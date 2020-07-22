@@ -1,0 +1,117 @@
+.about {
+  position: relative;
+  margin: 200px 0;
+
+  &__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+
+    @media (max-width: 1000px) {
+      grid-column-gap: 30px;
+      padding: 0;
+    }
+
+    @media (max-width: 500px) {
+      display: block;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      left: calc(50% + 500px);
+      top: 100px;
+      bottom: 0;
+      background-image: url(../images/about-image.png);
+      object-fit: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media (max-width:1000px) {
+        display: none;
+      }
+    }
+  }
+
+  &__deco-text {
+    position: absolute;
+    left: -40px;
+    transform: rotate(270deg);
+    text-transform: uppercase;
+    font-size: 14px;
+    color: rgba(52, 79, 16, 0.5);
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+      left: -110px;
+      top: 5px;
+    }
+  }
+
+  &__info {
+    padding-left: 100px;
+    max-width: 380px;
+
+    @media (max-width: 1000px) {
+      padding-left: 27px;
+    }
+  }
+
+  &__title {
+    padding-top: 40px;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: #344f10;
+    text-transform: uppercase;
+
+    @media (max-width: 1000px) {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+    margin: 20px 0;
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #344f10;
+  }
+
+  &__image {
+    background-image: url(../images/about-image.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    transform: translateX(-20px);
+
+    @media (max-width: 1000px) {
+      transform: translateX(0);
+    }
+  }
+
+}
