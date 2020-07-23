@@ -1,0 +1,76 @@
+.promo {
+  display: grid;
+  justify-content: center;
+
+  &__slogan p {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $logoColor;
+    width: 280px;
+    padding-top: 60px;
+    margin: 0;
+  }
+  &__text {
+    display: none;
+    height: 313px;
+
+    border-top: 1px solid rgba(52, 79, 16, 0.5);
+    & p {
+      font-size: 16px;
+      line-height: 150%;
+      color: $titlesColor;
+      width: 380px;
+      padding-top: 100px;
+
+    }
+  }
+}
+
+@media (min-width: $mobileScreen) {
+  .promo {
+    &__slogan {
+      text-align: center;
+      & p {
+        padding-top: 100px;
+      }
+    }
+  }
+}
+
+@media (min-width: $tabletScreen) {
+  .promo {
+    grid-template-columns: calc(50% - 40px) calc(50% - 30px);
+    grid-column-gap: 60px;
+    justify-content: space-between;
+    padding-top: 200px;
+    &__text {
+      display: flex;
+      justify-content: flex-end;
+    }
+    &__slogan {
+      height: 313px;
+      border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+      & p {
+        padding-top: 105px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media (min-width: $notebookScreen) {
+  .promo {
+    grid-template-columns: calc(50% - 100px) calc(50% - 20px);
+    grid-row-gap: 120px;
+
+    &__slogan {
+      & p {
+        font-size: 24px;
+        width: 380px;
+      }
+    }
+  }
+}
