@@ -1,0 +1,79 @@
+.creators {
+  display: grid;
+  justify-content: center;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    max-width: 380px;
+  }
+  &__title {
+    @extend %h2;
+  }
+  &__text {
+    @include text;
+    padding-top: 12px;
+    &--added {
+      display: none;
+    }
+  }
+  &__more {
+    @include more;
+
+  }
+  &__button {
+    margin: 30px auto 0;
+  }
+  &__photo {
+    display: none;
+  }
+  @media (min-width: $mobileScreen) {
+    grid-template-columns: repeat(2, calc(50% - 15px));
+    grid-column-gap: 30px;
+    justify-content: space-between;
+
+    &__content {
+      padding-left: 27px;
+      padding-right: 0;
+      justify-content: stretch;
+    }
+    &__photo {
+      display: initial;
+      height: 435px;
+    }
+    &__img {
+      object-position: center;
+      object-fit: cover;
+    }
+    &__button {
+      margin-left: 0;
+    }
+  }
+  @media (min-width: $tabletScreen) {
+    grid-template-columns: calc(50% - 40px) calc(50% - 30px);
+    grid-column-gap: 70px;
+    justify-content: space-between;
+    &__content {
+      justify-self: end;
+      padding: 0;
+    }
+    &__text {
+      padding-top: 25px;
+    }
+  }
+  @media (min-width: $notebookScreen) {
+    grid-template-columns: calc(50% - 100px) calc(50%);
+    grid-row-gap: 120px;
+    align-items: end;
+    &__photo {
+      height: 100%;
+      width: 520px;
+    }
+    &__text {
+      padding-top: 30px;
+      &--added {
+        display: initial;
+      }
+    }
+  }
+}
