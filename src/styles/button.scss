@@ -1,0 +1,43 @@
+.button {
+  position: relative;
+  width: 280px;
+  height: 60px;
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $button-text-color;
+  background: $menu-background-color;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  overflow: hidden;
+  z-index: 1;
+  border: 1px solid $menu-background-color;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: $body-background-color;
+    transition: all 0.3s linear;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $menu-background-color;
+    &:before {
+      width: 100%;
+    }
+  }
+
+}
+
+// .button:hover {
+//   color: $menu-background-color;
+//   background: $body-background-color;
+//   border: 1px solid $menu-background-color;
+// }
