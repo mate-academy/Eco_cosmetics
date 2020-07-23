@@ -2,46 +2,17 @@
   position: relative;
   margin: 200px 0;
 
-  &__wrapper {
+  &__deco-wrapper {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 50px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 20px;
-
-    @media (max-width: 1000px) {
-      grid-column-gap: 30px;
-      padding: 0;
-    }
-
-    @media (max-width: 500px) {
-      display: block;
-    }
-
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      right: 0;
-      left: calc(50% + 500px);
-      top: 100px;
-      bottom: 0;
-      background-image: url(../images/about-image.png);
-      object-fit: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-
-      @media (max-width:1000px) {
-        display: none;
-      }
-    }
   }
 
   &__deco-text {
     position: absolute;
-    left: -40px;
+    left: 20px;
     transform: rotate(270deg);
+    transform-origin: left;
     text-transform: uppercase;
     font-size: 14px;
     color: rgba(52, 79, 16, 0.5);
@@ -62,12 +33,58 @@
     }
   }
 
+  &__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+
+    @media (max-width: 1000px) {
+      grid-column-gap: 30px;
+      padding: 0;
+    }
+
+    @media (max-width: 500px) {
+      display: block;
+      padding: 20px;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      left: calc(50% + 500px);
+      top: 100px;
+      bottom: 0;
+      background-image: url(../images/about-image.png);
+      object-fit: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media (max-width:1000px) {
+        display: none;
+      }
+
+      @media (min-width: 2000px) {
+        background-position: left;
+      }
+    }
+  }
+
   &__info {
     padding-left: 100px;
     max-width: 380px;
 
     @media (max-width: 1000px) {
       padding-left: 27px;
+    }
+
+    @media (max-width: 500px) {
+      padding: 0;
+      width: auto;
     }
   }
 
@@ -105,12 +122,14 @@
     background-image: url(../images/about-image.png);
     object-fit: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
     position: relative;
     transform: translateX(-20px);
 
     @media (max-width: 1000px) {
       transform: translateX(0);
+      background-position: center;
+
     }
   }
 

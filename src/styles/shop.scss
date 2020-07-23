@@ -1,0 +1,157 @@
+.shop {
+
+  &__deco-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__deco-text {
+    position: absolute;
+    top: 500px;
+    left: 20px;
+    transform: rotate(270deg);
+    text-transform: uppercase;
+    transform-origin: top left;
+    font-size: 14px;
+    color: rgba(52, 79, 16, 0.5);
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+      left: -110px;
+      top: 5px;
+    }
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    padding-left: calc(50% - 500px);
+  
+    @media (max-width: 1300px) {
+      padding-left: 150px;
+    }
+  
+    @media (max-width: 1000px) {
+      padding: 0 27px;
+    }
+  
+    @media (max-width: 500px) {
+      padding: 0 20px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+  }
+
+  &__radio-face,
+  &__radio-body,
+  &__radio-hair,
+  &__radio-candles {
+    display: none;
+  }
+
+  &__tab-face,
+  &__tab-body,
+  &__tab-hair,
+  &__tab-candles {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #828282;
+    padding: 20px 0;
+    margin: 0 20px 20px 0;
+  }
+
+  &__radio-face:checked ~ &__tab-face,
+  &__radio-body:checked ~ &__tab-body,
+  &__radio-hair:checked ~ &__tab-hair,
+  &__radio-candles:checked ~ &__tab-candles {
+    color: #333;
+    border-bottom: 2px solid #333;
+  }
+
+  &__slider {
+    display: none;
+    background-color: #e4dfd3;
+    overflow: hidden;
+
+    @media (max-width: 500px) {
+      margin: 0 -20px;
+    }
+  }
+
+  &__radio-face:checked ~ .shop__face,
+  &__radio-body:checked ~ .shop__body,
+  &__radio-hair:checked ~ .shop__hair,
+  &__radio-candles:checked ~ .shop__candles {
+    display: flex;
+  }
+
+  &__arrow-left {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-top: 2px solid #828282;
+    border-left: 2px solid #828282;
+    transform: rotate(-45deg);
+  }
+
+  &__arrow-right {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    transform: rotate(45deg);
+  }
+
+  &__button {
+    display: block;
+    transform: translateX(360px);
+    color: #f2f2f2;
+    background-color: #333;
+    width: 280px;
+    height: 60px;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+
+    @media (max-width: 1300px) {
+      margin: 0 auto;
+      transform: translateX(-75px);
+    }
+
+    @media (max-width: 1000px) {
+      transform: translateX(0);
+    }
+
+    &:hover {
+      color: #333;
+      background-color: #e5e5e5;
+    }
+  }
+}
