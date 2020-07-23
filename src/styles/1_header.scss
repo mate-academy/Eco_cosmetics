@@ -1,0 +1,36 @@
+.header {
+  @extend %maxWidth;
+  height: 50px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  @media (max-width: $mediaStopM) {
+    margin-top: 23px;
+  }
+
+  @media (max-width: $mediaStopS) {
+    margin-top: 15px;
+  }
+}
+
+.header__basket {
+  height: 24px;
+  width: 20px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/images/header_basket.svg");
+  @extend %hoverLink;
+}
+
+.header__nav {
+  position: absolute;
+  left: calc(50% - 228px / 2);
+
+  @media (max-width: $mediaStopM) {
+    display: none;
+  }
+}

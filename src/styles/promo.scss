@@ -1,0 +1,80 @@
+.promo {
+  @extend %maxWidth;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 732px;
+
+  @media (max-width: $mediaStopL) {
+    height: auto;
+    margin-top: 27px;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+  }
+
+  @media (max-width: $mediaStopM) {
+    margin-top: 0;
+  }
+}
+
+.promo__caption {
+  @include text($mainTextColor, 60px, 1.2, bold);
+
+  @media (max-width: $mediaStopL) {
+    margin-top: 50px;
+    text-align: center;
+    @include text($mainTextColor, 36px, 1.3, bold);
+  }
+
+  @media (max-width: $mediaStopM) {
+    font-size: 24px;
+    margin-top: 25px;
+  }
+}
+
+.promo__sale {
+  @include text ($mainTextColor, 22px, 1.3);
+
+  @media (max-width: $mediaStopL) {
+    text-align: center;
+    @include text($mainTextColor, 18px, 1.5);
+    margin: 20px 0 30px;
+  }
+
+  @media (max-width: $mediaStopM) {
+    margin: 12px 0 19px;
+  }
+}
+
+.promo__right {
+  width: $promoImgWidth;
+  height: $promoImgHeight;
+
+  @media (max-width: $mediaStopL) {
+    width: 100%;
+    height: auto;
+  }
+
+  //@media (max-width: $mediaStopL) {
+  //  width: 100%;
+  //  height: auto;
+  //}
+
+  @media (max-width: $mediaStopS) {
+    width: calc(100% + 40px);
+    height: auto;
+  }
+}
+
+.promo__left {
+  height: $promoImgHeight;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: $mediaStopL) {
+    height: auto;
+    align-items: center;
+    max-width: 466px;
+  }
+}
