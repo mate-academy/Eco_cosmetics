@@ -1,0 +1,83 @@
+.about {
+  display: grid;
+  justify-content: center;
+  &__content {
+    padding: 0 20px;
+    max-width: 380px;
+  }
+  &__title {
+    @extend %h2;
+  }
+  &__text {
+    @include text;
+    padding-top: 12px;
+    &--added {
+      display: none;
+    }
+  }
+  &__more {
+    @include more;
+
+  }
+  &__photo {
+    display: none;
+  }
+  @media (min-width: $mobileScreen) {
+    grid-template-columns: repeat(2, calc(50% - 15px));
+    grid-column-gap: 30px;
+    justify-content: space-between;
+    &__content {
+      padding-left: 27px;
+      padding-right: 0;
+    }
+    &__photo {
+      display: initial;
+
+      &--big {
+        object-position: top;
+        object-fit: cover;
+      }
+      &--small {
+        display: none;
+      }
+    }
+  }
+  @media (min-width: $tabletScreen) {
+    grid-template-columns: calc(50% - 40px) calc(50% - 30px);
+    grid-column-gap: 70px;
+    justify-content: space-between;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-self: end;
+      padding: 0;
+    }
+  }
+  @media (min-width: $notebookScreen) {
+    grid-template-columns: calc(50% - 100px) calc(50%);
+    grid-row-gap: 120px;
+    align-items: end;
+    &__photo {
+      display: flex;
+      justify-content: space-between;
+      &--big {
+        height: 500px;
+        width: 520px;
+      }
+      &--small {
+        display: initial;
+        position: relative;
+        height: 430px;
+        width: calc(100% - 540px);
+        object-fit: cover;
+        object-position: center;
+        overflow: hidden;
+        top: 70px;
+      }
+    }
+    &__text--added {
+      display: initial;
+      padding-top: 30px;
+    }
+  }
+}
