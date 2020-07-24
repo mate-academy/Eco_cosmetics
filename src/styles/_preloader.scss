@@ -1,0 +1,118 @@
+$boxesInRow: 3;
+$boxSize: 20px;
+$boxMrg: 6px;
+$stepSize: $boxSize + $boxMrg;
+$contSize: $boxSize * $boxesInRow + $boxMrg * ($boxesInRow - 1);
+
+$animTime: 4s;
+
+.preloader {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: $m-light;
+  z-index: 1000;
+}
+
+.banter-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: $contSize;
+  height: $contSize;
+  margin-left: $contSize/-2;
+  margin-top: $contSize/-2;
+
+  &__box {
+    float: left;
+    position: relative;
+    width: $boxSize;
+    height: $boxSize;
+    margin-right: $boxMrg;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $d-green;
+    }
+
+    &:nth-child(#{$boxesInRow}n) {
+      margin-right: 0;
+      margin-bottom: $boxMrg;
+    }
+
+    &:nth-child(1):before,
+    &:nth-child(4):before {
+      margin-left: $stepSize;
+    }
+
+    &:nth-child(3):before {
+      margin-top: $stepSize*2;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+$movement: (
+  1: ("-x", "+x", "=0", "+x", "+y", "=0", "=0", "-y", "-x", "-x", "+x"),
+  2: ("=0", "+x", "-x", "+x", "+y", "=0", "=0", "=0", "-x", "=0", "-y"),
+  3: ("-x", "=0", "+x", "-x", "=0", "=0", "=0", "=0", "-y", "+x", "+y"),
+  4: ("-x", "=0", "-y", "+x", "+y", "-y", "=0", "=0", "-x", "+y", "+x"),
+  5: ("=0", "=0", "=0", "+x", "=0", "=0", "=0", "=0", "-y", "-x", "+y"),
+  6: ("=0", "-x", "=0", "+x", "=0", "=0", "=0", "+y", "-x", "-y", "+x"),
+  7: ("+x", "=0", "=0", "-x", "-y", "+x", "-x", "=0", "+y", "+x", "-x"),
+  8: ("=0", "-x", "-y", "+x", "=0", "=0", "=0", "=0", "+x", "+y", "-x"),
+  9: ("-x", "=0", "+x", "-x", "+x", "=0", "-x", "=0", "-x", "+x", "+x")
+);
+
+@each $i, $dirArr in $movement {
+  $xVal: 0;
+  $yVal: 0;
+  $n: 1;
+  $len: length($dirArr);
+  $step: percentage(1/$len);
+
+  @keyframes moveBox-#{$i} {
+
+    @each $dir in $dirArr {
+      @if ($dir == "-x") {
+        $xVal: $xVal - $stepSize;
+      }
+      @if ($dir == "+x") {
+        $xVal: $xVal + $stepSize;
+      }
+      @if ($dir == "-y") {
+        $yVal: $yVal - $stepSize;
+      }
+      @if ($dir == "+y") {
+        $yVal: $yVal + $stepSize;
+      }
+
+      #{$step * $n} {
+        transform: translate($xVal, $yVal);
+      }
+
+      $n: $n + 1;
+    }
+  }
+
+  .banter-loader__box:nth-child(#{$i}) {
+    animation: moveBox-#{$i} $animTime infinite;
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}

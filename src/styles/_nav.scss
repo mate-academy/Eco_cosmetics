@@ -1,0 +1,134 @@
+.nav__list__item {
+  color: $d-green;
+  @extend %inputsMenuText;
+}
+
+@media (min-width: 1025px) {
+
+  .nav__list {
+    position: absolute;
+    left: calc(50% - 128px);
+    top: 10.5px;
+    display: flex;
+    align-items: center;
+
+    & li {
+
+      &:nth-child(n+2) {
+        margin-left: 30px;
+      }
+    }
+
+    &__item {
+      position: relative;
+      text-transform: capitalize;
+      padding: 5px;
+      transition: all 0.5s;
+    }
+
+    &__item:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 0%;
+      content: ".";
+      color: transparent;
+      height: 1px;
+    }
+
+    &__item:hover {
+      color: $m-light;
+      z-index: 1;
+    }
+
+    &__item:hover:after {
+      z-index: -1;
+      animation: fill 0.5s forwards;
+      -webkit-animation: fill 0.5s forwards;
+      -moz-animation: fill 0.5s forwards;
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    position: absolute;
+    width: 100%;
+    top: 70px; //143 - 50 - 23
+    left: -150%;
+    transition: all 1s;
+
+    &.active {
+      left: 0;
+    }
+
+    &__list {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+
+      & li {
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #828282;
+      }
+
+      &__item {
+        padding: 5px;
+        color: $m-light;
+        text-transform: capitalize;
+        transition: all 0.5s;
+      }
+
+      &__item:hover {
+        color: #828282;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .nav {
+    top: 35px; //80 - 15 - 30
+
+    &.active {
+      left: 0;
+    }
+
+    &__list {
+
+      & li {
+        margin-top: 30px;
+      }
+
+      &__item {
+        padding: 5px;
+        color: $m-light;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #333;
+  }
+}

@@ -1,0 +1,101 @@
+.header__top {
+
+  &__burger {
+    display: block;
+    position: relative;
+    width: 18px;
+    height: 13px;
+    z-index: 1;
+  }
+
+  &__burger span,
+  &__burger:before,
+  &__burger:after {
+    content: "";
+    background-color: $d-green;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    transition: all 0.5s;
+  }
+
+  &__burger:before {
+    animation: burger_top_reverse 0.5s forwards;
+    top: 0;
+  }
+
+  &__burger:after {
+
+    bottom: 0;
+  }
+
+  &__burger span {
+    animation: burger_bot_reverse 0.5s forwards;
+    top: 50%;
+  }
+
+  &__burger.active span {
+    animation: burger_bot 0.5s forwards;
+    background-color: $m-light;
+  }
+
+  &__burger.active:before {
+    animation: burger_top 0.5s forwards;
+    background-color: $m-light;
+  }
+
+  &__burger.active:after {
+    opacity: 0;
+  }
+}
+
+@keyframes burger_top {
+  50% {
+    transform: rotate(90deg);
+    top: 6px;
+  }
+
+  100% {
+    transform: rotate(45deg);
+    top: 6px;
+  }
+}
+
+@keyframes burger_top_reverse {
+  0% {
+    transform: rotate(45deg);
+    top: 6px;
+  }
+
+  50% {
+    transform: rotate(90deg);
+    top: 6px;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    top: 0;
+  }
+}
+
+@keyframes burger_bot {
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-45deg);
+    top: 6px;
+  }
+}
+
+@keyframes burger_bot_reverse {
+  0% {
+    transform: rotate(-45deg);
+    top: 6px;
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
