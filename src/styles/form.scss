@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    padding: 10px 0;
+    margin-top: 10px;
+    font-family: $medium-font;
+    font-size: 18px;
+    color: $input-color;
+    background-color: transparent;
+
+    border: none;
+    border-bottom: 1px solid;
+    transition-duration: 0.3s;
+
+    &:last-child {
+      resize: vertical;
+      margin-top: 40px;
+    }
+
+    &:valid {
+      color: $text-color;
+      border-bottom-color: $text-color;
+    }
+
+    &:invalid {
+      color: #eb5757;
+      border-bottom-color: #eb5757;
+    }
+
+    &:not(:focus) {
+      color: $input-color;
+      border-bottom-color: $input-color;
+    }
+  }
+}
+
+@media (max-width: $small-screen) {
+  .form {
+
+    &__input {
+      font-size: 14px;
+    }
+  }
+}
