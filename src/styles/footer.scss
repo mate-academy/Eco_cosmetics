@@ -1,5 +1,85 @@
 .footer {
   background: rgba(52, 79, 16, 0.5);
-  height: 320px;
+  position: relative;
+  margin: 0 auto;
   width: 100%;
+  color: #e4dfd3;
+  font-size: 14px;
+  line-height: 130%;
+  padding: 30px 20px 50px;
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__nav-item {
+    padding-bottom: 20px;
+  }
+  &__link {
+    padding-right: 20px;
+  }
+  &__contacts {
+    padding-top: 30px;
+    & p {
+      padding-bottom: 12px;
+    }
+    & p:last-child {
+      padding-top: 8px;
+    }
+  }
+  &__copyrights {
+    line-height: 130%;
+    text-align: center;
+    text-transform: uppercase;
+    width: 200px;
+    margin: 30px auto 0;
+    & span {
+      display: none;
+    }
+  }
+  @media (min-width: $mobileScreen) {
+    padding-left: 27px;
+    &__contacts {
+      position: absolute;
+      top: 0;
+      right: 50px;
+    }
+    &__copyrights {
+      margin: 50px 0 0;
+      width: 260px;
+    }
+  }
+  @media (min-width: $tabletScreen) {
+    padding-left: 120px;
+    &__contacts {
+      right: 200px;
+    }
+  }
+  @media (min-width: $notebookScreen) {
+    max-width: $bigScreen;
+    height: 320px;
+    padding: 60px 50px 66px;
+    font-size: 18px;
+    &__nav-list {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 260px;
+    }
+    &__contacts {
+      padding-top: 60px;
+      right: 120px;
+    }
+    &__sm {
+      position: absolute;
+      right: 440px;
+      top: 220px;
+    }
+    &__copyrights {
+      width: 420px;
+      margin-top: 120px;
+      & span {
+        display: initial;
+        text-transform: capitalize;
+      }
+    }
+  }
 }
