@@ -1,0 +1,136 @@
+.about {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 0 200px 150px;
+
+  &__reverse-text {
+    @include small-uppercase-text;
+    position: absolute;
+    left: -50px;
+    top: 100px;
+    transform: rotate(-90deg);
+    transition: text-shadow $hover-transition;
+
+    &:hover {
+      text-shadow: 2px 2px 5px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 100px;
+      left: -110px;
+      top: 0.5em;
+      background-color: $green-color;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    @include section-text;
+    margin-bottom: 30px;
+    max-width: 380px;
+  }
+
+  &__link {
+    @include small-uppercase-text;
+    width: max-content;
+  }
+
+  &__images-container {
+    display: grid;
+    grid-template-columns: $about-photo-size 130px;
+    column-gap: 20px;
+    align-items: end;
+  }
+
+  &__photo {
+    width: $about-photo-size;
+    height: $about-photo-size;
+    object-fit: cover;
+    object-position: center;
+
+    &--part {
+      width: 130px;
+      height: 430px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .about {
+    column-gap: 20px;
+
+    &__images-container {
+      grid-template-columns: 1fr;
+    }
+
+    &__photo {
+      &--part {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about {
+    padding: 100px 0 90px 50px;
+    grid-template-columns: 1fr 1fr;
+
+    &__reverse-text {
+      display: none;
+    }
+
+    &__text {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+
+    &__images-container {
+      align-items: start;
+      grid-template-columns: 1fr;
+    }
+
+    &__photo {
+      width: 100%;
+      height: 320px;
+      justify-self: end;
+
+      &--part {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .about {
+    padding: 60px 20px;
+    grid-template-columns: 1fr;
+
+    &__images-container {
+      display: none;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

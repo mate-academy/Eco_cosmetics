@@ -1,0 +1,45 @@
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  background-color: $grey-color;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  transition: transform $hover-transition;
+
+  &__closer {
+    background: url(../images/button-close.png) no-repeat center;
+    margin: 25px;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    border-bottom: 1px solid #828282;
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 130%;
+    color: #e4dfd3;
+    transition: transform $hover-transition, text-shadow $hover-transition;
+
+    &:hover {
+      transform: scale(1.2);
+      text-shadow: 2px 2px 5px;
+    }
+  }
+}
