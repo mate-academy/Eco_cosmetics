@@ -24,23 +24,25 @@
               <a href="#contact" class="menu__link">Contact</a>
             </li>
             <li class="menu__item">
-              <a href="about" class="menu__link">About</a>
+              <a href="#about" class="menu__link">About</a>
             </li>
           </ul>
         </div>
       </div>
       <div class="header__wrapper">
-        <label for="toggler" class="button"></label>
-        <img
-          class="header__logo"
-          src="images/logo.svg"
-          alt=""
-        >
-        <img
-          class="header__logo-small"
-          src="images/logo-small.svg"
-          alt=""
-        >
+        <label for="toggler" class="button"><div class="bar"></div></label>
+        <a href="#" class="header__logo-link">
+          <img
+            class="header__logo"
+            src="images/logo.svg"
+            alt=""
+          >
+          <img
+            class="header__logo-small"
+            src="images/logo-small.svg"
+            alt=""
+          >
+        </a>
         <nav class="nav header__nav">
           <ul class="nav__list">
             <li class="nav__item">
@@ -54,11 +56,13 @@
             </li>
           </ul>
         </nav>
-        <img
-          class="header__basket"
-          src="images/basket.svg"
-          alt=""
-        >
+        <a href="#shop" class="header__shop-link">
+          <img
+            class="header__basket"
+            src="images/basket.svg"
+            alt=""
+          >
+        </a>
       </div>
     </header>
 
@@ -95,7 +99,7 @@
         <div class="about__info">
           <h3 class="about__title">About our brand</h3>
           <p class="about__text">Our brand cosmetics are made from natural ingredients and we are promoting them to the masses. Shampoo, hair conditioner, soap - in recycled paper. Creams, oils, washing products in glass containers with recycled paper labels. No synthetics and microplastics in cosmetics. And the packaging from it can be returned for recycling or reused.</p>
-          <p class="about__text">We are all neighbors of one big House. And we must protect what we have. Destroying everything around for the sake of consumerism and imaginary convenience, we destroy what does not belong to us. Be aware of your choice!</p>
+          <p class="about__text about__text-hidden">We are all neighbors of one big House. And we must protect what we have. Destroying everything around for the sake of consumerism and imaginary convenience, we destroy what does not belong to us. Be aware of your choice!</p>
           <a href="#" class="about__link">Learn more</a>
         </div>
         <div class="about__image"></div>
@@ -103,7 +107,7 @@
       </div>
     </section>
 
-    <section class="shop">
+    <section class="shop" id="shop">
       <div class="shop__deco-wrapper">
         <span class="shop__deco-text">shop</span>
       </div>
@@ -111,34 +115,36 @@
         <h2 class="shop__title">Shop</h2>
         <input
           id="face"
-          class="shop__radio-face"
+          class="shop__radio shop__radio-face"
           type="radio"
           name="shop"
           checked
         >
         <input
           id="body"
-          class="shop__radio-body"
+          class="shop__radio shop__radio-body"
           type="radio"
           name="shop"
 
         >
         <input
           id="hair"
-          class="shop__radio-hair"
+          class="shop__radio shop__radio-hair"
           type="radio"
           name="shop"
         >
         <input
           id="candles"
-          class="shop__radio-candles"
+          class="shop__radio shop__radio-candles"
           type="radio"
           name="shop"
         >
-        <label class="shop__tab-face" for="face">Face</label>
-        <label class="shop__tab-body" for="body">Body</label>
-        <label class="shop__tab-hair" for="hair">Hair</label>
-        <label class="shop__tab-candles" for="candles">Candles</label>
+        <div class="shop__tab-wrapper">
+          <label class="shop__tab shop__tab-face" for="face">Face</label>
+          <label class="shop__tab shop__tab-body" for="body">Body</label>
+          <label class="shop__tab shop__tab-hair" for="hair">Hair</label>
+          <label class="shop__tab shop__tab-candles" for="candles">Candles</label>
+        </div>
         <div class="shop__slider shop__face">
           <div class="product shop__product">
             <img
@@ -276,13 +282,15 @@
           </div>
         </div>
 
-        <div class="shop__arrow-left"></div>
-        <div class="shop__arrow-right"></div>
+        <div class="shop__arrows">
+          <div class="shop__arrow-left"></div>
+          <div class="shop__arrow-right"></div>
+        </div>
         <a href="#" class="shop__button">All Products</a>
       </div>
     </section>
 
-    <section class="about2">
+    <section class="about2" id="about">
       <div class="about2__wrapper">
         <span class="about2__deco-text">About the creators</span>
         <div class="about2__info">
@@ -349,7 +357,7 @@
       </div>
     </section>
 
-    <section class="contact-us">
+    <section class="contact-us" id="contact">
       <div class="contact-us__deco-wrapper">
         <span class="contact-us__deco-text">help</span>
       </div>
@@ -363,24 +371,28 @@
             class="form contact-us__form"
           >
             <input
-              class="form__name"
+              class="form__name form__field"
               type="text"
               placeholder="Your Name"
+              required
             >
             <input
-              class="form__email"
+              class="form__email form__field"
               type="email"
               placeholder="E-Mail"
+              required
             >
             <input
-              class="form__phone"
+              class="form__phone form__field"
               type="tel"
               placeholder="Phone Number"
+              pattern="[0-9]{10}"
             >
             <textarea
-              class="form__message"
+              class="form__message form__field"
               rows="2"
               placeholder="Your Message"
+              required
            ></textarea>
             <button class="form__button" type="submit">Send a message</button>
           </form>
@@ -397,9 +409,9 @@
       <div class="footer__wrapper">
         <nav class="footer__nav">
           <ul class="footer__list">
-            <li class="footer__item"><a href="#">Shop</a></li>
-            <li class="footer__item"><a href="#">Contact</a></li>
-            <li class="footer__item"><a href="#">About</a></li>
+            <li class="footer__item"><a href="#shop">Shop</a></li>
+            <li class="footer__item"><a href="#contact">Contact</a></li>
+            <li class="footer__item"><a href="#about">About</a></li>
           </ul>
         </nav>
         <span class="footer__copyright"><span class="footer__hidden-text">Copyright </span>&copy; 2019 <span class="footer__small-text">WITCH OF MOUNTAIN WINDS</span></span>
@@ -411,16 +423,20 @@
           <span class="footer__worktime">Support is available Monday - Friday 9am-6pm</span>
         </div>
         <div class="footer__icons">
-          <img
-            src="images/facebook.svg"
-            alt=""
-            class="footer__facebook-icon"
-          >
-          <img
-            src="images/instagram.svg"
-            alt=""
-            class="footer__instagram-icon"
-          >
+          <a href="" class="footer__facebook">
+            <img
+              src="images/facebook.svg"
+              alt=""
+              class="footer__facebook-icon"
+            >
+          </a>
+          <a href="https://www.instagram.com/witch_of_mountain_winds/" class="footer__instagram">
+            <img
+              src="images/instagram.svg"
+              alt=""
+              class="footer__instagram-icon"
+            >
+          </a>
         </div>
       </div>
     </footer>

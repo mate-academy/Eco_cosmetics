@@ -2,36 +2,22 @@
   position: relative;
   margin: 200px 0;
 
+  @media (max-width: $tabletWidth) {
+    margin: 50px 0;
+  }
+
   &__deco-wrapper {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 50px;
+    @extend %deco-wrapper;
   }
 
   &__deco-text {
-    position: absolute;
-    left: 70px;
-    transform: rotate(270deg);
-    transform-origin: left;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: rgba(52, 79, 16, 0.5);
+    @extend %deco-text;
 
-    @media (max-width: 1000px) {
-      display: none;
-    }
+    top: 200px;
+  }
 
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 100px;
-      height: 1px;
-      background-color: rgba(52, 79, 16, 0.5);
-      left: -110px;
-      top: 5px;
-    }
+  &:hover &__deco-wrapper * {
+    top: 100px;
   }
 
   &__wrapper {
@@ -42,12 +28,12 @@
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 20px;
 
-    @media (max-width: 1000px) {
+    @media (max-width: $tabletWidth) {
       grid-column-gap: 30px;
       padding: 0;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: $mobileWidth) {
       display: block;
       padding: 20px;
     }
@@ -65,7 +51,7 @@
       background-repeat: no-repeat;
       background-position: center;
 
-      @media (max-width:1000px) {
+      @media (max-width: $tabletWidth) {
         display: none;
       }
 
@@ -79,11 +65,11 @@
     padding-left: 100px;
     max-width: 380px;
 
-    @media (max-width: 1000px) {
+    @media (max-width: $tabletWidth) {
       padding-left: 27px;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: $mobileWidth) {
       padding: 0;
       width: auto;
     }
@@ -94,10 +80,11 @@
     font-size: 36px;
     line-height: 150%;
     letter-spacing: 0.05em;
-    color: #344f10;
+    color: $witchGreen;
     text-transform: uppercase;
 
-    @media (max-width: 1000px) {
+    @media (max-width: $tabletWidth) {
+      padding-top: 0;
       font-size: 24px;
     }
   }
@@ -105,19 +92,18 @@
   &__text {
     font-size: 16px;
     line-height: 150%;
-    color: #333;
+    color: $witchGray;
     margin: 20px 0;
   }
 
+  &__text-hidden {
+    @media (max-width: $tabletWidth) {
+      display: none;
+    }
+  }
+
   &__link {
-    display: inline-block;
-    font-size: 14px;
-    line-height: 130%;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #344f10;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #344f10;
+    @extend %link;
   }
 
   &__image {
@@ -128,11 +114,9 @@
     position: relative;
     transform: translateX(-20px);
 
-    @media (max-width: 1000px) {
+    @media (max-width: $tabletWidth) {
       transform: translateX(0);
       background-position: center;
-
     }
   }
-
 }

@@ -1,47 +1,35 @@
 .powder {
   margin-bottom: 200px;
 
+  @media (max-width: $tabletWidth) {
+    margin-bottom: 0;
+  }
+
   &__wrapper {
     position: relative;
-    max-width: 1200px;
+    max-width: $maxWidth;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 $paddingDesktop;
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: 1000px) {
+    @media (max-width: $tabletWidth) {
       padding: 0;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: $mobileWidth) {
       flex-direction: column;
     }
   }
 
   &__deco-text {
-    position: absolute;
+    @extend %deco-text;
+
     top: 200px;
-    left: 70px;
-    transform: rotate(270deg);
-    text-transform: uppercase;
-    transform-origin: top left;
-    font-size: 14px;
-    color: rgba(52, 79, 16, 0.5);
+  }
 
-    @media (max-width: 1000px) {
-      display: none;
-    }
-
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 100px;
-      height: 1px;
-      background-color: rgba(52, 79, 16, 0.5);
-      left: -110px;
-      top: 5px;
-    }
+  &:hover &__deco-text {
+    top: 100px;
   }
 
   &__title-column {
@@ -52,8 +40,8 @@
     align-items: flex-start;
     justify-content: space-between;
 
-    @media (max-width: 1000px) {
-      padding-left: 27px;
+    @media (max-width: $tabletWidth) {
+      padding-left: $paddingTablet;
     }
   }
 
@@ -64,24 +52,18 @@
     line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #344f10;
+    color: $witchGreen;
 
-    @media (max-width: 1000px) {
+    @media (max-width: $tabletWidth) {
       font-size: 24px;
       padding-top: 0;
     }
   }
 
   &__link {
-    font-size: 14px;
-    line-height: 130%;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #344f10;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #344f10;
+    @extend %link;
 
-    @media (max-width: 500px) {
+    @media (max-width: $mobileWidth) {
       position: absolute;
       top: 500px;
     }
@@ -90,7 +72,7 @@
   &__image-box {
     display: flex;
 
-    @media (max-width: 1000px) {
+    @media (max-width: $tabletWidth) {
       padding: 0 50px;
       overflow: hidden;
     }
@@ -103,7 +85,7 @@
     text-align: right;
     padding-right: 100px;
 
-    @media (max-width: 1200px) {
+    @media (max-width: $maxWidth) {
       padding-right: 30px;
     }
   }
@@ -113,7 +95,13 @@
     font-size: 16px;
     line-height: 150%;
     text-transform: capitalize;
-    color: #333;
+    color: $witchGray;
+    transition: 0.5s;
+    transform-origin: right;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     &::before {
       position: absolute;
@@ -123,7 +111,7 @@
       display: block;
       width: 76px;
       height: 1px;
-      background-color: #333;
+      background-color: $witchGray;
     }
 
     &::after {
@@ -135,23 +123,28 @@
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background-color: #333;
+      background-color: $witchGray;
 
-      @media (max-width: 1200px) {
+      @media (max-width: $maxWidth) {
         display: none;
       }
     }
   }
 
   &__note-box {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: $maxWidth;
     display: flex;
     justify-content: space-around;
-    padding: 100px 20px;
+    padding: 20px;
+    margin: 150px auto;
 
-    @media (max-width: 600px) {
+    @media (max-width: $tabletWidth) {
+      margin: 100px auto;
+    }
+
+    @media (max-width: $mobileWidth) {
       flex-direction: column;
+      margin: 30px;
     }
   }
 
@@ -159,6 +152,18 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
+    @media (max-width: $mobileWidth) {
+      margin-top: 30px;
+    }
+  }
+
+  &__note-image {
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &__note-text {

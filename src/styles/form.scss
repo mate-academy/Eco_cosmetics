@@ -2,37 +2,47 @@
   display: flex;
   flex-direction: column;
 
-  &__name,
-  &__email,
-  &__phone,
-  &__message {
+  &__field {
+    font-family: "Sharp Sans No2", sans-serif;
     margin-top: 20px;
-    padding: 10px;
+    padding: 10px 0;
     font-size: 18px;
     line-height: 150%;
     text-transform: capitalize;
-    color: #333;
+    color: $witchGray;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid #828282;
 
-    @media (max-width: 1000px) {
+    &:focus {
+      outline: none;
+      border-color: $witchGray;
+    }
+
+    &:focus:valid {
+      color: $witchGreen;
+      border-color: $witchGreen;
+    }
+
+    &:focus:invalid {
+      color: #eb5757;
+      border-color: #eb5757;
+    }
+
+    @media (max-width: $tabletWidth) {
       font-size: 14px;
-      padding: 5px;
     }
 
     &::placeholder {
       position: relative;
-      left: -10px;
       font-family: "Sharp Sans No2", sans-serif;
       font-size: 18px;
       line-height: 150%;
       text-transform: capitalize;
-      color: #828282;
+      color: $witchLightGray;
 
-      @media (max-width: 1000px) {
+      @media (max-width: $tabletWidth) {
         font-size: 14px;
-        left: -5px;
       }
     }
   }
@@ -47,28 +57,12 @@
   }
 
   &__button {
+    @extend %button;
+
     margin-top: 50px;
-    display: block;
-    color: #f2f2f2;
-    background-color: #333;
-    width: 280px;
-    height: 60px;
-    box-sizing: border-box;
-    border: 1px solid #333;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 60px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
 
-    @media (max-width: 500px) {
+    @media (max-width: $mobileWidth) {
       margin: 50px auto;
-    }
-
-    &:hover {
-      color: #333;
-      background-color: #e5e5e5;
     }
   }
 }

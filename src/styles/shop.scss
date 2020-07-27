@@ -1,37 +1,26 @@
 .shop {
   margin-bottom: 200px;
 
+  @media (max-width: $tabletWidth) {
+    margin-bottom: 100px;
+  }
+
+  @media (max-width: $mobileWidth) {
+    margin-bottom: 50px;
+  }
+
   &__deco-wrapper {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px;
+    @extend %deco-wrapper;
   }
 
   &__deco-text {
-    position: absolute;
+    @extend %deco-text;
+
     top: 500px;
-    left: 70px;
-    transform: rotate(270deg);
-    text-transform: uppercase;
-    transform-origin: top left;
-    font-size: 14px;
-    color: rgba(52, 79, 16, 0.5);
+  }
 
-    @media (max-width: 1000px) {
-      display: none;
-    }
-
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 100px;
-      height: 1px;
-      background-color: rgba(52, 79, 16, 0.5);
-      left: -110px;
-      top: 5px;
-    }
+  &:hover &__deco-wrapper * {
+    top: 150px;
   }
 
   &__wrapper {
@@ -42,12 +31,12 @@
       padding-left: 150px;
     }
   
-    @media (max-width: 1000px) {
-      padding: 0 27px;
+    @media (max-width: $tabletWidth) {
+      padding: 0 $paddingTablet;
     }
   
-    @media (max-width: 500px) {
-      padding: 0 20px;
+    @media (max-width: $mobileWidth) {
+      padding: 0 $paddingMobile;
     }
   }
 
@@ -56,37 +45,47 @@
     line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #344f10;
+    color: $witchGreen;
   }
 
-  &__radio-face,
-  &__radio-body,
-  &__radio-hair,
-  &__radio-candles {
+  &__tab-wrapper {
+    display: flex;
+  }
+
+  &__radio {
     display: none;
   }
 
-  &__tab-face,
-  &__tab-body,
-  &__tab-hair,
-  &__tab-candles {
+  &__tab {
     display: inline-block;
+    cursor: pointer;
     font-size: 18px;
     font-weight: bold;
     line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #828282;
-    padding: 20px 0;
+    color: $witchLightGray;
+    border-bottom: 2px solid transparent;
+    padding-top: 20px;
     margin: 0 20px 20px 0;
+    transition: 0.5s;
+
+    &:hover {
+      padding-top: 0;
+      padding-bottom: 20px;
+      color: $witchGray;
+      border-bottom: 2px solid $witchGray;
+    }
   }
 
-  &__radio-face:checked ~ &__tab-face,
-  &__radio-body:checked ~ &__tab-body,
-  &__radio-hair:checked ~ &__tab-hair,
-  &__radio-candles:checked ~ &__tab-candles {
-    color: #333;
-    border-bottom: 2px solid #333;
+  &__radio-face:checked ~ * &__tab-face,
+  &__radio-body:checked ~ * &__tab-body,
+  &__radio-hair:checked ~ * &__tab-hair,
+  &__radio-candles:checked ~ * &__tab-candles {
+    padding-top: 0;
+    padding-bottom: 20px;
+    color: $witchGray;
+    border-bottom: 2px solid $witchGray;
   }
 
   &__slider {
@@ -94,7 +93,7 @@
     background-color: #e4dfd3;
     overflow: hidden;
 
-    @media (max-width: 500px) {
+    @media (max-width: $mobileWidth) {
       margin: 0 -20px;
     }
   }
@@ -106,54 +105,56 @@
     display: flex;
   }
 
+  &__arrows {
+    display: flex;
+    position: relative;
+    padding: 30px 0;
+
+    @media (max-width: $tabletWidth) {
+      justify-content: flex-end;
+    }
+
+    @media (max-width: $mobileWidth) {
+      justify-content: center;
+    }
+  }
+
   &__arrow-left {
     display: inline-block;
+    cursor: pointer;
     width: 20px;
     height: 20px;
     margin: 5px;
-    border-top: 2px solid #828282;
-    border-left: 2px solid #828282;
+    border-top: 2px solid $witchLightGray;
+    border-left: 2px solid $witchLightGray;
     transform: rotate(-45deg);
+    transition: 0.5s;
+
+    &:hover {
+      border-color: $witchGray;
+    }
   }
 
   &__arrow-right {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 5px;
-    border-top: 2px solid #333;
-    border-right: 2px solid #333;
-    transform: rotate(45deg);
+    @extend .shop__arrow-left;
+
+    transform: rotate(135deg);
+    margin-left: 20px;
   }
 
   &__button {
-    display: block;
+    @extend %button;
+
     transform: translateX(360px);
-    color: #f2f2f2;
-    background-color: #333;
-    width: 280px;
-    height: 60px;
-    box-sizing: border-box;
-    border: 1px solid #333;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 60px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
+    transition: color 0.5s, background-color 0.5s;
 
     @media (max-width: 1300px) {
       margin: 0 auto;
       transform: translateX(-75px);
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: $tabletWidth) {
       transform: translateX(0);
-    }
-
-    &:hover {
-      color: #333;
-      background-color: #e5e5e5;
     }
   }
 }
