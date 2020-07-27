@@ -79,6 +79,12 @@
     
     text-transform: uppercase;
     color: $text-color;
+    transition-duration: all 0.3s ease;
+
+    &:hover {
+      color: $main-color;
+      border-bottom: 1px solid $main-color;
+    }
   }
 
   &__button {
@@ -86,6 +92,9 @@
   }
 
   &__images {
+    object-fit: cover;
+    object-position: center;
+
     &--big {
       margin-right: 20px;
       width: 45%;
@@ -96,14 +105,28 @@
       width: 25%;
       height: 430px;
     }
+
+    &--creators {
+      margin-right: 50px;
+      width: 55%;
+      height: 670px;
+    }
+
+    &--contact {
+      width: 50%;
+      height: 580px;
+    }
+  }
+}
+
+@media (max-width: 1030px) {
+  .article__words--hiden {
+    display: none;
   }
 }
 
 @media (max-width: $big-screen) {
   .article {
-    &__words--hiden {
-      display: none;
-    }
 
     &__images--big {
       width: 50%;
@@ -146,9 +169,6 @@
     }
 
     &__images {
-      object-fit: cover;
-      object-position: center;
-
       &--big {
         width: 50%;
         margin: 0;

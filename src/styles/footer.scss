@@ -1,11 +1,16 @@
 .footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 60px 50px 65px;
   height: 320px;
 
   color: $c-gray;
   background: rgba(52, 79, 16, 0.5);
+
+  &__contant {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 50px 65px;
+  }
 
   &__inner {
     display: flex;
@@ -40,7 +45,10 @@
 
 @media (max-width: $medium-screen) {
   .footer {
-    padding: 30px 30px 50px;
+
+    &__contant {
+      padding: 30px 30px 50px;
+    }
 
     &__nav {
       display: flex;
@@ -59,15 +67,20 @@
   }
 }
 
-@media (max-width: $medium-screen) {
+@media (max-width: $small-screen) {
   .footer {
-    flex-direction: column;
-    height: 470px;
+    height: 400px;
+
+    &__contant {
+      flex-direction: column;
+      padding: 30px;
+    }
 
     &__copyright {
       display: none;
 
       &--mobile {
+        margin-top: 20px;
         display: block;
         text-transform: uppercase;
         text-align: center;
