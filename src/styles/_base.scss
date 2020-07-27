@@ -13,11 +13,12 @@ body {
 
 .container {
   width: 1280px;
-  padding-left: 50px;
+  padding-left: 140px;
   padding-right: 50px;
   margin: 0 auto;
 
   @media (max-width: 1280px) {
+    padding-left: 50px;
     width: 992px;
   }
 
@@ -42,6 +43,14 @@ h2 {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: $secondary-color;
+
+  @media (max-width: 992px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 }
 
 h4 {
@@ -53,15 +62,52 @@ h4 {
   color: $secondary-color;
 }
 
+h5 {
+  font-family: "Sharp Sans No2 SemiBold", sans-serif;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 p {
   font-size: 16px;
   line-height: 150%;
   margin: 20px 0;
 }
 
+section {
+  padding: 100px 0;
+
+  @media (max-width: 992px) {
+    padding: 50px 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
+}
+
+input,
+textarea {
+  font-family: "Sharp Sans No2 Medium", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  color: $primary-color;
+  background: $bg-color;
+  border: none;
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 150%;
+    color: #828282;
+  }
+}
+
 .button {
   width: 280px;
   height: 60px;
+  display: block;
   font-size: 16px;
   line-height: 130%;
   text-align: center;
@@ -78,5 +124,42 @@ p {
     color: $primary-color;
     background-color: $bg-color;
     border: 1px solid $primary-color;
+  }
+}
+
+.side-text {
+  position: absolute;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  color: rgba(52, 79, 16, 0.5);
+  transform: rotate(-90deg);
+
+  &::after {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background: rgba(52, 79, 16, 0.5);
+    position: absolute;
+    left: -110px;
+    top: 50%;
+  }
+}
+
+.link {
+  font-family: "Sharp Sans No2 SemiBold", sans-serif;
+  display: block;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $secondary-color;
+  padding: 12px 0;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  transition: border-color $transition-duration ease-in-out;
+
+  &:hover {
+    border-color: $secondary-color;
   }
 }
