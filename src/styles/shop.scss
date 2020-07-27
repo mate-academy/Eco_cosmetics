@@ -1,0 +1,53 @@
+.shop {
+  flex-direction: column;
+  position: relative;
+
+  &__tabs {
+    display: flex;
+    color: $basicColorLighter;
+    margin-bottom: 60px;
+  }
+
+  &__tab {
+    margin-right: $mainPaddingRight;
+    cursor: pointer;
+    @include h5;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $basicColor;
+    }
+
+    &--checked {
+      color: $basicColor;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 2px;
+        margin-top: 12px;
+        background-color: $basicColor;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+  }
+
+  &__pagination {
+    margin: auto;
+    transform: translate(-$mainPaddingLeft / 2);
+    margin-bottom: 30px;
+  }
+
+  &__btn {
+    margin: auto;
+    transform: translate(-$mainPaddingLeft / 2);
+  }
+}

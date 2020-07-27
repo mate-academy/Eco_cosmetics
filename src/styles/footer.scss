@@ -1,0 +1,50 @@
+.footer {
+  background-color: $footerColor;
+  color: $bgColor;
+
+  &__container {
+    display: grid;
+    grid-template-areas: "footer__nav footer__contacts"
+      "footer__copyright footer__socials";
+    grid-template-columns: 1fr 1fr;
+    @include inputAndMenu;
+  }
+
+  &__nav {
+    grid-area: footer__nav;
+  }
+
+  &__copyright {
+    grid-area: footer__copyright;
+
+    &--name {
+      text-transform: uppercase;
+    }
+  }
+
+  &__contacts {
+    grid-area: footer__contacts;
+  }
+
+  &__contact {
+    margin-bottom: 20px;
+    display: block;
+    color: $bgColor;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__socials {
+    grid-area: footer__socials;
+  }
+
+  &__soc-media {
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
