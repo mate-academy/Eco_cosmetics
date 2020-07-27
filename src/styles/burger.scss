@@ -4,8 +4,6 @@
   @media (max-width: $mediaStopM) {
     display: block;
   }
-
-  @extend %hoverLink;
 }
 
 #menu__toggle {
@@ -16,7 +14,7 @@
   display: flex;
   align-items: center;
   position: fixed;
-  top: 34px;
+  top: 40px;
   left: 30px;
   width: 20px;
   height: 13px;
@@ -25,6 +23,7 @@
 
   @media (max-width: $mediaStopS) {
     left: 20px;
+    top: 34px;
   }
 }
 
@@ -84,7 +83,10 @@
     color: $pageBackgroundColor;
   }
 
-  @extend %hoverLink;
+  &:hover {
+    border: none;
+    padding-bottom: 0;
+  }
 }
 
 #menu__toggle:checked ~ .menu__btn > span {

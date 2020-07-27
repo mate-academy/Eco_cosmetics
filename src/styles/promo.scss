@@ -19,6 +19,11 @@
 
 .promo__caption {
   @include text($mainTextColor, 60px, 1.2, bold);
+  margin-right: 10px;
+
+  @media (max-width: $mediaStopSpecial) {
+    @include text($mainTextColor, 36px, 1.3, bold);
+  }
 
   @media (max-width: $mediaStopL) {
     margin-top: 50px;
@@ -34,6 +39,7 @@
 
 .promo__sale {
   @include text ($mainTextColor, 22px, 1.3);
+  margin-right: 10px;
 
   @media (max-width: $mediaStopL) {
     text-align: center;
@@ -55,11 +61,6 @@
     height: auto;
   }
 
-  //@media (max-width: $mediaStopL) {
-  //  width: 100%;
-  //  height: auto;
-  //}
-
   @media (max-width: $mediaStopS) {
     width: calc(100% + 40px);
     height: auto;
@@ -71,6 +72,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @extend %marginLeft;
 
   @media (max-width: $mediaStopL) {
     height: auto;
