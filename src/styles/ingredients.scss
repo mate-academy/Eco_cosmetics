@@ -1,6 +1,12 @@
 .ingredients {
   display: grid;
-  grid-template-columns: 3.91% 1.41% 6.25% 29.69% 7.81% auto;
+  grid-template-columns: 3.91% 1.41% 6.25% 23.44% 7.81% auto;
+
+  // grid-template-columns: 3.91% 1.41% 6.25% 23.44% 0% auto;
+
+  // @media (min-width:1280px) {
+  //   grid-template-columns: 3.91% 1.41% 6.25% 23.44% 7.81% auto;
+  // }
 
   grid-template-areas: ". a . b . c";
   margin-bottom: $space-between-containers;
@@ -16,5 +22,94 @@
 
   &__container-example {
     grid-area: c;
+    display: grid;
+    grid-template-columns: 200px 100px auto;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "a a1 i"
+      "b b1 i"
+      "c c1 i"
+      "d d1 i"
+      "e e1 i";
+  }
+
+  &__item-name {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: $gray-color;
+    align-self: center;
+    justify-self: end;
+
+    &--1 {
+      grid-area: a;
+    }
+
+    &--2 {
+      grid-area: b;
+    }
+
+    &--3 {
+      grid-area: c;
+    }
+
+    &--4 {
+      grid-area: d;
+    }
+
+    &--5 {
+      grid-area: e;
+    }
+  }
+
+  &__item-poiner {
+    align-self: center;
+    display: flex;
+    align-items: center;
+
+    &--1 {
+      grid-area: a1;
+    }
+
+    &--2 {
+      grid-area: b1;
+    }
+
+    &--3 {
+      grid-area: c1;
+    }
+
+    &--4 {
+      grid-area: d1;
+    }
+
+    &--5 {
+      grid-area: e1;
+    }
+
+    &--line {
+      width: 76px;
+      height: 1px;
+      margin-left: 20px;
+      background-color: $gray-color;
+    }
+
+    &--dot {
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $gray-color;
+
+    }
+  }
+
+  &__img-container {
+    grid-area: i;
+    margin-left: 19px;
+    // width: 100%;
+
+  }
+
+  &__img {
+    width: 100%;
   }
 }
