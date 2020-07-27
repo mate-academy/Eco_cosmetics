@@ -1,0 +1,112 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //padding: 0 20px;
+  &__title {
+    @extend %h2;
+  }
+  &__nav {
+    width: 280px;
+    padding: 12px 0 32px;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #828282;
+    &:hover {
+      color: $titlesColor;
+    }
+    &--selected {
+      color: $titlesColor;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: $titlesColor;
+        left: 0;
+        bottom: -10px;
+      }
+    }
+  }
+  &__products {
+    display: flex;
+  }
+  &__arrows {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 76px;
+    &--left,
+    &--right {
+      width: 28px;
+      height: 28px;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      border: 0;
+      background-color: $bcg-color;
+    }
+    &--left {
+      background-image: url(../images/Back1.svg);
+    }
+    &--right {
+      background-image: url(../images/Back.svg);
+    }
+  }
+  @media (min-width: $mobileScreen) {
+    align-items: flex-start;
+    padding: 0 27px;
+    &__products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 30px;
+    }
+    &__arrows {
+      align-self: flex-end;
+    }
+    &__button {
+      align-self: center;
+    }
+  }
+  @media (min-width: $tabletScreen) {
+    align-items: center;
+    &__arrows {
+      align-self: center;
+    }
+  }
+  @media (min-width: $notebookScreen) {
+    display: grid;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 0 0 150px;
+    margin: 0 auto;
+
+    &__products {
+      grid-template-columns: repeat(3, 380px);
+      grid-column-gap: 20px;
+    }
+    &__link {
+      display: inline-block;
+      font-size: 18px;
+    }
+    &__nav {
+      width: 400px;
+      padding: 20px 0 85px;
+    }
+    &__arrows {
+      margin-top: 45px;
+    }
+  }
+}
