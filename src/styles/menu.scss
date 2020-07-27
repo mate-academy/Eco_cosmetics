@@ -10,14 +10,17 @@
     &:checked ~ .menu__btn > span::before {
       top: 0;
       transform: rotate(0);
+      background-color: $c-gray;
     }
 
     &:checked ~ .menu__btn > span::after {
       top: 0;
       transform: rotate(90deg);
+      background-color: $c-gray;
     }
 
     &:checked ~ .nav__list {
+      display: flex;
       position: absolute;
       top: 0;
       left: 0;
@@ -29,6 +32,27 @@
 
       background-color: $main-color;
       transition-duration: 0.5s;
+    }
+
+    &:checked ~ .nav__list > a > .nav__link-img {
+      height: 0;
+    }
+
+    &:checked ~ .nav__list > li > .nav__item {
+      display: block;
+      visibility: visible;
+      margin-top: 150px;
+      padding-bottom: 10px;
+      width: 90vw;
+      font-size: 18px;
+      color: $c-gray;
+      text-align: center;
+
+      border-bottom: 1px solid $c-gray;
+    }
+
+    &:checked ~ .nav__list > li > a > .nav__img {
+      display: none;
     }
   }
 
@@ -74,5 +98,11 @@
   .menu__btn {
     display: flex;
     visibility: visible;
+  }
+}
+
+@media (max-width: $small-screen) {
+  .menu__toggle:checked ~ .nav__list > li > .nav__item {
+    margin-top: 100px;
   }
 }
