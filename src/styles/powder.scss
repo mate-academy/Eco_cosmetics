@@ -1,0 +1,91 @@
+.powder {
+  padding-left: 20px;
+  max-width: 380px;
+  margin: 0 auto;
+
+  &__title {
+    display: inline-block;
+    width: 150px;
+    @extend %h2;
+  }
+  &__details {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    overflow: hidden;
+    height: 400px;
+    align-items: end;
+  }
+  &__ingridients {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  &__component {
+    position: relative;
+    padding-right: 50px;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: end;
+    text-transform: capitalize;
+    color: $titlesColor;
+    & span {
+      display: none;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      width: 75px;
+      height: 1px;
+      background: $titlesColor;
+      top: 50%;
+      right: -50px;
+
+    }
+    &__img {
+      height: 100%;
+      object-fit: contain;
+      align-self: end;
+    }
+  }
+  @media (min-width: $mobileScreen) {
+    max-width: 1000px;
+    padding-left: 27px;
+    overflow: hidden;
+    &__details {
+      position: relative;
+      right: -20px;
+      bottom: 110px;
+    }
+    &__more {
+      position: relative;
+      bottom: 150px;
+    }
+  }
+  @media (min-width: $tabletScreen) {
+    max-width: 900px;
+    &__component {
+      padding-right: 100px;
+      & span {
+        display: initial;
+      }
+      &::after {
+        right: 10px;
+      }
+    }
+  }
+  @media (min-width: $notebookScreen) {
+    max-width: 1200px;
+    padding-left: 120px;
+
+    &__details {
+      grid-template-columns: repeat(2, 400px);
+      position: relative;
+      right: -280px;
+      bottom: 150px;
+    }
+    &__more {
+      bottom: 200px;
+    }
+  }
+}
