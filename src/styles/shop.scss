@@ -4,14 +4,20 @@
   // grid-template-rows: 600px;
   grid-template-areas: ". a . b";
   margin-bottom: $space-between-containers;
-  overflow: hidden;
+  overflow-x: hidden;
+  max-width: 1280px;
 
   @media (max-width:$ipad-version-breakpoint) {
     margin-bottom: $space-between-containers-ipad;
+    grid-template-columns: 100%;
+    grid-template-areas: "b";
+    padding: 0 27px;
+    // max-width: 1024px;
   }
 
   @media (max-width:$mobile-version-breakpoint) {
     margin-bottom: $space-between-containers-mobile;
+    padding: 0;
   }
 
   &__section-label {
@@ -22,6 +28,7 @@
     grid-area: b;
     display: flex;
     flex-direction: column;
+    max-width: 1130px;
   }
 
   &__header {
@@ -32,16 +39,34 @@
     color: $green-text-color;
     font-weight: 600;
     margin-bottom: 20px;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width:$mobile-version-breakpoint) {
+      text-align: center;
+    }
   }
 
   &__tabs {
     display: flex;
     overflow-x: hidden;
-    max-width: 1130px;
+    // max-width: 1180px;
+    width: 100%;
   }
 
   &__sections {
     margin-bottom: 60px;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width:$mobile-version-breakpoint) {
+      text-align: center;
+    }
   }
 
   &__link {
@@ -54,6 +79,11 @@
     line-height: 150%;
     padding: 4px 4px 20px 0;
     margin-right: 20px;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      padding-bottom: 10px;
+      font-size: 14px;
+    }
   }
 
   &__link:hover {
@@ -66,6 +96,14 @@
     margin-bottom: 20px;
     border: none;
     background-color: inherit;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width:$mobile-version-breakpoint) {
+      margin-right: 0;
+    }
   }
 
   &__section-button:focus {
@@ -78,31 +116,79 @@
 
   &__galery {
     display: flex;
-    margin-right: 30px;
     overflow-x: scroll;
+  }
+
+  &__item {
+    margin-right: 20px;
   }
 
   &__item--image {
     max-height: 500px;
-    max-width: 380px;
+    // max-width: 380px;
+    height: 100%;
+
+    @media (min-width:1025px) {
+      width: 380px;
+      height: 500px;
+    }
+
+    // @media (max-width:$ipad-version-breakpoint) {
+    //   // height: 300px;
+    //   // width: 342px;
+    // }
+
+    @media (max-width:$mobile-version-breakpoint) {
+      max-height: 267px;
+      // max-width: 320px;
+      // width: 100%;
+    }
   }
 
   &__slider {
     display: flex;
     overflow: hidden;
+    margin: 45px 0 30px ;
 
-    &--left {
-      width: 28px;
-      height: 28px;
-      background: url(/images/contentImages/shop/slider-left.svg) no-repeat;
-      background-size: contain;
+    &-button {
+      border: none;
+      margin-right: 10px;
+      cursor: pointer;
     }
 
-    &--right {
+    &-button--left {
       width: 28px;
       height: 28px;
-      background: url(/images/contentImages/shop/slider-right.svg) no-repeat;
-      background-size: contain;
+      background: url(/images/contentImages/shop/slider-left.svg) 50% no-repeat;
+      opacity: 0.6;
     }
+
+    &-button--right {
+      width: 28px;
+      height: 28px;
+      background: url(/images/contentImages/shop/slider-right.svg) 50% no-repeat;
+    }
+  }
+
+  &__all-products-button {
+    margin: 0 auto;
+  }
+
+  &__item--header,
+  &__item--price {
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $gray-color;
+    font-weight: 600;
+  }
+
+  &__item--header {
+    margin: 20px 0 10px;
+  }
+
+  &__item--price {
+    font-size: 18px;
   }
 }
