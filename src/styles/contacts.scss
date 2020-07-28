@@ -1,0 +1,171 @@
+.contacts {
+  display: grid;
+  // grid-template-columns: 50px 18px 82px 480px 100px auto;
+  grid-template-columns: 3.91% 1.41% 6.41% 37.5% 7.81% auto;
+  // grid-template-rows: 529px;
+  grid-template-areas: ". a . b . c";
+  margin-bottom: 150px;
+
+  @media (max-width:$ipad-version-breakpoint) {
+    margin-bottom: $space-between-containers-ipad;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "b c";
+    padding-left: 27px;
+  }
+
+  @media (max-width:$mobile-version-breakpoint) {
+    margin-bottom: $space-between-containers-mobile;
+    grid-template-columns: 1fr;
+    grid-template-areas: "b";
+    justify-items: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  &__section-label {
+    grid-area: a;
+  }
+
+  &__description {
+    grid-area: b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width:$mobile-version-breakpoint) {
+      margin-right: 30px;
+    }
+
+    &--header {
+      margin-bottom: 20px;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $green-text-color;
+
+      @media (max-width:$ipad-version-breakpoint) {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+
+      @media (max-width:$mobile-version-breakpoint) {
+        text-transform: uppercase;
+      }
+    }
+
+    &--text {
+      max-width: 380px;
+      margin-bottom: 20px;
+      font-size: 24px;
+      line-height: 150%;
+      text-transform: lowercase;
+      color: $gray-color;
+
+      @media (max-width:$ipad-version-breakpoint) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      max-width: 342px;
+    }
+  }
+
+  &__form-input,
+  &__form-textarea {
+    background: inherit;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    resize: none;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $non-active-grey-color;
+    font-family: inherit;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      font-size: 16px;
+    }
+
+    @media (max-width:$mobile-version-breakpoint) {
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+  }
+
+  &__form-textarea {
+    @media (max-width:$mobile-version-breakpoint) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__form-input:focus,
+  &__form-textarea:focus {
+    outline: none;
+  }
+
+  &__form-input:invalid,
+  &__form-textarea:invalid {
+    box-shadow: none;
+  }
+
+  &__form-input::placeholder,
+  &__form-textarea::placeholder {
+    font-size: 18px;
+    line-height: 150%;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      font-size: 16px;
+    }
+  }
+
+  &__form-input--phone {
+    margin-bottom: 50px;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form-submit-button {
+    margin-top: 50px;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      margin-top: 30px;
+    }
+  }
+
+  &__image-box {
+    grid-area: c;
+    // width: 100%;
+    // height: 100%;
+    // overflow: hidden;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    @media (max-width:$mobile-version-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__image {
+    // width: 100%;
+    // height: 100%;
+    @media (max-width:$ipad-version-breakpoint) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
