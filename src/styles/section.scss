@@ -1,5 +1,21 @@
 .section {
-  margin-bottom: $sectionPaddingBottom;
+  margin-bottom: $sectionMarginBottom;
   display: flex;
   position: relative;
+
+  @media (max-width: $desktopScreenBreakpoint) {
+    margin-bottom: $sectionMarginBottomMedium;
+  }
+
+  @media (max-width: $tabletScreenBreakpoint) {
+    padding-right: 0;
+  }
+
+  @media (max-width: $tabletSmallScreenBreakpoint) {
+    margin-bottom: $sectionMarginBottomSmall;
+  }
+
+  @media (max-width: $mobileScreenBreakpoint) {
+    margin-bottom: $sectionMarginBottomTiny;
+  }
 }

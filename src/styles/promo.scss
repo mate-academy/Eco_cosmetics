@@ -2,14 +2,43 @@
   justify-content: space-between;
   padding-right: $mainPaddingRight;
 
+  @media (max-width: $tabletScreenBreakpoint) {
+    padding-right: 0;
+  }
+
+  @media (max-width: $tabletSmallScreenBreakpoint) {
+    flex-direction: column;
+  }
+
   &__left {
     width: 50%;
     padding-right: 20px;
+    align-self: flex-end;
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      order: 1;
+      margin-top: 50px;
+
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__title {
     @include h1;
     margin-bottom: 30px;
+
+    @media (max-width: $desktopScreenBreakpoint) {
+      font-size: 50px;
+    }
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      margin-bottom: 20px;
+      text-align: center;
+      @include h3;
+    }
   }
 
   &__subtitle {
@@ -22,5 +51,9 @@
     height: 403px;
     width: 50%;
     object-fit: cover;
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      width: 100%;
+    }
   }
 }

@@ -6,16 +6,25 @@
     display: flex;
     color: $basicColorLighter;
     margin-bottom: 60px;
+    width: 400px;
+    justify-content: space-between;
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      width: 100%;
+    }
   }
 
   &__tab {
-    margin-right: $mainPaddingRight;
     cursor: pointer;
     @include h5;
     transition: color 0.5s;
 
     &:hover {
       color: $basicColor;
+    }
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      font-size: 14px;
     }
 
     &--checked {
@@ -44,10 +53,26 @@
     margin: auto;
     transform: translate(-$mainPaddingLeft / 2);
     margin-bottom: 30px;
+
+    @media (max-width: $desktopScreenBreakpoint) {
+      transform: translate(-$mainPaddingLeftSmall / 2);
+    }
+
+    @media (max-width: $mobileScreenBreakpoint) {
+      transform: none;
+    }
   }
 
   &__btn {
     margin: auto;
     transform: translate(-$mainPaddingLeft / 2);
+
+    @media (max-width: $desktopScreenBreakpoint) {
+      transform: translate(-$mainPaddingLeftSmall / 2);
+    }
+
+    @media (max-width: $mobileScreenBreakpoint) {
+      transform: none;
+    }
   }
 }

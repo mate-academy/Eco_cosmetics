@@ -3,6 +3,10 @@
   margin-right: 20px;
   margin-bottom: 50px;
 
+  &:last-child {
+    margin-right: 0;
+  }
+
   &__photo {
     height: $shopCardHeight;
     width: $shopCardWidth;
@@ -13,11 +17,21 @@
     &:hover {
       transform: scale(1.05);
     }
+
+    @media (max-width: $mobileScreenBreakpoint) {
+      // width: 100%;
+      // width: 700px;
+      height: 320px;
+    }
   }
 
   &__name {
     margin-bottom: 10px;
     @include h5;
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      font-size: 14px;
+    }
   }
 
   &__price {

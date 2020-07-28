@@ -3,20 +3,32 @@
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: $mobileScreenBreakpoint) {
+    flex-direction: column;
+  }
+
   &__left {
     width: 25%;
     margin-right: 80px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-between;
   }
 
   &__title {
     margin-bottom: 140px;
+
+    @media (max-width: $desktopScreenBreakpoint) {
+      margin-bottom: 40px;
+    }
   }
 
   &__right {
     display: flex;
+
+    @media (max-width: $desktopScreenBreakpoint) {
+      width: 50%;
+    }
   }
 
   &__names {
