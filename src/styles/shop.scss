@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  color: $grey-color;
 
   &__reverse-text {
     bottom: 450px;
@@ -16,18 +17,18 @@
   }
 
   &__menu-link {
-    @include shop-text;
+    @include fifth-text;
     padding-bottom: 20px;
-    color: #828282;
+    color: $light-grey-color;
     transition: color $hover-transition;
 
     &:hover {
-      color: #333;
+      color: $grey-color;
     }
   }
 
   &__goods {
-    margin-right: -50px;
+    margin-right: -$section-second-padding;
     display: grid;
     column-gap: 20px;
     grid-template-columns: repeat(3, 1fr);
@@ -52,15 +53,13 @@
   }
 
   &__subtitle {
-    @include shop-text;
-    color: $grey-color;
+    @include fifth-text;
     margin-bottom: 10px;
   }
 
   &__price {
-    @include shop-text;
+    @include fifth-text;
     font-weight: 500;
-    color: $grey-color;
     margin-bottom: 45px;
   }
 
@@ -70,7 +69,7 @@
     margin-bottom: 30px;
 
     &--prev {
-      color: #828282;
+      color: $light-grey-color;
       margin-right: 10px;
     }
 
@@ -89,7 +88,7 @@
   border-bottom: 2px solid $grey-color;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $third-breakpoint) {
   .shop {
 
     &__goods {
@@ -108,7 +107,7 @@
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: $fourth-breakpoint) {
 
   .shop {
 
@@ -124,8 +123,8 @@
     }
 
     &__image {
-      margin-left: -20px;
-      margin-right: -20px;
+      margin-left: -$section-fourth-padding;
+      margin-right: -$section-fourth-padding;
     }
 
     &__toggle {

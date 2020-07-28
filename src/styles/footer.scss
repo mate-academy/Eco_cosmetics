@@ -3,15 +3,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   background-color: #344f1080;
+  color: $beige-color;
 
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-
-  &__nav {
-    color: #e4dfd3;
   }
 
   &__info {
@@ -21,10 +18,8 @@
   }
 
   &__text {
+    @include first-text;
     margin-bottom: 30px;
-    font-size: 18px;
-    line-height: 130%;
-    color: #e4dfd3;
   }
 
   &__links {
@@ -57,19 +52,15 @@
   }
 
   &__link {
-    font-size: 18px;
-    line-height: 130%;
-    color: #e4dfd3;
+    @include first-text;
   }
 
   &__copyright {
-    font-size: 18px;
-    line-height: 130%;
-    color: #e4dfd3;
+    @include first-text;
   }
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width: $third-breakpoint) {
   .footer {
 
     &__nav {
@@ -105,9 +96,9 @@
   }
 }
 
-@media screen and (max-width:720px) {
+@media screen and (max-width: $fourth-breakpoint) {
   .footer {
-    padding: 30px 20px 60px;
+    padding: 30px $section-fourth-padding 60px;
     display: flex;
     flex-direction: column;
 

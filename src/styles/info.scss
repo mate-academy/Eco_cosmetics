@@ -8,7 +8,7 @@
   &:before {
     position: absolute;
     content: "";
-    left: -$section-left-padding;
+    left: -$section-first-padding;
     height: 1px;
     width: 530px;
     background-color: $green-color;
@@ -17,7 +17,7 @@
   &:after {
     position: absolute;
     bottom: 0;
-    right: -$section-left-padding;
+    right: -$section-first-padding;
     content: "";
     height: 1px;
     width: 530px;
@@ -25,22 +25,21 @@
   }
 
   &__left {
-    @include section-text;
+    @include fourth-text;
     width: 380px;
   }
 
   &__right {
+    @include sixth-text;
     max-width: 380px;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: $green-color;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $third-breakpoint) {
   .info {
     grid-template-columns: 1fr;
     padding: 0;
@@ -64,12 +63,11 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: $fourth-breakpoint) {
   .info {
 
     &__right {
-      font-size: 18px;
-      line-height: 150%;
+      @include seventh-text ;
     }
   }
 }

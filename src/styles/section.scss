@@ -1,14 +1,14 @@
 .section {
   position: relative;
   overflow: hidden;
-  padding: 0 50px 200px $section-left-padding;
+  padding: 0 $section-second-padding 200px $section-first-padding;
 
   &__title {
-    @include title-text;
+    @include third-text;
   }
 
   &__reverse-text {
-    @include small-uppercase-text;
+    @include second-text;
     position: absolute;
     display: flex;
     align-items: center;
@@ -32,16 +32,16 @@
   }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: $first-breakpoint) {
   .section {
     width: 1300px;
     margin: auto;
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: $second-breakpoint) {
   .section {
-    padding: 0 50px 150px;
+    padding: 0 $section-second-padding $section-first-padding;
 
     &__reverse-text {
       display: none;
@@ -49,19 +49,19 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: $third-breakpoint) {
   .section {
-    padding: 0 30px 100px;
+    padding: 0 $section-third-padding 100px;
 
     &__title {
-      font-size: 24px;
-      line-height: 150%;
+      @include sixth-text;
+      color: $green-color;
     }
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: $fourth-breakpoint) {
   .section {
-    padding: 0 20px 60px;
+    padding: 0 $section-fourth-padding 60px;
   }
 }
