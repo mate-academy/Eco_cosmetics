@@ -1,25 +1,32 @@
 .arrow {
+  display: flex;
+  width: 66px;
+  justify-content: space-between;
 
   &__item {
-    height: 18px;
-    width: 18px;
-    border: solid #828282;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
+    height: 28px;
+    width: 28px;
+    background-repeat: no-repeat;
+    background-size: contain;
     cursor: pointer;
-    transition: border-color $hover-duration;
-
-    &:hover {
-      border-color: $main-color;
-    }
 
     &_right {
-      transform: rotate(-45deg);
+      background-image: url(../images/arrow-normal.svg);
+      transform: rotate(180deg);
+      
+      &:hover {
+        background-image: url(../images/arrow-active.svg);
+        transform: none;
+      }
     }
 
     &_left {
-      transform: rotate(135deg);
+      background-image: url(../images/arrow-normal.svg);
+
+      &:hover {
+        background-image: url(../images/arrow-active.svg);
+        transform: rotate(180deg);
+      }
     }
   }
 }
