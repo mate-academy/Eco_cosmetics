@@ -1,11 +1,13 @@
 .creators {
   display: grid;
   justify-content: center;
+
   &__content {
     display: flex;
     flex-direction: column;
     padding: 0 20px;
     max-width: 380px;
+    position: relative;
   }
   &__title {
     @extend %h2;
@@ -22,6 +24,17 @@
   }
   &__photo {
     display: none;
+  }
+  &__aside {
+    display: none;
+    @include aside;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 100px;
+      background: rgba(52, 79, 16, 0.5);
+    }
   }
   @media (min-width: $mobileScreen) {
     grid-template-columns: repeat(2, calc(50% - 15px));
@@ -69,6 +82,19 @@
       padding-top: 30px;
       &--added {
         display: initial;
+      }
+    }
+    &__aside {
+      display: initial;
+      position: absolute;
+      transform: rotate(-90deg);
+      left: -170px;
+      top: 220px;
+      &::before {
+        transform: rotate(-90deg);
+        position: absolute;
+        left: -70px;
+        top: -45px;
       }
     }
   }

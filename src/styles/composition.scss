@@ -1,8 +1,8 @@
-.powder {
+.composition {
   padding-left: 20px;
   max-width: 380px;
   margin: 0 auto;
-
+  position: relative;
   &__title {
     display: inline-block;
     width: 150px;
@@ -48,6 +48,17 @@
       align-self: end;
     }
   }
+  &__aside {
+    display: none;
+    @include aside;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 100px;
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
   @media (min-width: $mobileScreen) {
     max-width: 1000px;
     padding-left: 27px;
@@ -86,6 +97,19 @@
     }
     &__more {
       bottom: 200px;
+    }
+    &__aside {
+      display: initial;
+      position: absolute;
+      transform: rotate(-90deg);
+      left: -15px;
+      top: 40px;
+      &::before {
+        transform: rotate(-90deg);
+        position: absolute;
+        left: -70px;
+        top: -45px;
+      }
     }
   }
 }
