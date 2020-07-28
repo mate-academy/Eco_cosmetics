@@ -1,0 +1,82 @@
+.formula {
+  display: flex;
+  align-items: flex-end;
+  
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    height: 331px;
+    justify-content: space-between;
+    width: 300px;
+    align-items: flex-start;
+    
+  }
+
+  &__description {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    width: 240px;
+    height: 322px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 119px;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item::before {
+    content: "";
+    display: block;
+    width: 76px;
+    height: 1px;
+    background-color: $main-color;
+    position: absolute;
+    left: calc(100% + 20px);
+    bottom: 12px;
+  }
+
+  &__item::after {
+    content: "";
+    display: block;
+    background-color: $main-color;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    left: calc(100% + 95px);
+    bottom: 10.5px;
+  }
+}
+
+@media screen and(max-width: $tablet-screen-width) {
+  .formula {
+    &__block {
+      height: 398px;
+    }
+  }
+}
+
+@media screen and(max-width: $mobile-screen-width) {
+  .formula {
+    &__block {
+      height: 550px;
+    }
+     
+    &__item {
+      right: 60%;
+    }
+     
+    &__img {
+      position: relative;
+      right: 20%;
+    }
+  }
+}
