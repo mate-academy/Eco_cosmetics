@@ -1,0 +1,212 @@
+.shop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 150px;
+  margin-top: 200px;
+  flex-wrap: nowrap;
+
+  &__caption {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    transform-origin: left center;
+    transform: rotate(-90deg);
+    left: 59px;
+    top: 686px;
+
+    &--line {
+      width: 100px;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+    &--text {
+      margin-left: 10px;
+      @extend %text2;
+      color: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__nav {
+    margin-top: 20px;
+    margin-bottom: 717px;
+
+    &__item {
+      @extend %h5;
+      color: $d-gray;
+      cursor: pointer;
+      margin-right: 25px;
+      padding-right: 7px;
+      padding-bottom: 20px;
+      transition: all 1s;
+
+      &:hover {
+        color: $l-gray;
+      }
+
+      &.active {
+        color: #333;
+        border-bottom: 2px solid #333;
+      }
+    }
+  }
+
+  &__cards {
+    position: absolute;
+    top: 186px;
+    display: grid;
+    grid-template-columns: repeat(3, 380px);
+    column-gap: 20px;
+    transition: opacity 3s;
+    font-size: 20px;
+    line-height: 1.5em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &__item {
+
+      & img {
+        width: 380px;
+        height: 500px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+
+      &--price {
+        font-size: 18px;
+      }
+
+      &--price:after {
+        content: " uah";
+      }
+    }
+
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+      display: grid;
+    }
+  }
+
+  &__arrows {
+    position: relative;
+    height: 28px;
+    transition: all 1s;
+
+    & img:hover {
+      cursor: pointer;
+      transform: scale(0.9);
+    }
+  }
+
+  &__btn {
+    position: relative;
+    height: $btnHeight;
+    width: $btnWidth;
+    margin-top: 30px;
+    margin-left: calc(100vw / 2 - 140px - 150px);
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 80px;
+    padding: 0 27px;
+
+    &__caption {
+      display: none;
+    }
+
+    &__btn {
+      margin: auto;
+      margin-top: 29px;
+    }
+
+    &__nav {
+      margin-top: 12px;
+      margin-bottom: 440px;
+
+      &__item {
+        margin-right: 15px;
+        padding-right: 5px;
+        padding-bottom: 10px;
+      }
+    }
+
+    &__cards {
+      top: 101px;
+      display: grid;
+      grid-template-columns: repeat(3, 342px);
+      column-gap: 30px;
+      transition: opacity 3s;
+
+      &__item {
+
+        & img {
+          width: 342px;
+          height: 300px;
+        }
+      }
+    }
+
+    &__arrows img:last-child {
+      position: absolute;
+      right: 0;
+    }
+
+    &__arrows img:first-child {
+      position: absolute;
+      right: 48px;
+    }
+  }
+
+  @media (max-width:766px) {
+    margin-top: 60px;
+    padding: 0;
+
+    &__btn {
+      margin: auto;
+      margin-top: 30px;
+    }
+
+    & h2 {
+      margin: auto;
+    }
+
+    &__nav {
+      margin: auto;
+      margin-top: 12px;
+      margin-bottom: 406px;
+
+      &__item {
+        font-size: 14px;
+      }
+    }
+
+    &__cards {
+      grid-template-columns: repeat(3, 320px);
+
+      &__item {
+
+        & img {
+          width: 320px;
+          height: 267px;
+        }
+
+        & div {
+          margin-left: 20px;
+        }
+      }
+    }
+
+    &__arrows img:last-child {
+      position: absolute;
+      right: 40%;
+    }
+
+    &__arrows img:first-child {
+      position: absolute;
+      left: 40%;
+    }
+  }
+}

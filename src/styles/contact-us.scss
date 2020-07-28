@@ -1,0 +1,89 @@
+.contact-us {
+  position: relative;
+  margin-top: 250px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &__caption {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    transform-origin: left center;
+    transform: rotate(-90deg);
+    left: 59px;
+    top: 460px;
+
+    &--line {
+      width: 88px;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+    &--text {
+      margin-left: 10px;
+      @extend %text2;
+      color: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__form {
+    padding-left: 150px;
+
+    & h4 {
+      max-width: 380px;
+    }
+
+    &__btn {
+      position: relative;
+      margin-top: 50px;
+      width: $btnWidth;
+      height: $btnHeight;
+
+      > button {
+        width: $btnWidth;
+        height: $btnHeight;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__photo {
+    margin-left: 100px;
+    background-image: url(/images/4.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 150px;
+
+    &__caption {
+      display: none;
+    }
+
+    &__form {
+      padding-left: 27px;
+    }
+    &__photo {
+      margin-left: 30px;
+    }
+  }
+
+  @media (max-width: 766px) {
+    margin-top: 60px;
+    grid-template-columns: 1fr;
+
+    &__form {
+      padding: 0 20px;
+
+      &__btn {
+        margin: auto;
+        margin-top: 30px;
+      }
+    }
+
+    &__photo {
+      display: none;
+    }
+  }
+}

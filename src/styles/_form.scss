@@ -2,63 +2,85 @@
   position: relative;
   padding-top: 10px;
 
-  &__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    text-transform: capitalize;
-    transition: 0.2s;
-    @extend %inputsMenuText;
-    color: #828282;
-  }
+  &__line {
+    position: relative;
 
-  &__field {
-    width: 100%;
-    border: 0;
-    outline: 0;
-    padding: 10px 0;
-    border-bottom: 1px solid $l-gray;
-    @extend %inputsMenuText;
-    color: #828282;
-    background: transparent;
+    & textarea {
+      resize: none;
+    }
 
-    transition: border-color 0.2s;
+    &__label {
+      position: absolute;
+      top: 10px;
+      display: block;
+      text-transform: capitalize;
+      transition: 0.2s;
+      @extend %inputsMenuText;
+      color: #828282;
+    }
 
-    &:focus {
-      ~ .form__label {
-        position: absolute;
-        top: 3px;
-        display: block;
-        transition: 0.2s;
-        font-size: 15px;
-        line-height: 15px;
+    &__field {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      padding-top: 30px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $l-gray;
+      @extend %inputsMenuText;
+      color: #828282;
+      background: transparent;
+
+      transition: border-color 0.2s;
+
+      @media (max-width: 1024px) {
+        padding-top: 25px;
       }
 
-      border-color: #333;
-    }
+      &:focus {
 
-    &::placeholder {
-      color: transparent;
-    }
+        ~ .form__line__label {
+          position: absolute;
+          top: 14px;
+          display: block;
+          transition: 0.2s;
+          font-size: 15px;
+          line-height: 15px;
+        }
 
-    &:placeholder-shown ~ .form__label {
-      cursor: text;
-      top: 20px;
-    }
+        border-color: #333;
+      }
 
-    &:required,
-    &:invalid {
-      box-shadow: none;
-    }
+      &::placeholder {
+        color: transparent;
+      }
 
-    &:invalid:not(:focus):not(:placeholder-shown) {
-      color: #eb5757;
-      border-color: #eb5757;
-    }
+      &:placeholder-shown ~ .form__line__label {
+        cursor: text;
+        top: 36px;
 
-    &:valid:not(:focus):not(:placeholder-shown) {
-      color: #344f10;
-      border-color: #344f10;
+        &--textarea {
+          top: 75px !important;
+        }
+
+        @media (max-width: 1024px) {
+          top: 31px;
+        }
+      }
+
+      &:required,
+      &:invalid {
+        box-shadow: none;
+      }
+
+      &:invalid:not(:focus):not(:placeholder-shown) {
+        color: #eb5757;
+        border-color: #eb5757;
+      }
+
+      &:valid:not(:focus):not(:placeholder-shown) {
+        color: #344f10;
+        border-color: #344f10;
+      }
     }
   }
 }
