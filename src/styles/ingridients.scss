@@ -1,10 +1,5 @@
 .ingredients {
 
-  @media (max-width: 768px) {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
   &__container {
     display: flex;
     justify-content: space-between;
@@ -17,12 +12,7 @@
   }
 
   &__side-text {
-    top: 80px;
-    left: -20px;
-
-    @media (max-width: 1280px) {
-      left: -80px;
-    }
+    top: 0;
 
     @media (max-width: 992px) {
       display: none;
@@ -40,20 +30,17 @@
       width: 100%;
       margin-top: 50px;
     }
+
+    @media (max-width: 576px) {
+      margin-top: 20px;
+    }
   }
 
   &__title {
     margin-bottom: 130px;
 
     @media (max-width: 768px) {
-      margin-bottom: 100px;
-      text-align: center;
-    }
-  }
-
-  &__br {
-    @media (max-width: 768px) {
-      display: none;
+      margin-bottom: 40px;
     }
   }
 
@@ -62,7 +49,8 @@
     width: 94px;
 
     @media (max-width: 768px) {
-      display: none;
+      position: absolute;
+      bottom: -90px;
     }
   }
 
@@ -75,17 +63,21 @@
     justify-content: space-around;
     align-items: flex-end;
 
-    @media (max-width: 768px) {
-      width: 300px;
+    @media (max-width: 766px) {
+      position: absolute;
+      right: 150px;
     }
 
     @media (max-width: 576px) {
-      width: 260px;
+      width: 250px;
+      position: absolute;
+      right: 60px;
     }
   }
 
   &__item {
     margin-right: 100px;
+    text-align: right;
     position: relative;
 
     &::before {
@@ -97,6 +89,16 @@
       top: 50%;
       right: -100px;
       transform: translateY(-50%);
+
+      @media (max-width: 768px) {
+        width: 120px;
+        right: -140px;
+      }
+
+      @media (max-width: 576px) {
+        width: 70px;
+        right: -80px;
+      }
     }
 
     &::after {
@@ -117,20 +119,28 @@
   }
 
   &__img {
-    width: 380px;
+    width: 384px;
     height: 400px;
     object-fit: cover;
 
     @media (max-width: 1280px) {
-      margin-right: -100px;
+      width: 242px;
+      margin-right: -50px;
+      object-position: left;
     }
 
     @media (max-width: 992px) {
-      margin-right: -250px;
+      width: 200px;
+      margin-right: -40px;
     }
 
     @media (max-width: 768px) {
-      z-index: -1;
+      margin-left: auto;
+      margin-right: -20px;
+    }
+
+    @media (max-width: 576px) {
+      width: 120px;
     }
   }
 }

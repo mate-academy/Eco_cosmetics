@@ -33,7 +33,6 @@ body {
     padding-left: 20px;
     padding-right: 20px;
   }
-
 }
 
 h2 {
@@ -49,7 +48,11 @@ h2 {
   }
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 26px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 22px;
   }
 }
 
@@ -80,10 +83,14 @@ section {
   padding: 100px 0;
 
   @media (max-width: 992px) {
-    padding: 50px 0;
+    padding: 70px 0;
   }
 
   @media (max-width: 768px) {
+    padding: 40px 0;
+  }
+
+  @media (max-width: 576px) {
     padding: 20px 0;
   }
 }
@@ -129,11 +136,18 @@ textarea {
 
 .side-text {
   position: absolute;
+  left: 50px;
   font-size: 14px;
   line-height: 130%;
+  white-space: nowrap;
   letter-spacing: 0.05em;
   color: rgba(52, 79, 16, 0.5);
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) translateX(-100%);
+  transform-origin: top left;
+
+  @media (max-width: 1280px) {
+    left: 0;
+  }
 
   &::after {
     content: "";
@@ -142,7 +156,7 @@ textarea {
     background: rgba(52, 79, 16, 0.5);
     position: absolute;
     left: -110px;
-    top: 50%;
+    bottom: 50%;
   }
 }
 
@@ -158,6 +172,10 @@ textarea {
   border-bottom: 1px solid transparent;
   cursor: pointer;
   transition: border-color $transition-duration ease-in-out;
+
+  @media (max-width: 768px) {
+    border-color: $secondary-color;
+  }
 
   &:hover {
     border-color: $secondary-color;
