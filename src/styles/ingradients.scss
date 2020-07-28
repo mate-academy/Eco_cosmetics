@@ -1,0 +1,123 @@
+.ingradients {
+  @extend %maxWidth;
+
+  position: relative;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 200px;
+  height: 396px;
+
+  @media (max-width: $mediaStopL) {
+    margin-top: 100px;
+    align-items: center;
+    height: 600px;
+  }
+}
+
+.ingradients__left {
+  @extend %marginLeft;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 396px;
+
+  @media (max-width: $mediaStopL) {
+    justify-content: space-between;
+    height: 396px;
+  }
+
+  @media (max-width: $mediaStopM) {
+    height: 600px;
+    position: absolute;
+  }
+}
+
+.ingradients__captions {
+
+  @include text($accentColor, 36px, 1.5);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  @media (max-width: $mediaStopSpecial) {
+    font-size: 24px;
+  }
+
+  @media (max-width: $mediaStopL) {
+    max-width: 100%;
+    margin-top: 0;
+  }
+}
+
+.ingradients__lear-more {
+  cursor: pointer;
+  @include text($accentColor, 14px, 1.3);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-bottom: 12px;
+  border-bottom: 1px solid $accentColor;
+  width: 100px;
+
+  @media (max-width: $mediaStopSpecial) {
+    margin-top: 20px;
+  }
+}
+
+.ingradients__right {
+  display: flex;
+}
+
+.ingradients__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.ingradients__name {
+  @include text($mainTextColor, 16, 1.5);
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 23px;
+  white-space: nowrap;
+
+  @media (max-width: $mediaStopL) {
+    margin-right: -50px;
+  }
+}
+
+.ingradients__line {
+  background-image: url("/images/line.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 5px;
+  width: 80px;
+  margin-left: 20px;
+
+  @media (max-width: $mediaStopL) {
+    background-image: url("/images/line2.svg");
+  }
+}
+
+.ingradients__id {
+  display: flex;
+  align-items: center;
+  @include text(rgba(52, 79, 16, 0.5), 14px, 1.3);
+  letter-spacing: 0.05em;
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 100px;
+  left: -85px;
+  text-transform: uppercase;
+
+  @media (max-width: $mediaStopSpecial) {
+    display: none;
+  }
+}
+
+.ingradients__idLine {
+  height: 1px;
+  width: 100px;
+  background-color: rgba(52, 79, 16, 0.5);
+  margin-right: 10px;
+}

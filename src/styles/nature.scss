@@ -1,0 +1,42 @@
+.nature {
+  @extend %maxWidth;
+  display: flex;
+  align-items: center;
+}
+
+.nature__describe {
+  @include text($mainTextColor,16px,1.5);
+  @extend %marginLeft;
+  padding: 100px 0;
+  border-top: 1px solid rgba(52, 79, 16, 0.5);
+
+  @media (max-width: $mediaStopSpecial) {
+    display: none;
+  }
+}
+
+.nature__caption {
+  @include text($accentColor, 24px, 1.5);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  order: 2;
+  margin-left: auto;
+  padding: 100px 200px 100px 0;
+  border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+
+  @media (max-width: $mediaStopSpecial) {
+    text-align: center;
+    margin: 0 auto;
+    padding: 100px 0 0;
+    border: none;
+  }
+
+  @media (max-width: $mediaStopM) {
+    font-size: 18px;
+  }
+
+  @media (max-width: $mediaStopS) {
+    padding-top: 60px;
+  }
+
+}

@@ -1,0 +1,40 @@
+.why-we {
+  @extend %maxWidth;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+
+  height: 640px;
+
+  @include text($mainTextColor, 14px, 1.3);
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  @media (max-width: $mediaStopM) {
+    margin-top: 60px;
+  }
+}
+
+.why-we__card {
+  margin-right: 20px;
+  max-width: 350px;
+  height: 140px;
+
+  &:nth-last-child(1) {
+    margin-right: 0;
+  }
+
+  & p {
+    margin-top: 20px;
+
+    @media (max-width: $mediaStopL) {
+      max-width: 218px;
+    }
+  }
+
+  & img {
+    height: 100px;
+  }
+}

@@ -1,0 +1,138 @@
+.shop {
+  @extend %maxWidth;
+  margin-top: 200px;
+
+  @media (max-width: $mediaStopSpecial) {
+    margin-top: 80px;
+  }
+
+  @media (max-width: $mediaStopL) {
+    margin-top: 80px;
+  }
+
+  @media (max-width: $mediaStopM) {
+    margin-top: 60px;
+  }
+  position: relative;
+}
+
+.shop__caption {
+  @include text ($accentColor, 36px, 1.5);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  @extend %marginLeft;
+
+  @media (max-width: $mediaStopL) {
+    font-size: 24px;
+  }
+
+  @media (max-width: $mediaStopS) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.shop__navigation {
+  display: flex;
+  margin-top: 20px;
+  @extend %marginLeft;
+
+  @media (max-width: $mediaStopS) {
+    justify-content: center;
+  }
+}
+
+.shop__link {
+  @include text (#828282, 18px, 1.5);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-right: 20px;
+  padding-bottom: 20px;
+
+  @media (max-width: $mediaStopL) {
+    padding-bottom: 10px;
+  }
+
+  @extend %hoverLink;
+
+  &--active {
+    color: $mainTextColor;
+    border-bottom: 1px solid $mainTextColor;
+  }
+}
+
+.shop__field {
+  @extend %marginLeft;
+  width: 100%;
+  display: flex;
+  margin-top: 63px;
+  justify-content: space-between;
+
+  @media (max-width: $mediaStopL) {
+    margin-top: 40px;
+
+  }
+
+  @media (max-width: $mediaStopM) {
+    margin-top: 20px;
+    .product-card--3 {
+      display: none;
+    }
+  }
+
+  @media (max-width: $mediaStopS) {
+    .product-card--2 {
+      display: none;
+    }
+  }
+}
+
+.shop__arrows {
+  display: flex;
+  margin-top: 45px;
+
+  @extend %marginLeft;
+
+  @media (max-width: $mediaStopL) {
+    margin-top: 20px;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: $mediaStopS) {
+    margin-top: 20px;
+    justify-content: center;
+  }
+}
+
+.shop__arrow_left {
+  width: 28px;
+  height: 28px;
+  background-image: url("/images/Back.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.shop__arrow_right {
+  width: 28px;
+  height: 28px;
+  background-image: url("/images/Back-1.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.shop__button {
+  margin: 30px auto 0;
+  width: 280px;
+
+  @media (max-width: $mediaStopM) {
+    margin-top: 30px;
+  }
+}
+
+.about__id--shop {
+  bottom: -100px;
+  left: -60px;
+}
