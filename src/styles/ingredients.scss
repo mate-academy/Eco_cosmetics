@@ -2,33 +2,34 @@
   padding-right: $mainPaddingRight;
   display: flex;
   justify-content: space-between;
-
-  @media (max-width: $mobileScreenBreakpoint) {
-    flex-direction: column;
-  }
+  position: relative;
 
   &__left {
-    width: 25%;
-    margin-right: 80px;
+    width: 20%;
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 400px;
+
+    @media (max-width: 1200px) {
+      position: absolute;
+    }
+
+    @media (max-width: $tabletScreenBreakpoint) {
+      height: 500px;
+    }
   }
 
   &__title {
     margin-bottom: 140px;
 
-    @media (max-width: $desktopScreenBreakpoint) {
-      margin-bottom: 40px;
-    }
   }
 
   &__right {
     display: flex;
-
-    @media (max-width: $desktopScreenBreakpoint) {
-      width: 50%;
-    }
+    height: 500px;
+    position: relative;
   }
 
   &__names {
@@ -36,13 +37,78 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
+    height: 400px;
+    align-self: center;
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      height: 300px;
+    }
   }
 
-  &__arrows {
+  &__ingredient {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
-    margin: 0 20px;
+    margin-right: 20px;
+    text-align: end;
+
+    @media (max-width: 1200px) {
+      position: relative;
+      right: -25vw;
+    }
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      right: -35vw;
+
+    }
+
+    @media (max-width: $mobileScreenBreakpoint) {
+      left: 20vw;
+    }
+
+    @media (max-width: $mobileScreenBreakpoint) {
+      left: 25vw;
+    }
+
+    @media (max-width: 500px) {
+      left: 15vw;
+    }
+
+    @media (max-width: 450px) {
+      left: 10vw;
+    }
+
+    @media (max-width: 400px) {
+      left: 5vw;
+    }
+  }
+
+  &__name {
+    margin-right: 20px;
+
+  }
+
+  &__picture {
+    align-self: center;
+
+    @media (max-width: 1200px) {
+      position: absolute;
+      left: 55vw;
+    }
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      left: 70vw;
+      height: 300px;
+    }
+
+    @media (max-width: $mobileScreenBreakpoint) {
+      left: 60vw;
+    }
+
+    @media (max-width: 600px) {
+      left: 70vw;
+    }
+
+    @media (max-width: 400px) {
+      left: 65vw;
+    }
   }
 }
