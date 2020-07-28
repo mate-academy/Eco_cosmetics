@@ -1,0 +1,52 @@
+.eco {
+  padding: 0 50px 250px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__picture {
+    margin-bottom: 45px;
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__text {
+    @include small-uppercase-text;
+    text-align: center;
+    color: #000;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .eco {
+    width: 1300px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .eco {
+    padding-bottom: 150px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .eco {
+    padding: 0 20px 60px;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+  }
+}

@@ -1,0 +1,58 @@
+.ingredients {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+
+  &__reverse-text {
+    bottom: 200px;
+  }
+
+  &__link {
+    @include small-uppercase-text;
+    width: max-content;
+  }
+
+  &__illustration {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__item {
+    @include section-text;
+    position: relative;
+    text-align: right;
+    text-transform: capitalize;
+    transition: text-shadow 0.5s;
+
+    &::after {
+      position: absolute;
+      top: -0.5em;
+      content: url(../images/ingridients.png);
+    }
+
+    &:hover {
+      text-shadow: $standard-text-shadow $green-color;
+    }
+  }
+
+  &__image {
+    width: 380px;
+    height: 100%;
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .ingredients {
+    grid-template-columns: 1fr;
+
+    &__illustration {
+      margin-bottom: 20px;
+    }
+  }
+}

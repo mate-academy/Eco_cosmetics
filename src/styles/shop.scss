@@ -1,8 +1,11 @@
 .shop {
   position: relative;
-  padding-left: 150px;
   display: flex;
   flex-direction: column;
+
+  &__reverse-text {
+    bottom: 450px;
+  }
 
   &__menu-list {
     display: flex;
@@ -24,6 +27,7 @@
   }
 
   &__goods {
+    margin-right: -50px;
     display: grid;
     column-gap: 20px;
     grid-template-columns: repeat(3, 1fr);
@@ -87,7 +91,6 @@
 
 @media screen and (max-width: 1024px) {
   .shop {
-    padding: 0 30px;
 
     &__goods {
       grid-template-columns: repeat(2, 1fr);
@@ -108,7 +111,6 @@
 @media screen and (max-width: 720px) {
 
   .shop {
-    padding: 0 20px;
 
     &__goods {
       grid-template-columns: 1fr;
@@ -122,21 +124,12 @@
     }
 
     &__image {
-      width: 70vw;
+      margin-left: -20px;
+      margin-right: -20px;
     }
 
     &__toggle {
       align-self: center;
-    }
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .shop {
-    &__image {
-      position: relative;
-      left: -20px;
-      width: 100vw;
     }
   }
 }

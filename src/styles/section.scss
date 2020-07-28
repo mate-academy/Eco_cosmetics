@@ -1,22 +1,67 @@
 .section {
+  position: relative;
   overflow: hidden;
+  padding: 0 50px 200px $section-left-padding;
+
   &__title {
     @include title-text;
+  }
+
+  &__reverse-text {
+    @include small-uppercase-text;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 50px;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    transition: text-shadow $hover-transition;
+
+    &:hover {
+      text-shadow: $standard-text-shadow;
+    }
+
+    &::before {
+      margin-right: 10px;
+      display: inline-block;
+      content: "";
+      height: 1px;
+      width: 100px;
+      background-color: $green-color;
+    }
   }
 }
 
 @media screen and (min-width: 1600px) {
   .section {
-    padding-left: 20vw;
-    padding-right: 20vw;
+    width: 1300px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .section {
+    padding: 0 50px 150px;
+
+    &__reverse-text {
+      display: none;
+    }
   }
 }
 
 @media screen and (max-width: 1024px) {
   .section {
+    padding: 0 30px 100px;
+
     &__title {
       font-size: 24px;
       line-height: 150%;
     }
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .section {
+    padding: 0 20px 60px;
   }
 }

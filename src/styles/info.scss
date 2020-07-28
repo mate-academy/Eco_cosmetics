@@ -3,11 +3,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 120px;
-  padding: 100px 150px 300px;
+  padding: 100px 0;
 
   &:before {
     position: absolute;
     content: "";
+    left: -$section-left-padding;
     height: 1px;
     width: 530px;
     background-color: $green-color;
@@ -15,8 +16,8 @@
 
   &:after {
     position: absolute;
-    bottom: 200px;
-    right: 0;
+    bottom: 0;
+    right: -$section-left-padding;
     content: "";
     height: 1px;
     width: 530px;
@@ -42,7 +43,7 @@
 @media screen and (max-width: 1024px) {
   .info {
     grid-template-columns: 1fr;
-    padding: 100px 0 0;
+    padding: 0;
 
     &:before {
       width: 0;
@@ -65,7 +66,6 @@
 
 @media screen and (max-width: 480px) {
   .info {
-    padding-top: 60px;
 
     &__right {
       font-size: 18px;
