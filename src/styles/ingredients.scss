@@ -1,11 +1,15 @@
 .ingredients {
   display: grid;
-  grid-template-columns: 3.91% 1.41% 6.25% 23.44% 7.81% auto;
+  // grid-template-columns: 3.91% 1.41% 6.25% 23.44% 7.81% auto;
 
-  // grid-template-columns: 3.91% 1.41% 6.25% 23.44% 0% auto;
+  grid-template-columns: 3.91% 1.41% 6.25% 23.44% 0% auto;
 
-  // @media (min-width:1280px) {
-  //   grid-template-columns: 3.91% 1.41% 6.25% 23.44% 7.81% auto;
+  @media (min-width:1280px) {
+    grid-template-columns: 3.91% 1.41% 6.25% 23.44% 7.81% auto;
+  }
+
+  // @media (min-width:$ipad-version-breakpoint) {
+  //   grid-template-columns: 3.91% 5.3% 6.25% 23.44% 7.81% auto;
   // }
 
   grid-template-areas: ". a . b . c";
@@ -30,6 +34,10 @@
       "c c1 i"
       "d d1 i"
       "e e1 i";
+
+    @media (max-width: $ipad-version-breakpoint) {
+      grid-template-columns: 200px 20px auto;
+    }
   }
 
   &__item-name {
@@ -64,6 +72,9 @@
     align-self: center;
     display: flex;
     align-items: center;
+    // z-index: 12;
+    // position: relative;
+    width: 90px;
 
     &--1 {
       grid-area: a1;
@@ -105,11 +116,14 @@
   &__img-container {
     grid-area: i;
     margin-left: 19px;
-    // width: 100%;
+    background: url(/images/conteiner-for-ingridients.svg) no-repeat;
+    background-size: contain;
+    // position: relative;
 
   }
 
-  &__img {
-    width: 100%;
-  }
+  // &__img {
+  //   width: auto;
+  //   height: 100%;
+  // }
 }
