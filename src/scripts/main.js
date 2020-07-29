@@ -35,3 +35,39 @@ $('.shop__nav__item').on('click', function() {
     $('.candles').addClass('active');
   };
 });
+
+$('.shop__arrows__pointer--next').on('click', function() {
+  if ($(this).hasClass('active')) {
+    $('.shop__arrows__pointer--prew').addClass('active');
+
+    $('.shop__cards__item.first').addClass('last');
+    $('.shop__cards__item.last').addClass('middle');
+    $('.shop__cards__item.first.last').removeClass('middle');
+    $('.shop__cards__item.middle').addClass('first');
+    $('.shop__cards__item.first.last').removeClass('first');
+    $('.shop__cards__item.last.middle').removeClass('last');
+    $('.shop__cards__item.middle.first').removeClass('middle');
+
+    if ($('.shop__cards__item.first').hasClass('end')) {
+      $(this).removeClass('active');
+    };
+  };
+});
+
+$('.shop__arrows__pointer--prew').on('click', function() {
+  if ($(this).hasClass('active')) {
+    $('.shop__arrows__pointer--next').addClass('active');
+
+    $('.shop__cards__item.middle').addClass('last');
+    $('.shop__cards__item.last').addClass('first');
+    $('.shop__cards__item.middle.last').removeClass('first');
+    $('.shop__cards__item.first').addClass('middle');
+    $('.shop__cards__item.middle.last').removeClass('middle');
+    $('.shop__cards__item.last.first').removeClass('last');
+    $('.shop__cards__item.middle.first').removeClass('first');
+
+    if ($('.shop__cards__item.first').hasClass('end')) {
+      $(this).removeClass('active');
+    };
+  };
+});

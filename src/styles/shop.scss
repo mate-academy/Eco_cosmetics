@@ -95,9 +95,23 @@
     height: 28px;
     transition: all 1s;
 
-    & img:hover {
-      cursor: pointer;
-      transform: scale(0.9);
+    &__pointer {
+
+      &:hover {
+        transform: scale(0.9);
+      }
+
+      & path {
+        fill: #828282;
+      }
+
+      &.active path {
+        fill: #333;
+      }
+
+      &.active {
+        cursor: pointer;
+      }
     }
   }
 
@@ -209,4 +223,16 @@
       left: 40%;
     }
   }
+}
+
+.first {
+  order: 1;
+}
+
+.middle {
+  order: 2;
+}
+
+.last {
+  order: 3;
 }
