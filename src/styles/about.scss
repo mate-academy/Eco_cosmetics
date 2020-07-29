@@ -7,12 +7,26 @@
 
   @media (max-width: $mediaStopL) {
     height: auto;
+    margin-top: 100px;
+  }
+  @media (max-width: $mediaStopS) {
+    margin-top: 60px;
   }
 }
 
 .about__left {
   margin-right: 20px;
   @extend %marginLeft;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 380px;
+
+  @media (max-width: $mediaStopM) {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .about__caption {
@@ -37,14 +51,7 @@
     max-width: 100%;
   }
 
-  &--pt1 {
-    margin-top: 20px;
-  }
-
   &--pt2 {
-    margin-top: 30px;
-    margin-bottom: 40px;
-
     @media (max-width: $mediaStopL) {
       display: none;
     }
@@ -59,10 +66,13 @@
   padding-bottom: 12px;
   border-bottom: 1px solid $accentColor;
   margin-top: 40px;
+  max-width: 100px;
 
   @media (max-width: $mediaStopSpecial) {
     margin-top: 20px;
   }
+
+  @include hover(border-bottom, 1px solid transparent);
 }
 
 .about__right {
