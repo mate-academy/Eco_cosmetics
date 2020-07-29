@@ -1,15 +1,24 @@
 .card {
-  width: $shopCardWidth;
-  margin-right: 20px;
   margin-bottom: 50px;
 
   &:last-child {
     margin-right: 0;
   }
 
+  &:nth-child(n+3) {
+    @media (max-width: $tabletScreenBreakpoint) {
+      display: none;
+    }
+  }
+
+  &:nth-child(n+2) {
+    @media (max-width: $mobileScreenBreakpoint) {
+      display: none;
+    }
+  }
+
   &__photo {
-    height: $shopCardHeight;
-    width: $shopCardWidth;
+    width: 100%;
     object-fit: cover;
     margin-bottom: 20px;
     cursor: pointer;
@@ -19,12 +28,16 @@
       transform: scale(1.05);
     }
 
-    @media (max-width: $mobileScreenBreakpoint) {
-      height: $mobilePictureHeight;
+    @media (max-width: $tabletScreenBreakpoint) {
+      height: 300px;
     }
 
-    @media (max-width: 420px) {
-      // width: 400px;
+    @media (max-width: $mobileScreenBreakpoint) {
+      height: $tabletPictureHeight;
+    }
+
+    @media (max-width: $mobileScreenBreakpoint) {
+      height: $mobilePictureHeight;
     }
   }
 
@@ -40,5 +53,4 @@
   &__price {
     @include text2;
   }
-
 }

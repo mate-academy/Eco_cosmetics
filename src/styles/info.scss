@@ -10,15 +10,15 @@
   &__text {
     border-top: 1px solid #000;
     width: 50%;
-    margin-right: $paddingRightForLeft;
+    margin-right: 120px;
     padding-top: $infoVerticalPadding;
     padding-left: $mainPaddingLeft;
 
-    @media (max-width: $desktopScreenBreakpoint) {
-      margin-right: $paddingRightForLeftSmall;
-    }
+    // @media (max-width: $desktopScreenBreakpoint) {
+    //   margin-right: $paddingRightForLeftSmall;
+    // }
 
-    @media (max-width: $tabletScreenBreakpoint) {
+    @media (max-width: $laptopScreenBreakpoint) {
       display: none;
     }
   }
@@ -30,15 +30,22 @@
     border-bottom: 1px solid #000;
     @include h4;
 
-    @media (max-width: $tabletScreenBreakpoint) {
+    @media (max-width: $laptopScreenBreakpoint) {
       padding: 0;
       margin: 0 auto;
       border: none;
-      font-size: 16px;
       text-align: center;
+      max-width: 390px;
+    }
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      max-width: 250px;
+      font-size: 16px;
+      // max-width: 100%;
     }
 
     @media (max-width: $mobileScreenBreakpoint) {
+      // font-size: 16px;
       max-width: 100%;
     }
   }
