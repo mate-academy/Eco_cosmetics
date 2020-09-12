@@ -1,0 +1,127 @@
+.container {
+
+  &_promo {
+    padding: 80px calc(50% - 1180px / 2) 0 calc(50% - 980px / 2);
+  }
+
+  &_quote {
+    padding: 300px calc(50% - 980px / 2) 0;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 200px;
+      content: " ";
+      display: block;
+      border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+      width: 50%;
+    }
+
+    &:after {
+      position: absolute;
+      right: 0;
+      bottom: -100px;
+      content: " ";
+      display: block;
+      border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+      width: 45%;
+    }
+  }
+
+  &_about {
+    padding: 200px calc(50% - 980px / 2) 0;
+    overflow-x: hidden;
+  }
+
+  &_creators,
+  &_formula {
+    padding: 200px  calc(50% - 1180px / 2) 0 calc(50% - 980px / 2);
+  }
+
+  &_features {
+    padding: 250px calc(50% - 1180px / 2) 0;
+  }
+
+  &_contactUs {
+    padding: 250px calc(50% - 1280px / 2) 150px calc(50% - 980px / 2);
+  }
+
+  &_shop {
+    padding: 200px calc(50% - 1280px / 2) 0 calc(50% - 980px / 2);
+  }
+
+  &_footer {
+    padding: 60px calc(50% - 1180px / 2) 60px;
+    background-color: rgba(52, 79, 16, 0.5);
+  }
+}
+
+@media screen and(max-width: 1050px) {
+  .container {
+
+    &_quote,
+    &_shop {
+      padding-right: 27px;
+      padding-left: 27px;
+    }
+
+    &_features,
+    &_formula,
+    &_creators,
+    &_contactUs,
+    &_about {
+      padding-left: 27px;
+    }
+  }
+}
+
+@media screen and(max-width: $tablet-screen-width) {
+  .container {
+
+    &_promo {
+      padding-top: 0;
+    }
+
+    &_quote {
+      padding-top: 100px;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &_about {
+      padding: 100px 20px 0;
+
+    }
+
+    &_formula {
+      overflow: hidden;
+    }
+    
+    &_footer {
+      padding: 30px 27px 50px;
+    }
+  }
+}
+
+@media screen and(max-width: $mobile-screen-width) {
+  .container {
+  
+    &_contactUs,
+    &_creators,
+    &_features,
+    &_formula,
+    &_shop,
+    &_about,
+    &_quote {
+      padding: 60px 20px 0;
+    }
+
+    &_contactUs {
+      padding-bottom: 60px;
+    }
+  }
+}
