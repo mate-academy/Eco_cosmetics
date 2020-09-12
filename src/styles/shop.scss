@@ -4,15 +4,10 @@
   text-transform: uppercase;
 
   &__block {
-    display: none;
+    display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     grid-gap: 20px;
-  }
-
-  &__block_first {
-    display: grid;
-    transform: translate(0%);
   }
 
   &__item {
@@ -20,11 +15,21 @@
     margin: 0 40px 63px 0;
     font-family: inherit;
     font-size: 18px;
+    font-weight: bold;
+    line-height: inherit;
     color: #828282;
+    background-color: inherit;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
     cursor: pointer;
     transition: color $hover-duration;
     position: relative;
     display: inline-block;
+
+    &--is-active {
+      color: $main-color;
+    }
 
     &:before {
       content: "";
@@ -38,6 +43,10 @@
       transform: scaleX(0);
     }
 
+    &--is-active::before {
+      transform: scaleX(1);
+    }
+
     &:hover:before {
       transform: scaleX(1);
     }
@@ -47,22 +56,6 @@
     }
   }
   
-  &__link[type="radio"] {
-    display: none;
-  }
-
-  &__link:checked + &__item {
-    color: $main-color;
-    border-bottom: 2px solid $main-color;
-  }
-
-  @for $i from 1 through 4 {
-    &__link_#{$i}:checked ~ &__block_#{$i} {
-      display: grid;
-      z-index: 5;
-    }
-  }
-
   &__arrow {
     margin: 45px 0 30px;
   }
