@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Checkout</title>
+    <link rel="stylesheet" href="../styles/main.scss">
+    <link rel="shortcut icon" href="../images/favicon.png">
+  </head>
+  <body>
+    <header class="container header">
+      <input
+        type="checkbox"
+        id="menuToggler"
+        class="header__menu-toggler"
+      >
+      <div class="header__plug"></div>
+      <label for="menuToggler" class="header__menu-button">
+        <div class="header__menu-button-line"></div>
+        <div class="header__menu-button-line"></div>
+        <div class="header__menu-button-line"></div>
+      </label>
+
+      <a href="../index.html" class="header__logo-box">
+        <img
+          src="../images/logo.svg"
+          alt="brand eco cosmetics site"
+          class="header__logo-image"
+        >
+        <h3 class="decoration-text header__logo-text">
+          witch of mountain winds
+        </h3>
+      </a>
+
+      <nav class="header__menu menu-text">
+        <ul class="header__ul">
+          <li class="header__li">
+            <a href="../index.html#shop" class="header__link">
+              Shop
+            </a>
+          </li>
+          <li class="header__li">
+            <a href="../index.html#contactUs" class="header__link">
+              Contact
+            </a>
+          </li>
+          <li class="header__li">
+            <a href="../index.html#aboutUs" class="header__link">
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <label for="menuToggler" class="header__basket"></label>
+    </header>
+    <article class="checkout">
+      <input
+        type="radio"
+        name="checkoutStep"
+        id="#shipping"
+        class="checkout__radio checkout__radio--shipping"
+        checked
+      >
+      <input
+        type="radio"
+        name="checkoutStep"
+        class="checkout__radio checkout__radio--payment"
+        id="#payment"
+      >
+      <input
+        type="radio"
+        name="checkoutStep"
+        class="checkout__radio checkout__radio--confirmation"
+        id="#confirmation"
+      >
+
+      <h2 class="heading-third-lvl checkout__heading">
+        Checkout
+      </h2>
+      <div class="checkout__steps-names-row">
+        <label for="#shipping" class="subtext checkout__step-name checkout__step-name--shipping">Shipping</label>
+        <label for="#payment" class="subtext checkout__step-name checkout__step-name--payment">Payment</label>
+        <label for="#confirmation" class="subtext checkout__step-name checkout__step-name--confirmation">Confiramtion</label>
+      </div>
+
+      <div class="checkout__steps-wide-row">
+        <form
+          method="GET"
+          action="#"
+          class="checkout__shipping-box"
+        >
+          <div class="checkout__inputs-column checkout__inputs-column--left">
+            <input
+              type="text"
+              placeholder="Full Name"
+              class="input checkout__input"
+            >
+            <input
+              type="email"
+              placeholder="E-Mail"
+              required
+              class="input checkout__input"
+            >
+            <input
+              type="text"
+              placeholder="Country"
+              class="input checkout__input"
+            >
+          </div>
+          <div class="checkout__inputs-column checkout__inputs-column--right">
+            <input
+              type="text"
+              placeholder="City"
+              class="input checkout__input"
+            >
+            <input
+              type="text"
+              placeholder="Postal Code"
+              class="input checkout__input"
+            >
+            <input
+              type="text"
+              placeholder="Address"
+              class="input checkout__input"
+            >
+          </div>
+
+          <label for="#payment" class="filled-big-button checkout__next-button checkout__next-button--shipping">next</label>
+        </form>
+
+        <section class="checkout__payment-box">
+          <p class="checkout__hint">
+            Choose payment option
+          </p>
+          <div class="checkout__payment-options-row">
+            <a
+              href="https://monobank.ua/r/VyZP"
+              rel="noopener"
+              target="_blank"
+              class="checkout__payment-option checkout__payment-option--not-fixed"
+            >
+              <div class="checkout__payment-option-icon checkout__payment-option-icon--online"></div>
+              Credit card
+            </a>
+            <div class="checkout__payment-option checkout__payment-option--fixed">
+              <div class="checkout__payment-option-icon checkout__payment-option-icon--offline"></div>
+              Payment on delivery
+            </div>
+          </div>
+          <label for="#confirmation" class="filled-big-button checkout__next-button">next</label>
+        </section>
+
+        <section class="checkout__confirmation-box">
+          <p class="checkout__confirmated-message">
+            Your order is accepted<br>
+            Thank you for choosing us
+          </p>
+          <div class="checkout__confirmated-picture">
+          </div>
+          <a href="../index.html#shop" class="bold-subtext checkout__back-to-shop">back to shop</a>
+        </section>
+      </div>
+    </article>
+    <script type="text/javascript" src="../scripts/main.js"></script>
+  </body>
+</html>

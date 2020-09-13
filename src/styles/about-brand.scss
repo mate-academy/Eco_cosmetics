@@ -1,0 +1,96 @@
+.about-brand {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  $aboutBrandTopSpace: 30px;
+  margin-top: $aboutBrandTopPadding - $aboutBrandTopSpace;
+  padding: $aboutBrandTopSpace 0 200px $bodyLeftPadding;
+  @media (max-width: $screenDesctop) {
+    margin-top: 0;
+    padding: 100px 0 80px $bodyLaptopSidePadding;
+  }
+  @media (max-width: $screenMobile) {
+    padding: 60px $bodyMobileSidePadding;
+  }
+
+  &__text-container {
+    flex-shrink: 0;
+    align-self: flex-end;
+    margin-right: 30px;
+    width: 380px;
+    @media (max-width: $screenLaptop) {
+      align-self: center;
+      width: 45%;
+    }
+    @media (max-width: $screenMobile) {
+      width: 100%;
+    }
+  }
+  &__title {
+    margin-bottom: 20px;
+    color: $colorSaturatedGreen;
+  }
+  &__text {
+    margin-bottom: 30px;
+    color: $colorDark;
+    @media (max-width: $screenLaptop) {
+      margin-bottom: 5px;
+    }
+  }
+  &__hidden-paragraph {
+    @media (max-width: $screenLaptop) {
+      display: none;
+    }
+  }
+  // &__button {
+
+  // }
+
+  &__small-image {
+    display: block;
+    width: calc(100% - 100px
+    - #{$aboutBrandIndentationBetweenPhotos}
+    - #{$aboutBrandBigPhotoWidth});
+    height: 430px;
+    margin-left: $aboutBrandIndentationBetweenPhotos;
+    object-fit: cover;
+    transition-duration: $transitionDuration;
+    @media (max-width: $screenLaptop) {
+      display: none;
+    }
+  }
+  &__images-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    &:hover {
+      .about-brand__small-image {
+        width: calc(100% - 100px
+        - #{$aboutBrandIndentationBetweenPhotos}
+        - #{$aboutBrandBigPhotoWidth}
+        + 20px);
+      }
+    }
+    @media (max-width: $screenLaptop) {
+      align-items: center;
+      width: 48%;
+    }
+    @media (max-width: $screenMobile) {
+      display: none;
+    }
+  }
+  &__big-image {
+    display: block;
+    width: $aboutBrandBigPhotoWidth;
+    height: 530px;
+    @media (max-width: $screenLaptop) {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &__sticked-label {
+    top: calc(23.5em + #{$aboutBrandTopPadding});
+  }
+}

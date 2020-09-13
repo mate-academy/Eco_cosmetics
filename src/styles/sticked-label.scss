@@ -1,0 +1,26 @@
+.sticked-label {
+  position: absolute;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  @extend .decoration-text;
+  color: $colorPaleGreen;
+  transform-origin: top left;
+  transition-duration: $transitionDuration;
+  transform: rotate(-90deg);
+  user-select: none;
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    width: 100px;
+    margin-right: 10px;
+    background-color: $colorPaleGreen;
+  }
+  &:hover {
+    transform: rotate(-90deg) skewX(-20deg);
+  }
+  @media (max-width: $screenDesctop) {
+    display: none;
+  }
+}

@@ -1,0 +1,98 @@
+.footer {
+  display: grid;
+  grid-template-areas: "links-box contacts-box"
+    "copyright soc-media-box";
+  // grid-template-rows: repeat(2, auto-fit);
+  justify-content: space-between;
+  align-content: space-between;
+  padding: 60px 50px;
+  background-color: $colorPaleGreen;
+  font-weight: 500;
+  color: $colorPaleBrown;
+  @media (max-width: $screenDesctop) {
+    padding: 30px $bodyLaptopSidePadding;
+  }
+  @media (max-width: $screenLaptop) {
+    grid-template-areas: "links-box contacts-box"
+      "soc-media-box contacts-box"
+      "copyright copyright";
+    align-content: flex-start;
+  }
+  @media (max-width: $screenSmallLaptop) {
+    grid-template-areas: "links-box"
+      "soc-media-box"
+      "contacts-box"
+      "copyright";
+    padding-bottom: 60px;
+    font-size: 14px;
+  }
+
+  a {
+    color: inherit;
+    transition-duration: $transitionDuration;
+    &:hover {
+      color: $colorSaturatedGreen;
+    }
+  }
+
+  &__links-box {
+    grid-area: links-box;
+  }
+  &__link {
+    padding: 10px 0;
+    margin-right: 20px;
+    @media (max-width: $screenLaptop) {
+      display: block;
+    }
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    @media (max-width: $screenLaptop) {
+      margin-top: 50px;
+    }
+    @media (max-width: $screenSmallLaptop) {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+
+  &__contacts-box {
+    grid-area: contacts-box;
+  }
+  &__contact {
+    display: block;
+    margin-bottom: 20px;
+    @media (max-width: $screenSmallLaptop) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__soc-media-box {
+    grid-area: soc-media-box;
+    @media (max-width: $screenSmallLaptop) {
+      margin: 10px 0 30px;
+    }
+  }
+  &__soc-media-item {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 0.1px; //it is for blind people
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    background: center no-repeat;
+    &--facebook {
+      background-image: url(../images/footer/facebook-ico.svg);
+      &:hover {
+        background-image: url(../images/footer/facebook-ico-colored.svg);
+      }
+    }
+    &--instagram {
+      background-image: url(../images/footer/instagram-ico.svg.svg);
+      &:hover {
+        background-image: url(../images/footer/instagram-ico-colored.svg.svg);
+      }
+    }
+  }
+}

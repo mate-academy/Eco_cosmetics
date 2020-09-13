@@ -1,0 +1,165 @@
+.header {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px $bodyRightPadding;
+  color: $colorSaturatedGreen;
+  @media (max-width: $screenLaptop) {
+    padding: 23px $bodyLaptopSidePadding;
+  }
+
+  &__menu-button {
+    display: none;
+    @media (max-width: $screenLaptop) {
+      position: fixed;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: $headerMenuButtonSides + 2 * $headerMenuButtonPadding;
+      height: $headerMenuButtonSides + 2 * $headerMenuButtonPadding;
+      padding: $headerMenuButtonPadding;
+      background-color: $colorPaleBrown;
+      cursor: pointer;
+    }
+  }
+  &__menu-button-line {
+    display: block;
+    height: $headerMenuButtonLineFattnes;
+    background-color: $colorSaturatedGreen;
+    transition-duration: $transitionDuration;
+  }
+
+  &__logo-box {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    @media (max-width: $screenLaptop) {
+      justify-content: center;
+    }
+  }
+  &__logo-image {
+    display: block;
+    height: 50px;
+    width: 50px;
+    @media (max-width: $screenLaptop) {
+      height: 24px;
+      width: 24px;
+    }
+  }
+  &__logo-text {
+    margin-left: 12px;
+    @media (max-width: $screenDesctop) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    justify-self: center;
+    @media (max-width: $screenLaptop) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      padding: 17vw $bodyLaptopSidePadding;
+      background-color: $colorDark;
+      transition-duration: $transitionDuration;
+      z-index: -1;
+      opacity: 0;
+    }
+  }
+  &__ul {
+    display: flex;
+    list-style: none;
+    @media (max-width: $screenLaptop) {
+      display: block;
+    }
+  }
+  // &__li {
+
+  // }
+  &__link {
+    display: inline-block;
+    padding: 20px;
+    color: inherit;
+    transition-duration: $transitionDuration;
+    text-decoration: none;
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: $colorSaturatedGreen;
+      transition-duration: $transitionDuration;
+    }
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+    @media (max-width: $screenLaptop) {
+      display: block;
+      margin-top: 50px;
+      padding: 10px;
+      color: $colorPaleBrown;
+      border-bottom: 1px solid $colorSemiDark;
+      text-align: center;
+      &:hover {
+        color: $colorPaleGreen;
+        &::after {
+          width: 0;
+        }
+      }
+    }
+  }
+
+  &__basket {
+    justify-self: end;
+    height: 25px;
+    width: 20px;
+    background: url(../images/header/header-basket.svg) center no-repeat;
+    background-size: contain;
+    @media (max-width: $screenLaptop) {
+      align-self: flex-end;
+    }
+  }
+
+  
+  &__menu-toggler {
+    display: none;
+  }
+  &__plug {
+    display: none;
+    @media (max-width: $screenLaptop) {
+      display: block;
+      // opacity: 0;
+    }
+  }
+
+  &__menu-toggler:checked ~ &__menu-button {
+    background-color: transparent;
+  }
+  &__menu-toggler:checked ~ &__menu-button &__menu-button-line {
+    background-color: $colorPaleBrown;
+    &:first-child {
+      transform: translateY($headerMenuButtonSides / 2
+      - $headerMenuButtonLineFattnes)
+        rotate(-135deg);
+    }
+    &:nth-child(2) {
+      opacity: 0;
+    }
+    &:last-child {
+      transform: translateY(- $headerMenuButtonSides / 2)
+        rotate(-45deg);
+    }
+  }
+  &__menu-toggler:checked ~ &__menu {
+    z-index: 1;
+    opacity: 1;
+  }
+
+}

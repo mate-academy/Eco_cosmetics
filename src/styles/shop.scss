@@ -1,0 +1,96 @@
+.shop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: $bodyLeftPadding;
+  @media (max-width: $screenDesctop) {
+    padding: 0 $bodyLaptopSidePadding;
+  }
+  @media (max-width: $screenMobile) {
+    padding: 0;
+  }
+
+  &__title {
+    color: $colorSaturatedGreen;
+    margin-bottom: 20px;
+    @media (max-width: $screenLaptop) {
+      margin-bottom: 10px;
+    }
+    @media (max-width: $screenMobile) {
+      padding: 0 $bodyMobileSidePadding;
+    }
+  }
+
+  &__slider-chapter-buttons-row {
+    margin-bottom: 40px;
+    @media (max-width: $screenLaptop) {
+      margin-bottom: 20px;
+    }
+    @media (max-width: $screenMobile) {
+      padding: 0 $bodyMobileSidePadding;
+    }
+  }
+  &__chapter-button {
+    margin-right: 20px;
+  }
+  &__slider-navigation-radio {
+    display: none;
+    &:checked + .shop__chapter-button {
+      color: $colorDark;
+      border-bottom-color: $colorDark;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 45px;
+    @media (max-width: $screenLaptop) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__big-button {
+    width: 280px;
+    margin: auto;
+  }
+
+  &__sticked-label {
+    bottom: 250px;
+  }
+
+  &__slides-navigation-buttons-box {
+    display: flex;
+    margin-bottom: 30px;
+    @media (max-width: $screenLaptop) {
+      align-self: flex-end;
+    }
+    @media (max-width: $screenMobile) {
+      align-self: center;
+    }
+  }
+  &__slides-navigation-button {
+    display: block;
+    height: 30px;
+    width: 30px;
+    border: none;
+    // outline: 1px $colorDark;
+    cursor: pointer;
+    transition-duration: $transitionDuration * 0.7;
+    &:hover {
+      transform: scale(1.1);
+    }
+    @media (max-width: $screenMobile) {
+      padding: 30px;
+    }
+    &--back {
+      margin-right: 20px;
+      background: url(../images/shop/button-back.svg) center no-repeat;
+      opacity: 0.3;
+      @media (max-width: $screenMobile) {
+        margin-right: 50px;
+      }
+    }
+    &--next {
+      background: url(../images/shop/button-next.svg) center no-repeat;
+    }
+  }
+}

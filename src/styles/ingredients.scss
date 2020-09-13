@@ -1,0 +1,123 @@
+.ingredients {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: $ingredientsPaddingTop + $ingredientsPaddingBottom
+    + $ingredientsImageHeight + $buttonLearnMorePaddingVertical;
+  padding-top: $ingredientsPaddingTop;
+  padding-bottom: $ingredientsPaddingBottom;
+  padding-left: $bodyLeftPadding;
+  overflow: hidden;
+  @media (max-width: $screenDesctop) {
+    padding-left: $bodyLaptopSidePadding;
+  }
+  @media (max-width: $screenLaptop) {
+    justify-content: space-between;
+    height: $ingredientsPaddingTopLaptop + $ingredientsPaddingBottomLaptop
+      + $ingredientsImageHeight + $buttonLearnMorePaddingVertical;
+    padding-top: $ingredientsPaddingTopLaptop;
+    padding-bottom: $ingredientsPaddingBottomLaptop;
+  }
+  @media (max-width: $screenMobile) {
+    height: auto;
+    padding: $ingredientsPaddingVerticalMobile $bodyMobileSidePadding;
+  }
+
+  &__title {
+    width: 300px;
+    margin-bottom: 130px;
+    color: $colorSaturatedGreen;
+    @media (max-width: $screenMobile) {
+      margin-bottom: 0;
+    }
+  }
+  &__learn-more {
+    width: 90px;
+  }
+
+  &__mobile-transparent-plug {
+    @media (max-width: $screenMobile) {
+      height: $ingredientsImageHeight;
+    }
+  }
+
+  &__illustration-box {
+    position: absolute;
+    top: $ingredientsPaddingTop;
+    right: $bodyRightPadding;
+    display: flex;
+    @media (max-width: $screenLaptop) {
+      top: $ingredientsPaddingTopLaptop;
+      right: - $ingredientsImageWidth / 5;
+    }
+    @media (max-width: $screenSmallLaptop) {
+      right: - $ingredientsImageWidth / 1.7;
+    }
+    @media (max-width: $screenMobile) {
+      top: auto;
+      bottom: $ingredientsPaddingVerticalMobile + 55px;
+    }
+  }
+  &__hint-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; //here
+    margin-right: 20px;
+    text-align: end;
+    @media (max-width: $screenLaptop) {
+      position: absolute;
+      top: 0;
+      right: $ingredientsImageWidth * 0.85;
+      height: $ingredientsImageHeight;
+    }
+    @media (max-width: $screenMobile) {
+      right: $ingredientsImageWidth * 0.8;
+    }
+  }
+  &__hint {
+    transition-duration: $transitionDuration;
+    &:hover {
+      transform: translateX(-2%);
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 1em;
+      width: 75px;
+      margin-left: 20px;
+      background: url(../images/ingredients/line.svg) center no-repeat;
+    }
+    @media (max-width: $screenLaptop) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      width: 215px;
+      &:last-child {
+        transform: translateY(15px);
+        &:hover {
+          transform: translateY(15px) translateX(-2%);
+        }
+      }
+      &::after {
+        background-image: url(../images/ingredients/line-laptop.svg);
+      }
+    }
+  }
+  &__hided {
+    @media (max-width: $screenLaptop) {
+      display: none;
+    }
+  }
+
+  &__image {
+    height: $ingredientsImageHeight;
+    width: $ingredientsImageWidth;
+    background: url(../images/ingredients/illustration.svg) center no-repeat;
+    background-size: contain;
+  }
+
+  &__sticked-label {
+    top: 25em;
+  }
+}

@@ -1,0 +1,87 @@
+.contact-us {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  padding-left: $bodyLeftPadding;
+  margin-bottom: 150px;
+  @media (max-width: $screenDesctop) {
+    padding-left: $bodyLaptopSidePadding;
+  }
+  @media (max-width: $screenSmallLaptop) {
+    padding-right: $bodyLaptopSidePadding;
+    margin-bottom: 100px;
+  }
+  @media (max-width: $screenMobile) {
+    padding-right: $bodyMobileSidePadding;
+    padding-left: $bodyMobileSidePadding;
+  }
+
+  &__text-column {
+    margin-right: 100px;
+    @media (max-width: $screenLaptop) {
+      margin-right: 30px;
+    }
+    @media (max-width: $screenSmallLaptop) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  &__title {
+    margin-bottom: 20px;
+    color: $colorSaturatedGreen;
+    @media (max-width: $screenMobile) {
+      margin-bottom: 10px;
+    }
+  }
+  &__explanation {
+    max-width: 380px;
+    text-transform: lowercase;
+  }
+
+  &__image {
+    max-height: 600px;
+    width: 50%;
+    overflow: hidden;
+    @media (max-width: $screenSmallLaptop) {
+      display: none;
+    }
+  }
+
+  &__img-actually {
+    display: block;
+    margin-top: -100px;
+    max-width: 100%;
+    object-fit: cover;
+    transition-duration: $transitionDuration;
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    &--textaria {
+      resize: vertical;
+      max-height: 10em;
+      margin-top: 40px;
+    }
+  }
+  &__button {
+    width: 280px;
+    margin-top: 50px;
+    font-weight: 500;
+    @media (max-width: $screenSmallLaptop) {
+      margin: 45px auto 0;
+    }
+    @media (max-width: $screenMobile) {
+      margin-top: 30px;
+    }
+  }
+
+  &__sticked-label {
+    bottom: 20em;
+  }
+}

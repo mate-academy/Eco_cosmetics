@@ -1,39 +1,55 @@
-# Eco cosmetics landing page
-Implement landing page according to [Figma design](https://www.figma.com/file/Jryi2RU2LgK2bfwsxldABC/brand_of_eco-cosmetics-(Copy)) - Use BEM and SCSS
-- Large screens 2560px
-- Full HD 1920px
-- The design 1600px
-- Notebook 1280px
-- Tablet 1024
-- Mobile (> 320px)
+# POTR POTS
+TAP **[PREVIEW LINK](https://andrii256.github.io/eco_cosmetics_demo/)** TO SEE DEMO
 
-1. Implement the header with `nav`.
-1. Implement `Brand of eco-cosmetics and magic candles` block.
-1. Implement `If you choose the gifts of nature and care about it’s - scroll down` block.
-1. Implement `About our brand` block.
-1. Implement `Shop` block:
-  - implement tabs
-  - implement slider
-1. Implement `About the creators` block.
-1. Implement `Ayurvedic Tooth Powder` block.
-1. Implement `Contact us` block.
-1. Implement footer.
+## Technologies
 
-## Instructions
-1. **Fork** the repo.
-2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
-3. Run `npm install` (or just `npm i`).
-4. Run `npm start`.
-5. Open one more terminal window for the next steps.
-6. `git checkout -b develop` - to create new branch and switch on it.
-7. Write you code in `src` folder.
-8. Run `npm run lint` and fix code style errors.
-9. Run `npm run deploy` to deploy your solution to `gh-pages`.
-10. `git add . && git commit -m 'solution'` to save your changes.
-11. `git push origin develop` - to send you code for PR.
-12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
-13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/Eco_cosmetics/).
-14. Copy `DEMO LINK` to the PR description.
+ - JavaScript (native)
+ - HTML5
+ - CSS3
+ - Sass (SCSS)
+ - CSS animations
+ - BEM
+ - Google page speed insights
+ - npm
+ - git
 
-> To update you PR repeat steps 7-11.
+
+## Code Description and Features
+
+
+This is online shop of Ukrainian fairy.
+
+At first glance, this may seem simple, but there were a range of non-technical issues:
+The first one is the design. As for me, there were not very beautiful colors, so I changed them (variables saved my life).
+The second one is bad photos from the designer, so I changed them too.
+The third one is the content. There were not the base of products, so I visited official Instagram page of this brand and get all needed data from there. It was a boring job, but life requires sometimes to do boring things, so I did.
+
+In general, here are usual layout and there are not what new to respond, so I will talk about unusual blocks:
+
+**Shop**
+The shop is a slider with multiple logic:
+- Scroll via default scroll. It is realized via `overflow scroll`. I could hide scrollbar, but I didn't because it is the hint of a user about current position.
+- Scroll using buttons. It was quite difficult because my layout is responsive and the width of slides sometimes can be float (not integer). And js DOM instruments like `getComputedWidth` returns only integer numbers. There were many problems to fix this, but I did it.
+- Chapters navigation. It would be easy to implement, just set `face.onclick = () => {slider.scrollLeft = cardWidth * 8}`, but what if the order of chapters will change? What if the admin will change products in the current chapter? What if admin will add a new chapter? This is the case when we really need Js and its opportunities.
+I found answers to all these questions and made proper solution. You can see details [here](https://github.com/Andrii256/Eco_cosmetics/blob/develop/src/scripts/slider.js).
+
+**Checkout**
+(touch on product, then touch 'by now' to open this block) or follow this [link](https://andrii256.github.io/eco_cosmetics_demo/product-cards/checkout.html).
+There is one big slider when one slide is one stage. And all its logic implemented using CSS only. I know, it is not very good for code quality. There are in real projects better to use JS. But I made it deliberately to train my mind. And I could it.
+
+## Links
+
+Figma design: [link](https://www.figma.com/file/YYe1t6RnMqNemJOzdWchj7/eco_cosmetics?node-id=0%3A1)
+
+Page speed insights: [link](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fandrii256.github.io%2Feco_cosmetics_demo%2F&tab=desktop)
+
+Demonstration: [link](https://andrii256.github.io/eco_cosmetics_demo/)
+
+## My Contacts
+Andrii Hrushetskyi
+
+Ukraine
+
+Phone: +380 68 4344 676 (telegram and viber available too) Email: [hrushetskyi.andrii@gmail.com](mailto:hrushetskyi.andrii@gmail.com)
+
+[Skype](https://join.skype.com/invite/g14s4nvGNzCx) | [LinkedIn](https://www.linkedin.com/in/andrii256/) | [GitHub](https://github.com/Andrii256)

@@ -1,0 +1,47 @@
+.features {
+  $this: &;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 $bodyRightPadding 250px;
+  @media (max-width: $screenDesctop) {
+    padding: 0 $bodyLaptopSidePadding 150px;
+  }
+  @media (max-width: $screenSmallLaptop) {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 60px;
+  }
+
+  &__item {
+    width: 32%;
+    text-align: center;
+    &:hover #{$this}__image {
+      transform: scale(1.1);
+    }
+    @media (max-width: $screenSmallLaptop) {
+      width: 40%;
+      margin-bottom: 50px;
+    }
+    @media (max-width: $screenMobile) {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    height: 100px;
+    margin-bottom: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition-duration: $transitionDuration;
+    &--a {
+      background-image: url(../images/features/illustration-a.svg);
+    }
+    &--b {
+      background-image: url(../images/features/illustration-b.svg);
+    }
+    &--c {
+      background-image: url(../images/features/illustration-c.svg);
+    }
+  }
+}
