@@ -1,0 +1,99 @@
+.slider {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  padding-bottom: 40px;
+  @media (max-width: $screenLaptop) {
+    padding-bottom: 0;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    height: 9px;
+    background-color: $colorPaleBrown;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: $colorPaleGreen;
+  }
+
+  &__slides-row {
+    display: flex;
+    width: calc(#{$sliderSlideWidth} * #{$sliderSlidesNumber}
+    + #{$sliderSlideSideMargin} * #{($sliderSlidesNumber - 1)});
+    padding-top: 15px;
+    transition-duration: $transitionDuration;
+    @media (max-width: $screenDesctop) {
+      width: calc(#{$sliderSlideWidthDesctop} * #{$sliderSlidesNumber}
+      + #{$sliderSlideSideMargin} * #{($sliderSlidesNumber - 1)});
+    }
+    @media (max-width: $screenLaptop) {
+      width: calc(#{$sliderSlideWidthLaptop} * #{$sliderSlidesNumber}
+      + #{$sliderSlideSideMargin} * #{($sliderSlidesNumber - 1)});
+    }
+    @media (max-width: $screenMobile) {
+      width: calc(#{$sliderSlideWidthMobile} * #{$sliderSlidesNumber}
+      + #{$sliderSlideSideMargin} * #{($sliderSlidesNumber - 1)});
+    }
+  }
+
+  //i must change order of selectors because
+  //linter force me https://prnt.sc/tnd524
+  &__image {
+    display: block;
+    width: 100%;
+    height: $sliderImageHeight;
+    object-fit: cover;
+    transition-duration: $transitionDuration;
+    @media (max-width: $screenSmallLaptop) {
+      height: $sliderImageHeightSmallLaptop;
+    }
+    @media (max-width: $screenMobile) {
+      height: $sliderImageHeightMobile;
+    }
+  }
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    width: $sliderSlideWidth;
+    margin-right: $sliderSlideSideMargin;
+    color: $colorDark;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: $colorPaleGreen;
+      & .slider__image {
+        transform: scale(1.03);
+      }
+    }
+    @media (max-width: $screenDesctop) {
+      width: $sliderSlideWidthDesctop;
+    }
+    @media (max-width: $screenLaptop) {
+      width: $sliderSlideWidthLaptop;
+    }
+    @media (max-width: $screenMobile) {
+      width: $sliderSlideWidthMobile;
+    }
+  }
+
+  &__name {
+    color: inherit;
+    margin-top: 10px;
+    padding: 10px 0;
+    font-size: 20px;
+    transition-duration: $transitionDuration * 0.7;
+    @media (max-width: $screenMobile) {
+      padding-left: $bodyMobileSidePadding;
+    }
+  }
+  &__price {
+    color: inherit;
+    transition-duration: $transitionDuration * 0.7;
+    @media (max-width: $screenMobile) {
+      padding-left: $bodyMobileSidePadding;
+    }
+  }
+}

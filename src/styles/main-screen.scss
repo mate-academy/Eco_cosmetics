@@ -1,0 +1,84 @@
+.main-screen {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px $bodyRightPadding 200px $bodyLeftPadding;
+  @media (max-width: $screenDesctop) {
+    padding-left: $bodyRightPadding;
+  }
+  @media (max-width: $screenLaptop) {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px $bodyLaptopSidePadding 100px;
+  }
+  @media (max-width: $screenMobile) {
+    padding: 0 0 60px;
+  }
+
+  &__content-box {
+    max-width: 480px;
+    margin-right: 20px;
+    color: $colorDark;
+    @media (max-width: $screenLaptop) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 0;
+      text-align: center;
+    }
+    @media (max-width: $screenMobile) {
+      padding: 0 $bodyMobileSidePadding;
+    }
+  }
+  &__title {
+    margin-bottom: 30px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 120%;
+    @media (max-width: $screenLaptop) {
+      margin-bottom: 20px;
+      font-size: 36px;
+    }
+    @media (max-width: $screenMobile) {
+      margin-bottom: 12px;
+      font-size: 24px;
+    }
+  }
+  &__promotion {
+    margin-bottom: 50px;
+    font-size: 22px;
+    font-weight: 500;
+    color: $colorSaturatedGreen;
+    @media (max-width: $screenLaptop) {
+      margin-bottom: 30px;
+      max-width: 280px;
+      font-size: 18px;
+    }
+    @media (max-width: $screenMobile) {
+      margin-bottom: 20px;
+    }
+  }
+  &__button {
+    width: 280px;
+  }
+
+  &__image {
+    display: block;
+    max-height: 450px;
+    max-width: 570px;
+    width: 100%;
+    // margin-left: 20px;
+    object-fit: cover;
+    object-position: center;
+    @media (max-width: $screenLaptop) {
+      max-height: 65vw;
+      max-width: 100%;
+      width: 100%;
+      // margin-left: 0;
+      margin-bottom: 50px;
+    }
+    @media (max-width: $screenMobile) {
+      min-height: 85vw;
+    }
+  }
+}

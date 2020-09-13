@@ -1,0 +1,89 @@
+.about-creators {
+  position: relative;
+  display: flex;
+  padding: 200px 50px 0 $bodyLeftPadding;
+  justify-content: space-between;
+  overflow: hidden;
+  @media (max-width: $screenDesctop) {
+    padding: 100px 0 0 $bodyLaptopSidePadding;
+  }
+  @media (max-width: $screenMobile) {
+    padding: 60px $bodyMobileSidePadding 0;
+  }
+
+  &__content-box {
+    align-self: flex-end;
+    width: 35%;
+    margin-right: 100px;
+    @media (max-width: $screenLaptop) {
+      align-self: center;
+      width: auto;
+      margin-right: 30px;
+    }
+    @media (max-width: $screenMobile) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    color: $colorSaturatedGreen;
+    @media (max-width: $screenLaptop) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    @media (max-width: $screenLaptop) {
+      margin-bottom: 10px;
+    }
+    &--hidded {
+      @media (max-width: $screenLaptop) {
+        display: none;
+      }
+    }
+  }
+
+  &__learn-more {
+    margin-bottom: 50px;
+    @media (max-width: $screenLaptop) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__to-contacts {
+    width: 280px;
+    @media (max-width: $screenMobile) {
+      margin: auto;
+    }
+  }
+
+  &__picture-box {
+    display: inline-block;
+    max-width: 55%;
+    overflow: hidden;
+    @media (max-width: $screenLaptop) {
+      flex-shrink: 0;
+    }
+    @media (max-width: $screenMobile) {
+      display: none;
+    }
+  }
+
+  &__img-actually {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition-duration: $transitionDuration;
+    &:hover {
+      transform: scale(1.04);
+    }
+  }
+
+  &__sticked-label {
+    top: 44em;
+  }
+}

@@ -1,0 +1,84 @@
+.product-info {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  column-gap: 100px;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 10px $bodyRightPadding 110px;
+  @media (max-width: $screenDesctop) {
+    column-gap: $bodyLaptopSidePadding;
+    padding-right: $bodyLaptopSidePadding;
+    padding-left: $bodyLaptopSidePadding;
+  }
+  @media (max-width: $screenSmallLaptop) {
+    grid-template-columns: 1fr;
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+  @media (max-width: $screenMobile) {
+    padding: 0 $bodyMobileSidePadding 40px;
+  }
+
+  &__image {
+    grid-row-start: span 6;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @media (max-width: $screenSmallLaptop) {
+      grid-row-start: 1;
+      height: calc(60vw - 2 * #{$bodyLaptopSidePadding});
+    }
+    @media (max-width: $screenMobile) {
+      grid-row-start: 3;
+      height: calc(90vw - 2 * #{$bodyMobileSidePadding});
+      margin-top: 20px;
+    }
+  }
+
+  &__title {
+    @media (max-width: $screenSmallLaptop) {
+      margin-top: 30px;
+    }
+    @media (max-width: $screenMobile) {
+      margin-top: 0;
+    }
+  }
+  &__price {
+    margin-top: 20px;
+    color: $colorSaturatedGreen;
+    @media (max-width: $screenMobile) {
+      margin-top: 5px;
+    }
+  }
+  &__amount {
+    margin-top: 20px;
+    @media (max-width: $screenMobile) {
+      display: none;
+    }
+  }
+  &__description {
+    margin-top: 30px;
+    @media (max-width: $screenMobile) {
+      margin-top: 20px;
+    }
+  }
+  &__hidlight {
+    color: $colorSaturatedGreen;
+  }
+  &__button {
+    height: 60px;
+    width: 280px;
+    margin-top: 85px;
+    @media (max-width: $screenSmallLaptop) {
+      justify-self: center;
+      grid-row-start: 5;
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+    @media (max-width: $screenMobile) {
+      grid-row-start: 4;
+      margin-bottom: 30px;
+    }
+  }
+}
