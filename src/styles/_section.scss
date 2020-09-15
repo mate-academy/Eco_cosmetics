@@ -1,0 +1,39 @@
+.section {
+  padding-top: 0;
+  padding-bottom: 200px;
+  padding-left: calc(75% - 810px);
+  padding-right: calc(25% - 270px);
+
+  &--borders {
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 300px;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      border-top: 1px solid $accent-color;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(75% - 810px + 380px);
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 200px;
+      left: calc(75% - 810px + 540px);
+    }
+  }
+
+  &--one-padding {
+    padding-right: 0;
+  }
+}
