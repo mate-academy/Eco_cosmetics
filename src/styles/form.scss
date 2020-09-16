@@ -1,0 +1,83 @@
+@import "utils";
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__item + &__item {
+    margin-top: 25px;
+
+    @media screen and (min-width: 1280px) {
+      margin-top: 2.34vw;
+    }
+  }
+
+  &__input,
+  &__textarea {
+    font-size: 14px;
+    line-height: 150%;
+
+    width: 100%;
+    padding-bottom: 5px;
+
+    background: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #bdbdbd;
+
+    &::placeholder {
+      color: #828282;
+    }
+
+    @media screen and (min-width: 1280px) {
+      font-size: 1.41vw;
+
+      border-bottom: 0.08vw solid #bdbdbd;
+      padding-bottom: 0.78vw;
+    }
+  }
+
+  &__textarea {
+    height: 54px;
+    resize: none;
+
+    &::placeholder {
+      padding-top: 20px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      height: 5.23vw;
+
+      &::placeholder {
+        padding-top: 2.89vw;
+      }
+    }
+  }
+
+  &__btn {
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+
+    padding: 20px 0;
+    margin-top: 30px;
+    background: $text-color;
+
+    cursor: pointer;
+
+    @include hover(background, $second-background-color);
+
+    @media screen and (min-width: 767px) {
+      width: 280px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: 21.87vw;
+      margin-top: 3.91vw;
+    }
+  }
+}
