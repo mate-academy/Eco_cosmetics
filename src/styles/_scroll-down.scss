@@ -1,0 +1,50 @@
+.scroll-down {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-grey;
+    width: 380px;
+    margin-right: 120px;
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__text::before {
+    content: "";
+    width: 580px;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 250px;
+    background-color: rgba(52, 79, 16, 0.5);
+  }
+
+  &__text::after {
+    content: "";
+    width: 580px;
+    height: 1px;
+    position: absolute;
+    right: 0;
+    top: 200px;
+    background-color: rgba(52, 79, 16, 0.5);
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+    width: 380px;
+
+    @media (max-width: $tabletBreakPoint) {
+      text-align: center;
+    }
+  }
+}
