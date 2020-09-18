@@ -3,62 +3,17 @@
 .nav {
   &__list {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__item--active {
+    color: $text-color;
+    padding-bottom: 20px;
+    border-bottom: 2px solid;
 
     @media (min-width: 1280px) {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-
-  &__item {
-    @media (max-width: 1279px) {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  }
-
-  &__link {
-    font-size: 18px;
-    font-weight: normal;
-    line-height: 130%;
-
-    @media (min-width: 1280px) {
-      font-size: 1.4vw;
-    }
-
-    //@include hover($_property:, $_toValue:);
-  }
-
-  &__close {
-    display: block;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-
-    z-index: 11;
-    @media (min-width: 1280px) {
-      display: none;
-    }
-  }
-
-  &__close-line {
-    display: block;
-    height: 1px;
-    width: 100%;
-    position: absolute;
-    top: 50%;
-
-    background: $background-color;
-
-    &:first-child {
-      transform: translateY(-50%) rotate(45deg);
-    }
-
-    &:last-child {
-      transform: translateY(-50%) rotate(-45deg);
+      padding-bottom: 1.56vw;
+      border-bottom: 0.15vw solid;
     }
   }
 }
