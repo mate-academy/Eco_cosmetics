@@ -1,14 +1,17 @@
 .scroll-down {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
+
+  @media (max-width: $tabletBreakPoint) {
+    justify-content: center;
+  }
 
   &__text {
     font-size: 16px;
     line-height: 150%;
     color: $c-grey;
     width: 380px;
-    margin-right: 120px;
 
     @media (max-width: $tabletBreakPoint) {
       display: none;
@@ -43,8 +46,16 @@
     color: #344f10;
     width: 380px;
 
+    margin-right: 100px;
+
     @media (max-width: $tabletBreakPoint) {
       text-align: center;
+      margin-right: 0;
+    }
+
+    @media (max-width: $phoneBreakPoint) {
+      text-align: start;
+      margin-left: 20px;
     }
   }
 }

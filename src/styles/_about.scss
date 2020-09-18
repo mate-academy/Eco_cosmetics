@@ -1,9 +1,18 @@
 .about {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  position: relative;
+
+  @media (max-width: $phoneBreakPoint) {
+    justify-content: center;
+  }
 
   &__text {
     width: 380px;
+
+    @media (max-width: $tabletBreakPoint) {
+      margin: 0 20px;
+    }
   }
 
   &__title {
@@ -12,23 +21,119 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #344f10;
+
+    margin-bottom: 20px;
+
+    @media (max-width: $tabletBreakPoint) {
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: $phoneBreakPoint) {
+      font-size: 24px;
+      line-height: 150%;
+    }
+  }
+
+  &__par1 {
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-grey;
+
+    margin-bottom: 30px;
+  }
+
+  &__par2 {
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-grey;
+
+    margin-bottom: 40px;
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__decor {
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__decor::before {
+    content: "about our brand";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 415px;
+    left: -180px;
+
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    color: rgba(52, 79, 16, 0.5);
+    text-transform: uppercase;
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__decor::after {
+    content: "";
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    bottom: 240px;
+    left: -113px;
+    background-color: rgba(52, 79, 16, 0.5);
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    padding-bottom: 12px;
+    border-bottom: 1px solid;
   }
 
   &__photos {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-left: 100px;
-    width: 650px;
+
+    @media (max-width: $tabletBreakPoint) {
+      margin-left: 30px;
+    }
+
+    @media (max-width: $phoneBreakPoint) {
+      display: none;
+    }
   }
 
   &__img-big {
     width: 500px;
+    margin-right: 20px;
+
+    @media (max-width: $tabletBreakPoint) {
+      width: 40vw;
+      margin-right: 0;
+    }
   }
 
   &__img-small {
     width: 130px;
     height: 430px;
     object-fit: cover;
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
   }
 }
