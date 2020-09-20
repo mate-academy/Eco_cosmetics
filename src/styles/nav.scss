@@ -1,0 +1,71 @@
+.nav {
+  padding-top: 50px;
+
+  @media (max-width: 1244px) {
+    padding-top: 0;
+  }
+
+  &__list {
+    display: flex;
+
+    font-size: 18px;
+    line-height: 130%;
+
+    width: 250px;
+    justify-content: space-between;
+
+    @media screen and (max-width: 1244px) {
+      position: relative;
+      top: 15px;
+      left: -15px;
+      width: auto;
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    padding: 4px 15px;
+
+    text-decoration: none;
+    color: $color-header;
+    transition: color 500ms;
+
+    &:hover {
+      color: $link-hover;
+    }
+
+    &:active {
+      background-color: $link-active;
+      border-radius: 10px;
+      color: whitesmoke;
+    }
+  }
+
+  &__toggler-label {
+    display: none;
+    border: 1px solid #5c4f45;
+
+    @media (max-width: 1244px) {
+      margin-top: 40px;
+      display: inline-block;
+      padding: 10px;
+      margin-right: 60px;
+    }
+
+    &::before {
+      content: url("../images/mdi_menu.png");
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__toggler {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1244px) {
+  .nav__toggler:not(:checked) ~ .nav__list {
+    display: none;
+  }
+}
