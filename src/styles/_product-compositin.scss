@@ -3,9 +3,11 @@
   grid-template-columns: 1fr 2fr;
   align-items: end;
 
-  &__diagram {
-    display: flex;
-    justify-content: flex-end;
+  &__image {
+    height: 380px;
+
+    background: url(/images/tooth.svg) no-repeat;
+    background-size: contain;
   }
 
   &__page-heading {
@@ -16,26 +18,36 @@
     margin-top: 140px;
   }
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-right: 20px;
-    align-content: center;
+  @media screen and(max-width: 1099px) {
+    overflow: hidden;
 
-    text-align: right;
+    &__title {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
 
-    font-size: 16px;
-    color: #333;
-    list-style-type: none;
+    &__page-heading {
+      max-width: 150px;
+    }
+
+    &__image {
+      background: url(/images/tooth-small.svg) no-repeat;
+      background-size: auto 100%;
+      background-position-x: left;
+      background-position-y: top;
+    }
   }
 
-  &__rectangle {
-    margin: 0 -5px 2px 20px;
-  }
+  @media screen and(max-width: 740px) {
+    grid-template-columns: 1fr;
+    &__image {
+      position: relative;
+      left: 20px;
 
-  &__image {
-    width: 380px;
-    height: 395px;
+      background: url(/images/tooth-mobile.svg) no-repeat;
+      background-size: cover;
+    }
   }
 }

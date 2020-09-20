@@ -28,36 +28,14 @@
     left: 0;
     right: 0;
     margin: auto;
-    display: flex;
-    width: fit-content;
-    list-style-type: none;
-  }
 
-  &__item-link {
-    margin: 0 20px;
-    font-size: 18px;
-    padding: 10px;
-    border: 1px solid transparent;
-    border-radius: 80%;
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 300ms;
-
-    &:visited {
-      color: $accent-color-dark;
-    }
-
-    &:hover {
-      color: #e4dfd3;
-      background-color: $accent-color;
-    }
+    transition: transform 300ms;
   }
 
   &__shopping-cart {
     padding: 10px;
     border: 2px solid transparent;
-    border-radius: 50%;
+    border-radius: 20px;
     cursor: pointer;
     transition: 300ms;
 
@@ -69,5 +47,67 @@
   &__photo-card {
     width: 24px;
     height: 24px;
+  }
+
+  &__toggler-label {
+    display: none;
+    color: #000;
+    z-index: 2;
+  }
+
+  &__toggler-label::before {
+    content: "\2630";
+    font-size: 24px;
+
+    color: #344f10;
+  }
+
+  &__toggler:checked ~ &__toggler-label::before {
+    content: "x";
+    font-size: 24px;
+
+    color: #e4dfd3;
+
+  }
+
+  &__toggler {
+    display: none;
+  }
+
+  @media screen and(max-width: 1000px) {
+    padding: 25px 30px 30px;
+
+    &__shopping-cart {
+      padding: 0;
+    }
+
+    &__brand {
+      display: none;
+    }
+
+    &__logo-info {
+      position: absolute;
+      top: 30px;
+      left: calc(50% - 24px);
+    }
+
+    &__logo {
+      width: 24px;
+      height: 24px;
+    }
+
+    &__toggler-label {
+      display: inline-block;
+    }
+
+    &__menu {
+      flex-direction: column;
+      align-items: center;
+      padding: 140px 30px 0;
+    }
+  
+    &__toggler:not(:checked) ~ &__menu {
+      transform: translate(-100%, 0);
+    }
   }
 }

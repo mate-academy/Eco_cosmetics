@@ -1,22 +1,47 @@
 .shop {
+  display: flex;
+  flex-direction: column;
+
   &__products {
     margin-right: 20px;
   }
 
   &__product-container {
     display: flex;
-    margin: 45px 0;
+    margin: 20px 0;
 
     overflow: hidden;
   }
 
-  &__arrow-left,
-  &__arrow-right {
+  &__arrow-item {
     width: 28px;
     height: 28px;
   }
 
   &__button {
     margin-top: 30px;
+  }
+
+  @media screen and (max-width: 1099px) {
+    &__products {
+      margin-right: 30px;
+    }
+
+    &__arrow {
+      padding-right: 30px;
+      
+      text-align: end;
+    }
+  }
+
+  @media screen and (max-width: 740px) {
+    &__page-heading {
+      margin: auto;
+    }
+
+    &__button,
+    &__arrow {
+      align-self: center;
+    }
   }
 }
