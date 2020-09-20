@@ -1,14 +1,37 @@
 .cards {
   display: flex;
-  //overflow: hidden;
+  justify-content: space-between;
+
+  @media (min-width: 1280px) {
+    width: 88.28vw;
+    transform: translateX(0.2vw);
+  }
 
   &__item {
     width: 100%;
+
+    @media (min-width: 768px) {
+      width: calc(50% - 15px);
+    }
+
+    @media (min-width: 1280px) {
+      width: calc(33% - 0.78vw);
+    }
   }
 
-  &__item + &__item {
+  &__item:nth-child(2) {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__item:last-child {
+    display: none;
+
     @media (min-width: 1280px) {
-      margin-left: 1.5vw;
+      display: block;
     }
   }
 }

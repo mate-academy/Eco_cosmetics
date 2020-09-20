@@ -12,32 +12,6 @@
     }
   }
 
-  &__input,
-  &__textarea {
-    font-size: 14px;
-    line-height: 150%;
-
-    width: 100%;
-    padding-bottom: 5px;
-
-    background: transparent;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 1px solid #bdbdbd;
-
-    &::placeholder {
-      color: #828282;
-    }
-
-    @media screen and (min-width: 1280px) {
-      font-size: 1.41vw;
-
-      border-bottom: 0.08vw solid #bdbdbd;
-      padding-bottom: 0.78vw;
-    }
-  }
-
   &__textarea {
     height: 54px;
     resize: none;
@@ -52,6 +26,51 @@
       &::placeholder {
         padding-top: 2.89vw;
       }
+    }
+  }
+
+  &__input,
+  &__textarea {
+    font-size: 14px;
+    line-height: 150%;
+
+    width: 100%;
+    padding-bottom: 5px;
+
+    background: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #bdbdbd;
+
+    outline: none;
+
+    &::placeholder {
+      color: #828282;
+    }
+
+    &:focus {
+      border-bottom-color: $text-color;
+    }
+
+    &:not(:placeholder-shown) {
+      border-bottom-color: $section-text-color;
+    }
+
+    &:valid {
+      border-bottom-color: $section-text-color;
+    }
+
+    &:invalid {
+      color: red;
+      border-bottom-color: red;
+    }
+
+    @media screen and (min-width: 1280px) {
+      font-size: 1.41vw;
+
+      border-bottom: 0.08vw solid #bdbdbd;
+      padding-bottom: 0.78vw;
     }
   }
 
