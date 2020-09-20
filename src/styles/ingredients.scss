@@ -1,0 +1,160 @@
+.ingredients {
+  display: grid;
+  grid-template-columns: 20px auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: ". a"
+    ". b"
+    ". c";
+  margin-bottom: $space-between-containers-mobile;
+
+  @media (min-width: $mobile-version-breakpoint) {
+    grid-template-columns: 27px 320px auto;
+    grid-template-rows: auto;
+    grid-template-areas: ". a b";
+    margin-bottom: $space-between-containers-ipad;
+  }
+
+  @media (min-width:$ipad-version-breakpoint) {
+    grid-template-columns: 3.91% 1.41% 6.25% 23.44% 7.81% auto;
+    grid-template-rows: auto;
+    grid-template-areas: ". a . b . c";
+    margin-bottom: $space-between-containers;
+  }
+
+  &__section-label {
+    grid-area: a;
+  }
+
+  &__header {
+    grid-area: a;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green-text-color;
+
+    @media (min-width:$ipad-version-breakpoint) {
+      grid-area: b;
+      margin-top: 63px;
+      font-size: 36px;
+    }
+  }
+
+  &__link-container {
+    grid-area: c;
+    margin-top: 20px;
+    @media (min-width: $mobile-version-breakpoint) {
+      grid-area: a;
+      align-self: end;
+    }
+    @media (min-width:$ipad-version-breakpoint) {
+      grid-area: b;
+      align-self: end;
+    }
+  }
+
+  &__container-example {
+    grid-area: b;
+    display: grid;
+    grid-template-columns: 100px 10px auto;
+    grid-template-rows: 20px repeat(5, auto) 20px;
+    grid-template-areas: ". . i"
+      "a a1 i"
+      "b b1 i"
+      "c c1 i"
+      "d d1 i"
+      "e l i"
+      ". .  i";
+
+    @media (min-width: $ipad-version-breakpoint) {
+      grid-area: c;
+      grid-template-columns: 200px 100px auto;
+    }
+  }
+
+  &__item-name {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: $gray-color;
+    text-align: end;
+    align-self: center;
+    justify-self: end;
+
+    &--1 {
+      grid-area: a;
+    }
+
+    &--2 {
+      grid-area: b;
+      &--additional {
+        display: none;
+        @media (min-width: $ipad-version-breakpoint) {
+          display: contents;
+        }
+      }
+    }
+
+    &--3 {
+      grid-area: c;
+    }
+
+    &--4 {
+      grid-area: d;
+    }
+
+    &--5 {
+      grid-area: e;
+    }
+  }
+
+  &__item-poiner {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    width: 90px;
+
+    &--1 {
+      grid-area: a1;
+    }
+
+    &--2 {
+      grid-area: b1;
+    }
+
+    &--3 {
+      grid-area: c1;
+    }
+
+    &--4 {
+      grid-area: d1;
+    }
+
+    &--5 {
+      grid-area: l;
+    }
+
+    &--line {
+      width: 76px;
+      height: 1px;
+      margin-left: 20px;
+      background-color: $gray-color;
+    }
+
+    &--dot {
+      display: none;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $gray-color;
+      @media (min-width: $ipad-version-breakpoint) {
+        display: block;
+      }
+    }
+  }
+
+  &__img-container {
+    grid-area: i;
+    margin-left: 19px;
+  }
+}

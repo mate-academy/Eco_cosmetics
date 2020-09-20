@@ -1,0 +1,85 @@
+.brand {
+  &__container-for-content {
+    display: grid;
+    grid-template-columns: 51.55% 1fr;
+    justify-items: center;
+    padding: 0 53px;
+    color: $gray-color;
+    margin-bottom: $space-between-containers;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      grid-template-columns: 1fr;
+      padding: 0 27px;
+      margin-bottom: $space-between-containers-ipad;
+    }
+
+    @media (max-width: $mobile-version-breakpoint) {
+      margin-bottom: $space-between-containers-mobile;
+      padding: 0;
+    }
+  }
+
+  &__introduction {
+    justify-self: end;
+    margin-right: 30px;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      grid-row: 2 / 3;
+      justify-self: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    @media (max-width:$mobile-version-breakpoint) {
+      margin-top: 25px;
+      margin-right: 0;
+      padding: 0 20px;
+    }
+  }
+
+  &__header {
+    font-size: 60px;
+    line-height: 72px;
+    font-weight: 600;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      text-align: center;
+      font-size: 36px;
+      line-height: $default-line-height;
+    }
+
+    @media (max-width:$mobile-version-breakpoint) {
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+
+  &__sales {
+    font-size: 22px;
+    line-height: $default-line-height;
+    padding: 20px 0;
+    margin-top: -10px;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width:$mobile-version-breakpoint) {
+      margin-bottom: 0;
+      padding: 12px 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      grid-row: 1 / 2 ;
+    }
+  }
+}

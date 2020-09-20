@@ -1,0 +1,64 @@
+.gifts-of-nature {
+  display: grid;
+  grid-template-columns: 11.71% 29.68% 9.37% 29.68% auto;
+  grid-template-rows: 101px auto 70px;
+  grid-template-areas: "a a . . ."
+    ". b . c ."
+    ". . . d d";
+  margin-bottom: $space-between-containers;
+
+  @media (max-width:$ipad-version-breakpoint) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    margin-bottom: $space-between-containers-ipad;
+  }
+
+  @media (max-width:$mobile-version-breakpoint) {
+    margin-bottom: $space-between-containers-mobile;
+  }
+
+  &__before-line {
+    grid-area: a;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__description {
+    grid-area: b;
+    font-size: 16px;
+    line-height: 150%;
+    color: $gray-color;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__header {
+    grid-area: c;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green-text-color;
+    margin-top: 5px;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      font-size: 18px;
+      max-width: 280px;
+      grid-column: 1 / 3 ;
+    }
+  }
+
+  &__after-line {
+    grid-area: d;
+    align-self: end;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      display: none;
+    }
+  }
+}

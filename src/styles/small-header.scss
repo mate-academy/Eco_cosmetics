@@ -1,0 +1,77 @@
+.small-header {
+  @media (min-width:$ipad-version-breakpoint) {
+    display: none;
+  }
+
+  position: absolute;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: $gray-color;
+  transition: transform 0.3s linear;
+  z-index: 3;
+
+  @media (max-width:$ipad-version-breakpoint) {
+    padding: $padding-for-header-for-ipad;
+  }
+
+  @media (max-width: $mobile-version-breakpoint) {
+    padding: $padding-for-header-for-mobile;
+  }
+
+  &__close-menu-button {
+    display: flex;
+    height: $hamburger-height;
+    width: $hamburger-width;
+    margin-bottom: 100px;
+    background: url(../images/menu-closer.svg) no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    transition: $transfrom-duration;
+
+    @media (max-width:$mobile-version-breakpoint) {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__close-menu-button:hover {
+    transform: scale(1.2);
+
+  }
+}
+
+.header__menu-toogler-checkbox:checked ~ .small-header {
+  transform: translateX(-100%);
+}
+
+.small-nav {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item {
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $small-nav-border-color;
+    text-align: center;
+  }
+
+  &__item:hover {
+    border-bottom: 1px solid #0a0;
+  }
+
+  &__link {
+    color: $body-background-color;
+    font-size: 18px;
+    line-height: $default-line-height;
+  }
+
+  &__item:hover &__link {
+    color: #0a0;
+  }
+}

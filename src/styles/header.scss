@@ -1,0 +1,126 @@
+.header {
+  margin-bottom: 80px;
+  position: relative;
+
+  @media (max-width:$ipad-version-breakpoint) {
+    margin-bottom: 10px;
+  }
+
+  &__menu-toogler-checkbox {
+    display: none;
+  }
+
+  &__container-for-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding-for-header-for-bigscreens;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      padding: $padding-for-header-for-ipad;
+    }
+
+    @media (max-width: $mobile-version-breakpoint) {
+      padding: $padding-for-header-for-mobile;
+    }
+  }
+
+  &__humburger-menu-button {
+    display: none;
+    width: $hamburger-width;
+    height: $hamburger-height;
+    background: url(../images/hamburger.svg) no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    transition: $transfrom-duration;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      display: flex;
+    }
+  }
+
+  &__humburger-menu-button:hover {
+    transform: scale(1.2);
+  }
+
+  &__logo-content {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__logo-description {
+    position: absolute;
+    margin-left: 64px;
+    font-size: 14px;
+    line-height: $default-line-height;
+    letter-spacing: 0.05em;
+    color: $green-text-color;
+
+    @media (max-width:$ipad-version-breakpoint) {
+      display: none;
+    }
+  }
+
+  &__basket {
+    height: 24px;
+    width: 20px;
+    background: url(../images/basket.svg);
+    transition: $transfrom-duration;
+  }
+
+  &__basket:hover {
+    transform: scale(1.2);
+  }
+}
+
+.nav {
+  @media (max-width:$ipad-version-breakpoint) {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    position: relative;
+    margin-right: $margin-for-nav-items;
+    font-size: 18px;
+    line-height: $default-line-height;
+    color: $green-text-color;
+    z-index: 1;
+    transition: color 0.3s linear;
+  }
+
+  &__link:hover {
+    color: #fff;
+  }
+
+  &__link::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -50%;
+    bottom: 0;
+    right: -50%;
+    margin: auto;
+    width: 150%;
+    height: 1px;
+    content: ".";
+    color: transparent;
+    background: #033;
+    visibility: none;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s linear;
+    border-radius: 10px;
+  }
+
+  &__link:hover:after {
+    opacity: 1;
+    visibility: visible;
+    height: 150%;
+
+  }
+}

@@ -1,0 +1,37 @@
+.button {
+  position: relative;
+  width: 280px;
+  height: 60px;
+  font-size: 16px;
+  line-height: $default-line-height;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $button-text-color;
+  border: 1px solid $gray-color;
+  background: $gray-color;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s linear;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: $body-background-color;
+    transition: all 0.3s linear;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: $gray-color;
+    &:before {
+      width: 100%;
+    }
+  }
+
+}
