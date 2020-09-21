@@ -1,49 +1,53 @@
 .contact {
   &__position {
     @extend %blocks;
-    width: 1077px;
+    position: relative;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 250px 0 150px;
 
     @media screen and (max-width: 1225px) {
-      width: auto;
+      padding-top: 150px;
       margin: 0 20px;
-
-      flex-direction: column;
     }
   }
 
   &__block {
     margin-right: 100px;
-    @media screen and (max-width: 1225px) {
-      max-width: 900px;
-    }
-
   }
 
   &__title {
     margin-top: 20px;
     text-transform: capitalize;
     @extend %heading_blocks;
+
+    @media screen and (max-width: 1225px) {
+      margin-top: 0;
+      text-transform: uppercase;
+    }
   }
 
   &__text {
     font-size: 24px;
     line-height: 150%;
+
+    @media screen and (max-width: 1225px) {
+      font-size: 20px;
+    }
   }
 
   &__img {
-    max-width: 550px;
+    width: 650px;
+    background: url("../images/contact_bird.png") no-repeat 50%;
+    background-size: cover;
 
-    object-fit: cover;
-
-    @media screen and (max-width: 1225px) {
-      margin-top: 15px;
+    @media screen and (max-width: 1244px) {
+      max-width: 370px;
+      min-width: 370px;
     }
 
-    @media screen and (max-width: 400px) {
-      object-fit: contain;
-      height: 340px;
+    @media screen and (max-width: 780px) {
+      display: none;
     }
   }
 }

@@ -1,31 +1,41 @@
 .creator {
   &__position {
     @extend %blocks;
-    width: 1077px;
+    max-width: 1180px;
     margin: 0 auto;
     padding-top: 200px;
 
     @media screen and (max-width: 1225px) {
-      width: auto;
+      padding-top: 100px;
+      justify-content: space-between;
       margin: 0 20px;
+    }
 
-      flex-direction: column;
+    @media screen and (max-width: 780px) {
+      max-width: 320px;
+      margin: 0 auto;
     }
   }
 
   &__title {
     width: 300px;
-    margin-top: 66px;
     @extend %heading_blocks;
+    @media screen and (max-width: 1225px) {
+      font-size: 24px;
+      line-height: 150%;
+      white-space: nowrap;
+    }
   }
 
   &__block {
     max-width: 900px;
     margin-right: 80px;
+    margin-top: 66px;
     @extend %text-block;
 
     @media screen and (max-width: 1225px) {
-      margin-bottom: 15px;
+      width: 342px;
+      margin-top: 0;
     }
   }
 
@@ -36,6 +46,10 @@
 
   &__footer {
     margin-bottom: 20px;
+
+    @media screen and (max-width: 1225px) {
+      display: none;
+    }
   }
 
   &__btn {
@@ -51,14 +65,19 @@
   }
 
   &__images {
-    object-fit: cover;
-    &-big {
-      max-width: 600px;
-      height: 669px;
-    }
+    &--big {
+      width: 800px;
+      background-image: url("../images/bird.png");
+      background-repeat: no-repeat;
+      background-size: cover;
 
-    @media screen and (max-width: 400px) {
-      object-fit: contain;
+      @media screen and (max-width: 1244px) {
+        max-width: 500px;
+      }
+
+      @media screen and (max-width: 780px) {
+        display: none;
+      }
     }
   }
 }

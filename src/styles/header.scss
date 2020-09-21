@@ -1,14 +1,15 @@
 .header {
-  height: 180px;
   &__position {
+    position: relative;
     display: flex;
     max-width: 1480px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 27px;
 
     color: $color-header;
 
-    justify-content: space-around;
+    justify-content: space-between;
+    z-index: 2;
 
     @media screen and (max-width: 450px) {
       flex-wrap: wrap;
@@ -19,6 +20,10 @@
     display: flex;
     margin-right: 30px;
     margin-left: 20px;
+
+    @media screen and (max-width: 1244px) {
+      order: 2;
+    }
   }
 
   &__logo {
@@ -36,6 +41,10 @@
     margin-top: 55px;
 
     @extend %heading-title;
+
+    @media screen and (max-width: 1244px) {
+      display: none;
+    }
   }
 
   &__item {
@@ -50,6 +59,11 @@
 
     &:hover {
       color: $link-hover;
+    }
+
+    @media screen and (max-width: 1244px) {
+      order: 3;
+      margin: 47px 0;
     }
   }
 }

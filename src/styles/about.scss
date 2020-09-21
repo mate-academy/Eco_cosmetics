@@ -1,55 +1,93 @@
 .about {
   &__position {
     @extend %blocks;
-    width: 1077px;
+    max-width: 1180px;
     margin: 0 auto;
     padding-top: 200px;
+    justify-content: space-between;
 
-    @media screen and (max-width: 1140px) {
-      width: auto;
-      margin: 0 auto;
-      flex-direction: column;
-      padding: 200px 20px 0;
+    @media screen and (max-width: 1244px) {
+      padding-top: 100px;
+      margin: 0 20px;
+
+      @media screen and (max-width: 780px) {
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 60px 20px 0;
+      }
     }
   }
 
   &__block {
     max-width: 380px;
     margin-right: 100px;
+
+    @media screen and (max-width: 1244px) {
+      margin-right: 30px;
+    }
+
+    @media screen and (max-width: 780px) {
+      margin-right: 0;
+    }
+
   }
 
   &__title {
     @extend %heading_blocks;
+    white-space: nowrap;
+
+    @media screen and (max-width: 780px) {
+      font-size: 24px;
+    }
   }
 
   &__description,
   &__text {
     margin-bottom: 35px;
     @extend %text-block;
+
+    @media screen and (max-width: 780px) {
+      font-size: 16px;
+    }
+  }
+
+  &__text {
+    @media screen and (max-width: 1244px) {
+      display: none;
+    }
   }
 
   &__btn {
     @extend %btn-lern;
-
-    @media screen and (max-width: 1140px) {
-      margin-bottom: 25px;
-    }
   }
 
-  &__images-big {
+  &__images {
     max-width: 600px;
-    margin-right: 20px;
+    background-size: cover;
 
-    object-fit: cover;
-  }
+    &--big {
+      width: 500px;
+      background: url("../images/big-img.png") no-repeat 50%;
 
-  &__images-small {
-    height: 430px;
-    margin-top: 120px;
-    object-fit: cover;
+      @media screen and (max-width: 1244px) {
+        max-width: 470px;
+      }
 
-    @media screen and (max-width: 1140px) {
-      display: none;
+      @media screen and (max-width: 780px) {
+        display: none;
+      }
+    }
+
+    &--small {
+      width: 130px;
+      margin: 100px 0 0;
+
+      background-image: url("../images/small-img.png");
+      background-repeat: no-repeat;
+
+      @media screen and (max-width: 1244px) {
+        display: none;
+      }
     }
   }
 }

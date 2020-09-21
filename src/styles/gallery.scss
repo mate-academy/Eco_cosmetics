@@ -1,16 +1,36 @@
 .gallery {
   display: flex;
+  width: 1180px;
   color: $btn-color;
+  justify-content: space-between;
 
   @media screen and (max-width: 1225px) {
-    flex-direction: column;
-    max-width: 380px;
-    margin: auto;
+    width: auto;
   }
 
-  &__oil,
-  &__cream {
-    margin-right: 20px;
+  &__card {
+    height: 100%;
+
+    @media screen and (max-width: 1225px) {
+      width: calc(50% - 15px);
+      height: 460px;
+    }
+
+    @media screen and (max-width: 780px) {
+      width: 100%;
+    }
+
+    &:nth-of-type(even) {
+      @media screen and (max-width: 1225px) {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      @media screen and (max-width: 780px) {
+        display: none;
+      }
+    }
   }
 
   &__title {
@@ -31,5 +51,6 @@
     margin-bottom: 20px;
     object-fit: cover;
     width: 100%;
+    height: 100%;
   }
 }

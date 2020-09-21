@@ -9,10 +9,35 @@
     text-transform: capitalize;
 
     border-bottom: 1px solid $link-active;
-    border-right: none;
-    border-left: none;
-    border-top: none;
-    background: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background: transparent;
+
+    outline: none;
+
+    &::placeholder {
+      color: #828282;
+    }
+
+    &:focus {
+      border-bottom: 1px solid #333;
+    }
+
+    &:invalid {
+      color: #eb5757;
+      border-bottom: 1px solid #eb5757;
+    }
+
+    &:valid {
+      color: #344f10;
+      border-bottom: 1px solid #344f10;
+    }
+
+    &:placeholder-shown {
+      color: #828282;
+      border-bottom-color: #bdbdbd;
+    }
   }
 
   &__btn {
