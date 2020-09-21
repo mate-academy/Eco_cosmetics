@@ -1,25 +1,37 @@
 .product-composition {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  align-items: end;
+  grid-template-columns: auto 2fr;
+
+  &__link {
+    grid-column: 1;
+    grid-row: 2;
+
+    align-self: end;
+  }
 
   &__image {
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
     height: 380px;
 
     background: url(/images/tooth.svg) no-repeat;
     background-size: contain;
+    background-position: right;
   }
 
   &__page-heading {
     max-width: 300px;
-  }
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
 
-  &__link {
-    margin-top: 140px;
+    padding-bottom: 0;
   }
 
   @media screen and(max-width: 1099px) {
     overflow: hidden;
+    column-gap: 180px;
 
     &__title {
       display: flex;
@@ -30,10 +42,11 @@
 
     &__page-heading {
       max-width: 150px;
+      align-self: start;
     }
 
     &__image {
-      background: url(/images/tooth-small.svg) no-repeat;
+      background: url(/images/tooth-mobile.svg) no-repeat;
       background-size: auto 100%;
       background-position-x: left;
       background-position-y: top;
@@ -41,13 +54,29 @@
   }
 
   @media screen and(max-width: 740px) {
-    grid-template-columns: 1fr;
-    &__image {
-      position: relative;
-      left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-      background: url(/images/tooth-mobile.svg) no-repeat;
-      background-size: cover;
+    &__link {
+      order: 3;
+      margin-top: 20px;
+    }
+
+    &__image {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1900px) {
+    &__page-heading {
+      max-width: 600px;
+      align-self: start;
+    }
+
+    &__image {
+      height: 600px;
     }
   }
 }

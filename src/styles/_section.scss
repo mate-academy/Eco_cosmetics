@@ -1,9 +1,120 @@
 .section {
   padding-top: 0;
   padding-bottom: 200px;
-  padding-left: calc(75% - 810px);
-  padding-right: calc(25% - 270px);
+  padding-left: calc(75% - #{$content-width-medium * 0.75});
+  padding-right: calc(25% - #{$content-width-medium * 0.25});
 
+  &:last-child {
+    padding-bottom: 150px;
+  }
+
+  @media screen and (min-width: 1199px) {
+    &__field {
+      position: relative;
+      right: 80px;
+      bottom: 230px;
+      display: flex;
+      align-items: center;
+  
+      transform-origin: left;
+      transform: rotate(270deg);
+    }
+  
+    &__field-text {
+      margin-left: 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: $accent-color;
+    }
+  
+    &__field-rectangle {
+      height: 1px;
+      width: 100px;
+      background-color: $accent-color;
+    }
+  }
+
+  @media screen and (min-width: 1900px) {
+    padding-top: 0;
+    padding-bottom: 200px;
+    padding-left: calc(75% - #{$content-width-large * 0.75});
+    padding-right: calc(25% - #{$content-width-large * 0.25});
+
+    &__field {
+      right: 80px;
+      bottom: 200px;
+    }
+
+    &__field-text {
+      margin-left: 20px;
+      font-size: 30px;
+    }
+
+    &__field-rectangle {
+      width: 200px;
+    }
+  }
+
+  @media screen and (min-width: 2500px) {
+    &__field {
+      right: 200px;
+      bottom: 200px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    padding-left: calc(50% - #{$content-width-small * 0.5});
+    padding-right: 0;
+    padding-bottom: 100px;
+  }
+
+  @media screen and (max-width: 740px) {
+    padding: 0 20px 60px;
+
+    &__field {
+      display: none;
+    }
+  }
+
+  // modifier one-padding
+  &--one-padding {
+    padding-right: 0;
+  }
+
+  // modifier tablet-equal-padding
+  &--tablet-equal-padding {
+    @media screen and (max-width: 1099px) {
+      padding-right: calc(50% - #{$content-width-small * 0.5});
+    }
+
+    @media screen and (max-width: 740px) {
+      padding: 0 0 60px;
+    }
+  }
+
+  &--mobile-without-padding {
+    @media screen and (max-width: 740px) {
+      padding: 0 0 60px;
+    }
+  }
+
+  // modifier mobile-one-padding
+  &--mobile-one-padding {
+    @media screen and (max-width: 740px) {
+      padding: 0 0 60px 20px;
+    }
+  }
+
+  // modifier stretch
+  &--stretch {
+    padding: 0 0 200px;
+
+    @media screen and(max-width: 1099px) {
+      padding-bottom: 100px;
+    }
+  }
+
+  // modifier borders
   &--borders {
     position: relative;
     padding-top: 100px;
@@ -23,13 +134,13 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: calc(75% - 810px + 380px);
+      width: calc(75% - #{$content-width-medium * 0.4});
     }
 
     &::after {
       position: absolute;
       bottom: 200px;
-      left: calc(75% - 810px + 540px);
+      left: calc(75% - #{$content-width-medium * 0.25});
     }
 
     @media screen and (max-width: 1099px) {
@@ -41,51 +152,23 @@
         display: none;
       }
     }
-  }
 
-  &--one-padding {
-    padding-right: 0;
-  }
+    @media screen and (min-width: 1900px) {
+      padding-top: 100px;
+      padding-bottom: 300px;
 
-  &--stretch {
-    padding: 0 0 200px;
-
-    @media screen and(max-width: 1099px) {
-      padding-bottom: 100px;
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(75% - #{$content-width-large * 0.4});
+      }
+  
+      &::after {
+        position: absolute;
+        bottom: 200px;
+        left: calc(75% - #{$content-width-large * 0.25});
+      }
     }
-  }
-
-  &:last-child {
-    padding-bottom: 150px;
-  }
-
-  @media screen and (max-width: 1099px) {
-    padding-left: calc(50% - 360px);
-    padding-right: 0;
-    padding-bottom: 100px;
-  }
-
-  @media screen and (max-width: 740px) {
-    padding: 0 20px 60px;
-  }
-
-  &--tablet-equal-padding {
-    @media screen and (max-width: 1099px) {
-      padding-right: calc(50% - 360px);
-    }
-
-    @media screen and (max-width: 740px) {
-      padding: 0 0 60px;
-    }
-  }
-
-  &--mobile-without-padding {
-    @media screen and (max-width: 740px) {
-      padding: 0 0 60px;
-    }
-  }
-
-  &--mobile-one-padding {
-    padding: 20px 0 60px;
   }
 }
