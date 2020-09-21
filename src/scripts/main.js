@@ -4,7 +4,7 @@ const html = document.querySelector('html');
 const burgerItem = document.querySelector('.burger');
 const menu = document.querySelector('.header__nav');
 const closeItem = document.querySelector('.close-burger');
-const navItem = document.querySelector('.nav__item');
+const navList = document.querySelector('.nav__list');
 
 burgerItem.addEventListener('click', () => {
   menu.classList.add('header__nav--active');
@@ -16,7 +16,7 @@ closeItem.addEventListener('click', () => {
   html.style.overflow = 'scroll';
 });
 
-navItem.addEventListener('click', () => {
+navList.addEventListener('click', () => {
   menu.classList.remove('header__nav--active');
   html.style.overflow = 'scroll';
 });
