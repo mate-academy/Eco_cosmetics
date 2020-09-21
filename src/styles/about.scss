@@ -1,13 +1,10 @@
 .about {
   padding: 100px 0;
-  // .about__block
 
   &__block {
     display: flex;
     justify-content: space-between;
   }
-
-  // .about__text
 
   &__text {
     max-width: 40%;
@@ -15,8 +12,6 @@
     flex-direction: column;
     justify-content: space-between;
   }
-
-  // .about__heading
 
   &__heading {
     margin: 20px 0;
@@ -26,16 +21,12 @@
     color: #344f10;
   }
 
-  // .about__p
-
   &__p {
     font-size: 16px;
     line-height: 24px;
 
     color: #333;
   }
-
-  // .about__link
 
   &__link {
     max-width: 104px;
@@ -54,12 +45,27 @@
     }
   }
 
-  // .about__photo
-
   &__photo {
-    background: url(../images/moonlight.png) center center no-repeat;
-    width: 500px;
-    height: 529px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    position: relative;
+    left: 120px;
+
+    &--big {
+      margin-right: 20px;
+
+      width: 500px;
+      height: 529px;
+      object-fit: cover;
+    }
+
+    &--small {
+      width: 130px;
+      height: 430px;
+      object-fit: cover;
+    }
   }
 }
 
@@ -69,6 +75,7 @@
 
     &__text {
       justify-content: start;
+      max-width: 100%;
     }
 
     &__heading {
@@ -86,10 +93,20 @@
     }
 
     &__photo {
-      background-size: 120%;
-      height: auto;
-      position: relative;
-      left: 27px;
+      position: static;
+      width: 50%;
+
+      &--big {
+        height: auto;
+        position: relative;
+        left: 27px;
+
+        object-position: -90px;
+      }
+
+      &--small {
+        display: none;
+      }
     }
 
     &__link {
@@ -97,6 +114,21 @@
       padding-top: 20px;
       font-size: 14px;
       line-height: 18px;
+    }
+  }
+}
+
+@media (max-width: $phone) {
+  .about {
+    padding: 30px 0;
+
+    &__text {
+      // max-width: 80%;
+      margin: 0 20px;
+    }
+
+    &__photo {
+      display: none;
     }
   }
 }

@@ -11,6 +11,7 @@
     justify-content: space-between;
     display: flex;
     flex-direction: column;
+    width: 40%;
   }
 
   &__heading {
@@ -20,6 +21,14 @@
     line-height: 47px;
     color: #344f10;
     letter-spacing: 0.05em;
+    margin-bottom: 20px;
+  }
+
+  &__p {
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+    margin-bottom: 30px;
   }
 
   &__link {
@@ -45,6 +54,9 @@
   }
 
   &__img {
+    position: relative;
+    left: 120px;
+    
     background: url(../images/bird.png) center no-repeat;
     width: 60%;
     height: auto;
@@ -63,10 +75,16 @@
     &__heading {
       font-size: 24px;
       line-height: 36px;
+      margin-bottom: 0;
     }
 
     &__p {
-      padding: 13px 0;
+      margin: 0;
+      padding-top: 12px;
+
+      &:nth-child(3) {
+        padding-bottom: 20px;
+      }
 
       &--invisible {
         display: none;
@@ -89,7 +107,32 @@
 
     &__button {
       margin-top: 30px;
-      width: auto;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: $phone) {
+  .creators {
+    padding: 0 20px;
+
+    &__img {
+      display: none;
+    }
+
+    &__text {
+      width: 100%;
+    }
+  }
+
+  .products {
+
+    &__title {
+      margin-left: 20px;
+    }
+
+    &__subtitle {
+      margin-left: 20px;
     }
   }
 }

@@ -15,6 +15,10 @@
     flex-direction: row;
     align-items: center;
   }
+
+  &__basket {
+    cursor: pointer;
+  }
 }
 
 .logo {
@@ -30,16 +34,13 @@
   }
 
   &__caption {
-    margin-left: 12px;
-        
+    position: absolute;
+    left: 120px;
     font-size: 14px;
-    line-height: 18px;
+    line-height: 130%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-
     color: #344f10;
-
-    text-align: left;
   }
 }
 
@@ -60,6 +61,7 @@
     font-size: 60px;
     line-height: 72px;
     color: #333;
+    font-weight: 600;
   }
 
   &__subtitle {
@@ -83,32 +85,15 @@
 
   &__button {
     padding: 20px 115px;
+    letter-spacing: 0.15em;
   }
 }
 
-@media (max-width: $phone) {
-  .header {
-    padding: 15px 20px;
-  }
-
+@media (max-width: 1100px) {
   .content {
-    padding: 12px 0;
 
-    &__title {
-      font-size: 24px;
-      line-height: 31px;
-    }
-
-    &__photo {
-
-      &--img {
-        width: 320px;
-        height: 257px;
-
-        object-fit: cover;
-        overflow-y: hidden;
-        background: center no-repeat;
-      }
+    &__photo--img {
+      width: calc(100% - 54px);
     }
   }
 }
@@ -117,6 +102,7 @@
   .header {
     max-width: 714px;
     display: block;
+    height: auto;
   }
 
   .content {
@@ -150,7 +136,6 @@
   }
 
   .logo {
-    // order: 2;
 
     &__img {
       height: 24px;
@@ -161,8 +146,37 @@
       display: none;
     }
   }
+}
 
-  .nav {
-    display: none;
+@media (max-width: $phone) {
+  .header {
+    padding: 15px 20px 12px;
+  }
+
+  .content {
+    padding: 12px 0;
+
+    &__title {
+      margin-top: 25px;
+
+      font-size: 24px;
+      line-height: 31px;
+    }
+
+    &__subtitle {
+      margin: 12px 0 20px;
+    }
+
+    &__photo {
+
+      &--img {
+        width: 320px;
+        height: 257px;
+
+        object-fit: cover;
+        overflow-y: hidden;
+        background: center no-repeat;
+      }
+    }
   }
 }
