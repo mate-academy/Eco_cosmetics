@@ -1,0 +1,111 @@
+.hamburger-menu {
+  display: none;
+
+  @media (max-width: $mediaStopM) {
+    display: block;
+    z-index: 1;
+  }
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+
+.menu__btn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 33px;
+  left: 30px;
+  width: 20px;
+  height: 13px;
+  cursor: pointer;
+  z-index: 1;
+
+  @media (max-width: $mediaStopS) {
+    left: 20px;
+    top: 28px;
+  }
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: $accentColor;
+  transition-duration: 0.2s;
+}
+
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+
+.nav__list--burger {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  text-align: center;
+  background-color: $mainTextColor;
+  box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav__item--burger {
+  display: block;
+  padding: 10px 24px;
+  margin: 20px;
+  border-bottom: 1px solid $pageBackgroundColor;
+  max-width: calc(100% - 40px);
+}
+
+.nav__item--burger:hover {
+  background-color: #828282;
+}
+
+.nav__link--burger {
+  &:link,
+  &:visited, {
+    color: $pageBackgroundColor;
+  }
+
+  &:hover {
+    border: none;
+    padding-bottom: 0;
+  }
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+  background-color: $pageBackgroundColor;
+}
+
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+  background-color: transparent;
+}
+
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+  background-color: $pageBackgroundColor;
+}
+
+#menu__toggle:checked ~ .nav__list--burger {
+  visibility: visible;
+  left: 0;
+}
