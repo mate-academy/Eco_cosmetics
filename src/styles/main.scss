@@ -42,26 +42,45 @@ html {
 
 body {
   background: $background-color;
-  overflow-x: hidden;
 }
 
 .main {
+  padding: 0 20px;
+
+  @media (min-width: 769px) {
+    padding: 0 27px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 0 3.9vw;
+  }
+
   &__section {
-    margin-bottom: 60px;
+    padding-top: 60px;
+
+    &:first-child,
+    &:last-child {
+      padding-bottom: 60px;
+    }
 
     @media (min-width: 768px) {
-      margin-bottom: 100px;
+      padding-top: 100px;
+
+      &:first-child,
+      &:last-child {
+        padding-bottom: 100px;
+      }
     }
 
     @media (min-width: 1280px) {
-      margin-bottom: 15.62vw;
+      padding-top: 15.62vw;
 
       &:first-child {
-        margin-top: 3.12vw;
+        padding-bottom: 15.62vw;
       }
 
       &:last-child {
-        margin-bottom: 11.72vw;
+        padding-bottom: 11.71vw;
       }
     }
   }
