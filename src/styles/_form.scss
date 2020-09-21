@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 33vw;
+
+  @media (max-width: 1280px) {
+    width: 83vw;
+  }
+
+  &__item {
+    background-color: $background-color;
+  }
+
+  &__input {
+    height: 55px;
+    width: 100%;
+    background-color: $background-color;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid gray;
+
+    font-size: 18px;
+
+    &:valid {
+      border-bottom: 1px solid $main-color;
+      color: $main-color;
+    }
+
+    &:invalid {
+      border-bottom: 1px solid red;
+      color: red;
+    }
+
+    &:checked {
+      border-bottom: 1px solid $main-dark-color;
+    }
+  }
+
+  &__input-textarea {
+    height: 70px;
+    padding-top: 37px;
+  }
+
+}

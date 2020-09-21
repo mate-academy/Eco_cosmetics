@@ -1,0 +1,41 @@
+.nav-shop {
+  width: 500px;
+
+  @media (max-width: 750px) {
+    width: 80vw;
+    margin: 0 auto 30px;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    text-align: start;
+  }
+
+  &__item-active {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 54px;
+      height: 2px;
+      top: 40px;
+      left: -3px;
+      font-weight: bold;
+      background: $main-dark-color;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $main-dark-color;
+  }
+
+  &__link-active {
+    font-weight: bold;
+  }
+}

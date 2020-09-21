@@ -1,0 +1,49 @@
+.shop {
+  &__nav {
+    margin-bottom: 45px;
+  }
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__products {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @media (max-width: 1280px) {
+      justify-content: space-around;
+    }
+  }
+
+  &__switch {
+    @media (max-width: 1280px) {
+      left: 85%;
+    }
+
+    @media (max-width: 750px) {
+      left: 44%;
+    }
+
+    position: relative;
+    &::before {
+      content: "<";
+      font-size: 45px;
+      color: rgba(52, 79, 16, 0.5);
+      left: 10px;
+    }
+
+    &::after {
+      position: relative;
+      content: ">";
+      font-size: 45px;
+      color: $main-color;
+      left: 15px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}
