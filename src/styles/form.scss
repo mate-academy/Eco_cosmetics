@@ -1,0 +1,65 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__field {
+    font-family: "Sharp Sans No2", sans-serif;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $witchGray;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #828282;
+
+    &:focus {
+      outline: none;
+      border-color: $witchGray;
+    }
+
+    &:focus:valid {
+      color: $witchGreen;
+      border-color: $witchGreen;
+    }
+
+    &:focus:invalid {
+      color: #eb5757;
+      border-color: #eb5757;
+    }
+
+    @media (max-width: $tabletWidth) {
+      font-size: 14px;
+    }
+
+    &::placeholder {
+      position: relative;
+      font-family: "Sharp Sans No2", sans-serif;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $witchLightGray;
+
+      @media (max-width: $tabletWidth) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__message {
+    margin-top: 50px;
+    resize: vertical;
+
+  }
+
+  &__button {
+    @extend %button;
+
+    margin-top: 50px;
+
+    @media (max-width: $mobileWidth) {
+      margin: 50px auto;
+    }
+  }
+}

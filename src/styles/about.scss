@@ -1,0 +1,123 @@
+.about {
+  position: relative;
+  margin: 200px 0;
+
+  @media (max-width: $tabletWidth) {
+    margin: 50px 0;
+  }
+
+  &__deco-wrapper {
+    @extend %deco-wrapper;
+  }
+
+  &__deco-text {
+    @extend %deco-text;
+
+    top: 200px;
+  }
+
+  &:hover &__deco-wrapper * {
+    top: 100px;
+  }
+
+  &__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+
+    @media (max-width: $tabletWidth) {
+      grid-column-gap: 30px;
+      padding: 0;
+    }
+
+    @media (max-width: $mobileWidth) {
+      display: block;
+      padding: 20px;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      left: calc(50% + 500px);
+      top: 100px;
+      bottom: 0;
+      background-image: url(../images/about-image.png);
+      object-fit: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media (max-width: $tabletWidth) {
+        display: none;
+      }
+
+      @media (min-width: 2000px) {
+        background-position: left;
+      }
+    }
+  }
+
+  &__info {
+    padding-left: 100px;
+    max-width: 380px;
+
+    @media (max-width: $tabletWidth) {
+      padding-left: 27px;
+    }
+
+    @media (max-width: $mobileWidth) {
+      padding: 0;
+      width: auto;
+    }
+  }
+
+  &__title {
+    padding-top: 40px;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: $witchGreen;
+    text-transform: uppercase;
+
+    @media (max-width: $tabletWidth) {
+      padding-top: 0;
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    color: $witchGray;
+    margin: 20px 0;
+  }
+
+  &__text-hidden {
+    @media (max-width: $tabletWidth) {
+      display: none;
+    }
+  }
+
+  &__link {
+    @extend %link;
+    margin-top: 2px;
+  }
+
+  &__image {
+    background-image: url(../images/about-image.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    position: relative;
+    transform: translateX(-20px);
+
+    @media (max-width: $tabletWidth) {
+      transform: translateX(0);
+      background-position: center;
+    }
+  }
+}

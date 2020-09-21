@@ -1,0 +1,160 @@
+.shop {
+  margin-bottom: 200px;
+
+  @media (max-width: $tabletWidth) {
+    margin-bottom: 100px;
+  }
+
+  @media (max-width: $mobileWidth) {
+    margin-bottom: 50px;
+  }
+
+  &__deco-wrapper {
+    @extend %deco-wrapper;
+  }
+
+  &__deco-text {
+    @extend %deco-text;
+
+    top: 500px;
+  }
+
+  &:hover &__deco-wrapper * {
+    top: 150px;
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    padding-left: calc(50% - 500px);
+  
+    @media (max-width: 1300px) {
+      padding-left: 150px;
+    }
+  
+    @media (max-width: $tabletWidth) {
+      padding: 0 $paddingTablet;
+    }
+  
+    @media (max-width: $mobileWidth) {
+      padding: 0 $paddingMobile;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $witchGreen;
+  }
+
+  &__tab-wrapper {
+    display: flex;
+  }
+
+  &__radio {
+    display: none;
+  }
+
+  &__tab {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $witchLightGray;
+    border-bottom: 2px solid transparent;
+    padding-top: 20px;
+    margin: 0 20px 20px 0;
+    transition: 0.5s;
+
+    &:hover {
+      padding-top: 0;
+      padding-bottom: 20px;
+      color: $witchGray;
+      border-bottom: 2px solid $witchGray;
+    }
+  }
+
+  &__radio-face:checked ~ * &__tab-face,
+  &__radio-body:checked ~ * &__tab-body,
+  &__radio-hair:checked ~ * &__tab-hair,
+  &__radio-candles:checked ~ * &__tab-candles {
+    padding-top: 0;
+    padding-bottom: 20px;
+    color: $witchGray;
+    border-bottom: 2px solid $witchGray;
+  }
+
+  &__slider {
+    display: none;
+    background-color: #e4dfd3;
+    overflow: hidden;
+
+    @media (max-width: $mobileWidth) {
+      margin: 0 -20px;
+    }
+  }
+
+  &__radio-face:checked ~ .shop__face,
+  &__radio-body:checked ~ .shop__body,
+  &__radio-hair:checked ~ .shop__hair,
+  &__radio-candles:checked ~ .shop__candles {
+    display: flex;
+  }
+
+  &__arrows {
+    display: flex;
+    position: relative;
+    padding: 30px 0;
+
+    @media (max-width: $tabletWidth) {
+      justify-content: flex-end;
+    }
+
+    @media (max-width: $mobileWidth) {
+      justify-content: center;
+    }
+  }
+
+  &__arrow-left {
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    border-top: 2px solid $witchLightGray;
+    border-left: 2px solid $witchLightGray;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+
+    &:hover {
+      border-color: $witchGray;
+    }
+  }
+
+  &__arrow-right {
+    @extend .shop__arrow-left;
+
+    transform: rotate(135deg);
+    margin-left: 20px;
+  }
+
+  &__button {
+    @extend %button;
+
+    transform: translateX(360px);
+    transition: color 0.5s, background-color 0.5s;
+
+    @media (max-width: 1300px) {
+      margin: 0 auto;
+      transform: translateX(-75px);
+    }
+
+    @media (max-width: $tabletWidth) {
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,0 +1,121 @@
+.toggler {
+  position: absolute;
+  z-index: 2;
+  visibility: hidden;
+}
+
+.button {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  z-index: 2;
+  visibility: hidden;
+
+  @media (max-width: $tabletWidth) {
+    visibility: visible;
+  }
+}
+
+.bar {
+  position: absolute;
+  top: 20px;
+  content: "";
+  background-color: $witchGreen;
+  display: block;
+  width: 20px;
+  height: 1px;
+  z-index: 2;
+  transition: 0.5s;
+  transform-origin: left;
+
+  &::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 20px;
+    height: 1px;
+    background-color: $witchGreen;
+    top: 7px;
+    z-index: 2;
+    transition: 0.5s;
+    transform-origin: left;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 20px;
+    height: 1px;
+    background-color: $witchGreen;
+    bottom: 7px;
+    z-index: 2;
+    transition: 0.5s;
+    transform-origin: left;
+  }
+
+  @media (max-width: 1000px) {
+    visibility: visible;
+  }
+}
+
+.toggler:checked ~ .header__wrapper .button .bar {
+  background-color: transparent;
+
+  &::before {
+    transform: rotate(-45deg);
+    background-color: #e4dfd3;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+    background-color: #e4dfd3;
+  }
+}
+
+.menu {
+  background-color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  visibility: hidden;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+
+  &__wrapper {
+    padding: 20px;
+  }
+
+  &__nav {
+    padding-top: 50px;
+  }
+
+  &__item {
+    border-bottom: 1px solid #828282;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+
+  }
+
+  &__link {
+    color: #e4dfd3;
+    font-size: 18px;
+    line-height: 23px;
+    padding: 15px 50px;
+  }
+}
+
+.toggler:checked + .menu {
+  @media (max-width: 1000px) {
+    visibility: visible;
+    opacity: 1;
+  }
+}
