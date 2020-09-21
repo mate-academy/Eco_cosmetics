@@ -1,0 +1,33 @@
+.close-burger {
+  display: none;
+  width: 20px;
+  height: 20px;
+
+  outline: none;
+  background: transparent;
+  border: none;
+
+  z-index: 11;
+
+  @media (max-width: $tabletBreakPoint) {
+    display: block;
+  }
+
+  &__line {
+    display: block;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+
+    background: $c-beige;
+
+    &:first-child {
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    &:last-child {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+}

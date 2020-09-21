@@ -14,40 +14,24 @@
     padding: 15px 20px 12px;
   }
 
-  &__label {
-    display: none;
-    z-index: 2;
+  &__burger {
     width: 20px;
     height: 13px;
+    position: relative;
+    display: none;
+
+    order: -1;
     cursor: pointer;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(../images/burger.svg);
 
     @media (max-width: $tabletBreakPoint) {
-      & {
-        display: block;
-      }
+      display: block;
     }
   }
 
-  &__toggler {
-    display: none;
-    z-index: 2;
-
-    &:checked + .header__label {
-      background-image: url(../images/cross.svg);
-      z-index: 2;
-    }
-
-    &:checked ~ .mobile-nav {
-      right: 0;
-      display: block;
-
-      @media (min-width: $tabletBreakPoint + 1) {
-        display: none;
-      }
-    }
+  &__close-burger {
+    position: absolute;
+    top: 20px;
+    left: 20px;
   }
 
   &__logo {
@@ -93,7 +77,24 @@
 
   &__nav {
     @media (max-width: $tabletBreakPoint) {
-      display: none;
+      width: 100%;
+      height: 100%;
+      padding: 80px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      background: $c-grey;
+
+      transform: translateX(100%);
+      transition: 0.3s linear;
+      z-index: 10;
+    }
+  }
+
+  &__nav--active {
+    @media (max-width: $tabletBreakPoint) {
+      transform: translateX(0);
     }
   }
 
