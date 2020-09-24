@@ -1,5 +1,8 @@
 'use strict';
 
-document.querySelector('.nav__list').onclick(function() {
-  document.querySelector('.nav__toggle--check').checked = false;
-});
+document.querySelector('.nav__list').addEventListener(
+  'click',
+  (e) => {
+    document.querySelector('.nav__toggle--check').checked = false;
+  },
+);
