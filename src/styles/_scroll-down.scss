@@ -1,0 +1,61 @@
+.scroll-down {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  @media (max-width: $tabletBreakPoint) {
+    justify-content: center;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-grey;
+    width: 380px;
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__text::before {
+    content: "";
+    width: 580px;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    bottom: 250px;
+    background-color: $c-green;
+  }
+
+  &__text::after {
+    content: "";
+    width: 580px;
+    height: 1px;
+    position: absolute;
+    right: 0;
+    top: 200px;
+    background-color: $c-green;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-green1;
+    width: 380px;
+
+    margin-right: 100px;
+
+    @media (max-width: $tabletBreakPoint) {
+      text-align: center;
+      margin-right: 0;
+    }
+
+    @media (max-width: $phoneBreakPoint) {
+      text-align: start;
+      margin-left: 20px;
+    }
+  }
+}

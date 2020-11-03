@@ -1,0 +1,106 @@
+.contacts {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+
+  @media (max-width: $phoneBreakPoint) {
+    justify-content: center;
+  }
+
+  &__decor::before {
+    content: "help";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 240px;
+    left: -128px;
+
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    color: $c-green;
+    text-transform: uppercase;
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__decor::after {
+    content: "";
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    bottom: 120px;
+    left: -113px;
+    background-color: $c-green;
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__left {
+    width: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: $phoneBreakPoint) {
+      margin: 0 20px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-green1;
+
+    margin-bottom: 20px;
+
+    @media (max-width: $tabletBreakPoint) {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    line-height: 150%;
+    color: $c-grey;
+
+    width: 380px;
+    margin-bottom: 20px;
+
+    @media (max-width: $tabletBreakPoint) {
+      font-size: 16px;
+      width: 342px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: $phoneBreakPoint) {
+      width: 100%;
+    }
+  }
+
+  &__right {
+    width: 550px;
+    height: 584px;
+
+    transition: transform 500ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: $tabletBreakPoint) {
+      width: 368px;
+      height: 409px;
+    }
+
+    @media (max-width: $phoneBreakPoint) {
+      display: none;
+    }
+  }
+}

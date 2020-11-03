@@ -1,0 +1,128 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-green1;
+
+    margin-bottom: 20px;
+
+    @media (max-width: $tabletBreakPoint) {
+      margin-bottom: 12px;
+      font-size: 24px;
+    }
+
+    @media (max-width: $phoneBreakPoint) {
+      align-self: center;
+    }
+  }
+
+  &__decor::before {
+    content: "shop";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 360px;
+    left: -130px;
+
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    color: $c-green;
+    text-transform: uppercase;
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__decor::after {
+    content: "";
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    bottom: 240px;
+    left: -113px;
+    background-color: $c-green;
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    margin-bottom: 65px;
+    @media (max-width: $tabletBreakPoint) {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: $phoneBreakPoint) {
+      margin: 0 auto 20px;
+    }
+  }
+
+  &__item {
+    margin-right: 60px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-grey3;
+
+    @media (max-width: $tabletBreakPoint) {
+      font-size: 14px;
+      margin-right: 40px;
+      padding-bottom: 10px;
+    }
+
+    &--active {
+      color: $c-grey;
+      border-bottom: 2px solid;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    margin-bottom: 45px;
+    overflow-x: scroll;
+
+    @media (max-width: $tabletBreakPoint) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__arrows {
+    margin: auto;
+    margin-bottom: 30px;
+  }
+
+  &__arrow {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+
+    &--previous {
+      background-image: url(/images/previous.svg);
+    }
+
+    &--next {
+      background-image: url(/images/next.svg);
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+}

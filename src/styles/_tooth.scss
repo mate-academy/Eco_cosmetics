@@ -1,0 +1,100 @@
+.tooth {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+
+  @media (max-width: $phoneBreakPoint) {
+    flex-direction: column;
+  }
+
+  &__decor::before {
+    content: "ingredients";
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 360px;
+    left: -160px;
+
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    color: $c-green;
+    text-transform: uppercase;
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__decor::after {
+    content: "";
+    width: 1px;
+    height: 100px;
+    position: absolute;
+    bottom: 210px;
+    left: -113px;
+    background-color: $c-green;
+
+    @media (max-width: $tabletBreakPoint) {
+      display: none;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: $tabletBreakPoint) {
+      margin-left: 27px;
+    }
+  }
+
+  &__title {
+    width: 300px;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-green1;
+
+    margin-bottom: 140px;
+
+    @media (max-width: $tabletBreakPoint) {
+      margin-bottom: 220px;
+      font-size: 24px;
+    }
+
+    @media (max-width: $phoneBreakPoint) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    @extend %learn-more;
+
+    @media (max-width: $phoneBreakPoint) {
+      position: absolute;
+      bottom: -40px;
+    }
+  }
+
+  &__right {
+    background-image: url(../images/toothpaste.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    height: 410px;
+    width: 700px;
+
+    @media (max-width: $tabletBreakPoint) {
+      background-image: url(../images/toothpaste2.svg);
+      height: 400px;
+      width: 550px;
+    }
+
+    @media (max-width: $phoneBreakPoint) {
+      position: relative;
+      left: 20px;
+    }
+  }
+}
