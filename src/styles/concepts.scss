@@ -1,0 +1,74 @@
+.concepts {
+  width: 100vw;
+  background-color: $backgroundGray;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    max-width: $containerMaxWidth;
+    margin: 0 auto;
+    padding: 0 $sideIndentNotebook 250px $sideIndentNotebook;
+
+    @media (max-width: 1200px) {
+      padding: 0 0 80px $sideIndentNotebook;
+    }
+
+    @media (max-width: 1060px) {
+      padding: 0 $sideIndentTablet 80px $sideIndentTablet;
+    }
+
+    @media (max-width: 600px) {
+      padding-right: $sideIndentTablet;
+    }
+
+    @media (max-width: $breakpointMobile) {
+      padding: 0 $sideIndentMobile 60px;
+    }
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    width: 100%;
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 142px 166px 166px;
+      row-gap: 50px;
+
+      & :first-child {
+        & :first-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 140px;
+  }
+
+  &__picture {
+    min-height: 100px;
+    margin-bottom: 24px;
+    object-fit: none;
+  }
+
+  &__text {
+    max-width: 380px;
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @media (max-width: $breakpointTablet) {
+      max-width: 218px;
+    }
+  }
+}

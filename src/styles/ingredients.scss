@@ -1,0 +1,192 @@
+.ingredients {
+  width: 100vw;
+  background-color: $backgroundGray;
+
+  &__container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    max-width: $containerMaxWidth;
+    margin: 0 auto;
+    padding: 0 $sideIndentNotebook 250px $sideIndentNotebook;
+
+    @media (max-width: 1200px) {
+      padding: 0 0 250px $sideIndentNotebook;
+    }
+
+    @media (max-width: 1060px) {
+      padding: 0 0 150px $sideIndentTablet;
+    }
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      padding-right: $sideIndentTablet;
+      overflow: hidden;
+    }
+
+    @media (max-width: $breakpointMobile) {
+      padding: 0 $sideIndentMobile 60px;
+    }
+  }
+
+  &__side-inscription {
+    top: 80px;
+  }
+
+  &__text {
+    width: 300px;
+    margin-top: 66px;
+    margin-left: 50px;
+
+    @media (max-width: $breakpointTablet) {
+      width: 150px;
+      margin-top: 10px;
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+
+    @media (max-width: $breakpointTablet) {
+      font-size: 24px;
+    }
+  }
+
+  &__about {
+    display: flex;
+    position: relative;
+    right: 1px;
+    width: 700px;
+    overflow: hidden;
+  }
+
+  &__list {
+    padding: 0;
+    margin-top: 35px;
+    margin-right: 23px;
+
+    @media (max-width: 1000px) {
+      margin-right: -52px;
+      margin-left: 52px;
+    }
+
+    @media (max-width: $breakpointTablet) {
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      margin-left: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 50px;
+
+    @media (max-width: $breakpointTablet) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 600px) {
+      width: 220px;
+      margin-left: -20px;
+    }
+  }
+
+  &__item-text {
+    display: block;
+    text-transform: capitalize;
+    font-size: 16px;
+    line-height: 1.5;
+
+    &--parentheses {
+      margin-left: 5px;
+
+      @media (max-width: $breakpointTablet) {
+        display: none;
+      }
+    }
+
+    @media (max-width: $breakpointTablet) {
+      max-width: 120px;
+      text-align: right;
+    }
+  }
+
+  &__item-line {
+    width: 80px;
+    height: 5px;
+    margin-left: 20px;
+    background-image: url(../images/line-with-ellipse.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @media (max-width: 1000px) {
+      background-image: url(../images/line.svg);
+    }
+  }
+
+  &__tooth-powder {
+    min-width: 380px;
+    min-height: 396px;
+
+  }
+
+  &__more {
+    display: block;
+    position: relative;
+    width: fit-content;
+    margin-left: -$navLinkPadding;
+    padding: $navLinkPadding;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $mainGreen;
+    cursor: pointer;
+
+    &::after {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: $navLinkPadding;
+      width: 0;
+      height: 1px;
+      background-color: $lightGreen;
+      content: "";
+      transition: width 0.3s ease-out;
+    }
+
+    &:hover::after {
+      width: calc(100% - 2 * #{$navLinkPadding});
+    }
+
+    &:visited {
+      color: $mainGreen;
+    }
+
+    &--notebook {
+      margin-top: 135px;
+
+      @media (max-width: $breakpointTablet) {
+        margin-top: 245px;
+      }
+
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      margin-top: 20px;
+
+      @media (min-width: 600px + 1px) {
+        display: none;
+      }
+    }
+  }
+}

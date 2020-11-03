@@ -1,0 +1,56 @@
+.tabs {
+  margin-left: 100px;
+
+  &__triggers {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+  }
+
+  &__triggers-item {
+    position: relative;
+    padding: $navLinkPadding;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $lightGray;
+    cursor: pointer;
+
+    &:first-of-type {
+      margin-left: -$navLinkPadding;
+    }
+
+    &:last-of-type {
+      margin-right: -$navLinkPadding;
+    }
+
+    &--active {
+      color: $mainGray;
+
+      &::after {
+        display: block;
+        position: absolute;
+        bottom: -10px;
+        left: $navLinkPadding;
+        width: calc(100% - 2 * #{$navLinkPadding});
+        height: 2px;
+        background-color: $mainGray;
+        content: "";
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 63px;
+  }
+
+  &__content-item {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}

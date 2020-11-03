@@ -1,0 +1,159 @@
+.creators {
+  width: 100vw;
+  background-color: $backgroundGray;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    max-width: $containerMaxWidth;
+    margin: 0 auto;
+    padding: 200px $sideIndentNotebook 200px $sideIndentNotebook;
+
+    @media (max-width: 1200px) {
+      padding: 0 0 80px $sideIndentNotebook;
+    }
+
+    @media (max-width: 1060px) {
+      padding: 0 0 80px $sideIndentTablet;
+    }
+
+    @media (max-width: 600px) {
+      padding-right: $sideIndentTablet;
+    }
+
+    @media (max-width: $breakpointMobile) {
+      padding: 0 $sideIndentMobile 60px;
+    }
+  }
+
+  &__side-inscription {
+    top: 280px;
+  }
+
+  &__info {
+    max-width: 380px;
+    margin-left: 100px;
+
+    @media (max-width: $breakpointNotebook) {
+      margin-left: 100px / $containerMaxWidth * 100vw;
+    }
+
+    @media (max-width: 1060px) {
+      margin-left: 100px / $containerMaxWidth * 70vw;
+    }
+
+    @media (max-width: $breakpointTablet) {
+      max-width: 342px;
+      margin-left: 0;
+    }
+  }
+
+  &__info-title {
+
+    @media (max-width: $breakpointTablet) {
+      font-size: 24px;
+    }
+  }
+
+  &__info-text {
+    margin-top: 20px;
+
+    & :nth-child(2) {
+      margin-top: 30px;
+
+      @media (max-width: 1060px) {
+        margin-top: 12px;
+      }
+    }
+
+    & :nth-child(3) {
+      margin-top: 30px;
+
+      @media (max-width: 1060px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1060px) {
+      margin-top: 12px;
+    }
+  }
+
+  &__info-more {
+    display: block;
+    position: relative;
+    width: fit-content;
+    margin-top: 20px;
+    margin-left: -$navLinkPadding;
+    padding: $navLinkPadding;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $mainGreen;
+    cursor: pointer;
+
+    &::after {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: $navLinkPadding;
+      width: 0;
+      height: 1px;
+      background-color: $lightGreen;
+      content: "";
+      transition: width 0.3s ease-out;
+    }
+
+    &:hover::after {
+      width: calc(100% - 2 * #{$navLinkPadding});
+    }
+
+    &:visited {
+      color: $mainGreen;
+    }
+
+    @media (max-width: $breakpointTablet) {
+      margin-top: 20px;
+    }
+  }
+
+  &__button {
+    @extend %button;
+    margin-top: 50px;
+
+    @media (max-width: $breakpointTablet) {
+      margin-top: 20px;
+    }
+  }
+
+  &__picture-big {
+    width: 600px;
+    height: 669px;
+    margin-left: 60px;
+
+    @include hover(transform, scale(1.08));
+
+    @media (max-width: $breakpointNotebook) {
+      width: 600px / $containerMaxWidth * 100vw;
+      height: 669px / $containerMaxWidth * 100vw;
+    }
+
+    @media (max-width: 900px) {
+      margin-left: 30px;
+    }
+
+    @media (max-width: $breakpointTablet) {
+      width: 368px / $breakpointTablet * 100vw;
+      height: 435px;
+      margin-left: 30px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @media (max-width: 660px) {
+      display: none;
+    }
+  }
+}

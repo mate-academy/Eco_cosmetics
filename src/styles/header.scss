@@ -1,0 +1,96 @@
+.header {
+  width: 100vw;
+  background-color: $backgroundGray;
+
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $containerMaxWidth;
+    height: $headerHeightNotebook;
+    margin: 0 auto;
+    padding: 40px $sideIndentNotebook;
+
+    @media (max-width: $breakpointTablet) {
+      height: $headerHeightTablet;
+      padding: 22px 0;
+    }
+
+    @media (max-width: $breakpointMobile) {
+      height: $headerHeightMobile;
+      padding: 15px 0;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $breakpointTablet) {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  &__brand-logo {
+    width: $logoSizeLarge;
+    height: $logoSizeLarge;
+
+    @include hover(transform, rotateY(180deg));
+
+    @media (max-width: $breakpointTablet) {
+      width: $logoSizeSmall;
+    }
+  }
+
+  &__brand-name {
+    display: block;
+    width: $logoNameWidth;
+    margin-left: 12px;
+
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+
+  &__menu-button {
+    display: none;
+    position: absolute;
+    left: $sideIndentTablet;
+    width: 20px;
+    height: 15px;
+    z-index: 3;
+    background-image: url(../images/burger-menu-closed.svg);
+    background-size: cover;
+    background-color: transparent;
+    cursor: pointer;
+
+    @media (max-width: $breakpointTablet) {
+      display: block;
+    }
+
+    &--showClose {
+      width: 15px;
+      height: 15px;
+      background-image: url(../images/burger-menu-opened.svg);
+    }
+  }
+
+  &__shopping-cart {
+    position: absolute;
+    right: $sideIndentNotebook;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    @include hover(transform, rotateY(180deg));
+
+    @media (max-width: $breakpointTablet) {
+      position: absolute;
+      right: $sideIndentTablet;
+    }
+  }
+}
