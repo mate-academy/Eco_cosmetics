@@ -1,0 +1,136 @@
+.graphic {
+  padding: 100px 0;
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+    
+  &__heading {
+    font-size: 36px;
+    line-height: 47px;
+    color: #344f10;
+    letter-spacing: 0.05em;
+  }
+
+  &__link {
+    max-width: 98px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e4dfd3;
+    line-height: 23px;
+    color: #1d4f10;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      border-bottom: 1px solid #1d4f10;
+  
+      transition: all 0.2s;
+    }
+  }
+
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 60px;
+  }
+
+  &__picture {
+    position: relative;
+    left: 120px;
+    display: flex;
+  }
+
+  &__notations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+
+}
+
+.notations {
+
+  &__item {
+    font-size: 16px;
+    line-height: 24px;
+
+    &::after {
+      content: "";
+      position: relative;
+      top: -5px;
+      display: inline-block;
+      margin: 0 20px;
+      width: 76px;
+      height: 1px;
+      background: #333;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .graphic {
+    padding: 50px 0;
+
+    &__text {
+      padding: 0;
+    }
+
+    &__heading {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    &__link {
+      width: 92px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__picture {
+      position: relative;
+      left: 150px;
+    }
+  }
+}
+
+@media (max-width: $phone) {
+  .graphic {
+    padding: 30px 0;
+
+    &__block {
+      padding: 0 20px;
+    }
+
+    &__picture {
+      left: -60px;
+      top: 120px;
+    }
+
+    &__link {
+      position: relative;
+      top: 160px;
+    }
+  }
+
+  .notations {
+    position: relative;
+    top: 10px;
+    height: 400px;
+
+    &__item {
+      position: relative;
+      right: 10px;
+
+      &::after {
+        content: "";
+        top: -30px;
+        left: 85px;
+      }
+    }
+  }
+}

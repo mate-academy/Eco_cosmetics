@@ -1,0 +1,182 @@
+.header {
+  position: relative;
+  max-width: 1180px;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 11px 50px 0;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__basket {
+    cursor: pointer;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border: 1px solid #344f10;
+    border-radius: 50%;
+  }
+
+  &__caption {
+    position: absolute;
+    left: 120px;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0 200px;
+
+  &__left-side {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 40%;
+  }
+
+  &__title {
+    font-size: 60px;
+    line-height: 72px;
+    color: #333;
+    font-weight: 600;
+  }
+
+  &__subtitle {
+    margin: 30px 0 52px;
+
+    font-size: 22px;
+    line-height: 29px;
+  }
+
+  &__photo {
+
+    max-height: 460px;
+
+    &--img {
+      width: 577px;
+      height: 460px;
+      object-fit: cover;
+      background: center no-repeat;
+    }
+  }
+
+  &__button {
+    padding: 20px 115px;
+    letter-spacing: 0.15em;
+  }
+}
+
+@media (max-width: 1100px) {
+  .content {
+
+    &__photo--img {
+      width: calc(100% - 54px);
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .header {
+    max-width: 714px;
+    display: block;
+    height: auto;
+  }
+
+  .content {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 0 50px;
+
+    &__left-side {
+      display: block;
+      width: 100%;
+      text-align: center;
+
+      order: 2;
+    }
+
+    &__title {
+      margin-top: 50px;
+
+      font-size: 36px;
+      line-height: 47px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    &__photo {
+      order: 1;
+    }
+  }
+
+  .logo {
+
+    &__img {
+      height: 24px;
+      width: 24px;
+    }
+
+    &__caption {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $phone) {
+  .header {
+    padding: 15px 20px 12px;
+  }
+
+  .content {
+    padding: 12px 0;
+
+    &__title {
+      margin-top: 25px;
+
+      font-size: 24px;
+      line-height: 31px;
+    }
+
+    &__subtitle {
+      margin: 12px 0 20px;
+    }
+
+    &__photo {
+
+      &--img {
+        width: 320px;
+        height: 257px;
+
+        object-fit: cover;
+        overflow-y: hidden;
+        background: center no-repeat;
+      }
+    }
+  }
+}
