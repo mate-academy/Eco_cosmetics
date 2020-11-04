@@ -1,0 +1,129 @@
+@import "utils";
+
+.header {
+  width: 100%;
+  height: 51px;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: $background-color;
+
+  z-index: 2;
+
+  @media (min-width: 769px) {
+    height: 77px;
+    padding: 0 27px;
+  }
+
+  @media (min-width: 1280px) {
+    height: 10.16vw;
+    padding: 0 3.9vw;
+  }
+
+  &__burger {
+    width: 20px;
+    height: 13px;
+    position: relative;
+    display: block;
+
+    order: -1;
+    cursor: pointer;
+
+    @media (min-width: 1280px) {
+      display: none;
+    }
+  }
+
+  &__close-burger {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  &__nav {
+    @media (max-width: 1279px) {
+      width: 100%;
+      height: 100%;
+      padding: 80px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      background: $text-color;
+
+      transform: translateX(100%);
+      transition: 0.3s linear;
+      z-index: 10;
+    }
+
+    @media (min-width: 1280px) {
+      width: 21.53vw;
+      order: 0;
+    }
+  }
+
+  &__nav--active {
+    @media (max-width: 1279px) {
+      transform: translateX(0);
+    }
+  }
+
+  &__nav-list {
+    flex-direction: column;
+
+    @media (min-width: 1280px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav-item {
+    text-align: center;
+    width: 100%;
+
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #828282;
+
+    @media (min-width: 768px) {
+      padding: 30px 0 10px;
+    }
+
+    @media (min-width: 1280px) {
+      width: auto;
+      margin-bottom: 0;
+      padding: 0;
+      border-bottom: none;
+    }
+  }
+
+  &__nav-link {
+    color: $background-color;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 130%;
+
+    @media (min-width: 1280px) {
+      font-size: 1.4vw;
+      color: $section-text-color;
+    }
+  }
+
+  &__bag {
+    width: 24px;
+    height: 24px;
+    background: url("../images/bag.svg") no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+
+    @media (min-width: 1280px) {
+      width: 1.88vw;
+      height: 2.2vw;
+    }
+  }
+}
