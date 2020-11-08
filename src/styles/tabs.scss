@@ -1,10 +1,28 @@
 .tabs {
   margin-left: 100px;
 
+  @media (max-width: 1200px) {
+    margin-left: 0;
+  }
+
+  @media (max-width: 375px) {
+    width: 320px;
+    margin: 0 auto;
+  }
+
   &__triggers {
     display: flex;
     justify-content: space-between;
-    width: 400px;
+    width: 382px;
+
+    @media (max-width: 1200px) {
+      width: 277px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 375px) {
+      margin-left: 20px;
+    }
   }
 
   &__triggers-item {
@@ -17,6 +35,10 @@
     text-transform: uppercase;
     color: $lightGray;
     cursor: pointer;
+
+    @media (max-width: 1200px) {
+      font-size: 14px;
+    }
 
     &:first-of-type {
       margin-left: -$navLinkPadding;
@@ -35,15 +57,23 @@
         bottom: -10px;
         left: $navLinkPadding;
         width: calc(100% - 2 * #{$navLinkPadding});
-        height: 2px;
+        height: 1px;
         background-color: $mainGray;
         content: "";
+
+        @media (max-width: 1200px) {
+          bottom: -5px;
+        }
       }
     }
   }
 
   &__content {
-    margin-top: 63px;
+    margin-top: 80px;
+
+    @media (max-width: 1200px) {
+      margin-top: 30px;
+    }
   }
 
   &__content-item {
@@ -51,6 +81,37 @@
 
     &--active {
       display: block;
+    }
+  }
+
+  &__content-container {
+    display: flex;
+    height: 664px;
+
+    @media (max-width: $breakpointNotebook) {
+      height: 464px;
+
+      & .product:last-of-type {
+        display: none;
+      }
+    }
+
+    @media (max-width: $breakpointTablet) {
+      height: 439px;
+    }
+
+    @media (max-width: $breakpointTablet - 1px) {
+      & .product {
+        display: none;
+      }
+
+      & .product:first-of-type {
+        display: block;
+      }
+    }
+
+    @media (max-width: 700px) {
+      height: 406px;
     }
   }
 }
