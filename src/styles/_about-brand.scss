@@ -1,0 +1,91 @@
+.about-brand {
+  display: grid;
+  grid-template-columns: 4fr 3fr 1fr;
+  column-gap: 20px;
+  align-items: end;
+
+  &__description-1,
+  &__description-2 {
+    max-width: 380px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__description-1 {
+    margin-bottom: 30px;
+  }
+
+  &__description-2 {
+    margin-bottom: 40px;
+  }
+
+  &__image-big {
+    height: 529px;
+  }
+
+  &__image-small {
+    height: 430px;
+  }
+
+  &__image-big,
+  &__image-small {
+    width: 100%;
+    object-fit: cover;
+    transition: 300ms;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  @media screen and (max-width: 1099px) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+
+    &__image-small,
+    &__description-2 {
+      display: none;
+    }
+
+    &__description-1 {
+      max-width: unset;
+    }
+
+    &__image-big {
+      height: 320px;
+    }
+  }
+
+  @media screen and (max-width: 740px) {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+
+    &__description-1 {
+      margin-bottom: 20px;
+    }
+
+    &__image-big {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 1900px) {
+    &__description-1,
+    &__description-2 {
+      max-width: 800px;
+      font-size: 30px;
+    }
+
+    &__description-2 {
+      margin-bottom: 60px;
+    }
+
+    &__image-big {
+      height: 830px;
+    }
+
+    &__image-small {
+      height: 700px;
+    }
+  }
+}
