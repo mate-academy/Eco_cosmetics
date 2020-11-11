@@ -1,0 +1,71 @@
+.header {
+  &__position {
+    position: relative;
+    display: flex;
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 0 27px;
+
+    color: $color-header;
+
+    justify-content: space-between;
+
+    @media screen and (max-width: 780px) {
+      max-width: 320px;
+      padding: 0 20px;
+    }
+
+    @media screen and (max-width: 450px) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__block {
+    display: flex;
+
+    @media screen and (max-width: 1244px) {
+      order: 2;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    min-width: 50px;
+    height: 50px;
+    margin-top: 40px;
+    margin-right: 12px;
+
+    background-image: url("../images/logo.png");
+    @extend %bg;
+  }
+
+  &__title {
+    margin-top: 55px;
+
+    @extend %heading-title;
+
+    @media screen and (max-width: 1244px) {
+      display: none;
+    }
+  }
+
+  &__item {
+    min-width: 20px;
+    height: 24px;
+    cursor: pointer;
+    margin-top: 47px;
+    margin-right: 60px;
+
+    background-image: url("../images/header_item.png");
+    @extend %bg;
+
+    &:hover {
+      color: $link-hover;
+    }
+
+    @media screen and (max-width: 1244px) {
+      order: 3;
+      margin: 47px 0;
+    }
+  }
+}

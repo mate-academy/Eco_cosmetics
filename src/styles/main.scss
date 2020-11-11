@@ -1,7 +1,73 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./header.scss";
+@import "./nav.scss";
+@import "./general.scss";
+@import "./brand.scss";
+@import "./bio.scss";
+@import "./about.scss";
+@import "./shop.scss";
+@import "./gallery.scss";
+@import "./creator.scss";
+@import "./powder.scss";
+@import "./photos.scss";
+@import "./contact.scss";
+@import "./form.scss";
+@import "./footer.scss";
+
+html {
+  font-family: "Sharp Sans No2", sans-serif;
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  background: $page-bg;
+  font-size: 14px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  &__header {
+    position: sticky;
+    top: 0;
+
+    background-color: $page-bg;
+    box-shadow: 0 0 10px 0 rgba(52, 79, 16, 0.5);
+  }
+
+  &__line {
+    display: inline-block;
+    width: 50%;
+    height: 1px;
+
+    background-color: rgba(52, 79, 16, 0.5);
+    border: none;
+
+    &--right {
+      position: relative;
+      left: 50%;
+    }
+
+    @media screen and (max-width: 1244px) {
+      display: none;
+    }
+  }
+
+  &__position {
+    @media screen and (max-width: 780px) {
+      max-width: 320px;
+
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
 }

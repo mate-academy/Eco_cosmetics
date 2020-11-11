@@ -1,0 +1,148 @@
+.footer {
+  background: rgba(52, 79, 16, 0.5);
+  color: $page-bg;
+  height: auto;
+  padding-bottom: 66px;
+
+  &__position {
+    @extend %blocks;
+
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-top: 60px;
+
+    color: $page-bg;
+
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 18px;
+
+    @media screen and (max-width: 1225px) {
+      font-size: 14px;
+      margin: 0 20px;
+    }
+
+    @media screen and (max-width: 780px) {
+      max-width: 320px;
+      margin: 0 auto;
+      padding: 60px 20px 0;
+    }
+  }
+
+  &__nav {
+    width: 276px;
+
+    @media screen and (max-width: 1225px) {
+      height: 150px;
+    }
+  }
+
+  &__block {
+    &--right {
+      order: 1;
+    }
+  }
+
+  &__icons {
+    width: 100%;
+    margin-bottom: 50px;
+
+    order: 2;
+  }
+
+  &__text {
+    width: 100%;
+    order: 3;
+    line-height: 130%;
+  }
+
+  &__list {
+    display: flex;
+
+    justify-content: space-between;
+    margin-bottom: 148px;
+
+    @media screen and (max-width: 1225px) {
+      flex-direction: column;
+      height: 95px;
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+    line-height: 130%;
+    color: $page-bg;
+    transition: color 300ms;
+
+    &:hover {
+      color: #333;
+    }
+
+    &:active {
+      background-color: $link-active;
+      border-radius: 10px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    top: 5px;
+
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+
+    background-repeat: no-repeat;
+    background-image: url("../images/footer_img.png");
+  }
+
+  &__city,
+  &__email,
+  &__phone,
+  &__shedule {
+    margin-bottom: 20px;
+  }
+
+  &__email,
+  &__phone {
+    &--link {
+      color: $page-bg;
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+
+  &__fb {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 14px;
+
+    background-image: url("../images/facebook.png");
+    background-repeat: no-repeat;
+  }
+
+  &__inst {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+
+    background-image: url("../images/inst.png");
+    background-repeat: no-repeat;
+  }
+
+  &__fb,
+  &__inst {
+    &:hover {
+      background-color: gray;
+    }
+  }
+
+  &__copy {
+    @media screen and (max-width: 1225px) {
+      display: none;
+    }
+  }
+}

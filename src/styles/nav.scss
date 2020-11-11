@@ -1,0 +1,137 @@
+.nav {
+  padding-top: 29px;
+
+  &__list {
+    display: flex;
+
+    font-size: 18px;
+    line-height: 130%;
+
+    width: 250px;
+    justify-content: space-between;
+  }
+
+  &__link {
+    padding: 4px 15px;
+
+    text-decoration: none;
+    color: $color-header;
+    transition: color 300ms;
+
+    &:hover {
+      color: $link-hover;
+    }
+
+    &:active {
+      color: #333;
+    }
+  }
+}
+
+#nav__toggle {
+  opacity: 0;
+}
+
+@media (max-width: 1244px) {
+  .nav {
+    &__btn {
+      position: relative;
+
+      display: flex;
+      width: 26px;
+      height: 26px;
+
+      align-items: center;
+
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    &__btn > span,
+    &__btn > span::before,
+    &__btn > span::after {
+      position: absolute;
+
+      display: block;
+      width: 100%;
+      height: 2px;
+
+      background-color: #616161;
+
+      transition-duration: 300ms;
+    }
+
+    &__btn > span::before {
+      content: "";
+      top: -8px;
+    }
+
+    &__btn > span::after {
+      content: "";
+      top: 8px;
+    }
+
+    &__list {
+      position: fixed;
+      top: 0;
+
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 80px 0;
+
+      text-align: center;
+
+      background-color: #333;
+      box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+
+      visibility: hidden;
+    }
+
+    &__item {
+      display: block;
+      width: 90%;
+      padding: 20px 0;
+      margin: 0 auto;
+
+      color: #333;
+      font-size: 20px;
+      font-weight: 600;
+
+      border-bottom: 1px solid #e4dfd3;
+      transition-duration: 300ms;
+
+      &:hover ~ .nav__list {
+        visibility: hidden;
+      }
+    }
+
+    &__link {
+      color: #e4dfd3;
+    }
+
+    &__item:hover {
+      background-color: #828282;
+      color: #333;
+    }
+  }
+
+  #nav__toggle:checked ~ .nav__btn > span {
+    transform: rotate(45deg);
+  }
+
+  #nav__toggle:checked ~ .nav__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+  }
+
+  #nav__toggle:checked ~ .nav__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  #nav__toggle:checked ~ .nav__list {
+    visibility: visible;
+    left: 0;
+  }
+}
