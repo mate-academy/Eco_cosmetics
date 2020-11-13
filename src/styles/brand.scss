@@ -1,0 +1,108 @@
+.brand {
+  width: 100%;
+  background-color: $backgroundGray;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    max-width: $containerMaxWidth;
+    margin: 0 auto;
+    padding: 40px $sideIndentNotebook 200px 150px;
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 100px;
+      padding-left: $sideIndentNotebook;
+    }
+
+    @media (max-width: $breakpointMobile) {
+      padding: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media (max-width: 1200px) {
+      align-items: center;
+      order: 2;
+    }
+
+    @media (max-width: $breakpointMobile) {
+      padding: 0 $sideIndentMobile 60px;
+    }
+  }
+
+  &__title {
+    max-width: 480px;
+
+    @media (max-width: 1200px) {
+      max-width: 466px;
+      margin-top: 50px;
+      font-size: 36px;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    @media (max-width: $breakpointMobile) {
+      margin-top: 25px;
+      font-size: 24px;
+    }
+  }
+
+  &__sale {
+    font-size: 22px;
+    line-height: 1.3;
+    margin-top: 30px;
+
+    @media (max-width: 1200px) {
+      max-width: 278px;
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    @media (max-width: $breakpointMobile) {
+      margin-top: 12px;
+    }
+  }
+
+  &__button {
+    @extend %button;
+    margin-top: 50px;
+
+    @media (max-width: 1200px) {
+      margin-top: 30px;
+    }
+
+    @media (max-width: $breakpointMobile) {
+      margin-top: 19px;
+    }
+  }
+
+  &__picture {
+    width: 577px;
+    height: 456px;
+    object-fit: cover;
+    object-position: center;
+
+    @media (max-width: 1200px) {
+      width: 714px;
+      height: 500px;
+    }
+
+    @media (max-width: $breakpointTablet) {
+      width: 714px / $containerMaxWidth * 150vw;
+      height: 500px / $containerMaxWidth * 150vw;
+    }
+
+    @media (max-width: $breakpointMobile) {
+      width: 320px;
+      height: 267px;
+    }
+  }
+}

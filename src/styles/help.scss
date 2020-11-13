@@ -1,0 +1,95 @@
+.help {
+  width: 100%;
+  background-color: $backgroundGray;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    max-width: $containerMaxWidth;
+    margin: 0 auto;
+    padding: 0 0 150px $sideIndentNotebook;
+
+    @media (max-width: 1200px) {
+      padding: 0 0 100px $sideIndentNotebook;
+    }
+
+    @media (max-width: 1060px) {
+      padding: 0 0 100px $sideIndentTablet;
+    }
+
+    @media (max-width: 600px) {
+      padding-right: $sideIndentTablet;
+    }
+
+    @media (max-width: $breakpointMobile) {
+      padding: 0 $sideIndentMobile 60px;
+    }
+  }
+
+  &__side-inscription {
+    top: 300px;
+  }
+
+  &__info {
+    width: 480px;
+    margin-left: 0;
+
+    @media (max-width: $breakpointNotebook) {
+      width: 480px / $containerMaxWidth * 100vw;
+    }
+
+    @media (max-width: $breakpointTablet) {
+      width: 342px;
+      margin-left: 0;
+    }
+  }
+
+  &__info-title {
+
+    @media (max-width: 1000px) {
+      font-size: 24px;
+    }
+  }
+
+  &__info-text {
+    width: 220px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    @media (max-width: 1000px) {
+      width: 342px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 400px) {
+      width: 280px;
+      margin-top: 12px;
+    }
+  }
+
+  &__picture-big {
+    width: 550px;
+    height: 584px;
+
+    @include hover(transform, scale(1.08));
+
+    @media (max-width: $breakpointNotebook) {
+      width: 550px / $containerMaxWidth * 100vw;
+      height: 584px / $containerMaxWidth * 100vw;
+    }
+
+    @media (max-width: 1000px) {
+      width: 368px;
+      height: 409px;
+    }
+
+    @media (max-width: $breakpointTablet - 1px) {
+      width: 368px / $containerMaxWidth * 100vw * 1.5;
+      height: 409px / $containerMaxWidth * 100vw * 1.5;
+    }
+
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
+}

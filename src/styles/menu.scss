@@ -1,0 +1,82 @@
+.menu {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    width: 250px + 2 * $navLinkPadding;
+
+    @media (max-width: $breakpointTablet) {
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      padding-top: 93px;
+      color: $backgroundGray;
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    padding: $navLinkPadding;
+    font-size: 18px;
+    color: $mainGreen;
+    cursor: pointer;
+
+    &::after {
+      display: block;
+      position: absolute;
+      bottom: 2px;
+      left: $navLinkPadding;
+      width: 0;
+      height: 1px;
+      background-color: $lightGreen;
+      content: "";
+      transition: width 0.3s ease-out;
+    }
+
+    &:hover::after {
+      width: calc(100% - 2 * #{$navLinkPadding});
+
+      @media (max-width: $breakpointTablet) {
+        width: 0;
+      }
+    }
+
+    &:visited {
+      color: $mainGreen;
+
+      @media (max-width: $breakpointTablet) {
+        color: $backgroundGray;
+      }
+    }
+
+    @media (max-width: $breakpointTablet) {
+      width: calc(100vw - 2 * #{$sideIndentTablet});
+      padding: 50px 0 10px;
+      text-align: center;
+      color: $backgroundGray;
+      border-bottom: 1px solid $lightGray;
+    }
+  }
+
+  @media (max-width: $breakpointTablet) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: $mainGray;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    color: $backgroundGray;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+
+    &--showMenu {
+      transform: translateY(0);
+    }
+  }
+}
