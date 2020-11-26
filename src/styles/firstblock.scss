@@ -1,0 +1,40 @@
+.brand {
+  display: grid;
+  grid-template-areas: "header image"
+    "text image"
+    "button image";
+
+  max-width: 1027px;
+  justify-content: space-between;
+
+  &__img {
+    grid-area: image;
+  }
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__retail {
+    grid-area: text;
+    color: $darkGrey;
+  }
+
+  &__shop {
+    grid-area: button;
+    background-color: $darkGrey;
+    width: 280px;
+    height: $btnHeight;
+    text-align: center;
+  }
+
+  &__link {
+    @include buttons;
+    color: #fff;
+    line-height: $btnHeight;
+  }
+}
+
+.main__brand {
+  margin: 0 auto;
+}
