@@ -1,0 +1,119 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px 0;
+  width: 1280px;
+  margin: 0 auto;
+  font-family: "Sharp Sans Display No2", sans-serif;
+  font-weight: 100;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::after {
+      content: "witch of mountain winds";
+      position: absolute;
+      display: block;
+      left: 60px;
+      width: 240px;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      color: $mainGreen;
+
+      @media (max-width: $tabletSize) {
+        content: none;
+      }
+    }
+
+    &__img {
+      width: 50px;
+      height: 50px;
+      display: block;
+      justify-content: center;
+      transition: transform 0.4s;
+
+      @media (max-width: $tabletSize) {
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+    }
+
+    @media (max-width: $tabletSize) {
+      order: 2;
+    }
+  }
+
+  &__cart {
+    transition: transform 0.4s;
+
+    @media (max-width: $tabletSize) {
+      order: 3;
+    }
+
+  }
+
+  &__cart:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  @media (max-width: $tabletSize) {
+    width: 100%;
+  }
+
+  &__shopping-cart {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    @media (max-width: 769px) {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  &__label {
+    display: none;
+    z-index: 2;
+    width: 20px;
+    height: 13px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../images/burger.svg");
+
+    @media (max-width: $tabletSize) {
+      & {
+        display: block;
+      }
+    }
+  }
+
+  &__toggler {
+    display: none;
+    z-index: 2;
+
+    &:checked + .header__label {
+      background-image: url("/images/cross.svg");
+      z-index: 2;
+    }
+
+    &:checked ~ .burger {
+      right: 0;
+    }
+  }
+}

@@ -37,3 +37,97 @@ Implement landing page according to [Figma design](https://www.figma.com/file/Jr
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.
+
+
+
+
+
+html {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-gap: 30px 40px;
+  justify-content: center;
+}
+
+.person {
+  position: relative;
+  transition: transform 1s linear, border-radius 1s linear;
+  margin-bottom: -20px;
+}
+
+.person__photo {
+  position: relative;
+}
+
+.person__rank {
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 32px;
+  text-align: center;
+  color: #8B0000;
+  position: absolute;
+  top: calc(50% - 16px);
+  right: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.person__img {
+  border-radius: 50%;
+  width: 100%;
+}
+
+.person__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.person__name {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  color: #2F4F4F;
+  margin-top: 8px;
+}
+
+.person__sport {
+
+}
+
+.person__extra {
+  font-size: 21.6px;
+  line-height: 25px;
+  text-align: center;
+  color: #000000;
+  /* margin-top: 11px; */
+
+  /* visibility: hidden; */
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.person:hover .person__extra {
+  opacity: 1;
+  z-index: 0;
+  bottom: -30px;
+}
+
+@media (max-width: 1000px) {
+  .people {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+  }
+}
