@@ -1,11 +1,23 @@
+.container {
+  width: $pageWidth;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  padding: 0 25px;
+}
+
 .brand {
   display: grid;
   grid-template-areas: "header image"
     "text image"
     "button image";
+  gap: 0 20px;
+  grid-template-columns: 480px 577px;
 
-  max-width: 1027px;
-  justify-content: space-between;
+  height: 451px;
+
+  max-width: 1077px;
 
   &__img {
     grid-area: image;
@@ -18,23 +30,29 @@
   &__retail {
     grid-area: text;
     color: $darkGrey;
+    vertical-align: top;
   }
 
   &__shop {
     grid-area: button;
-    background-color: $darkGrey;
-    width: 280px;
-    height: $btnHeight;
-    text-align: center;
+    align-self: flex-end;
+
+    @include buttons;
+
+    &:hover {
+      @include hoverButtons;
+    }
   }
 
   &__link {
-    @include buttons;
-    color: #fff;
-    line-height: $btnHeight;
+    @include links;
+
+    &:hover {
+      @include linkHover;
+    }
   }
 }
 
-.main__brand {
-  margin: 0 auto;
-}
+// .container__brand {
+//   margin: 0 auto;
+// }

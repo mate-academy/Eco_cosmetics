@@ -8,10 +8,61 @@
 @mixin semiboldText {
   font-weight: $semiBold;
   line-height: 150%;
-  letter-spacing: 5%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin textUC {
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin text {
+  font-size: 16px;
+  font-weight: $medium;
+  line-height: 150%;
+}
+
+@mixin priceText {
+  font-size: 18px;
+  font-weight: $medium;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin linkDecor {
+  text-decoration: none;
+}
+
+@mixin links {
+  @include linkDecor;
+  color: #fff;
+
+  display: block;
+
+  line-height: $btnHeight;
+  font-size: 16px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
 @mixin buttons {
-  text-decoration: none;
+  background-color: $darkGrey;
+
+  width: $btnWidth;
+  height: $btnHeight;
+
+  text-align: center;
+}
+
+@mixin hoverButtons {
+  background-color: $hoverColor;
+  border: 1px solid $darkGrey;
+}
+
+@mixin linkHover {
+  color: $darkGrey;
 }
