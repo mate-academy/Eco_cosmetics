@@ -1,0 +1,46 @@
+.nav {
+  &__list {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    gap: 40px;
+    list-style: none;
+    justify-items: center;
+  }
+
+  &__link {
+
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  text-align: right;
+  padding-right: $headerSidePadding;
+
+  &__item {
+    position: relative;
+  }
+
+  &__link--is-active {
+    color: $main-color-2;
+
+    &::before {
+      background-color: $main-color-2;
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      border-radius: 4px;
+      bottom: 0;
+    }
+  }
+
+  &__link:hover {
+    color: $main-color-2;
+  }
+}
