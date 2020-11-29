@@ -1,0 +1,190 @@
+.nav {
+  display: grid;
+  grid-template-columns: 60px  1fr 60px;
+  grid-template-rows: $s-header-height;
+  grid-template-areas: "nav logo cart";
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  @include media(tablet) {
+    grid-template-columns: 74px  1fr 76px;
+    grid-template-rows: $s-header-height + 20px;
+  }
+
+  @include media(dt) {
+    grid-template-areas: "logo nav cart";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: $s-header-height + 60px;
+    padding: 10px 30px;
+  }
+
+  &__burger-wrapper {
+    position: relative;
+    z-index: 2;
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    @include size(60px, $s-header-height);
+    padding: 20px;
+    @include media(dt) {
+      display: none;
+      justify-items: start;
+    }
+  }
+
+  &__burger {
+    @include size(20px, 1px);
+    background-color: $c-accent;
+    transition: all 0.2s;
+
+    &::after {
+      content: "";
+      position: relative;
+      display: block;
+      @include size(20px, 1px);
+      background-color: $c-accent;
+      transition: all 0.3s;
+      bottom: 6px;
+    }
+
+    &::before {
+      content: "";
+      position: relative;
+      display: block;
+      @include size(20px, 1px);
+      background-color: $c-accent;
+      transition: all 0.3s;
+      top: 5px;
+    }
+
+    &_close {
+      width: 0;
+      background-color: $c-background;
+
+      &::after {
+        bottom: 1px;
+        transform: rotate(45deg);
+        background-color: $c-background;
+      }
+      &::before {
+        top: 0;
+        transform: rotate(-45deg);
+        background-color: $c-background;
+      }
+    }
+  }
+
+  &__list {
+    position: fixed;
+    left: 0;
+    top: -101%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 80px;
+    background-color: $c-main-text;
+    transition: all 0.5s;
+
+    @include media(tablet) {
+      padding-top: 143px;
+    }
+
+    @include media(dt) {
+      position: static;
+      flex-direction: row;
+      width: unset;
+      height: unset;
+      padding: 0;
+      background-color: transparent;
+    }
+
+    &_opened {
+      top: 0;
+    }
+  }
+
+  &__list-item {
+    width: 100%;
+    padding: 0 20px;
+    @include media(tablet) {
+      padding: 0 27px;
+    }
+    @include media(tablet) {
+      padding: 0 20px;
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 1px solid $c-unfocused;
+    color: $c-background;
+    @include media(tablet) {
+      margin-bottom: 40px;
+    }
+    @include media(dt) {
+      margin-bottom: 0;
+      color: $c-accent;
+      border-bottom: 0;
+
+      &:hover {
+        border-bottom: 1px solid $c-accent;
+      }
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+    display: flex;
+    @include size(100%);
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    @include media(dt) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__logo-img {
+    @include size(24px);
+    @include media(dt) {
+      @include size(50px);
+      margin-right: 12px;
+    }
+  }
+
+  &__logo-text {
+    display: none;
+    @include media(dt) {
+      display: inline;
+      color: $c-accent;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+  }
+
+  &__cart {
+    grid-area: cart;
+    @include size(100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    @include media(dt) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__cart-img {
+    @include size(24px);
+  }
+}
