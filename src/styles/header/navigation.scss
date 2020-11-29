@@ -1,0 +1,30 @@
+.nav {
+  color: #344f10;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend %menu-text;
+    width: 270px;
+  }
+
+  &__link {
+    color: inherit;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+}
