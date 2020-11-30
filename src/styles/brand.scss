@@ -1,0 +1,98 @@
+.brand {
+  display: grid;
+  grid-template-areas: "header image"
+    "text image"
+    "button image";
+  gap: 0 20px;
+  grid-template-columns: 480px 577px;
+
+  height: 451px;
+
+  max-width: 1077px;
+
+  &__img {
+    grid-area: image;
+    transition-duration: 3s;
+  }
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__retail {
+    grid-area: text;
+    color: $darkGrey;
+    vertical-align: top;
+  }
+
+  &__shop {
+    grid-area: button;
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    justify-content: center;
+    padding: 6px 0 0;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: max-content;
+
+    &__img {
+      margin-bottom: 50px;
+    }
+
+    &__header {
+      padding-bottom: 20px;
+      align-self: center;
+      text-align: center;
+      width: 466px;
+
+      font-size: 36px;
+      line-height: 130%;
+    }
+
+    &__retail {
+      align-self: center;
+      text-align: center;
+      padding: 0 20px 30px;
+      width: 278px;
+    }
+
+    &__shop {
+      align-self: center;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    padding: 0;
+  }
+
+  .brand {
+    &__img {
+      margin-bottom: 25px;
+      align-self: center;
+      transform: scale(0.65);
+    }
+
+    &__header {
+      padding-bottom: 12px;
+      width: 280px;
+      font-size: 24px;
+    }
+
+    &__retail {
+      align-self: center;
+      text-align: center;
+      padding: 0 20px 30px;
+      width: 278px;
+    }
+  }
+}

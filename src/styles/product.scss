@@ -1,0 +1,43 @@
+.product {
+  display: flex;
+  margin-bottom: $marginBetween;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__content {
+    @include text;
+    color: $darkGrey;
+    max-width: 380px;
+    margin-right: 100px;
+  }
+
+  &__link {
+    @include linkDecor;
+    @include textUC;
+    color: $headers;
+    height: 31px;
+    position: relative;
+
+    &:hover {
+      &::after {
+        content: "";
+        height: 1px;
+        width: 95px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $headers;
+      }
+    }
+  }
+
+  &__img-small {
+    margin-left: 20px;
+    height: 430px;
+    align-self: flex-end;
+  }
+}

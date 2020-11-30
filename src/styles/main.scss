@@ -1,41 +1,40 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "normalize";
 @import "header";
-@import "firstblock";
-@import "secondblock";
+@import "brand";
+@import "birds";
+@import "product";
+@import "shop";
+@import "about";
+@import "composition";
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: $mainColor;
-  font-family: "Sharp Sans No2", sans-serif;
+.container {
+  max-width: $pageWidth;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  padding: 81px 25px 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-}
+.button {
+  @include buttons;
+  @include links;
 
-p,
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-* {
-  box-sizing: border-box;
+  &:hover {
+    @include linkHover;
+    @include hoverButtons;
+  }
 }
 
 .delimiter {
-  background: rgba(52, 79, 16, 0.5);
-  height: 1px;
-  width: 530px;
+  margin-top: $marginBetween;
+}
 
-  margin-top: 200px;
+.delimiterSecond {
+  margin-bottom: $marginBetween;
+  position: relative;
+  left: calc(100% - 530px);
 }

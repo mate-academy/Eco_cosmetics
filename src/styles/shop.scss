@@ -1,0 +1,72 @@
+.shop {
+  width: 1130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__link {
+    @include priceText;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 49px;
+    position: relative;
+    color: $lightGrey;
+  }
+
+  .selected {
+    color: $darkGrey;
+
+    &::after {
+      content: "";
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: $headers;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    align-self: center;
+  }
+}
+
+.catalog {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  &__card {
+    margin: 63px 0 45px;
+  }
+}
+
+.card {
+  width: 380px;
+
+  display: flex;
+  flex-direction: column;
+
+  &__img {
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    @include linkDecor;
+    font-size: 20px;
+    font-weight: $medium;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $darkGrey;
+  }
+
+  &__price {
+    @include priceText;
+  }
+}
