@@ -1,8 +1,17 @@
 .creators {
   display: flex;
   justify-content: space-between;
-  max-width: 1180px;
+  width: 1130px;
   padding-top: 170px;
+
+  @media (max-width: 990px) {
+    width: 100%;
+    padding-top: 100px;
+    // padding-left: 27px;
+  }
+  @media (max-width: 776px) {
+    padding-top: 60px;
+  }
   // margin-left: 150px;
 
   &__info {
@@ -21,6 +30,22 @@
     letter-spacing: 0.05em;
     color: #344f10;
     text-transform: uppercase;
+
+    @media (max-width: 990px) {
+      margin-top: 0;
+
+      font-size: 24px;
+      line-height: 36px;
+
+      // text-align: center;
+    }
+  }
+
+  &__desk-br {
+    @media(max-width: 990px) {
+      display: none;
+    }
+
   }
 
   @for $i from 1 through 3 {
@@ -36,10 +61,26 @@
 
   &__text1 {
     margin-top: 20px;
+
+    @media (max-width: 990px) {
+      width: 342px;
+    }
   }
+
+  &__text3 {
+    @media (max-width: 990px) {
+      display: none;
+    }
+  }
+
   @for $i from 2 through 3 {
     &__text#{$i} {
       margin-top: 30px;
+
+      @media(max-width: 990px) {
+        margin-top: 12px;
+        width: 342px;
+      }
     }
   }
 
@@ -54,6 +95,10 @@
     letter-spacing: 0.05em;
     color: #344f10;
     text-transform: uppercase;
+
+    @media (max-width: 990px) {
+      margin-top: 20px;
+    }
 
     &::after {
       content: "";
@@ -79,9 +124,26 @@
 
     background-color: #333;
 
+    @media (max-width: 990px) {
+      margin-top: 18px;
+    }
+
   }
 
   &__visual {
     margin-right: 50px;
+    @media (max-width: 990px) {
+      margin-left: 30px;
+    }
+  }
+
+  &__img {
+    @media(max-width: 990px) {
+      width: 368px;
+      height: 435px;
+    }
+    @media (max-width: 776px) {
+      display: none;
+    }
   }
 }

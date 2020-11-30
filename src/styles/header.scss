@@ -3,16 +3,53 @@
   justify-content: space-between;
   height: 90px;
   padding: 40px 50px 0;
+  width: 100%;
+
+  @media (min-width: 1500px) {
+    padding: 40px 150px 0;
+  }
+
+  @media (min-width: 1750px) {
+    padding: 40px 300px 0;
+  }
+
+  @media (min-width: 2000px) {
+    padding: 40px 400px 0;
+  }
+
+  @media (max-width: 1281px) {
+    width: 1280px;
+  }
+
+  @media (max-width: 990px) {
+    width: 100%;
+    height: 77px;
+    align-items: center;
+    padding: 0 40px;
+  }
+  @media (max-width: 854px) {
+    padding: 0 60px;
+  }
 
   &__logo {
     align-self: flex-end;
     display: flex;
     align-items: center;
 
+    @media (max-width: 990px) {
+      align-self: center;
+    }
+
     &-img {
       width: 50px;
       height: 50px;
       margin-right: 12px;
+
+      @media (max-width: 990px) {
+        width: 24px;
+        height: 24px;
+      }
+
     }
 
     &-text {
@@ -20,6 +57,10 @@
       font-size: 14px;
       font-weight: 500;
       text-transform: uppercase;
+
+      @media (max-width: 990px) {
+        display: none;
+      }
     }
   }
 
@@ -28,6 +69,10 @@
     display: flex;
     align-items: center;
     height: 50px;
+
+    @media (max-width: 990px) {
+      display: none;
+    }
     &-list {
       display: flex;
 
@@ -41,6 +86,37 @@
         }
 
       }
+    }
+  }
+
+  &__label {
+    display: none;
+    z-index: 2;
+    width: 20px;
+    height: 13px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../images/burger.svg");
+
+    @media (max-width: 990px) {
+      & {
+        display: block;
+      }
+    }
+  }
+
+  &__toggler {
+    display: none;
+    z-index: 2;
+
+    &:checked + .header__label {
+      background-image: url("../images/cross.svg");
+      z-index: 2;
+    }
+
+    &:checked ~ .burger {
+      right: 0;
     }
   }
 
