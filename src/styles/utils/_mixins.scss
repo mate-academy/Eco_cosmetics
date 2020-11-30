@@ -23,3 +23,22 @@
     }
   }
 }
+
+@mixin deco-lines ($posX, $posY) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    @include size(100vw, 1px);
+    background-color: $c-decor;
+    #{$posX}: 0;
+
+    @if ($posY == bottom) {
+      bottom: -100px;
+    }
+    @if ($posY == top) {
+      top: -100px;
+    }
+  }
+}
