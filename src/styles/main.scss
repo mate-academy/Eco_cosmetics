@@ -5,17 +5,45 @@
 @import "header";
 @import "logo";
 @import "nav";
-@import "section";
 @import "description";
+@import "adv";
+@import "side-text";
+@import "about";
+@import "shop";
+@import "creators";
+@import "ingridients";
+@import "bottle";
+@import "eco";
+@import "contact-us";
+@import "footer";
+
 
 body {
   background: $body-color;
 }
 
-// .wrapper {
-//   min-height: 100%;
-//   display: grid;
-//   grid-template-rows: min-content repeat(9, auto) min-content;
+.container {
+  min-height: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:  1fr;
+  grid-template-rows: minmax(130px, auto) 1fr minmax(320px, auto);
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
 
-// }
+.header {
+  grid-area: header;
+}
 
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+  align-content: center;
+}

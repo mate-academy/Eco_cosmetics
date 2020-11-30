@@ -1,46 +1,45 @@
 .description {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  padding: 40px 0 200px;
+  grid-template-columns: 1fr 4fr 5fr;
+  grid-template-rows: max-content min-content 60px;
+  justify-items: start;
+  grid-template-areas: ". dheading dimage" ". dsale dimage" ". dbutton dimage";
 
-  &__text {
-    // grid-column-start: 2;
-        justify-self: center;
-
-  }
-
-  &__main {
+  &__heading {
+    grid-area: dheading;
     font-size: 60px;
     line-height: 120%;
-    color: #333333;
+    color: #333;
   }
 
   &__image {
-    // grid-column-start: 3;
+    grid-area: dimage;
+    justify-self: start;
     width: 577px;
     height: 451px;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   &__sale {
+    grid-area: dsale;
     font-size: 22px;
     line-height: 130%;
+    align-self: center;
   }
 
-  &__shop {
+  &__button {
+    grid-area: dbutton;
     display: block;
+    justify-self: start;
+    align-self: end;
     height: 60px;
     text-align: center;
     line-height: 60px;
     width: 280px;
-    color: #F2F2F2;
+    color: #f2f2f2;
     font-size: 16px;
-    background-color: #333333;
+    background-color: #333;
   }
 
-}
-
-.description__image img {
-  display: block;
-  width: 100%;
 }

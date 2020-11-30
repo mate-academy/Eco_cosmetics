@@ -1,0 +1,58 @@
+.ingridients {
+  display: grid;
+  margin: 200px 0;
+  grid-template-columns: 1fr 4fr 5fr;
+  grid-template-rows: max-content min-content auto;
+  gap: 0 30px;
+  grid-template-areas:
+  "ing-side ing-title ing-images"
+  "ing-side ing-title ing-images"
+  "ing-side ing-link ing-images";
+  align-items: center;
+  font-family: "Sharp Sans Display No2";
+
+  &__side-text {
+    grid-area: ing-side;
+    align-self: start;
+    justify-self: center;
+  }
+
+  &__title {
+    display: block;
+    padding-bottom: 20px;
+    grid-area: ing-title;
+    text-transform: uppercase;
+    font-size: 36px;
+    line-height: 150%;
+    color: $headings-color;
+    letter-spacing: 0.05em;
+  }
+
+    &__link {
+    grid-area: ing-link;
+    align-self: end;
+    position: relative;
+    font-size: 14px;
+    line-height: 130%;
+    color: $headings-color;
+    width: 86px;
+    height: 31px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 86px;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: $headings-color;
+    }
+  }
+
+  &__bottle {
+    grid-area: ing-images;
+    align-self: end;
+    justify-self: end;
+    color: $text-grey;
+  }
+}

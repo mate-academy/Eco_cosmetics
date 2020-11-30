@@ -1,20 +1,27 @@
 .header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  position: relative;
 
   &--position {
-    margin: 40px 50px;
+    padding: 40px 50px;
   }
 
-  &__cart {
-    width: 20px;
-    height: 24px;
+  &__logo {
+    justify-self: start;
   }
 
   &__nav {
-    position: absolute;
-    left: calc(50% - 100px);
+    justify-self: center;
+
+    &--color {
+      color: $headings-color;
+    }
+  }
+
+  &__cart {
+    justify-self: end;
+    width: 20px;
+    height: 24px;
   }
 }
