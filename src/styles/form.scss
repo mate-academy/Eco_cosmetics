@@ -1,43 +1,45 @@
-.form__input {
-  position: relative;
-  margin-bottom: 25px;
-}
+.form {
 
-.form__input label {
-  position: absolute;
-  top: 5px;
+  &__input {
+    position: relative;
+    margin-bottom: 25px;
+  }
 
-  font-size: 18px;
-  line-height: 150%;
-  text-transform: capitalize;
-  color: #828282;
+  &__input label {
+    position: absolute;
+    top: 5px;
 
-  pointer-events: none;
-  transition: all 0.3s ease;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #828282;
 
-  @media (max-width: $tabletSize) {
-    font-size: 12px;
-    top: -5px;
+    transition: all 0.3s ease;
+
+    @media (max-width: $tabletSize) {
+      font-size: 12px;
+      top: -5px;
+    }
   }
 }
 
 .form__input input,
 .form__input textarea {
   display: block;
+  padding: 10px 0;
 
-  width: 480px;
+  width: 100%;
   border: none;
   border-bottom: 1px solid $lightGray;
-  padding: 10px 0;
   background: none;
   color: $textColor;
   font-size: 18px;
 
   @media (max-width: $tabletSize) {
-    width: 300px;
-    font-size: 12px;
     padding: 5px 0;
     margin: 0;
+    width: 100%;
+    font-size: 12px;
   }
 }
 
@@ -67,7 +69,6 @@
   width: 0;
   background: $lightGray;
   height: 2px;
-
   transition: all 0.2s ease;
 }
 
@@ -79,7 +80,6 @@
 }
 
 .form__input textarea {
-  height: 80px;
   overflow: auto;
   resize: none;
 }
@@ -87,9 +87,5 @@
 .form__input .input__underline {
   position: relative;
   display: block;
-  width: 480px;
-
-  @media (max-width: $tabletSize) {
-    width: 300px;
-  }
+  width: 100%;
 }

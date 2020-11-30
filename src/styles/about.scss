@@ -1,15 +1,14 @@
-.contacts {
+.about {
   display: flex;
-  padding-top: 100px;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  text-transform: uppercase;
+  padding-right: 0;
 
   &__info {
 
-    @media (max-width: 700px) {
-      margin: 0 auto;
+    @media (max-width: $tabletSize) {
+      margin-right: 20px;
     }
   }
 
@@ -17,58 +16,68 @@
     font-size: 36px;
     line-height: 150%;
     letter-spacing: 0.05em;
+    text-transform: uppercase;
     color: $mainGreen;
     font-weight: 600;
     padding-bottom: 20px;
 
     @media (max-width: $tabletSize) {
       font-size: 24px;
-      padding-bottom: 10px;
     }
   }
 
   &__text {
-    max-width: 380px;
-    padding-bottom: 20px;
-    font-size: 24px;
+    font-size: 16px;
     line-height: 150%;
-    text-transform: lowercase;
     color: $textColor;
+    padding-bottom: 30px;
+    font-weight: 500;
 
-    @media (max-width: $tabletSize) {
-      font-size: 14px;
+    @media (max-width: 720px) {
+      justify-content: center;
     }
   }
 
-  &__form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+  &__subtext {
+    font-size: 16px;
+    line-height: 150%;
+    color: $textColor;
+    padding-bottom: 40px;
+    font-weight: 500;
 
     @media (max-width: $tabletSize) {
-      margin: 0;
+      display: none;
     }
   }
 
   &__img {
-    width: 550px;
-    height: 584px;
+    width: 500px;
+    height: 529px;
     transition: transform 0.4s;
-    margin-left: 100px;
+    margin: 0 30px;
+
+    &--small {
+
+      width: 130px;
+      height: 430px;
+
+      @media (max-width: $tabletSize) {
+        display: none;
+      }
+    }
 
     @media (max-width: $tabletSize) {
       width: 370px;
-      height: 400px;
-      margin-left: 30px;
+      height: 386px;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 720px) {
       display: none;
     }
   }
 
   &__img:hover {
-    transform: scale(1.1) translateX(-30px);
+    transform: scale(1.1);
   }
 
   &__elem {
@@ -79,9 +88,8 @@
     color: rgba(52, 79, 16, 0.5);
     transform: rotate(-90deg);
     position: absolute;
-    left: -10px;
-    bottom: 330px;
-
+    left: -40px;
+    top: 150px;
     text-transform: uppercase;
 
     &::before {
@@ -97,9 +105,5 @@
     @media (max-width: $tabletSize) {
       display: none;
     }
-  }
-
-  @media (max-width: $tabletSize) {
-    padding: 30px;
   }
 }

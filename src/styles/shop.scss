@@ -12,7 +12,7 @@
     text-transform: uppercase;
     color: $mainGreen;
 
-    @media (min-width: 1280px) {
+    @media (min-width: $notebook) {
       font-size: 36px;
     }
   }
@@ -45,7 +45,6 @@
     position: absolute;
     left: 50px;
     bottom: 380px;
-
     text-transform: uppercase;
 
     &::before {
@@ -108,8 +107,7 @@
   &__arrows {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 20px 0 30px 0;
     width: 76px;
 
     &--left,
@@ -131,16 +129,17 @@
       background-image: url("/images/next.svg");
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: $tablet1024) {
       align-self: flex-end;
     }
 
     @media (max-width: $tabletSize) {
       align-self: center;
+      margin-bottom: 20px;
     }
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: $notebook) {
     align-items: flex-start;
     width: 100%;
     max-width: 1280px;
@@ -168,11 +167,11 @@
     }
   }
 
-  @media (max-width: 769px) {
+  @media (max-width: $tabletSize) {
     align-items: center;
   }
 
-  @media (min-width: 769px) {
+  @media (min-width: $tabletSize) {
     align-items: flex-start;
   }
 }
