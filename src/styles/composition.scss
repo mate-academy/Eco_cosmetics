@@ -1,0 +1,69 @@
+.composition {
+  margin-bottom: $marginBetween;
+  width: 1080px;
+  display: flex;
+  justify-content: space-between;
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__link {
+    @include linkDecor;
+    @include textUC;
+    color: $headers;
+    height: 31px;
+    position: relative;
+
+    &:hover {
+      &::after {
+        content: "";
+        height: 1px;
+        width: 95px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $headers;
+      }
+    }
+  }
+
+  &__scheme {
+    display: flex;
+  }
+}
+
+.scheme {
+  display: grid;
+  grid-template-columns: 1fr 85px;
+  grid-template-rows: repeat(5, auto);
+  gap: 20px 0;
+  grid-auto-flow: column;
+  justify-items: flex-end;
+  align-items: center;
+
+  &__line {
+    width: 76px;
+    height: 1px;
+    background-color: $darkGrey;
+
+    position: relative;
+  }
+
+  &__dot {
+    width: 5px;
+    height: 5px;
+    background-color: $darkGrey;
+    border-radius: 50%;
+
+    position: absolute;
+    right: -5px;
+    bottom: -2px;
+  }
+
+  &__img {
+    margin-left: 20px;
+  }
+}

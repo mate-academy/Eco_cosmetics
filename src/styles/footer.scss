@@ -1,0 +1,52 @@
+.footer {
+  background-color: rgba(52, 79, 16, 0.5);
+  color: $mainColor;
+  padding: 20px;
+  @include footerText;
+
+  &__container {
+    max-width: $pageWidth;
+    padding: 0 20px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "navigation contacts"
+      "copyright social";
+    gap: 0 $marginBetween;
+  }
+
+  &__list {
+    grid-area: navigation;
+
+    display: flex;
+    align-content: center;
+    height: 100%;
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    padding: 15px;
+    @include footerText;
+    @include linkDecor;
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    margin-left: 15px;
+  }
+
+  &__contacts {
+    grid-area: contacts;
+    padding: 15px 0;
+  }
+
+  &__networks {
+    grid-area: social;
+  }
+
+  &__networksLink {
+    padding: 15px;
+  }
+}
