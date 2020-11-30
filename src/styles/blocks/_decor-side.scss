@@ -1,0 +1,18 @@
+.decor-side {
+  @extend %decorative-text;
+  color: $c-decor;
+  $s-decor-line-width: 100px;
+  $s-decor-line-height: 1px;
+  transform: rotate(-90deg);
+  transform-origin: left top;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -#{($s-decor-line-width + 10)};
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    @include size($s-decor-line-width, $s-decor-line-height);
+    background-color: $c-decor;
+  }
+}
