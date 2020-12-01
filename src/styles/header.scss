@@ -1,15 +1,15 @@
 .header {
   display: flex;
-  position: sticky;
-  top: 0;
+  // position: sticky;
+  // top: 0;
   justify-content: center;
 
   background-color: $mainColor;
 }
 
 .nav {
-  display: flex;
   position: relative;
+  display: flex;
   justify-content: space-between;
 
   width: $pageWidth;
@@ -18,20 +18,19 @@
 
   &__toggler {
     display: none;
+    position: absolute;
   }
 
   &__toggler-label {
-    display: none;
-    cursor: pointer;
-    padding: 15px;
-  }
-
-  &__toggler-image {
     display: none;
   }
 
   &__company {
     display: flex;
+  }
+
+  &__logo {
+    transition-duration: $transDuration*3;
   }
 
   &__brandName {
@@ -40,7 +39,7 @@
 
   &__list {
     display: flex;
-    align-content: center;
+    // align-content: center;
 
     height: 100%;
 
@@ -49,6 +48,8 @@
     transform: translate(-50%);
 
     list-style: none;
+
+    transition-duration: $transDuration;
   }
 
   &__link {
@@ -59,6 +60,21 @@
     line-height: 130%;
     color: $headers;
     @include linkDecor;
+
+    transition-duration: $transDuration;
+
+    &:hover::after {
+      content: "";
+      display: block;
+      // position: absolute;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $headers;
+
+      transition-duration: $transDuration;
+    }
   }
 
   &__basket {
@@ -73,32 +89,73 @@
 
   @media screen and (max-width: 800px) {
     &__logo {
-      width: $logoSize;
-      height: $logoSize;
       margin: auto;
-    }
 
-    &__toggler-image {
-      display: inline-block;
-    }
-
-    &__toggler-label {
-      display: inline-block;
+      transform: scale(0.5);
     }
 
     &__list {
       display: none;
+      flex-direction: column;
+      align-items: center;
     }
 
+    &__toggler-label {
+      display: block;
+      position: relative;
+      margin: auto 0;
+      padding: 15px;
+
+      width: 20px;
+      height: 13px;
+
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    &__span,
+    &__span::before,
+    &__span::after {
+      display: block;
+      position: absolute;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $headers;
+
+      transition-duration: $transDuration;
+    }
+
+    &__span::before {
+      content: "";
+      top: -8px;
+    }
+    &__span::after {
+      content: "";
+      top: 8px;
+    }
+
+    &__toggler:checked ~ &__toggler-label > &__span {
+      transform: rotate(45deg);
+    }
+    &__toggler:checked ~ &__toggler-label > &__span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+    &__toggler:checked ~ &__toggler-label > &__span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
     &__toggler:checked ~ .nav__list {
       display: block;
-      left: 20px;
+      left: 0;
       top: 58px;
+      padding-left: 20px;
       transform: translate(0);
-
+      z-index: 1;
       height: max-content;
       width: 100%;
-
       background-color: $mainColor;
     }
   }
