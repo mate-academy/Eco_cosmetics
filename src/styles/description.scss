@@ -3,6 +3,7 @@
   padding: 40px 0 200px;
   grid-template-columns: 1fr 4fr 5fr;
   grid-template-rows: max-content min-content 60px;
+  gap: 20px 0;
   justify-items: start;
   grid-template-areas: ". dheading dimage" ". dsale dimage" ". dbutton dimage";
 
@@ -16,9 +17,14 @@
   &__image {
     grid-area: dimage;
     justify-self: start;
+    align-self: end;
     width: 577px;
     height: 451px;
-    object-fit: cover;
+    overflow: hidden;
+
+    & img {
+      max-width: 100%;
+    }
   }
 
   &__sale {
@@ -30,16 +36,40 @@
 
   &__button {
     grid-area: dbutton;
-    display: block;
-    justify-self: start;
-    align-self: end;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    width: 280px;
-    color: #f2f2f2;
-    font-size: 16px;
-    background-color: #333;
   }
+}
 
+@media screen and (max-width: 980px) {
+  .description {
+    padding: 0;
+    margin-bottom: 100px;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: max-content min-content min-content 60px;
+    justify-items: center;
+    grid-template-areas: ". dimage ."
+      ". dheading ."
+      ". dsale ."
+      ". dbutton .";
+
+    &__image {
+      justify-self: center;
+      width: 714px;
+      height: 500px;
+    }
+
+    &__heading {
+      font-size: 36px;
+      max-width: 430px;
+      line-height: 130%;
+      color: #333;
+      text-align: center;
+    }
+
+    &__sale {
+      max-width: 240px;
+      text-align: center;
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
 }

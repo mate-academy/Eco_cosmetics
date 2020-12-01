@@ -26,25 +26,9 @@
     letter-spacing: 0.05em;
   }
 
-  &__link {
+  &__learn-more {
     grid-area: ing-link;
     align-self: end;
-    position: relative;
-    font-size: 14px;
-    line-height: 130%;
-    color: $headings-color;
-    width: 86px;
-    height: 31px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      width: 86px;
-      height: 1px;
-      bottom: 0;
-      left: 0;
-      background-color: $headings-color;
-    }
   }
 
   &__bottle {
@@ -52,5 +36,25 @@
     align-self: end;
     justify-self: end;
     color: $text-grey;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .ingridients {
+    margin: 100px 0;
+    grid-template-columns: 20px 1fr 1fr;
+    grid-template-rows: min-content auto;
+    grid-template-areas: ". ing-title ing-images"
+     ". ing-link ing-images";
+     overflow: hidden;
+
+    &__title {
+      font-size: 24px;
+      align-self: start;
+    }
+
+    &__bottle {
+      margin-right: -20%;
+    }
   }
 }

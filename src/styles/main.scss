@@ -1,7 +1,9 @@
-@import "utils";
 @import "fonts";
+@import "utils";
 @import "typography";
 @import "reset";
+@import "link-button";
+@import "learn-more";
 @import "header";
 @import "logo";
 @import "nav";
@@ -29,6 +31,17 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: minmax(130px, auto) 1fr minmax(320px, auto);
   grid-template-areas: "header" "main" "footer";
+}
+
+@media screen and (max-width: 980px) {
+  .container {
+    max-width: 980px;
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "main" "footer";
+  }
+  .side-text {
+    display: none;
+  }
 }
 
 .header {

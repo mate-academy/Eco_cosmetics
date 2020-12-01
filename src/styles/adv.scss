@@ -1,14 +1,13 @@
 .adv {
   display: grid;
   padding: 100px 0;
-  grid-template-columns: 1fr 4fr 5fr;
+  grid-template-columns: 1fr 3fr 1fr 5fr 1fr;
   justify-content: start;
   position: relative;
   font-family: "Sharp Sans Display No2", sans-serif;
 
   &__info {
-    width: 380px;
-    height: 144px;
+    // width: 380px;
     line-height: 150%;
     font-size: 16px;
     grid-column: 2;
@@ -26,9 +25,8 @@
   }
 
   &__title {
-    width: 380px;
-    height: 108px;
-    grid-column: 3;
+    // width: 380px;
+    grid-column: 4;
     line-height: 150%;
     font-size: 24px;
     letter-spacing: 0.05em;
@@ -43,6 +41,29 @@
       height: 1px;
       width: 630px;
       background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .adv {
+    grid-template-columns: 1fr;
+    padding: 0 100px;
+
+    &__info {
+      display: none;
+    }
+
+    &__title {
+      justify-self: center;
+      grid-column: 1;
+      width: 280px;
+      font-size: 18px;
+      text-align: center;
+
+      &::after {
+        display: none;
+      }
     }
   }
 }
