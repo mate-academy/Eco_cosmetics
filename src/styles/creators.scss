@@ -1,8 +1,30 @@
 .creators {
   display: flex;
-  margin-bottom: $marginBetween;
-  width: 1080px;
-  justify-content: flex-end;
+  margin: 0 auto $marginBetween;
+  max-width: 1077px;
+  // justify-content: flex-end;
+  padding: 0 20px;
+
+  &__article {
+    @media (max-width: 950px) {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    left: 20px;
+    transition-duration: $transDuration * 3;
+
+    @media (max-width: 950px) {
+      transform: scale(0.6);
+    }
+
+    @media (max-width: 800px) {
+      display: none;
+    }
+  }
 
   &__description {
     display: flex;
@@ -39,8 +61,6 @@
 }
 
 .container {
-  position: relative;
-
   &__imgCreators {
     position: absolute;
     left: 0;

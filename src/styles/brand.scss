@@ -1,12 +1,16 @@
 .brand {
+  margin: 0 auto;
+  padding-top: $marginBetween / 2;
+  padding-right: 20px;
+  padding-left: 20px;
+
   display: grid;
   grid-template-areas: "header image"
     "text image"
     "button image";
   gap: 0 20px;
-  grid-template-columns: 480px 577px;
-
-  height: 451px;
+  // grid-template-columns: 480px 1fr; //577px;
+  justify-content: space-between;
 
   max-width: 1077px;
 
@@ -31,9 +35,8 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
   .container {
-    justify-content: center;
     padding: 6px 0 0;
   }
 
@@ -42,6 +45,7 @@
     flex-direction: column;
     justify-content: center;
     height: max-content;
+    padding-top: 10px;
 
     &__img {
       margin-bottom: 50px;
@@ -70,7 +74,16 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
+  .brand {
+    &__img {
+      // transform: scale(0.65);
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
   .container {
     padding: 0;
   }
@@ -78,21 +91,12 @@
   .brand {
     &__img {
       margin-bottom: 25px;
-      align-self: center;
-      transform: scale(0.65);
     }
 
     &__header {
       padding-bottom: 12px;
       width: 280px;
       font-size: 24px;
-    }
-
-    &__retail {
-      align-self: center;
-      text-align: center;
-      padding: 0 20px 30px;
-      width: 278px;
     }
   }
 }

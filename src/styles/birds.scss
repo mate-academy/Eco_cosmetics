@@ -1,27 +1,42 @@
 .birds {
-  height: 313px;
   width: $pageWidth;
 
   display: grid;
   grid-template-areas: "descr title";
   gap: 0 20px;
-  grid-template-columns: 480px 577px;
+  grid-template-columns: 2fr 3fr;
+  padding: 0 20px;
 
   max-width: 1077px;
 
   justify-content: center;
-  align-content: center;
+  align-items: center;
 
   &__scrollDown {
     grid-area: title;
     width: 380px;
+    text-align: center;
   }
 
   &__description {
     grid-area: descr;
     padding-right: 100px;
+    color: $darkGrey;
 
     @include text;
-    color: $darkGrey;
+
+    @include display;
+  }
+
+  @media (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    margin: 60px 0;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
   }
 }

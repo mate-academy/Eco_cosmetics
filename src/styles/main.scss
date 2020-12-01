@@ -13,13 +13,20 @@
 @import "contactUs";
 @import "footer";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   max-width: $pageWidth;
   margin: 0 auto;
+
+  position: relative;
+
   display: flex;
   justify-content: flex-end;
   align-content: flex-end;
-  padding: 81px 25px 0;
+  // padding: 81px 25px 0;
 }
 
 .button {
@@ -34,12 +41,18 @@
 
 .delimiter {
   margin-top: $marginBetween;
+  margin-bottom: $marginBetween / 2;
+
+  @include display;
 }
 
 .delimiterSecond {
+  margin-top: $marginBetween / 2;
   margin-bottom: $marginBetween;
   position: relative;
   left: calc(100% - 530px);
+
+  @include display;
 }
 
 @media (max-width: 1150px) {
