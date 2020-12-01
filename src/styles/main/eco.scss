@@ -1,20 +1,19 @@
 .eco {
-  display: grid;
-  grid-template-columns: repeat(3, 380px);
-  column-gap: 20px;
+  display: flex;
   justify-content: center;
-  align-items: baseline;
   padding: 50px 0;
-  border-bottom: 1px solid black;
 
-  @media (max-width: 999px) {
+  @media (max-width: $tablet-width) {
+    display: grid;
     grid-template-columns: repeat(3, 218px);
     column-gap: 30px;
+    justify-content: center;
+    align-items: baseline;
   }
 
-  @media (max-width: 824px) {
+  @media (max-width: $phone-width) {
     grid-template-columns: repeat(1, 218px);
-    row-gap: 50px;
+    row-gap: 20px;
     padding: 0;
   }
 
@@ -25,6 +24,15 @@
     justify-content: center;
     align-items: center;
     color: $black;
+    margin-left: 20px;
+
+    @media (max-width: $tablet-width) {
+      margin-left: 0;
+    }
+
+    @media (max-width: $phone-width) {
+      margin-left: 0;
+    }
   }
 
   &__no-microplastic {
@@ -43,13 +51,3 @@
     @extend %text2;
   }
 }
-
-// @media (max-width: 999px) {
-//   .eco {
-//     &__container {
-//       grid-template-columns: repeat(3, 218px);
-//       column-gap: 30px;
-//       max-width: 767px;
-//     }
-//   }
-// }
