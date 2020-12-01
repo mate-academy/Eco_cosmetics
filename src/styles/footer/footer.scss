@@ -1,30 +1,89 @@
 .footer {
-  width: 100%;
 
-  &__container {
-    position: relative;
-    display: flex;
-    flex-flow: column wrap;
-    max-width: 1280px;
-    height: 335px;
-    margin: 0 auto;
-    padding: 61px 49px 66px 51px;
-    background: rgba(52, 79, 16, 0.5);
-    color: #e4dfd3;
-    font-family: "Sharp", sans-serif;
-    font-size: 18px;
-    line-height: 1.3em;
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  height: 335px;
+  padding: 61px 49px 66px 51px;
+  font-family: "Sharp", sans-serif;
+  font-size: 18px;
+  line-height: 1.3em;
+  background: rgba(52, 79, 16, 0.5);
+  color: $beige;
+
+  @media (max-width: 999px) {
+    padding: 29px 26px 49px 27px;
+  }
+
+  @media (max-width: 824px) {
+    flex-flow: column nowrap;
+    height: auto;
+    padding: 30px 20px 60px;
+    font-size: 14px;
   }
 
   &__nav {
-    color: inherit;
     order: 1;
+    color: inherit;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend %menu-text;
+    width: 270px;
+
+    @media (max-width: 999px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__item {
+    text-align: center;
+
+    @media (max-width: 999px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    color: inherit;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: transparent;
+      transition: background-color 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        background-color: $darkgreen;
+      }
+    }
   }
 
   &__rights {
     order: 2;
     margin-top: 148px;
-    margin-right: 324px;
+    // margin-right: 324px;
+    text-align: left;
+
+    @media (max-width: 999px) {
+      order: 3;
+      margin-top: 50px;
+      margin-right: 30px;
+    }
+
+    @media (max-width: 824px) {
+      order: 4;
+      margin-top: 15px;
+      margin-right: 0;
+    }
   }
 
   &__brand {
@@ -35,16 +94,31 @@
     order: 3;
   }
 
-  &__country,
   &__e-mail,
-  &__phone-number,
+  &__phone-number {
+    display: block;
+    margin-bottom: 15px;
+    color: inherit;
+  }
+
+  &__country,
   &__support {
-    margin-bottom: 16px;
+    margin-bottom: 15px;
   }
 
   &__soc-networks {
-    margin-top: 10px;
     order: 4;
+    margin-top: 15px;
+
+    @media (max-width: 999px) {
+      order: 2;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 824px) {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
   }
 
   &__facebook {
@@ -61,9 +135,9 @@
   }
 
   &__instagram {
-    margin-left: 14px;
     height: 20px;
     width: 20px;
+    margin-left: 14px;
   }
 
   &__instagram-image {

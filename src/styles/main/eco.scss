@@ -1,25 +1,30 @@
 .eco {
-  &__container {
-    display: grid;
-    grid-template-columns: repeat(3, 380px);
-    column-gap: 20px;
-    justify-content: center;
-    align-items: baseline;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 50px 0;
-    border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  column-gap: 20px;
+  justify-content: center;
+  align-items: baseline;
+  padding: 50px 0;
+  border-bottom: 1px solid black;
+
+  @media (max-width: 999px) {
+    grid-template-columns: repeat(3, 218px);
+    column-gap: 30px;
+  }
+
+  @media (max-width: 824px) {
+    grid-template-columns: repeat(1, 218px);
+    row-gap: 50px;
+    padding: 0;
   }
 
   &__card {
-    // width: 380px;
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: #000;
+    color: $black;
   }
 
   &__no-microplastic {
@@ -28,9 +33,6 @@
 
   &__recycable {
     margin-bottom: 19px;
-    &:hover {
-      fill: #344f10;
-    }
   }
 
   &__natural {
@@ -42,12 +44,12 @@
   }
 }
 
-@media (max-width: 999px) {
-  .eco {
-    &__container {
-      grid-template-columns: repeat(3, 218px);
-      column-gap: 30px;
-      max-width: 767px;
-    }
-  }
-}
+// @media (max-width: 999px) {
+//   .eco {
+//     &__container {
+//       grid-template-columns: repeat(3, 218px);
+//       column-gap: 30px;
+//       max-width: 767px;
+//     }
+//   }
+// }

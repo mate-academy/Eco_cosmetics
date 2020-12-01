@@ -1,5 +1,4 @@
 .nav {
-  color: #344f10;
 
   &__list {
     display: flex;
@@ -7,6 +6,47 @@
     align-items: center;
     @extend %menu-text;
     width: 270px;
+    color: $green;
+
+    @media (max-width: 999px) {
+      flex-direction: column;
+      justify-content: flex-start;
+      // align-items: center;
+      position: absolute;
+      visibility: hidden;
+      margin: 0 auto;
+      width: 100vw;
+      height: 100vh;
+      top: -53px;
+      left: -30px;
+
+      background-color: $lightblack;
+      padding: 143px 27px 0;
+    }
+
+    @media (max-width: 824px) {
+      top: -15px;
+      left: 0;
+
+      background-color: $lightblack;
+      padding: 143px 27px 0;
+    }
+  }
+
+  &__item {
+    @media (max-width: 999px) {
+      margin-bottom: 50px;
+      width: 100%;
+      text-align: center;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $lightgrey;
+      }
+    }
   }
 
   &__link {

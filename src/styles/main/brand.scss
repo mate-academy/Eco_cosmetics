@@ -1,15 +1,33 @@
 .brand {
   display: flex;
   flex-direction: row-reverse;
-  color: #333;
   padding: 40px 0 200px;
+  color: $lightblack;
   border-bottom: 1px solid black;
-  max-width: 1280px;
+
+  @media (max-width: 999px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 7px 0 100px;
+  }
+
+  @media (max-width: 824px) {
+    padding: 0 0 60px;
+  }
 
   &__image {
     height: 451px;
     width: 577px;
     margin: 0 53px 0 20px;
+
+    @media (max-width: 999px) {
+      margin: 0 27px;
+    }
+
+    @media (max-width: 824px) {
+      width: 320px;
+      height: 267px;
+    }
   }
 
   &__content {
@@ -18,36 +36,15 @@
     align-content: flex-start;
     justify-content: space-between;
     padding-left: 150px;
-  }
 
-  &__sale {
-    font-family: "Sharp", sans-serif;
-    font-size: 22px;
-    line-height: 1.3em;
-  }
-
-  &__shop-link {
-    display: inline-block;
-  }
-}
-
-@media (max-width: 999px) {
-  .brand {
-    flex-direction: column;
-    align-items: center;
-    max-width: 767px;
-    padding: 7px 0 100px;
-
-    &__image {
-      margin: 0 27px;
-    }
-
-    &__content {
+    @media (max-width: 999px) {
       padding: 0;
       align-items: center;
     }
+  }
 
-    &__title {
+  &__title {
+    @media (max-width: 999px) {
       width: 466px;
       margin-top: 50px;
       font-size: 36px;
@@ -55,7 +52,19 @@
       text-align: center;
     }
 
-    &__sale {
+    @media (max-width: 824px) {
+      width: 280px;
+      margin-top: 25px;
+      font-size: 24px;
+    }
+  }
+
+  &__sale {
+    font-family: "Sharp", sans-serif;
+    font-size: 22px;
+    line-height: 1.3em;
+
+    @media (max-width: 999px) {
       width: 278px;
       margin-top: 20px;
       font-size: 18px;
@@ -63,8 +72,20 @@
       text-align: center;
     }
 
-    &__shop-link {
+    @media (max-width: 824px) {
+      margin-top: 19px;
+    }
+  }
+
+  &__shop-link {
+    display: inline-block;
+
+    @media (max-width: 999px) {
       margin-top: 30px;
+    }
+
+    @media (max-width: 824px) {
+      margin-top: 19px;
     }
   }
 }
