@@ -1,0 +1,66 @@
+.brand {
+  display: flex;
+
+  &__contents {
+    padding-top: 10px;
+    position: relative;
+    align-self: flex-start;
+    justify-self: flex-start;
+    width: 100px;
+    bottom: 0;
+    @include textLink($c-green);
+    writing-mode: tb-rl;
+    transform: rotate(180deg);
+    opacity: 0.5;
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 100px;
+      top: -100px;
+      right: 5px;
+      width: 1px;
+      background-color: $c-green;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  &__content {
+    max-width: $general-text-w;
+    align-self: flex-end;
+  }
+
+  &__title {
+    @include titleMain;
+  }
+
+  &__paragraph {
+    margin-bottom: $paragraph-margin;
+    line-height: 24px;
+  }
+
+  &__img {
+    width: $brand-img-w;
+    height: $brand-img-h;
+
+    &--small {
+      margin-left: 20px;
+      width: $brand-img-w * 0.26;
+      height: $brand-img-h * 0.8;
+      object-fit: cover;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    @include textLink($c-green);
+    padding: 12px 0;
+    border-bottom: 1px solid $c-green;
+  }
+}
