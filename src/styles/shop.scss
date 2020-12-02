@@ -1,0 +1,150 @@
+.shop {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  &__nameContainer {
+    position: relative;
+    margin-left: 50px;
+    width: 18px;
+    height: 155px;
+  }
+
+  &__name {
+    position: absolute;
+    transform-origin: left top;
+    transform: rotate(-90deg) translate(-100%, 0);
+    display: block;
+    width: 45px;
+
+    font-family: $mainFont;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: $mainElementColor;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__name::before {
+    content: "";
+    position: absolute;
+    transform-origin: left top;
+    top: 50%;
+    transform: rotate(-90deg) translate(0, calc(-100% - 10px));
+
+    width: 1px;
+    height: 100px;
+    background: $mainElementColor;
+  }
+
+  &__container {
+    margin-left: 100px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-x: hidden;
+  }
+
+  &__title {
+    font-family: $mainFont;
+    font-size: 36px;
+    line-height: 150%;
+    color: $mainTextColor;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__sections {
+    margin-top: 20px;
+    display: flex;
+    column-gap: 20px;
+  }
+
+  &__sectionItem {
+    padding-bottom: 20px;
+
+    font-family: $mainFont;
+    font-size: 18px;
+    line-height: 150%;
+    color: $mainTextColor;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__products {
+    margin-top: 60px;
+
+    display: flex;
+    column-gap: 20px;
+  }
+
+  // &__goods {
+
+  // }
+
+  &__img {
+    height: 500px;
+  }
+
+  &__goodsName {
+    margin-top: 20px;
+
+    font-family: $mainFont;
+    font-size: 20px;
+    line-height: 150%;
+    color: $mainTextColor;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    margin-top: 10px;
+
+    font-family: $mainFont;
+    font-size: 18px;
+    line-height: 150%;
+    color: $mainTextColor;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__buttons {
+    margin-top: 45px;
+    display: flex;
+    column-gap: 10px;
+  }
+
+  &__buttonBack,
+  &__buttonNext {
+    width: 28px;
+    height: 28px;
+
+    font-family: $mainFont;
+    font-size: 36px;
+    line-height: 28px;
+    color: grey;
+  }
+
+  &__toAllLink {
+    width: 280px;
+    height: 60px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: $secondTextColor;
+
+    font-family: $mainFont;
+    font-size: 16px;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #f2f2f2;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .shop__img {
+    max-height: 400px;
+  }
+}
