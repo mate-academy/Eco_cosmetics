@@ -1,13 +1,29 @@
 .labels {
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   margin-bottom: $marginBetween;
-  width: 1080px;
+  max-width: 1077px;
   justify-content: space-between;
   @include textUC;
 
-  &__part {
-    display: flex;
+  @media (max-width: 600px) {
     flex-direction: column;
-    justify-content: space-between;
+  }
+
+  &__part {
+    display: grid;
+    grid-template-rows: 100px 40px;
+    justify-items: center;
+
+    max-width: 380px;
+
+    @media (max-width: 600px) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    text-align: center;
   }
 }

@@ -5,9 +5,26 @@
   display: flex;
   // justify-content: space-between;
 
+  &__article {
+
+    margin-bottom: 20px;
+    @media (max-width: 950px) {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+  }
+
   &__img {
     float: right;
     margin-left: 30px;
+
+    @media (max-width: 950px) {
+      height: 409px;
+    }
+
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
 
   &__description {
@@ -15,35 +32,59 @@
     line-height: 150%;
     text-transform: lowercase;
     color: $darkGrey;
-    margin: 15px 0;
+    margin-bottom: 30px;
+
+    @media (max-width: 950px) {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
   }
 
   &__button {
     margin-top: 30px;
+    display: block;
+  }
+
+  &__form {
+    @media (max-width: 950px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
 
 input,
 textarea {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 15px 0;
+  display: block;
+  width: 480px;
+  padding: 10px 0;
+  margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid #bdbdbd;
   background-color: transparent;
   outline: none;
+
+  // @media (max-width: 950px) {
+  //   width: 342px;
+  // }
 }
 
 textarea {
   resize: none;
+  margin-top: 36px;
 }
 
 textarea::placeholder,
 input::placeholder {
   color: $lightGrey;
   font-size: 18px;
+  font-weight: $medium;
   line-height: 150%;
   text-transform: capitalize;
+
+  @media (max-width: 950px) {
+    font-size: 14px;
+  }
 }
 
 .container {
