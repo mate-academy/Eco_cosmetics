@@ -24,6 +24,7 @@
     line-height: 150%;
     color: $headings-color;
     letter-spacing: 0.05em;
+    font-family: "Sharp Sans Display No2", sans-serif;
   }
 
   &__info {
@@ -31,12 +32,12 @@
     font-size: 16px;
     line-height: 150%;
     color: $text-grey;
+    font-family: "Sharp Sans Medium", sans-serif;
   }
 
   &__learn-more {
     grid-area: link;
-    align-self: start;
-    margin-top: 20px;
+    align-self: center;
   }
 
   &__image {
@@ -63,7 +64,8 @@
 @media screen and (max-width: 980px) {
   .creators {
     margin: 100px 0;
-    grid-template-columns: 20px 1fr 1fr;
+    gap: 0;
+    grid-template-columns: 20px fit-content(342px) 1fr;
     grid-template-rows: minmax(auto, 310px) auto 60px;
     grid-template-areas: ". info images" ". link images" ". button images";
 
@@ -88,6 +90,19 @@
         height: 100%;
         object-fit: cover;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .creators {
+    margin: 60px 0;
+    gap: 20px 0;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-areas: ". info ." ". link ." ". button .";
+
+    &__image {
+      display: none;
     }
   }
 }

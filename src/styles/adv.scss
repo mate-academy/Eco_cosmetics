@@ -1,13 +1,12 @@
 .adv {
   display: grid;
-  padding: 100px 0;
+  margin: 100px 0;
   grid-template-columns: 1fr 3fr 1fr 5fr 1fr;
   justify-content: start;
   position: relative;
   font-family: "Sharp Sans Display No2", sans-serif;
 
   &__info {
-    // width: 380px;
     line-height: 150%;
     font-size: 16px;
     grid-column: 2;
@@ -25,7 +24,6 @@
   }
 
   &__title {
-    // width: 380px;
     grid-column: 4;
     line-height: 150%;
     font-size: 24px;
@@ -48,7 +46,6 @@
 @media screen and (max-width: 980px) {
   .adv {
     grid-template-columns: 1fr;
-    padding: 0 100px;
 
     &__info {
       display: none;
@@ -64,6 +61,17 @@
       &::after {
         display: none;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .adv {
+    justify-content: center;
+    grid-template-columns: fit-content(280px);
+
+    &__title {
+      text-align: left;
     }
   }
 }

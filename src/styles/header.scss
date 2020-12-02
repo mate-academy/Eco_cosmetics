@@ -4,7 +4,7 @@
     minmax(max-content, 1fr) minmax(min-content, 1fr);
   align-items: center;
   font-family: "Sharp Sans Display No2", sans-serif;
-  
+
   &--position {
     padding: 40px 50px;
   }
@@ -30,7 +30,12 @@
 
 @media screen and (max-width: 980px) {
   .header {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax(max-content, 1fr)
+    minmax(max-content, 1fr) minmax(min-content, 1fr);
+
+    &--position {
+      padding: 30px;
+    }
 
     &__nav {
       display: none;
@@ -42,11 +47,35 @@
     }
   }
 
-    &__cart {
-      grid-column-start: 3;
-    }
+  &__cart {
+    grid-column-start: 3;
+  }
 
   .logo__name {
     display: none;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .header {
+    height: 24px;
+
+    &--position {
+      padding: 20px;
+    }
+
+    &__logo .logo__image{
+      height: 24px;
+      width: 24px;
+    }
+
+    &__cart {
+      width: 14px;
+      height: 21px;
+
+      & img {
+        width: 100%;
+      }
+    }
   }
 }

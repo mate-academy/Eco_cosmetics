@@ -42,8 +42,9 @@
 @media screen and (max-width: 980px) {
   .ingridients {
     margin: 100px 0;
+    gap: 0;
     grid-template-columns: 20px 1fr 1fr;
-    grid-template-rows: min-content auto;
+    grid-template-rows: 50% 50%;
     grid-template-areas: ". ing-title ing-images"
       ". ing-link ing-images";
     overflow: hidden;
@@ -51,10 +52,30 @@
     &__title {
       font-size: 24px;
       align-self: start;
+
     }
 
     &__bottle {
-      margin-right: -20%;
+      transform: translateX(15%);
+    }
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .ingridients {
+    grid-template-columns: 20px 1fr;
+    grid-template-rows: min-content auto min-content;
+    grid-template-areas: ". ing-title"
+    ". ing-images" ". ing-link";
+    gap: 20px 0;
+    margin: 60px 0;
+
+    &__bottle {
+      transform: translateX(5%);
+    }
+
+    &__title {
+      padding: 0;
     }
   }
 }
