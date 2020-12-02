@@ -1,0 +1,103 @@
+.brand {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 100px;
+
+  &__nameContainer {
+    position: relative;
+    margin-left: 50px;
+    width: 18px;
+    height: 325px;
+  }
+
+  &__name {
+    position: absolute;
+    transform-origin: left top;
+    transform: rotate(-90deg) translate(-100%, 0);
+    display: block;
+    width: 215px;
+
+    font-family: $mainFont;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: $mainElementColor;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__name::before {
+    content: "";
+    position: absolute;
+    transform-origin: left top;
+    top: 50%;
+    transform: rotate(-90deg) translate(0, calc(-100% - 10px));
+
+    width: 1px;
+    height: 100px;
+    background: $mainElementColor;
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 380px;
+  }
+
+  &__title {
+    font-family: $mainFont;
+    font-size: 36px;
+    line-height: 150%;
+    color: $mainTextColor;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__textOne {
+    margin-top: 20px;
+
+    font-family: $mainFont;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+
+  &__textTwo {
+    @extend .brand__textOne;
+    margin-top: 30px;
+  }
+
+  &__moreLink {
+    display: block;
+    width: 95px;
+    margin-top: 40px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid $mainElementColor;
+
+    font-family: $mainBoldFont;
+    font-size: 14px;
+    line-height: 130%;
+    color: $mainTextColor;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__img {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+  }
+
+  &__imgBig {
+    max-width: 500px;
+  }
+
+  &__imgSmall {
+    max-width: 130px;
+
+  }
+}
