@@ -1,30 +1,23 @@
 .header {
-  margin-top: 40px;
-  display: flex;
-  // position: sticky;
-  // top: 0;
-  justify-content: center;
+  &__nav {
+    margin-top: 40px;
+    margin-bottom: $marginBetween / 2;
 
-  background-color: $mainColor;
+    @media (max-width: 950px) {
+      margin-bottom: $marginBetween / 4;
+    }
+
+    @media screen and (max-width: 800px) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .nav {
   position: relative;
   display: flex;
   justify-content: space-between;
-
-  width: $pageWidth;
-  margin-right: -15px;
-  padding: 0 20px;
-
-  &__toggler {
-    display: none;
-    position: absolute;
-  }
-
-  &__toggler-label {
-    display: none;
-  }
 
   &__company {
     display: flex;
@@ -38,9 +31,21 @@
     margin-left: 12px;
   }
 
+  &__basketBtn {
+    padding: 15px;
+  }
+
+  &__toggler {
+    display: none;
+    position: absolute;
+  }
+
+  &__toggler-label {
+    display: none;
+  }
+
   &__list {
     display: flex;
-    // align-content: center;
 
     height: 100%;
 
@@ -67,7 +72,6 @@
     &:hover::after {
       content: "";
       display: block;
-      // position: absolute;
 
       width: 100%;
       height: 1px;
@@ -78,10 +82,6 @@
     }
   }
 
-  &__basketBtn {
-    padding: 15px;
-  }
-
   @media screen and (max-width: 950px) {
     &__brandName {
       display: none;
@@ -89,10 +89,17 @@
   }
 
   @media screen and (max-width: 800px) {
-    &__logo {
-      margin: auto;
+    &__company {
+      margin: auto 0;
+    }
 
-      transform: scale(0.5);
+    &__logoLink {
+      margin: auto 0;
+      padding: 15px;
+    }
+
+    &__logo {
+      height: 15px;
     }
 
     &__list {
@@ -105,10 +112,8 @@
       display: block;
       position: relative;
       margin: auto 0;
-      padding: 15px;
-
+      padding: 15px ;
       width: 20px;
-      height: 13px;
 
       cursor: pointer;
       z-index: 1;
@@ -120,7 +125,7 @@
       display: block;
       position: absolute;
 
-      width: 100%;
+      width: 20px;
       height: 1px;
 
       background-color: $headers;
@@ -130,11 +135,11 @@
 
     &__span::before {
       content: "";
-      top: -8px;
+      top: -5px;
     }
     &__span::after {
       content: "";
-      top: 8px;
+      top: 5px;
     }
 
     &__toggler:checked ~ &__toggler-label > &__span {
@@ -152,7 +157,6 @@
       display: block;
       left: 0;
       top: 58px;
-      padding-left: 20px;
       transform: translate(0);
       z-index: 1;
       height: max-content;

@@ -4,30 +4,47 @@
 @import "normalize";
 @import "header";
 @import "brand";
-@import "birds";
-@import "product";
-@import "shop";
-@import "creators";
-@import "composition";
-@import "labels";
-@import "contactUs";
-@import "footer";
+// @import "birds";
+// @import "product";
+// @import "shop";
+// @import "creators";
+// @import "composition";
+// @import "labels";
+// @import "contactUs";
+// @import "footer";
 
 html {
   scroll-behavior: smooth;
 }
 
-.container {
-  max-width: $pageWidth;
-  margin: 0 auto;
+$pagePadd: 20px;
 
-  position: relative;
+.body {
+  &__header,
+  &__footer {
+    margin: 0 auto;
+    max-width: 1180px + ($pagePadd * 2);
+    padding: 0 $pagePadd;
+  }
 
-  display: flex;
-  justify-content: flex-end;
-  align-content: flex-end;
-  // padding: 81px 25px 0;
+  &__main {
+    margin: 0 auto;
+    max-width: 1077px + ($pagePadd * 2);
+    padding: 0 $pagePadd;
+  }
 }
+
+// .container {
+//   max-width: $pageWidth;
+//   margin: 0 auto;
+
+//   position: relative;
+
+//   display: flex;
+//   justify-content: flex-end;
+//   align-content: flex-end;
+//   // padding: 81px 25px 0;
+// }
 
 .button {
   @include buttons;

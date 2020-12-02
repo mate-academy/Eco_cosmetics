@@ -1,102 +1,73 @@
 .brand {
-  margin: 0 auto;
-  padding-top: $marginBetween / 2;
-  padding-right: 20px;
-  padding-left: 20px;
-
-  display: grid;
-  grid-template-areas: "header image"
-    "text image"
-    "button image";
-  gap: 0 20px;
-  // grid-template-columns: 480px 1fr; //577px;
+  display: flex;
   justify-content: space-between;
 
-  max-width: 1077px;
+  @media (max-width: 1050px) {
+    align-items: center;
+  }
 
-  &__img {
-    grid-area: image;
-    transition-duration: 3s;
+  @media (max-width: 950px) {
+    flex-direction: column;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 950px) {
+      order: 2;
+      align-items: center;
+      text-align: center;
+
+      br {
+        display: none;
+      }
+    }
   }
 
   &__header {
-    grid-area: header;
+    margin-bottom: 30px;
+    max-width: 480px;
+
+    @media (max-width: 1050px) {
+      font-size: 42px;
+    }
+
+    @media (max-width: 950px) {
+      margin-bottom: 20px;
+      font-size: 36px;
+    }
+
+    @media (max-width: 650px) {
+      margin-bottom: 12px;
+      font-size: 24px;
+    }
   }
 
   &__retail {
-    grid-area: text;
-    color: $darkGrey;
-    vertical-align: top;
+    margin-bottom: 55px;
+
+    @media (max-width: 950px) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 650px) {
+      margin-bottom: 19px;
+    }
   }
 
-  &__shop {
-    grid-area: button;
-    align-self: flex-end;
-  }
-}
+  &__img {
+    max-width: 577px;
+    max-height: 451px;
 
-@media screen and (max-width: 1024px) {
-  .container {
-    padding: 6px 0 0;
-  }
-
-  .brand {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: max-content;
-    padding-top: 10px;
-
-    &__img {
+    @media (max-width: 950px) {
+      order: 1;
       margin-bottom: 50px;
     }
 
-    &__header {
-      padding-bottom: 20px;
-      align-self: center;
-      text-align: center;
-      width: 466px;
-
-      font-size: 36px;
-      line-height: 130%;
-    }
-
-    &__retail {
-      align-self: center;
-      text-align: center;
-      padding: 0 20px 30px;
-      width: 278px;
-    }
-
-    &__shop {
-      align-self: center;
-    }
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .brand {
-    &__img {
-      // transform: scale(0.65);
-      width: 100%;
-    }
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .container {
-    padding: 0;
-  }
-
-  .brand {
-    &__img {
+    @media (max-width: 650px) {
+      max-width: 320px;
       margin-bottom: 25px;
-    }
-
-    &__header {
-      padding-bottom: 12px;
-      width: 280px;
-      font-size: 24px;
     }
   }
 }
