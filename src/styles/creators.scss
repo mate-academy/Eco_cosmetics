@@ -1,60 +1,70 @@
 .creators {
+  margin-bottom: $marginBetween;
+  position: relative;
   display: flex;
-  margin: 0 auto $marginBetween;
-  max-width: 1077px;
-  // justify-content: flex-end;
-  padding: 0 20px;
+  justify-content: space-between;
 
-  @media (max-width: 950px) {
-    margin-bottom: $marginBetween/2;
+  @media (max-width: 1050px) {
+    margin-bottom: $marginBetween / 2;
   }
 
-  &__article {
-    @media (max-width: 950px) {
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
+  @media (max-width: 750px) {
+    justify-content: center;
   }
 
-  &__img {
-    position: relative;
-    left: 20px;
-    transition-duration: $transDuration * 3;
+  @media (max-width: 650px) {
+    margin-bottom: $marginBetween / 3;
+  }
 
-    @media (max-width: 950px) {
-      height: 465px;
-    }
-
-    @media (max-width: 800px) {
-      display: none;
-    }
+  &__sideImg {
+    @include sideImg;
   }
 
   &__description {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-width: 380px;
+    margin-right: 120px;
+
+    @media (max-width: 1050px) {
+      margin-right: 120px;
+    }
+
+    @media (max-width: 750px) {
+      width: 280px;
+      margin-right: 0;
+    }
+  }
+
+  &__article {
+    margin-bottom: 20px;
+
+    @media (max-width: 1050px) {
+      font-size: 24px;
+      margin-bottom: 13px;
+    }
   }
 
   &__content {
-    @include text;
-    color: $darkGrey;
-    max-width: 380px;
-    margin-right: 100px;
+    margin-bottom: 30px;
+    @include secondaryText;
 
-    @media (max-width: 950px) {
-      margin-right: 0;
-    }
+    @media (max-width: 1050px) {
+      margin-bottom: 12px;
 
-    &-hide {
-      @media (max-width: 950px) {
+      :last-child {
+        margin-bottom: 20px;
+      }
+
+      &-hide {
         display: none;
       }
     }
   }
 
   &__link {
-    @include linkDecor;
+    margin-bottom: 50px;
     @include textUC;
     color: $headers;
     height: 31px;
@@ -71,14 +81,27 @@
         background-color: $headers;
       }
     }
-  }
-}
 
-.container {
-  &__imgCreators {
-    position: absolute;
-    left: 0;
-    top: 30%;
-    // transform: translateY(-50%);
+    @media (max-width: 1050px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__imgWrapper {
+    @media (max-width: 1050px) {
+      display: flex;
+      width: 577px;
+    }
+
+    @media (max-width: 750px) {
+      display: none;
+    }
+  }
+
+  &__img {
+    @media (max-width: 1050px) {
+      height: 435px;
+      width: 368px;
+    }
   }
 }
