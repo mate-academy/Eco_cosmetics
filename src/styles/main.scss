@@ -20,18 +20,21 @@
 @import "contact-us";
 @import "footer";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: $body-color;
 }
 
 .container {
   min-height: 100%;
-  max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr minmax(auto, 1280px) 1fr;
   grid-template-rows: min-content 1fr min-content;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas: ". header ." ". main ." "footer__wrapper footer__wrapper footer__wrapper";
 }
 
 .header {
@@ -42,15 +45,16 @@ body {
   grid-area: main;
 }
 
-.footer {
-  grid-area: footer;
+.footer__wrapper {
+  grid-area: footer__wrapper;
+  background-color: rgba(52, 79, 16, 0.5);
 }
 
 @media screen and (max-width: 980px) {
   .container {
     grid-template-columns: 1fr 768px 1fr;
-    grid-template-areas: ". header ." ". main ." " .footer .";
   }
+
   .side-text {
     display: none;
   }

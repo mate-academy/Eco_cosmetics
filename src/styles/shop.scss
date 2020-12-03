@@ -59,9 +59,10 @@
   &__card {
     grid-area: card;
     display: grid;
-    gap: 0 20px;
+    gap: 20px 20px;
     grid-template-columns: repeat(3, 380px);
-    overflow: hidden;
+    grid-auto-flow: row;
+    // overflow: hidden;
   }
 
   &__item {
@@ -77,6 +78,7 @@
   }
 
   &__image img {
+    width: 100%;
     object-fit: cover;
   }
 
@@ -129,6 +131,20 @@
     grid-area: abutton;
     justify-self: center;
   }
+}
+
+@media screen and (max-width: 1250px) {
+  .shop {
+    &__card {
+      grid-template-columns: repeat(3, 280px);
+    }
+
+    &__image {
+      display: block;
+      width: 280px;
+    }
+  }
+
 }
 
 @media screen and (max-width: 980px) {
