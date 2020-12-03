@@ -9,6 +9,8 @@
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
+    column-gap: 100px;
+    overflow: hidden;
   }
 
   &__content {
@@ -24,10 +26,14 @@
 
   &__picture {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, minmax(100px, auto));
     grid-template-rows: repeat(5, 80px);
     grid-auto-flow: column;
     column-gap: $description-line-w + 5px;
+
+    @include iPadMini {
+      column-gap: 5%;
+    }
   }
 
   &__description {
@@ -41,6 +47,10 @@
       border-radius: 50%;
       width: 5px;
       height: 5px;
+
+      @include iPadMini {
+        display: none;
+      }
     }
 
     &::after {

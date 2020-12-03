@@ -3,24 +3,39 @@
   column-gap: 130px;
   justify-content: flex-start;
 
+  @include iPadMini {
+    justify-content: center;
+  }
+
   &__wrapper {
     display: flex;
+
     &:first-child {
       border-top: 1px solid #{"#{$c-green}"+"80"};
       flex-grow: 1;
       justify-content: flex-end;
 
+      @include iPadMini {
+        display: none;
+      }
     }
 
     &:last-child {
       border-bottom: 1px solid #{"#{$c-green}"+"80"};
       flex-grow: 2;
       justify-content: flex-start;
+
+      @include iPadMini {
+        text-align: center;
+        border-bottom: 0;
+        justify-content: center;
+      }
     }
   }
 
   &__text {
     padding: 100px 0 100px 150px;
+    line-height: 1.5;
     max-width: $general-text-w;
   }
 
@@ -35,5 +50,9 @@
     line-height: 1.15;
     color: $c-green;
     text-transform: uppercase;
+
+    @include iPadMini {
+      padding: 0;
+    }
   }
 }

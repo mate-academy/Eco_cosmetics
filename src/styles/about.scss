@@ -9,6 +9,7 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+    column-gap: $gap-column-t-i;
     flex-grow: 1;
   }
 
@@ -27,6 +28,22 @@
   &__paragraph {
     margin-bottom: $paragraph-margin;
     line-height: 24px;
+  }
+
+  &__paragraph:last-of-type {
+    @include iPadMini {
+      display: none;
+    }
+  }
+
+  &__images {
+    width: $about-img-w;
+    height: auto;
+    object-fit: cover;
+
+    @include iPadMini {
+      width: $image-mobile-w;
+    }
   }
 
   &__link {

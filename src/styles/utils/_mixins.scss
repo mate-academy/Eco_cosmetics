@@ -1,12 +1,22 @@
+@mixin iPadMini {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
 @mixin titleMain {
   margin: 20px 0;
   font-family: "Sharp-Sans", sans-serif;
   font-size: 36px;
-  line-height: 54px;
+  line-height: 1.66;
   font-weight: 600;
   color: $c-green;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+
+  @include iPadMini {
+    font-size: 24px;
+  }
 }
 
 @mixin textLink($color) {

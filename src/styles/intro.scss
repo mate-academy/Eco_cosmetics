@@ -1,11 +1,36 @@
 .intro {
   display: flex;
   justify-content: flex-end;
-  column-gap: 20px;
+  column-gap: $gap-c;
+
+  @include iPadMini {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: $gap-r;
+  }
 
   &__content {
     max-width: 480px;
+
+    @include iPadMini {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
+
+  &__img {
+    width: 577px;
+    height: auto;
+
+    @media screen and (max-width: 768px) {
+      order: -1;
+      width: 714px;
+    }
+  }
+
   &__title {
     margin-bottom: 30px;
     font-family: "Sharp-Sans", sans-serif;
@@ -13,6 +38,12 @@
     font-weight: 600;
     line-height: 72px;
     color: $c-black;
+
+    @media screen and (max-width: 768px) {
+      font-size: 36px;
+      line-height: 46px;
+      max-width: 466px;
+    }
   }
 
   &__text {
@@ -22,5 +53,10 @@
     line-height: 1.3;
     color: $c-black;
     font-weight: 500;
+
+    @media screen and (max-width: 768px) {
+      max-width: 278px;
+      font-size: 18px;
+    }
   }
 }

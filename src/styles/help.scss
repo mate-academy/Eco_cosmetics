@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-between;
     flex-grow: 1;
+    column-gap: $gap-column-t-i;
   }
 
   &__content {
@@ -18,7 +19,6 @@
 
   &__title {
     @include titleMain;
-    text-transform: capitalize;
   }
 
   &__text {
@@ -26,10 +26,28 @@
     font-family: "Sharp-Sans", sans-serif;
     font-size: 24px;
     font-weight: 500;
-    line-height: 36px;
+    line-height: 1.5;
+
+    @include iPadMini {
+      font-size: 16px;
+    }
   }
 
   &__form {
     margin-bottom: 50px;
+
+    @include iPadMini {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__img {
+    width: $help-img-w;
+    height: auto;
+    object-fit: cover;
+
+    @include iPadMini {
+      width: $image-mobile-w;
+    }
   }
 }

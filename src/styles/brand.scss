@@ -8,6 +8,7 @@
   &__inner {
     display: flex;
     justify-content: space-between;
+    column-gap: 30px;
     flex-grow: 1;
   }
 
@@ -25,15 +26,35 @@
     line-height: 24px;
   }
 
+  &__paragraph:last-of-type {
+    @include iPadMini {
+      display: none;
+    }
+  }
+
+  &__images {
+    display: flex;
+    align-items: baseline;
+  }
+
   &__img {
     width: $brand-img-w;
     height: $brand-img-h;
+
+    @include iPadMini {
+      width: $image-mobile-w;
+      height: auto;
+    }
 
     &--small {
       margin-left: 20px;
       width: $brand-img-w * 0.26;
       height: $brand-img-h * 0.8;
       object-fit: cover;
+
+      @include iPadMini {
+        display: none;
+      }
     }
   }
 

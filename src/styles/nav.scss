@@ -2,16 +2,102 @@
   display: flex;
   align-items: center;
 
+  @media screen and (max-width: 768px) {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+  }
+
   &__list {
     display: flex;
     gap: $nav-gap;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__toggle {
+    display: none;
+
+    &--label {
+      position: relative;
+      display: none;
+      cursor: pointer;
+      z-index: 1;
+
+      @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+      }
+    }
+
+    &--line {
+      width: 20px;
+      height: 1px;
+      background-color: $c-green;
+    }
+  }
+
+  &__toggle:checked ~ &__list {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+    top: 0;
+    background-color: $c-black;
+    animation: appear 1s linear;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  &__toggle:checked + &__toggle--label &__toggle--line {
+    background-color: $c-beige;
+    transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+  }
+
+  &__toggle:checked + &__toggle--label .line--1 {
+    transform: rotate(45deg);
+    transform-origin: 0% 100%;
+  }
+
+  &__toggle:checked + &__toggle--label .line--2 {
+    opacity: 0;
+  }
+
+  &__toggle:checked + &__toggle--label .line--3 {
+    transform: rotate(-45deg);
+    transform-origin: 15% 100%;
+  }
+
+  &__item {
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      border-bottom: 1px solid $c-gray;
+      width: 90%;
+    }
   }
 
   &__link {
     @include textNavFooter($c-green);
 
-    &--footer {
-      @include textNavFooter($c-beige);
+    @media screen and (max-width: 768px) {
+      color: $c-beige;
     }
+  }
+}
+
+@keyframes appear {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100vh;
   }
 }
