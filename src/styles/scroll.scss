@@ -1,0 +1,46 @@
+.scroll {
+  display: flex;
+  position: relative;
+
+
+  &__text {
+    max-width: $cardWidth;
+    margin-left: 100px;
+    padding-top: 100px;
+
+    color: $colorGrey1;
+    line-height: 24px;
+
+    &::before {
+      @include khakiLine;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: calc(#{$cardWidth +100px});
+    }
+  }
+
+  &__phrase {
+    max-width: $cardWidth;
+
+    padding-top: 105px;
+    padding-bottom: 100px;
+    margin-left: 120px;
+
+    color: $colorKhaki;
+    
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &::after {
+      @include khakiLine;
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: calc(#{$cardWidth +100px});
+    }
+  }
+}
