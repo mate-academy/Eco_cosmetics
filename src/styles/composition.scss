@@ -1,14 +1,22 @@
 .composition {
   position: relative;
 
-  &__sideImg {
-    @include sideImg;
-  }
-
   margin-bottom: $marginBetween;
 
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1050px) {
+    margin-bottom: $marginBetween / 2;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: $marginBetween / 3;
+  }
+
+  &__sideImg {
+    @include sideImg;
+  }
 
   &__description {
     display: flex;

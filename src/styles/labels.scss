@@ -1,14 +1,19 @@
 .labels {
-  margin: 0 auto;
-  padding: 0 20px;
   display: flex;
-  margin-bottom: $marginBetween;
-  max-width: 1077px;
   justify-content: space-between;
-  @include textUC;
+  margin-bottom: $marginBetween;
+
+  @media (max-width: 1050px) {
+    margin-bottom: $marginBetween / 2;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: $marginBetween / 3;
+  }
 
   @media (max-width: 600px) {
     flex-direction: column;
+    align-items: center;
   }
 
   &__part {
@@ -25,5 +30,6 @@
 
   &__text {
     text-align: center;
+    @include textUC;
   }
 }
