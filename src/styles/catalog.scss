@@ -1,0 +1,40 @@
+.catalog {
+  display: flex;
+
+  &__card {
+    margin-left: 20px;
+    margin-bottom: 25px;
+
+    @media (max-width: 1050px) {
+      margin-bottom: 0;
+    }
+  }
+
+  > :first-child {
+    margin-left: 0;
+  }
+
+  @media (max-width: 1050px) {
+
+    justify-content: center;
+    > :last-child {
+      display: none;
+    }
+  }
+
+  @media (max-width: 850px) {
+    > :nth-child(2) {
+      display: none;
+    }
+
+    > :nth-child(3) {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 650px) {
+    > :nth-child(3) {
+      display: none;
+    }
+  }
+}

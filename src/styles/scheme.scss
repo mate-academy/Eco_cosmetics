@@ -1,0 +1,49 @@
+.scheme {
+  display: grid;
+  grid-template-columns: 1fr 85px;
+  grid-template-rows: repeat(5, auto);
+  gap: 20px 10px;
+  grid-auto-flow: column;
+  text-align: end;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    position: relative;
+    left: 40px;
+    grid-template-rows: repeat(5, 60px);
+  }
+
+  &__hide {
+    @media (max-width: 950px) {
+      display: none;
+    }
+  }
+
+  &__line {
+    width: 76px;
+    height: 1px;
+    background-color: $darkGrey;
+
+    position: relative;
+  }
+
+  &__dot {
+    width: 5px;
+    height: 5px;
+    background-color: $darkGrey;
+    border-radius: 50%;
+
+    position: absolute;
+    right: -5px;
+    bottom: -2px;
+  }
+
+  &__img {
+    margin-left: 20px;
+    height: 380px;
+
+    @media (max-width: 800px) {
+      margin-right: -100px;
+    }
+  }
+}
