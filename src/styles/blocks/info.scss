@@ -1,0 +1,36 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include h3-style;
+
+    @include onTablet {
+      margin-bottom: 12px;
+    }
+
+  }
+
+  &__text {
+    & p {
+      @include p-style;
+    }
+
+    @include onTablet {
+      & :last-child {
+        display: none;
+      }
+    }
+
+    p + p {
+      margin-top: 30px;
+
+      @include onTablet {
+        margin-top: 12px;
+      }
+    }
+  }
+}

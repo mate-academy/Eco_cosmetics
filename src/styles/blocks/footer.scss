@@ -1,0 +1,120 @@
+.footer {
+  background-color: rgba(52, 79, 16, 0.5);
+
+  &__container {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 60px 90px 55px 50px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 420px);
+    row-gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include onTablet {
+      width: 768px;
+      grid-template-columns: repeat(2, 340px);
+      padding: 29px $tablet-padding 49px;
+      margin: 0 auto;
+    }
+
+    @include onMobile {
+      width: 280px;
+      padding: 30px 0 $mobile-padding-bottom;
+      margin: 0 auto;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 40px;
+
+    list-style: none;
+
+    @include onTablet {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    @include onMobile {
+      gap: 20px;
+      order: 2;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 130%;
+    text-decoration: none;
+    color: $main-page-color-light;
+    padding: 10px 0;
+
+    @include onTablet {
+      font-size: 14px;
+    }
+  }
+
+  &__location {
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+
+    @include onMobile {
+      order: 4;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__copyright {
+    margin-top: -10px;
+
+    &::after {
+      content: "witch of mountain winds";
+      font-size: 16px;
+      text-transform: uppercase;
+      @include onTablet {
+        font-size: 12px;
+      }
+    }
+
+    @include onMobile {
+      order: 5;
+    }
+  }
+
+  &__networks {
+    display: flex;
+    gap: 14px;
+
+    @include onTablet {
+      gap: 20px;
+    }
+
+    @include onMobile {
+      order: 3;
+      margin: 10px 0 30px;
+    }
+  }
+
+  &__icon {
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__link {
+    transition: color 0.5s;
+
+    &:hover {
+      color: $main-page-color-gray;
+    }
+  }
+}

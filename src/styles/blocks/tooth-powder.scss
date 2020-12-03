@@ -1,0 +1,122 @@
+.tooth-powder {
+  position: relative;
+  display: flex;
+  padding: 0 50px 0 150px;
+
+  @include onTablet {
+    margin: 0 auto 150px;
+    padding: 0 0 0 $tablet-padding;
+  }
+
+  @include onMobile {
+    flex-direction: column;
+    width: 280px;
+    margin: 0 auto $mobile-padding-bottom;
+    padding: 0;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 300px;
+    margin-right: 80px;
+
+    @include onTablet {
+      margin-right: 320px;
+    }
+
+    @include onMobile {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    @include h3-style;
+    margin-bottom: 140px;
+
+    @include onTablet {
+      margin-bottom: 245px;
+      width: 150px;
+    }
+
+    @include onMobile {
+      margin-bottom: 420px;
+    }
+  }
+
+  &__ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: flex-end;
+    justify-content: center;
+    list-style: none;
+    margin-right: 20px;
+
+    @include onTablet {
+      position: absolute;
+      top: 40px;
+      left: 350px;
+      gap: 45px;
+    }
+
+    @include onMobile {
+      position: absolute;
+      top: 150px;
+      left: 0;
+      gap: 50px;
+    }
+
+    &-item {
+      display: flex;
+      font-size: 16px;
+      line-height: 150%;
+      color: $main-page-color-gray;
+      margin-right: 25px;
+      text-align: right;
+    }
+
+    &-arrow {
+      position: relative;
+      height: 1px;
+      width: 76px;
+      background-color: $main-page-color-gray;
+      transform: translate(20px, 13px);
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 5px;
+        height: 5px;
+        background-color: $main-page-color-gray;
+        border-radius: 50%;
+        transform: translate(76px, -2px);
+
+        @include onTablet {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__photo {
+    transition: transform 0.5s;
+
+    @include onMobile {
+      position: absolute;
+      top: 110px;
+      left: 150px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__side-element {
+    left: 20px;
+    top: 35px;
+  }
+
+}
