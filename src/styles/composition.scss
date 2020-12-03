@@ -1,6 +1,12 @@
 .composition {
+  position: relative;
+
+  &__sideImg {
+    @include sideImg;
+  }
+
   margin-bottom: $marginBetween;
-  width: 1080px;
+
   display: flex;
   justify-content: space-between;
 
@@ -9,14 +15,20 @@
     flex-direction: column;
     justify-content: space-around;
 
-    @media (max-width: 600px) {
+    @media (max-width: 1050px) {
       justify-content: space-between;
-      // overflow: hidden;
+    }
+
+    @media (max-width: 650px) {
+      height: 550px;
+    }
+
+    @media (max-width: 500px) {
+      height: 700px;
     }
   }
 
   &__link {
-    @include linkDecor;
     @include textUC;
     color: $headers;
     height: 31px;
@@ -43,7 +55,16 @@
       overflow: hidden;
     }
 
+    @media (max-width: 650px) {
+      height: 550px;
+      align-items: center;
+    }
+
     @media (max-width: 600px) {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-40%);
       width: 280px;
       overflow: hidden;
     }
@@ -65,12 +86,8 @@
     grid-template-rows: repeat(5, 60px);
   }
 
-  @media (max-width: 600px) {
-    position: absolute;
-  }
-
   &__hide {
-    @media (max-width: 800px) {
+    @media (max-width: 950px) {
       display: none;
     }
   }
@@ -101,14 +118,5 @@
     @media (max-width: 800px) {
       margin-right: -100px;
     }
-  }
-}
-
-.container {
-  &__imgIngr {
-    position: absolute;
-    left: 0;
-    // top: 30%;
-    // transform: translateY(-50%);
   }
 }
