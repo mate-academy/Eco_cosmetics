@@ -1,0 +1,31 @@
+.product {
+
+  &__photo {
+    height: 500px;
+    transition: border-radius 0.5s, transform 0.5s;
+
+    &:hover {
+      border-radius: 60px;
+      transform: scale(0.9);
+    }
+    @media (max-width: $tablet-width) {
+      object-fit: cover;
+      width: 342px;
+      height: 300px;
+    }
+
+    @media (max-width: $phone-width) {
+      width: 320px;
+      height: 267px;
+    }
+  }
+
+  &__title {
+    margin-top: 20px;
+  }
+
+  &__price {
+    @extend %price-text;
+    margin-top: 10px;
+  }
+}

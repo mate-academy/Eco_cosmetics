@@ -1,0 +1,58 @@
+.eco {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 0;
+
+  @media (max-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(3, 218px);
+    column-gap: 30px;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  @media (max-width: $phone-width) {
+    grid-template-columns: repeat(1, 218px);
+    row-gap: 20px;
+    padding: 0;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: $black;
+    margin-left: 20px;
+
+    @media (max-width: $tablet-width) {
+      margin-left: 0;
+    }
+
+    @media (max-width: $phone-width) {
+      margin-left: 0;
+    }
+  }
+
+  &__no-microplastic {
+    margin-bottom: 44px;
+    max-width: 218px;
+  }
+
+  &__recycable {
+    margin-bottom: 19px;
+    max-width: 218px;
+  }
+
+  &__natural {
+    margin-bottom: 24px;
+    max-width: 218px;
+  }
+
+  &__description {
+    @extend %text2;
+    max-width: 218px;
+    text-align: center;
+  }
+}

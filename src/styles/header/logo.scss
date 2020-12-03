@@ -1,0 +1,33 @@
+.logo {
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > img {
+      transition: transform 0.3s;
+    }
+
+    & > img:hover {
+      transform: rotateZ(360deg) scale(1.3);
+    }
+
+    @media (max-width: $tablet-width) {
+      & > img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+  }
+
+  &__brand-name {
+    margin-left: 12px;
+    @extend %text2;
+    color: $green;
+
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
+}

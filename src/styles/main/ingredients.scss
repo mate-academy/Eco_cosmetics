@@ -1,0 +1,152 @@
+.ingredients {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 100px 50px 0 150px;
+
+  @media (max-width: $tablet-width) {
+    justify-content: space-between;
+    padding: 50px 0 100px 27px;
+    overflow: hidden;
+  }
+
+  @media (max-width: $phone-width) {
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0 60px 20px;
+  }
+
+  &__side-description {
+    top: 198px;
+    left: 50px;
+
+    @media (max-width: $tablet-width) {
+      display: none;
+    }
+  }
+
+  &__title {
+
+    width: 300px;
+    margin-top: 40px;
+    color: $darkgreen;
+
+    @media (max-width: $tablet-width) {
+      width: 150px;
+      margin-top: 0;
+      font-size: 24px;
+    }
+
+    @media (max-width: $phone-width) {
+      align-self: flex-start;
+      // position: relative;
+      // transform: translate(-50%);
+    }
+  }
+
+  &__learn-more {
+    position: relative;
+    top: -162px;
+
+    @media (max-width: $tablet-width) {
+      align-self: flex-start;
+      // position: relative;
+      // top: 0px;~
+    }
+
+    @media (max-width: $phone-width) {
+      margin-top: 35px;
+      top: -40px;
+      // transform: translate(-60%);
+    }
+  }
+
+  &__tooth-powder {
+    position: relative;
+    top: -162px;
+    align-self: flex-end;
+    display: flex;
+
+    @media (max-width: $tablet-width) {
+      top: -112px;
+    }
+
+    @media (max-width: $phone-width) {
+      align-self: flex-start;
+      top: 0;
+    }
+  }
+
+  &__item {
+    @extend %text;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+    color: $lightblack;
+
+    &:first-child {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 524px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__item-hidden {
+    @media (max-width: 1073px) {
+      display: none;
+    }
+  }
+
+  &__item-line {
+    position: relative;
+    top: 0.5em;
+    display: inline-block;
+    width: 76px;
+    height: 1px;
+    margin-left: 20px;
+    margin-right: 23px;
+    background-color: $lightblack;
+
+    @media (max-width: $tablet-width) {
+      margin-right: -48px;
+    }
+
+    &::after {
+      position: absolute;
+      top: -(5px / 2);
+      left: 100%;
+      display: block;
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $lightblack;
+
+      @media (max-width: $tablet-width) {
+        display: none;
+      }
+    }
+  }
+
+  &__product {
+    width: 380px;
+    height: 395px;
+
+    @media (max-width: $tablet-width) {
+      // width: 281px;
+
+      margin-right: 0;
+
+      // object-fit: cover;
+      // object-position: top left;
+    }
+
+    @media (max-width: $phone-width) {
+      // width: 149px;
+    }
+  }
+}
