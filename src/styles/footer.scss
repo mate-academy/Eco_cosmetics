@@ -1,21 +1,19 @@
 .footer {
   box-sizing: border-box;
-  grid-column-start: 2;
-  grid-column-end: 3;
   max-width: 1280px;
   align-content: center;
   justify-content: center;
   display: grid;
-  grid-template-columns: 45%  45%;
-  grid-template-rows: repeat(5, max-content);
+  grid-template-columns: 1fr minmax(max-content, 4fr) minmax(max-content, 5fr);
+  grid-template-rows: repeat(5, auto);
   height: 320px;
-  gap: 20px 10%;
-  padding: 60px 50px;
+  gap: 20px 20px;
+  padding: 60px 0;
   font-family: "Sharp Sans Display No2", sans-serif;
   color: $body-color;
 
   &__nav {
-    grid-column-start: 1;
+    grid-column-start: 2;
     grid-row-start: 1;
 
     &--color {
@@ -24,33 +22,33 @@
   }
 
   &__copyright {
-    grid-column-start: 1;
+    grid-column-start: 2;
     grid-row-start: 5;
     font-size: 18px;
   }
 
   &__country {
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-row-start: 1;
   }
 
   &__email {
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-row-start: 2;
   }
 
   &__phone {
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-row-start: 3;
   }
 
   &__schedule {
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-row-start: 4;
   }
 
   &__media {
-    grid-column-start: 2;
+    grid-column-start: 3;
     grid-row-start: 5;
   }
 }
@@ -59,16 +57,15 @@
   .footer {
     height: 280px;
     font-size: 14px;
-    grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, max-content);
 
     &__nav {
-      grid-column-start: 1;
+      grid-column-start: 2;
       grid-row: 1 / span 3;
     }
 
     &__copyright {
-      grid-column: 1 / 2;
+      grid-column: 2 / 3;
       grid-row-start: 5;
       font-size: 14px;
 
@@ -78,27 +75,27 @@
     }
 
     &__country {
-      grid-column-start: 2;
+      grid-column-start: 3;
       grid-row-start: 1;
     }
 
     &__email {
-      grid-column-start: 2;
+      grid-column-start: 3;
       grid-row-start: 2;
     }
 
     &__phone {
-      grid-column-start: 2;
+      grid-column-start: 3;
       grid-row-start: 3;
     }
 
     &__schedule {
-      grid-column-start: 2;
+      grid-column-start: 3;
       grid-row-start: 4;
     }
 
     &__media {
-      grid-column-start: 1;
+      grid-column-start: 2;
       grid-row-start: 4;
     }
 
@@ -130,11 +127,13 @@
 
     &__nav {
       grid-row: 1 / 2;
+      grid-column: 1;
     }
 
     &__media {
       grid-row-start: 2;
       margin-right: 20px;
+      grid-column: 1;
     }
 
     &__country {
@@ -163,6 +162,7 @@
       padding: 10px;
       max-width: 198px;
       text-align: center;
+      grid-column: 1;
     }
   }
 }
