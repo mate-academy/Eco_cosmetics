@@ -1,11 +1,11 @@
 @mixin onMobile {
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     @content;
   }
 }
 
 @mixin onTablet {
-  @media (max-width: 1280px) {
+  @media (max-width: 1279px) {
     @content;
   }
 }
@@ -29,6 +29,10 @@
   line-height: 150%;
   color: $main-page-color-gray;
 
+  @include onTablet() {
+    width: 342px;
+  }
+
   @include onMobile {
     width: 280px;
   }
@@ -42,16 +46,18 @@
   letter-spacing: 0.05em;
   color: $main-page-color-green;
 
-  @include onMobile {
+  @include onTablet() {
     font-size: 24px;
     line-height: 150%;
-
   }
 }
 
 @mixin input-style {
   padding: 10px 0;
   width: 100%;
+  font-family: "Sharp Sans Display No2", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
   outline: none;
   border: none;
   border-bottom: 1px solid #bdbdbd;
@@ -62,7 +68,7 @@
     font-family: "Sharp Sans Display No2", sans-serif;
     font-size: 18px;
 
-    @include onMobile {
+    @include onTablet() {
       font-size: 14px;
     }
   }
