@@ -1,0 +1,88 @@
+.form {
+
+  &__input {
+    position: relative;
+    margin-bottom: 25px;
+  }
+
+  &__input label {
+    position: absolute;
+    top: 5px;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #828282;
+    transition: all 0.3s ease;
+
+    @media (max-width: $tabletSize) {
+      font-size: 12px;
+      top: -5px;
+    }
+  }
+}
+
+.form__input input,
+.form__input textarea {
+  display: block;
+  padding: 10px 0;
+
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $lightGray;
+  background: none;
+  color: $textColor;
+  font-size: 18px;
+
+  @media (max-width: $tabletSize) {
+    padding: 5px 0;
+    margin: 0;
+    width: 100%;
+    font-size: 12px;
+  }
+}
+
+.form__input input:focus ~ label,
+.form__input input:valid ~ label,
+.form__input textarea:focus ~ label {
+  top: -20px;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.form__input .input__underline:after {
+  right: 50%;
+}
+
+.form__input .input__underline:before {
+  left: 50%;
+}
+
+.form__input .input__underline:before,
+.form__input .input__underline:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  background: $lightGray;
+  height: 2px;
+  transition: all 0.2s ease;
+}
+
+.form__input input:focus ~ .input__underline:before,
+.form__input input:focus ~ .input__underline:after,
+.form__input textarea:focus ~ .input__underline:before,
+.form__input textarea:focus ~ .input__underline:after {
+  width: 50%;
+}
+
+.form__input textarea {
+  overflow: auto;
+  resize: none;
+}
+
+.form__input .input__underline {
+  position: relative;
+  display: block;
+  width: 100%;
+}

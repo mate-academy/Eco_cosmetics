@@ -1,0 +1,58 @@
+.product {
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $textColor;
+    padding: 20px 20px 10px;
+  }
+
+  &__price {
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $textColor;
+    padding-left: 20px;
+  }
+
+  &--2,
+  &--3 {
+    display: none;
+  }
+
+  @media (min-width: $tabletSize) {
+    &__img {
+      height: 500px;
+    }
+
+    &__name,
+    &__price {
+      padding-left: 0;
+    }
+
+    &--3 {
+      display: initial;
+    }
+  }
+
+  @media (min-width: $notebook) {
+
+    &--2 {
+      display: initial;
+    }
+  }
+}

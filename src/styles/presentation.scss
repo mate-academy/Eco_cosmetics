@@ -1,0 +1,117 @@
+.presentation {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 50px;
+  text-align: right;
+  align-items: center;
+
+  &__info {
+    text-align: left;
+    margin-right: 100px;
+
+    @media (max-width: $tabletSize) {
+      margin-right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 350px;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $mainGreen;
+    font-weight: 600;
+    padding-bottom: 20px;
+
+    @media (max-width: $tabletSize) {
+      font-size: 24px;
+      padding-bottom: 0;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 18px;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__img {
+    width: 380px;
+    height: 340px;
+    transition: transform 0.4s;
+    position: relative;
+  }
+
+  &__link {
+    margin-top: 50px;
+  }
+
+  &__content {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 120px 50px;
+    grid-template-rows: 46px 46px 46px 46px 46px;
+    grid-gap: 1vw;
+    position: absolute;
+    left: -140px;
+    bottom: 10px;
+  }
+
+  &__line {
+    width: 80px;
+    height: 5px;
+    background-image: url("../images/icons/point-line.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+
+    @media (max-width: $tabletSize) {
+      height: 1px;
+      background-image: url("../images/icons/line.svg");
+    }
+  }
+
+  &__elem {
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: rgba(52, 79, 16, 0.5);
+    transform: rotate(-90deg);
+    position: absolute;
+    left: -10px;
+    top: 170px;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      height: 1px;
+      width: 100px;
+      background: rgba(52, 79, 16, 0.5);
+      position: absolute;
+      bottom: 10px;
+      left: -110px;
+    }
+
+    @media (max-width: $tabletSize) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $tabletSize) {
+    padding-top: 30px;
+    padding-right: 0;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 30px 20px;
+  }
+}
