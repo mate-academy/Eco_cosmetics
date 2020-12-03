@@ -1,3 +1,15 @@
+@mixin onMobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
@@ -16,6 +28,10 @@
   font-size: 16px;
   line-height: 150%;
   color: $main-page-color-gray;
+
+  @include onMobile {
+    width: 280px;
+  }
 }
 
 @mixin h3-style {
@@ -25,6 +41,12 @@
   line-height: 130%;
   letter-spacing: 0.05em;
   color: $main-page-color-green;
+
+  @include onMobile {
+    font-size: 24px;
+    line-height: 150%;
+
+  }
 }
 
 @mixin input-style {
@@ -33,12 +55,16 @@
   outline: none;
   border: none;
   border-bottom: 1px solid #bdbdbd;
+  color: #828282;
   background-color: $main-page-color-light;
 
   &::placeholder {
     font-family: "Sharp Sans Display No2", sans-serif;
     font-size: 18px;
-    color: #828282;
+
+    @include onMobile {
+      font-size: 14px;
+    }
   }
 }
 
