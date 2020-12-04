@@ -1,15 +1,18 @@
 .footer {
-  padding: 60px 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 20px;
-  grid-auto-flow: column;
-  @include textNavFooter($c-beige);
   background-color: #{$c-green + "80"};
 
-  @include mobile {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
+  &__inner {
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+    grid-auto-flow: column;
+    @include textNavFooter($c-beige);
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+    }
   }
 
   &__link {
@@ -74,6 +77,7 @@
 
   .copyright {
     @include mobile {
+      margin-top: 20px;
       text-align: center;
     }
   }

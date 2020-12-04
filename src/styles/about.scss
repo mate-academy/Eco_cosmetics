@@ -1,8 +1,5 @@
 .about {
-  display: flex;
-  justify-content: space-between;
-  column-gap: 30px;
-  flex-grow: 1;
+  @include flexGrow;
 
   &__contents {
     align-self: flex-start;
@@ -10,10 +7,7 @@
   }
 
   &__inner {
-    display: flex;
-    justify-content: space-between;
-    column-gap: $gap-column-t-i;
-    flex-grow: 1;
+    @include flexGrow;
   }
 
   &__title {
@@ -22,6 +16,10 @@
 
   &__content {
     max-width: $general-text-w;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   &__text {

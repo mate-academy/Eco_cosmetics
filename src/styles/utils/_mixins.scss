@@ -5,7 +5,7 @@
 }
 
 @mixin tablet {
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1030px) {
     @content;
   }
 }
@@ -17,7 +17,7 @@
 }
 
 @mixin mobile {
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 684px) {
     @content;
   }
 }
@@ -45,6 +45,13 @@
   @include notebook {
     margin-top: 0;
   }
+}
+
+@mixin flexGrow {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  column-gap: $gap-column-t-i;
 }
 
 @mixin textLink($color) {
@@ -84,4 +91,11 @@
   right: -$description-line-w;
   display: block;
   background-color: $c-black;
+}
+
+@mixin Sharp($size, $width, $height) {
+  font-family: "Sharp-Sans", sans-serif;
+  font-size: $size;
+  font-weight: $width;
+  line-height: $height;
 }

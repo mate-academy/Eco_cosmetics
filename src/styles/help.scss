@@ -7,14 +7,15 @@
   }
 
   &__inner {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-    column-gap: $gap-column-t-i;
+    @include flexGrow;
   }
 
   &__content {
     max-width: $general-text-w;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   &__title {
@@ -23,10 +24,7 @@
 
   &__text {
     margin-bottom: 20px;
-    font-family: "Sharp-Sans", sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 1.5;
+    @include Sharp(24px, 500, 1.5);
 
     @include iPadMini {
       font-size: 16px;

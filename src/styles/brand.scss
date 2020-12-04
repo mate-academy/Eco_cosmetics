@@ -6,15 +6,16 @@
   }
 
   &__inner {
-    display: flex;
-    justify-content: space-between;
-    column-gap: 30px;
-    flex-grow: 1;
+    @include flexGrow;
   }
 
   &__content {
     max-width: $general-text-w;
     align-self: flex-end;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   &__title {
