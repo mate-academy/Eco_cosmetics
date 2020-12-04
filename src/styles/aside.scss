@@ -1,10 +1,10 @@
-.creators {
+.aside {
   width: 100%;
+
   display: grid;
-  justify-content: center;
-  grid-column-gap: 20px;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(9, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 20px;
 
   overflow-x: hidden;
 
@@ -15,7 +15,7 @@
     position: relative;
     margin-left: 50px;
     width: 18px;
-    height: 325px;
+    height: 150px;
   }
 
   &__name {
@@ -23,7 +23,7 @@
     transform-origin: left top;
     transform: rotate(-90deg) translate(-100%, 0);
     display: block;
-    width: 215px;
+    width: 40px;
 
     font-family: $mainFont;
     font-size: 14px;
@@ -46,15 +46,12 @@
     background: $mainElementColor;
   }
 
-  &__about {
+  &__contact {
     grid-column: 2 / 6;
-    grid-row: 1 / 10;
+    grid-row: 2 / 13;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    max-width: 450px;
-
   }
 
   &__title {
@@ -66,8 +63,28 @@
     text-transform: uppercase;
   }
 
-  &__textOne {
+  &__text {
     margin-top: 20px;
+
+    font-family: $mainFont;
+    font-size: 22px;
+    line-height: 150%;
+    color: $secondTextColor;
+    letter-spacing: 0.05em;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__yourName,
+  &__email,
+  &__phone,
+  &__message {
+    border: 0;
+    border-bottom: 1px solid $mainElementColor;
+    background-color: transparent;
 
     font-family: $mainFont;
     font-size: 16px;
@@ -76,28 +93,23 @@
     letter-spacing: 0.05em;
   }
 
-  &__textTwo,
-  &__textThree {
-    @extend .creators__textOne;
+  &__yourName {
+    margin-top: 20px;
+  }
+
+  &__email {
     margin-top: 30px;
   }
 
-  &__moreLink {
-    display: block;
-    width: 100px;
-    margin-top: 40px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid $mainElementColor;
-
-    font-family: $mainBoldFont;
-    font-size: 14px;
-    line-height: 130%;
-    color: $mainTextColor;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  &__phone {
+    margin-top: 30px;
   }
 
-  &__contact {
+  &__message {
+    margin-top: 60px;
+  }
+
+  &__button {
     width: 280px;
     height: 60px;
     margin-top: 50px;
@@ -113,58 +125,27 @@
 
   &__img {
     grid-column: 7 / 13;
-    grid-row: 1 / 10;
+    grid-row: 1 / 13;
 
-    display: flex;
-    align-items: flex-end;
-    gap: 20px;
-
-    margin-left: auto;
-  }
-
-  &__imgBig {
-    max-height: 670px;
+    justify-self: end;
+    align-self: end;
   }
 }
 
-@media screen and (max-width: 1100px) {
-  .creators__textOne {
-    font-size: 14px;
-  }
-
-  .creators__imgBig {
-    max-height: 600px;
+@media screen and (max-width: 1000px) {
+  .aside__img {
+    transform: translate(20%, 0);
   }
 }
 
 @media screen and (max-width: 950px) {
-  .creators__imgBig {
-    max-height: 500px;
-  }
-
-  .creators__textOne {
-    margin-top: 11px;
+  .aside__img {
+    transform: translate(30%, 0);
   }
 }
 
 @media screen and (max-width: 900px) {
-  .creators__imgBig {
-    max-height: 400px;
-  }
-
-  .creators__title {
-    font-size: 32px;
-  }
-
-  .creators__textOne {
-    font-size: 12px;
-  }
-
-  .creators__moreLink {
-    margin-top: 20px;
-  }
-
-  .creators__contact {
-    margin-top: 30px;
+  .aside__img {
+    transform: translate(40%, 0);
   }
 }
