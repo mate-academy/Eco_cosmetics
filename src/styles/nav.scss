@@ -56,6 +56,16 @@
     overflow: hidden;
   }
 
+  &__toggle:checked + &__toggle--label {
+    position: fixed;
+
+    left: $margin-container;
+
+    @include iPadMini {
+      left: $margin-container / 2;
+    }
+  }
+
   &__toggle:checked + &__toggle--label &__toggle--line {
     background-color: $c-beige;
     transition: transform 0.5s ease-in, opacity 0.5s ease-in;
@@ -76,7 +86,7 @@
   }
 
   &__item {
-    @media screen and (max-width: 768px) {
+    @include iPadMini {
       text-align: center;
       border-bottom: 1px solid $c-gray;
       width: 90%;
@@ -84,15 +94,31 @@
   }
 
   &__link {
+    position: relative;
     @include textNavFooter($c-green);
 
-    @media screen and (max-width: 768px) {
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $c-green;
+      transition: width 0.3s ease-out;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    @include iPadMini {
       color: $c-beige;
     }
   }
 }
 
-@keyframes appear {
+@keyframes appear-h {
   0% {
     height: 0;
   }
@@ -101,3 +127,4 @@
     height: 100vh;
   }
 }
+

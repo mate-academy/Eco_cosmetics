@@ -4,8 +4,12 @@
     width: $logo-size;
     height: auto;
 
-    @media screen and (max-width: 768px) {
+    @include iPadMini {
       width: $logo-size / 2;
+    }
+
+    &:hover {
+      animation: bell 1s linear;
     }
   }
 
@@ -23,10 +27,28 @@
       left: $logo-size + 12px;
       transform: translate(0, -50%);
 
-      @media screen and (max-width: 768px) {
+      @include iPadMini {
         display: none;
       }
     }
   }
 
+}
+
+@keyframes bell {
+  0% {
+    transform: rotate(2deg) scale(1.05);
+  }
+
+  25% {
+    transform: rotate(-30deg) scale(1.1);
+  }
+
+  50% {
+    transform: rotate(15deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotate(-5deg) scale(1.1);
+  }
 }

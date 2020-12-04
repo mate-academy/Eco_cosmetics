@@ -14,6 +14,10 @@
     display: flex;
     column-gap: 40px;
     margin-bottom: 62px;
+
+    @include mobile {
+      column-gap: 12px;
+    }
   }
 
   &__section {
@@ -25,6 +29,12 @@
     opacity: 0.5;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
+    transition: opacity 0.3s linear;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
 
     &--active {
       border-bottom: 2px solid $c-black;

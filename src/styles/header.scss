@@ -4,10 +4,30 @@
   align-items: center;
 
   &__nav {
-    height: 123px;
-
-    @media screen and (max-width: 768px) {
+    height:$header-h;
+    @include iPadMini {
+      height: $header-h / 2;
       order: -1;
     }
+  }
+
+  &__shop {
+    &:hover {
+      animation: bell 1s ease-in;
+    }
+  }
+}
+
+@keyframes bell {
+  0% {
+    transform: rotate(-30deg) scale(1.1);
+  }
+
+  50% {
+    transform: rotate(15deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotate(-5deg) scale(1.1);
   }
 }

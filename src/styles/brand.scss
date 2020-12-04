@@ -35,6 +35,11 @@
   &__images {
     display: flex;
     align-items: baseline;
+    transition: transform 1s linear;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__img {
@@ -44,6 +49,10 @@
     @include tablet {
       width: $image-mobile-w;
       height: auto;
+    }
+
+    @include mobile {
+      display: none;
     }
 
     &--small {

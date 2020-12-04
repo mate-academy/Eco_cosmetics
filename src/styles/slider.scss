@@ -3,6 +3,16 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 45px;
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+
+  &__product:not(:first-child) {
+    @include mobile {
+      display: none;
+    }
   }
 
   &__product:last-child {
@@ -14,5 +24,9 @@
   &__arrows {
     display: flex;
     justify-content: flex-end;
+
+    @include mobile {
+      justify-content: center;
+    }
   }
 }

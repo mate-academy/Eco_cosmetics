@@ -5,18 +5,32 @@
   row-gap: 20px;
   grid-auto-flow: column;
   @include textNavFooter($c-beige);
-  background-color: $c-green;
-  opacity: 0.5;
+  background-color: #{$c-green + "80"};
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+  }
 
   &__link {
     display: block;
     @include textNavFooter($c-beige);
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: $c-green;
+    }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include mobile {
+      order: 1;
+      row-gap: 20px;
+    }
   }
 
   &__contacts {
@@ -38,6 +52,11 @@
       justify-content: center;
     }
 
+    @include mobile {
+      flex-direction: row;
+      justify-content: left;
+    }
+
     &--list {
       display: flex;
       gap: $nav-gap;
@@ -45,6 +64,17 @@
 
     &--link {
       @include textNavFooter($c-beige);
+      transition: color 0.3s linear;
+
+      &:hover {
+        color: $c-green;
+      }
+    }
+  }
+
+  .copyright {
+    @include mobile {
+      text-align: center;
     }
   }
 }
