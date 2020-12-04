@@ -1,0 +1,56 @@
+.help {
+  display: flex;
+
+  &__contents {
+    align-self: flex-end;
+    bottom: 150px + $contents-h;
+  }
+
+  &__inner {
+    @include flexGrow;
+  }
+
+  &__content {
+    max-width: $general-text-w;
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    @include titleMain;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    @include Sharp(24px, 500, 1.5);
+
+    @include iPadMini {
+      font-size: 16px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 50px;
+
+    @include iPadMini {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__img {
+    width: $help-img-w;
+    height: auto;
+    object-fit: cover;
+
+    @include tablet {
+      width: $image-mobile-w;
+      height: auto;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

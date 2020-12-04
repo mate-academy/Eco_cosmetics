@@ -1,0 +1,84 @@
+.footer {
+  background-color: #{$c-green + "80"};
+
+  &__inner {
+    padding: 60px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+    grid-auto-flow: column;
+    @include textNavFooter($c-beige);
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+
+  &__link {
+    display: block;
+    @include textNavFooter($c-beige);
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: $c-green;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mobile {
+      order: 1;
+      row-gap: 20px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__schedule {
+    margin-bottom: 30px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    @include iPadMini {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include mobile {
+      flex-direction: row;
+      justify-content: left;
+    }
+
+    &--list {
+      display: flex;
+      gap: $nav-gap;
+    }
+
+    &--link {
+      @include textNavFooter($c-beige);
+      transition: color 0.3s linear;
+
+      &:hover {
+        color: $c-green;
+      }
+    }
+  }
+
+  .copyright {
+    @include mobile {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+}

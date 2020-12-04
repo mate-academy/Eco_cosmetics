@@ -1,0 +1,60 @@
+.about {
+  @include flexGrow;
+
+  &__contents {
+    align-self: flex-start;
+    top: $contents-h;
+  }
+
+  &__inner {
+    @include flexGrow;
+  }
+
+  &__title {
+    @include titleMain;
+  }
+
+  &__content {
+    max-width: $general-text-w;
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+  }
+
+  &__paragraph {
+    margin-bottom: $paragraph-margin;
+    line-height: 24px;
+  }
+
+  &__paragraph:last-of-type {
+    @include iPadMini {
+      display: none;
+    }
+  }
+
+  &__images {
+    width: $about-img-w;
+    height: auto;
+    object-fit: cover;
+
+    @include tablet {
+      width: $image-mobile-w;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    @include textLink($c-green);
+    padding: 12px 0;
+    border-bottom: 1px solid $c-green;
+  }
+}

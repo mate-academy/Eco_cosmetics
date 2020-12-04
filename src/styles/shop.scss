@@ -1,0 +1,51 @@
+.shop {
+  display: flex;
+
+  &__contents {
+    align-self: flex-end;
+    bottom: 250px + $contents-h;
+  }
+
+  &__title {
+    @include titleMain;
+  }
+
+  &__sections {
+    display: flex;
+    column-gap: 40px;
+    margin-bottom: 62px;
+
+    @include mobile {
+      column-gap: 12px;
+    }
+  }
+
+  &__section {
+    padding-bottom: 20px;
+    @include Sharp(18px, 600, 1.6);
+    color: $c-black;
+    opacity: 0.5;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    transition: opacity 0.3s linear;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--active {
+      border-bottom: 2px solid $c-black;
+      opacity: 1;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    display: flex;
+    margin: auto;
+  }
+}

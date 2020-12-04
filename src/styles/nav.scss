@@ -1,0 +1,120 @@
+.nav {
+  display: flex;
+  align-items: center;
+
+  @include iPadMini {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  &__list {
+    display: flex;
+    gap: $nav-gap;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+
+    &--open {
+      display: flex;
+      position: fixed;
+      flex-direction: column;
+      align-items: center;
+      left: 0;
+      top: 0;
+      background-color: $c-black;
+      animation: appear-h 1s linear;
+      height: 100vh;
+      justify-content: center;
+      width: 100vw;
+      overflow: hidden;
+    }
+  }
+
+  &__toggle {
+    position: relative;
+    display: none;
+    cursor: pointer;
+    z-index: 1;
+
+    @media screen and (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+    }
+
+    &-line {
+      width: 20px;
+      height: 1px;
+      background-color: $c-green;
+      transition: transform 0.5s ease-in, opacity 0.5s ease-in;
+
+    }
+  }
+
+  &__toggle-line--active {
+    background-color: $c-beige;
+  }
+
+  .line--1--active {
+    transform: rotate(45deg);
+    transform-origin: 0% 100%;
+  }
+
+  .line--2--active {
+    opacity: 0;
+  }
+
+  .line--3--active {
+    transform: rotate(-45deg);
+    transform-origin: 15% 100%;
+  }
+
+  &__item {
+    @include iPadMini {
+      text-align: center;
+      border-bottom: 1px solid $c-gray;
+      width: 90%;
+    }
+  }
+
+  &__link {
+    position: relative;
+    @include textNavFooter($c-green);
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $c-green;
+      transition: width 0.3s ease-out;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    @include iPadMini {
+      color: $c-beige;
+    }
+
+    &--open:hover::after {
+      width: 0;
+    }
+  }
+}
+
+@keyframes appear-h {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100vh;
+  }
+}

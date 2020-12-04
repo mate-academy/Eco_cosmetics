@@ -1,0 +1,56 @@
+.intro {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: $gap-c;
+
+  @include tablet {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: $gap-r;
+  }
+
+  &__content {
+    max-width: 480px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__img {
+    width: 577px;
+    height: auto;
+
+    @include tablet {
+      order: -1;
+      max-width: 714px;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @include Sharp(60px, 600, 0.8);
+    color: $c-black;
+
+    @include tablet {
+      font-size: 36px;
+      max-width: 466px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 52px;
+    @include Sharp(22px, 500, 1.3);
+    color: $c-black;
+
+    @include tablet {
+      max-width: 278px;
+      font-size: 18px;
+    }
+  }
+}

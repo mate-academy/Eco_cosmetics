@@ -1,0 +1,38 @@
+.product {
+  transition: transform 0.3s ease-in;
+
+  &:hover {
+    transform: translateY(-20px);
+  }
+  &__image {
+    max-width: 380px;
+    max-height: 500px;
+    width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+    object-fit: cover;
+
+    @include iPadMini {
+      height: 300px;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    @include Sharp(20px, 600, 1.6);
+    color: $c-black;
+    text-transform: uppercase;
+  }
+
+  &__cost {
+    @include Sharp(18px, 500, 1.6);
+
+    &:after {
+      content: " UAH";
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.contents {
+  padding-top: 10px;
+  position: relative;
+  width: 100px;
+  @include textLink($c-green);
+  writing-mode: tb-rl;
+  transform: rotate(180deg);
+  opacity: 0.5;
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: $contents-h;
+    top: -$contents-h;
+    right: 5px;
+    width: 1px;
+    background-color: $c-green;
+  }
+
+  @include iPadMini {
+    display: none;
+  }
+}

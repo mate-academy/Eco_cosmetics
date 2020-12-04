@@ -1,6 +1,101 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin notebook {
+  @media screen and (max-width: 1218px) {
+    @content;
   }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 1030px) {
+    @content;
+  }
+}
+
+@mixin iPadMini {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 684px) {
+    @content;
+  }
+}
+
+@mixin iPhoneSE {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin titleMain {
+  margin: 20px 0;
+  font-family: "Sharp-Sans", sans-serif;
+  font-size: 36px;
+  line-height: 1.66;
+  font-weight: 600;
+  color: $c-green;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+
+  @include iPadMini {
+    font-size: 24px;
+  }
+
+  @include notebook {
+    margin-top: 0;
+  }
+}
+
+@mixin flexGrow {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  column-gap: $gap-column-t-i;
+}
+
+@mixin textLink($color) {
+  font-family: "Sharp-Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@mixin textNavFooter($color) {
+  font-family: "Sharp-Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: $color;
+}
+
+@mixin textButton {
+  font-family: "Sharp-Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: $c-gray-light;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+@mixin textGeneral {
+  font-family: "Sharp-Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: $c-black;
+}
+
+@mixin ingredient-pseudo {
+  content: "";
+  position: absolute;
+  right: -$description-line-w;
+  display: block;
+  background-color: $c-black;
+}
+
+@mixin Sharp($size, $width, $height) {
+  font-family: "Sharp-Sans", sans-serif;
+  font-size: $size;
+  font-weight: $width;
+  line-height: $height;
 }

@@ -1,7 +1,62 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "reset";
+@import "page";
+@import "contents";
+@import "header";
+@import "company";
+@import "nav";
+@import "button";
+@import "intro";
+@import "information";
+@import "brand";
+@import "shop";
+@import "slider";
+@import "product";
+@import "arrow";
+@import "about";
+@import "ingredients";
+@import "advantages";
+@import "help";
+@import "form";
+@import "input";
+@import "socials";
+@import "footer";
+
+html {
+  scroll-behavior: smooth;
+
+}
+
+*::selection {
+  background: $c-green-light;
+  color: $c-beige;
+}
 
 body {
-  background: $c-gray;
+  @include textGeneral;
+  background: $c-beige;
+  line-height: 1.3;
+}
+
+.container {
+  max-width: 1280px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $margin-container;
+  padding-left: $margin-container;
+
+  @include iPadMini {
+    padding-right: $margin-container / 2;
+    padding-left: $margin-container / 2;
+  }
+}
+
+.section {
+  padding-bottom: $section-padding-d;
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: $section-padding-m;
+  }
 }

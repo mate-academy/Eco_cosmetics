@@ -1,0 +1,54 @@
+.company {
+
+  &__logo {
+    width: $logo-size;
+    height: auto;
+
+    @include iPadMini {
+      width: $logo-size / 2;
+    }
+
+    &:hover {
+      animation: bell 1s linear;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    @include textLink($c-green);
+
+    &::after {
+      position: absolute;
+      content: "Witch of mountain winds";
+      width: max-content;
+      top: 50%;
+      left: $logo-size + 12px;
+      transform: translate(0, -50%);
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+}
+
+@keyframes bell {
+  0% {
+    transform: rotate(2deg) scale(1.05);
+  }
+
+  25% {
+    transform: rotate(-30deg) scale(1.1);
+  }
+
+  50% {
+    transform: rotate(15deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotate(-5deg) scale(1.1);
+  }
+}
