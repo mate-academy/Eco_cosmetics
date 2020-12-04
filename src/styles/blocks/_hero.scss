@@ -1,0 +1,75 @@
+.hero {
+  display: grid;
+  grid-template-areas: "img" "desc" "btn";
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(3, auto);
+  justify-items: center;
+
+  @include media(tablet) {
+    padding: 0 25px;
+  }
+
+  @include media(dt) {
+    grid-template-areas: "desc img" "btn img";
+    grid-template-columns: 480px 577px;
+    justify-content: space-between;
+    justify-items: start;
+    padding: 0 50px 50px 150px;
+  }
+
+  &__img {
+    grid-area: img;
+    margin-bottom: 25px;
+    @include size(100%,267px);
+    object-fit: cover;
+    @include media(tablet) {
+      margin-bottom: 50px;
+      height: 500px;
+    }
+    @include media(dt) {
+      margin-bottom: 0;
+      height: 100%;
+    }
+  }
+
+  &__description {
+    grid-area: desc;
+  }
+
+  &__heading {
+    margin-bottom: 12px;
+    padding: 0 20px;
+    text-align: center;
+    @include media(tablet) {
+      margin: 0 auto 20px;
+      width: 466px;
+    }
+    @include media(dt) {
+      margin: 0 auto 26px;
+      padding: 0;
+      text-align: left;
+    }
+  }
+
+  &__discount {
+    margin-bottom: 19px;
+    padding: 0 21px;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    @include media(tablet) {
+      margin: 0 auto 30px;
+      max-width: 278px;
+    }
+    @include media(dt) {
+      max-width: 100%;
+      margin: 0 0 50px;
+      padding: 0;
+      text-align: left;
+    }
+  }
+
+  &__link-btn {
+    grid-area: btn;
+  }
+}

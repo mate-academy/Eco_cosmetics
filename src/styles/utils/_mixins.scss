@@ -3,4 +3,59 @@
   &:hover {
     #{$_property}: $_toValue;
   }
+  &:active {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin size ($w, $h:$w) {
+  width: $w;
+  height: $h;
+}
+
+@mixin media($bp) {
+  @if ($bp == tablet) {
+    @media (min-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if ($bp == dt) {
+    @media (min-width: 1279px) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (min-width: $bp) {
+      @content;
+    }
+  }
+
+}
+
+@mixin deco-lines ($posX, $posY) {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    @include size(100vw, 1px);
+    background-color: $c-decor;
+    #{$posX}: 0;
+
+    @if ($posY == bottom) {
+      bottom: -100px;
+    }
+    @if ($posY == top) {
+      top: -100px;
+    }
+  }
+}
+
+@mixin deco-side {
+  position: relative;
+  &__decor-side {
+    position: absolute;
+  }
 }

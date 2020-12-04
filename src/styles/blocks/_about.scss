@@ -1,0 +1,74 @@
+.about {
+  padding: 30px 20px;
+  &__decor-side {
+    display: none;
+  }
+
+  &__picture {
+    display: none;
+  }
+
+  &__text {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    &:nth-of-type(2) {
+      display: none;
+    }
+  }
+
+  &__img {
+    height: 100%;
+  }
+
+  @include media(tablet) {
+    display: grid;
+    grid-template-columns: minmax(320px, 380px) 369px;
+    grid-template-areas: "h img" "p img" "l img";
+    gap: 0 30px;
+    justify-content: center;
+    padding: 50px 0 40px 27px;
+
+    &__picture {
+      display: block;
+      grid-area: img;
+    }
+  }
+
+  @include media(dt) {
+    grid-template-columns: minmax(320px, 380px) 500px;
+    grid-template-areas: "h img" "p img" "p img" "l img";
+    gap: 0 100px;
+    padding: 100px 150px;
+    align-items: end;
+
+    &__decor-side {
+      display: block;
+      position: absolute;
+      left: 50px;
+      top: 300px;
+    }
+
+    &__picture {
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: -150px;
+        display: block;
+        @include size(130px, 430px);
+        background: url("../images/about-l.jpg");
+      }
+    }
+
+    &__text {
+      padding: 10px 0;
+      margin-bottom: 10px;
+      &:nth-of-type(2) {
+        display: block;
+      }
+    }
+  }
+}

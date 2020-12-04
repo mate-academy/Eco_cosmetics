@@ -1,0 +1,86 @@
+.slider {
+  overflow: hidden;
+  &__cards-wrapper {
+    display: flex;
+    gap: 30px;
+    height: fit-content;
+    transition: all 0.5s;
+  }
+
+  &__img {
+    @include size(100vw);
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__card-heading {
+    @extend %slider-text;
+    color: $c-main-text;
+    padding: 5px 20px;
+  }
+
+  &__price {
+    @extend %price-text;
+    color: $c-main-text;
+    padding: 5px 20px;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+  }
+
+  &__control-l,
+  &__control-r {
+    width: 28px;
+    height: 28px;
+    background: url("../images/arrow.svg");
+
+    &_disabled {
+      background: url("../images/arrow_disabled.svg");
+    }
+  }
+
+  &__control-l {
+    transform: rotate(180deg);
+  }
+
+  @include media(500px) {
+
+    padding: 30px 27px;
+
+    &__img {
+      @include size(calc(50vw - 42px));
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &__card-heading {
+      padding: 5px 0;
+    }
+
+    &__price {
+      padding: 5px 0;
+    }
+
+    &__controls {
+      justify-content: flex-end;
+      padding: 20px 0;
+    }
+  }
+
+  @include media(1100px) {
+    &__img {
+      @include size(380px,500px);
+      object-fit: cover;
+      object-position: center;
+    }
+
+    &__controls {
+      justify-content: flex-start;
+      padding: 30px 0;
+    }
+  }
+}

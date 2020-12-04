@@ -1,0 +1,85 @@
+.help {
+  display: grid;
+  gap: 12px;
+  padding: 30px 20px;
+
+  &__decor-side {
+    display: none;
+  }
+  &__img {
+    display: none;
+  }
+
+  &__input {
+    @extend %input-text;
+    background-color: $c-background;
+    border-bottom: 1px solid #bdbdbd;
+    padding: 20px 0 5px;
+    width: 100%;
+
+    &:focus {
+      border-bottom-color: $c-main-text;
+    }
+
+    //&:valid {
+    //  color: $c-accent;
+    //  border-color: $c-accent;
+    //}
+
+    //&:invalid {
+    //  color: $c-invalid;
+    //  border-color: $c-invalid;
+    //}
+  }
+
+  &__ta {
+    margin-top: 20px;
+    resize: none;
+  }
+
+  &__legend {
+    @extend %form-text;
+    padding: 0;
+  }
+
+  &__form-fs {
+    padding: 0;
+    border: none;
+    margin-bottom: 30px;
+  }
+
+  @include media(tablet) {
+    grid-template-areas: "h img" "f img";
+    grid-auto-columns: minmax(342px, 480px) 1fr;
+    gap: 12px 30px;
+    height: 509px;
+    padding: 50px 0 50px 27px;
+
+    &__section-heading {
+      grid-area: h;
+    }
+
+    &__form {
+      grid-area: f;
+    }
+
+    &__img {
+      display: block;
+      grid-area: img;
+      height: 100%;
+      justify-self: end;
+    }
+  }
+
+  @include media(dt) {
+    padding: 100px 0 100px 150px;
+    height: unset;
+
+    &__decor-side {
+      display: block;
+      position: absolute;
+      left: 50px;
+      top: 150px;
+    }
+  }
+}
