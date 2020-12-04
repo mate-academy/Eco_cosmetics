@@ -20,11 +20,18 @@
     }
   }
 
-  @if ($bp == dt) {
+  @else if ($bp == dt) {
     @media (min-width: 1279px) {
       @content;
     }
   }
+
+  @else {
+    @media (min-width: $bp) {
+      @content;
+    }
+  }
+
 }
 
 @mixin deco-lines ($posX, $posY) {
