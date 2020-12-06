@@ -1,0 +1,149 @@
+.shop {
+  margin-left: 100px;
+
+  @include onTablet {
+    margin-left: 0;
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: start;
+    margin-right: 20px;
+  }
+
+  &__link {
+    padding-right: 20px;
+
+    font-size: 18px;
+    color: $colorKhakiLight;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+
+    &::after {
+
+      content: " ";
+      display: block;
+      opacity: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $colorKhaki;
+    }
+
+    &:hover {
+      color: $colorKhaki;
+    }
+
+    &:hover::after {
+      content: " ";
+      display: block;
+      opacity: 1;
+      height: 1px;
+      width: 100%;
+      background-color: $colorKhaki;
+    }
+  }
+
+  &__products {
+    position: relative;
+    display: flex;
+  }
+
+  &__pointer {
+    @include pointer;
+    left: -235px;
+    top: 84px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+
+  &__card {
+    margin: 85px 20px 20px 0;
+
+    @include onTablet {
+      &_3 {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      min-width: 300px;
+      height: 340px;
+    }
+  }
+
+  &__product-name {
+    display: block;
+    margin-top: 15px;
+
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 1.5;
+    color: $colorGrey1;
+
+  }
+
+  &__product-price {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: $colorGrey1;
+  }
+
+  &__button {
+    margin-top: 50px;
+    margin-bottom: 200px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    @include button;
+    padding-right: 70px;
+    padding-left: 70px;
+  }
+
+  &__slider {
+    display: flex;
+
+    @include onTablet {
+      justify-content: flex-end;
+      margin-right: 20px;
+    }
+  }
+  
+  &__slider-button {
+    margin-top: 45px;
+    width: 28px;
+    height: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    background-color: transparent;
+
+    @include onTablet {
+      margin-top: 10px;
+    }
+
+    &_left {
+    background-image: url(/images/LeftArrow.svg);
+
+      @include onTablet {
+        margin-right: 40px;
+      }
+    }
+    
+    &_right {
+      background-image: url(/images/RightArrow.svg);
+    }
+  }
+}

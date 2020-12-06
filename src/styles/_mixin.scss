@@ -5,3 +5,75 @@
   height: 1px;
   background: rgba(52, 79, 16, 0.5);
 }
+
+@mixin title {
+  font-size: 36px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $colorKhaki;
+  letter-spacing: 0.05em;
+}
+
+@mixin lernMore {
+  font-size: 14px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: $colorKhaki;
+
+  &::after {
+    content: " ";
+    display: block;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    height: 1px;
+    width: 75px;
+
+    background-color: $colorKhaki;
+  }
+}
+
+@mixin button {
+  display: inline-block;
+  text-align: center;
+  padding: 20px 115px 18px;
+
+  color: $colorWhite;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.3;
+  background-color: $colorGrey1;
+}
+
+@mixin pointer {
+  position: absolute;
+  bottom: 97%;
+  left: -295px;
+  transform: rotate(-90deg);
+  transform-origin: right;
+
+  color: $colorKhakiLight;
+  font-size: 14px;
+  text-transform: uppercase;
+  
+  &::before {
+    content: " ";
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 6px;
+    height: 1px;
+    width: 100px;
+    background-color: $colorKhakiLight;
+  }
+}
+
+@mixin onTablet {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
