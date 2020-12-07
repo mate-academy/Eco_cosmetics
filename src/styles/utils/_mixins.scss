@@ -4,3 +4,93 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin container($width: calc(100% - 100px)) {
+  width: $width;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+@mixin btn-dark($border: 1px solid $black-c, $background: $black-c) {
+  display: inline-block;
+
+  width: 280px;
+  height: 60px;
+
+  text-align: center;
+  font-size: 16px;
+  line-height: 60px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background-color: $background;
+  border: $border;
+}
+
+@mixin btn-hover(
+  $background-color: $white-c,
+  $color: $orange-c,
+  $border: 1px solid $orange-c
+) {
+  transition: 0.3s;
+  &:hover {
+    background-color: $background-color;
+    color: $color;
+    border: $border;
+  }
+}
+
+@mixin heading-large {
+  font-size: 60px;
+  line-height: 120%;
+  color: $black;
+}
+
+@mixin heading-medium {
+  font-size: 36px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $green-c;
+}
+
+@mixin text-extra-large($text-transform: uppercase, $color: $green-c) {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: $text-transform;
+  color: $color;
+}
+
+@mixin text-large($font-size: 20px, $color: $black-c) {
+  font-size: $font-size;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@mixin text-medium($color: $primary-white-c) {
+  font-size: 18px;
+  line-height: 130%;
+  color: $color;
+}
+
+@mixin text-small {
+  font-size: 16px;
+  line-height: 150%;
+  color: $black-c;
+}
+
+@mixin text-extra-small(
+  $font-weight: 500,
+  $color: $green-c,
+  $letter-spacing: normal
+) {
+  font-size: 14px;
+  line-height: 130%;
+  font-weight: $font-weight;
+  text-align: center;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+  color: $color;
+}
