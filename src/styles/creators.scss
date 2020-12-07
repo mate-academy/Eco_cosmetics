@@ -1,4 +1,5 @@
 .creators {
+  width: 100%;
   max-width: 1200px;
 
   display: grid;
@@ -59,7 +60,7 @@
   }
 
   &__title {
-    font-family: $mainFont;
+    font-family: $mainBoldFont;
     font-size: 36px;
     line-height: 150%;
     color: $mainTextColor;
@@ -214,15 +215,31 @@
 }
 
 @media screen and (max-width: 600px) {
-  .creators__title {
-    font-size: 18px;
-  }
-
   .creators__textOne {
     font-size: 14px;
   }
 
   .creators__imgBig {
     transform: translate(10%, 0);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .creators__about {
+    grid-column: 1 / 7;
+  }
+
+  .creators__imgBig {
+    display: none;
+  }
+
+  .creators__textOne {
+    margin-top: 25px;
+  }
+
+  .creators__contact {
+    margin-left: -25px;
+    width: 280px;
+    align-self: center;
   }
 }

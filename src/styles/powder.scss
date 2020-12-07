@@ -1,4 +1,5 @@
 .powder {
+  width: 100%;
   max-width: 1200px;
 
   display: grid;
@@ -53,7 +54,7 @@
 
     max-width: 300px;
 
-    font-family: $mainFont;
+    font-family: $mainBoldFont;
     font-size: 36px;
     line-height: 150%;
     color: $mainTextColor;
@@ -272,4 +273,55 @@
     font-size: 12px;
   }
 
+}
+
+@media screen and (max-width: 500px) {
+  .powder {
+    grid-template-rows: repeat(13, 1fr);
+
+    &__title {
+      width: 300px;
+    }
+
+    &__itemContainer {
+      transform: translate(-30%, 20%);
+    }
+
+    &__moreLink {
+      grid-row: 7 / 8;
+    }
+
+    &__icon-One,
+    &__text-One,
+    &__icon-Two,
+    &__text-Two,
+    &__icon-Three,
+    &__text-Three {
+      grid-column: 1 / 7;
+    }
+
+    &__icon-One {
+      grid-row: 9 / 10;
+    }
+
+    &__text-One {
+      grid-row: 10 / 11;
+    }
+
+    &__icon-Two {
+      grid-row: 11 / 12;
+    }
+
+    &__text-Two {
+      grid-row: 12 / 13;
+    }
+
+    &__icon-Three {
+      grid-row: 13 / 14;
+    }
+
+    &__text-Three {
+      grid-row: 14 / 15;
+    }
+  }
 }
