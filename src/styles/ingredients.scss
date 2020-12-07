@@ -5,7 +5,7 @@
   margin-bottom: 250px;
 
   @include onTablet {
-    padding-left: 0;
+    margin-left: 0;
   }
 
   &__pointer {
@@ -24,13 +24,17 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      height: 470px;
+    }
 
+    @include onMobile {
+      position: absolute;
     }
   }
 
   &__title {
     @include title;
-    margin-top: 80px;
+    margin-top: 60px;
     margin-bottom: 140px;
 
     @include onTablet {
@@ -51,7 +55,9 @@
     margin-top: 35px;
 
     @include onTablet {
+      align-items: flex-start;
       margin-left: 0;
+      margin-top: 125px;
     }
   }
 
@@ -114,8 +120,17 @@
     background-repeat: no-repeat;
 
     @include onTablet {
-      top: 10%;
+      right: -10%;
+      top: 25%;
       height: 300px;
+    }
+
+    @include onMobile {
+      right: -40%;
+    }
+
+    @media (max-width: 400px) {
+      right: -80%;
     }
   }
 }

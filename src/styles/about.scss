@@ -5,8 +5,11 @@
   margin-bottom: 200px;
 
   @include onTablet {
-    // flex-direction: column-reverse;
-    margin: 0 0 80px;
+    margin: 30px 0 80px;
+  }
+
+  @include onMobile {
+    justify-content: center;
   }
 
   &__pointer {
@@ -19,18 +22,22 @@
 
   &__card {
     width: $cardWidth;
-    margin-top: 40px;
+    min-width: 350px;
     margin-left: 100px;
 
     @include onTablet {
       margin-top: 0;
-      width: 100%;
+      min-width: 300px;
       margin-left: 0;
     }
   }
 
   &__title {
     @include title;
+  }
+
+  @include onMobile {
+    font-size: 24px;
   }
 
   &__text {
@@ -40,6 +47,8 @@
     @include onTablet {
       min-width: 300px;
       margin-right: 20px;
+      font-size: 16px;
+      
     }
 
     &-second {
@@ -68,6 +77,10 @@
     @include onTablet {
       height: auto;
       margin-left: 20px;
+    }
+
+    @include onMobile {
+      display: none;
     }
 
     &-half {
