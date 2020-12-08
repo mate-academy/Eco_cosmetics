@@ -74,12 +74,17 @@
     display: block;
     @include buttonShop;
 
+    &:hover {
+      @include buttonHover;
+    }
+
     @media (max-width: 950px) {
       margin: 0 auto;
     }
   }
 
   &__data {
+
     @media (max-width: 950px) {
       display: flex;
       flex-direction: column;
@@ -91,12 +96,15 @@ input,
 textarea {
   display: block;
   width: 480px;
+  line-height: normal;
   padding: 10px 0;
   margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid #bdbdbd;
   background-color: transparent;
   outline: none;
+
+  @include H5_2;
 
   @media (max-width: 950px) {
     width: 342px;
@@ -109,15 +117,14 @@ textarea {
 
 textarea {
   resize: none;
-  margin-top: 36px;
+
+  @include H5_2;
 }
 
 textarea::placeholder,
 input::placeholder {
   color: #828282;
-  font-size: 18px;
-  font-weight: 400px;
-  line-height: 150%;
+  @include H5_1;
   text-transform: capitalize;
 
   @media (max-width: 950px) {
