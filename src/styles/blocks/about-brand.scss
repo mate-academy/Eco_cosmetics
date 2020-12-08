@@ -1,0 +1,68 @@
+.about-brand {
+  position: relative;
+  padding-left: $desktop-padding-left;
+  display: flex;
+  gap: 100px;
+
+  @include onTablet {
+    width: 768px;
+    gap: 30px;
+    margin: 0;
+    padding: 100px 0 80px $tablet-padding;
+  }
+
+  @include onMobile {
+    width: 320px;
+    padding: $mobile-padding-bottom 20px;
+  }
+
+  &__photos {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__photo {
+    width: 500px;
+    height: 529px;
+    transition: transform 0.5s;
+
+    @include onTablet {
+      width: 369px;
+      height: 318px;
+      object-fit: cover;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__photo-mini {
+    bottom: 200px;
+    right: 0;
+    width: 130px;
+    height: 430px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__learn-more {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 10px;
+    }
+  }
+
+  &__side-element {
+    top: 80px;
+    left: -30px;
+  }
+}

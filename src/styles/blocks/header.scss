@@ -1,0 +1,176 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  width: calc(100% - 100px);
+
+  &--location {
+    margin: 40px auto 80px;
+  }
+
+  &__fixer {
+    display: none;
+  }
+
+  @include onTablet {
+    margin: 22px $tablet-padding 31px;
+  }
+
+  @include onMobile {
+    margin: 15px 20px 12px;
+  }
+
+  &__nav {
+    @include onTablet {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      z-index: 1;
+      background-color: $main-page-color-gray;
+      transition: width 1s;
+    }
+
+    @include onMobile {
+      gap: 30px;
+    }
+  }
+
+  &__toggler {
+    display: none;
+
+    &-container {
+      display: none;
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &__click-zone {
+      position: absolute;
+      top: 30px;
+      left: 22px;
+      width: 30px;
+      height: 30px;
+      z-index: 3;
+      cursor: pointer;
+
+      @include onMobile {
+        top: 11px;
+        left: 15px;
+      }
+    }
+
+    @include onTablet {
+      &-icon {
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &-element {
+        height: 1px;
+        width: 20px;
+        z-index: 2;
+        background-color: $main-page-color-green;
+        transition: all 0.5s;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  @include onTablet {
+    &__toggler:checked + &__toggler-container {
+      & .header__toggler-element {
+        background: $main-page-color-light;
+        position: absolute;
+        top: 45px;
+        transform: rotate(405deg);
+
+        @include onMobile {
+          top: 25px;
+        }
+      }
+
+      & .header__toggler-element:nth-child(2) {
+        transform: rotate(495deg);
+      }
+
+      & .header__toggler-element:nth-child(3) {
+        opacity: 0;
+      }
+
+      & .header__toggler__click-zone:hover {
+        & ~ .header__toggler-element:nth-child(2) {
+          transform: rotate(585deg);
+        }
+
+        & ~ .header__toggler-element:nth-child(4) {
+          transform: rotate(495deg);
+        }
+      }
+    }
+
+    &__toggler:checked ~ &__fixer {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    &__toggler:not(:checked) ~ &__nav {
+      display: none;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    & img {
+      @include onTablet {
+        width: 24px;
+      }
+    }
+
+    &::after {
+      content: "witch of mountain winds";
+      position: absolute;
+      left: 62px;
+      color: $main-page-color-green;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 50px;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  .header__basket {
+    padding: 7px 10px 13px;
+    margin-right: -10px;
+    transition: transform 0.5s;
+
+    @include onMobile {
+      padding: 0;
+      margin: 0 0 -5px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

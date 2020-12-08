@@ -1,0 +1,70 @@
+.fact {
+  display: flex;
+  gap: 120px;
+
+  @include onTablet {
+    width: 280px;
+    margin: 0 auto;
+  }
+
+  &__description {
+    position: relative;
+    width: 530px;
+    padding: 101px 0 69px 150px;
+    &-text {
+      font-size: 16px;
+      line-height: 150%;
+      color: $main-page-color-gray;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__title {
+    position: relative;
+    width: 630px;
+    padding: 106px 250px 101px 0;
+
+    &-text {
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $main-page-color-green;
+
+      @include onTablet {
+        font-size: 18px;
+      }
+    }
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+.shop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: $desktop-padding-left;
+
+  @include onTablet {
+    width: 768px;
+    padding: 0 $tablet-padding 0;
+    margin: 0 auto 100px;
+  }
+
+  @include onMobile {
+    width: 320px;
+    padding: 0;
+    margin-bottom: $mobile-padding-bottom;
+  }
+
+  &__title {
+    @include h3-style;
+    @include onMobile {
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 55px;
+    list-style: none;
+
+    @include onTablet {
+      gap: 20px;
+    }
+
+    @include onMobile {
+      margin: 0 20px;
+      width: 280px;
+      gap: 0;
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    padding: 20px 0;
+    margin-bottom: 65px;
+
+    @include onTablet {
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    @include nav-link-style;
+    color: #828282;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.5s;
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      height: 2px;
+      bottom: 0;
+      width: 0;
+      background-color: $main-page-color-gray;
+      transition: width 0.5s linear;
+    }
+
+    &:hover::after,
+    &:focus::after,
+    &-active::after {
+      width: 100%;
+    }
+
+    &:hover,
+    &:focus,
+    &-active {
+      color: $main-page-color-gray;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 45px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      & > :last-child {
+        display: none;
+      }
+    }
+  }
+
+  &__togglers {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      align-self: center;
+      gap: 15px;
+    }
+
+    @include onTablet {
+      align-self: flex-end;
+    }
+  }
+
+  &__toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 5%;
+    background-color: $main-page-color-light;
+    transition: border-color 0.5s;
+
+    &-right {
+      transform: rotate(180deg);
+    }
+
+    &:hover {
+      border-color: #828282;
+    }
+
+    &:focus {
+      border-color: $main-page-color-gray;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  &__side-element {
+    left: 45px;
+    top: 10px;
+  }
+}
