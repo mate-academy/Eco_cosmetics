@@ -3,14 +3,20 @@
   justify-content: space-between;
   padding: 0 250px 0 150px;
   position: relative;
+  @media (max-width: 768px) {
+    padding: 0;
+    justify-content: center;
+  }
 
   &__smoll-text {
     max-width: 380px;
     font-size: 16px;
     line-height: 24px;
-    letter-spacing: 0em;
     text-align: left;
     @include avenirM;
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     &::after {
       content: "";
@@ -21,14 +27,10 @@
       top: -100px;
       position: absolute;
       background: rgba(52, 79, 16, 0.5);
-
     }
-
   }
 
-
   &__big-text {
-    // max-width: 380px;
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 0.05em;
@@ -36,6 +38,22 @@
     @include avenirM;
     text-transform: uppercase;
     align-items: center;
+    @media (max-width: 768px) {
+      br {
+        display: none;
+      }
+      text-align: center;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #344f10;
+      width: 280px;
+    }
+    @media (max-width: 732px) {
+      text-align: start;
+ 
+     }
 
     &::before {
       content: "";
@@ -46,7 +64,9 @@
       bottom: -100px;
       position: absolute;
       background: rgba(52, 79, 16, 0.5);
-
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
 }

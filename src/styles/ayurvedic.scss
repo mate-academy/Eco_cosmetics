@@ -4,8 +4,23 @@
   padding-left: 150px;
   padding-top: 50px;
 
+  @media (max-width: 768px) {
+    padding-top: 0;
+    padding-left: 27px;
+  }
+  @media (max-width: 732px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   &__tooth {
     position: relative;
+    @media (max-width: 768px) {
+      padding-left: 27px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 
   &__sideline {
@@ -20,6 +35,9 @@
     color: rgba(52, 79, 16, 0.5);
     transform: rotate(-90deg);
     text-transform: uppercase;
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     &::before {
       content: "";
@@ -34,22 +52,26 @@
     }
   }
 
-
-
-
   &__title {
-    @include avenirM;
+    @include avenirR;
     font-size: 36px;
     line-height: 54px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #344F10;
+    color: #344f10;
     max-width: 300px;
     padding-top: 43px;
     padding-bottom: 139px;
+    @media (max-width: 768px) {
+      font-size: 24px;
+      line-height: 36px;
+    }
+    @media (max-width: 732px) {
+      padding-top: 15px;
+      padding-bottom: 37px;
+    }
+    
   }
-
-
 
   &__more {
     @include sharpM;
@@ -57,7 +79,7 @@
     line-height: 18px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #344F10;
+    color: #344f10;
     padding-top: 10px;
     position: relative;
 
@@ -68,7 +90,10 @@
       height: 1px;
       left: 0;
       bottom: -12px;
-      background: #344F10;
+      background: #344f10;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 30px;
     }
   }
 
@@ -81,15 +106,18 @@
   }
 
   &__details {
-    @include avenirM;
+    @include avenirR;
     font-size: 16px;
     line-height: 24px;
     text-align: right;
     text-transform: capitalize;
-    color: #333333;
+    color: #333;
     position: relative;
     padding-bottom: 49px;
-    text-align: right;
+    @media (max-width: 768px) {
+      top: 10px;
+      left: 45px;
+    }
 
     &::after {
       content: "";
@@ -97,7 +125,7 @@
       width: 76px;
       height: 1px;
       display: block;
-      background: #333333;
+      background: #333;
       transform: rotate(-180deg);
       right: -100px;
       top: 13px;
@@ -110,9 +138,13 @@
       width: 5px;
       height: 5px;
       border-radius: 50%;
-      background: #333333;
+      background: #333;
       right: -102px;
       top: 11px;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
 
@@ -122,10 +154,17 @@
 
   &__jar {
     padding-left: 160px;
+    overflow: hidden;
+    @media (max-width: 768px) {
+      padding: 0;
+    }
   }
 
   &__jar-photo {
-    max-width: 100%;
-    object-fit: cover;
+
+    @media (max-width: 768px) {
+      position: relative;
+      left: 99px;
+    }
   }
 }

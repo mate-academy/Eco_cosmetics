@@ -1,26 +1,27 @@
 .footer {
-  max-width: 1280px;
+  // max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 60px 49px 66px 51px;
-  background: rgba(52, 79, 16, 0.5);;
+  background: rgba(52, 79, 16, 0.5);
+  @media (max-width: 992px) {
+    // width: 992px;
+  }
+  @media (max-width: 768px) {
+    // width: 768px;
+    padding: 29px 26px 49px 27px;
+  }
 
   &__info {
     display: flex;
     justify-content: space-between;
   }
 
-  // .footer__nav
-
-  &__nav {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
-  }
-
-  // .footer__menu
-
   &__menu {
     padding-bottom: 148px;
+    @media (max-width: 768px) {
+      padding-bottom: 90px;
+    }
   }
 
   // .footer__list
@@ -28,37 +29,40 @@
   &__list {
     display: flex;
     gap: 40px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
-
-  // .footer__item
-
-  &__item {
-    
-  }
-
-  // .footer__link
 
   &__link {
     font-size: 18px;
     @include avenirR;
     color: #e4dfd3;
     line-height: 23px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 
   // .footer__copyright
 
   &__copyright {
     @include sharpM;
-    color: #E4DFd3;
+    color: #e4dfd3;
     font-size: 18px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 18px;
+      text-align: end;
+    }
   }
-
-  // .footer__copyright1
-
-  &__copyright1 {
+  &__span {
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
-
-  // .footer__contact
 
   &__contact {
     color: #e4dfd3;
@@ -67,38 +71,32 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 18px;
+      justify-content: stretch;
+      gap: 20px;
+    }
   }
-
-  // .footer__text
-
-  &__text {
-  }
-
-  // .footer__email
 
   &__email {
     color: inherit;
   }
 
-  // .footer__tel
-
   &__tel {
     color: inherit;
   }
-
-  // .footer__support
-
-  &__support {
-  }
-
- 
 
   &__facebook {
     padding-right: 14px;
   }
 
-  // .footer__instagram
+  &__icons {
 
-  &__instagram {
+    @media (max-width: 768px) {
+      position: relative;
+      right: 420px;
+      bottom: 40px;
+    }
   }
 }

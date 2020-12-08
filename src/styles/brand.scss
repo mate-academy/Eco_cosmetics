@@ -1,18 +1,47 @@
 .main {
   &__wrapper {
-    max-width: $block-width;
+    width: $block-width;
     margin: 0 auto;
-  }
 
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    
+
+    @media (max-width: 576px) {
+      width: 100%;
+      // padding: 0 30px;
+    }
+
+    @media (max-width: 320px) {
+      width: 100%;
+      // padding: 0 30px;
+    }
+    // @media (max-width: 732px) {
+    //   max-width: 100%;
+    //  }
+  }
 }
+
 .brand {
   display: flex;
   justify-content: space-between;
   padding: 95px 50px 306px 150px;
 
-  &__text {
-   padding-right: 58px;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    padding-left: 50px;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    text-align: center;
+  }
 
+  &__text {
+    padding-right: 58px;
+
+    @media (max-width: 768px) {
+      padding-right: 0;
+    }
   }
 
   &__title {
@@ -24,19 +53,16 @@
     line-height: 72px;
     margin-bottom: 30px;
     white-space: nowrap;
-    // font-size: calc(43px + (17 + 17 * 0.7) * ((100vw - 320px) / 1280));
+
     @media (max-width: 768px) {
-      padding-top: 50px;
-    }
-
-    @media (max-width: 700px) {
       font-size: 36px;
-      line-height: 46px;
-    }
-
-    @media (max-width: 320px) {
-      font-size: 24px;
-      line-height: 24px;
+      white-space: normal;
+      line-height: 47px;
+      padding-top: 50px;
+      br {
+        display: none;
+      }
+      text-align: center;
     }
   }
 
@@ -46,6 +72,14 @@
     color: #333;
     @include avenirR;
     margin-bottom: 52px;
+  }
+
+  &__button {
+
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__btn {
@@ -59,6 +93,59 @@
     text-align: center;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+    padding: 0.25em 0 0.33em;
+    text-shadow: 0 0 80px rgba(255, 255, 255, 0.9);
+    animation: bounce-top 2s infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  @keyframes bounce-top {
+    0% {
+      transform: translateY(-45px);
+      animation-timing-function: ease-in;
+      opacity: 1;
+    }
+
+    24% {
+      opacity: 1;
+    }
+
+    40% {
+      transform: translateY(-24px);
+      animation-timing-function: ease-in;
+    }
+
+    65% {
+      transform: translateY(-12px);
+      animation-timing-function: ease-in;
+    }
+
+    82% {
+      transform: translateY(-6px);
+      animation-timing-function: ease-in;
+    }
+
+    93% {
+      transform: translateY(-4px);
+      animation-timing-function: ease-in;
+    }
+
+    25%,
+    55%,
+    75%,
+    87% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+    }
+
+    100% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
   }
 
   &__img {
@@ -66,9 +153,10 @@
     height: 456px;
     object-fit: cover;
     object-position: center;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 100%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: auto;
+    }
   }
 }

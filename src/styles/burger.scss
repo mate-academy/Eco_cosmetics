@@ -1,98 +1,23 @@
-// .burger {
-//   // display: none;
-//   &__span {
-//     display: block;
-//     position: absolute;
-//     width: 100%;
-//     height: 1px;
-//     background-color: #344f10;
-//      &::after {
-//        content: "";
-//        display: block;
-//        position: absolute;
-//        width: 100%;
-//        height: 1px;
-//        background-color: #344f10;
-//        top: 5px;
-//      }
-//      &::before {
-//        content: "";
-//       display: block;
-//       position: absolute;
-//       width: 100%;
-//       height: 1px;
-//       background-color: #344f10;
-//       top: -5px;
-//      }
-//     }
-//   &__togler {
-//     display: none;
-    
-//     &:checked ~ .burger__list {
-//       visibility: visible;
-//     }
-//   }
-
-  // &__list {
-  //   // display: none;
-  //   visibility: hidden;
-  //   font-size: 18px;
-  //   background-color: #333;
-  //   height: 100%;
-  //   width: 100%;
-  //   display: block;
-  //   position: fixed;
-  //   text-align: center;
-  //   top: 0;
-  //   left: 0;
-  //   padding-top: 176px;
-  // }
-
-//   &__link {
-//     color: #e4dfd3;
-//       font-size: 18px;
-//       line-height: 23px;
-//       font-weight: medium;
-//       font-family: "Sharp Sans Display No2";
-//       padding-bottom: 50px;
-//       display: block;
-//     &::after {
-//       content: "";
-//       width: 100%;
-//       height: 1px;
-//       background-color: #828282;
-//       display: block;
-//       margin-top: 10px;
-
-//     }
-//   }
-
-//   &__item {
-//   }
-
-// }
 .menu {
-    display: none;
+  display: none;
 
-    @media (max-width: 768px) {
-      display: block;
-      order: -1;
-    }
+  @media (max-width: 992px) {
+    display: block;
+    order: -1;
   }
-
+}
 
 #menu__toggle {
   display: none;
 }
 
 .menu__btn {
-  align-items: center;  /* центрируем содержимое кнопки */
+  align-items: center; /* центрируем содержимое кнопки */
   position: fixed;
   width: 26px;
   height: 26px;
   cursor: pointer;
   z-index: 1;
-
 }
 
 .menu__btn > span,
@@ -104,12 +29,14 @@
   height: 1px;
   background-color: #344f10;
 }
+
 .menu__btn > span::before {
-  content: '';
+  content: "";
   top: -8px;
 }
+
 .menu__btn > span::after {
-  content: '';
+  content: "";
   top: 8px;
 }
 
@@ -128,7 +55,7 @@
 }
 
 .menu__item {
-  font-family: "Sharp Sans Display No2";
+  font-family: "IBM", "Plex", sans-serif;
 }
 
 .menu__link {
@@ -136,7 +63,7 @@
   font-size: 18px;
   line-height: 23px;
   font-weight: medium;
-  font-family: "Sharp Sans Display No2";
+  font-family: "IBM", "Plex", sans-serif;
   padding: 0 27px 50px;
   display: block;
   &::after {
@@ -148,21 +75,24 @@
     margin-top: 10px;
   }
 }
+
 #menu__toggle:checked ~ .menu__btn > span {
   transform: rotate(45deg);
   background-color: #e4dfd3;
-
 }
+
 #menu__toggle:checked ~ .menu__btn > span::before {
   top: 0;
   transform: rotate(0);
   background-color: #e4dfd3;
 }
+
 #menu__toggle:checked ~ .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
   background-color: #e4dfd3;
 }
+
 #menu__toggle:checked ~ .menu__box {
   visibility: visible;
   left: 0;
