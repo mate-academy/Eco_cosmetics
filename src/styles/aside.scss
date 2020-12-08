@@ -86,6 +86,8 @@
     border-bottom: 1px solid $mainElementColor;
     background-color: transparent;
 
+    max-width: 280px;
+
     font-family: $mainFont;
     font-size: 16px;
     line-height: 150%;
@@ -107,6 +109,7 @@
 
   &__message {
     margin-top: 60px;
+    resize: none;
   }
 
   &__button {
@@ -174,7 +177,11 @@
 }
 
 @media screen and (max-width: 600px) {
-  .aside__button {
+  .aside__button,
+  .aside__yourName,
+  .aside__email,
+  .aside__phone,
+  .aside__message {
     width: 225px;
   }
 }
@@ -187,6 +194,17 @@
 
   .aside__img {
     display: none;
+  }
+
+  .aside__form {
+    align-self: center;
+  }
+
+  .aside__yourName,
+  .aside__email,
+  .aside__phone,
+  .aside__message {
+    width: 100%;
   }
 
   .aside__button {
