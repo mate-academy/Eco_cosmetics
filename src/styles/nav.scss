@@ -4,7 +4,13 @@
 
   color: $colorKhaki;
 
-  
+  &__toggle {
+    opacity: 0;
+  }
+
+  &__hamburger-menu {
+    display: none;
+  }
 
   &__list {
     display: flex;
@@ -16,16 +22,46 @@
   }
   
   &__link {
-    padding: 20px;
+    padding: 18px 40px;
     cursor: pointer;
 
-    color: $colorKhaki;
+    color: $colorKhakiLight;
+    font-family: $fontButton;
+    font-weight: 300;
+
+    transition: 0.5s;
+
+    &::after {
+      content: " ";
+      display: block;
+      position: relative;
+      left: 38px;
+      height: 1px;
+      transition: 0.4s;
+      width: 0;
+      background-color: $colorKhaki;
+    }
+    
+    &:hover {
+      color: $colorKhaki;
+    }
+
+    &:hover::after {
+      width: 65%;
+    }
   }
-  
+
   &__brand {
     position: relative;
     padding-left: 60px;
-    
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $colorKhaki;
+    font-family: $fontButton;
+    font-weight: 300;
+    transition: 0.4s;
+
+
     @include onTablet {
       order: 2;
       visibility: hidden;
@@ -60,10 +96,18 @@
     margin-top: -3px;
     margin-right: 10px;
 
+    &:hover {
+      animation: 0.11s tremor ease-out infinite;
+    }
+
     @include onTablet {
       order: 3;
       position: absolute;
       right: 30px;
+
+      &:hover {
+        animation: none;
+      }
     }
   }
 }

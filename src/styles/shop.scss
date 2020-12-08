@@ -35,13 +35,11 @@
     color: $colorKhakiLight;
     text-transform: uppercase;
 
-    transition: 0.3s;
+    transition: 0.4s;
 
     &::after {
-
       content: " ";
       display: block;
-      opacity: 0;
       height: 1px;
       width: 0%;
       background-color: $colorKhaki;
@@ -80,7 +78,11 @@
 
     &:hover {
       transform: scale(1.05);
-      border: 1px solid $colorGrey1;
+    }
+
+    &:hover > .shop__image {
+      border-radius: 30px;
+      box-shadow: 1px 2px 10px $colorGrey1;
     }
 
     &:last-child {
@@ -105,6 +107,7 @@
   &__image {
     object-fit: cover;
     width: 100%;
+    transition: 0.4s;
 
     @include onTablet {
       height: 300px;
