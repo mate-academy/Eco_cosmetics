@@ -1,0 +1,108 @@
+.shop {
+  &__container {
+    position: relative;
+
+    @include container(100%);
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 150px;
+  }
+
+  &__aside {
+    display: flex;
+    position: absolute;
+    top: 335px;
+    left: 50px;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+  }
+
+  &__aside-line {
+    width: 100px;
+    height: 1px;
+
+    margin-right: 10px;
+
+    color: rgba(52, 79, 16, 0.5);
+  }
+
+  &__aside-description {
+    &--text-extra-small {
+      @include text-extra-small(0.05em, 500, rgba(52, 79, 16, 0.5));
+    }
+  }
+
+  &__heading {
+    margin-bottom: 20px;
+
+    &--heading-medium {
+      @include heading-medium;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__list-item {
+    margin-right: 20px;
+    margin-bottom: 85px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__list-link {
+    padding-bottom: 20px;
+    margin-bottom: 60px;
+
+    &--text-large {
+      @include text-large(18px);
+    }
+
+    &--active {
+      border-bottom: 2px solid $black-c;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 45px;
+  }
+
+  &__card-img {
+    margin-bottom: 20px;
+
+    width: 100%;
+    height: auto;
+  }
+
+  &__card-name {
+    margin-bottom: 10px;
+
+    &--text-large {
+      @include text-large;
+    }
+  }
+
+  &__card-price {
+    &--text-large {
+      @include text-large(18px);
+    }
+  }
+
+  &__buttons {
+    margin-bottom: 45px;
+  }
+
+  &__btn {
+    align-self: center;
+  }
+}

@@ -7,7 +7,7 @@
 
 @mixin container($width: calc(100% - 100px)) {
   width: $width;
-  max-width: 1500px;
+  max-width: 1700px;
   margin: 0 auto;
 }
 
@@ -42,7 +42,7 @@
 @mixin heading-large {
   font-size: 60px;
   line-height: 120%;
-  color: $black;
+  color: $black-c;
 }
 
 @mixin heading-medium {
@@ -69,8 +69,8 @@
   color: $color;
 }
 
-@mixin text-medium($color: $primary-white-c) {
-  font-size: 18px;
+@mixin text-medium($color: $primary-white-c, $font-size: 18px) {
+  font-size: $font-size;
   line-height: 130%;
   color: $color;
 }
@@ -82,9 +82,9 @@
 }
 
 @mixin text-extra-small(
+  $letter-spacing: normal,
   $font-weight: 500,
-  $color: $green-c,
-  $letter-spacing: normal
+  $color: $green-c
 ) {
   font-size: 14px;
   line-height: 130%;
