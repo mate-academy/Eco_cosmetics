@@ -13,6 +13,14 @@
     margin-left: 25px;
   }
 
+  &__navCheckbox {
+    display: none;
+  }
+
+  &__navSwitcher {
+    display: none;
+  }
+
   &__nav {
     grid-column: 1 / 13;
     grid-row: 1/ 3;
@@ -128,9 +136,117 @@
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(12, 1fr);
 
+    /*#region navigation*/
+    &__navSwitcher {
+      position: relative;
+      align-self: center;
+      z-index: 2;
+
+      display: block;
+      width: 25px;
+      height: 25px;
+
+      margin-left: 25px;
+    }
+
+    &__navLine {
+      width: 25px;
+      height: 1px;
+      border: 1px solid $mainElementColor;
+      background-color: $mainElementColor;
+    }
+
+    &__navLine--first,
+    &__navLine--second,
+    &__navLine--third,
+    &__navLine--fourth {
+      position: absolute;
+    }
+
+    &__navLine--first {
+      top: 0;
+    }
+
+    &__navLine--second,
+    &__navLine--third {
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    &__navLine--fourth {
+      position: absolute;
+      bottom: 0;
+    }
+
     &__nav {
       display: none;
     }
+
+    &__navCheckbox:checked ~ &__navSwitcher > &__navLine--first,
+    &__navCheckbox:checked ~ &__navSwitcher > &__navLine--second,
+    &__navCheckbox:checked ~ &__navSwitcher > &__navLine--third,
+    &__navCheckbox:checked ~ &__navSwitcher > &__navLine--fourth {
+      background-color: $mainColor;
+    }
+
+    &__navCheckbox:checked ~ &__navSwitcher > &__navLine--second {
+      transform: rotate(45deg);
+    }
+
+    &__navCheckbox:checked ~ &__navSwitcher > &__navLine--third {
+      transform: rotate(-45deg);
+    }
+
+    &__navCheckbox:checked ~ &__navSwitcher > &__navLine--first {
+      top: 50%;
+      transform: translate(0, -50%) rotate(45deg);
+    }
+
+    &__navCheckbox:checked ~ &__navSwitcher > &__navLine--fourth {
+      top: 50%;
+      transform: translate(0, -50%) rotate(-45deg);
+    }
+
+    &__navCheckbox:checked ~ &__nav {
+      position: absolute;
+      grid-row: 2 / 13;
+      grid-column: 1 / 7;
+
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      background-color: #fff;
+    }
+
+    &__navCheckbox:checked ~ &__nav > &__list {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+      height: 100%;
+
+      padding-top: 80px;
+
+      background-color: $secondTextColor;
+    }
+
+    &__navCheckbox:checked ~ &__nav > &__list > &__item {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+
+      margin-right: 25px;
+      margin-left: 25px;
+
+      border-bottom: 1px solid $mainColor;
+    }
+
+    &__navCheckbox:checked ~ &__nav > &__list > &__item * {
+      color: $mainColor;
+    }
+
+    /*#endregion navigation*/
 
     &__logo {
       grid-column: 3 / 5;
