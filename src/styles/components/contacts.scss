@@ -1,0 +1,130 @@
+.contacts {
+  &__container {
+    position: relative;
+
+    @include container(100%);
+  }
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+
+    margin-left: 150px;
+
+    @media screen and (max-width: 1200px) {
+      margin-left: 50px;
+    }
+
+    @media screen and (max-width: 950px) {
+      margin-left: 0;
+    }
+  }
+
+  &__aside {
+    display: flex;
+    position: absolute;
+    top: 147px;
+    left: 50px;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+  }
+
+  &__aside-line {
+    width: 100px;
+    height: 1px;
+
+    margin-right: 10px;
+
+    color: rgba(52, 79, 16, 0.5);
+  }
+
+  &__aside-description {
+    &--text-extra-small {
+      @include text-extra-small(0.05em, 500, rgba(52, 79, 16, 0.5));
+    }
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-right: 20px;
+
+    max-width: 480px;
+
+    @media screen and (max-width: 1050px) {
+      max-width: 380px;
+    }
+  }
+
+  &__article-heading {
+    margin-bottom: 20px;
+
+    &--heading-medium {
+      @include heading-medium;
+    }
+
+    @media screen and (max-width: 980px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__article-description {
+    margin-bottom: 20px;
+
+    &--text-extra-large {
+      @include text-extra-large(lowercase, $black-c, normal);
+
+      @media screen and (max-width: 980px) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    margin-bottom: 30px;
+
+    &:nth-child(3) {
+      margin-bottom: 50px;
+    }
+
+    @media screen and (max-width: 980px) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__input {
+    padding-bottom: 10px;
+
+    width: 480px;
+
+    border: none;
+    background-color: inherit;
+    border-bottom: 1px solid $gray-c;
+
+    &--text-medium {
+      @include text-medium($black-c);
+    }
+
+    @media screen and (max-width: 1200px) {
+      width: 380px;
+    }
+  }
+
+  &__img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+  }
+}

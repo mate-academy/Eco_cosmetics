@@ -8,12 +8,30 @@
     justify-content: space-between;
 
     margin-left: 100px;
+
+    @media screen and (max-width: 1200px) {
+      margin-left: 0;
+    }
+
+    @media screen and (max-width: 980px) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   }
 
   &__article {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    margin-right: 20px;
+
+    @media screen and (max-width: 980px) {
+      align-items: center;
+      text-align: center;
+
+      margin-right: 0;
+    }
   }
 
   &__article-heading {
@@ -22,6 +40,10 @@
     &--heading-large {
       @include heading-large;
     }
+
+    @media screen and (max-width: 980px) {
+      margin-bottom: 20px;
+    }
   }
 
   &__article-description {
@@ -29,6 +51,19 @@
 
     &--text-medium {
       @include text-medium($black-c, 22px);
+
+      @media screen and (max-width: 980px) {
+        font-size: 18px;
+        line-height: 150%;
+      }
+    }
+  }
+
+  &__img-container {
+    @media screen and (max-width: 980px) {
+      margin-bottom: 50px;
+
+      width: 100%;
     }
   }
 

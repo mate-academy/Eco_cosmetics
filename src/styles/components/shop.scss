@@ -10,6 +10,14 @@
     flex-direction: column;
 
     margin-left: 150px;
+
+    @media screen and (max-width: 1200px) {
+      margin-left: 50px;
+    }
+
+    @media screen and (max-width: 980px) {
+      margin-left: 0;
+    }
   }
 
   &__aside {
@@ -19,6 +27,10 @@
     left: 50px;
     transform-origin: 0 0;
     transform: rotate(-90deg);
+
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
   }
 
   &__aside-line {
@@ -42,6 +54,10 @@
     &--heading-medium {
       @include heading-medium;
     }
+
+    @media screen and (max-width: 980px) {
+      margin-bottom: 10px;
+    }
   }
 
   &__list {
@@ -55,6 +71,10 @@
     &:last-child {
       margin-right: 0;
     }
+
+    @media screen and (max-width: 980px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__list-link {
@@ -63,6 +83,10 @@
 
     &--text-large {
       @include text-large(18px);
+
+      @media screen and (max-width: 980px) {
+        font-size: 14px;
+      }
     }
 
     &--active {
@@ -75,6 +99,22 @@
     justify-content: space-between;
 
     margin-bottom: 45px;
+
+    @media screen and (max-width: 1279px) {
+      justify-content: space-around;
+    }
+
+    @media screen and (max-width: 980px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__card {
+    @media screen and (max-width: 1279px) {
+      &:last-child {
+        display: none;
+      }
+    }
   }
 
   &__card-img {
