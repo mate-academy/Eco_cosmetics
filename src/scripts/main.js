@@ -9,7 +9,7 @@ const secondLine = document.querySelector('.line--2');
 const thirdLine = document.querySelector('.line--3');
 const links = document.querySelectorAll('.nav__link');
 
-toggle.onclick = function toOpenMenu() {
+function toOpenMenu() {
   list.classList.toggle('nav__list--open');
   toggle.classList.toggle('nav__toggle--active');
   lines.forEach(line => line.classList.toggle('nav__toggle-line--active'));
@@ -19,6 +19,8 @@ toggle.onclick = function toOpenMenu() {
   page.classList.toggle('page__non-scroll');
   links.forEach(link => link.classList.toggle('nav__link--open'));
 };
+
+toggle.addEventListener('click', toOpenMenu);
 
 function checkMediaQuery() {
   if (window.innerWidth > 768) {
