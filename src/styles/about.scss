@@ -1,0 +1,126 @@
+.about {
+  display: flex;
+  justify-content: space-between;
+  width: 1130px;
+  padding-bottom: 200px;
+
+  @media (max-width: 990px) {
+    width: 100%;
+    padding-bottom: 80px;
+    // padding-right: 70px;
+    justify-content: none;
+  }
+  @media (max-width: 776px) {
+    padding-bottom: 60px;
+    
+  }
+
+  &__visual {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    padding-top: 200px;
+
+    @media (max-width: 990px) {
+      padding-top: 100px;
+    }
+    @media (max-width: 776px) {
+      display: none;
+    }
+  }
+
+  &__big-img {
+    width: 500px;
+    height: 529px;
+    @media (max-width: 990px) {
+      width: 369px;
+      height: 318px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__small-img {
+    width: 130px;
+    height: 430px;
+    margin-left: 20px;
+
+    @media (max-width: 990px) {
+      display: none;
+    }
+  }
+
+  &__info {
+    padding-top: 242px;
+    @media (max-width: 990px) {
+      padding-top: 100px;
+    }
+    @media (max-width: 776px) {
+      padding-top: 60px;
+      // align-self: center;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: center;
+    }
+  }
+
+  &__title {
+    padding-left: 1px;
+    margin-bottom: 20px;
+
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 54px;
+    text-transform: uppercase;
+    @media (max-width: 990px) {
+      font-size: 24px;
+      line-height: 36px;
+    }
+    @media (max-width: 776px) {
+      text-align: center;
+    }
+    
+
+  }
+
+  @for $i from 1 through 2 {
+    &__text#{$i} {
+      width: 380px;
+
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+  }
+
+  &__text1 {
+    @media (max-width: 990px) {
+      width: 340px;
+      height: 216px;
+    }
+    @media (max-width: 776px) {
+      width: 100%;
+      height: fit-content;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      // margin: 0 auto;
+
+    }
+  }
+
+  &__text2 {
+    margin-top: 30px;
+    @media (max-width: 990px) {
+      display: none;
+    }
+  }
+
+  &__link {
+    margin-top: 40px;
+
+    @media (max-width: 776px) {
+      margin-top: 20px;
+      padding-left: 15px;
+    }
+  }
+}
