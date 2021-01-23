@@ -1,17 +1,28 @@
 .ingredients {
-  display: flex;
+  @include container;
+  padding-right: $margin-container;
+  padding-left: $margin-container;
+  overflow: hidden;
+
+  @include iPadMini {
+    padding-right: 0;
+    padding-left: $margin-container / 3;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
 
   &__contents {
     align-self: flex-start;
   }
 
   &__inner {
+    width: 100%;
     display: grid;
-    //justify-content: space-between;
-    //flex-grow: 1;
-    column-gap: 100px;
+    justify-content: space-between;
     grid-template-columns: repeat(2, auto);
-    overflow: hidden;
+    grid-template-rows: 1fr;
 
     @include mobile {
       column-gap: 0;
@@ -39,6 +50,19 @@
     @include iPadMini {
       column-gap: 5%;
     }
+
+    &-wrapper {
+      width: 100%;
+      display: grid;
+      justify-content: space-between;
+      grid-column: 2;
+      grid-row: 1 / span 2;
+
+      @include mobile {
+        grid-column: 1;
+        grid-row: 2;
+      }
+    }
   }
 
   &__description {
@@ -49,7 +73,7 @@
 
     &::before {
       @include ingredient-pseudo;
-      top: 5px;
+      top: 8px;
       border-radius: 50%;
       width: 5px;
       height: 5px;
@@ -73,9 +97,15 @@
   }
 
   &__link {
+    grid-row: 2;
+    grid-column: 1;
     width: max-content;
     @include textLink($c-green);
     padding: 12px 0;
     border-bottom: 1px solid $c-green;
+
+    @include mobile {
+      grid-row: 3;
+    }
   }
 }

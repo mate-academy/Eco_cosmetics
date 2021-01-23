@@ -20,7 +20,15 @@ function toOpenMenu() {
   links.forEach(link => link.classList.toggle('nav__link--open'));
 };
 
-toggle.addEventListener('click', toOpenMenu);
+list.addEventListener('click', event => {
+  const target = event.target;
+
+  if (!target.classList.contains('nav__link')) {
+    return;
+  }
+
+  return toOpenMenu();
+});
 
 function checkMediaQuery() {
   if (window.innerWidth > 768) {
@@ -35,4 +43,5 @@ function checkMediaQuery() {
   }
 }
 
+toggle.addEventListener('click', toOpenMenu);
 window.addEventListener('resize', checkMediaQuery);
