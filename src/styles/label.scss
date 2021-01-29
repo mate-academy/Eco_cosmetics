@@ -1,0 +1,52 @@
+.label {
+  display: block;
+  width: $labelTextWidth;
+  height: 1px;
+  background-color: $basicColorLighter;
+  transform: rotate(-90deg);
+  position: relative;
+  left: -130px;
+  top: 50%;
+
+  @media (max-width: $desktopScreenBreakpoint) {
+    left: -100px;
+  }
+
+  @media (max-width: $tabletScreenBreakpoint) {
+    display: none;
+  }
+
+  &:before {
+    display: inline-block;
+    width: $labelWidth;
+    position: relative;
+    top: -10px;
+    left: $labelTextWidth + 10px;
+    text-transform: uppercase;
+    color: $basicColorLighter;
+  }
+
+  &__short {
+    top: 400px;
+  }
+
+  &--about-brand:before {
+    content: "witch of mountain winds";
+  }
+
+  &--shop:before {
+    content: "shop";
+  }
+
+  &--about-the-creators:before {
+    content: "about the creators";
+  }
+
+  &--ingredients:before {
+    content: "ingredients";
+  }
+
+  &--help:before {
+    content: "help";
+  }
+}

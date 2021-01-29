@@ -1,0 +1,100 @@
+.shop {
+  flex-direction: column;
+
+  &__tabs {
+    display: flex;
+    color: $basicColorLighter;
+    margin-bottom: 60px;
+    width: 400px;
+    justify-content: space-between;
+    // line-height: 100%;
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      width: 280px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 400px) {
+      width: 100%;
+    }
+  }
+
+  &__tab {
+    cursor: pointer;
+    @include h5;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $basicColor;
+    }
+
+    @media (max-width: $tabletSmallScreenBreakpoint) {
+      font-size: 14px;
+      line-height: 100%;
+    }
+
+    &--checked {
+      color: $basicColor;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 2px;
+        margin-top: 20px;
+        background-color: $basicColor;
+
+        @media (max-width: $tabletSmallScreenBreakpoint) {
+          width: 40px;
+          margin-top: 12px;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    width: 100%;
+    margin-right: 0;
+
+    @media (max-width: $tabletScreenBreakpoint) {
+      grid-template-columns: repeat(2, 1fr);
+      margin-right: -50px;
+    }
+
+    @media (max-width: $mobileScreenBreakpoint) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__pagination {
+    margin: auto;
+    margin-bottom: 30px;
+  }
+
+  &__page {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+
+    &--previous {
+      background-image: url(/images/previous.svg);
+    }
+
+    &--next {
+      background-image: url(/images/next.svg);
+    }
+  }
+
+  &__btn {
+    margin: auto;
+  }
+}

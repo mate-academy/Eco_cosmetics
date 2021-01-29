@@ -1,0 +1,44 @@
+.advantages {
+  margin-left: -$mainPaddingLeft;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $desktopScreenBreakpoint) {
+    margin-left: -$mainPaddingLeft + 50px;
+  }
+
+  @media (max-width: $tabletScreenBreakpoint) {
+    margin-left: 0;
+  }
+
+  @media (max-width: $mobileScreenBreakpoint) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__card {
+    padding: 20px;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    @include text2;
+
+    @media (max-width: $mobileScreenBreakpoint) {
+      width: 300px;
+    }
+  }
+
+  &__icon {
+    height: 100px;
+    margin-bottom: 20px;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__text {
+    text-align: center;
+  }
+}

@@ -1,0 +1,40 @@
+.form {
+  &__input {
+    width: 100%;
+    background-color: $bgColor;
+    color: $basicColor;
+    border-bottom: 1px solid $basicColorLighter;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    @include inputAndMenu;
+    transition: border-color 0.3s;
+
+    &:focus,
+    &:hover {
+      color: $basicColor;
+      border-color: $basicColor;
+    }
+
+    &::placeholder {
+      color: $basicColorLighter;
+      padding-top: 20px;
+    }
+
+    @media (max-width: $tabletScreenBreakpoint) {
+      padding-bottom: 5px;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    @include inputAndMenu;
+    margin-bottom: 50px;
+
+    @media (max-width: $tabletScreenBreakpoint) {
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+  }
+}
