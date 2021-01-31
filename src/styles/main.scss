@@ -1,7 +1,78 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "normalize";
+@import "header";
+@import "brand";
+@import "birds";
+@import "product";
+@import "shop";
+@import "catalog";
+@import "card";
+@import "creators";
+@import "composition";
+@import "scheme";
+@import "labels";
+@import "contactUs";
+@import "footer";
 
-body {
-  background: $c-gray;
+html {
+  scroll-behavior: smooth;
+}
+
+$pagePadd: 20px;
+
+.body {
+  &__header,
+  &__footer {
+    margin: 0 auto;
+    max-width: 1180px + ($pagePadd * 2);
+    padding: 0 $pagePadd;
+  }
+
+  &__footer {
+    padding: 60px 20px 66px;
+  }
+
+  &__main {
+    margin: 0 auto;
+    max-width: 1077px + ($pagePadd * 2);
+    padding: 0 $pagePadd;
+  }
+}
+
+.button {
+  @include buttons;
+  @include links;
+
+  &:hover {
+    @include linkHover;
+    @include hoverButtons;
+  }
+}
+
+.delimiter {
+  margin-bottom: $marginBetween / 2;
+  position: relative;
+  left: -$pagePadd;
+
+  @include display;
+}
+
+.delimiterSecond {
+  margin-bottom: $marginBetween;
+  position: relative;
+  left: calc(100% - 510px);
+
+  @include display;
+
+  @media (max-width: 1050px) {
+    margin-bottom: $marginBetween / 2;
+  }
+}
+
+@media (max-width: 1150px) {
+  [class*="container__img"] {
+    display: none;
+  }
 }

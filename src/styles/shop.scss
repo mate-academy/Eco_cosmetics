@@ -1,0 +1,81 @@
+.main__shop {
+  margin-bottom: $marginBetween;
+
+  @media (max-width: 1050px) {
+    margin-bottom: $marginBetween / 2;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: $marginBetween / 3;
+  }
+}
+
+.shop {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 1200px) {
+    overflow: hidden;
+  }
+
+  @media (max-width: 850px) {
+    align-items: center;
+  }
+
+  &__sideImg {
+    @include sideImg;
+  }
+
+  &__link {
+    margin-bottom: 60px;
+    @include priceText;
+    color: $lightGrey;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    height: 49px;
+
+    @media (max-width: 1050px) {
+      margin-bottom: 30px;
+    }
+
+    &-selected {
+      color: $darkGrey;
+
+      &::after {
+        content: "";
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $headers;
+      }
+    }
+  }
+
+  &__scrolling {
+    margin-bottom: 30px;
+
+    &-link {
+      margin-right: 10px;
+
+      :first-child {
+        padding: 10px;
+      }
+    }
+
+    :last-child {
+      margin-right: 0;
+    }
+
+    @media (max-width: 1050px) {
+      align-self: center;
+    }
+  }
+
+  &__button {
+    align-self: center;
+  }
+}

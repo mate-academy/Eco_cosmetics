@@ -1,0 +1,133 @@
+.main__product {
+  margin-bottom: $marginBetween;
+
+  @media (max-width: 1050px) {
+    margin-bottom: $marginBetween / 2;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: $marginBetween / 3;
+  }
+}
+
+.product {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 650px) {
+    justify-content: center;
+  }
+
+  &__sideImg {
+    @include sideImg;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 950px) {
+      width: 342px;
+    }
+
+    @media (max-width: 950px) {
+      margin-right: 30px;
+    }
+
+    @media (max-width: 750px) {
+      width: 280px;
+    }
+
+    @media (max-width: 650px) {
+      margin-right: 0;
+    }
+  }
+
+  &__article {
+    margin-bottom: 20px;
+
+    @media (max-width: 950px) {
+      font-size: 24px;
+    }
+  }
+
+  &__content {
+    margin-bottom: 30px;
+    margin-right: 120px;
+    width: 380px;
+    @include secondaryText;
+
+    @media (max-width: 950px) {
+      margin-right: 0;
+    }
+
+    @media (max-width: 750px) {
+      width: 100%;
+    }
+
+    &-hidden {
+      margin-bottom: 40px;
+
+      @media (max-width: 1050px) {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    @include textUC;
+    color: $headers;
+    height: 31px;
+    position: relative;
+
+    &:hover {
+      &::after {
+        content: "";
+        height: 1px;
+        width: 95px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $headers;
+      }
+    }
+  }
+
+  &__images {
+    display: flex;
+    width: 577px;
+
+    @media (max-width: 950px) {
+      width: fit-content;
+    }
+
+    @media (max-width: 650px) {
+      display: none;
+    }
+  }
+
+  &__img {
+    margin-right: 20px;
+
+    @media (max-width: 1365px) {
+      margin-right: 0;
+    }
+
+    @media (max-width: 1050px) {
+      width: 318px;
+      height: 369px;
+    }
+
+    &-small {
+      position: relative;
+      height: 430px;
+      align-self: flex-end;
+
+      @media (max-width: 1365px) {
+        display: none;
+      }
+    }
+  }
+}

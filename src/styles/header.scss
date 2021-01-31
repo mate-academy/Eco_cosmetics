@@ -1,0 +1,167 @@
+.header {
+  &__nav {
+    margin-top: 40px;
+    margin-bottom: $marginBetween / 2;
+
+    @media (max-width: 950px) {
+      margin-bottom: $marginBetween / 4;
+    }
+
+    @media screen and (max-width: 800px) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  &__company {
+    display: flex;
+  }
+
+  &__logo {
+    transition-duration: $transDuration*3;
+  }
+
+  &__brandName {
+    margin-left: 12px;
+  }
+
+  &__basketBtn {
+    padding: 15px;
+  }
+
+  &__toggler {
+    display: none;
+    position: absolute;
+  }
+
+  &__toggler-label {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+
+    height: 100%;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+
+    list-style: none;
+
+    transition-duration: $transDuration;
+  }
+
+  &__link {
+    display: block;
+    padding: 15px;
+
+    font-size: 18px;
+    line-height: 130%;
+    color: $headers;
+    // @include linkDecor;
+
+    transition-duration: $transDuration;
+
+    &:hover::after {
+      content: "";
+      display: block;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $headers;
+
+      transition-duration: $transDuration;
+    }
+  }
+
+  @media screen and (max-width: 950px) {
+    &__brandName {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    &__company {
+      margin: auto 0;
+    }
+
+    &__logoLink {
+      margin: auto 0;
+      padding: 15px;
+    }
+
+    &__logo {
+      height: 15px;
+    }
+
+    &__list {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__toggler-label {
+      display: block;
+      position: relative;
+      margin: auto 0;
+      padding: 15px ;
+      width: 20px;
+
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    &__span,
+    &__span::before,
+    &__span::after {
+      display: block;
+      position: absolute;
+
+      width: 20px;
+      height: 1px;
+
+      background-color: $headers;
+
+      transition-duration: $transDuration;
+    }
+
+    &__span::before {
+      content: "";
+      top: -5px;
+    }
+    &__span::after {
+      content: "";
+      top: 5px;
+    }
+
+    &__toggler:checked ~ &__toggler-label > &__span {
+      transform: rotate(45deg);
+    }
+    &__toggler:checked ~ &__toggler-label > &__span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+    &__toggler:checked ~ &__toggler-label > &__span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+    &__toggler:checked ~ .nav__list {
+      display: block;
+      left: 0;
+      top: 58px;
+      transform: translate(0);
+      z-index: 1;
+      height: max-content;
+      width: 100%;
+      background-color: $mainColor;
+    }
+  }
+}
