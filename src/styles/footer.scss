@@ -1,0 +1,172 @@
+.footer {
+  box-sizing: border-box;
+  max-width: 1280px;
+  align-content: center;
+  margin: 0 auto;
+  justify-items: start;
+  display: grid;
+  grid-template-columns: 1fr minmax(max-content, 4fr)
+    minmax(max-content, 5fr) 1fr;
+  grid-template-rows: repeat(5, auto);
+  height: 320px;
+  gap: 20px 20px;
+  padding: 60px 0;
+  font-family: "Sharp Sans Display No2", sans-serif;
+  color: $body-color;
+
+  &__nav {
+    grid-column-start: 2;
+    grid-row-start: 1;
+
+    &--color {
+      color: $body-color;
+    }
+  }
+
+  &__copyright {
+    grid-column-start: 2;
+    grid-row-start: 5;
+    font-size: 18px;
+  }
+
+  &__country {
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+
+  &__email {
+    color: $body-color;
+    grid-column-start: 3;
+    grid-row-start: 2;
+  }
+
+  &__phone {
+    color: $body-color;
+    grid-column-start: 3;
+    grid-row-start: 3;
+  }
+
+  &__schedule {
+    grid-column-start: 3;
+    grid-row-start: 4;
+  }
+
+  &__media {
+    grid-column-start: 3;
+    grid-row-start: 5;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .footer {
+    height: 280px;
+    font-size: 14px;
+    grid-template-rows: repeat(5, max-content);
+
+    &__nav {
+      grid-column-start: 2;
+      grid-row: 1 / span 3;
+    }
+
+    &__copyright {
+      grid-column: 2 / 3;
+      grid-row-start: 5;
+      font-size: 14px;
+
+      &-word {
+        display: none;
+      }
+    }
+
+    &__country {
+      grid-column-start: 3;
+      grid-row-start: 1;
+    }
+
+    &__email {
+      grid-column-start: 3;
+      grid-row-start: 2;
+    }
+
+    &__phone {
+      grid-column-start: 3;
+      grid-row-start: 3;
+    }
+
+    &__schedule {
+      grid-column-start: 3;
+      grid-row-start: 4;
+    }
+
+    &__media {
+      grid-column-start: 2;
+      grid-row-start: 4;
+    }
+
+    & .nav__list {
+      flex-direction: column;
+
+    }
+
+    & .nav__item {
+      margin-bottom: 20px;
+    }
+
+    & .nav__link {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .footer {
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content repeat(6, auto);
+    padding: 30px 20px 60px;
+
+    & .nav__item:last-child {
+      margin-bottom: 0;
+    }
+
+    &__nav {
+      grid-row: 1 / 2;
+      grid-column: 1;
+    }
+
+    &__media {
+      grid-row-start: 2;
+      margin-right: 20px;
+      grid-column: 1;
+    }
+
+    &__country {
+      grid-column-start: 1;
+      grid-row-start: 3;
+    }
+
+    &__email {
+      grid-column-start: 1;
+      grid-row-start: 4;
+    }
+
+    &__phone {
+      grid-column-start: 1;
+      grid-row-start: 5;
+    }
+
+    &__schedule {
+      grid-column-start: 1;
+      grid-row-start: 6;
+    }
+
+    &__copyright {
+      grid-row-start: 7;
+      justify-self: center;
+      padding: 10px;
+      max-width: 198px;
+      text-align: center;
+      grid-column: 1;
+    }
+  }
+}

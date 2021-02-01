@@ -1,0 +1,40 @@
+.eco-friendly {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(min-content, 1fr));
+  grid-template-rows: auto auto;
+  font-family: "Sharp Sans Medium", sans-serif;
+  letter-spacing: 0.05em;
+  justify-items: center;
+  margin: 200px 0;
+
+  &__tile {
+    display: grid;
+    grid-template-columns: fit-content(350px);
+    grid-template-rows: 100px auto;
+    justify-items: center;
+    align-items: start;
+
+    p {
+      text-transform: uppercase;
+      font-size: 14px;
+      color: black;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .eco-friendly {
+    margin: 150px 30px;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .eco-friendly {
+    margin: 60px 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: row;
+    gap: 50px 0;
+  }
+}

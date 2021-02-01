@@ -1,7 +1,69 @@
-@import "utils";
 @import "fonts";
+@import "utils";
 @import "typography";
+@import "reset";
+@import "link-button";
+@import "learn-more";
+@import "header";
+@import "burger-menu";
+@import "logo";
+@import "nav";
+@import "description";
+@import "adv";
+@import "side-text";
+@import "about";
+@import "shop";
+@import "creators";
+@import "ingridients";
+@import "bottle";
+@import "eco";
+@import "contact-us";
+@import "footer";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  background: $body-color;
+}
+
+.container {
+  min-height: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 1280px) 1fr;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-areas: ". header ." ". main ."
+    "footer__wrapper footer__wrapper footer__wrapper";
+  overflow: hidden;
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer__wrapper {
+  grid-area: footer__wrapper;
+  background-color: rgba(52, 79, 16, 0.5);
+}
+
+@media screen and (max-width: 980px) {
+  .container {
+    grid-template-columns: 1fr 768px 1fr;
+  }
+
+  .side-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .container {
+    grid-template-columns: 1fr 320px 1fr;
+  }
 }
