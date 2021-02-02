@@ -1,0 +1,54 @@
+.bottle {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  min-width: 700px;
+
+  &__label {
+    position: absolute;
+    right: 502px;
+
+    font-weight: bold;
+    color: #333;
+    
+    &::before,
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      right: -96px;
+      background-color: #333;
+    }
+
+    &::before {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      top: calc(50% - 2px);
+    }
+
+    &::after {
+      width: 76px;
+      height: 1px;
+      top: 50%;
+    }
+
+    @for $i from 2 through 6 {
+      &:nth-child(#{$i}) {
+        top: 35px + 75px * ($i - 2);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .bottle {
+    &__label {
+      right: 430px;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
