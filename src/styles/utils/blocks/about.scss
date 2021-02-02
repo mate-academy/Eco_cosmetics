@@ -4,30 +4,31 @@
   // align-items: flex-end;
   margin-bottom: 200px;
 
-  &__vertical-text {
-    writing-mode: vertical-lr;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 0.05em;
-    text-align: center;
-    color: $brand-color-half;
+  // &__vertical-text {
+  //   writing-mode: vertical-lr;
+  //   text-orientation: mixed;
+  //   transform: rotate(180deg);
+  //   position: relative;
+  //   font-size: 14px;
+  //   line-height: 18px;
+  //   letter-spacing: 0.05em;
+  //   text-align: center;
+  //   color: $brand-color-half;
 
-    &::after {
-      position: relative;
-      content: "";
-      display: block;
-      height: 1px;
-      background-color: rgba(52, 79, 16, 0.5);
-      left: -41px;
-      top: 34%;
-      width: 100px;
-      writing-mode: vertical-lr;
-      text-orientation: mixed;
-      transform: rotate(90deg);
-    }
-  }
+  //   &::after {
+  //     position: absolute;
+  //     content: "";
+  //     display: block;
+  //     height: 1px;
+  //     background-color: rgba(52, 79, 16, 0.5);
+  //     left: -41px;
+  //     top: 34%;
+  //     width: 100px;
+  //     writing-mode: vertical-lr;
+  //     text-orientation: mixed;
+  //     transform: rotate(90deg);
+  //   }
+  // }
 
   &__about__our-brand {
     width: 380px;
@@ -43,7 +44,10 @@
     text-align: left;
     color: $brand-color;
     text-transform: uppercase;
+  }
 
+  &__text {
+    width: 380px;
   }
 
   &__biggest-text,
@@ -57,6 +61,7 @@
   }
 
   &__learn-more {
+    position: relative;
     font-family: "Sharp-Sans-Display-No2-Medium", sans-serif;
     font-size: 14px;
     line-height: 18px;
@@ -65,5 +70,40 @@
     color: $brand-color;
     text-transform: uppercase;
     text-decoration: none;
+
+    &:hover::after {
+      position: absolute;
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: $brand-color;
+      left: 0;
+      top: 20px;
+      width: 80px;
+    }
+  }
+
+  &__candels {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__big {
+    width: 480px;
+  }
+
+  &__small {
+    width: 130px;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+
+    &__vertical-text {
+      display: none;
+    }
   }
 }
