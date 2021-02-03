@@ -1,0 +1,74 @@
+.footer {
+  display: grid;
+  grid-template-areas: "nav contacts"
+    "a  contacts"
+    "copyright contacts";
+  column-gap: 35vw;
+  height: 320px;
+  background: rgba(52, 79, 16, 0.5);
+  padding-left: 20px;
+  color: $background-color;
+
+  @media (max-width: 1280px) {
+    height: 80vh;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__nav {
+    grid-area: nav;
+    padding-top: 40px;
+    max-width: 350px;
+  }
+
+  &__contacts {
+    grid-area: contacts;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-right: 0;
+    padding-top: 40px;
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    padding-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 130%;
+    @include hover ( color , $main-dark-color);
+
+    @media (max-width: 1280px) {
+      font-size: 14px;
+    }
+  }
+
+  &__link {
+    color: white;
+    font-size: 18px;
+    line-height: 23px;
+    @include hover ( color , $main-dark-color);
+  }
+
+  &__link-networks {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__facebook {
+    background: url(../images/facebook.svg) no-repeat;
+    width: 30px;
+    height: 30px;
+    display: block;
+    @include hover ( transform , scale(1.2));
+  }
+
+  &__instagram {
+    background: url(../images/instagram.svg) no-repeat;
+    width: 30px;
+    height: 30px;
+    display: block;
+    @include hover ( transform , scale(1.2));
+  }
+}

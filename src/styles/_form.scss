@@ -1,0 +1,48 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 33vw;
+
+  @media (max-width: 750px) {
+    width: 80vw;
+  }
+
+  &__item {
+    background-color: $background-color;
+  }
+
+  &__input {
+    height: 55px;
+    width: 100%;
+    background-color: $background-color;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid gray;
+
+    font-size: 18px;
+
+    &:valid {
+      border-bottom: 1px solid $main-color;
+      color: $main-color;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $main-dark-color;
+
+      &:invalid {
+        border-bottom: 1px solid red;
+        color: red;
+      }
+    }
+  }
+
+  &__input-textarea {
+    height: 70px;
+    padding-top: 37px;
+  }
+
+  &__button {
+    padding: 20px;
+  }
+}

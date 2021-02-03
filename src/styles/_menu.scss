@@ -1,0 +1,53 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+
+  &__icon {
+    position: relative;
+    width: 250px;
+
+    &::after {
+      content: "witch of mountain winds";
+
+      position: absolute;
+      top: 30%;
+      left: 25%;
+      color: $main-color;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      @media (max-width: 1280px) {
+        display: none;
+      }
+    }
+    @media (max-width: 1280px) {
+      width: auto;
+    }
+  }
+  &__nav {
+    @media (max-width: 1280px) {
+      display: none;
+    }
+  }
+
+  &__burger-icon {
+    display: none;
+
+    @media (max-width: 1280px) {
+      display: block;
+    }
+  }
+
+  &__basket {
+    width: 44px;
+    height: 44px;
+    background: url(../images/basket.svg) no-repeat 50%;
+    background-size: contain;
+    @include hover ( transform , scale(1.1));
+    @include hover ( cursor , pointer);
+  }
+}
