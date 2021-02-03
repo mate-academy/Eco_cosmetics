@@ -1,0 +1,67 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 0 $section-second-padding 200px $section-first-padding;
+
+  &__title {
+    @include third-text;
+  }
+
+  &__reverse-text {
+    @include second-text;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 50px;
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    transition: text-shadow $hover-transition;
+
+    &:hover {
+      text-shadow: $standard-text-shadow;
+    }
+
+    &::before {
+      margin-right: 10px;
+      display: inline-block;
+      content: "";
+      height: 1px;
+      width: 100px;
+      background-color: $green-color;
+    }
+  }
+}
+
+@media screen and (min-width: $first-breakpoint) {
+  .section {
+    width: 1300px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: $second-breakpoint) {
+  .section {
+    padding: 0 $section-second-padding $section-first-padding;
+
+    &__reverse-text {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $third-breakpoint) {
+  .section {
+    padding: 0 $section-third-padding 100px;
+
+    &__title {
+      @include sixth-text;
+      color: $green-color;
+    }
+  }
+}
+
+@media screen and (max-width: $fourth-breakpoint) {
+  .section {
+    padding: 0 $section-fourth-padding 60px;
+  }
+}

@@ -1,0 +1,73 @@
+.info {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 120px;
+  padding: 100px 0;
+
+  &:before {
+    position: absolute;
+    content: "";
+    left: -$section-first-padding;
+    height: 1px;
+    width: 530px;
+    background-color: $green-color;
+  }
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    right: -$section-first-padding;
+    content: "";
+    height: 1px;
+    width: 530px;
+    background-color: $green-color;
+  }
+
+  &__left {
+    @include fourth-text;
+    width: 380px;
+  }
+
+  &__right {
+    @include sixth-text;
+    max-width: 380px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green-color;
+  }
+}
+
+@media screen and (max-width: $third-breakpoint) {
+  .info {
+    grid-template-columns: 1fr;
+    padding: 0;
+
+    &:before {
+      width: 0;
+    }
+
+    &::after {
+      width: 0;
+    }
+
+    &__left {
+      display: none;
+    }
+
+    &__right {
+      justify-self: center;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: $fourth-breakpoint) {
+  .info {
+
+    &__right {
+      @include seventh-text ;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 100px;
+
+  &__reverse-text {
+    bottom: 250px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__text {
+    width: 380px;
+    @include sixth-text;
+  }
+
+  &__image {
+    margin-right: -50px;
+    width: 550px;
+    height: 550px;
+
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media screen and (max-width: $third-breakpoint) {
+  .contacts {
+    column-gap: 30px;
+
+    &__image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $fourth-breakpoint) {
+
+  .contacts {
+    grid-template-columns: 1fr;
+
+    &__text {
+      width: 100%;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}
