@@ -4,7 +4,7 @@
   overflow: hidden;
 
   &__fact {
-    max-width: 610px;
+    width: 610px;
     margin-right: 120px;
     border-top: 1px solid rgba(52, 79, 16, 0.5);
   }
@@ -20,7 +20,7 @@
   }
 
   &__scroll-down {
-    max-width: 710px;
+    width: 710px;
     display: flex;
     justify-content: end;
     border-bottom: 1px solid rgba(52, 79, 16, 0.5);
@@ -37,6 +37,25 @@
     text-transform: uppercase;
 
     transition: padding $transition-duration;
+  }
+}
+
+@media screen and (min-width: $large-screen-breakpoint) {
+  .interest {
+    justify-content: center;
+
+    &__fact {
+      margin-right: 220px;
+      width: calc((100% - 220px) / 2 - 50px);
+    }
+
+    &__fact-text {
+      padding-left: calc(100% - 380px);
+    }
+
+    &__scroll-down {
+      width: calc((100% - 220px) / 2 + 50px);
+    }
   }
 }
 
