@@ -14,17 +14,39 @@
 
   &__link {
     display: block;
+    position: relative;
+    padding: 10px;
     margin: 0 40px;
-    padding: 5px 12px;
-    border-radius: 8px;
     font-size: 18px;
-    color: #344f10;
-    text-decoration: none;
+    color: $brand-color;
+    cursor: pointer;
 
-    transition: background-color 1s;
+    &::after {
+      display: block;
+      position: absolute;
+      bottom: 2px;
+      left: 10px;
+      width: 0;
+      height: 1px;
+      background-color: #9aa788;
+      content: "";
+      transition: width 0.3s ease-out;
+    }
 
-    &:hover {
-      background-color: #fff;
+    &:hover::after {
+      width: calc(100% - 2 * #{10px});
+
+      @media (max-width: 768px) {
+        width: 0;
+      }
+    }
+
+    &:visited {
+      color: $brand-color;
+
+      @media (max-width: 768px) {
+        color: $background-gray;
+      }
     }
   }
 }
