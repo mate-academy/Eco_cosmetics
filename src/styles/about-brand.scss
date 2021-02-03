@@ -1,0 +1,50 @@
+.about-brand {
+  display: flex;
+  
+
+  &__text {
+    width: 380px;
+  }
+
+  &__title {
+    @extend %h2;
+    color: $c-green;
+    padding-bottom: 16px;
+  }
+  &__discription {
+    @include text;
+    color: $c-dark-grey;
+    &--1 {
+      padding-bottom: 30px;
+    }
+    &--2 {
+      padding-bottom: 40px;
+    }
+  }
+  &__link {
+    position: relative;
+    color: $c-green;
+    @include decorative-text;
+    text-decoration: none;
+    &::after {
+      position: absolute;
+      width: 80px;
+      height: 1px;
+      background-color: $c-green;
+    }
+  }
+  &__image-big {
+    position: relative;
+    width: 480px;
+    height: 529px;
+    padding-left: 120px;
+  }
+  &__image-tiny {
+    position: absolute;
+    right: 0;
+    width: 208px;
+    height: 430px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+}
