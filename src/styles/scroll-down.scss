@@ -1,0 +1,70 @@
+.scroll-down {
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__text {
+    width: 380px;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      width: 50vw;
+      height: 1px;
+      background: $secondary-color;
+      position: absolute;
+      top: -100px;
+      right: 0;
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    width: 560px;
+    position: relative;
+
+    @media (max-width: 1280px) {
+      width: 440px;
+    }
+
+    @media (max-width: 992px) {
+      width: 280px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 150%;
+      text-align: center;
+    }
+
+    &::after {
+      content: "";
+      width: 50vw;
+      height: 1px;
+      background: $secondary-color;
+      position: absolute;
+      bottom: -60px;
+      left: 0;
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+  }
+
+  &__br {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+}
