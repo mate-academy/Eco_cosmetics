@@ -1,15 +1,17 @@
 @import "utils";
 @import "fonts";
 @import "typography";
-@import "modules";
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
   @include text-1;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -21,6 +23,8 @@ body {
 .container {
   margin: 0 auto;
   max-width: $s-content;
-  padding: 0 50px;
+  padding: 0 50px 0 150px;
   width: 100%;
 }
+
+@import "modules";

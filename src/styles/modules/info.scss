@@ -1,0 +1,56 @@
+.info {
+  padding: 100px 0;
+
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 0;
+      right: 55vw;
+      width: 1000px;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: 0;
+      left: 58vw;
+      width: 1000px;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__text {
+    flex: 1 1 400px;
+    padding: 100px 0;
+    margin-right: 60px;
+    //border-top: 1px solid rgba(52, 79, 16, 0.5);
+  }
+
+  &__text-content {
+    @include text-1;
+    max-width: 400px;
+  }
+
+  &__call {
+    flex: 1 1 400px;
+    padding: 100px 0;
+    margin-left: 60px;
+    //border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+  }
+
+  &__call-content {
+    @include h4;
+    color: $c-green-dark;
+    max-width: 350px;
+  }
+}
