@@ -1,11 +1,14 @@
 .footer {
-  display: flex;
-  justify-content: space-between;
   height: 320px;
 
   color: #e4dfd3;
   background-color: #99a788;
   transition: inherit, background-color $transition-duration;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__left-part {
     margin-top: 60px;
@@ -73,6 +76,12 @@
 @media screen and (min-width: $large-screen-breakpoint) {
   .footer {
     background-color: rgba(52, 79, 16, 0.5);
+    
+    &__content {
+      width: 1050px;
+      margin: 0 auto;
+    }
+    
   }
 }
 
@@ -126,8 +135,11 @@
   .footer {
     padding: 0 20px;
     height: 470px;
-    justify-content: start;
-    flex-direction: column;
+
+    &__content {
+      justify-content: start;
+      flex-direction: column;
+    }
 
     &__icons {
       margin: 0;
