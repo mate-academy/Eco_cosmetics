@@ -6,6 +6,10 @@
   padding: 40px 130px;
   transition: padding $transition-duration;
 
+  &__burger-menu {
+    display: none;
+  }
+
   &__logo-link {
     display: flex;
     align-items: center;
@@ -40,5 +44,54 @@
 @media screen and (max-width: $medium-screen-breakpoint) {
   .header {
     padding: 40px 50px;
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .header {
+    padding: 23px 27px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+
+    &__logo-link {
+      justify-self: center;
+    }
+
+    &__bag {
+      justify-self: end;
+    }
+
+    &__burger-menu {
+      display: block;
+    }
+
+    &__title {
+      display: none;
+    }
+
+    &__navigation {
+      display: none;
+    }
+
+    &__logo,
+    &__bag {
+      width: 5vw;
+      height: 5vw;
+
+      background-size: contain;
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .header {
+    padding: 15px 20px 12px;
+
+    &__logo,
+    &__bag {
+      width: 24px;
+      height: 24px;
+    }
   }
 }

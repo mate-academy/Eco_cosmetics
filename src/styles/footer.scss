@@ -18,14 +18,13 @@
     font-size: 18px;
     line-height: 130%;
 
-    &--uppercase {
+    &-uppercase {
       text-transform: uppercase;
     }
   }
 
   &__contacts {
     margin-top: 60px;
-    //width: 480px;
 
     font-weight: bold;
     font-size: 18px;
@@ -47,6 +46,10 @@
   &__icons {
     display: flex;
     margin-top: 30px;
+  }
+
+  &__icons--hidden {
+    display: none;
   }
 
   &__icon {
@@ -76,5 +79,71 @@
 @media screen and (max-width: $medium-screen-breakpoint) {
   .footer {
     background-color: rgba(52, 79, 16, 0.5);
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .footer {
+    &__left-part,
+    &__contacts {
+      margin-top: 30px;
+    }
+  
+    &__copyright {
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    &__country,
+    &__link,
+    &__support {
+      font-size: 14px;
+    }
+
+    &__link {
+      margin-top: 12px;
+    }
+
+    &__icons--hidden {
+      display: flex;
+    }
+
+    &__icons--visible {
+      display: none;
+    }
+
+    &__copyright-hidden {
+      display: none;
+    }
+
+    &__copyright-uppercase {
+      text-transform: lowercase;
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .footer {
+    height: 470px;
+    justify-content: start;
+    flex-direction: column;
+
+    &__icons {
+      margin: 0;
+    }
+
+    &__copyright {
+      display: none;
+
+      &--mobile {
+        display: block;
+        text-align: center;
+        margin: 50px auto 0;
+      }
+    }
+
+    &__copyright-uppercase {
+      text-transform: uppercase;
+    }
   }
 }
