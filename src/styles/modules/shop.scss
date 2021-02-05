@@ -1,0 +1,73 @@
+.shop {
+  padding: 100px 0;
+
+  &__container {
+    position: relative;
+  }
+
+  &__label {
+    top: 220px;
+    left: 30px;
+  }
+
+  &__title {
+    @include h2;
+    margin-bottom: 20px;
+    color: $c-green-dark;
+  }
+
+  &__nav {
+    display: flex;
+    margin-bottom: 85px;
+  }
+
+  &__nav-item {
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+  }
+
+  &__nav-button {
+    @include text-buttons;
+    font-size: 18px;
+    color: #828282;
+
+    &--active {
+      color: $c-black;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: -2px;
+        height: 2px;
+        width: 100%;
+        background-color: $c-black;
+      }
+    }
+  }
+
+  &__link {
+    margin: 0 auto;
+  }
+
+  &__buttons {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__button {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 40px;
+  }
+}
