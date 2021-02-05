@@ -3,6 +3,10 @@
   background-color: $background-gray;
   margin-bottom: 250px;
 
+  @media (max-width: $iphone-se-screen-breakpoint) {
+    margin-bottom: 60px;
+  }
+
   &__container {
     display: flex;
     position: relative;
@@ -26,14 +30,14 @@
     }
 
     @media (max-width: $iphone-se-screen-breakpoint) {
-      padding: 0 20px 60px;
+      padding: 0 20px;
     }
   }
 
-  // &__vertical {
-  //   top: 60px;
-  //   left: -50px;
-  // }
+  &__vertical {
+    top: 65px;
+    left: 0;
+  }
 
   &__text {
     width: 300px;
@@ -57,6 +61,13 @@
 
     @media (max-width: $ipad-mini-screen-breakpoint) {
       font-size: 24px;
+      line-height: 36px;
+    }
+
+    @media (max-width: 320px) {
+      width: 280px;
+      font-size: 24px;
+      text-transform: uppercase;
     }
   }
 
@@ -65,7 +76,14 @@
     position: relative;
     right: 1px;
     width: 700px;
-    overflow: hidden;
+
+    @media (max-width: 1000px) {
+      width: 700px;
+    }
+
+    @media (max-width: 320px) {
+      width: 280px;
+    }
   }
 
   &__list {
@@ -140,6 +158,10 @@
   &__tooth-powder {
     min-width: 380px;
     min-height: 396px;
+
+    @media (max-width: 320px) {
+      width: 280px;
+    }
   }
 
   &__more {
