@@ -11,8 +11,8 @@ $('.shop__slider').slick({
   slidesToScroll: 1,
   // variableWidth: true
 
-  nextArrow: '.shop__prev',
-  prevArrow: '.shop__next',
+  nextArrow: '.shop__next',
+  prevArrow: '.shop__prev',
 });
 
 $('.slick-filter button').click(function() {
