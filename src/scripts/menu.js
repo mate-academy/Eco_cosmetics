@@ -17,8 +17,8 @@
     mobileMenuRef.classList.toggle('is-open');
     mobileDropRef.classList.toggle('is-open');
   });
+
   buttonHamburger.addEventListener('click', (event) => {
     moveContentDown.classList.toggle('brand--active-header');
   });
-
 })();
