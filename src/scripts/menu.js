@@ -20,5 +20,6 @@
 
   buttonHamburger.addEventListener('click', (event) => {
     moveContentDown.classList.toggle('brand--active-header');
+    buttonHamburger.classList.toggle('header__hamburger--close');
   });
 })();
