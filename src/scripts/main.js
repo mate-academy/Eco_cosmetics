@@ -9,7 +9,7 @@ $('.shop__slider').slick({
   infinite: true,
   slidesToShow: 3,
   slidesToScroll: 1,
-  // variableWidth: true
+  variableWidth: true,
 
   nextArrow: '.shop__next',
   prevArrow: '.shop__prev',
