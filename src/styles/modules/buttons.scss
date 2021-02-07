@@ -1,13 +1,24 @@
 .button {
   display: block;
   width: 280px;
-  padding: 20px;
+  padding: 19px;
 
   @include text-buttons;
   text-align: center;
 
   color: $c-white-light;
   background-color: $c-black;
+  border: 1px solid transparent;
+
+  transition: border 0.35s ease-in-out,
+    color 0.35s ease-in-out,
+    background-color 0.35s ease-in-out;
+
+  &:hover {
+    background-color: transparent;
+    color: $c-black;
+    border: 1px solid $c-black;
+  }
 }
 
 .button-small {
@@ -26,5 +37,12 @@
     width: 100%;
 
     background-color: $c-green-dark;
+    transition: opacity 0.5s;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 0;
+    }
   }
 }
