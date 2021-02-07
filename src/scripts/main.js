@@ -1,5 +1,6 @@
 'use strict';
 
+// Slider:
 $('.shop__nav-button').click(function() {
   $('.shop__nav-button').removeClass('shop__nav-button--active');
   $(this).addClass('shop__nav-button--active');
@@ -27,3 +28,14 @@ $('.slick-filter button').click(function() {
   }
 });
 /* eslint-env jquery */
+
+// Menu toggle:
+document.querySelector('.sandwich').addEventListener('click', function(e) {
+  const menu = document.querySelector('.menu');
+  const sandwich = document.querySelector('.sandwich__button');
+  // const mobileLang = document.querySelector('.header__lang');
+
+  // mobileLang.classList.toggle('header__lang--mobile-active');
+  menu.classList.toggle('menu--active');
+  sandwich.classList.toggle('sandwich__button--active');
+});
