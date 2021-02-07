@@ -2,9 +2,21 @@
   padding: 100px 0;
   overflow: hidden;
 
+  @include screen-m {
+    padding: 50px 0;
+  }
+
+  @include screen-s {
+    padding: 30px 0;
+  }
+
   &__container {
     display: flex;
     align-items: center;
+
+    @include screen-s {
+      padding: 0 20px;
+    }
   }
 
   &__text {
@@ -12,6 +24,14 @@
     margin-right: 120px;
 
     border-top: 1px solid rgba(52, 79, 16, 0.5);
+
+    @include screen-xl {
+      margin-right: 60px;
+    }
+
+    @include screen-m {
+      display: none;
+    }
   }
 
   &__text-content {
@@ -25,6 +45,11 @@
   &__call {
     width: 1066.5px;
     border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+
+    @include screen-m {
+      width: 100%;
+      border-bottom: 0;
+    }
   }
 
   &__call-content {
@@ -33,5 +58,15 @@
 
     @include h4;
     color: $c-green-dark;
+
+    @include screen-m {
+      padding: 0;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @include screen-s {
+      font-size: 18px;
+    }
   }
 }

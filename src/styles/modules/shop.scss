@@ -1,8 +1,24 @@
 .shop {
   padding: 100px 0;
 
+  @include screen-m {
+    padding: 50px 0;
+  }
+
+  @include screen-s {
+    padding: 30px 0;
+  }
+
   &__container {
     position: relative;
+
+    @include screen-m {
+      padding: 0 25px;
+    }
+
+    @include screen-s {
+      padding: 0 20px;
+    }
   }
 
   &__label {
@@ -15,16 +31,32 @@
 
     @include h2;
     color: $c-green-dark;
+
+    @include screen-m {
+      font-size: 28px;
+    }
+
+    @include screen-s {
+      font-size: 24px;
+    }
   }
 
   &__nav {
     display: flex;
     margin-bottom: 85px;
+
+    @include screen-m {
+      margin-bottom: 40px;
+    }
   }
 
   &__nav-item {
     &:not(:last-child) {
       margin-right: 50px;
+
+      @include screen-s {
+        margin-right: 20px;
+      }
     }
   }
 
@@ -36,6 +68,10 @@
     cursor: pointer;
 
     transition: color 0.2s ease;
+
+    @include screen-s {
+      font-size: 14px;
+    }
 
     &--active {
       color: $c-black;
@@ -51,6 +87,10 @@
         width: 100%;
 
         background-color: $c-black;
+
+        @include screen-s {
+          bottom: -10px;
+        }
       }
     }
 
@@ -69,6 +109,14 @@
 
     display: flex;
     flex-direction: row;
+
+    @include screen-m {
+      right: 30px;
+    }
+
+    @include screen-s {
+      bottom: 70px;
+    }
   }
 
   &__button {
@@ -86,5 +134,9 @@
 
   &__slider {
     margin-bottom: 40px;
+
+    @include screen-s {
+      margin-bottom: 55px;
+    }
   }
 }

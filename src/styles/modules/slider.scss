@@ -1,13 +1,31 @@
 .slider {
+  @include screen-s {
+    position: relative;
+    left: -20px;
+  }
+
   &__item {
     width: 380px;
     margin-right: 23px;
+
+    @include screen-m {
+      width: 342px;
+      margin-right: 30px;
+    }
+
+    @include screen-s {
+      width: 320px;
+    }
   }
 
   &__photo {
     height: 500px;
     width: 100%;
     margin-bottom: 20px;
+
+    @include screen-m {
+      height: 300px;
+    }
 
     object-fit: cover;
     cursor: pointer;
@@ -17,6 +35,10 @@
     &:hover {
       border-radius: 16px;
       box-shadow: 2px 2px 4px rgba(150, 150, 150, 0.7);
+
+      @include screen-s {
+        border-radius: 0;
+      }
     }
   }
 
@@ -25,6 +47,14 @@
 
     @include text-price;
     font-size: 20px;
+
+    @include screen-m {
+      width: 714px;
+    }
+
+    @include screen-s {
+      margin-left: 20px;
+    }
   }
 
   &__price {
@@ -32,6 +62,10 @@
 
     &::after {
       content: " UAH";
+    }
+
+    @include screen-s {
+      margin-left: 20px;
     }
   }
 }
