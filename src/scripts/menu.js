@@ -3,7 +3,6 @@
 (() => {
   const menuBtnRef = document.querySelector('[data-menu-button]');
   const mobileMenuRef = document.querySelector('[data-menu]');
-  const mobileDropRef = document.querySelector('[data-lang]');
   const moveContentDown = document.querySelector('.brand');
   const buttonHamburger = document.querySelector('.header__hamburger');
 
@@ -11,11 +10,10 @@
     const expanded
             = menuBtnRef.getAttribute('aria-expanded') === 'true' || 'false';
 
-    menuBtnRef.classList.toggle('is-open');
-    menuBtnRef.setAttribute('aria-expanded', !expanded);
+    menuBtnRef.classList.toggle('header__menu-button--active');
 
-    mobileMenuRef.classList.toggle('is-open');
-    mobileDropRef.classList.toggle('is-open');
+    menuBtnRef.setAttribute('aria-expanded', !expanded);
+    mobileMenuRef.classList.toggle('nav--menu-open');
   });
 
   buttonHamburger.addEventListener('click', (event) => {

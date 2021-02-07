@@ -13,11 +13,13 @@
   }
 
   &__link {
+    font-family: "Sharp-Sans-Display-No2-Medium", sans-serif;
+    font-size: 18px;
+    line-height: 23.4px;
     display: block;
     position: relative;
     padding: 10px;
     margin: 0 40px;
-    font-size: 18px;
     color: $brand-color;
     cursor: pointer;
 
@@ -60,6 +62,15 @@
     background-color: #333;
     pointer-events: none;
 
+    &--menu-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      pointer-events: initial;
+      background-color: #333;
+      z-index: 2;
+    }
+
     &__item {
       display: block;
       margin-top: 80px;
@@ -85,15 +96,6 @@
         background-color: #e3dfd3;
         z-index: 5;
       }
-    }
-
-    &.is-open {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(0);
-      pointer-events: initial;
-      background-color: #333;
-      z-index: 2;
     }
   }
 }
