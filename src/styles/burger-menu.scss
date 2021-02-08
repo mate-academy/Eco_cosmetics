@@ -22,21 +22,24 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 0;
+    height: 100vh;
     z-index: 1;
     overflow: hidden;
+    transform: translateY(-100%);
+    opacity: 0;
 
     padding: 0 27px;
 
     background-color: $dark-grey-color;
-    transition: height 0.2s linear;
+    transition: transform 0.3s linear, opacity 0.3s;
   }
 
   &__toggle {
     display: none;
 
     &:checked ~ .burger-menu__navigation {
-      height: 100vh;
+      transform: translateY(0);
+      opacity: 100%;
     }
 
     &:checked ~ .burger-menu__button {
