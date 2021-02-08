@@ -1,0 +1,131 @@
+.shop {
+  padding: 100px 0 100px 150px;
+  max-width: 1350px;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__nav {
+    display: flex;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 40px;
+    cursor: pointer;
+  }
+
+  &__link {
+    color: #828282;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 150%;
+
+    &_active {
+      color: $text-grey;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 2px;
+        margin-top: 20px;
+        background-color: $text-grey;
+      }
+    }
+
+    &:hover {
+      color: $text-grey;
+    }
+  }
+
+  &__slider {
+    margin-top: 63px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 380px 380px 330px;
+    justify-content: center;
+  }
+
+  &__image {
+    object-fit: cover;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(0.95);
+    }
+  }
+
+  &__name {
+    padding: 20px 0 10px;
+    font-size: 20px;
+    line-height: 150%;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $text-grey;
+  }
+
+  &__price {
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: $text-grey;
+  }
+
+  &__arrows {
+    display: block;
+    margin: 45px 0 27px;
+    font-size: 40px;
+    color: #828282;
+  }
+
+  &__arrow {
+    padding: 0 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: $text-grey;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: $tablet-screen-breakpoint) {
+  .shop {
+    padding: 0 27px;
+
+    &__link {
+      font-size: 14px;
+
+      &_active {
+        &::after {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    &__slider {
+      grid-template-columns: repeat(2, 342px);
+      gap: 30px;
+    }
+
+    &__image {
+      width: 342px;
+      height: 300px;
+    }
+
+    &__goods:last-child {
+      display: none;
+    }
+
+    &__arrows {
+      text-align: center;
+    }
+  }
+}
