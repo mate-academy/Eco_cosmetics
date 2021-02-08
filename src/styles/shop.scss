@@ -45,8 +45,12 @@
     margin-top: 63px;
     display: grid;
     gap: 20px;
-    grid-template-columns: 380px 380px 330px;
+    grid-template-columns: 35% 35% 25%;
     justify-content: center;
+  }
+
+  &__wrap {
+    overflow: hidden;
   }
 
   &__image {
@@ -54,7 +58,7 @@
     transition: 0.3s;
 
     &:hover {
-      transform: scale(0.95);
+      transform: scale(1.2);
     }
   }
 
@@ -126,6 +130,45 @@
 
     &__arrows {
       text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-screen-breakpoint) {
+  .shop {
+    padding: 60px 0 0;
+
+    &__title {
+      text-align: center;
+    }
+
+    &__nav {
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    &__item {
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__slider {
+      grid-template-columns: 100%;
+      margin: 0;
+    }
+
+    &__image {
+      width: 100%;
+    }
+
+    &__name,
+    &__price {
+      text-align: center;
+    }
+
+    &__goods:nth-child(2) {
+      display: none;
     }
   }
 }

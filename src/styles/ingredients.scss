@@ -59,3 +59,72 @@
     background-position: center;
   }
 }
+
+@media screen  and (max-width: $tablet-screen-breakpoint) {
+  .ingredients {
+    padding: 100px 0 0 27px;
+
+    &__info {
+      padding: 0;
+    }
+    &__list {
+      align-items: flex-start;
+    }
+
+    &__item {
+      position: relative;
+      max-width: 120px;
+    }
+
+    &__pointer {
+      position: absolute;
+      top: 10px;
+      left: 100px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__image {
+      background-image: url("../images/ingredients-cut.png");
+      width: 280px;
+    }
+  }
+}
+
+@media screen  and (max-width: $mobile-screen-breakpoint) {
+  .ingredients {
+    flex-direction: column;
+    padding: 60px 0 0 10px;
+    align-items: center;
+
+    &__info {
+      padding: 0;
+    }
+
+    &__link {
+      display: none;
+    }
+
+    &__list {
+      align-items: flex-start;
+    }
+
+    &__item {
+      position: relative;
+      max-width: 120px;
+    }
+
+    &__pointer {
+      position: absolute;
+      top: 10px;
+      left: 100px;
+    }
+
+    &__image {
+      background-image: url("../images/ingr-short.png");
+      width: 180px;
+    }
+  }
+}
