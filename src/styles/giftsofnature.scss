@@ -1,14 +1,17 @@
 .gifts-of-nature {
   display: flex;
-  gap: 120px;
-  width: 100%;
+  justify-content: space-between;
+  overflow: hidden;
 
   &__title {
+    display: flex;
+    justify-content: end;
+
     @extend %h4;
     justify-self: flex-start;
     max-width: 380px;
     padding: 100px 0;
-
+    
     color: $c-light-green;
   }
 
@@ -16,19 +19,89 @@
     @include text;
     
     width: 380px;
-    padding: 100px 0;
-    float: right;
-    
+    padding: 100px 0 100px 230px;
+
     font-weight: 700;
     color: #333;
   }
+
   &__right {
-    border-bottom: 1px solid rgba(52, 79, 16, 0.5);
-    width: 50%;
+    width: 610px;
+    border-bottom: 1px solid rgba(52,79,16,0.5);
   }
 
   &__left {
-    border-top: 1px solid rgba(52, 79, 16, 0.5);
-    width: 50%;
+    width: 610px;
+    margin-right: 120px;
+    border-top: 1px solid rgba(52,79,16,0.5);
+  }
+
+  @media screen and (min-width: $large-screen-breakpoint) {
+    & {
+      justify-content: center;
+  
+      &__left {
+        margin-right: 220px;
+        width: calc((100% - 220px) / 2 - 50px);
+      }
+  
+      &__discription {
+        padding-left: calc(100% - 380px);
+      }
+  
+      &__right {
+        width: calc((100% - 220px) / 2 + 50px);
+      }
+    }
+  }
+  
+  @media screen and (max-width: $medium-screen-breakpoint) {
+    & {
+      &__discription {
+        padding-left: 150px;
+      }
+  
+      &__title {
+        padding-right: 270px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: $small-screen-breakpoint) {
+    & {
+      &__left {
+        display: none;
+      }
+  
+      &__right {
+        width: 280px;
+        margin: auto;
+  
+        border-bottom: none;
+      }
+  
+      &__title {
+        padding: 0;
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+  }
+  
+  @media screen and (max-width: $super-small-screen-breakpoint) {
+    & {
+      &__right {
+        width: auto;
+        margin: 0 20px;
+  
+      }
+  
+      &__title {
+        width: auto;
+        padding: 0;
+        font-size: 18px;
+        text-align: center;
+      }
+    }
   }
 }
