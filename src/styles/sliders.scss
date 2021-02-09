@@ -1,0 +1,48 @@
+.sliders {
+  display: flex;
+
+  &__slider {
+   
+    margin-right: 16px;
+
+    &--left {
+      background: url(../images/previous.png) no-repeat center;
+  
+      &:disabled {
+        cursor: default;
+        background: url(../images/previous.png);
+      }
+    }
+
+    &--right {
+      background-image: url(../images/next.png);
+
+      &:disabled {
+        cursor: default;
+        background-image: url(../images/next.png);
+      }
+    }
+  }
+
+  &__button {
+    margin-left: 20vw;
+    justify-self: center;
+    padding: 19px 69px;
+  }
+
+  .slider--left::before {
+    display: block;
+    content: "";
+    width: 32px;
+    height: 32px;
+    background: url(../images/previous.svg);
+  }
+
+  .slider--right::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url(../images/next.svg);
+  }
+}
