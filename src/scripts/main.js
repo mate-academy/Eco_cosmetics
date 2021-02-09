@@ -33,9 +33,7 @@ $('.slick-filter button').click(function() {
 document.querySelector('.sandwich').addEventListener('click', function(e) {
   const menu = document.querySelector('.menu');
   const sandwich = document.querySelector('.sandwich__button');
-  // const mobileLang = document.querySelector('.header__lang');
 
-  // mobileLang.classList.toggle('header__lang--mobile-active');
   menu.classList.toggle('menu--active');
   sandwich.classList.toggle('sandwich__button--active');
 });

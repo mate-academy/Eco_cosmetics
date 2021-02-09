@@ -11,6 +11,7 @@
 
   &__container {
     position: relative;
+    margin: 0 auto;
 
     @include screen-m {
       padding: 0 25px;
@@ -22,14 +23,15 @@
   }
 
   &__label {
+    position: absolute;
     top: 220px;
-    left: 30px;
+    left: 35px;
   }
 
   &__title {
     margin-bottom: 20px;
 
-    @include h2;
+    @extend %h2;
     color: $c-green-dark;
 
     @include screen-m {
@@ -61,13 +63,13 @@
   }
 
   &__nav-button {
-    @include text-buttons;
+    @extend %text-buttons;
     font-size: 18px;
     color: $c-gray;
 
     cursor: pointer;
 
-    transition: color 0.2s ease;
+    transition: color $t-transition ease;
 
     @include screen-s {
       font-size: 14px;
@@ -121,7 +123,7 @@
 
   &__button {
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+    transition: transform $t-transition ease-in-out;
 
     &:hover {
       transform: scale(1.06);

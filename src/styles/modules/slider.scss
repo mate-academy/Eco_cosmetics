@@ -30,7 +30,8 @@
     object-fit: cover;
     cursor: pointer;
 
-    transition: border-radius 0.35s ease-in-out, text-shadow 0.35s ease-in;
+    transition: border-radius $t-transition ease-in-out,
+      text-shadow $t-transition ease-in;
 
     &:hover {
       border-radius: 16px;
@@ -45,7 +46,7 @@
   &__title {
     margin-bottom: 10px;
 
-    @include text-price;
+    @extend %text-price;
     font-size: 20px;
 
     @include screen-m {
@@ -58,7 +59,7 @@
   }
 
   &__price {
-    @include text-price;
+    @extend %text-price;
 
     &::after {
       content: " UAH";

@@ -11,6 +11,7 @@
 
   &__container {
     position: relative;
+    margin: 0 auto;
 
     @include screen-m {
       padding: 0 25px;
@@ -22,6 +23,7 @@
   }
 
   &__label {
+    position: absolute;
     top: 50px;
     left: 0;
   }
@@ -39,7 +41,7 @@
     margin: 50px 120px 0 0;
     max-width: 380px;
 
-    @include h2;
+    @extend %h2;
     line-height: 39.6px;
     color: $c-green-dark;
 
@@ -94,11 +96,11 @@
   &__model-item {
     position: relative;
 
-    @include text-1;
+    @extend %text-1;
     text-align: right;
 
     cursor: pointer;
-    transition: transform 0.35s ease-in-out;
+    transition: transform $t-transition ease-in-out;
 
     @include screen-m {
       max-width: 150px;
