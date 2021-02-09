@@ -1,0 +1,39 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+
+  @include screen-m {
+    width: 340px;
+  }
+
+  @include screen-s {
+    width: 100%;
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    padding: 10px 0;
+
+    @extend %text-input-menu;
+    color: $c-black;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+
+    &::placeholder {
+      color: $c-gray;
+    }
+
+    &--textarea {
+      resize: none;
+      margin: 20px 0 50px;
+      height: 44px;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+  }
+}

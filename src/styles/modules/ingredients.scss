@@ -1,0 +1,163 @@
+.ingredients {
+  padding: 100px 0;
+
+  @include screen-m {
+    padding: 50px 0;
+  }
+
+  @include screen-s {
+    padding: 30px 0;
+  }
+
+  &__container {
+    position: relative;
+    margin: 0 auto;
+
+    @include screen-m {
+      padding: 0 25px;
+    }
+
+    @include screen-s {
+      padding: 0 20px;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 50px;
+    left: 0;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+
+    @include screen-s {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    margin: 50px 120px 0 0;
+    max-width: 380px;
+
+    @extend %h2;
+    line-height: 39.6px;
+    color: $c-green-dark;
+
+    @include screen-xl {
+      max-width: 280px;
+      line-height: 150%;
+      margin-right: 20px;
+    }
+
+    @include screen-l {
+      margin-top: 0;
+    }
+
+    @include screen-m {
+      font-size: 28px;
+    }
+
+    @include screen-s {
+      font-size: 24px;
+    }
+  }
+
+  &__model {
+    position: relative;
+
+    @include screen-l {
+      left: 125px;
+    }
+
+    @include screen-s {
+      left: 170px;
+    }
+  }
+
+  &__model-list {
+    position: absolute;
+    left: -300px;
+    top: 37px;
+
+    display: flex;
+    flex-direction: column;
+
+    @include screen-m {
+      left: -220px;
+    }
+
+    @include screen-s {
+      left: -210px;
+    }
+  }
+
+  &__model-item {
+    position: relative;
+
+    @extend %text-1;
+    text-align: right;
+
+    cursor: pointer;
+    transition: transform $t-transition ease-in-out;
+
+    @include screen-m {
+      max-width: 150px;
+    }
+
+    @include screen-m {
+      max-width: 136px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+
+      @include screen-m {
+        margin-bottom: 40px;
+      }
+    }
+
+    &:hover {
+      transform: translateX(7px);
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      right: -90px;
+      transform: translateY(-50%);
+
+      width: 75px;
+      height: 1px;
+
+      background-color: $c-black;
+
+      @include screen-m {
+        width: 35px;
+        right: -50px;
+      }
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      right: -90px;
+      transform: translateY(-50%);
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+      background-color: $c-black;
+
+      @include screen-m {
+        right: -50px;
+      }
+    }
+  }
+}

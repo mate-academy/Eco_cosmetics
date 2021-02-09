@@ -1,0 +1,61 @@
+.advantages {
+  padding: 100px 0;
+
+  @include screen-m {
+    padding: 50px 0;
+  }
+
+  @include screen-m {
+    padding: 30px 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin: 0 auto;
+    padding: 0 100px;
+
+    @include screen-m {
+      padding: 0 25px;
+    }
+
+    @include screen-m {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 350px;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @include screen-m {
+        margin-right: 0;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__image {
+    height: 70px;
+    margin-bottom: 40px;
+
+    transition: transform $t-transition ease-in-out;
+
+    &:hover {
+      transform: rotate(-5deg);
+    }
+  }
+
+  &__heading {
+    @extend %text-3;
+    text-align: center;
+  }
+}

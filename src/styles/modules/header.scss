@@ -1,0 +1,49 @@
+.header {
+  position: relative;
+  padding: 40px 0;
+
+  @include screen-s {
+    padding: 15px 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 auto;
+    padding: 0 50px;
+
+    @include screen-m {
+      padding: 0 25px;
+    }
+
+    @include screen-s {
+      padding: 0 20px;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include screen-s {
+      display: none;
+    }
+  }
+
+  &__cart {
+    transition: transform $t-transition ease-in;
+
+    &:hover {
+      transform: scale(-1, 1);
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+}

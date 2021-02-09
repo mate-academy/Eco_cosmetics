@@ -1,0 +1,30 @@
+.logo {
+  transition: text-shadow $t-transition ease-in;
+
+  &:hover {
+    text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.7);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image {
+    @include screen-s {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__text {
+    margin-left: 12px;
+
+    @extend %text-2;
+    color: $c-green-dark;
+
+    @include screen-l {
+      display: none;
+    }
+  }
+}

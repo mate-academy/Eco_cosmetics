@@ -1,0 +1,111 @@
+.promo {
+  padding: 40px 0 100px;
+
+  @include screen-m {
+    padding: 30px 0 50px;
+  }
+
+  @include screen-m {
+    padding: 0 0 30px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0 auto;
+
+    @include screen-m {
+      flex-direction: column;
+      padding: 0 25px;
+      align-items: center;
+    }
+
+    @include screen-s {
+      padding: 0 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @include screen-m {
+      order: 2;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    margin-left: 20px;
+
+    @include screen-l {
+      width: 470px;
+    }
+
+    @include screen-m {
+      width: 714px;
+      margin-bottom: 50px;
+    }
+
+    @include screen-m {
+      width: 100vw;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__photo {
+    @include screen-m {
+      position: relative;
+      left: -10px;
+
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @extend %h1;
+    line-height: 60px;
+
+    @include screen-xl {
+      line-height: 72px;
+    }
+
+    @include screen-m {
+      max-width: 550px;
+      margin-bottom: 20px;
+
+      text-align: center;
+      font-size: 40px;
+      line-height: 140%;
+    }
+
+    @include screen-s {
+      font-size: 24px;
+    }
+  }
+
+  &__br {
+    &--del {
+      @include screen-m {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+
+    @extend %text-input-menu;
+    font-size: 22px;
+
+    @include screen-s {
+      font-size: 18px;
+      text-align: center;
+      white-space: nowrap;
+      margin-bottom: 45px;
+    }
+  }
+}
