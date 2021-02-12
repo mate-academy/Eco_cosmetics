@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+
+  @include desctop {
+    background-color: $beigeGrayColor;
+  }
+
+  @include tabletMini {
+    padding-top: $pagePaddingMobile;
+  }
+
+  &__company {
+    @include tabletMini {
+      display: flex;
+      order: 2;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    &::after {
+      content: "witch of mountain winds";
+      margin-left: 14px;
+      font-size: 14px;
+      text-transform: uppercase;
+
+      @include tabletMini {
+        display: none;
+      }
+    }
+  }
+
+  &__shop {
+    @include tabletMini {
+      display: flex;
+      order: 2;
+    }
+  }
+}
