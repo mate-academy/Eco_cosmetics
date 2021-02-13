@@ -1,8 +1,50 @@
 .product {
-  @extend %h5;
-  
+  &__photo {
+    width: 25vw;
+    max-width: 380px;
+  }
+
+  &__name,
+  &__cost {
+    @extend %h5;
+    color: $c-dark-grey;
+  }
+
   &__name {
+    margin-top: 20px;
     font-size: 20px;
-    padding: 20px 0 10px;
+  }
+
+  &__cost {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .product {
+
+    &__photo {
+      width: 342px;
+      height: 450px;
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .product {
+    width: 100%;
+
+    &__photo {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      max-width: inherit;
+    }
+
+    &__name,
+    &__cost {
+      margin-left: 20px;
+    }
   }
 }

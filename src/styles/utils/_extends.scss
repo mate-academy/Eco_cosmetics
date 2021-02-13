@@ -1,10 +1,12 @@
 %h1 {
+  display: block;
   font-size: 60px;
   font-weight: 500;
   line-height: 72px;
 }
 
 %h2 {
+  display: block;
   font-size: 36px;
   line-height: 150%;
   font-weight: 500;
@@ -13,12 +15,14 @@
 }
 
 %h3 {
+  display: block;
   font-size: 36px;
   font-weight: 500;
   line-height: 150%;
 }
 
 %h4 {
+  display: block;
   font-weight: 500;
   font-size: 24px;
   line-height: 150%;
@@ -27,9 +31,33 @@
 }
 
 %h5 {
+  display: block;
   font-weight: 500;
   font-size: 18px;
   line-height: 150%;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  %h1 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  %h2 {
+    font-size: 24px;
+    line-height: 150%;
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  %h2, %h1 {
+    text-align: center;
+  }
+
+  %h1 {
+    font-size: 24px;
+    line-height: 24px;
+  }
 }

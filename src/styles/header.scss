@@ -1,18 +1,98 @@
 .header {
   display: flex;
-  padding: 40px 130px;
   justify-content: space-between;
-  
-  color: $c-green;
+  align-items: center;
 
-  @include text-3; 
-  
-  &__nav {
-    color: $c-green;
+  padding: 40px 130px;
+
+  &__burger {
+    display: none;
+  }
+
+  &__logo-link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 50px;
+    height: 50px;
+
+    background-image: url(../images/logo.png);
+  }
+
+  &__title {
+    margin-left: 12px;
+
+    @include decorative-text;
   }
 
   &__cart {
-    display: inline-block;
-    align-self: center;
+    width: 32px;
+    height: 32px;
+
+    background: url(../images/cart.svg) no-repeat center;
+  }
+}
+
+@media screen and (min-width: $large-screen-breakpoint) {
+  .header {
+    width: 1050px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: $medium-screen-breakpoint) {
+  .header {
+    padding: 40px 50px;
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .header {
+    padding: 23px 27px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+
+    &__logo-link {
+      justify-self: center;
+    }
+
+    &__cart {
+      justify-self: end;
+    }
+
+    &__burger {
+      display: block;
+    }
+
+    &__title {
+      display: none;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    &__logo,
+    &__cart {
+      width: 5vw;
+      height: 5vw;
+
+      background-size: contain;
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .header {
+    padding: 15px 20px 12px;
+
+    &__logo,
+    &__cart {
+      width: 24px;
+      height: 24px;
+    }
   }
 }

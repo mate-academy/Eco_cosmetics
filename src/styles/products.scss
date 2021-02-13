@@ -1,8 +1,35 @@
 .products {
   display: flex;
-  overflow: hidden;
 
   &__product {
     margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .products {
+    &__product {
+      margin-right: 30px;
+
+      &:last-child {
+        display: none;
+      }
+
+      &:nth-child(2) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .products {
+    &__product {
+      margin: 0;
+
+      &:nth-child(2) {
+        display: none;
+      }
+    }
   }
 }
