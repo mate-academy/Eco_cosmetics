@@ -1,35 +1,112 @@
 .contact-us {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  position: relative;
 
-  max-width: 480px;
-  padding-right: 120px;
+  padding-left: 130px;
 
   &__title {
     @extend %h2;
 
     color: $c-green;
-    padding-bottom: 20px;
+  }
+
+  &__side-text {
+    top: 40px;
+    left: 130px;
   }
 
   &__text {
     @extend %h4;
 
-    max-width: 380px;
-    padding-bottom: 10px;
+    margin-top: 20px;
+    width: 380px;
 
     text-transform: none;
   }
 
-  &__image {
-    height: 584px;
-    width: 529px;
-
-    align-self: right;
+  &__container {
+    margin-left: 100px;
+    margin-right: 120px;
+    width: 380px;
   }
   
   &__button {
     align-self: flex-end;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: $large-screen-breakpoint) {
+  .contact-us {
+    justify-content: space-between;
+
+    &__text {
+      margin-right: 220px;
+    }
+  }
+}
+
+@media screen and (max-width: $medium-screen-breakpoint) {
+  .contact-us {
+    padding-left: 50px;
+
+    &__side-text {
+      left: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .contact-us {
+    justify-content: center;
+
+    &__side-text {
+      display: none;
+    }
+
+    &__text {
+      margin-left: 0;
+      margin-right: 30px;
+      width: 342px;
+    }
+
+    &__description {
+      margin-top: 12px;
+      width: 342px;
+
+      font-size: 16px;
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .contact-us {
+    padding: 0 20px;
+
+    &__image-container {
+      display: none;
+    }
+
+    &__text {
+      margin: 0;
+      width: auto;
+    }
+
+    &__heading {
+      text-align: start;
+    }
+
+    &__description {
+      width: auto;
+    }
+
+    &__button {
+      margin: 30px auto 0;
+    }
   }
 }
