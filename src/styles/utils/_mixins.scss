@@ -4,3 +4,21 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin hoverAnimation {
+  position: relative;
+  &:before {
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: $green;
+    top: 40px;
+    left: 0;
+    content: "";
+    transition: width 0.3s;
+  }
+  
+  &:hover:before {
+    width: 100%;
+  }
+}
