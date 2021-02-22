@@ -1,0 +1,32 @@
+.nav {
+  @extend %fontSharpSansDisplay;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    position: relative;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    color: $colorGreen;
+    padding: 13px 0;
+    
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: "";
+      width: 0;
+      height: 2px;
+      background-color: $colorGreen;
+      transition: width 300ms linear;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
