@@ -1,31 +1,36 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 
   padding-top: 40px;
 
   &__logo {
-    display: flex;
-    align-items: center;
+    position: relative;
 
-    &-text {
+    &::after {
       @extend %fontSharpSansDisplay;
+      position: absolute;
+      top: 55%;
+      left: 100%;
+      margin-left: 12px;
+      transform: translateY(-55%);
+      width: 220px;
+      content: "witch of mountain winds";
       font-size: 1.4rem;
       line-height: 1.8rem;
-      text-transform: uppercase;
+      letter-spacing: 0.05em;
       color: $colorGreen;
-      margin-left: 12px;
+      text-transform: uppercase;
     }
   }
 
   &__nav {
-    flex-basis: 20%;
-    margin-left: 18%;
+    flex-basis: 21%;
   }
 
   &__basket {
-    margin-left: auto;
     margin-right: 5px;
   }
 }
