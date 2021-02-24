@@ -1,0 +1,61 @@
+.ingredients {
+  display: flex;
+  padding-top: 240px;
+  gap: 20px;
+
+  &__title {
+    max-width: 280px;
+  }
+
+  &__item {
+    display: flex;
+    width: calc(50% + 100px);
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    height: 400px;
+
+    &--text {
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      width: calc(50% - 100px);
+
+      &::before {
+        position: absolute;
+        content: url(../images/decor/decor_ingredients.svg);
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 320px;
+  }
+
+  &__link {
+    align-self: flex-start;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 60px;
+    color: $green;
+    @extend %text-3;
+    text-decoration: none;
+    @include hoverLinkAnimation($green);
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-width: 200px;
+    height: 320px;
+    margin-right: 50px;
+  }
+}
