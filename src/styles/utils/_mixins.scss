@@ -5,19 +5,19 @@
   }
 }
 
-@mixin hoverAnimation {
+@mixin hoverLinkAnimation($color) {
   position: relative;
   &:before {
     position: absolute;
     width: 0;
     height: 1px;
-    background-color: $green;
-    top: 40px;
+    background-color: $color;
+    bottom: -12px;
     left: 0;
     content: "";
     transition: width 0.3s;
   }
-  
+
   &:hover:before {
     width: 100%;
   }
