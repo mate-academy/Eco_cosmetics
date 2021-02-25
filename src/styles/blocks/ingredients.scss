@@ -13,7 +13,7 @@
   }
 
   &__left {
-    flex-basis: 27%;
+    flex-basis: 29%;
     padding-top: 80px;
   }
 
@@ -73,5 +73,62 @@
 
   &__img {
     flex-basis: 54%;
+  }
+
+  @media (max-width: 980px) {
+
+    & {
+      overflow: hidden;
+      width: auto;
+      margin-left: 25px;
+      padding-top: 100px;
+      padding-left: 0;
+    }
+
+    &__subtitle {
+      display: none;
+    }
+
+    &__title {
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+    }
+
+    &__left {
+      padding-top: 0;
+    }
+
+    &__img {
+      margin-right: -60px;
+    }
+
+    &__text {
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        left: 185px;
+      }
+    }
+  }
+
+  @media (max-width: 580px) {
+    &__block {
+      flex-wrap: wrap;
+    }
+
+    &__left {
+      flex-basis: 100%;
+    }
+
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__right {
+      flex-basis: 100%;
+      height: 380px;
+    }
   }
 }
