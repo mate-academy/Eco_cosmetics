@@ -1,10 +1,7 @@
 .footer {
   height: 320px;
-  padding-left: 130px;
-  padding-right: 130px;
 
-  @include inputs-text;
-  
+  text-transform: none;
   color: $c-dirty-white;
   background-color: #99a788;
 
@@ -35,12 +32,16 @@
     &--uppercase {
       text-transform: uppercase;
     }
+
+    &--smallscreen {
+      display: none;
+    }
   }
 
   &__right {
     margin-top: 60px;
 
-    font-weight: bold;
+    font-weight: 700;
     font-size: 18px;
     line-height: 20px;
 
@@ -50,7 +51,8 @@
   &__link {
     display: block;
     margin-top: 20px;
-    
+
+    font-size: 20px;
     color: inherit;
     text-decoration: none;
   }
@@ -62,6 +64,10 @@
   &__icons {
     display: flex;
     margin-top: 30px;
+
+    &--smallscreen {
+      display: none;
+    }
   }
 
   &__icon {
@@ -102,6 +108,14 @@
     &__copyright {
       margin-top: 50px;
       font-size: 14px;
+
+      &--smallscreen {
+        display: none;
+      }
+
+      &--bigscreen {
+        display: inline-block;
+      }
     }
 
     &__country,
@@ -120,6 +134,25 @@
   .footer {
     padding: 0 20px;
     height: 470px;
+
+    &__icons {
+      &--smallscreen {
+        display: flex;
+      }
+      &--bigscreen {
+        display: none;
+      }
+    }
+
+    &__copyright {
+      &--smallscreen {
+        display: inline-block;
+      }
+
+      &--bigscreen {
+        display: none;
+      }
+    }
     &__container {
       justify-content: start;
       flex-direction: column;

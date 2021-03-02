@@ -7,7 +7,7 @@
 
   &__title {
     @extend %h2;
-
+    text-transform: none;
     color: $c-green;
   }
 
@@ -17,8 +17,7 @@
   }
 
   &__text {
-    @extend %h4;
-
+    @include text;
     margin-top: 20px;
     width: 380px;
 
@@ -28,7 +27,7 @@
   &__container {
     margin-left: 100px;
     margin-right: 120px;
-    width: 380px;
+    width: auto;
   }
   
   &__button {
@@ -65,7 +64,16 @@
       display: none;
     }
 
+    &__button {
+      margin: 30px auto 0;
+    }
+
+    &__title {
+      text-align: start;
+    }
+
     &__text {
+      text-align: start;
       margin-left: 0;
       margin-right: 30px;
       width: 342px;
@@ -84,7 +92,7 @@
   }
 }
 
-@media screen and (max-width: $small-screen-breakpoint) {
+@media screen and (max-width: $super-small-screen-breakpoint) {
   .contact-us {
     padding: 0 20px;
 
