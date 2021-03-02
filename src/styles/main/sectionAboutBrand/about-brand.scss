@@ -2,14 +2,10 @@
   @extend %sectionFlexContainer;
 
   position: relative;
-  padding-top: 200px;
+  padding-top: $sectionIndentTop;
 
   @include desctop {
-    padding-top: $sectionPaddingMobile;
-  }
-
-  &__link {
-    @extend %linkContents;
+    padding-top: $sectionPaddingDesktop;
   }
 
   &__inner {
@@ -18,17 +14,9 @@
     margin-left: -110px;
     justify-content: space-between;
 
-    @include desctop {
+    @include tablet {
       flex-direction: column;
       align-items: center;
-    }
-
-    @include tablet {
-      flex-direction: row;
-    }
-
-    @include tabletMini {
-      flex-direction: column;
     }
   }
 
@@ -59,15 +47,10 @@
     font-weight: 500;
   }
 
-  &__button {
-    @extend %button-learn;
-    margin-top: 40px;
-  }
-
   &__image-block {
     position: relative;
 
-    @include desctop {
+    @include tablet {
       display: flex;
       flex: 0 0 47%;
     }
@@ -79,7 +62,7 @@
 
   &__image {
     display: block;
-    @include desctop {
+    @include tablet {
       margin-top: 40px;
       max-width: 480px;
       width: 100%;

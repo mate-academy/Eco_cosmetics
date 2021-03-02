@@ -1,40 +1,42 @@
 .burger {
-  &__toggler:checked ~ &__nav {
-    display: block;
-    animation: appear-h 0.5s linear;
+  @include tabletMini {
+    &__nav {
+      display: none;
+    }
+    .nav {
+      &__list {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
 
-    @include tabletMini {
-      .nav {
-        &__list {
+        color: $beigeGrayColor;
+        background-color: $darkColor;
+      }
+
+      &__link {
+        position: relative;
+        justify-content: center;
+        margin: 0 20px 50px;
+
+        &::after {
+          content: "";
           position: absolute;
-          top: 0;
-          right: 0;
           bottom: 0;
-          left: 0;
-          justify-content: center;
-          flex-direction: column;
-          text-align: center;
-
-          color: $beigeGrayColor;
-          background-color: $darkColor;
-        }
-
-        &__link {
-          position: relative;
-          justify-content: center;
-          margin: 0 20px 50px;
-
-          &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            height: 1px;
-            width: 100%;
-            background-color: $beigeGrayColor;
-          }
+          height: 1px;
+          width: 100%;
+          background-color: $beigeGrayColor;
         }
       }
     }
+  }
+  &__toggler:checked ~ &__nav {
+    display: block;
+    animation: appear-h 0.5s linear;
   }
 }
 

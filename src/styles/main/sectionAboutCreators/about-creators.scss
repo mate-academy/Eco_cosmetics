@@ -5,6 +5,73 @@
   padding-top: 200px;
 
   @include desctop {
-    padding-top: $sectionPaddingMobile;
+    padding-top: $sectionPaddingDesktop + 180px;
+  }
+
+  @include mobile {
+    padding-top: $sectionPaddingDesktop + 160px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    margin-right: 15px;
+  }
+
+  &__text-block {
+    @include desctop {
+      margin-right: 30px;
+    }
+
+    @include tabletMini {
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    max-width: 380px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+
+    &:nth-child(2) {
+      margin-top: 12px;
+    }
+
+    &:nth-child(3) {
+      margin-top: 12px;
+    }
+
+    @include mobile {
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+
+  &__image-block {
+    position: relative;
+
+    @include desctop {
+      display: flex;
+      flex: 0 0 50%;
+    }
+
+    @include tabletMini {
+      display: none;
+    }
+  }
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    @include desctop {
+      width: 368px;
+      height: 435px;
+    }
   }
 }

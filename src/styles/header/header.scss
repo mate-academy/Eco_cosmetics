@@ -22,6 +22,7 @@
   &__link {
     display: flex;
     align-items: center;
+    transition: transform 0.5s;
     &::after {
       content: "witch of mountain winds";
       margin-left: 14px;
@@ -32,9 +33,16 @@
         display: none;
       }
     }
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__shop {
+    &:hover {
+      animation: scaleForIcon 1s linear;
+    }
     @include tabletMini {
       display: flex;
       order: 2;
