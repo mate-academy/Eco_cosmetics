@@ -1,0 +1,161 @@
+.footer {
+  height: 320px;
+
+  text-transform: none;
+  color: $c-dirty-white;
+  background-color: #99a788;
+
+  &__nav {
+    color: inherit;
+
+    & .nav__list {
+      justify-content: flex-start;
+    }
+
+    & .nav__item:first-child {
+      padding-left: 0;
+    }
+  }
+
+  &__left {
+    margin-top: 60px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    margin-top: 150px;
+
+    &--uppercase {
+      text-transform: uppercase;
+    }
+
+    &--smallscreen {
+      display: none;
+    }
+  }
+
+  &__right {
+    margin-top: 60px;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+
+    color: #e4dfd3;
+  }
+
+  &__link {
+    display: block;
+    margin-top: 20px;
+
+    font-size: 20px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__support {
+    margin-top: 20px;
+  }
+
+  &__icons {
+    display: flex;
+    margin-top: 30px;
+
+    &--smallscreen {
+      display: none;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+
+    &:first-child {
+      margin-right: 14px;
+    }
+
+    &--facebook {
+      background: url(../images/facebook.svg);
+    }
+
+    &--insta {
+      background: url(../images/instagram.svg);
+    }
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .footer {
+    padding: 0 20px;
+
+    & .nav__list {
+      flex-direction: column;
+    }
+
+    & .nav__item {
+      padding-left: 0;
+    }
+
+    &__left,
+    &__right {
+      margin-top: 30px;
+    }
+
+    &__copyright {
+      margin-top: 50px;
+      font-size: 14px;
+
+      &--smallscreen {
+        display: none;
+      }
+
+      &--bigscreen {
+        display: inline-block;
+      }
+    }
+
+    &__country,
+    &__link,
+    &__support {
+      font-size: 14px;
+    }
+
+    &__link {
+      margin-top: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .footer {
+    padding: 0 20px;
+    height: 470px;
+
+    &__icons {
+      &--smallscreen {
+        display: flex;
+      }
+      &--bigscreen {
+        display: none;
+      }
+    }
+
+    &__copyright {
+      &--smallscreen {
+        display: inline-block;
+      }
+
+      &--bigscreen {
+        display: none;
+      }
+    }
+    &__container {
+      justify-content: start;
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,168 @@
+.shop {
+  position: relative;
+  padding-left: 130px;
+
+  &__products {
+    margin-top: 85px;
+  }
+  &__heading {
+    @extend %h2;
+
+    padding-bottom: 20px;
+
+    color: $c-green;
+  }
+
+  &__content-wrapper {
+    margin-left: 100px;
+    width: max-content;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__side-text {
+    left: 130px;
+    top: 210px;
+  }
+
+  &__sliders {
+    margin-right: calc(50% - 260px);
+  }
+  &__buttons-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__navigation-button {
+    @extend %h5;
+
+    padding-right: 20px;
+
+    color: $c-light-grey;
+    background-color: #e5e5e5;
+
+    border: none;
+
+    &:hover {
+      color: $c-dark-grey;
+    }
+
+    &--active {
+      color: $c-dark-grey;
+      position: relative;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 50px;
+        height: 2px;
+
+        position: absolute;
+        bottom: -20px;
+        background-color: $c-dark-grey;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $large-screen-breakpoint) {
+  .shop {
+    &__content-wrapper {
+      width: max-content;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+@media screen and (max-width: $medium-screen-breakpoint) {
+  .shop {
+    padding-left: 50px;
+
+    &__side-text {
+      left: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .shop {
+    padding: 0 27px;
+
+    &__side-text {
+      display: none;
+    }
+
+    &__content-wrapper {
+      margin: 0 auto;
+      width: max-content;
+    }
+
+    &__button {
+      margin: 30px auto 0;
+    }
+
+    &__list {
+      margin-top: 12px;
+    }
+
+    &__list-item {
+      margin-right: 30px;
+    }
+
+    &__navigation-button {
+      font-size: 14px;
+
+      &--active {
+        &::after {
+          bottom: -10px;
+          height: 1px;
+        }
+      }
+    }
+
+    &__products {
+      margin-top: 30px;
+    }
+
+    &__buttons-container {
+      margin-top: 20px;
+      flex-direction: column;
+    }
+
+    &__sliders {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .shop {
+    padding: 0;
+
+    &__content-wrapper {
+      margin: 0;
+      width: 100%;
+    }
+
+    &__list {
+      justify-content: space-evenly;
+      margin-top: 12px;
+    }
+
+    &__list-item {
+      margin-right: 0;
+    }
+
+    &__sliders {
+      margin-right: 0;
+    }
+    &__button {
+      margin: 30px auto 0;
+    }
+  }
+}

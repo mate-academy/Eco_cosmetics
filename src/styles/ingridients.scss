@@ -1,0 +1,226 @@
+.ingridients {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &__side-text {
+    top: 107px;
+  }
+
+  &__text {
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 380px;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__title {
+    @extend %h2;
+
+    justify-self: center;
+
+    color: $c-green;
+  }
+
+  &__discription {
+    @include text;
+
+    color: $c-dark-grey;
+
+    &--1 {
+      padding-bottom: 30px;
+    }
+
+    &--2 {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    margin-top: 220px;
+    color: $c-green;
+    text-decoration: none;
+
+    @include decorative-text;
+    
+    &:hover::after {
+      content: "";
+
+      position: absolute;
+      top: 20px;
+      right: 0;
+
+      width: 100%;
+      height: 2px;
+
+      background-color: $c-green;
+    }
+  }
+
+  &__image-big {
+    width: 380px;
+    height: 396px;
+  }
+
+  &__bottle {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    min-width: 700px;
+  }
+
+  &__name {
+    position: absolute;
+    right: 520px;
+    width: fit-content;
+
+    font-weight: bold;
+    color: #333;
+
+    &::before,
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      right: -96px;
+
+      background-color: #333;
+    }
+
+    &::before {
+      width: 5px;
+      height: 5px;
+      top: calc(50% - 2px);
+      
+      border-radius: 50%;
+    }
+
+    &::after {
+      width: 76px;
+      height: 1px;
+
+      top: 50%;
+    }
+
+    @for $i from 2 through 6 {
+      &:nth-child(#{$i}) {
+        top: 35px + 75px * ($i - 2);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $large-screen-breakpoint) {
+  .ingridients {
+    &__main-part {
+      justify-content: center;
+    }
+
+    &__text {
+      margin-right: 100px;
+    }
+
+    &__icons {
+      margin: 200px auto 0;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: $medium-screen-breakpoint) {
+  .ingridients {
+    &__text {
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .ingridients {
+    &__side-text {
+      display: none;
+    }
+
+    &__main-part {
+      width: max-content;
+      margin: 0 auto;
+      justify-content: flex-start;
+    }
+
+    &__text {
+      margin: 0;
+    }
+
+    &__heading {
+      min-width: 342px;
+    }
+
+    &__link {
+      margin-top: 300px;
+    }
+
+    &__bottle {
+      margin-left: -100px;
+    }
+
+    &__name {
+      right: 430px;
+    }
+
+    &__icons {
+      margin: 150px auto 0;
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .ingridients {
+    &__main-part {
+      position: relative;
+      margin: 0;
+      width: 100%;
+    }
+
+    &__text {
+      width: 100%;
+      margin: 0 20px;
+    }
+
+    &__heading {
+      min-width: auto;
+    }
+
+    &__bottle {
+      position: absolute;
+      left: 0;
+      top: 70px;
+    }
+
+    &__link {
+      margin-top: 450px;
+    }
+
+    &__icons {
+      margin: 0 auto;
+      flex-direction: column;
+    }
+
+    &__icon {
+      margin: 60px auto 0;
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .ingridients {
+    &__advantages {
+      margin: 0 auto;
+      flex-direction: column;
+    }
+  }
+}

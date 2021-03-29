@@ -1,0 +1,162 @@
+.about-brand {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  padding-left: 130px;
+
+  &__text {
+    margin: 42px 120px 0 100px;
+    min-width: 380px;
+    width: 380px;
+  }
+
+  &__title {
+    @extend %h2;
+    color: $c-green;
+  }
+
+  &__discription {
+    @include text;
+
+    color: $c-dark-grey;
+
+    &--1 {
+      margin-top: 16px;
+    }
+    &--2 {
+      margin-top: 30px;
+    }
+  }
+  &__link {
+    @include decorative-text;
+    position: relative;
+    margin-top: 20px;
+
+    color: $c-green;
+    text-decoration: none;
+    
+    &:hover::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $c-green;
+    }
+  }
+
+  &__images {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  &__side-text {
+    top: 214px;
+    left: 130px;
+  }
+
+  &__image-big {
+    width: 480px;
+    height: 529px;
+    margin-right: 20px;
+  }
+  
+  &__image-tiny {
+    width: 208px;
+    height: 430px;
+    align-self: flex-end;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: $large-screen-breakpoint) {
+    .about-brand {
+      justify-content: center;
+  
+      &__text {
+        margin-right: 220px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: $medium-screen-breakpoint) {
+    & {
+      padding-left: 50px;
+  
+      &__side-text {
+        left: 50px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: $small-screen-breakpoint) {
+    & {
+      justify-content: center;
+      padding-left: 27px;
+  
+      &__side-text {
+        display: none;
+      }
+  
+      &__text {
+        margin: 10px 30px 0 0;
+        min-width: inherit;
+        max-width: 342px;
+      }
+
+      &__discription {
+        &--2 {
+          display: none;
+        }
+      }
+
+      &__link {
+        margin-top: 40px;
+      }
+  
+      &__image-tiny {
+        display: none;
+      }
+  
+      &__images {
+        display: flex;
+        justify-content: space-between;
+        overflow: inherit;
+        width: 47vw;
+        height: 42vw;
+      }
+  
+      &__image-big {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-right: 0;
+      }
+    }
+  }
+  
+  @media screen and (max-width: $super-small-screen-breakpoint) {
+    & {
+      padding-left: 0;
+  
+      &__text {
+        max-width: inherit;
+        width: auto;
+        margin: 0 20px;
+      }
+
+      &__discription {
+        &--1 {
+          margin-top: 12px;
+        }
+      }
+
+      &__images {
+        display: none;
+      }
+    }
+  }
+}
