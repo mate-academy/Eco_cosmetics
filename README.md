@@ -1,12 +1,6 @@
 # About
 - Eco-cosmetics landing page includes header with nav, main with seven blocks there and footer. Also there are few animations, buttons and links.
-- To look better responsive in different devices I use media queries:
-    - Large screens (> 2560px)
-    - Full HD (1920px)
-    - The design (1600px)
-    - Notebook (1280px)
-    - Tablet (1024px)
-    - Mobile (> 320px)
+- This page is adaptive to different devices Mobile (> 320px), Tablet (1024px), Notebook (1280px), Large screens (> 2560px)
 
 # Links
 - [DEMO LINK](https://yurasokal.github.io/Eco_cosmetics/)
