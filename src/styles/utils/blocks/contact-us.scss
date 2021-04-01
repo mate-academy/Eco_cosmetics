@@ -1,0 +1,156 @@
+.contact-us {
+  width: 100%;
+  background-color: $background-gray;
+  padding-left: 150px;
+
+  @media screen and (min-width: $the-design-screen-breakpoint) {
+    padding-left: 40px;
+  }
+
+  @media (max-width: $optimizing-standart-screen-breakpoint) {
+    padding-left: 0;
+  }
+
+  @media (max-width: $ipad-mini-screen-breakpoint) {
+    padding-left: 0;
+  }
+
+  @media (max-width: $iphone-se-screen-breakpoint) {
+    margin-bottom: 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    max-width: $container-max-width;
+    margin-bottom: 100px;
+
+    @media screen and (min-width: $the-design-screen-breakpoint) {
+      justify-content: center;
+      max-width: 100%;
+      gap: 220px;
+      padding-left: 130px;
+      margin-bottom: 100px;
+    }
+
+    @media (max-width: $optimizing-standart-screen-breakpoint) {
+      padding: 0 0 0 50px;
+    }
+
+    @media (max-width: $analog-standart-ipad-screen-breakpoint) {
+      padding: 0 0 0 27px;
+    }
+
+    @media (max-width: $ipad-mini-screen-breakpoint) {
+      padding: 0 0 70px;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: $phones-screen-breakpoint) {
+      padding-right: 27px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: $iphone-se-screen-breakpoint) {
+      padding: 0 20px 60px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__vertical {
+    left: 0;
+    top: 0;
+  }
+
+  &__info {
+    width: 480px;
+    margin-left: 0;
+
+    @media (max-width: $standart-screen-breakpoint) {
+      width: 480px / $container-max-width * 100vw;
+    }
+
+    @media (max-width: $ipad-mini-screen-breakpoint) {
+      width: 342px;
+      margin-left: calc(50% - 171px);
+    }
+
+    @media (max-width: $iphone-se-screen-breakpoint) {
+      width: 280px;
+      margin-left: calc(50% - 140px);
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 54px;
+    letter-spacing: 0;
+    text-align: left;
+    color: $brand-color;
+
+    @media (max-width: $normal-screen-breakpoint) {
+      font-size: 24px;
+    }
+
+    @media (max-width: $iphone-se-screen-breakpoint) {
+      text-transform: uppercase;
+    }
+  }
+
+  &__text {
+    width: 380px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0;
+    text-align: left;
+    color: $text-color;
+
+    @media (max-width: $normal-screen-breakpoint) {
+      width: 342px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 400px) {
+      width: 280px;
+      margin-top: 12px;
+    }
+  }
+
+  &__picture {
+    width: 550px;
+    height: 584px;
+
+    @include hover(transform, scale(1.1));
+
+    @media (max-width: $standart-screen-breakpoint) {
+      width: 550px / $container-max-width * 100vw;
+      height: 584px / $container-max-width * 100vw;
+    }
+
+    @media (max-width: $normal-screen-breakpoint) {
+      width: 368px;
+      height: 409px;
+    }
+
+    @media (max-width: $ipad-mini-screen-breakpoint - 1px) {
+      width: 368px / $container-max-width * 100vw * 1.5;
+      height: 409px / $container-max-width * 100vw * 1.5;
+    }
+
+    @media (max-width: $ipad-mini-screen-breakpoint) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $iphone-se-screen-breakpoint) {
+  .contact-us {
+    padding: 0;
+  }
+}

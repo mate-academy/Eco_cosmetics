@@ -1,0 +1,180 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 150px;
+
+  &__section {
+    margin-bottom: 200px;
+  }
+
+  &__vertical {
+    top: 30px;
+  }
+
+  &__name {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 54px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: $brand-color;
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 85px;
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    display: block;
+    margin: 0 20px;
+    padding: 0;
+    border-radius: 8px;
+    font-size: 18px;
+    color: $text-color;
+    text-decoration: none;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__arrows {
+    font-size: 28px;
+    margin-bottom: 27px;
+  }
+
+  &__left-arrow,
+  &__right-arrow {
+    border: none;
+    font-size: 28px;
+    color: $text-color;
+    outline: none;
+
+    &:hover {
+      color: $light-button;
+    }
+  }
+
+  &__button {
+    width: 280px;
+    margin: 0 auto;
+  }
+}
+
+.is-active {
+  position: relative;
+  color: $text-color;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: $text-color;
+    border-radius: 8px;
+    height: 2px;
+    top: 54px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media screen and (min-width: $the-design-screen-breakpoint) {
+  .shop {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: $optimizing-standart-screen-breakpoint) {
+  .shop {
+    padding-left: 50px;
+  }
+}
+
+@media screen and (max-width: $analog-standart-ipad-screen-breakpoint) {
+  .shop {
+    padding-left: 27px;
+
+    &__arrows {
+      text-align: end;
+      padding: 5px 10px;
+      margin: 0 8px 10px;
+    }
+  }
+}
+
+@media screen and (max-width: $ipad-mini-screen-breakpoint) {
+  .shop {
+    &__arrows {
+      position: relative;
+      left: 5px;
+      text-align: center;
+      // padding: 5px 10px;
+      // margin: 0 160px 10px 0;
+    }
+
+    &__list {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    &__name {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: $iphone-se-screen-breakpoint) {
+  .is-active {
+    &::after {
+      height: 2px;
+      top: 26px;
+    }
+  }
+
+  .shop {
+    padding: 0;
+
+    &__section {
+      margin-bottom: 80px;
+    }
+
+    &__name {
+      font-size: 24px;
+      margin: 0 auto;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    &__link {
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    &__list {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    &__arrows {
+      padding: 5px 10px;
+      margin: 0 8px 10px;
+    }
+
+    &__right-arrow {
+      margin-left: 32px;
+    }
+  }
+}

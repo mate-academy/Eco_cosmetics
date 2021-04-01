@@ -1,0 +1,71 @@
+@import "../vars";
+@import "../mixins";
+
+.header {
+  &__top {
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 130px;
+    margin-bottom: 45px;
+  }
+
+  &__hamburger {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    z-index: 3;
+    visibility: hidden;
+
+    height: 13px;
+    width: 20px;
+
+    cursor: pointer;
+  }
+
+  &__hamburger-x {
+    visibility: hidden;
+  }
+
+  &__menu-button {
+    visibility: hidden;
+  }
+
+  &__shopping-bag {
+    @include hover(transform, scale(1.2));
+  }
+}
+
+@media screen and (max-width: $ipad-mini-screen-breakpoint) {
+  .header {
+
+    &__top {
+      height: 77px;
+      margin-bottom: 0;
+    }
+
+    &__hamburger {
+      background: url("/images/burger.svg") center no-repeat;
+      position: absolute;
+      top: 35px;
+      left: 27px;
+      visibility: visible;
+
+      &--close {
+        background: url("/images/burger-close.svg") center no-repeat;
+      }
+    }
+
+    &__shopping-bag {
+      position: absolute;
+      top: 31px;
+      right: 27px;
+
+      height: 19.5px;
+      width: 17px;
+    }
+  }
+}

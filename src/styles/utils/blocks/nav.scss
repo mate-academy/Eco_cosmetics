@@ -1,0 +1,101 @@
+.nav {
+  display: flex;
+  text-align: center;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__link {
+    font-family: "Sharp-Sans-Display-No2-Medium", sans-serif;
+    font-size: 18px;
+    line-height: 23.4px;
+    display: block;
+    position: relative;
+    padding: 10px;
+    margin: 0 40px;
+    color: $brand-color;
+    cursor: pointer;
+
+    &::after {
+      display: block;
+      position: absolute;
+      bottom: 2px;
+      left: 10px;
+      width: 0;
+      height: 1px;
+      background-color: $analog-brand-color;
+      content: "";
+      transition: width 0.3s ease-out;
+    }
+
+    &:hover::after {
+      width: calc(100% - 2 * #{10px});
+    }
+  }
+}
+
+.menu-button {
+  display: none;
+}
+
+@media (max-width: $ipad-mini-screen-breakpoint) {
+  .nav {
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    transform: translateX(-100%);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    background-color: $text-color;
+    pointer-events: none;
+
+    &--menu-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      pointer-events: initial;
+      background-color: $text-color;
+      z-index: 2;
+    }
+
+    &__item {
+      display: block;
+      margin-top: 80px;
+    }
+
+    &__link {
+      display: block;
+      position: relative;
+      padding: 10px;
+      margin: 0 40px;
+      font-size: 18px;
+      color: $background-main;
+      cursor: pointer;
+
+      &::after {
+        display: block;
+        position: absolute;
+        content: "";
+        bottom: 2px;
+        left: 27px;
+        width: calc(100% - 54px);
+        height: 1px;
+        background-color: $background-main;
+        z-index: 5;
+      }
+    }
+  }
+}

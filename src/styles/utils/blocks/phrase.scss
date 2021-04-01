@@ -1,0 +1,104 @@
+.phrase {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 200px 0 150px;
+
+  &__section {
+    margin-bottom: 100px;
+  }
+
+  &__text {
+    padding: 100px 0;
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 380px;
+    border-top: 1px solid rgba(52, 79, 16, 0.5);
+  }
+
+  &__title {
+    padding: 100px 0;
+    font-size: 24px;
+    line-height: 36px;
+    color: $brand-color;
+    text-transform: uppercase;
+    max-width: 380px;
+    border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+  }
+}
+
+@media screen and (min-width: $the-design-screen-breakpoint) {
+  .phrase {
+    justify-content: center;
+    padding: 0 200px 0 100px;
+    gap: 300px;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .phrase {
+    padding: 0 50px 0 100px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .phrase {
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+
+    &__text {
+      text-align: center;
+      max-width: 380px;
+      border-bottom: 0;
+    }
+
+    &__title {
+      text-align: center;
+      max-width: 380px;
+    }
+  }
+}
+
+@media screen and (max-width: $ipad-mini-screen-breakpoint) {
+  .phrase {
+    flex-direction: column;
+
+    &__section {
+      margin-bottom: 0;
+    }
+
+    &__text {
+      display: none;
+    }
+
+    &__phrase {
+      text-align: center;
+      max-width: 280px;
+      padding: 0;
+      border-bottom: 0;
+    }
+
+    &__title {
+      border: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $iphone-se-screen-breakpoint) {
+  .phrase {
+    padding: 0 20px;
+
+    &__section {
+      margin-bottom: 0;
+    }
+
+    &__title {
+      max-width: 280px;
+      font-size: 18px;
+      line-height: 27px;
+      border: 0;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__img {
+    padding-right: 12px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__text {
+    font-family: "Sharp-Sans-Display-No2-Medium", sans-serif;
+    font-size: 14px;
+    line-height: 18.2px;
+    color: $brand-color;
+  }
+}
+
+@media screen and (max-width: $ipad-mini-screen-breakpoint) {
+  .logo {
+    &__text {
+      display: none;
+    }
+
+    &__img {
+      height: 35px;
+      width: 35px;
+      position: absolute;
+      left: calc(50% - 17.5px);
+      top: 23px;
+    }
+  }
+}

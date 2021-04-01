@@ -1,0 +1,68 @@
+.product {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  &__name {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: $text-color;
+  }
+
+  &__price {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: $text-color;
+  }
+
+  &__img {
+    @include hover(transform, scale(1.08));
+  }
+}
+
+@media screen and (min-width: $the-design-screen-breakpoint) {
+  .product {
+    justify-content: center;
+    gap: 110px;
+  }
+}
+
+@media screen and (max-width: $optimizing-standart-screen-breakpoint) {
+  .product {
+    &__ubtan {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $ipad-mini-screen-breakpoint) {
+  .product {
+    &__face-cream {
+      display: none;
+    }
+
+    &__hydrophilic-oil {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-width: $iphone-se-screen-breakpoint) {
+  .product {
+    &__face-cream {
+      display: none;
+    }
+
+    &__oil-img {
+      max-width: 318px;
+    }
+  }
+}
