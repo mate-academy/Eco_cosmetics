@@ -4,7 +4,7 @@
 
 # Links
 - [DEMO LINK](https://yurasokal.github.io/Eco_cosmetics/)
-- [Code](https://github.com/mate-academy/Eco_cosmetics/pull/39/files)
+- [Code](https://github.com/yurasokal/Eco_cosmetics/tree/develop)
 - [The landing page](https://www.figma.com/file/Fz588JKGuPS2Bk21De4KE5/brand_of_eco-cosmetics-(Edit)?node-id=1%3A2)
 
 # Technologies
