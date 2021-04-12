@@ -1,0 +1,118 @@
+.header {
+
+  &__wrapper {
+    @include max-width-content($content_max-width);
+    padding: 0 $wrapper_paddings_size-S;
+  }
+
+  &__image-wrapper {
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: $size-S) {
+    &__image-wrapper {
+      padding: 0 $wrapper_paddings_size-S;
+    }
+  }
+
+  @media (min-width: $size-M) {
+    &__wrapper {
+      padding: 0 $wrapper_paddings;
+    }
+
+    &__image-wrapper {
+      padding: 0 $wrapper_paddings;
+    }
+  }
+
+  @media (min-width: $size-L) {
+    &__wrapper--nav {
+      padding: 0;
+      width: min-content;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    text-align: center;
+    color: $gray-collor;
+  }
+
+  &__paragraph {
+    margin-bottom: 46px;
+    text-align: center;
+    color: $gray-collor;
+  }
+
+  @each $size, $img-margin, $title-margin, $text-margin in $header_margins {
+    @media (min-width: #{$size}) {
+      &__image-wrapper {
+        margin-bottom: $img-margin;
+      }
+
+      &__title {
+        margin-bottom: $title-margin;
+      }
+
+      &__paragraph {
+        margin-bottom: $text-margin;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  @media (min-width: 800px) {
+    &__flex-container {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      @include max-width-content($content_max-width);
+      padding: 30px $wrapper_paddings 0;
+    }
+
+    &__image-wrapper {
+      margin: 0 0 0 20px;
+      padding: 0;
+      width: 50%;
+    }
+
+    &__wrapper--content {
+      margin: 0;
+      padding: 0;
+      width: 380px;
+    }
+
+    &__title {
+      text-align: left;
+    }
+
+    &__paragraph {
+      text-align: left;
+    }
+
+    &__button {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: $size-L) {
+    &__flex-container {
+      padding: 0 $wrapper_paddings;
+    }
+  }
+
+  @media (min-width: $size-XL) {
+    &__wrapper--content {
+      width: 480px;
+    }
+  }
+}

@@ -1,3 +1,41 @@
 h1 {
-  @extend %h1;
+  @include font(24px, 130%, 700);
+
+  @each $size, $font-size in $h1_font-size {
+    @media (min-width: #{$size}) {
+      & {
+        @include font(#{$font-size}, 130%, 700);
+      }
+    }
+  }
+}
+
+h2 {
+  @include font(36px, 54px, 700);
+  letter-spacing: 5%;
+  text-transform: uppercase;
+}
+
+h3 {
+  @include font(36px, 54px, 700);
+}
+
+h4 {
+  @include font(24px, 36px, 700);
+  letter-spacing: 5%;
+  text-transform: uppercase;
+}
+
+p {
+  @include font(18px, 150%, 500);
+
+  @media (min-width: $size-L) {
+    & {
+      @include font(24px, 150%, 500);
+    }
+  }
+}
+
+a {
+  @include font(18px, 27px, 500);
 }
