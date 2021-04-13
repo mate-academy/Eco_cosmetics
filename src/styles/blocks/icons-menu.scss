@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 15px 0 12px;
 
   &__item {
     display: inline-flex;
@@ -42,23 +41,14 @@
     }
   }
 
-  @each $size, $margin-top, $margin-bottom in $icons-menu_margins {
-    @media (min-width: #{$size}) {
-      & {
-        margin-top: $margin-top;
-        margin-bottom: $margin-bottom;
-      }
-    }
-  }
-
-  @media (min-width: 800px) {
+  @media (min-width: $design-jump) {
     &__link--logo::after {
       content: "witch of mountain winds";
       display: inline-block;
       padding-left: 12px;
 
       text-transform: uppercase;
-      @include font(14px, 130%, 400);
+      @include font(14px, 130%, 500);
       letter-spacing: 0.05em;
       color: $content-color;
     }
