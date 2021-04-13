@@ -1,12 +1,11 @@
 .section-intro {
 
   &__title {
-    max-width: 280px;
+    max-width: $section-block_size-S;
     margin: 0 auto;
 
     text-align: center;
     @include font(18px, 150%, 500);
-    letter-spacing: 0.05em;
     color: $content-color;
   }
 
@@ -39,7 +38,7 @@
         margin-right: 80px;
         border-top: 1px solid rgba(52, 79, 16, 0.5);
 
-        @each $size, $gap in $section-intro_gap {
+        @each $size, $gap in $section-containers_gap {
           @media (min-width: #{$size}) {
             & {
               margin-right: $gap;
@@ -56,7 +55,7 @@
     }
     
     &__title {
-      max-width: 300px;
+      max-width: $section-block_size-M;
       margin: 0;
 
       text-align: left;
@@ -64,19 +63,27 @@
     }
 
     &__paragraph {
-      max-width: 300px;
+      max-width: $section-block_size-M;
       display: block;
+    }
 
-      @include font(16px, 150%, 500);
+    @media (min-width: $size-L) {
+      &__title {
+        max-width: $section-block_size-L;
+      }
+
+      &__paragraph {
+        max-width: $section-block_size-L;
+      }
     }
 
     @media (min-width: $size-XL) {
       &__title {
-        max-width: $section-block_size;
+        max-width: $section-block_size-XL;
       }
 
       &__paragraph {
-        max-width: $section-block_size;
+        max-width: $section-block_size-XL;
       }
     }
   }

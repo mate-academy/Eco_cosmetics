@@ -8,12 +8,24 @@ h1 {
       }
     }
   }
+
+  @media (min-width: $size-L) {
+    & {
+      line-height: 120%;
+    }
+  }
 }
 
 h2 {
-  @include font(36px, 54px, 700);
-  letter-spacing: 5%;
+  @include font(24px, 150%, 700);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+
+  @media (min-width: $size-L) {
+    & {
+      @include font(36px, 150%, 500);
+    }
+  }
 }
 
 h3 {
@@ -27,13 +39,8 @@ h4 {
 }
 
 p {
-  @include font(18px, 150%, 500);
-
-  @media (min-width: $size-L) {
-    & {
-      @include font(24px, 150%, 500);
-    }
-  }
+  @include font(16px, 150%, 500);
+  color: $gray-collor;
 }
 
 a {

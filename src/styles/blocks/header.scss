@@ -1,7 +1,7 @@
 .header {
 
   &__wrapper {
-    @include max-width-content($content_max-width);
+    @include max-width-content($content_max-width + (2 * $wrapper_paddings));
     padding: 0 $wrapper_paddings_size-S;
   }
 
@@ -59,8 +59,15 @@
 
   &__paragraph {
     margin-bottom: 46px;
+
+    @include font(18px, 150%, 500);
     text-align: center;
-    color: $gray-collor;
+
+    @media (min-width: $size-L) {
+      & {
+        @include font(22px, 130%, 500);
+      }
+    }
   }
 
   @each $size, $img-margin, $title-margin, $text-margin in $header_margins {
@@ -119,6 +126,7 @@
 
   @media (min-width: $size-L) {
     &__flex-container {
+      @include max-width-content($content_max-width + (2 * $wrapper_paddings));
       padding: 0 $wrapper_paddings;
     }
   }
