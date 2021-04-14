@@ -1,5 +1,9 @@
 .section-intro {
 
+  &__wrapper {
+    @include max-width-content($size-XXXL);
+  }
+
   &__title {
     max-width: $section-block_size-S;
     margin: 0 auto;
@@ -14,7 +18,7 @@
   }
 
   @media (min-width: $design-jump) {
-    & {
+    &__wrapper {
       display: flex;
       justify-content: space-between;
     }
@@ -33,9 +37,9 @@
       }
 
       &--left {
-        flex-grow: 1;
-        justify-content: flex-end;
-        margin-right: 80px;
+        flex-shrink: 0;
+        margin-right: 30px;
+        padding-left: 27px;
         border-top: 1px solid rgba(52, 79, 16, 0.5);
 
         @each $size, $gap in $section-containers_gap {
@@ -48,14 +52,13 @@
       }
 
       &--right {
-        flex-grow: $section-proportions;
-        justify-content: flex-start;
+        flex-grow: 1;
         border-bottom: 1px solid rgba(52, 79, 16, 0.5);
       }
     }
     
     &__title {
-      max-width: $section-block_size-M;
+      min-width: $section-block_size-L;
       margin: 0;
 
       text-align: left;
@@ -63,27 +66,41 @@
     }
 
     &__paragraph {
-      max-width: $section-block_size-M;
+      width: $section-block_size-L;
       display: block;
     }
+  }
 
-    @media (min-width: $size-L) {
-      &__title {
-        max-width: $section-block_size-L;
-      }
-
-      &__paragraph {
-        max-width: $section-block_size-L;
-      }
+  @media (min-width: $size-L) {
+    &__title {
+      min-width: $section-block_size-XL;
     }
 
-    @media (min-width: $size-XL) {
-      &__title {
-        max-width: $section-block_size-XL;
-      }
+    &__paragraph {
+      width: $section-block_size-XL;
+    }
+  }
 
-      &__paragraph {
-        max-width: $section-block_size-XL;
+  @media (min-width: $size-XL) {
+    &__paragraph {
+      margin-left: 100px;
+    }
+  }
+
+  @media (min-width: $size-XXL) {
+    &__content-container {
+     
+      &--left {
+        padding-left: $wrapper_paddings_size-XXL;
+      }
+    }
+  }
+
+  @media (min-width: $size-XXXL) {
+    &__content-container {
+     
+      &--left {
+        padding-left: $wrapper_paddings_size-XXXL;
       }
     }
   }

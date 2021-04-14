@@ -1,5 +1,6 @@
 'use strict';
 
+// Burger-Menu
 const burgerToggler = document.querySelector('.burger-toggler');
 const nav = document.querySelector('.nav');
 const button = document.querySelector('#toggler');
@@ -9,6 +10,7 @@ button.addEventListener('click', () => {
   nav.classList.toggle('nav--active');
 });
 
+// Add <br> to title
 const newTitleText = 'Brand of<br>eco-cosmetics and magic candles';
 const mediaQuery = window.matchMedia('(min-width: 800px)');
 

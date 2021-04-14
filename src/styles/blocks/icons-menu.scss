@@ -14,12 +14,12 @@
 
   &__logo {
     @include square(24px);
-  }
 
-  @each $page-size, $image-size in $logo-size {
-    @media (min-width: #{$page-size}) {
-      &__logo {
-        @include square(#{$image-size});
+    @each $page-size, $image-size in $logo-size {
+      @media (min-width: #{$page-size}) {
+        & {
+          @include square(#{$image-size});
+        }
       }
     }
   }
@@ -35,12 +35,6 @@
     background-position: center;
   }
 
-  @media (min-width: $size-L) {
-    &__item--burger {
-      display: none;
-    }
-  }
-
   @media (min-width: $design-jump) {
     &__link--logo::after {
       content: "witch of mountain winds";
@@ -51,6 +45,18 @@
       @include font(14px, 130%, 500);
       letter-spacing: 0.05em;
       color: $content-color;
+    }
+  }
+
+  @media (min-width: $size-L) {
+    &__item--burger {
+      display: none;
+    }
+
+    &__link--shop {
+      @include square(32px);
+      background-repeat: no-repeat;
+      background-size: contain;
     }
   }
 }

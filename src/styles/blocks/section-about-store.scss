@@ -1,13 +1,8 @@
 .section-about-store {
 
   &__wrapper {
-    @include max-width-content($content_max-width + $wrapper_paddings);
-
-    @media (min-width: $size-XL) {
-      & {
-        padding: 0 0 0 27px;
-      }
-    }
+    @include max-width-content($size-XXXL);
+    padding: 0 $wrapper_paddings_size-S;
   }
 
   &__title {
@@ -58,43 +53,22 @@
 
   &__label {
     display: none;
-
-    @media (min-width: $content_max-width) {
-      display: inline-block;
-      margin-right: 80px;
-    }
   }
 
   @media (min-width: $size-S) {
     &__wrapper {
       display: flex;
+      @include max-width-content(
+        $content_max-width + 2 * $wrapper_paddings_size-S
+      );
+
+      padding: 0 0 0 $wrapper_paddings_size-S;
     }
 
     &__content-container--left {
       flex-shrink: 0;
-      box-sizing: content-box;
       margin: 0 30px 0 0;
       width: $section-block_size-M;
-      padding: 0 0 0 20px;
-
-      @media (min-width: $size-M) {
-        & {
-          width: $section-block_size-L;
-          padding: 0 0 0 27px;
-        }
-      }
-
-      @media (min-width: $size-L) {
-        & {
-          width: $section-block_size-XL;
-        }
-      }
-
-      @media (min-width: $size-XL) {
-        & {
-          padding: 0;
-        }
-      }
 
       @each $size, $gap in $section-containers_gap {
         @media (min-width: #{$size}) {
@@ -106,6 +80,7 @@
     }
 
     &__content-container--right {
+      overflow: visible;
       align-self: stretch;
       flex-grow: 1;
       display: flex;
@@ -114,16 +89,28 @@
 
     &__title {
       margin-top: 10px;
+    }
+  }
 
-      @media (min-width: $size-L) {
-        & {
-          margin: 40px 0 20px;
-        }
-      }
+  @media (min-width: $size-M) {
+    &__content-container--left {
+      width: $section-block_size-L;
+    }
+
+    &__wrapper {
+      padding: 0 0 0 $wrapper_paddings_size-L;
     }
   }
 
   @media (min-width: $size-L) {
+    &__content-container--left {
+      width: $section-block_size-XL;
+    }
+
+    &__title {
+      margin: 40px 0 20px;
+    }
+
     &__paragraph--additional {
       display: block;
       margin-top: 30px;
@@ -143,6 +130,47 @@
 
     &__link {
       padding-bottom: 10px;
+    }
+  }
+
+  @media (min-width: $size-XL) {
+    &__label {
+      display: inline-block;
+    }
+
+    &__content-container--left {
+      margin-left: 80px;
+    }
+  }
+
+  @media (min-width: $content_max-width) {
+    &__content-container--right {
+      overflow: visible;
+    }
+
+    &__photo--smaller {
+      width: 208px;
+      max-width: $image-about_width-large;
+    }
+  }
+
+  @media (min-width: $size-XXL) {
+    &__wrapper {
+      @include max-width-content(
+        $content_max-width + 2 * $wrapper_paddings_size-XXL
+      );
+
+      padding-left: $wrapper_paddings_size-XXL;
+    }
+  }
+
+  @media (min-width: $size-XXXL) {
+    &__wrapper {
+      @include max-width-content(
+        $content_max-width + 2 * $wrapper_paddings_size-XXXL
+      );
+
+      padding-left: $wrapper_paddings_size-XXXL;
     }
   }
 }
