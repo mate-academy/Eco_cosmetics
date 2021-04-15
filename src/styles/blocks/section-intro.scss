@@ -1,20 +1,38 @@
 .section-intro {
 
   &__wrapper {
-    @include max-width-content($size-XXXL);
+    @include max-width-content(
+      $content_max-width + 2 * $wrapper_paddings_size-XXXL
+    );
   }
 
   &__title {
-    max-width: $section-block_size-S;
+    max-width: $section-block_size-M;
     margin: 0 auto;
 
     text-align: center;
     @include font(18px, 150%, 500);
     color: $content-color;
+
+    @each $size, $width in $section-block_size-list {
+      @media (min-width: #{$size}) {
+        & {
+          min-width: $width;
+        }
+      }
+    }
   }
 
   &__paragraph {
     display: none;
+
+    @each $size, $width in $section-block_size-list {
+      @media (min-width: #{$size}) {
+        & {
+          width: $width;
+        }
+      }
+    }
   }
 
   @media (min-width: $design-jump) {
@@ -39,13 +57,21 @@
       &--left {
         flex-shrink: 0;
         margin-right: 30px;
-        padding-left: 27px;
+        padding-left: $wrapper_paddings_size-L;
         border-top: 1px solid rgba(52, 79, 16, 0.5);
 
         @each $size, $gap in $section-containers_gap {
           @media (min-width: #{$size}) {
             & {
               margin-right: $gap;
+            }
+          }
+        }
+
+        @each $size, $padding in $wrapper_padding-list {
+          @media (min-width: #{$size}) {
+            & {
+              padding-left: $padding;
             }
           }
         }
@@ -58,7 +84,6 @@
     }
     
     &__title {
-      min-width: $section-block_size-L;
       margin: 0;
 
       text-align: left;
@@ -66,42 +91,13 @@
     }
 
     &__paragraph {
-      width: $section-block_size-L;
       display: block;
-    }
-  }
-
-  @media (min-width: $size-L) {
-    &__title {
-      min-width: $section-block_size-XL;
-    }
-
-    &__paragraph {
-      width: $section-block_size-XL;
     }
   }
 
   @media (min-width: $size-XL) {
     &__paragraph {
       margin-left: 100px;
-    }
-  }
-
-  @media (min-width: $size-XXL) {
-    &__content-container {
-     
-      &--left {
-        padding-left: $wrapper_paddings_size-XXL;
-      }
-    }
-  }
-
-  @media (min-width: $size-XXXL) {
-    &__content-container {
-     
-      &--left {
-        padding-left: $wrapper_paddings_size-XXXL;
-      }
     }
   }
 }
