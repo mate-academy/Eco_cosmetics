@@ -1,0 +1,122 @@
+.burger {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 20px;
+
+  &__item {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: $green;
+    border-radius: 3px;
+    z-index: 2;
+    transform-origin: 2px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+      opacity 0.55s ease;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      width: 20px;
+      height: 2px;
+      background-color: $green;
+      transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+        transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
+        background-color 300ms;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 6px;
+      width: 20px;
+      height: 2px;
+      background-color: $green;
+      transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+        transform 300ms cubic-bezier(0.23, 1, 0.32, 1),
+        background-color 300ms;
+    }
+  }
+
+  &__checkbox {
+    display: block;
+    position: absolute;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 3;
+  }
+
+  &__logo {
+    z-index: 2;
+    display: none;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__nav {
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    transition: top 0.3s;
+    z-index: 1;
+  }
+}
+
+.burger .burger__checkbox:checked ~ .burger__item {
+  background-color: #fff0;
+
+  &:before {
+    top: 0;
+    background-color: $beige;
+    transform: rotate(45deg);
+    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1),
+      transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+      background-color 300ms;
+  }
+
+  &:after {
+    bottom: 0;
+    background-color: $beige;
+    transform: rotate(-45deg);
+    transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1),
+      transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+      background-color 300ms;
+  }
+}
+
+.burger .burger__checkbox:checked ~ .burger__nav {
+  display: flex;
+  top: 0;
+}
+
+@media (max-width: $tabletBreakPoint) {
+  .burger {
+    display: flex;
+
+    &__logo {
+      display: block;
+    }
+
+    &__nav {
+      padding: 140px 27px 0;
+      justify-content: center;
+      background-color: $black;
+    }
+  }
+}
+
+@media (max-width: $mobileBreakPoint) {
+  .burger__nav {
+    padding: 120px 20px 0;
+  }
+}

@@ -1,0 +1,105 @@
+.contacts {
+  display: flex;
+  gap: 20px;
+  padding: 200px 0;
+
+  &__item {
+    position: relative;
+    @extend %flex-center;
+    width: 50%;
+    overflow: hidden;
+
+    &--text::before {
+      content: url(../images/contactsSide.svg);
+      @extend %sideBar;
+    }
+  }
+
+  &__text {
+    max-width: 380px;
+  }
+
+  &__picture {
+    overflow: hidden;
+  }
+
+  &__title {
+    @extend %title;
+  }
+
+  &__paragraph {
+    margin-bottom: 20px;
+    color: $black;
+    font-size: 24px;
+    line-height: 1.5em;
+  }
+}
+
+.form {
+  &__item {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: none;
+    color: $black;
+    font-size: 18px;
+    line-height: 1.5em;
+    border-bottom: 1px solid gray;
+    background-color: transparent;
+
+    &--textarea {
+      margin-top: 30px;
+      resize: none;
+    }
+
+    &__placeholder {
+      color: $darkGray;
+    }
+
+    &:focus {
+      color: $black;
+      outline: none;
+      border-bottom: 1px solid $black;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    max-width: 280px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: $tabletBreakPoint) {
+  .contacts {
+    &__item--text:before {
+      display: none;
+    }
+
+    &__paragraph {
+      font-size: 16px;
+    }
+  }
+
+  .form {
+    &__item {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: $mobileBreakPoint) {
+  .contacts {
+    &__item {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    &__item--picture {
+      display: none;
+    }
+  }
+}
