@@ -1,7 +1,58 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./utils/normalize";
 
-body {
-  background: $c-gray;
+@import "./blocks/header.scss";
+@import "./blocks/nav.scss";
+@import "./blocks/home.scss";
+@import "./blocks/facts.scss";
+@import "./blocks/about.scss";
+
+.shop {
+  position: relative;
+  padding-left: 130px;
+
+  &__sign {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    transform: rotate(-90deg);
+
+    &-first {
+      margin-right: 10px;
+      width: 100px;
+      height: 1px;
+      background-color: #344d1080;
+    }
+
+    &-second {
+      height: 18px;
+      display: flex;
+      align-items: flex-end;
+      font-size: 14px;
+      color: #344d1080;
+    }
+  }
+
+  &__container {
+    padding-left: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 40px;
+    color: $main;
+  }
+
+  &__photo {
+    width: 380px;
+    height: 500px;
+  }
 }
