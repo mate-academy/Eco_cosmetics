@@ -20,6 +20,7 @@
   }
 
   &__picture {
+    align-self: center;
     overflow: hidden;
   }
 
@@ -53,7 +54,8 @@
       resize: none;
     }
 
-    &__placeholder {
+    &::placeholder {
+      font-family: "SharpSans№2", sans-serif;
       color: $darkGray;
     }
 
@@ -65,16 +67,20 @@
   }
 
   &__button {
-    width: 100%;
-    max-width: 280px;
+    width: 280px;
     height: 60px;
     border: none;
     cursor: pointer;
+
+    @media (max-width: $mobileBreakPoint) {
+      width: 100%;
+    }
   }
 }
 
 @media (max-width: $tabletBreakPoint) {
   .contacts {
+    padding: 60px 0;
     &__item--text:before {
       display: none;
     }
@@ -87,15 +93,22 @@
   .form {
     &__item {
       font-size: 14px;
+      width: 100%;
     }
   }
 }
 
 @media (max-width: $mobileBreakPoint) {
   .contacts {
+    padding: 60px 0;
+
     &__item {
+      justify-content: center;
       width: 100%;
-      justify-content: flex-start;
+    }
+
+    &__text {
+      max-width: 100%;
     }
 
     &__item--picture {
