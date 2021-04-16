@@ -1,4 +1,5 @@
-.section-about-creators {
+.section-contact-us {
+  padding-top: 40px;
 
   &__wrapper {
     display: flex;
@@ -10,12 +11,21 @@
     padding: 0 $wrapper_paddings_size-S;
   }
 
+  &__label {
+    display: none;
+  }
+
   &__content-wrapper {
     @each $size, $margin in $section-containers_gap {
       @media (min-width: #{$size}) {
         margin-right: $margin;
       }
     }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    color: $content-color;
 
     @each $size, $width in $section-block_size-list {
       @media (min-width: #{$size}) {
@@ -26,30 +36,17 @@
     }
   }
 
-  &__label {
-    display: none;
-  }
-
-  &__title {
-    margin-bottom: 12px;
-    color: $content-color;
-  }
-
   &__paragraph {
-    margin-bottom: 30px;
-    color: $content-color;
+    margin-bottom: 35px;
+    color: $gray-collor;
 
-    &--additional {
-      display: none;
+    @each $size, $width in $section-block_size-list {
+      @media (min-width: #{$size}) {
+        & {
+          width: $width;
+        }
+      }
     }
-  }
-
-  &__link {
-    margin-top: 10px;
-  }
-
-  &__contact-us {
-    margin: 30px auto 0;
   }
 
   &__image-wrapper {
@@ -57,9 +54,9 @@
     flex-grow: 1;
     max-width: 580px;
 
-    background-image: url(../images/photo/Photo_AboutCreators.jpg);
+    background-image: url(../images/photo/Contact-Us.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center left;
   }
 
   @media (min-width: $size-S) {
@@ -69,10 +66,6 @@
 
     &__title {
       margin-top: 10px;
-    }
-
-    &__contact-us {
-      margin: 30px 0 0;
     }
 
     &__image-wrapper {
@@ -95,11 +88,6 @@
   @media (min-width: $size-L) {
     &__title {
       margin: 20px 0;
-      line-height: 130%;
-    }
-
-    &__link {
-      padding-bottom: 10px;
     }
   }
 
@@ -110,10 +98,6 @@
 
     &__label {
       display: inline-block;
-    }
-
-    &__contact-us {
-      margin-top: 50px;
     }
   }
 }
