@@ -8,26 +8,15 @@
   }
 
   &__title {
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
 
   &__link {
-    position: relative;
-    margin-top: 40px;
-    width: 100px;
-    color: $c-olive;
-    line-height: 130%;
-    letter-spacing: 0.05em;
-    font-weight: 600;
+    @extend %learn;
 
-    &::after {
-      position: absolute;
-      content: "";
-      background-color: $after-line;
-      height: 1px;
-      left: 0;
-      right: 0;
-      bottom: -12px;
+    &--creators {
+      margin-top: 20px;
+      margin-bottom: 50px;
     }
   }
 
@@ -51,24 +40,22 @@
   }
 
   &__mark {
-    position: absolute;
-    text-transform: uppercase;
-    color: $after-line;
-    font-size: 14px;
-    line-height: 130%;
-    letter-spacing: 0.05em;
-    transform: rotate(-90deg);
+    @extend %mark;
     left: -200px;
     top: 90px;
 
+    &--creators {
+      left: -175px;
+      top: 75px;
+    }
+
+    &--bottle {
+      left: -40px;
+      top: 0;
+    }
+
     &::before {
-      position: absolute;
-      content: "";
-      background-color: $after-line;
-      width: 100px;
-      height: 1px;
-      left: -120px;
-      top: 7px;
+      @extend %before;
     }
   }
 }
