@@ -42,6 +42,13 @@
     background-size: contain;
     background-position: center;
 
+    transition-property: transform;
+    @include transition-linear(0.3s);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
     &--facebook {
       margin-right: 20px;
       background-image: url(../images/facebook.svg);
@@ -62,6 +69,19 @@
     &--work-time {
       margin-bottom: 0;
       margin-top: 20px;
+    }
+  }
+
+  &__link {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+
+    border-bottom: 1px solid transparent;
+    transition-property: border;
+    @include transition-linear(0.3s);
+
+    &:hover {
+      border-bottom: 1px solid $main-color;
     }
   }
 
