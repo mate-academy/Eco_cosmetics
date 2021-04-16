@@ -1,0 +1,248 @@
+$headerContentMaxWidth: 1176px;
+
+$icon-paddings: 10px;
+$icons-wrapper-pd-top: 15px - $icon-paddings;
+$icons-wrapper-pd-bottom: 12px - $icon-paddings;
+
+$iconsPaddingY:
+  $width-iPad 23px 30px,
+  $widthDesctopS 40px 52px,
+  $widthDesctopM 40px 81px;
+
+.header {
+
+  height: 100vh;
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: $headerContentMaxWidth;
+    padding: 0 $contentPaddingX;
+    margin: 0 auto;
+
+    transition: padding 0.2s linear;
+
+    @media (min-width: $width-iPad) {
+      padding: 0 $contentPaddingX-iPad;
+    }
+  }
+
+  &__icons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: $icons-wrapper-pd-top;
+    padding-bottom: $icons-wrapper-pd-bottom;
+
+    transition: padding 0.5s ease-in-out, margin 0.5s linear;
+
+    @each $screenWidth, $pd-top, $pd-bottom in $iconsPaddingY {
+      @media (min-width: #{$screenWidth}) {
+        padding-top: $pd-top - $icon-paddings;
+        padding-bottom: $pd-bottom - $icon-paddings;
+      }
+    }
+  }
+
+  &__menu-toggler {
+    display: inline-block;
+    padding: $icon-paddings;
+    margin-left: -$icon-paddings;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  &__menu-icon {
+    position: relative;
+    display: block;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+
+    background-image: url("../images/icons/burger-menu.svg");
+    @extend %bg-cover-noRep-center;
+    background-size: initial;
+
+    transition: background-image 0.05s linear 0.15s,
+      width 0.1s linear;
+
+    &--active {
+      width: 14.9px;
+      transition: background-image 0.1s ease-in-out,
+        width 0.1s ease-out 0.33s;
+      background-image: url("../images/icons/close-menu.svg");
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+    padding: $icon-paddings;
+  }
+
+  &__logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__bag {
+    display: inline-block;
+    width: 20px + $icon-paddings * 2;
+    height: 24px + $icon-paddings * 2;
+    margin-right: -$icon-paddings;
+
+    background-image: url("../images/icons/bag-s.svg");
+    @extend %bg-cover-noRep-center;
+    background-size: initial;
+
+    transition: width 0.5s ease-in-out,
+      margin-right 0.5s ease-in-out,
+      background-image 0.5s linear;
+
+    @media (min-width: $width-iPad) {
+      width: 16.6px + $icon-paddings * 2;
+      height: 19.5px + $icon-paddings * 2;
+      margin-right: -$icon-paddings + 3.7px;
+      background-image: url("../images/icons/bag-m.svg");
+    }
+  }
+
+  &__main {
+    @media (min-width: $widthDesctopS) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+    }
+  }
+
+  &__picture {
+    display: flex;
+    min-height: 267px;
+    margin-left: -$contentPaddingX;
+    margin-right: -$contentPaddingX;
+
+    background-image: url("../images/header-s.jpeg");
+    @extend %bg-cover-noRep-center;
+
+    transition: margin 0.5s linear,
+      min-height 0.5s linear,
+      background-image 0.5s linear;
+
+    @media (min-width: 420px) {
+      min-height: 360px;
+    }
+
+    @media (min-width: 500px) {
+      min-height: 460px;
+      background-image: url("../images/header-m.jpg");
+    }
+
+    @media (min-width: 600px) {
+      min-height: 560px;
+      margin: 0;
+    }
+
+    @media (min-width: 700px) {
+      min-height: 660px;
+    }
+
+    @media (min-width: $width-iPad) {
+      min-height: 714px;
+    }
+
+    @media (min-width: $widthDesctopS) {
+      width: 580px;
+      min-height: 451px;
+      max-height: 451px;
+      background-image: url("../images/header-l.jpeg");
+      background-size: contain;
+    }
+  }
+
+  &__title {
+    display: flex;
+    max-width: 280px;
+    margin: 25px auto 12px;
+    text-align: center;
+    color: $mainTextColor;
+
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 129%;
+
+    transition: font-size 0.5s linear,
+      max-width 0.5s linear,
+      margin 0.5s linear;
+
+    @media (min-width: 540px) {
+      max-width: 400px;
+      font-size: 30px;
+    }
+
+    @media (min-width: $width-iPad) {
+      max-width: 500px;
+      margin: 50px auto 20px;
+      font-weight: 600;
+      font-size: 36px;
+    }
+
+    @media (min-width: $widthDesctopS) {
+      max-width: 480px;
+      margin-top: 0;
+      margin-bottom: 30px;
+
+      font-weight: 500;
+      font-size: 50px;
+      line-height: 70px;
+      text-align: left;
+    }
+
+    @media (min-width: 1080px) {
+      font-weight: 900;
+      font-size: 60px;
+    }
+  }
+
+  &__title br {
+    display: none;
+
+    transition: display 0.5s linear;
+
+    @media (min-width: $widthDesctopS) {
+      display: inline;
+    }
+  }
+
+  &__par-discount {
+    display: block;
+    margin-bottom: 46px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: $mainTextColor;
+
+    transition: margin-bottom 0.5s linear;
+
+    @media (min-width: $width-iPad) {
+      margin-bottom: 57px;
+    }
+
+    @media (min-width: $widthDesctopS) {
+      margin-bottom: 52px;
+
+      font-size: 22px;
+      line-height: 130%;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    margin: 0 auto 60px;
+
+    @media (min-width: $widthDesctopS) {
+      margin: 0;
+    }
+  }
+}
