@@ -83,7 +83,6 @@
     background-image: url(../images/photo/Union.png);
     background-repeat: no-repeat;
     background-size: contain;
-    
   }
 
   @media (min-width: $size-M) {
@@ -117,6 +116,10 @@
   @media (min-width: $size-L) {
     &__link {
       padding-bottom: 10px;
+    }
+
+    &__ingridients-list {
+      margin-top: 30px;
     }
   }
 
@@ -158,6 +161,36 @@
       &--explanation {
         display: inline-block;
       }
+    }
+
+    &__ingridient-pointer {
+      position: relative;
+    }
+
+    &__ingridient-pointer::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      display: block;
+      @include square(5px);
+      transform: translateY(-2px);
+
+      border-radius: 50%;
+      background-color: $gray-collor;
+    }
+  }
+
+  @media (min-width: $size-XXL) {
+    &__content-wrapper {
+      margin-right: 0;
+    }
+
+    &__ingridients-list {
+      margin-right: 25px;
+    }
+
+    &__image {
+      left: 0;
     }
   }
 
