@@ -1,0 +1,168 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $width-iPad) {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  @media (min-width: $widthLaptopS) {
+    padding: 100px 0;
+  }
+
+  &__content {
+    max-width: 280px;
+    @media (min-width: $width-iPad) {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    @media (min-width: $width-iPad) {
+      display: flex;
+      flex-direction: column;
+      max-width: 342px;
+      margin-right: 27px;
+    }
+
+    @media (min-width: $widthLaptopS) {
+      position: relative;
+      justify-content: flex-end;
+      max-width: 372px;
+      margin-right: 70px;
+    }
+
+    @media (min-width: $widthLaptopM) {
+      margin-right: 120px;
+    }
+  }
+
+  &__mark {
+    position: absolute;
+    top: 15%;
+    left: -50%;
+
+    font-size: 11px;
+    font-family: "Sharp-Sans-No2", sans-serif;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: rgba(52, 79, 16, 0.5);
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+
+    &::before {
+      content: "";
+      top: 9px;
+      left: -66%;
+      position: absolute;
+      right: 20px;
+      width: 100px;
+      height: 1px;
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 12px;
+
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @media (min-width: $widthLaptopS) {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }
+
+  &__par1 {
+    display: block;
+    margin-bottom: 44px;
+
+    font-size: 16px;
+    line-height: 24px;
+    color: $mainTextColor;
+
+    @media (min-width: $width-iPad) {
+      width: 342px;
+    }
+
+    @media (min-width: $widthLaptopS) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__par2 {
+    display: none;
+
+    @media (min-width: $widthLaptopS) {
+      display: block;
+      margin-bottom: 40px;
+
+      font-size: 16px;
+      line-height: 24px;
+      color: $mainTextColor;
+    }
+  }
+
+  &__pictures {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__pic1 {
+    @media (min-width: $width-iPad) {
+      min-width: 369px;
+      min-height: 318px;
+      margin-right: -$contentPaddingX-iPad;
+
+      background-image: url("../images/about_1.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @media (min-width: $widthLaptopS) {
+      margin-right: 20px;
+      min-width: 400px;
+      min-height: 529px;
+      background-image: url("../images/about_1L.jpg");
+    }
+
+    @media (min-width: $widthLaptopM) {
+      min-width: 480px;
+    }
+  }
+
+  &__pic2 {
+    @media (min-width: $widthLaptopS) {
+      margin-right: -$contentPaddingX-laptop;
+
+      width: 100px;
+      height: 430px;
+      background-image: url("../images/about_2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @media (min-width: $widthLaptopL) {
+      width: 208px;
+    }
+
+    @media (min-width: 1600px) {
+      width: 308px;
+    }
+  }
+}
