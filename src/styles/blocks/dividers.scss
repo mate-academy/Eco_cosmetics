@@ -1,0 +1,27 @@
+.dividers {
+  &::before,
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    background-color: rgba(52, 79, 16, 0.5);
+    height: 1px;
+  }
+
+  &::before {
+    left: 0;
+    width: 39%;
+  }
+
+  &::after {
+    right: 0;
+    width: 43%;
+  }
+
+  @media (max-width: 980px) {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+}

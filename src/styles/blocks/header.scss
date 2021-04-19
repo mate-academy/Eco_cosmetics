@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  padding-top: 40px;
+
+  &__logo {
+    position: relative;
+
+    &::after {
+      @extend %fontSharpSansDisplay;
+      position: absolute;
+      top: 55%;
+      left: 100%;
+      margin-left: 12px;
+      transform: translateY(-55%);
+      width: 220px;
+      content: "witch of mountain winds";
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      letter-spacing: 0.05em;
+      color: $colorGreen;
+      text-transform: uppercase;
+    }
+  }
+
+  &__nav {
+    flex-basis: 21%;
+  }
+
+  &__basket {
+    margin-right: 5px;
+    transition: transform 500ms linear;
+
+    &:hover {
+      transform: scale(1.2) rotate(360deg);
+    }
+  }
+
+  @media (max-width: 980px) {
+    & {
+      padding-top: 23px;
+    }
+
+    &__logo {
+      width: 24px;
+      height: 24px;
+      &::after {
+        display: none;
+      }
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    &__basket {
+      height: 24px;
+    }
+  }
+}

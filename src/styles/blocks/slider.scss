@@ -1,0 +1,117 @@
+.slider {
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+  }
+
+  &__element {
+    flex-basis: 32.5%;
+  }
+
+  &__img {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 2rem;
+    line-height: 3rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  &__price {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__prev,
+  &__next {
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+  }
+
+  &__prev::after,
+  &__prev::before,
+  &__next::after,
+  &__next::before {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 1px;
+    top: 50%;
+    background-color: $colorGray;
+    transform-origin: left;
+  }
+
+  &__prev::after,
+  &__prev::before {
+    left: 50%;
+  }
+
+  &__next::after,
+  &__next::before {
+    right: -50%;
+    background-color: $colorBlack;
+  }
+
+  &__prev::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &__prev::before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &__next::after {
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+  &__next::before {
+    transform: translate(-50%, -50%) rotate(-135deg);
+  }
+
+  @media (max-width: 980px) {
+    &__element {
+      flex-basis: 48%;
+    }
+    
+    &__element--tablet {
+      display: none;
+    }
+
+    &__control {
+      text-align: end;
+      margin-bottom: 20px;
+    }
+
+    &__prev {
+      margin-right: 30px;
+    }
+  }
+
+  @media (max-width: 420px) {
+    &__element {
+      flex-basis: 100%;
+
+      &--mobile {
+        display: none;
+      }
+    }
+
+    &__img {
+      margin: 0 -25px 20px;
+      height: 270px;
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+.contact {
+  padding: 200px 0 150px 100px;
+  position: relative;
+
+  &__subtitle {
+    @extend %section-subtitle;
+    left: -12px;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left {
+    flex-basis: 44%;
+  }
+  
+  &__right {
+    flex-basis: 50%;
+    margin-right: -50px;
+  }
+
+  &__title {
+    @extend %section-title;
+    text-transform: capitalize;
+  }
+
+  &__text {
+    font-size: 2.4rem;
+    line-height: 3.6rem;
+    max-width: 380px;
+    margin-bottom: 20px;
+  }
+
+  &__input,
+  &__textarea {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  &__data {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    padding: 10px 0;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #bdbdbd;
+    background: inherit;
+    outline: none;
+  }
+
+  textarea {
+    resize: none;
+    height: 48px;
+  }
+
+  &__label {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    color: #bdbdbd;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    pointer-events: none;
+    transition-duration: 200ms;
+  }
+
+  &__textarea {
+    margin: 60px 0 50px;
+  }
+
+  &__button {
+    @include btn();
+  }
+
+  @media (max-width: 980px) {
+    & {
+      padding: 100px 0 60px;
+    }
+
+    &__subtitle {
+      display: none;
+    }
+
+    
+    &__left {
+      flex-basis: 50%;
+    }
+
+    &__right {
+      flex-basis: 50%;
+      margin-right: -25px;
+    }
+
+    &__img {
+      height: 100%;
+    }
+
+    &__title {
+      font-size: 2.4rem;
+      font-weight: 3.6rem;
+    }
+
+    &__text {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+
+    &__input {
+      margin-bottom: 25px;
+    }
+
+    &__textarea {
+      margin: 40px 0 30px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    &__right {
+      display: none;
+    }
+    
+    &__left {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.contact .contact__data:focus + .contact__label,
+.contact .contact__data:valid + .contact__label {
+  transform: translateY(-20px);
+  font-size: 1.4rem;
+}

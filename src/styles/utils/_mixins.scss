@@ -4,3 +4,30 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin btn() {
+  @extend %fontSharpSansDisplay;
+  display: inline-block;
+  width: 280px;
+  border: 2px solid $colorBlack;
+  padding: 19px 0 20px;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $colorWhite;
+  transition: background-color 300ms linear, color 500ms linear;
+  background-color: $colorBlack;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $colorYellowWhite;
+    color: $colorBlack;
+  }
+  @media (max-width: 400px) {
+    & {
+      width: 100%;
+    }
+  }
+}
