@@ -1,0 +1,149 @@
+.section-about-store {
+
+  &__wrapper {
+    @include max-width-content(
+      $content_max-width + 2 * $wrapper_paddings_size-XXXL
+    );
+
+    padding: 0 $wrapper_paddings_size-S;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    color: $content-color;
+  }
+
+  &__paragraph {
+    color: $content-color;
+
+    &--additional {
+      display: none;
+    }
+  }
+
+  &__link {
+    margin-top: 40px;
+  }
+
+  &__content-container--right {
+    display: none;
+  }
+
+  &__photo {
+    display: block;
+
+    background-image: url(../images/photo/Photo_AboutBrand.jpg);
+    background-size: cover;
+    background-position: center;
+
+    &--bigger {
+      flex-grow: 4;
+      max-width: 580px;
+      height: 100%;
+    }
+
+    &--smaller {
+      display: none;
+      align-self: flex-end;
+      height: 85%;
+      margin-left: 20px;
+    }
+  }
+
+  &__label {
+    display: none;
+  }
+
+  @media (min-width: $size-S) {
+    &__wrapper {
+      display: flex;
+
+      padding: 0 0 0 $wrapper_paddings_size-S;
+    }
+
+    &__content-container--left {
+      flex-shrink: 0;
+      margin: 0 30px 0 0;
+
+      @each $size, $width in $section-block_size-list {
+        @media (min-width: #{$size}) {
+          & {
+            width: $width;
+          }
+        }
+      }
+
+      @each $size, $gap in $section-containers_gap {
+        @media (min-width: #{$size}) {
+          & {
+            margin-right: $gap;
+          }
+        }
+      }
+    }
+
+    &__content-container--right {
+      overflow: visible;
+      align-self: stretch;
+      flex-grow: 1;
+      display: flex;
+      overflow-x: hidden;
+    }
+
+    &__title {
+      margin-top: 10px;
+    }
+  }
+
+  @media (min-width: $design-jump) {
+    &__wrapper {
+      padding: 0 0 0 $wrapper_paddings_size-L;
+
+      @each $size, $padding in $wrapper_padding-list {
+        @media (min-width: #{$size}) {
+          padding-left: $padding;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $size-L) {
+    &__title {
+      margin: 20px 0;
+    }
+
+    &__paragraph--additional {
+      display: block;
+      margin-top: 30px;
+    }
+
+    &__link {
+      padding-bottom: 10px;
+    }
+  }
+
+  @media (min-width: $size-XL) {
+    &__label {
+      display: inline-block;
+    }
+
+    &__content-container--left {
+      margin-left: 80px;
+    }
+  }
+
+  @media (min-width: $content_max-width) {
+    &__photo {
+  
+      &--bigger {
+        width: $image-about_width-large;
+      }
+  
+      &--smaller {
+        display: block;
+        width: 208px;
+        max-width: $image-about_width-large;
+      }
+    }
+  }
+}

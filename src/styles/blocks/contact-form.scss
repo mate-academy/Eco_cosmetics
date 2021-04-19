@@ -1,0 +1,83 @@
+.contact-form {
+  width: min-content;
+
+  &__input {
+    width: 280px;
+    height: 26px;
+    margin-top: 25px;
+
+    font-family: inherit;
+    @include font(14px, 150%, 500);
+    color: $gray-collor;
+
+    background-color: $main-color;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid #bdbdbd;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &--textarea {
+      margin-bottom: 45px;
+      resize: none;
+    }
+
+    &::placeholder {
+      color: $gray-collor-reserve;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $gray-collor;
+    }
+
+    &:valid {
+      color: $content-color;
+    }
+
+    &:invalid {
+      color: #eb5757;
+    }
+
+    @each $size, $width in $section-block_size-list {
+      @media (min-width: #{$size}) {
+        & {
+          width: $width;
+        }
+      }
+    }
+  }
+
+  &__button {
+    outline: 0;
+  }
+
+  @media (min-width: $size-L) {
+    &__input {
+      @include font(18px, 150%, 500);
+    }
+  }
+
+  @media (min-width: $size-XL) {
+    &__input {
+      margin-top: 30px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @media (min-width: $size-XXL) {
+    &__input {
+      width: 420px;
+    }
+  }
+
+  @media (min-width: $size-XXXL) {
+    &__input {
+      width: 480px;
+    }
+  }
+}

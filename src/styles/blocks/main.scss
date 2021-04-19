@@ -1,0 +1,31 @@
+.main {
+  padding-top: 60px;
+  overflow: hidden;
+
+  &__wrapper {
+    @include max-width-content($content_max-width);
+    padding: 0 $wrapper_paddings_size-S;
+  }
+
+  &__section {
+    margin-bottom: 60px;
+  }
+
+  @each $size, $indent in $main_indents {
+    @media (min-width: #{$size}) {
+      & {
+        padding-top: $indent;
+      }
+
+      &__section {
+        margin-bottom: $indent;
+      }
+    }
+  }
+
+  @media (min-width: $size-M) {
+    &__wrapper {
+      padding: 0 $wrapper_paddings_size-L;
+    }
+  }
+}

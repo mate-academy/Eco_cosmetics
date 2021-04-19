@@ -1,0 +1,204 @@
+.section-ingredients {
+  padding: 15px 0;
+
+  &__wrapper {
+    @include max-width-content(
+      $content_max-width + 2 * $wrapper_paddings_size-XXL
+    );
+
+    padding-left: $wrapper_paddings_size-S;
+  }
+
+  &__label {
+    display: none;
+  }
+
+  &__title {
+    margin-bottom: 38px;
+    color: $content-color;
+
+    @each $size, $width in $section-block_size-list {
+      @media (min-width: #{$size}) {
+        & {
+          width: $width;
+        }
+      }
+    }
+  }
+
+  &__link {
+    margin-top: 30px;
+
+    &--big-screen {
+      display: none;
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+  }
+
+  &__ingridients-list {
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 320px;
+  }
+
+  &__ingridient-item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__ingridient-name {
+    max-width: 120px;
+    text-align: right;
+    @include font(16px, 150%, 700);
+    color: $gray-collor;
+
+    &--explanation {
+      display: none;
+    }
+  }
+
+  &__ingridient-pointer {
+    flex-shrink: 0;
+    margin-left: 20px;
+    width: 76px;
+    height: 1px;
+    background-color: $gray-collor;
+  }
+
+  &__image {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 0;
+    left: -50px;
+    width: 380px;
+    height: 400px;
+    background-image: url(../images/photo/Union.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  @media (min-width: $size-M) {
+    &__wrapper {
+      display: flex;
+    }
+
+    &__title-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__link {
+      display: none;
+  
+      &--big-screen {
+        display: inline-flex;
+        width: min-content;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  @media (min-width: $design-jump) {
+    &__wrapper {
+      padding-left: $wrapper_paddings_size-L;
+    }
+  }
+
+  @media (min-width: $size-L) {
+    &__link {
+      padding-bottom: 10px;
+    }
+
+    &__ingridients-list {
+      margin-top: 30px;
+    }
+  }
+
+  @media (min-width: $size-XL) {
+    & {
+      padding: 0;
+    }
+
+    &__wrapper {
+      padding: 0 $wrapper_paddings_size-L;
+
+      @each $size, $padding in $wrapper_padding-list {
+        @media (min-width: #{$size}) {
+          & {
+            padding: 0 $padding;
+          }
+        }
+      }
+    }
+
+    &__label {
+      display: inline-block;
+    }
+
+    &__title-wrapper {
+      margin-left: 80px;
+    }
+
+    &__content-wrapper {
+      flex-grow: 1;
+      justify-content: flex-end;
+      margin-right: -50px;
+    }
+
+    &__ingridient-name {
+      max-width: 200px;
+      white-space: nowrap;
+  
+      &--explanation {
+        display: inline-block;
+      }
+    }
+
+    &__ingridient-pointer {
+      position: relative;
+    }
+
+    &__ingridient-pointer::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      display: block;
+      @include square(5px);
+      transform: translateY(-2px);
+
+      border-radius: 50%;
+      background-color: $gray-collor;
+    }
+  }
+
+  @media (min-width: $size-XXL) {
+    &__content-wrapper {
+      margin-right: 0;
+    }
+
+    &__ingridients-list {
+      margin-right: 25px;
+    }
+
+    &__image {
+      left: 0;
+    }
+  }
+
+  @media (min-width: $size-XXXL) {
+    &__wrapper {
+      @include max-width-content(
+        $content_max-width + 2 * $wrapper_paddings_size-XXXL
+      );
+    }
+  }
+}

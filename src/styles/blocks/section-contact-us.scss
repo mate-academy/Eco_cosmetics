@@ -1,0 +1,107 @@
+.section-contact-us {
+  padding-top: 40px;
+
+  &__wrapper {
+    display: flex;
+
+    @include max-width-content(
+      $content_max-width + 2 * $wrapper_paddings_size-XXXL
+    );
+
+    padding: 0 $wrapper_paddings_size-S;
+  }
+
+  &__label {
+    display: none;
+  }
+
+  &__content-wrapper {
+    @each $size, $margin in $section-containers_gap {
+      @media (min-width: #{$size}) {
+        margin-right: $margin;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    color: $content-color;
+
+    @each $size, $width in $section-block_size-list {
+      @media (min-width: #{$size}) {
+        & {
+          width: $width;
+        }
+      }
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 35px;
+    color: $gray-collor;
+
+    @each $size, $width in $section-block_size-list {
+      @media (min-width: #{$size}) {
+        & {
+          width: $width;
+        }
+      }
+    }
+  }
+
+  &__image-wrapper {
+    display: none;
+    flex-grow: 1;
+    max-width: 580px;
+
+    background-image: url(../images/photo/Contact-Us.jpg);
+    background-size: cover;
+    background-position: center left;
+  }
+
+  @media (min-width: $size-S) {
+    &__wrapper {
+      padding: 0 0 0 $wrapper_paddings_size-S;
+    }
+
+    &__title {
+      margin-top: 10px;
+    }
+
+    &__image-wrapper {
+      display: block;
+    }
+  }
+
+  @media (min-width: $design-jump) {
+    &__wrapper {
+      padding-left: $wrapper_paddings_size-L;
+
+      @each $size, $padding in $wrapper_padding-list {
+        @media (min-width: #{$size}) {
+          padding-left: $padding;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $size-L) {
+    &__title {
+      margin: 20px 0;
+    }
+  }
+
+  @media (min-width: $size-XL) {
+    & {
+      padding: 0;
+    }
+
+    &__content-wrapper {
+      margin-left: 80px;
+    }
+
+    &__label {
+      display: inline-block;
+    }
+  }
+}

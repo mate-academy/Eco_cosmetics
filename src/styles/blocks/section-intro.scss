@@ -1,0 +1,108 @@
+.section-intro {
+  padding: 20px 0;
+
+  &__wrapper {
+    @include max-width-content(
+      $content_max-width + 2 * $wrapper_paddings_size-XXXL
+    );
+  }
+
+  &__title {
+    max-width: $section-block_size-M;
+    margin: 0 auto;
+
+    text-align: center;
+    @include font(18px, 150%, 500);
+    color: $content-color;
+
+    @each $size, $width in $section-block_size-list {
+      @media (min-width: #{$size}) {
+        & {
+          min-width: $width;
+        }
+      }
+    }
+  }
+
+  &__paragraph {
+    display: none;
+
+    @each $size, $width in $section-block_size-list {
+      @media (min-width: #{$size}) {
+        & {
+          width: $width;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $design-jump) {
+    & {
+      padding: 0;
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__content-container {
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+
+      @each $size, $padding in $section-intro_paddings {
+        @media (min-width: #{$size}) {
+          & {
+            padding: $padding 0;
+          }
+        }
+      }
+
+      &--left {
+        flex-shrink: 0;
+        margin-right: 30px;
+        padding-left: $wrapper_paddings_size-L;
+        border-top: 1px solid rgba(52, 79, 16, 0.5);
+
+        @each $size, $gap in $section-containers_gap {
+          @media (min-width: #{$size}) {
+            & {
+              margin-right: $gap;
+            }
+          }
+        }
+
+        @each $size, $padding in $wrapper_padding-list {
+          @media (min-width: #{$size}) {
+            & {
+              padding-left: $padding;
+            }
+          }
+        }
+      }
+
+      &--right {
+        flex-grow: 1;
+        border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+      }
+    }
+    
+    &__title {
+      margin: 0;
+
+      text-align: left;
+      @include font(24px, 150%, 500);
+    }
+
+    &__paragraph {
+      display: block;
+    }
+  }
+
+  @media (min-width: $size-XL) {
+    &__paragraph {
+      margin-left: 100px;
+    }
+  }
+}

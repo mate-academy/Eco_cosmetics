@@ -1,0 +1,86 @@
+.icons-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__item {
+    display: inline-flex;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    &--logo {
+      transition-property: transform;
+      @include transition-linear(0.3s);
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__logo {
+    @include square(24px);
+
+    @each $page-size, $image-size in $logo-size {
+      @media (min-width: #{$page-size}) {
+        & {
+          @include square(#{$image-size});
+        }
+      }
+    }
+  }
+
+  &__link--shop {
+    display: flex;
+    width: 20px;
+    height: 24px;
+    color: transparent;
+
+    background-image: url(../images/Basket.svg);
+    background-size: cover;
+    background-position: center;
+
+    transition-property: transform;
+    @include transition-linear(0.3s);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  @media (min-width: $design-jump) {
+
+    &__link--logo {
+
+      &::after {
+        content: "witch of mountain winds";
+        display: inline-block;
+        padding-left: 12px;
+  
+        text-transform: uppercase;
+        @include font(14px, 130%, 500);
+        letter-spacing: 0.05em;
+        color: $content-color;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @media (min-width: $size-L) {
+    &__item--burger {
+      display: none;
+    }
+
+    &__link--shop {
+      @include square(32px);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}

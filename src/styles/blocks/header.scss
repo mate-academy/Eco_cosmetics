@@ -1,0 +1,205 @@
+.header {
+
+  &__wrapper {
+    @include max-width-content(
+      $content_max-width + (2 * $wrapper_paddings_size-L)
+    );
+    
+    padding: 0 $wrapper_paddings_size-S;
+  }
+
+  &__menu {
+    margin: 15px 0 12px;
+
+    @each $size, $margin-top, $margin-bottom in $icons-menu_margins {
+      @media (min-width: #{$size}) {
+        & {
+          margin-top: $margin-top;
+          margin-bottom: $margin-bottom;
+        }
+      }
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    text-align: center;
+    color: $gray-collor;
+  }
+
+  &__paragraph {
+    margin-bottom: 46px;
+
+    @include font(18px, 150%, 500);
+    text-align: center;
+  }
+
+  @each $size, $img-margin, $title-margin, $text-margin in $header_margins {
+    @media (min-width: #{$size}) {
+      &__image-wrapper {
+        margin-bottom: $img-margin;
+      }
+
+      &__title {
+        margin-bottom: $title-margin;
+      }
+
+      &__paragraph {
+        margin-bottom: $text-margin;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  @media (min-width: $size-S) {
+    &__image-wrapper {
+      padding: 0 $wrapper_paddings_size-S;
+    }
+  }
+
+  @media (min-width: $size-M) {
+    &__wrapper {
+      padding: 0 $wrapper_paddings_size-L;
+    }
+
+    &__image-wrapper {
+      padding: 0 $wrapper_paddings_size-L;
+    }
+  }
+
+  @media (min-width: $design-jump) {
+    &__flex-container {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      @include max-width-content($content_max-width);
+      padding: 30px $wrapper_paddings_size-L 0;
+    }
+
+    &__image-wrapper {
+      margin: 0 0 0 20px;
+      padding: 0;
+      width: 50%;
+    }
+
+    &__wrapper--content {
+      margin: 0;
+      padding: 0;
+      width: 380px;
+    }
+
+    &__title {
+      text-align: left;
+    }
+
+    &__paragraph {
+      text-align: left;
+    }
+
+    &__button {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: $size-L) {
+    &__wrapper {
+      @each $size, $padding in $wrapper_padding-list {
+        @media (min-width: #{$size}) {
+          & {
+            padding: 0 $padding;
+          }
+        }
+      }
+    }
+
+    &__wrapper--nav {
+      padding: 0;
+      width: min-content;
+    }
+
+    &__flex-container {
+      @include max-width-content(
+        $content_max-width + (2 * $wrapper_paddings_size-L)
+      );
+
+      padding-top: 0;
+
+      @each $size, $padding in $wrapper_padding-list {
+        @media (min-width: #{$size}) {
+          & {
+            padding: 0 $padding;
+          }
+        }
+      }
+    }
+
+    &__paragraph {
+      @include font(22px, 130%, 500);
+    }
+  }
+
+  @media (min-width: $size-XL) {
+    &__nav {
+      margin-left: 4%;
+    }
+
+    &__wrapper--content {
+      width: 480px;
+    }
+
+    &__image-wrapper {
+      max-width: 580px;
+    }
+  }
+
+  @media (min-width: $size-XXL) {
+    &__wrapper {
+      @include max-width-content(
+        $content_max-width + 2 * $wrapper_paddings_size-XXL
+      );
+
+      &--content {
+        padding: 0;
+        margin-left: 0;
+      }
+    }
+
+    &__flex-container {
+      @include max-width-content(
+        $content_max-width + 2 * $wrapper_paddings_size-XXL
+      );
+    }
+  }
+
+  @media (min-width: $size-XXXL) {
+    &__wrapper {
+      @include max-width-content(
+        $content_max-width + 2 * $wrapper_paddings_size-XXXL
+      );
+
+      &--content {
+        padding: 0;
+        margin-left: 0;
+      }
+    }
+
+    &__flex-container {
+      @include max-width-content(
+        $content_max-width + 2 * $wrapper_paddings_size-XXXL
+      );
+    }
+  }
+}
