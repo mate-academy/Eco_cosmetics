@@ -1,4 +1,4 @@
-$headerContentMaxWidth: 1176px;
+$headerContentMaxWidth: 1175px;
 
 $icon-paddings: 10px;
 $icons-wrapper-pd-top: 15px - $icon-paddings;
@@ -6,26 +6,32 @@ $icons-wrapper-pd-bottom: 12px - $icon-paddings;
 
 $iconsPaddingY:
   $width-iPad 23px 30px,
-  $widthDesctopS 40px 52px,
-  $widthDesctopM 40px 81px;
+  $widthLaptopS 40px 52px,
+  $widthLaptopM 40px 70px;
+
+$titleMaxWidth: 480px;
+$pictureMaxWidth: 580px;
+$mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
 
 .header {
+  padding: 0 $contentPaddingX;
 
-  height: 100vh;
+  transition: padding 0.2s linear;
+
+  @media (min-width: $width-iPad) {
+    padding: 0 $contentPaddingX-iPad;
+  }
+
+  @media (min-width: $widthLaptopS) {
+    padding: 0 $contentPaddingX-laptop;
+  }
 
   &__content-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: $headerContentMaxWidth;
-    padding: 0 $contentPaddingX;
     margin: 0 auto;
-
-    transition: padding 0.2s linear;
-
-    @media (min-width: $width-iPad) {
-      padding: 0 $contentPaddingX-iPad;
-    }
   }
 
   &__icons-wrapper {
@@ -51,6 +57,10 @@ $iconsPaddingY:
     margin-left: -$icon-paddings;
     z-index: 1;
     cursor: pointer;
+
+    @media (min-width: $widthLaptopS) {
+      display: none;
+    }
   }
 
   &__menu-icon {
@@ -68,24 +78,98 @@ $iconsPaddingY:
       width 0.1s linear;
 
     &--active {
-      width: 14.9px;
-      transition: background-image 0.1s ease-in-out,
-        width 0.1s ease-out 0.33s;
+      // width: 14.9px;
+      transition: background-image 0.1s linear;
       background-image: url("../images/icons/close-menu.svg");
     }
   }
 
   &__logo-link {
+    position: relative;
     display: flex;
     padding: $icon-paddings;
+
+    transition: transform 0.3s ease-out;
+
+    &:hover {
+      transform: scale(1.03);
+    }
   }
 
   &__logo {
     width: 24px;
     height: 24px;
+
+    transition: transform 0.2s linear;
+
+    &:active {
+      opacity: 0.6;
+    }
+
+    @media (min-width: $widthLaptopS) {
+      width: 50px;
+      height: 50px;
+      margin-left: -$icon-paddings;
+    }
+  }
+
+  &__logo-sign {
+    display: none;
+
+    &:hover {
+      transition: text-shadow 0.5s linear;
+      text-shadow: 0 2px 4px #fff;
+    }
+
+    @media (min-width: $widthLaptopS) {
+      display: flex;
+      position: absolute;
+      left: 62px;
+      top: 50%;
+      transform: translateY(calc(-50% + 7px));
+      padding-bottom: 12px;
+
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 18px;
+      font-family: "Sharp-Sans-No2", sans-serif;
+
+      color: #344f10;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      transition: opacity 0.2s linear,
+        box-shadow 0.2s linear;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: 1px;
+
+        background-color: #344f10;
+        opacity: 0;
+        transition: opacity 0.2s linear;
+      }
+
+      &:hover::after {
+        transition: box-shadow 0.3s, opacity 0.2s linear;
+        opacity: 1;
+        box-shadow: 0 -4px 7px 3px #fcfaf4;
+      }
+
+      &:active::after {
+        transition: box-shadow 0s;
+        box-shadow: 0 -10px 12px 10px #fcfaf4;
+      }
+    }
   }
 
   &__bag {
+    position: relative;
     display: inline-block;
     width: 20px + $icon-paddings * 2;
     height: 24px + $icon-paddings * 2;
@@ -97,7 +181,8 @@ $iconsPaddingY:
 
     transition: width 0.5s ease-in-out,
       margin-right 0.5s ease-in-out,
-      background-image 0.5s linear;
+      background-image 0.5s linear,
+      transform 0.2s linear;
 
     @media (min-width: $width-iPad) {
       width: 16.6px + $icon-paddings * 2;
@@ -105,18 +190,61 @@ $iconsPaddingY:
       margin-right: -$icon-paddings + 3.7px;
       background-image: url("../images/icons/bag-m.svg");
     }
+
+    @media (min-width: $widthLaptopS) {
+      width: 22.12px + $icon-paddings * 2;
+      height: 26px + $icon-paddings * 2;
+      margin-right: -$icon-paddings + 5px;
+      background-image: url("../images/icons/bag-l.svg");
+
+      transition: transform 0.3s ease-out;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+
+      &:active {
+        opacity: 0.7;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 9px;
+
+        width: calc(100% - 18px);
+        height: 1px;
+
+        background-color: #344f10;
+        opacity: 0;
+        transition: opacity 0.2s linear,
+          box-shadow 0.2s linear;
+      }
+
+      &:hover::after {
+        transition: box-shadow 0.3s, opacity 0.2s linear;
+        opacity: 1;
+        box-shadow: 0 -3px 6px 3px #fcfaf4;
+      }
+
+      &:active::after {
+        transition: box-shadow 0s;
+        box-shadow: 0 -10px 10px 8px #fcfaf4;
+      }
+    }
   }
 
   &__main {
-    @media (min-width: $widthDesctopS) {
+    @media (min-width: $widthLaptopS) {
       display: flex;
+      margin-bottom: 200px;
       flex-direction: row-reverse;
-      justify-content: space-around;
+      justify-content: flex-start;
     }
   }
 
   &__picture {
-    display: flex;
     min-height: 267px;
     margin-left: -$contentPaddingX;
     margin-right: -$contentPaddingX;
@@ -129,38 +257,36 @@ $iconsPaddingY:
       background-image 0.5s linear;
 
     @media (min-width: 420px) {
-      min-height: 360px;
+      min-height: 300px;
     }
 
     @media (min-width: 500px) {
-      min-height: 460px;
+      min-height: 350px;
       background-image: url("../images/header-m.jpg");
     }
 
     @media (min-width: 600px) {
-      min-height: 560px;
+      min-height: 400px;
       margin: 0;
     }
 
     @media (min-width: 700px) {
-      min-height: 660px;
+      min-height: 450px;
     }
 
     @media (min-width: $width-iPad) {
-      min-height: 714px;
+      min-height: 500px;
     }
 
-    @media (min-width: $widthDesctopS) {
-      width: 580px;
+    @media (min-width: $widthLaptopS) {
+      width: $pictureMaxWidth;
       min-height: 451px;
       max-height: 451px;
-      background-image: url("../images/header-l.jpeg");
-      background-size: contain;
+      background-image: url("../images/header.svg");
     }
   }
 
   &__title {
-    display: flex;
     max-width: 280px;
     margin: 25px auto 12px;
     text-align: center;
@@ -170,9 +296,10 @@ $iconsPaddingY:
     font-size: 24px;
     line-height: 129%;
 
-    transition: font-size 0.5s linear,
-      max-width 0.5s linear,
-      margin 0.5s linear;
+    transition: font-size 0.2s linear,
+      max-width 0.2s linear,
+      margin 0.2s linear,
+      width 0.2s linear;
 
     @media (min-width: 540px) {
       max-width: 400px;
@@ -186,8 +313,9 @@ $iconsPaddingY:
       font-size: 36px;
     }
 
-    @media (min-width: $widthDesctopS) {
-      max-width: 480px;
+    @media (min-width: $widthLaptopS) {
+      width: $titleMaxWidth - 100px;
+      margin: 0 20px 30px 0;
       margin-top: 0;
       margin-bottom: 30px;
 
@@ -198,8 +326,11 @@ $iconsPaddingY:
     }
 
     @media (min-width: 1080px) {
-      font-weight: 900;
+      width: $titleMaxWidth;
+
+      font-weight: 600;
       font-size: 60px;
+      letter-spacing: 1px;
     }
   }
 
@@ -208,7 +339,7 @@ $iconsPaddingY:
 
     transition: display 0.5s linear;
 
-    @media (min-width: $widthDesctopS) {
+    @media (min-width: $widthLaptopS) {
       display: inline;
     }
   }
@@ -229,19 +360,21 @@ $iconsPaddingY:
       margin-bottom: 57px;
     }
 
-    @media (min-width: $widthDesctopS) {
+    @media (min-width: $widthLaptopS) {
       margin-bottom: 52px;
 
+      font-weight: 600;
       font-size: 22px;
-      line-height: 130%;
+      line-height: 29px;
+      letter-spacing: 0.5px;
       text-align: left;
     }
   }
 
   &__button {
-    margin: 0 auto 60px;
+    margin: 0 auto;
 
-    @media (min-width: $widthDesctopS) {
+    @media (min-width: $widthLaptopS) {
       margin: 0;
     }
   }
