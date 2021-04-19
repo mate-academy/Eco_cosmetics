@@ -1,0 +1,72 @@
+.powder {
+  display: flex;
+  align-items: center;
+  padding: 0 0 200px 100px;
+  position: relative;
+  height: 100%;
+  &__transform {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: rgba(52, 79, 16, 0.5);
+    position: absolute;
+    top: 80px;
+    width: 192px;
+    height: 0;
+    left: -100px;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: -70px;
+      height: 1px;
+      width: 100px;
+      background: rgba(52,79,16,0.5);
+    }
+  }
+  &__block {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__h2 {
+    @extend %h2;
+  }
+  &__link {
+    @extend %link;
+    display: flex;
+    align-items: flex-end;
+  }
+  &__wrap {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    padding-top: 50px;
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+  &__mark {
+    width: 200px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+  &__img::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #333;
+    display: inline-block;
+  }
+
+}

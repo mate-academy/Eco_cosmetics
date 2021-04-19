@@ -1,0 +1,104 @@
+.shop {
+  padding: 0 0 200px 100px;
+  &__title {
+    width: 100%;
+    @extend %h2;
+    padding-bottom: 20px;
+  }
+  &__nav {
+    padding-bottom: 65px;
+    display: flex;
+    gap: 50px;
+  }
+  &__link {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: $link;
+    transition: 1s;
+    &:hover {
+      border-bottom: 1px solid $black-tex;
+    }
+    &--active {
+      color: $black-tex;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $black-tex;
+    }
+  }
+  &__galery {
+    width: 100%;
+    display: flex;
+    position: relative;
+    gap: 20px;
+    padding-bottom: 40px;
+  }
+  &__transform {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: rgba(52, 79, 16, 0.5);
+    position: absolute;
+    top: 25px;
+    width: 192px;
+    height: 0;
+    left: -200px;
+    transform: rotate(-90deg);
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: -35px;
+      height: 1px;
+      width: 100px;
+      background: rgba(52,79,16,0.5);
+    }
+  }
+  &__img {
+    width: 33.3%;
+  }
+  &__product-img {
+    width: 100%;
+    max-height: 500px;
+  }
+  &__product-title {
+    padding: 20px 0 10px;
+    @extend %p;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $black-tex;
+  }
+  &__cost {
+    @extend %p;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    color: $black-tex;
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    &--all {
+      width: 279px;
+      height: 59px;
+      color: $f2f2f2;
+      background-color: $black-tex;
+      font-size: 16px;
+      line-height: 60px;
+      letter-spacing: 0.15em;
+      border: 1px solid $black-tex;
+      transition: 0.5s;
+      text-transform: uppercase;
+      &:hover {
+        color: $black-tex;
+        background-color: $hover;
+      }
+    }
+  }
+}

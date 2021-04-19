@@ -1,0 +1,87 @@
+.contact {
+  display: flex;
+  padding: 0 0 200px 100px;
+  justify-content: space-between;
+  position: relative;
+  &__transform {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: rgba(52, 79, 16, 0.5);
+    position: absolute;
+    top: 20px;
+    width: 192px;
+    height: 0;
+    left: -100px;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      left: -35px;
+      height: 1px;
+      width: 100px;
+      background: rgba(52,79,16,0.5);
+    }
+  }
+  &__h2 {
+    @extend %h2;
+    padding-bottom: 20px;
+  }
+  &__text {
+    @extend %p;
+    font-size: 16px;
+    line-height: 150%;
+    padding-bottom: 30px;
+    max-width: 300px;
+    &--last {
+      padding-bottom: 20px;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    &--input {
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 18px;
+      line-height: 1.5em;
+      width: 480px;
+      margin-bottom: 30px;
+      background-color: $c-gray;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid grey;
+      color: #344f10;
+    }
+  }
+  &__button {
+    width: 279px;
+    height: 59px;
+    color: $f2f2f2;
+    background-color: $black-tex;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.15em;
+    border: 1px solid $black-tex;
+    transition: 0.5s;
+    text-transform: uppercase;
+    margin-top: 20px;
+    &:hover {
+      color: $black-tex;
+      background-color: $hover;
+    }
+  }
+  &__img {
+    padding-left: 120px;
+    max-width: 600px;
+    max-height: 584px;
+  }
+  &__feedback {
+    resize: none;
+    margin-top: 10px;
+  }
+}
