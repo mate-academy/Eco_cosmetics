@@ -5,6 +5,11 @@
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 1439px) {
+    margin-right: 50px;
+    margin-left: 50px;
+  }
+
   &__sign {
     position: absolute;
     width: 320px;
@@ -45,8 +50,8 @@
 
   &__text {
     margin-bottom: 20px;
-    width: 400px;
-    font-size: 24px;
+    width: 380px;
+    font-size: 22px;
     line-height: 36px;
     color: $dark-main;
   }
@@ -83,7 +88,7 @@
   &__textarea {
     padding: 10px;
     margin-bottom: 50px;
-    height: 50px;
+    height: 40px;
     outline: none;
     border: none;
     border-bottom: 1px solid $middle-gray;
@@ -100,7 +105,9 @@
     align-items: center;
     border: none;
     outline: none;
-    color: #fff;
+    color: $light-gray;
+    text-decoration: none;
+    font-family: "Sharp-Sans-No2", sans-serif;
     font-size: 16px;
     letter-spacing: 1.5px;
     line-height: 20px;
@@ -108,9 +115,22 @@
     transition-duration: 0.3s;
 
     &:hover {
+      cursor: pointer;
       color: $dark-main;
-      background-color: $background;
+      background-color: $background-button;
       border: 1px solid $dark-main;
+    }
+  }
+
+  &__img {
+    width: 530px;
+    height: 580px;
+  }
+
+  @media (max-width: 1439px) {
+    &__input,
+    &__textarea {
+      background-color: $background;
     }
   }
 }

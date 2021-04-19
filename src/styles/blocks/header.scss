@@ -6,6 +6,46 @@
   justify-content: space-between;
   align-items: center;
 
+  @media (max-width: 1439px) {
+    padding: 40px 50px;
+    margin-bottom: 40px;
+  }
+
+  &__nav-toggler,
+  &__nav-icon {
+    display: none;
+  }
+
+  &__nav-icon {
+    z-index: 2;
+    width: 24px;
+    height: 16px;
+    background-image: url(../images/menu.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    transition-duration: 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__nav-toggler {
+    z-index: 2;
+    display: none;
+  }
+
+  &__nav-toggler:checked ~ &__nav-icon {
+    background-image: url(../images/cross.svg);
+    transform: rotate(0.5turn);
+  }
+
+  &__nav-toggler:checked ~ .nav {
+    top: 0;
+  }
+
   &__logo {
     display: flex;
     justify-content: space-between;
@@ -26,8 +66,8 @@
     transition-duration: 0.1s;
 
     &-logo {
-      width: 22px;
-      height: 26px;
+      width: 32px;
+      height: 32px;
     }
 
     &:hover {
