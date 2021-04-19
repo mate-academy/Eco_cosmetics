@@ -5,24 +5,29 @@
   &__top {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 30px;
+    padding-top: 30px;
     margin-right: 40px;
     margin-left: 70px;
 
     @media (max-width: 800px) {
       grid-template-rows: 25px;
-      margin-top: 15px;
+      padding-top: 15px;
       margin-right: 30px;
     }
   }
 
   &__logo {
     display: flex;
-    justify-content: flex-start;
+    justify-content: start;
     align-items: center;
+
+    @media (max-width: 800px) {
+      justify-content: center;
+    }
   }
 
   &__logo-image {
+    display: flex;
     height: 100%;
 
     &--bag {
@@ -41,7 +46,7 @@
     margin-left: 12px;
 
     @media (max-width: 800px) {
-      visibility: hidden;
+      display: none;
     }
   }
 
@@ -55,22 +60,45 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 800px) {
+      position: absolute;
+      left: 45%;
+      top: 25%;
+    }
   }
 
   &__menu {
     display: flex;
     flex-direction: row;
     gap: 40px;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+      display: none;
+      z-index: 10;
+      gap: 100px;
+    }
+  }
+
+  &__toggler:checked ~ &__top &__menu {
+    display: flex;
   }
 
   &__link {
     color: $c-olive;
     font-size: 18px;
     line-height: 130%;
+
+    @media (max-width: 800px) {
+      color: $c-white;
+      font-size: 22px;
+    }
   }
 
   &__item {
     position: relative;
+    text-align: center;
 
     &::after {
       position: absolute;
@@ -81,11 +109,19 @@
       right: 0;
       bottom: -5px;
       visibility: hidden;
+      z-index: 11;
       opacity: 0.01;
       transition-duration: $duration;
       transition-timing-function: ease-in;
+
+      @media (max-width: 800px) {
+        background-color: $c-white;
+        left: -100%;
+        right: -100%;
+        bottom: -10px;
+      }
     }
-    
+
     &:hover::after {
       visibility: visible;
       opacity: 1;
@@ -168,8 +204,59 @@
 
   &__picture-wrap {
     display: flex;
+
     @media (max-width: 800px) {
       grid-area: image;
     }
+  }
+
+  &__toggler {
+    display: none;
+  }
+
+  &__toggler-label {
+    display: none;
+    z-index: 10;  //z-index
+    cursor: pointer;
+    height: 100%;
+
+    background-image: url(../images/burger.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    @media (max-width: 800px) {
+      display: flex;
+    }
+  }
+
+  &__toggler:checked ~ &__top &__toggler-label {
+    background-image: url(../images/cross.png);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+  }
+
+  &__back {
+    position: absolute;
+    display: flex;
+    opacity: 0.1;
+    visibility: hidden;
+    background-color: #333;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;  //z-index
+    transition-duration: $duration;
+    transition-timing-function: ease-in;
+
+    @media (min-width: 800px) {
+      display: none;
+    }
+  }
+
+  &__toggler:checked ~ &__back {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
   }
 }
