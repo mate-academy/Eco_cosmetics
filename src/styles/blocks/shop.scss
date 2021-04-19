@@ -2,6 +2,11 @@
   position: relative;
   &__title {
     margin-bottom: 20px;
+
+    @media (max-width: 800px) {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
   }
 
   &__menu {
@@ -13,6 +18,10 @@
     position: relative;
     padding-bottom: 20px;
     margin-bottom: 65px;
+
+    @media (max-width: 1020px) {
+      margin-bottom: 20px;
+    }
 
     &::after {
       position: absolute;
@@ -40,6 +49,10 @@
     transition-duration: $duration;
     transition-timing-function: ease-in;
 
+    @media (max-width: 800px) {
+      font-size: 15px;
+    }
+
     &:hover {
       color: $c-dark-olive;
     }
@@ -47,13 +60,25 @@
 
   &__catalog {
     display: grid;
-    grid-template-columns: repeat(3, 380px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
     gap: 20px;
+
+    @media (max-width: 1020px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 400px;
+    }
   }
 
   &__card {
     display: flex;
     flex-direction: column;
+
+    &--3 {
+      @media (max-width: 1020px) {
+        display: none;
+      }
+    }
   }
 
   &__photo {
@@ -80,7 +105,15 @@
   &__vector-wrap {
     display: flex;
     gap: 20px;
-    margin-top: 45px;
+    margin-top: 5%;
+
+    @media (max-width: 1020px) {
+      margin-top: 30%;
+    }
+
+    @media (max-width: 700px) {
+      margin-top: 15%;
+    }
   }
 
   &__vector {
@@ -103,15 +136,5 @@
 
   &__button {
     @extend %button;
-  }
-
-  &__mark {
-    @extend %mark;
-    left: 30px;
-    top: 195px;
-
-    &::before {
-      @extend %before;
-    }
   }
 }
