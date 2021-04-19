@@ -8,6 +8,16 @@
     text-transform: uppercase;
     letter-spacing: 0.9px;
     color: $ColorTitles;
+
+    @media (min-width: 500px) {
+      font-weight: 600;
+    }
+
+    @media (min-width: 1150px) {
+      margin-bottom: 20px;
+      font-size: 36px;
+      line-height: 47px;
+    }
   }
 
   &__text {
@@ -19,8 +29,34 @@
     line-height: 24px;
     color: $Text-gray;
 
-    :last-child {
+    :nth-child(2) {
       margin-bottom: 44px;
+    }
+
+    @media (min-width: 740px) {
+      gap: 12px;
+    }
+
+    @media (max-width: 1150px) {
+      & :last-child {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1150px) {
+      gap: 0;
+
+      & :nth-child(2) {
+        margin-bottom: 30px;
+      }
+
+      & :last-child {
+        margin-bottom: 20px;
+      }
+
+      & :first-child {
+        margin-bottom: 54px;
+      }
     }
   }
 
@@ -44,6 +80,14 @@
 
       background-color: $ColorTitles;
     }
+
+    @media (min-width: 740px) {
+      margin-bottom: 35px;
+    }
+
+    @media (min-width: 1150px) {
+      margin-bottom: 63px;
+    }
   }
 
   &__button {
@@ -66,6 +110,10 @@
       background-color: #e5e5e5;
       color: $Text-gray;
       border: 1px solid #333;
+    }
+    
+    @media (min-width: 740px) {
+      margin-bottom: 100px;
     }
   }
 }

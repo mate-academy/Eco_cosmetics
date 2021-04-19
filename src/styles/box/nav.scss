@@ -12,6 +12,15 @@
 
   transition: visibility 0.2s linear, opacity 0.3s;
 
+  @media (min-width: 1050px) {
+    top: 53px;
+    background-color: transparent;
+
+    visibility: visible;
+    opacity: 1;
+    height: 150px;
+  }
+
   &--visibility {
     visibility: visible;
     opacity: 1;
@@ -21,6 +30,10 @@
 
   &__container {
     padding: 80px 20px 0;
+
+    @media (min-width: 1050px) {
+      padding: 0;
+    }
   }
 
   &__list {
@@ -28,6 +41,12 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 10px;
+
+    @media (min-width: 1050px) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+    }
   }
 
   &__items {
@@ -39,6 +58,10 @@
     color: #e4dfd3;
     line-height: 23px;
 
+    @media (min-width: 1050px) {
+      color: #344f10;
+    }
+
     &::after {
       content: "";
 
@@ -48,6 +71,10 @@
       margin: 10px 0 30px;
 
       background-color: #828282;
+
+      @media (min-width: 1050px) {
+        width: 0;
+      }
     }
   }
 }

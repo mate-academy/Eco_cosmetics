@@ -3,9 +3,48 @@
 @import "./arrow.scss";
 
 .section-4 {
- 
-  // &__container {
-  // }
+  position: relative;
+  max-width: 768px;
+  margin: 0 auto;
+
+  @media (min-width: 740px) {
+    padding: 0 27px;
+  }
+
+  @media (min-width: 1050px) {
+    max-width: 1240px;
+    padding-left: 150px;
+  }
+
+  @media (min-width: 1050px) {
+    &::before {
+      content: "shop";
+      position: absolute;
+      display: block;
+      top: 142px;
+      left: 60px;
+
+      color: rgba(52, 79, 16, 0.5);
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      transform: rotate(-90deg);
+    }
+
+    & ::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 180px;
+      left: 81px;
+      width: 0.5px;
+      height: 100px;
+
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
 
   &__title {
     margin-bottom: 12px;
@@ -13,9 +52,22 @@
     text-align: center;
     font-size: 24px;
     line-height: 36px;
-    letter-spacing: 5%;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #344f10;
+
+    @media (min-width: 500px) {
+      font-weight: 600;
+    }
+
+    @media (min-width: 740px) {
+      text-align: left;
+    }
+  }
+
+  &__container-button {
+    display: flex;
+    justify-content: center;
   }
 
   &__button {
@@ -38,6 +90,14 @@
       background-color: #e5e5e5;
       color: $Text-gray;
       border: 1px solid #333;
+    }
+
+    @media (min-width: 740px) {
+      margin-left: 29px 0 100px;
+    }
+
+    @media (min-width: 1050px) {
+      margin: 27px auto 203px;
     }
   }
 }

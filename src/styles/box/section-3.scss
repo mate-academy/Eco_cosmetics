@@ -1,15 +1,66 @@
 .section-3 {
+  position: relative;
+
+  @media (min-width: 1050px) {
+    &::before {
+      content: "witch of mountain winds";
+      position: absolute;
+      display: block;
+      top: 107px;
+      left: -20px;
+
+      color: rgba(52, 79, 16, 0.5);
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+
+      transform: rotate(-90deg);
+    }
+
+    & ::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 230px;
+      left: 84px;
+      width: 0.5px;
+      height: 100px;
+
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
 
   &__container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     padding: 0 20px;
-    overflow: hidden;
+
+    @media (min-width: 740px) {
+      padding: 0 0 0 27px;
+      gap: 30px;
+    }
+
+    @media (min-width: 1050px) {
+      padding-left: 150px;
+      justify-content: flex-start;
+      gap: 120px;
+    }
   }
 
   &__wrapper {
+    max-width: 450px;
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 740px) {
+      align-items: flex-start;
+      max-width: 342px;
+    }
+
+    @media (min-width: 1050px) {
+      max-width: 380px;
+    }
   }
 
   &__title {
@@ -21,6 +72,14 @@
     line-height: 36px;
     letter-spacing: 2px;
     color: #344f10;
+
+    @media (min-width: 500px) {
+      font-weight: 600;
+    }
+
+    @media (min-width: 1050px) {
+      margin-top: 36px;
+    }
   }
 
   &__text {
@@ -29,6 +88,23 @@
     font-size: 16px;
     line-height: 24px;
     color: $Text-gray;
+
+    @media (min-width: 1050px) {
+      margin-bottom: 30px;
+    }
+
+    &-none {
+      display: none;
+
+      color: #333;
+      font-size: 16px;
+      line-height: 24px;
+
+      @media (min-width: 1050px) {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
   }
 
   &__link {
@@ -55,5 +131,17 @@
 
   &__img {
     display: none;
+
+    @media (min-width: 740px) {
+      width: 369px;
+      height: 318px;
+      display: block;
+    }
+
+    @media (min-width: 1050px) {
+      margin-bottom: 200px;
+      width: 480px;
+      height: 529px;
+    }
   }
 }
