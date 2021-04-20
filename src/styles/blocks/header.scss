@@ -14,8 +14,6 @@ $pictureMaxWidth: 580px;
 $mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
 
 .header {
-  padding: 0 $contentPaddingX;
-
   transition: padding 0.2s linear;
 
   @media (min-width: $width-iPad) {
@@ -32,6 +30,11 @@ $mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
     justify-content: center;
     max-width: $headerContentMaxWidth;
     margin: 0 auto;
+
+    @media (min-width: $widthLaptopS) {
+      display: block;
+      margin-bottom: 200px;
+    }
   }
 
   &__icons-wrapper {
@@ -40,6 +43,7 @@ $mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
     align-items: center;
     padding-top: $icons-wrapper-pd-top;
     padding-bottom: $icons-wrapper-pd-bottom;
+    margin: 0 20px;
 
     transition: padding 0.5s ease-in-out, margin 0.5s linear;
 
@@ -48,6 +52,10 @@ $mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
         padding-top: $pd-top - $icon-paddings;
         padding-bottom: $pd-bottom - $icon-paddings;
       }
+    }
+
+    @media (min-width: $width-iPad) {
+      margin: 0;
     }
   }
 
@@ -89,10 +97,10 @@ $mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
     display: flex;
     padding: $icon-paddings;
 
-    transition: transform 0.3s ease-out;
+    transition: transform 0.2s ease-out;
 
     &:hover {
-      transform: scale(1.03);
+      transform: scale(1.01);
     }
   }
 
@@ -116,18 +124,13 @@ $mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
   &__logo-sign {
     display: none;
 
-    &:hover {
-      transition: text-shadow 0.5s linear;
-      text-shadow: 0 2px 4px #fff;
-    }
-
     @media (min-width: $widthLaptopS) {
       display: flex;
       position: absolute;
       left: 62px;
-      top: 50%;
+      top: 53%;
       transform: translateY(calc(-50% + 7px));
-      padding-bottom: 12px;
+      padding-bottom: 15px;
 
       font-weight: 600;
       font-size: 12px;
@@ -138,9 +141,22 @@ $mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
       white-space: nowrap;
       letter-spacing: 0.05em;
       text-transform: uppercase;
+      opacity: 0.9;
 
       transition: opacity 0.2s linear,
-        box-shadow 0.2s linear;
+        box-shadow 0.2s linear,
+        color 0.3s linear;
+
+      &:hover {
+        opacity: 1;
+        transition: text-shadow 0.3s linear;
+        text-shadow: 0 2px 4px #fff;
+      }
+
+      &:active {
+        transition: color 0s ease-out;
+        color: rgba(0, 0, 0, 0.4);
+      }
 
       &::after {
         content: "";
@@ -193,18 +209,22 @@ $mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
 
     @media (min-width: $widthLaptopS) {
       width: 22.12px + $icon-paddings * 2;
-      height: 26px + $icon-paddings * 2;
+      height: 38px + $icon-paddings * 2;
       margin-right: -$icon-paddings + 5px;
       background-image: url("../images/icons/bag-l.svg");
+      opacity: 0.9;
 
-      transition: transform 0.3s ease-out;
+      transition: transform 0.2s ease-out,
+        opacity 0.3s linear;
 
       &:hover {
-        transform: scale(1.15);
+        opacity: 1;
+        transform: scale(1.08);
       }
 
       &:active {
-        opacity: 0.7;
+        transition: opacity 0s ease-out;
+        opacity: 0.4;
       }
 
       &::after {
@@ -225,7 +245,7 @@ $mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
       &:hover::after {
         transition: box-shadow 0.3s, opacity 0.2s linear;
         opacity: 1;
-        box-shadow: 0 -3px 6px 3px #fcfaf4;
+        box-shadow: 0 -4px 6px 4px #fcfaf4;
       }
 
       &:active::after {
@@ -238,7 +258,6 @@ $mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
   &__main {
     @media (min-width: $widthLaptopS) {
       display: flex;
-      margin-bottom: 200px;
       flex-direction: row-reverse;
       justify-content: flex-start;
     }
@@ -246,8 +265,6 @@ $mainMaxWidth: $titleMaxWidth + $pictureMaxWidth + 20px;
 
   &__picture {
     min-height: 267px;
-    margin-left: -$contentPaddingX;
-    margin-right: -$contentPaddingX;
 
     background-image: url("../images/header-s.jpeg");
     @extend %bg-cover-noRep-center;

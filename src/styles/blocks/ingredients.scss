@@ -1,0 +1,109 @@
+$ingredientsPdLeft: 150px;
+$ingredientsPdRight: 51px;
+$ingredientsPaddingX: $ingredientsPdLeft + $ingredientsPdRight;
+
+.ingredients {
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 150px
+      $ingredientsPdRight
+      150px
+      $ingredientsPdLeft;
+    max-width: 1079px + $ingredientsPaddingX;
+    margin: 0 auto;
+    margin-right: 0;
+  }
+
+  &__title {
+    margin-bottom: 139px;
+
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+  }
+
+  &__left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__mark {
+    position: absolute;
+    top: 57px;
+    left: -150px;
+
+    font-size: 11px;
+    line-height: 18px;
+    font-family: "Sharp-Sans-No2", sans-serif;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: rgba(52, 79, 16, 0.5);
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+
+    &::before {
+      content: "";
+      top: 9px;
+      left: -110px;
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    padding-right: 119px;
+  }
+
+  &__list-item {
+    position: relative;
+    display: flex;
+    margin-bottom: 52px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+
+    text-transform: capitalize;
+    color: #333;
+
+    &:last-child {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__list-image {
+    position: absolute;
+    display: flex;
+    left: calc(100% + 20px);
+    top: calc(50% - 2px);
+
+    width: 80px;
+    height: 5px;
+    background-image: url("../images/ingradients/img1.svg");
+  }
+
+  &__image {
+    width: 382px;
+    height: 398px;
+    background-image: url("../images/ingradients/main.svg");
+  }
+}
