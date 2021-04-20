@@ -54,15 +54,22 @@
     text-align: center;
 
     @media (min-width: 1050px) {
-      &:hover::after {
+      &::after {
         content: "";
         position: absolute;
         top: 20px;
         left: 0;
         width: 100%;
+        opacity: 0;
   
         height: 1px;
         background-color: $Text-gray;
+
+        transition: opacity 0.3s;
+      }
+
+      &:hover::after {
+        opacity: 1;
       }
     }
   }
