@@ -1,0 +1,78 @@
+@import "./contacts.scss";
+
+.section-8 {
+  position: relative;
+
+  @media (min-width:740px) {
+    display: flex;
+    gap: 30px;
+    padding-left: 27px;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1150px) {
+    justify-content: space-between;
+    max-width: 1280px;
+    padding: 0 50px 0 150px;
+
+    &::before {
+      content: "help";
+      position: absolute;
+      display: block;
+      top: 70px;
+      left: 60px;
+
+      color: rgba(52, 79, 16, 0.5);
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      transform: rotate(-90deg);
+    }
+
+    & ::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 110px;
+      left: 80px;
+      width: 0.5px;
+      height: 100px;
+
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__container {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 450px;
+
+    @media (min-width: 740px) {
+      max-width: 341px;
+      padding: 0;
+    }
+
+    @media (min-width: 1050px) {
+      margin: 0;
+      max-width: 478px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @media (min-width: 740px) {
+      display: block;
+      width: 368px;
+      height: 409px;
+    }
+
+    @media (min-width: 1050px) {
+      width: 529px;
+      height: 584px;
+    }
+  }
+}

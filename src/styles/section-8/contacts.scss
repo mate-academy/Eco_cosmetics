@@ -1,0 +1,111 @@
+.contact {
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    font-size: 24px;
+    line-height: 36px;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+    color: $ColorTitles;
+
+    @media (min-width: 500px) {
+      font-weight: bold;
+    }
+
+    @media (min-width: 1050px) {
+      margin-bottom: 20px;
+
+      text-transform: none;
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    &-text {
+      margin-bottom: 20px;
+
+      font-size: 16px;
+      line-height: 24px;
+      text-transform: lowercase;
+      color: $Text-gray;
+
+      @media (min-width: 1050px) {
+        font-size: 24px;
+        line-height: 36px;
+        max-width: 380px;
+      }
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-rows: repeat(4);
+    gap: 20px;
+
+    @media (min-width: 1050px) {
+      gap: 30px;
+    }
+    
+    & :nth-child(4) {
+      margin-top: 25px;
+
+      @media (min-width:1050px) {
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+    }
+
+    & :last-child {
+      margin-top: 5px;
+    }
+
+    & :nth-child(n) {
+      padding: 5px;
+
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #8d8d8d;
+
+      &:focus {
+        border-bottom: 1px solid #333;
+      }
+    }
+
+    &-placeholder {
+      background-color: #e4dfd3;
+    }
+
+    &-button {
+      margin-bottom: 60px;
+
+      width: 280px;
+      height: 60px;
+  
+      background-color: $Text-gray;
+  
+      font-size: 16px;
+      line-height: 21px;
+      text-transform: uppercase;
+      letter-spacing: 15%;
+      color: #f2f2f2;
+
+      transition: color 0.5s, background 0.5s, border 0.5s;
+
+      @media (min-width: 1050px) {
+        margin-bottom: 150px;
+      }
+
+      &:hover {
+        background-color: #e5e5e5;
+        color: $Text-gray;
+        border: 1px solid #333;
+      }
+    }
+  }
+}

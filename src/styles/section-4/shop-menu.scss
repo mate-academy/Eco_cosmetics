@@ -1,0 +1,65 @@
+.shop-menu {
+  display: flex;
+  justify-content: center;
+  padding: 0 17px 32px 20px;
+
+  @media (min-width: 740px) {
+    justify-content: flex-start;
+    padding-left: 0;
+  }
+
+  &__list {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__items {
+    position: relative;
+    width: 55px;
+
+    &:hover::after {
+      content: "";
+      position: absolute;
+      display: block;
+
+      margin-top: 10px;
+
+      width: 35px;
+      height: 2px;
+      background-color: $Text-gray;
+
+      @media (min-width:1050px) {
+        top: 15px;
+        left: 0;
+      }
+    }
+
+    &:hover:last-child::after {
+      content: "";
+      position: absolute;
+      display: block;
+
+      margin-top: 10px;
+
+      width: 63px;
+      height: 2px;
+      background-color: $Text-gray;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 5%;
+    text-transform: uppercase;
+    color: #828282;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $Text-gray;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import "./about.scss";
+
+.section-5 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: 1150px) {
+    &::before {
+      content: "about the creators";
+      position: absolute;
+      display: block;
+      top: 70px;
+      left: -5px;
+
+      color: rgba(52, 79, 16, 0.5);
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      transform: rotate(-90deg);
+    }
+
+    & ::after {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 180px;
+      left: 81px;
+      width: 0.5px;
+      height: 100px;
+
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__wrapper {
+
+    @media (min-width: 740px) {
+      display: flex;
+      justify-content: space-between;
+      max-width: 768px;
+    }
+
+    @media (min-width:1150px) {
+      max-width: 1280px;
+      padding: 0 50px 0 150px;
+      gap: 120px;
+    }
+  }
+  
+  &__container {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @media (min-width: 400px) {
+      padding: 0 0 0 27px;
+    }
+
+    @media (min-width: 1150px) {
+      max-width: 1280px;
+      padding: 0;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @media (min-width: 740px) {
+      margin-left: 30px;
+      display: block;
+      width: 368px;
+      height: 435px;
+    }
+
+    @media (min-width: 1150px) {
+      width: 580px;
+      height: 669px;
+      margin-bottom: 201px;
+    }
+  }
+}
