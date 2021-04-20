@@ -3,18 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Eco cosmetics</title>
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="icon" href="./images/logo.svg">
   </head>
-  <body>
+  <body class="page">
     <header class="header header--gap">
+      <div class="header__menu-toggler"></div>
       <div class="header__logo">
-        <img
+        <a href="#">
+          <img
           class="header__img"
           src="./images/logo.svg"
           alt="Logo"
         >
+        </a>
         <p class="header__title">witch of mountain winds</p>
       </div>
       <nav class="header__nav">
@@ -22,11 +25,13 @@
         <a class="header__nav-link header__nav-link--pad" href="#">Contact</a>
         <a class="header__nav-link" href="#">About</a>
       </nav>
-      <img
+      <a href="#" class="header__link">
+        <img
         class="header__basket"
         src="./images/bag.svg"
         alt="basket"
       >
+      </a>
     </header>
 
     <main class="main">
@@ -61,7 +66,8 @@
         <div class="about__transform">witch of mountain winds</div>
         <div class="about__content">
           <h2 class="about__title">about our brand</h2>
-          <p class="about__text about__text--first">Our brand cosmetics are made
+          <p class="about__text about__text--first">
+            Our brand cosmetics are made
             from natural ingredients and we are
             promoting them to the masses. Shampoo, hair conditioner, soap - in
             recycled paper. Creams, oils, washing products in glass containers
@@ -75,13 +81,20 @@
             imaginary convenience, we destroy what does not belong to us. Be
             aware of your choice!
           </p>
-          <a class="about__link" href="#">LERN MORE</a>
+          <a class="about__link" href="#">LEARN MORE</a>
         </div>
-        <img
-          class="about__img"
-          src="./images/product2.jpg"
-          alt="Product"
-        >
+        <div class="about__imgs">
+          <img
+            class="about__img"
+            src="./images/product2.jpg"
+            alt="Product"
+          >
+          <img
+            class="about__img-2"
+            src="./images/productSmole2.jpg"
+            alt="Product"
+          >
+        </div>
       </section>
 
       <section class="shop">
@@ -103,7 +116,7 @@
             <p class="shop__product-title">Hydrophilic oil</p>
             <p class="shop__cost">160 UAH</p>
           </div>
-          <div class="shop__img">
+          <div class="shop__img shop__img--none">
             <img
               class="shop__product-img"
               src="./images/2.jpg"
@@ -112,7 +125,7 @@
             <p class="shop__product-title">Face cream</p>
             <p class="shop__cost">210 UAH</p>
           </div>
-          <div class="shop__img">
+          <div class="shop__img shop__img--last">
             <img
               class="shop__product-img"
               src="./images/3.jpg"
@@ -150,10 +163,10 @@
             birds, as it is very difficult to rescue birds in a rented communal
             apartment.
           </p>
-          <a class="creators__link" href="#">lern more</a>
+          <a class="creators__link" href="#">learn more</a>
           <button type="button" class="creators__button">to contact us</button>
         </div>
-        <div>
+        <div class="creators__bird">
           <img
             class="creators__img"
             src="./images/bird.jpg"
@@ -166,56 +179,45 @@
         <div class="powder__transform">Ingredients</div>
         <div class="powder__block">
           <h2 class="powder__h2">Ayurvedic Tooth Powder</h2>
-          <a class="powder__link" href="#">lern more</a>
+          <img
+            class="powder__prodact-smole"
+            src="./images/Frame.svg"
+            alt="Product"
+          >
+          <a class="powder__link" href="#">learn more</a>
         </div>
         <div class="powder__content">
           <div class="powder__wrap">
             <p class="powder__mark">Kaolin</p>
-            <img
-              class="powder__img"
-              src="./images/line.svg"
-              alt="line"
-            >
+            <div class="powder__img"></div>
           </div>
 
           <div class="powder__wrap">
             <p class="powder__mark">Sivak (Persian Salvador)</p>
-            <img
-              class="powder__img"
-              src="./images/line.svg"
-              alt="line"
-            >
+            <div class="powder__img"></div>
           </div>
 
           <div class="powder__wrap">
             <p class="powder__mark">Calcium Carbonate</p>
-            <img
-              class="powder__img"
-              src="./images/line.svg"
-              alt="line"
-            >
+            <div class="powder__img"></div>
           </div>
 
           <div class="powder__wrap">
             <p class="powder__mark">Licorice Root</p>
-            <img
-              class="powder__img"
-              src="./images/line.svg"
-              alt="line"
-            >
+            <div class="powder__img"></div>
           </div>
 
           <div class="powder__wrap">
             <p class="powder__mark">Turmeric</p>
-            <img
-              class="powder__img"
-              src="./images/line.svg"
-              alt="line"
-            >
+            <div class="powder__img"></div>
           </div>
 
         </div>
-        <img src="./images/botel.png" alt="product">
+        <img
+          class="powder__product"
+          src="./images/botel.png"
+          alt="product"
+        >
 
       </section>
 
@@ -252,13 +254,15 @@
         <div class="contact__transform">help</div>
         <div class="contact__us">
           <h2 class="contact__h2">contact us</h2>
-          <p class="contact__text">we will help you choose a product that suits you and answer your
+          <p class="contact__text">
+            we will help you choose a product that suits you and answer your
             other questions
           </p>
           <form
             class="contact__form"
             action="#"
             method="GET"
+            autocomplete="off"
           >
             <input
               class="contact__name contact__form--input"
@@ -266,6 +270,7 @@
               name="name"
               required
               placeholder="Your Name"
+              autocomplete="off"
             >
             <input
               class="contact__email contact__form--input"
@@ -273,6 +278,7 @@
               name="email"
               required
               placeholder="E-Mail"
+              autocomplete="off"
             >
             <input
               class="contact__number contact__form--input"
@@ -282,6 +288,7 @@
               min="10"
               max="13"
               placeholder="Phone Number"
+              autocomplete="off"
             >
             <textarea
               class="contact__feedback contact__form--input"
@@ -290,6 +297,7 @@
               rows="1"
               required
               placeholder="Your Message"
+              autocomplete="off"
            ></textarea>
           </form>
           <button type="button" class="contact__button">send a message</button>
@@ -303,33 +311,40 @@
     </main>
 
     <footer class="footer">
-      <div class="footer__menu">
-        <nav class="footer__nav">
-          <a class="footer__link" href="#">Shop</a>
-          <a class="footer__link" href="#">Contact</a>
-          <a class="footer__link" href="#">About</a>
-        </nav>
-        <p class="footer__text">
-          Copyright © 2019 WITCH OF MOUNTAIN WINDS
-        </p>
-      </div>
-      <div class="footer__adres">
-        <p class="footer__text">Ukraine</p>
-        <p class="footer__text">support.mountain@gmail.com</p>
-        <p class="footer__text">+380934476839</p>
-        <p class="footer__text">Support is available Monday - Friday 9am-6pm</p>
-        <div class="footer__icon">
-          <img
-            class="footer__img"
-            src="./images/facebook.svg"
-            alt="facebook"
-          >
-          <img
-            class="footer__img"
-            src="./images/instagram.svg"
-            alt="instagram"
-          >
+      <div class="footer__wrap">
+        <div class="footer__menu">
+          <nav class="footer__nav">
+            <a class="footer__link" href="#">Shop</a>
+            <a class="footer__link" href="#">Contact</a>
+            <a class="footer__link" href="#">About</a>
+          </nav>
+          <p class="footer__text footer__text--none">
+            <span>Copyright</span> © 2019 WITCH OF MOUNTAIN WINDS
+          </p>
         </div>
+        <div class="footer__adres">
+          <p class="footer__text">Ukraine</p>
+          <a href="mailto:hello@miami.com" class="footer__text">support.mountain@gmail.com</a>
+          <a href="tel:+380934476839" class="footer__text">+380934476839</a>
+          <p class="footer__text">Support is available Monday - Friday 9am-6pm</p>
+          <div class="footer__icon">
+            <a class="footer__img" href="https://uk-ua.facebook.com/">
+              <img
+                class="footer__sol"
+                src="./images/facebook.svg"
+                alt="facebook"
+              >
+            </a>
+            <a class="footer__img" href="https://www.instagram.com/">
+              <img
+                class="footer__sol"
+                src="./images/instagram.svg"
+                alt="instagram"
+              >
+            </a>
+          </div>
+        </div>
+        <p class="footer__hidden">© 2019 WITCH OF MOUNTAIN WINDS</p>
       </div>
     </footer>
     <script type="text/javascript" src="scripts/main.js"></script>

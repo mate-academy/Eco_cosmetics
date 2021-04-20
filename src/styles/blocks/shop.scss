@@ -1,23 +1,50 @@
 .shop {
   padding: 0 0 200px 100px;
+  @extend %auto;
+  @media (max-width: 768px) {
+    padding: 0 0 100px;
+  }
+  @media (max-width: 320px) {
+    padding: 0 0 60px;
+  }
   &__title {
     width: 100%;
     @extend %h2;
     padding-bottom: 20px;
+    @media (max-width: 768px) {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+    }
+    @media (max-width: 320px) {
+      text-align: center;
+    }
   }
   &__nav {
     padding-bottom: 65px;
     display: flex;
     gap: 50px;
+    @media (max-width: 768px) {
+      padding-bottom: 32px;
+    }
+    @media (max-width: 320px) {
+      gap: 16px;
+      padding: 0 20px 32px;
+    }
   }
   &__link {
     font-family: "Nunito Sans", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 18px;
     line-height: 150%;
     letter-spacing: 0.05em;
     color: $link;
     transition: 1s;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 21px;
+      letter-spacing: 0.05em;
+    }
     &:hover {
       border-bottom: 1px solid $black-tex;
     }
@@ -33,6 +60,9 @@
     position: relative;
     gap: 20px;
     padding-bottom: 40px;
+    @media (max-width: 768px) {
+      padding-bottom: 75px;
+    }
   }
   &__transform {
     font-family: "Roboto", sans-serif;
@@ -48,6 +78,9 @@
     height: 0;
     left: -200px;
     transform: rotate(-90deg);
+    @media (max-width: 768px) {
+      display: none;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -60,10 +93,31 @@
   }
   &__img {
     width: 33.3%;
+    @media (max-width: 768px) {
+      width: 50%;
+    }
+    &--none {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    &--last {
+      @media (max-width: 320px) {
+        display: none;
+      }
+    }
+    @media (max-width: 320px) {
+      width: 100%;
+    }
   }
   &__product-img {
     width: 100%;
     max-height: 500px;
+    @media (max-width: 768px) {
+      max-width: 342px;
+      max-height: 300px;
+      image-rendering: pixelated;
+    }
   }
   &__product-title {
     padding: 20px 0 10px;
@@ -73,6 +127,9 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: $black-tex;
+    @media (max-width: 320px) {
+      padding-left: 20px;
+    }
   }
   &__cost {
     @extend %p;
@@ -80,6 +137,9 @@
     line-height: 150%;
     letter-spacing: 0.05em;
     color: $black-tex;
+    @media (max-width: 320px) {
+      padding-left: 20px;
+    }
   }
   &__button {
     display: flex;

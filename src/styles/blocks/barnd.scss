@@ -2,18 +2,57 @@
   display: flex;
   justify-content: space-between;
   padding: 0 0 200px 100px ;
+  @extend %auto;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 0 100px;
+  }
+  @media (max-width: 320px) {
+    padding-bottom: 60px;
+  }
 
   &__name {
     color: $black-tex;
     max-width: 480px;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
   &__h1 {
     padding-bottom: 20px;
+    @media (max-width: 768px) {
+      padding-top: 50px;
+      font-size: 36px;
+      line-height: 130%;
+      text-align: center;
+      br {
+        display: none;
+      }
+    }
+    @media (max-width: 320px) {
+      font-size: 24px;
+      line-height: 31px;
+      max-width: 280px;
+      padding: 25px 0 12px;
+    }
   }
   &__text {
     font-size: 16px;
     line-height: 150%;
     padding-bottom: 50px;
+    @media (max-width: 768px) {
+      padding-top: 20px;
+      font-size: 18px;
+      line-height: 27px;
+      text-align: center;
+    }
+    @media (max-width: 320px) {
+      font-size: 18px;
+      line-height: 27px;
+      max-width: 280px;
+      padding-bottom: 46px;
+    }
   }
   &__button {
     width: 279px;

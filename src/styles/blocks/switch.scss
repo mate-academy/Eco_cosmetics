@@ -3,6 +3,17 @@
   justify-content: space-between;
   width: 100%;
   padding-bottom: 240px;
+  @extend %auto;
+  @media (max-width: 768px) {
+    padding: 0 0 150px;
+  }
+  @media (max-width: 320px) {
+    padding: 0 20px 60px;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    gap: 50px;
+  }
   &__col {
     display: flex;
     flex-direction: column;
@@ -12,6 +23,9 @@
     max-width: 84px;
     max-height: 84px;
     padding-bottom: 40px;
+    @media (max-width: 320px) {
+      padding-bottom: 20px;
+    }
   }
   &__text {
     font-size: 14px;
@@ -20,5 +34,11 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #000;
+    @media (max-width: 320px) {
+      width: 285px;
+    }
+  }
+  br {
+    display: none;
   }
 }

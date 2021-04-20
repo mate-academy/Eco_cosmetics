@@ -1,9 +1,20 @@
 .about {
   display: flex;
-  justify-content: space-between;
+  gap: 110px;
   align-items: center;
   position: relative;
-  padding: 0 0 200px 100px;
+  padding: 0 0 200px 80px;
+  justify-content: flex-start;
+  @media (max-width: 768px) {
+    align-items: center;
+    padding: 0 0 100px;
+    gap: 30px;
+    justify-content: center;
+  }
+  @media (max-width: 320px) {
+    padding: 0 20px 72px;
+  }
+  @extend %auto;
   &__transform {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -19,6 +30,9 @@
     left: -100px;
     transform: rotate(-90deg);
     text-transform: uppercase;
+    @media (max-width: 768px) {
+      display: none;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -35,22 +49,61 @@
   &__title {
     @extend %h2;
     padding-bottom: 16px;
+    @media (max-width: 768px) {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+    }
+    @media (max-width: 320px) {
+      padding-bottom: 12px;
+    }
   }
   &__text {
     font-size: 16px;
     line-height: 150%;
     &--first {
       padding-bottom: 30px;
+      @media (max-width: 768px) {
+        padding-bottom: 44px;
+      }
     }
     &--second {
       padding-bottom: 40px;
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
   &__link {
     @extend %link;
   }
+  &__imgs {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    @media (max-width: 768px) {
+      width: 50%;
+    }
+    @media (max-width: 320px) {
+      display: none;
+    }
+  }
   &__img {
     max-width: 480px;
     max-height: 529px;
+    @media (max-width: 768px) {
+      max-width: 318px;
+      max-height: 369px;
+    }
+    &-2 {
+      position: absolute;
+      top: 165px;
+      left: 500px;
+      max-width: 175px;
+      max-height: 430px;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
   }
 }
