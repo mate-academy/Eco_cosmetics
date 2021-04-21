@@ -1,0 +1,106 @@
+.interest {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+
+  &__fact {
+    width: 610px;
+    margin-right: 120px;
+    border-top: 1px solid rgba(52, 79, 16, 0.5);
+  }
+
+  &__fact-text {
+    width: 380px;
+    padding: 100px 0 100px 230px;
+
+    font-weight: bold;
+    color: $dark-grey-color;
+  }
+
+  &__scroll-down {
+    width: 710px;
+    display: flex;
+    justify-content: end;
+    border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+  }
+
+  &__scroll-down-text {
+    width: 360px;
+    padding: 100px 350px 100px 0;
+
+    font-weight: bold;
+    font-size: 24px;
+    color: $green-color;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (min-width: $large-screen-breakpoint) {
+  .interest {
+    justify-content: center;
+
+    &__fact {
+      margin-right: 220px;
+      width: calc((100% - 220px) / 2 - 50px);
+    }
+
+    &__fact-text {
+      padding-left: calc(100% - 380px);
+    }
+
+    &__scroll-down {
+      width: calc((100% - 220px) / 2 + 50px);
+    }
+  }
+}
+
+@media screen and (max-width: $medium-screen-breakpoint) {
+  .interest {
+    &__fact-text {
+      padding-left: 150px;
+    }
+
+    &__scroll-down-text {
+      padding-right: 270px;
+    }
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .interest {
+    &__fact {
+      display: none;
+    }
+
+    &__scroll-down {
+      width: 280px;
+      margin: auto;
+      
+      border-bottom: none;
+    }
+
+    &__scroll-down-text {
+      padding: 0;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .interest {
+    &__scroll-down {
+      width: auto;
+      margin: 0 20px;
+      
+    }
+
+    &__scroll-down-text {
+      width: auto;
+      padding: 0;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+}

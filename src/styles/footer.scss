@@ -1,0 +1,167 @@
+.footer {
+  height: 320px;
+
+  color: $brown-color;
+  background-color: #99a788;
+  transition: inherit, background-color $transition-duration;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left-part {
+    margin-top: 60px;
+  }
+
+  &__copyright {
+    margin-top: 150px;
+
+    font-family: "SharpSansNo2Medium", Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+
+    &-uppercase {
+      text-transform: uppercase;
+    }
+  }
+
+  &__contacts {
+    margin-top: 60px;
+
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+
+    color: $brown-color;
+  }
+
+  &__link {
+    display: block;
+    margin-top: 20px;
+    color: inherit;
+  }
+
+  &__support {
+    margin-top: 20px;
+  }
+
+  &__icons {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  &__icons--hidden {
+    display: none;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+
+    &:first-child {
+      margin-right: 14px;
+    }
+
+    &--facebook {
+      background-image: url(../images/icons/facebook.svg);
+    }
+
+    &--insta {
+      background-image: url(../images/icons/instagram.svg);
+    }
+  }
+}
+
+@media screen and (min-width: $large-screen-breakpoint) {
+  .footer {
+    background-color: rgba(52, 79, 16, 0.5);
+
+    &__content {
+      width: 1050px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__contacts {
+      justify-self: end;
+    }
+  }
+}
+
+@media screen and (max-width: $medium-screen-breakpoint) {
+  .footer {
+    background-color: rgba(52, 79, 16, 0.5);
+  }
+}
+
+@media screen and (max-width: $small-screen-breakpoint) {
+  .footer {
+    &__left-part,
+    &__contacts {
+      margin-top: 30px;
+    }
+  
+    &__copyright {
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    &__country,
+    &__link,
+    &__support {
+      font-size: 14px;
+    }
+
+    &__link {
+      margin-top: 12px;
+    }
+
+    &__icons--hidden {
+      display: flex;
+    }
+
+    &__icons--visible {
+      display: none;
+    }
+
+    &__copyright-hidden {
+      display: none;
+    }
+
+    &__copyright-uppercase {
+      text-transform: lowercase;
+    }
+  }
+}
+
+@media screen and (max-width: $super-small-screen-breakpoint) {
+  .footer {
+    padding: 0 20px;
+    height: 470px;
+
+    &__content {
+      justify-content: start;
+      flex-direction: column;
+    }
+
+    &__icons {
+      margin: 0;
+    }
+
+    &__copyright {
+      display: none;
+
+      &--mobile {
+        display: block;
+        text-align: center;
+        margin: 50px auto 0;
+      }
+    }
+
+    &__copyright-uppercase {
+      text-transform: uppercase;
+    }
+  }
+}
