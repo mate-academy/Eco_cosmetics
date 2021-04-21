@@ -1,0 +1,55 @@
+.scroll {
+  display: flex;
+  position: relative;
+
+  &__text {
+    width: $cardWidth;
+    margin-left: 100px;
+    padding-top: 100px;
+
+    color: $colorGrey1;
+    line-height: 24px;
+
+    &::before {
+      @include khakiLine;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: calc(#{$cardWidth +100px});
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__phrase {
+    max-width: $cardWidth;
+
+    padding-top: 105px;
+    margin-left: 120px;
+
+    color: $colorKhaki;
+    
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &::after {
+      @include khakiLine;
+      margin-top: 100px;
+      position: relative;
+      width: calc(#{$cardWidth + 150px});
+    }
+
+    @include onTablet {
+      margin: 0 auto;
+      padding-top: 20px;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

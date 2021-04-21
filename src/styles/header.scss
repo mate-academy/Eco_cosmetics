@@ -1,0 +1,83 @@
+.header {
+  padding-top: 55px;
+
+  &__nav {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__main {
+    display: flex;
+
+    @include onTablet {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__card {
+    margin: 0 20px 200px 100px;
+
+    @include onTablet {
+      margin: 50px 0;
+    }
+  }
+
+  &__title {
+    width: 480px;
+    margin-bottom: 20px;
+    
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 72px;
+    color: $colorGrey1;
+
+    @include onTablet {
+      width: 100%;
+      text-align: center;
+    }
+
+    @include onMobile {
+      font-size: 30px;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    margin-bottom: 50px;
+
+    font-size: 22px;
+    color: $colorGrey1;
+
+    @include onTablet {
+      text-align: center;
+    }
+  }
+
+  &__button {
+    @include button;
+
+    @include onTablet {
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  &__image {
+    background-image: url(../images/header__image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 580px;
+
+    height: 450px;
+
+    @include onTablet {
+      height: 350px;
+      width: 100%;
+    }
+  }
+}

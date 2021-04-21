@@ -1,7 +1,29 @@
-@import "utils";
 @import "fonts";
-@import "typography";
+@import "normalize";
+@import "variables";
+@import "mixin";
+@import "reset";
+@import "header";
+@import "nav";
+@import "scroll";
+@import "about";
+@import "shop";
+@import "creators";
+@import "ingredients";
+@import "eco";
+@import "contact";
+@import "footer";
 
-body {
-  background: $c-gray;
+.container {
+  max-width: $contentMaxWidth + 2 * $containerPadding;
+  width: calc(100% - #{2 * $containerPadding});
+  margin: 0 auto;
+
+  @include onTablet {
+    width: calc(100% - 40px);
+  }
+}
+
+main {
+  overflow: hidden;
 }

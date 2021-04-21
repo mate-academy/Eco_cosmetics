@@ -1,0 +1,102 @@
+.about {
+  display: flex;
+  position: relative;
+  margin-top: 200px;
+  margin-bottom: 200px;
+
+  @include onTablet {
+    margin: 30px 0 80px;
+  }
+
+  @include onMobile {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  &__pointer {
+    @include pointer;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__card {
+    width: $cardWidth;
+    min-width: 350px;
+    margin-left: 100px;
+
+    @include onTablet {
+      margin-top: 0;
+      min-width: 300px;
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    @include title;
+  }
+
+  @include onMobile {
+    font-size: 24px;
+  }
+
+  &__text {
+    color: $colorGrey1;
+    line-height: 1.5;
+
+    @include onTablet {
+      min-width: 300px;
+      margin-right: 20px;
+      font-size: 16px;
+      
+    }
+
+    &-second {
+      margin-top: 30px;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    @include lernMore;
+  }
+
+  &__image {
+    width: 480px;
+    height: 530px;
+    margin-left: 120px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/about-image.jpg);
+
+    @include onTablet {
+      height: auto;
+      margin-left: 100px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    &-half {
+      width: 200px;
+      height: 430px;
+      margin-left: 20px;
+      margin-top: 100px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url(../images/about-image.jpg);
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}

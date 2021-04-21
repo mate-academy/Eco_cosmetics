@@ -1,0 +1,113 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  color: $colorKhaki;
+
+  &__list {
+    display: flex;
+
+    @include onTablet {
+      order: 1;
+      flex-direction: column;
+    }
+  }
+  
+  &__link {
+    display: block;
+    padding: 0 20px;
+    cursor: pointer;
+
+    color: $colorKhakiLight;
+    font-family: $fontButton;
+    font-weight: 300;
+
+    transition: 0.5s;
+
+    &::after {
+      content: " ";
+      display: block;
+      position: relative;
+      height: 1px;
+      transition: 0.4s;
+      width: 0;
+      background-color: $colorKhaki;
+    }
+    
+    &:hover {
+      color: $colorKhaki;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+  }
+
+  &__brand {
+    position: relative;
+    padding-left: 60px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $colorKhaki;
+    font-family: $fontButton;
+    font-weight: 300;
+    transition: 0.4s;
+
+    @include onTablet {
+      order: 2;
+      visibility: hidden;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-10%);
+    }
+  }
+  
+  &__brand::before {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    transform: translate(0, -25%);
+    margin-right: 12px;
+    width: 50px;
+    height: 50px;
+    background-image: url("../images/logo.svg");
+
+    @include onTablet {
+      visibility: visible;
+    }
+  }
+  
+  &__basket {
+    display: block;
+    background-image: url(../images/basket.svg);
+    width: 20px;
+    height: 28px;
+    background-repeat: no-repeat;
+    margin-top: -3px;
+    margin-right: 10px;
+
+    &:hover {
+      animation: 0.11s tremor ease-out infinite;
+    }
+
+    @include onTablet {
+      order: 3;
+      position: absolute;
+      right: 30px;
+
+      &:hover {
+        animation: none;
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+  }
+
+  &__button {
+    display: none;
+  }
+}

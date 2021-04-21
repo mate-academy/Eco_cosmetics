@@ -1,0 +1,107 @@
+.creators {
+  display: flex;
+  position: relative;
+  margin-left: 100px;
+  margin-bottom: 200px;
+
+  @include onTablet {
+    margin-left: 0;
+    margin-bottom: 50px;
+  }
+
+  @include onMobile {
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+
+  }
+
+  &__pointer {
+    @include pointer;
+    left: -340px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__card {
+    width: 390px;
+    margin-right: 120px;
+
+    @include onTablet {
+      min-width: 300px;
+      margin-right: 0;
+    }
+
+    @include onMobile {
+      min-width: 280px;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @include title;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__description {
+    color: $colorGrey1;
+
+    &_middle {
+      margin-top: 45px;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+    }
+
+    @include onTablet {
+      &_last {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    @include lernMore;
+  }
+
+  &__button {
+    @include button;
+    margin-top: 40px;
+    padding-left: 63px;
+    padding-right: 63px;
+
+    @include onTablet {
+      width: 100%;
+      margin-top: 20px;
+      font-size: 15px;
+    }
+  }
+
+  &__image {
+    margin-top: 60px;
+    width: 580px;
+    height: 669px;
+    background-image: url(/images/creators.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onTablet {
+      margin-top: 0;
+      background-size: cover;
+      height: auto;
+
+      @include onMobile {
+        display: none;
+      }
+    }
+  }
+}
