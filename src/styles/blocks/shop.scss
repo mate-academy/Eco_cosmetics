@@ -7,6 +7,10 @@
     padding: 0 $contentPaddingX-iPad;
   }
 
+  @media (max-width: $width-iPad - 1px) {
+    padding: 0;
+  }
+
   &__content {
     max-width: 1180px;
     margin-bottom: 114px;
@@ -161,6 +165,10 @@
     position: relative;
     display: flex;
     justify-content: flex-end;
+
+    @media (max-width: $width-iPad - 1px) {
+      display: block;
+    }
   }
 
   &__product-card {
@@ -196,6 +204,8 @@
     height: 500px;
     margin-bottom: 20px;
 
+    object-fit: cover;
+    object-position: center;
     @media (max-width: $widthLaptopL - 1px) {
       &--last {
         width: 330px;
@@ -259,6 +269,7 @@
 
     @media (max-width: $width-iPad - 1px) {
       margin-top: 18px;
+      margin-bottom: 32px;
     }
   }
 
@@ -303,6 +314,11 @@
       transform: translateX(-50%);
       margin-left: 50%;
       margin-top: 29px;
+    }
+
+    @media (max-width: $width-iPad - 1px) {
+      transform: initial;
+      margin: 0 auto;
     }
   }
 }
