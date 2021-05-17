@@ -2,22 +2,27 @@
   display: flex;
   justify-content: flex-end;
 
+  @media (max-width: $widthLaptopM - 1px) {
+    justify-content: center;
+    padding: 0 $contentPaddingX-iPad;
+  }
+
   &__content {
     max-width: 1180px;
     margin-bottom: 114px;
+    margin-right: 30px;
 
-    // @media (max-width: $widthLaptopXL) {
-    //   margin-right: -20px;
-    // }
+    @media (max-width: $widthLaptopL - 1px) {
+      margin-right: 0;
+    }
 
-    // @media (max-width: $widthLaptopL) {
-    //   max-width: 1130px;
-    //   margin-right: -$contentPaddingX-laptop;
-    // }
+    @media (max-width: $widthLaptopS - 1px) {
+      margin-bottom: 100px;
+    }
 
-    // @media (max-height: 860px) {
-    //   margin-right: 0;
-    // }
+    @media (max-width: $width-iPad - 1px) {
+      margin-bottom: 0;
+    }
   }
 
   &__title {
@@ -28,6 +33,15 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #344f10;
+
+    @media (max-width: $widthLaptopS - 1px) {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    @media (max-width: $width-iPad - 1px) {
+      text-align: center;
+    }
   }
 
   &__chapters {
@@ -37,10 +51,18 @@
   &__chapters-list {
     display: flex;
     flex-direction: row;
+
+    @media (max-width: $width-iPad - 1px) {
+      justify-content: space-evenly;
+    }
   }
 
   &__chapters-item {
     margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__chapters-link {
@@ -95,12 +117,23 @@
       transition: box-shadow 0s;
       box-shadow: 0 -10px 10px 8px #fcfaf4;
     }
+
+    @media (max-width: $widthLaptopS - 1px) {
+      padding: 2px 15px 10px 0;
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    @media (max-width: $width-iPad - 1px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 
   &__mark {
     position: absolute;
     top: 9px;
-    left: -108px;
+    left: -100px;
 
     font-size: 11px;
     line-height: 18px;
@@ -136,6 +169,26 @@
     &:last-child {
       margin-right: 0;
     }
+
+    &--2 {
+      @media (max-width: $widthLaptopM - 1px) {
+        display: none;
+      }
+    }
+
+    &--3 {
+      @media (max-width: $width-iPad - 1px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: $widthLaptopS - 1px) {
+      margin-right: 30px;
+    }
+
+    @media (max-width: $width-iPad - 1px) {
+      margin-right: 0;
+    }
   }
 
   &__product-image {
@@ -143,16 +196,23 @@
     height: 500px;
     margin-bottom: 20px;
 
-    @media (max-width: $widthLaptopL) {
+    @media (max-width: $widthLaptopL - 1px) {
       &--last {
         width: 330px;
       }
     }
 
-    // @media (max-height: 860px) {
-    //   width: 320px;
-    //   height: 400px;
-    // }
+    @media (max-width: $widthLaptopM - 1px) {
+      width: 342px;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @media (max-width: $width-iPad - 1px) {
+      width: 320px;
+      height: 267px;
+    }
   }
 
   &__product-name {
@@ -165,6 +225,10 @@
 
     letter-spacing: 0.05em;
     text-transform: uppercase;
+
+    @media (max-width: $width-iPad - 1px) {
+      margin-left: 20px;
+    }
   }
 
   &__product-price {
@@ -174,12 +238,28 @@
 
     letter-spacing: 0.05em;
     text-transform: uppercase;
+
+    @media (max-width: $width-iPad - 1px) {
+      margin-left: 20px;
+    }
   }
 
   &__toggler {
     display: inline-block;
     width: 380px;
     margin-top: 40px;
+
+    @media (max-width: $widthLaptopS - 1px) {
+      display: block;
+      width: 100%;
+      margin-top: 21px;
+
+      text-align: right;
+    }
+
+    @media (max-width: $width-iPad - 1px) {
+      margin-top: 18px;
+    }
   }
 
   &__toggler-arrow-left {
@@ -190,6 +270,14 @@
 
     background-image: url("../images/shop/arrow-left.svg");
     cursor: pointer;
+
+    @media (max-width: $widthLaptopS - 1px) {
+      margin-right: 34px;
+    }
+
+    @media (max-width: $width-iPad - 1px) {
+      margin-right: 28px;
+    }
   }
 
   &__toggler-arrow-right {
@@ -199,6 +287,10 @@
 
     background-image: url("../images/shop/arrow-right.svg");
     cursor: pointer;
+
+    @media (max-width: $width-iPad - 1px) {
+      margin-right: 20px;
+    }
   }
 
   &__button {
@@ -206,8 +298,11 @@
     margin-top: 40px;
     margin-left: 15px;
 
-    // @media (max-height: 760px) {
-    //   margin-top: 20px;
-    // }
+    @media (max-width: $widthLaptopS - 1px) {
+      display: block;
+      transform: translateX(-50%);
+      margin-left: 50%;
+      margin-top: 29px;
+    }
   }
 }
