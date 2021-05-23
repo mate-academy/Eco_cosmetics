@@ -1,0 +1,75 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+
+  &__logo {
+    position: relative;
+    width: 249px;
+    height: 50px;
+    fill: white;
+    @include hover(filter, brightness(0.7));
+
+    &:before {
+      position: absolute;
+      width: 0;
+      height: 1px;
+      background-color: $green;
+      top: 50px;
+      left: 62px;
+      content: "";
+      transition: width 1s;
+    }
+
+    &:hover:before {
+      width: 187px;
+    }
+  }
+
+  &__item {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__bag {
+    height: 26px;
+    width: 22px;
+    background-image: url(../images/bag.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    @include hoverLinkAnimation($green);
+  }
+}
+
+@media (max-width: $smallScreenBreakPoint) {
+  .header {
+    padding-top: 27px;
+    &__item {
+      width: 100%;
+    }
+
+    &__nav {
+      display: none;
+    }
+
+    &__logo {
+      display: none;
+      &--mobile {
+        display: block;
+      }
+    }
+
+    &__bag {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
+
+@media (max-width: $mobileScreenBreakPoint) {
+  .header {
+    padding-top: 15px;
+  }
+}

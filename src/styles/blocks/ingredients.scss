@@ -1,0 +1,116 @@
+.ingredients {
+  display: flex;
+  padding-top: 200px;
+  gap: 20px;
+
+  &__title {
+    max-width: 280px;
+  }
+
+  &__item {
+    display: flex;
+    width: calc(50% + 100px);
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    height: 400px;
+
+    &--text {
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      width: calc(50% - 100px);
+      overflow: visible;
+
+      &::before {
+        position: absolute;
+        content: url(../images/decor/decor_ingredients.svg);
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__link {
+    align-self: flex-start;
+    display: inline-block;
+    position: relative;
+    color: $green;
+    @extend %text-3;
+    text-decoration: none;
+    @include hoverLinkAnimation($green);
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-width: 180px;
+    height: 320px;
+    margin-right: 20px;
+  }
+
+  &__ingredient {
+    position: relative;
+    @extend %paragraph;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 76px;
+      height: 1px;
+      bottom: 50%;
+      right: -86px;
+      background-color: $black;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      background-color: $black;
+      bottom: 10px;
+      right: -91px;
+    }
+  }
+}
+
+@media (max-width: $smallScreenBreakPoint) {
+  .ingredients {
+
+    &__item--text:before {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $mobileScreenBreakPoint) {
+  .ingredients {
+    flex-direction: column;
+
+    &__item {
+      width: 100%;
+      height: fit-content;
+
+      &--text {
+        justify-content: flex-start;
+      }
+    }
+
+    &__link {
+      position: absolute;
+      bottom: -420px;
+    }
+  }
+}

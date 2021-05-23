@@ -1,0 +1,87 @@
+.about {
+  display: flex;
+  gap: 20px;
+  padding-top: 200px;
+
+  &__item {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &:first-child::before {
+      position: absolute;
+      content: url(../images/decor/decor_brand.svg);
+      left: 0;
+      top: 0;
+    }
+
+    &--image {
+      justify-content: flex-start;
+    }
+  }
+
+  &__text {
+    max-width: 380px;
+  }
+
+  &__heading {
+    margin-bottom: 16px;
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+    @extend %paragraph;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__link {
+    color: $green;
+    @extend %text-3;
+    text-decoration: none;
+    @include hoverLinkAnimation($green);
+  }
+}
+
+@media (max-width: $smallScreenBreakPoint) {
+  .about {
+    gap: 30px;
+    padding-top: 0;
+
+    &__item:before {
+      display: none;
+    }
+
+    &__paragraph--hide {
+      display: none;
+    }
+
+    &__item--image {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: $mobileScreenBreakPoint) {
+  .about__image {
+    display: none;
+  }
+
+  .about__item {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .about__text {
+    max-width: 100%;
+  }
+
+  .about__item--image {
+    display: none;
+  }
+}
