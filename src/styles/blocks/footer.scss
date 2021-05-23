@@ -1,0 +1,120 @@
+.footer {
+  background-color: $light-green;
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    height: 320px;
+    padding: 60px 100px;
+    @extend %auto;
+    @media (max-width: 768px) {
+      height: 280px;
+      padding: 29px 27px 49px;
+      gap: 10%;
+    }
+    @media (max-width: 540px) {
+      padding: 30px 20px 60px;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (max-width: 480px) {
+      max-width: 280px;
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  &__link {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    border-bottom: 1px solid transparent;
+    color: $e4dfd3;
+    transition: 1s;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    @media (max-width: 480px) {
+      max-width: max-content;
+      font-weight: 400;
+    }
+    &:hover {
+      border-bottom: 1px solid #e4dfd3;
+    }
+  }
+  &__text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    padding-bottom: 20px;
+    color: $e4dfd3;
+    display: block;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    @media (max-width: 480px) {
+      font-weight: 400;
+      width: 265px;
+    }
+    &--none {
+      @media (max-width: 768px) {
+        font-size: 14px;
+        line-height: 18px;
+        text-transform: lowercase;
+        width: 250px;
+        span {
+          display: none;
+        }
+      }
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
+  }
+  &__adres {
+    width: 50%;
+    @media (max-width: 480px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__icon {
+    @media (max-width: 480px) {
+      order: -1;
+      padding: 20px 0 30px;
+    }
+  }
+
+  &__img {
+    width: 20px;
+    height: 20px;
+    margin-right: 14px;
+  }
+  &__sol:hover {
+    box-shadow: 0 0 20px 5px rgba(70, 88, 74, 0.8);
+  }
+  &__hidden {
+    display: none;
+    @media (max-width: 540) {
+      display: block;
+      text-align: center;
+      padding-top: 10px;
+      color: $e4dfd3;
+    }
+  }
+}

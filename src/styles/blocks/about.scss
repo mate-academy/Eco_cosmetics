@@ -1,0 +1,109 @@
+.about {
+  display: flex;
+  gap: 110px;
+  align-items: center;
+  position: relative;
+  padding: 0 0 200px 80px;
+  justify-content: flex-start;
+  @media (max-width: 768px) {
+    align-items: center;
+    padding: 0 0 100px;
+    gap: 30px;
+    justify-content: center;
+  }
+  @media (max-width: 425px) {
+    padding: 0 20px 72px;
+  }
+  @extend %auto;
+  &__transform {
+    font-family: "Sharp Sans No2", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: rgba(52, 79, 16, 0.5);
+    position: absolute;
+    top: 105px;
+    width: 215px;
+    height: 0;
+    left: -100px;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    @media (max-width: 768px) {
+      display: none;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: -110px;
+      height: 1px;
+      width: 100px;
+      background: rgba(52,79,16,0.5);
+    }
+  }
+  &__content {
+    max-width: 385px;
+  }
+  &__title {
+    @extend %h2;
+    padding-bottom: 16px;
+    @media (max-width: 768px) {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+    }
+    @media (max-width: 425px) {
+      padding-bottom: 12px;
+    }
+  }
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    &--first {
+      padding-bottom: 30px;
+      @media (max-width: 768px) {
+        padding-bottom: 44px;
+      }
+    }
+    &--second {
+      padding-bottom: 40px;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+  &__link {
+    @extend %link;
+  }
+  &__imgs {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    @media (max-width: 768px) {
+      width: 50%;
+    }
+    @media (max-width: 425px) {
+      display: none;
+    }
+  }
+  &__img {
+    max-width: 480px;
+    max-height: 529px;
+    @media (max-width: 768px) {
+      max-width: 318px;
+      max-height: 369px;
+    }
+    &-2 {
+      position: absolute;
+      top: 165px;
+      left: 500px;
+      max-width: 175px;
+      max-height: 430px;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}

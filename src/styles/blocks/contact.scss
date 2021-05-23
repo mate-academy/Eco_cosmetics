@@ -1,0 +1,127 @@
+.contact {
+  display: flex;
+  padding: 0 0 200px 100px;
+  justify-content: space-between;
+  position: relative;
+  @extend %auto;
+  @media (max-width: 768px) {
+    padding: 0 0 100px;
+  }
+  @media (max-width: 425px) {
+    padding: 0 20px 60px;
+  }
+  &__transform {
+    font-family: "Sharp Sans No2", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: rgba(52, 79, 16, 0.5);
+    position: absolute;
+    top: 20px;
+    width: 192px;
+    height: 0;
+    left: -100px;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    @media (max-width: 768px) {
+      display: none;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      left: -35px;
+      height: 1px;
+      width: 100px;
+      background: rgba(52,79,16,0.5);
+    }
+  }
+  &__h2 {
+    @extend %h2;
+    text-transform: none;
+    padding-bottom: 20px;
+    @media (max-width: 768px) {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      max-width: 245px;
+    }
+  }
+  &__text {
+    @extend %p;
+    font-size: 16px;
+    line-height: 150%;
+    padding-bottom: 30px;
+    max-width: 265px;
+    @media (max-width: 768px) {
+      max-width: 342px;
+    }
+    &--last {
+      padding-bottom: 20px;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    &--input {
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 18px;
+      line-height: 1.5em;
+      width: 480px;
+      margin-bottom: 30px;
+      background-color: #fff;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid grey;
+      color: #344f10;
+      @media (max-width: 768px) {
+        max-width: 342px;
+      }
+      @media (max-width: 425px) {
+        max-width: 280px;
+        background-color: $bgc-mobile;
+      }
+    }
+  }
+  &__button {
+    width: 279px;
+    height: 59px;
+    color: $f2f2f2;
+    background-color: $black-tex;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.15em;
+    border: 1px solid $black-tex;
+    transition: 0.5s;
+    text-transform: uppercase;
+    margin-top: 20px;
+    &:hover {
+      color: $black-tex;
+      background-color: $e4dfd3;
+    }
+  }
+  &__bird {
+    position: relative;
+    align-items: center;
+    width: 50%;
+  }
+  &__img {
+    // padding-left: 120px;
+    max-width: 600px;
+    // max-height: 584px;
+    @media (max-width: 768px) {
+      padding-left: 30px;
+      max-width: 368px;
+      max-height: 409px;
+    }
+    @media (max-width: 425px) {
+      display: none;
+    }
+  }
+  &__feedback {
+    resize: none;
+    margin-top: 10px;
+  }
+}
