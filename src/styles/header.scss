@@ -1,0 +1,106 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: $block-width;
+  padding: 30px 50px 0;
+  font-size: 18px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 576px) {
+    width: 100%;
+    // padding: 0 30px;
+  }
+
+  @media (max-width: 320px) {
+    width: 100%;
+    // padding: 0 30px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::after {
+      content: "witch of mountain winds";
+      position: absolute;
+      display: block;
+      left: 60px;
+      width: 240px;
+      text-transform: uppercase;
+      font-size: 11px;
+      // line-height: 130%;
+      // letter-spacing: .05em;
+      color: #303b21;
+
+      @media (max-width: 992px) {
+        display: none;
+      }
+    }
+  }
+  
+  &__menu {
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    color: #344f10;
+    font-family: "IBM", "Plex", sans-serif;
+    font-weight: 500;
+    line-height: 23px;
+    padding-right: 40px;
+    display: block;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__list {
+    display: flex;
+    text-align: center;
+  }
+
+  &__basket {
+
+    &:hover {
+      animation: shake 0.82s cubic-bezier(0.36,0.07,0.19,0.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+
+    @keyframes shake {
+      10%,
+      90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+      
+      20%,
+      80% {
+        transform: translate3d(2px, 0, 0);
+      }
+    
+      30%,
+      50%,
+      70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+    
+      40%,
+      60% {
+        transform: translate3d(4px, 0, 0);
+      }
+    }
+  }
+}
