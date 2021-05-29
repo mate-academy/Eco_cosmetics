@@ -1,0 +1,252 @@
+.components {
+  &__container {
+    position: relative;
+    height: 400px;
+    @include container;
+
+    background: url("../images/components.png") no-repeat right center;
+
+    @media screen and (max-width: 1200px) {
+      width: calc(100% - 100px);
+      margin: 0 0 0 100px;
+    }
+
+    @media screen and (max-width: 980px) {
+      background-position: 130%;
+    }
+
+    @media screen and (max-width: 850px) {
+      background-position: 140%;
+    }
+
+    @media screen and (max-width: 770px) {
+      background-position: 150%;
+    }
+
+    @media screen and (max-width: 700px) {
+      background-position: 80% 70%;
+
+      background-size: 40%;
+    }
+
+    @media screen and (max-width: 530px) {
+      background-position: 100% 70%;
+
+      background-size: 40%;
+    }
+
+    @media screen and (max-width: 430px) {
+      background-position: 150% 60%;
+
+      background-size: 60%;
+    }
+  }
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+
+    height: 100%;
+    margin-left: 100px;
+
+    @media screen and (max-width: 1200px) {
+      margin-left: 0;
+    }
+
+    @media screen and (max-width: 700px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__aside {
+    display: flex;
+    position: absolute;
+    top: 207px;
+    left: 0;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+  }
+
+  &__aside-line {
+    width: 100px;
+    height: 1px;
+
+    margin-right: 10px;
+
+    color: rgba(52, 79, 16, 0.5);
+  }
+
+  &__aside-description {
+    &--text-extra-small {
+      @include text-extra-small(0.05em, 500, rgba(52, 79, 16, 0.5));
+    }
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    max-width: 300px;
+
+    margin-left: -50px;
+
+    @media screen and (max-width: 1050px) {
+      justify-content: space-around;
+    }
+
+    @media screen and (max-width: 700px) {
+      align-items: center;
+      text-align: center;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__article-heading {
+    margin-top: 100px;
+
+    &--heading-medium {
+      @include heading-medium;
+    }
+
+    @media screen and (max-width: 1182px) {
+      margin-top: 0;
+    }
+  }
+
+  &__article-link {
+    padding-bottom: 12px;
+
+    transition: 0.3s;
+
+    &--text-extra-small {
+      @include text-extra-small(0.05em, 600);
+
+      border-bottom: 1px solid #e4dfd3;
+
+      &:hover {
+        border-bottom: 1px solid $green-c;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
+  }
+
+  &__product {
+    display: flex;
+
+    margin-right: 400px;
+
+    @media screen and (max-width: 1040px) {
+      margin-right: 350px;
+    }
+
+    @media screen and (max-width: 980px) {
+      margin-right: 200px;
+    }
+
+    @media screen and (max-width: 700px) {
+      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 530px) {
+      margin-right: 170px;
+    }
+
+    @media screen and (max-width: 450px) {
+      margin-right: 100px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    margin: 40px 0;
+
+    @media screen and (max-width: 700px) {
+      height: 200px;
+      margin: 0;
+    }
+
+    @media screen and (max-width: 700px) {
+      height: 150px;
+      margin: 0;
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+    text-align: end;
+
+    &--text-small {
+      @include text-small;
+    }
+  }
+
+  &__list-line {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin-left: 20px;
+
+    width: 76px;
+    height: 1px;
+
+    background-color: $black-c;
+
+    @media screen and (max-width: 400px) {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+
+      transform: translateX(50%);
+
+      width: 5px;
+      height: 5px;
+
+      background-color: $black-c;
+      border-radius: 50%;
+
+      @media screen and (max-width: 1182px) {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    display: none;
+    padding-bottom: 12px;
+
+    transition: 0.3s;
+
+    &--text-extra-small {
+      @include text-extra-small(0.05em, 600);
+
+      border-bottom: 1px solid #e4dfd3;
+
+      &:hover {
+        border-bottom: 1px solid $green-c;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      display: block;
+    }
+  }
+}

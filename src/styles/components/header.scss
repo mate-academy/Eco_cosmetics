@@ -1,0 +1,86 @@
+.header {
+  &__container {
+    @include container;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 130px;
+
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 980px) {
+      height: 100px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__burger-btn {
+    display: none;
+
+    padding: 20px 0;
+
+    z-index: 1;
+
+    @media screen and (max-width: 950px) {
+      display: block;
+    }
+  }
+
+  %line {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background-color: $green-c;
+  }
+
+  &__burger-toggler {
+    position: relative;
+    @extend %line;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -7px;
+      transition-duration: 0.3s;
+      @extend %line;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      transition-duration: 0.3s;
+      @extend %line;
+    }
+
+    &--active {
+      transform: rotate(45deg);
+      background-color: $secondary-white-c !important;
+    }
+
+    &--active::before {
+      top: 0;
+      opacity: 0;
+    }
+
+    &--active::after {
+      top: 0;
+      transform: rotate(90deg);
+      background-color: $secondary-white-c !important;
+    }
+  }
+
+  &__shop-btn {
+    padding: 10px 0;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(2);
+    }
+  }
+}
