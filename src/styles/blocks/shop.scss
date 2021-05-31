@@ -13,6 +13,9 @@
   }
 
   &__category {
+    border: none;
+    background: inherit;
+    cursor: pointer;
     font-size: 18px;
     line-height: 1.5em;
     text-transform: uppercase;
@@ -37,7 +40,7 @@
   }
 
   &__goods {
-    @extend %flex-center;
+    @extend %flex-between;
     gap: 20px;
     margin-bottom: 40px;
   }
@@ -56,6 +59,7 @@
 
   &__image {
     max-height: 600px;
+    max-width: 380px;
   }
 
   &__title {
@@ -72,6 +76,31 @@
     text-transform: uppercase;
   }
 }
+
+.face {
+  display: flex;
+}
+
+.body {
+  display: none;
+}
+
+.hair {
+  display: none;
+}
+
+.candles {
+  display: none;
+}
+
+.visiable {
+  display: flex;
+}
+
+.unVisiable {
+  display: none;
+}
+
 @media (max-width: $tabletBreakPoint) {
   .shop {
     padding-top: 80px;
@@ -98,7 +127,7 @@
       width: 50%;
     }
 
-    &__card--two {
+    &__card--three {
       display: none;
     }
   }
