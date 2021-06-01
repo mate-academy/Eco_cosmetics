@@ -1,0 +1,108 @@
+.info {
+  display: flex;
+  gap: 20px;
+  padding-top: 200px;
+
+  &__item {
+    position: relative;
+    @extend %flex-center;
+    width: 50%;
+    align-items: center;
+    overflow: hidden;
+
+    &:first-child::before {
+      position: absolute;
+      content: url(../images/info.svg);
+      top: 0;
+      left: 0;
+    }
+
+    &--picture {
+      position: relative;
+      justify-content: flex-start;
+      flex-basis: 60%;
+
+      @media (max-width: 1280px) {
+        justify-content: flex-end;
+      }
+
+      &::after {
+        content: url(../images/miniCandle.jpg);
+        position: absolute;
+        bottom: 0;
+        left: 500px;
+
+        @media (max-width: 1280px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__text {
+    max-width: 380px;
+  }
+
+  &__picture {
+    overflow: hidden;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    @extend %title;
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.5em;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__link {
+    color: $green;
+    font-size: 14px;
+    line-height: 1.3em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include hoverLinkAnimation($green);
+  }
+}
+
+@media (max-width: $tabletBreakPoint) {
+  .info {
+    gap: 30px;
+    padding-top: 0;
+
+    &__item:before {
+      display: none;
+    }
+
+    &__paragraph--hidden {
+      display: none;
+    }
+
+    &__item--picture {
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media (max-width: $mobileBreakPoint) {
+  .info__item--picture {
+    display: none;
+  }
+
+  .info__item {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .info__text {
+    max-width: 100%;
+  }
+}

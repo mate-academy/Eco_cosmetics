@@ -4,3 +4,28 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin background($url) {
+  background-image: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin hoverLinkAnimation($color) {
+  position: relative;
+  &:before {
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: $color;
+    bottom: -10px;
+    left: 0;
+    content: "";
+    transition: width 0.3s;
+  }
+
+  &:hover:before {
+    width: 100%;
+  }
+}
