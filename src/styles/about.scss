@@ -1,0 +1,137 @@
+.about__main {
+  margin-bottom: 200px;
+
+  @media (max-width: 950px) {
+    margin-bottom: calc(200px / 2);
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: calc(200px / 3);
+  }
+}
+
+.about {
+  position: relative;
+
+  &__sideImg {
+    @include sideImg;
+  }
+
+  display: grid;
+  grid-template-columns: 500px 480px 288px;
+  gap: 20px;
+  align-items: end;
+
+  @media (max-width: 950px) {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 650px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__header {
+    @include H2_1;
+    max-width: 380px;
+    margin-bottom: 20px;
+    color: #344f10;
+
+    @media (max-width: 950px) {
+      @include H4_1;
+      max-width: 280px;
+      margin-bottom: 12px;
+    }
+
+  }
+
+  &__text-one {
+    @include text;
+    max-width: 380px;
+    margin-bottom: 30px;
+
+    @media (max-width: 950px) {
+      max-width: 342px;
+      margin-bottom: 44px;
+    }
+
+    @media (max-width: 650px) {
+      max-width: 280px;
+    }
+  }
+
+  &__text-two {
+    @include text;
+    max-width: 380px;
+    margin-bottom: 40px;
+
+    @media (max-width: 950px) {
+      display: none;
+    }
+  }
+
+  &__link {
+    @include text2;
+    color: #344f10;
+    margin-bottom: 21px;
+    text-transform: uppercase;
+    height: 31px;
+    position: relative;
+
+    &:hover {
+      &::after {
+        content: "";
+        height: 1px;
+        width: 95px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: #344f10;
+      }
+    }
+
+    @media (max-width: 950px) {
+      margin-bottom: 11px;
+    }
+  }
+}
+
+.about__photo-big {
+  max-width: 480px;
+  max-height: 529px;
+
+  @media (max-width: 1150px) {
+    max-width: 100%;
+    max-height: 418px;
+  }
+
+  @media (max-width: 850px) {
+    max-width: 369px;
+    max-height: 318px;
+  }
+
+  @media (max-width: 650px) {
+    display: none;
+  }
+}
+
+.about__photo-small {
+  max-width: 288px;
+  max-height: 430px;
+  margin-bottom: 0;
+
+  @media (max-width: 1350px) {
+    display: none;
+  }
+
+  @media (max-width: 650px) {
+    display: none;
+  }
+}
