@@ -1,8 +1,9 @@
 .nav {
-
+  @extend %FontFamily-Sharp;
+  font-size: 18px;
   &__list {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     list-style: none;
     padding: 0;
   }
@@ -14,5 +15,17 @@
   &__link {
     text-decoration: none;
     color: $header-color;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background-color: $header-color;
+      transition: 0.5s;
+    }
+    &:hover::after {
+      width: 100%;
+    }
   }
 }
