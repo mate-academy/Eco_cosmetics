@@ -8,6 +8,9 @@ Implement landing page according to [Figma design](https://www.figma.com/file/Fz
 - Tablet 1024
 - Mobile (> 320px)
 
+## Fonts
+Use `Sharp Sans No2 Medium` and `Avenir`, which you can find in fonts directory.
+
 1. Implement the header with `nav`.
 1. Implement `Brand of eco-cosmetics and magic candles` block.
 1. Implement `If you choose the gifts of nature and care about it’s - scroll down` block.
