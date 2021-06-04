@@ -20,6 +20,9 @@ Implement landing page according to [Figma design](https://www.figma.com/file/Fz
 1. Implement `Contact us` block.
 1. Implement footer.
 
+## Fonts
+Use `Sharp Sans No2 Medium` and `Avenir`, which you can find in fonts directory.
+
 ## Instructions
 1. **Fork** the repo.
 2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
