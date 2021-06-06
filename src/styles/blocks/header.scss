@@ -10,6 +10,10 @@
   padding: 40px 50px;
   background-color: $body-bgc;
 
+  &__menu-button {
+    display: none;
+  }
+
   &__logo-box {
     display: flex;
     flex-wrap: nowrap;
@@ -40,5 +44,45 @@
     background-repeat: no-repeat;
     background-position: right;
     justify-self: end;
+  }
+
+  @media (max-width: 1200px) {
+    & {
+      padding: 23px 27px 0;
+      &__logo-box {
+        .logo__text {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    & {
+      padding: 23px 27px 0;
+      &__nav {
+        display: none;
+      }
+
+      &__menu-button {
+        display: flex;
+      }
+
+      &__logo {
+        &-box {
+          justify-content: center;
+        }
+      }
+      .logo__img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  @media (max-width: 575px) {
+    & {
+      padding: 15px 20px 0;
+    }
   }
 }
