@@ -1,0 +1,107 @@
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1180px;
+  padding: 20px;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-image {
+    width: $mobile-logo-size;
+    height: $mobile-logo-size;
+    margin-right: 12px;
+    @include hover(transform, rotate(360deg));
+  }
+
+  &__logo-text {
+    display: none;
+    color: $primary-green-color;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &__shopping-card {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    @include hover(transform, rotate(360deg));
+    cursor: pointer;
+  }
+
+  &__toggler {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+  }
+
+  &__toggler-label {
+    width: 20px;
+    height: 13px;
+    background-image: url(./../images/burger-menu.svg);
+    background-size: cover;
+    cursor: pointer;
+  }
+
+  &__toggler-label:hover {
+    @include hover(transform, rotate(180deg));
+  }
+
+  &__toggler:checked ~ .nav {
+    display: flex;
+  }
+
+  &__toggler:checked + &__toggler-label {
+    content: "";
+    width: 15px;
+    height: 15px;
+    z-index: 5;
+    background-image: url(./../images/burger-close.svg);
+    background-size: cover;
+    transform: rotate(90deg);
+    transition-duration: 0.3s;
+  }
+
+  @include onTablet {
+    padding: 27px 23px;
+  }
+
+  @include onDesktop {
+    max-width: 1180px;
+    padding: 40px 50px;
+
+    &__toggler-label,
+    &__toggler {
+      display: none;
+    }
+
+    &__logo {
+      order: -1;
+    }
+
+    &__logo-image {
+      width: $desktop-logo-size;
+      height: $desktop-logo-size;
+    }
+
+    &__logo-text {
+      display: block;
+    }
+
+    &__shopping-card {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  @include onLargeScreen {
+    padding: 50px 130px;
+  }
+}
