@@ -30,6 +30,10 @@
     @extend %button-style;
   }
 
+  &__button:hover {
+    @extend %button-hover-style;
+  }
+
   @include onTablet {
     &__picture {
       width: 100%;
@@ -46,37 +50,37 @@
     }
 
     &__title {
-      font-size: 36px;
       margin-bottom: 20px;
+      font-size: 36px;
+      letter-spacing: 1px;
     }
 
     &__subtitle {
+      letter-spacing: 1px;
       margin-bottom: 57px;
     }
   }
 
   @include onDesktop {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 20px;
-    max-height: 450px;
+    display: grid;
+    grid-template-columns: 1fr 5fr 6fr;
 
     &__picture {
-      max-width: 580px;
+      order: 1;
+      grid-column: 3/4;
       margin-bottom: 0;
     }
 
     &__block {
+      grid-column: 2/3;
       justify-content: space-between;
-      align-items: start;
+      align-items: flex-start;
       text-align: left;
-      margin: 0;
     }
 
     &__title {
       font-size: 60px;
       line-height: 72px;
-      letter-spacing: 1px;
       font-weight: 500;
       margin-bottom: 20px;
     }
@@ -84,5 +88,10 @@
     &__subtitle {
       margin-bottom: 50px;
     }
+  }
+
+  @include onLargeScreen {
+    justify-content: center;
+    max-width: 1180px;
   }
 }

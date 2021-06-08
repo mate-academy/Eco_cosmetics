@@ -28,7 +28,6 @@
   }
 
   &__link {
-    // text-decoration: none;
     color: $light-gray;
   }
 
@@ -73,17 +72,22 @@
 
     &__link {
       color: $primary-green-color;
-      transition: 0.2s;
     }
 
-    &__link:hover::before {
+    &__link::before {
       content: "";
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
       height: 1px;
+      opacity: 0;
       background-color: $primary-green-color;
+      transition: all 400ms linear;
+    }
+
+    &__link:hover::before {
+      opacity: 1;
     }
   }
 
