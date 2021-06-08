@@ -1,12 +1,123 @@
+@import "./fonts.scss";
 @import "utils";
 @import "typography";
+@import "./reset.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Avenir", serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
 
 body {
   background: $c-gray;
 }
 
 .header {
-  position: sticky;
-  top: 0;
-  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+
+  &__logo-big {
+    display: none;
+  }
+}
+
+.nav {
+  &__list {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    font-family: "SharpSansNo2", sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: #344f10;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 50px;
+
+    &__logo-small {
+      display: none;
+    }
+
+    &__logo-big {
+      display: block;
+    }
+  }
+  .nav {
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &__link {
+      font-family: "Sharp Sans Display No2", sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      text-decoration: none;
+      color: #344f10;
+      padding: 10px;
+    }
+    &__toggler-label {
+      display: none;
+    }
+  }
+
+  .main-section {
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-around;
+    &__text {
+      width: 480px;
+    }
+
+    &__title {
+      font-family: "Avenir", sans-serif;
+      font-size: 60px;
+      line-height: 60px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    &__info {
+      font-size: 22px;
+      margin-bottom: 32px;
+    }
+
+    &__link {
+      text-decoration: none;
+      text-transform: uppercase;
+      display: block;
+      text-align: center;
+      line-height: 60px;
+      width: 280px;
+      height: 60px;
+      color: #f2f2f2;
+      border: 2px solid #333;
+      background-color: #333;
+      &:hover {
+        color: #333;
+        background-color: #f2f2f2;
+      }
+    }
+
+  }
 }
