@@ -1,0 +1,68 @@
+.fact {
+  @extend %FontFamily-Avenir;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 200px 50px;
+  text-align: center;
+  color: $header-color;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+  }
+
+  &__img {
+    height: 100px;
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s linear;
+  }
+
+  &__img--1 {
+    background-image: url(../images/fact__img--1.svg);
+  }
+  &__img--2 {
+    background-image: url(../images/fact__img--2.svg);
+  }
+  &__img--3 {
+    background-image: url(../images/fact__img--3.svg);
+  }
+
+  &__text {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &__block:hover {
+    .fact__img {
+      transform: scale(1.3);
+    }
+  }
+
+  @media (max-width: 1200px) {
+    & {
+      padding: 150px 27px;
+    }
+  }
+  @media (max-width: 1000px) {
+    & {
+      padding: 100px 27px;
+    }
+  }
+  @media (max-width: 576px) {
+    & {
+      flex-direction: column;
+      row-gap: 20px;
+      align-items: center;
+      padding: 60px 20px;
+
+      &__block {
+        width: 100%;
+      }
+    }
+  }
+}
