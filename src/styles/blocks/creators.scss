@@ -1,0 +1,94 @@
+.creators {
+  &__title {
+    @extend %h2;
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    margin-bottom: 36px;
+  }
+
+  &__image,
+  &__text:last-of-type {
+    display: none;
+  }
+
+  &__learn-more {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__button-link {
+    display: block;
+    margin: 0 auto;
+    @extend %button-style;
+  }
+
+  &__button-link:hover {
+    @extend %button-hover-style;
+  }
+
+  @include onTablet {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__text {
+      margin-bottom: 12px;
+    }
+
+    &__picture {
+      margin-right: -27px;
+    }
+
+    &__image {
+      display: block;
+      width: 100%;
+      min-height: 435px;
+      object-fit: cover;
+    }
+
+    &__button-link {
+      margin: 0;
+    }
+  }
+
+  @include onDesktop {
+    gap: 0;
+    grid-template-columns: 1fr 5fr 6fr;
+
+    &__aside {
+      top: 160px;
+    }
+
+    &__title {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    &__picture {
+      margin-right: 0;
+    }
+
+    &__block {
+      margin-top: 30px;
+      margin-right: 100px;
+    }
+
+    &__text:last-of-type {
+      display: block;
+    }
+  }
+
+  @include onLargeScreen {
+    &__block {
+      justify-content: space-evenly;
+    }
+  }
+}

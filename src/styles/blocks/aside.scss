@@ -1,0 +1,35 @@
+.aside {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    position: relative;
+    top: 200px;
+    left: 0;
+    height: 18.2px;
+    width: 20px;
+    transform: rotate(-90deg);
+
+    &__content {
+      position: relative;
+      font-size: 14px;
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transform: rotate(90deg);
+      color: $primary-green-color;
+      opacity: 0.5;
+
+      &::before {
+        position: absolute;
+        bottom: 8px;
+        left: -110px;
+        width: 100px;
+        height: 1px;
+        background-color: $primary-green-color;
+        content: "";
+      }
+    }
+  }
+}

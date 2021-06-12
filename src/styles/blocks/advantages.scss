@@ -1,0 +1,36 @@
+.advantages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  &__advantage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    @extend %text;
+  }
+
+  &__image {
+    display: block;
+    width: 80px;
+    @include hover (transform, translateY(-20px));
+  }
+
+  @include onTablet {
+    flex-direction: row;
+
+    &__advantage {
+      width: 218px;
+    }
+  }
+
+  @include onDesktop {
+    &__advantage {
+      width: 380px;
+    }
+  }
+}

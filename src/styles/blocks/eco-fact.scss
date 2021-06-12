@@ -1,0 +1,67 @@
+.eco-fact {
+  padding: 60px 0;
+
+  &__text {
+    display: none;
+  }
+
+  &__title {
+    @extend %h3;
+  }
+
+  @include onTablet {
+    max-width: 280px;
+    padding: 100px 0;
+    text-align: center;
+  }
+
+  @include onDesktop {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 4fr 2fr;
+    max-width: 100%;
+    text-align: left;
+
+    &::before {
+      content: "";
+      position: absolute;
+      margin-left: -50px;
+      width: 45vw;
+      height: 1px;
+      background-color: $primary-green-color;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: -50px;
+      width: 50vw;
+      height: 1px;
+      background-color: $primary-green-color;
+    }
+
+    &__text {
+      display: block;
+      grid-column: 2/3;
+      line-height: 24px;
+    }
+
+    &__title {
+      grid-column: 4/5;
+      font-size: 24px;
+      line-height: 36px;
+      font-weight: 500;
+    }
+  }
+  @include onLargeScreen {
+    &::before {
+      margin-left: -130px;
+    }
+
+    &::after {
+      margin-right: -130px;
+    }
+  }
+}
