@@ -1,14 +1,18 @@
 'use strict';
 
-const toggler = document.querySelector('#toggler');
-const navLink = document.querySelectorAll('.nav__link');
+const toggler = document.querySelector('.header__icon');
+const navList = document.querySelector('.nav__list');
+const nav = document.querySelector('.nav');
+const body = document.querySelector('.page__content');
 
-function removeToggler() {
-  for (const link of navLink) {
-    link.addEventListener('click', () => {
-      toggler.checked = false;
-    });
-  }
-}
+toggler.addEventListener('click', () => {
+  nav.classList.toggle('nav__shown');
+  toggler.classList.toggle('header__icon--closer');
+  body.classList.toggle('header__hidden');
+});
 
-removeToggler();
+navList.addEventListener('click', () => {
+  nav.classList.remove('nav__shown');
+  toggler.classList.remove('header__icon--closer');
+  body.classList.remove('header__hidden');
+});

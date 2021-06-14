@@ -28,21 +28,21 @@
     font-family: inherit;
     border: none;
     border-bottom: 1px solid $input-line-color;
-  }
 
-  &__input:focus {
-    outline: none;
-    border-color: $primary-dark-color;
-  }
+    &:focus {
+      outline: none;
+      border-color: $primary-dark-color;
+    }
 
-  &__input:valid {
-    color: $primary-green-color;
-    border-color: $primary-green-color;
-  }
+    &:valid {
+      color: $primary-green-color;
+      border-color: $primary-green-color;
+    }
 
-  &__input:last-of-type {
-    margin-top: 60px;
-    margin-bottom: 40px;
+    &:last-of-type {
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
   }
 
   &__image {
@@ -54,14 +54,14 @@
     margin: 0 auto;
     @extend %button-style;
     outline: none;
-  }
 
-  &__button:focus {
-    border: 1px solid $light-gray;
-  }
+    &:focus {
+      border: 1px solid $light-gray;
+    }
 
-  &__button:hover {
-    @extend %button-hover-style;
+    &:hover {
+      @extend %button-hover-style;
+    }
   }
 
   @include onTablet {
@@ -114,10 +114,10 @@
     &__input {
       padding: 10px 0;
       margin-bottom: 30px;
-    }
 
-    &__input::placeholder {
-      font-size: 18px;
+      &::placeholder {
+        font-size: 18px;
+      }
     }
 
     &__aside {
@@ -130,4 +130,13 @@
       margin-right: -130px;
     }
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border-bottom: 1px solid $primary-green-color;
+  -webkit-text-fill-color: $primary-green-color;
+  -webkit-box-shadow: 0 0 0 1000px  transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
