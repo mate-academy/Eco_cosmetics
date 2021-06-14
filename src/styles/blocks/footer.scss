@@ -1,9 +1,13 @@
 .footer {
-  max-width: 100%;
-  padding: 30px 20px 60px;
   background-color: $footer-background;
   color: $light-gray;
   font-size: 14px;
+
+  &__content {
+    padding: 30px 20px 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 
   &__subscribe {
     display: flex;
@@ -41,10 +45,11 @@
   }
 
   @include onTablet {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 29px 27px 49px;
-
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 29px 27px 49px;
+    }
     &__nav {
       grid-row: 1/2;
     }
@@ -65,8 +70,10 @@
   }
 
   @include onDesktop {
-    padding: 60px 50px;
-    font-size: 18px;
+    &__content {
+      padding: 60px 50px;
+      font-size: 18px;
+    }
 
     &__contacts {
       grid-row: 1/2;
@@ -79,8 +86,10 @@
   }
 
   @include onLargeScreen {
-    padding: 60px 130px;
-    grid-template-columns: 1.5fr 1fr;
+    &__content {
+      padding: 60px 130px;
+      grid-template-columns: 1.5fr 1fr;
+    }
   }
 }
 

@@ -1,13 +1,19 @@
 .nav {
-  display: none;
+  transform: translateX(-100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   font-family: "Sharp Sans No2", sans-serif;
   font-size: 18px;
+  transition: transform 0.3s;
+
+  &__nothidden {
+    transform: translateX(0);
+    width: 100vw;
+  }
 
   &__list {
-    position: fixed;
-    top: 0;
-    left: 0;
-
     width: 100vw;
     height: 100vh;
     padding: 80px 20px;
@@ -29,6 +35,10 @@
 
   &__link {
     color: $light-gray;
+
+    &:target ~ .nav {
+      transform: translateX(0);
+    }
   }
 
   @include onTablet {

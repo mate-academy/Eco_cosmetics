@@ -1,9 +1,14 @@
 .header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
+  // position: relative;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 
   &__logo {
     display: flex;
@@ -53,15 +58,9 @@
     @include hover(transform, rotate(180deg));
   }
 
-  &__toggler:checked ~ .nav {
-    display: flex;
-    position: fixed;
-    overflow: hidden;
-  }
-
   &__toggler:checked + &__toggler-label {
     content: "";
-    position: fixed;
+    position: absolute;
     width: 15px;
     height: 15px;
     z-index: 5;
@@ -72,11 +71,15 @@
   }
 
   @include onTablet {
-    padding: 23px 27px;
+    &__content {
+      padding: 23px 27px;
+    }
   }
 
   @include onDesktop {
-    padding: 40px 50px;
+    &__content {
+      padding: 40px 50px;
+    }
 
     &__toggler-label,
     &__toggler {
