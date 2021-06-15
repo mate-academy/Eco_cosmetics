@@ -5,7 +5,7 @@
   overflow: hidden;
   padding: 200px 0 200px 150px;
 
-  transition: width 0.5s linear;
+  transition: width $transition-duration linear;
 
   &__block {
     @extend %FontFamily-Avenir;
@@ -53,7 +53,7 @@
       height: 430px;
       object-fit: cover;
       margin-left: 20px;
-      transition: width 0.5s linear;
+      transition: width $transition-duration linear;
     }
 
   }
@@ -68,10 +68,6 @@
   @media (max-width: $desktop-width) {
     & {
       padding: 100px 0 80px 27px;
-
-      .sticked-label {
-        display: none;
-      }
     }
   }
 
@@ -80,9 +76,10 @@
       &__block {
         width: 45%;
         align-self: center;
-        .about__paragraph--hidden {
-          display: none;
-        }
+      }
+
+      &__paragraph--hidden {
+        display: none;
       }
 
       &__title {
