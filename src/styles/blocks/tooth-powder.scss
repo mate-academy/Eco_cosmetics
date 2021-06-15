@@ -6,6 +6,10 @@
   padding: 200px 50px 0 150px;
   color: $header-color;
 
+  &__sticker {
+    @extend %sticked-label;
+  }
+
   &__title-block {
     display: flex;
     flex-direction: column;
@@ -70,9 +74,9 @@
     transform: translateX(-5px);
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: $desktop-width) {
     & {
-      padding: 0 27px;
+      padding: 100px 27px 0;
 
       &__title-block {
         width: 300px;
@@ -80,7 +84,7 @@
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: $tablet-width) {
     & {
       padding: 100px 0 0 27px;
       &__title {
@@ -97,7 +101,7 @@
     }
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: $phone-width) {
     & {
       padding-top: 60px;
       &__title-block {
@@ -109,7 +113,7 @@
       }
       &__img-block {
         position: absolute;
-        top: 72px;
+        top: calc(60px + 72px);
         right: 0;
         width: calc(380px - 100px - 132px);
       }

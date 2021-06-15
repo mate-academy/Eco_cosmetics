@@ -18,13 +18,19 @@
     column-gap: 20px;
   }
 
-  &__item::after {
-    display: block;
-    content: "";
-    height: 2px;
-    width: 100%;
-    margin-top: 20px;
-    background-color: $header-color;
+  &__item {
+    &::after {
+      display: block;
+      content: "";
+      height: 2px;
+      width: 100%;
+      margin-top: 20px;
+      background-color: $header-color;
+    }
+  }
+
+  &__sticker {
+    @extend %sticked-label;
   }
 
   &__catalog {
@@ -68,12 +74,12 @@
       margin-top: 10px;
       font-size: 18px;
     }
-  }
 
-  &__card:hover {
-    color: #977272;
-    .shop__card-img {
-      transform: scale(1.03);
+    &:hover {
+      color: #977272;
+      .shop__card-img {
+        transform: scale(1.03);
+      }
     }
   }
 
@@ -82,7 +88,7 @@
     align-self: center;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: $desktop-width) {
     & {
       padding: 0 27px;
       &__card {
@@ -94,7 +100,7 @@
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: $tablet-width) {
     & {
       overflow-x: hidden;
       &__catalog {
@@ -113,7 +119,7 @@
     }
   }
 
-  @media (max-width: 575px) {
+  @media (max-width: $phone-width) {
     & {
       padding: 60px 20px;
       align-items: center;
@@ -128,8 +134,10 @@
         justify-content: space-between;
       }
 
-      &__item::after {
-        margin-top: 10px;
+      &__item {
+        &::after {
+          margin-top: 10px;
+        }
       }
 
       &__catalog {

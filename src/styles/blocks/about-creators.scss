@@ -1,16 +1,14 @@
 .about-creators {
-  margin: 200px 0 100px;
   @extend %FontFamily-Avenir;
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 0 50px 0 150px;
+  padding: 200px 50px 0 150px;
 
   &__text-block {
     display: flex;
     flex-direction: column;
-    // justify-content: flex-end;
-    width: 400px;
+    max-width: 400px;
     margin-right: 100px;
   }
 
@@ -62,10 +60,9 @@
     max-height: 100%;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: $desktop-width) {
     & {
-      padding: 0;
-      padding-left: 27px;
+      padding: 100px 0 0 27px;
 
       .sticked-label {
         display: none;
@@ -73,7 +70,7 @@
     }
   }
 
-  @media (max-width: 1000px) {
+  @media (max-width: $tablet-width) {
     & {
       &__text-block {
         margin: 0;
@@ -98,7 +95,7 @@
       }
 
       &__button {
-        margin-top: 30px - 12px; //12 - learn-more paddings
+        margin-top: calc(30px - 12px); //12 - learn-more paddings
       }
 
       &__img-box {
@@ -107,7 +104,7 @@
     }
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: $phone-width) {
     & {
       display: block;
       padding: 0 27px;
