@@ -1,5 +1,7 @@
 .mobile-nav {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
   font-family: inherit;
   font-size: inherit;
   width: 100%;
@@ -8,7 +10,7 @@
   color: $footer-color;
   background-color: $body-main-color;
   transform: translateX(-200%);
-  z-index: 1;
+  transition: transform 0.5s;
 
   &__button {
     width: 15px;
@@ -49,9 +51,7 @@
   }
 
   &--active {
-    position: fixed;
-    top: 0;
-    left: 0;
     transform: translateX(0);
+    z-index: 1;
   }
 }
