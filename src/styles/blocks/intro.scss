@@ -7,10 +7,6 @@
     object-fit: cover;
 
     margin-bottom: 24px;
-    @include onTablet {
-      width: 100%;
-      padding: 0 28px;
-    }
   }
 
   &__text {
@@ -24,19 +20,37 @@
     text-align: center;
     font-weight: normal;
     font-size: 24px;
-    line-height: 31px;
+    line-height: 130%;
     margin: 0 0 12px;
   }
 
   &__info {
     font-size: 18px;
-    line-height: 27px;
+    line-height: 150%;
 
     margin: 0 0 46px;
   }
 
   &__link {
     @include button;
+  }
+
+  @include onTablet {
+    &__image {
+      width: 100%;
+      padding: 0 28px;
+      margin-bottom: 50px;
+    }
+
+    &__title {
+      max-width: 480px;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    &__info {
+      margin-bottom: 56px;
+    }
   }
 
   @include onDesktop {
@@ -48,13 +62,7 @@
       max-width: 580px;
       padding: 0;
       margin: 0;
-      transition: transform 0.3s, box-shadow 0.3s, border-radius 0.3s;
-
-      &:hover {
-        transform: scale(1.1);
-        box-shadow: 3px 5px 15px ;
-        border-radius: 4px;
-      }
+      @include image-hover-effect;
     }
 
     &__text {

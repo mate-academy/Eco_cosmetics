@@ -33,3 +33,41 @@
     text-shadow: 4px 4px 10px;
   }
 }
+
+@mixin image-hover-effect {
+  transition: transform 0.3s, box-shadow 0.3s, border-radius 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 3px 5px 15px ;
+    border-radius: 4px;
+  }
+}
+
+@mixin page-link {
+  position: relative;
+  font-family: "Sharp Sans Display No2", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color-green;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: $color-green;
+    transition: width 0.4s;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
