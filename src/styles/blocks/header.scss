@@ -3,21 +3,18 @@
   justify-content: space-between;
   align-items: center;
 
-  max-width: 1260px;
   padding: 12px 20px;
 
-  &__bascet--desktop {
-    display: none;
+  &__bascet {
+    transition: transform 0.6s;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
   }
 
   @include onTablet {
-    &__bascet {
-      display: none;
-
-      &--desktop {
-        display: block;
-      }
-    }
+    padding: 24px 28px;
   }
 
   @include onDesktop {
@@ -49,14 +46,6 @@
 
       &:hover {
         transform: scale(1.2);
-      }
-    }
-
-    &__bascet--desktop {
-      transition: transform 0.6s;
-
-      &:hover {
-        transform: rotate(360deg);
       }
     }
   }
