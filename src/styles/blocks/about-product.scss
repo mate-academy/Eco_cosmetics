@@ -70,13 +70,13 @@
     }
 
     &__text {
-      max-width: 342px;
+      max-width: 380px;
       padding: 0 28px;
     }
 
     &__image {
       display: block;
-      object-fit: cover;
+      object-fit: contain;
       &--desktop {
         display: none;
       }
@@ -118,7 +118,7 @@
 
     &__subtitle-text {
       display: block;
-      width: 380px;
+      max-width: 380px;
       margin: 0;
     }
 
@@ -134,8 +134,34 @@
     }
 
     &__text {
-      max-width: 380px;
+      position: relative;
+      min-width: 380px;
       padding: 0;
+
+      &::before {
+        position: absolute;
+        left: -125px;
+        top: 200px;
+        content: "";
+        height: 1px;
+        width: 100px;
+        background-color: rgba(52, 79, 16, 0.5);
+        transform: rotate(90deg);
+      }
+
+      &::after {
+        position: absolute;
+        left: -180px;
+        top: 0;
+        content: "witch of mountain winds";
+        text-transform: uppercase;
+        color: rgba(52, 79, 16, 0.5);
+        font-family: "Sharp Sans Display No2", sans-serif;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        transform: rotate(270deg);
+      }
     }
 
     &__info {
@@ -150,18 +176,25 @@
     &__image-container {
       display: flex;
       align-items: flex-end;
-      gap: 30px;
+      gap: 20px;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: translate(-20px, -20px) scale(1.1);
+
+      }
     }
 
     &__image {
-      display: block;
-      width: 480px;
+      height: 530px;
+      max-width: 480px;
       object-fit: cover;
 
       &--desktop {
         display: block;
-        width: 130px;
+        max-width: 130px;
         height: 430px;
+        object-fit: cover;
       }
     }
   }
