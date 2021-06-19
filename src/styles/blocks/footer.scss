@@ -39,6 +39,7 @@
 
   &__text {
     line-height: 150%;
+    margin: 0;
   }
 
   &__copyright {
@@ -47,5 +48,45 @@
     text-transform: uppercase;
     margin: 0;
     padding: 0;
+  }
+
+  @include onTablet {
+    padding-bottom: 50px;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+
+    &__list {
+      margin: 0;
+    }
+
+    &__list-item {
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &__copyright {
+      align-self: start;
+    }
+  }
+
+  @include onDesktop {
+    position: relative;
+    padding: 60px 50px;
+
+    &__list--desktop {
+      display: flex;
+      gap: 40px;
+    }
+
+    &__list-item--desktop {
+      position: absolute;
+      bottom: 30%;
+      right: 280px;
+    }
   }
 }
