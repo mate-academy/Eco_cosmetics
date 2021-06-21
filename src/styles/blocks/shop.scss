@@ -1,7 +1,6 @@
 .shop {
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
 
   &__title {
     align-self: center;
@@ -15,16 +14,11 @@
     color: $color-green;
   }
 
-  &__product {
-    display: flex;
-    flex-direction: column;
-  }
-
   &__list {
     display: flex;
     list-style: none;
     gap: 16px;
-    padding: 0;
+    padding: 0 20px;
   }
 
   &__item {
@@ -43,10 +37,25 @@
     }
   }
 
+  &__products {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  &__product {
+    &--tablet,
+    &--desktop {
+      display: none;
+    }
+
+  }
+
   &__image {
-    width: 100vw;
+    width: 100%;
     height: 270px;
     object-fit: cover;
+    margin-bottom: 20px;
   }
 
   &__product-name {
@@ -54,6 +63,8 @@
     font-size: 20px;
     line-height: 150%;
     letter-spacing: 0.05em;
+    margin: 0 0 10px;
+    padding: 0 20px;
   }
 
   &__product-price {
@@ -62,19 +73,19 @@
     font-size: 18px;
     line-height: 150%;
     letter-spacing: 0.05em;
-    margin-bottom: 18px;
+    padding: 0 20px;
   }
 
   &__switch {
     display: flex;
-    gap: 32px ;
+    gap: 32px;
     align-self: flex-end;
     text-decoration: none;
     color: $color-dark_gray;
     font-size: 18px;
     line-height: 150%;
     letter-spacing: 0.05em;
-    margin-bottom: 18px;
+    margin-bottom: 32px;
   }
 
   &__back {
@@ -96,5 +107,97 @@
     align-self: center;
     display: block;
     @include button;
+  }
+
+  @include onTablet {
+    padding: 0 28px;
+
+    &__title {
+      align-self: flex-start;
+    }
+
+    &__list {
+      padding: 0;
+    }
+
+    &__products {
+      justify-content: center;
+      gap: 30px;
+    }
+
+    &__product {
+      &--tablet {
+        display: block;
+      }
+    }
+
+    &__image {
+      height: 340px;
+    }
+
+    &__product-name {
+      padding: 0;
+    }
+
+    &__product-price {
+      padding: 0;
+    }
+  }
+
+  @include onDesktop {
+    position: relative;
+    padding-left: 150px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100px;
+      height: 1px;
+      left: 28px;
+      top: 230px;
+      background-color: rgba(52, 79, 16, 0.5);
+      transform: rotate(90deg);
+
+    }
+
+    &::after {
+      position: absolute;
+      content: "shop";
+      left: 60px;
+      top: 130px;
+      text-transform: uppercase;
+      color: rgba(52, 79, 16, 0.5);
+      font-family: "Sharp Sans Display No2", sans-serif;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      transform: rotate(270deg);
+    }
+
+    &__products {
+      justify-content: flex-start;
+      gap: 20px;
+      margin-bottom: 45px;
+    }
+
+    &__product {
+      &--desktop {
+        display: block;
+      }
+    }
+
+    &__image {
+      height: 500px;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &__switch {
+      gap: 32px;
+      align-self: flex-start;
+    }
   }
 }
