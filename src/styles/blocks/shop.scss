@@ -1,0 +1,100 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+
+  &__title {
+    align-self: center;
+    margin: 0 0 12px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-green;
+  }
+
+  &__product {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    gap: 16px;
+    padding: 0;
+  }
+
+  &__item {
+    color: #828282;
+    cursor: pointer ;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s, color 0.3s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-dark_gray;
+      border-bottom: 2px solid #000;
+    }
+  }
+
+  &__image {
+    width: 100vw;
+    height: 270px;
+    object-fit: cover;
+  }
+
+  &__product-name {
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+  }
+
+  &__product-price {
+    text-decoration: none;
+    color: $color-dark_gray;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    margin-bottom: 18px;
+  }
+
+  &__switch {
+    display: flex;
+    gap: 32px ;
+    align-self: flex-end;
+    text-decoration: none;
+    color: $color-dark_gray;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    margin-bottom: 18px;
+  }
+
+  &__back {
+    display: block;
+    width: 28px;
+    height: 28px;
+
+    background-image: url(../images/Back.svg);
+  }
+
+  &__forvard {
+    display: block;
+    width: 28px;
+    height: 28px;
+    background-image: url(../images/next.svg);
+  }
+
+  &__button-all {
+    align-self: center;
+    display: block;
+    @include button;
+  }
+}

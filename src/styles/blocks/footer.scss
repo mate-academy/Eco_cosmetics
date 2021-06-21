@@ -1,11 +1,14 @@
 .footer {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   color: $color-gray;
   font-size: 14px;
   background-color: #8c9772;
 
-  padding: 30px 20px 60px;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px 60px;
+  }
 
   &__list {
     list-style: none;
@@ -51,9 +54,12 @@
   }
 
   @include onTablet {
-    padding-bottom: 50px;
 
     &__container {
+      padding-bottom: 50px;
+    }
+
+    &__content {
       display: flex;
       justify-content: space-between;
       margin-bottom: 50px;
@@ -75,8 +81,12 @@
   }
 
   @include onDesktop {
-    position: relative;
-    padding: 60px 50px;
+    &__container {
+      position: relative;
+      margin: 0 auto;
+      max-width: 1260px;
+      padding: 60px 50px;
+    }
 
     &__list--desktop {
       display: flex;
@@ -85,8 +95,8 @@
 
     &__list-item--desktop {
       position: absolute;
-      bottom: 30%;
-      right: 280px;
+      bottom: 25%;
+      right: 230px;
     }
   }
 }
