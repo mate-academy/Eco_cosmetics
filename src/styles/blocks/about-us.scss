@@ -1,0 +1,130 @@
+.about-us {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    padding: 0 20px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-green;
+  }
+
+  &__info {
+    margin: 0 0 44px;
+    max-width: 342px;
+
+    &--desktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: block;
+    @include page-link;
+    margin-bottom: 42px;
+  }
+
+  &__button {
+    align-self: center;
+    margin: 0;
+    display: block;
+    @include button;
+  }
+
+  &__image-container {
+    display: none;
+  }
+
+  @include onTablet {
+    &__container {
+      display: flex;
+      gap: 30px;
+      padding: 0 28px;
+    }
+
+    &__button {
+      align-self: flex-start;
+    }
+
+    &__image-container {
+      display: block;
+      width: 380px;
+    }
+
+    &__image {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include onDesktop {
+    position: relative;
+    padding-left: 150px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 100px;
+      height: 1px;
+      left: 30px;
+      top: 200px;
+      background-color: rgba(52, 79, 16, 0.5);
+      transform: rotate(90deg);
+
+    }
+
+    &::after {
+      position: absolute;
+      content: "about the creators";
+      left: 0;
+      top: 50px;
+      text-transform: uppercase;
+      color: rgba(52, 79, 16, 0.5);
+      font-family: "Sharp Sans Display No2", sans-serif;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      transform: rotate(270deg);
+    }
+    &__container {
+      padding: 0;
+      gap: 120px;
+    }
+
+    &__title {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    &__info {
+      max-width: 380px;
+
+      &--desktop {
+        display: block;
+      }
+    }
+
+    &__link {
+      margin-bottom: 62px;
+    }
+
+    &__image-container {
+      width: 580px;
+    }
+  }
+}
