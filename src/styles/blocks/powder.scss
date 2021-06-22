@@ -10,7 +10,8 @@
 
   &__ingreds {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 48px;
   }
 
   &__list {
@@ -34,7 +35,7 @@
       left: 150px;
       content: "";
       height: 1px;
-      width: 30vw;
+      width: 76px;
       background-color: $color-dark_gray;
     }
   }
@@ -84,5 +85,79 @@
     text-align: center;
     text-transform: uppercase;
     color: #000;
+  }
+
+  @include onTablet {
+    &__container {
+      padding: 0 28px;
+    }
+    &__title {
+      margin-bottom: 0;
+    }
+
+    &__ingreds {
+      justify-content: flex-end;
+    }
+
+    &__benefits {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 28px;
+    }
+
+    &__card {
+      max-width: 220px;
+    }
+  }
+
+  @include onDesktop {
+    &__container {
+      padding: 0 50px 0 150px;
+      &--desktop {
+        display: flex;
+      }
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__ingreds {
+      gap: 120px;
+    }
+
+    &__item {
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 226px;
+        content: "";
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        background-color: $color-dark_gray;
+        transform: translateY(-50%);
+      }
+    }
+
+    &__image-container {
+      width: 50%;
+      max-width: 100%;
+      overflow: visible;
+      transform: translateX(0);
+    }
+
+    &__benefits {
+      padding: 0 50px;
+    }
+
+    &__card-image {
+      transition: transform 0.4s;
+      &:hover {
+        transform: translateY(-20px);
+      }
+    }
   }
 }
