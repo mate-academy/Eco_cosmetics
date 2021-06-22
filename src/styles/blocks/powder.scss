@@ -1,8 +1,7 @@
 .powder {
-  padding: 0 20px;
-
   &__container {
     position: relative;
+    padding: 0 20px;
   }
 
   &__title {
@@ -11,40 +10,79 @@
 
   &__ingreds {
     display: flex;
+    justify-content: space-between;
   }
 
   &__list {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     list-style: none;
     margin: 0;
     padding: 0;
+    transform: translateY(-30px);
   }
 
   &__item {
     position: relative;
+    text-align: right;
     line-height: 150%;
-    margin-bottom: 72px;
 
-    &::before {
+    &::after {
       position: absolute;
-      top: 10px;
-      left: 170px;
+      top: 50%;
+      left: 150px;
       content: "";
       height: 1px;
-      width: 76px;
+      width: 30vw;
       background-color: $color-dark_gray;
     }
   }
 
   &__image-container {
-    position: absolute;
-    top: 110px;
-    right: 0;
-    width: 120px;
+    width: 50%;
+    max-width: 100%;
+    overflow: hidden;
+    transform: translateX(20px);
   }
 
   &__image {
+    object-position: left;
     object-fit: cover;
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    @include page-link;
+    margin-bottom: 105px;
+  }
+
+  &__benefits {
+    padding: 0 20px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  &__card-image {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+  }
+
+  &__card-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
   }
 }
