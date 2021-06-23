@@ -1,0 +1,110 @@
+.contact {
+  padding: 0 20px;
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    margin: 0 0 20px;
+  }
+
+  &__input {
+    padding: 5px 0;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 150%;
+    width: 100%;
+    background-color: $color-gray;
+    border: 0;
+    border-bottom: 1px transparent;
+    margin-bottom: 25px;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &--textarea {
+      resize: none;
+      margin-bottom: 30px;
+    }
+
+    &:required {
+      border-bottom: 1px solid #bdbdbd;
+    }
+
+    &:hover {
+      border-color: #6f6f6f;
+    }
+
+    &:focus {
+      border-color: $color-dark_gray;
+    }
+
+    &:invalid {
+      color: #eb5757;
+    }
+
+    &:required:valid {
+      color: $color-green;
+      border-color: $color-green;
+    }
+
+  }
+
+  &__button {
+    @include button;
+  }
+
+  &__image {
+    display: none;
+  }
+
+  @include onTablet {
+    padding: 0 28px;
+    display: flex;
+
+    &__container {
+      width: 50%;
+    }
+
+    &__image-container {
+      overflow: hidden;
+      transform: translateX(28px);
+    }
+
+    &__image {
+      height: 410px;
+      display: block;
+      object-fit: cover;
+      object-position: left;
+    }
+  }
+
+  @include onDesktop {
+    padding-left: 150px;
+    gap: 120px;
+
+    &__title {
+      text-transform: capitalize;
+      font-size: 36px;
+    }
+
+    &__text {
+      font-size: 24px;
+      width: 380px;
+    }
+
+    &__image-container {
+      overflow: visible;
+      transform: translateX(0);
+    }
+
+    &__image {
+      height: 530px;
+      transition: transform 0.4s;
+      &:hover {
+        cursor: pointer;
+        transform: translateX(-50px);
+      }
+    }
+  }
+}

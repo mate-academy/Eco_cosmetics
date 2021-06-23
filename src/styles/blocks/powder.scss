@@ -112,8 +112,35 @@
   }
 
   @include onDesktop {
+
     &__container {
       padding: 0 50px 0 150px;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 1px;
+        left: 30px;
+        top: 80px;
+        background-color: rgba(52, 79, 16, 0.5);
+        transform: rotate(90deg);
+      }
+
+      &::after {
+        position: absolute;
+        content: "ingredients";
+        left: 34px;
+        top: -34px;
+        text-transform: uppercase;
+        color: rgba(52, 79, 16, 0.5);
+        font-family: "Sharp Sans Display No2", sans-serif;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        transform: rotate(270deg);
+      }
+
       &--desktop {
         display: flex;
       }
@@ -149,6 +176,15 @@
       transform: translateX(0);
     }
 
+    &__image {
+      transition: transform 0.4s;
+
+      &:hover {
+        transform: translateX(-50px);
+        cursor: pointer;
+      }
+    }
+
     &__benefits {
       padding: 0 50px;
     }
@@ -157,6 +193,7 @@
       transition: transform 0.4s;
       &:hover {
         transform: translateY(-20px);
+        cursor: pointer;
       }
     }
   }
