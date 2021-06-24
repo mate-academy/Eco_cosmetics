@@ -9,6 +9,12 @@
     margin: 0 0 20px;
   }
 
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &__input {
     padding: 5px 0;
     font-family: inherit;
@@ -52,6 +58,9 @@
 
   &__button {
     @include button;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__image {
@@ -66,13 +75,18 @@
       width: 50%;
     }
 
+    &__form {
+      align-items: flex-start;
+    }
+
     &__image-container {
+      width: 50%;
       overflow: hidden;
       transform: translateX(28px);
     }
 
     &__image {
-      height: 410px;
+      width: 368px;
       display: block;
       object-fit: cover;
       object-position: left;
@@ -80,7 +94,7 @@
   }
 
   @include onDesktop {
-    padding-left: 150px;
+    padding: 0 50px 0 150px;
     gap: 120px;
 
     &__container {
@@ -123,12 +137,12 @@
     }
 
     &__image-container {
-      overflow: visible;
-      transform: translateX(0);
+      width: 100%;
+      transform: translateX(50px);
     }
 
     &__image {
-      height: 530px;
+      width: 610px;
       transition: transform 0.4s;
       &:hover {
         cursor: pointer;
