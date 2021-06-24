@@ -1,0 +1,153 @@
+.contact {
+  padding: 0 20px;
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    margin: 0 0 20px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__input {
+    padding: 5px 0;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 150%;
+    width: 100%;
+    background-color: $color-gray;
+    border: 0;
+    border-bottom: 1px transparent;
+    margin-bottom: 25px;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &--textarea {
+      resize: none;
+      margin-bottom: 30px;
+    }
+
+    &:required {
+      border-bottom: 1px solid #bdbdbd;
+    }
+
+    &:hover {
+      border-color: #6f6f6f;
+    }
+
+    &:focus {
+      border-color: $color-dark_gray;
+    }
+
+    &:invalid {
+      color: #eb5757;
+    }
+
+    &:required:valid {
+      color: $color-green;
+      border-color: $color-green;
+    }
+
+  }
+
+  &__button {
+    @include button;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__image {
+    display: none;
+  }
+
+  @include onTablet {
+    padding: 0 28px;
+    display: flex;
+
+    &__container {
+      width: 50%;
+    }
+
+    &__form {
+      align-items: flex-start;
+    }
+
+    &__image-container {
+      width: 50%;
+      overflow: hidden;
+      transform: translateX(28px);
+    }
+
+    &__image {
+      width: 368px;
+      display: block;
+      object-fit: cover;
+      object-position: left;
+    }
+  }
+
+  @include onDesktop {
+    padding: 0 50px 0 150px;
+    gap: 120px;
+
+    &__container {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 1px;
+        left: -120px;
+        top: 55px;
+        background-color: rgba(52, 79, 16, 0.5);
+        transform: rotate(90deg);
+      }
+
+      &::after {
+        position: absolute;
+        content: "ingredients";
+        left: -116px;
+        top: -60px;
+        text-transform: uppercase;
+        color: rgba(52, 79, 16, 0.5);
+        font-family: "Sharp Sans Display No2", sans-serif;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        transform: rotate(270deg);
+      }
+    }
+
+    &__title {
+      text-transform: capitalize;
+      font-size: 36px;
+    }
+
+    &__text {
+      font-size: 24px;
+      width: 380px;
+    }
+
+    &__image-container {
+      width: 100%;
+      transform: translateX(50px);
+    }
+
+    &__image {
+      width: 610px;
+      transition: transform 0.4s;
+      &:hover {
+        cursor: pointer;
+        transform: translateX(-50px);
+      }
+    }
+  }
+}
