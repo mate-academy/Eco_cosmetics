@@ -1,0 +1,212 @@
+$ingredientsPdLeft: 150px;
+$ingredientsPdRight: 51px;
+$ingredientsPaddingX: $ingredientsPdLeft + $ingredientsPdRight;
+
+.ingredients {
+  position: relative;
+  // max-width: 1265px;
+
+  padding: 150px
+    $ingredientsPdRight
+    150px
+    $ingredientsPdLeft;
+
+  @media (max-width: $widthLaptopM - 1) {
+    padding: 50px
+      0
+      0
+      $contentPaddingX-iPad;
+  }
+
+  @media (max-width: $width-iPad - 1) {
+    padding: 0;
+    padding-left: $contentPaddingX;
+    padding-bottom: 45px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1265px - $ingredientsPaddingX;
+    margin: 0 auto;
+    margin-right: 0;
+
+    @media (min-width: $widthLaptopL) {
+      margin-right: 80px;
+    }
+
+    @media (max-width: $width-iPad - 1) {
+      flex-direction: column;
+      max-width: $width-iPad - $contentPaddingX-iPad;
+    }
+  }
+
+  &__title {
+    max-width: 300px;
+    margin-bottom: 139px;
+
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @media (max-width: $widthLaptopS - 1) {
+      margin-bottom: 0;
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  &__title-break {
+    @media (max-width: $widthLaptopS - 1) {
+      display: none;
+    }
+  }
+
+  &__left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @media (max-width: $widthLaptopS - 1) {
+      justify-content: space-between;
+    }
+  }
+
+  &__mark {
+    position: absolute;
+    top: 25px;
+    left: -140px;
+
+    font-size: 11px;
+    line-height: 18px;
+    font-family: "Sharp-Sans-No2", sans-serif;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: rgba(52, 79, 16, 0.5);
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+
+    &::before {
+      content: "";
+      top: 9px;
+      left: -110px;
+      position: absolute;
+      width: 100px;
+      height: 1px;
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__learn-more {
+    @media (max-width: $width-iPad - 1) {
+      position: relative;
+      bottom: -440px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: flex-end;
+
+    @media (max-width: $widthLaptopS - 1) {
+      position: relative;
+    }
+
+    @media (max-width: $width-iPad - 1) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    padding-right: 119px;
+
+    @media (max-width: $widthLaptopS - 1) {
+      position: absolute;
+      right: 210px;
+      top: 45px;
+    }
+
+    @media (max-width: $width-iPad - 1) {
+      right: 67px;
+      top: 13px;
+    }
+  }
+
+  &__list-item {
+    position: relative;
+    display: flex;
+    margin-bottom: 52px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+
+    text-transform: capitalize;
+    color: #333;
+
+    &:last-child {
+      margin-bottom: 35px;
+    }
+
+    @media (max-width: $widthLaptopS - 1) {
+      margin-bottom: 43px;
+    }
+  }
+
+  &__list-item-hidden {
+    @media (max-width: $widthLaptopS - 1) {
+      display: none;
+    }
+  }
+
+  &__list-item-break {
+    @media (min-width: $widthLaptopS) {
+      display: none;
+    }
+  }
+
+  &__list-image {
+    position: absolute;
+    display: flex;
+    left: calc(100% + 20px);
+    top: calc(50% - 2px);
+
+    width: 80px;
+    height: 5px;
+    background-image: url("../images/ingradients/arrow.svg");
+
+    @media (max-width: $widthLaptopS - 1) {
+      width: 76px;
+      height: 1px;
+
+      background-image: url("../images/ingradients/arrow-iPad.svg");
+    }
+  }
+
+  &__image {
+    width: 382px;
+    height: 398px;
+    background-image: url("../images/ingradients/main.svg");
+
+    @media (max-width: $widthLaptopS - 1) {
+      width: 281px;
+
+      background-image: url("../images/ingradients/main-iPad.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    @media (max-width: $width-iPad - 1) {
+      width: 149px;
+    }
+  }
+}

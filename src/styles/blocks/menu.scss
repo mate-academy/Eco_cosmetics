@@ -1,0 +1,71 @@
+$menuPaddingX: 23px;
+$menuPaddingX-iPad: 30px;
+
+$linkPaddingY: 10px;
+
+$navItemHeight: 63px;
+$navItemHeight-iPad: 83px;
+
+$navListMarginTop: 113px - $navItemHeight;
+$navListMarginTop-iPad: 176px - $navItemHeight-iPad;
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 $menuPaddingX;
+
+  width: 100vw;
+  height: 100vh;
+
+  font-family: "Sharp-Sans-No2-Book", sans-serif;
+  text-align: center;
+
+  background-color: #333;
+
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-out,
+    padding 0.5s linear;
+
+  @media (min-width: $width-iPad) {
+    padding: 0 $menuPaddingX-iPad;
+  }
+
+  &--active {
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+  }
+
+  &__nav-list {
+    margin-top: $navListMarginTop;
+
+    transition: margin-top 0.7s ease-in-out;
+
+    @media (min-width: $width-iPad) {
+      margin-top: $navListMarginTop-iPad;
+    }
+  }
+
+  &__nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: $navItemHeight;
+    border-bottom: 1px solid #828282;
+
+    transition: height 0.5s ease-in-out;
+
+    @media (min-width: $width-iPad) {
+      height: $navItemHeight-iPad;
+    }
+  }
+
+  &__nav-link {
+    display: block;
+    width: 100%;
+    padding-top: $linkPaddingY;
+    padding-bottom: $linkPaddingY;
+    font-size: 18px;
+    color: $mainBgColor;
+  }
+}
