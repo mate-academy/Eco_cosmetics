@@ -1,0 +1,125 @@
+.ingredients {
+  @extend %sectionFlexContainer;
+
+  position: relative;
+  padding-top: $sectionIndentTop;
+
+  @include desctop {
+    padding-top: $sectionPaddingDesktop;
+  }
+
+  &__inner {
+    display: grid;
+    position: relative;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 1fr;
+
+    @include tablet {
+      padding-bottom: 40px;
+    }
+
+    @include mobile {
+      gap: 0;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+
+    @include tabletMini {
+      max-width: 380px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 38px;
+    @include mobile {
+      margin-bottom: 38px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__image-block {
+    overflow: hidden;
+  }
+  &__picture {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, auto));
+    grid-template-rows: repeat(5, 80px);
+    grid-auto-flow: column;
+    column-gap: 95px;
+
+    @include tabletMini {
+      column-gap: 5%;
+    }
+
+    &-wrapper {
+      width: 100%;
+      display: grid;
+      justify-content: space-between;
+      grid-column: 2;
+      grid-row: 1 / span 2;
+
+      @include tabletMini {
+        grid-column: 1;
+        grid-row: 2;
+      }
+    }
+  }
+
+  &__description {
+    position: relative;
+    text-align: right;
+    align-self: center;
+    padding-right: 2px;
+
+    @include mobile {
+      padding-right: 20px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: -108px;
+      display: block;
+      background-color: $darkColor;
+      top: 9px;
+      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -105px;
+      display: block;
+      background-color: $darkColor;
+      top: 50%;
+      width: 90px;
+      height: 1px;
+      transform: translateY(-50%);
+
+      @include mobile {
+        right: -80px;
+      }
+    }
+  }
+
+  &__img {
+    grid-row: 1 / 6;
+  }
+}

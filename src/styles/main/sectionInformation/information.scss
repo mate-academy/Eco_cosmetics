@@ -1,0 +1,61 @@
+.information {
+  display: flex;
+  margin-top: 200px;
+
+  @include tabletMini {
+    padding: 20px;
+
+    margin-top: 60px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    column-gap: 120px;
+  }
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__wrapper:first-child {
+    border-top: 1px solid rgba(52, 79, 16, 0.5);
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding: 100px 0 100px 100px;
+
+    @include tabletMini {
+      display: none;
+    }
+  }
+
+  &__wrapper:last-child {
+    border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    flex-grow: 2;
+    justify-content: flex-start;
+    padding: 100px 100px 100px 0;
+
+    @include tabletMini {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  &__about {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__title {
+    color: $khakiColor;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}

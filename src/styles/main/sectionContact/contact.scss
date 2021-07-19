@@ -1,0 +1,91 @@
+.contact {
+  @extend %sectionFlexContainer;
+
+  position: relative;
+  padding-top: 200px;
+
+  @include desktop {
+    padding-top: $sectionPaddingDesktop;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+
+    @include desktop {
+      -webkit-column-gap: 70px;
+    }
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 150%;
+
+    @include tablet {
+      font-size: 24px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__text {
+    max-width: 380px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 150%;
+
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    max-width: 100%;
+
+    &:last-child {
+      margin-top: 60px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px 0;
+    background: transparent;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid $GrayColor;
+
+    &::placeholder {
+      text-transform: capitalize;
+      color: $GrayColor;
+    }
+
+    @include tabletMini {
+      font-size: 14px;
+    }
+  }
+
+  &__image-block {
+    @include desktop {
+      max-width: 529px;
+      height: 584px;
+    }
+
+    @include tablet {
+      width: 368px;
+      height: 409px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.about-brand {
+  @extend %sectionFlexContainer;
+
+  position: relative;
+  padding-top: $sectionIndentTop;
+
+  @include desctop {
+    padding-top: $sectionPaddingDesktop;
+  }
+
+  &__inner {
+    display: flex;
+    column-gap: 120px;
+    margin-left: -110px;
+    justify-content: space-between;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__text-block {
+    & :nth-child(3) {
+      margin-top: 30px;
+    }
+
+    @include tabletMini {
+      & :nth-child(3) {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 40px;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__text {
+    max-width: 500px;
+    margin-top: 20px;
+    font-weight: 500;
+  }
+
+  &__image-block {
+    position: relative;
+
+    @include tablet {
+      display: flex;
+      flex: 0 0 47%;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__image {
+    display: block;
+    @include tablet {
+      margin-top: 40px;
+      max-width: 480px;
+      width: 100%;
+    }
+    &:nth-child(2) {
+      position: absolute;
+      bottom: 0;
+      right: -230px;
+      height: 430px;
+      width: 208px;
+      overflow: hidden;
+      object-fit: cover;
+      object-position: center;
+
+      @include desctop {
+        display: none;
+      }
+    }
+  }
+}
