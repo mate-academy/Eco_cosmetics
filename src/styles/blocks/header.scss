@@ -1,0 +1,164 @@
+.header {
+  @include onLaptop {
+    height: 100vh;
+  }
+
+  &__menu {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onLaptop {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__content {
+    @include onLaptop {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+  }
+
+  &__text {
+    padding: 0 20px;
+
+    @include onLaptop {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      order: -1;
+
+      width: 480px;
+      margin-right: 20px;
+      padding: 0;
+    }
+  }
+
+  &__photo-container {
+    position: relative;
+    width: 100%;
+    height: 270px;
+
+    margin-bottom: 25px;
+
+    @include onTablet {
+      height: 500px;
+      margin-bottom: 50px;
+    }
+
+    @include onLaptop {
+      width: 50%;
+      height: 450px;
+      margin: 0;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: normal;
+    text-align: center;
+    color: $colorGrey;
+
+    @include onTablet {
+      padding: 0 121px;
+      margin-bottom: 20px;
+
+      font-size: 36px;
+      line-height: 47px;
+      font-weight: bold;
+    }
+
+    @include onLaptop {
+      padding: 0;
+      margin-bottom: 30px;
+
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 72px;
+      text-align: left;
+
+      color: $colorGrey;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+      line-height: 60px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 46px;
+
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: $colorGrey;
+
+    @include onTablet {
+      margin-bottom: 55px;
+      font-weight: bold;
+    }
+
+    @include onLaptop {
+      margin-bottom: 50px;
+      font-size: 22px;
+      line-height: 29px;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include onLaptop {
+      margin: 0;
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+    
+    @include onLaptop {
+      order: -1;
+    }
+  }
+
+  &__logo {
+    display: none;
+    margin: 3px 0 0 12px;
+
+    font-family: "Sharp Sans Display No2 Bold", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $colorGreen;
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+}
