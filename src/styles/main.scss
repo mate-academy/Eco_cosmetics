@@ -1,7 +1,234 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils/reset";
+@import "./utils/normalize";
+@import "./utils/fonts";
 
-body {
-  background: $c-gray;
+@import "./blocks/page.scss";
+@import "./blocks/top-actions.scss";
+
+@mixin onPhone {
+  @media (max-width: 760px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onWideScreen {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin full-screen-element-width($padding) {
+  width: calc(100% - #{$padding} * 2);
+}
+
+$main-bg-color: #e4dfd3;
+$main-font-color: #344f10;
+$dark-color: #333;
+$icon-size: 24px;
+$padding-on-phone: 20px;
+$padding-on-tablet: 28px;
+$padding-on-desktop: 40px 50px;
+$padding-on-wide-screen: 40px 130px;
+
+.header {
+  min-width: 270px;
+
+  &__content {
+    height: 100vh;
+    background-color: #e4dfd3;
+
+    @include onWideScreen {
+      background-color: #fff;
+    }
+  }
+}
+
+.top-container {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  @include onTablet {
+    padding: $padding-on-tablet;
+  }
+
+  @include onPhone() {
+    padding: $padding-on-phone;
+  }
+
+  @include onDesktop {
+    padding: $padding-on-desktop;
+  }
+
+  @include onWideScreen {
+    padding: $padding-on-wide-screen;
+  }
+}
+
+.icon {
+  display: flex;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__brand-name {
+    display: none;
+  }
+
+  @include onDesktop {
+    &__brand-name {
+      display: inline-block;
+      position: absolute;
+      transform: translate(30%, 100%);
+      font-family: "Sharp Sans Display No2", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      color: $main-font-color;
+
+      text-transform: uppercase;
+    }
+  }
+
+  &--menu {
+    @include square($icon-size);
+
+    background-image: url(../images/menu.svg);
+  }
+
+  &--logo {
+    @include square($icon-size);
+
+    background-image: url(../images/logo.svg);
+
+    @include onDesktop {
+      @include square(50px);
+    }
+  }
+
+  &--cart {
+    @include square($icon-size);
+
+    background-image: url(../images/cart.svg);
+
+    @include onDesktop {
+      @include square(26px);
+    }
+  }
+
+  &--cross {
+    @include square($icon-size);
+
+    background-image: url(../images/cross.svg);
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+
+    list-style: none;
+  }
+
+  &__item {
+    padding: 0 20px;
+  }
+
+  &__link {
+    display: inline-block;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+    padding-bottom: 6px;
+    border-bottom: 1px solid transparent;
+    color: $main-font-color;
+
+    transform: translateY(6px);
+    transition: 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid $main-font-color;
+    }
+  }
+}
+
+.menu {
+  background-color: $dark-color;
+
+  &__content {
+    height: 100vh;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    list-style: none;
+
+    @include onTablet {
+      margin-top: 80px;
+    }
+
+    @include onPhone {
+      margin-top: 26px;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include full-screen-element-width($padding-on-phone);
+
+    @include onTablet {
+      @include full-screen-element-width($padding-on-tablet);
+      margin-bottom: 50px;
+    }
+    
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+    color: $main-bg-color;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #828282;
+    transition: 0.3s;
+
+    &:hover {
+      color: #f2f2f2;
+      border-color: #f2f2f2;
+    }
+  }
+
+  @include onDesktop {
+    display: none;
+  }
 }
