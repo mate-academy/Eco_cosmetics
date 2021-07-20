@@ -21,10 +21,33 @@
   }
 
   &__link {
-    font-family: "Sharp Sans Display No2 Bold", sans-serif;
+    position: relative;
+    display: block;
+    font-family: "Sharp Sans Display No2", sans-serif;
     font-size: 18px;
     line-height: 23px;
 
     color: $colorGreen;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 100%;
+      
+      width: 100%;
+      height: 3px;
+
+      background-color: $colorGreen;
+      opacity: 0;
+
+      transition: opacity 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
   }
 }
