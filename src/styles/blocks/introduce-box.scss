@@ -1,0 +1,85 @@
+.introduce {
+  @extend %FontFamily-Avenir;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 50px 200px 150px;
+
+  &__text {
+    max-width: 480px;
+    margin-right: 20px;
+    color: $body-main-color;
+    align-items: center;
+  }
+
+  &__text1 {
+    font-size: 60px;
+  }
+
+  &__text2 {
+    padding-top: 30px;
+    padding-bottom: 52px;
+    font-size: 22px;
+  }
+
+  &__button {
+    @extend %button;
+  }
+
+  &__img {
+    overflow: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    max-width: 570px;
+    max-height: 450px;
+    width: 100%;
+  }
+
+  @media (max-width: $desktop-width) {
+    & {
+      padding-left: 50px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    & {
+      flex-direction: column-reverse;
+      align-items: center;
+      padding: 30px 27px 100px;
+      text-align: center;
+
+      &__text {
+        max-width: 480px;
+        font-size: 30px;
+      }
+
+      &__text1 {
+        font-size: inherit;
+        padding-top: 50px;
+      }
+
+      &__img {
+        max-width: 100%;
+        max-height: 65vw;
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: $phone-width) {
+    & {
+      padding: 12px 0 0;
+      &__text {
+        margin: 0;
+        padding: 0 20px;
+
+      }
+      &__text1 {
+        padding-top: 25px;
+      }
+      &__text2 {
+        padding: 12px 0 46px;
+      }
+    }
+  }
+}

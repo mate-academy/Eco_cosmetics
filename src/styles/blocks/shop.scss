@@ -1,0 +1,160 @@
+.shop {
+  @extend %FontFamily-Avenir;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 150px;
+  text-transform: uppercase;
+  color: $header-color;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    column-gap: 20px;
+  }
+
+  &__item {
+    &::after {
+      display: block;
+      content: "";
+      height: 2px;
+      width: 100%;
+      margin-top: 20px;
+      background-color: $header-color;
+    }
+  }
+
+  &__sticker {
+    @extend %sticked-label;
+  }
+
+  &__catalog {
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    margin: 63px 0 30px;
+    padding-bottom: 30px;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      height: 9px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $second-main-color;
+      border-radius: 50px;
+      outline: $second-main-color;
+    }
+  }
+
+  &__card {
+    width: 380px;
+    cursor: pointer;
+    transition: color $transition-duration;
+    flex-shrink: 0;
+    &-img {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: 500px;
+      transition: transform $transition-duration;
+    }
+    &-name {
+      margin-top: 20px;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    &-price {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    &:hover {
+      color: $second-main-color;
+      .shop__card-img {
+        transform: scale(1.03);
+      }
+    }
+  }
+
+  &__button {
+    @extend %button;
+    align-self: center;
+  }
+
+  @media (max-width: $desktop-width) {
+    & {
+      padding: 0 27px;
+      &__card {
+        &-img {
+          width: 100%;
+          height: 300px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    & {
+      overflow-x: hidden;
+      &__catalog {
+        margin: 20px 0 30px;
+        padding-bottom: 20px;
+        width: 100vw;
+      }
+
+      &__card {
+        width: 47.8%;
+        &-img {
+          width: 100%;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $phone-width) {
+    & {
+      padding: 60px 20px;
+      align-items: center;
+      overflow-x: hidden;
+      &__title {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+
+      &__category {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__item {
+        &::after {
+          margin-top: 10px;
+        }
+      }
+
+      &__catalog {
+        width: 100%;
+      }
+
+      &__card {
+        width: 100vw;
+        &-img {
+          height: 267px;
+        }
+        &-name {
+          font-size: 20px;
+        }
+        &-price {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

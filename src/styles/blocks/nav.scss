@@ -1,0 +1,35 @@
+.nav {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  transition: color $transition-duration, background-color $transition-duration;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    padding: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background-color: inherit;
+      transition: width $transition-duration,
+        background-color $transition-duration;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

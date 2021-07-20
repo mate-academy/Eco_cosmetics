@@ -1,0 +1,122 @@
+.about {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 200px 0 200px 150px;
+
+  transition: width $transition-duration linear;
+
+  &__block {
+    @extend %FontFamily-Avenir;
+    width: 380px;
+    margin-right: 30px;
+    align-self: flex-end;
+    flex-shrink: 0;
+  }
+
+  &__sticker {
+    @extend %sticked-label;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 36px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: $header-color;
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  &__learn-more-button {
+    @extend %learn-more-button;
+  }
+
+  &__img-box {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    &-big-photo {
+      display: block;
+      width: 480px;
+      height: 530px;
+    }
+    &-small-photo {
+      display: block;
+      width: calc(100% - 100px - 20px - 500px);
+      height: 430px;
+      object-fit: cover;
+      margin-left: 20px;
+      transition: width $transition-duration linear;
+    }
+
+  }
+
+  &__img-box:hover {
+    .about__img-box-small-photo {
+      width: calc(100% - 100px - 20px - 500px + 20px);
+      // transform: scaleX(1.05);
+    }
+  }
+
+  @media (max-width: $desktop-width) {
+    & {
+      padding: 100px 0 80px 27px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    & {
+      &__block {
+        width: 45%;
+        align-self: center;
+      }
+
+      &__paragraph--hidden {
+        display: none;
+      }
+
+      &__title {
+        font-size: 24px;
+      }
+
+      &__img-box {
+        max-width: 48%;
+        width: 48%;
+
+      }
+      &__img-box-big-photo {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+
+        align-self: center;
+      }
+      &__img-box-small-photo {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: $phone-width) {
+    & {
+
+      padding: 0 20px;
+
+      &__block {
+        width: 100%;
+      }
+
+      &__img-box {
+        display: none;
+      }
+    }
+  }
+}

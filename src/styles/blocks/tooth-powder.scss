@@ -1,0 +1,137 @@
+.tooth-powder {
+  position: relative;
+  @extend %FontFamily-Avenir;
+  display: flex;
+  justify-content: space-between;
+  padding: 200px 50px 0 150px;
+  color: $header-color;
+
+  &__sticker {
+    @extend %sticked-label;
+  }
+
+  &__title-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 380px;
+  }
+
+  &__title {
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+
+  &__learn-more-button {
+    @extend %learn-more-button;
+  }
+
+  &__img-block {
+    position: relative;
+    display: flex;
+  }
+
+  &__img {
+    display: block;
+    width: 380px;
+    height: 395px;
+    object-fit: cover;
+    object-position: top left;
+    overflow-x: hidden;
+  }
+
+  &__items-block {
+    position: absolute;
+    left: -75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-shrink: 0;
+    height: 100%;
+    text-align: right;
+    margin-right: 20px;
+  }
+
+  &__item {
+    text-transform: capitalize;
+    align-items: center;
+    transition: transform 0.2s linear;
+  }
+
+  &__item::after {
+    display: inline-block;
+    content: "";
+    width: 76px;
+    height: 1em;
+    margin-left: 20px;
+    background-image: url(../images/line.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__item:hover {
+    transform: translateX(-5px);
+  }
+
+  @media (max-width: $desktop-width) {
+    & {
+      padding: 100px 27px 0;
+
+      &__title-block {
+        width: 300px;
+      }
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    & {
+      padding: 100px 0 0 27px;
+      &__title {
+        font-size: 24px;
+      }
+
+      &__img-block {
+        width: calc(380px - 100px);
+      }
+
+      &__items-block {
+        left: -70%;
+      }
+    }
+  }
+
+  @media (max-width: $phone-width) {
+    & {
+      padding-top: 60px;
+      &__title-block {
+        height: 500px;
+      }
+
+      &__title {
+        height: 72px;
+      }
+      &__img-block {
+        position: absolute;
+        top: calc(60px + 72px);
+        right: 0;
+        width: calc(380px - 100px - 132px);
+      }
+
+      &__items-block {
+        left: -120%;
+      }
+
+      &__item {
+        display: flex;
+        justify-content: flex-end;
+        width: 120px + 76px + 20px;
+      }
+
+      &__item::after {
+        background-image: url(../images/Rectangle-line.svg);
+        width: 72px;
+      }
+    }
+  }
+}

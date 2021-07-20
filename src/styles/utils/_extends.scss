@@ -2,3 +2,88 @@
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
+
+%FontFamily-Sharp {
+  font-family: "Sharp Sans Display no2", sans-serif;
+  font-weight: 500;
+}
+
+%FontFamily-Sharp-Italic {
+  font-family: "Sharp Sans Display no2", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+%FontFamily-Avenir {
+  font-family: "Avenir", sans-serif;
+  font-weight: 500;
+}
+
+%content-width-1500 {
+  max-width: 1500px;
+  margin: auto;
+}
+
+%content-padding-leftright {
+  padding-left: 150px;
+  padding-right: 50px;
+}
+
+%short-story__width {
+  width: 380px;
+}
+
+%sticked-label {
+  position: absolute;
+  top: calc(12em + 170px);
+  left: 50px;
+}
+
+%button {
+  @extend %FontFamily-Sharp;
+  display: block;
+  font-size: 16px;
+  width: 280px;
+  height: 60px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+  color: #f2f2f2;
+  background-color: $body-main-color;
+  border: 1px solid $body-main-color;
+  transition: color $transition-duration, background-color $transition-duration;
+  &:hover {
+    color: $body-main-color;
+    background-color: $body-bgc;
+  }
+}
+
+%learn-more-button {
+  display: block;
+  @extend %FontFamily-Sharp;
+  padding: 12px 0;
+  cursor: pointer;
+  width: fit-content;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: $body-bgc;
+  border: none;
+  color: $header-color;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-top: 10px;
+    background-color: $header-color;
+    transition: width $transition-duration;
+  }
+
+  &:hover::after {
+    width: 0;
+  }
+}
