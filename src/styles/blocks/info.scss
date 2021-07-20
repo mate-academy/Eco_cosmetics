@@ -1,0 +1,95 @@
+.info {
+  position: relative;
+  display: block;
+  padding: 0 20px;
+
+  @include onLaptop {
+    display: grid;
+    padding: 0;
+  }
+
+  &__item {
+    @include onLaptop {
+      padding: 100px 0;
+    }
+  }
+
+  &__item-link {
+    @include onTablet {
+      width: 280px;
+      margin: 0 auto;
+
+      text-align: center;
+    }
+
+    @include onLaptop {
+      width: 100%;
+      text-align: left;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: -50px;
+        display: block;
+        width: calc(50% + 50px);
+        height: 1px;
+        background-color: $colorGreen;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $colorGreen;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $colorGrey;
+    }
+
+    @include onTablet {
+      font-weight: bold;
+    }
+
+    @include onLaptop {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &__item-text {
+    @include onLaptop {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50px;
+        display: block;
+        width: 45%;
+        height: 1px;
+        background-color: $colorGreen;
+      }
+    }
+  }
+
+  &__text {
+    display: none;
+
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 24px;
+
+    color: $colorGrey;
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+}
