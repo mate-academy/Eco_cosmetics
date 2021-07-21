@@ -1,10 +1,10 @@
 .about {
   position: relative;
   display: block;
-  padding-left: 20px;
 
   @include onTablet {
     display: grid;
+    padding-left: 20px;
   }
 
   @include onLaptop {
@@ -56,14 +56,12 @@
     font-weight: normal;
     letter-spacing: 0.05em;
 
-    text-align: center;
     text-transform: uppercase;
 
     color: $colorGreen;
 
     @include onTablet {
       font-weight: 500;
-      text-align: left;
     }
 
     @include onLaptop {
@@ -75,6 +73,16 @@
     @include onDesktop {
       margin-bottom: 16px;
       line-height: 40px;
+    }
+
+    &--creators {
+      @include onLaptop {
+        line-height: 47px;
+      }
+
+      @include onDesktop {
+        line-height: 40px;
+      }
     }
   }
 
@@ -100,6 +108,18 @@
       @include onLaptop {
         display: block;
         margin-bottom: 40px;
+      }
+    }
+
+    &--creators {
+      margin-bottom: 36px;
+
+      @include onTablet {
+        margin-bottom: 12px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
       }
     }
   }
@@ -134,6 +154,17 @@
         opacity: 1;
       }
     }
+
+    &--creators {
+      @include onTablet {
+        display: inline-block;
+        margin-top: 44px;
+      }
+
+      @include onLaptop {
+        margin-top: 20px;
+      }
+    }
   }
 
   &__photo-container {
@@ -158,6 +189,14 @@
         display: block;
       }
     }
+
+    &--creators {
+      height: 435px;
+
+      @include onLaptop {
+        height: 670px;
+      }
+    }
   }
 
   &__photo {
@@ -172,6 +211,14 @@
       &--small {
         bottom: -50px;
       }
+    }
+  }
+
+  &__button {
+    margin-top: 45px;
+
+    @include onLaptop {
+      margin-top: 60px;
     }
   }
 }
