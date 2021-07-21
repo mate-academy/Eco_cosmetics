@@ -1,0 +1,177 @@
+.about {
+  position: relative;
+  display: block;
+  padding-left: 20px;
+
+  @include onTablet {
+    display: grid;
+  }
+
+  @include onLaptop {
+    align-items: end;
+    padding-left: 50px;
+  }
+
+  @include onDesktop {
+    align-items: center;
+  }
+
+  &__name {
+    display: none;
+    position: absolute;
+    top: 0;
+
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: rgba(52, 79, 16, 0.5);
+
+    transform: rotate(-90deg) translateX(-50%) translateY(-250%);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: calc(100% + 10px);
+      display: block;
+      width: 100px;
+      height: 1px;
+
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: $colorGreen;
+
+    @include onTablet {
+      font-weight: 500;
+      text-align: left;
+    }
+
+    @include onLaptop {
+      margin-bottom: 20px;
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 16px;
+      line-height: 40px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 45px;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    color: $colorGrey;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onLaptop {
+      margin-bottom: 30px;
+    }
+
+    &--hide {
+      display: none;
+
+      @include onLaptop {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $colorGreen;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      display: block;
+      opacity: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $colorGreen;
+
+      transition: opacity 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__photo-container {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 320px;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onLaptop {
+      height: 530px;
+    }
+
+    &--small {
+      display: none;
+      height: 430px;
+
+      @include onLaptop {
+        display: block;
+      }
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include onDesktop {
+      &--small {
+        bottom: -50px;
+      }
+    }
+  }
+}
