@@ -4,12 +4,10 @@
 
   @include onTablet {
     display: grid;
-    padding-left: 20px;
   }
 
   @include onLaptop {
     align-items: end;
-    padding-left: 50px;
   }
 
   @include onDesktop {
@@ -20,17 +18,20 @@
     display: none;
     position: absolute;
     top: 0;
+    width: max-content;
 
     font-family: "Sharp Sans Display No2", sans-serif;
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    text-align: right;
 
     color: rgba(52, 79, 16, 0.5);
 
-    transform: rotate(-90deg) translateX(-50%) translateY(-250%);
-
+    transform-origin: top left;
+    transform: rotate(-90deg) translateX(-100%);
+    
     &::after {
       content: "";
       position: absolute;
@@ -122,10 +123,41 @@
         margin-bottom: 30px;
       }
     }
+
+    &--intro {
+      margin-bottom: 36px;
+
+      @include onTablet {
+        margin-bottom: 12px;
+      }
+
+      @include onLaptop {
+        margin-bottom: 54px;
+      }
+      
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--job {
+      margin-bottom: 44px;
+
+      @include onLaptop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--place {
+      @include onLaptop {
+        margin-bottom: 20px;
+      }
+    }
   }
 
   &__link {
     position: relative;
+    display: inline-block;
 
     font-family: "Sharp Sans Display No2", sans-serif;
     font-size: 14px;
@@ -156,13 +188,10 @@
     }
 
     &--creators {
-      @include onTablet {
-        display: inline-block;
-        margin-top: 44px;
-      }
+      margin-bottom: 40px;
 
       @include onLaptop {
-        margin-top: 20px;
+        margin-bottom: 62px;
       }
     }
   }
@@ -207,18 +236,15 @@
     object-fit: cover;
     object-position: center;
 
-    @include onDesktop {
-      &--small {
-        bottom: -50px;
+    &--small {
+      @include onLaptop {
+        width: calc(100% + 50px);
       }
-    }
-  }
 
-  &__button {
-    margin-top: 45px;
-
-    @include onLaptop {
-      margin-top: 60px;
+      @include onDesktop {
+        bottom: -50px;
+        width: calc(100% + 100px);
+      }
     }
   }
 }
