@@ -1,28 +1,30 @@
 .product {
-  &--mobile-hidden {
-    display: none;
-
-    @include onTablet {
-      display: block;
-    }
-  }
-
-  &--tablet-hidden {
-    display: none;
-
-    @include onLaptop {
-      display: block;
-    }
-  }
-
   &__photo-container {
     position: relative;
     height: 267px;
     margin-bottom: 20px;
+
+    @include onTablet {
+      height: 300px;
+    }
+
+    @include onLaptop {
+      height: 500px;
+    }
   }
 
   &__photo {
     @extend %photo-position;
+
+    &--max-width {
+      @include onLaptop {
+        width: calc(100% + 50px);
+      }
+
+      @include onDesktop {
+        width: calc(100% + 100px);
+      }
+    }
   }
 
   &__name {
@@ -44,8 +46,7 @@
 
   &__price {
     padding: 0 20px;
-    margin-bottom: 18px;
-
+    
     font-size: 18px;
     line-height: 27px;
     letter-spacing: 0.05em;

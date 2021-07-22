@@ -3,6 +3,14 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
 
+  &--tablet {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
   &--laptop {
     display: block;
 
@@ -37,6 +45,32 @@
             grid-column: #{$start} / #{$end + 1};
           }
         }
+      }
+    }
+
+    &--tablet-0 {
+      display: none;
+
+      @include onLaptop {
+        display: block;
+      }
+    }
+
+    &--mobile-0 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &--row-2-3 {
+      @include onLaptop {
+        grid-row: 2 / 3;
+      }
+
+      @include onDesktop {
+        grid-row: 1 / 2;
       }
     }
   }
