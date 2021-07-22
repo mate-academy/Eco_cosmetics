@@ -1,0 +1,36 @@
+.nav {
+  display: none;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  &__link {
+    color: $main-font-color;
+    padding-bottom: 12px;
+    border-bottom: 1px solid transparent;
+
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+
+    transition: border-bottom 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid $main-font-color;
+    }
+  }
+
+  @include onDesktop {
+    display: block;
+    width: 250px;
+  }
+
+  @include onWideScreen {
+    display: block;
+    width: 300px;
+  }
+}
