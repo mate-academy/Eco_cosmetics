@@ -1,0 +1,119 @@
+.contact-us {
+  position: relative;
+
+  &__title {
+    margin-bottom: 12px;
+
+    @include onLaptop {
+      margin-bottom: 20px;
+      text-transform: capitalize;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: lowercase;
+
+    color: $colorGrey;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onLaptop {
+      width: 380px;
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    font-size: 14px;
+    line-height: 21px;
+    background-color: $colorBeige;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+
+    &:nth-child(3) {
+      margin-bottom: 45px;
+
+      @include onLaptop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 30px;
+
+      @include onLaptop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &::placeholder {
+      font-family: "Avenir", sans-serif;
+      font-size: 14px;
+      line-height: 21px;
+      text-transform: capitalize;
+
+      color: #828282;
+
+      @include onTablet {
+        font-weight: 500;
+      }
+
+      @include onLaptop {
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+
+    @include onLaptop {
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    @include onDesktop {
+      background-color: #fff;
+    }
+  }
+
+  &__photo-container {
+    position: relative;
+    display: none;
+    width: 100%;
+
+    @include onTablet {
+      display: block;
+      height: 409px;
+    }
+
+    @include onLaptop {
+      height: 584px;
+    }
+  }
+
+  &__photo {
+    @extend %photo-position;
+
+    @include onTablet {
+      width: calc(100% + 30px);
+    }
+
+    @include onLaptop {
+      width: calc(100% + 50px);
+    }
+
+    @include onDesktop {
+      width: calc(100% + 100px);
+    }
+  }
+}
