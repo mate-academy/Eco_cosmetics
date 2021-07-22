@@ -1,0 +1,195 @@
+.about {
+  @include proper-padding(0, 60px, #{$indent-on-phone});
+
+  &__for-whom {
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $main-font-color;
+    grid-row: 1;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      font-weight: bold;
+      justify-self: center;
+      align-self: center;
+      text-align: center;
+      max-width: 280px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      font-weight: bold;
+      font-size: 24px;
+      max-width: none;
+      margin: 100px 0 0;
+    }
+  }
+
+  &__fact {
+    display: none;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onDesktop {
+      display: block;
+      grid-row: 1;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__line {
+    @include onDesktop {
+      display: block;
+      height: 1px;
+      background-color: $main-font-color;
+      opacity: 50%;
+
+      &--top {
+        margin-bottom: 100px;
+        width: 200%;
+        transform: translate(-50%);
+      }
+
+      &--bottom {
+        margin-top: 100px;
+        width: 250%;
+        margin-bottom: 200px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    position: relative;
+    grid-row: 2;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $main-font-color;
+
+    @include onTablet {
+      font-weight: bold;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+    }
+  }
+
+  &__aside-element {
+    display: none;
+    position: relative;
+    transform: rotate(-90deg) translate(-50%, 50%);
+    grid-row: 2;
+    bottom: 15%;
+    height: min-content;
+
+    &::before {
+      content: "";
+      display: block;
+      position: relative;
+      transform: translate(-110%);
+      top: 11px;
+      height: 1px;
+      width: 100px;
+      background-color: $main-font-color;
+    }
+
+    @include onDesktop {
+      display: inline-block;
+      position: relative;
+      right: 50%;
+    }
+  }
+
+  &__text {
+    font-style: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $dark-color;
+
+    @include onTablet {
+      font-weight: bold;
+    }
+
+    @include onDesktop {
+      grid-row: 2;
+      min-width: 395px;
+    }
+  }
+
+  &__story {
+    margin-bottom: 44px;
+
+    @include onDesktop {
+      grid-row: 3;
+    }
+
+    &--extended {
+      display: none;
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        display: block;
+        grid-row: 4;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+    grid-row: 2;
+    object-fit: cover;
+
+    @include onTablet {
+      display: block;
+      max-height: 320px;
+      width: 110%;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      min-height: 485px;
+      max-height: 486px;
+    }
+  }
+
+  &__extra-image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      align-self: end;
+      grid-column: 12;
+      grid-row: 2;
+      width: 200%;
+      height: 80%;
+      background-image: url(../images/about.png);
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &__more {
+    width: max-content;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $main-font-color;
+    padding-bottom: 12px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $main-font-color;
+    }
+  }
+}
