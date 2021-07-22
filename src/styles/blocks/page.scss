@@ -21,7 +21,15 @@
     }
   }
 
-  &__section {
-    margin-bottom: calc(60px - $indent-on-phone);
+  &__section:not(:last-child) {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 100px;
+    }
   }
 }

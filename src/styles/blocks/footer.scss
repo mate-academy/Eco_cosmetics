@@ -1,0 +1,81 @@
+.footer {
+  @include proper-padding(30px, 60px, $indent-on-phone);
+  font-size: 14px;
+  color: $main-bg-color;
+  background-color: #8c9772;
+
+  @include onTablet {
+    @include proper-padding(30px, 50px, $indent-on-tablet);
+  }
+
+  @include onDesktop {
+    @include proper-padding(60px, 66px, $indent-on-desktop);
+    
+    font-size: 18px;
+    line-height: 130%;
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+  }
+
+  &__media {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      grid-row: 3;
+      margin-bottom: 0;
+      justify-content: start;
+      gap: 14px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+
+    line-height: 130%;
+
+    @include onTablet {
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__support {
+    line-height: 150%;
+    margin-bottom: 30px;
+  }
+
+  &__copyright {
+    width: 75%;
+    justify-self: center;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 130%;
+
+    @include onTablet {
+      justify-self: start;
+      text-align: left;
+      text-transform: initial;
+    }
+
+    @include onDesktop {
+      width: 100%;
+
+      &::before {
+        content: "Copyright";
+        text-transform: initial;
+      }
+      text-transform: uppercase;
+    }
+  }
+}

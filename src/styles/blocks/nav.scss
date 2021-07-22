@@ -1,11 +1,26 @@
 .nav {
   display: none;
 
+  &--footer {
+    display: inline-block;
+  }
+
   &__list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
+
+    &--footer {
+      flex-direction: column;
+      gap: 20px;
+
+      @include onDesktop {
+        line-height: 130%;
+        flex-direction: row;
+        gap: 0;
+      }
+    }
   }
 
   &__link {
@@ -21,6 +36,21 @@
 
     &:hover {
       border-bottom: 1px solid $main-font-color;
+    }
+
+    &--footer {
+      padding-bottom: 6px;
+      font-family: "Avenir", sans-serif;
+      font-size: 14px;
+      color: $main-bg-color;
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+
+      &:hover {
+        border-color: $main-bg-color;
+      }
     }
   }
 
