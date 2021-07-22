@@ -1,11 +1,10 @@
 .page {
+  background-color: $main-bg-color;
   font-family: "Avenir", Helvetica, sans-serif;
-  font-weight: 400;
+  color: $dark-color;
 
-  &__body {
-    margin: 0;
-
-    background-color: #e5e5e5;
+  @include onWideScreen {
+    background-color: #fff;
   }
 
   &__menu {
@@ -20,5 +19,9 @@
     &:target {
       transform: translateX(0);
     }
+  }
+
+  &__section {
+    margin-bottom: calc(60px - $indent-on-phone);
   }
 }
