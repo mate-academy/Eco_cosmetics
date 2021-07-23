@@ -18,6 +18,10 @@
     }
   }
 
+  &__zoom-image {
+    overflow: hidden;
+  }
+
   &__image {
     position: relative;
     left: -10%;
@@ -26,6 +30,11 @@
     max-height: 270px;
     margin-bottom: 20px;
     object-fit: cover;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     @include onTablet {
       position: static;
@@ -68,11 +77,19 @@
 
     &::after {
       position: absolute;
-      top: 0;
+      top: 75%;
       right: 0;
       left: 0;
       bottom: 0;
       content: "";
+
+      @include onTablet {
+        top: 70%;
+      }
+
+      @include onDesktop {
+        top: 75%;
+      }
     }
   }
 }
