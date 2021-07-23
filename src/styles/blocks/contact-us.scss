@@ -1,0 +1,74 @@
+.contact {
+  position: relative;
+  @extend %FontFamily-Avenir;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 150px;
+  padding-bottom: 200px;
+  column-gap: 100px;
+
+  &__sticker {
+    @extend %sticked-label;
+  }
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 20px;
+  }
+
+  &__title {
+    font-size: 36px;
+    text-transform: capitalize;
+  }
+
+  &__text {
+    font-size: 24px;
+    max-width: 380px;
+    text-transform: lowercase;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center left;
+  }
+
+  @media (max-width: $desktop-width) {
+    & {
+      padding-left: 27px;
+      padding-bottom: 150px;
+      column-gap: 120px;
+
+      .sticked-lobby {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: $tablet-width) {
+    & {
+      padding-left: 27px;
+      padding-bottom: 100px;
+      column-gap: 30px;
+      &__text-box {
+        height: min-content;
+        justify-content: flex-end;
+        row-gap: 0;
+      }
+    }
+  }
+  @media (max-width: $phone-width) {
+    & {
+      display: block;
+      padding: 0 20px;
+      padding-bottom: 60px;
+      column-gap: 120px;
+
+      &__img-box {
+        display: none;
+      }
+    }
+  }
+}

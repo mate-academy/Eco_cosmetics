@@ -1,0 +1,52 @@
+.short-story {
+  display: flex;
+  justify-content: space-between;
+  @extend %FontFamily-Avenir;
+
+  &__text {
+    width: 530px;
+    padding: 100px 0 93px 150px;
+    margin-right: 120px;
+    font-size: 16px;
+    line-height: 150%;
+    border-top: 1px solid $header-color;
+  }
+
+  &__heading {
+    width: 630px;
+    padding: 100px 250px 100px 0;
+    font-size: 24px;
+    color: $header-color;
+    text-transform: uppercase;
+    line-height: 150%;
+    border-bottom: 1px solid $header-color;
+  }
+
+  @media (max-width: $desktop-width) {
+    & {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      &__text {
+        display: none;
+      }
+
+      &__heading {
+        width: 280px;
+        padding: 0;
+        font-size: 18px;
+        border: none;
+      }
+      &__heading::after {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: $phone-width) {
+    & {
+      padding: 60px 0;
+    }
+  }
+}

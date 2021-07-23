@@ -1,0 +1,139 @@
+.footer {
+  background-color: $second-main-color;
+  &__content {
+    @extend %FontFamily-Avenir;
+    display: grid;
+    grid-template-areas: "nav info"
+      "copyright media";
+    justify-content: space-between;
+    height: 320px;
+    padding: 60px 50px;
+    font-size: 18px;
+    color: $footer-color;
+  }
+
+  &__nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:hover::after {
+      background-color: $footer-color;
+    }
+  }
+
+  .nav__list {
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    grid-area: copyright;
+    @extend %FontFamily-Sharp;
+    &-2 {
+      text-transform: uppercase;
+    }
+  }
+
+  &__info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__media {
+    grid-area: media;
+  }
+
+  @media (max-width: $tablet-width) {
+    & {
+      &__content {
+        padding: 30px 27px;
+        grid-template-areas: "nav info"
+          "media info"
+          "copyright copyright";
+      }
+      &__nav {
+        .nav__list {
+          flex-direction: column;
+        }
+        .nav__item {
+          padding: 0;
+          padding-bottom: 20px;
+        }
+      }
+
+      &__copyright {
+        &-1 {
+          display: none;
+        }
+        &-2 {
+          text-transform: lowercase;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 780px) {
+    & {
+      &__content {
+        padding: 30px 20px 60px;
+        font-size: 14px;
+        height: 470px;
+        justify-content: space-between;
+        align-content: center;
+        grid-template-areas: "nav info"
+          "media info"
+          "copyright";
+      }
+
+      &__nav {
+        flex-direction: row;
+      }
+
+      &__info {
+        margin-top: 30px;
+      }
+
+      &__link {
+        &:nth-of-type(-n + 3) {
+          padding-bottom: 12px;
+        }
+        &:last-of-type {
+          padding-top: 20px;
+        }
+      }
+
+      &__copyright {
+        padding: 30px 0;
+        text-align: center;
+        &-2 {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    & {
+      &__content {
+        grid-template-areas: "nav"
+          "media"
+          "info"
+          "copyright";
+      }
+    }
+  }
+}
