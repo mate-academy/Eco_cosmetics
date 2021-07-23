@@ -19,6 +19,14 @@
     }
   }
 
+  &--desktop {
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
   @include onTablet {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -45,6 +53,12 @@
             grid-column: #{$start} / #{$end + 1};
           }
         }
+
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
       }
     }
 
@@ -61,16 +75,6 @@
 
       @include onTablet {
         display: block;
-      }
-    }
-
-    &--row-2-3 {
-      @include onLaptop {
-        grid-row: 2 / 3;
-      }
-
-      @include onDesktop {
-        grid-row: 1 / 2;
       }
     }
   }

@@ -8,6 +8,14 @@
     padding-top: 25px;
   }
 
+  @include onLaptop {
+    padding-top: 40px;
+  }
+
+  @include onDesktop {
+    display: grid;
+  }
+
   &__item {
     @include onLaptop {
       width: 33.33%;
@@ -16,6 +24,72 @@
         display: flex;
         justify-content: flex-end;
       }
+    }
+
+    @include onDesktop {
+      width: max-content;
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+    
+    @include onLaptop {
+      order: -1;
+    }
+  }
+
+  &__nav {
+    display: none;
+    
+    @include onLaptop {
+      display: block;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+
+  &__nav-item {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__nav-link {
+    position: relative;
+    display: block;
+
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 18px;
+    line-height: 23px;
+    color: $colorGreen;
+
+    &::after {
+      background-color: $colorGreen;
+    }
+  }
+
+  &__logo {
+    display: none;
+    margin: 3px 0 0 12px;
+
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: $colorGreen;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onLaptop {
+      display: block;
     }
   }
 }

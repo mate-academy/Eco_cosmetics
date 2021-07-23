@@ -5,11 +5,44 @@
     }
   }
 
+  &--buy {
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &--logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-image {
+    @include square(24px);
+
+    @include onLaptop {
+      @include square(50px);
+    }
+  }
+
   &__item {
     transition: transform 0.3s;
 
     &:hover {
       transform: scale(110%);
+    }
+
+    &--on-tablet {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &--on-mobile {
+      @include onTablet {
+        display: none;
+      }
     }
   }
 }
