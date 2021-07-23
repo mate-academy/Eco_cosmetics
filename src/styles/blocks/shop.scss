@@ -1,0 +1,58 @@
+.shop {
+  &__title {
+    grid-row: 1;
+    text-align: center;
+    margin-bottom: 12px;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__catalog {
+    grid-row: 2;
+    margin-bottom: 32px;
+
+    @include onDesktop {
+      margin-bottom: 85px;
+    }
+  }
+
+  &__aside-element {
+    display: none;
+    grid-row: 2;
+
+    @include onDesktop {
+      display: inline-block;
+      position: relative;
+      right: 50%;
+      top: -25%;
+    }
+  }
+
+  &__products {
+    @include onTablet {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        justify-content: space-around;
+        gap: 30px;
+      }
+
+      @include onDesktop {
+        width: 110%;
+        align-self: end;
+        gap: 20px;
+      }
+    }
+  }
+}
