@@ -1,0 +1,164 @@
+.ingredients {
+  --margin-bottom-tablet: 170px;
+  --margin-bottom-desktop: 250px;
+
+  &__aside-element {
+    display: none;
+    grid-row: 1;
+
+    @include onDesktop {
+      display: inline-block;
+      position: relative;
+      right: 50%;
+      bottom: 13%;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-row: 1;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__text-wrapper {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      grid-row: 1;
+      margin-bottom: var(--margin-bottom-tablet);
+    }
+
+    @include onDesktop {
+      justify-content: flex-end;
+      margin-bottom: var(--margin-bottom-desktop);
+    }
+  }
+
+  &__scheme-wrapper {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-row: 1;
+    }
+  }
+
+  &__title {
+    grid-row: 1;
+    margin-bottom: 38px;
+
+    @include onDesktop {
+      margin-bottom: 140px;
+    }
+  }
+
+  &__scheme {
+    position: relative;
+    left: 5%;
+    display: flex;
+    gap: 20px;
+    grid-row: 1;
+    width: 100%;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: var(--margin-bottom-tablet);
+    }
+
+    @include onDesktop {
+      justify-content: flex-end;
+      gap: 100px;
+      left: 0;
+      margin-bottom: var(--margin-bottom-desktop);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  &__item {
+    position: relative;
+    text-transform: capitalize;
+    text-align: right;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-weight: bold;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: relative;
+      height: 1px;
+      width: 100%;
+      background-color: $dark-color;
+      transform: translate(100%, 24px);
+      bottom: 10px;
+      left: 20px;
+
+      @include onDesktop {
+        width: 40%;
+        transform: translate(240%, 24px);
+      }
+    }
+
+    &:nth-child(2)::after {
+      @include onDesktop {
+        content: "(Persian salvador)";
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    right: -10%;
+    object-fit: contain;
+
+    @include onDesktop {
+      position: static;
+      width: initial;
+      right: 0;
+      left: 25%;
+    }
+  }
+
+  &__more {
+    align-self: end;
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      justify-content: space-evenly;
+    }
+  }
+}
