@@ -32,23 +32,35 @@
     }
   }
 
-  &__image {
-    grid-row: 2;
-  }
-
   &__extra-image {
     display: none;
+    transition: width 0.3s linear;
 
     @include onDesktop {
       display: block;
-      align-self: end;
-      grid-column: 12;
-      grid-row: 2;
-      width: 200%;
+      align-self: flex-end;
+      width: 45%;
       height: 80%;
-      background-image: url(../images/about.png);
-      background-position: center;
-      background-size: cover;
+      object-fit: cover;
+    }
+  }
+
+  &__image-wrapper {
+    grid-row: 2;
+    transition: all 0.3s linear;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+
+    &:hover {
+      transform: translate(-10px);
+
+      .about__extra-image {
+        width: 40%;
+      }
     }
   }
 }

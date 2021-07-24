@@ -94,6 +94,7 @@
     text-align: right;
     font-size: 16px;
     line-height: 150%;
+    transition: 0.3s linear;
 
     @include onTablet {
       font-weight: bold;
@@ -103,22 +104,37 @@
       content: "";
       display: block;
       position: relative;
-      height: 1px;
+      height: 100%;
       width: 100%;
-      background-color: $dark-color;
-      transform: translate(100%, 24px);
+      background-image: url(../images/line.svg);
+      background-repeat: no-repeat;
+      transform: translate(100%, 195%);
       bottom: 10px;
       left: 20px;
 
       @include onDesktop {
-        width: 40%;
-        transform: translate(240%, 24px);
+        background-image: url(../images/pointer-line.svg);
+        transform: translate(95%, 185%);
       }
     }
 
     &:nth-child(2)::after {
       @include onDesktop {
         content: "(Persian salvador)";
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+      transform: translateX(-10px);
+      color: $light-green;
+
+      &::before {
+        background-image: url(../images/line-hover.svg);
+
+        @include onDesktop {
+          background-image: url(../images/pointer-line-hover.svg);
+        }
       }
     }
   }
