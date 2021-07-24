@@ -1,0 +1,126 @@
+.product {
+  &__info {
+    @include onTablet {
+      grid-row: 2;
+    }
+
+    @include onDesktop {
+      grid-row: 1;
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  }
+
+  &__price {
+    margin-bottom: 12px;
+
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      color: $dark-green;
+    }
+  }
+
+  &__weight {
+    display: none;
+
+    @include onTablet {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-family: "Sharp Sans Display No2", sans-serif;
+      font-size: 18px;
+      line-height: 130%;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-wrapper {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+      grid-row: 1 / 4;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    transition: transform 0.3s;
+
+    @include onTablet {
+      max-height: 440px;
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      max-height: 480px;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__button {
+    grid-row: 3;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin: 0 auto 80px;
+    }
+
+    @include onDesktop {
+      grid-row: 3;
+      margin: 0;
+      align-self: end;
+    }
+  }
+
+  &__text {
+    grid-row: 4;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 16px;
+    line-height: 130%;
+
+    @include onDesktop {
+      grid-row: 2;
+      align-self: start;
+    }
+  }
+
+  &__details {
+    color: $dark-green;
+  }
+
+  &__ingredients {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+}

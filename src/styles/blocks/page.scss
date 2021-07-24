@@ -22,19 +22,35 @@
     }
   }
 
-  &__section {
-    overflow-x: hidden;
+  &__header {
+    margin-bottom: 24px;
   }
 
-  &__section:not(footer:only-of-type) {
-    @include section-margin(60px, $indent-on-phone);
+  &__section {
+    overflow-x: hidden;
 
-    @include onTablet {
-      @include section-margin(100px, $indent-on-tablet);
+    &--main {
+      @include section-margin(60px, $indent-on-phone);
+
+      @include onTablet {
+        @include section-margin(100px, $indent-on-tablet);
+      }
+
+      @include onDesktop {
+        @include section-margin(200px, $indent-on-desktop);
+      }
     }
 
-    @include onDesktop {
-      @include section-margin(200px, $indent-on-desktop);
+    &--product {
+      @include section-margin(40px, $indent-on-phone / 2);
+  
+      @include onTablet {
+        @include section-margin(60px, $indent-on-tablet / 2);
+      }
+  
+      @include onDesktop {
+        @include section-margin(110px, $indent-on-desktop / 2);
+      }
     }
   }
 }
