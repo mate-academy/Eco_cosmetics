@@ -17,10 +17,11 @@
   }
 
   &__info {
-    margin-bottom: 45px;
+    margin-bottom: 35px;
     color: $colorGrey;
 
     @include onTablet {
+      margin-bottom: 15px;
       font-weight: 500;
     }
 
@@ -28,59 +29,30 @@
       margin-bottom: 30px;
     }
 
+    &:last-child {
+      @include onLaptop {
+        margin-bottom: 45px;
+      }
+    }
+
     &--hide {
       display: none;
 
       @include onLaptop {
         display: block;
-        margin-bottom: 40px;
-      }
-    }
-
-    &--creators {
-      margin-bottom: 36px;
-
-      @include onTablet {
-        margin-bottom: 12px;
-      }
-
-      @include onDesktop {
-        margin-bottom: 30px;
-      }
-    }
-
-    &--intro {
-      margin-bottom: 36px;
-
-      @include onTablet {
-        margin-bottom: 12px;
-      }
-
-      @include onLaptop {
-        margin-bottom: 54px;
-      }
-      
-      @include onDesktop {
-        margin-bottom: 30px;
-      }
-    }
-
-    &--job {
-      margin-bottom: 44px;
-
-      @include onLaptop {
-        margin-bottom: 30px;
-      }
-    }
-
-    &--place {
-      @include onLaptop {
-        margin-bottom: 20px;
       }
     }
   }
 
   &__link {
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onLaptop {
+      margin-top: 0;
+    }
+
     &--creators {
       margin-bottom: 40px;
 
@@ -91,57 +63,26 @@
   }
 
   &__photo-container {
-    position: relative;
-    display: none;
-    width: 100%;
-    height: 320px;
-
-    @include onTablet {
-      display: block;
-    }
-
-    @include onLaptop {
-      height: 530px;
-    }
+    @extend %photo-container-position;
 
     &--small {
       display: none;
-      height: 430px;
+      height: calc(100% - 100px);
 
       @include onLaptop {
-        position: relative;
         top: 100px;
         display: block;
-      }
-    }
-
-    &--creators {
-      height: 435px;
-
-      @include onLaptop {
-        height: 670px;
       }
     }
   }
 
   &__photo {
     @extend %photo-position;
+    @extend %large-photo-width;
 
-    @include onTablet {
-      width: calc(100% + #{$paddingContainerTablet});
-    }
-
-    @include onLaptop {
-      width: 100%;
-    }
-
-    &--small {
+    &--contain {
       @include onLaptop {
-        width: calc(100% + #{$paddingContainerLaptop});
-      }
-
-      @include onDesktop {
-        width: calc(100% + #{$paddingContainerDesktop});
+        width: 100%;
       }
     }
   }
