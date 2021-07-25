@@ -3,6 +3,7 @@
     position: relative;
     height: 267px;
     margin-bottom: 20px;
+    overflow: hidden;
 
     @include onTablet {
       height: 300px;
@@ -15,6 +16,7 @@
 
   &__photo {
     @extend %photo-position;
+    transition: transform 0.4s;
 
     &--max-width {
       @include onLaptop {
@@ -24,6 +26,10 @@
       @include onDesktop {
         width: calc(100% + #{$paddingContainerDesktop});
       }
+    }
+
+    &:hover {
+      transform: scale(105%);
     }
   }
 

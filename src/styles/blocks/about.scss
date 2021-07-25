@@ -64,6 +64,19 @@
 
   &__photo-container {
     @extend %photo-container-position;
+    width: calc(100% + #{$paddingContainerTablet});
+
+    background-image: url("../images/about.png");
+    background-size: cover;
+    background-position: center;
+
+    @include onLaptop {
+      width: 100%;
+    }
+
+    &--creators {
+      background-image: url("../images/about-2.png");
+    }
 
     &--small {
       display: none;
@@ -72,17 +85,11 @@
       @include onLaptop {
         top: 100px;
         display: block;
+        width: calc(100% + #{$paddingContainerLaptop});
       }
-    }
-  }
 
-  &__photo {
-    @extend %photo-position;
-    @extend %large-photo-width;
-
-    &--contain {
-      @include onLaptop {
-        width: 100%;
+      @include onDesktop {
+        width: calc(100% + #{$paddingContainerDesktop});
       }
     }
   }
