@@ -12,11 +12,6 @@
     @include onLaptop {
       height: 500px;
     }
-  }
-
-  &__photo {
-    @extend %photo-position;
-    transition: transform 0.4s;
 
     &--max-width {
       @include onLaptop {
@@ -27,6 +22,15 @@
         width: calc(100% + #{$paddingContainerDesktop});
       }
     }
+  }
+
+  &__photo {
+    position: absolute;
+    @include square(100%);
+    object-fit: cover;
+    object-position: center;
+    
+    transition: transform 0.4s;
 
     &:hover {
       transform: scale(105%);

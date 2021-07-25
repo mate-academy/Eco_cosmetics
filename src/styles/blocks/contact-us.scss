@@ -104,10 +104,21 @@
 
   &__photo-container {
     @extend %photo-container-position;
-    @extend %large-photo-width;
 
     background-image: url("../images/contact-us.png");
     background-size: cover;
     background-position: center;
+
+    @include onTablet {
+      width: calc(100% + #{$paddingContainerTablet});
+    }
+  
+    @include onLaptop {
+      width: calc(100% + #{$paddingContainerLaptop});
+    }
+  
+    @include onDesktop {
+      width: calc(100% + #{$paddingContainerDesktop});
+    }
   }
 }
