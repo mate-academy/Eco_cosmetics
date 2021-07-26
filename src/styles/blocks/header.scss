@@ -42,6 +42,12 @@
       height: 100%;
       max-width: 385px;
     }
+
+    &--progress {
+      text-align: center;
+      max-width: none;
+      height: auto;
+    }
   }
 
   &__title {
@@ -85,9 +91,16 @@
     }
   }
 
-  @include onDesktop {
-    &__button {
+  &__button {
+    @include onDesktop {
       grid-row: 1;
     }
+  }
+
+  &__progress-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70vh;
   }
 }

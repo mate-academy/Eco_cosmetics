@@ -4,27 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- <style>
-      .page {background-color: #e4dfd3; font-family: sans-serif; overflow-x: hidden;}
-      .grid {display: grid; grid-template-columns: repeat(12, 1fr); margin: 20px;}
-      .page__menu {display: none;}
-      .top-wrapper {grid-column: 1 / 13; display: flex; justify-content: space-between; align-items: center;}
-      .nav__list {display: flex; flex-direction: row; gap: 30px; list-style: none;}
-      h1 {margin: 0; font-weight: normal;}
-      a {text-decoration: none;}
-      .nav__link {color: #344f10; font-family: sans-serif; font-size: 18px; line-height: 130%;}
-      .icon__brand-name {display: none;}
-      .icon--menu {display: none;}
-      .header__image--mobile {display: none;}
-      .image-wrapper {grid-column: 7 / 13;}
-      .header__image {width: 100%; height: 100%;}
-      .header__text {grid-column: 2 / 6; grid-row: 1; display: flex; flex-direction: column; justify-content: space-between;}
-      .header__title {grid-row: 1; font-size: 60px; line-height: 72px;}
-      .header__offer {grid-row: 1; font-size: 22px;}
-      .button {grid-row: 1; display: flex; font-size: 16px; line-height: 130%; letter-spacing: 0.15em; text-transform: uppercase; justify-content: center; align-items: center; color: #f2f2f2; background-color: #333; width: 280px; height: 60px;}
-    </style> -->
-
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="icon" href="./images/logo.png">
     <title>Witch of Mountain Winds</title>
@@ -41,8 +20,7 @@
             >
           </a>
 
-
-          <a href="/" class="icon icon--logo">
+          <a href="./index.html" class="icon icon--logo">
             <img
               src="./images/logo.svg"
               alt="logo"
@@ -192,7 +170,7 @@
               Be aware of your choice!
             </p>
 
-            <a href="#" class="about__more learn-more">
+            <a href="./progress.html" class="about__more learn-more">
               Learn more
             </a>
           </div>
@@ -335,7 +313,7 @@
             </div>
           </div>
 
-          <a href="/" class="button shop__button grid__item--1-2 grid__item--tablet-3-4 grid__item--desktop-6-8">
+          <a href="./progress.html" class="button shop__button grid__item--1-2 grid__item--tablet-3-4 grid__item--desktop-6-8">
             All products
           </a>
         </div>
@@ -369,7 +347,7 @@
               as it is very difficult to rescue birds in a rented communal apartment.
             </p>
 
-            <a href="#" class="creators__more learn-more">
+            <a href="./progress.html" class="creators__more learn-more">
               Learn more
             </a>
 
@@ -464,7 +442,7 @@
               >
             </div>
 
-            <a href="#" class="ingredients__more learn-more">
+            <a href="./progress.html" class="ingredients__more learn-more">
               Learn more
             </a>
           </div>
@@ -474,7 +452,7 @@
               Ayurvedic Tooth Powder
             </h2>
 
-            <a href="#" class="ingredients__more learn-more">
+            <a href="./progress.html" class="ingredients__more learn-more">
               Learn more
             </a>
           </div>
@@ -601,9 +579,10 @@
             </p>
 
             <form
-              action=""
+              action="./index.html"
               method="POST"
               class="contact__form form"
+              id="contact-form"
             >
               <input
                 type="text"
@@ -627,7 +606,9 @@
                 name="phone"
                 class="form__input-field input"
                 placeholder="Phone number"
-                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                pattern = "^(?=.*[0-9])[- +()0-9]+$"
+                minlength="9"
+                required
               >
 
               <textarea
@@ -643,6 +624,8 @@
 
             <button
               class="button contact__button grid__item--1-2 grid__item--tablet-3-4 grid__item--desktop-6-8"
+              type="submit"
+              form="contact-form"
             >
               Send a message
             </button>
@@ -676,7 +659,7 @@
         </nav>
 
         <div class="footer__media grid__item grid__item--1-1 grid__item--tablet-1-1 grid__item--desktop-8-9">
-          <a href="#" class="icon icon--facebook">
+          <a href="#facebook-page" class="icon icon--facebook">
             <img
               src="./images/facebook.svg"
               alt="Facebook"
@@ -684,7 +667,7 @@
             >
           </a>
 
-          <a href="#" class="icon icon--instagram">
+          <a href="https://www.instagram.com/witch_of_mountain_winds/?hl=uk" class="icon icon--instagram">
             <img
               src="./images/instagram.svg"
               alt="Instagram"
