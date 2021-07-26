@@ -62,6 +62,18 @@
     }
   }
 
+  &__info-container {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+
   &__photo-container {
     @extend %photo-container-position;
     width: calc(100% + #{$paddingContainerTablet});
@@ -69,6 +81,10 @@
     background-image: url("../images/about.png");
     background-size: cover;
     background-position: center;
+
+    @include onTablet {
+      min-height: 350px;
+    }
 
     @include onLaptop {
       width: 100%;
