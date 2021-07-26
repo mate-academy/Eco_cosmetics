@@ -1,0 +1,69 @@
+.tooth-powder {
+  &__title {
+    margin-bottom: 35px;
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    position: relative;
+    margin-bottom: 60px;
+    overflow: hidden;
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+  }
+
+  &__list {
+    padding: 10px 20px 0 0;
+    text-align: right;
+    text-transform: capitalize;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 76px;
+      background-color: #333;
+      position: absolute;
+      bottom: 50%;
+      left: calc(100% + 20px);
+    }
+  }
+
+  &__img-wrapper {
+    margin-bottom: 20px;
+    height: 400px;
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    position: absolute;
+  }
+
+  &__link {
+    @include onTablet {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  $margin-item:
+    1 50px,
+    2 35px,
+    3 35px,
+    4 45px;
+
+  @each $item, $margin-bottom in $margin-item {
+    &__item:nth-child(#{$item}) {
+      margin-bottom: $margin-bottom;
+    }
+  }
+}
