@@ -1,34 +1,144 @@
 .header {
-  &__top {
-    padding: 15px 20px 12px;
+  &__nav-top {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    padding: 15px 20px 0;
+    margin-bottom: 12px;
+    list-style: none;
     @include onTablet {
-      padding: 24px 30px 28px;
+      margin-bottom: 30px;
+      padding: 24px 27px 0;
+    }
+    @include onDekstop {
+      margin-bottom: 80px;
+      padding: 40px 50px 0;
+    }
+  }
+  &__dekstop-nav {
+    display: none;
+    @include onDekstop {
+      display: grid;
+      grid-template-columns: repeat(3, max-content);
+      column-gap: 40px;
+    }
+  }
+  &__dekstop-link {
+    position: relative;
+    display: inline-block;
+    max-width: max-content;
+    font-size: 18px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #344f10;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: -10px;
+      height: 1px;
+      background-color: #344f10;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+  &__basket {
+    justify-self: end;
+    height: 24px;
+    @include onDekstop {
+      height: 30px;
+    }
+  }
+  &__logo {
+    height: 24px;
+    @include onDekstop {
+      display: none;
+    }
+  }
+  &__dekstop-logo {
+    @include onDekstop {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      align-items: center;
+      column-gap: 12px;
+      pointer-events: none;
+    }
+  }
+  &__logo-decription {
+    display: none;
+    @include onDekstop {
+      display: block;
+      text-decoration: none;
+      max-width: max-content;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      color: #344f10;
+    }
+  }
+  &__decription {
+    @include onDekstop {
+      position: relative;
+      padding: 0 50px;
+    }
+  }
+  &__product {
+    text-align: center;
+    @include onDekstop {
+      width: 100%;
+      position: absolute;
+      text-align: left;
     }
   }
   &__title {
     margin-bottom: 12px;
     font-size: 24px;
     line-height: 130%;
-    text-align: center;
     @include onTablet {
       margin-bottom: 20px;
       font-size: 36px;
+    }
+    @include onDekstop {
+      margin-bottom: 30px;
+      font-size: 60px;
+      line-height: 72px;
+    }
+  }
+  &__break-title {
+    display: none;
+    @include onDekstop {
+      display: block;
     }
   }
   &__paragraph {
     margin-bottom: 45px;
     font-size: 18px;
     line-height: 150%;
-    text-align: center;
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+    @include onDekstop {
+      margin-bottom: 40px;
+      font-size: 22px;
+      line-height: 130%;
+    }
   }
-  //&__product {
-  //}
+
   &__main-image {
     margin-bottom: 25px;
     width: 100%;
     @include onTablet {
-      padding: 0 28px;
       margin-bottom: 50px;
+    }
+    @include onDekstop {
+      margin-bottom: 200px;
     }
   }
   &__button {
@@ -37,8 +147,11 @@
     @include onTablet {
       margin-bottom: 100px;
     }
+    @include onDekstop {
+      margin: 0;
+    }
   }
-  &__nav-mobile {
+  &__nav-mobile-tablet {
     position: absolute;
     top: 0;
     width: 100%;
