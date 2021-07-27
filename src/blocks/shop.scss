@@ -1,25 +1,42 @@
 .shop {
+  &__space-around {
+    padding: 0;
+    @include onTablet {
+      padding: 0 27px;
+    }
+    @include onDekstop {
+      padding-left: 50px;
+    }
+  }
   &__title {
     margin-bottom: 12px;
     text-align: center;
+    @include onTablet {
+      text-align: start;
+    }
+    @include onDekstop {
+      margin-bottom: 20px;
+      text-align: start;
+    }
   }
-  //&__nav {
-  //}
   &__list {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
     list-style: none;
+    @include onMobile {
+      padding: 0 20px;
+    }
+    @include onDekstop {
+      margin-bottom: 65px;
+    }
   }
-
-  //&__item {
-  //}
-
   &__link {
     position: relative;
     display: block;
     padding-bottom: 10px;
-    margin-bottom: 20px;
     font-size: 14px;
+    line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #828282;
@@ -42,19 +59,32 @@
     &:focus::after {
       opacity: 1;
     }
+    @include onDekstop {
+      padding-bottom: 20px;
+      font-size: 18px;
+    }
+  }
+  &__content-wrapper {
+    position: relative;
   }
   &__photo {
     margin-bottom: 20px;
     width: 100%;
     object-fit: cover;
-    @include onTablet {
-      height: 300px;
+    @include onDekstop {
+      height: 500px;
     }
   }
-  &__tablet {
+  &__dekstop {
     display: none;
-    @include onTablet {
+    @include onDekstop {
       display: block;
+    }
+  }
+  &__tablet-dekstop {
+    display: block;
+    @include onMobile {
+      display: none;
     }
   }
   &__product-name {
@@ -63,18 +93,30 @@
     line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    @include onMobile {
+      padding: 0 20px;
+    }
   }
   &__product-price {
-    margin-bottom: 75px;
+    margin-bottom: 40px;
+    font-weight: 500;
     font-size: 18px;
     line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    @include onMobile {
+      margin-bottom: 75px;
+      padding: 0 20px;
+      font-weight: 400;
+    }
   }
   &__button {
     margin: 0 auto 60px;
     @include onTablet {
       margin-bottom: 135px;
+    }
+    @include onDekstop {
+      margin: 0 0 215px;
     }
   }
 }
