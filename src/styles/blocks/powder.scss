@@ -1,6 +1,6 @@
 .powder {
   &__content {
-    margin-top: 60px;
+    margin-top: 40px;
 
     @include onDesktop {
       position: relative;
@@ -12,6 +12,12 @@
   }
 
   &__info {
+    position: relative;
+
+    @include onIPad {
+      width: 40%;
+    }
+
     @include onDesktop {
       width: 50%;
     }
@@ -32,7 +38,7 @@
   &__title {
     @include onIPad {
       position: relative;
-      top: 100px;
+      top: 45px;
     }
 
     @include onDesktop {
@@ -47,7 +53,6 @@
     margin-left: 10%;
 
     @include onIPad {
-      margin-left: 30%;
       margin-top: 0;
     }
 
@@ -57,17 +62,30 @@
   }
 
   &__link {
-    position: relative;
-    top: 470px;
-    
-    @include onIPad {
-      position: relative;
-      top: 400px;
-    }
-
+    display: none;
+  
     @include onDesktop {
+      display: block;
       position: static;
       margin-top: 180px;
+
+      &:hover {
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: "";
+          border-bottom: 2px solid #333;
+          width: 94px;
+        }
+      }
+    }
+
+    &--onPhone {
+      margin-left: 30px;
+      @include onDesktop {
+        display: none;
+      }
     }
   }
   

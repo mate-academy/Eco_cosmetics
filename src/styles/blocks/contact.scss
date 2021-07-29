@@ -1,9 +1,16 @@
 .contact {
-  &__content {
-    margin-top: 50px;
+  margin-top: 50px;
 
+  @include onIPad {
+    margin-top: 150px;
+  }
+
+  @include onDesktop {
+    margin-top: 230px;
+  }
+
+  &__content {
     @include onIPad {
-      margin-top: 230px;
       display: flex;
       justify-content: space-between;
     }
@@ -81,6 +88,12 @@
     @include onDesktop {
       position: relative;
       right: 300px;
+
+      transition: 0.2s;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
 

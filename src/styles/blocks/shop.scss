@@ -1,4 +1,15 @@
 .shop {
+  margin-top: 60px;
+
+  @include onIPad {
+    margin-top: 80px;
+  }
+
+  @include onDesktop {
+    margin-top: 180px;
+    
+  }
+
   &__content {
     @include onDesktop {
       padding-left: 100px;
@@ -7,15 +18,9 @@
   
   &__title {
     text-align: center;
-    margin-top: 60px;
 
     @include onIPad {
       text-align: left;
-      margin-top: 80px;
-    }
-
-    @include onDesktop {
-      margin-top: 180px;
     }
   }
 
@@ -73,11 +78,13 @@
 
   &--is-active {
     color: #333;
+    position: relative;
+
     &::after {
       position: absolute;
       content: "";
-      border: 1px solid #333;
-      width: 50px;
+      border-bottom: 2px solid #333;
+      width: 100%;
     }
   }
 
@@ -126,6 +133,12 @@
 
       @include onDesktop {
         height: 380px;
+
+        transition: 0.2s;
+      
+        &:hover {
+          transform: scale(1.05);
+        }
       }
     }
 
