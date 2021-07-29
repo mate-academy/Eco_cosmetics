@@ -1,7 +1,7 @@
-
 .contact {
   &__wrapper {
-    margin-bottom: 60px;
+    max-width: 1450px;
+    margin: 0 auto 60px;
     padding: 0 20px;
     @include onTablet {
       margin-bottom: 100px;
@@ -16,32 +16,11 @@
   &__title {
     margin-bottom: 12px;
   }
-
   &__paragraph {
     margin-bottom: 20px;
     @include onDekstop {
       font-size: 24px;
       line-height: 150%;
-    }
-  }
-  &__label {
-    display: block;
-    $margin:
-      1 25px,
-      2 25px,
-      3 45px,
-      4 30px;
-    @include onDekstop {
-      $margin:
-        1 30px,
-        2 30px,
-        3 60px,
-        4 50px;
-    }
-    @each $child, $margin-bottom in $margin {
-      &:nth-child(#{$child}) {
-        margin-bottom: $margin-bottom;
-      }
     }
   }
   &__place {
@@ -57,8 +36,10 @@
       padding: 0 0 10px;
     }
     &::placeholder {
+      font-family: "Avenir", sans-serif;
       font-size: 14px;
       line-height: 150%;
+
       @include onDekstop {
         font-size: 18px;
       }
@@ -68,11 +49,31 @@
       color: #eb5757;
     }
     &:valid {
-      border-color: #344f10;
-      color: #344f10;
+      border-color: $green-color;
+      color: $green-color;
+    }
+    &:required {
+      border-bottom: 1px solid #bdbdbd;
     }
     &:focus {
-      border-color: #333;
+      border-color: $dark-color;
+    }
+    $margin:
+    1 25px,
+    2 25px,
+    3 45px,
+    4 30px;
+    @include onDekstop {
+    $margin:
+      1 30px,
+      2 30px,
+      3 60px,
+      4 50px;
+    }
+    @each $child, $margin-bottom in $margin {
+      &:nth-child(#{$child}) {
+        margin-bottom: $margin-bottom;
+      }
     }
   }
   &__break-line {
@@ -82,6 +83,7 @@
     }
   }
   &__button {
+    font-family: "Avenir", sans-serif;
     @include onMobile {
       margin: auto;
     }
