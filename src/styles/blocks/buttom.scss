@@ -12,9 +12,24 @@
     text-decoration: none;
     text-transform: uppercase;
     line-height: 66px;
+    font-size: 14px;
+    width: 280px;
+    text-align: center;
+
+    &:hover {
+      color: #333;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      line-height: 65px;
+
+      letter-spacing: 1px;
+    }
   }
 
   &-more {
+    position: relative;
     display: inline-block;
     color: #344f10;
     text-transform: uppercase;
@@ -22,8 +37,25 @@
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 0.2px;
+    padding-bottom: 19px;
 
-    border-bottom: 1px solid #344f10;
-    padding-bottom: 8px;
+    &:hover {
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        border: 1px solid #333;
+        width: 100%;
+      }
+    }
+  }
+
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid #333;
   }
 }
