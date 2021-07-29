@@ -6,6 +6,15 @@
     @include onTablet {
       margin-bottom: 150px;
     }
+    @include onDekstop {
+      margin-bottom: 250px;
+    }
+  }
+  &__break-line {
+    display: none;
+    @include onDekstop {
+      display: block;
+    }
   }
 
   &__item {
@@ -26,8 +35,10 @@
     @each $content, $advantage, $margin-bottom in $item-picture {
       &:nth-child(#{$advantage}):before {
         content: $content;
-        display: block;
         margin-bottom: 20px;
+        @include onTablet {
+          margin-bottom: 25px;
+        }
       }
       &:nth-child(#{$advantage}) {
         @include onMobile {

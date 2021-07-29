@@ -1,11 +1,17 @@
 .tooth-powder {
+  &__title-wrapper {
+    position: relative;
+  }
   &__title {
     margin-bottom: 35px;
     @include onTablet {
       margin-bottom: 0;
     }
+    @include onDekstop {
+      position: absolute;
+      bottom: 170px;
+    }
   }
-
   &__description {
     position: relative;
     margin-bottom: 60px;
@@ -13,53 +19,96 @@
     @include onTablet {
       margin-bottom: 160px;
     }
+    @include onDekstop {
+      margin-bottom: 200px;
+    }
   }
-
+  &__list-wrapper {
+    position: relative;
+    @include onDekstop {
+      position: static;
+    }
+  }
   &__list {
-    padding: 10px 20px 0 0;
+    padding-top: 20px;
+    position: absolute;
+    width: max-content;
+    right: -50px;
     text-align: right;
     text-transform: capitalize;
     list-style: none;
+    @include onDekstop {
+      position: static;
+      padding-top: 40px;
+    }
   }
-
   &__item {
+    $pseudo-ell:1px;
     position: relative;
+    padding-right: 95px;
     &::before {
       content: "";
       display: block;
-      height: 1px;
-      width: 76px;
+      height: $pseudo-ell;
+      width: 75px;
       background-color: #333;
       position: absolute;
       bottom: 50%;
-      left: calc(100% + 20px);
+      right: 0;
+    }
+    @include onDekstop {
+      &::after {
+        content: "";
+        display: block;
+        height: 5px;
+        width: 5px;
+        transform: translateY(50%);
+        border-radius: 50%;
+        background-color: #333;
+        position: absolute;
+        bottom: calc(50% + #{$pseudo-ell});
+        right: 0;
+      }
     }
   }
-
   &__img-wrapper {
-    margin-bottom: 20px;
+    margin-bottom: 0;
     height: 400px;
-    @include onTablet {
-      margin-bottom: 0;
+    @include onMobile {
+      margin-bottom: 20px;
     }
   }
-
   &__img {
     position: absolute;
+    height: 400px;
   }
-
+  &__link-wrapper {
+    position: relative;
+  }
   &__link {
-    @include onTablet {
-      position: absolute;
-      bottom: 0;
+    position: absolute;
+    bottom: 0;
+    @include onMobile {
+      position: static;
     }
   }
-
+  &__add-word {
+    display: none;
+    @include onDekstop {
+      display: inline-block;
+    }
+  }
+  &__break-title {
+    display: block;
+    @include onDekstop {
+      display: none;
+    }
+  }
   $margin-item:
     1 50px,
-    2 35px,
-    3 35px,
-    4 45px;
+    2 50px,
+    3 50px,
+    4 50px;
 
   @each $item, $margin-bottom in $margin-item {
     &__item:nth-child(#{$item}) {
