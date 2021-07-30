@@ -16,10 +16,6 @@
   &__catalog {
     grid-row: 2;
     margin-bottom: 32px;
-
-    @include onDesktop {
-      margin-bottom: 85px;
-    }
   }
 
   &__aside-element {
@@ -44,6 +40,7 @@
 
       @include onTablet {
         display: flex;
+        min-width: 0;
         justify-content: space-around;
         gap: 30px;
       }
@@ -57,12 +54,102 @@
   }
 
   &__button {
-    @include onTablet {
-      margin-bottom: 38px;
+    grid-row: 2;
+  }
+
+  &__arrows {
+
+    &--mobile {
+      width: max-content;
+      height: max-content;
+      align-self: center;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+      bottom: 40px;
+  
+      @include onTablet {
+        display: block;
+  
+        &--mobile {
+          display: none;
+        }
+      }
+  
+      .slick-arrow {
+        font-size: 0;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: transparent;
+    
+        cursor: pointer;
+        transition: opacity 0.3s;
+      }
+    
+      .slick-next {
+        background-image: url(../images/next.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin-left: 20px;
+      }
+    
+      .slick-prev {
+        background-image: url(../images/prev.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+
+      .slick-arrow.slick-disabled {
+        opacity: 0.3;
+      }
     }
 
-    @include onDesktop {
-      margin-bottom: 60px;
+    display: none;
+
+    width: max-content;
+    height: max-content;
+    align-self: center;
+
+    @include onTablet {
+      display: block;
+      grid-row: 2;
+
+      &--mobile {
+        display: none;
+      }
+    }
+
+    .slick-arrow {
+      font-size: 0;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      border: transparent;
+  
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+  
+    .slick-next {
+      background-image: url(../images/next.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      margin-left: 10px;
+    }
+  
+    .slick-prev {
+      background-image: url(../images/prev.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  
+    .slick-arrow.slick-disabled {
+      opacity: 0.3;
     }
   }
 }
