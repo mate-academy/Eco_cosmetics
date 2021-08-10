@@ -1,0 +1,74 @@
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin button {
+  width: 280px;
+  height: 60px;
+
+  font-family: "Sharp Sans Display No2", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  line-height: 60px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color-white;
+  background-color: $color-dark_gray;
+  border: 2px solid transparent;
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+
+  &:hover {
+    color: $color-dark_gray;
+    background-color: $color-white;
+    border-color: $color-dark_gray;
+    text-shadow: 4px 4px 10px;
+  }
+}
+
+@mixin image-hover-effect {
+  transition: transform 0.3s, box-shadow 0.3s, border-radius 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 3px 5px 15px ;
+    border-radius: 4px;
+  }
+}
+
+@mixin page-link {
+  position: relative;
+  font-family: "Sharp Sans Display No2", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color-green;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: $color-green;
+    transition: width 0.4s;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
