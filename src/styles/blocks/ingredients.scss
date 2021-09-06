@@ -1,0 +1,76 @@
+.ingredients {
+
+  &__text {
+    position: relative;
+  }
+
+  &__title {
+    margin-top: 70px;
+  }
+
+  &__more {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__composition {
+    position: relative;
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+  }
+
+  &__link {
+    position: relative;
+    padding: 5px 10px;
+  }
+
+  &__item {
+    position: relative;
+    align-self: flex-end;
+    width: max-content;
+    
+
+    @include onIpad {
+      margin-right: 50px;
+    }
+
+    @include onDesktop {
+      margin-right: 120px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -100px;
+      width: 80px;
+      height: 1px;
+      background: #000;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: auto;
+    transform: translateX(50%);
+
+    @include onIpad {
+      position: static;
+      right: -19%;
+      object-fit: contain;
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      position: relative;
+      right: 0;
+    }
+  }
+}

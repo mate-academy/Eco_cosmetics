@@ -1,0 +1,66 @@
+.shop {
+  
+  &__title {
+    text-align: center;
+
+    @include onIpad {
+      text-align: left;
+    }
+  }
+
+  &__menu {
+    grid-row: 2;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+
+    @include onIpad {
+      justify-content: flex-start;
+      gap: 14px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__link {
+    padding: 10px;
+    padding-left: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #828282;
+
+  }
+
+  &__link-active {
+    color: #333;
+    position: relative;
+    font-weight: bold;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 60px;
+      height: 2px;
+      width: 90%;
+      background: #333;
+    }
+  }
+
+  &__side-text {
+    grid-row: 3;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    width: 100%;
+    grid-row: 5;
+    justify-content: center;
+  }
+}
