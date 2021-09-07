@@ -1,0 +1,89 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    width: 100vw;
+    object-fit: cover;
+
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 130%;
+    margin: 0 0 12px;
+  }
+
+  &__info {
+    font-size: 18px;
+    line-height: 150%;
+
+    margin: 0 0 46px;
+  }
+
+  &__link {
+    @include button;
+  }
+
+  @include onTablet {
+    &__image {
+      width: 100%;
+      padding: 0 28px;
+      margin-bottom: 50px;
+    }
+
+    &__title {
+      max-width: 480px;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    &__info {
+      margin-bottom: 56px;
+    }
+  }
+
+  @include onDesktop {
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 50px 0 150px;
+    overflow: hidden;
+    &__image {
+      max-width: 580px;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      @include image-hover-effect;
+    }
+
+    &__text {
+      align-items: flex-start;
+      max-width: 480px;
+    }
+
+    &__title {
+      text-align: left;
+      font-weight: 600;
+      font-size: 60px;
+      line-height: 72px;
+      margin-bottom: 30px;
+    }
+
+    &__info {
+      font-weight: 600;
+      font-size: 22px;
+      margin-bottom: 52px;
+    }
+  }
+}
