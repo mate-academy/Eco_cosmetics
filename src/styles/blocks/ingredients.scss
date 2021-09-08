@@ -2,16 +2,21 @@
 
   &__side-text {
     position: relative;
+    grid-row: 1;
     width: max-content;
-    top: 120px;
+    top: 80px;
   }
 
   &__text {
     position: relative;
+    grid-row: 1;
   }
 
   &__title {
-    margin-top: 70px;
+    
+    @include onDesktop {
+      margin-top: 50px;
+    }
   }
 
   &__more {
@@ -21,7 +26,9 @@
 
   &__composition {
     position: relative;
+    grid-row: 1;
     display: flex;
+    transform: translateX(-9px);
   }
 
   &__list {
@@ -33,29 +40,29 @@
   }
 
   &__link {
-    position: relative;
     padding: 5px 10px;
+    font-size: 16px;
+    color: #333;
   }
 
   &__item {
     position: relative;
     align-self: flex-end;
     width: max-content;
-    
 
     @include onIpad {
       margin-right: 50px;
     }
 
     @include onDesktop {
-      margin-right: 120px;
+      margin-right: 110px;
     }
 
     &::after {
       content: "";
       position: absolute;
       top: 50%;
-      right: -100px;
+      right: -86px;
       width: 80px;
       height: 1px;
       background: #000;
@@ -63,20 +70,6 @@
   }
 
   &__image {
-    position: relative;
-    width: auto;
-    transform: translateX(50%);
-
-    @include onIpad {
-      position: static;
-      right: -19%;
-      object-fit: contain;
-      transform: translateX(0);
-    }
-
-    @include onDesktop {
-      position: relative;
-      right: 0;
-    }
+    position: static;
   }
 }
