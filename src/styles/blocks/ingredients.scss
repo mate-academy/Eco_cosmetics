@@ -1,4 +1,6 @@
 .ingredients {
+  display: flex;
+  align-items: flex-end;
 
   &__side-text {
     position: relative;
@@ -8,12 +10,24 @@
   }
 
   &__text {
-    position: relative;
-    grid-row: 1;
+    display: none;
+    grid-row: 1 ;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 
   &__title {
-    
+
+    &--mobile {
+      grid-row: 1;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
     @include onDesktop {
       margin-top: 50px;
     }
@@ -22,54 +36,17 @@
   &__more {
     position: absolute;
     bottom: 0;
-  }
 
-  &__composition {
-    position: relative;
-    grid-row: 1;
-    display: flex;
-    transform: translateX(-9px);
-  }
+    &--mobile {
+      bottom: -50px;
 
-  &__list {
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-around;
-  }
+      @include onIpad {
+        bottom: 0;
+      }
 
-  &__link {
-    padding: 5px 10px;
-    font-size: 16px;
-    color: #333;
-  }
-
-  &__item {
-    position: relative;
-    align-self: flex-end;
-    width: max-content;
-
-    @include onIpad {
-      margin-right: 50px;
+      @include onDesktop {
+        display: none;
+      }
     }
-
-    @include onDesktop {
-      margin-right: 110px;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: -86px;
-      width: 80px;
-      height: 1px;
-      background: #000;
-    }
-  }
-
-  &__image {
-    position: static;
   }
 }
