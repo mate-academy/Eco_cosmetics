@@ -1,0 +1,64 @@
+.page {
+    background-color: #e4dfd3;
+    color: #333333;
+    font-family: 'Avenir', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    scroll-behavior: smooth;
+  
+    @include onDesktop {
+      font-size: 18px;
+      line-height: 150%;
+    }
+  
+    @include onTab {
+      font-weight: 500;
+    }
+  
+    &__menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      background-color: #333333;
+      z-index: 1;
+      transform: translateX(-100%);
+      transition: 0.3s;
+  
+      &:target {
+        transform: translateX(0);
+      }
+    }
+  
+    &__section {
+      position: relative;
+      margin-bottom: 45px;
+  
+      @include onTab {
+        margin-bottom: 60px;
+      }
+  
+      @include onDesktop {
+        margin-bottom: 150px;
+      }
+  
+      &-title {
+        font-size: 24px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #344f10;
+        margin-bottom: 12px;
+  
+        @include onDesktop {
+          font-size: 36px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  
