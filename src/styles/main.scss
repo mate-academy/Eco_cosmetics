@@ -1,101 +1,14 @@
 // @import "utils";
 @import "./fonts";
-// @import "typography";
+@import "./reset";
 @import "./utils/mixins";
 @import "./blocks/grid.scss";
 // body {
 //   background: $c-gray;
 // }
-// @import "./blocks/header.scss";
+@import "./blocks/footer.scss";
 @import "./blocks/page.scss";
 @import "./blocks/menu.scss";
-
-.icon {
-  &__image {
-    width: 24px;
-    height: 24px;
-
-    @include onDesktop {
-      &--logo {
-        width: 50px;
-        height: 50px;
-      }
-    }
-
-    @include onBigScreen {
-      &--logo {
-        background-color: #e4dfd3;
-        border-radius: 50%;
-      }
-    }
-  }
-
-  @include onDesktop {
-    &--menu {
-      display: none;
-    }
-
-    &--logo::after {
-      content: "witch of mountain winds";
-      position: absolute;
-      margin-left: 12px;
-      text-transform: uppercase;
-      font-size: 12px;
-      line-height: 50px;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-    }
-  }
-
-  &--bag {
-    transition: transform 0.3s;
-    
-    &:hover {
-      transform: scale(1.2);
-    }
-  }
-}
-
-.burger-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav {
-  display: none;
-
-  &__list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style: none;
-  }
-
-  &__link {
-    color: #344f10;
-    padding-bottom: 12px;
-    border-bottom: 1px solid transparent;
-
-    font-family: "Sharp Sans Display No2", sans-serif;
-    font-size: 18px;
-    line-height: 130%;
-
-    transition: border-color 0.3s;
-
-    &:hover {
-      border-color: #344f10;
-    }
-
-  }
-
-  @include onDesktop {
-    display: block;
-    width: 250px;
-  }
-
-  @include onBigScreen {
-    display: block;
-    width: 300px;
-  }
-}
+@import "./blocks/burger-menu.scss";
+@import "./blocks/nav.scss";
+@import "./blocks/icon.scss";
