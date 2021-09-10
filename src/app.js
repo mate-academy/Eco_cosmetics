@@ -19,6 +19,10 @@ function move(shift) {
   prev.disabled = position <= 0;
   position = position % count;
 
+  if (getprop === 'normal') {
+    list.style.transform = `translateX(${(-position * cardWidth)}px)`;
+  }
+
   list.style.transform = `translateX(${(-position * (cardWidth + numProp))}px)`;
 }
 
