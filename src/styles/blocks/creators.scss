@@ -1,0 +1,120 @@
+.creators {
+  &__title {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #344f10;
+    margin-bottom: 12px;
+
+    @include onDesktop {
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    grid-row: 1;
+    top: 120px;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: max-content;
+      width: max-content;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      transform: translateX(-50%) rotate(-90deg);
+      color: rgba(52, 79, 16, 0.5);
+      text-transform: uppercase;
+      transition: 0.5s;
+
+      &:hover {
+        transform: translate(-50%, 100%) rotate(-90deg);
+      }
+
+      &::before {
+        content: "";
+        position: relative;
+        display: block;
+        top: 8px;
+        right: 120px;
+        height: 1px;
+        width: 100px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__history-name {
+    margin-bottom: 36px;
+
+    @include onIpad {
+      margin-bottom: 0;
+    }
+  }
+
+  &__history-second {
+    margin-bottom: 44px;
+
+    @include onIpad {
+      margin-bottom: 0;
+    }
+  }
+
+  &__history--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__learn-btn {
+    margin-bottom: 42px;
+
+    @include onIpad {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img-item {
+    display: none;
+
+    @include onIpad {
+      display: block;
+
+      width: 100%;
+      object-position: center;
+      object-fit: cover;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+    }
+
+    @include onDesktop {
+      max-height: 670px;
+    }
+  }
+}
