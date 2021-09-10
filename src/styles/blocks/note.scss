@@ -1,28 +1,27 @@
 .note {
-    display: none;
-  
-    @include onDesktop {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    height: max-content;
+    width: max-content;
+    transform-origin: top;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    transform: translateX(-50%) rotate(-90deg);
+    color: rgba(52, 79, 16, 0.5);
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      position: relative;
       display: block;
-      height: max-content;
-      width: max-content;
-      transform-origin: top;
-      font-size: 14px;
-      line-height: 130%;
-      letter-spacing: 0.05em;
-      transform: translateX(-50%) rotate(-90deg);
-      color: rgba(52, 79, 16, 0.5);
-      text-transform: uppercase;
-  
-      &::before {
-        content: "";
-        position: relative;
-        display: block;
-        top: 8px;
-        right: 120px;
-        height: 1px;
-        width: 100px;
-        background-color: rgba(52, 79, 16, 0.5);
-      }
+      top: 8px;
+      right: 120px;
+      height: 1px;
+      width: 100px;
+      background-color: rgba(52, 79, 16, 0.5);
     }
   }
-  
+}

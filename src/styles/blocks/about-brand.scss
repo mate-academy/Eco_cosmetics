@@ -1,76 +1,75 @@
 .about-brand {
-    
-    @include onDesktop {
-      margin-top: 200px;
-    }
-  
-    &__note {
-      position: relative;
-      grid-row: 1;
-      top: 120px;
-    }
-  
-    &__info {
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__note {
+    position: relative;
+    grid-row: 1;
+    top: 120px;
+  }
+
+  &__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     grid-row: 1;
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+    margin-bottom: 44px;
+
+    @include onDesktop {
+      font-weight: 500;
+      margin-bottom: 30px;
     }
-  
-    &__paragraph {
-      font-size: 16px;
-      line-height: 150%;
-      color: #333;
-      margin-bottom: 44px;
-  
-      @include onDesktop {
-        font-weight: 500;
-        margin-bottom: 30px;
-      }
-  
-      &--desktop {
-        display: none;
-  
-        @include onDesktop {
-          display: block;
-          margin-bottom: 44px;
-        }
-      }
-    }
-  
-    &__images {
+
+    &--desktop {
       display: none;
-  
-      @include onTab {
-        display: flex;
-        gap: 20px;
-      }
-    }
-  
-    &__image {
-      object-fit: cover;
-  
-      @include onTab {
-        display: block;
-        width: 110%;
-        max-height: 400px;
-      }
-  
+
       @include onDesktop {
-        max-height: 100%;
-      }
-  
-      &--desktop {
-        display: none;
-  
-        @include onDesktop {
-          display: block;
-          grid-row: 1;
-          height: 430px;
-          max-width: 33%;
-          align-self: flex-end;
-          object-fit: cover;
-        }
+        display: block;
+        margin-bottom: 44px;
       }
     }
   }
+
+  &__images {
+    display: none;
+
+    @include onTab {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+
+    @include onTab {
+      display: block;
+      width: 110%;
+      max-height: 400px;
+    }
+
+    @include onDesktop {
+      max-height: 100%;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        grid-row: 1;
+        height: 430px;
+        max-width: 33%;
+        align-self: flex-end;
+        object-fit: cover;
+      }
+    }
+  }
+}
