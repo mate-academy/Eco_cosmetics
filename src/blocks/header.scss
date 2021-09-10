@@ -1,17 +1,23 @@
 .header {
+  &__nav {
+    margin-bottom: 12px;
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+    @include onDekstop {
+      margin-bottom: 80px;
+    }
+  }
   &__nav-top {
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     align-items: center;
-    padding: 15px 20px 0;
-    margin-bottom: 12px;
     list-style: none;
+    padding: 15px 20px 0;
     @include onTablet {
-      margin-bottom: 30px;
       padding: 24px 27px 0;
     }
     @include onDekstop {
-      margin-bottom: 80px;
       padding: 40px 50px 0;
     }
   }
@@ -35,6 +41,7 @@
     text-transform: capitalize;
     text-decoration: none;
     color: $green-color;
+    transition: all 0.3s;
     &::after {
       content: "";
       display: block;
@@ -42,13 +49,18 @@
       width: 100%;
       bottom: -10px;
       height: 1px;
-      background-color: $green-color;
+      background-color: $light-green-color;
       opacity: 0;
       transition: opacity 0.3s;
     }
     &:hover:after {
       opacity: 1;
     }
+
+    &:hover {
+      color: $light-green-color;
+    }
+
   }
   &__basket {
     justify-self: end;
@@ -137,13 +149,18 @@
   }
 
   &__main-image {
+    display: block;
     margin-bottom: 25px;
     width: 100%;
+    transition: transform 0.2s;
     @include onTablet {
       margin-bottom: 50px;
     }
     @include onDekstop {
       margin-bottom: 200px;
+    }
+    &:hover {
+      transform: scale(1.03);
     }
   }
   &__button {

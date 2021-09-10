@@ -54,9 +54,38 @@
       margin-bottom: 0;
     }
   }
+  &__link-nav {
+    position: relative;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: -10px;
+      height: 1px;
+      background-color: $green-color;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:hover:after {
+      opacity: 1;
+    }
+
+    &:hover {
+      color: $green-color;
+    }
+  }
   &__link {
     text-decoration: none;
     color: inherit;
+    transition: all 0.3s;
+    &:hover {
+      color: $green-color;
+    }
   }
   &__nav-facebook {
     display: inline-block;
@@ -88,7 +117,6 @@
     }
   }
   &__paragraph-2 {
-    margin: auto;
     font-size: 11px;
     font-family: "Sharp Sans Display No2", sans-serif;
     line-height: 130%;

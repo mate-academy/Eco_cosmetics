@@ -1,0 +1,133 @@
+.header-checkout {
+  &__nav-top {
+    margin-bottom: 25px;
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+    @include onDekstop {
+      margin-bottom: 75px;
+    }
+  }
+  &__title {
+    display: none;
+    margin: 0 auto 30px;
+    text-transform: capitalize;
+    pointer-events: none;
+    @include onDekstop {
+      display: block;
+    }
+  }
+  &__title-onTablet-1 {
+    margin-bottom: 5px;
+    font-size: 14px;
+    line-height: 150%;
+    color: $dark-color;
+    text-transform: uppercase;
+    @include onDekstop {
+      display: none;
+    }
+  }
+  &__line-1 {
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+    @include onDekstop {
+      display: none;
+    }
+  }
+
+  &__over-line {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: #bdbdbd;
+    }
+  }
+  &__title-onTablet-2 {
+    margin: 0 auto 25px;
+    font-size: 16px;
+    line-height: 150%;
+    color: $dark-color;
+    text-transform: uppercase;
+    @include onTablet {
+      margin: 0 auto 45px;
+    }
+    @include onDekstop {
+      display: none;
+    }
+  }
+  &__nav {
+    margin: 0 auto 60px;
+    display: none;
+    @include onDekstop {
+      display: block;
+    }
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 80px;
+  }
+  &__link {
+    position: relative;
+    display: inline-block;
+    max-width: max-content;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $green-color;
+    transition: all 0.3s;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: -10px;
+      height: 1px;
+      background-color: $light-green-color;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:hover:after {
+      opacity: 1;
+    }
+
+    &:hover {
+      color: $light-green-color;
+    }
+  }
+  &__label {
+    display: block;
+    height: 30px;
+    margin-bottom: 25px;
+
+    @include onDekstop {
+      margin-bottom: 30px;
+    }
+  }
+  &__form &__label {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__form {
+    margin-bottom: 60px;
+    @include onDekstop {
+      margin-bottom: 50px;
+    }
+  }
+  &__button {
+    margin: 0 auto 110px;
+  }
+}

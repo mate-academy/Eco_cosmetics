@@ -21,16 +21,21 @@
       2 25px,
       3 45px,
       4 30px;
+    @each $child, $margin-bottom in $margin {
+      &:nth-child(#{$child}) {
+        margin-bottom: $margin-bottom;
+      }
+    }
     @include onDekstop {
       $margin:
         1 30px,
         2 30px,
         3 60px,
         4 50px;
-    }
-    @each $child, $margin-bottom in $margin {
-      &:nth-child(#{$child}) {
-        margin-bottom: $margin-bottom;
+      @each $child, $margin-bottom in $margin {
+        &:nth-child(#{$child}) {
+          margin-bottom: $margin-bottom;
+        }
       }
     }
   }

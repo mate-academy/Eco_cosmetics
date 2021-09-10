@@ -47,6 +47,7 @@
     $pseudo-ell:1px;
     position: relative;
     padding-right: 95px;
+    transition: color 0.2s;
     &::before {
       content: "";
       display: block;
@@ -56,6 +57,7 @@
       position: absolute;
       bottom: 50%;
       right: 0;
+      transition: background-color 0.2s;
     }
     @include onDekstop {
       &::after {
@@ -69,7 +71,17 @@
         position: absolute;
         bottom: calc(50% + #{$pseudo-ell});
         right: 0;
+        transition: background-color 0.2s;
       }
+    }
+    &:hover::before {
+      background-color: $light-green-color;
+    }
+    &:hover::after {
+      background-color: $light-green-color;
+    }
+    &:hover {
+      color: $light-green-color;
     }
   }
   &__img-wrapper {
@@ -104,6 +116,11 @@
     @include onDekstop {
       display: none;
     }
+  }
+  &__item-link {
+    text-decoration: none;
+    color: inherit;
+
   }
   $margin-item:
     1 50px,
