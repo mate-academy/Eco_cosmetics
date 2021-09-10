@@ -530,7 +530,7 @@
           </div>
 
           <div class="grid">
-            <ul class="grid__item-dekstop--2-4">
+            <ul class="grid__item-dekstop--2-4 slick-button">
               <li class="previous"></li>
               <li class="next"></li>
             </ul>
@@ -904,6 +904,7 @@
           cssEase: 'linear',
           nextArrow: '.next',
           prevArrow: '.previous',
+          arrow: true,
           responsive: [
             {
               breakpoint: 1280,
@@ -952,32 +953,26 @@
 
         $('ul.slick-button li.next').on('click', function () {
           if (counter < countLimit) {
-            console.log(countLimit, counter, 'counter < countLimit');
             counter++;
           }
           if (counter >= countLimit) {
-            console.log(countLimit, counter, 'counter >= countLimit 0.3');
             elementNext.style.opacity = '0.3';
             elementPrev.style.opacity = '0.8';
           }
           if (counter > 3 ) {
-              console.log(countLimit, counter, 'counter > 3 0.8');
               elementPrev.style.opacity = '0.8';
           }
         });
 
         $('ul.slick-button li.previous').on('click', function () {
           if (counter > 3) {
-            console.log(countLimit, counter, 'counter > 3 prev');
             counter--;
           }
           if(counter <= countLimit) {
-            console.log(countLimit, counter, 'counter < countLimit + 1 0.8 Prev');
             elementNext.style.opacity =  '0.8';
           }
 
           if(counter === 3) {
-            console.log(countLimit, counter, 'counter === 3 0.3 prev');
             elementPrev.style.opacity = '0.3';
           }
         });
@@ -1001,7 +996,6 @@
             counter = 3;
 
             filterClass = `.shop__${productType}-product`
-            console.log(nodesFaceClass);
             $('.filter-class').text(filterClass);
             $('.slick').slick('slickUnfilter', filterClass);
             $('.slick').slick('slickFilter', filterClass);
@@ -1013,8 +1007,8 @@
             filterClass = '';
             countLimit = nodesCountClass;
             if(counter <= countLimit) {
-            elementNext.style.opacity =  '0.8';
-            elementPrev.style.opacity = '0.3';
+              elementNext.style.opacity =  '0.8';
+              elementPrev.style.opacity = '0.3';
             }
           }
         }
