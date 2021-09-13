@@ -1,6 +1,26 @@
 .card {
   display: block;
 
+  &--2nd {
+    display: none;
+
+    @include onTab {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &--3rd {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
   &__name {
     display: block;
     font-size: 20px;
@@ -31,6 +51,10 @@
     transition: 0.5s;
 
     @include onDesktop {
+      height: 500px;
+    }
+
+    @include onTab {
       height: 500px;
     }
 
