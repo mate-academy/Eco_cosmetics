@@ -1,0 +1,74 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  @include onDesktop {
+    grid-row: 1;
+    text-align: left;
+  }
+
+  &__name {
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+
+    @include onIpad {
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 130%;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 60px;
+      line-height: 72px;
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 150%;
+    margin-bottom: 48px;
+
+    @include onIpad {
+      margin-bottom: 56px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-img--container {
+    grid-row: 1;
+  }
+
+  &-img {
+    width: 100%;
+    min-height: 450px;
+    object-fit: cover;
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+  }
+
+  &__btn {
+    align-self: center;
+
+    @include onDesktop {
+      align-self: flex-start;
+    }
+  }
+}

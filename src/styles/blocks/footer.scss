@@ -1,0 +1,182 @@
+.footer {
+  height: 470px;
+  color: #e4dfd3;
+  background-color: #8c9772;
+
+  @include onIpad {
+    height: 280px;
+    font-weight: 500;
+  }
+
+  @include onDesktop {
+    height: 320px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+  }
+
+  &__content {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+
+    @include onIpad {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      width: 60%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-left: -10px;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    padding: 10px;
+    color: #e4dfd3;
+    transition: 0.5s;
+
+    &:hover {
+      color: #23571c;
+      cursor: pointer;
+    }
+
+  }
+
+  &__conect {
+    display: flex;
+    gap: 20px;
+
+    &--mobile {
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        width: 40%;
+      }
+    }
+    &-link {
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__support {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+
+    @include onIpad {
+      width: 50%;
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      width: 40%;
+      gap: 20px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+    }
+
+    &-link {
+      display: block;
+      color: #e4dfd3;
+      transition: 0.5s;
+
+      &:hover {
+        color: #23571c;
+        cursor: pointer;
+      }
+    }
+
+    &-time {
+      line-height: 150%;
+      width: 280px;
+
+      @include onIpad {
+        width: 100%;
+      }
+
+      @include onDesktop {
+        width: 100%;
+      }
+    }
+
+    &-phone {
+      margin-bottom: 8px;
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__copyrigth {
+    font-size: 14px;
+    line-height: 130%;
+
+    &--mobile {
+      width: 200px;
+      margin: auto;
+      text-align: center;
+      text-transform: uppercase;
+
+      @include onIpad {
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        text-transform: unset;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      font-size: 18px;
+      line-height: 130%;
+    }
+
+    &--uppercase {
+      text-transform: uppercase;
+    }
+  }
+}

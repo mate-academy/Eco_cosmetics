@@ -1,0 +1,129 @@
+.brand {
+  &__title {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #344f10;
+    margin-bottom: 12px;
+
+    @include onDesktop {
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__link {
+    position: relative;
+    grid-row: 1;
+    display: none;
+    top: 60px;
+
+    @include onDesktop {
+      display: block;
+      height: max-content;
+      width: max-content;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      transform: translateX(-50%) rotate(-90deg);
+      color: rgba(52, 79, 16, 0.5);
+      text-transform: uppercase;
+      transition: 0.5s;
+
+      &:hover {
+        transform: translate(-50%, 100%) rotate(-90deg);
+      }
+
+      &::before {
+        content: "";
+        position: relative;
+        display: block;
+        top: 8px;
+        right: 120px;
+        height: 1px;
+        width: 100px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__history {
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+    margin-bottom: 44px;
+
+    @include onDesktop {
+      font-weight: 500;
+      margin-bottom: 30px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+
+        margin-bottom: 44px;
+      }
+    }
+  }
+
+  &__images {
+    display: none;
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
+
+    @include onIpad {
+      display: flex;
+      gap: 20px;
+    }
+
+  }
+
+  &__img-big {
+    object-fit: cover;
+
+    @include onIpad {
+      display: block;
+      max-height: 400px;
+      width: 110%;
+    }
+
+    @include onDesktop {
+      max-height: 100%;
+    }
+  }
+
+  &__img-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: 430px;
+      max-width: 33%;
+      align-self: flex-end;
+      object-fit: cover;
+    }
+  }
+}

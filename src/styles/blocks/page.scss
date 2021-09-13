@@ -1,0 +1,51 @@
+.page {
+  font-family: Avenir, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  background-color: #e4dfd3;
+  color: #333;
+  scroll-behavior: smooth;
+
+  @include onIpad {
+    font-weight: 500;
+  }
+
+  @include onDesktop {
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #333;
+    z-index: 1;
+
+    transform: translate(-100%, -100%);
+
+    transition: 0.5s;
+
+    &:target {
+      transform: translate(0, 0);
+    }
+  }
+
+  &__section {
+    position: relative;
+    margin-bottom: 45px;
+
+    @include onIpad {
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+}
