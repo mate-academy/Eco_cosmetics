@@ -17,7 +17,7 @@
     }
   }
 
-  &__text {
+  &__content {
     grid-row: 1;
     display: flex;
     flex-direction: column;
@@ -27,8 +27,8 @@
   &__link {
     position: relative;
     grid-row: 1;
-    top: 120px;
     display: none;
+    top: 60px;
 
     @include onDesktop {
       display: block;
@@ -87,21 +87,22 @@
 
   &__images {
     display: none;
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.03);
+      cursor: pointer;
+    }
 
     @include onIpad {
       display: flex;
       gap: 20px;
     }
+
   }
 
   &__img-big {
     object-fit: cover;
-    transition: 0.5s;
-
-    &:hover {
-      transform: scale(1.05);
-      cursor: pointer;
-    }
 
     @include onIpad {
       display: block;

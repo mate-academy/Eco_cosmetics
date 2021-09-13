@@ -1,0 +1,184 @@
+.shop {
+  &__link {
+    position: absolute;
+    top: 210px;
+    left: 180px;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: max-content;
+      width: max-content;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      transform: translateX(-50%) rotate(-90deg);
+      color: rgba(52, 79, 16, 0.5);
+      text-transform: uppercase;
+      transition: 0.5s;
+
+      &:hover {
+        transform: translate(-50%, 100%) rotate(-90deg);
+      }
+
+      &::before {
+        content: "";
+        position: relative;
+        display: block;
+        top: 8px;
+        right: 120px;
+        height: 1px;
+        width: 100px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #344f10;
+    margin-bottom: 12px;
+
+    @include onIpad {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__list {
+    grid-row: 2;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+
+    @include onIpad {
+      justify-content: flex-start;
+      gap: 14px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__item-link {
+    padding: 10px;
+    padding-left: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #828282;
+
+    &--active {
+      color: #333;
+      position: relative;
+      font-weight: bold;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 40px;
+        height: 2px;
+        width: 90%;
+        background: #333;
+      }
+    }
+  }
+
+  &__catalog {
+    display: flex;
+    grid-row: 3;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    transform: translateX(0%);
+    transition: 0.4s;
+    overflow: hidden;
+
+    @include onIpad {
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__card {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 100%;
+
+    @include onIpad {
+      width: 48%;
+    }
+
+    @include onDesktop {
+      width: 33%;
+    }
+
+    &-link {
+      width: 100%;
+      height: 100%;
+    }
+
+    &-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+
+      @include onIpad {
+        height: 342px;
+      }
+
+      @include onDesktop {
+        height: 500px;
+      }
+    }
+
+    &-title {
+      display: block;
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    &-price {
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    width: 100%;
+    grid-row: 5;
+    justify-content: center;
+  }
+}
