@@ -4,6 +4,10 @@
   color: #333;
   scroll-behavior: smooth;
 
+  @include onBigScreen {
+    background-color: #fff;
+  }
+
   &__body {
     display: flex;
     flex-direction: column;
@@ -23,4 +27,21 @@
       transform: translateX(0);
     }
   }
+
+  &__section {
+    overflow-x: hidden;
+
+    &--main {
+      @include section-margin(60px, 20px);
+
+      @include onTablet {
+        @include section-margin(100px, 28px);
+      }
+
+      @include onDesktop {
+        @include section-margin(200px, 40px);
+      }
+    }
+  }
+
 }
