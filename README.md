@@ -24,7 +24,7 @@ Implement landing page according to [Figma design](https://www.figma.com/file/Fz
 Use `Sharp Sans No2 Medium` and `Avenir`, which you can find in fonts directory.
 
 
-## HR important moments
+## Checklist for preparing a portfolio project for HR review
 
 - The speed of animations is the same throughout the landing page (for example, increasing when hovering or moving blocks when scrolling)
 - Placeholders in the forms suggest what to enter, and if there is a validation of the form, then it is clear in what format to enter the phone number
