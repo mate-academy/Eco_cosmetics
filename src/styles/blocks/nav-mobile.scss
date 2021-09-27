@@ -1,0 +1,45 @@
+.nav-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0 0;
+  background-color: $darBckg;
+  height: 100vh;
+  font-family: "Sharp Sans Display No2";
+  transition: transform $transitionTime;
+  transform: translateX(-100%);
+
+  &:target {
+    transform: translateX(0%);
+  }
+
+  &__list {
+    padding: 0 0 0;
+    margin: 45px 0 0;
+    list-style: none;
+    text-align: center;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: -10px;
+      height: 1px;
+      background-color: $mobileNavColor;
+    }
+  }
+
+  &__link {
+    color: $mobileNavColor;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: inherit;
+  }
+}
