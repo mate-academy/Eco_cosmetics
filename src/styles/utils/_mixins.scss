@@ -1,1 +1,42 @@
-// Test (no empty line)
+@mixin fontface($name, $file, $weight, $style: normal) {
+  @font-face {
+    font-family: $name;
+    font-display: swap;
+    @if $name == "Avenir" {
+      src: url("../fonts/Avenir/" + $file + ".ttf") format("truetype");
+    }
+    @else {
+      src: url("../fonts/Sharp_Sans_No2/" + $file + ".otf") format("otf");
+    }
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin onDesktop {
+  @media screen and (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin onLaptop {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+@mixin onTablet {
+  @media screen and (min-width: 640px) {
+    @content;
+  }
+}
