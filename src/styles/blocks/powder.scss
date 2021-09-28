@@ -9,11 +9,43 @@
 
     transform: translateX(115%);
 
+    &-desktop {
+      display: none;
+
+      @include onDeskTop {
+        height: 407px;
+        width: 390px;
+        display: block;
+        grid-row: 1 / 5;
+        background-image: url(../images/powder-full.svg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__desktop-description {
+    display: none;
+
+    @include onDeskTop {
+      width: 381px;
+      height: 406px;
+      grid-row: 1;
+      display: block;
+      background-image: url(../images/Frame-1.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
 
   &__wrapp {
     margin-top: 40px;
     position: relative;
+    @include onDeskTop {
+      display: none;
+    }
   }
 
   &__description {
@@ -69,6 +101,9 @@
         left: 117%;
       }
     }
+    @include onDeskTop {
+      display: none;
+    }
   }
 
   &__line-breaker {
@@ -81,6 +116,12 @@
 
   &__cards {
     margin-top: 60px;
+
+    @include onDeskTop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &__card {
@@ -94,12 +135,43 @@
       margin-bottom: 0;
     }
 
+    &-img {
+      display: block;
+
+      @include onDeskTop {
+        width: 98px;
+        height: 84px;
+      }
+    }
+
     &-text {
       margin-top: 20px;
       font-size: 14px;
       line-height: 130%;
       text-align: center;
       text-transform: uppercase;
+      color: #000000;
+    }
+
+    @include onDeskTop {
+      margin-bottom: 0;
+      flex-basis: 33.33%;
+    }
+  }
+
+  &__mobile {
+
+    @include onDeskTop {
+      display: none;
+    }
+  }
+
+  &__desktop {
+    display: none;
+
+    @include onDeskTop {
+      display: block;
+      grid-row: 2;
     }
   }
 }
