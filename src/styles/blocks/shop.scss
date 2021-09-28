@@ -43,27 +43,28 @@
     text-transform: uppercase;
     font-size: 14px;
     line-height: 150%;
+    transition: color $transitionTime;
 
     &:hover {
       color: $darBckg;
     }
 
-    &:hover::after {
+    &::after {
       content: "";
       position: absolute;
       background-color: $darBckg;
+      visibility: hidden;
       font-weight: bold;
       bottom: -10px;
       height: 2px;
       right: 0;
       left: 0;
-
-      &:hover {
-        visibility: visible;
-      }
+      transition: visibility $transitionTime;
     }
 
-
+    &:hover::after {
+      visibility: visible;
+    }
 
     @include onDeskTop {
       font-weight: 500;
@@ -91,6 +92,12 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+
+        transition: transform $transitionTime;
+
+        &:hover {
+          transform: scale(1.01);
+        }
 
         @include onDeskTop {
           height: 600px;
