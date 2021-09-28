@@ -1,18 +1,31 @@
 .section {
+  padding-bottom: 200px;
+
+  @include onMinDesktop {
+    padding-bottom: 100px;
+  }
+
   &__line {
     content: "";
     border-top: 1px solid rgba(52, 79, 16, 0.5);
   }
 
-  &__left-text {
+  &__text {
     font-family: Sharp_Sans_No2, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: #333;
+  }
+
+  &__left-text {
     margin: 0;
     padding: 100px 0;
+
+    @include onMinDesktop {
+      padding: 50px 0;
+    }
   }
 
   &__right-text {
@@ -26,5 +39,9 @@
     color: #344f10;
     padding: 100px 0;
     margin: 0;
+
+    @include onMinDesktop {
+      padding: 50px 0;
+    }
   }
 }
