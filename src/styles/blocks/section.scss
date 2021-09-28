@@ -18,6 +18,7 @@
       font-size: 36px;
       line-height: 150%;
       letter-spacing: 0.05em;
+      margin-bottom: 30px;
     }
   }
 
@@ -32,8 +33,36 @@
   
       @include onDeskTop {
         display: block;
-        margin: 12px 0 0;
+        margin: 30px 0 0;
         color: $darBckg;
+        line-height: 150%;
+      }
+    }
+  }
+
+  &__vertical-text {
+    display: none;
+
+    @include onDeskTop {
+      position: relative;
+      width: max-content;
+      display: block;
+      height: 25px;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      transform-origin: 109px 107px;
+      transform: rotate(-90deg);
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 1px;
+        top: 29%;
+        right: 104%;
+        background-color: $burgerMenu-color;
       }
     }
   }
