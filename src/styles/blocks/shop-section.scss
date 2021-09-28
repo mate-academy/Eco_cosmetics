@@ -1,0 +1,104 @@
+.shop-section {
+  margin-bottom: 160px;
+  &__h2 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__menu-button {
+    position: relative;
+    font-family: Sharp_Sans_No2, sans-serif;
+    font-weight: normal;
+    
+    font-size: 18px;
+    color: #828282;
+    text-transform: uppercase;
+    padding: 20px 20px 20px 0;
+    transition: 0.3s;
+
+    @include onMinDesktop {
+      padding-bottom: 15px;
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: #333;
+    }
+
+    &:hover::after {
+      position: absolute;
+      bottom: 0;
+      content: "";
+      height: 1px;
+      background-color: #333;
+      left: 0;
+      right: 20px;
+    }
+
+    &:focus {
+      color: #333;
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        content: "";
+        height: 1px;
+        background-color: #333;
+        left: 0;
+        right: 20px;
+      }
+    }
+
+  }
+
+  &__vertical-img {
+    height: 150px;
+  }
+
+  &__items {
+    margin: 60px 0 40px;
+
+    @include onMinDesktop {
+      margin: 40px 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    padding-bottom: 20px;
+
+    @include onMinDesktop {
+      height: 400px;
+    }
+  }
+
+  &__item-name {
+    display: block;
+
+    font-family: Avenir, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 0 0 10px;
+    color: #333;
+
+    @include onMinDesktop {
+      font-size: 18px;
+    }
+
+  }
+
+  &__item-price {
+    font-family: Avenir, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    @include onMinDesktop {
+      font-size: 16px;
+    }
+  }
+}

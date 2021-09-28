@@ -17,16 +17,22 @@
   gap: 40px;
 
   &__link {
+    position: relative;
     font-size: 18px;
     line-height: 130%;
     text-decoration: none;
     color: #344f10;
     padding: 10px 0;
-    border-bottom: 1px solid transparent;
     transition: 0.3s;
 
-    &:hover {
-      border-bottom: 1px solid #344f10;
+    &:hover::after {
+      position: absolute;
+      bottom: 0;
+      content: "";
+      height: 1px;
+      background-color: #344f10;
+      left: 0;
+      right: 0;
     }
   }
 }
