@@ -1,6 +1,16 @@
 .powder {
-  margin-top: 200px;
   position: relative;
+
+  @include onDeskTop {
+    margin-top: 200px;
+  }
+
+  &__vertical-text {
+
+    @include onDeskTop {
+      margin-top: -100px;
+    }
+  }
 
   &__title {
 
@@ -20,16 +30,13 @@
 
     &-desktop {
       display: none;
-
+      @extend %center-background;
       @include onDeskTop {
         height: 407px;
         width: 390px;
         display: block;
         grid-row: 1 / 5;
         background-image: url(../images/powder-full.svg);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
       }
     }
   }
