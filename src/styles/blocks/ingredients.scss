@@ -1,0 +1,87 @@
+.ingredients {
+  display: flex;
+  padding-top: 200px;
+  gap: 20px;
+
+  &__title {
+    @extend %title;
+    max-width: 280px;
+  }
+
+  &__item {
+    @extend %flex-between;
+    width: calc(50% + 100px);
+    overflow: hidden;
+    align-items: center;
+    height: 400px;
+
+    &--title {
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      width: calc(50% - 100px);
+      overflow: visible;
+
+      &::before {
+        content: url(../images/ingredientSide.svg);
+        @extend %sideBar;
+      }
+    }
+  }
+
+  &__text {
+    @extend %flex-between;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__link {
+    align-self: flex-start;
+    display: inline-block;
+    position: relative;
+    color: $green;
+    font-size: 14px;
+    line-height: 1.3em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include hoverLinkAnimation($green);
+  }
+
+  &__list {
+    position: relative;
+    @extend %flex-between;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 320px;
+    min-width: 180px;
+    margin-right: 20px;
+  }
+
+  &__ingredient {
+    position: relative;
+    font-size: 16px;
+    line-height: 1.5em;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 76px;
+      height: 1px;
+      bottom: 50%;
+      right: -86px;
+      background-color: $black;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 5px;
+      width: 5px;
+      border-radius: 50%;
+      background-color: $black;
+      bottom: 10px;
+      right: -91px;
+    }
+  }
+}
