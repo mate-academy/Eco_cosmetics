@@ -1,0 +1,53 @@
+.promo {
+  display: flex;
+  gap: 20px;
+  padding-top: 200px;
+
+  &__item {
+    @extend %flex-center;
+    align-items: center;
+    width: 50%;
+    padding: 100px 0;
+
+    &--tagline {
+      justify-content: flex-start;
+    }
+  }
+
+  &__paragraph {
+    position: relative;
+    max-width: 380px;
+    font-size: 16px;
+    line-height: 1.5em;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: 0;
+      height: 2px;
+      width: 50vw;
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__tagline {
+    position: relative;
+    max-width: 380px;
+    color: $green;
+    font-size: 24px;
+    line-height: 1.5em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      height: 2px;
+      width: 50vw;
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+}
