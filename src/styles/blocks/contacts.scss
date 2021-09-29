@@ -1,0 +1,77 @@
+.contacts {
+  display: flex;
+  gap: 20px;
+  padding: 200px 0;
+
+  &__item {
+    position: relative;
+    @extend %flex-center;
+    width: 50%;
+    overflow: hidden;
+
+    &--text::before {
+      content: url(../images/contactsSide.svg);
+      @extend %sideBar;
+    }
+  }
+
+  &__text {
+    max-width: 380px;
+  }
+
+  &__picture {
+    align-self: center;
+    overflow: hidden;
+  }
+
+  &__title {
+    @extend %title;
+  }
+
+  &__paragraph {
+    margin-bottom: 20px;
+    color: $black;
+    font-size: 24px;
+    line-height: 1.5em;
+  }
+}
+
+.form {
+  &__item {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: none;
+    color: $black;
+    font-size: 18px;
+    line-height: 1.5em;
+    border-bottom: 1px solid gray;
+    background-color: transparent;
+
+    &--textarea {
+      min-height: 50px;
+      margin-top: 30px;
+      resize: none;
+      overflow-y: auto;
+    }
+
+    &::placeholder {
+      font-family: "SharpSans№2", sans-serif;
+      color: $darkGray;
+    }
+
+    &:focus {
+      color: $black;
+      outline: none;
+      border-bottom: 1px solid $black;
+    }
+  }
+
+  &__button {
+    width: 280px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+  }
+}
