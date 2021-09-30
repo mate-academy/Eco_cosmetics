@@ -64,3 +64,41 @@
     @include hoverLinkAnimation($green);
   }
 }
+
+@media (max-width: $tabletBreakPoint) {
+  .info {
+    gap: 30px;
+    padding-top: 0;
+
+    &__item:before {
+      display: none;
+    }
+
+    &__paragraph--hidden {
+      display: none;
+    }
+
+    &__item--picture {
+      justify-content: flex-end;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobileBreakPoint) {
+  .info__item--picture {
+    display: none;
+  }
+
+  .info__item {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .info__text {
+    max-width: 100%;
+  }
+}
