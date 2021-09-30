@@ -1,12 +1,27 @@
 .sectionTM {
   padding-top: 100px;
 
+  @include onMobile {
+    padding-top: 60px;
+  }
+
   &__h2 {
     text-transform: uppercase;
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 0.05em;
     margin-bottom: 12px;
+
+    @include onMobile {
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+
+    &--text-align-center {
+      @include onMobile {
+        text-align: center;
+      }
+    }
   }
 
   &__text {
@@ -18,11 +33,22 @@
 
     &--with-small-padding {
       margin-bottom: -20px;
+      @include onMobile {
+        margin-top: 12px;
+      }
+    }
+
+    @include onMobile {
+      padding-bottom: 44px;
     }
   }
 
   &-1__img {
     height: 318px;
+
+    @include onMobile {
+      display: none;
+    }
   }
   &-2__img {
     height: 300px;
@@ -50,12 +76,19 @@
       position: absolute;
       height: 100%;
       width: 100%;
+      left: 0;
+      right: 0;
     }
   }
 
   &__nav {
     margin-bottom: 20px;
     display: flex;
+
+    @include onMobile {
+      font-weight: 400;
+      justify-content: center;
+    }
   }
 
   &__button {
@@ -65,11 +98,25 @@
 
   &__to-contact-us-button {
     margin-top: 34px;
+
+    @include onMobile {
+      margin-top: 30px;
+    }
+  }
+
+  &-3__MobileButton {
+    @include onMobile {
+      margin-bottom: -38px;
+    }
   }
 
   &-4--padding {
 
     margin-bottom: 290px;
+
+    @include onMobile {
+      margin-bottom: 36px;
+    }
   }
 
   &-4-ingredients-pos {

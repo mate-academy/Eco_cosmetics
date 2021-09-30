@@ -9,6 +9,10 @@
 
   &__container {
     padding: 0 27px;
+
+    @include onMobile {
+      padding: 0 20px;
+    }
   }
 
   &__nav {
@@ -31,7 +35,6 @@
       background-image: url(../images/menuIcon.svg);
       object-position: bottom;
       transform: translateY(10%);
-      
     }
 
     &_logo {
@@ -52,6 +55,14 @@
     font-size: 36px;
     text-align: center;
     color: #333;
+
+    @include onMobile {
+      margin-top: 290px;
+      line-height: 32px;
+      font-size: 24px;
+      font-weight: 400;
+
+    }
   }
 
   &__text {
@@ -61,6 +72,12 @@
     font-size: 18px;
     text-align: center;
     color: #333;
+
+    @include onMobile {
+      margin: 12px 0 46px;
+      line-height: 27px;
+      font-weight: 400;
+    }
   }
 
   &__sale-text {
@@ -73,6 +90,10 @@
     text-align: center;
 
     margin-top: 50px;
+
+    @include onMobile {
+      margin-top: 60px;
+    }
   }
 
   &__flex-centered {
@@ -91,10 +112,20 @@
     object-position: center;
     object-fit: cover;
 
+    @include onMobile {
+      height: 267px;
+      position: absolute;
+      left: 0;
+    }
+
     &__img-wrapper {
       position: absolute;
       height: 100%;
       width: 100%;
+
+      @include onMobile {
+        position: relative;
+      }
     }
   }
 }
