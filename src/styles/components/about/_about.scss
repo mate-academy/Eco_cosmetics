@@ -37,10 +37,16 @@
     }
   }
   &__image {
+    position: relative;
+    z-index: 2;
+    transition: transform $duration;
     background-image: url("../images/about-t.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    &:hover {
+      transform: scale(1.1);
+    }
     @include onTablet {
       grid-column: 4/7;
     }
@@ -49,9 +55,13 @@
       grid-row: 1/5;
     }
     &--secondary {
+      z-index: 1;
       @include onLaptop {
         grid-column: 12/13;
       }
     }
+  }
+  &__aside {
+    background-image: url("../images/about.svg");
   }
 }

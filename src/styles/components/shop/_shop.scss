@@ -31,6 +31,13 @@
       grid-column: 2/5;
     }
   }
+  &__link {
+    transition: border-color $duration;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-color: $darkGreenColor;
+    }
+  }
   &__product {
     grid-column: 1/3;
     margin-bottom: 80px;
@@ -39,6 +46,13 @@
       grid-column: 1/4;
     }
     &-image {
+      transition: transform $duration;
+      position: relative;
+      cursor: pointer;
+      z-index: 2;
+      &:hover {
+        transform: scale(1.03);
+      }
       width: 100%;
       margin-bottom: 20px;
       @include onLaptop {
@@ -92,5 +106,9 @@
     @include onLaptop {
       grid-column: 6/9;
     }
+  }
+  &__aside {
+    background-image: url("../images/shop.svg");
+    grid-row: 1/4;
   }
 }
