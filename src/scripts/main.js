@@ -16,3 +16,7 @@ function handleEvent(event) {
   event.preventDefault();
   form.reset();
 }
+
+const form1 = document.querySelector('.form1');
+
+form1.addEventListener('submit', handleEvent);
