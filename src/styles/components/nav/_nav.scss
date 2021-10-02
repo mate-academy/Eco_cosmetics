@@ -11,6 +11,11 @@
       justify-content: space-between;
       align-items: center;
     }
+    &--mobile {
+      margin-top: 48px;
+      height: 162px;
+      color: white;
+    }
   }
   &__item {
     margin-bottom: 20px;
@@ -18,18 +23,46 @@
       margin-right: 40px;
       margin-bottom: 0;
     }
+    &--menu {
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
+      &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $grayColorBurger;
+      }
+    }
   }
   &__link {
+    font-size: 18px;
+    line-height: 130%;
     color: inherit;
     transition: color $duration;
     &:hover {
-      color: $lightGreenColorRGBA;
+      color: $lightBeigeColor;
     }
   }
   &--header {
     display: none;
     @include onLaptop {
       display: block;
+    }
+  }
+  &--mobile {
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform $duration ease-in-out;
+    &:target {
+      transform: translateX(0);
     }
   }
 }
