@@ -1,0 +1,51 @@
+.advantages {
+  &__list {
+    max-width: 1450px;
+    margin: 0 auto 60px;
+    list-style: none;
+    align-items: baseline;
+    @include onTablet {
+      margin-bottom: 150px;
+    }
+    @include onDekstop {
+      margin-bottom: 250px;
+    }
+  }
+  &__break-line {
+    display: none;
+    @include onDekstop {
+      display: block;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000;
+
+    $item-picture:
+      url(../images/advantage-1.png) 1 65px,
+      url(../images/advantage-2.png) 2 50px,
+      url(../images/advantage-3.png) 3 0;
+
+    @each $content, $advantage, $margin-bottom in $item-picture {
+      &:nth-child(#{$advantage}):before {
+        content: $content;
+        margin-bottom: 20px;
+        @include onTablet {
+          margin-bottom: 25px;
+        }
+      }
+      &:nth-child(#{$advantage}) {
+        @include onMobile {
+          margin-bottom: $margin-bottom;
+        }
+      }
+    }
+  }
+}

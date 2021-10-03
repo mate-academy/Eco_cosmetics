@@ -1,0 +1,43 @@
+#back__arrow-path {
+  transition: fill 0.2s;
+}
+
+.back {
+  text-decoration: none;
+  color: #000;
+  &__container {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    font-weight: 400;
+    &:hover #back__arrow-path {
+      fill: $light-green-color;
+    }
+  }
+  &__word {
+    font-size: 15px;
+    @include onTablet {
+      font-size: 20px;
+    }
+    @include onDekstop {
+      font-size: 30px;
+    }
+    transition: color 0.2s;
+  }
+  &__container:hover &__word {
+    color: $light-green-color;
+  }
+  &__arrow {
+    display: block;
+    height: 15px;
+    width: 15px;
+    @include onTablet {
+      height: 20px;
+      width: 20px;
+    }
+    @include onDekstop {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}

@@ -1,0 +1,151 @@
+.footer {
+  &__nav {
+    padding: 30px 20px 60px;
+    background-color: #8c9772;
+    font-size: 14px;
+    line-height: 130%;
+    color: #e4dfd3;
+    @include onTablet {
+      padding: 30px 27px 50px;
+    }
+    @include onDekstop {
+      padding: 60px 50px 65px;
+      font-size: 18px;
+    }
+  }
+  &__wrapper {
+    max-width: 1450px;
+    margin: auto;
+  }
+  &__list-1 {
+    list-style: none;
+    margin-bottom: 30px;
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+  }
+  &__list-2 {
+    list-style: none;
+    margin-bottom: 20px;
+  }
+
+  &__item-1 {
+    margin: 0 0 20px;
+    &:last-child {
+      margin: 0;
+    }
+    @include onDekstop {
+      display: inline-block;
+      margin: 0 40px 0 0;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  &__dekstop-item-1 {
+    display: block;
+    @include onDekstop {
+      display: none;
+    }
+  }
+  &__item-2 {
+    margin-bottom: 12px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__link-nav {
+    position: relative;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: -10px;
+      height: 1px;
+      background-color: $green-color;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:hover:after {
+      opacity: 1;
+    }
+
+    &:hover {
+      color: $green-color;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+    &:hover {
+      color: $green-color;
+    }
+  }
+  &__nav-facebook {
+    display: inline-block;
+    margin-right: 15px;
+    transition: transform 0.3s;
+    &:hover {
+      transform: translateX(5%) scale(1.1);
+    }
+  }
+  &__nav-instagram {
+    display: inline-block;
+    transition: transform 0.3s;
+    &:hover {
+      transform: translateX(5%) scale(1.1);
+    }
+  }
+  &__paragraph-1 {
+    margin-bottom: 30px;
+    font-size: inherit;
+    line-height: 150%;
+  }
+  &__break-line {
+    display: block;
+    @include onTablet {
+      display: none;
+    }
+    @include onDekstop {
+      display: none;
+    }
+  }
+  &__paragraph-2 {
+    font-size: 11px;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    line-height: 130%;
+    text-align: center;
+    text-transform: uppercase;
+    &::before {
+      content: url(../images/winds-1svg.svg) " 2019";
+      text-transform: capitalize;
+      font-size: 14px;
+      line-height: 130%;
+    }
+    @include onTablet {
+      text-align: start;
+    }
+    @include onDekstop {
+      font-size: 14px;
+      text-align: start;
+      &::before {
+        content: "Copyright " url(../images/winds-1svg.svg) " 2019";
+        font-size: 18px;
+        line-height: 130%;
+        text-transform: capitalize;
+      }
+    }
+  }
+  &__media-page {
+    display: none;
+    @include onDekstop {
+      display: block;
+    }
+  }
+}

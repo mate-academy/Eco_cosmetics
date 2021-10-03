@@ -1,0 +1,136 @@
+.tooth-powder {
+  &__title-wrapper {
+    position: relative;
+  }
+  &__title {
+    margin-bottom: 35px;
+    @include onTablet {
+      margin-bottom: 0;
+    }
+    @include onDekstop {
+      position: absolute;
+      bottom: 170px;
+    }
+  }
+  &__description {
+    position: relative;
+    max-width: 1450px;
+    margin: 0 auto 60px;
+    overflow: hidden;
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+    @include onDekstop {
+      margin-bottom: 200px;
+    }
+  }
+  &__list-wrapper {
+    position: relative;
+    @include onDekstop {
+      position: static;
+    }
+  }
+  &__list {
+    padding-top: 20px;
+    position: absolute;
+    width: max-content;
+    right: -50px;
+    text-align: right;
+    text-transform: capitalize;
+    list-style: none;
+    @include onDekstop {
+      position: static;
+      padding-top: 40px;
+    }
+  }
+  &__item {
+    $pseudo-ell:1px;
+    position: relative;
+    padding-right: 95px;
+    transition: color 0.2s;
+    &::before {
+      content: "";
+      display: block;
+      height: $pseudo-ell;
+      width: 75px;
+      background-color: $dark-color;
+      position: absolute;
+      bottom: 50%;
+      right: 0;
+      transition: background-color 0.2s;
+    }
+    @include onDekstop {
+      &::after {
+        content: "";
+        display: block;
+        height: 5px;
+        width: 5px;
+        transform: translateY(50%);
+        border-radius: 50%;
+        background-color: $dark-color;
+        position: absolute;
+        bottom: calc(50% + #{$pseudo-ell});
+        right: 0;
+        transition: background-color 0.2s;
+      }
+    }
+    &:hover::before {
+      background-color: $light-green-color;
+    }
+    &:hover::after {
+      background-color: $light-green-color;
+    }
+    &:hover {
+      color: $light-green-color;
+    }
+  }
+  &__img-wrapper {
+    margin-bottom: 0;
+    height: 400px;
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+  }
+  &__img {
+    position: absolute;
+    height: 400px;
+  }
+  &__link-wrapper {
+    position: relative;
+  }
+  &__link {
+    position: absolute;
+    bottom: 0;
+    @include onMobile {
+      position: static;
+    }
+  }
+  &__add-word {
+    display: none;
+    @include onDekstop {
+      display: inline-block;
+    }
+  }
+  &__break-title {
+    display: block;
+    @include onDekstop {
+      display: none;
+    }
+  }
+  &__item-link {
+    text-decoration: none;
+    color: inherit;
+
+  }
+  $margin-item:
+    1 50px,
+    2 50px,
+    3 50px,
+    4 50px;
+
+  @each $item, $margin-bottom in $margin-item {
+    &__item:nth-child(#{$item}) {
+      margin-bottom: $margin-bottom;
+    }
+  }
+}

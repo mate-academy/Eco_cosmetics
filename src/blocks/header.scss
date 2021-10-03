@@ -1,0 +1,189 @@
+.header {
+  &__nav {
+    margin-bottom: 12px;
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+    @include onDekstop {
+      margin-bottom: 80px;
+    }
+  }
+  &__nav-top {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    list-style: none;
+    padding: 15px 20px 0;
+    @include onTablet {
+      padding: 24px 27px 0;
+    }
+    @include onDekstop {
+      padding: 40px 50px 0;
+    }
+  }
+  &__dekstop-nav {
+    display: none;
+    @include onDekstop {
+      display: grid;
+      grid-template-columns: repeat(3, max-content);
+      column-gap: 40px;
+    }
+  }
+  &__dekstop-link {
+    position: relative;
+    display: inline-block;
+    max-width: max-content;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $green-color;
+    transition: all 0.3s;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: -10px;
+      height: 1px;
+      background-color: $light-green-color;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:hover:after {
+      opacity: 1;
+    }
+
+    &:hover {
+      color: $light-green-color;
+    }
+
+  }
+  &__basket {
+    justify-self: end;
+    height: 24px;
+    @include onDekstop {
+      height: 30px;
+    }
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+  &__logo {
+    height: 24px;
+    @include onDekstop {
+      display: none;
+    }
+  }
+  &__dekstop-logo {
+    @include onDekstop {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      align-items: center;
+      column-gap: 12px;
+      pointer-events: none;
+    }
+  }
+  &__logo-decription {
+    display: none;
+    @include onDekstop {
+      display: block;
+      text-decoration: none;
+      max-width: max-content;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      color: $green-color;
+    }
+  }
+  &__decription {
+    @include onDekstop {
+      position: relative;
+      padding: 0 50px;
+    }
+  }
+  &__product {
+    text-align: center;
+    @include onDekstop {
+      width: 100%;
+      position: absolute;
+      text-align: left;
+    }
+  }
+  &__title {
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 130%;
+    @include onTablet {
+      margin-bottom: 20px;
+      font-size: 36px;
+    }
+    @include onDekstop {
+      margin-bottom: 30px;
+      font-size: 60px;
+      line-height: 72px;
+    }
+  }
+  &__break-title {
+    display: none;
+    @include onDekstop {
+      display: block;
+    }
+  }
+  &__paragraph {
+    margin-bottom: 45px;
+    font-size: 18px;
+    line-height: 150%;
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+    @include onDekstop {
+      margin-bottom: 40px;
+      font-size: 22px;
+      line-height: 130%;
+    }
+  }
+
+  &__main-image {
+    display: block;
+    margin-bottom: 25px;
+    width: 100%;
+    transition: transform 0.2s;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+    @include onDekstop {
+      margin-bottom: 200px;
+    }
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+  &__button {
+    display: block;
+    margin: 0 auto 60px;
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+    @include onDekstop {
+      margin: 0;
+    }
+  }
+  &__nav-mobile-tablet {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: -100%;
+    transition: left 0.3s;
+    &:target {
+      left: 0;
+    }
+    @include onDekstop {
+      display: none;
+    }
+  }
+}

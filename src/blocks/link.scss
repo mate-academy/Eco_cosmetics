@@ -1,0 +1,31 @@
+.link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  max-width: max-content;
+  font-family: "Sharp Sans Display No2", sans-serif;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $green-color;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 1px;
+    background-color: $light-green-color;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  &:hover:after {
+    opacity: 1;
+  }
+
+  &:hover {
+    color: $light-green-color;
+  }
+}

@@ -1,0 +1,30 @@
+.nav-string {
+  position: absolute;
+  transform: translateX(-100%);
+  &__content {
+    display: none;
+    @include onDekstop {
+      position: relative;
+      display: block;
+      width: max-content;
+      transform: rotate(-90deg);
+      transform-origin: right;
+      font-size: 14px;
+      line-height: 130%;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: rgba(52, 79, 16, 0.5);
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 50%;
+        left: -110px;
+        height: 1px;
+        width: 100px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+}
