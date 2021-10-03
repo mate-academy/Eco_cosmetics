@@ -1,0 +1,47 @@
+.menu {
+  height: 100vh;
+  background-color: $dark-color;
+  z-index: 1;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+  }
+
+  &__item {
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include full-screen-element-width($indent-on-phone);
+
+    @include onTablet {
+      @include full-screen-element-width($indent-on-tablet);
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+    color: $main-bg-color;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid $dark-grey;
+    transition: 0.3s;
+
+    &:hover {
+      color: $light-grey;
+      border-color: $light-grey;
+    }
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+}

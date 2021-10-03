@@ -1,0 +1,56 @@
+.page {
+  background-color: $main-bg-color;
+  font-family: "Avenir", Helvetica, sans-serif;
+  color: $dark-color;
+  scroll-behavior: smooth;
+
+  @include onWideScreen {
+    background-color: #fff;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: 0.4s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__header {
+    margin-bottom: 24px;
+  }
+
+  &__section {
+    overflow-x: hidden;
+
+    &--main {
+      @include section-margin(60px, $indent-on-phone);
+
+      @include onTablet {
+        @include section-margin(100px, $indent-on-tablet);
+      }
+
+      @include onDesktop {
+        @include section-margin(200px, $indent-on-desktop);
+      }
+    }
+
+    &--product {
+      @include section-margin(40px, $indent-on-phone / 2);
+  
+      @include onTablet {
+        @include section-margin(60px, $indent-on-tablet / 2);
+      }
+  
+      @include onDesktop {
+        @include section-margin(110px, $indent-on-desktop / 2);
+      }
+    }
+  }
+}

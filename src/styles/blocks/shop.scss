@@ -1,0 +1,119 @@
+.shop {
+  &__title {
+    grid-row: 1;
+    text-align: center;
+    margin-bottom: 12px;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__catalog {
+    grid-row: 2;
+    margin-bottom: 32px;
+  }
+
+  &__aside-element {
+    display: none;
+    grid-row: 2;
+
+    @include onDesktop {
+      display: inline-block;
+      position: relative;
+      right: 50%;
+      bottom: 30%;
+    }
+  }
+
+  &__products {
+    @include onTablet {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        min-width: 0;
+        justify-content: space-around;
+        gap: 30px;
+      }
+
+      @include onDesktop {
+        width: 110%;
+        align-self: end;
+        gap: 20px;
+      }
+    }
+  }
+
+  &__button {
+    grid-row: 2;
+  }
+
+  &__arrows {
+
+    &--mobile {
+      display: none;
+  
+      @include onTablet {
+        display: block;
+  
+        &--mobile {
+          display: none;
+        }
+      }
+    }
+
+    display: none;
+
+    width: max-content;
+    height: max-content;
+    align-self: center;
+
+    @include onTablet {
+      display: block;
+      grid-row: 2;
+
+      &--mobile {
+        display: none;
+      }
+    }
+
+    .slick-arrow {
+      font-size: 0;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      border: transparent;
+  
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+  
+    .slick-next {
+      background-image: url(../images/next.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      margin-left: 10px;
+    }
+  
+    .slick-prev {
+      background-image: url(../images/prev.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  
+    .slick-arrow.slick-disabled {
+      opacity: 0.3;
+    }
+  }
+}

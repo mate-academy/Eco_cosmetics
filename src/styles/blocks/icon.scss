@@ -1,0 +1,40 @@
+.icon {
+  &__image {
+    @include square($icon-size);
+
+    @include onDesktop {
+      &--logo {
+        @include square(50px);
+      }
+    }
+
+    @include onWideScreen {
+      &--logo {
+        background-color: $main-bg-color;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  @include onDesktop {
+    &--menu {
+      display: none;
+    }
+  }
+
+  &__brand-name {
+    display: none;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    color: $dark-green;
+    text-transform: uppercase;
+    position: absolute;
+    transform: translate(5%, 100%);
+
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
+}

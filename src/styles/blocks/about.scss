@@ -1,0 +1,68 @@
+.about {
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__aside-element {
+    display: none;
+    grid-row: 2;
+
+    @include onDesktop {
+      display: inline-block;
+      position: relative;
+      right: 50%;
+      top: 7%;
+    }
+  }
+
+  &__text {
+    grid-row: 2;
+  }
+
+  &__story {
+    margin-bottom: 44px;
+
+    &--extended {
+      display: none;
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__extra-image {
+    display: none;
+    transition: width 0.3s linear;
+
+    @include onDesktop {
+      display: block;
+      align-self: flex-end;
+      width: 45%;
+      height: 430px;
+      object-fit: cover;
+    }
+  }
+
+  &__image-wrapper {
+    grid-row: 2;
+    transition: transform 0.3s linear;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+
+    &:hover {
+      @include onDesktop {
+        transform: translate(-10px);
+
+        .about__extra-image {
+          width: 40%;
+        }
+      }
+    }
+  }
+}

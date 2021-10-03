@@ -1,0 +1,58 @@
+.for-whom {
+  &__main-text {
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $dark-green;
+    grid-row: 1;
+
+    @include onTablet {
+      font-weight: bold;
+      justify-self: center;
+      align-self: center;
+      text-align: center;
+      max-width: 280px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      font-weight: bold;
+      font-size: 24px;
+      max-width: none;
+      margin: 100px 0 0;
+    }
+  }
+
+  &__fact {
+    display: none;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onDesktop {
+      display: block;
+      grid-row: 1;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__line {
+    @include onDesktop {
+      display: block;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+
+      &--top {
+        margin-bottom: 100px;
+        width: 200%;
+        transform: translate(-50%);
+      }
+
+      &--bottom {
+        margin-top: 100px;
+        width: 250%;
+      }
+    }
+  }
+}

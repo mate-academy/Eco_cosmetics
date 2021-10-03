@@ -1,0 +1,52 @@
+.contact {
+  margin-bottom: 80px;
+
+  @include onTablet {
+    margin-bottom: 100px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 150px;
+  }
+
+  &__aside-element {
+    display: none;
+    grid-row: 1;
+
+    @include onDesktop {
+      display: inline-block;
+      position: relative;
+      right: 50%;
+      bottom: 2%;
+    }
+  }
+
+  &__text {
+    grid-row: 1;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__form {
+    margin-bottom: 30px;
+  }
+
+  &__image {
+    grid-row: 1;
+
+    transition: transform 0.4s ease-in-out;
+
+    @include onDesktop {
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__button {
+    align-self: flex-start;
+  }
+}

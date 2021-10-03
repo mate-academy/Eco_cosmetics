@@ -1,0 +1,68 @@
+.nav {
+  display: none;
+
+  &--footer {
+    display: inline-block;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+
+    &--footer {
+      flex-direction: column;
+      gap: 20px;
+
+      @include onDesktop {
+        line-height: 130%;
+        flex-direction: row;
+        gap: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: $dark-green;
+    padding-bottom: 12px;
+    border-bottom: 1px solid transparent;
+
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $dark-green;
+    }
+
+    &--footer {
+      padding-bottom: 6px;
+      font-family: "Avenir", sans-serif;
+      font-size: 14px;
+      color: $main-bg-color;
+      transition: 0.3s;
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+
+      &:hover {
+        border-color: $dark-green;
+        color: $dark-green;
+      }
+    }
+  }
+
+  @include onDesktop {
+    display: block;
+    width: 250px;
+  }
+
+  @include onWideScreen {
+    display: block;
+    width: 300px;
+  }
+}
