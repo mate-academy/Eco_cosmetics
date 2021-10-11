@@ -1,0 +1,91 @@
+.page {
+  background-color: #e4dfd3;
+  font-family: "Avenir", Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  color: #333;
+  scroll-behavior: smooth;
+
+  @include onTablet {
+    font-weight: 500;
+  }
+
+  @include onDesktop {
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  @include onBigScreen {
+    background-color: #fff;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: 0.4s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    overflow-x: hidden;
+
+    &--main {
+      overflow-x: hidden;
+      @include section-margin(60px, 20px);
+
+      @include onTablet {
+        @include section-margin(100px, 28px);
+      }
+
+      @include onDesktop {
+        @include section-margin(200px, 40px);
+      }
+    }
+  }
+
+  &__secton {
+    position: relative;
+    margin-bottom: 45px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+
+    &-title {
+      font-family: Avenir, sans-serif;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: #344f10;
+      margin-bottom: 12px;
+
+      @include onDesktop {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+}

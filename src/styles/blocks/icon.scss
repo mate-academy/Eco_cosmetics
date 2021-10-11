@@ -1,0 +1,48 @@
+.icon {
+  &__image {
+    width: 24px;
+    height: 24px;
+
+    @include onDesktop {
+      &--logo {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    @include onBigScreen {
+      &--logo {
+        background-color: #e4dfd3;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  @include onDesktop {
+    &--menu {
+      display: none;
+    }
+
+    &--logo::after {
+      content: "witch of mountain winds";
+      position: absolute;
+      margin-left: 12px;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 50px;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+  }
+
+  &--bag,
+  &--facebook,
+  &--instagram {
+    transition: transform 0.3s;
+    
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+}
