@@ -1,0 +1,186 @@
+.powder {
+  &__container {
+    position: relative;
+    padding: 0 20px;
+  }
+
+  &__title {
+    margin-bottom: 38px;
+  }
+
+  &__ingreds {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transform: translateY(-30px);
+  }
+
+  &__item {
+    position: relative;
+    text-align: right;
+    line-height: 100%;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 180px;
+      content: "";
+      height: 1px;
+      width: 76px;
+      background-color: $color-dark_gray;
+    }
+  }
+
+  &__image-container {
+    width: 50%;
+    max-width: 100%;
+    overflow: hidden;
+    transform: translateX(20px);
+  }
+
+  &__image {
+    object-position: left;
+    object-fit: cover;
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    @include page-link;
+    margin-bottom: 105px;
+  }
+
+  &__benefits {
+    padding: 0 20px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  &__card-image {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+  }
+
+  &__card-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  @include onTablet {
+    &__container {
+      padding: 0 28px;
+    }
+    &__title {
+      margin-bottom: 0;
+    }
+
+    &__ingreds {
+      justify-content: flex-end;
+    }
+
+    &__benefits {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 28px;
+    }
+
+    &__card {
+      max-width: 220px;
+    }
+  }
+
+  @include onDesktop {
+
+    &__container {
+      padding: 0 50px 0 150px;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 100px;
+        height: 1px;
+        left: 30px;
+        top: 135px;
+        background-color: rgba(52, 79, 16, 0.5);
+        transform: rotate(90deg);
+      }
+
+      &::after {
+        position: absolute;
+        content: "ingredients";
+        left: 34px;
+        top: 0;
+        text-transform: uppercase;
+        color: rgba(52, 79, 16, 0.5);
+        font-family: "Sharp Sans Display No2", sans-serif;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        transform: rotate(270deg);
+      }
+
+      &--desktop {
+        display: flex;
+      }
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__ingreds {
+      margin-left: 170px;
+      gap: 110px;
+    }
+
+    &__image-container {
+      width: 382px;
+      transform: translateX(0);
+      overflow: visible;
+    }
+
+    &__image {
+     
+      transition: transform 0.4s;
+
+      &:hover {
+        transform: translateX(-50px);
+        cursor: pointer;
+      }
+    }
+
+    &__benefits {
+      padding: 0 50px;
+    }
+
+    &__card-image {
+      transition: transform 0.4s;
+      &:hover {
+        transform: translateY(-20px);
+        cursor: pointer;
+      }
+    }
+  }
+}
