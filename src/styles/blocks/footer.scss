@@ -1,0 +1,163 @@
+.footer {
+  box-sizing: border-box;
+  background-color: $lightGreen;
+
+  @include onDesktop {
+    background-color: rgba(52, 79, 16, 0.5);
+  }
+
+  &__content {
+    padding: 30px 0 60px;
+  }
+
+  &__nav-list {
+    display: block;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__nav-item {
+    margin-bottom: 20px;
+
+    &:hover {
+      border-color: $darkGreen;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__nav-link {
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    color: $beige;
+    font-size: 14px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $darkGreen;
+      border-color: $darkGreen;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+  }
+
+  &__network {
+    margin-bottom: 30px;
+    display: block;
+    gap: 20px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__network--mobile {
+    display: flex;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__network--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    grid-row: 1;
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__text {
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+
+    color: $beige;
+
+    width: max-content;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      color: $darkGreen;
+      border-color: $darkGreen;
+    }
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+  }
+
+  &__support {
+    margin: 0 0 30px;
+  }
+
+  &__copyright {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    text-align: center;
+
+    @include onTablet {
+      justify-content: start;
+    }
+  }
+
+  &__copyright-text {
+    margin: 0;
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+
+    color: $beige;
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &--uppercase {
+      text-transform: uppercase;
+    }
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+  }
+}

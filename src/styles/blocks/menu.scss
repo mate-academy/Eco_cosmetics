@@ -1,0 +1,63 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  z-index: 2;
+
+  background-color: $grey1;
+  height: 100vh;
+  display: block;
+  box-sizing: border-box;
+
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__content {
+    padding: 20px 0;
+
+    @include onTablet {
+      padding: 30px 0;
+    }
+  }
+
+  &__cross {
+    margin: 0 0 45px;
+
+    @include onTablet {
+      margin: 0 0 100px;
+    }
+  }
+
+  &__nav-item {
+    display: block;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $beige;
+    margin-bottom: 30px;
+    color: $beige;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $grey2;
+      border-color: $grey2;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__nav-link {
+    display: block;
+    color: inherit;
+  }
+}

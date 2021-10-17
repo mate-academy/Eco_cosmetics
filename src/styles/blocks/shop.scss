@@ -1,0 +1,167 @@
+.shop {
+  &__nav-list {
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    @include onTablet {
+      justify-content: start;
+    }
+
+    @include onDesktop {
+      margin: 0 0 63px;
+      justify-content: start;
+    }
+  }
+
+  &__nav-item {
+    margin-right: 16px;
+  }
+
+  &__nav-link {
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    padding-bottom: 10px;
+    border-bottom: 1px solid transparent;
+
+    color: #828282;
+
+    transition: all 0.3s;
+
+    &:hover {
+      color: $grey1;
+      border-color: $grey1;
+    }
+
+    @include onDesktop {
+      padding-bottom: 20px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  &__product {
+    margin-bottom: 78px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__product--mobile {
+    display: block;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__product--tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__product--desktop {
+    display: none;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__photo-mobile-box {
+    margin: 0 0 20px;
+    height: 267px;
+  }
+
+  &__photo {
+    object-fit: cover;
+    object-position: center;
+    transition: transform, 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  &__photo--mobile {
+    height: inherit;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  &__photo--tablet {
+    height: 342px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__photo--desktop {
+    height: 500px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__photo-name {
+    margin: 0 0 10px;
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $grey1;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+  }
+
+  &__photo-price {
+    margin: 0;
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $grey1;
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}

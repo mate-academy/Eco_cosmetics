@@ -1,0 +1,54 @@
+.payment {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(100%);
+  z-index: 2;
+
+  background-color: $beige;
+  height: 100vh;
+  display: block;
+  box-sizing: border-box;
+
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include onDesktop {
+    background-color: #fff;
+  }
+
+  &__images {
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__image {
+    cursor: pointer;
+    margin: 0 auto 12px;
+  }
+
+  &__name {
+    margin: 0;
+    font-family: Sharp Sans Display No2, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-align: center;
+
+    color: $grey1;
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}

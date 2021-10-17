@@ -1,0 +1,160 @@
+.basket {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(100%);
+  z-index: 2;
+
+  background-color: $beige;
+  height: 100vh;
+  display: block;
+  box-sizing: border-box;
+
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include onDesktop {
+    background-color: #fff;
+  }
+
+  &__content {
+    padding: 20px 0;
+
+    @include onTablet {
+      padding: 30px 0;
+    }
+  }
+
+  &__nav {
+    margin: 0 0 24px;
+  }
+
+  @include onTablet {
+    margin: 0 0 60px;
+  }
+
+  @include onDesktop {
+    margin: 0 0 76px;
+  }
+
+  &__title {
+    display: block;
+    padding: 0 0 5px;
+    border-bottom: 1px solid $grey3;
+    margin: 0 0 20px;
+    font-family: Sharp Sans Display No2, sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $grey1;
+
+    @include onTablet {
+      margin: 0 0 60px;
+      width: 30%;
+    }
+  
+    @include onDesktop {
+      margin: 0 0 30px;
+      width: 100%;
+      padding: 0;
+      border-color: transparent;
+      font-size: 36px;
+      line-height: 130%;
+
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: capitalize;
+      color: $darkGreen;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 27px;
+    font-family: Sharp Sans Display No2, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $grey1;
+
+    @include onTablet {
+      margin: 0 0 47px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__text {
+    margin: 0 0 50px;
+    font-family: Sharp Sans Display No2, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-align: center;
+
+    color: $grey1;
+
+    @include onTablet {
+      margin: 0 0 47px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 60px;
+      font-size: 20px;
+    }
+  }
+
+  &__checkout-position {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__checkout-list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 75px;
+    }
+  }
+
+  &__checkout-link {
+    font-family: Sharp Sans Display No2, sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+    border-bottom: 1px solid transparent;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: rgba(52, 79, 16, 0.5);
+
+    transition: all 0.3s;
+
+    &--target {
+      color: $grey1;
+      border-bottom: 1px solid $grey1;
+    }
+
+    &:hover {
+      border-color: rgba(52, 79, 16, 0.5);
+    }
+
+    &:target {
+      color: $grey1;
+      border-color: $grey1;
+    }
+  }
+}
