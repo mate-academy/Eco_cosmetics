@@ -1,0 +1,60 @@
+.confirmation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(100%);
+  z-index: 2;
+
+  background-color: $beige;
+  height: 100vh;
+  display: block;
+  box-sizing: border-box;
+
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include onDesktop {
+    background-color: #fff;
+  }
+
+  &__icon {
+    display: block;
+    margin: 0 auto 140px;
+
+    @include onTablet {
+      margin: 0 auto 150px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    font-family: Sharp Sans Display No2, sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $grey1;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $grey1;
+    transition: all 0.3s;
+
+    &:hover {
+      border-bottom-color: $darkGreen;
+      color: $darkGreen;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      border-bottom-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.ayurvedic-tooth-powder {
+  overflow: hidden;
+
+  &__content {
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      justify-content: flex-end;
+      gap: 119px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 37px;
+  }
+
+  &__ingredients-box {
+    width: max-content;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    transform: translateX(50%);
+
+    @include onDesktop {
+      transform: translateX(0);
+    }
+  }
+
+  &__ingredient {
+    position: relative;
+    margin: 0;
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-align: right;
+    text-transform: capitalize;
+
+    color: $grey1;
+    transition: all 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      color: $darkGreen;
+      transform: translateX(-10px);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -96px;
+      width: 76px;
+      height: 1px;
+      background: $grey1;
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__photo {
+    position: relative;
+    right: -25%;
+
+    @include onDesktop {
+      right: 0;
+    }
+  }
+
+  &__link {
+    margin: 0 0 60px;
+
+    @include onTablet {
+      margin: 0 0 100px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 100px;
+    }
+  }
+
+  &__icon-item {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__icon-position {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    margin: 0 auto 20px;
+    width: 60px;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onTablet {
+      margin-bottom: 28px;
+      width: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 44px;
+      width: 80px;
+    }
+  }
+
+  &__icon-name {
+    margin: 0;
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #000;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+  }
+}
