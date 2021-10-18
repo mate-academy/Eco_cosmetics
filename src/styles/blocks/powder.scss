@@ -1,0 +1,95 @@
+.powder {
+  &__content {
+    margin-top: 40px;
+
+    @include onDesktop {
+      position: relative;
+      left: -90px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 100px;
+    }
+  }
+
+  &__info {
+    position: relative;
+
+    @include onIPad {
+      width: 40%;
+    }
+
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+
+  &__photo-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__img-desktop {
+    height: 400px;
+  }
+
+  &__title {
+    @include onIPad {
+      position: relative;
+      top: 45px;
+    }
+
+    @include onDesktop {
+      position: static;
+      margin-top: 60px;
+    }
+  }
+
+  &__photo {
+    margin-top: 20px;
+    overflow: hidden;
+    margin-left: 10%;
+
+    @include onIPad {
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: static;
+      margin-top: 180px;
+
+      &:hover {
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: "";
+          border-bottom: 2px solid #333;
+          width: 94px;
+        }
+      }
+    }
+
+    &--onPhone {
+      margin-left: 30px;
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__img {
+    height: 400px;
+  }
+}

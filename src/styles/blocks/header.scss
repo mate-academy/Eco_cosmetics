@@ -1,0 +1,39 @@
+.header {
+  &__menu-phone {
+    height: 51px;
+
+    @include onIPad {
+      height: 60px;
+    }
+
+    &--icons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+
+      @include onIPad {
+        margin-top: 23px;
+      }
+    }
+  }
+
+  &__menu-desktop {
+    display: none;
+  }
+
+  @include onDesktop {
+    &__menu-phone {
+      display: none;
+    }
+
+    &__menu-desktop {
+      display: block;
+      margin-top: 40px;
+
+      &--blocks {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

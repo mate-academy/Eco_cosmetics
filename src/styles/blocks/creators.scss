@@ -1,0 +1,89 @@
+.creators {
+  &__content {
+    margin-top: 60px;
+
+    @include onIPad {
+      margin-top: 135px;
+      display: flex;
+    }
+
+    @include onDesktop {
+      margin-top: 200px;
+      padding-left: 100px;
+    }
+  }
+
+  &__info {
+    @include onIPad {
+      width: 50%;
+      padding-right: 30px;
+    }
+
+    @include onDesktop {
+      padding-right: 130px;
+    }
+  }
+
+  &__text {
+    &:first-of-type {
+      margin-top: 12px;
+    }
+  }
+
+  &__paragraph {
+    &:nth-of-type(n + 2) {
+      margin-top: 36px;
+    }
+
+    &:nth-of-type(n + 3) {
+      display: none;
+
+      @include onIPad {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__link {
+    margin-top: 44px;
+
+    &--heigth {
+      line-height: 60px;
+    }
+  }
+
+  &__buttom {
+    padding: 0;
+    margin-top: 30px;
+    border-color: #333;
+    border: none;
+  }
+
+  &__photo {
+    display: none;
+
+    @include onIPad {
+      width: 50%;
+      display: inline-block;
+    }
+
+    @include onDesktop {
+      transition: 0.2s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 435px;
+
+    object-fit: cover;
+
+    @include onDesktop {
+      height: 640px;
+    }
+  }
+}
