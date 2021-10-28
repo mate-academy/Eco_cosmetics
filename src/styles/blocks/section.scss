@@ -1,0 +1,53 @@
+.section {
+  &__container {
+    @include container;
+    @include grid;
+    position: relative;
+  }
+
+  &__side-title {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: $container-padding-desk;
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+
+  &__rigth-column {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onLaptop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    color: $color-dark-olive;
+    text-transform: uppercase;
+
+    @include onLaptop {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__paragraph {
+    padding-bottom: 30px;
+
+    &--extra {
+      display: none;
+
+      @include onLaptop {
+        display: block;
+      }
+    }
+  }
+}
