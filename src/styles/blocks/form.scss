@@ -1,0 +1,40 @@
+.form {
+
+  &__info {
+    margin-bottom: 10px;
+
+    @include onLaptop {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  &__field {
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-light-medium-gray;
+
+    transition: border-color $transition-duration;
+
+    @include onLaptop {
+      margin-bottom: 20px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 30px;
+
+      @include onLaptop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-dark-gray;
+    }
+  }
+}
