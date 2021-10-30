@@ -1,0 +1,39 @@
+.gridTM {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 20px;
+
+  @include onMobile {
+    display: block;
+  }
+
+  &__item {
+
+    @for $start from 1 through 6 {
+      @for $end from $start through 6 {
+        &--col-#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+
+        // &--desktop-#{$start}-#{$end} {
+        //   @include onMinDesktop {
+        //     grid-column: #{$start} / #{$end + 1};
+        //   }
+        // }
+      }
+    }
+    @for $begin from 1 through 6 {
+      @for $stop from $begin through 6 {
+        &--row-#{$begin}-#{$stop} {
+          grid-row: #{$begin} / #{$stop + 1};
+        }
+  
+        // &--desktop-#{$start}-#{$end} {
+        //   @include onMinDesktop {
+        //     grid-column: #{$start} / #{$end + 1};
+        //   }
+        // }
+      }
+    }
+  }
+}
