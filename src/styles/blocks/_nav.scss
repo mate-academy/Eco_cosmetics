@@ -1,0 +1,59 @@
+.nav {
+  display: none;
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: start;
+    align-items: center;
+  }
+
+  &__logo {
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
+  &__description {
+    @include onDesktop {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  &__list {
+    @include onDesktop {
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    @include onDesktop {
+      padding-bottom: 9px;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        color: #333;
+        border-color: #333;
+      }
+    }
+  }
+
+  &__bag {
+    display: flex;
+    justify-content: end;
+  }
+}

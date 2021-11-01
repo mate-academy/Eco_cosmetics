@@ -1,0 +1,87 @@
+.header {
+  &__nav {
+    display: grid;
+    grid-template-columns: $icon-width 1fr $icon-width;
+    justify-items: center;
+    align-items: center;
+    margin: 0 24px 12px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    padding-top: 12px;
+    @include container;
+    // @include Tablet {
+    //   padding-top: 30px;
+    // }
+
+    @include onDesktop {
+      padding-top: 81px;
+    }
+  }
+
+  &__info {
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    margin: 0 auto 12px;
+
+    @include onDesktop {
+      text-align: left;
+      margin: 0 0 30px;
+      font-size: 60px;
+      line-height: 72px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+
+    @include onDesktop {
+      font-size: 22px;
+      line-height: 29px;
+    }
+  }
+
+  &__img-cont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    margin-bottom: 28px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    grid-column: 1/2;
+  }
+
+  &__button {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    margin: auto;
+    background-color: $color-black;
+    border-radius: 4px;
+
+    @include onDesktop {
+      width: 80%;
+      margin-bottom: 28px;
+    }
+  }
+}
