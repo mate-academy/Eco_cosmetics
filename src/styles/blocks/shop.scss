@@ -46,7 +46,6 @@
 
   &__link {
     margin-bottom: 20px;
-    margin-right: 50px;
     padding-bottom: 10px;
     display: block;
     border-bottom: 2px solid transparent;
@@ -69,6 +68,10 @@
       border-color: $color-dark-gray;
     }
 
+    @include onTablet {
+      margin-right: 50px;
+    }
+
     @include onLaptop {
       padding-bottom: 20px;
       margin-bottom: 60px;
@@ -84,13 +87,16 @@
 
   &__card {
     margin-bottom: 40px;
-    transition: color $transition-duration;
+    transition: color $transition-duration, transform $transition-duration;
 
     &:hover {
       .shop__product-name {
         color: $color-olive;
       }
 
+      .shop__product-image {
+        transform: scale(1.05);
+      }
     }
 
     &:nth-of-type(n+2) {
@@ -127,15 +133,21 @@
     }
   }
 
+    &__image-container {
+    overflow: hidden;
+    height: 300px;
+    margin-bottom: 20px;
+
+    @include onLaptop {
+      height: 500px;
+    }
+  }
+
   &__product-image {
     width: 100%;
-    height: 260px;
-    margin-bottom: 20px;
+    height: 300px;
     object-fit: cover;
-
-    @include onTablet {
-      height: 300px;
-    }
+    transition: color $transition-duration, transform $transition-duration;
 
     @include onLaptop {
       height: 500px;

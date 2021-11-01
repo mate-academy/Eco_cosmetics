@@ -1,6 +1,17 @@
 .logo {
   display: flex;
   align-items: center;
+  transition: transform $transition-duration, color $transition-duration;
+
+  &:hover {
+    cursor: pointer;
+    color: $color-olive;
+    transform: scale(1.1);
+
+    @include onLaptop {
+      transform: none;
+    }
+  }
 
   &__image {
     width: 24px;
