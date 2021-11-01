@@ -1,0 +1,234 @@
+.header {
+    padding-top: 40px;
+
+    @media (max-width: 1000px) {
+        padding-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+        padding-top: 10px;
+    }
+
+    // .header__container
+    &__container {
+    }
+
+    // .header__body
+    &__body {
+        position: relative;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    // .header__btn
+    &__btn {
+    }
+
+    // .header__logo
+    &__logo {
+    }
+
+    // .header__menu
+    &__menu {
+        @media (min-width: 992px) {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (max-width: 768px) {
+            position: fixed;
+            top: -100%;
+            left: 0;
+            z-index: 4;
+
+            width: 100%;
+            height: 100%;
+            padding: 140px 27px 27px;
+
+            background-color: $colorMain;
+            overflow: auto;
+
+            transition-property: top, visibility;
+            transition: 0.3s ease-in-out;
+
+            visibility: hidden;
+
+            &.active {
+                top: 0;
+                visibility: visible;
+            }
+        }
+
+        @media (max-width: 480px) {
+            padding-top: 80px;
+        }
+    }
+
+    // .header__basket
+    &__basket {
+        height: 32px;
+        width: 32px;
+
+        @media (max-width: 768px) {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    // .logo__icon
+    &__icon {
+        width: 50px;
+        height: 50px;
+
+        @media (min-width: 769px) {
+            margin-right: 12px;
+        }
+
+        @media (max-width: 768px) {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    // .logo__title
+    &__title {
+        font-size: 14px;
+        font-family: $fontSharp;
+        color: $colorGreen;
+        letter-spacing: 0.05em;
+
+        text-transform: uppercase;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+.menu {
+    // .menu__list
+    &__list {
+        @media (min-width: 769px) {
+            display: flex;
+        }
+    }
+
+    // .menu__item
+    &__item {
+        @media (min-width: 769px) {
+            &:not(:last-child) {
+                margin-right: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            text-align: center;
+
+            &:not(:last-child) {
+                margin: 0px 0px 50px 0px;
+            }
+
+            &:after {
+                width: 100px;
+            }
+        }
+    }
+
+    // .menu__link
+    &__link {
+        font-size: 18px;
+        font-family: $fontSharp;
+        color: $colorGreen;
+
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            height: 1px;
+            width: 0%;
+            background-color: $colorGreen;
+
+            transition: width 0.3s ease-in-out;
+
+            @media (max-width: 768px) {
+                width: 100%;
+                background-color: $colorGrey;
+            }
+        }
+
+        @media (max-width: 768px) {
+            color: $colorMainBack;
+            display: block;
+            padding-bottom: 10px;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &:after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+//Burger
+.icon-menu {
+    display: none;
+
+    @media (max-width: 768px) {
+        display: block;
+        width: 20px;
+        height: 13px;
+        cursor: pointer;
+        z-index: 5;
+        position: relative;
+
+        span {
+            transition-property: transform, top, bottom;
+            top: calc(50% - 0.5px);
+            left: 0px;
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background-color: $colorGreen;
+            &:first-child {
+                top: 0px;
+            }
+            &:last-child {
+                top: auto;
+                bottom: 0px;
+            }
+        }
+
+        &.active {
+            span {
+                transform: scale(0);
+                &:first-child {
+                    transform: rotate(-45deg);
+                    top: calc(50% - 0.5px);
+                    background-color: $colorMainBack;
+                }
+                &:last-child {
+                    transform: rotate(45deg);
+                    bottom: calc(50% - 0.5px);
+                    background-color: $colorMainBack;
+                }
+            }
+        }
+    }
+}
