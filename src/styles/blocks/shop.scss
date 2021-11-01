@@ -1,0 +1,107 @@
+.shop {
+  &__title {
+    text-align: center;
+    padding-bottom: 12px;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 32px;
+
+    @include onTablet {
+      justify-content: start;
+    }
+  }
+
+  &__item {
+    margin-right: 14px;
+  }
+
+  &__link {
+    position: relative;
+    color: #828282;
+    font-weight: 400;
+
+    &--active {
+      color: $c-dark-gray;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 2px;
+        top: 30px;
+        left: 0;
+        background-color: $c-dark-gray;
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__picture {
+    margin: 0 -20px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+
+  &__card {
+    &-good {
+      padding: 10px 0 20px;
+    }
+
+    &-price {
+      color: $c-dark-gray;
+      padding-bottom: 78px;
+
+      @include onTablet {
+        padding-bottom: 0;
+      }
+    }
+
+    &:nth-child(2) {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &:nth-child(3) {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin: 42px 0 138px;
+    }
+  }
+}
