@@ -3,4 +3,3 @@ This landing page were created as one of the home tasks during my education in a
 
 - [DEMO LINK](https://trskzk.github.io/Eco_cosmetics/)
 
-- [MOCKUP] (https://www.figma.com/file/Fz588JKGuPS2Bk21De4KE5/brand_of_eco-cosmetics-FE-students?node-id=1%3A2)
