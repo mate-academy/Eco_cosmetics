@@ -1,9 +1,16 @@
 .footer {
   background-color: $c-olive;
+  color: #e4dfd3;
 
-  &__content {
+  &__container {
     padding: 30px 0 60px;
 
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__content {
     @include onTablet {
       display: flex;
       justify-content: space-between;
@@ -25,6 +32,7 @@
 
     @include onTablet {
       display: block;
+      padding-bottom: 50px;
     }
   }
 
@@ -48,6 +56,10 @@
     }
   }
 
+  &__img {
+    margin-right: 20px;
+  }
+
   &__contacts-item {
     &:not(:last-child) {
       margin-bottom: 12px;
@@ -58,6 +70,10 @@
     }
   }
 
+  &__contacts-img {
+    color: #e4dfd3;
+  }
+
   &__copyrights {
     text-align: center;
     text-transform: $text-transform;
@@ -66,5 +82,17 @@
       text-align: left;
       text-transform: lowercase;
     }
+  }
+}
+
+.nav {
+  &__item {
+    &:not(:last-child) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__link {
+    color: #e4dfd3;
   }
 }
