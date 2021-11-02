@@ -1,0 +1,152 @@
+.tooth {
+  margin-bottom: 100px;
+  @media (min-width:768px) {
+    display: flex;
+    margin-bottom: 160px;
+    margin-left: 90px;
+    justify-content: center;
+  }
+
+  @media (min-width: 1280px) {
+    margin-bottom: 250px;
+    margin-left: 200px;
+    gap: 20%;
+  }
+
+  &__title {
+    width: 280px;
+    height: 72px;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+    padding-right: 45px;
+
+    @media (min-width: 1280px) {
+      font-size: 36px;
+      width: 280px;
+      height: 162px;
+      font-weight: 500;
+    }
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #344f10;
+    text-align: left;
+    margin: 0 auto 37px;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  &__items {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+
+  }
+
+  &__image {
+    width: 380px;
+    height: 400px;
+    &--container {
+      @media(max-width: 1280px) {
+        overflow-x: hidden;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    text-align: right;
+    margin-right: 48px;
+    width: 80px;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      transform: translateX(-50%);
+      left: 154px;
+
+      width: 70px;
+      border-bottom: 1px solid black;
+      align-items: center;
+    }
+
+    &--carb {
+      width: 91px;
+    }
+    transition: transform 0.4s;
+    &:hover {
+      cursor: none;
+      transform: translateX(-1em);
+
+      @media(min-width: 768px) {
+        transform: translateX(-2em);
+      }
+    }
+  }
+
+  &__more {
+    position: relative;
+    width: 130px;
+    font-size: 14px;
+    line-height: 130%;
+    /* or 18px */
+    
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    color: #344f10;
+    padding-bottom: 11px;
+   
+    border-bottom: 1px solid #344f10;
+
+    margin-left: 20px;
+
+    @media (min-width: 768px) {
+      margin-left: 10%;
+    }
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    &-second {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+        width: 95px;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__helper {
+    margin-left: 20px;
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      gap: 65%;
+      // margin-left: 10%;
+    }
+
+    @media (min-width: 1280px) {
+      margin-top: 60px;
+      margin-left: 20px;
+      gap: 130px;
+    }
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}

@@ -1,12 +1,11 @@
-.creators {
+.contact-us {
   margin-bottom: 60px;
-
   @media (min-width: 768px) {
     margin-bottom: 100px;
   }
 
   @media (min-width: 1280px) {
-    margin-bottom: 200px;
+    margin-bottom: 150px;
   }
 
   &__intro {
@@ -71,7 +70,13 @@
 
   &__text {
     width: 280px;
-    height: 240px;
+    height: 72px;
+
+    @media (min-width:1200px) {
+      width: 380px;
+      height: 108px;
+      font-size: 24px;
+    }
     font-weight: normal;
     font-size: 16px;
     line-height: 150%;
@@ -89,17 +94,13 @@
     }
 
     &--container {
-      @media (min-width: 768px) {
-        width: 342px;
-        height: 192px;
-      }
-      @media (min-width: 768px) {
-        width: 380px;
-        height: 192px;
-      }
       margin: 0 0 30px;
       align-items: center;
       text-align: left;
+
+      @media (max-width: 768px) {
+        margin-bottom: 20px;
+      }
 
       &-1 {
         width: 280px;
@@ -108,29 +109,6 @@
           margin-bottom: 54px;
           width: 380px;
           height: 72px;
-        }
-      }
-      &-2 {
-        
-        width: 280px;
-        height: 144px;
-        @media (min-width: 768px) {
-          width: 342px;
-          height: 120px;
-        }
-        @media (min-width: 1280px) {
-          margin-bottom: 30px;
-          width: 380px;
-          height: 120px;
-        }
-      }
-      &-3 {
-        display: none;
-        width: 380px;
-        height: 96px;
-
-        @media (min-width: 1280px) {
-          display: block;
         }
       }
     }
@@ -159,16 +137,17 @@
   }
   
   &__image {
-    background-image: url(../images/bird.jpg);
-    background-size: cover;
+    background-image: url(../images/bird3.jpg);
+    background-repeat: no-repeat;
     @media (min-width:768px) {
       width: 368px;
       height: 435px;
+      background-image: url(../images/bird3.jpg);
     }
 
     @media (min-width:1280px) {
       width: 580px;
-      height: 669px;
+      height: 584px;
       margin-right: 20px;
     }
   }
@@ -177,5 +156,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &__inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border: none;
+  }
+
+  &__field {
+    padding-bottom: 5px;
+    border: none;
+    background-color: #e4dfd3;
+    border-bottom: 1px solid #bdbdbd;
+
+    &:focus {
+      outline: none;
+      border-color: #333;
+    }
+
+    &:last-child {
+      padding-top: 20px;
+    }
   }
 }
