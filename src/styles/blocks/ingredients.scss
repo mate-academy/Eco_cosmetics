@@ -1,0 +1,223 @@
+.ingredients {
+  position: relative;
+  margin-bottom: 60px;
+
+  @include Tablet() {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+
+  @include onDesktop {
+  margin-bottom: 200px;
+  display: flex;
+  }
+
+  
+  &__sidetext {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    align-self: center;
+    width: max-content;
+    font-family: Sharp Sans No2;
+    color: rgba(52, 79, 16, 0.5);
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: top left;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      opacity: 1;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+    }
+      
+    &::before {
+      content: '';
+      display: inline-flex;
+      align-self: center;
+      background-color: rgba(52, 79, 16, 0.5);
+      
+      @include onDesktop {
+        width: 100px;
+        height: 1px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 37px;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344F10;
+
+    @include Tablet {
+      margin: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 221px;
+      margin-top: 65px;
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__more-info {
+    display: inline-block;
+    font-family: Sharp Sans No2;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344F10;
+    text-decoration: none;
+    padding-bottom: 9px;
+    border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    margin: 0;
+    width: max-content;
+
+    &:hover {
+      border-color: transparent;
+    }
+
+    @include onDesktop {
+      padding-bottom: 12px;
+    }
+  }
+  
+  &__images {
+    display: flex;
+    height: 100%;
+    object-fit: contain;
+    object-position: left;
+    margin-left: 171px;
+
+      @include Tablet() {
+        // position: relative;
+        object-fit: cover;
+        object-position: left;
+        // margin-left: 487px;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      @include onDesktop() {
+        margin: 0;
+        height: 395px;
+
+      }
+  }
+ &__wrapper {
+   position: absolute;
+   width: max-content;
+
+   @include onDesktop {
+     position: static;
+   }
+ }
+  &__names {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: max-content;
+    gap: 52px;
+    padding-top: 34px;
+
+    @include Tablet {
+      position: absolute;
+    
+    }
+    
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: right;
+    text-transform: capitalize;
+
+    @include Tablet {
+      font-weight: 500;
+    }
+
+    &::after {
+
+      content: "";
+      font-size: 55px;
+      display: inline-flex;
+      align-self: center;
+      background-color: rgba(52, 79, 16, 0.5);
+      width: 76px;
+      height: 1px;
+      margin-left: 20px;
+
+      @include Tablet {
+       
+      }
+    }
+
+
+  }
+}
+
+.eco {
+  margin-bottom: 60px;
+
+@include Tablet {
+  
+margin-bottom: 150px;
+}
+  @include onDesktop {
+  margin-bottom: 250px;
+}
+  
+ &__logo {
+   margin-bottom: 20px;
+
+
+
+   @include onDesktop {
+   margin-bottom: 44px;
+   }
+ }
+
+ &__declaration {
+   text-align: center;
+   margin-bottom: 108px;
+
+   @include Tablet {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #000000;
+ }
+}
+}
+
+.image-wrapper {
+
+  @include Tablet {
+    margin-left: 48px;
+  }
+
+  @include onDesktop {
+    margin: 0;
+  }
+
+}
