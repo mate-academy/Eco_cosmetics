@@ -1,27 +1,20 @@
 .contact-us {
-  position: relative;
-  margin-bottom: 60px;
-
-  @include Tablet() {
-    margin-bottom: 100px;
-  }
 
   @include onDesktop {
-  margin-bottom: 200px;
   display: flex;
   }
 
-  
   &__sidetext {
     opacity: 0;
     position: absolute;
     display: flex;
     align-self: center;
     width: max-content;
-    font-family: Sharp Sans No2;
-    color: rgba(52, 79, 16, 0.5);
     transform: rotate(-90deg) translateX(-100%);
     transform-origin: top left;
+
+    font-family: Sharp Sans No2;
+    color: rgba(52, 79, 16, 0.5);
     text-transform: uppercase;
 
     @include onDesktop {
@@ -48,10 +41,10 @@
   &__title {
     margin: 0;
     margin-bottom: 12px;
+
     font-weight: normal;
     font-size: 24px;
     line-height: 150%;
-    // letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #344F10;
 
@@ -62,16 +55,13 @@
     @include onDesktop {
       font-weight: 500;
       font-size: 36px;
-      line-height: 150%;
       text-transform: capitalize;
-      color: #344F10;
       margin-bottom: 20px;
     }
   }
 
   &__paragraph {
     margin: 0 0 20px;
-    font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 150%;
@@ -83,16 +73,21 @@
     }
 
     @include onDesktop {
-      font-style: normal;
       font-weight: 500;
       font-size: 24px;
-      line-height: 150%;
-      text-transform: lowercase;
       
       margin-bottom: 20px;
     }
   }
   
+  &__form {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
   &__images {
     display: none;
 
@@ -104,7 +99,6 @@
       }
 
       @include onDesktop() {
-        // width: 610px;
         height: 584px;
       }
   }
@@ -113,36 +107,3 @@
     margin: 0;
   }
 }
-
-.form {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 30px;
-
-  @include onDesktop {
-    margin-bottom: 50px;
-  }
- 
-
-  &__field {
-    border-style: none;
-    border-bottom: 1px solid #BDBDBD;
-    background-color: #E4DFD3;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 150%;
-    text-transform: capitalize;
-    color: #828282;
-    padding-bottom: 5px;
-    margin-bottom: 25px;
-
-    @include onDesktop {
-    padding-bottom: 10px;
-    font-weight: 500;
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-  }
-}
-

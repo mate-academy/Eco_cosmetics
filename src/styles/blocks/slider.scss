@@ -1,0 +1,89 @@
+.slider {
+
+  &__menu {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 20px;
+    margin: 0;
+
+    @include Tablet {
+      justify-content: start;
+      gap: 32px;
+    }
+    @include onDesktop {
+      justify-content: start;
+      gap: 51px;
+      padding-bottom: 63px;
+    }
+  }
+
+  &__sidetext {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    align-self: center;
+    width: max-content;
+    font-family: Sharp Sans No2;
+    color: rgba(52, 79, 16, 0.5);
+    transform: rotate(-90deg) translate(-100%, -100%);
+    transform-origin: top left;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      opacity: 1;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+    }
+      
+    &::before {
+      content: '';
+      display: inline-flex;
+      align-self: center;
+      background-color: rgba(52, 79, 16, 0.5);
+      
+      @include onDesktop {
+        width: 100px;
+        height: 1px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #828282;
+
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+
+    &:hover {
+      color: #333333;
+      border-color: #333333;
+    }
+
+    @include Tablet {
+      font-weight: 500;
+    }
+    
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  &__gallery {
+    position: relative;
+  }
+}

@@ -1,4 +1,22 @@
 .header {
+  &__menu {
+    display: none;
+    padding-top: 15px;
+
+    @include Tablet {
+      padding-top: 23px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-content: start;
+      align-content: center;
+      padding-top: 30px;
+    }
+  }
+
   &__content {
     padding-top: 12px;
 
@@ -17,7 +35,7 @@
     line-height: 130%;
     text-align: center;
     font-family: Avenir;
-    margin: 0 0 12px;
+    margin-bottom: 12px;
 
     @include Tablet {
       margin-bottom: 20px;
@@ -60,7 +78,6 @@
 
     @include Tablet() {
       margin: 0 0 50px;
-
     }
 
     @include onDesktop {

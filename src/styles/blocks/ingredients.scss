@@ -1,20 +1,15 @@
 .ingredients {
-  position: relative;
-  margin-bottom: 60px;
 
   @include Tablet() {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 100px;
   }
 
   @include onDesktop {
-  margin-bottom: 200px;
-  display: flex;
+    display: flex;
   }
 
-  
   &__sidetext {
     opacity: 0;
     position: absolute;
@@ -81,12 +76,12 @@
     color: #344F10;
     text-decoration: none;
     padding-bottom: 9px;
-    border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    border-bottom: 1px solid transparent;
     margin: 0;
     width: max-content;
 
     &:hover {
-      border-color: transparent;
+      border-color: rgba(52, 79, 16, 0.5);
     }
 
     @include onDesktop {
@@ -102,28 +97,37 @@
     margin-left: 171px;
 
       @include Tablet() {
-        // position: relative;
         object-fit: cover;
         object-position: left;
-        // margin-left: 487px;
         margin: 0;
-        overflow: hidden;
       }
 
       @include onDesktop() {
         margin: 0;
         height: 395px;
-
       }
   }
- &__wrapper {
-   position: absolute;
-   width: max-content;
+
+  &__image-wrapper {
+    overflow: hidden;
+    
+    @include Tablet {
+      margin-left: 48px;
+    }
+  
+    @include onDesktop {
+      margin: 0;
+    }
+}
+
+  &__wrapper {
+    position: absolute;
 
    @include onDesktop {
      position: static;
-   }
- }
+    }
+  }
+
   &__names {
     display: flex;
     flex-direction: column;
@@ -134,9 +138,7 @@
 
     @include Tablet {
       position: absolute;
-    
     }
-    
   }
 
   &__item {
@@ -152,7 +154,6 @@
     }
 
     &::after {
-
       content: "";
       font-size: 55px;
       display: inline-flex;
@@ -161,63 +162,31 @@
       width: 76px;
       height: 1px;
       margin-left: 20px;
-
-      @include Tablet {
-       
-      }
     }
 
+    &::before {
+      display: none;
 
-  }
-}
-
-.eco {
-  margin-bottom: 60px;
-
-@include Tablet {
-  
-margin-bottom: 150px;
-}
-  @include onDesktop {
-  margin-bottom: 250px;
-}
-  
- &__logo {
-   margin-bottom: 20px;
-
-
-
-   @include onDesktop {
-   margin-bottom: 44px;
-   }
- }
-
- &__declaration {
-   text-align: center;
-   margin-bottom: 108px;
-
-   @include Tablet {
-    margin: 0;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 130%;
-    text-align: center;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-
-    color: #000000;
- }
-}
-}
-
-.image-wrapper {
-
-  @include Tablet {
-    margin-left: 48px;
+      @include onDesktop {
+        position: absolute;
+        right: 0;
+        content: "";
+        display: inline-flex;
+        align-self: center;
+        background: #333333;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        margin-left: 20px;
+      }
+    }
   }
 
-  @include onDesktop {
-    margin: 0;
-  }
+  &__addition {
+    display: none;
 
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
 }

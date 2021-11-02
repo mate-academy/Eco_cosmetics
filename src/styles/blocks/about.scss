@@ -1,34 +1,30 @@
 .about {
-  position: relative;
-  margin: 60px 0;
-
-  @include Tablet() {
-    margin: 100px 0 80px;
-  }
 
   @include onDesktop {
-  margin: 200px 0;
-  display: flex;
+    display: flex;
   }
 
-  
   &__sidetext {
-    opacity: 0;
     position: absolute;
+
     display: flex;
     align-self: center;
     width: max-content;
+
     font-family: Sharp Sans No2;
     color: rgba(52, 79, 16, 0.5);
+    opacity: 0;
+
     transform: rotate(-90deg) translateX(-100%);
     transform-origin: top left;
     text-transform: uppercase;
 
     @include onDesktop {
-      opacity: 1;
       font-size: 14px;
       line-height: 130%;
       letter-spacing: 0.05em;
+
+      opacity: 1;
     }
       
     &::before {
@@ -47,16 +43,16 @@
 
   &__title {
     margin: 10px 0 12px;
-    font-weight: normal;
+
     font-size: 24px;
+    font-weight: normal;
     line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #344F10;
 
     @include onDesktop {
-      margin-bottom: 16px;
-      margin-top: 42px;
+      margin-bottom: 42px 0 16px;
       font-weight: 500;
       font-size: 36px;
       line-height: 110%;
@@ -66,13 +62,10 @@
   &__paragraph {
     margin: 0;
     margin-bottom: 44px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
 
-    @include Tablet {
-      font-weight: 500;
-    }
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
 
     &:last-of-type {
       display: none;  
@@ -83,6 +76,10 @@
       }
     }
 
+    @include Tablet {
+      font-weight: 500;
+    }
+
     @include onDesktop {
       margin-bottom: 30px;
     }
@@ -90,6 +87,7 @@
 
   &__more-info {
     display: inline-block;
+
     font-family: Sharp Sans No2;
     font-size: 14px;
     line-height: 130%;
@@ -97,11 +95,12 @@
     text-transform: uppercase;
     color: #344F10;
     text-decoration: none;
+
     padding-bottom: 9px;
-    border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    border-bottom: 1px solid transparent;
 
     &:hover {
-      border-color: transparent;
+      border-color: rgba(52, 79, 16, 0.5);
     }
 
     @include onDesktop {
@@ -119,7 +118,7 @@
     &-big {
       display: none;
 
-      @include Tablet() {
+      @include Tablet {
         display: block;
         object-fit: cover;
         object-position: center;
@@ -127,7 +126,7 @@
         width: 100%;
       }
 
-      @include onDesktop() {
+      @include onDesktop {
         height: 529px;
       }
     }

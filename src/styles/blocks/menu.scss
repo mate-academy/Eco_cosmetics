@@ -1,60 +1,59 @@
 .menu {
-  display: none;
-
-  @include onDesktop {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: start;
-    align-content: center;
+  &__logo {
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
   }
   
-    &__logo {
-  
-      @include onDesktop {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
+  &__content {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+  }
   
-    &__content {
-  
-      @include onDesktop {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
-  
-    &__list {
-  
-      @include onDesktop {
-        padding: 0;
-        list-style: none;
-        display: flex;
-        gap: 40px;
-      }
-    }
-
-    &__link {
-      box-sizing: border-box;
-      padding-bottom: 9px;
-      border-bottom: 2px solid transparent;
-      transition: color 0.3s, border-color 0.3s;
-       &:hover {
-        color: #333333;
-        border-color: #333333;
-       }
-
-      @include onDesktop {
-        font-family: Sharp Sans No2;
-        font-size: 18px;
-        line-height: 130%;
-        padding-bottom: 12px;
-        color: #344F10;
-        text-decoration: none;
-      }
-    }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     
+    @include onDesktop {
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    color: #E4DFD3;
+    padding-bottom: 9px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+      
+    &:hover {
+      color: #333333;
+      border-color: #333333;
+    }
+
+    @include onDesktop {
+      font-family: Sharp Sans No2;
+      font-size: 18px;
+      padding-bottom: 12px;
+      color: #344F10;
+    }
+  }  
 }
