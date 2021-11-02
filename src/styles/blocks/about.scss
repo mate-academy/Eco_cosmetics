@@ -66,9 +66,13 @@
   &__paragraph {
     margin: 0;
     margin-bottom: 44px;
-    font-weight: normal;
+    font-weight: 400;
     font-size: 16px;
     line-height: 150%;
+
+    @include Tablet {
+      font-weight: 500;
+    }
 
     &:last-of-type {
       display: none;  
@@ -118,14 +122,19 @@
       @include Tablet() {
         display: block;
         object-fit: cover;
+        object-position: center;
+        height: 318px;
         width: 100%;
+      }
+
+      @include onDesktop() {
+        height: 529px;
       }
     }
 
     &-small {
       display: none;
       width: 208px; 
-      height: 430px;
 
       @include onDesktop() {
         display: block;

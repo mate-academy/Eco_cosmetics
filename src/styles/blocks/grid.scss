@@ -1,4 +1,7 @@
 .grid {
+// display: grid;
+// grid-template-columns: repeat(2, 1fr);
+//     column-gap: 20px;
 
   @include Tablet() {
     display: grid;
@@ -12,14 +15,24 @@
     column-gap: 20px;
   }
 
+  &--dense {
+    @include Tablet {
+      display: grid;
+      
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
 
+
+  }
   &--desktop {
     display: block;
 
     @include Tablet() {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      column-gap: 30px;
+      display: block;
+      // display: grid;
+      // grid-template-columns: repeat(6, 1fr);
+      // column-gap: 30px;
     }
     
     @include onDesktop {
