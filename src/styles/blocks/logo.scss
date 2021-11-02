@@ -11,6 +11,7 @@
   }
 
   &__text {
+    position: relative;
     display: none;
     padding-left: 12px;
 
@@ -21,8 +22,25 @@
     color: $dark-green;
     text-transform: uppercase;
 
+    animation: slide-left 1s ease-out 1;
+
     @include onDesktop {
       display: inline;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 1px;
+        background: $dark-green;
+        left: 12px;
+        bottom: 0;
+        transition: width $transition-duration;
+      }
+    
+      &:hover::after {
+        width: 95%;
+      }
     }
   }
 }

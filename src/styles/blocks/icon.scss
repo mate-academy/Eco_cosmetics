@@ -3,7 +3,20 @@
   width: $icon-size;
   height: $icon-size;
 
+  transition: transform $transition-duration;
+
   background: center / contain no-repeat;
+
+  &--big {
+    width: $icon-size--big;
+    height: $icon-size--big;
+
+    &:hover {
+      @include onDesktop {
+        transform: scale(1.1);
+      }
+    }
+  }
 
   &--nav {
     background-image: url(../images/nav.svg);
@@ -17,15 +30,40 @@
     background-image: url(../images/shop.svg);
   }
 
+  &--bird {
+    background-image: url(../images/bird.svg);
+  }
+
+  &--recycle {
+    background-image: url(../images/recycle.svg);
+  }
+
+  &--leaves {
+    background-image: url(../images/leaves.svg);
+  }
+
   &--cross {
     background-image: url(../images/cross.svg);
   }
 
   &--ig {
     background-image: url(../images/instagram.svg);
+    margin-right: 20px;
   }
 
   &--fb {
     background-image: url(../images/facebook.svg);
+  }
+
+  &--shop,
+  &--ig,
+  &--fb {
+    display: inline-block;
+
+    &:hover {
+      @include onDesktop {
+        transform: scale(1.1);
+      }
+    }
   }
 }

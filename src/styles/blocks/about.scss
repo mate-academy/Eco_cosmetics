@@ -1,16 +1,46 @@
 .about {
+  overflow: hidden;
+
   &__info {
     padding-top: 40px;
+
+    @include onTablet {
+      padding-top: 0;
+    }
   }
 
   &__img-container {
     display: none;
     margin-bottom: 24px;
+    position: relative;
+
+    background: no-repeat center / 100% url(../images/candle.jpg);
+
+    @include onTablet {
+      display: block;
+      margin-bottom: 0;
+    }
 
     @include onDesktop {
       display: block;
       margin-bottom: 0;
       height: 100%;
+    }
+  }
+
+  &__img-container--extra {
+    @include onDesktop {
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: -20px;
+        transform: translateX(100%);
+        height: 80%;
+        width: 100%;
+        background: no-repeat center url(../images/candle.jpg);
+      }
     }
   }
 }
