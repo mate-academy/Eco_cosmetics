@@ -1,23 +1,46 @@
 .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  column-gap: 20px;
+  // display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  // grid-template-rows: 1fr;
+  // column-gap: 20px;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
 
   @include onDesktop {
     grid-template-columns: repeat(12, 1fr);
-    column-gap: 24px;
+    column-gap: 20px;
+  }
+
+  &--tablet {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
   }
 
   &--desktop {
     display: block;
 
+    @include onTablet {
+      display: block;
+    }
+
     @include onDesktop {
       display: grid;
+      grid-auto-flow: dense;
       grid-template-columns: repeat(12, 1fr);
-      column-gap: 24px;
+      column-gap: 20px;
     }
   }
+
+  
 
   &__item {
 
@@ -27,6 +50,12 @@
           grid-column: #{$start} / #{$end + 1};
         }
 
+        &--tablet-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start}/#{$end + 1};
+          }
+        }
+
         &--desktop-#{$start}-#{$end} {
           @include onDesktop {
             grid-column: #{$start} / #{$end + 1};
@@ -34,9 +63,5 @@
         }
       }
     }
-  }
-
-  &__item-row {
-    grid-row: 1;
   }
 }
