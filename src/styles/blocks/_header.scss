@@ -4,7 +4,6 @@
     grid-template-columns: $icon-width 1fr $icon-width;
     justify-items: center;
     align-items: center;
-    margin: 0 24px 12px;
   }
 
   &__container {
@@ -12,7 +11,6 @@
   }
 
   &__content {
-    padding-top: 12px;
     @include container;
 
     @include onDesktop {
@@ -34,11 +32,28 @@
     text-align: center;
     margin: 0 auto 20px;
 
+    @include onTablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
+
     @include onDesktop {
       text-align: left;
       margin: 0 0 20px;
       font-size: 60px;
       line-height: 60px;
+    }
+  }
+
+  &__on-tab {
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__on-desk {
+    @include onDesktop {
+      display: block;
     }
   }
 
@@ -66,6 +81,12 @@
     width: 100%;
   }
 
+  &__button-cont {
+    @include onTablet {
+      display: flex;
+    }
+  }
+
   &__button {
     width: 100%;
     margin-bottom: 30px;
@@ -74,11 +95,15 @@
     line-height: 21px;
     text-align: center;
     background-color: $color-black;
-    border-radius: 4px;
+
+    @include onTablet {
+      width: 40%;
+      margin: 0 auto;
+    }
 
     @include onDesktop {
       width: 55%;
-      margin-bottom: 48px;
+      margin: 0 0 48px;
     }
   }
 }
