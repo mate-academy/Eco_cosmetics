@@ -1,11 +1,6 @@
 .header {
   &__menu {
     display: none;
-    padding-top: 15px;
-
-    @include Tablet {
-      padding-top: 23px;
-    }
 
     @include onDesktop {
       display: grid;
@@ -14,38 +9,30 @@
       justify-content: start;
       align-content: center;
       padding-top: 30px;
-    }
-  }
-
-  &__content {
-    padding-top: 12px;
-
-    @include Tablet {
-      padding-top: 30px;
-    }
-    
-    @include onDesktop {
-      padding-top: 81px;
+      margin-bottom: 80px;
     }
   }
 
   &__title {
+    margin-bottom: 12px;
+
     font-weight: normal;
     font-size: 24px;
     line-height: 130%;
     text-align: center;
-    font-family: Avenir;
-    margin-bottom: 12px;
+    font-family: Avenir, sans-serif;
 
     @include Tablet {
       margin-bottom: 20px;
-      font-weight: 500;
+
       font-size: 36px;
+      font-weight: 500;
     }
 
     @include onDesktop {
-      text-align: left;
       margin: 0 0 30px;
+
+      text-align: left;
       font-size: 60px;
       line-height: 100%;
     }
@@ -73,11 +60,11 @@
 
   &__image {
     object-fit: cover;
-    margin: 0 0 25px;
+    margin-bottom: 25px;
     width: 100%;
 
     @include Tablet() {
-      margin: 0 0 50px;
+      margin-bottom: 50px;
     }
 
     @include onDesktop {
@@ -87,19 +74,5 @@
 
   &__button {
     margin-bottom: 60px;
-  }
-
-  &__line {
-    &::after {
-  
-      @include onDesktop {
-        content: '';
-        display: block;
-        width: 610px;
-        height: 1px;
-        margin-top: 200px;
-        background-color: rgba(52, 79, 16, 0.5);
-      }
-    }
   }
 }

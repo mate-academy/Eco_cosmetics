@@ -5,64 +5,22 @@
   }
 
   &__sidetext {
-    opacity: 0;
     position: absolute;
-    display: flex;
-    align-self: center;
-    width: max-content;
-
-    font-family: Sharp Sans No2;
-    color: rgba(52, 79, 16, 0.5);
-    transform: rotate(-90deg) translateX(-100%);
-    transform-origin: top left;
-    text-transform: uppercase;
-
-    @include onDesktop {
-      opacity: 1;
-      font-size: 14px;
-      line-height: 130%;
-      letter-spacing: 0.05em;
-    }
-      
-    &::before {
-      content: '';
-      display: inline-flex;
-      align-self: center;
-      background-color: rgba(52, 79, 16, 0.5);
-      
-      @include onDesktop {
-        width: 100px;
-        height: 1px;
-        margin-right: 10px;
-      }
-    }
   }
 
   &__title {
-    margin: 0;
     margin-bottom: 12px;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 150%;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #344F10;
+   
+    @extend %section-title;
 
     @include onDesktop {
       margin-bottom: 16px;
       margin-top: 24px;
-      font-weight: 500;
-      font-size: 36px;
-      line-height: 110%;
     }
   }
 
   &__paragraph {
-    margin: 0;
-   
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
+    @extend %paragraph;
 
     &:first-of-type{
       margin-bottom: 36px;
@@ -74,16 +32,10 @@
 
     &:last-of-type {
       display: none; 
-      margin: 0; 
-
 
       @include onDesktop {
         display: block;
       }
-    }
-
-    @include Tablet {
-      font-weight: 500;
     }
 
     @include onDesktop {
@@ -92,28 +44,9 @@
   }
 
   &__more-info {
-    display: inline-block;
-
-    font-family: Sharp Sans No2;
-    font-size: 14px;
-    line-height: 130%;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #344F10;
-    text-decoration: none;
-
-    padding-bottom: 9px;
-    border-bottom: 1px solid transparent;
+    @extend %more-info-button;
     margin-bottom: 30px;
     margin-top: 44px;
-
-    &:hover {
-      border-color: rgba(52, 79, 16, 0.5);
-    }
-
-    @include onDesktop {
-      padding-bottom: 12px;
-    }
   }
   
   &__images {
@@ -131,9 +64,5 @@
       @include onDesktop() {
         height: 669px;
       }
-  }
-
-  &__button {
-    margin: 0;
   }
 }

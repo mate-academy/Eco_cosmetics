@@ -6,66 +6,22 @@
 
   &__sidetext {
     position: absolute;
-
-    display: flex;
-    align-self: center;
-    width: max-content;
-
-    font-family: Sharp Sans No2;
-    color: rgba(52, 79, 16, 0.5);
-    opacity: 0;
-
-    transform: rotate(-90deg) translateX(-100%);
-    transform-origin: top left;
-    text-transform: uppercase;
-
-    @include onDesktop {
-      font-size: 14px;
-      line-height: 130%;
-      letter-spacing: 0.05em;
-
-      opacity: 1;
-    }
-      
-    &::before {
-      content: '';
-      display: inline-flex;
-      align-self: center;
-      background-color: rgba(52, 79, 16, 0.5);
-      
-      @include onDesktop {
-        width: 100px;
-        height: 1px;
-        margin-right: 10px;
-      }
-    }
   }
 
   &__title {
-    margin: 10px 0 12px;
+    margin-bottom: 12px;
 
-    font-size: 24px;
-    font-weight: normal;
-    line-height: 150%;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #344F10;
+    @extend %section-title;
 
     @include onDesktop {
-      margin-bottom: 42px 0 16px;
-      font-weight: 500;
-      font-size: 36px;
-      line-height: 110%;
+      margin-bottom: 16px;
     }
   }
 
   &__paragraph {
-    margin: 0;
     margin-bottom: 44px;
 
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 150%;
+    @extend %paragraph;
 
     &:last-of-type {
       display: none;  
@@ -76,36 +32,13 @@
       }
     }
 
-    @include Tablet {
-      font-weight: 500;
-    }
-
     @include onDesktop {
       margin-bottom: 30px;
     }
   }
 
   &__more-info {
-    display: inline-block;
-
-    font-family: Sharp Sans No2;
-    font-size: 14px;
-    line-height: 130%;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #344F10;
-    text-decoration: none;
-
-    padding-bottom: 9px;
-    border-bottom: 1px solid transparent;
-
-    &:hover {
-      border-color: rgba(52, 79, 16, 0.5);
-    }
-
-    @include onDesktop {
-      padding-bottom: 12px;
-    }
+    @extend %more-info-button;
   }
   
   &__images {

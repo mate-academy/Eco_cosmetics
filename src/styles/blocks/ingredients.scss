@@ -6,87 +6,23 @@
     justify-content: space-between;
   }
 
-  @include onDesktop {
-    display: flex;
-  }
-
   &__sidetext {
-    opacity: 0;
     position: absolute;
-    display: flex;
-    align-self: center;
-    width: max-content;
-    font-family: Sharp Sans No2;
-    color: rgba(52, 79, 16, 0.5);
-    transform: rotate(-90deg) translateX(-100%);
-    transform-origin: top left;
-    text-transform: uppercase;
-
-    @include onDesktop {
-      opacity: 1;
-      font-size: 14px;
-      line-height: 130%;
-      letter-spacing: 0.05em;
-    }
-      
-    &::before {
-      content: '';
-      display: inline-flex;
-      align-self: center;
-      background-color: rgba(52, 79, 16, 0.5);
-      
-      @include onDesktop {
-        width: 100px;
-        height: 1px;
-        margin-right: 10px;
-      }
-    }
   }
 
   &__title {
-    margin: 0;
     margin-bottom: 37px;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 150%;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #344F10;
-
-    @include Tablet {
-      margin: 0;
-    }
+   
+    @extend %section-title;
 
     @include onDesktop {
       margin-bottom: 221px;
       margin-top: 65px;
-      font-weight: 500;
-      font-size: 36px;
-      line-height: 110%;
     }
   }
 
   &__more-info {
-    display: inline-block;
-    font-family: Sharp Sans No2;
-    font-size: 14px;
-    line-height: 130%;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #344F10;
-    text-decoration: none;
-    padding-bottom: 9px;
-    border-bottom: 1px solid transparent;
-    margin: 0;
-    width: max-content;
-
-    &:hover {
-      border-color: rgba(52, 79, 16, 0.5);
-    }
-
-    @include onDesktop {
-      padding-bottom: 12px;
-    }
+    @extend %more-info-button;
   }
   
   &__images {
@@ -103,7 +39,6 @@
       }
 
       @include onDesktop() {
-        margin: 0;
         height: 395px;
       }
   }
@@ -122,10 +57,6 @@
 
   &__wrapper {
     position: absolute;
-
-   @include onDesktop {
-     position: static;
-    }
   }
 
   &__names {
@@ -142,7 +73,6 @@
   }
 
   &__item {
-    position: relative;
     display: flex;
     font-size: 16px;
     line-height: 150%;
@@ -158,7 +88,7 @@
       font-size: 55px;
       display: inline-flex;
       align-self: center;
-      background-color: rgba(52, 79, 16, 0.5);
+      background-color: $color-dark-green;
       width: 76px;
       height: 1px;
       margin-left: 20px;
@@ -173,7 +103,7 @@
         content: "";
         display: inline-flex;
         align-self: center;
-        background: #333333;
+        background: $color-black;
         width: 5px;
         height: 5px;
         border-radius: 50%;

@@ -1,9 +1,22 @@
 .intro {
 
   @include onDesktop {
-    padding-top: 100px;
+   
   }
 
+  &__start-line {
+    &::after {
+  
+      @include onDesktop {
+        content: '';
+        display: block;
+        width: 610px;
+        height: 1px;
+        margin-bottom: 100px;
+        background-color: $color-dark-green;
+      }
+    }
+  }
   &__paragraph {
     display: none;
 
@@ -18,7 +31,7 @@
   &__important {
     margin: 0;
     text-transform: uppercase;
-    color: #344F10;
+    color: $color-green;
     font-size: 18px;
     font-weight: normal;
     line-height: 150%;
@@ -37,19 +50,21 @@
     }
   }
 
-  &__line {
- 
+  &__end-line {
+    @include onDesktop {
+      height: 93px;
+    }
     &:after {
       position: absolute;
       right: 0;
       content: '';
       display: block;
-      background-color: rgba(52, 79, 16, 0.5);
+      background-color: $color-dark-green;
 
       @include onDesktop {
         width: 711px;
         height: 1px;
-        margin-top: 100px;
+        margin-top: 93px;
       }
     }
   }
