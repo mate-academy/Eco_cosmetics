@@ -66,19 +66,39 @@
     }
   }
 
-  &__cards {
+  &__card--2,
+  &__card--3 {
+    display: none;
+  }
+
+  &__card--2 {
     @include onTablet {
-      &:nth-child(3) {
-        display: none;
-      }
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__card--3 {
+    @include onDesktop {
+      display: block;
     }
   }
 
   &__product-img {
+    width: 100%;
+    height: 267px;
+    object-fit: cover;
+
     @include onTablet {
-      width: 100%;
       height: 300px;
-      object-fit: cover;
+    }
+
+    @include onDesktop {
+      width: auto;
+      height: 100%;
     }
   }
 
