@@ -1,5 +1,4 @@
 .benefits {
-  margin-bottom: 60px;
   text-align: center;
   align-items: center;
   color: #000;
@@ -18,10 +17,17 @@
   &__item {
     display: flex;
     flex-direction: column;
-    margin-bottom: 58px;
-    
+
+    &:not(:last-child) {
+      margin-bottom: 58px;
+    }
+
     @include onTablet {
       width: 218px;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -30,8 +36,14 @@
     margin-bottom: 20px;
   }
 
+  &__text {
+    color: #000;
+    letter-spacing: 0.05em;
+    text-transform: $text-uppercase;
+  }
+
   &__img {
     align-self: center;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 }

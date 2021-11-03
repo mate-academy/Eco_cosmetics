@@ -1,7 +1,7 @@
 .shop {
   &__title {
     text-align: center;
-    padding-bottom: 12px;
+    margin-bottom: 12px;
 
     @include onTablet {
       text-align: left;
@@ -11,7 +11,7 @@
   &__list {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 32px;
+    margin-bottom: 32px;
 
     @include onTablet {
       justify-content: start;
@@ -26,8 +26,10 @@
     position: relative;
     color: #828282;
     font-weight: 400;
+    text-transform: $text-uppercase;
+    letter-spacing: 0.05em;
 
-    &--active {
+    &:hover {
       color: $c-dark-gray;
 
       &::after {
@@ -62,13 +64,18 @@
   }
 
   &__card {
+    margin: 0 auto 78px;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
     &-good {
-      padding: 10px 0 20px;
+      margin: 10px 0 20px;
     }
 
     &-price {
       color: $c-dark-gray;
-      padding-bottom: 78px;
 
       @include onTablet {
         padding-bottom: 0;
@@ -98,10 +105,6 @@
   }
 
   &__button {
-    margin-bottom: 60px;
-
-    @include onTablet {
-      margin: 42px 0 138px;
-    }
+    align-self: center;
   }
 }

@@ -1,20 +1,55 @@
 .info {
-  &__paragraph {
-    @include onTablet {
-      width: 280px;
-      text-align: center;
+  &__line {
+    display: none;
+    width: 580px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include onLaptop {
+      display: block;
     }
   }
 
   &__content {
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
     justify-content: center;
-    margin-bottom: 60px;
+
+    @include onLaptop {
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    &:last-child {
+      display: block;
+      color: $c-green;
+      text-transform: $text-uppercase;
+      letter-spacing: 0.05em;
+    }
 
     @include onTablet {
-      margin-bottom: 100px;
+      width: 280px;
+      text-align: center;
+    }
+
+    @include onLaptop {
+      display: block;
+      width: 380px;
+      margin: 100px 0;
+
+      &:first-child {
+        margin-right: 120px;
+      }
     }
   }
 }
