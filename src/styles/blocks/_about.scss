@@ -1,0 +1,58 @@
+.about {
+  padding: 0 20px;
+
+  @include onDesktop {
+    padding: 0;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: $color-green2;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  &__paragraph {
+    padding-bottom: 10px;
+
+    &--hiden {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+      // &:target {
+      //   display: block;
+      // }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: grid;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__link-cont {
+    margin-top: 40px;
+  }
+
+  &__link {
+    font-family: Sharp Sans, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $color-green1;
+  }
+}

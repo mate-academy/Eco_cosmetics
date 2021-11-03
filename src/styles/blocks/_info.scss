@@ -1,5 +1,26 @@
 .info {
   font-family: Avenir, sans-serif;
+  
+  @include onDesktop {
+    &::before {
+      content: "";
+      display: block;
+      width: 45%;
+      height: 2px;
+      background-color: $color-green1;
+      margin-bottom: 24px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 50%;
+      height: 2px;
+      background-color: $color-green1;
+      margin-left: 50%;
+      margin-bottom: 24px;
+    }
+  }
 
   &__container {
     @include onDesktop {
@@ -16,7 +37,8 @@
 
     @include onDesktop {
       display: block;
-      border-bottom: 1px solid $color-green2;
+      // border-bottom: 1px solid $color-green2;
+     
     }
   }
 
@@ -40,8 +62,13 @@
   }
 
   &__text-cont {
-    padding: 100px 0;
-    border-top: 1px solid $color-green2;
+    display: none;
+    
+    @include onDesktop {
+      display: block;
+      padding: 100px 0;
+      // border-top: 1px solid $color-green2;
+    }
   }
 
   &__text {
