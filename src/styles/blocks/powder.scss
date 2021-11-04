@@ -1,0 +1,124 @@
+.powder {
+  // .powder__container
+  &__container {
+    position: relative;
+  }
+  // .powder__body
+  &__body {
+    position: relative;
+
+    @media (max-width: 670px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  // .powder__brand
+  &__brand {
+  }
+  // .powder__content
+  &__content {
+    grid-column: 2 / 5;
+
+    display: grid;
+    grid-template-rows: 1fr min-content;
+
+    padding-top: 50px;
+
+    @media (max-width: 1024px) {
+      grid-column: 1 / 4;
+    }
+
+    @media (max-width: 768px) {
+      padding-top: 0;
+    }
+  }
+  // .powder__title
+  &__title {
+    @media (max-width: 670px) {
+      margin-bottom: 40px;
+    }
+  }
+  // .powder__link
+  &__link {
+    @media (max-width: 670px) {
+      display: none;
+    }
+  }
+  // .powder__hide
+  &__hide {
+    display: none;
+    @media (max-width: 670px) {
+      display: block;
+    }
+  }
+  // .powder__manual
+  &__manual {
+    grid-column: 6 / 13;
+
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      transform: translateX(-15%);
+    }
+
+    @media (max-width: 670px) {
+      transform: translateX(20%);
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 480px) {
+      transform: translateX(3%);
+    }
+  }
+  // .powder__items
+  &__items {
+    @media (max-width: 768px) {
+      transform: translateX(30%);
+    }
+  }
+  // .powder__item
+  &__item {
+    padding-right: 120px;
+    text-align: right;
+
+    position: relative;
+
+    &:not(:last-child) {
+      margin: 0px 0px 60px 0px;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: calc(50% - 3px);
+      right: 4%;
+      width: 80px;
+      height: 6px;
+      background-image: url(../images/powder/line.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  // .powder__name
+  &__name {
+    text-transform: capitalize;
+    white-space: nowrap;
+    @media (max-width: 768px) {
+      display: inline-block;
+      max-width: 110px;
+      white-space: normal;
+    }
+  }
+  // .powder__image
+  &__image {
+  }
+
+  // .powder__hide
+  .powder__hide-words {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}

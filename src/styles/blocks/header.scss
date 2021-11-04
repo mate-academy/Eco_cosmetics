@@ -74,9 +74,17 @@
         height: 32px;
         width: 32px;
 
+        transition: transform 0.3s ease-in-out;
+
         @media (max-width: 768px) {
             width: 24px;
             height: 24px;
+        }
+
+        @media (any-hover: hover){
+            &:hover{
+                transform: scale(1.1);
+            }
         }
     }
 }
@@ -109,8 +117,18 @@
 
         text-transform: uppercase;
 
+        transition: color 0.3s ease-in-out;
+
         @media (max-width: 768px) {
             display: none;
+        }
+
+        @media (any-hover: hover){
+            &:hover{
+                .logo & {
+                    color: rgb(231, 12, 12);
+                }
+            }
         }
     }
 }
@@ -186,7 +204,6 @@
     }
 }
 
-//Burger
 .icon-menu {
     display: none;
 
