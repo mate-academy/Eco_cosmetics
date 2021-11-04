@@ -1,0 +1,63 @@
+.nav {
+  background-color: $black;
+  z-index: 1;
+
+  @include onDesktop {
+    background-color: transparent;
+  }
+
+  &__top-actions {
+    margin: 16px auto 40px;
+    padding: 0 20px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    padding: 0 20px;
+    width: 100%;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid transparent;
+
+    transition: border-color $transition-duration;
+
+    &:hover {
+      border-color: $cream;
+    }
+
+    @include onDesktop {
+      padding-bottom: 0;
+
+      &:hover {
+        border-color: $dark-green;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 130%;
+    color: $cream;
+
+    @include onDesktop {
+      font-family: Sharp-Sans, sans-serif;
+      color: $dark-green;
+    }
+  }
+}

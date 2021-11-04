@@ -1,0 +1,37 @@
+.form {
+  &__field {
+    margin-bottom: 24px;
+    padding-bottom: 4px;
+    width: 100%;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $light-gray;
+    transition: border-color $transition-duration;
+
+    cursor: pointer;
+
+    &:focus {
+      color: $black;
+      outline: none;
+      border-color: $black;
+    }
+
+    &:last-of-type {
+      margin-bottom: 32px;
+
+      @include onDesktop {
+        margin-bottom: 52px;
+      }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: $dark-green;
+    }
+  }
+}

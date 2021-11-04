@@ -1,0 +1,40 @@
+.header {
+  font-family: Avenir, sans-serif;
+
+  &__top-actions {
+    margin: 16px auto 12px;
+    padding: 0 20px;
+
+    @include onTablet {
+      margin: 16px auto 36px;
+    }
+
+    @include onDesktop {
+      max-width: $max-width-desktop;
+      margin: 16px auto 80px;
+      padding: 0 50px;
+    }
+  }
+
+  &__nav {
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    transform: translateX(-100%);
+    transition: transform $transition-duration;
+  
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      position: relative;
+      height: auto;
+      transform: translateX(0);
+    }
+  }
+}
