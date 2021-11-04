@@ -1,22 +1,115 @@
 .powder {
+  position: relative;
+
+  &__img {
+
+    @include onLaptop {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__title {
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 40px;
+      letter-spacing: 0.05em;
+      padding: 60px 0 150px;
+    }
+  }
 
   &__img-cont {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 40px;
   }
 
-  &__img {
-    display: block;
-  }
+  &__img-p {
+    font-family: Avenir, sans-serif;
+    padding-top: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
 
-  &__img-title {
-    display: block;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &--mob {
+      display: block;
+    }
+
+    &--tab {
+      display: none;
+    }
+
+    &--desk {
+      display: none;
+    }
+
+    @include onTablet {
+      &--mob {
+        display: none;
+      }
+  
+      &--tab {
+        display: block;
+      }
+  
+      &--desk {
+        display: none;
+      }
+    }
+
+    @include onDesktop {
+      &--mob {
+        display: none;
+      }
+  
+      &--tab {
+        display: none;
+      }
+  
+      &--desk {
+        display: block;
+      }
+    }
   }
 
   &__ecco {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: 20px;
+  }
+
+  &__list {
+    position: absolute;
+
+    @include onDesktop {
+      right: 40%;
+      top: 70px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+    margin-bottom: 48px;
+    text-transform: capitalize;
+
+    &::after {
+      position: relative;
+      content: "";
+      display: block;
+      height: 1px;
+      width: 76px;
+      background-color: #333;
+    }
   }
 }

@@ -1,20 +1,22 @@
 .about {
-
+  font-family: Avenir, sans-serif;
   @include onDesktop {
     padding: 0;
   }
 
   &__title {
-    font-size: 36px;
+    margin-bottom: 16px;
+    font-size: 24px;
     line-height: 36px;
-    font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.05em;
     color: $color-green2;
     text-transform: uppercase;
     text-align: left;
   }
 
   &__paragraph {
+    font-family: Avenir, sans-serif;
+
     padding-bottom: 30px;
 
     &--hiden {
@@ -29,15 +31,35 @@
     }
   }
 
-  &__img {
-    display: none;
+  // &__img {
+  //   display: none;
 
-    @include onTablet {
-      display: grid;
-    }
+  //   @include onTablet {
+  //     display: grid;
+  //   }
 
-    @include onDesktop {
+  //   @include onDesktop {
+  //     display: grid;
+  //   }
+  // }
+
+  // &__right {
+  //   // width: 100%;
+  //   height: 100%;
+  //   background: url(../images/photos/about.png) no-repeat left top;
+  // }
+
+  &--smoll {
+    &::after {
+      content: "";
       display: block;
+      position: absolute;
+      bottom: 0;
+      right: -20px;
+      transform: translateX(100%);
+      height: 80%;
+      width: 100%;
+      background: url(../images/photos/about.png) no-repeat -150px;
     }
   }
 
@@ -50,17 +72,5 @@
     }
   }
 
-  &__link-cont {
-    margin-top: 40px;
-  }
-
-  &__link {
-    font-family: Sharp Sans, sans-serif;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding-bottom: 8px;
-    border-bottom: 1px solid $color-green1;
-  }
+  
 }

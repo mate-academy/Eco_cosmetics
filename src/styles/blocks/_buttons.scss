@@ -19,11 +19,24 @@
   line-height: 21px;
   text-align: center;
   background-color: $color-black;
+  color: $color-gray2;
+  text-transform: uppercase;
   cursor: pointer;
 
-  @include onTablet {
-    width: 40%;
-    margin: 0 auto;
+  &:hover {
+    background-color: $color-gray2;
+    color: $color-black;
+    outline: none;
+    border: 1px solid $color-black;
+  }
+
+  &__link {
+    color: $color-gray2;
+    text-transform: uppercase;
+    &:hover {
+      // display: block;
+      color: $color-black;
+    }
   }
 
   @include onDesktop {
@@ -31,9 +44,46 @@
     margin: 0 0 48px;
   }
 
+  // @include onTablet {
+  //   width: 40%;
+  //   margin: 0 auto;
+  // }
+
   &--shop {
     @include onDesktop {
       width: 20%;
+    }
+  }
+
+  &--creators {
+    @include onDesktop {
+      width: 100%;
+      margin-top: 60px;
+    }
+
+    @include onTablet {
+      width: 100%;
+      margin: 40px 0 0;
+    }
+  }
+}
+
+.lern {
+  display: inline-block;
+  margin-top: 40px;
+
+  &__link {
+    font-family: Sharp Sans, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: $color-green2;
+    padding-bottom: 10px;
+    transition: border-bottom 1s;
+
+    &:hover {
+      border-bottom: 1px solid $color-green2;
     }
   }
 }
