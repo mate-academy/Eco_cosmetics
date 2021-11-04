@@ -14,7 +14,8 @@
     @extend %section-title;
 
     @include onDesktop {
-      margin-bottom: 16px;
+      margin-top: 42px;
+      margin-bottom: 20px;
     }
   }
 
@@ -51,15 +52,16 @@
     &-big {
       display: none;
 
-      @include Tablet {
+      @include Tablet() {
+        position: absolute;
         display: block;
         object-fit: cover;
         object-position: center;
-        height: 318px;
-        width: 100%;
+        height: 100%;
       }
 
       @include onDesktop {
+        position: static;
         height: 529px;
       }
     }

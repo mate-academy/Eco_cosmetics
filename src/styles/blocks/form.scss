@@ -5,7 +5,8 @@
   &__field {
     border-style: none;
     border-bottom: 1px solid $color-light-grey;
-    background-color: $color-grey;
+    background-color: $color-creamy;
+    color: $color-green;
 
     font-size: 14px;
     line-height: 150%;
@@ -22,5 +23,42 @@
       font-weight: 500;
       font-size: 18px;
     }
+
+    &::placeholder {
+      color: $color-dark-grey;
+      font-family: Sharp Sans No2, sans-serif;
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 150%;
+      text-transform: capitalize;
+
+      @include Tablet {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-black;
+
+      &:invalid {
+        color:$color-red;
+        border-color:$color-red;
+      }
+
+      &:valid {
+        border-color: $color-green;
+      }
+    }
+
+    &:-webkit-autofill,
+     &:-webkit-autofill:hover,
+     &:-webkit-autofill:focus,
+     &:-webkit-autofill:active {
+       background-clip: text;
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: $color-green;
+     }
   }
 }
