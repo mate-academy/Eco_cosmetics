@@ -1,10 +1,25 @@
 .shop {
+  &__container {
+    @include onLaptop {
+      width: calc(100% - 150px);
+      margin: 0 0 0 150px;
+    }
+
+    @include onDesktop {
+      margin: 0 auto;
+    }
+  }
+
   &__title {
     text-align: center;
     margin-bottom: 12px;
 
     @include onTablet {
       text-align: left;
+    }
+
+    @include onLaptop {
+      margin-bottom: 20px;
     }
   }
 
@@ -16,10 +31,22 @@
     @include onTablet {
       justify-content: start;
     }
+
+    @include onLaptop {
+      margin-bottom: 85px;
+    }
   }
 
   &__item {
-    margin-right: 14px;
+    &:not(:last-child) {
+      @include onTablet {
+        margin-right: 14px;
+      }
+
+      @include onLaptop {
+        margin-right: 20px;
+      }
+    }
   }
 
   &__link {
@@ -70,8 +97,20 @@
       margin-bottom: 48px;
     }
 
+    @include onLaptop {
+      margin: 0;
+
+      &:not(:last-child) {
+        margin: 0 20px 40px 0;
+      }
+    }
+
     &-good {
       margin: 10px 0 20px;
+
+      @include onLaptop {
+        margin: 15px 0 10px;
+      }
     }
 
     &-price {
@@ -85,7 +124,7 @@
     &:nth-child(2) {
       display: none;
 
-      @include onDesktop {
+      @include onLaptop {
         display: block;
       }
     }
@@ -95,6 +134,12 @@
 
       @include onTablet {
         display: block;
+      }
+    }
+
+    @include onLaptop {
+      &:not(:last-child) {
+        margin-right: 20px;
       }
     }
   }

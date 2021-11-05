@@ -1,0 +1,28 @@
+.nav {
+  display: none;
+
+  @include onLaptop {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      @include onLaptop {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__link {
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 18px;
+
+    @include onLaptop {
+      color: $c-green;
+    }
+  }
+}

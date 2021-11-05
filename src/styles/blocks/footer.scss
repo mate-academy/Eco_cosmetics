@@ -34,10 +34,18 @@
     @include onTablet {
       display: block;
     }
+
+    @include onLaptop {
+      display: none;
+    }
   }
 
   &__nav-copyrights {
     display: none;
+
+    @include onLaptop {
+      display: block;
+    }
   }
 
   &__info {
@@ -46,6 +54,11 @@
     @include onTablet {
       margin-bottom: 0;
     }
+
+    @include onLaptop {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__icons {
@@ -53,6 +66,12 @@
 
     @include onTablet {
       display: none;
+    }
+
+    @include onLaptop {
+      display: block;
+      margin: 30px 0 0;
+      order: 2;
     }
   }
 
@@ -65,6 +84,10 @@
 
     &:not(:last-child) {
       margin-bottom: 12px;
+
+      @include onLaptop {
+        margin-bottom: 20px;
+      }
     }
 
     &:nth-child(3) {
@@ -91,17 +114,9 @@
       width: auto;
       margin-left: 10px;
     }
-  }
-}
 
-.nav {
-  &__item {
-    &:not(:last-child) {
-      padding-bottom: 20px;
+    @include onLaptop {
+      display: none;
     }
-  }
-
-  &__link {
-    color: #e4dfd3;
   }
 }

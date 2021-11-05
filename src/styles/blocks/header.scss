@@ -1,7 +1,13 @@
 .header {
-  &__part {
+  &__container {
     @include onLaptop {
-      display: flex;
+      width: calc(100% - 100px);
+      margin: 0 50px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      margin: 0;
     }
   }
 
@@ -16,6 +22,38 @@
     }
   }
 
+  &__menu {
+    @include onLaptop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    @include onLaptop {
+      &::after {
+        margin-left: 12px;
+        content: "Witch of mountain winds";
+        text-transform: $text-uppercase;
+        font-family: "Sharp Sans Display No2", sans-serif;
+        font-size: 14px;
+        color: $c-green;
+      }
+    }
+
+    @include onLaptop {
+      height: 50px;
+    }
+  }
+
+  &__part {
+    @include onLaptop {
+      display: flex;
+    }
+  }
+
   &__promo {
     margin-bottom: 25px;
 
@@ -27,18 +65,18 @@
       order: 2;
       margin: 0 50px 0 0;
     }
-  }
 
-  &__container {
-    @include onLaptop {
-      width: calc(100% - 70px);
-      margin: 0 20px 0 50px;
+    @include onDesktop {
+      margin: 0;
     }
   }
 
   &__img {
+    height: 100%;
     width: 100%;
-    height: auto;
+    // width: -moz-available;
+    // width: -webkit-fill-available;
+    // width: fill-available;
 
     @include onLaptop {
       height: 100%;
@@ -59,9 +97,10 @@
 
     @include onLaptop {
       width: 480px;
-      margin: 0 20px;
+      margin: 0 0 0 100px;
       height: 100%;
       justify-content: space-between;
+      align-items: start;
     }
   }
 
@@ -70,6 +109,7 @@
 
     @include onLaptop {
       margin-bottom: 30px;
+      text-align: start;
     }
   }
 

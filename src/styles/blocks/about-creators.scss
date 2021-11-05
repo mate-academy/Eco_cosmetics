@@ -12,10 +12,18 @@
     @include onTablet {
       margin-right: 30px;
     }
+
+    @include onLaptop {
+      margin-right: 120px;
+    }
   }
 
   &__title {
     margin-bottom: 12px;
+
+    @include onLaptop {
+      margin-bottom: 20px;
+    }
   }
 
   &__text {
@@ -25,10 +33,27 @@
       @include onTablet {
         margin-bottom: 12px;
       }
+
+      @include onLaptop {
+        margin-bottom: 54px;
+      }
     }
 
     &:nth-child(3) {
       margin-bottom: 44px;
+
+      @include onLaptop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:nth-child(4) {
+      display: none;
+
+      @include onLaptop {
+        display: block;
+        margin-bottom: 20px;
+      }
     }
   }
 
@@ -51,5 +76,9 @@
 
   &__button {
     align-self: center;
+
+    @include onTablet {
+      align-self: start;
+    }
   }
 }
