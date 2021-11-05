@@ -2,7 +2,7 @@
   display: inline-flex;
   min-height: 60px;
   min-width: 280px;
-  padding: 0px 15px;
+  padding: 5px 15px;
 
   justify-content: center;
   align-items: center;
@@ -16,7 +16,11 @@
 
   border: 1px solid transparent;
 
-  @media (min-width: 769px){
+  @media (max-width: 480px){
+      width: 100%;
+  }
+
+  @media (min-width: 769px) {
     animation-name: wow;
     animation-duration: 10s;
     animation-timing-function: ease-in-out;
@@ -78,7 +82,7 @@
       height: 100px;
       width: 1px;
       background: $colorGreen;
-      margin-right: 5px;
+      margin-right: 2px;
       margin-bottom: 10px;
     }
   }
@@ -122,4 +126,44 @@
       }
     }
   }
+}
+
+.link-footer {
+  transition: color 0.3s ease-in-out;
+
+  @media (any-hover: hover){
+    &:hover{
+      color: $colorMain;
+    }
+  }
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 0px 10px 10px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #bdbdbd;
+  outline: none;
+  color: rgb(88, 13, 13);
+
+  &::placeholder {
+    font-weight: 500;
+    color: $colorGrey;
+  }
+
+  &:focus {
+    border-bottom-color: rgb(88, 13, 13);
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }

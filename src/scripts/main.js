@@ -1,14 +1,9 @@
 'use strict';
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   document.querySelector('.wrapper').classList.add('loaded');
-// });
-
 const iconMenu = document.querySelector(".icon-menu");
 const menu = document.querySelector(".menu");
 const body = document.querySelector("body");
-
-const navLinks = document.querySelectorAll('.nav__link');
+const navLinks = document.querySelectorAll('.menu__link');
 
 iconMenu.addEventListener("click", function (e) {
   iconMenu.classList.toggle("active");
@@ -18,9 +13,9 @@ iconMenu.addEventListener("click", function (e) {
 
 navLinks.forEach((link) => {
   link.addEventListener('click', () => {
-    iconMenu.classList.remove('_active');
-    menuBody.classList.remove('_active');
-    body.classList.remove('_lock');
+    iconMenu.classList.remove('active');
+    menu.classList.remove('active');
+    body.classList.remove('lock');
   })
 });
 

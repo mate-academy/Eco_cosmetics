@@ -1,0 +1,144 @@
+.footer {
+  background-color: $colorGree2;
+  padding: 30px 0px 50px;
+  // .footer__container
+  &__container {
+  }
+  // .footer__body
+  &__body {
+    color: $colorWhite;
+    font-size: 18px;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    row-gap: 20px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 670px) {
+      row-gap: 0;
+      grid-template-columns: 1fr;
+    }
+  }
+  // .footer__nav
+  &__nav {
+  }
+  // .footer__social
+  &__social {
+    @media (max-width: 768px) {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 670px) {
+      margin-bottom: 30px;
+    }
+  }
+  // .footer__copy
+  &__copy {
+    grid-row: 2;
+    grid-column: 1 / 6;
+    line-height: 130%;
+
+    @media (max-width: 768px) {
+      grid-row: 3;
+    }
+
+    @media (max-width: 670px) {
+      grid-row: 4;
+      text-align: center;
+    }
+  }
+  // .footer__info
+  &__info {
+    @media (max-width: 670px) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.nav-footer {
+  grid-column: 1 / 4;
+
+  @media (max-width: 670px) {
+    margin-bottom: 20px;
+  }
+  // .nav-footer__list
+  &__list {
+    @media (min-width: 769px) {
+      display: flex;
+    }
+  }
+  // .nav-footer__item
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 769px) {
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+
+    @media (max-width: 670px) {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  // .nav-footer__link
+  &__link {
+    color: $colorWhite;
+  }
+}
+
+.info-footer {
+  grid-column: 8 / -1;
+
+  @media (max-width: 670px) {
+    grid-row: 3;
+    grid-column: 1 / -1;
+  }
+  // .info-footer__item
+  &__item {
+    margin-bottom: 20px;
+
+    @media (max-width: 670px) {
+      margin-bottom: 12px;
+    }
+  }
+  // .info-footer__link
+  &__link {
+    color: $colorWhite;
+  }
+  // .info-footer__social
+  &__social {
+  }
+}
+
+.social-footer {
+  grid-row: 2;
+  grid-column: 8 / 9;
+
+  @media (max-width: 768px) {
+    grid-column: 1 / -1;
+  }
+
+  // .social-footer__item
+  &__item {
+    img {
+      transition: transform 0.3s ease-in-out;
+      @media (any-hover: hover) {
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+  }
+}
