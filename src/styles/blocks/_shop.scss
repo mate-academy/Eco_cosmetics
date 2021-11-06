@@ -1,6 +1,7 @@
 .shop {
-  &__conteiner {
+  &__container {
     @include container;
+    padding: 0 0 0 50px;
   }
 
   &__title {
@@ -17,6 +18,7 @@
 
     @include onTablet {
       justify-content: start;
+      gap: 20px;
     }
   }
 
@@ -59,41 +61,51 @@
     margin-bottom: 40px;
   }
 
-  &:nth-of-type(n+2) {
+  &__none-tab {
     display: none;
-  }
 
-  @include onDesktop {
-
-    &:nth-of-type(3) {
+    @include onTablet {
       display: block;
-      min-width: 0;
+    }
+
+    @include onDesktop {
+      display: block;
     }
   }
 
-  @include onTablet {
+  &__none-desk {
+    display: none;
 
-    &:nth-of-type(2) {
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
       display: block;
     }
   }
 
   &__img-cont {
     overflow: hidden;
-    height: 300px;
+    // height: 300px;
     margin-bottom: 20px;
 
-    @include onDesktop {
-      height: 500px;
-    }
+    // @include onDesktop {
+    //   height: 500px;
+    // }
   }
 
   &__img {
     width: 100%;
-    height: 300px;
+    // height: 300px;
     object-fit: cover;
 
+    @include onTablet {
+      // max-width: 300px;
+    }
+
     @include onDesktop {
+      max-width: 500px;
       height: 500px;
     }
   }
