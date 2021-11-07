@@ -1,14 +1,14 @@
 .powder {
   position: relative;
 
-  &__title {
-    @include onDesktop {
-      font-size: 36px;
-      line-height: 40px;
-      letter-spacing: 0.05em;
-      padding: 0 0 150px;
-    }
-  }
+  // &__title {
+  //   @include onDesktop {
+  //     font-size: 36px;
+  //     line-height: 40px;
+  //     letter-spacing: 0.05em;
+  //     padding: 0 0 150px;
+  //   }
+  // }
 
   &__img-cont {
     display: flex;
@@ -78,10 +78,17 @@
     flex-flow: column;
     justify-content: center;
 
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+
     @include onDesktop {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       column-gap: 20px;
+      padding-top: 40px;
     }
   }
 
@@ -89,6 +96,11 @@
     position: absolute;
     right: 30%;
     top: 120px;
+
+    @include onTablet {
+      right: 40%;
+      top: 40px;
+    }
 
     @include onDesktop {
       right: 45%;
@@ -126,6 +138,10 @@
   &__bottle-cont {
     position: relative;
     right: -60%;
+
+    @include onTablet {
+      right: -80%;
+    }
 
     @include onDesktop {
       right: 0%;
