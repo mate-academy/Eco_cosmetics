@@ -2,18 +2,21 @@
 <html lang="en" class="page">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
     <title>Eco Cosmetics</title>
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="icon" href="images/favicon.png">
   </head>
 
-  <body>
+  <body class="page__body">
     <header class="header page__header">
       <div class="container header__container">
         <div class="header__content">
-          <a href="#" class="header__menu">
-            <img src="images/menu-open.png" alt="Menu">
+          <a href="#" class="header__button-open">
+            <img src="images/menu-closed.png" alt="Menu">
           </a>
 
           <a href="#" class="header__logo">
@@ -29,13 +32,31 @@
           <nav class="nav header__nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="" class="nav__link">Shop</a>
+                <a href="#shop" class="nav__link nav__link--c-green">Shop</a>
               </li>
               <li class="nav__item">
-                <a href="" class="nav__link">Contact</a>
+                <a href="#contact" class="nav__link nav__link--c-green">Contact</a>
               </li>
               <li class="nav__item">
-                <a href="" class="nav__link">About</a>
+                <a href="#about" class="nav__link nav__link--c-green">About</a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav id="menu" class="menu header__menu">
+            <a href="#" class="menu__button-close">
+              <img src="images/menu-opened.png" alt="Menu">
+            </a>
+
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#shop" class="menu__link">Shop</a>
+              </li>
+              <li class="menu__item">
+                <a href="#contact" class="menu__link">Contact</a>
+              </li>
+              <li class="menu__item">
+                <a href="#about" class="menu__link">About</a>
               </li>
             </ul>
           </nav>
@@ -90,8 +111,7 @@
             </p>
 
             <p class="text text--md info__text">
-              If you choose the gifts of nature and care about it’s - scroll
-              down
+              If you choose the gifts of nature and care about it’s - scroll down
             </p>
           </div>
         </div>
@@ -131,10 +151,11 @@
                 media="(min-width:1280px)"
                 srcset="images/candle-1280.png"
               >
-              <img class="about-brand__img"
-                  src="images/candle.png"
-                  alt=""
-              >
+              <img
+                class="about-brand__img"
+                src="images/candle.png"
+                alt="Candle"
+                >
             </picture>
             <img
               class="about-brand__img"
@@ -158,7 +179,7 @@
             <li class="shop__item">
               <a
                 href=""
-                class="text text--sm shop__link"
+                class="text text--sm shop__link shop__link--active"
               >
                 Face
               </a>
@@ -200,8 +221,6 @@
             <article class="shop__card">
               <div class="shop__picture">
                 <picture>
-                  <!-- <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
-                  <source media="(min-width:465px)" srcset="img_white_flower.jpg"> -->
                   <img
                     src="images/cream.png"
                     alt="Face cream"
@@ -284,23 +303,48 @@
         </div>
       </section>
 
-      <!-- <section class="component page__component">
-          <h2 class="title component__title">Ayurvedic Tooth Powder</h2>
+      <section class="component page__component">
+        <aside class="aside">
+          <hr class="aside__line">
+          <span class="text text--sm aside__text">Component</span>
+        </aside>
 
-          <div class="component__details">
-            <ul class="component__ingridients">
-              <li class="paragraph component__ingridient">Kaolin</li>
-              <li class="paragraph component__ingridient">Sivak <span>(Persian Salvador)</span></li>
-              <li class="paragraph component__ingridient">Calcium Carbonate</li>
-              <li class="paragraph component__ingridient">Licorice Root</li>
-              <li class="paragraph component__ingridient">Turmeric</li>
-            </ul>
+        <div class="container component__container">
+          <div class="grid">
+            <div class="grid__item grid__item--laptop-2-5 grid__item--tablet-1-3">
+              <h2 class="title component__title">Ayurvedic Tooth <br> Powder</h2>
+            </div>
 
-            <img src="images/jar_big.png" alt="Powder" class="component__img">
+            <div class="grid__item grid__item-laptop--6-8">
+              <div class="component__wrapper">
+                <div class="component__ingredients">
+                  <span class="text component__ingredient">Kaolin</span>
+                  <span class="text component__ingredient">
+                    Sivak
+                    <span class="text component__additional-ingredient">&#160;(Persian salvador)</span>
+                  </span>
+                  <span class="text component__ingredient">Calcium carbonate</span>
+                  <span class="text component__ingredient">Licorice root</span>
+                  <span class="text component__ingredient">Turmeric</span>
+                </div>
+              </div>
+            </div>
+            <div class="grid__item grid__item--laptop-8-12 grid__item--tablet-5-6">
+              <div class="component__img-wrapper">
+                <img
+                  class="component__img"
+                  src="./images/jar.png"
+                  alt="Powder"
+                >
+              </div>
+            </div>
+
+            <div class="grid__item grid__item--laptop-2-3 grid__item--tablet-1-1">
+              <a href="#" class="link component__link">Learn more</a>
+            </div>
           </div>
-
-          <a href="#" class="link component__link">Learn more</a>
-      </section> -->
+        </div>
+      </section>
 
       <section class="benefits page__benefits">
         <div class="container benefits__content">
@@ -365,50 +409,45 @@
                 class="contact-us__form form"
                 autocomplete="off"
               >
-                <label class="form__item" for="name">
-                  <input
-                    type="text"
-                    class="form__input"
-                    id="name"
-                    name="name"
-                    placeholder="Your name"
-                    required
-                  >
-                </label>
+                <input
+                  type="text"
+                  class="form__input"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                >
 
-                <label class="form__item" for="email">
-                  <input
-                    type="email"
-                    class="form__input"
-                    id="email"
-                    name="email"
-                    placeholder="E-mail"
-                    maxlength="30"
-                    required
-                  >
-                </label>
-                <label class="form__item" for="phone">
-                  <input
-                    type="number"
-                    class="form__input"
-                    id="phone"
-                    name="phone"
-                    placeholder="Phone number"
-                    pattern="+[0-9]{2}-[0-9] {3}-[0-9] {7}"
-                    required
-                  >
-                </label>
-                <label class="form__item" for="message">
-                  <input
-                    class="form__input form__input--textarea"
-                    type="text"
-                    name="message"
-                    id="message"
-                    placeholder="Your message"
-                    required
-                  >
-                </label>
-                <a class="contact-us__button button">Send a message</a>
+                <input
+                      type="email"
+                      class="form__input"
+                      id="email"
+                      name="email"
+                      placeholder="E-mail"
+                      maxlength="30"
+                      required
+                >
+
+                <input
+                      type="tel"
+                      class="form__input"
+                      id="phone"
+                      name="phone"
+                      placeholder="Phone number"
+                      pattern="+[0-9]{2}-[0-9] {3}-[0-9] {7}"
+                      required
+                >
+
+                <input
+                      class="form__input form__input--textarea"
+                      type="text"
+                      name="message"
+                      id="message"
+                      placeholder="Your message"
+                      required
+                >
+
+                <button type="submit" class="contact-us__button button">Send a message</button>
               </form>
             </article>
 

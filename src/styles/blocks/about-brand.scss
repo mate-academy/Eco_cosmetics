@@ -21,6 +21,10 @@
   &__content {
     display: flex;
     flex-direction: row;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
   }
 
   &__article {
@@ -30,9 +34,11 @@
 
     @include onTablet {
       margin-right: 30px;
+      max-width: 700px;
     }
 
     @include onLaptop {
+      max-width: none;
       margin-right: 120px;
     }
   }
@@ -48,8 +54,13 @@
 
   &__text {
     margin-bottom: 44px;
+    margin-right: 20px;
 
-    @include onLaptop {
+    &:nth-child(3) {
+      display: none;
+    }
+
+    @include onDesktop {
       &:nth-child(2) {
         margin-bottom: 30px;
       }
@@ -64,10 +75,8 @@
     display: none;
 
     &:nth-child(2) {
-      width: 100%;
-      // width: -moz-available;  
-      // width: -webkit-fill-available;
-      // width: fill-available;
+      vertical-align: middle;
+      width: -webkit-fill-available;
 
       @include onTablet {
         display: block;
@@ -88,17 +97,17 @@
       }
     }
 
-    //@include onLaptop {
+    // @include onLaptop {
     //  &:nth-child(2) {
     //    margin-right: 20px;
     //    height: 100%;
     //    width: auto;
     //  }
-    //
+    
     //  &:last-child {
     //    display: block;
     //    align-self: end;
     //  }
-    //}
+    // }
   }
 }

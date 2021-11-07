@@ -18,11 +18,21 @@
     margin: 15px 0 12px;
 
     @include onTablet {
-      margin: 27px 7px 30px;
+      margin: 27px 0 36px;
+    }
+
+    @include onLaptop {
+      margin: 40px 0 80px;
     }
   }
 
-  &__menu {
+  &__button-open {
+    transition: all $transition-duration;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
     @include onLaptop {
       display: none;
     }
@@ -31,6 +41,11 @@
   &__logo {
     display: flex;
     align-items: center;
+    transition: all $transition-duration linear;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     @include onLaptop {
       &::after {
@@ -45,6 +60,14 @@
 
     @include onLaptop {
       height: 50px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onLaptop {
+      display: block;
     }
   }
 
@@ -73,10 +96,8 @@
 
   &__img {
     height: 100%;
-    width: 100%;
-    // width: -moz-available;
-    // width: -webkit-fill-available;
-    // width: fill-available;
+    vertical-align: middle;
+    width: -webkit-fill-available;
 
     @include onLaptop {
       height: 100%;
@@ -119,6 +140,14 @@
     @include onLaptop {
       margin-bottom: 40px;
       font-size: 22px;
+    }
+  }
+
+  &__basket {
+    transition: all $transition-duration;
+
+    &:hover {
+      transform: scale(1.2);
     }
   }
 }

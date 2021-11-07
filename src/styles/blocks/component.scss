@@ -1,28 +1,111 @@
-// .component {
-//   &__title {
-//     padding-left: 20px;
-//   }
+.component {
+  @include onTablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-//   &__ingridient {
-//     position: relative;
+  &__container {
+    width: calc(100% - 20px);
+    margin: 0 0 0 20px;
 
-//     &::after {
-//       position: absolute;
-//       content: "";
-//       width: 76px;
-//       height: 1px;
-//       left: 0;
-//       top: 20px;
-//       background-color: $c-dark-gray;
-//     }
-//   }
+    @include onTablet {
+      width: calc(100% - 27px);
+      margin-left: 27px;
+    }
 
-//   &__img {
-//     width: 50%;
-//     overflow: hidden;
-//   }
+    @include onLaptop {
+      width: calc(100% - 200px);
+      margin: 0 50px 0 150px;
+    }
+  }
 
-//   &__link {
-//     margin-bottom: 20px;
-//   }
-// }
+  &__title {
+    margin-bottom: 36px;
+  }
+
+  &__img {
+    display: flex;
+    height: 100%;
+    object-fit: contain;
+    object-position: left;
+    margin-left: 220px;
+
+    @include onTablet {
+      object-fit: cover;
+      object-position: left;
+      margin-left: 0;
+    }
+  }
+
+  &__img-wrapper {
+    overflow: hidden;
+
+    @include onTablet {
+      margin-left: 48px;
+    }
+
+    @include onLaptop {
+      margin: 0;
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+  }
+
+  &__ingredients {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 34px;
+    width: max-content;
+    gap: 52px;
+
+    @include onTablet {
+      position: absolute;
+    }
+  }
+
+  &__ingredient {
+    display: flex;
+    text-align: right;
+    text-transform: capitalize;
+
+    &::after {
+      content: "";
+      display: inline-flex;
+      align-self: center;
+      width: 76px;
+      height: 1px;
+      margin-left: 20px;
+      font-size: 55px;
+      background-color: $c-green;
+    }
+
+    &::before {
+      display: none;
+
+      @include onLaptop {
+        position: absolute;
+        margin-left: 20px;
+        right: 0;
+        content: "";
+        display: inline-flex;
+        align-self: center;
+        background: $c-dark-gray;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__additional-ingredient {
+    display: none;
+
+    @include onLaptop {
+      display: inline;
+    }
+  }
+}

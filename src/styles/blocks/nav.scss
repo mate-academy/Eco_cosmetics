@@ -1,28 +1,50 @@
 .nav {
-  display: none;
-
-  @include onLaptop {
-    display: block;
-  }
-
   &__list {
     display: flex;
+    flex-direction: column;
+
+    @include onLaptop {
+      flex-direction: row;
+    }
   }
 
   &__item {
+    transition: all $transition-duration ease-in;
+
     &:not(:last-child) {
+      margin-bottom: 20px;
+
       @include onLaptop {
-        margin-right: 40px;
+        margin: 0 40px 0 0;
       }
     }
   }
 
   &__link {
-    font-family: "Sharp Sans Display No2", sans-serif;
-    font-size: 18px;
+    display: inline-block;
+    color: $c-beige;
+    line-height: 130%;
+    transition: all $transition-duration;
+
+    @include onTablet {
+      font-weight: 500;
+    }
 
     @include onLaptop {
+      font-size: 18px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &--c-green {
+      font-family: "Sharp Sans Display No2", sans-serif;
       color: $c-green;
+
+      &:hover {
+        color: $c-olive;
+      }
     }
   }
 }
