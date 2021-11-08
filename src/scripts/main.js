@@ -31,6 +31,8 @@ for (let i = 0; i < tabs.length; i++) {
     const tabs_item = tabs_items[j];
 
     tabs_item.addEventListener("click", function (e) {
+      e.preventDefault();
+
       for (let k = 0; k < tabs_items.length; k++) {
         tabs_items[k].classList.remove('active');
         tabs_blocks[k].classList.remove('active');
@@ -38,7 +40,6 @@ for (let i = 0; i < tabs.length; i++) {
 
       tabs_item.classList.add('active');
       tabs_blocks[j].classList.add('active');
-      e.preventDefault();
     });
   }
 }

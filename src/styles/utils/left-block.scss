@@ -1,0 +1,30 @@
+.left-block {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  &__text {
+    font-family: $fontSharp;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: $colorGreen;
+    text-transform: uppercase;
+
+    position: relative;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &:before {
+      content: "";
+      height: 100px;
+      width: 1px;
+      background: $colorGreen;
+      margin-right: 2px;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}

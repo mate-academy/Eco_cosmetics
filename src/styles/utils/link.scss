@@ -1,0 +1,45 @@
+.link {
+  display: inline-block;
+  padding-bottom: 12px;
+
+  font-family: $fontSharp;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $colorGreen;
+
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 0%;
+    height: 1px;
+
+    background-color: $colorGreen;
+
+    transition: width 0.3s ease-in-out;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+    }
+  }
+
+  &-footer {
+    transition: color 0.3s ease-in-out;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $colorMain;
+      }
+    }
+  }
+}
