@@ -1,0 +1,48 @@
+.link {
+  display: inline-block;
+  padding-bottom: 12px;
+
+  font-family: $fontSharp;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $colorGreen;
+
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    height: 1px;
+    background-color: $colorGreen;
+
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &:after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &-footer {
+    transition: color 0.3s ease-in-out;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $colorMain;
+      }
+    }
+  }
+}

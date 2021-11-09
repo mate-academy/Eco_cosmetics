@@ -1,0 +1,46 @@
+.btn {
+  display: inline-flex;
+  min-height: 60px;
+  min-width: 280px;
+  padding: 5px 15px;
+
+  justify-content: center;
+  align-items: center;
+
+  background-color: $colorMain;
+  color: $colorGrey2;
+  font-family: $fontSharp;
+
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  border: 1px solid transparent;
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+
+  @media (min-width: 769px) {
+    animation: blink 10s ease-in-out infinite alternate;
+
+    @keyframes blink {
+      0% {
+      }
+
+      50% {
+        background-color: #e4dfd3;
+        border-color: $colorMain;
+        color: $colorMain;
+      }
+
+      100% {
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+  }
+}
