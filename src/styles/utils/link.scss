@@ -15,20 +15,23 @@
     content: "";
     position: absolute;
     right: 0;
+    left: 0;
     bottom: 0;
 
-    width: 0%;
-    height: 1px;
+    opacity: 0;
+    visibility: hidden;
 
+    height: 1px;
     background-color: $colorGreen;
 
-    transition: width 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
   }
 
   @media (any-hover: hover) {
     &:hover {
       &:after {
-        width: 100%;
+        opacity: 1;
+        visibility: visible;
       }
     }
   }
