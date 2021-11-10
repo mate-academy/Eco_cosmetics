@@ -1,0 +1,100 @@
+.page {
+  font-family: Avenir, sans-serif;
+  scroll-behavior: smooth;
+  @include font(16px, 500, 24px, $color-black);
+
+  &__body {
+    margin: 0;
+    background-color: $color-gray4;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__nav {
+    margin: 40px 48px 80px;
+  }
+
+  &__section {
+    overflow: hidden;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__right {
+    display: none;
+
+    &--powder {
+      display: block;
+      background-size: 70%;
+    }
+
+    @include onTablet {
+      display: block;
+      height: 100%;
+
+      &--about {
+        position: relative;
+
+        background: url(../images/photos/about.png) no-repeat center;
+        background-size: cover;
+      }
+ 
+      &--creators {
+        background: url(../images/photos/hand.png) no-repeat left top;
+        background-size: cover;
+      }
+
+      &--powder {
+        display: block;
+      }
+
+      &--contact {
+        background: url(../images/photos/ird-photo.png) no-repeat left top;
+        background-size: cover;
+      }
+    }
+
+    @include onDesktop {
+      display: block;
+      height: 100%;
+
+      &--about {
+        background: url(../images/photos/about.png) no-repeat left top;
+        background-size: contain;
+      }
+
+      &--creators {
+        background: url(../images/photos/hand.png) no-repeat left top;
+      }
+
+      &--contact {
+        background: url(../images/photos/ird-photo.png) no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.contact {
+  &__field {
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    transition: border-color 0.3s;
+
+    &::placeholder {
+      font-family: Avenir, sans-serif;
+      font-size: 18px;
+      line-height: 27px;
+      text-transform: capitalize;
+      color: $color-gray1;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-black;
+    }
+
+    &__field--last {
+      resize: none;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.border-text {
+  display: none;
+  position: absolute;
+  align-self: center;
+  width: max-content;
+  font-family: Sharp-Sans, sans-serif;
+  font-size: 14px;
+  color: $color-green1;
+  transform: rotate(270deg) translateX(-100%);
+  transform-origin: top left;
+  text-transform: uppercase;
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &::before {
+    content: "";
+    display: inline-flex;
+    align-self: center;
+    background-color: $color-green1;
+
+    @include onDesktop {
+      width: 100px;
+      height: 1px;
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.header {
+  &__nav {
+    display: grid;
+    grid-template-columns: $icon-width 1fr $icon-width;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    @include container;
+
+    @include onDesktop {
+      padding-top: 80px;
+    }
+  }
+
+  &__info {
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    margin: 0 auto 20px;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      margin: 0 0 20px;
+      font-size: 60px;
+      line-height: 60px;
+    }
+  }
+
+  &__on-tab {
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__on-desk {
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+
+    @include onDesktop {
+      font-size: 22px;
+      line-height: 29px;
+      text-align: left;
+      margin: 0 auto 44px;
+    }
+  }
+
+  &__img-cont {
+    display: block;
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+}

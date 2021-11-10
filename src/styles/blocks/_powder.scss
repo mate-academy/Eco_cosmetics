@@ -1,0 +1,144 @@
+.powder {
+  position: relative;
+
+  &__img-cont {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 60px;
+
+    @include onDesktop {
+      padding-top: 40px;
+    }
+  }
+
+  &__img-p {
+    font-family: Avenir, sans-serif;
+    padding-top: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &--mob {
+      display: block;
+    }
+
+    &--tab {
+      display: none;
+    }
+
+    &--desk {
+      display: none;
+    }
+
+    @include onTablet {
+      &--mob {
+        display: none;
+      }
+  
+      &--tab {
+        display: block;
+      }
+  
+      &--desk {
+        display: none;
+      }
+    }
+
+    @include onDesktop {
+      &--mob {
+        display: none;
+      }
+  
+      &--tab {
+        display: none;
+      }
+  
+      &--desk {
+        display: block;
+      }
+    }
+  }
+
+  &__ecco {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+      padding-top: 40px;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    right: 30%;
+    top: 180px;
+
+    @include onTablet {
+      right: 40%;
+      top: 40px;
+    }
+
+    @include onDesktop {
+      right: 43%;
+      top: 50px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 48px;
+    text-transform: capitalize;
+
+    &--hiden {
+      display: none;
+
+      @include onTablet {
+        display: inline;
+      }
+
+      @include onDesktop {
+        display: inline;
+      }
+    }
+
+    &::after {
+      position: relative;
+      content: "";
+      display: block;
+      height: 1px;
+      width: 76px;
+      background-color: #333;
+    }
+  }
+
+  &__bottle-cont {
+    position: relative;
+    right: -60%;
+
+    @include onTablet {
+      right: -80%;
+    }
+
+    @include onDesktop {
+      right: 0%;
+    }
+  }
+}
