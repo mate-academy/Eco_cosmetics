@@ -1,0 +1,51 @@
+.slider {
+
+  &__menu {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @include Tablet {
+      justify-content: start;
+      gap: 32px;
+    }
+    @include onDesktop {
+      justify-content: start;
+      gap: 51px;
+      margin-bottom: 63px;
+    }
+  }
+
+  &__sidetext {
+    position: absolute;
+  }
+
+  &__link {
+    display: block;
+    font-size: 14px;
+    color: $color-dark-grey;
+
+    @extend %shop-typo;
+
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+
+    &:hover {
+      color: $color-black;
+    }
+
+    &--is-active {
+      color: $color-black;
+      border-color: $color-black;
+    }
+    
+    @include onDesktop {
+      font-size: 18px;
+    }
+  }
+
+  &__gallery {
+    position: relative;
+  }
+}

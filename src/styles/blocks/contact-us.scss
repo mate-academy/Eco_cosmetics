@@ -1,0 +1,47 @@
+.contact-us {
+  overflow: hidden;
+  @include onDesktop {
+  display: flex;
+  }
+
+  &__sidetext {
+    position: absolute;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    @extend %section-title;
+    @include onDesktop {
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 20px;
+   
+    @extend %paragraph;
+
+    @include onDesktop {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__images {
+    // position: absolute;
+    display: none;
+    
+    @include Tablet() {
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      height: 409px;
+    }
+
+    @include onDesktop {
+      height: 584px;
+    }
+  }
+}

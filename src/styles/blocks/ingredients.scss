@@ -1,0 +1,123 @@
+.ingredients {
+
+  @include Tablet() {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__sidetext {
+    position: absolute;
+  }
+
+  &__title {
+    margin-bottom: 37px;
+   
+    @extend %section-title;
+
+    @include onDesktop {
+      margin-bottom: 221px;
+      margin-top: 65px;
+    }
+  }
+
+  &__more-info {
+    @extend %more-info-button;
+  }
+  
+  &__images {
+    display: flex;
+    height: 100%;
+    object-fit: contain;
+    object-position: left;
+    margin-left: 171px;
+
+      @include Tablet() {
+        object-fit: cover;
+        object-position: left;
+        margin: 0;
+      }
+
+      @include onDesktop() {
+        position: absolute;
+        height: 395px;
+      }
+  }
+
+  &__image-wrapper {
+    overflow: hidden;
+
+    @include Tablet {
+      margin-left: 48px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+}
+
+  &__wrapper {
+    position: absolute;
+  }
+
+  &__names {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: max-content;
+    gap: 52px;
+    padding-top: 34px;
+
+    @include Tablet {
+      position: absolute;
+    }
+  }
+
+  &__item {
+    display: flex;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: right;
+    text-transform: capitalize;
+
+    @include Tablet {
+      font-weight: 500;
+    }
+
+    &::after {
+      content: "";
+      font-size: 55px;
+      display: inline-flex;
+      align-self: center;
+      background-color: $color-dark-green;
+      width: 76px;
+      height: 1px;
+      margin-left: 20px;
+    }
+
+    &::before {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        right: 0;
+        content: "";
+        display: inline-flex;
+        align-self: center;
+        background: $color-black;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &__addition {
+    display: none;
+
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
+}

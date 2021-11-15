@@ -1,0 +1,81 @@
+.about {
+overflow: hidden;
+  @include onDesktop {
+    display: flex;
+  }
+
+  &__sidetext {
+    position: absolute;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    @extend %section-title;
+
+    @include onDesktop {
+      margin-top: 42px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 44px;
+
+    @extend %paragraph;
+
+    &:last-of-type {
+      display: none;  
+
+      @include onDesktop {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__more-info {
+    @extend %more-info-button;
+  }
+  
+  &__images {
+    @include onDesktop {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+    }
+
+    &-big {
+      display: none;
+
+      @include Tablet() {
+        // position: absolute;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        height: 318px;
+        width: 100%;
+        // height: 100%;
+      }
+
+      @include onDesktop {
+
+        // position: static;
+        height: 529px;
+      }
+    }
+
+    &-small {
+      display: none;
+      width: 208px; 
+
+      @include onDesktop() {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.gallery {
+
+  @include Tablet {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+
+  @include onDesktop {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  &__item {
+    margin-bottom: 78px;
+
+    &:nth-child(2) {
+      display: none;
+    }
+
+    &:last-child {
+      display: none;
+    }
+
+    @include Tablet {
+      display: block;
+      gap: 30px;
+      width: 100%;
+      margin-bottom: 40px;
+
+      &:nth-child(2) {
+        display: block;
+      }
+    }
+  
+    @include onDesktop {
+      display: block;
+      gap: 20px;
+
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 248px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 20px;
+
+    @include Tablet {
+      position: static;
+      height: 300px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      height: 500px;
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    margin-bottom: 10px;
+
+    @extend %shop-typo;
+  }
+
+  &__price {
+    font-size: 18px;
+    
+    @extend %shop-typo;
+  }
+}

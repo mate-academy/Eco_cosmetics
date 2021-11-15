@@ -1,0 +1,35 @@
+.sidetext {
+
+  display: flex;
+  align-self: center;
+  width: max-content;
+
+  font-family: Sharp Sans No2, sans-serif;
+  color: $color-dark-green;
+  opacity: 0;
+
+  transform: rotate(-90deg) translateX(-100%);
+  transform-origin: top left;
+  text-transform: uppercase;
+
+  @include onDesktop {
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+
+    opacity: 1;
+  }
+    
+  &::before {
+    content: '';
+    display: inline-flex;
+    align-self: center;
+    background-color: $color-dark-green;
+    
+    @include onDesktop {
+      width: 100px;
+      height: 1px;
+      margin-right: 10px;
+    }
+  }
+}

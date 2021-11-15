@@ -1,0 +1,79 @@
+.header {
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      justify-content: start;
+      align-content: center;
+      padding-top: 30px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    font-family: Avenir, sans-serif;
+
+    @include Tablet {
+      margin-bottom: 20px;
+
+      font-size: 36px;
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px;
+
+      text-align: left;
+      font-size: 60px;
+      line-height: 100%;
+    }
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 46px;
+
+    @include Tablet() {
+      margin-bottom: 56px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 130%;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    margin-bottom: 25px;
+    width: 100%;
+
+    @include Tablet() {
+      position: static;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    margin-bottom: 60px;
+  }
+}

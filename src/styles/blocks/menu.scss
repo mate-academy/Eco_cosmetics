@@ -1,0 +1,52 @@
+.menu {
+  &__logo {
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+  
+
+  &__content {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    box-sizing: border-box;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 130%;
+    color: $color-creamy;
+    padding-bottom: 9px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+      
+    &:hover {
+      border-color: $color-black;
+    }
+
+    @include onDesktop {
+      font-family: Sharp Sans No2, sans-serif;
+      font-size: 18px;
+      padding-bottom: 12px;
+      color: $color-green;
+    }
+  }  
+}
