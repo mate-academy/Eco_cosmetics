@@ -1,0 +1,115 @@
+.goods {
+  overflow: hidden;
+  margin-bottom: 215px;
+
+  @include onPad {
+    margin-bottom: 140px;
+  }
+
+  @include onMobile {
+    margin-bottom: 60px;
+  }
+
+  &__side {
+    position: relative;
+    top: 60px;
+    left: 40px;
+    display: inline-block;
+
+    @include onPad {
+      display: none;
+    }
+  }
+
+  &__gallery {
+    margin-right: calc(50% - 50vw);
+    display: flex;
+    margin-left: 140px;
+
+    @include onPad {
+      padding: 0 30px;
+      margin-left: 0;
+    }
+
+    @include onMobile {
+      padding: 0;
+      justify-content: center;
+    }
+
+    &-item {
+      width: 380px;
+      margin-right: 20px;
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-right: 0;
+
+        @include onMobile {
+          display: none;
+        }
+      }
+
+      @include onPad {
+        margin-right: 30px;
+        width: 50%;
+      }
+
+      @include onMobile {
+        margin-bottom: 40px;
+        width: 100%;
+        margin-right: 0;
+      }
+
+      &:nth-child(2) {
+        
+        @include onPad {
+          display: none;
+        }
+      }
+
+      & img {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        object-fit: cover;
+
+        @include onPad {
+          max-height: 300px;
+        }
+      }
+
+      &__info {
+        font-weight: 500;
+        font-size: 20px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+
+        @include onMobile {
+          padding-left: 20px;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+
+          @include onMobile {
+            margin-bottom: 70px;
+          }
+        }
+      }
+    }
+  }
+
+  &__btn {
+    padding: 20px 70px;
+    margin-left: 47%;
+
+    @include onPad {
+      margin: 0 auto;
+    }
+
+    @include onMobile {
+      width: 280px;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+.contact {
+  margin-bottom: 150px;
+
+  @include onPad {
+    margin-bottom: 100px;
+  }
+
+  &__side {
+    position: relative;
+    top: 50px;
+
+    @include onPad {
+      display: none;
+    }
+  }
+
+  &__inner {
+    margin-right: calc((50vh - 42%));
+    display: flex;
+
+    @include onPad {
+      margin-right: 0;
+    }
+  }
+
+  &__left {
+    margin-left: 100px;
+    width: 50%;
+
+    @include onPad {
+      margin-left: 0;
+      margin-right: 30px;
+    }
+
+    @include onMobile {
+      padding: 0 20px;
+      margin-right: 0;
+      width: 100%;
+    }
+
+    &-title {
+      margin-bottom: 20px;
+      
+      @include onPad {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+    }
+
+    &-subtitle {
+      font-size: 24px;
+      line-height: 150%;
+      text-transform: lowercase;
+      color: $grey;
+      margin-bottom: 20px;
+
+      @include onPad {
+        font-size: 16px;
+
+        & br {
+          display: none;
+        }
+      }
+    }
+
+    &-form {
+
+      &__field {
+        width: 80%;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        background-color: $background;
+
+        @include onPad {
+          width: 100%;
+          margin-bottom: 25px;
+        }
+
+        @include onMobile {
+          width: 100%;
+        }
+
+        &:nth-child(3) {
+          margin-bottom: 40px;
+
+          @include onPad {
+            margin-bottom: 45px;
+          }
+        }
+
+        border: none;
+        border-bottom: 1px solid #bdbdbd;
+        font-size: 18px;
+        line-height: 150%;
+        text-transform: capitalize;
+        color: #828282;
+
+        outline: none;
+
+        @include onPad {
+          font-size: 14px;
+          background-color: $background;
+        }
+      }
+
+      &__btn {
+        padding: 20px 60px;
+
+        @include onPad {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__right {
+    margin-right: calc((50vh - 50%));
+    width: 50%;
+
+    @include onPad {
+      margin-right: 0;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+    
+    & img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.textarea {
+  margin-bottom: 50px;
+  resize: none;
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+  color: #828282;
+  height: 40px;
+
+  @include onPad {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+}

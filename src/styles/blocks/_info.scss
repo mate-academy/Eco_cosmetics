@@ -1,0 +1,87 @@
+.info {
+  margin-bottom: 200px;
+
+  @include onPad {
+    margin-bottom: 100px;
+  }
+
+  @include onMobile {
+    margin-bottom: 60px;
+  }
+  
+  &::after {
+    margin-left: 50%;
+    margin-top: 100px;
+    display: block;
+    content: "";
+    height: 1px;
+    width: 730px;
+
+    background-color: rgba(52, 79, 16, 0.5);
+
+    @include onPad {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    margin-left: 90px;
+    display: flex;
+    
+    @include onPad {
+      margin-left: 0;
+    }
+
+    @include onMobile {
+      margin-left: 0;
+    }
+  }
+
+  &__left {
+    margin-right: 50px;
+    width: 40%;
+    display: flex;
+
+    @include onPad {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__right {
+    display: flex;
+    width: 50%;
+
+    @include onPad {
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+
+    @include onMobile {
+      text-align: left;
+      width: 100%;
+    }
+
+    &-text {
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: $green;
+
+      @include onMobile {
+        width: 100%;
+        font-size: 20px;
+      }
+    }
+  }
+}

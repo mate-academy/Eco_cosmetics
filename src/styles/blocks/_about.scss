@@ -1,0 +1,143 @@
+.about {
+  margin-bottom: 200px;
+
+  @include onPad {
+    height: 350px;
+    margin-bottom: 80px;
+  }
+  
+  @include onMobile {
+    margin-bottom: 60px;
+  }
+
+  &__side {
+    margin-right: 70px;
+    width: 20px;
+
+    @include onPad {
+      display: none;
+    }
+
+    @include onMobile {
+      margin-right: 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 520px;
+    margin-top: 30px;
+    margin-right: calc(50% - 50vw);
+
+    @include onMobile {
+      flex-direction: column;
+      margin-right: 0;
+    }
+  }
+
+  &__desc {
+    height: 370px;
+    display: block;
+    padding-top: 50px;
+    margin-right: 60px;
+    width: 380px;
+
+    @include onPad {
+      margin-right: 30px;
+      padding-top: 0;
+      width: 50%;
+    }
+
+    @include onMobile {
+      padding: 0;
+      margin-right: 0;
+      width: 100%;
+    }
+
+    &-title {
+      margin-bottom: 20px;
+
+      @include onPad {
+        font-size: 24px;
+      }
+
+      @include onMobile {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+    }
+
+    &-text {
+      display: block;
+      margin-bottom: 30px;
+
+      &--last {
+        margin-bottom: 40px;
+
+        @include onPad {
+          display: none;
+        }
+      }
+
+      @include onMobile {
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  &__image {
+    display: flex;
+    align-content: flex-end;
+    margin-right: 20px;
+    width: 38%;
+
+    @include onPad {
+      width: 50%;
+      height: 320px;
+      margin-right: 0;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    & img {
+      width: 100%;
+      display: block;
+      max-height: 530px;
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+
+  &__small {
+    display: flex;
+    align-items: flex-end;
+    width: 210px;
+
+    @include onPad {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    img {
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      display: block;
+      max-height: 430px;
+    }
+  }
+
+  &__btn {
+    margin-top: 20px;
+
+    @include onPad {
+      margin-top: 50px;
+    }
+  }
+}

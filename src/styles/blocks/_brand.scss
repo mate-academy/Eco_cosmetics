@@ -1,0 +1,125 @@
+.brand {
+  margin-bottom: 100px;
+
+  @include onPad {
+    margin-bottom: 100px;
+  }
+
+  @include onMobile {
+    margin-bottom: 60px;
+  }
+
+  &::after {
+    margin-top: 200px;
+    display: block;
+    content: "";
+    height: 1px;
+    width: 670px;
+
+    background-color: rgba(52, 79, 16, 0.5);
+
+    @include onPad {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    margin-left: 100px;
+    padding: 0 40px;
+
+    @include onPad {
+      margin-left: 0;
+      flex-direction: column-reverse;
+      text-align: center;
+      align-items: center;
+    }
+
+    @include onMobile {
+      padding: 0;
+      margin-left: 0;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    margin-right: 60px;
+    width: 48%;
+
+    @include onPad {
+      width: 80%;
+      margin-right: 0;
+    }
+
+    @include onMobile {
+      padding: 0 20px;
+      width: 100%;
+    }
+    
+    &-title {
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 50px;
+      line-height: 100%;
+
+      color: $grey;
+
+      @include onPad {
+        font-size: 36px;
+        margin-bottom: 20px;
+
+        & br {
+          display: none;
+        }
+      }
+
+      @include onMobile {
+        margin-bottom: 12px;
+        font-size: 24px;
+      }
+    }
+
+    &-slogan {
+      margin-bottom: 50px;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 130%;
+
+      color: $grey;
+
+      @include onPad {
+        font-size: 18px;
+        margin-bottom: 60px;
+      }
+
+      @include onMobile {
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  &__image {
+    width: 68%;
+
+    @include onPad {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    @include onMobile {
+      width: 100%;
+    }
+
+    & img {
+      width: 100%;
+      max-height: 541px;
+      object-fit: cover;
+    }
+  }
+}
