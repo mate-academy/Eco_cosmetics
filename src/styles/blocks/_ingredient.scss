@@ -1,0 +1,178 @@
+.ingredient {
+  margin-bottom: 200px;
+  position: relative;
+
+  @include onPad {
+    margin-bottom: 100px;
+  }
+
+  @include onMobile {
+    height: 540px;
+    margin-bottom: 60px;
+    overflow: hidden;
+  }
+
+  &__side {
+    top: 105px;
+
+    @include onPad {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    margin-right: calc((50vh - 50%));
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include onPad {
+      overflow: hidden;
+      margin-right: calc((50% - 50vh));
+    }
+
+    @include onMobile {
+      margin-top: 90px;
+    }
+  }
+
+  &__add {
+    width: 30%;
+    height: 400px;
+    margin-top: 60px;
+    margin-left: 100px;
+    margin-right: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onPad {
+      width: 40%;
+      height: 380px;
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    @include onMobile {
+      padding-top: 10px;
+      width: 70%;
+      top: 0;
+      position: absolute;
+      height: 500px;
+    }
+
+    &-title {
+      line-height: 150%;
+
+      & br {
+        @include onPad {
+          display: none;
+        }
+      }
+
+      @include onPad {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__info {
+    width: 20%;
+    margin-right: 120px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+
+    @include onPad {
+      width: 15%;
+      margin-right: 50px;
+    }
+
+    @include onMobile {
+      width: 30%;
+      margin-right: 0;
+      margin-top: -20px;
+    }
+
+    &-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      &__item {
+        position: relative;
+        margin-bottom: 50px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: right;
+        text-transform: capitalize;
+
+        @include onPad {
+          margin-bottom: 40px;
+        }
+
+        @include onMobile {
+          margin-bottom: 50px;
+        }
+
+        &::after {
+          position: absolute;
+          left: 156%;
+          bottom: 40%;
+          display: block;
+          content: "";
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: $grey;
+
+          @include onPad {
+            display: none;
+          }
+        }
+
+        &::before {
+          position: absolute;
+          left: 110%;
+          top: 50%;
+          display: block;
+          content: "";
+          width: 80px;
+          height: 1px;
+
+          background-color: $grey;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-image {
+      width: 40%;
+
+      @include onMobile {
+        width: 60%;
+        height: 390px;
+      }
+
+      & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+span {
+  @include onMobile {
+    display: none;
+  }
+}

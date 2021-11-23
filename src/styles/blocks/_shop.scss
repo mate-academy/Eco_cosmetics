@@ -1,0 +1,77 @@
+.shop {
+
+  @include onPad {
+    margin-bottom: 20px;
+  }
+
+  &__wrapper {
+    margin-left: 100px;
+
+    @include onPad {
+      text-align: left;
+      margin-left: 0;
+    }
+
+    @include onMobile {
+      text-align: center;
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include onMobile {
+      font-size: 24px;
+    }
+  }
+
+  &__navigation {
+
+    display: flex;
+
+    @include onMobile {
+      justify-content: space-between;
+    }
+
+    &-link {
+      display: block;
+      height: 50px;
+      margin-right: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $shop;
+      padding-bottom: 20px;
+
+      @include onMobile {
+        margin-right: 16px;
+      }
+
+      &:active {
+
+        @include onPad {
+          color: $grey;
+          border-bottom: 1px solid $grey;
+        }
+
+        @include onMobile {
+          color: $grey;
+          border-bottom: 1px solid $grey;
+        }
+      }
+
+      &:hover {
+        color: $grey;
+        border-bottom: 1px solid $grey;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

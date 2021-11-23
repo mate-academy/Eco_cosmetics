@@ -1,0 +1,47 @@
+.menu {
+  position: absolute;
+  background-color: $grey;
+  height: 100vh;
+
+  &__close {
+    padding-top: 20px;
+
+    @include onPad {
+      padding-top: 30px;
+    }
+
+    @include onMobile {
+      padding-top: 20px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &-link {
+      margin-bottom: 40px;
+      width: 100%;
+      display: block;
+      font-family: "Sharp Sans Display No2", sans-serif;
+      font-size: 18px;
+      line-height: 130%;
+      color: $background;
+      text-align: center;
+      text-decoration: none;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::after {
+        margin-top: 10px;
+        display: block;
+        content: "";
+        height: 1px;
+        background-color: $background;
+      }
+    }
+  }
+}

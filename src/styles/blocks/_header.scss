@@ -1,0 +1,138 @@
+.header {
+  margin-top: 40px;
+  margin-bottom: 80px;
+
+  @include onPad {
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+
+  @include onMobile {
+    margin-top: 15px;
+    margin-bottom: 12px;
+  }
+
+  &__menu {
+    display: none;
+
+    @include onPad {
+      display: block;
+    }
+
+    @include onMobile {
+      display: block;
+    }
+
+    &-link {
+
+      & img {
+        display: block;
+
+        @include onMobile {
+          width: 20px;
+          height: 13px;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    &-link {
+      margin-right: 12px;
+
+      & img {
+        display: block;
+        width: 50px;
+        height: 50px;
+
+        @include onPad {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    &-text {
+      display: inline-block;
+      font-family: "Sharp Sans Display No2", sans-serif;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: $green;
+
+      @include onPad {
+        display: none;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+  }
+
+  &__basket {
+    
+    &-link {
+
+      & img {
+        width: 32px;
+        height: 32px;
+        display: block;
+
+        @include onPad {
+          width: 24px;
+          height: 24px;
+        }
+
+        @include onMobile {
+          width: 20px;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  @include onPad {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    
+    &-item {
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &__link {
+        text-decoration: none;
+        font-family: "Sharp Sans Display No2", sans-serif;
+        font-size: 18px;
+        line-height: 130%;
+
+        color: $green;
+
+        &:hover {
+          color: $grey;
+        }
+      }
+    }
+  }
+}

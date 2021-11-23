@@ -1,0 +1,131 @@
+.button--1 {
+  display: block;
+  width: 280px;
+  padding: 20px 115px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: $softgrey;
+  background-color: $grey;
+  transition: 0.2s;
+  border: 1px solid transparent;
+
+  &:hover {
+    color: $grey;
+    background-color: $background;
+    border: 1px solid $grey;
+  }
+
+  @include onPad {
+    margin: 0 auto;
+  }
+
+  @include onMobile {
+    width: 100%;
+  }
+}
+
+.button--2 {
+  position: relative;
+  display: block;
+  font-family: "Sharp Sans Display No2", sans-serif;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $green;
+  transition: 0.3s;
+
+  &::after {
+    margin-top: 10px;
+    position: absolute;
+    display: block;
+  }
+
+  &:hover::after {
+    display: block;
+    content: "";
+    height: 1px;
+    width: 100px;
+
+    background-color: $green;
+  }
+}
+
+.text--vertical {
+  position: relative;
+  display: inline-block;
+
+  transform: rotate(-90deg);
+  transform-origin: left;
+  top: 46%;
+  white-space: nowrap;
+
+  font-family: "Sharp Sans Display No2", sans-serif;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: rgba(52, 79, 16, 0.5);
+
+  @include onMobile {
+    display: none;
+  }
+
+  &::before {
+    position: absolute;
+    margin-left: -110px;
+    top: 50%;
+    content: "";
+    display: block;
+    background-color: rgba(52, 79, 16, 0.5);
+    height: 1px;
+    width: 100px;
+  }
+}
+
+.hidden {
+
+  @include onPad {
+    display: none;
+  }
+
+  @include onMobile {
+    display: none;
+  }
+}
+
+.blocktitle {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 110%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $green;
+}
+
+.infotext {
+  font-family: "Avenier", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: $grey;
+}
+
+.footernav {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  text-decoration: none;
+  margin-right: 40px;
+  color: $background;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
