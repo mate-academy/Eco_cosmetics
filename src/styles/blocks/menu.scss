@@ -1,5 +1,8 @@
 .menu {
   background-color: $c-dgrey;
+  z-index: 1;
+  height: 100vh;
+  box-sizing: border-box;
 
   @include onDesktop {
     display: none;
@@ -12,31 +15,41 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 44px;
+
+    @include onTablet {
+      padding-top: 100px;
+    }
   }
 
   &__item {
+    position: relative;
     width: 100%;
     text-align: center;
     margin-bottom: 32px;
+    padding-bottom: 8px;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: block;
+      content: "";
+      border: 1px solid #828282;
+      background-color: #828282;
     }
   }
 
   &__link {
     @include linkStyle;
     color: $c-lgrey;
-
-    &::after {
-      display: block;
-      content: "";
-      border: 1px solid #828282;
-      background-color: #828282;
-
-      @include onTablet {
-        margin-bottom: 52px;
-      }
-    }
   }
 }
