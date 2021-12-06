@@ -1,0 +1,48 @@
+.page {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: "Avenir", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: $c-dgrey;
+  background-color: #e4dfd3;
+  padding: 16px 20px 0;
+
+  @include onTablet {
+    padding-top: 24px;
+  }
+
+  @include onDesktop {
+    padding-top: 40px;
+  }
+
+  &__body {
+    width: 100%;
+    margin: auto;
+    min-width: 280px;
+    max-width: 1180px;
+
+    @include onTablet {
+      max-width: 712px;
+    }
+
+    @include onDesktop {
+      max-width: 1180px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 300ms;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
