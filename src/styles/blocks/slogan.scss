@@ -1,0 +1,102 @@
+.slogan-hr {
+  display: none;
+  width: 530px;
+  height: 1px;
+  background-color: $primary-color;
+
+  @include onDesktop {
+    display: block;
+  }
+
+  &--1 {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+  }
+
+  &--2 {
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+  }
+}
+
+.slogan {
+  &__content {
+    display: flex;
+    margin-top: 60px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 120px;
+  }
+
+  @include onTablet {
+    margin-top: 100px;
+  }
+
+  @include onDesktop {
+    margin-left: $margin-left;
+    margin-top: 260px;
+    position: relative;
+  }
+
+  &__text1 {
+    display: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $primary-color;
+    max-width: 380px;
+    text-align: left;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__text2 {
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: $secondary-color;
+    padding: 0 20px;
+
+    @include onTablet {
+      text-align: center;
+      max-width: 380px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      font-size: 24px;
+      text-align: left;
+      padding-right: 100px;
+      max-width: 500px;
+    }
+  }
+
+  &__hr {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &-1 {
+      position: absolute;
+      width: 50%;
+      left: 0;
+      top: -100%;
+    }
+
+    &-2 {
+      position: absolute;
+      width: 40%;
+      right: 0;
+      top: 150%;
+    }
+  }
+}

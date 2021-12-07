@@ -1,0 +1,96 @@
+.footer {
+  @include margins;
+  background-color: $bottom-color;
+  line-height: 18px;
+  color: $white-color;
+  font-size: 14px;
+
+  @include onTablet {
+    font-weight: 500;
+  }
+
+  &__container {
+    padding-bottom: 60px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 2fr 1fr;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    grid-column-start: 1;
+
+    padding-top: 30px;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__sclmedia {
+    display: flex;
+    gap: 0 20px;
+    grid-column-start: 1;
+
+    margin-top: 20px;
+
+    @include onDesktop {
+      grid-column-start: 2;
+      order: 1;
+    }
+
+    &__link-1 {
+      background-image: url(../images/facebook.svg);
+    }
+
+    &__link-2 {
+      background-image: url(../images/instagram.svg);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    grid-column-start: 2;
+    grid-row-start: 1;
+
+    padding-top: 30px;
+  }
+
+  &__info {
+    grid-column-start: 2;
+
+    margin-top: 20px;
+
+    line-height: 21px;
+  }
+
+  &__copyright {
+    grid-column-start: 1;
+
+    @include onTablet {
+      text-align: left;
+      text-transform: none;
+    }
+
+    @include onDesktop {
+      &::before {
+        content: "Copyright ";
+      }
+    }
+
+    margin-top: 30px;
+
+    font-family: Source Sans Pro, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

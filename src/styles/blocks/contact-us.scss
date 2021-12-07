@@ -1,0 +1,58 @@
+.contact-us {
+  @include margins;
+  padding: 0 20px;
+
+  @include onTablet {
+    padding: 0;
+    padding-left: 30px;
+    display: flex;
+  }
+
+  @include onDesktop {
+    padding: 0;
+    margin-left: $margin-left;
+  }
+}
+
+.contact-us-picture {
+  &__image {
+    display: none;
+
+    @media (min-width: 850px) {
+      display: block;
+      height: 100%;
+      width: 400px;
+      object-fit: cover;
+      object-position: 30%;
+    }
+  }
+}
+
+.contact-us-text {
+  @include onTablet {
+    min-width: 400px;
+    max-width: 0;
+    margin-right: auto;
+  }
+
+  &__description {
+    margin-top: 12px;
+  }
+
+  &__field {
+    margin-top: 25px;
+
+    &:first-child {
+      margin-top: 20px;
+    }
+
+    &--last {
+      margin-top: 45px;
+      resize: none;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+  }
+}
