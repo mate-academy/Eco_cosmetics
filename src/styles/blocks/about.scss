@@ -2,12 +2,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   @include onTablet {
     flex-direction: row;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: flex-end;
   }
 
   @include onDesktop {
@@ -16,6 +15,17 @@
 
   &__title {
     @include h2Style;
+  }
+
+  &__text-container {
+    @include onTablet {
+      width: 342px;
+      margin-right: 32px;
+    }
+
+    @include onDesktop {
+      width: 372px;
+    }
   }
 
   &__text {

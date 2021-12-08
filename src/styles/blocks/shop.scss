@@ -1,9 +1,10 @@
 .shop {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @include onDesktop {
+  @include onTablet {
     align-items: flex-start;
   }
 
@@ -33,7 +34,7 @@
   &__link {
     @include linkStyle;
     text-transform: uppercase;
-    color: #828282;
+    color: $c-link-grey;
     padding-bottom: 10px;
     border-bottom: 2px solid transparent;
 
@@ -49,6 +50,45 @@
       font-weight: bold;
       color: $c-dgrey;
       border-color: $c-dgrey;
+    }
+  }
+
+  &__cards-container {
+    position: relative;
+    display: flex;
+    margin-bottom: 76px;
+  }
+
+  &__product-card {
+    @include onTablet {
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include onDesktop {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__button {
+    align-self: center;
+  }
+
+  &__left-icon {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      top: 152px;
+      right: 1260px;
     }
   }
 }
