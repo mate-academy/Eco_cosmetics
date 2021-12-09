@@ -1,0 +1,123 @@
+.creators {
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__about {
+    margin: 0 0 13px;
+    @include title-options;
+
+    @include onDesktop {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__info {
+    margin: 0 0 36px;
+    @include paragraph-options;
+
+    @include onTablet {
+      margin: 0 0 13px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 54px;
+    }
+  }
+
+  &__details {
+    margin: 0 0 44px;
+    @include paragraph-options;
+
+    @include onDesktop {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__facts {
+    margin: 0 0 30px;
+    @include paragraph-options;
+
+    @include onDesktop {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__learn {
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 14px;
+    line-height: 130%;
+    width: max-content;
+
+    text-align: start;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+
+    color: #344f10;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $color-green;
+      box-sizing: border-box;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__button {
+    margin: 45px 0 200px;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 16px;
+    line-height: 130%;
+
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: #f2f2f2;
+  }
+
+  &__picture {
+    display: none;
+    // position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &-container {
+      position: relative;
+      box-sizing: border-box;
+      max-height: 669px;
+
+      &::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      @include onDesktop {
+        height: 669px;
+        // padding-bottom: 0;
+      }
+    }
+  }
+}
