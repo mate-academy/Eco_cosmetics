@@ -1,106 +1,102 @@
 .powder {
   position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 
-  @include onTablet {
-    width: 732px;
+  &__top-container {
+    width: 300px;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      display: grid;
+      width: 712px;
+      height: 396px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 372px 1fr;
+      margin-bottom: 168px;
+    }
+
+    @include onDesktop {
+      width: 1080px;
+    }
   }
 
   &__title {
     @include h2Style;
     width: 280px;
-  }
-
-  &__picture-container {
-    width: 280px;
-    height: 400px;
-    margin-bottom: 20px;
-
-    @include onTablet {
-      position: absolute;
-      right: 0;
-      width: 460px;
-      height: 400px;
-    }
+    margin-bottom: 36px;
 
     @include onDesktop {
-      position: relative;
-      right: 0;
-      width: max-content;
-      align-self: flex-end;
+      margin-top: 40px;
     }
   }
 
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: left;
+  &__picture {
+    margin-bottom: 20px;
 
-    @include onTablet {
-      display: none;
+    &-image {
+      @include onDesktop {
+        display: none;
+      }
     }
 
-    &--big {
+    &-image--desktop {
       display: none;
 
-      @include onTablet {
+      @include onDesktop {
         display: block;
       }
     }
   }
 
-  &__learn-more-link {
-    margin-bottom: 60px;
+  &__bottom-container {
+    width: 280px;
 
     @include onTablet {
-      margin-bottom: 164px;
-    }
-
-    @include onDesktop {
-      margin-bottom: 200px;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
     }
   }
 
-  &__icons-container {
+  &__icon-block {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 68px;
 
     @include onTablet {
-      flex-direction: row;
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
   &__icon-image {
-    display: block;
-  }
-
-  &__icons-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 20px;
   }
 
   &__icon-title {
-    width: 280px;
-    font-style: normal;
-    font-weight: bold;
     font-size: 14px;
+    font-weight: bold;
     line-height: 130%;
     text-align: center;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 
     @include onTablet {
-      width: 218px;
+      width: 220px;
     }
+  }
+
+  &__left-icon {
+    display: none;
 
     @include onDesktop {
-      width: 380px;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 1160px;
     }
   }
 }
