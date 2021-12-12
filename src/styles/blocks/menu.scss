@@ -2,6 +2,8 @@
   background-color: #333;
   box-sizing: border-box;
   height: 100vh;
+  overflow-y: auto;
+  z-index: 8;
 
   &__header {
     display: flex;
@@ -10,7 +12,6 @@
   }
 
   &__icon {
-    // justify-self: start;
     height: 20px;
     width: 20px;
     background-image: url(../images/header/cross.png);
@@ -31,14 +32,13 @@
   &__item {
     padding-bottom: 10px;
     margin-bottom: 30px;
-    border-bottom: 1px solid #828282;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
 
-    // &::before {
-    //   content: "";
-    //   height: 1px;
-    //   width: 280px;
-    //   color: #F2F2F2;
-    // }
+    &:hover {
+      border-color: #828282;
+      box-sizing: border-box;
+    }
   }
 
   &__link {

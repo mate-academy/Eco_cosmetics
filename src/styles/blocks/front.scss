@@ -1,28 +1,40 @@
 .front {
-  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  overflow: hidden;
 
   @include onTablet() {
-    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
   }
 
   @include onDesktop() {
-    margin-bottom: 200px;
+    display: flex;
+    flex-direction: row;
+    // margin-bottom: 200px;
+    justify-content: space-between;
+
   }
 
   &__picture-container {
-    position: relative;
     box-sizing: border-box;
-    max-height: 451px;
+    position: relative;
+    margin-bottom: 24px;
+    // width: 320px;
+    height: 268px;
 
-    &::after {
-      content: "";
-      display: block;
-      padding-bottom: 100%;
+    @include onTablet {
+      width: 712px;
+      height: 500px;
+      margin-bottom: 52px;
     }
 
     @include onDesktop {
-      height: 451px;
-      padding-bottom: 0;
+      width: 580px;
+      height: 452px;
+      margin-bottom: 0;
     }
   }
 
@@ -30,34 +42,35 @@
     position: absolute;
     width: 100%;
     height: 100%;
-
+    object-fit: cover;
     object-position: center;
-
-    @include onDesktop {
-      margin-top: 50px;
-    }
   }
 
   &__content {
     box-sizing: border-box;
-    // grid-row-start: 1;
-    // grid-column-start: 2;
-    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    justify-self: center;
+    margin: 0 auto;
 
-    @include onDesktop {
-      // max-width: 600px;
+    @include onTablet {
       align-items: start;
       text-align: start;
-      padding: 0;
+
+      width: 480px;
+    }
+
+    @include onDesktop {
+      align-items: start;
+      text-align: start;
+
+      width: 480px;
     }
   }
 
   &__name {
-    // display: block;
+    justify-content: center;
     margin-top: 25px;
     font-size: 24px;
     line-height: 130%;
@@ -84,6 +97,7 @@
   }
 
   &__button {
+    width: 100%;
     margin-top: 46px;
 
     @include onTablet {

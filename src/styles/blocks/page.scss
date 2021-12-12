@@ -2,25 +2,17 @@
   font-family: "Avenir_Book", sans-serif;
   background-color: #e4dfd3;
   width: 100%;
-  // min-height: 100%;
-  // max-width: 1440px;
   overflow-x: hidden;
-  // padding: 0 20px;
+  scroll-behavior: smooth;
 
   &__body {
     margin: 0;
+    min-width: 320px;
 
-    @include onDesktop {
-      display: grid;
-      grid-template-columns: 1280px ;
-      margin: 0 auto;
-      justify-content: center;
+    &--with-menu {
+      overflow: hidden;
     }
   }
-
-  // &__header {
-  //   // padding: 0 20px;
-  // }
 
   &__menu {
     position: fixed;
@@ -37,12 +29,26 @@
     }
   }
 
-  // &__front {
-  //   // padding: 0 20p;
-  // }
+  &__main {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1280px ;
+      margin: 0 auto;
+      justify-content: center;
+    }
+  }
+
+  &__front {
+    padding: 0 20px;
+    margin-bottom: 60px;
+
+    @include onDesktop {
+      padding: 0 0 200px;
+      margin: 0;
+    }
+  }
 
   &__shop {
-    // box-sizing: border-box;
     padding: 0 20px;
     margin-bottom: 60px;
 
@@ -56,14 +62,22 @@
   }
 
   &__line {
+    display: none;
 
-    &-first {
-      margin-bottom: 100px;
+    @include onTablet {
+      display: block;
     }
-    position: relative;
-    width: 100%;
-    margin-bottom: 200px;
-    // padding: 20px 20px;
+
+    @include onDesktop {
+      display: block;
+
+      &-first {
+        margin-bottom: 100px;
+      }
+      position: relative;
+      width: 100%;
+      margin-bottom: 200px;
+    }
   }
 
   &__info {
@@ -107,8 +121,7 @@
   }
 
   &__ingredients {
-    padding: 0 20px;
-    margin-bottom: 60px;
+    padding: 60px 20px 0;
 
     @include onTablet {
       margin-bottom: 155px;
@@ -128,6 +141,7 @@
 
     @include onDesktop {
       margin-bottom: 240px;
+      padding: 0 20px;
     }
   }
 
@@ -148,12 +162,11 @@
 
 .icon {
   transition: all 0.3s;
-  overflow: hidden;
+  // overflow: hidden;
 
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
-    // pointer-events: none;
     z-index: 10;
   }
 }

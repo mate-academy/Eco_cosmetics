@@ -2,8 +2,13 @@
   margin: 0;
   padding: 0;
   min-width: 320px;
-  // box-sizing: border-box;
-  // height: 100vh;
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: 1280px ;
+    margin: 0 auto;
+    justify-content: center;
+  }
 
   &__container {
     box-sizing: border-box;
@@ -27,10 +32,6 @@
     display: flex;
     align-items: center;
 
-    // @include ondesktopt() {
-    //   justify-self: start;
-    // }
-
     &-image {
       display: block;
       margin-right: 12px;
@@ -41,12 +42,6 @@
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
-
-      // @include onDesktop {
-      //   width: 50px;
-      //   height: 50px;
-      //   order: -1;
-      // }
     }
 
     &-name {
@@ -94,8 +89,6 @@
 
     @include onDesktop {
       justify-self: end;
-      width: 32px;
-      height: 32px;
       order: 4;
     }
   }
@@ -105,13 +98,11 @@
 
     @include onDesktop {
       display: flex;
-      // justify-content: space-between;
       gap: 40px;
       align-items: center;
 
       margin: 0;
       padding: 0;
-      // order: 3;
     }
   }
 
@@ -131,8 +122,10 @@
     color: #344f10;
     text-decoration: none;
 
+    transition: color 0.3s;
+
     &:hover {
-      color: #333;
+      color: $color-black;
     }
   }
 }
