@@ -1,0 +1,66 @@
+.shop {
+  &__title {
+    text-align: center;
+
+    @include onTab {
+      text-align: left;
+    }
+  }
+
+  &__nav {
+    grid-row: 2;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+      gap: 20px;
+    }
+
+    @include onTab {
+      justify-content: flex-start;
+      gap: 14px;
+    }
+  }
+
+  &__link {
+    padding: 10px 10px 10px 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #828282;
+    transition: 0.05s;
+
+    &--active {
+      color: #333;
+      position: relative;
+      font-weight: bold;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 40px;
+        height: 2px;
+        width: 90%;
+        background-color: #333;
+      }
+    }
+
+    &:hover {
+      box-shadow: 1px 1px #333;
+    }
+  }
+
+  &__note {
+    position: absolute;
+    top: 250px;
+  }
+
+  &__button-container {
+    display: flex;
+    width: 100%;
+    grid-row: 5;
+    justify-content: center;
+  }
+}

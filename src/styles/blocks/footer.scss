@@ -1,0 +1,92 @@
+.footer {
+  height: 470px;
+  color: #e4dfd3;
+  background-color: #8c9772;
+
+  @include onTab {
+    height: 280px;
+    font-weight: 500;
+  }
+
+  @include onDesktop {
+    height: 350px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: -10px;
+
+    @include onTab {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav {
+    @include onDesktop {
+      width: 30%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    margin: 15px 0 20px -10px;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTab {
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+    padding: 10px;
+    color: #e4dfd3;
+    transition: 0.5s;
+
+    &:hover {
+      box-shadow: 0 0 3px 1px rgba(221, 221, 221, 1);
+    }
+  }
+
+  &__last-line {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__copyright {
+    font-size: 14px;
+    line-height: 130%;
+
+    &--mobile {
+      width: 200px;
+      margin: auto;
+      text-align: center;
+      text-transform: uppercase;
+
+      @include onTab {
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        text-transform: unset;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      font-size: 18px;
+      line-height: 130%;
+    }
+  }
+}

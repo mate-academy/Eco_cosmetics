@@ -1,0 +1,82 @@
+.about-creators {
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__note {
+    position: relative;
+    top: 120px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__paragraph--1 {
+    margin-bottom: 36px;
+
+    @include onTab {
+      margin-bottom: 0;
+    }
+  }
+
+  &__2nd-paragraph {
+    margin-bottom: 44px;
+
+    @include onTab {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    margin-bottom: 42px;
+
+    @include onTab {
+      margin-bottom: 0;
+    }
+  }
+
+  &__paragraph--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__image {
+    display: none;
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTab {
+      display: block;
+      width: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
+
+    @include onDesktop {
+      height: 670px;
+    }
+  }
+
+  &__button {
+    align-self: center;
+
+    @include onDesktop {
+      align-self: start;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @include onDesktop {
+    gap: 30px;
+  }
+
+  &__input {
+    padding: 5px 5px 5px 0;
+    color: #828282;
+    padding-left: 0;
+    border-bottom: 1px solid #bdbdbd;
+    background-color: transparent;
+    transition: 0.5s;
+
+    @include onDesktop {
+      padding: 10px;
+      padding-left: 0;
+    }
+
+    &--tel {
+      margin-bottom: 25px;
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 10px 1px #fff;
+      border-radius: 5px;
+    }
+
+    &:focus {
+      color: #828282;
+      border-color: #333;
+    }
+
+    &:valid {
+      color: #344f10;
+      border-color: #344f10;
+    }
+
+    &:focus:invalid {
+      color: #eb5757;
+      border-color: #eb5757;
+    }
+  }
+}
