@@ -1,0 +1,58 @@
+.benefits {
+  text-align: center;
+  align-items: center;
+  color: $c-black;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onTablet {
+      flex-direction: row;
+      // justify-content: space-between;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-bottom: 58px;
+    }
+
+    @include onTablet {
+      width: 218px;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+
+        @include onLaptop {
+          margin-right: 20px;
+        }
+      }
+    }
+
+    @include onLaptop {
+      width: 380px;
+    }
+  }
+
+  &__img-wrapper {
+    height: 75px;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    color: $c-black;
+    letter-spacing: $letter-spacing;
+    text-transform: $text-uppercase;
+    font-size: 14px;
+  }
+
+  &__img {
+    align-self: center;
+    margin-bottom: 20px;
+  }
+}

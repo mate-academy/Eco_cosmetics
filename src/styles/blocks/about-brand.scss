@@ -1,0 +1,113 @@
+.about-brand {
+  &__container {
+    margin: 0 0 0 20px;
+    width: calc(100% - 20px);
+
+    @include onTablet {
+      margin-left: 27px;
+      width: calc(100% - 27px);
+    }
+
+    @include onLaptop {
+      margin-left: 150px;
+      width: calc(100% - 150px);
+    }
+
+    @include onDesktop {
+      margin: 0 auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onTablet {
+      margin-right: 30px;
+      max-width: 700px;
+    }
+
+    @include onLaptop {
+      max-width: none;
+      margin-right: 120px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    text-align: start;
+
+    @include onLaptop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 44px;
+    margin-right: 20px;
+
+    &:nth-child(3) {
+      display: none;
+    }
+
+    @include onDesktop {
+      &:nth-child(2) {
+        margin-bottom: 30px;
+      }
+
+      &:nth-child(3) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    &:nth-child(2) {
+      vertical-align: middle;
+      width: -webkit-fill-available;
+
+      @include onTablet {
+        display: block;
+        height: 100%;
+      }
+
+      @include onLaptop {
+        margin-right: 20px;
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    &:last-child {
+      @include onLaptop {
+        display: block;
+        align-self: end;
+      }
+    }
+
+    // @include onLaptop {
+    //  &:nth-child(2) {
+    //    margin-right: 20px;
+    //    height: 100%;
+    //    width: auto;
+    //  }
+    
+    //  &:last-child {
+    //    display: block;
+    //    align-self: end;
+    //  }
+    // }
+  }
+}

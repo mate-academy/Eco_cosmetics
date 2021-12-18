@@ -1,0 +1,140 @@
+.footer {
+  background-color: $c-olive;
+  color: $c-beige;
+
+  &__container {
+    padding: 30px 0 60px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      margin-bottom: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+  }
+
+  &__nav-icons {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onLaptop {
+      display: none;
+    }
+  }
+
+  &__nav-copyrights {
+    display: none;
+
+    @include onLaptop {
+      display: block;
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: $text-uppercase;
+
+      &::before {
+        content: "Copyright";
+        text-transform: none;
+      }
+    }
+  }
+
+  &__info {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onLaptop {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__icons {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onLaptop {
+      display: block;
+      margin: 30px 0 0;
+      order: 2;
+    }
+  }
+
+  &__img {
+    margin-right: 20px;
+    transition: all $transition-duration;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+
+  &__contacts-item {
+    color: $c-beige;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+
+      @include onLaptop {
+        margin-bottom: 20px;
+      }
+    }
+
+    &:nth-child(3) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__contacts-img {
+    color: $c-beige;
+
+    &:hover {
+      color: $c-white;
+      font-weight: 500;
+    }
+  }
+
+  &__copyrights {
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+
+    font-family: "Sharp Sans Display No2", sans-serif;
+    color: $c-beige;
+    text-transform: $text-uppercase;
+
+    @include onTablet {
+      text-align: left;
+      text-transform: lowercase;
+      width: auto;
+      margin-left: 10px;
+    }
+
+    @include onLaptop {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.contact-us {
+  &__container {
+    @include onTablet {
+      width: calc(100% - 27px);
+      margin: 0 0 0 27px;
+    }
+
+    @include onLaptop {
+      width: calc(100% - 150px);
+      margin: 0 0 0 150px;
+    }
+
+    @include onDesktop {
+      margin: 0 auto;
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onTablet {
+      margin-right: 30px;
+    }
+
+    @include onLaptop {
+      margin-right: 120px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    @include onLaptop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      height: 100%;
+      vertical-align: middle;
+      width: -webkit-fill-available;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    align-self: center;
+
+    @include onTablet {
+      align-self: start;
+    }
+
+    @include onLaptop {
+      margin-top: 50px;
+    }
+  }
+}
