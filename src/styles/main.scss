@@ -2,6 +2,53 @@
 @import "fonts";
 @import "typography";
 
+@import "header.scss";
+@import "menu.scss";
+@import "choose.scss";
+@import "shop.scss";
+@import "about.scss";
+@import "about__brand.scss";
+@import "powder.scss";
+@import "contact-us.scss";
+@import "footer.scss";
+
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
 body {
-  background: $c-gray;
+  background: #e5e5e5;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.body__container {
+  max-width: 1600px;
+  margin: 0 auto;
+  @include Tablet {
+    padding: 28px 27px 0;
+  }
+}
+
+.button__hover {
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 12px 19px rgba(0, 0, 0, 0.22);
+  }
+}
+
+.link {
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    color: #333;
+    text-shadow: gray;
+    transform: translate(10px);
+  }
 }
