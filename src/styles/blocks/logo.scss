@@ -1,0 +1,36 @@
+.logo {
+  display: flex;
+  align-items: center;
+  transition: transform $transition-duration, color $transition-duration;
+
+  &:hover {
+    cursor: pointer;
+    color: $color-olive;
+    transform: scale(1.1);
+
+    @include onLaptop {
+      transform: none;
+    }
+  }
+
+  &__image {
+    width: 24px;
+
+    @include onLaptop {
+      width: 50px;
+    }
+  }
+
+  &__text {
+    padding-left: 12px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    display: none;
+
+    @include onLaptop {
+      display: inline;
+    }
+  }
+}

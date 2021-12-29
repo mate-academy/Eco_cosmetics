@@ -1,0 +1,177 @@
+.shop {
+  &__content {
+    @include container;
+  }
+
+  &__titles {
+    @include onLaptop {
+      @include grid;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    @include onLaptop {
+      margin-bottom: 16px;
+      grid-column: 2 / 13;
+    }
+  }
+
+  &__side-title {
+    display: none;
+    position: absolute;
+    top: 0;
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+
+
+  &__nav {
+    @include onLaptop {
+      grid-column: 2 / 13;
+    }
+  }
+
+  &__nav-content {
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      justify-content: start;
+    }
+  }
+
+  &__link {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    display: block;
+    border-bottom: 2px solid transparent;
+
+    color: $color-dark-medium-gray;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color $transition-duration, border-color $transition-duration;
+
+    &:hover {
+      color: $color-dark-gray;
+      border-color: $color-dark-gray;
+    }
+
+    &--active {
+      color: $color-dark-gray;
+      outline: none;
+      border-color: $color-dark-gray;
+    }
+
+    @include onTablet {
+      margin-right: 50px;
+    }
+
+    @include onLaptop {
+      padding-bottom: 20px;
+      margin-bottom: 60px;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  &__products {
+    @include grid;
+    position: relative;
+  }
+
+  &__card {
+    margin-bottom: 40px;
+    transition: color $transition-duration, transform $transition-duration;
+
+    &:hover {
+      .shop__product-name {
+        color: $color-olive;
+      }
+
+      .shop__product-image {
+        transform: scale(1.05);
+      }
+    }
+
+    &:nth-of-type(n+2) {
+      display: none;
+    } 
+
+    @include onTablet {
+      &:nth-of-type(1) {
+        grid-column: 1 / 4;
+      }
+      &:nth-of-type(2) {
+        display: block;
+        grid-column: 4 / 7;
+      }
+    }
+
+    @include onLaptop {
+      &:nth-of-type(1) {
+        grid-column: 2 / 6;
+      }
+      &:nth-of-type(2) {
+        display: block;
+        grid-column: 6 / 10;
+      }
+
+      &:nth-of-type(3) {
+        display: block;
+        grid-column: 6 / 10;
+        min-width: 0;
+        position: absolute;
+        padding-left: $grid-gap-desk;
+        transform: translateX(100%);
+      }
+    }
+  }
+
+    &__image-container {
+    overflow: hidden;
+    height: 300px;
+    margin-bottom: 20px;
+
+    @include onLaptop {
+      height: 500px;
+    }
+  }
+
+  &__product-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: color $transition-duration, transform $transition-duration;
+
+    @include onLaptop {
+      height: 500px;
+    }
+  }
+
+  &__product-name {
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color $transition-duration;
+  }
+
+  &__product-price {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+}

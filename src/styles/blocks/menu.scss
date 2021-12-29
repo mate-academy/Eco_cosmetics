@@ -1,0 +1,74 @@
+.menu {
+  font-family: "Sharp-Sans";
+  background-color: $color-dark-gray;
+  position: fixed;
+  z-index: 1;
+
+  @include onLaptop {
+    position: static;
+  }
+
+  @include onLaptop {
+    background-color: transparent;
+
+  }
+
+  &__top-actions {
+    @include onLaptop {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include container;
+
+    @include onLaptop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__icon {
+    transition: transform $transition-duration;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__item {
+    font-size: 18px;
+    line-height: 24px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: $color-beige;
+    margin-top: 30px;
+    border-bottom: 1px solid $color-light-medium-gray;
+    padding-bottom: 10px;
+
+    transition: color $transition-duration;
+
+    &:hover {
+      color: $color-olive;
+    }
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onLaptop {
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+
+    @include onLaptop {
+      color: $color-dark-gray;
+    }
+  }
+}

@@ -1,0 +1,121 @@
+.section {
+  overflow: hidden;
+ 
+  &__container {
+    @include container;
+    @include grid;
+    position: relative;
+  }
+
+  &__side-title {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: $container-padding-desk;
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+
+  &__left-column {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onLaptop {
+      grid-column: 2 / 6;
+    }
+
+    &--contacts {
+      @include onLaptop {
+        grid-column: 2 / 7;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    @include onLaptop {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__paragraph {
+    padding-bottom: 30px;
+
+    &--extra {
+      display: none;
+
+      @include onLaptop {
+        display: block;
+      }
+    }
+  }
+
+  &__right-column {
+    display: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / 7;
+    }
+
+    @include onLaptop {
+      grid-column: 7 / 13;
+    }
+
+    &--about-brand {
+      background-image: url(../images/image-about-brand.png);
+    }
+
+    &--about-creators {
+      background-image: url(../images/image-about-creators.png);
+    }
+
+    &--ingridients {
+      background-image: url(../images/ingridients.png);
+      height: 400px;
+      grid-column: 3 / 13;
+    }
+
+    &--contacts {
+      background-image: url(../images/image-contacts.png);
+      background-position: 0 0;
+
+      @include onLaptop {
+        grid-column: 8 / 13;
+      }
+    }
+
+    &--duplicated {
+      @include onLaptop {
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: -$grid-gap-desk;
+          transform: translateX(100%);
+          height: 80%;
+          width: 100%;
+          background: url(../images/image-about-brand.png) no-repeat -150px center;
+        }
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onLaptop {
+      margin-top: 50px;
+    }
+  }
+}
