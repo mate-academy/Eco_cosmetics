@@ -11,11 +11,10 @@
 6. All items in the shop section must have hover effects
 7. All interactive elements(*links, buttons, pictures, icons*) ***should have a hover effect and cursor pointer***. User must intuitively understand that he can interact with some element
 8. When a user clicks on Address Google Maps is opened in a new tab (Use `target="_blank"`)
-9. Make sure when you click on logo there is no 404 error (Use `href="#"` in `anchor tag`)
-10. The user must have the opportunity to conveniently write 2-3 lines of text in the message input field
-11. When you try to send the form there is no 405 error and the form is automatically cleared after submit
-12. The form shouldn’t submit empty
-13. After autocomplete the form, change the [default styles](http://joxi.ru/ZrJobRLuQ9qp5m). Read more about [changing autocomplete styles](https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/)
+9. The user must have the opportunity to conveniently write 2-3 lines of text in the message input field
+10. When you try to send the form there is no 405 error and the form is automatically cleared after submit
+11. The form shouldn’t submit empty
+12. After autocomplete the form, change the [default styles](http://joxi.ru/ZrJobRLuQ9qp5m). Read more about [changing autocomplete styles](https://css-tricks.com/snippets/css/change-autocomplete-styles-webkit-browsers/)
 
 ## HR review
 
