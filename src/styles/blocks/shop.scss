@@ -1,0 +1,118 @@
+.shop {
+  @include margins;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+
+  @include onTablet {
+    align-items: flex-start;
+  }
+
+  @include onDesktop {
+    margin-left: $margin-left;
+  }
+
+  &__list {
+    margin-top: 12px;
+    width: 100%;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__category {
+    text-transform: uppercase;
+  }
+
+  &__main {
+    width: 100%;
+    margin-top: 32px;
+    justify-content: center;
+
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      justify-content: space-around;
+      margin-top: 85px;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    height: 267px;
+    background-image: url(../images/shop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+
+    @include onTablet {
+      width: 300px;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+  }
+
+  &__product {
+    transition: transform 0.5s;
+
+    @include onTablet {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &-2 {
+      display: none;
+
+      @media (min-width: 800px) {
+        display: block;
+      }
+    }
+
+    &-3 {
+      display: none;
+
+      @media (min-width: 1200px) {
+        display: block;
+      }
+    }
+  }
+
+  &__product-name {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: $secondary-color;
+    margin-top: 20px;
+  }
+
+  &__product-price {
+    margin-top: 10px;
+  }
+
+  &__button {
+    margin: 0 auto;
+    margin-top: 40px;
+    max-width: 280px;
+  }
+
+  &-helper {
+    &__line {
+      width: 100px;
+
+      position: absolute;
+      left: 300%;
+      transform: translateY(-25px);
+
+      color: $secondary-color;
+    }
+  }
+}

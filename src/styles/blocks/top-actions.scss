@@ -1,0 +1,101 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+
+  @include onTablet {
+    padding: 30px;
+  }
+
+  @include onDesktop {
+    padding: 40px;
+  }
+
+  &__shop {
+    background-image: url(../images/shop.svg);
+  }
+
+  &__toggler {
+    display: block;
+    background-image: url(../images/menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $secondary-color;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+}
+
+.menu {
+  padding: 18px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: $primary-color;
+  z-index: 1;
+  height: 100%;
+
+  transform: translateX(-100%);
+  transition: 0.5s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include onTablet {
+    padding: 30px;
+  }
+
+  &__toggler {
+    display: block;
+    background-image: url(../images/cross.svg);
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 45px;
+  }
+
+  &__link {
+    margin-bottom: 10px;
+    margin-top: 30px;
+    display: block;
+    text-decoration: none;
+    color: $background-color;
+    font-family: Source Sans Pro, sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+
+    &:hover {
+      color: grey;
+    }
+  }
+
+  &__hr {
+    color: white;
+    height: 5px;
+    width: 100%;
+  }
+}

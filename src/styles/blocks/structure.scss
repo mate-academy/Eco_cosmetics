@@ -1,0 +1,121 @@
+.structure {
+  @include margins;
+
+  padding-left: 20px;
+  height: 700px;
+  position: relative;
+
+  @include onTablet {
+    padding-left: 30px;
+  }
+
+  @include onDesktop {
+    margin-left: $margin-left;
+  }
+
+  &__header {
+    text-align: left;
+    margin: 0 auto;
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    top: 100px;
+    height: 600px;
+    width: 220px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-image: url(../images/bottle-mobile.svg);
+
+    @include onTablet {
+      height: 588px;
+      width: 400px;
+
+      background-image: url(../images/bottle-tablet.svg);
+    }
+
+    @include onDesktop {
+      height: 585px;
+      width: 530px;
+      right: 20px;
+      top: 120px;
+
+      background-image: url(../images/bottle-desktop.svg);
+    }
+  }
+
+  &__headache {
+    position: absolute;
+    top: 100px;
+    right: 300px;
+
+    @include onTablet {
+      right: 500px;
+    }
+
+    @include onDesktop {
+      right: 800px;
+      top: 130px;
+    }
+  }
+
+  &__component {
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: right;
+    justify-content: flex-end;
+
+    &:first-child {
+      margin-top: 30px;
+    }
+
+    &:nth-child(2) {
+      margin-top: 80px;
+    }
+
+    &:nth-child(3) {
+      margin-top: 60px;
+    }
+
+    &:nth-child(4) {
+      margin-top: 36px;
+    }
+
+    &:nth-child(5) {
+      margin-top: 100px;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 160px;
+    height: 2px;
+    background-color: $primary-color;
+    width: 100px;
+
+    @include onDesktop {
+      &:after {
+        content: " ";
+        background-color: $primary-color;
+        border-radius: 100%;
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top: -3px;
+      }
+    }
+  }
+
+  &__learn-more {
+    margin-top: 650px;
+  }
+
+  &-helper__line {
+    left: 650%;
+  }
+}

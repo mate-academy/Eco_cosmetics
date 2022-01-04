@@ -1,7 +1,247 @@
-@import "utils";
+@import "utils", "fonts";
 @import "fonts";
 @import "typography";
+@import "blocks/footer";
+@import "blocks/contact-us";
+@import "blocks/shop";
+@import "blocks/creators";
+@import "blocks/about";
+@import "blocks/brand";
+@import "blocks/ecology";
+@import "blocks/slogan";
+@import "blocks/structure";
+@import "blocks/top-actions.scss";
 
 body {
-  background: $c-gray;
+  font-family: Montserrat, sans-serif;
+  background-color: $background-color;
+  letter-spacing: 0.05em;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.5s;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &:focus {
+    color: $primary-color;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.helper {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    height: 30px;
+    width: 18px;
+    white-space: nowrap;
+
+    position: absolute;
+    right: 106%;
+    transform: rotate(90deg);
+
+    font-family: Source Sans Pro, sans-serif;
+    color: $secondary-color;
+    text-transform: uppercase;
+  }
+
+  &__line {
+    width: 100px;
+
+    position: absolute;
+    transform: translateY(-25px);
+
+    color: $secondary-color;
+  }
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: $secondary-color;
+
+  @include onDesktop {
+    font-size: 36px;
+  }
+}
+
+.desktop__br {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+  }
+}
+
+.mobile__br {
+  display: block;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &__image {
+    display: block;
+    width: 25px;
+    height: 25px;
+
+    background-image: url(../images/logo.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    font-family: Source Sans Pro, sans-serif;
+    text-transform: uppercase;
+    color: $secondary-color;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+
+    &:visited {
+      text-decoration: none;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
+
+.button {
+  text-transform: uppercase;
+  width: 100%;
+  height: 60px;
+
+  border: none;
+  background-color: $primary-color;
+  font-family: Source Sans Pro, sans-serif;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.15em;
+  color: $white-color;
+  outline: none;
+  cursor: pointer;
+
+  transition: background-color 0.5s;
+
+  &:hover {
+    border: 1px solid $primary-color;
+    background-color: $bottom-color;
+    color: $primary-color;
+  }
+
+  &:active {
+    border: 1px solid $primary-color;
+    background-color: #fff;
+    color: $primary-color;
+  }
+
+  @include onDesktop {
+    max-width: 280px;
+  }
+}
+
+.container {
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @include onTablet {
+    max-width: 800px;
+    padding: 0 30px;
+  }
+
+  @include onDesktop {
+    padding: 0 130px;
+    max-width: 1200px;
+  }
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+  height: 36px;
+
+  padding-top: 14px;
+
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $form-bottom-color;
+  background-color: inherit;
+  color: #000;
+  font-size: 14px;
+  line-height: 21px;
+  transition: background-color 1s;
+
+  &::placeholder {
+    color: $form-placeholder-color;
+  }
+
+  &:hover {
+    background-color: #fff;
+  }
+}
+
+.learn-more {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: $secondary-color;
+  position: relative;
+  border-bottom: 1px solid $secondary-color;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px $bottom-color inset;
+  transition: background-color 5000s ease-in-out 0s;
 }

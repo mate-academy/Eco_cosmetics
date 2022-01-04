@@ -1,0 +1,69 @@
+.contact-us {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  @include margins;
+  padding: 0 20px;
+
+  @include onTablet {
+    padding: 0;
+    padding-left: 30px;
+    display: flex;
+  }
+
+  @include onDesktop {
+    padding: 0;
+    margin-left: $margin-left;
+  }
+
+  &-helper__line {
+    left: 300%;
+  }
+}
+
+.contact-us-picture {
+  &__image {
+    display: none;
+
+    @media (min-width: 850px) {
+      display: block;
+      height: 100%;
+      width: 400px;
+      object-fit: cover;
+      object-position: 30%;
+    }
+  }
+}
+
+.contact-us-text {
+  @include onTablet {
+    min-width: 400px;
+    max-width: 0;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 850px) {
+    margin: 0;
+  }
+
+  &__description {
+    margin-top: 12px;
+  }
+
+  &__field {
+    margin-top: 25px;
+
+    &:first-child {
+      margin-top: 20px;
+    }
+
+    &--last {
+      margin-top: 45px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+  }
+}

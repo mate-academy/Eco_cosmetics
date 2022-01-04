@@ -1,0 +1,82 @@
+.brand {
+  @include onDesktop {
+    display: flex;
+    margin-left: $margin-left;
+    margin-right: 20px;
+    justify-content: space-between;
+    margin-top: 55px;
+  }
+
+  &__picture {
+    background-image: url(../images/header-picture.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    min-height: 300px;
+    min-width: 300px;
+
+    @include onDesktop {
+      max-width: 580px;
+      width: 100%;
+      order: 2;
+      margin-left: 50px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    order: 1;
+    padding: 0 20px;
+
+    @include onDesktop {
+      max-width: 580px;
+      align-items: start;
+      text-align: start;
+      padding: 0;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin-top: 25px;
+    font-size: 24px;
+    line-height: 130%;
+
+    @include onTablet {
+      margin-top: 50px;
+      font-size: 60px;
+      line-height: 72px;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+
+  &__sales {
+    margin-top: 12px;
+    font-size: 18px;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+  }
+
+  &__button {
+    margin-top: 46px;
+
+    @include onTablet {
+      margin-top: 58px;
+      max-width: 280px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+}
