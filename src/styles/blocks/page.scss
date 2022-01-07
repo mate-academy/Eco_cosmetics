@@ -1,0 +1,172 @@
+.page {
+  font-family: "Avenir_Book", sans-serif;
+  background-color: #e4dfd3;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__main {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1280px ;
+      margin: 0 auto;
+      justify-content: center;
+    }
+  }
+
+  &__front {
+    padding: 0 20px;
+    margin-bottom: 60px;
+
+    @include onDesktop {
+      padding: 0 0 200px;
+      margin: 0;
+    }
+  }
+
+  &__shop {
+    padding: 0 20px;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 135px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 250px;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+
+      &-first {
+        margin-bottom: 100px;
+      }
+      position: relative;
+      width: 100%;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__info {
+    padding: 0 20px;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__brand {
+    padding: 0 20px;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      padding: 0 0 0 20px;
+    }
+  }
+
+  &__creators {
+    padding: 0 20px;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      padding: 0 0 20px;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__ingredients {
+    padding: 60px 20px 0;
+
+    @include onTablet {
+      margin-bottom: 155px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__symbols {
+    padding: 0 20px;
+
+    @include onTablet {
+      margin-bottom: 150px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 240px;
+      padding: 0 20px;
+    }
+  }
+
+  &__contact-us {
+    padding: 0 20px;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+      padding: 0 0 0 20px;
+    }
+  }
+}
+
+.icon {
+  transition: all 0.3s;
+  // overflow: hidden;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    z-index: 10;
+  }
+}

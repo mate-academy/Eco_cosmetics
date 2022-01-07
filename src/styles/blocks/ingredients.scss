@@ -1,0 +1,70 @@
+.ingredients {
+  overflow: hidden;
+  box-sizing: border-box;
+
+  &__title {
+    @include title-options;
+    margin: 0 0 37px;
+  }
+
+  &__container {
+    box-sizing: border-box;
+    position: relative;
+    width: 300px;
+    height: 397.69px;
+    // width: 50px;
+    // height: 200px;
+    // object-fit: contain;
+  }
+
+  &__picture {
+    position: absolute;
+    object-position: right;
+    padding-left: 30px;
+
+    // background-position: 50%;
+    // width: 50%;
+
+    // left: 0;
+    // width: 50%;
+    // height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    object-fit: cover;
+
+    @include onTablet {
+      transform: translate(-10%, -50%);
+      left: 0%;
+    }
+  }
+
+  &__learn {
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 14px;
+    line-height: 130%;
+    width: max-content;
+
+    text-align: start;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+
+    color: #344f10;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $color-green;
+      box-sizing: border-box;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+}

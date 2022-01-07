@@ -1,0 +1,131 @@
+.header {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: 1280px ;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  &__container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin: 0 20px;
+
+    @include onTablet {
+      margin: 0 30px;
+    }
+
+    @include onDesktop {
+      margin: 0 50px;
+    }
+  }
+
+  &__logo {
+    width: max-content;
+    display: flex;
+    align-items: center;
+
+    &-image {
+      display: block;
+      margin-right: 12px;
+      width: 24px;
+      height: 24px;
+
+      background-image: url(../images/header/header-logo.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &-name {
+      display: none;
+
+      font-family: "Sharp Sans Display No2", sans-serif;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+
+      color: #344f10;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__menu--opener {
+    display: block;
+    height: 13px;
+    width: 20px;
+    order: -1;
+
+    background-image: url(../images/header/menu-opener.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__bag {
+    display: block;
+    width: 20px;
+    height: 24px;
+
+    background-image: url(../images/header/header-box.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      justify-self: end;
+      order: 4;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    list-style-type: none;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+
+    color: #344f10;
+    text-decoration: none;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+}

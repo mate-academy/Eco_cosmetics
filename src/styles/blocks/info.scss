@@ -1,0 +1,44 @@
+.info {
+  &__text {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #344f10;
+
+    @include onTablet() {
+      font-weight: 500;
+      width: 280px;
+      height: 81px;
+      justify-content: center;
+      justify-self: center;
+      align-items: center;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @include onDesktop() {
+      width: 100%;
+      font-weight: 500;
+      font-size: 24px;
+      justify-content: start;
+      justify-self: start;
+      align-items: flex-start;
+      text-align: start;
+      margin: 0;
+    }
+  }
+
+  &__knowledge {
+    display: none;
+
+    @include paragraph-options;
+
+    @include onDesktop() {
+      display: block;
+    }
+  }
+}

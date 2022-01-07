@@ -1,0 +1,112 @@
+.brand {
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__about {
+    margin: 0 0 12px;
+
+    @include title-options;
+
+    @include onDesktop() {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__details {
+    margin: 0 0 30px;
+
+    @include paragraph-options;
+  }
+
+  &__motivation {
+    display: none;
+    margin: 0 0 40px;
+
+    @include paragraph-options;
+
+    @include onDesktop() {
+      display: block;
+    }
+  }
+
+  &__learn {
+    width: max-content;
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 14px;
+    line-height: 130%;
+
+    text-align: start;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    padding-bottom: 12px;
+
+    color: #344f10;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $color-green;
+      box-sizing: border-box;
+    }
+  }
+
+  &__pictures {
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    @include onDesktop() {
+      margin-bottom: 200px;
+      width: 100%;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    object-position: center;
+    background-position: 50%;
+
+    @include onTablet() {
+      display: block;
+      width: 100%;
+    }
+
+    @include onDesktop() {
+      display: block;
+    }
+
+    &__contain {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+    }
+
+    &--half {
+      display: none;
+      background-position: right;
+
+      object-fit: cover;
+
+      width: 100%;
+      height: 430px;
+
+      @include onDesktop() {
+        display: block;
+      }
+    }
+  }
+}
