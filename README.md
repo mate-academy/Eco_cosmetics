@@ -10,7 +10,7 @@ Implement landing page according to [Figma design](https://www.figma.com/file/Fz
 
 1. Implement the header with `nav`.
 1. Implement `Brand of eco-cosmetics and magic candles` block.
-1. Implement `If you choose the gifts of nature and care about it’s - scroll down` block.
+1. Implement `If you choose the cover2 of nature and care about it’s - scroll down` block.
 1. Implement `About our brand` block.
 1. Implement `Shop` block:
   - implement tabs

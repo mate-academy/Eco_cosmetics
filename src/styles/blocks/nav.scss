@@ -1,0 +1,44 @@
+.nav {
+  width: 248px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+
+    &--footer {
+      flex-direction: column;
+
+      @include onDesktop {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__item--footer {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    @include linkStyle;
+    color: $c-olive;
+    transition: 300ms;
+
+    &:hover {
+      border-bottom: 1px solid $c-olive;
+    }
+
+    &--footer {
+      color: $c-lgrey;
+      font-size: 14px;
+      @include onDesktop {
+        font-size: 18px;
+
+        transition: border-bottom 300ms;
+
+        &:hover {
+          border-bottom: 1px solid $c-lgrey;
+        }
+      }
+    }
+  }
+}
