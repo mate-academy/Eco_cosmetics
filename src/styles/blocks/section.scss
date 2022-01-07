@@ -38,6 +38,7 @@
       box-sizing: border-box;
       background-size: cover;
       transition: 0.3s;
+      cursor: pointer;
 
       &:hover {
         transform: scale(1.02);
@@ -449,6 +450,7 @@
       box-sizing: border-box;
       background-size: cover;
       transition: 0.3s;
+      cursor: pointer;
 
       &:hover {
         transform: scale(1.02);
@@ -473,6 +475,7 @@
       align-self: end;
       width: 100%;
       transition: 0.3s;
+      cursor: pointer;
 
       &:hover {
         transform: scale(1.02);
@@ -600,6 +603,7 @@
 
       &-p {
         border-bottom: 2px solid transparent;
+        cursor: pointer;
 
         @include mobile {
           padding-bottom: 10px;
@@ -637,14 +641,10 @@
       }
 
       @include ipadPage {
-        // display: grid;
         height: 387px;
         flex-direction: row;
         gap: 30px;
         justify-content: center;
-        // margin-left: 27px;
-        // margin-right: 27px;
-        // width: 100%;
       }
     }
 
@@ -678,6 +678,10 @@
         display: block;
         align-self: stretch;
         margin: 0 20px;
+      }
+
+      @include ipadPage {
+        justify-self: center;
       }
     }
   }
@@ -831,7 +835,7 @@
     }
 
     &-link {
-      display: block;
+      display: inline-block;
       margin-bottom: 51px;
       box-sizing: border-box;
 
@@ -859,6 +863,7 @@
       box-sizing: border-box;
       background-size: cover;
       transition: 0.3s;
+      cursor: pointer;
 
       &:hover {
         transform: scale(1.02);
@@ -889,11 +894,11 @@
     @include ipadPage {
       align-items: start;
       box-sizing: border-box;
-      margin-bottom: 80px;
+      margin-bottom: 154px;
     }
 
     @include mainPage {
-      margin-bottom: 254px;
+      margin-bottom: 204px;
     }
 
     @include desktopMainPage {
@@ -934,6 +939,7 @@
 
       &-svg {
         transition: 0.3s;
+        cursor: pointer;
 
         &:hover {
           transform: scale(1.02);
@@ -997,7 +1003,7 @@
     }
 
     &-link {
-      display: block;
+      display: inline-block;
       margin-bottom: 51px;
       box-sizing: border-box;
 
@@ -1056,45 +1062,52 @@
       }
     }
 
-    &-svg {
+    @include ipadPage {
+      margin-bottom: 153px;
 
+      & :nth-child(2n + 1) {
+        grid-row: 1 / 2;
+        align-self: baseline;
+      }
+
+      & :nth-child(2n) {
+        grid-row: 2 / 3;
+        align-self: start;
+      }
+    }
+
+    @include mainPage {
+      & :nth-child(2n + 1) {
+        grid-row: 1 / 2;
+        align-self: baseline;
+      }
+
+      & :nth-child(2n) {
+        grid-row: 2 / 3;
+        align-self: start;
+      }
+    }
+
+    @include desktopMainPage {
+      & :nth-child(2n + 1) {
+        grid-row: 1 / 2;
+        align-self: baseline;
+      }
+
+      & :nth-child(2n) {
+        grid-row: 2 / 3;
+        align-self: start;
+      }
+    }
+
+    &-svg {
+      display: flex;
+      justify-content: center;
       transition: 0.3s;
+      cursor: pointer;
 
       &:hover {
         transform: scale(1.05);
-      }
-
-      @include mainPage {
-        margin-bottom: 44px;
-      }
-
-      @include desktopMainPage {
-        margin-bottom: 44px;
-      }
-
-      &--natural {
-        margin-bottom: 44px;
-
-        @include mobile {
-          margin-bottom: 20px;
-        }
-
-      }
-
-      &--recycling {
-        margin-bottom: 19px;
-
-        @include mobile {
-          margin-bottom: 20px;
-        }
-      }
-
-      &--two-leaf {
-        margin-bottom: 40px;
-
-        @include mobile {
-          margin-bottom: 20px;
-        }
       }
     }
   }
@@ -1206,6 +1219,7 @@
       box-sizing: border-box;
       background-size: cover;
       transition: 0.3s;
+      cursor: pointer;
 
       &:hover {
         transform: scale(1.02);
