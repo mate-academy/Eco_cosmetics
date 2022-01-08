@@ -10,9 +10,9 @@
       rel="icon"
     >
     <link rel="stylesheet" href="./styles/main.scss">
-  </head>
-  <body class="page__body page__body--with-menu" id="homepage">
     <script type="text/javascript" src="scripts/main.js"></script>
+  </head>
+  <body class="page__body" id="homepage">
     <header class="header top-actions grid--for-header">
       <!-- menu logo -->
       <div class="grid-for-header__item top-actions__item"
@@ -46,17 +46,17 @@
       <!-- top menu -->
       <div class="grid-for-header__item top-actions__item grid__item--main-page-5-8 grid__item--desktop-main-page-7-11">
         <div class="top-actions__menu">
-          <ul class="menu-top__list">
-            <li class="menu-top__item">
-              <a href="#shop" class="menu-top__link">Shop</a>
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="#shop" class="menu__link">Shop</a>
             </li>
 
-            <li class="menu-top__item">
-              <a href="#contact" class="menu-top__link">Contact</a>
+            <li class="menu__item">
+              <a href="#contact" class="menu__link">Contact</a>
             </li>
 
-            <li class="menu-top__item">
-              <a href="#about" class="menu-top__link">About</a>
+            <li class="menu__item">
+              <a href="#about" class="menu__link">About</a>
             </li>
           </ul>
         </div>
@@ -75,6 +75,35 @@
         </a>
       </div>
     </header>
+
+    <div class="page__menu menu-slicer" id="menu">
+      <div class="menu-slicer__content">
+        <a href="#homepage" class="menu-slicer__icon icon--menu">
+          <img
+            src="./images/cross.svg"
+            alt="exit-from-menu"
+            class="icon--menu-image"
+          >
+        </a>
+        <div class="">
+          <div class="">
+            <ul class="menu-slicer__list">
+              <li class="menu-slicer__item">
+                <a href="#shop" class="menu-slicer__link">Shop</a>
+              </li>
+
+              <li class="menu-slicer__item">
+                <a href="#contact-us" class="menu-slicer__link">Contact</a>
+              </li>
+
+              <li class="menu-slicer__item">
+                <a href="#about" class="menu-slicer__link">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <main>
       <section class="section section__home grid"
@@ -96,9 +125,9 @@
             20% of sales at a wild bird shelter
           </span>
 
-          <div class="button button--shop section__home-button">
+          <a href="#shop" class="section__home-button button button--shop">
             Shop
-          </div>
+          </a>
         </div>
       </section>
 
@@ -152,7 +181,7 @@
             us. Be aware of your choice!
           </article>
 
-          <a href="" class="section__about-link link link--learn-more">learn MORE</a>
+          <a href="#" class="section__about-link link link--learn-more">learn MORE</a>
         </div>
 
         <div class="section__about-big-image grid__item--ipad-page-4-6 grid__item--main-page-7-11 grid__item--desktop-main-page-7-11">
@@ -239,9 +268,9 @@
 
           <a href="#" class="section__about-the-creators-link link link--learn-more">learn MORE</a>
 
-          <div class="button button--to-contuct-us section__about-the-creators-button">
+          <a href="#contact-us" class="section__about-the-creators-button button button--to-contuct-us">
             to contact us
-          </div>
+          </a>
         </div>
 
         <div class="section__about-the-creators-big-image grid__item--ipad-page-4-6 grid__item--main-page-7-12 grid__item--desktop-main-page-7-12">
@@ -363,7 +392,7 @@
         </div>
       </section>
 
-      <section class="section section__contact-us grid" id="contact">
+      <section class="section section__contact-us grid" id="contact-us">
         <div class="section__contact-us-container-side-bar grid__item--main-page-1-1 grid__item--desktop-main-page-1-1">
           <p class="section__contact-us-side-bar side-bar text--side-bar">help</p>
         </div>
@@ -379,7 +408,7 @@
 
           <form
             class="form section__contact-us-form"
-            action="get"
+            action="#"
             onclick="event.preventDefault()"
           >
             <input
@@ -399,8 +428,9 @@
 
             <input
               name="phone-number"
-              type="text"
-              placeholder="phone number"
+              type="tel"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+              placeholder="phone number 050-555-55-55"
               class="contact-us__field form-field"
               required
             >
