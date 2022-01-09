@@ -1,0 +1,247 @@
+@import "./utils.scss";
+
+.ayurvedic-svg {
+  $height-ayurvedic: 368px;
+  height: 382px;
+
+  @include mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 20px;
+    position: relative;
+  }
+
+  @include ipadPage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 20px;
+    position: relative;
+  }
+
+  @include mainPage {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0 20px;
+  }
+
+  @include desktopMainPage {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0 20px;
+  }
+
+  &-container-left {
+    align-self: center;
+
+    @include mobile {
+      grid-column: 1 / 2;
+      position: absolute;
+      left: 80px;
+      width: 100%;
+      display: grid;
+      gap: 0 20px;
+    }
+
+    @include ipadPage {
+      position: absolute;
+      grid-column: 1 / 2;
+      width: 200px;
+      right: -40px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 20px;
+    }
+
+    @include mainPage {
+      grid-column: 1 / 4;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 20px;
+    }
+
+    @include desktopMainPage {
+      grid-column: 1 / 4;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 20px;
+    }
+  }
+
+  &-container-label {
+    font-family: "Avenir", serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    text-transform: capitalize;
+    color: $color-titanium;
+
+    @include mobile {
+      grid-column: 1 / 2;
+      display: flex;
+      flex-direction: column;
+      // justify-content: space-around;
+      height: $height-ayurvedic;
+    }
+
+    @include ipadPage {
+      grid-column: 1 / 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $height-ayurvedic;
+    }
+
+    @include mainPage {
+      grid-column: 1 / 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $height-ayurvedic;
+    }
+
+    @include desktopMainPage {
+      grid-column: 1 / 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $height-ayurvedic;
+    }
+
+    &-span {
+      @include mobile {
+        display: none;
+      }
+
+      @include ipadPage {
+        display: none;
+      }
+    }
+  }
+
+  &-label {
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $height-ayurvedic;
+      width: fill-available;
+    }
+
+    @include ipadPage {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $height-ayurvedic;
+      width: fill-available;
+    }
+
+    @include mainPage {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $height-ayurvedic;
+      width: fill-available;
+    }
+
+    @include desktopMainPage {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $height-ayurvedic;
+      width: fill-available;
+    }
+  }
+
+  &-container-pointer {
+    @include mobile {
+      grid-column: 2 / 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $height-ayurvedic;
+    }
+
+    @include ipadPage {
+      grid-column: 3 / 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $height-ayurvedic;
+    }
+
+    @include mainPage {
+      grid-column: 3 / 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $height-ayurvedic;
+    }
+
+    @include desktopMainPage {
+      grid-column: 3 / 4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: $height-ayurvedic;
+    }
+  }
+
+  &-pointer {
+    height: 1px;
+    width: 100%;
+    background-color: $color-titanium;
+    position: relative;
+
+    @include mobile {
+      width: 76px;
+    }
+
+    @include ipadPage {
+      width: 76px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      border-radius: 2px;
+      border: 2px solid $color-titanium;
+      right: 0;
+      top: calc(50% - 2px);
+
+      @include mobile {
+        display: none;
+      }
+
+      @include ipadPage {
+        display: none;
+      }
+    }
+  }
+
+  &-container-right {
+    @include mobile {
+      grid-column: 2 / 3;
+      position: absolute;
+    }
+
+    @include ipadPage {
+      grid-column: 3 / 3;
+      justify-self: center;
+      position: absolute;
+    }
+
+    @include mainPage {
+      grid-column: 4 / 8;
+    }
+
+    @include desktopMainPage {
+      grid-column: 4 / 8;
+    }
+  }
+
+  &-image {
+    height: 382px;
+  }
+}

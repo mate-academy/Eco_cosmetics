@@ -1,0 +1,94 @@
+.form-field {
+  display: block;
+  box-sizing: border-box;
+  position: relative;
+
+  height: 48px;
+  width: 100%;
+  padding: 10px 8px;
+
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom: 1px solid $color-soft-grey;
+  margin-bottom: 20px;
+
+  font-family: "Avenir", "Arial", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: $color-form;
+  transition: 0.3s;
+
+  @include mobile {
+    height: 32px;
+  }
+
+  @include ipadPage {
+    height: 32px;
+  }
+
+  &::placeholder {
+    font-family: "Avenir", serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: capitalize;
+    color: $color-form;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    @include ipadPage {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  &:hover {
+
+    border-bottom: 1px solid $color-black;
+
+    &::placeholder {
+      color: #000;
+    }
+  }
+
+  &:focus {
+    color: #000;
+    outline: none;
+    border-color: transparent;
+    border-bottom: 1px solid $color-black;
+
+    &::placeholder {
+      color: $color-form;
+    }
+  }
+
+  &--textarea {
+    height: 78px;
+    resize: none;
+
+    font-family: "Avenir", serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: $color-form;
+
+    margin-bottom: 50px;
+
+    @include mobile {
+      height: 52px;
+      margin-bottom: 29px;
+    }
+
+    @include ipadPage {
+      height: 52px;
+      margin-bottom: 29px;
+    }
+  }
+}

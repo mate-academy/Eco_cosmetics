@@ -1,0 +1,44 @@
+.menu {
+  &__list {
+    display: flex;
+    justify-content: center;
+
+    @include desktopMainPage {
+      justify-content: start;
+    }
+  }
+
+  &__item {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: "SharpSans", sans-serif;
+    font-size: 18px;
+    color: $color-holly;
+    transition: 0.3s;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $color-holly;
+    }
+
+    &:hover {
+      color: $color-black;
+
+      &::after {
+        content: "";
+      }
+    }
+  }
+}

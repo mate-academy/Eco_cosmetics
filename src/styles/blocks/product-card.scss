@@ -1,0 +1,82 @@
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column ;
+
+  &__image {
+    height: 500px;
+    width: 380px;
+    margin-bottom: 20px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    @include mobile {
+      height: 267px;
+      width: 100vw;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    @include ipadPage {
+      height: 300px;
+      width: 100%;
+      background-position: center 40%;
+    }
+  }
+
+  &__name {
+    font-family: "Avenir", serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-titanium;
+    margin-bottom: 10px;
+
+    @include mobile {
+      margin-left: 20px;
+    }
+  }
+
+  &__price {
+    font-family: "Avenir", serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-titanium;
+
+    @include mobile {
+      margin-left: 20px;
+    }
+  }
+
+  // &--hydrophilic-oil {
+  // }
+
+  &--face-cream {
+    @include mobile {
+      display: none;
+    }
+
+    @include ipadPage {
+      display: none;
+    }
+  }
+
+  &--image-ubtan {
+    @include mobile {
+      display: none;
+    }
+  }
+}

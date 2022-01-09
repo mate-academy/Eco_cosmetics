@@ -1,0 +1,215 @@
+.footer {
+  background-color: rgba(52, 79, 16, 0.5);
+  color: $color-sand;
+  height: 320px;
+  padding-top: 60px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @include mobile {
+    height: 470px;
+    padding-top: 25px;
+  }
+
+  @include ipadPage {
+    height: 280px;
+    padding-top: 25px;
+  }
+
+  &__container {
+    @include mobile {
+      display: grid;
+      margin: 0 20px;
+    }
+  }
+
+  &__menu {
+    text-transform: capitalize;
+
+    &-list {
+      display: flex;
+      gap: 40px;
+
+      @include mobile {
+        display: block;
+        font-size: 14px;
+        // margin-bottom: 15px;
+      }
+
+      @include ipadPage {
+        display: block;
+        font-size: 14px;
+      }
+    }
+    &-item {
+      margin-bottom: 10px;
+    }
+
+    @include mobile {
+      grid-row: 1 / 2;
+    }
+
+    @include ipadPage {
+      grid-row: 1 / 2;
+    }
+
+    @include mainPage {
+      grid-row: 1 / 2;
+    }
+
+    @include desktopMainPage {
+      grid-row: 1 / 2;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $color-sand;
+
+      &:hover {
+        color: $color-titanium;
+      }
+    }
+
+  }
+
+  &__links {
+    text-decoration: none;
+    color: $color-sand;
+
+    &:hover {
+      color: $color-titanium;
+    }
+  }
+
+  &__links-to-networks {
+    display: flex;
+    gap: 14px;
+    transition: 0.3s;
+
+    @include mobile {
+      grid-row: 2 / 3;
+      gap: 20px;
+    }
+
+    @include ipadPage {
+      grid-row: 2 / 3;
+      gap: 20px;
+    }
+
+    @include mainPage {
+      grid-row: 2 / 3;
+    }
+
+    @include desktopMainPage {
+      grid-row: 2 / 3;
+    }
+
+    &-svg {
+      &:hover {
+        transform: scale(1.2);
+        transition: 0.3s;
+      }
+    }
+  }
+
+  &__copyright {
+    font-family: "SharpSans", serif;
+    font-weight: 400;
+    font-size: 16px;
+
+    @include mobile {
+      grid-row: 4 / 5;
+      justify-self: center;
+      text-align: center;
+    }
+
+    @include ipadPage {
+      grid-row: 3 / 4;
+    }
+
+    @include mainPage {
+      grid-row: 2 / 3;
+    }
+
+    @include desktopMainPage {
+      grid-row: 2 / 3;
+    }
+
+    &-copy {
+      @include mobile {
+        display: none;
+      }
+
+      @include ipadPage {
+        display: none;
+      }
+    }
+
+    &-words {
+      text-transform: uppercase;
+
+      @include mobile {
+        font-size: 14px;
+      }
+
+      @include ipadPage {
+        text-transform: none;
+        font-size: 14px;
+      }
+
+      &-br {
+        display: none;
+
+        @include mobile {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  &__address-container {
+
+    @include mobile {
+      font-size: 14px;
+
+      & p {
+        margin-bottom: 4px;
+      }
+    }
+
+    @include ipadPage {
+      grid-row: 1 / 4;
+      font-size: 14px;
+
+      & p {
+        margin-bottom: 4px;
+      }
+    }
+
+    @include mainPage {
+      grid-row: 1 / 2;
+
+      & p {
+        margin-bottom: 15px;
+      }
+    }
+
+    @include desktopMainPage {
+      grid-row: 1 / 2;
+
+      & p {
+        margin-bottom: 15px;
+      }
+    }
+
+    &-support {
+      @include mobile {
+        line-height: 49px;
+      }
+
+      @include ipadPage {
+        line-height: 49px;
+      }
+    }
+  }
+}

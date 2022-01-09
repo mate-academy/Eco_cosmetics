@@ -1,0 +1,46 @@
+.top-actions {
+  &__item {
+    width: max-content;
+    position: relative;
+
+    &:nth-child(1) {
+      @include mainPage {
+        display: none;
+      }
+
+      @include desktopMainPage {
+        display: none;
+      }
+    }
+
+    &:nth-child(2) {
+      justify-self: center;
+
+      @include mainPage {
+        justify-self: start;
+      }
+
+      @include desktopMainPage {
+        justify-self: start;
+      }
+    }
+
+    &:nth-child(3) {
+      display: none;
+
+      @include mainPage {
+        display: block;
+        justify-self: center;
+      }
+
+      @include desktopMainPage {
+        display: block;
+        justify-self: start;
+      }
+    }
+
+    &:nth-child(4) {
+      justify-self: end;
+    }
+  }
+}

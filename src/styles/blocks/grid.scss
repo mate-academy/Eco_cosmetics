@@ -1,0 +1,134 @@
+.grid {
+
+  // @include mobile {
+  //   display: grid;
+  //   grid-template-columns: repeat(2, 1fr);
+  // }
+  // @include ipadPage {
+  //   display: grid;
+  //   grid-template-columns: repeat(6, 1fr);
+  // }
+
+  @include ipadPage {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    gap: 0 20px;
+  }
+
+  @include mainPage {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    gap: 0 20px;
+  }
+
+  @include desktopMainPage {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    gap: 0 20px;
+  }
+
+  &--for-header {
+    align-items: center;
+    gap: 20px;
+
+    @include mobile {
+      display: flex;
+      justify-content: space-between;
+    }
+    @include ipadPage {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include mainPage {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    @include desktopMainPage {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__item {
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &--mobile-#{$start}-#{$end} {
+          @include mobile {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+        &--ipad-page-#{$start}-#{$end} {
+          @include ipadPage {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+        &--main-page-#{$start}-#{$end} {
+          @include mainPage {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+        &--desktop-main-page-#{$start}-#{$end} {
+          @include desktopMainPage {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &--three-point {
+    @include ipadPage {
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 25px;
+    }
+
+    @include mainPage {
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 25px;
+    }
+
+    @include desktopMainPage {
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 25px;
+    }
+  }
+
+  &--for-about-the-creators {
+    @include mainPage {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0 20px;
+    }
+  }
+
+  &--for-footer {
+    @include mobile {
+      grid-template-rows: 120px 45px 180px 50px;
+      align-items: start;
+    }
+
+    @include ipadPage {
+      grid-template-rows: 120px 65px 50px;
+      align-items: start;
+    }
+
+    @include mainPage {
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 6px;
+      align-items: start;
+    }
+
+    @include desktopMainPage {
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 6px;
+      align-items: start;
+    }
+  }
+}
