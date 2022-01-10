@@ -1,0 +1,70 @@
+.composition {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  &--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      grid-row: 1;
+    
+    }
+  }
+
+  &--mobile {
+    grid-row: 2;
+    
+    @include onIpad {
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+  
+  &__list {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+  }
+
+  &__link {
+    display: block;
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #333;
+  }
+
+  &__item {
+    position: relative;
+    align-self: flex-end;
+    text-align: end;
+    min-width: 120px;
+    margin-right: 50px;
+
+    @include onDesktop {
+      margin-right: 110px;
+      width: max-content;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -86px;
+      width: 80px;
+      height: 1px;
+      background: #000;
+    }
+  }
+
+  &__image {
+    display: block;
+    position: static;
+  }
+}

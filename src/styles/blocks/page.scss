@@ -1,0 +1,68 @@
+.page {
+  font-family: Avenir, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  color: #333;
+  background-color: #e4dfd3;
+  scroll-behavior: smooth;
+
+  @include onIpad {
+    font-weight: 500;
+  }
+
+  @include onDesktop {
+    font-size: 18px;
+    line-height: 150%;
+  }
+  
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #333;
+    z-index: 1;
+
+    transform: translateY(-100%);
+    transition: 0.5s;
+
+    &:target {
+      transform: translateY(0);
+    }
+
+  }
+
+  &__section {
+    position: relative;
+    margin-bottom: 45px;
+
+    @include onIpad {
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+    
+    &-title {
+      font-family: Avenir, sans-serif;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: #344f10;
+      margin-bottom: 12px;
+
+      @include onDesktop {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

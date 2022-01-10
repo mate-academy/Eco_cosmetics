@@ -1,0 +1,28 @@
+.messenger {
+  display: flex;
+  gap: 20px;
+
+  &--mobile {
+    
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      width: 40%;
+    }
+  }
+
+  &__link {
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

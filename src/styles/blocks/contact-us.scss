@@ -1,0 +1,59 @@
+.contact-us {
+
+  &__side-text {
+    grid-row: 1;
+  }
+
+  &__left {
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__paragraph {
+
+    margin-bottom: 20px;
+
+    @include onIpad {
+      max-width: 380px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+
+  &__image {
+    display: none;
+
+    @include onIpad {
+      position: static;
+      display: block;
+      width: 110%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left;
+      transition: 0.5s;
+    
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    @include onDesktop {
+      width: 120%;
+      height: 100%;
+    }
+  }
+
+  &__button {
+    align-self: center;
+
+    @include onIpad {
+      align-self: flex-start;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.ingredients {
+  display: flex;
+  align-items: flex-end;
+
+  &__side-text {
+    position: relative;
+    grid-row: 1;
+    width: max-content;
+    top: 80px;
+  }
+
+  &__text {
+    display: none;
+    grid-row: 1 ;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+
+    &--mobile {
+      grid-row: 1;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    bottom: 0;
+
+    &--mobile {
+      bottom: -50px;
+
+      @include onIpad {
+        bottom: 0;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+}
