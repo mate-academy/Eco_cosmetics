@@ -1,0 +1,51 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: $headerTopPad 0;
+  background-color: $darkGray;
+
+  @include onTablet {
+    padding: $headerTopPadTab 0;
+  }
+
+  overflow: auto;
+  z-index: 1;
+
+  &__top {
+    margin-bottom: 45;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding-bottom: 10px;
+    border-bottom: 1px solid transparent;
+
+    color: $lightText;
+    text-decoration: none;
+    font-family: "Sharp Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+
+    &:hover {
+      border-color: $lightGray;
+    }
+  }
+}
