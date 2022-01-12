@@ -1,7 +1,22 @@
 .page {
+  font-family: Avenir, sans-serif;
+  font-weight: 400px;
+
+  @include onTablet {
+    font-weight: 500px;
+  }
+
+  @include onDesktop {
+    font-weight: 500;
+  }
+
   &__body {
     margin: 0;
     background-color: $mainBgc;
+
+    &--with-menu {
+      overflow: hidden;
+    }
   }
 
   &__menu {
@@ -23,10 +38,12 @@
 
     @include onTablet {
       margin-bottom: 100px;
+      font-weight: 500px;
     }
 
     @include onDesktop {
       margin-bottom: 200px;
+      font-weight: 500px;
     }
   }
 }
