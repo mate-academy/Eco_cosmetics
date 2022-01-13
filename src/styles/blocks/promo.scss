@@ -1,27 +1,39 @@
 .promo {
-  &__container {
+
+  &__background {
+    height: 270px;
+    margin-bottom: 25px;
+    background-image: url(../images/photos/brand-of.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onTablet {
+      margin: 0 30px;
+      margin-bottom: 50px;
+      height: 500px;
+    }
 
     @include onDesktop {
-      display: flex;
-      justify-content: space-between;
-      gap: 50px;
+      display: none;
     }
   }
 
-  font-family: Avenir, serif;
-  font-weight: 500;
+  @include onTablet {
+    background-image: none;
+  }
+
+  @include onDesktop {
+    background-image: none;
+  }
 
   &__photo {
-    width: 100%;
-    margin-bottom: 25px;
-    order: 1;
+    display: none;
 
-    @include onTablet {
-      margin-bottom: 50px;
-    }
+    margin-bottom: 25px;
 
     @include onDesktop {
-      width: 580px;
+      display: block;
+      margin-bottom: 50px;
     }
   }
 
@@ -38,29 +50,36 @@
     &--title {
       margin: 0 0 12px;
       text-align: center;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 130%;
+      color: $darkGray;
 
       @include onTablet {
         margin-bottom: 20px;
+        font-weight: 500;
       }
 
       @include onDesktop {
         text-align: unset;
+        font-size: 60px;
+        line-height: 60px;
+        font-weight: 500;
       }
-
-      font-size: 36px;
-      line-height: 130%;
-      color: $darkGray;
     }
 
     &--subtitle {
       margin: 0 0 46px;
+      line-height: 150%;
+      font-size: 18px;
+
+      @include onMobile {
+        font-weight: 400;
+      }
 
       @include onTablet {
         margin-bottom: 50px;
       }
-
-      line-height: 150%;
-      font-size: 18px;
     }
   }
 }
