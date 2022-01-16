@@ -1,7 +1,36 @@
 .choose {
 
+  &__content {
+
+    width: 280px;
+    margin: 0 auto;
+
+    @include iPad {
+      width: 280px;
+      margin: 0 auto;
+    }
+
+    @include Desk {
+      width: 100%;
+    }
+  }
+
   &__description {
     display: none;
+
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $textColor;
+  }
+
+  @include Desk {
+    &__description {
+      display: block;
+    }
   }
 
   &__title {
@@ -15,8 +44,6 @@
     text-align: left;
 
     color: #344f10;
-
-    padding: 0 20px;
 
     @include iPad {
       width: 280px;

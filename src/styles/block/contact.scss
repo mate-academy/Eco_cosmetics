@@ -1,5 +1,12 @@
 .contact {
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__title {
     font-family: Avenir, sans-serif;
     font-style: normal;
@@ -8,7 +15,6 @@
     line-height: 150%;
 
     text-transform: uppercase;
-
     color: $h2color;
   }
 
@@ -21,14 +27,16 @@
     line-height: 150%;
 
     text-transform: lowercase;
-
     color: $textColor;
+
+    margin-top: 12px;
   }
 
   &__form {
     display: flex;
     flex-direction: column;
-
+    transition: all 0.3s;
+    margin-top: 20px;
   }
 
   &__form-field {
@@ -36,17 +44,77 @@
     background-color: #e4dfd3;
     box-sizing: border-box;
     border: transparent;
-    border-bottom: 1px solid #333 ;
+    border-bottom: 1px solid #bdbdbd;
     height: 32px;
+    transition: all 0.3s;
+
+    &::placeholder {
+      font-family: Avenir, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 150%;
+
+      text-transform: capitalize;
+      color: #828282;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #333;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid #344f10;
+    }
+
+    &:focus::placeholder {
+      color: #344f10;
+    }
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 
   &__form-text {
-    margin-top: 38px;
     resize: none;
-    height: 32px;
+    height: 52px;
     background-color: #e4dfd3;
     box-sizing: border-box;
     border: transparent;
-    border-bottom: 1px solid #333 ;
+    border-bottom: 1px solid #bdbdbd;
+    transition: all 0.3s;
+
+    &::placeholder {
+      font-family: Avenir, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 150%;
+
+      text-transform: capitalize;
+      color: #828282;
+      padding-top: 24px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #333;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid #344f10;
+    }
+
+    &:focus::placeholder {
+      color: #344f10;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
   }
 }
