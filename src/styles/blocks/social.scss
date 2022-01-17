@@ -2,6 +2,26 @@
   display: flex;
   gap: 15px;
 
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
   &__item {
     width: 20px;
     height: 20px;

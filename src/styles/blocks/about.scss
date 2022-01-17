@@ -40,59 +40,57 @@
     @include onDesktop {
       padding-left: 0;
     }
-  }
 
-  &__title {
-    margin-bottom: 12px;
-    font-size: 24px;
-    text-transform: uppercase;
+    &--title {
+      margin-bottom: 12px;
+      font-size: 24px;
+      font-weight: $fontWeightMob;
+      text-transform: uppercase;
 
-    @include onDesktop {
-      margin-bottom: 20px;
-      font-size: 36px;
-    }
-  }
-
-  &__info {
-    margin-bottom: 40px;
-
-    @include onDesktop {
-      font-weight: 500;
-    }
-
-    @include onTablet {
-      font-weight: 500;
-    }
-
-    &--desktop {
-      display: none;
-      margin-bottom: 40px;
+      @include onTablet {
+        font-weight: $fontWeigthTablet;
+      }
 
       @include onDesktop {
-        display: block;
+        margin-bottom: 20px;
+        font-size: 36px;
       }
     }
-  }
 
-  &__link {
-    display: inline;
-    color: $darkGreen;
-    font-weight: bold;
-    text-decoration: none;
+    &--info {
+      margin-bottom: 40px;
 
-    border-bottom: 1px solid transparent;
+      @include onTablet {
+        font-weight: $fontWeigthTablet;
+      }
 
-    transition: 0.3s;
+      &-desktop {
+        display: none;
+        margin-bottom: 40px;
+        font-weight: $fontWeigthTablet;
 
-    &:hover {
-      border-color: $darkGreen;
+        @include onDesktop {
+          display: block;
+        }
+      }
     }
 
-    &--creators {
-      padding-bottom: 30px;
+    &--link {
+      display: inline;
+      color: $darkGreen;
+      font-weight: bold;
+      text-decoration: none;
+
+      border-bottom: 1px solid transparent;
+
+      transition: 0.3s;
+
+      &:hover {
+        border-color: $darkGreen;
+      }
 
       @include onDesktop {
-        padding-bottom: 70px;
+        margin-bottom: 70px;
       }
     }
   }
@@ -101,21 +99,16 @@
     display: none;
 
     @include onDesktop {
-      display: inline-block;
+      display: inline-flex;
     }
 
     &--small {
       display: none;
-      position: absolute;
-      bottom: 5px;
 
       @include onDesktop {
         display: block;
+        object-fit: cover;
       }
-    }
-
-    &--creators {
-      width: 580px;
     }
   }
 }

@@ -1,0 +1,104 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+
+  &__catalog {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    padding-bottom: 80px;
+
+    @include onTablet {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 10px;
+    font-size: 24px;
+    line-height: 150%;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: $fontWeightMob;
+
+    @include onTablet {
+      text-align: start;
+      font-weight: $fontWeigthTablet;
+      padding-left: 30px;
+    }
+
+    @include onDesktop {
+      padding-left: 0;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      width: max-content;
+      gap: 30px;
+      justify-content: start;
+      padding-left: 30px;
+    }
+
+    @include onDesktop {
+      padding-left: 0;
+    }
+
+    &--item {
+      padding-bottom: 10px;
+      border-bottom: 1px solid transparent;
+      transition: $transitionTime;
+
+      &:hover {
+        border-bottom-color: $darkGray ;
+      }
+    }
+
+    &--link {
+      font-size: 14px;
+      line-height: 150%;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $lightGray;
+      transition: $transitionTime;
+
+      @include onTablet {
+        font-weight: $fontWeigthTablet;
+      }
+
+      &:hover {
+        color: $darkGreen;
+      }
+    }
+  }
+
+  &__background {
+    height: 260px;
+    background-image: url(../images/photos/shop1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+}
