@@ -1,14 +1,26 @@
 .nav {
   &__list {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    display: none;
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    &--section-4 {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      height: 14px;
+    }
   }
+
   &__item {
     margin-left: 38px;
   }
+
   &__link {
     font-family: Sharp Sans, sans-serif;
     font-weight: bold;
@@ -17,6 +29,22 @@
     text-decoration: none;
     &--footer {
       color: #e4dfd3;
+    }
+    &--section-4 {
+      font-family: Sharp Sans, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #333;
+      text-decoration: none;
+    }
+  }
+
+  &__cart {
+    width: 24px;
+    height: 24px;
+    @include onDesktop {
+      width: 32px;
+      height: 32px;
     }
   }
 }

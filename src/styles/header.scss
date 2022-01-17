@@ -1,11 +1,33 @@
 .header {
-  margin: 0 auto;
-  height: 170px;
-  
-  &__content {
+  &__nav {
+    padding: 0 20px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
     align-items: center;
+
+    @include onTab {
+      height: 77px;
+    }
+
+    @include onDesktop {
+      height: 130px;
+      padding: 0 50px;
+    }
+  }
+
+  &__logo {
+    height: 24px;
+    width: 24px;
+    @include onDesktop {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  &__menu-opener {
+    @include onDesktop {
+      display: none;
+    }
   }
 }
