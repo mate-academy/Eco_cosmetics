@@ -1,35 +1,75 @@
 .about {
 
-  &__title {
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
+  &__title {
     font-family: Avenir, sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 24px;
     line-height: 150%;
 
     letter-spacing: 0.05em;
     text-transform: uppercase;
-
     color: $h2color;
   }
 
   &__description {
-
     font-family: Avenir, sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 16px;
     line-height: 150%;
     text-align: left;
 
     color: $textColor;
-
     margin-top: 12px;
   }
 
   &__learn-link {
-
     margin-top: 44px;
+  }
+
+  &__img {
+    background-image: url(../images/about-brand.jpg);
+    display: none;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include iPad {
+      display: block;
+      width: 369px;
+      height: 318px;
+    }
+
+    @include Desk {
+      width: 480px;
+      height: 529px;
+    }
+
+  }
+
+  &__img-small {
+    background-image: url(../images/about-brand.jpg);
+    display: none;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include Desk {
+      display: flex;
+      height: 430px;
+      width: 200px;
+      margin-right: -50px;
+    }
+  }
+
+  &__img-container {
+    display: grid;
+    align-items: flex-end;
   }
 }

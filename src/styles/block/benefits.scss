@@ -1,5 +1,31 @@
 .benefits {
 
+  @include iPad {
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__item {
+      width: 280px;
+    }
+  }
+
+  @include Desk {
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &__item {
+      width: 380px;
+    }
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -7,6 +33,10 @@
     align-items: center;
 
     margin-top: 60px;
+
+    @include iPad {
+      margin-top: 0;
+    }
 
     &:first-child {
       margin-top: 0;
@@ -16,7 +46,7 @@
   &__description {
     font-family: Avenir, sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 14px;
     line-height: 130%;
 
@@ -25,7 +55,7 @@
     text-transform: uppercase;
 
     color: #000;
-
     margin-top: 20px;
+
   }
 }
