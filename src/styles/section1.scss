@@ -4,7 +4,7 @@
   align-items: center;
   @include onDesktop {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 80px);
     gap: 20px;
   }
 
@@ -34,7 +34,10 @@
     order: 2;
     @include onDesktop {
       order: 1;
-      grid-column: 2 / 7;
+      grid-column: 2 / 6;
+      display: grid;
+      grid-template-columns: repeat(5, 80px);
+      gap: 20px;
     }
   }
 
@@ -68,7 +71,7 @@
       font-weight: 500;
       line-height: 72px;
       text-align: left;
-      
+      grid-column: 1 / 5;
     }
 
   }
@@ -88,8 +91,14 @@
     @include onTab {
       padding-top: 12px;
     }
+    @include onDesktop {
+      grid-column: 1 / 4 ;
+    }
   }
   &__button {
     margin-top: 45px;
+    @include onDesktop {
+      grid-column: 1 / 4 ;
+    }
   }
 }

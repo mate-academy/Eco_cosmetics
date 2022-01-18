@@ -2,20 +2,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include onDesktop {
+    margin-top: 306px;
+    display: grid;
+    grid-template-columns: repeat(12, 80px);
+    gap: 20px;
+  }
 
   &__item-1 {
     display: none;
     font-family: Avenir, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 400;
-    line-height: 27px;
-    letter-spacing: 0;
+    font-weight: 500;
+    line-height: 24px;
     text-align: left;
 
     @include onDesktop {
-      margin-top: 300px;
       display: block;
+      height: 120px;
+      width: 380px;
+      grid-column: 2 / 6;
     }
   
   }
@@ -38,11 +45,14 @@
     }
 
     @include onDesktop {
-      margin-top: 306px;
-      font-size: 24px;
+      margin-top: 0;
+      height: 108px;
+      width: 380px;
       font-style: normal;
+      font-size: 24px;
       font-weight: 500;
       line-height: 36px;
+      grid-column: 7 / 11;
     }
   }
 }
