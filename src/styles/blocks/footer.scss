@@ -1,33 +1,80 @@
 .footer {
-  padding: 30px 20px 60px;
+  padding-top: 30px;
+  padding-bottom: 60px;
   background-color: $footerBgc;
-
   font-family: Avenir, sans-serif;
   font-size: 14px;
-  font-weight: 400;
+  color: $lightText;
 
   @include onTablet {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 30px 50px;
-    font-family: Avenir, sans-serif;
-    font-size: 18px;
-    font-weight: 400;
+    padding-bottom: 50px;
+    font-weight: $fontWeigthTablet;
   }
 
   @include onDesktop {
-    display: flex;
-    justify-content: space-between;
-    padding: 60px 50px;
-    font-family: Avenir, sans-serif;
+    padding-top: 60px;
+    padding-bottom: 60px;
     font-size: 18px;
-    font-weight: 400;
   }
 
-  &__content-footer {
+  &__container {
     display: flex;
     flex-direction: column;
-    gap: 140px;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
+  &__nav {
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &--list {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+
+      @include onDesktop {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+
+    &--item {
+      margin-bottom: 20px;
+    }
+
+    &--link {
+      text-decoration: none;
+      color: $lightText;
+    }
+  }
+
+  &__copymob {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__copytab {
+    bottom: none;
+    display: flex;
+    text-align: center;
+    font-weight: bold;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
 }

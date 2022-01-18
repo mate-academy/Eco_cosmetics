@@ -7,3 +7,12 @@ window.addEventListener('hashchange', () => {
     document.body.classList.remove('page__body--with-menu');
   }
 });
+
+document.getElementById('consultationForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  document.getElementsByName('name')[0].value = '';
+  document.getElementsByName('email')[0].value = '';
+  document.getElementsByName('phone')[0].value = '';
+  document.getElementsByName('message')[0].value = '';
+});
