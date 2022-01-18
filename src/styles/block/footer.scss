@@ -1,9 +1,28 @@
 .footer {
+  @include Desk {
+    display: none;
+  }
+
+  &--2 {
+    display: none;
+
+    @include Desk {
+      display: block;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   background-color: rgba(52, 79, 16, 0.5);
 
   font-family: Avenir, sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 14px;
   line-height: 130%;
 
@@ -20,6 +39,15 @@
     font-weight: bold;
     text-align: center;
 
+    @include iPad {
+      text-align: left;
+    }
+
+    @include Desk {
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+
     margin-top: 30px;
     padding-bottom: 60px;
   }
@@ -34,6 +62,7 @@
     &-img:last-child {
       padding-left: 20px;
     }
+
   }
 
   &__adress {

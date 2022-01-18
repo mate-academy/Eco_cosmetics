@@ -4,13 +4,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include Desk {
+      flex-direction: row;
+      justify-content: left;
+    }
   }
 
   &__link {
     text-decoration: none;
     font-family: Avenir, sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 14px;
     line-height: 130%;
 
@@ -20,5 +25,15 @@
     &:first-child {
       margin-top: 0;
     }
+
+    @include Desk {
+      margin-top: 0;
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
   }
 }

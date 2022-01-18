@@ -35,41 +35,62 @@
   }
 
   &__img {
-    background-image: url(../images/about-brand.jpg);
     display: none;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 
     @include iPad {
       display: block;
-      width: 369px;
-      height: 318px;
+    }
+  }
+
+  &__img-wrap {
+    display: none;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include iPad {
+      display: block;
+      max-height: 318px;
+      padding-bottom: 0;
     }
 
     @include Desk {
-      width: 480px;
-      height: 529px;
+      display: block;
+      max-height: 529px;
+      padding-bottom: 0;
     }
 
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
   }
 
   &__img-small {
-    background-image: url(../images/about-brand.jpg);
     display: none;
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: center;
 
     @include Desk {
       display: flex;
       height: 430px;
       width: 200px;
-      margin-right: -50px;
     }
   }
 
   &__img-container {
-    display: grid;
-    align-items: flex-end;
+    display: none;
+
+    @include Desk {
+      display: flex;
+      align-items: flex-end;
+
+    }
   }
 }

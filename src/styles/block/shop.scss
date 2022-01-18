@@ -1,33 +1,73 @@
 .shop {
-
   &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+
+    @include iPad {
+      display: block;
+    }
+  }
+
+  &__card {
+    &--2 {
+      display: none;
+
+      @include iPad {
+        display: block;
+      }
+    }
+
+    &--3 {
+      display: none;
+
+      @include Desk {
+        display: block;
+      }
+    }
   }
 
   &__title {
     font-family: Avenir, sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 24px;
     line-height: 150%;
 
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    color: $h2color;
+    margin: 0 auto;
+  }
 
-    color: #344f10;
+  &__card-wrap {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include iPad {
+      max-height: 300px;
+    }
+
+    @include Desk {
+      min-height: 500px;
+      object-fit: contain;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
   }
 
   &__image {
-    width: 320px;
-    height: 267px;
-    background-image: url(../images/shop-1.jpg);
-    background-size: cover;
-    background-position: center;
-
-    margin-top: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   &__nav {
@@ -35,8 +75,10 @@
   }
 
   &__button {
-
+    margin: 0 auto;
     margin-top: 78px;
+    z-index: 1;
+
   }
 
   &__price {
