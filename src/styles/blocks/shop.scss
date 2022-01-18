@@ -2,25 +2,9 @@
   display: flex;
   flex-direction: column;
 
-  &__catalog {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 25px;
-    max-width: 1200px;
-    padding-bottom: 80px;
-
-    @include onTablet {
-      padding-bottom: 40px;
-    }
-
-    @include onDesktop {
-      display: grid;
-      margin: 0 auto;
-    }
-  }
-
   &__title {
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+    padding-left: 20px;
     font-size: 24px;
     line-height: 150%;
     text-transform: uppercase;
@@ -28,6 +12,7 @@
     font-weight: $fontWeightMob;
 
     @include onTablet {
+      padding-left: 30px;
       text-align: start;
       font-weight: $fontWeigthTablet;
     }
@@ -44,11 +29,13 @@
     list-style: none;
     justify-content: space-between;
     margin-bottom: 20px;
+    padding-left: 20px;
 
     @include onTablet {
       width: max-content;
       gap: 30px;
       justify-content: start;
+      padding-left: 30px;
     }
 
     @include onDesktop {
@@ -88,15 +75,49 @@
     background-image: url(../images/photos/shop1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     margin-bottom: 20px;
 
     @include onTablet {
       display: none;
     }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 80px;
+    padding-left: 20px;
+    text-transform: uppercase;
+    font-size: 20px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__catalog {
+    display: none;
+    margin-bottom: 40px;
+    padding: 0 30px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
 
     @include onDesktop {
       display: none;
+    }
+
+    &--desktop {
+      display: none;
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        display: grid;
+      }
     }
   }
 

@@ -8,11 +8,13 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-document.getElementById('consultationForm').addEventListener('submit', (e) => {
-  e.preventDefault();
+document.querySelector('#form').addEventListener('submit',
+  function(event) {
+    event.preventDefault();
 
-  document.getElementsByName('name')[0].value = '';
-  document.getElementsByName('email')[0].value = '';
-  document.getElementsByName('phone')[0].value = '';
-  document.getElementsByName('message')[0].value = '';
-});
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('tel').value = '';
+    document.getElementById('message').value = '';
+  }
+);
