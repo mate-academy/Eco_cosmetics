@@ -7,6 +7,13 @@
   @include onTab {
     width: 768px;
   }
+  @include onDesktop {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 80px);
+    grid-template-rows: repeat(7);
+    gap: 20px;
+  }
 
   &__item_1 {
     font-family: Avenir, sans-serif;
@@ -22,6 +29,17 @@
     @include onTab {
       width: 728px;
     }
+    @include onDesktop {
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 54px;
+      letter-spacing: 0.05em;
+      text-align: left;
+      height: 162px;
+      width: 300px;
+      grid-column: 2 / 5;
+      grid-row: 2 / 3;
+    }
   }
 
   &__jar {
@@ -31,6 +49,11 @@
     transform: translateX(50%);
     @include onTab {
       transform: translateX(75%);
+    }
+    @include onDesktop {
+      transform: translateX(10%);
+      grid-column: 9 / 12;
+      grid-row: 1 / 7;
     }
   }
   &__learn-more {
@@ -57,6 +80,11 @@
       height: 1px;
       background-color: black;
       margin-top: 5px;
+    }
+    @include onDesktop {
+      transform: translateX(0);
+      grid-column: 2 / 3;
+      grid-row: 6 / 7;
     }
   }
 }
