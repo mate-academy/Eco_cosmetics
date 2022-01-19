@@ -8,13 +8,16 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    padding-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
   }
 
   &__name {
     text-align: end;
-    padding-right: 20px;
+    padding-right: 15px;
+
+    @include onTablet {
+      font-weight: $fontWeigthTablet;
+    }
   }
 
   &__line {
@@ -22,9 +25,30 @@
     border-top: 1px solid $darkGray;
   }
 
+  &__circle {
+    display: none;
+    height: 5px;
+    width: 5px;
+    background-color: $darkGray;
+    border-radius: 50%;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
   &__image {
-    position: absolute;
-    z-index: -1;
-    right: -20%;
+    position: relative;
+    right: 8%;
+    bottom: 40px;
+
+    @include onTablet {
+      right: 5%;
+    }
+
+    @include onDesktop {
+      right: 0;
+      left: 5%;
+    }
   }
 }

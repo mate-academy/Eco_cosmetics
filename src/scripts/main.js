@@ -8,13 +8,13 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-document.querySelector('#form').addEventListener('submit',
+document.getElementById('consultationForm').addEventListener('submit',
   function(event) {
     event.preventDefault();
 
     document.getElementById('name').value = '';
     document.getElementById('email').value = '';
-    document.getElementById('tel').value = '';
+    document.getElementById('phone').value = '';
     document.getElementById('message').value = '';
   }
 );

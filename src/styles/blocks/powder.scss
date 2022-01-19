@@ -4,12 +4,18 @@
   margin-bottom: 70px;
 
   @include onTablet {
-    font-weight: $fontWeigthTablet;
     margin-bottom: 170px;
   }
 
   @include onDesktop {
     margin-bottom: 220px;
+  }
+
+  &__flex {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__title {
@@ -18,6 +24,7 @@
 
     @include onTablet {
       padding-left: 30px;
+      font-weight: $fontWeigthTablet;
     }
 
     @include onDesktop {
@@ -26,9 +33,20 @@
   }
 
   &__content {
-    position: relative;
     display: flex;
     justify-content: end;
+    position: relative;
+    left: 30%;
+    margin-top: 40px;
+
+    @include onTablet {
+      left: 10%;
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      position: static;
+    }
   }
 
   &__link {
@@ -48,10 +66,20 @@
 
     @include onDesktop {
       margin: 0;
+      display: none;
     }
 
     &:hover {
       border-color: $darkGreen;
+    }
+
+    &--desktop {
+      display: none;
+      width: 100px;
+
+      @include onDesktop {
+        display: inline-block;
+      }
     }
   }
 }
