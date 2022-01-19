@@ -63,8 +63,11 @@
 
     text-transform: lowercase;
     color: $textColor;
-
     margin-top: 12px;
+
+    @include Desk {
+      margin-top: 20px;
+    }
   }
 
   &__form {
@@ -82,6 +85,10 @@
     border-bottom: 1px solid #bdbdbd;
     height: 32px;
     transition: all 0.3s;
+
+    @include Desk {
+      margin-bottom: 36px;
+    }
 
     &::placeholder {
       font-family: Avenir, sans-serif;
@@ -104,8 +111,12 @@
     }
 
     &:focus::placeholder {
-      color: #344f10;
+      color: $h2color;
     }
+
+    // &:invalid {
+    //   border: 1px solid red;
+    // }
   }
 
   input[type="number"]::-webkit-outer-spin-button,
@@ -136,20 +147,24 @@
     }
 
     &:hover {
-      border-bottom: 1px solid #333;
+      border-bottom: 1px solid $textColor;
     }
 
     &:focus {
       outline: none;
-      border-bottom: 1px solid #344f10;
+      border-bottom: 1px solid $h2color;
     }
 
     &:focus::placeholder {
-      color: #344f10;
+      color: $h2color;
     }
   }
 
   &__button {
     margin-top: 30px;
+
+    @include Desk {
+      margin-top: 50px;
+    }
   }
 }
