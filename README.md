@@ -1,4 +1,10 @@
-<!-- # Eco cosmetics landing page -->
+<<<<<<< HEAD
+
+=======
+<!-- - [DEMO LINK](https://github.com/Ol-Lav/Eco_cosmetics); -->
+
+# Eco cosmetics landing page
+>>>>>>> 44063e77b48206706728f832279bf17fd8c9b6ac
 Implement landing page according to [Figma design](https://www.figma.com/file/Fz588JKGuPS2Bk21De4KE5/brand_of_eco-cosmetics-(Edit)?node-id=1%3A2
 ) - Use BEM and SCSS
 - Large screens 2560px
