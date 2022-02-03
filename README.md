@@ -1,7 +1,7 @@
 <<<<<<< HEAD
 
 =======
-<!-- - [DEMO LINK](https://github.com/Ol-Lav/Eco_cosmetics); -->
+- [DEMO LINK](https://github.com/Ol-Lav/Eco_cosmetics);
 
 # Eco cosmetics landing page
 >>>>>>> 44063e77b48206706728f832279bf17fd8c9b6ac
