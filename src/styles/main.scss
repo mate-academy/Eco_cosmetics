@@ -1,16 +1,20 @@
 @import "utils";
-// @import "fonts";
+
 @font-face {
   font-family: "Avenir";
   src: url(../fonts/Avenir/Avenir_Book.ttf);
+  font-weight: 400;
 }
 @font-face {
   font-family: "Avenir";
   src: url(../fonts/Avenir/Avenir_Heavy.ttf);
+  font-weight: bold;
 }
+
 @font-face {
   font-family: "Sharp Sans";
-  src: url(../fonts/Sharp_Sans_No2/Sharp_Sans_No2_Book.otf);
+  src: url(../fonts/Sharp_Sans_No2/Sharp_Sans_No2_Medium.otf);
+  font-weight: bold;
 }
 
 @import "typography";
@@ -18,48 +22,9 @@
 @import "./blocks/container.scss";
 @import "./blocks/icon.scss";
 @import "./blocks/top-actions.scss";
+@import "./blocks/grid.scss";
 @import "./blocks/header.scss";
 @import "./blocks/menu.scss";
 @import "./blocks/button.scss";
-
-.grid {
-  display: grid(2, 1fr);
-  column-gap: 20px;
-  justify-content: center;
-  &--tablet {
-    display: block;
-    @include onTablet {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      column-gap: 30px;
-    }
-  }
-  &--desktop {
-    @include onTablet {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      column-gap: 20px;
-    }
-  }
-  &__item {
-    justify-self: center;
-    @for $start from 1 through 13 {
-      @for $end from 1 through 13 {
-        &--desktop-#{$start}-#{$end} {
-          @include onDesktop {
-            grid-column: #{$start} / #{$end};
-          }
-        }
-      }
-    }
-    @for $start from 1 through 7 {
-      @for $end from 1 through 7 {
-        &--tablet-#{$start}-#{$end} {
-          @include onTablet {
-            grid-column: #{$start} / #{$end};
-          }
-        }
-      }
-    }
-  }
-}
+@import "./blocks/link.scss";
+@import "./blocks/about.scss";
