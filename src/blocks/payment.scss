@@ -1,0 +1,272 @@
+.payment {
+  background-color: #e4dfd3;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0 ease;
+  z-index: 2;
+  overflow-y: auto;
+  background-repeat: no-repeat;
+  background-size: auto 39%;
+  background-position: 50% 100%;
+  height: 100%;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__checkout {
+    font-family: "Sharp Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+    border-bottom: 1px solid #bdbdbd;
+
+    @include iPhone {
+      grid-column: 1 / 3;
+    }
+
+    @include main {
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: capitalize;
+      color: #344f10;
+      border-bottom: none;
+      grid-column: 1 / 13;
+    }
+
+    @include desctop {
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: capitalize;
+      color: #344f10;
+      border-bottom: none;
+      grid-column: 1 / 13;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    margin-top: 20px;
+    grid-column: 1 / 3;
+    justify-content: center;
+
+    @include iPhone {
+      margin-top: 60px;
+      grid-column: 1 / 7;
+    }
+
+    @include main {
+      margin-top: 30px;
+      grid-column: 1 / 13;
+    }
+
+    @include desctop {
+      grid-column: 1 / 13;
+      margin-top: 30px;
+
+    }
+
+    &--item {
+      font-family: "Sharp Sans", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+      margin-right: 0;
+      padding-bottom: 8px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include iPhone {
+        margin-right: 0;
+      }
+
+      @include main {
+        margin-right: 82px;
+      }
+
+      @include desctop {
+        margin-right: 82px;
+      }
+
+      &-1 {
+        display: none;
+
+        @include main {
+          display: block;
+          color: #828282;
+        }
+
+        @include desctop {
+          display: block;
+          color: #828282;
+        }
+
+      }
+
+      &-2 {
+        display: block;
+
+        @include main {
+          display: block;
+          color: #333;
+          border-bottom: 1px solid #333;
+        }
+
+        @include desctop {
+          display: block;
+          color: #333;
+          border-bottom: 1px solid #000;
+        }
+      }
+
+      &-3 {
+        display: none;
+
+        @include main {
+          display: block;
+          color: #828282;
+        }
+
+        @include desctop {
+          display: block;
+          color: #828282;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-family: "Sharp Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+
+    @include iPhone {
+      grid-column: 1 / 7;
+    }
+
+    @include main {
+      font-size: 20px;
+      margin-top: 60px;
+      grid-column: 1 / 13;
+    }
+
+    @include desctop {
+      font-size: 20px;
+      margin-top: 60px;
+      grid-column: 1 / 13;
+    }
+  }
+
+  &__payMenu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+
+    @include iPhone {
+      grid-column: 1 / 7;
+    }
+
+    @include main {
+      grid-column: 4 / 10;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 66px;
+    }
+
+    @include desctop {
+      grid-column: 4 / 10;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 66px;
+    }
+
+    &--1 {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &--2 {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 35px;
+
+      @include main {
+        margin-top: 0;
+      }
+
+      @include desctop {
+        margin-top: 0;
+      }
+    }
+
+    &--image {
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 55px;
+      height: 31px;
+      display: block;
+      
+      &-card {
+        background-image: url(../images/card.svg);
+      }
+
+      &-car {
+        background-image: url(../images/car.svg);
+      }
+    }
+
+    &--text {
+      font-family: "Sharp Sans", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      color: #333;
+      text-decoration: none;
+      margin-top: 12px;
+
+      @include main {
+        font-size: 20px;
+      }
+
+      @include desctop {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 85px;
+  }
+}

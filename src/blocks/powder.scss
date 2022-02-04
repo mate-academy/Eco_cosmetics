@@ -1,0 +1,334 @@
+.powder {
+
+  &__textLine {
+    display: none;
+
+    @include iPhone {
+      display: none;
+    }
+
+    @include main {
+      display: block;
+      position: relative;
+      grid-column: 1 / 2;
+    }
+
+    @include desctop {
+      display: block;
+      position: relative;
+      grid-column: 1 / 2;
+    }
+
+    &--rotate {
+
+      @include main {
+        font-family: "Sharp Sans", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        color: rgba(52, 79, 16, 0.5);
+        transform: rotate(-90deg);
+        align-self: center;
+        width: 350px;
+        position: absolute;
+        top: 10%;
+        left: -200%;
+        height: 25px;
+  
+        &::before {
+          content: "";
+          height: 1px;
+          width: 100px;
+          background-color: rgba(52, 79, 16, 0.5);
+          display: inline-block;
+          align-self: center;
+          margin-right: 10px;
+          margin-bottom: 3px;
+        }
+      }
+  
+      @include desctop {
+        font-family: "Sharp Sans", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        color: rgba(52, 79, 16, 0.5);
+        transform: rotate(-90deg);
+        grid-column: 1 / 2;
+        align-self: center;
+        width: 250px;
+        position: absolute;
+        top: 15%;
+        left: -145%;
+        height: 25px;
+  
+        &::before {
+          content: "";
+          height: 1px;
+          width: 100px;
+          background-color: rgba(52, 79, 16, 0.5);
+          display: inline-block;
+          align-self: center;
+          margin-right: 10px;
+          margin-bottom: 3px;
+        }
+      }
+    }
+  }
+
+  &__titleButton {
+    grid-column: 1 / 2;
+    margin-left: 20px;
+    margin-right: -200px;
+
+    @include iPhone {
+      grid-column: 1 / 2;
+      margin-left: 30px;
+      margin-right: 0;
+    }
+
+    @include main {
+      grid-column: 2 / 5;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    @include desctop {
+      grid-column: 2 / 6;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &--title {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 110%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #344f10;
+
+      @include iPhone {
+        font-weight: 500;
+        font-size: 24px;
+      }
+
+      @include main {
+        font-weight: 500;
+        font-size: 36px;
+        margin-top: 66px;
+      }
+
+      @include desctop {
+        font-weight: 500;
+        font-size: 36px;
+        margin-top: 66px;
+      }
+    }
+
+    &--button {
+      font-family: "Sharp Sans", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #344f10;
+      margin-top: 454px;
+      display: inline-block;
+      text-decoration: none;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #344f10;
+
+      @include iPhone {
+        margin-top: 300px;
+      }
+
+      @include main {
+        margin-top: 140px;
+      }
+
+      @include desctop {
+        margin-top: 220px;
+      }
+    }
+  }
+
+  &__specification {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    justify-content: end;
+    justify-self: end;
+    padding-top: 105px;
+    margin-left: -350px;
+
+    @include iPhone {
+      grid-column: 2 / 3;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 20px;
+      justify-content: end;
+      justify-self: end;
+      padding-top: 35px;
+      margin-right: -40px;
+      margin-left: 0;
+    }
+
+    @include main {
+      grid-column: 6 / 9;
+      padding-top: 35px;
+      justify-content: end;
+      justify-self: end;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 20px;
+    }
+
+    @include desctop {
+      grid-column: 6 / 9;
+      padding-top: 35px;
+      justify-content: end;
+      justify-self: end;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 20px;
+    }
+
+    &--1 {
+      grid-column: 1 / 3;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--2 {
+      grid-column: 3 / 4;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    &--item {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: right;
+      text-transform: capitalize;
+      color: #333;
+      padding-bottom: 52px;
+      display: inline-block;
+
+      @include iPhone {
+        font-weight: 500;
+      }
+
+      @include main {
+        font-weight: 500;
+      }
+
+      @include desctop {
+        font-weight: 500;
+      }
+
+      &-line {
+        width: 1px;
+        height: 1px;
+        display: block;
+        border-radius: 50%;
+        background-color: #333;
+        margin-bottom: 65px;
+        margin-top: 10px;
+
+        @include iPhone {
+          width: 1px;
+          height: 1px;
+          margin-bottom: 65px;
+        }
+
+        @include main {
+          width: 5px;
+          height: 5px;
+          margin-bottom: 61px;
+        }
+
+        @include desctop {
+          width: 5px;
+          height: 5px;
+          margin-bottom: 61px;
+        }
+
+        &::before {
+          content: "";
+          width: 76px;
+          height: 1px;
+          background-color: #333;
+          display: inline-block;
+          margin-bottom: 15px;
+          margin-left: -74px;
+
+          @include iPhone {
+            margin-bottom: 15px;
+          }
+
+          @include main {
+            margin-bottom: 13px;
+            margin-left: -74px;
+          }
+
+          @include desctop {
+            margin-bottom: 13px;
+            margin-left: -74px;
+          }
+        }
+      }
+    }
+  }
+
+  &__capacity {
+    grid-column: 3 / 4;
+    overflow: hidden;
+    margin-top: 70px;
+    object-fit: contain;
+    margin-left: -40px;
+    display: block;
+
+    @include iPhone {
+      grid-column: 3 / 4;
+      overflow: hidden;
+      margin-top: 0;
+      margin-left: 0;
+    }
+
+    @include main {
+      grid-column: 9 / 13;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      overflow: visible;
+    }
+
+    @include desctop {
+      grid-column: 9 / 13;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      overflow: visible;
+    }
+
+    &--image {
+
+      @include main {
+        width: 99%;
+      }
+
+      @include desctop {
+        width: 99%;
+      }
+    }
+  }
+}
