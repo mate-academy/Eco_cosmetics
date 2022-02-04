@@ -2,15 +2,36 @@
   &__info {
     margin-bottom: 35px;
     &--extra {
-      // text-align: right;
+      position: relative;
+      display: block;
+      text-align: right;
       text-transform: capitalize;
+      grid-column: 1 / 2;
+      // justify-items: end;
+      &:after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        background-color: $c-gray-main;
+        width: 76px;
+        top: 30%;
+        right: -65%;
+      }
     }
   }
   &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    align-items: end;
+    position: relative;
+    width: 100%;
+
+    height: 390px;
 
     background-image: url(../images/icons/jar.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: 100% 0;
+    background-position: 200px;
   }
 }
