@@ -14,7 +14,7 @@
     font-family: Avenir, sans-serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 24px;
     text-align: left;
 
@@ -23,8 +23,22 @@
       height: 120px;
       width: 380px;
       grid-column: 2 / 6;
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+
+        height: 1px;
+        width: 530px;
+        background-color: #344f1080;
+
+        position: absolute;
+        top: -100px;
+        left: -150px;
+
+      }
     }
-  
+
   }
 
   &__item-2 {
@@ -39,7 +53,7 @@
     letter-spacing: 0.05em;
     text-align: left;
     text-transform: uppercase;
-    
+
     @include onTab {
       text-align: center;
     }
@@ -52,7 +66,17 @@
       font-size: 24px;
       font-weight: 500;
       line-height: 36px;
+      position: relative;
       grid-column: 7 / 11;
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 650px;
+        background-color: #344f1080;
+        position: absolute;
+        bottom: -100px;
+      }
     }
   }
 }
