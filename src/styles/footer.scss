@@ -5,20 +5,17 @@
   height: 470px;
   width: 100%;
   background-color: #344f1080;
-  padding: 60px 50px 66px;
+  padding: 30px 50px 66px;
   box-sizing: border-box;
   @include onTab {
+    padding: 60px 130px 66px;
     height: 280px;
     flex-direction: row;
     gap: 10px;
     align-items: center;
     position: relative;
-  }
-  @include onDesktop {
     margin-top: 200px;
     display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: 6;
   }
 
   &__list {
@@ -28,13 +25,21 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    @include onDesktop {
+    @include onTab {
       display: flex;
-      flex-direction: row;
       list-style: none;
-      margin: 0;
-      padding: 0;
-      grid-column: 1 / 2;
+    }
+    @include onDesktop {
+      flex-direction: row;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__nav {
+    @include onTab {
+      grid-row: 1 / 5;
+    }
+    @include onDesktop {
       grid-row: 1 / 2;
     }
   }
@@ -48,6 +53,9 @@
     text-align: left;
     text-decoration: none;
     color: #e4dfd3;
+    @include onTab {
+      font-size: 18px;
+    }
   }
 
   &__icons {
@@ -56,7 +64,7 @@
     width: 60px;
     height: 20px;
     gap: 20px;
-    @include onDesktop {
+    @include onTab {
       grid-column: 2 / 3;
       grid-row: 5 / 6;
     }
@@ -65,27 +73,40 @@
   &__instagram {
     height: 20px;
     width: 20px;
-    background-color: blanchedalmond;
+    background-image: url(../../src/images/inst.svg);
   }
   &__facebook {
     height: 20px;
     width: 20px;
-    background-color: blanchedalmond;
+    background-image: url(../../src/images/faceBook.svg);
   }
 
   &__items {
-    font-family: Sharp Sans, sans-serif;
-    font-weight: 400;
-    color: #e4dfd3;
+    font-family: Avner, sans-serif;
     font-size: 14px;
-    @include onDesktop {
-      font-weight: bold;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: left;
+    text-decoration: none;
+    color: #e4dfd3;
+    &--last {
+      font-family: Avner, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 18px;
+      text-align: left;
+      text-decoration: none;
+      color: #e4dfd3;
+    }
+    @include onTab {
       font-size: 18px;
     }
   }
   &__Ukrain {
     margin-top: 30px;
-    @include onDesktop {
+    @include onTab {
       margin-top: 0;
       grid-column: 2 / 3;
       grid-row: 1 / 2;
@@ -93,7 +114,7 @@
   }
   &__mail {
     margin-top: 12px;
-    @include onDesktop {
+    @include onTab {
       margin-top: 0;
       grid-column: 2 / 3;
       grid-row: 2 / 3;
@@ -101,7 +122,7 @@
   }
   &__phone {
     margin-top: 12px;
-    @include onDesktop {
+    @include onTab {
       margin-top: 0;
       grid-column: 2 / 3;
       grid-row: 3 / 4;
@@ -109,21 +130,23 @@
   }
   &__support {
     margin-top: 20px;
-    @include onDesktop {
+    @include onTab {
       margin-top: 0;
       grid-column: 2 / 3;
       grid-row: 4 / 5;
     }
   }
   &__Copyright {
-    margin-top: 30px;
+    display: inline-block;
+    margin: 30px auto 0;
     width: 198px;
     text-align: center;
-    @include onDesktop {
-      margin-top: 0;
+    @include onTab {
+      font-size: 18px;
       grid-column: 1 / 2;
       grid-row: 5 / 6;
-      width: 374px;
+      width: max-content;
+      margin: 30px 0 0;
     }
   }
 }
