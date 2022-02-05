@@ -1,0 +1,66 @@
+.jar {
+  display: grid;
+  height: 398px;
+  grid-template-rows: repeat(5, 80px);
+  position: relative;
+  &__main {
+    height: 382px;
+    width: 397px;
+  }
+  &__items {
+    &--1 {
+      grid-row: 1;
+    }
+    &--2 {
+      grid-row: 2;
+    }
+    &--3 {
+      grid-row: 3;
+    }
+    &--4 {
+      grid-row: 4;
+    }
+    &--5 {
+      grid-row: 5;
+    }
+  }
+}
+
+.item {
+  font-family: Avenir, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+  position: absolute;
+  left: -48px;
+  transform: translateX(-100%);
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 76px;
+    background-color: #333;
+    position: absolute;
+    left: 100%;
+    margin-left: 20px;
+    bottom: 10px;
+  }
+  @include onDesktop {
+    left: -128px;
+    transform: translateX(-100%);
+    &::before {
+      content: "";
+      display: block;
+      height: 5px;
+      width: 5px;
+      background-color: #333;
+      position: absolute;
+      left: 100%;
+      margin-left: 95px;
+      bottom: 8px;
+      border-radius: 50%;
+    }
+  }
+}
