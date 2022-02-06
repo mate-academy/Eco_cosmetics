@@ -45,12 +45,25 @@
   &__title {
     font-family: Avenir, sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: normal;
     font-size: 24px;
     line-height: 150%;
 
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: $h2color;
+
+    @include iPad {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 150%;
+      text-align: left;
+    }
+
+    @include Desk {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 110%;
+    }
   }
 
   &__description {
@@ -85,6 +98,13 @@
     border-bottom: 1px solid #bdbdbd;
     height: 32px;
     transition: all 0.3s;
+
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: #828282;
 
     @include Desk {
       margin-bottom: 36px;
@@ -127,12 +147,19 @@
 
   &__form-text {
     resize: none;
-    height: 52px;
+    height: 68px;
     background-color: #e4dfd3;
     box-sizing: border-box;
     border: transparent;
     border-bottom: 1px solid #bdbdbd;
     transition: all 0.3s;
+
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: #828282;
 
     &::placeholder {
       font-family: Avenir, sans-serif;
@@ -143,7 +170,7 @@
 
       text-transform: capitalize;
       color: #828282;
-      padding-top: 24px;
+      padding-top: 38px;
     }
 
     &:hover {
@@ -161,6 +188,7 @@
   }
 
   &__button {
+    margin: 0 auto;
     margin-top: 30px;
 
     @include Desk {
