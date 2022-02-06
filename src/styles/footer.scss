@@ -31,13 +31,12 @@
     }
     @include onDesktop {
       flex-direction: row;
-      grid-row: 1 / 2;
     }
   }
 
   &__nav {
     @include onTab {
-      grid-row: 1 / 5;
+      grid-row: 1 / 4;
     }
     @include onDesktop {
       grid-row: 1 / 2;
@@ -65,8 +64,19 @@
     height: 20px;
     gap: 20px;
     @include onTab {
+      grid-column: 1 / 2;
+      grid-row: 4 / 5;
+    }
+    @include onDesktop {
       grid-column: 2 / 3;
       grid-row: 5 / 6;
+    }
+  }
+
+  &__item {
+    transition-duration: 0.4s;
+    &:hover {
+      transform: scale(1.05);
     }
   }
 
@@ -74,11 +84,19 @@
     height: 20px;
     width: 20px;
     background-image: url(../../src/images/inst.svg);
+    transition-duration: 0.4s;
+    &:hover {
+      transform: scale(1.25);
+    }
   }
   &__facebook {
     height: 20px;
     width: 20px;
     background-image: url(../../src/images/faceBook.svg);
+    transition-duration: 0.4s;
+    &:hover {
+      transform: scale(1.25);
+    }
   }
 
   &__items {
@@ -147,6 +165,11 @@
       grid-row: 5 / 6;
       width: max-content;
       margin: 30px 0 0;
+    }
+    @include onDesktop {
+      &::before {
+        content: "Copyright";
+      }
     }
   }
 }
