@@ -41,6 +41,7 @@
 }
 
 .subheader {
+
   &--main {
     padding-bottom: 12px;
     font-family: inherit;
@@ -53,6 +54,7 @@
     text-transform: uppercase;
 
     color: $c-green-main;
+    position: relative;
     @include onTablet {
       font-weight: 500;
       text-align: center;
@@ -63,13 +65,28 @@
       font-weight: 500;
       font-size: 24px;
       line-height: 36px;
+      margin-bottom: 300px;
     }
   }
   &--extra {
+    position: relative;
     display: none;
     @include onDesktop {
+      display: block;
       font-family: inherit;
       font-weight: 500;
+
+      &:after {
+        content: "";
+        height: 1px;
+        width: 711px;
+        background-color: #344f1080;
+        position: absolute;
+        top: 300px;
+        left: 100%;
+
+      }
+
     }
   }
 }

@@ -5,10 +5,33 @@
     justify-content: space-between;
   }
   &__list {
+    position: relative;
     display: flex;
     padding: 0;
     margin: 0 0 20px;
     list-style-type: none;
+    @include onDesktop {
+      &:before {
+        content: "shop";
+        font-family: "Sharp Sans", sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+
+        text-align: center;
+        letter-spacing: 0.05em;
+
+        color: #344f1080;
+
+        transform: rotate(-90deg);
+        position: absolute;
+
+        height: 16px;
+        left: -25%;
+        bottom: -250%;
+
+      }
+    }
   }
   &__item {
     flex-grow: 1;
@@ -50,6 +73,14 @@
       @media (max-width:740px) {
         display: none;
       }
+
+      &-2 {
+        display: none;
+        @include onDesktop {
+          display: inline-block;
+        }
+
+      }
     }
 
     &::after {
@@ -80,6 +111,13 @@
       &--extra {
         @media (max-width:740px) {
           display: none;
+        }
+
+        &-2 {
+          display: none;
+          @include onDesktop {
+            display: inline-block;
+          }
         }
       }
     }
