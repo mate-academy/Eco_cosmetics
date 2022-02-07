@@ -1,0 +1,25 @@
+%burger-line {
+  display: block;
+  width: 20px;
+  height: 1px;
+
+  background-color: $primary;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__line {
+    @extend %burger-line;
+    margin: 5px 0;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+
+    @extend %burger-line;
+  }
+}

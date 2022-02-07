@@ -4,3 +4,46 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin media-breakpoint-up($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin narrow($width) {
+  @keyframes narrow {
+    to {
+      width: $width;
+    }
+  }
+}
+
+@mixin zoomIn {
+  cursor: zoom-in;
+  transition: transform $duration-light ease-in-out,
+    box-shadow $duration-light ease-in-out;
+
+  &:hover {
+    box-shadow: 0 20px 40px #0000004d;
+    transform: scale(1.1);
+  }
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+
+  border-radius: 50%;
+}
