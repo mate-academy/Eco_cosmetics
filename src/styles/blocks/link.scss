@@ -1,0 +1,49 @@
+.link {
+  display: block;
+  position: relative;
+  font-family: "Sharp Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 40px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $c-green-main;
+  text-decoration: none;
+  transition: font-weight 0.2s linear;
+  &:hover {
+    font-weight: bold;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 30%;
+      height: 1px;
+      background-color: $c-green-main;
+      bottom: -10px;
+    }
+  }
+
+  @include onDesktop {
+    &:after {
+      width: 20%;
+    }
+
+    &-extra {
+      @include onTablet {
+        margin-bottom: 100px;
+
+      }
+      @include onDesktop {
+        &:after {
+          // width: 35%;
+
+        }
+      }
+    }
+    &--2 {
+      margin-bottom: 40px;
+    }
+  }
+}

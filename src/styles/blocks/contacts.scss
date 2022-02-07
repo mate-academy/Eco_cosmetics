@@ -1,0 +1,86 @@
+.contacts {
+  display: block;
+  &__item {
+    margin-bottom: 12px;
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+  &__link {
+    display: block;
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    // margin-bottom: 12px;
+    color: #e4dfd3;
+    text-decoration: none;
+    transition: color 0.2s linear;
+    &:hover {
+      color: $c-green-main;
+    }
+    @include onTablet {
+      &:first-child {
+        margin-top: 30px;
+      }
+    }
+    &:last-child {
+      // margin-bottom: 30px;
+    }
+  }
+  &__extra-info {
+    font-size: 14px;
+    line-height: 21px;
+    color: #e4dfd3;
+    margin-bottom: 30px;
+  }
+
+  &__copyright {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-family: "Sharp Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    margin: 0 auto;
+    color: #e4dfd3;
+    text-decoration: none;
+    &::before {
+      display: block;
+      content: url(../images/icons/copyright.svg);
+      position: absolute;
+      left: 15%;
+      top: 0;
+    }
+    @include onTablet {
+      text-align: left;
+      &::before {
+        display: block;
+        content: url(../images/icons/copyright.svg);
+        position: absolute;
+        left: -3%;
+        top: 0;
+      }
+    }
+    @include onDesktop {
+      &::before {
+        display: block;
+        content: url(../images/icons/copyright.svg);
+        position: absolute;
+        left: 22%;
+        top: 0;
+      }
+      &::after {
+        display: block;
+        content: "Copyright";
+        position: absolute;
+        left: 5%;
+        top: 0;
+      }
+    }
+  }
+}
