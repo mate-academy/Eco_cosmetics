@@ -8,11 +8,11 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-const form = document.querySelector('.form');
+// const form = document.querySelector('.form');
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  form.reset();
+// form.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   form.reset();
 
-  window.location.href = '#';
-});
+//   window.location.href = '#';
+// });
