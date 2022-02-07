@@ -1,0 +1,188 @@
+.header {
+  max-width: 1260px;
+  padding: 15px 0 0;
+  margin: 0 auto;
+  font-family: "Sharp Sans Display No2";
+  color: $burgerMenu-color;
+
+  &__burger-menu {
+    width: 20px;
+    height: 1px;
+    position: relative;
+    background-color: $burgerMenu-color;
+    transition: transform 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: 0;
+      right: 0;
+      background-color: $burgerMenu-color;
+      height: 1px;
+      transition: transform 0.3s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: $burgerMenu-color;
+      transition: transform 0.3s;
+    }
+
+    &.opened {
+      background-color: transparent;
+      margin-bottom: 20px;
+
+      &:before,
+      &:after {
+        background-color: $mobileNavColor;
+        top: 0;
+      }
+
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after  {
+        transform: rotate(-45deg);
+      }
+    }
+
+    @include onDeskTop {
+      display: none;
+    }
+  }
+
+  @include onDeskTop {
+    padding: 40px 0 0;
+  }
+
+  &__logo {
+    width: 24px;
+    display: block;
+
+    @include onDeskTop {
+      width: 50px;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    &-bag {
+
+      transition: transform $transitionTime;
+      &:hover {
+        transform:scale(1.03)
+      }
+    }
+  }
+
+  &__shopping-bag {
+    width: 20px;
+    height: 24px;
+    
+    @include onDeskTop {
+      margin: 0;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__logo--wrapp {
+    display: flex;
+    align-items: center;
+
+    & p:last-child {
+      margin-left: 12px;
+    }
+  }
+
+  &__logo--name {
+    display: none;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+
+    @include onDeskTop {
+      text-transform: uppercase;
+      margin: 0;
+      display: block;
+    }
+  }
+
+  &__image {
+    margin-top: 12px;
+    width: 100%px;
+    height: 260px;
+    background-image: url(../images/header_img.png);
+    background-size: cover;
+    background-position: center;
+
+    @include onDeskTop {
+      height: 450px;
+      margin-top: 0;
+    }
+  }
+
+  &__text {
+    padding: 0 15px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+    font-family: "Avenir";
+    color: #333333;
+
+    @include onDeskTop {
+      display: block;
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 300px;
+      text-align: initial;
+    }
+  }
+
+  &__brand-info {
+    margin: 0;
+    font-size: 24px;
+
+    @include onDeskTop {
+      font-weight: 500;
+      font-size: 60px;
+      line-height: 72px;
+    }
+  }
+
+  &__line-breaker {
+    display: none;
+
+    @include onDeskTop {
+      display: block;
+    }
+  }
+
+  &__sale-info {
+    margin: 12px 0 0;
+    font-size: 18px;
+    line-height: 150%;;
+
+    @include onDeskTop {
+      font-weight: 500;
+      margin-top: 30px;
+      font-size: 22px
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+  }
+}
+
+

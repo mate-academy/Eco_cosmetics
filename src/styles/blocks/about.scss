@@ -1,0 +1,38 @@
+.about {
+  &__image-big {
+    display: none;
+
+    @include onDeskTop {
+      & {
+        display: block;
+        height: 480px;
+        background-image: url(../images/about_big.png);
+        background-size: cover;
+        background-position: center;
+      } 
+    }
+  }
+  &__image-small {
+    display: none; 
+    @extend %center-background;
+
+    @include onDeskTop {
+      & {
+        display: block;
+        margin-top: 50px;
+        height: 430px;
+        background-image: url(../images/about_big.png);
+      } 
+    }
+  }
+
+  &__text {
+     @include onDeskTop {
+       padding-top: 25px;
+     }
+  }
+
+  &__link {
+    margin-top: 40px;
+  }
+}

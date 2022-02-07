@@ -1,0 +1,217 @@
+.powder {
+  position: relative;
+
+  @include onDeskTop {
+    margin-top: 200px;
+  }
+
+  &__vertical-text {
+
+    @include onDeskTop {
+      margin-top: -100px;
+    }
+  }
+
+  &__title {
+
+    @include onDeskTop {
+      margin-bottom: 0;
+      padding-top: 70px;
+    }
+  }
+
+  &__img {
+    height: 400px;
+    width: 150px;
+    background-image: url(../images/powder-half.svg);
+    @extend %center-background;
+
+    transform: translateX(115%);
+
+    &-desktop {
+      display: none;
+      @extend %center-background;
+      @include onDeskTop {
+        height: 407px;
+        width: 390px;
+        display: block;
+        grid-row: 1 / 5;
+        background-image: url(../images/powder-full.svg);
+      }
+    }
+
+    @include onTablet {
+      transform: translateX(300%);
+    }
+  }
+
+  &__desktop-description {
+    display: none;
+
+    @include onDeskTop {
+      height: 406px;
+      grid-row: 1;
+      display: block;
+      background-image: url(../images/Frame-1.png);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__wrapp {
+    margin-top: 40px;
+    position: relative;
+    @include onDeskTop {
+      display: none;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 150%;
+    color: $darBckg;
+    position: absolute;
+
+    &::after {
+      content: "";
+      width: 75px;
+      height: 1px;
+      background-color: $burgerMenu-color;
+      position: absolute;
+      top: 50%;
+      left: 140%;
+      transform: rotate(1deg);
+    }
+
+    &-1 {
+      top: 1.3%;
+      left: 25%;
+
+      @include onTablet {
+        left: 45%;
+      }
+    }
+
+    &-2 {
+      top: 20.3%;
+      left: 28%;
+
+      @include onTablet {
+        left: 46%;
+      }
+    }
+
+    &-3 {
+      top: 35.3%;
+      left: 20%;
+
+      &::after {
+        left: 113%;
+      }
+
+      @include onTablet {
+        left: 41%;
+      }
+    }
+
+    &-4 {
+      top: 60.3%;
+      left: 8%;
+
+      &::after {
+        left: 117%;
+      }
+
+      @include onTablet {
+        left: 40%;
+      }
+    }
+
+    &-5 {
+      top: 74.3%;
+      left: 20%;
+
+      &::after {
+        left: 117%;
+      }
+
+      @include onTablet {
+        left: 44%;
+      }
+    }
+    @include onDeskTop {
+      display: none;
+    }
+  }
+
+  &__line-breaker {
+    display: block;
+
+    @include onDeskTop {
+      display: none;
+    }
+  }
+
+  &__cards {
+    margin-top: 60px;
+
+    @include onDeskTop {
+      margin-top: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__card {
+    margin-bottom: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-img {
+      display: block;
+
+      @include onDeskTop {
+        width: 98px;
+        height: 84px;
+      }
+    }
+
+    &-text {
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 130%;
+      text-align: center;
+      text-transform: uppercase;
+      color: #000000;
+    }
+
+    @include onDeskTop {
+      margin-bottom: 0;
+      flex-basis: 33.33%;
+    }
+  }
+
+  &__mobile {
+
+    @include onDeskTop {
+      display: none;
+    }
+  }
+
+  &__desktop {
+    display: none;
+
+    @include onDeskTop {
+      margin-top: 0;
+      display: block;
+      grid-row: 2;
+    }
+  }
+}

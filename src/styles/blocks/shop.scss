@@ -1,0 +1,134 @@
+.shop {
+  & {
+    @include onDeskTop {
+      margin-top: 200px;
+    }
+  }
+  &__title {
+    text-align: center;
+
+    @include onDeskTop {
+      margin-bottom: 0;
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include onDeskTop {
+      grid-row: 2;
+      margin: 20px 0 60px;
+    }
+  }
+
+  &__item {
+    flex-basis: 25%;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    width: max-content;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: $shopLinksColor;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 150%;
+    transition: color $transitionTime;
+
+    &:hover {
+      color: $darBckg;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $darBckg;
+      visibility: hidden;
+      font-weight: bold;
+      bottom: -10px;
+      height: 2px;
+      right: 0;
+      left: 0;
+      transition: visibility $transitionTime;
+    }
+
+    &:hover::after {
+      visibility: visible;
+    }
+
+    @include onDeskTop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+    }
+  }
+  
+  &__card {
+
+    &--2,
+    &--3 {
+      display: none;
+
+      @include onDeskTop {
+        display: block;
+      }
+    }
+
+    @for $i from 1 through 3 {
+      &--img-#{$i} {
+        height: 260px;
+        background-image: url(../images/shop_mobile-img.png);
+        @extend %center-background;
+
+        transition: transform $transitionTime;
+
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.01);
+        }
+
+        @include onDeskTop {
+          height: 600px;
+          background-image: url(../images/shop_img-#{$i}.png);
+        }
+      }
+    }
+
+    &--description {
+      margin-top: 20px;
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $darBckg;
+    }
+
+    &--price {
+      margin-top: 10px;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $darBckg;
+    }
+  }
+
+  &__button {
+    margin-top: 70px;
+
+    @include onDeskTop {
+      margin-top: 40px;
+    }
+  }
+}

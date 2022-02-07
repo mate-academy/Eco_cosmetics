@@ -1,0 +1,102 @@
+.footer {
+  margin-top: 60px;
+  padding: 30px 0 60px;
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  color: $footer-text-color;
+  background-color: $footer-background-color;
+
+  @include onDeskTop {
+    max-width: 100%;
+    margin-top: 200px;
+    padding: 60px 0 70px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+  }
+
+  &__nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onDeskTop {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-item {
+      margin-bottom: 20px;
+      transition: transform $transitionTime;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+ 
+
+  &__contact {
+    
+    &-item {
+      color: inherit;
+      margin-bottom: 12px;
+      display: block;
+
+      &:nth-child(3) {
+        margin-bottom: 20px;
+      }
+
+      @include onDeskTop {
+        margin-bottom: 20px;
+        &:nth-child(4){
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  &__nav-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__social-icons { 
+    margin-bottom: 30px;
+    grid-row: 2;
+
+    &-link {
+      text-decoration: none;
+    }
+
+  }
+
+  &__social-icon {
+    margin-right: 20px;
+  }
+
+  &__copyright {
+    max-width: 261px;
+    margin-top: 30px;
+    text-align: center;
+    text-transform: uppercase;
+
+    &-hidden {
+      display: none;
+
+      @include onDeskTop {
+        display: inline-block;
+      }
+    }
+
+    @include onDeskTop {
+      margin-top: 0;
+      grid-row: 2;
+      max-width: max-content;
+    }
+  }
+}

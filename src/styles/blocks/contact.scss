@@ -1,0 +1,46 @@
+.contact {
+
+  &__vertical-text {
+    @include onDeskTop {
+      margin-top: -160px;
+    }
+  }
+
+  &__title  {
+    @include onDeskTop {
+      text-transform: capitalize;
+    }
+  }
+  &__text {
+    grid-row: 2;
+
+    @include onDeskTop {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 150%;
+      text-transform: lowercase;
+    }
+  }
+
+  &__button {
+    border: 1px solid $darBckg;
+    margin: 0;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+
+  &__img {
+    @extend %center-background;
+    @include onDeskTop {
+      grid-row: 1/4;
+      background-image: url(../images/Contact-img.png);
+
+    }
+  }
+
+  @include onDeskTop {
+    margin-top: 200px;
+  }
+}
