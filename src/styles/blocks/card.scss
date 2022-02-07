@@ -1,0 +1,35 @@
+.card {
+  $block: &;
+
+  text-align: center;
+  margin-bottom: 50px;
+  cursor: pointer;
+
+  transition: color $duration-default ease-in;
+
+  @include media-breakpoint-up($md) {
+    margin-bottom: 0;
+  }
+
+  &__icon {
+    min-height: 85px;
+    margin-bottom: 15px;
+
+    @include media-breakpoint-up($md) {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__info {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    color: $light-green;
+
+    #{$block}__icon {
+      animation: shake 1.5s ease-in;
+    }
+  }
+}

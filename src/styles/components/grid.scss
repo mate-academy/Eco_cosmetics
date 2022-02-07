@@ -5,12 +5,12 @@
   @include media-breakpoint-up($md) {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 20px 30px;
+    gap: $gap-default 30px;
   }
 
   @include media-breakpoint-up($lg) {
     grid-template-columns: repeat(12, 1fr);
-    gap: 20px;
+    gap: $gap-default;
   }
 
   &--align-center {
@@ -21,6 +21,14 @@
     display: block;
 
     @include media-breakpoint-up($md) {
+      display: grid;
+    }
+  }
+
+  &--lg {
+    display: block;
+
+    @include media-breakpoint-up($lg) {
       display: grid;
     }
   }
