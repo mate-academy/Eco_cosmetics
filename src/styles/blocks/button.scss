@@ -18,16 +18,23 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   text-decoration: none;
-  border: 0;
+  // border: 0;
+  border: 1px solid transparent;
 
   cursor: pointer;
   outline: none;
+  transition: color 0.3s border-color 0.3s background-color 0.3s linear;
   @include onTablet {
     // margin-bottom: 40px;
     width: 280px;
   }
   @include onDesktop {
     width: 280px;
+  }
+  &:hover {
+    background-color: #e5e5e5;
+    color: $c-gray-main;
+    border-color: $c-gray-main;
   }
   &__header {
     position: relative;
@@ -36,7 +43,7 @@
         content: "";
         width: 610px;
         height: 1px;
-        background-color: #344f1080;
+        background-color: $c-green-main;
         position: absolute;
         top: 250px;
       }

@@ -17,7 +17,6 @@
         font-weight: bold;
         font-size: 14px;
         line-height: 18px;
-
         text-align: center;
         letter-spacing: 0.05em;
 
@@ -29,7 +28,18 @@
         height: 16px;
         left: -25%;
         bottom: -250%;
+      }
+      &:after {
+        content: "";
+        background-color: #344f1080;
 
+        transform: rotate(-180deg);
+        position: absolute;
+
+        height: 100px;
+        width: 1px;
+        left: -17%;
+        bottom: -750%;
       }
     }
   }
@@ -47,10 +57,13 @@
     text-transform: uppercase;
     text-decoration: none;
     position: relative;
+    transition: font-size 0.3s font-weight 0.3s color 0.3s linear;
 
     color: #828282;
     &:hover {
       color: $c-gray-main;
+      font-size: 20px;
+      font-weight: bold;
       &:after {
         content: "";
         display: block;
@@ -73,7 +86,6 @@
       @media (max-width:740px) {
         display: none;
       }
-
       &-2 {
         display: none;
         @include onDesktop {
@@ -82,7 +94,6 @@
 
       }
     }
-
     &::after {
       content: "";
       display: block;
@@ -97,6 +108,11 @@
     object-fit: content;
     object-position: center;
     margin-bottom: 20px;
+    transition: transform 0.3s linear;
+    &:hover {
+      cursor: zoom-in;
+      transform: scale(1.2);
+    }
 
     &-description {
       font-family: Avenir, sans-serif;

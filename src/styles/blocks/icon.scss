@@ -1,4 +1,21 @@
 .icon {
+  // position: relative;
+  @include onDesktop {
+    &::before {
+      position: absolute;
+      content: "witch of mountain winds";
+      line-height: 18px;
+      font-family: "Sharp Sans", sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      display: block;
+      left: 10%;
+      top: 7%;
+      text-transform: uppercase;
+      color: $c-green-main;
+      letter-spacing: 0.05em;
+    }
+  }
   &__image {
     width: 24px;
     height: 24px;
@@ -8,6 +25,7 @@
     }
   }
   &__logo {
+    position: relative;
     width: 24px;
     height: 24px;
     @include onDesktop {

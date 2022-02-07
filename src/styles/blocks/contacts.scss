@@ -2,6 +2,9 @@
   display: block;
   &__item {
     margin-bottom: 12px;
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
   }
   &__link {
     display: block;
@@ -13,6 +16,12 @@
     // margin-bottom: 12px;
     color: #e4dfd3;
     text-decoration: none;
+    transition: font-size 0.3s font-weight 0.3s color 0.3s linear;
+    &:hover {
+      font-size: 20px;
+      font-weight: bold;
+      color: $c-green-main;
+    }
     @include onTablet {
       &:first-child {
         margin-top: 30px;
@@ -48,6 +57,32 @@
       position: absolute;
       left: 15%;
       top: 0;
+    }
+    @include onTablet {
+      text-align: left;
+      &::before {
+        display: block;
+        content: url(../images/icons/copyright.svg);
+        position: absolute;
+        left: -3%;
+        top: 0;
+      }
+    }
+    @include onDesktop {
+      &::before {
+        display: block;
+        content: url(../images/icons/copyright.svg);
+        position: absolute;
+        left: 22%;
+        top: 0;
+      }
+      &::after {
+        display: block;
+        content: "Copyright";
+        position: absolute;
+        left: 5%;
+        top: 0;
+      }
     }
   }
 }

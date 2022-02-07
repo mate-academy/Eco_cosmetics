@@ -1,6 +1,6 @@
 .about {
   &__info {
-    // margin-bottom: 35px;
+
     &--extra {
       position: relative;
       display: block;
@@ -19,8 +19,7 @@
       }
 
       @include onTablet {
-
-        transform: translateX(-70%);
+        transform: translate(-70%, 50%);
         margin-bottom: 40px;
         &:after {
           content: "";
@@ -31,16 +30,14 @@
           top: 50%;
           right: -20%;
         }
-
       }
       @include onDesktop {
-        transform: translate(-90%, 100%);
+        transform: translate(-90%, 110%);
         margin-bottom: 50px;
         &:after {
           right: -15%;
         }
       }
-      // justify-items: end;
     }
   }
   &__container {
@@ -61,6 +58,12 @@
 
   }
   &__photo {
+    cursor: zoom-in;
+    transition: transform 0.3s box-shadow 0.3s linear;
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 10px 10px 10px $c-green-main;
+    }
 
     &--extra {
       display: block;
@@ -92,6 +95,14 @@
           height: 589px;
           width: 100%;
         }
+      }
+    }
+    &--special {
+      display: none;
+      @include onDesktop {
+        display: block;
+        height: 430px;
+        align-self: end;
       }
     }
   }

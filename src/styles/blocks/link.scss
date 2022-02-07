@@ -9,17 +9,22 @@
   margin-bottom: 40px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #344f10;
+  color: $c-green-main;
   text-decoration: none;
-  &:after {
-    content: "";
-    position: absolute;
-    width: 30%;
-    height: 1px;
-    background-color: #344f10;
-    bottom: -50%;
-    left: 0;
+  transition: font-size 0.3s linear;
+  &:hover {
+    font-size: 20px;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 30%;
+      height: 1px;
+      background-color: $c-green-main;
+      bottom: -10px;
+    }
   }
+
   @include onDesktop {
     &:after {
       width: 20%;
@@ -28,19 +33,11 @@
     &-extra {
       @include onTablet {
         margin-bottom: 100px;
-        &:after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 1px;
-          background-color: #344f10;
-          bottom: -50%;
-          left: 0;
-        }
+
       }
       @include onDesktop {
         &:after {
-          width: 35%;
+          // width: 35%;
 
         }
       }
