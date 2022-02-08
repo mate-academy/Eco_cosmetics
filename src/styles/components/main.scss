@@ -1,4 +1,44 @@
 .main {
+
+  &__section-content {
+    position: relative;
+  }
+
+  &__section-naming {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotate(-90deg) translate(-100%, 50%);
+    transform-origin: left;
+
+    font-family: Sharp sans, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: $primary;
+    opacity: 0.5;
+
+    @include media-breakpoint-up($lg) {
+      display: block;
+    }
+  }
+
+  &__section-naming-text {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      transform: translateX(-110%);
+      top: 50%;
+
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: $primary;
+    }
+  }
+
   &__section {
     padding-top: $anchor-indent;
     margin-top: -$anchor-indent;

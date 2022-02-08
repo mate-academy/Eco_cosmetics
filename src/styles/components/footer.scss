@@ -1,4 +1,5 @@
 .footer {
+
   padding: 25px 0 60px;
 
   background-color: $light-green;
@@ -7,6 +8,7 @@
   color: $beige;
 
   @include media-breakpoint-up($md) {
+    display: grid;
     padding-bottom: 50px;
   }
 
@@ -15,8 +17,20 @@
     font-size: $fs-regular;
   }
 
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-default;
+
+    @include media-breakpoint-up($md) {
+      display: grid;
+    }
+  }
+
   &__copyright {
     text-align: center;
+    font-family: Sharp sans, sans-serif;
+    font-weight: 700;
 
     @include media-breakpoint-up($md) {
       order: 2;
@@ -68,8 +82,15 @@
     padding: 5px 0;
 
     @include media-breakpoint-up($lg) {
-      // display: inline-block;
       padding: 0;
+    }
+
+    &--change {
+      transition: color $duration-default ease-in-out;
+
+      &:hover {
+        color: $primary;
+      }
     }
   }
 

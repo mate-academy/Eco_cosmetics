@@ -1,4 +1,21 @@
+/* eslint-disable no-unused-vars */
 'use strict';
+
+// eslint-disable-next-line no-undef
+const swiper = new Swiper('.swiper', {
+  slidesPerView: 'auto',
+  direction: 'horizontal',
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  spaceBetween: 30,
+
+  breakpoints: {
+    1260: {
+      spaceBetween: 20,
+    },
+  },
+});
 
 function openMenu() {
   const menu = document.querySelector('.menu');
