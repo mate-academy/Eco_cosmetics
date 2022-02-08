@@ -8,6 +8,7 @@ const openMenu = document.querySelector('.open-menu');
 
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#menu') {
+    document.body.classList.add('page__body--with-menu');
     openMenu.classList.add('header__open-menu--open');
     menuIcon.href = '#';
 
@@ -15,6 +16,7 @@ window.addEventListener('hashchange', () => {
       menuIconLine[i].classList.add('menu-icon__line--open-menu');
     }
   } else {
+    document.body.classList.remove('page__body--with-menu');
     openMenu.classList.remove('header__open-menu--open');
     menuIcon.href = '#menu';
 
