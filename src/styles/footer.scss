@@ -1,21 +1,26 @@
 .footer {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  height: 470px;
   width: 100%;
   background-color: #344f1080;
-  padding: 30px 50px 66px;
-  box-sizing: border-box;
-  @include onTab {
-    padding: 60px 130px 66px;
-    height: 280px;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    position: relative;
-    margin-top: 200px;
-    display: grid;
+  &__wraper {
+    margin: 0 auto;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    height: 470px;
+    max-width: 1444px;
+
+    padding: 30px 50px 66px;
+    box-sizing: border-box;
+    @include onTab {
+      padding: 30px 130px 66px;
+      height: 280px;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      position: relative;
+      margin-top: 200px;
+      display: grid;
+    }
   }
 
   &__list {
@@ -52,7 +57,7 @@
     text-align: left;
     text-decoration: none;
     color: #e4dfd3;
-    @include onTab {
+    @include onDesktop {
       font-size: 18px;
     }
   }
@@ -118,7 +123,7 @@
       text-decoration: none;
       color: #e4dfd3;
     }
-    @include onTab {
+    @include onDesktop {
       font-size: 18px;
     }
   }
@@ -160,13 +165,14 @@
     width: 198px;
     text-align: center;
     @include onTab {
-      font-size: 18px;
+      font-size: 14px;
       grid-column: 1 / 2;
       grid-row: 5 / 6;
       width: max-content;
       margin: 30px 0 0;
     }
     @include onDesktop {
+      font-size: 18px;
       &::before {
         content: "Copyright";
       }
