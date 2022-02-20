@@ -1,0 +1,44 @@
+.page {
+  background-color: $beige;
+
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    box-shadow: none;
+
+    transition: transform $duration-default linear,
+      box-shadow $duration-default linear;
+
+    &--animate {
+      transform: translateY(-110%);
+    }
+
+    &--fixed {
+      box-shadow: 4px 4px 12px $shadow;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+
+    visibility: hidden;
+    transform: translateX(-100%);
+
+    transition: visibility $duration-default ease-in-out,
+      transform $duration-default ease-in-out;
+
+    &--open {
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+
+  &--with-menu {
+    overflow: hidden;
+  }
+}

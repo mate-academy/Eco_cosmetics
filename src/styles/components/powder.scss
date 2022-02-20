@@ -1,0 +1,62 @@
+.powder {
+  &__bottle {
+    position: relative;
+    min-height: 400px;
+
+    background-image: url("../images/pictures/bottle.svg");
+    background-repeat: no-repeat;
+    background-position: 190px center;
+
+    @include media-breakpoint-up($md) {
+      background-position: 0 center 0;
+    }
+
+    @include media-breakpoint-up($lg) {
+      background-position: center;
+      background-size: contain;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    top: 40px;
+
+    text-align: end;
+
+    @include media-breakpoint-up($md) {
+      transform: translateX(-100%);
+    }
+
+    @include media-breakpoint-up($lg) {
+      transform: translateX(0);
+      left: -70%;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &:nth-child(odd) {
+      margin-bottom: 52px;
+    }
+
+    &:nth-child(even) {
+      margin-bottom: 49px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -65%;
+      display: block;
+      width: 76px;
+      height: 1px;
+      background-color: $dark;
+    }
+  }
+}

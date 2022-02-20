@@ -1,0 +1,45 @@
+.form {
+  &__field {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #8d8d8d;
+
+    transition: border $duration-default linear;
+
+    @include media-breakpoint-up($lg) {
+      padding: 10px 0;
+      font-size: $fs-regular;
+    }
+
+    &--textarea {
+      resize: none;
+      height: 50px;
+    }
+
+    &:-webkit-autofill {
+      box-shadow: inset 0 0 0 50px $beige;
+      -webkit-text-fill-color: $dark;
+    }
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    &:focus,
+    &:hover {
+      border-color: $dark;
+    }
+
+    &:invalid {
+      border-color: $error;
+
+      &::placeholder {
+        color: $error;
+      }
+    }
+  }
+}

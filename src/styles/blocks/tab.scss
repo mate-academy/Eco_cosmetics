@@ -1,0 +1,44 @@
+.tab {
+  &__nav {
+    display: flex;
+    gap: 16px;
+
+    color: $gray;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up($lg) {
+      font-size: $fs-regular;
+    }
+  }
+
+  &__link {
+    padding-bottom: 10px;
+    transition: color $duration-default linear;
+
+    &:hover {
+      color: $dark;
+    }
+
+    &--active {
+      color: $dark;
+      border-bottom: 2px solid $dark;
+    }
+  }
+
+  &__content {
+    margin-top: 20px;
+
+    @include media-breakpoint-up($lg) {
+      margin-top: 60px;
+    }
+  }
+
+  &__pane {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+}

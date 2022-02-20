@@ -1,0 +1,67 @@
+.grid {
+  $block: &;
+  display: grid;
+
+  @include media-breakpoint-up($md) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: $gap-default 30px;
+  }
+
+  @include media-breakpoint-up($lg) {
+    grid-template-columns: repeat(12, 1fr);
+    gap: $gap-default;
+  }
+
+  &--align-center {
+    align-items: center;
+  }
+
+  &--md {
+    display: inherit;
+
+    @include media-breakpoint-up($md) {
+      display: grid;
+    }
+  }
+
+  &--lg {
+    display: inherit;
+
+    @include media-breakpoint-up($lg) {
+      display: grid;
+    }
+  }
+
+  &__item {
+    &--md {
+      @include media-breakpoint-up($md) {
+        @for $start from 1 through 6 {
+          @for $end from $start through 6 {
+            &--#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+    }
+
+    &--lg {
+      @include media-breakpoint-up($lg) {
+        @for $start from 1 through 12 {
+          @for $end from $start through 12 {
+            &--#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+    }
+
+    @each $property, $value in $grid-settings {
+      &--#{$property}--#{$value} {
+        #{$property}: $value;
+      }
+    }
+  }
+}

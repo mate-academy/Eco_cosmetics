@@ -1,0 +1,63 @@
+.article {
+  position: relative;
+  opacity: 0;
+
+  transition: opacity 1s linear;
+
+  &__content {
+    @include media-breakpoint-up($lg) {
+      padding: 100px 0;
+    }
+
+    @include media-breakpoint-down($lg) {
+      max-width: 280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  &__fact {
+    @include media-breakpoint-down($lg) {
+      display: none;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: 0;
+    height: 1px;
+
+    background-color: #344f1080;
+
+    visibility: hidden;
+    transition: width 1.5s linear;
+
+    @include media-breakpoint-up($lg) {
+      visibility: visible;
+    }
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    max-width: 44%;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    max-width: 50%;
+  }
+
+  &--show {
+    opacity: 1;
+
+    &::after,
+    &::before {
+      width: 100%;
+    }
+  }
+}
