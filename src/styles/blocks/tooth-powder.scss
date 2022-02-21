@@ -1,0 +1,166 @@
+.tooth-powder {
+
+  &__prefix {
+    position: relative;
+    transform: rotate(-90deg) translate(-150px, -30px);
+  }
+
+  &__title {
+    margin-bottom: 38px;
+
+    @include onDesktop {
+      padding-top: 60px;
+    }
+  }
+
+  &__content {
+  
+    display: flex;
+    justify-content: center;
+    position: relative;
+  
+  }
+
+  &__image {
+  
+    display: block;
+    width: 380px;
+    height: 396px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    @include onDesktop {
+      position: static;
+    }
+
+  }
+
+  &__button {
+    margin-bottom: 60px;
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__icon {
+
+    margin: 0 auto;
+    width: 100px;
+    height: 80px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    margin-bottom: 20px;
+
+    &--snail {
+      background-image: url(../images/icons/snail.svg);
+    }
+
+    &--recycle {
+      background-image: url(../images/icons/recycle.svg);
+    }
+
+    &--leaves {
+      background-image: url(../images/icons/leaves.svg);
+    }
+
+  }
+
+  &__icon-text {
+
+    font-family: Avenir, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    
+    color: #000;
+
+    margin-bottom: 50px;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+  }
+
+}
+
+.content {
+
+  &__items {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: max-content;
+    transform: translateX(-20%);
+
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      padding-top: 30px;
+    }
+
+  }
+
+  &__item {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Avenir, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $c-dark;
+
+    margin-bottom: 50px;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    &:after {
+
+      display: block;
+      content: "";
+      width: 76px;
+      height: 1px;
+      background-color: $c-dark;
+      margin-left: 20px;
+
+    }
+
+    &--circle {
+
+      display: none;
+      position: absolute;
+      right: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $c-dark;
+
+      @include onDesktop {
+        display: inline;
+      }
+
+    }
+
+    &--break {
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+  
+}
