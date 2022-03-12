@@ -45,7 +45,18 @@
     width: 600px;
     height: 398px;
     display: flex;
-    transform: translate(10%);
+    justify-content: flex-end;
+    margin-left: auto;
+
+    &--1 {
+      display: flex;
+      transform: translate(15%);
+    }
+
+    &--content {
+      transform: translate(35%);
+    }
+
     @include iPad {
       display: none;
     }
@@ -54,8 +65,6 @@
   &__box--iPad {
     position: relative;
     width: 100%;
-    // width: 380px;
-    // height: 398px;
     display: none;
     margin-left: auto;
 
@@ -63,12 +72,15 @@
       display: flex;
       justify-content: flex-end;
       margin-left: auto;
+      transform: translate(20%);
+    }
+
+    @include Desk {
       transform: translate(0%);
     }
   }
 
   &__box-img {
-    // transform: translate(50%);
     height: 398px;
     width: 380px;
 
@@ -85,77 +97,43 @@
     line-height: 150%;
     text-transform: capitalize;
     color: $textColor;
+    position: relative;
+    padding-right: 20px;
 
-    &--1 {
-      position: relative;
-      top: 35px;
-      right: -15px;
-      &::after {
-        transform: translate(90%, -1100%);
+    &-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 45px 20px 0 0;
+
+      @include iPad {
+        transform: translate(20%);
       }
+
+      @include Desk {
+        transform: translate(0%);
+      }
+
     }
 
-    &--2 {
-      position: relative;
-      top: 80px;
-      right: 115px;
-      &::after {
-        transform: translate(260%, -1100%);
-      }
-    }
-
-    &--2-mobile {
-      position: relative;
-      top: 80px;
-      right: -25px;
-      white-space: nowrap;
-      &::after {
-        transform: translate(80%, -1100%);
-      }
-    }
-
-    &--3 {
-      position: relative;
-      top: 125px;
-      right: 80px;
-      &::after {
-        transform: translate(215%, -1100%);
-      }
-    }
-
-    &--3-mobile {
-      position: relative;
-      top: 100px;
-      right: 25px;
-      &::after {
-        transform: translate(130%, -2400%);
-      }
-    }
-
-    &--4 {
-      position: relative;
-      top: 165px;
-      right: 40px;
-      &::after {
-        transform: translate(160%, -1100%);
-      }
-    }
-
-    &--5 {
-      position: relative;
-      top: 225px;
-      right: 10px;
-      &::after {
-        transform: translate(120%, -1100%);
-      }
-    }
-
-    &::after {
-      content: "";
-      height: 1px;
+    &--line {
       width: 76px;
-      display: block;
+      border-top: 1px solid $textColor;
+    }
+
+    &--point {
+      width: 5px;
+      height: 5px;
       background-color: $textColor;
+      border-radius: 50%;
+
+      @include iPad {
+        display: none;
+      }
+
+      @include Desk {
+        display: block;
+      }
     }
   }
 }

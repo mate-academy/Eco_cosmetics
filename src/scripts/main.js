@@ -8,10 +8,12 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-function stopDefAction(evt) {
-  evt.preventDefault();
-}
+// function stopDefAction(evt) {
+//   evt.preventDefault();
+// }
 
 document.getElementById('send-form').addEventListener(
-  'submit', stopDefAction, false
+  'submit', function(event) {
+    event.preventDefault();
+  }, false
 );
