@@ -59,10 +59,30 @@
 
   &__social {
     margin-top: 20px;
-  }
 
-  &__social-link {
-    padding-left: 20px;
+    &-wrap {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-link {
+
+      &::after {
+        content: "";
+        opacity: 0;
+        display: block;
+        height: 2px;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        transition: all 0.3s;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
   }
 
   &__adress {

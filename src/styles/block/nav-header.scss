@@ -1,5 +1,12 @@
 .nav-header {
 
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
   &__link {
     text-decoration: none;
     font-family: Sharp_Sans_No2, sans-serif;
@@ -14,7 +21,26 @@
 
     &:last-child {
       padding-right: 0;
+    }
 
+    &::after {
+      content: "";
+      opacity: 0;
+      display: block;
+      height: 2px;
+      background-color: #333;
+      width: 100%;
+      // margin-top: 10px;
+      transition: all 0.3s;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &:hover {
+      font-weight: bold;
+      color: #333;
     }
   }
 }
