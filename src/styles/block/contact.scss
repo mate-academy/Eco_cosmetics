@@ -1,0 +1,198 @@
+.contact {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include iPad {
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__img-wrap {
+    display: none;
+    position: relative;
+    width: 100%;
+
+    &::after {
+      content: "";
+      box-sizing: border-box;
+      padding-bottom: 100%;
+    }
+
+    @include iPad {
+      display: block;
+      max-height: 410px;
+    }
+
+    @include iPad {
+      max-height: 584px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+
+  }
+
+  &__title {
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+
+    text-transform: capitalize;
+    color: $h2color;
+
+    @include iPad {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 150%;
+      text-align: left;
+    }
+
+    @include Desk {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__description {
+
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-transform: lowercase;
+    color: $textColor;
+    margin-top: 12px;
+
+    @include Desk {
+      margin-top: 20px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+    margin-top: 20px;
+  }
+
+  &__form-field {
+    margin-bottom: 18px;
+    background-color: #e4dfd3;
+    box-sizing: border-box;
+    border: transparent;
+    border-bottom: 1px solid #bdbdbd;
+    height: 32px;
+    transition: all 0.3s;
+
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: #828282;
+
+    @include Desk {
+      margin-bottom: 36px;
+    }
+
+    &::placeholder {
+      font-family: Avenir, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+
+      text-transform: capitalize;
+      color: #828282;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #333;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid #344f10;
+    }
+
+    &:focus::placeholder {
+      color: $h2color;
+    }
+
+    // &:invalid {
+    //   border: 1px solid red;
+    // }
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &__form-text {
+    resize: none;
+    height: 68px;
+    background-color: #e4dfd3;
+    box-sizing: border-box;
+    border: transparent;
+    border-bottom: 1px solid #bdbdbd;
+    transition: all 0.3s;
+
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    color: #828282;
+
+    &::placeholder {
+      font-family: Avenir, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+
+      text-transform: capitalize;
+      color: #828282;
+      padding-top: 38px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $textColor;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $h2color;
+    }
+
+    &:focus::placeholder {
+      color: $h2color;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    margin-top: 30px;
+
+    @include Desk {
+      margin-top: 50px;
+    }
+  }
+}

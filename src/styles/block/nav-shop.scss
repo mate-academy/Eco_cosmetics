@@ -1,0 +1,51 @@
+.nav-shop {
+
+  @include iPad {
+    width: 280px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #828282;
+
+    @include Desk {
+      font-size: 18px;
+    }
+
+    &::after {
+      content: "";
+      opacity: 0;
+      display: block;
+      height: 2px;
+      background-color: #333;
+      width: 100%;
+      margin-top: 10px;
+      transition: all 0.3s;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &:hover {
+      font-weight: bold;
+      color: #333;
+    }
+  }
+}

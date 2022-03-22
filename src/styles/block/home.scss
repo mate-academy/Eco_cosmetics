@@ -1,0 +1,99 @@
+.home {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 -20px;
+
+    @include Desk {
+      display: grid;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    @include Desk {
+      align-items: flex-start;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 714px;
+
+    @include Desk {
+      width: 580px;
+      height: 451px;
+    }
+
+    @media (max-width: 1280px) {
+      order: -1;
+    }
+  }
+
+  &__title {
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    color: $textColor;
+    margin-top: 24px;
+
+    @include iPad {
+      font-size: 36px;
+    }
+
+    @include Desk {
+      font-size: 60px;
+      margin-top: 0;
+      text-align: left;
+    }
+  }
+
+  &__description {
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: $textColor;
+
+    margin-top: 12px;
+
+    @include iPad {
+      margin-top: 20px;
+    }
+
+    @include Desk {
+      font-size: 22px;
+      margin-top: 30px;
+    }
+  }
+
+  &__button {
+    margin-top: 46px;
+
+    @include iPad {
+      margin-top: 56px;
+    }
+
+    @include Desk {
+      margin-top: 40px;
+    }
+
+  }
+
+  &__no-wrap {
+    white-space: nowrap;
+  }
+}

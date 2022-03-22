@@ -1,0 +1,119 @@
+.footer {
+
+  @include Desk {
+    display: none;
+  }
+
+  &--2 {
+    display: none;
+
+    @include Desk {
+      display: block;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  background-color: rgba(52, 79, 16, 0.5);
+
+  font-family: Avenir, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+
+  color: #e4dfd3;
+
+  &__support {
+    line-height: 150%;
+
+    margin-top: 20px;
+  }
+
+  &__copyright {
+    font-family: Sharp_Sans_No2, sans-serif;
+    font-weight: bold;
+    text-align: center;
+
+    @include iPad {
+      text-align: left;
+    }
+
+    @include Desk {
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+
+    margin-top: 30px;
+    padding-bottom: 60px;
+  }
+
+  &__nav {
+    padding-top: 30px;
+  }
+
+  &__social {
+    margin-top: 20px;
+
+    &-wrap {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-link {
+
+      &::after {
+        content: "";
+        opacity: 0;
+        display: block;
+        height: 2px;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        transition: all 0.3s;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__adress {
+    margin-top: 30px;
+  }
+
+  &__contacts {
+    margin-top: 12px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__contacts-link {
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+
+    color: #e4dfd3;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color: #333;
+    }
+  }
+
+  &__margin-bottom {
+    padding-bottom: 66px;
+  }
+}

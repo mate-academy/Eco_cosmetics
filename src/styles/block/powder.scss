@@ -1,0 +1,134 @@
+.powder {
+  overflow: hidden;
+
+  &__content {
+    @include iPad {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $h2color;
+
+    @include iPad {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 150%;
+      text-align: left;
+    }
+
+    @include Desk {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__box {
+    position: relative;
+    width: 600px;
+    height: 398px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+
+    &--content {
+      transform: translate(35%);
+    }
+
+    @include iPad {
+      display: none;
+    }
+  }
+
+  &__box--iPad {
+    position: relative;
+    width: 100%;
+    display: none;
+    margin-left: auto;
+
+    @include iPad {
+      display: flex;
+      justify-content: flex-end;
+      margin-left: auto;
+      transform: translate(20%);
+    }
+
+    @include Desk {
+      transform: translate(0%);
+    }
+  }
+
+  &__box-img {
+    height: 398px;
+    width: 380px;
+
+    @include iPad {
+      transform: translate(0%);
+    }
+  }
+
+  &__contains {
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $textColor;
+    position: relative;
+    padding-right: 20px;
+
+    &-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 45px 20px 0 0;
+
+      @include iPad {
+        transform: translate(20%);
+      }
+
+      @include Desk {
+        transform: translate(0%);
+      }
+
+    }
+
+    &--line {
+      width: 76px;
+      border-top: 1px solid $textColor;
+    }
+
+    &--point {
+      width: 5px;
+      height: 5px;
+      background-color: $textColor;
+      border-radius: 50%;
+
+      @include iPad {
+        display: none;
+      }
+
+      @include Desk {
+        display: block;
+      }
+    }
+  }
+}

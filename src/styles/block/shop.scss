@@ -1,0 +1,120 @@
+.shop {
+  &__card {
+    &--2 {
+      display: none;
+
+      @include iPad {
+        display: block;
+      }
+    }
+
+    &--3 {
+      display: none;
+
+      @include Desk {
+        display: block;
+      }
+    }
+  }
+
+  &__title {
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $h2color;
+    text-align: center;
+
+    @include iPad {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 150%;
+      text-align: left;
+    }
+
+    @include Desk {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__card-wrap {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: -1;
+
+    @include iPad {
+      max-height: 300px;
+    }
+
+    @include Desk {
+      min-height: 500px;
+      object-fit: contain;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 20px;
+
+    @include Desk {
+      margin-top: 64px;
+    }
+
+  }
+
+  &__nav {
+    margin: 0 auto;
+    margin-top: 12px;
+
+    @include iPad {
+      margin: 0;
+      margin-top: 20px;
+
+    }
+  }
+
+  &__button {
+    margin-top: 78px;
+    z-index: 1;
+
+    @include iPad {
+      margin-top: 40px;
+    }
+  }
+
+  &__wrap-button {
+    margin: 0 auto;
+  }
+
+  &__price {
+    padding: 0;
+    z-index: -1;
+    margin-top: 40px;
+
+    @include Desk {
+      margin-top: 80px;
+    }
+
+    @media (max-width: 270px) {
+      margin: 0 20px;
+      margin-top: 20px;
+    }
+  }
+}

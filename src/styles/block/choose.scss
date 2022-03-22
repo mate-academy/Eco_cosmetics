@@ -1,0 +1,81 @@
+.choose {
+  &__content {
+
+    width: 280px;
+    margin: 0 auto;
+
+    @include iPad {
+      width: 280px;
+      margin: 0 auto;
+    }
+
+    @include Desk {
+      width: 100%;
+      padding: 100px;
+    }
+  }
+
+  &__description {
+    display: none;
+
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $textColor;
+  }
+
+  @include Desk {
+    &__description {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-family: Avenir, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: left;
+
+    color: #344f10;
+
+    @include iPad {
+      width: 280px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @include Desk {
+
+      text-align: left;
+    }
+
+  }
+  @include Desk {
+    &::before {
+      content: "";
+      display: block;
+      position: relative;
+      right: 50%;
+      margin-right: 100px;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      left: 50%;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+  }
+}

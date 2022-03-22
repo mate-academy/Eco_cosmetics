@@ -1,0 +1,46 @@
+.page {
+
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: #e4dfd3;
+    font-family: Sharp_Sans_No2, Avenir, sans-serif;
+  }
+
+  &__section {
+    margin-top: 60px;
+
+    @include iPad {
+      margin-top: 100px;
+    }
+
+    &:first-child {
+      margin-top: 8px;
+    }
+
+    @include Desk {
+      margin-top: 200px;
+
+      &:first-child {
+        margin-top: 92px;
+      }
+    }
+  }
+
+  .page__body--with-menu {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+
+    transform: translate(0, -100%);
+    transition: all 0.3s;
+
+    &:target {
+      transform: translate(0);
+    }
+  }
+}
