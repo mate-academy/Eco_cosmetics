@@ -1,0 +1,90 @@
+.navigation {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0 20px;
+
+    @include onTablet {
+      margin: 24px 0 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      margin: 40px 0 70px;
+    }
+  }
+
+  &__item {
+    @include onDesktop {
+      &-main-logo {
+        display: flex;
+        align-items: center;
+
+        order: -1;
+      }
+
+      &-basket {
+        justify-self: end;
+      }
+    }
+  }
+
+  &__menu-list {
+    display: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__menu-item {
+    display: inline-block;
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__menu-link {
+    @include menu-text;
+    color: $color__Navy-Green;
+    text-decoration: none;
+  }
+
+  &__img--menu-logo {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__img--basket-logo {
+    @include onDesktop {
+      height: 26px;
+    }
+  }
+
+  &__img--main-logo {
+    @include onDesktop {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  &__logo-name {
+    display: none;
+    margin: 0;
+
+    @include text-2;
+    color: $color__Navy-Green;
+
+    @include onDesktop {
+      display: block;
+      margin-left: 12px;
+    }
+  }
+}
