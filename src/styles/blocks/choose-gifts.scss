@@ -1,0 +1,67 @@
+.choose-gifts {
+  overflow-x: hidden;
+
+  @include onDesktop {
+    padding: 100px 0;
+  }
+
+  &__left-side {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: 0;
+        display: block;
+        width: 100vw;
+        border-top: $thin-line;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    @include text;
+  }
+
+  &__right-side {
+    @include onTablet {
+      justify-self: center;
+      max-width: 280px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      margin: 5px 0 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        display: block;
+        width: 100vw;
+        border-bottom: $thin-line;
+      }
+    }
+  }
+
+  &__header {
+    margin: 0;
+    @include h5;
+    color: $color__Navy-Green;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      @include h4;
+    }
+  }
+}
