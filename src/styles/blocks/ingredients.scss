@@ -1,0 +1,88 @@
+.ingredients {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__left-wrap {
+    display: none;
+    @include onTablet {
+      display: flex;
+      height: 370px;
+    }
+    flex-direction: column;
+    justify-content: space-between;
+
+    a {
+      display: none;
+      @include onTablet {
+        display: inline;
+      }
+    }
+  }
+
+  &__powder {
+    display: flex;
+    height: 400px;
+
+    &-content {
+      display: flex;
+      padding-right: 20px;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    &-content-wrap {
+      display: flex;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    &-text {
+      margin: 0;
+      @extend %text;
+      line-height: 150%;
+      padding-right: 15px;
+      text-transform: capitalize;
+      white-space: nowrap;
+    }
+
+    &-line {
+      width: 80px;
+      border-top: 1px solid $black-color;
+    }
+
+    &-circle {
+      display: none;
+      @include onDesktop {
+        display: block;
+      }
+
+      height: 5px;
+      width: 5px;
+      background-color: $black-color;
+      border-radius: 50%;
+    }
+    
+    &-image {
+     
+      max-width: 100%;
+      height: 390px;
+      position: relative;
+      object-fit: cover;
+      object-position: left;
+
+      @include onDesktop {
+        min-width: 270px;
+        width: 100%;
+        height: 480px;
+        object-fit: contain;
+       
+      }
+    }
+  }
+}

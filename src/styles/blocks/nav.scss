@@ -1,0 +1,61 @@
+.nav {
+  &__list {
+    list-style: none;
+    display: none;
+    @include onDesktop {
+      display: flex;
+    }
+    margin: 0;
+    padding: 0;
+
+    &--desktop {
+      flex-direction: column;
+
+      @include onDesktop {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__item {
+    padding-right: 38px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &--desktop {
+      padding-top: 20px;
+      &:first-child {
+        padding-top: 0;
+      }
+      @include onDesktop {
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $green-color;
+
+    @extend %fontSharpSans500;
+    font-size: 14px;
+    
+    @include onDesktop {
+      font-size: 18px;
+    }
+    
+    line-height: 130%;
+
+    &--white {
+      color: $bg-color;
+    }
+  }
+  &__mobile {
+    display: flex;
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

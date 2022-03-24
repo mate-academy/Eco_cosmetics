@@ -1,0 +1,133 @@
+.shop {
+  &__nav {
+    margin-top: 20px;
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include onTablet {
+      display: block;
+    }
+  }
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding-right: 15px;
+    &:last-child {
+      padding-right: 0;
+    }
+
+    @include onDesktop {
+      padding-right: 50px;
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    @extend %fontAvenir;
+
+    font-size: 14px;
+    @include onDesktop {
+      font-size: 18px;
+    }
+
+    line-height: 150%;
+    letter-spacing: 0.05em;
+
+    color: $gray-color;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &--active {
+      color: $black-color;
+      padding-bottom: 10px;
+
+      @include onDesktop {
+        padding-bottom: 20px;
+      }
+
+      border-bottom: 2px solid $black-color;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__items-list {
+    &:nth-child(-n + 3) {
+      display: none;
+    }
+    @include onTablet {
+      &:nth-child(2) {
+        display: block;
+      }
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+    @include onDesktop {
+      &:nth-child(3) {
+        display: block;
+      }
+    }
+  }
+
+  &__img {
+    margin-top: 30px;
+    max-width: 100%;
+    @include onDesktop {
+      margin-top: 90px;
+      max-width: 100%;
+    }
+
+    height: 500px;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin: 20px 0 0;
+
+    @extend %fontAvenir;
+    font-size: 20px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $black-color;
+  }
+
+  &__price {
+    margin: 10px 0 0;
+
+    @extend %fontAvenir;
+    font-size: 18px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $black-color;
+  }
+
+  &__btn-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 0;
+  }
+}

@@ -1,0 +1,38 @@
+.vertical-info {
+  margin: 80px 0 0;
+  transform: rotate(-90deg);
+
+  &--contact-margin {
+    margin: 10px 0 0;
+  }
+
+  &--desktop {
+    display: none;
+    @include onDesktop {
+      display: flex;
+      align-self: flex-start;
+    }
+  }
+
+  &__text {
+    margin: 0 0 0 10px;
+
+    @extend %fontSharpSans700;
+    font-size: 14px;
+
+    line-height: 130%;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    color: $lime-color;
+
+    &::before {
+      content: "";
+      display: flex;
+      transform: translate(-110%, 8px);
+      height: 1px;
+      position: absolute;
+      padding-left: 100px;
+      background-color: $lime-color;
+    }
+  }
+}
