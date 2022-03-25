@@ -2,21 +2,61 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
+  justify-content: first baseline;
 
-  @include onDesktop {
-    grid-template-columns: repeat(12, 1fr);
+  @include ipadMini {
+    grid-template-columns: repeat(6, 1fr);
     column-gap: 24px;
   }
 
-  &--desktop {
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+
+  &--tablet {
     display: block;
+
+    @include ipadMini {
+      display: grid;
+    }
 
     @include onDesktop {
       display: grid;
     }
   }
 
+  // &__item {
+  //   @for $start from 1 through 6 {
+  //     @for $end from $start through 6 {
+  //       &--#{$start}-#{$end} {
+  //         grid-column: #{$start} / #{$end + 1};
+  //       }
+
+  //       &--tablet-#{$start}-#{$end} {
+  //         @include ipadMini {
+  //           grid-column: #{$start} / #{$end + 1};
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
   &__item {
+    @for $start from 1 through 6 {
+      @for $end from $start through 6 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+
+        &--tablet-#{$start}-#{$end} {
+          @include ipadMini {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
     @for $start from 1 through 12 {
       @for $end from $start through 12 {
         &--#{$start}-#{$end} {
@@ -31,4 +71,26 @@
       }
     }
   }
+
+  &__item:nth-of-type(1) {
+    @include onDesktop {
+      order: 2;
+    }
+  }
+
+  &__item:nth-of-type(2) {
+    @include onDesktop {
+      order: 1;
+    }
+  }
+
+  &__item:nth-of-type(3) {
+    @include onDesktop {
+      order: 3;
+    }
+  }
 }
+// &__item {
+//   &--3-4 {
+//     grid-column: 3 / 5;
+// }
