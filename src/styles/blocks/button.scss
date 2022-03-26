@@ -23,22 +23,37 @@
     color: $black-color;
     border: 1px solid $black-color;
   }
-}
 
-.btn-link {
-  width: max-content;
-  display: block;
+  &-link {
+    width: max-content;
+    display: block;
 
-  @extend %fontSharpSans700;
-  font-size: 14px;
-  border-bottom: 1px solid transparent;
-  line-height: 130%;
-  color: $green-color;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  text-decoration: none;
+    @extend %fontSharpSans700;
+    font-size: 14px;
+    border-bottom: 1px solid transparent;
+    line-height: 130%;
+    color: $green-color;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
 
-  @include hover(border-bottom) {
-    border-bottom: 1px solid $green-color;
+    @include hover(border-bottom) {
+      border-bottom: 1px solid $green-color;
+    }
+
+    &--footer {
+      @extend %fontSharpSans500;
+      color: $bg-color;
+      white-space: nowrap;
+      text-transform: none;
+      font-weight: 400;
+      @include onDesktop {
+        font-size: 18px;
+      }
+
+      @include hover(border-bottom) {
+        border-bottom: 1px solid $bg-color;
+      }
+    }
   }
 }
