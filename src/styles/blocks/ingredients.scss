@@ -26,20 +26,26 @@
   }
 
   &__powder {
-    display: flex;
-    height: 400px;
-
     &-content {
       display: flex;
       padding-right: 20px;
       flex-direction: column;
+      justify-content: center;
+      @include onTablet {
+        justify-content: flex-start;
+      }
       align-items: flex-end;
     }
 
     &-content-wrap {
       display: flex;
       align-items: center;
-      margin-top: 50px;
+      &:not(:first-child) {
+        margin-top: 35px;
+        @include onTablet {
+          margin-top: 50px;
+        }
+      }
     }
 
     &-text {
@@ -48,11 +54,14 @@
       line-height: 150%;
       padding-right: 15px;
       text-transform: capitalize;
-      white-space: nowrap;
+      white-space: normal;
+      @include onTablet {
+        white-space: nowrap;
+      }
     }
 
     &-line {
-      width: 80px;
+      min-width: 80px;
       border-top: 1px solid $black-color;
     }
 
@@ -67,9 +76,8 @@
       background-color: $black-color;
       border-radius: 50%;
     }
-    
+
     &-image {
-     
       max-width: 100%;
       height: 390px;
       position: relative;
@@ -81,7 +89,6 @@
         width: 100%;
         height: 480px;
         object-fit: contain;
-       
       }
     }
   }
