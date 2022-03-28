@@ -52,11 +52,26 @@
       border-bottom: 1px solid $color__Carbon;
     }
 
+    &::before {
+      @include on-desktop {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -100px;
+        transform: translateY(-50%);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $color__Carbon;
+      }
+    }
+
     &--hide {
       display: none;
 
       @include on-desktop {
-        display: block;
+        display: inline-block;
       }
     }
 
@@ -68,6 +83,10 @@
         top: 40px;
         right: $strip-moving-to-jar--tablet-screen;
       }
+
+      @include on-desktop {
+        right: $strip-moving-to-jar--desktop-screen;
+      }
     }
 
     &:nth-child(2) {
@@ -77,6 +96,11 @@
       @include on-tablet {
         top: 112px;
         right: $strip-moving-to-jar--tablet-screen;
+      }
+
+      @include on-desktop {
+        width: max-content;
+        right: $strip-moving-to-jar--desktop-screen;
       }
     }
 
@@ -93,6 +117,10 @@
         right: $strip-moving-to-jar--tablet-screen;
         width: max-content;
       }
+
+      @include on-desktop {
+        right: $strip-moving-to-jar--desktop-screen;
+      }
     }
 
     &:nth-child(4) {
@@ -104,6 +132,10 @@
         right: $strip-moving-to-jar--tablet-screen;
         width: max-content;
       }
+
+      @include on-desktop {
+        right: $strip-moving-to-jar--desktop-screen;
+      }
     }
 
     &:nth-child(5) {
@@ -114,6 +146,10 @@
         top: 338px;
         right: $strip-moving-to-jar--tablet-screen;
       }
+
+      @include on-desktop {
+        right: $strip-moving-to-jar--desktop-screen;
+      }
     }
   }
 
@@ -123,6 +159,10 @@
 
     @include on-tablet {
       right: calc(#{$jar-moving-to-screen} - 42px);
+    }
+
+    @include on-desktop {
+      right: 0;
     }
   }
 
