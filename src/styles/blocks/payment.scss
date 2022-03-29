@@ -1,0 +1,94 @@
+.payment {
+  display: none;
+
+  &--active {
+    display: block;
+    position: fixed;
+    box-sizing: border-box;
+    top: 270px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 270px);
+    background-color: $beige;
+    padding: 30px 20px 0;
+    transition: all 0.3s ease 0s;
+    z-index: 2;
+
+    @include mobile {
+      top: 135px;
+      height: calc(100vh - 135px);
+    }
+
+    @media (max-height: 760px) and (min-width: 1024px) and (max-width: 1279px) {
+      padding-top: 0;
+    }
+  }
+
+  &__content {
+    @include flex-column;
+    align-items: center;
+  }
+
+  &__choosePayment {
+    font-family: "Semibold", sans-serif;
+    font-size: 20px;
+    line-height: 130%;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__options {
+    display: flex;
+    height: 104px;
+    gap: 220px;
+    padding-top: 66px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 35px;
+      padding-top: 46px;
+      height: 170px;
+    }
+
+    @media (max-height: 760px) and (min-width: 1024px) and (max-width: 1279px) {
+      padding-top: 30px;
+    }
+  }
+
+  &__option {
+    @include link;
+    height: 100%;
+    width: 160px;
+    display: flex;
+    align-items: flex-end;
+    font-family: "Semibold", sans-serif;
+    font-size: 20px;
+    line-height: 130%;
+    color: $dark-grey;
+    text-align: center;
+    justify-content: center;
+  
+    @include mobile {
+      font-size: 16px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &--active {
+      color: $dark-green;
+      transform: scale(1.2);
+    }
+  }
+
+  &__creditCard {
+    background: url(../images/card.png) 50% 10% no-repeat;
+  }
+
+  &__onDelivery {
+    background: url(../images/delivery-normal.png) 50% 10% no-repeat;
+  }
+}

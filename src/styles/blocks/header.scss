@@ -1,0 +1,98 @@
+.header {
+  position: relative;
+  height: 130px;
+  width: 100%;
+  background-color: $beige;
+
+  &--fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
+
+  @include iPad {
+    height: 77px;
+  }
+
+  @include mobile {
+    height: 51px;
+  }
+
+  // логотип //
+  &__conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 130px;
+
+    @media (max-width: 1279px) {
+      padding: 0 50px;
+    }
+
+    @include mobile {
+      padding: 0 20px;
+    }
+  }
+
+  &__logo {
+    @include mobile {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  // бургер //
+  &__burger {
+    display: none;
+
+    @include mobile {
+      display: block;
+      position: absolute;
+      top: 20px;
+      z-index: 10;
+      width: 20px;
+      height: 13px;
+      background: url(../images/menu.png) 0 0 no-repeat;
+      background-size: cover;
+    }
+
+    &--active {
+      background: url(../images/close.png) 0 0 no-repeat;
+      background-size: contain;
+    }
+  }
+
+  // nav //
+  &__nav {
+    &--active {
+      @include mobile {
+        position: fixed;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        z-index: 8;
+        padding: 80px 20px;
+        width: 100vw;
+        height: 100%;
+        background-color: $dark-grey;
+        transition: all 0.3s ease 0s;
+      }
+    }
+  }
+
+  // корзина //
+  &__shopping-bag {
+    @include link;
+    height: 26px;
+    width: 26px;
+    background: url(../images/корзина.png) no-repeat;
+    background-size: contain;
+
+    @include mobile {
+      height: 24px;
+    }
+  }
+}

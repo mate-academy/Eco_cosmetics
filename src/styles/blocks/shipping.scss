@@ -1,0 +1,62 @@
+.shipping {
+  @include flex-column;
+  z-index: 3;
+  height: 100vh;
+
+  &__form {
+    @include flex-column;
+    max-height: 200px;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    row-gap: 30px;
+    column-gap: 10vw;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      max-height: max-content;
+      align-self: center;
+    }
+
+    @include iPad {
+      row-gap: 28px;
+    }
+
+    @include mobile {
+      padding-top: 27px;
+      row-gap: 24px;
+    }
+  }
+
+  &__form-labels {
+    display: none;
+  }
+
+  &__input {
+    @include input-text;
+    max-width: $widthBlock;
+    padding: 0 10px;
+    color: $dark-green;
+    border: none;
+    border-bottom: 1px solid $grey;
+    background-color: transparent;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      font-size: 14px;
+      width: 278px;
+      padding-bottom: 3px;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $dark-grey;
+    }
+
+    &:valid {
+      border-bottom: 1px solid $dark-green;
+    }
+
+    &--invalid {
+      border-bottom: 1px solid #eb5757;
+      color: #eb5757;
+    }
+  }
+}

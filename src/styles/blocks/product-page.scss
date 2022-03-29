@@ -1,0 +1,255 @@
+.product-page {
+  display: none;
+
+  &--active {
+    @include body-hidden;
+    display: block;
+    position: fixed;
+    box-sizing: border-box;
+    top: 130px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 130px);
+    background-color: $beige;
+    transition: all 0.3s ease 0s;
+    z-index: 2;
+    padding: 50px;
+
+    @include mobile {
+      top: 50px;
+      height: calc(100vh - 50px);
+    }
+
+    @media (max-height: 760px) and (max-width: 768px) {
+      padding-top: 13px;
+    }
+
+    @media (min-height: 760px) and (max-width: 768px) {
+      padding-top: 0;
+    }
+
+    @include iPad {
+      top: 77px;
+      height: calc(100vh - 77px);
+      padding: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    gap: 120px;
+
+    @media (max-width: 1023px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+  }
+
+  &__img {
+    width: 480px;
+    height: 468px;
+
+    @include iPad {
+      width: 466px;
+      height: 440px;
+    }
+
+    @include mobile {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80vw;
+      object-fit: none;
+      object-position: center;
+    }
+
+    @media (max-height: 760px) and (max-width: 767px) {
+      top: 80px;
+      height: 230px;
+    }
+
+    @media (min-height: 760px) and (max-width: 767px) {
+      top: 110px;
+      height: 248px;
+    }
+
+    @media (max-height: 760px) and (min-width: 1024px) and (max-width: 1279px) {
+      height: 378px;
+    }
+  }
+
+  // info-block //
+  &__info-block {
+    @include flex-column;
+    position: relative;
+    width: 480px;
+
+    @include iPad {
+      width: 466px;
+    }
+
+    @include mobile {
+      box-sizing: border-box;
+      padding: 0 20px;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @include h4;
+    color: $dark-grey;
+    text-transform: uppercase;
+
+    @include iPad {
+      padding-top: 30px;
+      font-family: "Semibold", sans-serif;
+    }
+
+    @include mobile {
+      padding-top: 10px;
+      font-family: "Semibold", sans-serif;
+      font-size: 20px;
+    }
+
+    @media (max-height: 780px) and (max-width: 767px) {
+      padding-top: 0;
+    }
+  }
+
+  &__price {
+    padding-top: 20px;
+    @include price-text;
+    color: $dark-green;
+
+    @include iPad {
+      font-family: "Semibold", sans-serif;
+    }
+
+    @include mobile {
+      padding-top: 5px;
+      font-size: 16px;
+      font-family: "Semibold", sans-serif;
+    }
+  }
+
+  &__weight {
+    padding-top: 20px;
+    font-size: 18px;
+    line-height: 130%;
+
+    @media (max-height: 780px) {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+    }
+
+    @include mobile {
+      padding-top: 5px;
+      align-self: flex-end;
+      font-family: "Semibold", sans-serif;
+    }
+  }
+
+  &__ingredients {
+    display: inline-block;
+    padding-top: 30px;
+    @include text;
+
+    @include iPad {
+      padding-top: 170px;
+    }
+
+    @media (min-height: 760px) and (min-width: 768px) and (max-width: 1024px) {
+      padding-top: 130px;
+    }
+
+    @media (max-height: 760px) and (min-width: 1024px) and (max-width: 1279px) {
+      padding-top: 30px;
+    }
+
+    @include mobile {
+      position: absolute;
+      left: 0;
+      padding: 0 20px;
+      font-family: "Semibold", sans-serif;
+    }
+
+    @media (max-height: 760px) and (max-width: 767px) {
+      top: 380px;
+      line-height: 130%;
+    }
+
+    @media (min-height: 760px) and (max-width: 767px) {
+      top: 500px;
+    }
+
+    span {
+      color: $dark-green;
+    }
+  }
+
+  &__application {
+    padding-top: 30px;
+    @include text;
+
+    @include mobile {
+      position: absolute;
+      left: 0;
+      padding: 0 20px;
+      font-family: "Semibold", sans-serif;
+    }
+
+    @media (max-height: 760px) and (max-width: 767px) {
+      top: 476px;
+      line-height: 130%;
+    }
+
+    @media (min-height: 760px) and (max-width: 767px) {
+      top: 610px;
+    }
+
+    span {
+      color: $dark-green;
+    }
+  }
+
+  // кнопка //
+  &__button {
+    @include button;
+    @include button-text;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    @media (min-width: 1024px) {
+      transform: translateY(-100%);
+    }
+
+    &:hover {
+      @include hover-button;
+    }
+
+    @include iPad {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 190px;
+    }
+
+    @include mobile {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (max-height: 760px) and (max-width: 767px) {
+      top: 320px;
+      height: 40px;
+      width: 220px;
+    }
+
+    @media (min-height: 760px) and (max-width: 767px) {
+      top: 392px;
+    }
+  }
+}

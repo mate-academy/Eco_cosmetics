@@ -1,0 +1,184 @@
+.shop {
+  @include flex-column;
+  position: relative;
+  height: max-content;
+
+  &__title {
+    @include h2;
+    color: $dark-green;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      font-size: 24px;
+    }
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  // categoties //
+  &__categories {
+    display: flex;
+    padding-top: 20px;
+    gap: 50px;
+
+    @include iPad {
+      gap: 14px;
+    }
+
+    @include mobile {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 20px 0;
+      justify-content: space-between;
+      gap: 0;
+    }
+  }
+
+  &__category {
+    position: relative;
+    @include price-text;
+    @include link;
+    color: #828282;
+    width: max-content;
+
+    &:active {
+      color: $dark-grey;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        box-sizing: content-box;
+        height: 2px;
+        width: 100%;
+        background-color: $dark-grey;
+        top: 40px;
+        left: 0;
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      &:active {
+        &::after {
+          top: 20px;
+        }
+      }
+    }
+
+    &--active {
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        box-sizing: content-box;
+        height: 2px;
+        width: 100%;
+        color: $dark-grey;
+        background-color: $dark-grey;
+        top: 40px;
+        left: 0;
+
+        @media (min-width: 320px) and (max-width: 1023px) {
+          top: 20px;
+        }
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      font-size: 14px;
+    }
+  }
+
+  // блоки //
+  &__block {
+    display: none;
+
+    &--active {
+      position: relative;
+      padding-top: 60px;
+      display: flex;
+      justify-content: space-between;
+      overflow: auto;
+
+      @media (min-width: 320px) and (max-width: 1023px) {
+        padding: 32px 0 0 20px;
+      }
+    }
+  }
+
+  &__card {
+    width: $widthBlock;
+    @include flex-column;
+    padding-right: 20px;
+
+    @include iPad {
+      width: 342px;
+    }
+
+    @include mobile {
+      width: 280px;
+    }
+  }
+
+  &__card-img {
+    width: $widthBlock;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+
+    @include iPad {
+      height: 300px;
+      width: 342px;
+    }
+
+    @include mobile {
+      height: 248px;
+      width: 280px;
+    }
+  }
+
+  &__card-name {
+    @include link;
+    padding-top: 20px;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__price {
+    padding-top: 10px;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  // кнопка //
+  &__form {
+    height: min-content;
+    width: min-content;
+    margin: 60px auto;
+
+    @include iPad {
+      margin: 50px auto;
+    }
+
+    @include mobile {
+      margin: 30px auto;
+    }
+  }
+
+  &__button {
+    @include button;
+    @include flex-center;
+    cursor: pointer;
+
+    &:hover {
+      @include hover-button;
+    }
+  }
+}

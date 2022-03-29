@@ -1,0 +1,167 @@
+.shopping-bag {
+  display: none;
+
+  &--active {
+    display: block;
+    position: fixed;
+    box-sizing: border-box;
+    top: 100px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    background-color: $beige;
+    padding: 0 20px;
+    transition: all 0.3s ease 0s;
+    z-index: 2;
+
+    @include iPad {
+      padding: 0;
+      top: 76px;
+      height: calc(100vh - 76px);
+    }
+
+    @include mobile {
+      top: 50px;
+      height: calc(100vh - 50px);
+    }
+  }
+
+  &__block {
+    display: flex;
+    position: relative;
+  }
+
+  &__quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 16px;
+    width: 20px;
+    background-color: $olive;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 30%;
+    margin-top: -4px;
+    margin-left: -8px;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__container {
+    @include flex-column;
+    justify-content: center;
+    padding: 50px 150px 0;
+
+    @include iPad {
+      padding: 30px;
+    }
+
+    @include mobile {
+      padding: 10px;
+    }
+  }
+
+  &__title {
+    font-family: "Semibold", "Poppins", sans-serif;
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 0.05em;
+    color: $dark-green;
+    text-align: center;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      position: relative;
+      text-align: left;
+      color: $dark-grey;
+      @include decorative-text;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: $grey;
+        height: 1px;
+        width: 218px;
+        bottom: -5px;
+        left: 0;
+
+        @include mobile {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 82px;
+    justify-content: center;
+    padding-top: 30px;
+  }
+
+  &__link {
+    @include link;
+    @include upperText;
+    color: #828282;
+
+    &:hover {
+      color: $dark-grey;
+      border-bottom: 1px solid;
+    }
+
+    &--active {
+      color: $dark-grey;
+      border-bottom: 1px solid;
+    }
+  }
+
+  &__phase-title {
+    display: none;
+
+    @include iPad {
+      padding-top: 60px;
+    }
+
+    @include mobile {
+      padding-top: 20px;
+    }
+
+    &--active {
+      @media (min-width: 320px) and (max-width: 1023px) {
+        display: block;
+        @include h5;
+        text-transform: uppercase;
+        font-size: 16px;
+        color: $dark-grey;
+        text-align: center;
+      }
+    }
+  }
+
+  &__next {
+    align-self: center;
+    padding-top: 50px;
+
+    @include mobile {
+      position: absolute;
+      bottom: 20px;
+    }
+  }
+
+  &__button {
+    @include button;
+    @include button-text;
+
+    &:hover {
+      @include hover-button;
+    }
+  }
+}

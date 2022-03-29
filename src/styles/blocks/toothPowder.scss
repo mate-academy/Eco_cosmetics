@@ -1,0 +1,131 @@
+.toothPowder {
+  @include page-standart;
+
+  &__main {
+    @include flex-column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include h2;
+    color: $dark-green;
+    line-height: 110%;
+    max-width: $widthBlock;
+
+    @media (max-width: 1080px) {
+      max-width: 280px;
+      font-size: 24px;
+    }
+
+    @include mobile {
+      position: absolute;
+      top: 0;
+      left: 0;
+      max-width: 98%;
+    }
+  }
+
+  &__ingredients-block {
+    display: flex;
+    gap: 120px;
+
+    @media (max-width: 1420px) and (min-width: 1081px) {
+      gap: 104px;
+    }
+
+    @media (max-width: 1080px) and (min-width: 768px) {
+      gap: 84px;
+    }
+
+    @include iPad {
+      gap: 48px;
+    }
+
+    @include mobile {
+      padding-top: 94px;
+      padding-bottom: 60px;
+      gap: 48px;
+    }
+  }
+
+  &__ingredients {
+    @include flex-column;
+    padding-top: 34px;
+    gap: 50px;
+    text-align: right;
+    max-width: 280px;
+
+    @media (max-width: 1420px) {
+      gap: 44px;
+    }
+
+    @media (max-width: 1080px) {
+      gap: 38px;
+    }
+  }
+
+  &__ingredient {
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    line-height: 150%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 76px;
+      background-color: $dark-grey;
+      right: -100px;
+      bottom: 10px;
+
+      @media (max-width: 1080px) {
+        right: -96px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 5px;
+      width: 5px;
+      border-radius: 100%;
+      background-color: $dark-grey;
+      right: -100px;
+      bottom: 8px;
+
+      @media (max-width: 1080px) {
+        display: none;
+      }
+    }
+  }
+  &__more {
+    @include more;
+    padding-bottom: 10px;
+
+    @include mobile {
+      position: absolute;
+      left: 0;
+      bottom: 10px;
+    }
+  }
+
+  &__container {
+    height: 395px;
+    width: 380px;
+
+    @include iPad {
+      margin-right: -100px;
+    }
+
+    @media (min-width: 450px) and (max-width: 768px) {
+      margin-right: -100px;
+    }
+
+    @media (max-width: 450px) {
+      margin-right: -231px;
+    }
+  }
+}

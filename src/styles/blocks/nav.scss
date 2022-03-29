@@ -1,0 +1,67 @@
+.nav {
+  &__list {
+    display: flex;
+    gap: 38px;
+
+    &--header {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &--active {
+      @include mobile {
+        @include flex-column;
+        gap: 63px;
+        transition: all 0.3s ease 0s;
+      }
+    }
+
+    &--footer {
+      @include iPad {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      @include mobile {
+        flex-direction: column;
+        gap: 11px;
+      }
+    }
+  }
+
+  &__items {
+    list-style: none;
+
+    &--header {
+      @include mobile {
+        border-bottom: 1px solid #828282;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__link {
+    @include link;
+    font-family: "Semibold", "Poppins", sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+
+    @include mobile {
+      color: beige;
+      font-family: "Semibold", "Poppins", sans-serif;
+      font-size: 18px;
+      line-height: 130%;
+      text-align: center;
+    }
+
+    &--footer {
+      color: $beige;
+
+      @include iPad {
+        font-size: 14px;
+      }
+    }
+  }
+}

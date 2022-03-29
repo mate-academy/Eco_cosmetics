@@ -1,0 +1,97 @@
+.aboutBrand {
+  @include page-standart;
+  justify-content: space-between;
+
+  // content //
+  &__content {
+    @include flex-column;
+    padding-top: 42px;
+    padding-right: 40px;
+    max-width: $widthBlock;
+
+    @include iPad {
+      padding-right: 30px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+      padding-right: 0;
+      align-content: center;
+    }
+  }
+
+  &__title {
+    @include h2;
+    color: $dark-green;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      font-size: 24px;
+    }
+
+    @include mobile {
+      text-align: center;
+    }
+  }
+  
+  &__info-block {
+    position: relative;
+    padding-top: 20px;
+    @include flex-column;
+    gap: 30px;
+    width: $widthBlock;
+
+    @media (max-width: 1023px) {
+      padding-top: 12px;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    @include text;
+
+    &:last-child {
+      @media (min-width: 320px) and (max-width: 1023px) {
+        display: none;
+      }
+    }
+  }
+
+  &__more {
+    padding-top: 40px;
+    @include more;
+  }
+
+  &__main-img {
+    width: 480px;
+    height: 529px;
+    object-fit: cover;
+    object-position: center;
+    padding-right: 20px;
+
+    @include iPad {
+      width: 369px;
+      height: 318px;
+      padding-right: 0;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__additional-img {
+    display: block;
+    margin-top: 100px;
+    height: 430px;
+    width: 208px;
+    background: url(../images/aboutBrand-img.png) 60% 100% no-repeat;
+    background-size: cover;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+}
