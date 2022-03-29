@@ -20,7 +20,6 @@
       &-main-logo {
         display: flex;
         align-items: center;
-
         order: -1;
       }
 
@@ -30,30 +29,28 @@
     }
   }
 
-  &__menu-list {
-    display: none;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
+  &__menu-nav-block {
     @include on-desktop {
-      display: block;
+      position: relative;
     }
   }
 
-  &__menu-item {
-    display: inline-block;
-    margin-right: 40px;
+  &__menu-list {
+    display: none;
 
-    &:last-child {
-      margin-right: 0;
+    @include on-desktop {
+      display: flex;
+      gap: 40px;
     }
   }
 
   &__menu-link {
     @include menu-text;
     color: $color__Navy-Green;
-    text-decoration: none;
+
+    &:hover {
+      border-color: $color__Navy-Green;
+    }
   }
 
   &__img--menu-logo {

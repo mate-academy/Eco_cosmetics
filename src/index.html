@@ -12,14 +12,13 @@
   <body class="page__body" >
     <header class="page__header header-cosmetic">
       <div class="container">
-        <nav class="navigation">
+        <div class="navigation">
           <div class="navigation__wrapper grid grid--desktop">
 
-            <div class="
-              navigation__item
+            <div class="navigation__item
               grid__item--desktop-7-11
             ">
-              <a href="#" class="navigation__menu-img-link">
+              <a href="#hiddenNavigation" class="navigation__menu-img-link">
                 <div class="logo navigation__img--menu-logo">
                   <img
                     class="logo__image"
@@ -29,19 +28,21 @@
                 </div>
               </a>
 
-              <ul class="navigation__menu-list">
-                <li class="navigation__menu-item">
-                  <a href="#" class="navigation__menu-link">Shop</a>
-                </li>
+              <nav class="nav-block navigation__menu-nav-block">
+                <ul class="nav-block__list navigation__menu-list">
+                  <li class="nav-block__element navigation__menu-item">
+                    <a href="#shop" class="nav-block__link navigation__menu-link">Shop</a>
+                  </li>
 
-                <li class="navigation__menu-item">
-                  <a href="#" class="navigation__menu-link">Contact</a>
-                </li>
+                  <li class="nav-block__element navigation__menu-item">
+                    <a href="#contact" class="nav-block__link navigation__menu-link">Contact</a>
+                  </li>
 
-                <li class="navigation__menu-item">
-                  <a href="#" class="navigation__menu-link">About</a>
-                </li>
-              </ul>
+                  <li class="nav-block__element navigation__menu-item">
+                    <a href="#about" class="nav-block__link navigation__menu-link">About</a>
+                  </li>
+                </ul>
+              </nav>
             </div>
 
             <div class="
@@ -77,6 +78,32 @@
               </a>
             </div>
           </div>
+        </div>
+
+        <nav id="hiddenNavigation" class="nav-block hidden-navigation">
+          <div class="container">
+            <a href="#" class="hidden-navigation__img-link-wrapper" >
+              <img
+                src="./images/logo/menu-close.svg"
+                alt="Button to close menu"
+                class="hidden-navigation__img-close"
+              >
+            </a>
+
+            <ul class="nav-block__list hidden-navigation__list">
+              <li class="nav-block__element hidden-navigation__element">
+                <a href="#shop" class="nav-block__link hidden-navigation__link">Shop</a>
+              </li>
+
+              <li class="nav-block__element hidden-navigation__element">
+                <a href="#contact" class="nav-block__link hidden-navigation__link">Contact</a>
+              </li>
+
+              <li class="nav-block__element hidden-navigation__element">
+                <a href="#about" class="nav-block__link hidden-navigation__link">About</a>
+              </li>
+            </ul>
+          </div>
         </nav>
 
         <div class="grid grid--tablet">
@@ -104,6 +131,7 @@
         </div>
       </div>
     </header>
+
     <main class="page__main">
       <section id="choose-gifts" class="page__choose-gifts choose-gifts">
         <div class="container">
@@ -198,7 +226,7 @@
         </div>
       </section>
 
-      <section class="page__shop shop">
+      <section id="shop" class="page__shop shop">
         <div class="container">
           <div class="shop__wrapper grid grid--tablet">
             <div class="shop__left-strip
@@ -295,7 +323,7 @@
         </div>
       </section>
 
-      <section class="page__creators creators">
+      <section id="about" class="page__creators creators">
         <div class="container">
           <div class="creators__wrapper grid grid--tablet">
             <div class="creators__left-strip
@@ -479,7 +507,7 @@
         </div>
       </section>
 
-      <section class="page__contact-us contact-us">
+      <section id="contact" class="page__contact-us contact-us">
         <div class="container">
           <div class="contact-us__wrapper grid grid--tablet">
             <div class="contact-us__left-strip
@@ -503,7 +531,7 @@
                 you and answer your other questions
               </p>
 
-              <form action="#" method="post" class="contact-us__form">
+              <form action="http://test.php" method="post" class="contact-us__form">
                 <label class="contact-us__input" for="contact-us__form-name">
                   <input
                     class="input-field"
@@ -533,6 +561,10 @@
                     placeholder="phone number"
                     type="tel"
                     name="Phone"
+                    title="068-123-45-67"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                    minlength="13"
+                    maxlength="13"
                     required
                   >
                 </label>
@@ -541,12 +573,15 @@
                   class="contact-us__input input-field input-field--massage "
                   name="Massage"
                   placeholder="Your message"
+                  title="Minimum message length is 10 characters and
+                    the maximum is up to 160 characters"
                   minlength="10"
+                  maxlength="160"
                   rows="1"
                   required
                 ></textarea>
 
-                <button class="contact-us__button button">send a message</button>
+                <button class="contact-us__button button" type="submit">send a message</button>
               </form>
             </div>
 
@@ -577,15 +612,15 @@
           ">
             <ul class="nav-block__list footer__navigation-list">
               <li class="nav-block__element">
-                <a href="#" class="nav-block__link footer__nav-link">Shop</a>
+                <a href="#shop" class="nav-block__link footer__nav-link">Shop</a>
               </li>
 
               <li class="nav-block__element">
-                <a href="#" class="nav-block__link footer__nav-link">Contact</a>
+                <a href="#contact" class="nav-block__link footer__nav-link">Contact</a>
               </li>
 
               <li class="nav-block__element">
-                <a href="#" class="nav-block__link footer__nav-link">About</a>
+                <a href="#about" class="nav-block__link footer__nav-link">About</a>
               </li>
             </ul>
           </nav>
