@@ -40,9 +40,9 @@
   }
 
   &__input {
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(3) {
+    display: block;
+
+    &:nth-child(-n + 2) {
       margin: 0 0 25px;
 
       @include on-desktop {
@@ -50,16 +50,16 @@
       }
     }
 
+    &:nth-child(3) {
+      margin: 0 0 45px;
+    }
+
     &:nth-child(4) {
-      position: relative;
       margin: 0 0 30px;
+      overflow-y: hidden;
 
       @include on-desktop {
         margin: 0 0 50px;
-      }
-
-      &::placeholder {
-        transform: translateY(20px);
       }
     }
   }
