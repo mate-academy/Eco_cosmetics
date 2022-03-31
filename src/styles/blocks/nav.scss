@@ -1,0 +1,51 @@
+@import "../utils/_vars.scss";
+@import "../utils/_mixins.scss";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include tablet {
+    display: none;
+  }
+
+  @include mobile {
+    grid-column: 1 / 3;
+    display: none;
+  }
+
+  &__links {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__icon {
+    transition: $transition;
+  }
+
+  &__item {
+    text-decoration: none;
+    color: $green;
+    transition: $transition;
+  
+    &:hover {
+      color: $lightGreen;
+    }
+  
+    &:hover .nav__icon {
+      stroke: $lightGreen;
+    }
+  }
+
+  &--mobile {
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+    @include mobile {
+      display: flex;
+    }
+  }
+}
