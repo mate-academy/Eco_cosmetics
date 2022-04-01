@@ -1,0 +1,76 @@
+@import "../utils/_vars.scss";
+@import "../utils/_mixins.scss";
+
+.info {
+
+  position: relative;
+  
+  &__wrapper {
+    padding: 100px 130px;
+
+    @include laptop {
+      padding: 100px 50px;
+    }
+
+    @include tablet {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    @include mobile {
+      padding: 130px 27px 100px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    color: $black;
+    align-self: center;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+  }
+
+  &__title {
+    color: $green;
+    align-self: center;
+
+    @include tablet {
+      grid-column: 3 / 5;
+      width: 110%;
+      justify-self: center;
+      font-size: 18px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      justify-self: center;
+      font-size: 18px;
+    }
+
+  }
+
+  &__line {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    width: 50%;
+    background: $lightGreen;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
