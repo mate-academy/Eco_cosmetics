@@ -1,25 +1,9 @@
-.brand {
-  overflow-x: hidden;
-  &__container {
-    @include ipadMini {
-      display: flex;
-      height: 321px;
-    }
+.creators {
+  overflow: hidden;
 
+  &__container {
     @include onDesktop {
       height: fit-content;
-    }
-
-  }
-
-  &__info {
-    @include ipadMini {
-      margin-right: 30px;
-    }
-
-    @include onDesktop {
-      margin-right: 120px;
-      padding-left: 100px;
     }
   }
 
@@ -61,6 +45,10 @@
 
     margin-bottom: 10px;
 
+    @include ipadMini {
+      letter-spacing: 0;
+    }
+
     @include onDesktop {
       font-size: 36px;
       line-height: 40px;
@@ -68,7 +56,6 @@
       text-transform: uppercase;
 
       margin-bottom: 34px;
-      //padding-left: 123px;
     }
   }
 
@@ -78,20 +65,22 @@
     line-height: 21px;
     color: #333;
 
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
     @include ipadMini {
       display: block;
       font-size: 16px;
       line-height: 24px;
-      height: 216px;
-      width: 342px;
+      letter-spacing: 0;
+      max-width: 328px;
+
+      margin-bottom: 15px;
     }
 
     @include onDesktop {
       font-size: 16px;
       line-height: 24px;
-      min-width: 380px;
+      margin-bottom: 30px;
     }
   }
 
@@ -100,68 +89,76 @@
 
     @include onDesktop {
       display: block;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       height: fit-content;
     }
   }
 
   &__link {
+    // display: block;
+    margin-top: 30px;
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
     color: #344f10;
 
+    @include ipadMini {
+      margin-top: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+      margin-top: 0;
+    }
+
     &:hover {
       padding-bottom: 10px;
       border-bottom: 1px solid #344f10;
+      width: 86px;
     }
   }
 
-  &__bigimage {
+  &__btn {
+    @include ipadMini {
+      max-width: 280px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__picture-wrapper {
     display: none;
 
     @include ipadMini {
       display: block;
-      max-height: 318px;
-      // margin-right: -27px;
-      // min-width: 369px;
+      min-width: 368px;
+      margin-right: -27px;
     }
 
     @include onDesktop {
-      margin-right: 20px;
-      min-height: 529px;
+      margin-right: 0;
     }
-
   }
 
-  &__photobig {
-    height: 100%;
+  &__image {
+    height: 435px;
     width: 110%;
     object-fit: cover;
     object-position: center;
 
     @include onDesktop {
-      min-width: 480px;
       width: 100%;
+      height: 100%;
     }
   }
 
-  &__smallimage {
-    display: none;
-
+  &__order {
     @include onDesktop {
-      display: block;
-      height: 430px;
-      // min-width: 130px;
-      padding-top: 100px;
-      margin-right: -50px;
+      &:nth-of-type(1) {
+        order: 1;
+      }
     }
-  }
-
-  &__photosmall {
-    height: 100%;
-    max-width: 208px;
-    object-fit: cover;
-    object-position: right;
   }
 }
