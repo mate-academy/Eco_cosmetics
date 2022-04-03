@@ -1,0 +1,312 @@
+@import "../utils/_vars.scss";
+@import "../utils/_mixins.scss";
+
+.shop {
+  height: 70vh;
+  padding: 0 130px;
+
+  @media (max-height: 950px) {
+    height: 120vh;
+  }
+
+  @include laptop {
+    padding: 0 50px 50px;
+    height: 100vh;
+  }
+
+  @include tablet {
+    padding: 110px 27px 0;
+    height: 50vh;
+  }
+
+  @include mobile {
+    padding: 0 20px;
+    position: relative;
+    height: 70vh;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding-bottom: 50px;
+    width: 100%;
+
+    @include tablet {
+      padding-bottom: 25px;
+    }
+    @include mobile {
+      padding-bottom: 15px;
+      text-align: center;
+      position: static;
+    }
+  }
+
+  &__sidetext {
+    color: rgba(52, 79, 16, 0.5);
+    width: max-content;
+    transform: rotateZ(-90deg) translate(-50%, -50%);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__line {
+    content: "";
+    width: 1px;
+    height: 70px;
+    background: rgba(52, 79, 16, 0.5);
+    display: block;
+    transform: translate(800%, 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__title {
+    color: $green;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    height: fit-content;
+
+    @include tablet {
+      font-size: 24px;
+      margin-bottom: 20px;
+      grid-column: 1 / 2;
+    }
+
+    @include mobile {
+      font-size: 24px;
+      margin-bottom: 20px;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: 50px;
+
+    @include tablet {
+      grid-column: 1 / 4;
+      gap: 20px;
+    }
+
+    @include mobile {
+      width: 100%;
+      grid-column: 1 / 3;
+      gap: 20px;
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $lightGray;
+
+    &:hover {
+      color: $lightGreen;
+      border-bottom: 1px solid $lightGreen;
+    }
+
+    &--active {
+      border-bottom: 1px solid $green;
+      color: $black;
+    }
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    transition: $transition;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__slider {
+    max-height: 600px;
+    height: 100%;
+    // padding: 0 0 200px 130px;
+  }
+
+  &__button {
+    transform: translateY(180%);
+
+    @include tablet {
+      grid-column: 3 / 5;
+      transform: translateY(-150%);
+
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      transform: translateY(-150%);
+    }
+  }
+}
+
+.slider {
+
+  position: relative;
+  width: 100%;
+  display: grid;
+
+  @include tablet {
+    // text-align: center;
+  }
+
+  &__grid {
+    
+    @include tablet {
+      grid-column: 1 / 7;
+    }
+    
+    @include mobile {
+      grid-column: 1 / 3;
+      position: static;
+    }
+  }
+  
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    position: absolute;
+    bottom: 0;
+    max-width: 1440px;
+
+    @include tablet {
+      display: none;
+      justify-content: space-around;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+      position: static;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+
+    &--mobile {
+      display: none;
+      position: static;
+
+      @include mobile {
+        display: block;
+        align-self: start;
+        width: 100%;
+      }
+    }
+  }
+
+  &__slide {
+
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      transform: scale(105%);
+    }
+
+    &:hover .slider__inner {
+      width: 105%;
+      height: 105%;
+    }
+
+    &:hover h5 {
+      // font-size: 20px;
+      color: $lightGreen;
+    }
+    
+    @include tablet {
+      max-width: 340px;
+      max-height: 300px;
+    }
+
+    @include mobile {
+      width: 100%;
+      height: 300px;
+      // transform: translateY(-100%);
+    }
+  }
+
+  &__img {
+    margin-bottom: 30px;
+    object-fit: contain;
+
+    @include tablet {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include mobile {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    
+  }
+
+  &__subtitle {
+    color: $black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    transition: $transition;
+  }
+
+  &__price {
+    color: $black;
+  }
+}
+// .slider {
+
+//   overflow: hidden;
+
+//   // &__wrapper {
+
+//   // }
+
+//   // &__slide {
+
+//   // }
+
+//   &__img {
+//     margin-bottom: 20px;
+//   }
+
+//   &__subtitle {
+//     color: $black;
+//     margin-bottom: 13px;
+//   }
+
+//   // &__pagination {
+    
+//   // }
+
+// }
