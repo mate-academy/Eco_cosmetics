@@ -11,16 +11,24 @@
 @import "blocks/shop.scss";
 @import "blocks/side-text.scss";
 @import "blocks/product.scss";
+@import "blocks/toothpaste.scss";
+@import "blocks/benefits.scss";
+@import "blocks/form-field.scss";
+@import "blocks/contact-us.scss";
 
 .page {
   &__section {
     position: relative;
     margin-bottom: 100px;
-
+    scroll-behavior: smooth;
 
     &--line {
       display: none;
       padding: 100px 0 200px 0;
+
+      &__second {
+        text-align: right;
+      }
 
       @include onDeskTop {
         display: block;
@@ -32,9 +40,7 @@
     }
 
     @include onDeskTop {
-      margin: 0 auto;
-      max-width: $page-width;
-
+      margin: 0 auto 200px auto;
     }
   }
 
@@ -65,6 +71,7 @@
     margin-right: 40px;
     padding-bottom: 12px;
     border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
 
     &:hover {
       border-bottom: 1px solid #344f10;
@@ -119,4 +126,8 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
+}
+
+h3 {
+  margin: 0;
 }
