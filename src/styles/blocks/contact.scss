@@ -1,0 +1,182 @@
+.contact {
+  overflow: hidden;
+
+  &__container {
+    @include onDesktop {
+      height: fit-content;
+    }
+  }
+
+  &__info {
+    position: relative;
+  }
+
+  &__decor {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      display: block;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba(52, 79, 16, 0.5);
+      left: -1%;
+      top: 10px;
+      transform: rotate(-90deg);
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100px;
+        left: -75px;
+        top: -40px;
+        display: block;
+        transform: rotate(-90deg);
+
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    margin-bottom: 10px;
+
+    @include ipadMini {
+      letter-spacing: 0;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 40px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      margin-bottom: 34px;
+    }
+  }
+
+  &__maininfo {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #333;
+
+    margin-bottom: 30px;
+
+    @include ipadMini {
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0;
+      max-width: 328px;
+
+      margin-bottom: 15px;
+    }
+
+    @include onDesktop {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    display: block;
+    box-sizing: border-box;
+    font-family: inherit;
+
+    width: 100%;
+    border: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #828282;
+    background-color: #e5e5e5;
+
+    margin: 0 0 30px;
+    outline: none;
+    resize: none;
+
+    &:nth-child(4) {
+      margin-bottom: 15px;
+    }
+
+    @include ipadMini {
+      margin-bottom: 25px;
+
+      &:nth-child(4) {
+        margin-bottom: 10px;
+      }
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px;
+      padding-bottom: 10px;
+
+      &:nth-child(4) {
+        margin-bottom: 20px;
+      }
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      text-transform: capitalize;
+      color: #828282;
+    }
+  }
+
+  &__textarea {
+    &::placeholder {
+      transform: translateY(20px);
+    }
+  }
+
+  &__picture-wrapper {
+    display: none;
+
+    @include ipadMini {
+      display: block;
+      min-width: 368px;
+      margin-right: -27px;
+    }
+
+    @include onDesktop {
+      margin-right: -50px;
+      max-width: 610px;
+    }
+  }
+
+  &__image {
+    height: 435px;
+    width: 110%;
+    object-fit: cover;
+    object-position: left;
+
+    @include onDesktop {
+      width: 110%;
+      height: 100%;
+    }
+  }
+
+  &__order {
+    @include onDesktop {
+      &:nth-of-type(1) {
+        order: 1;
+      }
+    }
+  }
+}
