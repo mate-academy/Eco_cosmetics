@@ -2,11 +2,41 @@
 @import "../utils/_mixins.scss";
 
 .shop {
-  // height: 70vh;
-  height: 150vh;
+  height: 70vh;
   padding: 0 130px;
+  display: none;
 
-  @media (max-height: 950px) {
+  &--desktop {
+    display: block;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &--tablet {
+
+    @include tablet {
+      display: block;
+      padding: 110px 27px 0;
+      height: 110vh;
+    }
+  }
+
+  &--mobile {
+    @include mobile {
+      display: block;
+      padding: 0 20px;
+      position: relative;
+      height: 90vh;
+    }
+  }
+
+  @media (max-height: 950px) and (min-width: 1000px) {
     height: 120vh;
   }
 
@@ -15,27 +45,17 @@
     height: 100vh;
   }
 
-  @include tablet {
-    padding: 110px 27px 0;
-    height: 50vh;
-  }
-
-  @include mobile {
-    padding: 0 20px;
-    position: relative;
-    height: 70vh;
-  }
-
   &__wrapper {
     position: relative;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
     width: 100%;
+    overflow: hidden;
 
     @include tablet {
-      padding-bottom: 25px;
+      margin-bottom: 25px;
     }
     @include mobile {
-      padding-bottom: 15px;
+      margin-bottom: 15px;
       text-align: center;
       position: static;
     }
@@ -117,6 +137,42 @@
   &__link {
     text-decoration: none;
     color: $lightGray;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: $lightGreen;
+      border-bottom: 1px solid $lightGreen;
+    }
+
+    &--active {
+      border-bottom: 1px solid $green;
+      color: $black;
+    }
+  }
+
+  &__link1 {
+    text-decoration: none;
+    color: $lightGray;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: $lightGreen;
+      border-bottom: 1px solid $lightGreen;
+    }
+
+    &--active {
+      border-bottom: 1px solid $green;
+      color: $black;
+    }
+  }
+
+  &__link2 {
+    text-decoration: none;
+    color: $lightGray;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
 
     &:hover {
       color: $lightGreen;
@@ -146,7 +202,6 @@
   &__slider {
     max-height: 600px;
     height: 100%;
-    // padding: 0 0 200px 130px;
   }
 
   &__button {
@@ -160,155 +215,143 @@
 
     @include mobile {
       grid-column: 1 / 3;
-      transform: translateY(-150%);
+      transform: translateY(-250%);
     }
   }
 }
 
-// .slider {
-
-//   position: relative;
-//   width: 100%;
-//   display: grid;
-
-//   @include tablet {
-//     // text-align: center;
-//   }
-
-//   &__grid {
-    
-//     @include tablet {
-//       grid-column: 1 / 7;
-//     }
-    
-//     @include mobile {
-//       grid-column: 1 / 3;
-//       position: static;
-//     }
-//   }
-  
-//   &__inner {
-//     display: flex;
-//     justify-content: space-between;
-//     gap: 20px;
-//     position: absolute;
-//     bottom: 0;
-//     max-width: 1440px;
-
-//     @include tablet {
-//       display: none;
-//       justify-content: space-around;
-//     }
-
-//     @include mobile {
-//       display: none;
-//     }
-
-//     &--tablet {
-//       display: none;
-//       position: static;
-
-//       @include tablet {
-//         display: flex;
-//       }
-//     }
-
-//     &--mobile {
-//       display: none;
-//       position: static;
-
-//       @include mobile {
-//         display: block;
-//         align-self: start;
-//         width: 100%;
-//       }
-//     }
-//   }
-
-//   &__slide {
-
-//     text-decoration: none;
-//     transition: $transition;
-
-//     &:hover {
-//       transform: scale(105%);
-//     }
-
-//     &:hover .slider__inner {
-//       width: 105%;
-//       height: 105%;
-//     }
-
-//     &:hover h5 {
-//       // font-size: 20px;
-//       color: $lightGreen;
-//     }
-    
-//     @include tablet {
-//       max-width: 340px;
-//       max-height: 300px;
-//     }
-
-//     @include mobile {
-//       width: 100%;
-//       height: 300px;
-//       // transform: translateY(-100%);
-//     }
-//   }
-
-//   &__img {
-//     margin-bottom: 30px;
-//     object-fit: contain;
-
-//     @include tablet {
-//       object-fit: cover;
-//       width: 100%;
-//       height: 100%;
-//     }
-
-//     @include mobile {
-//       object-fit: cover;
-//       width: 100%;
-//       height: 100%;
-//     }
-    
-//   }
-
-//   &__subtitle {
-//     color: $black;
-//     margin-bottom: 10px;
-//     text-transform: uppercase;
-//     transition: $transition;
-//   }
-
-//   &__price {
-//     color: $black;
-//   }
-// }
-
 .slider {
 
-  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: grid;
 
-  // &__wrapper {
+  &__grid {
 
-  // }
+    display: flex;
+    
+    @include tablet {
+      grid-column: 1 / 7;
+      justify-content: space-between;
+    }
+    
+    // @include mobile {
+    //   grid-column: 1 / 3;
+    //   position: static;
+    //   display: none;
+    // }
 
-  // &__slide {
+    &--tablet {
+      display: none;
 
-  // }
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+  
+  &__inner {
+    gap: 20px;
+    position: absolute;
+    bottom: 0;
+    max-width: 1440px;
+    display: none;
+
+    /*DESKTOP*/
+
+    &--active {
+      display: flex;
+    }
+  }
+
+  /*TABLET*/
+
+  &__inner1 {
+    display: none;
+    position: static;
+    justify-content: space-between;
+    width: 100%;
+
+    &--active {
+      display: flex;
+    }
+  }
+
+  /*MOBILE*/
+
+  &__inner2 {
+    display: none;
+    position: static;
+
+    &--active {
+      display: block;
+      align-self: start;
+      width: 100%;
+    }
+  }
+
+  &__slide {
+
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      transform: scale(105%);
+    }
+
+    &:hover .slider__inner {
+      width: 105%;
+      height: 105%;
+    }
+
+    &:hover h5 {
+      color: $lightGreen;
+    }
+    
+    @include tablet {
+      max-width: 342px;
+      max-height: 340px;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include mobile {
+      width: 100%;
+      height: 300px;
+    }
+  }
 
   &__img {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    object-fit: cover;
+    width: 380px;
+    height: 500px;
+    
+
+    @include tablet {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include mobile {
+      object-fit: cover;
+      object-position: center;
+      max-height: 267px;
+      width: 100%;
+      height: 100%;
+    }
+    
   }
 
   &__subtitle {
     color: $black;
-    margin-bottom: 13px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    transition: $transition;
   }
 
-  // &__pagination {
-    
-  // }
-
+  &__price {
+    color: $black;
+  }
 }
