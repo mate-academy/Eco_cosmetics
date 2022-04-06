@@ -117,3 +117,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelector('.shop__link2').click();
 });
+
+function nameInput() {
+  if (!document.getElementById('name').value.match(/[0-9]/)) {
+    return true;
+  }
+}
+
+function phoneInput() {
+  if (!document.getElementById('phone').value.match(/[a-zA-Z]/)) {
+    return true;
+  }
+}
+
+const input2 = document.getElementById('name');
+
+input2.addEventListener('blur', (e) => {
+  e.preventDefault();
+
+  if (nameInput(input2)) {
+    input2.classList.remove('contact__input--invalid');
+    input2.classList.add('contact__input--valid');
+  }
+});
+
+input2.addEventListener('blur', (e) => {
+  e.preventDefault();
+
+  if (!nameInput(input2)) {
+    input2.classList.remove('contact__input--valid');
+    input2.classList.add('contact__input--invalid');
+  }
+});
+
+const input3 = document.getElementById('phone');
+
+input3.addEventListener('blur', (e) => {
+  e.preventDefault();
+
+  if (nameInput(input3)) {
+    input3.classList.remove('contact__input--invalid');
+    input3.classList.add('contact__input--valid');
+  }
+});
+
+input3.addEventListener('blur', (e) => {
+  e.preventDefault();
+
+  if (!phoneInput(input3)) {
+    input3.classList.add('contact__input--invalid');
+    input3.classList.remove('contact__input--valid');
+  }
+});
