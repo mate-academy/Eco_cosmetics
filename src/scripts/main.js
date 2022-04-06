@@ -169,3 +169,5 @@ input3.addEventListener('blur', (e) => {
     input3.classList.remove('contact__input--valid');
   }
 });
+
+document.getElementById('message').value = 'Your message';
