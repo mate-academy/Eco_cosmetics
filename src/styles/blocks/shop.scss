@@ -2,7 +2,7 @@
 @import "../utils/_mixins.scss";
 
 .shop {
-  height: 70vh;
+  height: 750px;
   padding: 0 130px;
   display: none;
 
@@ -23,7 +23,7 @@
     @include tablet {
       display: block;
       padding: 110px 27px 0;
-      height: 110vh;
+      height: fit-content;
     }
   }
 
@@ -32,17 +32,14 @@
       display: block;
       padding: 0 20px;
       position: relative;
-      height: 90vh;
+      height: fit-content;
     }
-  }
-
-  @media (max-height: 950px) and (min-width: 1000px) {
-    height: 120vh;
   }
 
   @include laptop {
     padding: 0 50px 50px;
-    height: 100vh;
+    height: 560px;
+
   }
 
   &__wrapper {
@@ -207,15 +204,22 @@
   &__button {
     transform: translateY(180%);
 
+    @include laptop {
+      grid-column: 4 / 7;
+
+    }
+
     @include tablet {
       grid-column: 3 / 5;
-      transform: translateY(-150%);
+      transform: translateY(0);
 
     }
 
     @include mobile {
       grid-column: 1 / 3;
-      transform: translateY(-250%);
+      transform: translateY(0);
+      margin-top: 30px;
+      margin-bottom: 100px;
     }
   }
 }
@@ -225,6 +229,14 @@
   position: relative;
   width: 100%;
   display: grid;
+
+  @media (max-width: 1420px) and (min-width: 1000px) {
+    height: 420px;
+  }
+
+  @include tablet {
+    height: 550px;
+  }
 
   &__grid {
 
@@ -327,6 +339,10 @@
     width: 380px;
     height: 500px;
     
+    @media (max-width: 1420px) and (min-width: 1000px) {
+      width: 250px;
+      height: 328px;
+    }
 
     @include tablet {
       object-fit: cover;
