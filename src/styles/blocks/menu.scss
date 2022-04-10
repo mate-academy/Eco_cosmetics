@@ -1,12 +1,19 @@
 .menu {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: #333;
+
+  @include onDesktop {
+    display: none;
+  }
 
   &__content {
     box-sizing: border-box;
     height: 100vh;
     padding-top: 20px;
-
-    overflow-y: auto;
   }
 
   &__top {
@@ -36,6 +43,29 @@
 
   &__item {
     margin-bottom: 41px;
+    text-align: center;
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 292px;
+      }
+    }
+  }
+
+  &__items {
+    margin-bottom: 41px;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #828282;
+    width: 100%;
 
     &:last-child {
       margin-bottom: 0;
@@ -78,17 +108,5 @@
         border-bottom: 1px solid #344f10;
       }
     }
-
-    &-action {
-      @media (max-width: 1179px) {
-        padding-bottom: 10px;
-        border-bottom: 1px solid #828282;
-        width: 100%;
-      }
-    }
-
-    // &:hover {
-    //  color: #fff;
-    // }
   }
 }
