@@ -170,4 +170,4 @@ input3.addEventListener('blur', (e) => {
   }
 });
 
-document.getElementById('message').value = 'Your message';
+document.getElementById('message').value = '';
