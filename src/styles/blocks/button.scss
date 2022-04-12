@@ -1,0 +1,48 @@
+.button {
+  margin-top: 30px;
+  box-sizing: border-box;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #333;
+
+  padding: 19px 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #f2f2f2;
+  border: transparent;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  @include onDesktop {
+    max-width: 280px;
+    margin: 0;
+  }
+
+  &:hover {
+    color: $mainColor;
+    background-color: $colorButtonAccent;
+    border: 1px solid $mainColor;
+  }
+
+  &__desktop {
+    @media (max-width: 1179px) {
+      display: none;
+    }
+  }
+
+  &__laptop {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+}

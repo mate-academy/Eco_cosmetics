@@ -1,0 +1,99 @@
+.present {
+  padding: 0;
+  margin-top: 100px;
+  overflow: hidden;
+
+  @include onDesktop {
+    max-height: 346px;
+    margin-top: 0;
+    padding: 100px 0;
+  }
+
+  // @include onDesktop {
+  //   margin-top: 200px;
+  // }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+  }
+
+  &__info {
+
+    @include ipadMini {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 30px 0;
+    }
+
+    @include onDesktop {
+      position: relative;
+      margin: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        width: 100vw;
+        border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @include ipadMini {
+      text-align: center;
+      padding: 0 75px;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0;
+      padding: 0;
+      text-align: start;
+    }
+  }
+
+  &__rside {
+    @media (max-width: 1179px) {
+      display: none;
+    }
+
+    max-height: 144px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: 0;
+      width: 100vw;
+      border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__order:nth-of-type(1) {
+    @include ipadMini {
+      order: 1;
+    }
+  }
+
+  &__order:nth-of-type(2) {
+    @include ipadMini {
+      order: 1;
+    }
+  }
+}

@@ -1,0 +1,263 @@
+.tooth-powder {
+  overflow: hidden;
+
+  // @include onDesktop {
+  //   display: block;
+  // }
+
+  &__info {
+    @include ipadMini {
+      min-width: 260px;
+    }
+
+    @include onDesktop {
+      min-width: 380px;
+      margin-right: 38px;
+      padding-left: 100px;
+      position: relative;
+    }
+  }
+
+  &__decor {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      display: block;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba(52, 79, 16, 0.5);
+      left: -7%;
+      transform: rotate(-90deg);
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100px;
+        left: -75px;
+        top: -40px;
+        display: block;
+        transform: rotate(-90deg);
+
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      display: inline-block;
+      font-size: 36px;
+      line-height: 40px;
+      margin-bottom: 0;
+      min-width: 380px;
+    }
+  }
+
+  &__ingredients {
+    margin-right: 47px;
+    min-width: 103px;
+
+    @include onDesktop {
+      min-width: 162px;
+      margin: 0;
+      padding-right: 116px;
+      margin-left: -90px;
+    }
+
+    &:nth-of-type(1) {
+      @include onDesktop {
+        order: 1;
+      }
+    }
+  }
+  &__container {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1180px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    margin-bottom: 30px;
+
+    @include ipadMini {
+      margin-bottom: 0;
+    }
+  }
+
+  &__ingredient {
+    position: relative;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: #333;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 76px;
+      height: 1px;
+      left: 120%;
+      top: 50%;
+      background: #333;
+      transform: rotate(-180deg);
+
+      @include onDesktop {
+        left: 111%;
+      }
+    }
+
+    &::before {
+      @include onDesktop {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #333;
+        top: 40%;
+        right: -96px;
+      }
+    }
+
+    &__ingredient-text {
+      display: none;
+
+      @include onDesktop {
+        display: inline;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &:nth-child(1) {
+      margin-bottom: 52px;
+      margin-top: 2px;
+
+      @include onDesktop {
+        &::before {
+          content: "";
+          top: 55%;
+        }
+      }
+
+      &::after {
+        content: "";
+        top: 60%;
+      }
+
+      @include ipadMini {
+        margin-top: 38px;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 41px;
+      @include onDesktop {
+        &::after {
+          top: 25%;
+        }
+        &::before {
+          top: 20%;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      margin-bottom: 36px;
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 49px;
+      min-width: 120px;
+    }
+  }
+
+  // &__picture {
+  //   @include onDesktop {
+  //     //margin-right: -100px;
+  //   }
+  // }
+
+  &__image {
+    height: 397px;
+  }
+
+  &__link-block {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #344f10;
+    display: block;
+
+    @include ipadMini {
+      margin-top: -18px;
+    }
+
+    &:hover {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #344f10;
+    }
+  }
+
+  &__link-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-top: 270px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: #344f10;
+      position: absolute;
+      // top: 370px;
+
+      &:hover {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #344f10;
+      }
+    }
+  }
+
+  &__order:nth-of-type(1) {
+    @include onDesktop {
+      order: 1;
+    }
+  }
+
+  &__order:nth-of-type(2) {
+    @include onDesktop {
+      order: 1;
+    }
+  }
+
+  &__order:nth-of-type(3) {
+    @include onDesktop {
+      order: 2;
+    }
+  }
+}

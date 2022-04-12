@@ -1,0 +1,164 @@
+.creators {
+  overflow: hidden;
+
+  &__container {
+    @include onDesktop {
+      height: fit-content;
+    }
+  }
+
+  &__decor {
+    display: none;
+
+    @include onDesktop {
+      position: relative;
+      display: block;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba(52, 79, 16, 0.5);
+
+      transform: rotate(-90deg) translate(0, -280px);
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100px;
+        left: -75px;
+        top: -40px;
+        display: block;
+        transform: rotate(-90deg);
+
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    margin-bottom: 10px;
+
+    @include ipadMini {
+      letter-spacing: 0;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 40px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      margin-bottom: 34px;
+    }
+  }
+
+  &__maininfo {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #333;
+
+    margin-bottom: 20px;
+
+    @include ipadMini {
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0;
+      max-width: 328px;
+
+      margin-bottom: 15px;
+    }
+
+    @include onDesktop {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__desktopinfo {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 20px;
+      height: fit-content;
+    }
+  }
+
+  &__link {
+    // display: block;
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #344f10;
+
+    @include ipadMini {
+      margin-top: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+      margin-top: 0;
+    }
+
+    &:hover {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #344f10;
+      width: 86px;
+    }
+  }
+
+  &__btn {
+    @include ipadMini {
+      max-width: 280px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__picture-wrapper {
+    display: none;
+
+    @include ipadMini {
+      display: block;
+      min-width: 368px;
+      margin-right: -27px;
+    }
+
+    @include onDesktop {
+      margin-right: 0;
+    }
+  }
+
+  &__image {
+    height: 435px;
+    width: 110%;
+    object-fit: cover;
+    object-position: center;
+
+    @include onDesktop {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__order {
+    @include onDesktop {
+      &:nth-of-type(1) {
+        order: 1;
+      }
+    }
+  }
+}

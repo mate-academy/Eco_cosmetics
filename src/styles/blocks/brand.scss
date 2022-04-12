@@ -1,0 +1,170 @@
+.brand {
+  overflow-x: hidden;
+
+  &__container {
+    @include ipadMini {
+      display: flex;
+      height: 321px;
+    }
+
+    @include onDesktop {
+      height: fit-content;
+    }
+
+  }
+
+  &__info {
+    @include ipadMini {
+      margin-right: 30px;
+    }
+
+    @include onDesktop {
+      margin-right: 120px;
+      padding-left: 100px;
+    }
+  }
+
+  &__decor {
+    display: none;
+
+    @include onDesktop {
+      position: relative;
+      display: block;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      color: rgba(52, 79, 16, 0.5);
+
+      transform: rotate(-90deg) translate(0, -280px);
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 100px;
+        left: -75px;
+        top: -40px;
+        display: block;
+        transform: rotate(-90deg);
+
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 40px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      margin-bottom: 34px;
+      //padding-left: 123px;
+    }
+  }
+
+  &__maininfo {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #333;
+
+    margin-bottom: 30px;
+
+    @include ipadMini {
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      height: 216px;
+      width: 342px;
+    }
+
+    @include onDesktop {
+      font-size: 16px;
+      line-height: 24px;
+      min-width: 380px;
+    }
+  }
+
+  &__desktopinfo {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 40px;
+      height: fit-content;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #344f10;
+    cursor: pointer;
+
+    &:hover,
+    :focus {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #344f10;
+    }
+  }
+
+  &__bigimage {
+    display: none;
+
+    @include ipadMini {
+      display: block;
+      max-height: 318px;
+      // margin-right: -27px;
+      // min-width: 369px;
+    }
+
+    @include onDesktop {
+      margin-right: 20px;
+      min-height: 529px;
+    }
+
+  }
+
+  &__photobig {
+    height: 100%;
+    width: 110%;
+    object-fit: cover;
+    object-position: center;
+
+    @include onDesktop {
+      min-width: 480px;
+      width: 100%;
+    }
+  }
+
+  &__smallimage {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: 430px;
+      // min-width: 130px;
+      padding-top: 100px;
+      margin-right: -50px;
+    }
+  }
+
+  &__photosmall {
+    height: 100%;
+    max-width: 208px;
+    object-fit: cover;
+    object-position: right;
+  }
+}
