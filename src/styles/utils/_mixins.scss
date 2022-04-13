@@ -10,3 +10,31 @@
     @content;
   }
 }
+
+@mixin laptopBreakpoint {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin desktopBreakpoint {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin dontShowOnMobile {
+  @media (max-width: 1279px) {
+    display: none;
+  }
+}
+
+@mixin customColumns($numberOfCols) {
+  @for $start from 1 through $numberOfCols {
+    @for $end from $start through $numberOfCols {
+      &--cols--#{$start}-#{$end} {
+        grid-column: #{$start} / #{$end + 1};
+      }
+    }
+  }
+}
