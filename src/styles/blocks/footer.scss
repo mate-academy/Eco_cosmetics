@@ -1,0 +1,192 @@
+.footer {
+  padding: 30px 0 40px;
+  background-color: rgba(52, 79, 16, 0.5);
+
+  @include On768 {
+    padding-bottom: 30px;
+  }
+
+  @include On1280 {
+    padding: 60px 0;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    @include On1280 {
+      flex-direction: row;
+      margin-bottom: 0;
+    }
+
+    &-item {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      color: $main-color;
+      margin-bottom: 10px;
+      @include hover(color, #fff);
+
+      @include On1280 {
+        margin-bottom: 0;
+        margin-right: 40px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__social-media {
+    display: flex;
+
+    margin-bottom: 40px;
+
+    @include On768 {
+      margin-bottom: 50px;
+    }
+
+    @include On1280 {
+      margin: 0;
+    }
+    
+
+    &--hiddenOn1280 {
+      @include On1280 {
+        display: none;
+      }
+    }
+
+    &--shownOn1280 {
+      display: none;
+
+      @include On1280 {
+        display: flex;
+      }
+    }
+
+    &-item {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      @include hover(border-radius, 4px);
+      @include hover(background-color, (rgba(213, 204, 204, 0.6)));
+      cursor: pointer;
+
+      &--facebook {
+        background-image: url(../images/icons/facebook.svg);
+        display: block;
+        margin-right: 20px;
+
+        @include On1280 {
+          margin-right: 14px;
+        }
+      }
+
+      &--insta {
+        background-image: url(../images/icons/insta.svg);
+      }
+
+      &:hover {
+        background-color: rgba(213, 204, 204, 0.6);
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &__contacts {
+    font-size: 14px;
+    line-height: 21px;
+    color: $main-color;
+    margin-bottom: 40px;
+
+    @include On768 {
+      margin-bottom: 0;
+    }
+
+    @include On1280 {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+
+    &-item {
+      @include hover(color, #fff);
+      display: block;
+      font-size: 14px;
+      line-height: 21px;
+      color: $main-color;
+
+      margin-bottom: 20px;
+  
+      @include On1280 {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: $main-color;
+    margin: 0 auto;
+
+    @include On768 {
+      font-weight: 400;
+      line-height: 21px;
+      margin: 0;
+    }
+
+    @include On1280 {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    &-text {
+      font-size: 0;
+
+      @include On1280 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.copyright {
+  display: block;
+  background-image: url(../images/icons/copyright-svg.svg);
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 10px;
+
+  @include On768 {
+    margin-left: 0;
+  }
+
+  @include On1280 {
+    margin-left: 10px;
+  }
+}

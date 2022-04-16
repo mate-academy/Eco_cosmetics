@@ -1,0 +1,152 @@
+.shipping {
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  
+  position: fixed;
+  top: 0;
+  background-color: $main-color;
+  height: 100%;
+  overflow: auto;
+  z-index: 3;
+  width: 100%;
+  transform: translateX(100%);
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__checkout {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid $line-color;
+
+    @include On1280 {
+      display: none;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+
+    margin-bottom: 30px;
+
+    @include On1280 {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+
+    margin-bottom: 50px;
+
+    @include On768 {
+      margin-bottom: 60px;
+    }
+
+    @include On1280 {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__form {
+    margin: 0 auto;
+
+    @include On1280 {
+      margin: 0;
+    }
+  }
+
+  &__top-bar {
+    margin-bottom: 20px;
+
+    @include On768 {
+      margin-bottom: 30px;
+    }
+
+    @include On1280 {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__main-title {
+    display: none;
+
+    @include On1280 {
+      display: block;
+      text-align: center;
+      font-size: 36px;
+      line-height: 54px;
+      color: $green-col;
+
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include On1280 {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-item {
+      display: block;
+      width: max-content;
+      margin-right: 80px;
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: 18px;
+      padding-bottom: 10px;
+      margin-bottom: 60px;
+      color: $bottom-line;
+      @include hover(color, $black-color);
+
+      &:hover {
+        color: $black-color;
+      }
+
+      &--selected {
+        border-bottom: 1px solid $black-color;
+        color: $black-color;
+      }
+    }
+  }
+
+  &__button {
+    border: none;
+    margin-bottom: 100px;
+
+    @include On768 {
+      margin: 0 auto 100px;
+    }
+
+    &--payment-option {
+      margin: 0 auto 100px;
+    }
+  }
+
+  &__payment-option {
+    margin-bottom: 40px;
+
+    @include On1280 {
+      margin: 0 auto 50px;
+    }
+  }
+}
