@@ -2,12 +2,16 @@
   &__menu {
     margin: 0 auto;
     position: relative;
-    padding: 20px;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
 
+    @include onTablet {
+      padding: 27px;
+    }
+
     @include onDesktop {
-      padding: 40px 0 92px;
+      padding: 50px 20px 92px;
     }
   }
 
@@ -17,7 +21,7 @@
     }
   }
 
-  &__icon-opener{
+  &__icon-opener {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -42,28 +46,71 @@
     margin: 0 0 10px;
     font-weight: 600;
     font-size: 24px;
-    line-height: 130%;
+    line-height: 31px;
     text-align: center;
     color: $c-gray;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 54px;
+      text-transform: capitalize;
+    }
 
     @include onDesktop {
       text-align: left;
       font-size: 60px;
+      line-height: 78px;
       padding: 0;
       margin-bottom: 30px;
+      text-transform: none;
     }
   }
+
+  &__title--line {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__title--new-line {
+    display: none;
+
+    @include onTablet {
+      display: initial;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  // @include onTablet {
+  //   #title br {
+  //     display: none;
+  //   }
+  // }
 
   &__subtitle {
     margin: 0 0 30px;
     font-size: 16px;
-    line-height: 150%;
+    line-height: 24px;
     text-align: center;
     color: $c-gray;
 
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
     @include onDesktop {
       text-align: left;
-      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    padding: 0 20px;
+
+    @include onDesktop {
+      padding: 0;
     }
   }
 }

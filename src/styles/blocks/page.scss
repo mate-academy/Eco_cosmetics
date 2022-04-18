@@ -1,31 +1,35 @@
 .page {
   font-family: "Avenir-book", sans-serif;
   font-weight: 400;
-    &__body {
-      background-color: $c-base;
-      margin: 0;
+  &__body {
+    background-color: $c-base;
+    margin: 0;
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
     }
 
-    &__section {
-      margin-bottom: 100px;
-
-      @include onDesktop {
-        margin-bottom: 200px;
-      }
+    @include onDesktop {
+      margin-bottom: 200px;
     }
+  }
 
-    &__menu {
-      position: fixed;
-      padding: 20px;
-      top: 0;
-      left: 0;
-      right: 0;
-      
-      transform: translateX(-100%);
-      transition: transform 0.3s;
-  
-      &:target {
-        transform: translateX(0);
-      }
+  &__menu {
+    position: fixed;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
     }
+  }
 }
