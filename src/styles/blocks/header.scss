@@ -45,10 +45,22 @@
       line-height: 150%;
       text-transform: capitalize;
     }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      font-size: 60px;
+      line-height: 130%;
+      text-transform: none;
+      text-align: left;
+    }
   }
 
   &__title-break--iphone {
     @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
       display: none;
     }
   }
@@ -59,9 +71,17 @@
     @include onTablet {
       display: inline;
     }
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &__text {
     text-align: center;
+
+    @include onDesktop {
+      text-align: left;
+    }
   }
 }
