@@ -1,0 +1,80 @@
+.article__section {
+  @include limitContentWidth;
+}
+
+.article__section-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @include forMobile {
+    padding: 0 20px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -84px;
+
+    content: "";
+    width: 530px;
+    height: 1px;
+
+    background: rgba(52, 79, 16, 0.5);
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  position: relative;
+
+  &::after {
+    position: absolute;
+    right: -84px;
+    bottom: 0;
+
+    content: "";
+    width: 530px;
+    height: 1px;
+
+    background: rgba(52, 79, 16, 0.5);
+
+    @include forMobile {
+      display: none;
+    }
+  }
+}
+
+.article__text {
+  max-width: 380px;
+  color: #333;
+
+  @include fontParams(16px, 150%, 400);
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.article__title {
+  max-width: 380px;
+  color: #344f10;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  @include fontParams(24px, 150%, 600);
+
+  @include forMobile {
+    @include fontParams(18px, 150%, 600);
+    max-width: 280px;
+
+    // display: flex;
+    // justify-content: center;
+    padding: 21px 0 100px;
+    margin: 0;
+  }
+}

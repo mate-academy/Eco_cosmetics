@@ -1,0 +1,111 @@
+.main__about-brand {
+  display: flex;
+  column-gap: 120px;
+
+  position: relative;
+}
+
+.main__col-1 {
+  max-width: 380px;
+  margin-left: 72px;
+
+  @include forMobile {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+.main__rotated-text {
+  @include fontParams(14px, 130%, 500);
+
+  position: absolute;
+  top: 175px;
+  left: -29px;
+
+  transform: rotate(270deg);
+  transform-origin: 0 0;
+
+  margin: 0;
+  color: rgba(52, 79, 16, 0.5);
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.main__side-line {
+  width: 1px;
+  height: 100px;
+
+  background: rgba(52, 79, 16, 0.5);
+
+  transform-origin: 0 0;;
+
+  position: absolute;
+  left: -20px;
+  top: 185px;
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.main__about-title {
+  @include fontParams(36px, 110%, 600);
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $greenColor;
+  margin: 0;
+
+  @include forMobile {
+    @include fontParams(24px, 150%, 600);
+    letter-spacing: 0.05em;
+  }
+}
+
+.main__about-text {
+  @include fontParams(16px, 150%, 400);
+
+  margin-top: 34px;
+  margin-bottom: 40px;
+
+  color: $textColor;
+
+  @include forMobile {
+    @include fontParams(14px, 150%, 400);
+
+    margin-top: 10px;
+    margin-bottom: 27px;
+  }
+
+  &:nth-of-type(3) {
+    @include forMobile {
+      display: none;
+    }
+  }
+}
+
+.main__learn-more-button {
+  @include fontParams(14px, 130%, 500);
+
+  color: $greenColor;
+
+  border-bottom: 1px solid $greenColor;
+  padding-bottom: 10px;
+}
+
+.main__col-2 {
+  position: relative;
+  gap: 20px;
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.main__image-2 {
+  position: absolute;
+  bottom: 7px;
+  right: -150px;
+}

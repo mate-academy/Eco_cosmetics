@@ -1,0 +1,185 @@
+.main {
+  &__shop {
+    position: relative;
+    margin-top: 200px;
+    padding-left: 84px;
+
+    @include forMobile {
+      // padding: 0 20px;
+      padding: 0;
+      margin-top: 110px;
+    }
+  }
+
+  &__shop-rotated-text {
+    @include fontParams(14px, 130%, 500);
+
+    position: absolute;
+    top: 40px;
+    left: -29px;
+
+    transform: rotate(270deg);
+    transform-origin: 0 0;
+
+    margin: 0;
+    color: rgba(52, 79, 16, 0.5);
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  &__shop-side-line {
+    width: 1px;
+    height: 100px;
+
+    background: rgba(52, 79, 16, 0.5);
+
+    transform-origin: 0 0;;
+
+    position: absolute;
+    left: -20px;
+    top: 50px;
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  &__shop-title {
+    @include fontParams(36px, 110%, 600);
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $greenColor;
+    margin: 0;
+
+    @include forMobile {
+      @include fontParams(24px, 150%, 600);
+      letter-spacing: 0.05em;
+
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .filter {
+    &__list {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+
+      padding: 0;
+
+      @include forMobile {
+        @include fontParams(14, 130% 400);
+
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__link {
+      @include fontParams(18px, 150%, 600);
+
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: $isNotActive;
+
+      @include forMobile {
+        @include fontParams(14px, 130%, 400);
+
+        // display: flex;
+        // justify-content: space-between;
+      }
+    }
+
+    &__link.active {
+      color: $textColor;
+
+      padding-bottom: 10px;
+
+      border-bottom: 2px solid $textColor;
+    }
+  }
+
+  &__filter-image {
+    margin-top: 61px;
+    margin-bottom: 40px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+
+    @include forMobile {
+      grid-template-columns: 1fr;
+      margin-top: 25px;
+      margin-bottom: 31px;
+    }
+  }
+
+  &__filter-col-2,
+  &__filter-col-3 {
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  .shop__image {
+    @include forMobile {
+      width: calc(100% + 80px);
+      height: 267px;
+
+      margin-left: -40px;
+    }
+  }
+
+  &__filter-title {
+    @include fontParams(18px, 150%, 600);
+
+    text-transform: uppercase;
+    color: $textColor;
+    letter-spacing: 0.05em;
+
+    margin-top: 13px;
+    margin-bottom: 20px;
+
+    @include forMobile {
+      @include fontParams(18px, 150% 600);
+
+      margin: 14px 0 11px;
+    }
+  }
+
+  &__filter-price {
+    @include fontParams(18px, 150%, 500);
+
+    text-transform: uppercase;
+    color: $textColor;
+    letter-spacing: 0.05em;
+
+    margin: 0;
+  }
+
+  &__shop-button {
+    @include fontParams(16px, 130%, 600);
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $buttonColor;
+
+    width: 280px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // margin: 0 auto;
+
+    background-color: $textColor;
+
+    @include forMobile {
+      margin: 0 auto;
+    }
+  }
+}

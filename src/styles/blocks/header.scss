@@ -1,0 +1,155 @@
+.header {
+  padding: 24px $mainPaddingX 200px;
+
+  @include forMobile {
+    padding: 20px $mobilePaddingX 100px;
+  }
+
+  &__wrapper-content {
+    @include limitContentWidth;
+  }
+
+  &__section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include forMobile {
+      margin-bottom: 20px;
+      padding: 0;
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include forMobile {
+      display: block;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__main-logo {
+    @include forMobile {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__logo-text {
+    @include fontParams(14px, 130%);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  .nav {
+    &__list {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    &__link {
+      @include fontParams(18px, 150%, 500);
+      color: #344f10;
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  &__cart-mobile {
+    @include forMobile {
+      width: 20px;
+      height: 24px;
+    }
+  }
+
+  &__brand {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    margin-top: 92px;
+
+    @include forMobile {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 13px;
+      margin-top: 0;
+    }
+  }
+
+  &__main-image {
+    @include forMobile {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      height: 267px;
+    }
+  }
+
+  &__main-col-1 {
+    max-width: 480px;
+    height: 451px;
+    margin-left: 100px;
+
+    @include forMobile {
+      width: 280px;
+      height: 197px;
+      margin: 0 auto;
+    }
+  }
+
+  &__title {
+    @include fontParams(60px, 130%, 600);
+    margin: 0;
+
+    @include forMobile {
+      @include fontParams(24px, 130%, 600);
+      text-align: center;
+    }
+  }
+
+  &__sale-text {
+    @include fontParams(16px, 150%, 400);
+    color: #333333;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    @include forMobile {
+      @include fontParams(16px, 150%, 400);
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__shop-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 280px;
+    height: 60px;
+
+    background:#333333;
+  }
+
+  &__shop-text {
+    @include fontParams(16px, 130%, 600);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #f2f2f2;
+  }
+}
