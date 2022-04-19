@@ -1,6 +1,12 @@
 .header {
   &__content {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 20px 0;
 
     @include onTablet {
       padding: 28px;
@@ -13,9 +19,10 @@
 
   &__img {
     display: block;
+    flex-grow: 1;
     margin: 0 -20px 24px;
     width: calc(100% + 40px);
-    height: 267px;
+    height: 100%;
 
     object-fit: cover;
     object-position: center;
@@ -28,17 +35,34 @@
   }
 
   &__title {
+    margin-bottom: 12px;
     font-weight: 600;
     font-size: 24px;
     line-height: 130%;
     text-align: center;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
   }
 
-  &__title-break {
+  &__title-break--iphone {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__title-break--tablet {
     display: none;
 
     @include onTablet {
       display: inline;
     }
+  }
+
+  &__text {
+    text-align: center;
   }
 }
