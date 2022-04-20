@@ -1,27 +1,20 @@
 .grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  column-gap: 20px;
+  display: block;
 
   &--tablet {
-    display: block;
-
     @include onTablet {
       display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
     }
   }
 
   &--desktop {
-    display: block;
-
     @include onDesktop {
       display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 36px;
     }
-  }
-
-  @include onDesktop {
-    grid-template-columns: repeat(12, 1fr);
-    column-gap: 36px;
   }
 
   &__item {
