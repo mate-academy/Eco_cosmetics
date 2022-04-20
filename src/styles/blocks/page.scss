@@ -9,32 +9,32 @@
     margin: 0;
   }
 
-&__menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  transform: translateX(-100%);
-  transition: transform 0.3s;
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
-  &:target {
-    transform: translateX(0);
-  }
-}
+    transform: translateX(-100%);
+    transition: transform 0.3s;
 
-  &__main {
-
+    &:target {
+      transform: translateX(0);
+    }
   }
 
   &__section {
     margin: 0;
-    height: 100vh;
 
-    &-gifts {
+    &-choice {
+      box-sizing: border-box;
       display: flex;
+      width: 280px;
       justify-content: center;
-      align-items: center;
-      margin: 0 0 100px 0;
+      align-items: flex-start;
+
+      margin: 0 0 100px;
+
       font-weight: 600;
       font-size: 18px;
       line-height: 27px;
@@ -45,6 +45,223 @@
 
     &-ref {
       margin-top: 30px;
+      margin-bottom: 111px;
+
+      &-creators {
+        margin: 0 0 30px;
+      }
+
+      &-ingredients {
+        margin: 0 0 112px;
+      }
+    }
+
+    &-nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+
+      margin-bottom: 27px;
+    }
+
+    &-image {
+      &-content {
+        background-image: url(../images/shop.svg);
+        background-position: center;
+
+        margin: 0 -20px 20px;
+
+        height: 267px;
+        width: calc(100% + 40px);
+      }
+    }
+
+    &-item {
+      margin: 0;
+      margin-bottom: 10px;
+
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    &-price {
+      margin: 0 0 30px;
+
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 2px;
+    }
+
+    &-button {
+      margin-bottom: $section-space-between;
+    }
+
+    &-creators {
+      width: 280px;
+      height: 72px;
+      margin: 0 0 10px;
+    }
+
+    &-powder {
+      margin: 0 0 30px;
+    }
+
+    &-ingredients {
+      position: relative;
+      display: inline;
+
+      &-scheme {
+        position: absolute;
+        list-style: none;
+        display: block;
+
+        margin-top: 22px;
+
+        &-item {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+
+          margin-top: 5px;
+
+          &:nth-of-type(1) {
+            padding-bottom: 48px;
+          }
+
+          &:nth-of-type(2) {
+            padding-bottom: 39px;
+          }
+
+          &:nth-of-type(3) {
+            padding-bottom: 34px;
+          }
+
+          &:nth-of-type(4) {
+            padding-bottom: 47px;
+          }
+
+          &:last-of-type {
+            margin-top: -45px;
+          }
+        }
+
+        &-line {
+          width: 76px;
+          height: 2px;
+
+          margin-top: -60px;
+          margin-left: 143px;
+          margin-right: 101px;
+
+          background-image: url(../images/ingredients-line.svg);
+
+          &:nth-of-type(1) {
+            margin-bottom: 72px;
+          }
+
+          &:nth-of-type(2) {
+            margin-bottom: 50px;
+          }
+
+          &:nth-of-type(3) {
+            margin-bottom: 72px;
+          }
+
+          &:nth-of-type(4) {
+            margin-bottom: 140px;
+          }
+        }
+      }
+
+      &-image {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        margin-top: 21px;
+
+        &-powder {
+          position: relative;
+          width: 150px;
+          height: 395px;
+
+          margin: 0 -20px;
+
+          background-image: url(../images/ingredients.svg);
+        }
+      }
+    }
+
+    &-benefits {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &-1 {
+        width: 62px;
+        height: 60px;
+
+        margin-bottom: 20px;
+
+        background-image: url(../images/noSynthetic.svg);
+
+        &-describe {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 18px;
+          letter-spacing: 0.5px;
+          color: #000;
+          margin-bottom: 50px;
+          text-transform: uppercase;
+        }
+      }
+
+      &-2 {
+        width: 100px;
+        height: 84px;
+
+        margin-bottom: 20px;
+
+        background-image: url(../images/recycled.svg);
+
+        &-describe {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 18px;
+          letter-spacing: 0.5px;
+          color: #000;
+          margin-bottom: 50px;
+          text-transform: uppercase;
+          text-align: center;
+        }
+      }
+
+      &-3 {
+        width: 79px;
+        height: 74px;
+
+        margin-bottom: 25px;
+
+        background-image: url(../images/natural.svg);
+
+        &-describe {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 18px;
+          letter-spacing: 0.5px;
+          color: #000;
+          text-transform: uppercase;
+
+          margin-bottom: $section-space-between;
+        }
+      }
     }
   }
 }
