@@ -1,0 +1,186 @@
+.header {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 18px 0 100px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding-bottom: 30px;
+      padding-top: 23px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 53px;
+    }
+
+    &-navigation {
+      display: none;
+
+      @include onDesktop {
+        display: inline-block;
+        margin-top: 20px;
+        margin-right: 45px;
+
+        &-link {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 27px;
+          color: #344f10;
+          text-decoration: none;
+          padding-left: 40px;
+        }
+      }
+    }
+
+  }
+
+  &__menu-opener {
+    display: inline-block;
+    width: 23px;
+    height: 20px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/menu.svg);
+
+    @include onDesktop {
+      display: inline-block;
+      background-image: url(../images/logo.svg);
+
+      margin-top: 22px;
+      width: 50px;
+      height: 50px;
+
+      &::before {
+        display: inline-block;
+        content: "witch of mountain winds";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 5%;
+        color: #344f10;
+        margin-left: 60px;
+        padding-top: 15px;
+        width: 208px;
+        text-transform: uppercase;
+
+        &:first-child {
+          margin-left: 200px;
+        }
+      }
+    }
+
+  }
+
+  &__shopping {
+    display: block;
+    width: 20px;
+    height: 24px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/shopping.svg);
+
+    @include onDesktop {
+      background-image: url(../images/shopping_main.svg);
+      width: 22px;
+      height: 26px;
+      margin-top: 25px;
+    }
+  }
+
+  &__image {
+    height: 267px;
+    width: calc(100% + 40px);
+    margin: 0 -20px;
+    margin-bottom: 25px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/header.svg);
+
+    /*margin-left: calc(-50vw + 50%);*/
+
+    @include onTablet {
+      display: flex;
+
+      width: 714px;
+      height: 500px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      width: 580px;
+      height: 451px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    color: $t-color;
+    padding-bottom: 10px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &-main {
+      display: none;
+      @include onDesktop {
+        width: 480px;
+        height: 234px;
+        display: block;
+        font-size: 60px;
+        line-height: 78px;
+        font-weight: 600;
+        padding-left: 100px;
+        padding-bottom: 30px;
+        margin: 0;
+      }
+    }
+
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    padding-bottom: 30px;
+
+    @include onDesktop {
+      display: flex;
+      padding-bottom: 50px;
+      padding-left: 100px;
+    }
+  }
+
+  &__button {
+    height: 60px;
+    margin-bottom: $section-space-between;
+
+    @include onDesktop {
+      margin-left: 100px;
+      margin-bottom: 253px;
+    }
+  }
+}
