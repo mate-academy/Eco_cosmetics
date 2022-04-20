@@ -1,0 +1,29 @@
+@import "../utils";
+
+.nav {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+
+    &__list {
+      display: flex;
+      justify-content: center;
+
+      list-style: none;
+    }
+
+    &__item {
+      &:not(:last-of-type) {
+        margin-right: 40px;
+      }
+    }
+
+    &__link {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      color: $greenColor;
+    }
+  }
+}
