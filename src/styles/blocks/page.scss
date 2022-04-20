@@ -1,0 +1,46 @@
+.page {
+  .section__page {
+    display: none;
+    @include forMobile {
+      display: none;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      width: 100vw;
+      height: 100vh;
+
+      padding: 20px;
+
+      background-color: $textColor;
+      transform: translateX(-100%);
+
+      transition: transform 0.3s ease-in;
+
+      &:target {
+        transform: translateX(0);
+        display: block;
+      }
+    }
+  }
+
+  .nav__list {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+
+      @include forMobile {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+  .nav__link {
+    @include fontParams(18px, 150%, 500);
+    color: $footerColor;
+
+    @include forMobile {
+      // color:$footerColor;
+    }
+  }
+}
