@@ -1,10 +1,60 @@
 .about {
   &__side-text {
     display: none;
+    position: absolute;
+    left: -35px;
+    top: 1446px;
+    width: 192px;
+    height: 18px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: rgba(52, 79, 16, 0.5);
+
+    transform: rotate(-90deg);
+
+    @include onDesktop {
+      display: inline-block;
+    }
+
+    &::before {
+      content: "";
+      width: 1px;
+      height: 100px;
+      position: absolute;
+      left: -51px;
+      top: -42px;
+
+      background-color: rgba(52, 79, 16, 0.5);
+      transform: rotate(-90deg);
+
+      @include onDesktop {
+        display: inline-block;
+      }
+    }
   }
 
   &__img {
     display: none;
+
+    @include onTablet {
+      display: block;
+      width: 369px;
+
+      &--for-desktop {
+        display: none;
+
+        @include onDesktop {
+          display: block;
+          width: 130px;
+          height: 430px;
+
+          background-size: cover;
+        }
+      }
+    }
   }
 
   &__text {
