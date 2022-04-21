@@ -2,24 +2,21 @@
 
 .slogan {
 
-  @include onTablet {
-    padding: 0;
-  }
-
-  &__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  &__line {
+    display: none;
 
     @include onDesktop {
-      position: relative;
+      display: block;
+      margin-bottom: 100px;
 
-      justify-content: space-between;
-      gap: 120px;
+      border-bottom: 1px solid $greenColor;
     }
 
-    @include onTablet {
-      justify-content: center;
+    &--after {
+      @include onDesktop {
+        display: block;
+        margin-top: 100px;
+      }
     }
   }
 
@@ -28,30 +25,19 @@
 
     @include onDesktop {
       display: block;
-      max-width: 380px;
 
       font-size: 16px;
       line-height: 24px;
       color: $menuBgr;
-
-      &::after {
-        content: "";
-
-        width: 530px;
-        height: 1px;
-
-        position: absolute;
-        left: 0;
-        top: -100px;
-
-        background-color: $lightGreen;
-      }
     }
   }
 
-  &__main-text {
-    margin: 100px 0;
+  &__flex {
+    display: flex;
+    justify-content: center;
+  }
 
+  &__main-text {
     font-size: 18px;
     font-weight: 600;
     line-height: 27px;
@@ -60,27 +46,13 @@
     text-transform: uppercase;
 
     @include onTablet {
-      margin: 150px 0 130px;
+      text-align: center;
     }
 
     @include onDesktop {
-      margin: 0;
-
       font-size: 24px;
       line-height: 36px;
-
-      &::before {
-        content: "";
-
-        width: 630px;
-        height: 1px;
-
-        position: absolute;
-        right: 0;
-        bottom: -100px;
-
-        background-color: $lightGreen;
-      }
+      text-align: left;
     }
   }
 }

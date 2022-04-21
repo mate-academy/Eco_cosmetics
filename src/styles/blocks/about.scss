@@ -1,0 +1,80 @@
+@import "../utils";
+
+.about {
+  &__title {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 5%;
+    color: $greenColor;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    font-size: 14px;
+    line-height: 21px;
+    color: $menuBgr;
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    @include onTablet {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      width: calc(100% + 30px);
+
+      @include onDesktop {
+        width: 100%;
+        height: 529px;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      background-image: url("../images/photos/about-small-pic.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include onDesktop {
+        display: block;
+
+        margin-top: 132px;
+        width: calc(100% + 110px);
+        height: calc(100% - 25%);
+      }
+
+      @media (min-width: 1440px) {
+        margin-top: calc(100% + 7%);
+        width: calc(80% + 105px);
+        height: 430px;
+      }
+    }
+  }
+}
