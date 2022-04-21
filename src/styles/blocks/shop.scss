@@ -42,6 +42,10 @@
 
   &__item {
     margin-right: 14px;
+
+    @include onDesktop {
+      margin-right: 50px;
+    }
   }
 
   &__link {
@@ -51,6 +55,11 @@
     text-transform: uppercase;
     text-decoration: none;
     color: #828282;
+
+    @include onDesktop {
+      font-size: 18px;
+      line-height: 27px;
+    }
 
     &--active {
       position: relative;
@@ -116,6 +125,12 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    transition: transform 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__discription {
@@ -126,8 +141,14 @@
 
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    cursor: pointer;
 
     color: $c-gray;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #8e8d8c;
+    }
 
     @include onTablet {
       margin-bottom: 15px;
