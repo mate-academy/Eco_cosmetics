@@ -1,5 +1,6 @@
 .shop {
   position: relative;
+  overflow: hidden;
 
   &__title {
     margin: 0 0 20px;
@@ -55,6 +56,12 @@
     text-transform: uppercase;
     text-decoration: none;
     color: #828282;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-gray;
+    }
 
     @include onDesktop {
       font-size: 18px;
@@ -116,6 +123,11 @@
   &__gallery-3 {
     @include onTablet {
       display: block;
+    }
+
+    @include onDesktop {
+      width: 380px;
+      overflow: hidden;
     }
   }
 
