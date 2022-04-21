@@ -17,6 +17,7 @@
   }
 
   &__item {
+    display: none;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14px;
@@ -63,13 +64,6 @@
   &__img--small-screen--2 {
     display: none;
 
-    @media (min-width: 350px) {
-      display: flex;
-      flex-shrink: 0;
-      width: 320px;
-      height: 267px;
-    }
-
     @include On768 {
       display: none;
     }
@@ -79,23 +73,36 @@
     display: flex;
     gap: 30px;
     height: 360px;
+    max-width: 320px;
 
     @include On768 {
       height: 413px;
+      max-width: 380px;
+      justify-content: space-between;
     }
 
     @include On1280 {
       height: 630px;
+      width: 380px;
     }
 
     &-item {
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      flex-shrink: 0;
 
       &--On660 {
         display: none;
     
         @include On768 {
           display: block;
+          max-width: 380px;
         }
+      }
+
+      @include On1280 {
+        width: 380px;
       }
     }
   }
@@ -104,14 +111,14 @@
     cursor: zoom-in;
     object-fit: cover;
     display: flex;
-    width: 280px;
     height: 267px;
+    width: 100%;
     flex-shrink: 0;
     margin-bottom: 20px;
     @include hover(transform, scale);
 
     @include On768 {
-      width: 342px;
+      max-width: 380px;
       height: 300px;
     }
 
