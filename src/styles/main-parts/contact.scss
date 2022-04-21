@@ -30,6 +30,12 @@
     @include forMobile {
       display: none;
     }
+
+    transition: transform 0.5s ease-in;
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.9);
+    }
   }
 
   &__contact-rotated-text {
@@ -107,24 +113,51 @@
 
     margin-bottom: 40px;
     padding-bottom: 10px;
+
+    @include fontParams(14px, 150%, 500);
+    font-family: "Poppins", sans-serif;
+    color: $isNotActive;
   }
 
   .contact__message {
     margin: 0;
     padding-bottom: 5px;
+  }
 
+  .contact__name::placeholder,
+  .contact__email::placeholder,
+  .contact__message::placeholder,
+  .contact__number::placeholder {
     font-family: "Poppins", sans-serif;
     @include fontParams(18px, 150%, 500);
 
     color: $isNotActive;
   }
 
-  .contact__name::placeholder,
-  .contact__email::placeholder,
-  .contact__number::placeholder {
-    font-family: "Poppins", sans-serif;
-    @include fontParams(18px, 150%, 500);
+  &__contact-button {
+    @include fontParams(16px, 130%, 600);
 
-    color: $isNotActive;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $buttonColor;
+
+    width: 280px;
+    height: 60px;
+    margin-top: 50px;
+    transition: background 0.3s ease-in;
+
+    background-color: $textColor;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 11px rgba(33,33,33,.2);
+      color: $textColor;
+      background: $buttonColor;
+    }
+
+    @include forMobile {
+      margin-top: 35px;
+    }
   }
 }

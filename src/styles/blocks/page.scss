@@ -24,23 +24,32 @@
     }
   }
 
-  .nav__list {
+  .nav__list-top {
+    @include forMobile {
       list-style: none;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
 
-      @include forMobile {
-        display: flex;
-        flex-direction: column;
-      }
+      row-gap: 40px;
+
+      padding-left: 0;
+      margin-top: 45px;
+
+      text-align: center;
     }
+  }
 
-  .nav__link {
-    @include fontParams(18px, 150%, 500);
-    color: $footerColor;
-
+  .nav__item-top {
     @include forMobile {
-      // color:$footerColor;
+      border-bottom: 1px solid $isNotActive;
+      color: $footerColor;
+    }
+  }
+
+  .nav__link-top {
+    @include forMobile {
+      @include fontParams(18px, 130%, 600);
+      color: $footerColor;
     }
   }
 }

@@ -104,6 +104,11 @@
 
     border-bottom: 1px solid $greenColor;
     padding-bottom: 10px;
+    
+    &:hover {
+      color:rgba(36, 62, 3, 0.5);
+      border-bottom: 1px solid rgba(36, 62, 3, 0.5);
+    }
   }
 
   &__creators-contact-button {
@@ -120,8 +125,15 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    transition: background 0.3s ease-in;
 
     background-color: $textColor;
+
+    &:hover {
+      box-shadow: 0 0 11px rgba(33,33,33,.2);
+      color: $textColor;
+      background: $buttonColor;
+    }
 
     @include forMobile {
       margin-top: 35px;
@@ -129,6 +141,12 @@
   }
 
   &__creature-image {
+    transition: transform 0.5s ease-in;
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.8);
+    }
+
     @include forMobile {
       display: none;
     }

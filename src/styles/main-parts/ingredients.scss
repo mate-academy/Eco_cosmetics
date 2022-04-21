@@ -79,7 +79,7 @@
   &__ingredients-col-2 {
     grid-column: 4 / 7;
 
-    margin-top: 35px;
+    margin-top: 30px;
 
     @include forMobile {
       margin-top: 80px;
@@ -130,7 +130,7 @@
   }
 
   &__ingredients-text {
-    margin-bottom: 47px;
+    margin-bottom: 38px;
     text-align: right;
 
     @include fontParams(16px, 150%, 400);
@@ -150,31 +150,51 @@
     width: 72px;
     height: 1px;
 
-    background-color:rgba(52, 79, 16, 0.5);
+    background-color: rgba(52, 79, 16, 0.5);
 
     &:nth-child(1) {
       position: absolute;
       top: 57px;
+
+      @include forMobile {
+        top: 63px;
+      }
     }
 
     &:nth-child(2) {
       position: absolute;
       top: 130px;
+
+      @include forMobile {
+        top: 124px;
+      }
     }
 
     &:nth-child(3) {
       position: absolute;
       top: 215px;
+
+      @include forMobile {
+        top: 200px;
+      }
     }
 
     &:nth-child(4) {
       position: absolute;
-      top: 285px;
+      top: 290px;
+
+      @include forMobile {
+        top: 285px;
+      }
     }
 
     &:nth-child(5) {
       position: absolute;
       top: 355px;
+
+      @include forMobile {
+        top: 360px;
+      }
     }
   }
 
@@ -189,6 +209,11 @@
     position: absolute;
     left: 0;
     bottom: 0;
+
+    &:hover {
+      color:rgba(36, 62, 3, 0.5);
+      border-bottom: 1px solid rgba(36, 62, 3, 0.5);
+    }
   }
 
   &__ingredients-section {
@@ -220,13 +245,19 @@
     width: 80px;
     height: 60px;
 
+    transition: transform 0.5s ease-in;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+
     @include forMobile {
       width: 62px;
       height: 60px;
     }
   }
 
-  &__ingredients-text {
+  &__ingredients-text-2 {
     @include fontParams(14px, 130%, 400);
     letter-spacing: 0.05em;
     text-transform: uppercase;
