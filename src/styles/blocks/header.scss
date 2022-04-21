@@ -20,8 +20,6 @@
     box-sizing: border-box;
 
     @include onDesktop {
-      display: flex;
-      justify-content: flex-start;
       padding: 0 0 80px;
     }
 
@@ -31,13 +29,14 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 130%;
+      min-width: 250px;
 
       letter-spacing: 0.05em;
       text-transform: uppercase;
 
       color: $colorNav;
 
-      padding-right: 330px;
+      padding-right: 230px;
 
       @include onDesktop {
         display: inline;
@@ -52,7 +51,6 @@
 
     @include onDesktop {
       margin: 0;
-      // width: 580px;
     }
   }
 
@@ -156,10 +154,18 @@
 
     color: #f2f2f2;
 
+    transition: background-color 0.3s;
+
     &--margin {
       display: flex;
       justify-content: center;
       margin: 30px 0 100px;
+    }
+
+    &:hover {
+      color: #333;
+      background-color: transparent;
+      border: 1px solid #333;
     }
   }
 
@@ -192,6 +198,10 @@
     color: $colorNav;
     display: none;
 
+    &:hover {
+      color: $colorHover;
+    }
+
     @include onDesktop {
       display: inline;
     }
@@ -211,13 +221,15 @@
   }
 
   &__buy {
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
     @include onDesktop {
       display: flex;
       align-items: center;
-      transform: translateX(-15px);
-      @media (min-width: 1200px) {
-        transform: translateX(30px);
-      }
     }
   }
 }

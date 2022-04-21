@@ -5,6 +5,9 @@
 
   &__about {
 
+    &-height {
+      height: fit-content;
+    }
     &-link {
       display: flex;
       font-weight: 500;
@@ -41,6 +44,16 @@
       @include onDesktop {
         display: block;
         transform: translateY(-150px);
+      }
+
+      &-2 {
+        @include onTablet {
+          transform: translateY(-60px);
+        }
+
+        @include onDesktop {
+          transform: translateY(-130px);
+        }
       }
     }
 
@@ -88,7 +101,6 @@
 
     @include onTablet {
       padding: 0 30px;
-      height: 3222px;
     }
   }
 
@@ -169,6 +181,12 @@
       @include onDesktop {
         margin-bottom: 30px;
       }
+
+      @include onTablet {
+        &-2 {
+          margin-top: 15px;
+        }
+      }
     }
 
   }
@@ -216,12 +234,9 @@
 
     @include onDesktop {
       display: block;
+      font-size: 36px;
       width: 100%;
       margin-bottom: 34px;
-    }
-
-    @media (min-width: 1205px) {
-      font-size: 36px;
     }
   }
 }
