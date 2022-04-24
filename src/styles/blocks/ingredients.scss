@@ -1,0 +1,96 @@
+@import "../utils";
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+
+  background-image: url("../images/photos/powder.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+
+  @include onDesktop {
+    background-image: unset;
+  }
+
+  &__container {
+    position: relative;
+    right: 150px;
+    top: 6px;
+
+    @include onTablet {
+      top: 37px;
+    }
+
+    @include onDesktop {
+      top: 40px;
+      right: 30px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    @include onTablet {
+      margin-right: 100px;
+    }
+
+    @include onDesktop {
+      margin-right: 0;
+    }
+
+    &--1 {
+      margin-bottom: 50px;
+    }
+
+    &--2 {
+      margin-bottom: 41px;
+    }
+
+    &--3 {
+      margin-bottom: 36px;
+    }
+
+    &--4 {
+      margin-bottom: 49px;
+    }
+
+    &--5 {
+      margin-bottom: 77px;
+    }
+  }
+
+  &__name {
+    margin-right: 15px;
+
+    font-size: 16px;
+    line-height: 24px;
+    color: $menuBgr;
+    text-align: end;
+
+    @include onDesktop {
+      margin-right: 20px;
+    }
+  }
+
+  &__line {
+    width: 76px;
+    border-top: 1px solid $menuBgr;
+  }
+
+  &__line-circle {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      width: 5px;
+      height: 5px;
+
+      background-color: $menuBgr;
+      border-radius: 100%;
+    }
+  }
+}
