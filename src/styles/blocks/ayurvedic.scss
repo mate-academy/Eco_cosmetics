@@ -1,0 +1,99 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.ayurvedic {
+
+  &__nav {
+    display: none;
+    writing-mode: vertical-lr;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      grid-row: 1;
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__parent {
+    display: flex;
+    justify-content: flex-end;
+
+    @include onTablet {
+      grid-row: 1;
+    }
+  }
+
+  &__image {
+    min-width: 149px;
+    overflow: hidden;
+  }
+
+  &__text {
+    width: 103px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-align: right;
+    margin-right: 40px;
+
+    color: #333;
+  }
+
+  &__ingredients-line {
+    width: 1px;
+    height: 90px;
+    background-color: rgba(52, 79, 16, 0.5);
+
+    transform: translate(-25px, 90px);
+  }
+
+  &__line {
+    width: 76px;
+    height: 1px;
+    background-color: #333;
+    transform: translate(110px, -25px);
+  }
+
+  &__link {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    padding-bottom: 10px;
+    width: max-content;
+    border-bottom: 1px solid #344f10;
+    color: #344f10;
+    transition: color 0.3s;
+    margin: 30px 0 100px 20px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+    &:hover {
+      color: $colorHover;
+      border-color: $colorHover;
+    }
+
+  }
+}
