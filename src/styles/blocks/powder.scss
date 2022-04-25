@@ -1,0 +1,178 @@
+.powder {
+  overflow: hidden;
+
+  &__content {
+    position: relative;
+  }
+
+  &__rotate {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    color: #344f10;
+
+    @include onDesktop {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__ingredients {
+    position: relative;
+    margin: 0 0 30px;
+    height: 395px;
+
+    @include onTablet {
+      margin: 0 0 -20px;
+    }
+  }
+
+  &__ingredient {
+    position: absolute;
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    
+    color: #344f10;
+    text-align: end;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: calc(-76px - 20px);
+      transform: translateY(-50%);
+      width: 76px;
+      border-bottom: 1px solid $main-text-color;
+    }
+
+    &::before {
+      @include onDesktop {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -100px;
+        transform: translateY(-50%);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $main-text-color;
+      }
+    }
+
+    &:nth-child(1) {
+      top: 6px;
+      right: $line;
+
+      @include onTablet {
+        top: 40px;
+        right: $line-tablet;
+      }
+
+      @include onDesktop {
+        right: $line-desktop;
+      }
+    }
+
+    &:nth-child(2) {
+      top: 80px;
+      right: $line;
+
+      @include onTablet {
+        top: 112px;
+        right: $line-tablet;
+      }
+
+      @include onDesktop {
+        width: max-content;
+        right: $line-desktop;
+      }
+    }
+
+    &:nth-child(3) {
+      top: 142px;
+      right: $line;
+
+      @media (min-width: 386px) {
+        top: 154px;
+      }
+
+      @include onTablet {
+        top: 194px;
+        right: $line-tablet;
+        width: max-content;
+      }
+
+      @include onDesktop {
+        right: $line-desktop;
+      }
+    }
+
+    &:nth-child(4) {
+      top: 230px;
+      right: $line;
+
+      @include onTablet {
+        top: 266px;
+        right: $line-tablet;
+        width: max-content;
+      }
+
+      @include onDesktop {
+        right: $line-desktop;
+      }
+    }
+
+    &:nth-child(5) {
+      top: 304px;
+      right: $line;
+
+      @include onTablet {
+        top: 338px;
+        right: $line-tablet;
+      }
+
+      @include onDesktop {
+        right: $line-desktop;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: $ingredients-position;
+
+    @include onTablet {
+      right: calc(#{$ingredients-position} - 42px);
+    }
+
+    @include onDesktop {
+      right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+  }
+}

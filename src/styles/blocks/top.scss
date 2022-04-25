@@ -1,0 +1,87 @@
+.top {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0 20px;
+
+    @include onTablet {
+      margin: 24px 0 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      margin: 40px 0 70px;
+    }
+  }
+
+  &__item {
+    @include onDesktop {
+      &-logo {
+        display: flex;
+        align-items: center;
+        order: -1;
+      }
+
+      &-shopping {
+        justify-self: end;
+      }
+    }
+  }
+
+  &__menu {
+    &-nav {
+      @include onDesktop {
+        position: relative;
+      }
+    }
+
+    &-list {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        gap: 40px;
+      }
+    }
+
+    &-link {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+      
+      color: #344f10;
+
+      &:hover {
+        border-color: #344f10;
+      }
+    }
+
+    &-opener {
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__logo {
+    @include onDesktop {
+      height: 26px;
+    }
+  }
+
+  &__logo-name {
+    display: none;
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #344f10;
+
+    @include onDesktop {
+      display: block;
+      margin-left: 12px;
+    }
+  }
+}

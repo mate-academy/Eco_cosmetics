@@ -1,0 +1,82 @@
+.gift {
+  overflow-x: hidden;
+
+  @include onDesktop {
+    padding: 100px 0;
+  }
+
+  &__left {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: 0;
+        display: block;
+        width: 100vw;
+        border-top: 1px solid #344f1080;
+      }
+    }
+  }
+
+  &__info {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__right {
+    @include onTablet {
+      justify-self: center;
+      max-width: 280px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      justify-self: start;
+      margin: 5px 0 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        display: block;
+        width: 100vw;
+        border-bottom: 1px solid #344f1080;
+      }
+    }
+  }
+
+  &__about {
+    margin: 0;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    color: #344f10;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      text-align: start;
+    }
+  }
+}
