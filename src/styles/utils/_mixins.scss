@@ -1,5 +1,5 @@
 @mixin limitContentWidth {
-  max-width: $averageContentWidth;
+  max-width: $desktopScreen;
   margin: 0 auto;
 }
 
@@ -12,6 +12,18 @@
   font-size: $fontSize;
   line-height: $lineHeight;
   font-weight: $fontWeight;
+}
+
+@mixin forDesktop {
+  @media (max-width: $desktopScreen) {
+    @content;
+  }
+}
+
+@mixin forTablet {
+  @media (max-width: $tabletScreen) and (min-width: $mobileScreen) {
+    @content;
+  }
 }
 
 @mixin forMobile {

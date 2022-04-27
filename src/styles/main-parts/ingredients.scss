@@ -2,14 +2,23 @@
   &__ingredients {
     margin-top: 200px;
     row-gap: 200px;
+
+    // display: grid;
+    // grid-template-columns: repeat(12, 1fr);
+    // column-gap: 38px;
   }
 
   &__ingredients-wrapper {
     position: relative;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 38px;
+
+    @include forTablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 10px;
+    }
 
     @include forMobile {
       max-width: 280px;
@@ -20,7 +29,6 @@
 
       margin: 0 auto;
       padding-bottom: 200px;
-
     }
   }
 
@@ -29,13 +37,17 @@
 
     position: absolute;
     top: 85px;
-    left: -29px;
+    left: 10px;
 
     transform: rotate(270deg);
     transform-origin: 0 0;
 
     margin: 0;
     color: rgba(52, 79, 16, 0.5);
+
+    @include forTablet {
+      display: none;
+    }
 
     @include forMobile {
       display: none;
@@ -52,7 +64,11 @@
 
     position: absolute;
     top: 95px;
-    left: -20px;
+    left: 20px;
+
+    @include forTablet {
+      display: none;
+    }
 
     @include forMobile {
       display: none;
@@ -60,12 +76,15 @@
   }
 
   &__ingredients-col-1 {
-    width: 380px;
-    grid-column: 1 / 4;
-
-    margin-left: 75px;
+    max-width: 380px;
+    grid-column: 2 / 6;
 
     position: relative;
+
+    @include forTablet {
+      grid-column: 1 / 5;
+      max-width: 300px;
+    }
 
     @include forMobile {
       grid-column: 1 / 2;
@@ -80,6 +99,14 @@
     grid-column: 4 / 7;
 
     margin-top: 30px;
+
+    @include forTablet {
+      grid-column: 3 / 4;
+
+      margin-top: 30px;
+
+      width: 120px;
+    }
 
     @include forMobile {
       margin-top: 80px;
@@ -104,7 +131,7 @@
   }
 
   &__ingredients-col-4 {
-    grid-column: 9 / 12;
+    grid-column: 8 / 12;
 
     @include forMobile {
       margin-top: 80px;
@@ -123,6 +150,12 @@
     color: $greenColor;
     margin: 0;
 
+    @include forTablet {
+      @include fontParams(24px, 150%, 600);
+
+      max-width: 342px;
+    }
+
     @include forMobile {
       @include fontParams(24px, 150%, 600);
       letter-spacing: 0.05em;
@@ -134,13 +167,36 @@
     text-align: right;
 
     @include fontParams(16px, 150%, 400);
-  }
 
-  &__ingredients-text:nth-child(5) {
-    margin-bottom: 0;
+    @include forTablet {
+      // position: absolute;
+      max-width: 120px;
+
+      // text-align: right;
+
+      &:nth-child(2) {
+        margin-top: 50px;
+      }
+
+      &:nth-child(3) {
+        margin-top: 50px;
+      }
+
+      &:nth-child(4) {
+        margin-top: 20px;
+      }
+
+      &:nth-child(5) {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .persian {
+    @include forTablet {
+      display: none;
+    }
+
     @include forMobile {
       display: none;
     }
@@ -211,7 +267,7 @@
     bottom: 0;
 
     &:hover {
-      color:rgba(36, 62, 3, 0.5);
+      color: rgba(36, 62, 3, 0.5);
       border-bottom: 1px solid rgba(36, 62, 3, 0.5);
     }
   }
