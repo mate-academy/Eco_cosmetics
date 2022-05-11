@@ -8,11 +8,13 @@
   color: #e4dfd3;
 
   &__menu-list {
+    padding-top: 30px;
     list-style-type: none;
 
     @include onDesktop {
       display: flex;
       gap: 40px;
+      padding-top: 0;
     }
   }
 
@@ -33,6 +35,11 @@
     font-weight: 500;
     font-size: 18px;
     color: #e4dfd3;
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+    }
   }
 
   &__icons {
@@ -44,12 +51,6 @@
     @include onTablet {
       margin-bottom: 0;
     }
-
-    @include onDesktop {
-      position: absolute;
-      bottom: 66px;
-      right: 555px;
-    }
   }
 
   &__info {
@@ -57,14 +58,19 @@
     flex-direction: column;
     gap: 10px;
 
+    @include onTablet {
+      padding-top: 30px;
+    }
+
     @include onDesktop {
-      font-size: 16px;
+      padding-top: 0;
       gap: 20px;
+      font-size: 16px;
     }
   }
 
   &__info-break {
-    @include onDesktop {
+    @include onTablet {
       display: none;
     }
   }
@@ -78,7 +84,7 @@
   &__company-text {
     display: block;
     margin-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     font-weight: 600;
     text-align: center;
 
@@ -92,7 +98,7 @@
     @include onDesktop {
       font-size: 18px;
       font-weight: 500;
-      padding-bottom: 0;
+      padding-bottom: 40px;
     }
 
     &--desktop {
