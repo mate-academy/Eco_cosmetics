@@ -3,6 +3,14 @@
     list-style-type: none;
     position: absolute;
     right: 168px;
+
+    @include onTablet {
+      right: 262px;
+    }
+
+    @include onDesktop {
+      right: 468px;
+    }
   }
 
   &__item {
@@ -25,9 +33,23 @@
       transform: rotate(-180deg) translateX(-20px);
     }
 
+    &--hidden {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--line-break-3 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
     &--1 {
       padding-bottom: 52px;
-      margin-top: 6px;
+      margin-top: 38px;
     }
 
     &--2 {
@@ -59,5 +81,17 @@
   &__img-wrapper {
     min-width: 148px;
     overflow: hidden;
+
+    @include onTablet {
+      min-width: 230px;
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
 }
