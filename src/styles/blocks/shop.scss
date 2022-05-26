@@ -1,0 +1,145 @@
+.shop {
+
+  &__title {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 24px;
+
+    &__list {
+      display: flex;
+      list-style: none;
+      gap: 16px;
+
+    }
+
+    &__item {
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: $lite-grey;
+
+      &:hover {
+        color: $dark-grey;
+
+        &::after {
+          content: "";
+          display: block;
+          background-color: $dark-grey;
+          height: 2px;
+        }
+
+        &::before:first-child {
+          content: "";
+          display: block;
+          background-color: $dark-grey;
+          height: 2px;
+        }
+      }
+    }
+}
+
+
+  &__gallery {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: $column-gap;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: $column-gap;
+    }
+    &__photo {
+      height: 267px;
+      width: 100%;
+      object-fit:cover;
+
+      @include onTablet {
+        height: 300px;
+      }
+
+      @include onDesktop {
+        height: 500px;
+      }
+    }
+
+    &-item {
+
+      &--tablet{
+        display: none;
+
+        @include onTablet {
+          display: block;
+        }
+
+      }
+
+      &--desktop {
+        display: none;
+
+        @include onDesktop {
+          display: block;
+        }
+      }
+    }
+
+    &-title {
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    &-price {
+      margin-top: 10px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $dark-grey;
+  }
+}
