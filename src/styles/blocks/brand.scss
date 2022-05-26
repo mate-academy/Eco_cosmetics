@@ -1,15 +1,13 @@
 .brand {
   &__title {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 36px;
     text-align: left;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-
     color: $colorDarkGreen;
 
+    @extend %h4;
+
     margin: 0 auto;
+    padding-bottom: 40px;
 
     @include onDesktop {
     font-size: 36px;
@@ -19,16 +17,13 @@
 
   &__paragraph {
     margin: 0;
-    padding-top: 10px; //34
+    padding-top: 10px;
+    padding-bottom: 30px;
 
-    font-size: 14px;
-    line-height: 21px;
+   @extend %small-text;
 
     @include onDesktop {
-      padding-top: 32px;
-
-      font-size: 16px;
-      line-height: 24px;
+      padding-bottom: 40px;
     }
 
     &--hide {
@@ -36,36 +31,35 @@
 
       @include onDesktop {
         display: block;
+        padding-bottom: 40px;
       }
     }
   }
 
-  &__link {
-    display: inline-block;
-    color: $colorDarkGreen;
-    font-size: 14px;
-    line-height: 18px;
-    text-decoration: none;
-
-    padding-top: 30px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid $colorDarkGreen;
-
-    @include onDesktop {
-      padding-top: 40px;
-    }
-  }
-
   &__pictures {
+    position: relative;
+
     display: none;
+
 
     @include onDesktop {
       display: block;
     }
 
     &--big {
+
       height: 530px;
       width: 480px;
+      object-fit: cover;
+    }
+
+    &--small {
+      position: absolute;
+      left: 500px;
+      top: 100px;
+
+      height: 430px;
+      max-width: 480px;
       object-fit: cover;
     }
   }
