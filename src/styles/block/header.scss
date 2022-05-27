@@ -1,0 +1,107 @@
+.header {
+  box-sizing: border-box;
+  max-width: 1180px;
+  &__nav {
+    content: "";
+  }
+
+  &__content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDecstop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      margin-top: 80px;
+    }
+  }
+
+  &__img-conteiner {
+    width: 100%;
+    @include onDecstop {
+      grid-column: 7 / 13;
+      grid-row: 1;
+    }
+  }
+
+  &__description {
+
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+    @include onDecstop {
+      grid-column: 2/ 7;
+    }
+  }
+
+  &__img {
+    display: flex;
+    padding-bottom: 100%;
+    width: 100%;
+    height: 100%;
+
+    @include bg-img(url(../images/design_photos/header_photo.png));
+
+    @include onDecstop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__titel {
+    text-align: center;
+    grid-column: 1 / -1;
+    margin-top: 25px;
+    font-size: 24px;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+      margin-top: 50px;
+      font-size: 60px;
+    }
+
+    @include onDecstop {
+      grid-column: 2 / 7;
+      text-align: left;
+      margin-top: 0;
+    }
+  }
+
+  &__mesage {
+    text-align: center;
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    @extend %text;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onDecstop {
+      grid-column: 2 / 7;
+      text-align: left;
+      margin-top: 30px;
+    }
+  }
+
+  &__btn {
+    @extend %flex-center;
+    grid-column: 1 / -1;
+    margin-top: 30px;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      margin-top: 50px;
+    }
+
+    @include onDecstop {
+      grid-column: 2 / 7;
+      justify-content: start;
+      margin-top: 30px;
+    }
+  }
+}
