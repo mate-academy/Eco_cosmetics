@@ -1,0 +1,68 @@
+.about__creator {
+  margin-top: 100px;
+
+  &--container {
+    
+    @include onTablet {
+      display: flex;
+      gap: $column-gap;
+    }
+    
+    @include onDesktop {
+      margin-left: 17%;
+    }
+  }
+
+  &___content {
+    @include onDesktop {
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &-link {
+    margin-top: 30px;
+  }
+
+  &__button {
+    margin-top: 30px;
+  }
+
+  &__text {
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &-img {
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: 4 / -1;
+        grid-row: 1;
+      }
+    }
+  }
+
+  &__photo {
+    @include onTablet {
+      width: 368px;
+      height: 435px;
+      object-fit: cover;
+    }
+    @include onDesktop {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,6 +1,18 @@
 .shop {
 
-  margin-left: 7%;
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: $column-gap;
+  }
+
+  &--container {
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
   &__title {
     margin-top: 100px;
     margin-bottom: 20px;
@@ -31,6 +43,20 @@
 
       color: $lite-grey;
 
+      &--first {
+        color: $dark-grey;
+
+        &::after{
+          content: "";
+          display: block;
+          background-color: $dark-grey;
+          height: 1px;
+          color: $dark-grey;
+          margin-top: 10px;   
+        }
+
+      }
+
       &:hover {
         color: $dark-grey;
 
@@ -38,14 +64,8 @@
           content: "";
           display: block;
           background-color: $dark-grey;
-          height: 2px;
-        }
-
-        &::before:first-child {
-          content: "";
-          display: block;
-          background-color: $dark-grey;
-          height: 2px;
+          height: 1px;
+          margin-top: 10px;
         }
       }
     }
