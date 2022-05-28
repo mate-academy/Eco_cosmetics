@@ -1,0 +1,81 @@
+.header {
+  &__img-mobile {
+    background-image: url(../images/01.png);
+    background-position: center;
+    background-size: cover;
+    height: 267px;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      height: 500px;
+      margin: 0 27px 50px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__content {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__text {
+    display: grid;
+    justify-items: center;
+
+    @include onDesktop {
+      display: grid;
+      grid-column: 2 / 7;
+      justify-items: start;
+      align-content: start;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    @include onTablet {
+      text-transform: capitalize;
+      max-width: 466px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      text-transform: none;
+      margin: 0 0 40px;
+    }
+  }
+
+  &__sale {
+    text-align: center;
+    margin: 0 0 30px;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+
+  &__img-desktop {
+    height: 450px;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/01.png);
+    display: none;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column: 7 / -1;
+    }
+  }
+}
