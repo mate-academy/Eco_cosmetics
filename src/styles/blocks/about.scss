@@ -1,0 +1,119 @@
+.about {
+  &__contant {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: $colomn-gap;
+    }
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: $colomn-gap;
+    }
+
+  }
+  &__text {
+    @include onTablet {
+      display: grid;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      margin: 0 0 34px;
+    }
+  }
+
+  &__first-p {
+    margin: 0 0 30px;
+
+    @include onTablet {
+      display: grid;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__second-p {
+    display: none;
+    margin: 0 0 40px;
+
+    @include onDesktop {
+      display: grid;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__learn-more {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid $color-text-accent;
+  }
+
+  &__photo-container {
+    display: none;
+    position: relative;
+
+    @include onTablet {
+      display: grid;
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 12;
+    }
+  }
+
+  &__photo {
+    @include onTablet {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__photo-second {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      top: 10%;
+      left: 101%;
+      width: 20%;
+      height: 90%;
+      object-fit: cover;
+      object-position: 30%;
+      display: flex;
+      margin: 0 30px;
+      z-index: -1;
+    }
+  }
+}
