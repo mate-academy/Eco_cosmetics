@@ -1,0 +1,57 @@
+.about {
+
+  &__content-container {
+    position: relative;
+  }
+
+  &__paragraf {
+
+    &--second {
+      display: none;
+
+      @include onPad {
+        display: block;
+      }
+    }
+  }
+
+  &__image-left {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    &-container {
+      display: none;
+      height: 100%;
+      position:relative;
+      max-height: 530px;
+      max-width: 480px;
+
+      @include onPad {
+        display: block;
+      }
+    }
+  }
+
+  &__image-right {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    &-container {
+      display: none;
+      position: absolute;
+      
+      height: 80%;
+      bottom: 0;
+      left: 105%;
+      overflow: hidden;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+}

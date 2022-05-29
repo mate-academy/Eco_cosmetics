@@ -1,0 +1,37 @@
+.header {
+
+  &__container {
+    margin: $headerTopPaddingPhone 0 25px;
+
+    @include onPad {
+      margin: $headerTopPaddingPad 0 35px;
+    }
+
+    @include onDesktop {
+      margin: $headerTopPaddingDeskTop 0 90px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+      justify-content: space-between;
+
+    &--mobile {
+      display: block;
+      display: flex;
+      justify-content: space-between;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
