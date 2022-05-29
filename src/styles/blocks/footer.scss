@@ -1,0 +1,84 @@
+.footer {
+
+  background-color: $color-footer;
+  color: $color-light;
+
+  &__content {
+    padding-top: 30px;
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-column: $colomn-gap;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      grid-column: $colomn-gap;
+    }
+  }
+
+  &__menu {
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+      grid-column: 1 / 4;
+
+    }
+  }
+
+  &__link {
+    color: $color-light;
+    display: block;
+    margin-bottom: 15px;
+    text-decoration: none;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__social-img {
+    grid-column: 1 / 4;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__support {
+    margin-bottom: 40px;
+  }
+
+  &__copy {
+    grid-column: 3 / 5;
+    text-align: center;
+    padding-bottom: 40px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: inline-block;
+        padding-bottom: 62px;
+      }
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+    }
+  }
+}
