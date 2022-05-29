@@ -1,0 +1,50 @@
+.tagline {
+  display: flex;
+  gap: 120px;
+
+  &__content-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    @include onDecstop{
+      justify-content: start;
+      order: 1;
+      border-bottom: 1px solid $decoration-line;
+      flex-basis: 50%;
+    }
+
+  }
+
+  &__content-description {
+    display: none;
+    @include onDecstop{
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      height: 100%;
+
+      border-top: 1px solid $decoration-line;
+      flex-basis: 50%;
+    }
+  }
+
+  &__description {
+    max-width: 380px;
+    @include onDecstop {
+      margin: 100px 0;
+    }
+  }
+
+  &__header {
+    color: $titel-color;
+    @include onDecstop {
+      margin: 130px 0;
+    }
+    @media (min-width: 768px) and (max-width: 1280px) {
+      text-align: center;
+    }
+  }
+}
+

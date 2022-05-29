@@ -1,0 +1,53 @@
+.nav {
+  box-sizing: border-box;
+  @include onDecstop {
+    display: flex;
+    justify-content: center;
+  }
+
+ &__list {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   list-style: none;
+   @include onDecstop {
+     flex-direction: row;
+     justify-content: baseline;
+     gap: 10px;
+  }
+ }
+
+  &__item {
+    position: relative;
+    width: 100%;
+  }
+
+ &__link {
+    padding: 30px;
+    text-decoration: none;
+    color: inherit;
+    @extend %inputs-menu-text;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    &--menu {
+      padding-bottom: 10px;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        background-color: #828282;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1280px) {
+      padding: 50px 50px 10px;
+    }
+ }
+
+}
