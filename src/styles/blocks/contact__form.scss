@@ -1,0 +1,95 @@
+.contact__form {
+  margin-top: 100px;
+
+  @include onDesktop {
+    margin-left: 7%;
+    margin-top: 200px;
+  }
+
+  &-wrapper {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+  }
+
+
+  &__description {
+    display: block;
+    margin: 20px 0;
+    width: 70%;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    background: $white;
+    border-right: 1px;
+    border-top: 0;
+    border-left: 0;
+
+    border-color: #BDBDBD;
+    height: 50px;
+    padding: 14px 16px;
+
+    &:hover {
+      border-bottom: 1px solid $dark-grey;
+      border-right: 1px;
+      border-top: 0;
+      border-left: 0;
+    }
+  
+    &:focus {
+      border-bottom: 1px solid $green;
+      border-right: 1px;
+      border-top: 0;
+      border-left: 0;
+    }
+  
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: #828282;
+    }
+  }
+
+  &--textarea {
+
+    height: 70px;
+    resize: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    font-family: inherit;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    margin-bottom: 100px;
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+    }
+  }
+
+  &__photo {
+    object-fit: cover;
+    height: 85%;
+    width: 100%;
+  }
+}
