@@ -1,0 +1,144 @@
+.shop {
+  &__content {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: $colomn-gap;
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      display: grid;
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    list-style: none;
+
+    @include onDesktop {
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__item {
+    margin: 0 0 25px;
+
+    @include onTablet {
+      margin: 0 0 35px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 60px;
+    }
+  }
+
+  &__link {
+    color: $color-grey;
+    padding-bottom: 10px;
+
+    &:hover {
+      color: $color-text;
+      border-bottom: 2px solid $color-text;
+    }
+
+    &--active {
+      color: $color-text;
+      border-bottom: 2px solid $color-text;
+    }
+  }
+
+  &__goods {
+    display: block;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: $colomn-gap;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: $colomn-gap;
+    }
+  }
+
+  &__goods-1 {
+    @include onTablet {
+      margin: 0;
+      display: grid;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__goods-2 {
+    display: none;
+
+    @include onTablet {
+      display: grid;
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 10;
+    }
+  }
+
+  &__goods-3 {
+    display: none;
+
+    @include onDesktop {
+      margin-right: -50px;
+      display: grid;
+      grid-column: 10 / -1;
+    }
+  }
+
+  &__name {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__photo {
+    object-fit: cover;
+    object-position: center;
+    height: 267px;
+    width: 100%;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      height: 300px;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include onDesktop {
+      margin-left: 80px;
+    }
+  }
+}
