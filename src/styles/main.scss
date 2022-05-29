@@ -6,11 +6,27 @@
   &__body {
     font-family: "Poppins", "Roboto", Arial, Helvetica, sans-serif;
     margin: 0;
+    scroll-behavior: smooth;
 
     background-color: $biscuit;
   }
 
   &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1;
+
+    transform: translateY(-100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__basket {
     position: fixed;
     top: 0;
     left: 0;
@@ -37,41 +53,19 @@
     padding-top: 40px;
   }
 
-  &__img {
-    position: relative;
-    width: 100%;
+  &__photo {
     max-height: 267px;
-
     margin: 20px 0 25px;
-
-    box-sizing: border-box;
-
-    &::after {
-      content: " ";
-      display: block;
-      padding-bottom: 100%;
-    }
 
     @include onTablet {
       margin: 30px 0 50px;
       max-height: 500px;
-      padding-bottom: 0;
     }
 
     @include onDesktop {
       margin-top: 81px;
       min-height: 450px;
-      padding-bottom: 0;
     }
-  }
-
-  &__photo {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
   }
 
   &__title {
@@ -95,6 +89,35 @@
   }
 }
 
+.photo {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  &::after {
+    content: " ";
+    display: flex;
+    padding-bottom: 100%;
+  }
+
+  @include onTablet {
+    padding-bottom: 0;
+  }
+
+  @include onDesktop {
+    padding-bottom: 0;
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 .container {
   margin: 0 auto 100px;
   padding: 0 20px;
@@ -103,11 +126,17 @@
   @include onTablet {
     padding: 0 27px;
     max-width: 714px;
+    margin: 0 auto 130px;
   }
 
   @include onDesktop {
     padding: 0 40px;
     max-width: 1180px;
+    margin: 0 auto 200px;
+  }
+
+  &--footer {
+    margin-bottom: 0;
   }
 }
 
@@ -161,10 +190,17 @@
     }
   }
 
+  &__list {
+    list-style-type: none;
+    display: inline-flex;
+    padding: 0;
+  }
+
   &__link {
     margin-right: 20px;
     text-decoration: none;
-    @extend %input-menu;
+    color: $hard-green;
+    @extend %nav;
   }
 
   &__bag {
@@ -186,6 +222,20 @@
     @include onTablet {
       display: grid;
       grid-auto-flow: row;
+    }
+  }
+
+  &--info {
+    @include onTablet {
+      display: block;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      display: grid;
+      padding: 100px 0;
+      border: 1px solid rgba(52, 79, 16, 0.5);
     }
   }
 
@@ -233,34 +283,77 @@
     }
   }
 
+  &__item-grid {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 27px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__item-ib {
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      justify-content: start;
+    }
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
 }
 
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid transparent;
 
   width: 280px;
   height: 60px;
 
   background-color: $dark;
 
-  @extend %text-button ;
+  &__link {
+    @extend %text-button ;
+    text-decoration: none;
+  }
 }
 
 @include onDesktop {
-  .order-1 {
+  .order-desk1 {
     order: 1;
   }
 
-  .order-2 {
+  .order-desk2 {
     order: 2;
   }
 
-  .order-3 {
+  .order-desk3 {
     order: 3;
   }
 
+}
+
+@include onTablet {
+  .order-tab1 {
+    order: 1;
+  }
+
+  .order-tab2 {
+    order: 2;
+  }
+
+  .order-tab3 {
+    order: 3;
+  }
 }
 
 .last-element {
@@ -301,6 +394,7 @@
     padding-bottom: 10px;
 
     @extend %menu-link;
+    color: $hard-green;
     text-decoration: none;
 
     border-bottom: 1px solid $hard-grey;
@@ -310,6 +404,25 @@
 .info {
   &__description {
     @extend %price-text;
+
+    @include onTablet {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      max-width: 380px;
+    }
+  }
+
+  &__about-ecology {
+    @extend %paragraph;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 }
 
@@ -317,17 +430,554 @@
   &__title {
     margin-bottom: 10px;
     @extend %title;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
   }
 
   &__paragraph {
     margin-bottom: 30px;
     @extend %paragraph;
+
+    &--hidden {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      max-height: 320px;
+    }
+
+    @include onDesktop {
+      max-height: 530px;
+    }
+  }
+
+  &__logo {
+    background-image: url("../images/icon/1.png");
   }
 }
 
 .learn-more {
+  display: inline-block;
   padding-bottom: 10px;
   @extend %more;
 
   border-bottom: 1px solid $hard-green;
+}
+
+.footer {
+  padding: 30px 0 40px;
+  max-height: 470px;
+  background-color: $light-green;
+
+  box-sizing: border-box;
+
+  @include onTablet {
+    padding-bottom: 30px;
+    max-height: 263px;
+
+  }
+
+  @include onDesktop {
+    background-color: rgba(52, 79, 16, 0.5);
+    padding: calc(60px - 27px) 0;
+    max-height: 320px;
+  }
+
+  &__nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    @extend %nav;
+    color: $biscuit;
+  }
+
+  &__nav-item {
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+
+    @include onDesktop {
+      margin-right: 40px;
+    }
+  }
+
+  &__wrapper {
+    display: inline-flex;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__media {
+    @include boxSquare(20px);
+  }
+
+  &__media-facebook {
+    margin-right: 20px;
+    background-image: url("../images/icon/facebook.png");
+
+    @include onDesktop {
+      margin-right: 14px;
+    }
+  }
+
+  &__media-instagram {
+    background-image: url("../images/icon/insta.png");
+  }
+
+  &__info {
+    @extend %info;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info-item {
+    padding-bottom: 10px;
+
+    &:last-of-type {
+      @include onDesktop {
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  &__end {
+    @extend %end;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: -27px;
+    }
+  }
+}
+
+.contact-us {
+  &__title {
+    @extend %title;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    @extend %paragraph;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 25px;
+    border: 0;
+    background-color: $biscuit;
+    padding: 5px 0;
+    font-family: inherit;
+    border-bottom: 1px solid $light-grey;
+    outline: none;
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      max-height: 409px;
+    }
+
+    @include onDesktop {
+      max-height: 584px;
+    }
+  }
+
+  &__logo {
+    background-image: url("../images/icon/contacts.png");
+  }
+}
+
+.textarea {
+  margin-bottom: 30px;
+  resize: none;
+}
+
+.creators {
+
+  &__title {
+    @extend %title;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__logo {
+    background-image: url("../images/icon/Group\ 2.2.png");
+  }
+
+  &__paragraph {
+    @extend %paragraph;
+
+    &:first-of-type {
+      margin-bottom: 20px;
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      margin-bottom: 30px;
+    }
+
+    &--hidden {
+      display: none;
+      margin-bottom: 20px;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__learn-more {
+    margin-bottom: 25px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      max-height: 435px;
+    }
+
+    @include onDesktop {
+      max-height: 669px;
+    }
+  }
+}
+
+.tooth-power {
+  &__title {
+    display: inline-block;
+    @extend %title;
+    margin-bottom: 21px;
+  }
+
+  &__logo {
+    background-image: url("../images/icon/Group\ 2.4.png");
+
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 40px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      column-gap: 20px;
+
+    }
+
+    @include onDesktop {
+      grid-template-columns: 1fr 1.5fr;
+    }
+  }
+
+  &__union {
+    text-align: center;
+    @extend %decorative-text;
+  }
+
+  &__drow {
+    width: 100%;
+    height: 397px;
+    background-image: url("../images/icon/Union.png");
+    background-repeat: no-repeat;
+  }
+
+  &__more {
+    position: relative;
+    top: -13px;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 140px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 220px;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 20px;
+  }
+
+  &__sub {
+    @extend %eco;
+    margin-bottom: 50px;
+  }
+
+  &__eco {
+    @include onTablet {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+    }
+  }
+
+  &__eco-box {
+    text-align: center;
+  }
+}
+
+.logo {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.union {
+  width: max-content;
+  text-align: end;
+
+  &__item {
+    position: relative;
+    margin: 0;
+
+    &::after {
+      position: absolute;
+      content: " ";
+      top: 50%;
+      right: -100%;
+
+      display: block;
+      width: 76px;
+      height: 1px;
+      background-color: $dark;
+    }
+
+    @each $number, $margin in $margins {
+      &--#{$number} {
+        margin-bottom: $margin;
+      }
+    }
+
+    @include onTablet {
+      &:first-of-type {
+        margin-top: 38px;
+      }
+    }
+  }
+}
+
+.shop {
+  &__logo {
+    background-image: url("../images/icon/shop.png");
+  }
+
+  &__title {
+    @extend %title;
+    margin-bottom: 20px;
+  }
+
+  &__topic {
+    display: block;
+    @extend %shop;
+    text-decoration: none;
+    color: $hard-grey;
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__price {
+    @extend %h3;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+
+  &__picture {
+    height: 267px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-right: 27px;
+      width: 342px;
+      height: 300px;
+    }
+
+    @include onDesktop {
+      margin-right: 20px;
+      width: 380px;
+      height: 500px;
+    }
+  }
+}
+
+.product {
+  &--2 {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &--3 {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+
+    &--1 {
+      background-image: url("../images/img/shop1.png");
+    }
+
+    &--2 {
+      background-image: url("../images/img/shop2.png");
+    }
+
+    &--3 {
+      background-image: url("../images/img/shop3.png");
+    }
+  }
+
+  &__name {
+    @extend %h3;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    right: -50%;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.flex {
+  @include onTablet {
+    display: flex;
+  }
+}
+
+.basket {
+  height: 100vh;
+  padding-top: 15px;
+  background-color: $biscuit;
+
+  &__wrapper-button {
+    margin-bottom: 50px;
+  }
+
+  &__paragraph {
+    @extend %paragraph;
+    margin-bottom: 20px;
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    @extend %eco;
+  }
+
+  &__picture {
+    margin-bottom: 30px;
+    height: 248px;
+  }
+}
+
+.shipping {
+  height: 100vh;
+  padding-top: 15px;
 }

@@ -16,11 +16,38 @@
   }
 }
 
-%input-menu {
+%nav {
   font-size: 18px;
   line-height: 27px;
   font-weight: 500;
-  color: $hard-green;
+
+  @include onTablet {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+  }
+
+  @include onDesktop {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+  }
+}
+
+%input {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: $light-grey;
+
+  @include onTablet {
+    font-weight: 500;
+  }
+
+  @include onDesktop {
+    font-size: 18px;
+    line-height: 27px;
+  }
 }
 
 %menu-link {
@@ -51,7 +78,7 @@
   margin: 0;
   font-size: 18px;
   line-height: 27px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.9px;
   text-transform: uppercase;
   color: $hard-green;
@@ -63,30 +90,51 @@
 }
 
 %paragraph {
+  font-family: "Poppins" "Roboto", sans-serif;
   margin: 0;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
   color: $dark;
+
+  @include onTablet {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 %title {
+  --size: 24px;
   font-family: "Poppins" "Roboto", sans-serif;
   margin: 0;
-  font-style: 24px;
+  font-size: var(--size);
   line-height: 36px;
   font-weight: 600;
-  letter-spacing: 5%;
+  letter-spacing: calc(var(--size) * 0.05);
   text-transform: uppercase;
   color: $hard-green;
 
   @include onDesktop {
-    font-style: 36px;
+    --size: 36px;
     line-height: 40px;
+    letter-spacing: calc(var(--size) * 0.05);
+  }
+}
+
+%info {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: $biscuit;
+
+  @include onDesktop {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
 %more {
+  font-family: "Poppins" "Roboto", sans-serif;
   font-size: 14px;
   line-height: 18px;
   font-weight: 500;
@@ -95,20 +143,54 @@
   color: $hard-green;
 }
 
-// %h2 {
-//   font-family: "Poppins" "Roboto", sans-serif;
-//   font-size: 36px;
-//   line-height: 110%;
-//   font-weight: 600;
-//   letter-spacing: 5%;
-//   text-transform: uppercase;
-// }
+%end {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 600;
+  color: $biscuit;
 
-// %h5 {
-//   font-family: "Poppins" "Roboto", sans-serif;
-//   font-size: 18px;
-//   line-height: 150%;
-//   font-weight: 600;
-//   letter-spacing: 5%;
-//   text-transform: uppercase;
-//  }
+  @include onTablet {
+    line-height: 21px;
+    font-weight: 400;
+  }
+
+  @include onDesktop {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+  }
+}
+
+%eco {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: calc(14px * 0.05);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+%h3 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 600;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: $dark;
+}
+
+%shop {
+  --size: 14px;
+  font-size: var(var(--size));
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: calc(var(--size) * 0.05);
+  text-transform: uppercase;
+
+  @include onDesktop {
+    --size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+  }
+}
