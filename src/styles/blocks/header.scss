@@ -1,4 +1,4 @@
-.header{
+.header {
   padding-top: 15px;
 
   @include onTablet {
@@ -6,7 +6,6 @@
   }
 
   @include onDesktop {
-    display: flex;
     padding-top: 40px;
   }
 
@@ -14,6 +13,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 92px;
+    }
   }
 
   &__logo {
@@ -31,7 +34,7 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
 
-color: #344F10;
+    color: #344f10;
 
     @include onDesktop {
       display: block;
@@ -47,9 +50,20 @@ color: #344F10;
     }
   }
 
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onDesktop {
+      flex-direction: row-reverse;
+      gap: 20px;
+    }
+  }
+
   &__image {
     width: calc(100% + 40px);
-    margin: 0 0 25px -20px;
+    margin: 0 0 25px 0;
   }
 
   &__text-container {
@@ -58,7 +72,12 @@ color: #344F10;
     justify-items: center;
     align-items: center;
     text-align: center;
-    color: #333333;
+    color: #333;
+
+    @include onDesktop {
+      text-align: initial;
+      align-items: initial;
+    }
   }
 
   &__main-text {
