@@ -1,3 +1,72 @@
 .about {
-  box-sizing: border-box;
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+  }
+  @include onDecstop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+    overflow: hidden;
+  }
+
+  &__description {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+    @include onDecstop {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__header {
+    @extend %h4;
+    @include onDecstop {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__paragraph-wrap {
+    margin: 40px 0;
+  }
+
+  &__paragraph:not(:first-child) {
+    margin-top: 30px;
+    display: none;
+    @include onDecstop {
+      display: block;
+    }
+  }
+
+  &__img-wrap {
+    display: none;
+    @include onTablet {
+      display: block;
+      grid-column: 4 / 7;
+    }
+    @include onDecstop {
+      grid-column: 7/13;
+      display: flex;
+      gap: 20px;
+      align-items: end;
+    }
+  }
+
+  &__img {
+
+    &--smoll-size-img {
+      display: none;
+      @include onDecstop {
+        display: block;
+        max-height: 480px;
+        object-position: bottom left;
+      }
+    }
+  }
 }

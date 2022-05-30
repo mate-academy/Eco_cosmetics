@@ -1,3 +1,17 @@
 .description-section {
-  position: absolute;
+  display: none;
+  @extend %decorative-text;
+  @include onDecstop {
+    display: block;
+    color: $decoration-line;
+    transform: rotateZ(-90deg);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -100%;
+      width: 100px;
+      border: 1px solid $decoration-line ;
+    }
+  }
 }
