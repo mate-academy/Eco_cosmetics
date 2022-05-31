@@ -1,0 +1,49 @@
+.about {
+  position: relative;
+  &__title-wrapper {
+    margin: 0 0 10px;
+  }
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344F10;
+  }
+  &__text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #333333;
+  }
+
+  &__image-container {
+
+    @include on-mobile {
+      display: none;
+    }
+    @include on-tablet-mini {
+      display: grid;
+    }
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__candle-image {
+    @include on-desktop {
+      width: 480px;
+      height: 529px;
+    }
+
+    @include on-tablet-mini{
+      width: 369px;
+      height: 318px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

@@ -1,7 +1,5 @@
 
 .header {
-  height: 100vh;
-
   &__content {
     display: flex;
     justify-content: space-between;
@@ -121,15 +119,67 @@
     }
   }
 
-  &__title {
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 130%;
-    color: #333333;
+  &__title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 500px;
+
+    @include on-desktop {
+      align-items: flex-start;
+      margin: 0;
+    }
   }
 
-  &__title-container {
-    
+  &__title {
+    text-align: center;
+    font-weight: 466;
+    font-size: 36px;
+    text-align: center;
+    color: #333333;
+
+    @include on-tablet-mini {
+      text-transform: capitalize;
+    }
+
+    @include on-desktop {
+      text-align: start;
+      text-transform: none;
+      font-weight: 600;
+      font-size: 60px;
+      line-height: 130%;
+    }
+  }
+
+  &__title-sale {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    @include on-desktop {
+      text-align: start;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 280px;
+    height: 60px;
+    background-color: #333;
+  }
+
+  &__button-text {
+    padding: 0 115px;
+    line-height: 60px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
   }
 }
 
