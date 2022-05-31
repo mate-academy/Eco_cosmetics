@@ -17,6 +17,13 @@
       crossorigin="anonymus"
     >
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Poppins:wght@400;500;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js">
+    </script>
+
   </head>
   <body class="page__body">
     <header class="page__header header">
@@ -42,18 +49,18 @@
           <nav class="header__nav nav">
             <ul class="nav__list">
               <li class="nav__list__item">
-                <a href="#" class="header__link">Shop</a>
+                <a href="#shop" class="header__link">Shop</a>
               </li>
               <li class="nav__list__item">
-                <a href="#"class="header__link">Contact</a>
+                <a href="#contact__f"class="header__link">Contact</a>
               </li>
               <li class="nav__list__item">
-                <a href="#"class="header__link">About</a>
+                <a href="#about"class="header__link">About</a>
               </li>
             </ul>
           </nav>
 
-          <a href="#">
+          <a href="#shop">
             <img 
               src="./images/shop-header.svg" 
               alt="logo"
@@ -73,13 +80,14 @@
             <div class="header__title-second">
               20% of sales at a wild bird shelter
             </div>
-            <a href="button" class="button header__title-button">shop</a>
+            <a href="#shop" class="button header__title-button">shop</a>
           </div>
         </div>
 
 
       </div>
     </header>
+
     <nav class="page__menu menu" id="menu">
       <div class="container">
         <div class="menu__content">
@@ -88,10 +96,10 @@
           </div>
           <ul class="menu__list">
             <li class="menu__list__item">
-              <a href="#" class="menu__list__link">Shop</a>
+              <a href="#shop" class="menu__list__link">Shop</a>
             </li>
             <li class="menu__list__item">
-              <a href="#" class="menu__list__link">Contact</a>
+              <a href="#contact__f" class="menu__list__link">Contact</a>
             </li>
             <li class="menu__list__item">
               <a href="#about" class="menu__list__link">About</a>
@@ -108,16 +116,18 @@
             <div class="about__us-text  about__us-text--desktop pargraph-text">
               Biologists say that birds are indicators of the environmental situation, and over the past half century, the population of seabirds has declined by 70%. Birds die due to environmental problems and human intervention in the natural environment.
             </div>
-            <div class="about__us-title-small">
-              if you choose the gifts of 
-              <br>
-              nature and care about 
-              <br>
-              it’s - scroll down
-            </div>
+            <a href="#about__us" class="about__us-title-small">
+              <div class="about__us-title-small-text">
+                if you choose the gifts of 
+                <br>
+                nature and care about 
+                <br>
+                it’s - scroll down
+              </div>
+            </a>
           </div>
 
-          <div class="about__us-container">
+          <div class="about__us-container" id="about__us">
             <div class="before__title">
               <div class="before__title-content">
                 witch of mountain winds
@@ -166,21 +176,90 @@
           </div>
 
           <div class="shop__nav">
-            <ul class="shop__nav__list">
+            <ul class="shop__nav__list tabs__links">
               <li class="shop__nav__link">
-                <a href="#" class="shop__nav__item shop__nav__item--first">face</a>
+                <a 
+                 href="#content-1" 
+                 class="shop__nav__item shop__nav__item--first" 
+                 checked>face</a>
+              </li>
+              <li class="shop__nav__link ">
+                <a 
+                  href="#content-2" 
+                  class="shop__nav__item shop__nav__item--body " 
+                  >body</a>
+              </li>
+              <li class="shop__nav__link ">
+                <a 
+                  href="#content-3" 
+                  class="shop__nav__item shop__nav__item--hair"
+                  >hair</a>
               </li>
               <li class="shop__nav__link">
-                <a href="#" class="shop__nav__item">body</a>
-              </li>
-              <li class="shop__nav__link">
-                <a href="#" class="shop__nav__item">hair</a>
-              </li>
-              <li class="shop__nav__link">
-                <a href="#" class="shop__nav__item">candles</a>
+                <a 
+                  href="#content-4" 
+                  class="shop__nav__item shop__nav__item--candles"
+                  >candles</a>
               </li>
             </ul>
           </div>
+
+          <div class="swiper slider">
+            <div class="shop__gallery swiper-wrapper slider__wrapper">
+              <div class="shop__gallery-item slider__slide swiper-slide">
+                <img 
+                src="./images/gallery-1.png" 
+                alt="Hydrophilic oil" 
+                class="shop__gallery__photo"
+                >
+                <div class="shop__item-title">
+                  <a href="./oil.html" class="shop__link">Hydrophilic oil</a>
+                </div>
+                <div class="shop__item-price">
+                  160 UAH
+                </div>
+              </div>
+  
+              <div class="shop__gallery-item slider__slide swiper-slide shop__gallery-item--tablet">
+                <img 
+                src="./images/gallery-2.png" 
+                alt="Face cream" 
+                class="shop__gallery__photo"
+              >
+                <div class="shop__item-title">
+                  <a href="./face_cream.html" class="shop__link">Face cream</a>
+                </div>
+                <div class="shop__item-price">
+                  210 UAH
+                </div>
+              </div>
+  
+              <div class="shop__gallery-item slider__slide swiper-slide shop__gallery-item--desktop">
+                <img 
+                src="./images/gallery-3.png" 
+                alt="ubtan" 
+                class="shop__gallery__photo"
+              >
+                <div class="shop__item-title">
+                  <a href="./ubtan.html" class="shop__link">ubtan</a>
+                </div>
+                <div class="shop__item-price">
+                  160 UAH
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="
+          swiper-button-prev
+          slider__button
+        "></div>
+
+          <div class="
+            swiper-button-next
+            slider__button
+          "></div>
+
 
           <div class="shop__gallery">
             <div class="shop__gallery-item">
@@ -190,7 +269,7 @@
               class="shop__gallery__photo"
               >
               <div class="shop__item-title">
-                <a href="#" class="shop__link">Hydrophilic oil</a>
+                <a href="./oil.html" class="shop__link">Hydrophilic oil</a>
               </div>
               <div class="shop__item-price">
                 160 UAH
@@ -204,7 +283,7 @@
               class="shop__gallery__photo"
             >
               <div class="shop__item-title">
-                <a href="#" class="shop__link">Face cream</a>
+                <a href="./face_cream.html" class="shop__link">Face cream</a>
               </div>
               <div class="shop__item-price">
                 210 UAH
@@ -218,15 +297,18 @@
               class="shop__gallery__photo"
             >
               <div class="shop__item-title">
-                <a href="#" class="shop__link">ubtan</a>
+                <a href="./ubtan.html" class="shop__link">ubtan</a>
               </div>
               <div class="shop__item-price">
                 160 UAH
               </div>
             </div>
           </div>
+
+
+
           <div class="shop__button">
-            <a href="button" class="button">all products</a>
+            <a href="./face_cream.html" class="button">all products</a>
           </div>
         </div>
       </section>
@@ -256,7 +338,7 @@
               <a href="#" class="about__creator-item link">lern more</a>
             </div>
             <div class="about__creator__button">
-              <a href="button" class="button">to contact us</a>
+              <a href="#contact__f" class="button">to contact us</a>
             </div>
           </div>
 
@@ -349,7 +431,7 @@
         </div>
       </section>
 
-      <section class="page__section contact__form">
+      <section class="page__section contact__form" id="contact__f">
         <div class="container">
           <div class="contact__form-wrapper">
             <div class="contact__form__content">
@@ -385,11 +467,13 @@
                   name="textarea" 
                   class="contact__form__field contact__form--textarea"
                   placeholder="Your message"></textarea>
+
+                <div class="contact__form__button">
+                  <button  class="button">send a message</button>
+                </div>
                 
               </form>
-              <div class="contact__form__button">
-                <a href="button" class="button">send a message</a>
-              </div>
+
             </div>
 
             <div class="contact__form__img">
@@ -408,19 +492,20 @@
         <div class="footer__nav">
           <ul class="footer__list">
             <li class="footer__list__item">
-              <a href="#" class="footer__link">Shop</a>
+              <a href="#shop" class="footer__link">Shop</a>
             </li>
             <li class="footer__list__item">
-              <a href="#"class="footer__link">Contact</a>
+              <a href="#contact__f"class="footer__link">Contact</a>
             </li>
             <li class="footer__list__item">
-              <a href="#"class="footer__link">About</a>
+              <a href="#about"class="footer__link">About</a>
             </li>
           </ul>
         </div>
 
         <div class="footer__icons">
-          <a href="/" class="footer__icon__link">
+          <a href="https://www.facebook.com/" class="footer__icon__link"
+          target="_blank">
             <img 
             src="./images/facebook.svg" 
             alt="facebook"
@@ -428,7 +513,8 @@
             >
           </a>
 
-          <a href="/" class="footer__icon__link">
+          <a href="https://www.instagram.com/" class="footer__icon__link"
+          target="_blank">
             <img 
             src="./images/instagram.svg" 
             alt="instagram"
@@ -438,10 +524,23 @@
         </div>
   
         <div class="footer__contact__information">
-          <div class="footer__contact__information__item">Ukraine</div>
-          <div class="footer__contact__information__item">support.mountain@gmail.com</div>
-          <div class="footer__contact__information__item">+380934476839</div>
-          <div class="footer__contact__information__item">Support is available Monday - Friday 9am-6pm</div>
+
+          <div class="footer__contact__information__item">
+            <a href= "https://goo.gl/maps/bpHeeobhbmt1eSRQ7" class="footer__contact__information__link">Ukraine</a>
+          </div>
+
+          <div class="footer__contact__information__item">
+            <a 
+              href="mailto:support.mountain@gmail.com" 
+              class="footer__contact__information__link" 
+              target="_blank">support.mountain@gmail.com</a>
+          </div>
+
+          <div class="footer__contact__information__item">
+            <a href="tel:+380934476839" class="footer__contact__information__link">+380934476839</a>
+          </div>
+
+          <div class="footer__contact__information__link">Support is available Monday - Friday 9am-6pm</div>
         </div>
   
         <div class="footer__rights">
@@ -449,6 +548,8 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/main.js">
+    </script>
+
   </body>
 </html>

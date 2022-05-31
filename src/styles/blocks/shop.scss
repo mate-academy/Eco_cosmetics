@@ -88,6 +88,7 @@
   }
 
   &__gallery {
+    display: none;
 
     @include onTablet {
       display: grid;
@@ -116,17 +117,43 @@
 
     &-item {
 
-      &--tablet {
-        display: none;
+      transition: all 0.3s;
 
-        @include onTablet {
-          display: block;
-        }
+      &:hover {
+        transform: scale(103%);
+      }
+    }
 
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &__photo {
+      height: 267px;
+      width: 100%;
+      object-fit: cover;
+
+      @include onTablet {
+        height: 300px;
+        width: 100%;
       }
 
+      @include onDesktop {
+        height: 500px;
+      }
+    }
+
+    &-item {
+
       &--desktop {
-        display: none;
+
+        @include onTablet {
+          display: none;
+        }
 
         @include onDesktop {
           display: block;
@@ -177,5 +204,19 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: $dark-grey;
+
+    &:hover {
+      color: $lite-green;
+    }
+  }
+
+  &__ingrediance {
+    margin-top: 40px;
+    &__content {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $green;
+    }
   }
 }
