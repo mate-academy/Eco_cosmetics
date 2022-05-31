@@ -2,6 +2,10 @@
 @import "./typography";
 @import "./font";
 
+.swiper {
+  width: 100%;
+}
+
 .page {
   &__body {
     font-family: "Poppins", "Roboto", Arial, Helvetica, sans-serif;
@@ -9,6 +13,14 @@
     scroll-behavior: smooth;
 
     background-color: $biscuit;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    overflow: hidden;
   }
 
   &__menu {
@@ -54,12 +66,14 @@
   }
 
   &__photo {
-    max-height: 267px;
-    margin: 20px 0 25px;
+    background-image: url("../images/img/header.png");
+
+    height: 267px;
+    margin: 20px -20px 25px;
 
     @include onTablet {
       margin: 30px 0 50px;
-      max-height: 500px;
+      height: 500px;
     }
 
     @include onDesktop {
@@ -90,32 +104,10 @@
 }
 
 .photo {
-  position: relative;
-  width: 100%;
+  background-size: cover;
   box-sizing: border-box;
-
-  &::after {
-    content: " ";
-    display: flex;
-    padding-bottom: 100%;
-  }
-
-  @include onTablet {
-    padding-bottom: 0;
-  }
-
-  @include onDesktop {
-    padding-bottom: 0;
-  }
-
-  &__img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
-  }
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .container {
@@ -130,13 +122,31 @@
   }
 
   @include onDesktop {
-    padding: 0 40px;
+    padding: 0 50px;
     max-width: 1180px;
     margin: 0 auto 200px;
   }
 
   &--footer {
     margin-bottom: 0;
+  }
+}
+
+.container-contact {
+  margin: 0 auto 100px;
+  padding: 0 20px;
+  max-width: 280px;
+
+  @include onTablet {
+    min-width: 714px;
+    padding-right: 0;
+    margin: 0 auto 130px;
+  }
+
+  @include onDesktop {
+    padding-right: 0;
+    min-width: 1180px;
+    margin: 0 auto 200px;
   }
 }
 
@@ -153,6 +163,11 @@
     background-position: center;
     background-repeat: no-repeat;
     @include boxSquare(24px);
+    transition: 0.3s linear;
+
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 
   &__link-menu {
@@ -174,10 +189,10 @@
 
 .nav-desktop {
   display: none;
-  align-items: center;
 
   @include onDesktop {
     display: grid;
+    align-items: center;
   }
 
   &__logo {
@@ -201,6 +216,13 @@
     text-decoration: none;
     color: $hard-green;
     @extend %nav;
+    border-bottom: 2px solid transparent;
+
+    transition: 0.3s linear;
+
+    &:hover {
+      border-bottom: 2px solid $hard-green;
+    }
   }
 
   &__bag {
@@ -241,7 +263,7 @@
 
   @include onTablet {
     grid-template-columns: repeat(6, 1fr);
-    column-gap: 27px;
+    column-gap: 30px;
   }
 
   @include onDesktop {
@@ -314,16 +336,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid transparent;
+  border: 1px solid $biscuit;
 
   width: 280px;
   height: 60px;
 
   background-color: $dark;
 
+  &:hover {
+    border-color: $dark;
+    background-color: $biscuit;
+
+    &__link {
+      color: $dark;
+    }
+  }
+
   &__link {
     @extend %text-button ;
     text-decoration: none;
+
+    &:hover {
+      color: $dark;
+    }
   }
 }
 
@@ -359,6 +394,7 @@
 .last-element {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .menu {
@@ -445,20 +481,37 @@
 
       @include onDesktop {
         display: block;
+        margin-bottom: 40px;
       }
     }
   }
 
   &__photo {
     display: none;
+    height: 480px;
+    width: 369px;
+    background-image: url("../images/img/about-brand.png");
 
     @include onTablet {
       display: block;
-      max-height: 320px;
     }
 
     @include onDesktop {
-      max-height: 530px;
+      width: 480px;
+      height: 530px;
+    }
+  }
+
+  &__photo-small {
+    display: none;
+    background-image: url("../images/img/about-brand.png");
+
+    @include onDesktop {
+      display: block;
+      height: 440px;
+      width: 100%;
+      position: relative;
+      bottom: -90px;
     }
   }
 
@@ -472,7 +525,9 @@
   padding-bottom: 10px;
   @extend %more;
 
-  border-bottom: 1px solid $hard-green;
+  &:hover {
+    border-bottom: 1px solid $hard-green;
+  }
 }
 
 .footer {
@@ -508,6 +563,11 @@
     text-decoration: none;
     @extend %nav;
     color: $biscuit;
+    transition: 0.3s linear;
+
+    &:hover {
+      border-bottom: 1px solid $biscuit;
+    }
   }
 
   &__nav-item {
@@ -541,6 +601,11 @@
 
   &__media {
     @include boxSquare(20px);
+    transition: 0.3s linear;
+
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 
   &__media-facebook {
@@ -557,7 +622,6 @@
   }
 
   &__info {
-    @extend %info;
     margin-bottom: 30px;
 
     @include onTablet {
@@ -566,12 +630,19 @@
   }
 
   &__info-item {
-    padding-bottom: 10px;
+    display: block;
+    margin-bottom: 10px;
+    @extend %info;
+    text-decoration: none;
 
-    &:last-of-type {
-      @include onDesktop {
-        padding-bottom: 30px;
-      }
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__info-time {
+    @include onDesktop {
+      margin-bottom: 30px;
     }
   }
 
@@ -613,19 +684,11 @@
     }
   }
 
-  &__input {
-    width: 100%;
-    margin-bottom: 25px;
-    border: 0;
-    background-color: $biscuit;
-    padding: 5px 0;
-    font-family: inherit;
-    border-bottom: 1px solid $light-grey;
-    outline: none;
-  }
-
   &__photo {
     display: none;
+    width: 615px;
+    height: 100%;
+    background-image: url("../images/img/contact-us.png");
 
     @include onTablet {
       display: block;
@@ -639,6 +702,21 @@
 
   &__logo {
     background-image: url("../images/icon/contacts.png");
+  }
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 25px;
+  border: 0;
+  background-color: $biscuit;
+  padding: 5px 0;
+  font-family: inherit;
+  border-bottom: 1px solid $light-grey;
+  outline: none;
+
+  &:checked {
+    border-bottom: 1px solid $dark;
   }
 }
 
@@ -668,6 +746,10 @@
     &:first-of-type {
       margin-bottom: 20px;
 
+      @include onTablet {
+        margin-bottom: 15px;
+      }
+
       @include onDesktop {
         margin-bottom: 30px;
       }
@@ -675,6 +757,14 @@
 
     &:nth-of-type(2) {
       margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
     }
 
     &--hidden {
@@ -690,6 +780,10 @@
   &__learn-more {
     margin-bottom: 25px;
 
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
     @include onDesktop {
       margin-bottom: 40px;
     }
@@ -697,13 +791,18 @@
 
   &__photo {
     display: none;
+    width: 580px;
+    height: 100%;
+    background-image: url("../images/img/about-creators.png");
 
     @include onTablet {
-      display: flex;
-      max-height: 435px;
+      display: block;
+      max-height: 440px;
+      margin-right: -27px;
     }
 
     @include onDesktop {
+      display: block;
       max-height: 669px;
     }
   }
@@ -848,9 +947,15 @@
     color: $hard-grey;
     margin: 0 0 15px;
     padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-bottom: 2px solid $dark;
+      color: $dark;
+    }
   }
 
-  &__wrapper {
+  &__wrapper-button {
     display: flex;
     justify-content: center;
   }
@@ -858,7 +963,22 @@
   &__price {
     @extend %h3;
     font-weight: 500;
-    margin-bottom: 30px;
+    margin: 0 0 30px;
+  }
+
+  &__product {
+    @include onTablet {
+      width: 342px;
+
+      &:first-of-type {
+        margin-right: 30px;
+      }
+    }
+
+    @include onDesktop {
+      width: 380px !important;
+      margin-right: 20px;
+    }
   }
 
   &__picture {
@@ -880,24 +1000,8 @@
 }
 
 .product {
-  &--2 {
-    display: none;
-
-    @include onDesktop {
-      display: block;
-    }
-  }
-
-  &--3 {
-    display: none;
-
-    @include onTablet {
-      display: block;
-    }
-  }
-
   &__picture {
-    width: 100%;
+    // margin: 0 -20px;
     background-position: center;
     background-size: cover;
 
