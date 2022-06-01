@@ -1,5 +1,4 @@
 .footer {
-
   background-color: $color-footer;
   color: $color-light;
 
@@ -18,23 +17,32 @@
   }
 
   &__menu {
+    display: flex;
+    flex-direction: column;
 
     @include onDesktop {
       display: flex;
+      flex-direction: row;
       gap: 40px;
       grid-column: 1 / 4;
-
     }
   }
 
   &__link {
     color: $color-light;
-    display: block;
     margin-bottom: 15px;
     text-decoration: none;
+    transition: all 0.3s;
 
     &:last-child {
       margin-bottom: 20px;
+    }
+
+    @include onTablet {
+      &:hover {
+        transform: scale(103%);
+        color: $color-backgroun;
+      }
     }
   }
 
@@ -46,6 +54,24 @@
 
     @include onDesktop {
       display: none;
+    }
+
+    &--desk {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        gap: $colomn-gap;
+        grid-column: 8 / 13;
+      }
+    }
+  }
+
+  &__icon {
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(115%);
     }
   }
 
@@ -73,6 +99,8 @@
   }
 
   &__info {
+    display: flex;
+    flex-direction: column;
     @include onTablet {
       grid-column: 4 / 7;
     }

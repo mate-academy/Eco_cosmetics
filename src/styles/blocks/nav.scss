@@ -14,9 +14,27 @@
 
   &__logo {
     display: none;
+    transition: all 0.3s;
+
+    @include onTablet {
+      &:hover {
+        transform: scale(105%);
+      }
+    }
 
     @include onDesktop {
       display: block;
+    }
+  }
+
+  &__link {
+    @include onTablet {
+      transition: all 0.3s;
+
+      &:hover {
+        color: $color-text;
+        transform: scale(105%);
+      }
     }
   }
 
@@ -56,5 +74,13 @@
     height: 26px;
     width: 20px;
     background-image: url(../images/basket.svg);
+
+    @include onTablet {
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(105%);
+      }
+    }
   }
 }

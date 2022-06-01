@@ -1,5 +1,6 @@
 .creators {
   &__contant {
+
     @include onTablet {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -78,6 +79,14 @@
     font-size: 14px;
     padding: 0 0 10px;
     border-bottom: 1px solid $color-text-accent;
+    transition: all 0.3s;
+
+    @include onTablet {
+      &:hover {
+        color: $color-footer;
+        border-bottom: 1px solid $color-footer;
+      }
+    }
   }
 
   &__photo-container {
@@ -101,6 +110,13 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+      transition: all 0.3s;
+
+      @include onTablet {
+        &:hover {
+          box-shadow: 5px 2px 10px $color-footer;
+        }
+      }
     }
   }
 

@@ -8,6 +8,15 @@
     }
   }
 
+  &__pointer {
+    color: $color-text-accent;
+    text-decoration: none;
+
+    @include onDesktop {
+      cursor: pointer;
+    }
+  }
+
   &__title {
     margin-bottom: 20px;
 
@@ -44,10 +53,11 @@
   &__link {
     color: $color-grey;
     padding-bottom: 10px;
+    transition: all 0.3s;
 
     &:hover {
-      color: $color-text;
-      border-bottom: 2px solid $color-text;
+      color: $color-footer;
+      border-bottom: 2px solid $color-footer;
     }
 
     &--active {
@@ -111,9 +121,27 @@
   &__name {
     display: inline-block;
     margin-bottom: 10px;
+    transition: all 0.3s;
 
     @include onTablet {
       margin-bottom: 15px;
+    }
+
+    @include onTablet {
+      &:hover {
+        transform: scale(105%);
+        color: $color-footer;
+      }
+    }
+  }
+
+  &__price {
+    transition: all 0.3s;
+    @include onTablet {
+      &:hover {
+        transform: scaleY(105%);
+        color: $color-footer;
+      }
     }
   }
 
@@ -123,9 +151,15 @@
     height: 267px;
     width: 100%;
     margin-bottom: 20px;
+    transition: all 0.3s;
 
     @include onTablet {
       height: 300px;
+
+      &:hover {
+        transform: scale(105%);
+        box-shadow: 5px 2px 10px $color-footer;
+      }
     }
 
     @include onDesktop {
