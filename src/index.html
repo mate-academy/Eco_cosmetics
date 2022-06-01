@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Eco-cosmetics shop</title>
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
@@ -12,6 +12,22 @@
       crossorigin="use-credentials"
     >
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/fav.png" type="image/x-icon">
+    <script src="scripts/main.js" defer></script>
+    <script>
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#menu-mobile') {
+          document.body.classList.add('page__body--with-menu');
+        } else {
+          document.body.classList.remove('page__body--with-menu');
+        }
+      });
+    </script>
+    <script>
+      document.querySelector("#contact").addEventListener("submit", function(event) {
+         event.preventDefault();
+}, false);
+    </script>
   </head>
   <body class="page__body">
 
@@ -35,13 +51,13 @@
             <nav class="menu">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="#" class="menu__link">shop</a>
+                  <a href="#shop" class="menu__link">shop</a>
                 </li>
                 <li class="menu__item">
-                  <a href="#" class="menu__link">Contact</a>
+                  <a href="#contact" class="menu__link">Contact</a>
                 </li>
                 <li class="menu__item">
-                  <a href="#" class="menu__link">About</a>
+                  <a href="#about" class="menu__link">About</a>
                 </li>
               </ul>
             </nav>
@@ -74,7 +90,7 @@
         <a href="#" class="icon icon--cross"></a>
         <ul class="menu-mobile__list">
           <li class="menu-mobile__item">
-            <a href="#" class="menu-mobile__link">catalog</a>
+            <a href="#" class="menu-mobile__link">Shop</a>
           </li>
           <li class="menu-mobile__item">
             <a href="#" class="menu-mobile__link">Contact</a>
@@ -132,7 +148,16 @@
     </section>
 
     <section class="page__brand brand">
+
+
+
       <div class="container grid">
+        <div class="vertical-anchor">
+          <p class="vertical-anchor__text" id="about">
+            witch of mountain winds
+          </p>
+        </div>
+
         <div class="brand__text grid__item--2-5">
           <h2 class="brand__title">
             about our brand
@@ -145,7 +170,7 @@
             We are all neighbors of one big House. And we must protect what we have. Destroying everything around for the sake of consumerism and imaginary convenience, we destroy what does not belong to us. Be aware of your choice!
           </p>
           <a href="#" class="slim-link">
-            LEARN MORE TEST
+            LEARN MORE
           </a>
         </div>
         <div class="brand__pictures grid__item--7-11">
@@ -165,13 +190,18 @@
 
     <section class="page__catalog catalog">
       <div class="container">
+        <div class="vertical-anchor">
+          <p class="vertical-anchor__text" id="shop">
+            shop
+          </p>
+        </div>
         <h2 class="catalog__title">
           <a href="#" class="catalog__title-link">Shop</a>
         </h2>
         <ul class="catalog__list grid">
           <div class="grid__item--2-2">
-            <li class="catalog__item catalog__item--active">
-              <a class="catalog__link" href="#">face</a>
+            <li class="catalog__item">
+              <a class="catalog__link catalog__link--active" href="#">face</a>
             </li>
           </div>
 
@@ -232,6 +262,11 @@
 
     <section class="page__creators creators">
       <div class="container grid">
+        <div class="vertical-anchor">
+          <p class="vertical-anchor__text">
+            about the creators
+          </p>
+        </div>
         <div class="creators__text-container grid__item--2-5">
           <h4 class="creators__title">about the creators</h4>
           <p class="creators__paragraph">
@@ -265,6 +300,11 @@
 
     <section class="page__ayurvedic ayurvedic">
       <div class="container grid">
+        <div class="vertical-anchor">
+          <p class="vertical-anchor__text">
+            ingredients
+          </p>
+        </div>
         <h2 class="ayurvedic__title grid__item--2-5">Ayurvedic Tooth Powder</h2>
 
         <div class="ayurvedic__bottle-container grid__item--6-12">
@@ -327,13 +367,138 @@
     </section>
 
     <section class="page__contact contact">
-      <div class="container"></div>
+      <div class="container grid">
+        <div class="vertical-anchor">
+          <p class="vertical-anchor__text">
+            help
+          </p>
+        </div>
+        <div class="contact__content grid__item--2-6">
+          <h2 class="contact__title">
+            Contact us
+          </h2>
+
+          <p class="contact__text">
+            We will help you choose a product that suits you and answer your other questions
+          </p>
+
+          <form action="#" method="get" id="contact">
+            <label for="name">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="your name"
+                class="contact__field form-field"
+                required
+              >
+            </label>
+            <label for="email">
+              <input
+                name="email"
+                type="email"
+                placeholder="e-mail"
+                class="contact__field form-field"
+                required
+              >
+            </label>
+            <label for="phone">
+              <input
+                name="phone"
+                type="tel"
+                placeholder="phone number"
+                class="contact__field form-field"
+                required
+              >
+            </label>
+            <textarea
+              name="message"
+              placeholder="your message"
+              class="
+                contact__field
+                contact__field--last
+                form-field
+                form-field--textarea
+              "
+              required
+            ></textarea>
+            <button class="button" type="submit">
+              <a
+                href="#contact"
+                class="button__link"
+              >
+                Send a message
+              </a>
+            </button>
+          </form>
+        </div>
+
+        <img
+          src="images/bird_with_plant.jpg"
+          alt="bird with plant"
+          class="contact__image grid__item--8-12">
+      </div>
     </section>
 
     <section class="page__footer footer">
-      <div class="container"></div>
+      <div class="container grid">
+        <div class="footer__menu grid__item--1-3">
+          <ul class="footer__menu-list">
+            <li class="footer__menu-item">
+              <a href="#shop" class="footer__menu-link">shop</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#contact" class="footer__menu-link">Contact</a>
+            </li>
+            <li class="footer__menu-item">
+              <a href="#about" class="footer__menu-link">About</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__social-links social-links  grid__item--8-12">
+          <a
+            href="https:facebook.com"
+            target="_blank"
+            class="social-links__link"
+          >
+            <img
+              src="images/facebook.svg"
+              alt="facebook icon"
+              class="social-links__icon"
+            >
+          </a>
+
+          <a
+            href="https:instagram.com"
+            target="_blank"
+            class="social-links__link"
+          >
+            <img
+              src="images/instagram.svg"
+              alt="instagram icon"
+              class="social-links__icon"
+            >
+          </a>
+        </div>
+        <div class="footer__info-content grid__item--8-12">
+          <a
+            href="https://www.google.com/maps/place/Arka+Svobody+Ukrayins%CA%B9koho+Narodu,+Parkova+Doroha,+Kyiv,+02000/@50.468298,30.4987207,14z/data=!4m2!3m1!1s0x40d4ce4ef9be01b7:0xcd7dcf2eba57eba2"
+            target="_blank"
+            class="footer__info"
+          >
+            Ukraine, Kyiv
+          </a>
+          <a href="mailto:support.mountain@gmail.com" class="footer__info">support.mountain@gmail.com</a>
+          <a href="tel:+380934476839" class="footer__info">+380934476839</a>
+          <div class="footer__info footer__info--last">Support is available Monday - Friday 9am-6pm</div>
+
+        </div>
+
+        <div class="footer__copyright  grid__item--1-5"> &#169 2019-2022 witch of mountain winds</div>
+
+      </div>
     </section>
 
-    <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>

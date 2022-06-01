@@ -1,0 +1,36 @@
+.vertical-anchor {
+  display: none;
+  position: relative;
+
+  @include onDesktop {
+    display: block;
+  }
+
+  &__text {
+    position: absolute;
+
+    margin: 0;
+    left: 0;
+    top: 0;
+
+    transform: rotate(180deg);
+
+    white-space: nowrap;
+    color: $colorDarkGreen;
+    opacity: 50%;
+    writing-mode: vertical-lr;
+
+    @extend %decorative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 100px;
+      width: 1px;
+      top: -110px;
+      left: 50%;
+      background-color: $colorDarkGreen;
+      opacity: 50%;
+    }
+  }
+}

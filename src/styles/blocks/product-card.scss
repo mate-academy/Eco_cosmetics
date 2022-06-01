@@ -1,6 +1,4 @@
 .product-card {
-  //margin: 0 auto;
-
   &:not(:first-child) {
     display: none;
 
@@ -9,14 +7,10 @@
     }
   }
 
-
-
   &__image {
     display: block;
     margin: 0 auto 20px;
     object-fit: cover;
-
-
 
     height: 267px;
     width: 320px; //??
@@ -24,6 +18,17 @@
     @include onDesktop {
       height: 500px;
       width: 380px;
+    }
+
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+    -webkit-transition: .3s ease-in-out;
+    transition: 400ms ease-in-out;
+
+    &:hover {
+      -webkit-filter: grayscale(0);
+	    filter: grayscale(0);
+
     }
   }
 
@@ -35,7 +40,6 @@
 
     @include onDesktop {
       margin-bottom: 12px;
-
     }
   }
 
@@ -46,7 +50,6 @@
 
     @include onDesktop {
       margin-bottom: 40px;
-
     }
   }
 }

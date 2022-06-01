@@ -26,14 +26,12 @@
     list-style: none;
     margin: 0;
     padding: 0;
-
   }
 
   &__item {
     margin-bottom: 15px;
-    &--active {
-      border-bottom: 2px solid $colorBlack;
-    }
+    @extend %text-14-regular;
+    color: $colorGrey3;
 
     @include onDesktop {
       margin-bottom: 50px;
@@ -45,7 +43,11 @@
     text-decoration: none;
     text-transform: uppercase;
     padding: 0 5px 10px 0;
+    color: inherit;
 
-    @extend %text-14-regular;
+    &--active {
+      border-bottom: 2px solid $colorBlack;
+      color: $colorBlack;
+    }
   }
 }
