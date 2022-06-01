@@ -1,4 +1,5 @@
 .about {
+  overflow: hidden;
   @include onTablet {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -8,7 +9,6 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
-    overflow: hidden;
   }
 
   &__description {
@@ -16,12 +16,13 @@
       grid-column: 1 / 4;
     }
     @include onDecstop {
-      grid-column: 3 / 6;
+      grid-column: 2 / 6;
     }
   }
 
   &__header {
     @extend %h4;
+    color: $titel-color;
     @include onDecstop {
       font-style: normal;
       font-weight: 600;
@@ -36,12 +37,23 @@
     margin: 40px 0;
   }
 
-  &__paragraph:not(:first-child) {
-    margin-top: 30px;
-    display: none;
-    @include onDecstop {
-      display: block;
+  &__paragraph {
+    &:not(:first-child) {
+      margin-top: 30px;
     }
+    &--dislpay-hidden-onTablet {
+      display: none;
+      @include onTablet {
+        display: block;
+      }
+    }
+    &--dislpay-hidden-onDecstop {
+      display: none;
+      @include onDecstop {
+        display: block;
+      }
+    }
+
   }
 
   &__img-wrap {
@@ -65,7 +77,8 @@
       @include onDecstop {
         display: block;
         max-height: 480px;
-        object-position: bottom left;
+        object-fit: cover;
+        object-position: center;
       }
     }
   }

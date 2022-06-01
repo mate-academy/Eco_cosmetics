@@ -4,11 +4,18 @@
     display: flex;
     justify-content: center;
   }
-
+  &--footer {
+    display: flex;
+  }
   &--shop {
+    grid-row: 2;
+    @include onTablet {
+      grid-column: 1 /-1;
+    }
+
     @include onDecstop {
       display: block;
-      grid-column: 3;
+      grid-column: 2 / 6;
     }
   }
 
@@ -18,17 +25,31 @@
     justify-content: center;
     align-items: center;
     list-style: none;
-
     @include onDecstop {
       flex-direction: row;
       justify-content: baseline;
       gap: 10px;
     }
 
-    &--shop {
+    &--footer {
       @include onDecstop {
+        gap: 40px;
+      }
+    }
+
+    &--shop {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 0 20px;
+      @include onTablet {
+        margin: 0 30px;
+        justify-content: start;
         gap: 20px;
-        margin-top: 30px;
+      }
+
+      @include onDecstop {
+        margin: 0;
         justify-content: space-between;
       }
     }
@@ -47,14 +68,25 @@
     padding: 30px;
     text-decoration: none;
     color: inherit;
-    @extend %inputs-menu-text;
     display: flex;
     justify-content: center;
     text-align: center;
+    @extend %inputs-menu-text;
 
+    &--footer-menu {
+      padding: 10px 0;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      @extend %inputs-menu-text;
+      @include onTablet {
+        justify-content: start;
+      }
+    }
     &--menu {
       padding-bottom: 10px;
-      color: 8;
 
       &::before {
         content: "";
@@ -85,10 +117,6 @@
       &:active {
         color: $txt-color;
       }
-    }
-
-    @media (min-width: 768px) and (max-width: 1280px) {
-      padding: 50px 50px 10px;
     }
   }
 }

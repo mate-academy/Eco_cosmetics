@@ -1,0 +1,89 @@
+.footer {
+  padding: 60px 0;
+  background-color: $footer-color;
+  color: $bg-color;
+  @include onTablet {
+    margin: 130px 0 0;
+  }
+
+  @include onDecstop {
+    margin: 200px 0 0;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: start;
+      flex-wrap: wrap;
+      text-align: start;
+    }
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    @include onTablet {
+      align-items: flex-start;
+    }
+    @include onDecstop {
+      gap: 70px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &__link {
+    text-decoration: none;
+    color: $bg-color;
+  }
+
+  &__icon-wrap {
+    display: flex;
+    gap: 10px;
+    height: 20px;
+  }
+
+  &__icon {
+    display: none;
+    @include onDecstop {
+      display: block;
+    }
+    &--nav {
+      display: block;
+      @include onDecstop {
+        display: none;
+      }
+    }
+    &--fb {
+      @include icon (20px, url(../images/icon/fb.svg));
+    }
+    &--inst {
+      @include icon (20px, url(../images/icon/inst.svg));
+    }
+  }
+
+  &__copyright {
+    display: none;
+    @include onTablet {
+      display: block;
+    }
+
+    &--info {
+      display: block;
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}

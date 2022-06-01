@@ -1,0 +1,76 @@
+.card {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+  flex-direction: column;
+  grid-row: 3;
+
+  &__1 {
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDecstop {
+      grid-column: 2/ 6;
+
+    }
+  }
+  &__2 {
+    display: none;
+
+    @include onDecstop {
+      display: flex;
+      grid-column: 6 / 10;
+      visibility: visible;
+    }
+  }
+  &__3 {
+    display: none;
+    @include onTablet {
+      display: flex;
+      grid-column: 4 / 7;
+      visibility: visible;
+    }
+    @include onDecstop {
+      grid-column: 10 / 13;
+
+    }
+  }
+
+  &__img {
+    max-height: 500px;
+    object-fit: cover;
+  }
+
+  &__header {
+    &--first-card {
+      margin: 0 20px;
+      @include onTablet {
+        margin: 0 30px;
+      }
+      @include onDecstop {
+        margin: 0;
+      }
+    }
+  }
+
+  &__price {
+    @extend %price-text;
+
+    &--first-card {
+      margin: 0 20px;
+      @include onTablet {
+        margin: 0 30px;
+      }
+      @include onDecstop {
+        margin: 0;
+      }
+    }
+
+    &:after {
+      content: "UAN";
+      margin-left: 10px;
+    }
+  }
+}
