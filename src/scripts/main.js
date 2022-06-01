@@ -33,3 +33,10 @@ function hideFunction() {
 
   x.style.display = 'none';
 }
+
+const form = document.querySelector('.contact__form-form');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  form.reset();
+});

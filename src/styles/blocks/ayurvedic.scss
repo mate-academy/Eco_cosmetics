@@ -37,6 +37,11 @@
   }
 
   &__photo {
+    transition: all 0.4s;
+
+    &:hover {
+      transform: scaleX(110%)
+    }
     position: relative;
     display: block;
 
@@ -83,8 +88,14 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-
     text-align: right;
+
+    transition: all 0.4s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scaleX(110%)
+    }
 
     &::after {
       content: "";
@@ -95,6 +106,9 @@
       width: 70%;
       left: 110%;
       top: -50%;
+      transition: all 0.4s;
+      cursor: pointer;
+
 
       @include onTablet {
         width: 60%;
@@ -111,6 +125,12 @@
         left: 140%;
       }
 
+    }
+
+    &:hover::after {
+      background-color: $green;
+      height: 1px;
+      width: 75%;
     }
   }
 
