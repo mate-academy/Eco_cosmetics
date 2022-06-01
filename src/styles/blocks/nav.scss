@@ -1,8 +1,14 @@
 .nav {
   &__list {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     list-style-type: none;
-    gap: 40px;
+
+    @include onTablet {
+      gap: 40px;
+      flex-direction: row;
+    }
   }
 
   &__link {
@@ -15,6 +21,14 @@
 
     &:hover {
       color: #8c9772;
+    }
+
+    &--footer {
+      color: #E4DFD3;
+
+      &:hover {
+        color: #344f10;
+      }
     }
   }
 }

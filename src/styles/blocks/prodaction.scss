@@ -1,0 +1,59 @@
+.prodaction {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 30px;
+    }
+
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+
+    &--snail {
+      background-image: url(../images/icons/franken-snail.svg);
+    }
+
+    &--recycle {
+      background-image: url(../images/icons/resycle.svg);
+    }
+
+    &--leaf {
+      background-image: url(../images/icons/leaves.svg);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000;
+  }
+}
