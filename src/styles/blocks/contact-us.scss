@@ -38,8 +38,23 @@
   }
 
   &__button {
-    @extend %text-button ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $biscuit;
+    cursor: pointer;
 
-    @include hover(color, $dark);
+    width: 280px;
+    height: 60px;
+
+    background-color: $dark;
+    @extend %text-button ;
+    transition: 0.3s linear;
+
+    &:hover {
+      border-color: $dark;
+      background-color: $biscuit;
+      color: $dark;
+    }
   }
 }
