@@ -1,0 +1,80 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__link {
+    background-position: center;
+    background-repeat: no-repeat;
+    @include boxSquare(24px);
+
+    @include hover(transform, scale(1.3));
+  }
+
+  &__link-menu {
+    background-image: url("../images/icon/menu.png");
+  }
+
+  &__link-logo {
+    background-image: url("../images/icon/icon.png");
+  }
+
+  &__link-bag {
+    background-image: url("../images/icon/buy.png");
+  }
+
+  &__link-cross {
+    background-image: url("../images/icon/cross.png");
+  }
+}
+
+.nav-desktop {
+  display: none;
+
+  @include onDesktop {
+    display: grid;
+    align-items: center;
+  }
+
+  &__logo {
+    @include onDesktop {
+      display: block;
+      width: 100%;
+      height: 50px;
+      background-image: url("../images/icon/logo.png");
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    display: inline-flex;
+    padding: 0;
+  }
+
+  &__link {
+    margin-right: 20px;
+    text-decoration: none;
+    color: $hard-green;
+    @extend %nav;
+    border-bottom: 2px solid transparent;
+    @include hover(border-bottom, 2px solid rgba(52, 79, 16, 0.5));
+  }
+
+  &__bag {
+    display: block;
+    @include boxSquare(24px);
+    background-image: url("../images/icon/buy.png");
+    background-repeat: no-repeat;
+    @include hover(transform, scale(1.3));
+  }
+
+  &__ai {
+    display: flex;
+    align-self: center;
+  }
+}

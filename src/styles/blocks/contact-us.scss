@@ -1,0 +1,45 @@
+
+.contact-us {
+  &__title {
+    @extend %title;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    @extend %paragraph;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__photo {
+    display: none;
+    width: 50vw;
+    height: 100%;
+    background-image: url("../images/img/contact-us.png");
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__logo {
+    background-image: url("../images/icon/contacts.png");
+  }
+
+  &__button {
+    @extend %text-button ;
+
+    @include hover(color, $dark);
+  }
+}

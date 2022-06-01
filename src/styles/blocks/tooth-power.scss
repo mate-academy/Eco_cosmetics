@@ -1,0 +1,129 @@
+.tooth-power {
+  &__title {
+    display: inline-block;
+    margin-bottom: 21px;
+
+    @extend %title;
+
+    @include onTablet {
+      width: 342px;
+    }
+  }
+
+  &__logo {
+    background-image: url("../images/icon/Group\ 2.4.png");
+
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 40px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      column-gap: 20px;
+
+    }
+
+    @include onDesktop {
+      grid-template-columns: 1fr 1.5fr;
+    }
+  }
+
+  &__union {
+    text-align: center;
+    @extend %decorative-text;
+  }
+
+  &__drow {
+    width: 100%;
+    height: 397px;
+    background-image: url("../images/icon/Union.png");
+    background-repeat: no-repeat;
+  }
+
+  &__more {
+    position: relative;
+    top: -13px;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 135px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 220px;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      object-fit: scale-down;
+      height: 74px;
+    }
+
+    @include onDesktop {
+      height: 84px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__sub {
+    @extend %eco;
+    margin-bottom: 50px;
+  }
+
+  &__eco {
+    @include onTablet {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  &__eco-box {
+    text-align: center;
+
+    @include onTablet {
+      width: 218px;
+    }
+  }
+}
+
+.union {
+  width: max-content;
+  text-align: end;
+
+  &__item {
+    position: relative;
+    margin: 0;
+
+    &::after {
+      display: block;
+      position: absolute;
+      content: " ";
+      top: 50%;
+      right: -100%;
+
+      width: 76px;
+      height: 1px;
+
+      background-color: $dark;
+    }
+
+    @each $number, $margin in $margins {
+      &--#{$number} {
+        margin-bottom: $margin;
+      }
+    }
+
+    @include onTablet {
+      &:first-of-type {
+        margin-top: 38px;
+      }
+    }
+  }
+}

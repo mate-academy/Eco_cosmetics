@@ -1,0 +1,245 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    font-family: "Poppins", "Roboto", Arial, Helvetica, sans-serif;
+    margin: 0;
+
+    background-color: $biscuit;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transition: 0.3s linear;
+    transform: translateY(-100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
+
+.photo {
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  margin: 0 auto 100px;
+  padding: 0 20px;
+  max-width: 280px;
+
+  @include onTablet {
+    padding: 0 27px;
+    max-width: initial;
+    margin: 0 auto 130px;
+  }
+
+  @include onDesktop {
+    padding: 0 50px;
+    max-width: 1180px;
+    margin: 0 auto 200px;
+  }
+
+  &--footer {
+    margin-bottom: 0;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+
+  &--phone {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+      grid-auto-flow: row;
+    }
+  }
+
+  &--info {
+    @include onTablet {
+      display: block;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      display: grid;
+      padding: 100px 0;
+    }
+  }
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+
+  &__item-tablet {
+    @include onTablet {
+      @for $start from 1 through 6 {
+        @for $end from $start through 6 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &__item-desktop {
+    @include onDesktop {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &__item-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      align-items: flex-start;
+    }
+  }
+
+  &__item-grid {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 27px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__item-ib {
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      justify-content: start;
+    }
+
+    @include onDesktop {
+      justify-content: space-between;
+      width: 380px;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $biscuit;
+  cursor: pointer;
+
+  width: 280px;
+  height: 60px;
+
+  background-color: $dark;
+
+  @include hover(border-color, $dark);
+  @include hover(background-color, $biscuit);
+
+  &__link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    @extend %text-button ;
+    text-decoration: none;
+
+    @include hover(color, $dark);
+  }
+}
+
+.order-desk {
+  @include onDesktop {
+    @each $order in $orders {
+      &--#{$order} {
+        order: $order;
+      }
+    }
+  }
+}
+
+.order-tab {
+  @include onTablet {
+    @each $order in $orders {
+      &--#{$order} {
+        order: $order;
+      }
+    }
+  }
+}
+
+.additional {
+  position: relative;
+}
+
+.learn-more {
+  display: inline-block;
+  padding-bottom: 10px;
+  @extend %more;
+  border-bottom: 1px solid transparent;
+  @include hover(border-bottom, 1px solid $hard-green);
+}
+
+.logo {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.flex {
+  @include onTablet {
+    display: flex;
+  }
+}
+
+.last-element {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

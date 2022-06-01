@@ -1,0 +1,58 @@
+.about-brand {
+  &__title {
+    margin-bottom: 10px;
+    @extend %title;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+    @extend %paragraph;
+
+    &--hidden {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__photo {
+    display: none;
+    height: 100%;
+    width: 50vw;
+    background-image: url("../images/img/about-brand.png");
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      height: 530px;
+    }
+  }
+
+  &__photo-small {
+    display: none;
+    background-image: url("../images/img/about-brand.png");
+
+    @include onDesktop {
+      display: block;
+      height: 440px;
+      width: 33.33vw;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  &__logo {
+    background-image: url("../images/icon/1.png");
+    background-position-x: 100%;
+  }
+}

@@ -1,0 +1,176 @@
+.shop {
+  &__logo {
+    position: absolute;
+    height: 150px;
+    background-image: url("../images/icon/shop.png");
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    @extend %title;
+
+    @include onTablet {
+      justify-content: start;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__topic {
+    display: block;
+    box-sizing: border-box;
+
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+
+    text-decoration: none;
+    color: $hard-grey;
+    border-bottom: 2px solid transparent;
+
+    @include hover(border-bottom, 2px solid $dark);
+    @include hover(color, $dark);
+    @extend %shop;
+
+    @include onTablet {
+      margin-bottom: 25px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__wrapper-button {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__name {
+    margin-left: 20px;
+
+    @include onTablet {
+      margin-left: 0;
+    }
+  }
+
+  &__price {
+    margin: 0 0 30px;
+    font-weight: 500;
+    margin-left: 20px;
+
+    @extend %h3;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      margin-left: 0;
+    }
+  }
+
+  &__product {
+    @include onTablet {
+      width: 342px;
+
+      &:first-of-type {
+        margin-right: 30px;
+      }
+    }
+
+    @include onDesktop {
+      width: 380px;
+      margin-right: 20px;
+    }
+
+  }
+
+  &__picture {
+    position: relative;
+    height: 267px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.3s linear;
+
+    &:hover {
+      transform: scale(0.95);
+    }
+
+    @include onTablet {
+      width: 100%;
+      height: 300px;
+    }
+
+    @include onDesktop {
+      width: 380px;
+      height: 500px;
+    }
+  }
+}
+
+.product {
+  &__picture {
+    background-position: center;
+    background-size: cover;
+
+    &--1 {
+      background-image: url("../images/img/shop1.png");
+    }
+
+    &--2 {
+      background-image: url("../images/img/shop2.png");
+    }
+
+    &--3 {
+      background-image: url("../images/img/shop3.png");
+    }
+
+    &--4 {
+      background-image: url("../images/img/products.png");
+    }
+  }
+
+  &__name {
+    @extend %h3;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    right: -50%;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.swiper {
+  width: 320px;
+  margin-left: -20px;
+
+  @include onTablet {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  @include onDesktop {
+    overflow: visible;
+  }
+}

@@ -1,0 +1,50 @@
+.info {
+  &__description {
+    @extend %price-text;
+    position: relative;
+
+    @include onTablet {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      max-width: 380px;
+    }
+
+    &:before {
+      display: none;
+      position: absolute;
+      content: " ";
+      top: 225%;
+      height: 1px;
+      width: 100vw;
+      background-color: rgba(52, 79, 16, 0.5);
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__about-ecology {
+    @extend %paragraph;
+    display: none;
+    position: relative;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &::before {
+      position: absolute;
+      content: " ";
+      right: 0;
+      top: -100px;
+      height: 2px;
+      width: 100vw;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+}
