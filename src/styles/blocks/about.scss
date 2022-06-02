@@ -9,12 +9,7 @@
       justify-content: space-between;
     }
   }
-  &__title-wrapper {
-    @include on-tablet-mini {
-      display: flex;
-      flex-direction: column;
-    }
-  }
+
   &__title {
     margin: 0 0 10px;
     font-weight: 600;
@@ -23,6 +18,9 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #344F10;
+    @include on-desktop {
+      margin: 0 0 20px;
+    }
   }
   &__text {
     margin: 0 0 20px;
@@ -31,8 +29,10 @@
     line-height: 150%;
     color: #333333;
 
-    &:last-child {
-      margin-bottom: 40px;
+    @include on-desktop {
+      margin: 0 0 30px;
+    }
+    &--second {
       @include on-mobile {
         display: none;
       }
@@ -41,6 +41,19 @@
       }
       @include on-desktop {
         display: block;
+        margin: 0 0 30px;
+      }
+    }
+    &--third {
+      @include on-mobile {
+        display: none;
+      }
+      @include on-tablet-mini {
+        display: none;
+      }
+      @include on-desktop {
+        display: block;
+        margin: 0 0 20px;
       }
     }
   }
@@ -59,7 +72,7 @@
 
   &__candle-image {
     @include on-tablet-mini{
-      width: 369px;
+      width: 100%;
       height: 318px;
       object-fit: cover;
       object-position: center;
@@ -71,31 +84,45 @@
     }
   }
 
-  &__learn-more {
-    position: relative;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 130%;
-    text-decoration: none;
-    color: #344F10;
 
-    &::after {
-      content: '';
-      position: absolute;
-      margin-top: 10px;
-      height: 1px;
-      left: 0;
-      right: 0;
-      background-color: #344F10;;
-      @include on-mobile {
-        display: none;
-      }
-      @include on-tablet-mini {
-        display: none;
-      }
-      @include on-desktop {
-        display: block;
-      }
+
+  &__bird-image {
+    @include on-tablet-mini{
+      width: 100%;
+      height: 435px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      height: 669px;
+    }
+  }
+
+  &__button {
+    @include on-mobile {
+      display: flex;
+      justify-content: center;
+    }
+    @include on-tablet-mini {
+      display: block;
+      margin: 0 auto;
+    }
+    @include on-desktop {
+      display: flex;
+      justify-content: start;
+      margin: 0;
+    }
+  }
+
+  &__learn-link {
+    margin-bottom: 36px;
+    @include on-tablet-mini {
+      margin-bottom: 41px;
+    }
+    @include on-desktop {
+      margin-bottom: 51px;
     }
   }
 }
