@@ -11,23 +11,21 @@
   }
 
   &__photo {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 59px;
-    background-image: url("../images/img/header.png");
-
+    background-image: url("../images/header.png");
+    margin: 20px 0 25px -20px;
+    width: 100vw;
     height: 267px;
 
     @include onTablet {
-      position: static;
+      width: 100%;
       margin: 30px 0 50px;
       height: 500px;
+      @include hover(filter, drop-shadow(0 0 0.75rem $dark));
     }
 
     @include onDesktop {
       margin-top: 81px;
-      min-height: 450px;
+      height: 100%;
     }
   }
 
@@ -35,7 +33,6 @@
     @extend %h1;
     margin-bottom: 10px;
     text-align: center;
-    margin-top: 320px;
 
     @include onTablet {
       margin-top: 0;

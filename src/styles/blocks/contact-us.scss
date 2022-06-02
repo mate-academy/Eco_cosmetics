@@ -26,7 +26,7 @@
     display: none;
     width: 50vw;
     height: 100%;
-    background-image: url("../images/img/contact-us.png");
+    background-image: url("../images/contact-us.png");
 
     @include onTablet {
       display: block;
@@ -34,13 +34,14 @@
   }
 
   &__logo {
-    background-image: url("../images/icon/contacts.png");
+    background-image: url("../images/icons/contact-us.svg");
   }
 
   &__button {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
     border: 1px solid $biscuit;
     cursor: pointer;
 
@@ -48,7 +49,12 @@
     height: 60px;
 
     background-color: $dark;
-    @extend %text-button ;
+    @extend %text-button;
+
+    @include onTablet {
+      margin: 0;
+    }
+
     transition: 0.3s linear;
 
     &:hover {
