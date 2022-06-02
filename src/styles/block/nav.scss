@@ -1,6 +1,6 @@
 .nav {
   box-sizing: border-box;
-  @include onDecstop {
+  @include onDesktop {
     display: flex;
     justify-content: center;
   }
@@ -13,7 +13,7 @@
       grid-column: 1 /-1;
     }
 
-    @include onDecstop {
+    @include onDesktop {
       display: block;
       grid-column: 2 / 6;
     }
@@ -25,14 +25,14 @@
     justify-content: center;
     align-items: center;
     list-style: none;
-    @include onDecstop {
+    gap: 30px;
+    @include onDesktop {
       flex-direction: row;
       justify-content: baseline;
-      gap: 10px;
     }
 
     &--footer {
-      @include onDecstop {
+      @include onDesktop {
         gap: 40px;
       }
     }
@@ -40,15 +40,13 @@
     &--shop {
       flex-direction: row;
       justify-content: space-between;
-      gap: 16px;
-      margin: 0 20px;
       @include onTablet {
         margin: 0 30px;
         justify-content: start;
         gap: 20px;
       }
 
-      @include onDecstop {
+      @include onDesktop {
         margin: 0;
         justify-content: space-between;
       }
@@ -65,7 +63,8 @@
   }
 
   &__link {
-    padding: 30px;
+    position: relative;
+    padding: 0 0 10px;
     text-decoration: none;
     color: inherit;
     display: flex;
@@ -73,16 +72,36 @@
     text-align: center;
     @extend %inputs-menu-text;
 
+    &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 1px;
+        background-color: $titel-color;
+      }
+    }
+
     &--footer-menu {
+      position: relative;
       padding: 10px 0;
       text-decoration: none;
       color: inherit;
       display: flex;
-      text-align: center;
-      justify-content: center;
       @extend %inputs-menu-text;
       @include onTablet {
         justify-content: start;
+      }
+
+      &:hover {
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          border: 1px solid $bg-color;
+        }
       }
     }
     &--menu {
@@ -101,18 +120,6 @@
     &--shop {
       padding: 10px 0;
       color: $inactive-element-color;
-
-      &:hover {
-        &::before {
-          content: "";
-          position: absolute;
-          margin-top: 10px;
-          bottom: 0;
-          height: 1px;
-          width: 100%;
-          background-color: #828282;
-        }
-      }
 
       &:active {
         color: $txt-color;

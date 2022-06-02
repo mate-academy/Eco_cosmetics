@@ -6,14 +6,14 @@
     margin: 130px 0 0;
   }
 
-  @include onDecstop {
+  @include onDesktop {
     margin: 200px 0 0;
   }
   &__wrap {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
+    margin-left: 20px;
     @include onTablet {
       display: flex;
       flex-direction: row;
@@ -29,11 +29,10 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 20px;
-    align-items: center;
     @include onTablet {
       align-items: flex-start;
     }
-    @include onDecstop {
+    @include onDesktop {
       gap: 70px;
     }
   }
@@ -42,6 +41,10 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+    margin: 40px 0 0;
+    @include onTablet {
+      margin-left: 0;
+    }
   }
   &__link {
     text-decoration: none;
@@ -55,20 +58,23 @@
   }
 
   &__icon {
+    @include hover (transform, scale(1.5));
     display: none;
-    @include onDecstop {
+    @include onDesktop {
       display: block;
     }
     &--nav {
       display: block;
-      @include onDecstop {
+      @include onDesktop {
         display: none;
       }
     }
     &--fb {
+      @include hover (transform, scale(1.5));
       @include icon (20px, url(../images/icon/fb.svg));
     }
     &--inst {
+      @include hover (transform, scale(1.5));
       @include icon (20px, url(../images/icon/inst.svg));
     }
   }

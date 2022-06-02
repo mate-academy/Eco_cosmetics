@@ -1,11 +1,12 @@
 .about {
+  position: relative;
   overflow: hidden;
   @include onTablet {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     column-gap: 20px;
   }
-  @include onDecstop {
+  @include onDesktop {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
@@ -15,7 +16,7 @@
     @include onTablet {
       grid-column: 1 / 4;
     }
-    @include onDecstop {
+    @include onDesktop {
       grid-column: 2 / 6;
     }
   }
@@ -23,7 +24,7 @@
   &__header {
     @extend %h4;
     color: $titel-color;
-    @include onDecstop {
+    @include onDesktop {
       font-style: normal;
       font-weight: 600;
       font-size: 36px;
@@ -47,9 +48,9 @@
         display: block;
       }
     }
-    &--dislpay-hidden-onDecstop {
+    &--dislpay-hidden-onDesktop {
       display: none;
-      @include onDecstop {
+      @include onDesktop {
         display: block;
       }
     }
@@ -62,7 +63,7 @@
       display: block;
       grid-column: 4 / 7;
     }
-    @include onDecstop {
+    @include onDesktop {
       grid-column: 7/13;
       display: flex;
       gap: 20px;
@@ -71,10 +72,10 @@
   }
 
   &__img {
-
+    @include hover (transform, scale(1.05));
     &--smoll-size-img {
       display: none;
-      @include onDecstop {
+      @include onDesktop {
         display: block;
         max-height: 480px;
         object-fit: cover;

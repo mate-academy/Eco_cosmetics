@@ -1,11 +1,22 @@
 .contact-form {
   display: flex;
   gap: 120px;
-
+  overflow: hidden;
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
   &__description {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
   }
 
   &__form {

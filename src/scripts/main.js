@@ -16,3 +16,11 @@ function handleEvent(event) {
   event.preventDefault();
   form.reset();
 }
+
+window.addEventListener('scroll', () => {
+  if (window.location.hash === '#about') {
+    document.body.classList.add('page__body--with-menu');
+  } else {
+    document.body.classList.remove('page__body--with-menu');
+  }
+});

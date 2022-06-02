@@ -1,18 +1,19 @@
 .shop {
-  overflow: auto;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  overflow: hidden;
   @include onTablet {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, auto);
     column-gap: 30px;
     justify-content: center;
+    overflow: auto;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
-  @include onDecstop {
+  @include onDesktop {
     grid-template-columns: repeat(12, 1fr);
     column-gap: 20px;
   }
@@ -27,7 +28,7 @@
       grid-column: 1 /-1;
     }
 
-    @include onDecstop {
+    @include onDesktop {
       grid-column: 2 /-1;
       margin: 0;
     }
@@ -42,7 +43,7 @@
     @include onTablet {
       margin-top: 50px;
     }
-    @include onDecstop {
+    @include onDesktop {
       margin-top: 40px;
     }
   }

@@ -1,17 +1,28 @@
 .description-section {
-  display: none;
-  @extend %decorative-text;
-  @include onDecstop {
-    display: block;
-    color: $decoration-line;
-    transform: rotateZ(-90deg);
-
-    &::after {
+  position: relative;
+  grid-column: 1 / 2;
+  &__content {
+    @include onDesktop {
+      position: absolute;
+      transform: rotateZ(-90deg);
+      transform-origin: top center;
+      width: max-content;
+      margin-left: -100%;
+      padding-left: 10px;
+      color: $decoration-line;
+      &--margin-0 {
+        margin-left: 0;
+      }
+    }
+    &::before {
       content: "";
       position: absolute;
-      left: -100%;
+      display: block;
+      height: 1px;
+      background-color: $decoration-line;
       width: 100px;
-      border: 1px solid $decoration-line ;
+      right: 100%;
+      top: 50%;
     }
   }
 }
