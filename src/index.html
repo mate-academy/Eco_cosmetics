@@ -4,36 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco cosmetics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
   <body class="page__body">
     <header class="page__section header">
       <div class="container">
-        <div class="header__content grid__item grid__item--desktop-7-9">
-          <a href="/" class="header__menu-opener"></a>
-          <a href="/" class="header__logo link"></a>
+        <div class="grid grid--desktop header__grid--tablet">
+          <div class="grid__item grid__item--desktop-1-4">
+            <div class="header__content">
+              <a href="#menu" class="header__menu-opener"></a>
+              <a href="/" class="header__logo link">
+                <img src="images/icons/icon.svg" alt="logo icon" class="header__logo">
+              </a>
+            </div>
+          </div>
           <div class="header__nav grid__item--desktop-7-9">
             <ul class="header__item">
               <li class="header__list--shop">
-                <a href="#" class="link">Shop</a>
+                <a href="#shop" class="link">Shop</a>
               </li>
               <li class="header__list--contact">
-                <a href="#" class="link">Contact</a>
+                <a href="#contact" class="link">Contact</a>
               </li>
               <li class="header__list--about">
-                <a href="" class="link">About</a>
+                <a href="#about" class="link">About</a>
               </li>
             </ul>
           </div>
-          <a href="/" class="header__icon-buy"></a>
+          <div class="grid__item grid__item--desktop-12-12">
+            <div class="header__buy">
+              <a href="/" class="header__icon-buy">
+                <img src="images/icons/menu-buy.svg" alt="shopping basket">
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <nav class="menu">
-        <div class="container">
-          <div class="menu__content"></div>
-        </div>
-      </nav>
 
       <section class="page__section brand-of-cosmetics">
         <div class="container">
@@ -47,14 +57,42 @@
                   Brand of eco-cosmetics and magic candles
                 </h1>
                 <p class="header__title-sale">20% of sales at a wild bird shelter</p>
-                <button class="header__button">
-                  <a href="#" class="header__button-text">shop</a>
-                </button>
+                <div class="header__button">
+                  <button class="button">
+                    <a href="#shop" class="button__text">shop</a>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <nav class="page__menu menu" id="menu">
+        <div class="container">
+          <div class="menu__content">
+            <div class="menu__icon">
+              <a href="#" class="menu__icon-close">
+                <img src="images/icons/menu-close.svg" alt="">
+              </a>
+            </div>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#shop" class="menu__link">Shop</a>
+              </li>
+              <div class="menu__line"></div>
+              <li class="menu__item">
+                <a href="#contact" class="menu__link">Contact</a>
+              </li>
+              <div class="menu__line"></div>
+              <li class="menu__item">
+                <a href="#about" class="menu__link">About</a>
+              </li>
+              <div class="menu__line"></div>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>
@@ -79,8 +117,11 @@
         </div>
       </section>
 
-      <section class="page__section about">
+      <section class="page__section about" id="about">
         <div class="container">
+          <div class="rotated-sign about__rotated-sign--1">
+            <span class="">witch of mountain winds</span>
+          </div>
           <div class="grid grid--desktop">
             <div class="about__title-content grid__item grid__item--desktop-2-5 grid__item--tablet-1-3">
               <div class="about__title-wrapper">
@@ -108,8 +149,11 @@
         </div>
       </section>
 
-      <section class="page__section shop">
+      <section class="page__section shop" id="shop">
         <div class="container">
+          <div class="rotated-sign shop__rotated-sign">
+            <span>about the creators</span>
+          </div>
           <div class="grid grid--desktop">
             <h2 class="shop__title grid__item grid__item--desktop-2-12 grid__item--tablet-1-3">shop</h2>
             <nav class="shop__nav grid__item grid__item--desktop-2-12 grid__item--tablet-1-6">
@@ -160,6 +204,9 @@
 
       <section class="page__section about">
         <div class="container">
+          <div class="rotated-sign about__rotated-sign">
+            <span>about the creators</span>
+          </div>
           <div class="grid grid--desktop">
             <div class="about__title-content grid__item grid__item--desktop-2-5 grid__item--tablet-1-3">
               <div class="about__title-wrapper">
@@ -183,7 +230,7 @@
               </div>
               <div class="about__button">
                 <button class="button">
-                  <a href="#" class="button__text">to contact us</a>
+                  <a href="#contact" class="button__text">to contact us</a>
                 </button>
               </div>
             </div>
@@ -196,18 +243,16 @@
 
       <section class="page__section ayurvedic">
         <div class="container">
+          <div class="rotated-sign ayurvedic__rotated-sign">
+            <span>Ingredients</span>
+          </div>
           <div class="grid grid--desktop ayurvedic__tablet">
-            <div class="grid__item grid__item--desktop-2-4">
-              <h2 class="ayurvedic__title">
-                Ayurvedic Tooth
-                <br>
-                Powder
-              </h2>
-              <div class="ayurvedic__learn-link learn-more">
-                <a href="#" class="learn-more__link">
-                  LEARN MORE
-                </a>
-              </div>
+            <div class="grid__item grid__item--desktop-2-5">
+                <h2 class="ayurvedic__title">
+                  Ayurvedic Tooth
+                  <br>
+                  Powder
+                </h2>
             </div>
             <div class="ayurvedic__content  grid__item grid__item--desktop-6-12 grid__item--tablet-3-6">
               <div class="ayurvedic__scheme">
@@ -238,7 +283,13 @@
                 </div>
               </div>
             </div>
-
+            <div class="grid__item grid__item--desktop-2-4">
+              <div class="ayurvedic__learn-link learn-more">
+                <a href="#" class="learn-more__link">
+                  LEARN MORE
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -266,33 +317,91 @@
         </div>
       </section>
 
-      <section class="page__section contact-us">
+      <section class="page__section contact-us" id="contact">
         <div class="container">
+          <div class="rotated-sign contact-us__rotated-sign">
+            <span>help</span>
+          </div>
           <div class="grid grid--desktop">
-            <div class="about__title-content grid__item grid__item--desktop-2-5 grid__item--tablet-1-3">
-              <div class="about__title-wrapper">
-                <h2 class="about__title">
+            <div class="grid__item grid__item--desktop-2-5 grid__item--tablet-1-3">
+              <div class="contact-us__title-wrapper">
+                <h2 class="contact-us__title">
                   contact us
                 </h2>
               </div>
-              <p class="about__text">
+              <p class="contact-us__text">
                 We will help you choose a product that suits you and answer your other questions
               </p>
-
-              <div class="about__button">
+              <form action="#" method="get" autocomplete="on" class="contact-us__form">
+                <input type= "text" name="firstname" placeholder="Your Name" required class="contact-us__form-field">
+                <input type= "email" name="email" class="contact-us__form-field" placeholder="e-mail" required>
+                <input type= "phone" name="phone" class="contact-us__form-field" placeholder="phone" required>
+                <textarea name="textarea" class="contact-us__form-field contact-us__form-field--textarea" placeholder="Your message" required></textarea>
+              </form>
+              <div class="contact-us__button">
                 <button class="button">
-                  <a href="#" class="button__text">to contact us</a>
+                  <a href="#" class="button__text">send a message</a>
                 </button>
               </div>
             </div>
-            <div class="about__image-container grid__item grid__item--desktop-7-12 grid__item--tablet-4-6">
-              <img src="images/contact-us_bird.png" alt="photo with bird" class="about__bird-image">
+            <div class="contact-us__image-container grid__item grid__item--desktop-7-12 grid__item--tablet-4-6">
+              <img src="images/contact-us_bird.png" alt="photo with bird" class="contact-us__bird-image">
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="footer"></footer>
+
+    <footer class="page-section footer">
+      <div class="container">
+        <div class="grid grid--desktop footer__grid-row">
+          <div class="grid__item grid__item--desktop-1-5 grid__item--tablet-1-3 footer__grid-row--1 footer__grid-row--tablet-1">
+            <div class="footer__nav">
+              <a href="#shop" class="footer__item">Shop</a>
+              <a href="#contact" class="footer__item">Contact</a>
+              <a href="#about" class="footer__item">About</a>
+            </div>
+          </div>
+          <div class="grid__item grid__item--desktop-1-5 grid__item--tablet-1-3 footer__grid-row--2 footer__grid-row--tablet-3">
+            <div class="footer__copyright-wrapper footer__copyright-wrapper--mobile-none">
+              <div class="footer__copyright-word">Copyright</div>
+              <img src="images/icons/copyright.svg" alt="">
+              <div class="footer__copyright-text">2019 witch of mountain winds</div>
+            </div>
+          </div>
+          <div class="footer__icons footer__icons--desktop-none">
+            <a href="https://www.facebook.com/" class="footer__icons-facebook">
+              <img src="images/icons/facebook.svg" alt="facebook link">
+            </a>
+            <a href="https://www.instagram.com/" class="footer__icons-instagram">
+              <img src="images/icons/instagram.svg" alt="instagram link">
+            </a>
+          </div>
+          <div class="grid__item grid__item--desktop-8-12 grid__item--tablet-4-6 footer__grid-row--1 footer__grid-row--tablet-1">
+            <div class="footer__info">
+              <div>Ukraine</div>
+              <div>support.mountain@gmail.com</div>
+              <div>+380934476839</div>
+              <div>Support is available Monday - Friday 9am-6pm</div>
+            </div>
+          </div>
+          <div class="grid__item grid__item--desktop-8-12 grid__item--tablet-1-3 footer__grid-row--2 footer__grid-row--tablet-2">
+            <div class="footer__icons footer__icons--mobile-none">
+              <a href="https://www.facebook.com/" class="footer__icons-facebook">
+                <img src="images/icons/facebook.svg" alt="facebook link">
+              </a>
+              <a href="https://www.instagram.com/" class="footer__icons-instagram">
+                <img src="images/icons/instagram.svg" alt="instagram link">
+              </a>
+            </div>
+          </div>
+          <div class="footer__copyright-wrapper footer__copyright-wrapper--desktop-none">
+            <img src="images/icons/copyright.svg" alt="">
+            <div class="footer__copyright-text">2019 witch of mountain winds</div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>

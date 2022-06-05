@@ -1,10 +1,12 @@
 
 .header {
+  position: relative;
   &__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    width: 50vw;
     padding: 15px 0 20px;
 
     @include on-tablet-mini {
@@ -12,7 +14,6 @@
     }
 
     @include on-desktop {
-      // display: grid;
       padding: 40px 0 82px;
     }
   }
@@ -34,10 +35,8 @@
   }
 
   &__logo {
-    // position: relative;
     width: 24px;
     height: 24px;
-    background-image: url(../images/icons/icon.svg);
     position: relative;
     color: #344F10;
 
@@ -74,6 +73,7 @@
   }
 
   &__nav {
+    padding: 40px 0 82px;
     @include on-mobile {
       display: none;
     }
@@ -92,10 +92,21 @@
     gap: 40px;
   }
 
-  &__icon-buy {
-    width: 20px;
-    height: 24px;
-    background-image: url(../images/icons/menu-buy.svg);
+  &__buy {
+    position: absolute;
+    right: 20px;
+    padding: 15px 0 20px;
+
+    @include on-tablet-mini {
+      position: static;
+      padding: 23px 0 30px;
+    }
+    @include on-desktop {
+      position: static;
+      display: flex;
+      justify-content: flex-end;
+      padding: 40px 0 82px;
+    }
   }
 
   &__image {
@@ -178,6 +189,19 @@
     text-transform: uppercase;
     color: #fff;
     text-decoration: none;
+  }
+
+  &__grid--tablet {
+    @include on-mobile {
+      display: flex;
+    }
+    @include on-tablet-mini {
+      display: flex;
+      justify-content: space-between;
+    }
+    @include on-desktop {
+      display: grid;
+    }
   }
 }
 

@@ -1,0 +1,27 @@
+.rotated-sign {
+  position: relative;
+  width: max-content;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: rgba(52, 79, 16, 0.5);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 88px;
+    height: 1px;
+    transform: translate(-120%, 7px);
+    background-color: rgba(52, 79, 16, 0.5);
+  }
+
+  @include on-mobile {
+    display: none;
+  }
+  @include on-tablet-mini {
+    display: none;
+  }
+  @include on-desktop {
+    display: block;
+  }
+}
