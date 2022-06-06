@@ -1,7 +1,159 @@
 @import "utils";
-@import "fonts";
+@import "./src/styles/grid";
 @import "typography";
 
-body {
-  background: $c-gray;
+.page {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+  &__body {
+    background: #e4dfd3;
+    margin: 0;
+  }
+}
+
+.container {
+  margin: 0;
+}
+
+.header {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    & > :not(:nth-child(2)) {
+      padding: 0 20px;
+    }
+
+    @include onTablet {
+      margin: 0 30px;
+
+      & > :not(:nth-child(2)) {
+        padding: 0;
+      }
+    }
+  }
+
+  &__nav {
+    margin-top: 15px;
+    margin-bottom: 20px;
+
+    --icon-width: 24px;
+
+    display: grid;
+
+    grid-template-columns: var(--icon-width) 1fr var(--icon-width);
+    justify-items: center;
+
+    &--menu-desktop {
+      display: flex;
+      align-items: center;
+    }
+
+    @include onDesktop {
+      justify-items: start;
+      grid-template-columns: repeat(2, 1fr) var(--icon-width);
+    }
+
+    @media (max-width: 1024px) {
+      &--menu-desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__photo-container {
+    margin-bottom: 25px;
+  }
+
+  &__photo {
+    min-height: 267px;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    color: #333;
+  }
+
+  &__about {
+    margin-bottom: 30px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    color: #333;
+  }
+
+  &__container-button {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    width: 280px;
+    min-height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    background-color: #333;
+    color: #f2f2f2;
+  }
+}
+
+.icon {
+  display: block;
+  width: 100%;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &__menu {
+    background-image: url(../images/menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__shop {
+    background-image: url(../images/bag-shop.svg);
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+.menu--item:not(:last-child) {
+  padding-right: 40px;
 }
