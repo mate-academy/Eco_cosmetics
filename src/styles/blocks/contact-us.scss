@@ -48,6 +48,26 @@
     @include on-desktop {
       display: grid;
     }
+    &:hover {
+      opacity: 1;
+      animation: flash 1.5s;
+    }
+    @-webkit-keyframes flash {
+      0% {
+        opacity: .4;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes flash {
+      0% {
+        opacity: .4;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
   }
 
   &__button {
@@ -119,6 +139,7 @@
       line-height: 150%;
       text-transform: capitalize;
       color: #828282;
+      resize: none;
 
       @include on-tablet-mini {
         margin-bottom: 30px;
@@ -127,6 +148,13 @@
         margin-bottom: 50px;
         font-size: 18px;
       }
+    }
+
+    &:focus {
+      font-family: inherit;
+      outline: none;
+      color: #344F10;
+      border-bottom: 1px solid #333;
     }
   }
 

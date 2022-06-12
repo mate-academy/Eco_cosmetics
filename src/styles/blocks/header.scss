@@ -182,15 +182,6 @@
     background-color: #333;
   }
 
-  &__button-text {
-    padding: 0 115px;
-    line-height: 60px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #fff;
-    text-decoration: none;
-  }
-
   &__grid--tablet {
     @include on-mobile {
       display: flex;
@@ -206,12 +197,29 @@
 }
 
 .link {
+  position: relative;
   font-weight: 500;
   font-size: 18px;
   line-height: 150%;
   text-transform: capitalize;
   color: #344F10;
   text-decoration: none;
+
+  &--nav {
+    transition: all 0.3s;
+    &:hover {
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 1px;
+        background-color: #344F10;
+      }
+    }
+  }
 }
 
 .order {
