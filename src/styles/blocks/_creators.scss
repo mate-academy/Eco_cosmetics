@@ -1,0 +1,127 @@
+.creators {
+  position: relative;
+  display: block;
+  @include onDesktop {
+    display: grid;
+  }
+  &__info {
+    width: 100%;
+    @include onTablet {
+      width: 342px;
+    }
+    @include onDesktop {
+      width: 380px;
+    }
+    &-title {
+      text-transform: uppercase;
+      color: $green;
+      max-width: 52%;
+      letter-spacing: 0.05em;
+      margin-top: 100px;
+      @include onTablet {
+        max-width: 100%;
+        margin-top: 130px;
+      }
+      @include onDesktop {
+        margin-top: 180px;
+      }
+      @include onScreen {
+        margin-top: 184px;
+      }
+    }
+    &-text {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      margin-top: 10px;
+      &:nth-child(3n) {
+        margin-top: 20px;
+        @include onTablet {
+          margin-top: 16px;
+        }
+        @include onDesktop {
+          margin-top: 30px;
+        }
+      }
+      &:last-of-type {
+        margin-top: 30px;
+      }
+      &--desktop {
+        display: none;
+        @include onDesktop {
+          display: block;
+          margin-top: 40px;
+        }
+      }
+      @include onTablet {
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 12px;
+      }
+      @include onDesktop {
+        margin-top: 36px;
+      }
+      @include onScreen {
+        margin-top: 20px;
+      }
+    }
+    &-link {
+      margin-top: 30px;
+      @include onTablet {
+        margin-top: 20px;
+      }
+      @include onDesktop {
+        margin-top: 22px;
+      }
+
+    }
+    &-button {
+      margin-top: 32px;
+      display: block;
+      @include onTablet {
+        margin-top: 38px;
+      }
+      @include onDesktop {
+        margin-top: 50px;
+      }
+      @include onScreen {
+        margin-top: 48px;
+      }
+    }
+  }
+  &__img {
+    height: 435px;
+    width: 368px;
+    position: absolute;
+    right: -27px;
+    bottom: 4px;
+    display: none;
+    margin-top: 0;
+    @include hover(transform, scale(1.05));
+    @include onTablet {
+      display: block;
+    }
+    @include onDesktop {
+      position: relative;
+      width: 580px;
+      height: 669px;
+      right: 0;
+      bottom: 0;
+      margin-top: 180px;
+    }
+  }
+  &__link {
+    display: none;
+    @include onDesktop {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      bottom: -246px;
+      left: -80px;
+    }
+    @include onScreen {
+      bottom: -228px;
+      left: -82px;
+    }
+  }
+}

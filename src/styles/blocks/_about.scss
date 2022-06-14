@@ -1,0 +1,112 @@
+.about {
+  position: relative;
+  display: block;
+  @include onDesktop {
+    display: grid;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: -50px;
+    bottom: -48px;
+    display: none;
+    height: 430px;
+    width: 130px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/products/product1.jpg);
+    @include onDesktop {
+      display: block;
+    }
+    @include onScreen {
+      width: 208px;
+      right: -128px;
+      bottom: -44px;
+    }
+  }
+  &__info {
+    margin-top: 100px;
+    @include onTablet {
+      margin-top: 130px;
+    }
+    @include onDesktop {
+      margin-top: 276px;
+    }
+    @include onScreen {
+      margin-top: 278px;
+    }
+    &-title {
+      text-transform: uppercase;
+      color: $green;
+      letter-spacing: 0.05em;
+    }
+    &-text {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      color: $grey;
+      margin-top: 10px;
+      width: 100%;
+      @include onTablet {
+        width: 344px;
+        margin-top: 12px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      @include onDesktop {
+        margin-top: 34px;
+        width: 384px;
+      }
+      @include onScreen {
+        margin-top: 40px;
+      }
+      &--2 {
+        display: none;
+        @include onDesktop {
+          display: inline-block;
+          margin-top: 30px;
+        }
+      }
+    }
+    &-link {
+      margin-top: 0;
+      @include onDesktop {
+        margin-top: 38px;
+      }
+    }
+    &-nav {
+      top: 104px;
+      left: -176px;
+      display: none;
+      @include onDesktop {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+  &__img {
+    display: none;
+    object-fit: cover;
+    @include hover(transform, scale(1.05));
+    @include onTablet {
+      display: block;
+      top: 0;
+      position: absolute;
+      right: -27px;
+      height: 318px;
+      width: 369px;
+    }
+    @include onDesktop {
+      position: relative;
+      right: 0;
+      top: 300px;
+      height: 529px;
+      width: 100%;
+    }
+    @include onScreen {
+      top: 298px;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.page {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: $green;
+    -webkit-box-shadow: 0 0 0 1000px $mainColor inset;
+    transition: $mainColor 5000s ease-in-out 5s;
+  }
+  background-color: $mainColor;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  &__body {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+  }
+  &__menu {
+    position: fixed;
+    background-color: $secondaryColor;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
+
+* {
+  transition-duration: 0.3s;
+}

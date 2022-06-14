@@ -1,0 +1,108 @@
+.header {
+  &__nav {
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include onTablet {
+      height: 68px;
+    }
+    @include onDesktop {
+      height: 128px;
+    }
+  }
+  &__list {
+    list-style: none;
+    display: none;
+    position: absolute;
+    padding: 0;
+    left: 50%;
+    transform: translateX(3%);
+    @include onDesktop {
+      display: flex;
+    }
+    &-item {
+      margin-right: 40px;
+      @include hover(transform, scale(1.2));
+    }
+    &-link {
+      text-decoration: none;
+      color: $green;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      @include hover(transform, scale(1.2));
+    }
+  }
+  &__info {
+    &-img {
+      height: 267px;
+      width: 100vw;
+      position: relative;
+      margin-top: 5px;
+      object-fit: cover;
+      @include hover(transform, scale(1.05));
+      @include onTablet {
+        height: 500px;
+        margin-top: 10px;
+        width: 100%;
+      }
+      @include onDesktop {
+        height: 451px;
+        margin-top: 34px;
+        top: 10px;
+      }
+      @include onScreen {
+        top: -2px;
+      }
+    }
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include onDesktop {
+      align-items: flex-start;
+    }
+    &-title {
+      text-align: center;
+      margin-top: 24px;
+      width: 100%;
+      @include onTablet {
+        margin-top: 50px;
+        width: 450px;
+        text-transform: capitalize;
+      }
+      @include onDesktop {
+        text-transform: none;
+        text-align: start;
+        width: 460px;
+        margin-top: 0;
+      }
+      @include onScreen {
+        margin-top: -24px;
+      }
+    }
+    &-info {
+      text-align: center;
+      margin-top: 10px;
+
+      @include onDesktop {
+        margin-top: 30px;
+      }
+    }
+    &-button {
+      width: 100%;
+      margin: 30px auto 0;
+      display: flex;
+      justify-content: center;
+      @include onTablet {
+        margin: 48px auto 0;
+      }
+      @include onDesktop {
+        margin: 48px 0 0;
+        justify-content: flex-start;
+      }
+    }
+  }
+}

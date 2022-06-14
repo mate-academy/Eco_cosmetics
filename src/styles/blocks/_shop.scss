@@ -1,0 +1,137 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+  @include onDesktop {
+    display: grid;
+  }
+  &__link {
+    display: none;
+    @include onDesktop {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      bottom: -106px;
+      left: -32px;
+    }
+    @include onScreen {
+      bottom: -98px;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 108px;
+    letter-spacing: 0.05em;
+    color: $green;
+    @include onTablet {
+      text-align: start;
+      margin-top: 138px;
+    }
+    @include onDesktop {
+      margin-top: 254px;
+    }
+    @include onScreen {
+      margin-top: 246px;
+    }
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: relative;
+    @include onTablet {
+      justify-content: flex-start;
+      gap: 32px;
+      margin-top: 10px;
+    }
+    @include onDesktop {
+      margin-top: 30px;
+      gap: 50px;
+    }
+    @include onScreen {
+      margin-top: 28px;
+    }
+    &-link {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: 2px solid rgba(51, 51, 51, 0);
+      color: #828282;
+      padding-bottom: 10px;
+      transition-duration: 0.3s;
+      &:hover {
+        border-bottom: 2px solid rgba(51, 51, 51, 1);
+        color: $secondaryColor;
+      }
+      @include onDesktop {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 27px;
+      }
+    }
+  }
+  &__items {
+    display: block;
+    margin-top: 28px;
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 38px;
+    }
+    @include onDesktop {
+      gap: 20px;
+      justify-content: start;
+      margin-top: 48px;
+    }
+  }
+  &__card {
+    &-img {
+      left: -20px;
+      height: 267px;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      object-fit: cover;
+      @include hover(transform, scale(1.05));
+      @include onTablet {
+        height: 300px;
+        width: 342px;
+        margin-left: 0;
+      }
+      @include onDesktop {
+        height: 500px;
+        width: 380px;
+      }
+    }
+    &-text {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 10px;
+      @include onTablet {
+        margin-top: 14px;
+      }
+      &--title {
+        margin-top: 12px;
+        font-weight: 600;
+      }
+    }
+  }
+  &__button {
+    margin: 30px auto 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include onTablet {
+      margin: 50px auto 0;
+    }
+    @include onDesktop {
+      margin: 40px auto 0;
+    }
+  }
+}
