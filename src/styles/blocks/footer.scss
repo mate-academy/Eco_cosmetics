@@ -1,0 +1,161 @@
+.footer {
+  background-color: $colorLightGreen;
+  padding-top: 30px;
+
+  padding-bottom: 40px;
+
+
+  &__nav {
+    margin-bottom: 40px;
+
+    &-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 20px;
+
+      @include onTablet {
+        gap: 15px;
+      }
+
+      @include onDesktop {
+        gap: 40px;
+        flex-direction: row;
+      }
+
+    }
+
+    &-icons {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+
+      @include onDesktop {
+        display: none;
+      }
+
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      display: block;
+      content: "";
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &-fb {
+        background-image: url(../images/FACEB.svg);
+
+      }
+
+      &-inst {
+        background-image: url(../images/INSTA.svg);
+      }
+    }
+
+
+    &-link {
+      text-decoration: none;
+      color: $colorBackground;
+      @extend %poppins-500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+
+      @include onTablet {
+        font-size: 14px;
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__copywrite {
+    @extend %poppins-600;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: $colorBackground;
+    max-width: 198px;
+    margin: 0 auto;
+
+    @include onTablet {
+      text-align: left;
+      line-height: 150%;
+      max-width: max-content;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &-text {
+      @extend %poppins-400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $colorBackground;
+
+      @include onDesktop {
+        &:last-child {
+          padding-bottom: 30px;
+        }
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      @extend %poppins-400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $colorBackground;
+    }
+  }
+
+  &__icons-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &-fb {
+      background-image: url(../images/FACEB.svg);
+
+    }
+
+    &-inst {
+      background-image: url(../images/INSTA.svg);
+    }
+  }
+
+}
+
+

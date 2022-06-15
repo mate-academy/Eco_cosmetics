@@ -35,26 +35,30 @@
   }
 
   &-big {
-    display: none;
+    &__logo {
+      display: none;
 
-    @include onDesktop {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      align-content: center;
-
-
-      &__logo {
+      @include onDesktop {
+        display: block;
         width: 270px;
         height: 50px;
       }
+    }
 
-      &__cart {
+    &__cart {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
         width: 22px;
         height: 26px;
+      }
 
-        &-container {
+
+      &-container {
+        display: none;
+
+        @include onDesktop {
           display: flex;
           flex-direction: row-reverse;
           align-items: center;
@@ -63,3 +67,4 @@
     }
   }
 }
+
