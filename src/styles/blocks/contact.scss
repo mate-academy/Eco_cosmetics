@@ -39,6 +39,15 @@
     display: flex;
     flex-direction: column;
 
+    &-label {
+      border-bottom: 1px solid  #BDBDBD;
+      padding-bottom: 5px;
+
+      @include onDesktop {
+        padding-bottom: 10px;
+      }
+    }
+
     &-title {
       @extend %poppins-600;
       font-size: 24px;
@@ -83,6 +92,10 @@
 
 
 
+
+
+
+
     &--field {
       @extend %poppins-400;
       background-color: transparent;
@@ -102,12 +115,7 @@
         margin-bottom: 30px;
       }
 
-      &::after {
-        content: "";
-        display: block;
-        border-bottom: 1px solid #BDBDBD;
-        border-radius: 4px;
-      }
+
 
       &::placeholder {
         font-style: normal;
@@ -123,15 +131,16 @@
       }
 
       &--textarea {
-        padding-top: 40px;
+        padding-top: 29px;
         resize: none;
         background-color: transparent;
         text-align: bottom;
         height: 55px;
+        border-bottom: 1px solid #BDBDBD;
 
         &::placeholder {
           position: absolute;
-          bottom: -5px;
+          bottom: 0px;
         }
       }
     }
