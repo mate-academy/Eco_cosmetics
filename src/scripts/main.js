@@ -24,6 +24,10 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-document.getElementById('form').addEventListener('click', function(event) {
-  event.preventDefault();
-});
+const form = document.getElementById('form');
+
+form.onsubmit = function() {
+  document.getElementById('form').reset();
+
+  return false;
+};
