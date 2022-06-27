@@ -1,7 +1,15 @@
 .header {
   box-sizing: border-box;
 
-  padding: 20px 0;
+  padding: 15px 0 100px;
+
+  @include media(tablet) {
+    padding: 22px 0 130px;
+  }
+
+  @include media(notebook) {
+    padding: 40px 0 200px;
+  }
 
   &__content {
     @include grid-6-col;
@@ -14,13 +22,9 @@
     }
   }
 
-  &__img {
-    display: block;
-    width: 100vw;
+  &__img-container {
+    margin: 0 $pad-container-mob 25px;
     height: 267px;
-    margin: 0 -20px 25px;
-    object-fit: cover;
-    object-position: center;
 
     @include media(tablet) {
       grid-column: 1 / -1;
@@ -36,6 +40,15 @@
 
       height: 450px;
     }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
   }
 
   &__title {
