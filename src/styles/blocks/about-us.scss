@@ -1,0 +1,51 @@
+.about-us {
+  &__title {
+    @extend %sectionTitle;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__picture {
+    display: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include hover(transform scale(1.05));
+
+    &--1 {
+      @include onTablet {
+        display: block;
+        grid-row: 1 / 5;
+        background-image: url(../images/about-us-tablet.jpg);
+      }
+
+      @include onDesktop {
+        background-image: url(../images/about-us-desktop-1.jpg);
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        display: block;
+        grid-row: 2 / 5;
+        background-image: url(../images/about-us-desktop-2.jpg);
+      }
+    }
+  }
+}

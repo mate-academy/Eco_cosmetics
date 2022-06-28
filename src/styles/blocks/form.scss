@@ -1,0 +1,71 @@
+.form {
+  &__input {
+    width: 100%;
+    padding-bottom: 5px;
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 0;
+    border-bottom: 1px solid #bdbdbd;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #828282;
+    outline: none;
+
+    @include onTablet {
+      font-weight: 500px;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 25px;
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 45px;
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    @include hover(border-color $colorDark);
+
+    &:focus {
+      color: $colorGreenDark;
+      border-color: $colorGreenDark;
+    }
+
+    &:valid {
+      color: $colorGreenDark;
+      border-color: $colorGreenDark;
+    }
+
+    &:-webkit-autofill {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: $colorGreenDark !important;
+    }
+
+    &:not(:placeholder-shown) {
+      &:invalid {
+        color: #eb5757;
+        border-color: #eb5757;
+      }
+    }
+
+    &--text-area {
+      resize: none;
+      padding: 0;
+    }
+  }
+}
