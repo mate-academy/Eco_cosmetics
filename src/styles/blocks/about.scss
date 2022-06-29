@@ -1,7 +1,16 @@
 .about {
   &__content {
-    @include grid-6-col;
-    @include grid-12-col;
+    @include media(tablet) {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+      @include media(notebook) {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 20px;
+    }
   }
 
   &__wrapper {
