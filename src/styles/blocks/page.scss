@@ -1,3 +1,23 @@
 .page {
   background-color: $c-beige;
+  max-width: 1180px;
+  margin: 0 auto;
+
+  &--with-menu {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
 }
