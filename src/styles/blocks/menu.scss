@@ -1,33 +1,49 @@
 .menu {
-  background-color: $c-dark-main;
+  box-sizing: border-box;
+
   height: 100vh;
+  padding: 20px 0;
+
+  background-color: $c-dark-main;
   overflow-y: auto;
 
-  @media (min-width: $screen-l) {
+  @include media(notebook) {
     display: none;
   }
 
-  &__list {
-    padding: 0 20px;
-    height: 25%;
+  &__icon {
+    width: 20px;
+    margin-bottom: 45px;
 
-    &-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      border-bottom: 1px solid $c-gray-2;
+    @include media(tablet) {
+      margin-bottom: 100px;
     }
   }
 
-  &__link {
-    display: block;
-    color: $c-beige;
-    @extend %Text-reg-18;
-    padding: 30px 10px 10px;
+  &__nav-list {
+    list-style: none;
+  }
 
-    @media (min-width: $screen-m) {
-      padding: 50px 10px 10px;
+  &__nav-item {
+    margin-bottom: 30px;
+
+    border-bottom: 1px solid $c-gray-1;
+
+    @include media(tablet) {
+      margin-bottom: 50px;
     }
+  }
+
+  &__nav-link {
+    display: block;
+
+    padding-bottom: 10px;
+
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    color: #e4dfd3;
+    text-decoration: none;
   }
 }

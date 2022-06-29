@@ -1,0 +1,81 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+
+  @include media(tablet) {
+    padding-bottom: 30px;
+  }
+
+  @include media(notebook) {
+    @include grid-12-col;
+
+    padding-bottom: 80px;
+  }
+
+  &__menu {
+    width: 24px;
+
+    @include media(notebook) {
+      display: none;
+    }
+  }
+
+  &__logo-text {
+    display: none;
+    width: 270px;
+
+    @include media(notebook) {
+      display: block;
+      height: 50px;
+    }
+  }
+
+  &__logo {
+    width: 24px;
+
+    @include media(notebook) {
+      display: none;
+    }
+  }
+
+  &__navigation {
+    display: none;
+
+    @include media(notebook) {
+      display: block;
+      grid-column: 7;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__nav-item {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__nav-link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: $c-green-1;
+    text-decoration: none;
+  }
+
+  &__shop {
+    width: 24px;
+
+    @include media(notebook) {
+      grid-column: 12;
+      justify-self: end;
+    }
+  }
+}

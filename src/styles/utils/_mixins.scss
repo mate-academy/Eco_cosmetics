@@ -1,10 +1,48 @@
-@mixin sqr ($size) {
-  height: $size;
-  width: $size;
+
+@mixin onlyOnTablet {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
 }
 
-@mixin back-position {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+@mixin media($keys...) {
+  @each $key in $keys {
+    @media (min-width: map-get($media-break, $key)) {
+      @content;
+    }
+}
+}
+
+@mixin grid-6-col {
+  @include media(tablet) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+}
+
+@mixin grid-12-col {
+  @include media(notebook) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+}
+
+@mixin section-title {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  color: $c-green-1;
+
+  @include media(tablet) {
+    text-align: left;
+  }
+
+  @include media(notebook) {
+    font-size: 36px;
+    line-height: 110%;
+  }
 }

@@ -1,16 +1,36 @@
 .grid {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: minmax(320px, 1fr);
 
-  @media (min-width: $screen-m) {
-    grid-template-columns: minmax(715px, 1fr);
-    padding: 0 30px;
+  @include media(tablet) {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
   }
-  @media (min-width: $screen-l) {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 0 50px;
-    justify-items: right;
+
+  @include media(notebook) {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+
+  &__item {
+    @for $start from 1 through 6 {
+      @for $end from $start through 6 {
+        &--tablet-#{$start}-#{$end} {
+          @include media(tablet) {
+            grid-column-start: $start;
+            grid-column-end: #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &--desktop-#{$start}-#{$end} {
+          @include media(notebook) {
+            grid-column-start: $start;
+            grid-column-end: #{$end + 1};
+          }
+        }
+      }
+    }
   }
 }
