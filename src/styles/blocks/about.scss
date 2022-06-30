@@ -25,10 +25,12 @@
 
   &__title {
     padding-bottom: 10px;
-    @include section-title;
+    @extend %Section-title;
+    text-align: left;
 
     @include media (notebook) {
       padding-bottom: 40px;
+      text-align: center;
     }
   }
 
@@ -61,6 +63,7 @@
     @include media(tablet) {
       display: block;
       height: 320px;
+      max-width: 340px;
 
       grid-column: 4 / -1;
     }
@@ -69,6 +72,25 @@
       height: 530px;
       object-position: center;
       grid-column: 7 / 11;
+    }
+
+    &--creators {
+      @include media (tablet) {
+        background-image: url(../images/photo/tablet/birdHand_tablet.jpg);
+        @include back-position;
+
+        height: 440px;
+        max-width: 340px;
+        grid-column: 4 / -1;
+      }
+
+      @include media (notebook) {
+        background-image: url(../images/photo/desktop/birdHand_desktop.jpg);
+        @include back-position;
+        height: 660px;
+        max-width: 580px;
+        grid-column: 7 / -1;
+      }
     }
   }
 
@@ -86,7 +108,7 @@
       object-fit: cover;
 
       &--creators {
-        grid-column: 7 / -1;
+        grid-column: 7 / -3;
         height: 645px;
       }
     }
@@ -105,5 +127,9 @@
       width: 100%;
       height: 430px;
     }
+  }
+
+  &__button {
+    margin: 0 auto;
   }
 }
