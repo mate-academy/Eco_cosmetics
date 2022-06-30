@@ -1,0 +1,73 @@
+
+.ingredients {
+  // &__content {
+
+  //   @include media(tablet) {
+  //     display: grid;
+  //     grid-template-columns: repeat(6, 1fr);
+  //     column-gap: 30px;
+  //   }
+
+  //   @include media(notebook) {
+  //     grid-template-columns: repeat(12, 1fr);
+  //     column-gap: 20px;
+  //   }
+  // }
+
+  // &__wrapper {
+  //   @include media(notebook) {
+  //     grid-column: 2 / 6;
+  //   }
+  // }
+
+  &__title {
+    position: relative;
+    padding-bottom: 10px;
+    @extend %Section-title;
+    text-align: left;
+
+    @include media (notebook) {
+      position: absolute;
+      top: 0;
+      left: 150px;
+    }
+  }
+
+  &__jar {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+
+    @include media(notebook) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__list {
+    margin-top: 37px;
+
+    &-item {
+      @extend %text-reg-16;
+      text-align: right;
+      display: block;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__img-container {
+    background-image: url(../images/svg/jar_desktop.svg);
+    background-repeat: no-repeat;
+    display: block;
+    height: 100%;
+  }
+
+  &__link {
+    position: absolute;
+    top: 500px;
+
+    @include media(notebook) {
+      left: 150px;
+      top: 420px;
+    }
+  }
+}
