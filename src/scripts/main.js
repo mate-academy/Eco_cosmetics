@@ -7,3 +7,12 @@ window.addEventListener('hashchange', () => {
     document.body.classList.remove('page--with-menu');
   }
 });
+
+const form = document.querySelector('.form');
+
+// eslint-disable-next-line
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  form.reset();
+});

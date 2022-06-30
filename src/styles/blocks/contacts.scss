@@ -1,0 +1,77 @@
+.contacts {
+  &__content {
+    @include media(tablet) {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include media(notebook) {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__wrapper {
+    @include media(tablet) {
+      grid-column: 1 / 4;
+    }
+
+    @include media(notebook) {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    padding-bottom: 10px;
+    @extend %Section-title;
+    text-align: left;
+
+    @include media (notebook) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__description {
+    padding-bottom: 30px;
+
+    @include media(tablet) {
+      font-size: 16px;
+    }
+
+    @include media(notebook) {
+      padding-bottom: 40px;
+    }
+
+    @extend %small-text;
+    color: $c-dark-main;
+  }
+
+  &__img-container {
+    display: none;
+
+    @include media (tablet) {
+      display: block;
+      background-image: url(../images/photo/tablet/bird_tablet.jpg);
+      @include back-position;
+
+      height: 407px;
+      max-width: 340px;
+      grid-column: 4 / -1;
+    }
+
+    @include media (notebook) {
+      background-image: url(../images/photo/desktop/bird_desktop.jpg);
+      background-position: center;
+      background-size: contain;
+      height: 540px;
+      max-width: 580px;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}
