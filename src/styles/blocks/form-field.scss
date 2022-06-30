@@ -1,0 +1,74 @@
+.form-field {
+  box-sizing: border-box;
+
+  width: 100%;
+  padding: 5px 0;
+
+  font-family: inherit;
+  @extend %small-text;
+  color: $c-gray1;
+
+  background-color: $c-main-bg;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #bdbdbd;
+
+  transition: border-color 0.3s;
+
+  @include media(notebook) {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  &:valid {
+    color: $c-gray1;
+
+    background-color: $c-main-bg;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  @include media(notebook) {
+    padding: 10px 0;
+  }
+
+  &::placeholder {
+    @extend %small-text;
+    color: $c-gray3;
+
+    @include media(notebook) {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+
+  &:hover {
+    border-bottom-color: $c-gray1;
+  }
+
+  &:focus {
+    outline: none;
+
+    &::placeholder {
+      color: $c-gray1;
+    }
+  }
+
+  &:invalid:not(:focus):not(:placeholder-shown) {
+    color: #eb5757;
+    border-bottom-color: #eb5757;
+  }
+
+  &--textarea {
+    height: 33px;
+    resize: none;
+
+    font-family: inherit;
+    @extend %small-text;
+
+    @include media(notebook) {
+      height: 50px;
+    }
+  }
+}
