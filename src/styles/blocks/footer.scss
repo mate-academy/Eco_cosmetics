@@ -1,0 +1,117 @@
+.footer {
+  background-color: $c-green-2;
+  color: $c-beige;
+  padding: 30px 0 40px;
+
+  &__content {
+    display: grid;
+
+    @include media(tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__nav {
+    &-item {
+      margin-bottom: 10px;
+
+    }
+
+    &-link {
+      padding: 10px 0;
+
+      @include media(tablet) {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+      }
+
+      &:visited {
+        color: $c-green-1;
+      }
+    }
+  }
+
+  &__social {
+
+    &--desk {
+      display: none;
+    }
+
+    display: flex;
+    margin-bottom: 40px;
+    &-icon {
+      display: block;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+      @include sqr(20px);
+
+      &--fb {
+        background-image: url(../images/svg/icon_facebook.svg);
+        background-size: contain;
+      }
+
+      &--insta {
+        background-image: url(../images/svg/icon_instagram.svg);
+        background-size: contain;
+      }
+    }
+
+    @include media(notebook) {
+      &--tablet {
+        display: none;
+      }
+
+      &--desk {
+        display: flex;
+      }
+    }
+  }
+
+  &__info {
+    &-list {
+      margin-bottom: 40px;
+    }
+
+    &-item {
+      @extend %small-text;
+      padding-bottom: 10px;
+    }
+
+    &-link {
+      color: $c-beige;
+
+      &:visited {
+        color: $c-green-1;
+      }
+    }
+
+  }
+
+  &__copyright {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+
+    @include media (tablet) {
+      text-align: left;
+      margin: 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      width: 100%;
+    }
+
+    @include media (notebook) {
+      margin-top: -60px;
+      &::before {
+        content: "Copyright";
+      }
+    }
+  }
+}
