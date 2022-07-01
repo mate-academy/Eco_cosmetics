@@ -14,20 +14,38 @@
   &__nav {
     &-item {
       margin-bottom: 10px;
-
     }
 
     &-link {
+      color: $c-beige;
       padding: 10px 0;
+
+      &::after {
+        content: "";
+        background-color: $c-beige;
+        display: block;
+        width: 0;
+        height: 1px;
+
+        transition: width 0.5s;
+      }
+
+      transition: color 0.5s;
+
+      &:visited {
+        color: $c-beige;
+      }
+
+      &:hover {
+        &::after {
+          width: 100px;
+        }
+      }
 
       @include media(tablet) {
         font-weight: 400;
         font-size: 14px;
         line-height: 150%;
-      }
-
-      &:visited {
-        color: $c-green-1;
       }
     }
   }
@@ -50,11 +68,21 @@
       &--fb {
         background-image: url(../images/svg/icon_facebook.svg);
         background-size: contain;
+        transition: transform 0.5s;
+
+        &:hover {
+          transform: scale(1.5);
+        }
       }
 
       &--insta {
         background-image: url(../images/svg/icon_instagram.svg);
         background-size: contain;
+        transition: transform 0.5s;
+
+        &:hover {
+          transform: scale(1.5);
+        }
       }
     }
 
@@ -77,16 +105,21 @@
     &-item {
       @extend %small-text;
       padding-bottom: 10px;
+      cursor: pointer;
+      transition: font-weight 0.5s;
+
+      &:hover {
+        font-weight: 900;
+      }
     }
 
     &-link {
       color: $c-beige;
 
       &:visited {
-        color: $c-green-1;
+        color: $c-beige;
       }
     }
-
   }
 
   &__copyright {

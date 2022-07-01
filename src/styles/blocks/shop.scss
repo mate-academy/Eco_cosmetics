@@ -30,7 +30,6 @@
     justify-content: space-between;
 
     margin: 0 -10px 15px;
-    list-style: none;
 
     @include media(tablet) {
       margin-bottom: 25px;
@@ -61,6 +60,17 @@
     text-decoration: none;
     color: $c-gray-1;
 
+    &::after {
+      content: "";
+      background-color: $c-dark-main;
+      display: block;
+      width: 0;
+      height: 1px;
+      margin-top: 20px;
+
+      transition: width 0.5s;
+    }
+
     transition: color 0.5s;
 
     @include media(notebook) {
@@ -70,8 +80,10 @@
     }
 
     &:hover {
-      color: $c-green-1;
-      text-shadow: 5px 5px 10px $c-green-2;
+      color: $c-dark-main;
+      &::after {
+        width: 130%;
+      }
     }
   }
 
@@ -100,15 +112,23 @@
   }
 
   &__card {
+    padding: 10px;
+    transition: transform 0.5s, background-color 0.5s, color 0.5s;
 
-    &--second {
+    &:hover {
+      transform: scale(1.05);
+      background-color: $c-green-2;
+      color: $c-beige;
+    }
+
+    &--ubtan {
       display: none;
     }
 
     @include media(tablet) {
       grid-column: 1 / 4;
 
-      &--second {
+      &--ubtan {
         display: block;
         grid-column: 4 / -1;
       }
@@ -117,7 +137,7 @@
     @include media(notebook) {
       grid-column: 1 / 7;
 
-      &--second {
+      &--ubtan {
         grid-column: 7 / -1;
       }
     }

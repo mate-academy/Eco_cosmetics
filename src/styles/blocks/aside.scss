@@ -34,10 +34,27 @@
 
       text-align: left;
       font-size: 24px;
+
+      &::after {
+        content: "";
+        position: relative;
+        bottom: -100px;
+        right: 0;
+
+        display: block;
+        height: 1px;
+        margin-right: -2000px;
+
+        grid-column: 7 / -1;
+        grid-row: 5;
+
+        background-color: rgba(52, 79, 16, 0.5);
+      }
     }
   }
 
   &__about {
+    position: relative;
     display: none;
     color: $c-dark-main;
     @extend %text-reg-16;
@@ -46,6 +63,21 @@
       display: block;
       grid-column: 2 / 6;
       grid-row: 1;
+
+      &::before {
+        content: "";
+        position: relative;
+        top: -100px;
+
+        display: block;
+        height: 1px;
+        margin-left: -2000px;
+
+        grid-column: 1 / 6;
+        grid-row: 1;
+
+        background-color: rgba(52, 79, 16, 0.5);
+      }
     }
   }
 }

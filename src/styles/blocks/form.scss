@@ -19,8 +19,29 @@
       }
     }
 
+    &:valid {
+      color: $c-dark-main;
+
+      background-color: $c-beige;
+      border: 1px solid transparent;
+      border-bottom: 1px solid #bdbdbd;
+    }
+
+    &:hover {
+      border-bottom-color: $c-dark-main;
+    }
+
     &:focus {
       outline: none;
+      color: $c-dark-main;
+
+      background-color: $c-beige;
+      border-bottom-color: $c-dark-main;
+    }
+
+    &:invalid:not(:focus):not(:placeholder-shown) {
+      color: #eb5757;
+      border-bottom-color: #eb5757;
     }
   }
 
@@ -31,4 +52,11 @@
       margin-top: 50px;
     }
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border-bottom: 1px solid $c-dark-main;
+  -webkit-text-fill-color: $c-dark-main;
 }
