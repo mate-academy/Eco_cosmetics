@@ -1,0 +1,110 @@
+.product-card {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 20px 0;
+
+  background-color: $c-main-bg;
+
+  overflow-y: auto;
+
+  &__top-actions {
+    margin-bottom: 20px;
+
+    @include media(tablet) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__content {
+    @include media(tablet) {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include media(tablet) {
+        @include grid-6-col;
+      }
+    }
+  }
+
+  &__wrapper {
+    grid-column: 2 / 6;
+  }
+
+  &__title {
+    @extend %h5;
+
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    @include media(tablet) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__value {
+    margin-bottom: 20px;
+
+    color: $c-subtitle;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include media(tablet) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__weight {
+    @include media(tablet) {
+      margin-bottom: 30px;
+
+      color: $c-gray1;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 440px;
+
+    margin-bottom: 30px;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include hover(box-shadow, 5px 5px 15px 5px rgba(0,0,0,0.7));
+  }
+
+  &__button {
+    margin: 0 auto 50px;
+
+    @include media(tablet) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+    @extend %small-text;
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    @include media(tablet) {
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+  }
+}

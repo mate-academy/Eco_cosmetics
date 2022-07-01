@@ -61,14 +61,22 @@
   }
 
   &--textarea {
-    height: 33px;
-    resize: none;
-
     font-family: inherit;
     @extend %small-text;
 
-    @include media(notebook) {
-      height: 50px;
+    &[contenteditable]:empty::before {
+      content: "Message";
+
+      @extend %small-text;
+      color: $c-gray3;
+
+      @include media(notebook) {
+        font-size: 18px;
+      }
+    }
+
+    &:focus:empty:before {
+      color: $c-gray1;
     }
   }
 }

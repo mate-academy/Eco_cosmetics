@@ -52,6 +52,10 @@
     color: $c-footer-text;
     text-decoration: none;
 
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-bottom-color, $c-footer-text);
+
     @include media(notebook) {
       font-weight: 500;
       font-size: 18px;
@@ -80,8 +84,11 @@
   }
 
   &__social-link {
+    display: block;
     margin-right: 20px;
 
+    @include hover(transform, scale(1.1));
+    
     &:last-child {
       margin-right: 0;
     }
@@ -107,11 +114,16 @@
 
   &__contact-link {
     display: block;
+    width: max-content;
     margin-bottom: 10px;
 
     @extend %small-text;
     text-decoration: none;
     color: $c-footer-text;
+
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-bottom-color, $c-footer-text);
 
     &:last-child {
       margin-bottom: 0;
@@ -129,7 +141,8 @@
 
       @include media(tablet) {
         grid-column: 1 / 4;
-        width: 100%;
+        width: max-content;
+        margin: 0;
         text-align: left;
       }
 
