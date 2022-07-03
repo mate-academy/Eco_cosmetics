@@ -1,5 +1,12 @@
 @import "utils";
 @import "./src/styles/grid";
+@import "./src/styles/blocks/top-action";
+@import "./src/styles/blocks/about-preface";
+@import "./src/styles/blocks/creators";
+@import "./src/styles/blocks/shop";
+@import "./src/styles/blocks/decorative";
+@import "./src/styles/blocks/learn-more";
+@import "./src/styles/blocks/button";
 @import "typography";
 
 .page {
@@ -7,65 +14,68 @@
   font-family: "Poppins", sans-serif;
 
   &__body {
-    background: #e4dfd3;
+    background: $cream;
     margin: 0;
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
   }
 }
 
 .container {
-  margin: 0;
+  margin: 0 auto;
+
+  padding: 0 20px;
+
+  &--mobile {
+    padding: 0;
+  }
+
+  @include onTablet {
+    max-width: 720px;
+    padding: 0 27px;
+  }
+
+  @include onDesktop {
+    max-width: 1180px;
+    padding: 0 50px;
+
+    &__preface-padding {
+      padding: 100px 0;
+    }
+  }
 }
 
 .header {
 
   &__content {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    //min-height: 100vh;
 
-    & > :not(:nth-child(2)) {
-      padding: 0 20px;
-    }
-
-    @include onTablet {
-      margin: 0 30px;
-
-      & > :not(:nth-child(2)) {
-        padding: 0;
-      }
-    }
-  }
-
-  &__nav {
-    margin-top: 15px;
-    margin-bottom: 20px;
-
-    --icon-width: 24px;
-
-    display: grid;
-
-    grid-template-columns: var(--icon-width) 1fr var(--icon-width);
-    justify-items: center;
-
-    &--menu-desktop {
-      display: flex;
-      align-items: center;
-    }
-
-    @include onDesktop {
-      justify-items: start;
-      grid-template-columns: repeat(2, 1fr) var(--icon-width);
-    }
-
-    @media (max-width: 1024px) {
-      &--menu-desktop {
-        display: none;
-      }
-    }
+    padding-top: 15px;
   }
 
   &__photo-container {
     margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
   }
 
   &__photo {
@@ -76,12 +86,30 @@
   }
 
   &__title {
+    //display: inline-block;
+    padding: 0 20px;
+
     margin-bottom: 10px;
 
     font-size: 24px;
     line-height: 130%;
     text-align: center;
-    color: #333;
+    color: $d-gray;
+
+    @include onTablet {
+      padding: 0;
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    @include onDesktop {
+      display: inline-block;
+      max-width: 480px;
+      font-size: 60px;
+      text-transform: none;
+      text-align: left;
+    }
   }
 
   &__about {
@@ -92,43 +120,25 @@
     line-height: 150%;
     text-align: center;
 
-    color: #333;
-  }
+    color: $d-gray;
 
-  &__container-button {
-    display: flex;
-    justify-content: center;
-  }
-
-  &__button {
-    width: 280px;
-    min-height: 60px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 130%;
-
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-
-    background-color: #333;
-    color: #f2f2f2;
+    @include onDesktop {
+      max-width: 480px;
+      text-align: left;
+    }
   }
 }
 
 .icon {
   display: block;
   width: 100%;
+  padding-bottom: 100%;
 
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 
-  &__menu {
+  &--menu {
     background-image: url(../images/menu.svg);
 
     @include onDesktop {
@@ -136,8 +146,24 @@
     }
   }
 
-  &__shop {
+  &--shop {
     background-image: url(../images/bag-shop.svg);
+  }
+
+  &--cross {
+    background-image: url(../images/cross.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  &__image {
+    @include onDesktop {
+      padding-right: 330px;
+    }
   }
 }
 
@@ -150,10 +176,173 @@ h2,
 h3,
 h4,
 h5,
-p {
+p,
+ul {
   margin: 0;
+  padding: 0;
 }
 
-.menu--item:not(:last-child) {
-  padding-right: 40px;
+picture {
+  display: flex;
+}
+
+.menu {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  background-color: $d-gray;
+  text-align: center;
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 0;
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__list {
+    list-style: none;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  &__item {
+    padding-bottom: 30px;
+
+    &:after {
+      content: "";
+      display: block;
+      border-bottom: 1px solid #828282;
+    }
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 0;
+
+      &:not(:last-child) {
+        padding-right: 40px;
+      }
+
+      &:after {
+        border-bottom: 1px solid transparent;
+      }
+
+      &:hover:after {
+        border-bottom: 1px solid #828282;
+      }
+    }
+  }
+
+  &-desktop-link {
+    color: $green;
+  }
+
+  &__link {
+    display: block;
+    padding-bottom: 10px;
+
+    color: $cream;
+  }
+}
+
+.about {
+  &--title {
+    padding-bottom: 10px;
+
+    @include onDesktop {
+      padding-bottom: 40px;
+      font-size: 36px;
+    }
+  }
+
+  &--paragraph {
+    padding-bottom: 30px;
+
+    &:last-child {
+      display: none;
+
+      @include onDesktop {
+        padding-bottom: 40px;
+        display: inline-block;
+      }
+    }
+  }
+
+  &__photo--container {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+
+    @include onDesktop {
+      height: 530px;
+      object-fit: cover;
+    }
+  }
+
+  &__photo--small {
+    object-position: bottom;
+    width: 100%;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
+
+.text-paragraph {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: $d-gray;
+
+  @include onTablet {
+    font-size: 16px;
+  }
+}
+
+.title {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: $green;
+
+  @include onDesktop {
+    font-size: 36px;
+  }
+}
+
+.list {
+  list-style: none;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
 }
