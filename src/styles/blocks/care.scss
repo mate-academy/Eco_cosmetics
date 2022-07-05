@@ -1,0 +1,56 @@
+.care {
+  &__text {
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      display: grid;
+      height: 1px;
+      background-color: $color-text;
+      grid-column: 1 / 6;
+      margin: 0 0 100px -50px;
+      margin-bottom: 100px;
+    }
+
+    &--second {
+      grid-column: 7 / 13;
+      margin: 0 -50px 0 0;
+    }
+  }
+
+  &__biologists-say {
+    display: none;
+
+    @include onDesktop {
+      display: grid;
+      grid-column: 2 / 6;
+      margin: 0 0 100px;
+    }
+  }
+
+  &__you-choose {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0 0 100px;
+
+    @include onTablet {
+      margin: 0 0 130px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-column: 7 / 11;
+      justify-content: start;
+      text-align: left;
+    }
+  }
+}
