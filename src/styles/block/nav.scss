@@ -1,0 +1,129 @@
+.nav {
+  box-sizing: border-box;
+  @include onDesktop {
+    display: flex;
+    justify-content: center;
+  }
+  &--footer {
+    display: flex;
+  }
+  &--shop {
+    grid-row: 2;
+    @include onTablet {
+      grid-column: 1 /-1;
+    }
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: baseline;
+    }
+
+    &--footer {
+      @include onDesktop {
+        gap: 40px;
+      }
+    }
+
+    &--shop {
+      flex-direction: row;
+      justify-content: space-between;
+      @include onTablet {
+        margin: 0 30px;
+        justify-content: start;
+        gap: 20px;
+      }
+
+      @include onDesktop {
+        margin: 0;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+
+    &--shop {
+      width: min-content;
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding: 0 0 10px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    @extend %inputs-menu-text;
+
+    &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 1px;
+        background-color: $titel-color;
+      }
+    }
+
+    &--footer-menu {
+      position: relative;
+      padding: 10px 0;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      @extend %inputs-menu-text;
+      @include onTablet {
+        justify-content: start;
+      }
+
+      &:hover {
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          border: 1px solid $bg-color;
+        }
+      }
+    }
+    &--menu {
+      padding-bottom: 10px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        background-color: #828282;
+      }
+    }
+
+    &--shop {
+      padding: 10px 0;
+      color: $inactive-element-color;
+
+      &:active {
+        color: $txt-color;
+      }
+    }
+  }
+}

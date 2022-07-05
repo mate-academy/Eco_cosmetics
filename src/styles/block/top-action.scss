@@ -1,0 +1,36 @@
+.top-action {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 20px 0;
+  height: 50px;
+  grid-column: 1 / -1;
+  @include onTablet {
+    margin: 40px 30px 0;
+  }
+
+  &__logo {
+    display: block;
+
+    @include icon(40px,url(../images/icon/logo.svg) );
+
+    @include onTablet {
+      @include icon(50px,url(../images/icon/logo.svg) );
+    }
+
+    @include onDesktop {
+      height: 50px;
+      width: 270px;
+      @include bg-img (url(../images/icon/logo_big.svg));
+    }
+
+  }
+
+  &__menu-wrap {
+
+    display: none;
+    color: $titel-color;
+    @include onDesktop {
+      display: flex;
+    }
+  }
+}
