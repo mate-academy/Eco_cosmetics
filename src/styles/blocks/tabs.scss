@@ -1,0 +1,43 @@
+.tabs {
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 24px;
+  }
+
+  &__links {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    order: 0;
+    white-space: nowrap;
+  }
+
+  &__links > a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 6px 10px;
+    text-align: center;
+    color: #1976d2;
+  }
+
+  & > div:not(.tabs__wrapper--first) {
+    display: none;
+  }
+
+  & > div:target {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+
+  
+    @include onDesktop {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}

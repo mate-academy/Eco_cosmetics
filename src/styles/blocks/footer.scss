@@ -1,0 +1,192 @@
+.footer {
+  bottom: 0;
+  background-color: $lite-green;
+
+  &--container {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding-top: 30px;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__nav {
+
+    @include onTablet {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $white;
+    margin-bottom: 11px;
+
+    font-weight: 500;
+    font-size: 18px;
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    transition: all 0.3ms;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+  
+  &__contact__information {
+
+    &__link {
+      text-decoration: none;
+      color: $white;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      margin-bottom: 10px;
+      transition: all 0.4s;
+      cursor: pointer;
+  
+      &:hover {
+        transform: scale(105%);
+      }
+
+      @include onDesktop {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+      }
+    }
+    
+    &__item {
+      margin-bottom: 10px;
+      transition: all 0.4s;
+      cursor: pointer;
+  
+      &:hover {
+        transform: scale(105%);
+      }
+
+    }
+
+    @include onTablet {
+      padding-top: 30px;
+      grid-column: 4 / -1;
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+
+  &__icons {
+    margin: 20px 26px 40px 0;
+
+    @include onTablet {
+      grid-column: 1 / 2;
+      grid-row: 2;
+      margin-left: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+
+    &__item {
+      margin-left: 10px;
+
+      @include onTablet {
+        margin: 0 10px 0 0;
+      }
+
+      @include onDesktop {
+        width: 20px;
+        height: 20px;
+      }
+
+      transition: all 0.3ms;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(120%);
+      }
+    }
+  }
+
+  &__rights {
+    display: block;
+    padding: 40px 0;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 3;
+      text-wrap: none;
+      margin: 0 0 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      grid-row: 2;
+      margin-top: -20px;
+    }
+
+    &-text {
+      color: $white;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 130%;
+      text-align: center;
+
+      @include onTablet {
+        text-align: left;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+      }
+
+      @include onDesktop {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        &::before {
+          content: "Copyright";
+          display: inline;
+        }
+      }
+    }
+  }
+
+  &__icon__link {
+    text-decoration: none;
+  }
+}

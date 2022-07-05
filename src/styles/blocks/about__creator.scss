@@ -1,0 +1,105 @@
+.about__creator {
+  margin-top: 100px;
+
+  &__section__title {
+    @include onDesktop {
+      &::before {
+        display: block;
+        content: "";
+        background-image: url("../images/about_creators_text.svg");
+        background-repeat: no-repeat;
+        margin-left: -6%;
+        width: 100%;
+        height: 200px;
+        position: absolute;
+
+      }
+    }
+  }
+
+  &--container {
+    display: grid;
+
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: $column-gap;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: $column-gap;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+    @include onDesktop {
+      grid-column: 2 / 7;
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-link {
+    margin-top: 30px;
+  }
+
+  &__button {
+    margin-top: 30px;
+  }
+
+  &__text {
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &-img {
+    transition: all 0.4s;
+
+    &:hover {
+      transform: scale(105%);
+    }
+
+    &--tablet {
+      display: none;
+        
+      @include onTablet {
+        grid-column: 4 / -1;
+        display: block;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+  
+
+  &__photo {
+
+    @include onTablet {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+
+    }
+
+  }
+}

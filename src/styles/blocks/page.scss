@@ -1,0 +1,48 @@
+h1,
+h2,
+h3,
+a,
+li,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  background-color: $white;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__icon-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 26px;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translate(0);
+    }
+  }
+}

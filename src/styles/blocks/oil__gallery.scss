@@ -1,0 +1,114 @@
+.oil__gallery {
+  margin-top: 50px;
+
+  &__item-parametr {
+    display: none;
+
+    @include onTablet {
+      display: inline;
+    }
+  }
+
+  &--container {
+    @include onDesktop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__wrapper {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 15%;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+
+    @include onTablet {
+      height: auto;
+    }
+  }
+
+  &__link {
+
+    @include onTablet {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+    }
+  }
+
+  &__content {
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+    }
+  }
+
+  &__ingrediance {
+
+    @include onTablet {
+      width: 70%;
+    }
+
+    @include onDesktop {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__item-title {
+
+    @include onTablet {
+      display: none;
+    }
+    
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+  
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__item-price {
+    margin-bottom: 20px;
+  }
+
+  &__img {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}

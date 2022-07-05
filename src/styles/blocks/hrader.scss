@@ -1,0 +1,172 @@
+.header {
+
+  &__icon {
+    transition: all 0.4s;
+    cursor: pointer;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__content {
+    display: grid;
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 24px;
+    }
+
+    @include onDesktop {
+      margin-top: 87px;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    background-image: url("../images/header-img.png");
+    background-size: cover;
+
+    width: 100%;
+    height: $header-img-heigth;
+    background-position: center;
+    transition: all 0.4s;
+    cursor: pointer;
+
+    @include onTablet {
+      position: relative;
+      height: 500px;
+      width: 100%;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      position: relative;
+      width: 100%;
+      height: 451px;
+      grid-column: 7 / -1;
+      grid-row: 1;
+    }
+
+    &:hover {
+      transform: scale(90%);
+    }
+
+  }
+
+  &__title {
+    margin-top: $header-img-heigth + 25px;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      position: relative;
+      margin: 50px 0 0;
+      grid-column: 2 / 6;
+
+    }
+
+    @include onDesktop {
+      position: relative;
+      margin: 0;
+      grid-column: 2 / 7;
+      grid-row: 1;
+    }
+
+    &-main {
+      align-self: center;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 130%;
+      margin-bottom: 10px;
+      text-align: center;
+
+      @include onTablet {
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 150%;
+  
+        text-align: center;
+        text-transform: capitalize;
+      }
+
+      @include onDesktop {
+        align-self: start;
+        text-align: left;
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 130%;
+      }
+    }
+
+    &-second {
+      align-self: center;
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        align-self: start;
+      }
+
+      @include onTablet {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+      }
+    }
+
+    &-button {
+      align-self: center;
+
+      @include onDesktop {
+        align-self: start;
+      }
+    }
+  }
+
+  &__logo__text {
+    display: none;
+    transition: all 0.4s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(105%);
+    }
+    
+    @include onDesktop {
+      position: absolute;
+      display: block;
+      margin-left: 62px;
+      top: 15px;
+  
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+  
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $green;
+    }
+  
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+
+    text-transform: capitalize;
+    color: $green;
+    transition: all 0.4s;
+    cursor: pointer;
+
+    &:hover {
+      color: $lite-green;
+    }
+  }
+
+}
