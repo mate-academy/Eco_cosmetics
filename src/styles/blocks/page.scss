@@ -1,0 +1,38 @@
+.page {
+  font-family: Poppins, serif;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background-color: #E4DFD3;
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include on-tablet-mini {
+      margin-bottom: 130px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__body--with-menu {
+    overflow: hidden;
+  }
+}

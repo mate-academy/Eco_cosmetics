@@ -1,0 +1,25 @@
+.top-actions {
+  // --icon-width: 18px;
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  justify-items: center;
+  align-items: center;
+
+  @include on-desktop {
+    grid-template-columns: 50px 24px 20px;
+  }
+
+  &--mobile {
+    @include on-desktop {
+      display: none;
+    }
+  }
+  &--desktop {
+    @include on-tablet-mini {
+      display: none;
+    }
+    @include on-mobile {
+      display: none;
+    }
+  }
+}

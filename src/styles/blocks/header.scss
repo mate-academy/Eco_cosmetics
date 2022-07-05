@@ -1,0 +1,256 @@
+
+.header {
+  position: relative;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 50vw;
+    padding: 15px 0 20px;
+
+    @include on-tablet-mini {
+      padding: 23px 0 30px;
+    }
+
+    @include on-desktop {
+      padding: 40px 0 82px;
+    }
+  }
+
+  &__menu-opener {
+    width: 20px;
+    height: 13px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/icons/menu-opener.svg);
+
+    &:hover {
+      background-image: url(../images/icons/menu-hover.svg);
+    }
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    color: #344F10;
+
+    @include on-desktop {
+      width: 50px;
+      height: 50px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &::after {
+      content: 'witch of mountain winds';
+      position: absolute;
+      top: 25%;
+      transform: translateY(25%);
+      width: max-content;
+      padding-left: 62px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      @include on-mobile {
+        display: none;
+      }
+
+      @include on-desktop {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &__nav {
+    padding: 40px 0 82px;
+    @include on-mobile {
+      display: none;
+    }
+
+    @include on-desktop {
+      display: grid;
+      gap: 40px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    gap: 40px;
+  }
+
+  &__buy {
+    position: absolute;
+    right: 20px;
+    padding: 15px 0 20px;
+
+    @include on-tablet-mini {
+      position: static;
+      padding: 23px 0 30px;
+    }
+    @include on-desktop {
+      position: static;
+      display: flex;
+      justify-content: flex-end;
+      padding: 40px 0 82px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 267px;
+    margin-bottom: 25px;
+    object-fit: cover;
+    object-position: center;
+
+    @include on-tablet-mini {
+      width: 100%;
+      height: 500px;
+    }
+
+    @include on-desktop {
+      display: block;
+      height: 451px;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      opacity: 1;
+      animation: flash 1.5s;
+    }
+    @-webkit-keyframes flash {
+      0% {
+        opacity: .4;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes flash {
+      0% {
+        opacity: .4;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 500px;
+
+    @include on-desktop {
+      align-items: flex-start;
+      margin: 0;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 466;
+    font-size: 36px;
+    text-align: center;
+    color: #333333;
+
+    @include on-tablet-mini {
+      text-transform: capitalize;
+    }
+
+    @include on-desktop {
+      text-align: start;
+      text-transform: none;
+      font-weight: 600;
+      font-size: 60px;
+      line-height: 130%;
+    }
+  }
+
+  &__title-sale {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    @include on-desktop {
+      text-align: start;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 280px;
+    height: 60px;
+    background-color: #333;
+  }
+
+  &__grid--tablet {
+    @include on-mobile {
+      display: flex;
+    }
+    @include on-tablet-mini {
+      display: flex;
+      justify-content: space-between;
+    }
+    @include on-desktop {
+      display: grid;
+    }
+  }
+}
+
+.link {
+  position: relative;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: #344F10;
+  text-decoration: none;
+
+  &--nav {
+    transition: all 0.3s;
+    &:hover {
+      &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 1px;
+        background-color: #344F10;
+      }
+    }
+  }
+}
+
+.order {
+  @include on-desktop {
+    &__1{
+      order: 1;
+    }
+
+    &__2 {
+      order: 2;
+    }
+  }
+}

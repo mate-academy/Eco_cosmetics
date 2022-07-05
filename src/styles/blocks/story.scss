@@ -1,0 +1,66 @@
+.story {
+  &__paragraph-1 {
+    position: relative;
+    margin-top: 100px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333333;
+
+    @include on-mobile {
+      display: none;
+    }
+
+    @include on-tablet-mini {
+      display: none;
+    }
+
+    @include on-desktop {
+      display: grid;
+      &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: -100px;
+        height: 1px;
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__paragraph-2 {
+    margin: 0 auto;
+    position: relative;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344F10;
+
+    @include on-tablet-mini {
+      text-align: center;
+    }
+
+    @include on-desktop {
+      margin-top: 100px;
+      text-align: start;
+      font-size: 24px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: -100px;
+        height: 1px;
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+}
+
+
+
+

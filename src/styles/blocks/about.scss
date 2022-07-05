@@ -1,0 +1,160 @@
+.about {
+  position: relative;
+  &__title-wrapper {
+    margin: 0 0 10px;
+  }
+  &__wrapper {
+    @include on-tablet-mini {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344F10;
+    @include on-desktop {
+      margin: 0 0 20px;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+  &__text {
+    margin: 0 0 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #333333;
+
+    @include on-desktop {
+      margin: 0 0 30px;
+      font-size: 16px;
+    }
+    &--second {
+      @include on-mobile {
+        display: none;
+      }
+      @include on-tablet-mini {
+        display: none;
+      }
+      @include on-desktop {
+        display: block;
+        margin: 0 0 30px;
+      }
+    }
+    &--third {
+      @include on-mobile {
+        display: none;
+      }
+      @include on-tablet-mini {
+        display: none;
+      }
+      @include on-desktop {
+        display: block;
+        margin: 0 0 20px;
+      }
+    }
+  }
+
+  &__image-container {
+    @include on-mobile {
+      display: none;
+    }
+    @include on-tablet-mini {
+      display: grid;
+    }
+    @include on-desktop {
+      display: grid;
+    }
+
+    &:hover {
+      opacity: 1;
+      animation: flash 1.5s;
+    }
+    @-webkit-keyframes flash {
+      0% {
+        opacity: .4;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes flash {
+      0% {
+        opacity: .4;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__candle-image {
+    @include on-tablet-mini{
+      width: 100%;
+      height: 318px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      height: 529px;
+    }
+  }
+
+
+
+  &__bird-image {
+    @include on-tablet-mini{
+      width: 100%;
+      height: 435px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      height: 669px;
+    }
+  }
+
+  &__button {
+    @include on-mobile {
+      display: flex;
+      justify-content: center;
+    }
+    @include on-tablet-mini {
+      display: block;
+      margin: 0 auto;
+    }
+    @include on-desktop {
+      display: flex;
+      justify-content: start;
+      margin: 0;
+    }
+  }
+
+  &__learn-link {
+    margin-bottom: 36px;
+    @include on-tablet-mini {
+      margin-bottom: 41px;
+    }
+    @include on-desktop {
+      margin-bottom: 51px;
+    }
+  }
+
+  &__rotated-sign {
+    transform: rotate(-90deg) translate(-70%, -300%);
+
+    &--1 {
+    transform: rotate(-90deg) translate(-60%, -350%);
+    }
+  }
+}
