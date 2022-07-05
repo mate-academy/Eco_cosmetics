@@ -3,13 +3,5 @@
 
 [DEMO](https://saperzp.github.io/Eco_cosmetics/)
 
-- Used BEM and SCSS
-- Large screens 2560px
-- Full HD 1920px
-- The design 1600px
-- Notebook 1280px
-- Tablet 1024
-- Mobile (> 320px)
-
-## Fonts
-Used `Sharp Sans No2 Medium` and `Avenir`.
+Tech stack: HTML5, SASS, JS
+Responsive design
