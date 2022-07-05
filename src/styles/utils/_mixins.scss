@@ -1,6 +1,20 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin makeAwesome {
+  // opacity: 0.85;
+  transition: opacity 0.3s linear;
+
   &:hover {
-    #{$_property}: $_toValue;
+    opacity: 0.5;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 714px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1180px) {
+    @content;
   }
 }

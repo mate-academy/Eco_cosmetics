@@ -1,0 +1,62 @@
+.strong-point {
+  @include onDesktop {
+    position: relative;
+  }
+
+
+  &::before {
+    position: absolute;
+    width: 530px;
+    height: 1px;
+    background-color: #8c9772;
+    top: -100px;
+
+    @include onDesktop {
+      content: "";
+    }
+  }
+
+  &::after {
+    position: absolute;
+    width: 530px;
+    height: 1px;
+    background-color: #8c9772;
+    right: 0;
+    bottom: -100px;
+
+    @include onDesktop {
+      content: "";
+    }
+  }
+
+  &__additional-text {
+    display: none;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+
+    @include onDesktop {
+      display: initial;
+    }
+  }
+
+  &__main-text {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @include onTablet {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+}
