@@ -1,4 +1,15 @@
 .shop {
+  &__card {
+    margin-bottom: 30px;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
   &--title {
     text-align: center;
     padding-bottom: 20px;
@@ -9,7 +20,7 @@
   }
 
   &__photo--container {
-    display: flex;
+    margin-bottom: 10px;
   }
 
   &__photo {
@@ -26,12 +37,22 @@
   }
 
   &__product {
+    padding-bottom: 10px;
+
     font-weight: 600;
     font-size: 18px;
     line-height: 150%;
 
     letter-spacing: 0.05em;
     text-transform: uppercase;
+
+    @include onTablet {
+      padding-bottom: 15px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 13px;
+    }
   }
 
   &__price {
@@ -50,7 +71,11 @@
 }
 
 .flex__desktop {
-  display: grid;
+  display: block;
+
+  @include onTablet {
+    display: grid;
+  }
 
   @include onDesktop {
     display: flex;
@@ -58,10 +83,10 @@
 }
 
 .section-menu {
-  padding: 0 20px 15px;
+  padding-bottom: 15px;
 
   @include onTablet {
-    padding: 0 0 25px;
+    padding-bottom: 25px;
   }
 
   display: flex;
@@ -101,4 +126,20 @@
 
 .flex__item {
   flex-grow: 1;
+}
+
+.full-width-image {
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  position: relative;
+  right: 50%;
+  width: 100vw;
+
+  @include onTablet {
+    position: static;
+    width: 100%;
+    margin: 0;
+  }
 }

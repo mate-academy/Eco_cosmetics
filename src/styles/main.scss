@@ -1,12 +1,14 @@
 @import "utils";
 @import "./src/styles/grid";
 @import "./src/styles/blocks/top-action";
+@import "./src/styles/blocks/menu";
 @import "./src/styles/blocks/about-preface";
 @import "./src/styles/blocks/creators";
 @import "./src/styles/blocks/shop";
 @import "./src/styles/blocks/decorative";
 @import "./src/styles/blocks/learn-more";
 @import "./src/styles/blocks/button";
+@import "./src/styles/blocks/footer";
 @import "typography";
 
 .page {
@@ -16,6 +18,7 @@
   &__body {
     background: $cream;
     margin: 0;
+    overflow: hidden auto;
   }
 
   &__section {
@@ -35,10 +38,6 @@
   margin: 0 auto;
 
   padding: 0 20px;
-
-  &--mobile {
-    padding: 0;
-  }
 
   @include onTablet {
     max-width: 720px;
@@ -86,9 +85,6 @@
   }
 
   &__title {
-    //display: inline-block;
-    padding: 0 20px;
-
     margin-bottom: 10px;
 
     font-size: 24px;
@@ -97,7 +93,6 @@
     color: $d-gray;
 
     @include onTablet {
-      padding: 0;
       font-size: 36px;
       line-height: 150%;
       text-transform: capitalize;
@@ -169,6 +164,12 @@
 
 .link {
   text-decoration: none;
+  color: $cream;
+
+  &--green {
+    text-decoration: none;
+    color: $green;
+  }
 }
 
 h1,
@@ -184,83 +185,6 @@ ul {
 
 picture {
   display: flex;
-}
-
-.menu {
-  position: fixed;
-
-  top: 0;
-  left: 0;
-  right: 0;
-
-  transform: translateY(-100%);
-  transition: transform 0.3s;
-
-  &:target {
-    transform: translateX(0);
-  }
-
-  background-color: $d-gray;
-  text-align: center;
-
-  &__content {
-    box-sizing: border-box;
-    height: 100vh;
-    padding: 20px 0;
-  }
-
-  @include onDesktop {
-    display: none;
-  }
-
-  &__list {
-    list-style: none;
-
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 150%;
-  }
-
-  &__item {
-    padding-bottom: 30px;
-
-    &:after {
-      content: "";
-      display: block;
-      border-bottom: 1px solid #828282;
-    }
-
-    @include onTablet {
-      padding-bottom: 50px;
-    }
-
-    @include onDesktop {
-      padding-bottom: 0;
-
-      &:not(:last-child) {
-        padding-right: 40px;
-      }
-
-      &:after {
-        border-bottom: 1px solid transparent;
-      }
-
-      &:hover:after {
-        border-bottom: 1px solid #828282;
-      }
-    }
-  }
-
-  &-desktop-link {
-    color: $green;
-  }
-
-  &__link {
-    display: block;
-    padding-bottom: 10px;
-
-    color: $cream;
-  }
 }
 
 .about {
