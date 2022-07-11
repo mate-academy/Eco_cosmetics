@@ -1,0 +1,112 @@
+.product {
+  z-index: 90;
+  overflow-x: none;
+  overflow-y: scroll;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: $c-bg;
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr minmax(280px, 466px) 1fr;
+  }
+  &__content {
+    padding: 20px;
+    @include onTablet {
+      padding: 28px;
+    }
+  }
+  &__top-actions {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    max-width: 768px;
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+  &__menu {
+    display: block;
+  }
+
+  &__logo {
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/icon/logo.svg);
+  }
+  &__card {
+    grid-column: 2 / 3;
+    &--reverse {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      @include onTablet {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+  &__title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-bt-and-main;
+    @include onTablet {
+      margin-bottom: 25px;
+    }
+  }
+  &__cost {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-bt-and-main;
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+    &--hidden {
+      display: none;
+      @include onTablet {
+        display: block;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  &__img-container {
+    overflow: hidden;
+    margin-bottom: 30px;
+    height: 250px;
+    @include onTablet {
+      height: 440px;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+  }
+  &__button {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+  &__text {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $t-title-green;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.page__body--with-product {
+  overflow: hidden;
+}
