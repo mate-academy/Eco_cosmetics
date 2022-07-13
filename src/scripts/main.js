@@ -15,3 +15,13 @@ window.addEventListener('hashchange', () => {
     document.body.classList.remove('page__body--with-product');
   }
 });
+
+const form = document.getElementById('my_form');
+
+form.addEventListener('submit', function handleSubmit(event) {
+  event.preventDefault();
+
+  form.submit();
+
+  form.reset();
+});
