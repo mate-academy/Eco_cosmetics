@@ -19,8 +19,52 @@
     }
   }
 
+  &__menu {
+    padding-bottom: 15px;
+
+    @include onTablet {
+      padding-bottom: 25px;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      justify-content: start;
+      gap: 35px;
+    }
+
+    @include onDesktop {
+      gap: 70px;
+    }
+
+    &__item {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+    }
+
+    &__link {
+      display: inline-block;
+      padding-bottom: 10px;
+
+      border-bottom: 1px solid transparent;
+
+      text-decoration: none;
+      color: $gray;
+
+      &:hover {
+        color: $d-gray;
+        border-bottom: 1px solid #828282;
+      }
+    }
+  }
+
   &__photo--container {
-    margin-bottom: 10px;
+    display: flex;
+    margin-bottom: 20px;
   }
 
   &__photo {
@@ -60,6 +104,11 @@
     text-transform: uppercase;
     color: $d-gray;
   }
+
+  &__container--button {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .display__desktop {
@@ -67,79 +116,5 @@
 
   @include onTablet {
     display: block;
-  }
-}
-
-.flex__desktop {
-  display: block;
-
-  @include onTablet {
-    display: grid;
-  }
-
-  @include onDesktop {
-    display: flex;
-  }
-}
-
-.section-menu {
-  padding-bottom: 15px;
-
-  @include onTablet {
-    padding-bottom: 25px;
-  }
-
-  display: flex;
-  justify-content: space-between;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-
-  @include onTablet {
-    justify-content: start;
-    gap: 35px;
-  }
-
-  @include onDesktop {
-    gap: 70px;
-  }
-
-  &__item {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 130%;
-  }
-
-  &__link {
-    display: inline-block;
-    padding-bottom: 10px;
-
-    border-bottom: 1px solid transparent;
-
-    color: $gray;
-
-    &:hover {
-      color: $d-gray;
-      border-bottom: 1px solid #828282;
-    }
-  }
-}
-
-.flex__item {
-  flex-grow: 1;
-}
-
-.full-width-image {
-  left: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  max-width: 100vw;
-  position: relative;
-  right: 50%;
-  width: 100vw;
-
-  @include onTablet {
-    position: static;
-    width: 100%;
-    margin: 0;
   }
 }

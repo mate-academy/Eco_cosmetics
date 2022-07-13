@@ -1,0 +1,44 @@
+.form-field {
+  font-family: inherit;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 0 0 5px;
+
+  background-color: $cream;
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #828282;
+
+  &:-webkit-autofill {
+    box-shadow: inset 0 0 0 50px $cream;
+    -webkit-text-fill-color: $green;
+  }
+
+  &::placeholder {
+    text-transform: capitalize;
+  }
+
+  &:focus {
+    outline: 0;
+    color: $d-gray;
+    border-color: $d-gray;
+  }
+
+  &:valid:not(:placeholder-shown) {
+    color: $green;
+    border-color: $green;
+  }
+
+  &:required:invalid:not(:placeholder-shown) {
+    border-color: #eb5757;
+  }
+
+  &:required:invalid:not(:focus) {
+    color: #eb5757;
+  }
+}

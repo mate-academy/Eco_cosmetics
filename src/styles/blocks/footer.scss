@@ -8,15 +8,48 @@
     font-size: 16px;
   }
 
+  &--grid {
+    grid-auto-flow: column;
+
+    &--order-1 {
+      order: 1;
+    }
+  }
+
   &__menu {
     padding-bottom: 20px;
   }
 
+  &__menu__item {
+    padding-bottom: 15px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
+  }
+
+  &__menu__link {
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-color: $cream;
+    }
+  }
+
   &__social {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 
     display: flex;
     gap: 20px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
 
     @include onDesktop {
       padding: 0;
@@ -57,24 +90,3 @@
     }
   }
 }
-
-.grid__item--order-1 {
-  @include  onDesktop {
-    order: 1;
-  }
-}
-
-.grid__item--order-11 {
-  @include onTablet {
-    order: 0;
-  }
-
-}
-
-//.grid__item--footer {
-//  order: 2;
-//
-//  &:nth-child(3) {
-//    order: 1;
-//  }
-//}

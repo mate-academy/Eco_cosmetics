@@ -5,6 +5,9 @@
   left: 0;
   right: 0;
 
+  background-color: $d-gray;
+  text-align: center;
+
   transform: translateY(-100%);
   transition: transform 0.3s;
 
@@ -23,9 +26,6 @@
   &:target {
     transform: translateX(0);
   }
-
-  background-color: $d-gray;
-  text-align: center;
 
   &__content {
     box-sizing: border-box;
@@ -48,54 +48,23 @@
   &__item {
     padding-bottom: 30px;
 
-    &:after {
-      content: "";
-      display: block;
-      border-bottom: 1px solid #828282;
-    }
-
     @include onTablet {
       padding-bottom: 50px;
     }
 
     @include onDesktop {
-      padding-bottom: 0;
+      padding: 0;
 
       &:not(:last-child) {
         padding-right: 40px;
       }
-
-      &:after {
-        border-bottom: 1px solid transparent;
-      }
-
-      &:hover:after {
-        border-bottom: 1px solid #828282;
-      }
     }
-  }
-
-  &__item--footer {
-    padding-bottom: 11px;
-    &:last-child {
-      padding-bottom: 0;
-    }
-
-    @include onDesktop {
-      padding: 0;
-    }
-
-    &:after {
-      display: none;
-    }
-  }
-
-  &-desktop-link {
-    color: $green;
   }
 
   &__link {
     display: block;
     padding-bottom: 10px;
+
+    border-bottom: 1px solid #828282;
   }
 }
