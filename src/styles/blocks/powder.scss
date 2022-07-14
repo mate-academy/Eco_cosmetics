@@ -1,55 +1,110 @@
 .powder {
-  &__title {
-    display: inline;
-    padding-left: 20px;
-    padding-bottom: 21px;
-
-    @include onTablet {
-      padding: 0 27px;
-    }
-
-    @include onDesktop {
-      padding: 0;
-    }
-  }
-
-  &__list {
-    padding: 37px 20px 41px 0;
-    list-style: none;
+  &__card {
+    padding-bottom: 31px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-  }
 
-  &__list__item {
-    text-align: right;
-  }
+    @include onTablet {
+      padding: 0;
+      flex-direction: row;
+    }
 
-  &__description {
-    display: flex;
-    justify-content: right;
-  }
+    &--title {
+      padding-bottom: 21px;
 
-  &__photo__container {
-    display: flex;
+      @include onTablet {
+        padding: 0;
+        min-width: 250px;
+      }
 
-  }
+      @include onDesktop {
+        min-width: 380px;
+        padding: 0;
+      }
+    }
 
-  &__photo {
-    position: relative;
-    right: 0;
-    width: 100%;
+    &--list {
+      padding-right: 20px;
+
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      &--item {
+        display: flex;
+        text-align: right;
+        justify-content: right;
+        align-items: center;
+
+        transition: transform 0.3s ease-out;
+
+        &:hover {
+          transform: translateX(30%);
+        }
+
+        &--line {
+          margin-left: 10px;
+
+          position: relative;
+          display: inline;
+          height: 2px;
+          width: 40px;
+          background-color: $d-gray;
+
+          @include onTablet {
+            width: 80px;
+          }
+
+          &:after {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            display: inline-block;
+            height: 5px;
+            width: 5px;
+            content: "";
+            background-color: $d-gray;
+            border-radius: 50%;
+
+            transform: translate(-50% ,-50%);
+          }
+        }
+      }
+    }
+
+    &--description {
+      display: flex;
+      justify-content: right;
+      flex-shrink: 0;
+
+      position: relative;
+
+      right: -20px;
+
+      @include onTablet {
+        right: -50px;
+      }
+
+      @include onDesktop {
+        right: 0;
+      }
+    }
+
+    &--photo-container {
+      display: flex;
+      position: relative;
+    }
+
+    &--photo {
+      width: 100%;
+    }
   }
 
   &__learn-more {
-    padding-left: 20px;
-
     @include onTablet {
-      padding-left: 27px;
-    }
-
-    @include onDesktop {
-      padding-left: 0;
+      position: relative;
+      top: -20px;
     }
   }
 }

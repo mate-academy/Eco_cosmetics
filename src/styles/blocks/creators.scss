@@ -46,12 +46,21 @@
     @include onTablet {
       display: flex;
       height: 100%;
+
+      overflow: hidden;
+      cursor: zoom-in;
     }
   }
 
   &__photo {
     width: 100%;
     object-fit: none;
+
+    transition: transform 0.5s linear;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__container--button {

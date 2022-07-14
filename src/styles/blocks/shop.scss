@@ -8,6 +8,11 @@
     @include onDesktop {
       margin-bottom: 40px;
     }
+
+    &--link {
+      text-decoration: none;
+      color: $d-gray;
+    }
   }
 
   &--title {
@@ -64,19 +69,27 @@
 
   &__photo--container {
     display: flex;
+    max-height: 267px;
     margin-bottom: 20px;
+    cursor: zoom-in;
+
+    overflow: hidden;
+
+    @media (min-width:350px) {
+      max-height: 350px;
+    }
+    @media (min-width:500px) {
+      max-height: 500px;
+    }
   }
 
   &__photo {
-    height: 267px;
     object-fit: cover;
     width: 100%;
+    transition: transform 0.5s linear;
 
-    @include onTablet {
-      height: 300px;
-    }
-    @include onDesktop {
-      height: 500px;
+    &:hover {
+      transform: scale(1.1);
     }
   }
 
