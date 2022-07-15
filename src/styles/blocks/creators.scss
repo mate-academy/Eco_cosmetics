@@ -1,0 +1,86 @@
+.creators {
+  &--title {
+    padding-bottom: 10px;
+
+    @include onDesktop {
+      padding-bottom: 20px;
+    }
+  }
+
+  &--paragraph {
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding-bottom: 15px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 30px;
+    }
+
+    &:nth-child(2) {
+      padding-bottom: 30px;
+
+      @include onTablet {
+        padding-bottom: 20px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 30px;
+      }
+    }
+
+    &:last-child {
+      display: none;
+
+      @include onDesktop {
+        display: inline-block;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  &__photo--container {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      height: 100%;
+
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    object-fit: none;
+
+    transition: transform 0.5s linear;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__container--button {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: left;
+    }
+  }
+
+  &__learn-more {
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+}

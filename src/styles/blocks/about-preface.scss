@@ -1,0 +1,51 @@
+.preface {
+  display: flex;
+  flex-direction: column;
+
+  @include onDesktop {
+    &:before {
+      width: calc(50% - 100px);
+      display: block;
+      content: "";
+      border-bottom: 1px rgba(52, 79, 16, 0.5) solid;
+    }
+
+    &:after {
+      position: relative;
+      left: 50%;
+      width: 50%;
+      display: block;
+      content: "";
+      border-bottom: 1px rgba(52, 79, 16, 0.5) solid;
+    }
+  }
+
+  &__container--padding {
+    @include onDesktop {
+      padding: 100px 0;
+    }
+  }
+
+  &--title {
+    font-size: 18px;
+    max-width: 280px;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      max-width: 100%;
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+
+  &--paragraph {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+.shop {
+  &__card {
+    margin-bottom: 30px;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &--link {
+      text-decoration: none;
+      color: $d-gray;
+    }
+  }
+
+  &--title {
+    text-align: center;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__menu {
+    padding-bottom: 15px;
+
+    @include onTablet {
+      padding-bottom: 25px;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      justify-content: start;
+      gap: 35px;
+    }
+
+    @include onDesktop {
+      gap: 70px;
+    }
+
+    &--item {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+    }
+
+    &--link {
+      display: inline-block;
+      padding-bottom: 10px;
+
+      border-bottom: 1px solid transparent;
+
+      text-decoration: none;
+      color: $gray;
+
+      &:hover {
+        color: $d-gray;
+        border-bottom: 1px solid #828282;
+      }
+    }
+  }
+
+  &__photo--container {
+    display: flex;
+    max-height: 267px;
+    margin-bottom: 20px;
+    cursor: zoom-in;
+
+    overflow: hidden;
+
+    @media (min-width:350px) {
+      max-height: 350px;
+    }
+    @media (min-width:500px) {
+      max-height: 500px;
+    }
+  }
+
+  &__photo {
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.5s linear;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__product {
+    padding-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      padding-bottom: 15px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 13px;
+    }
+  }
+
+  &__price {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $d-gray;
+  }
+
+  &__container--button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.display__desktop {
+  display: none;
+
+  @include onTablet {
+    display: block;
+  }
+}

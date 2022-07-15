@@ -1,0 +1,41 @@
+.top__action {
+  margin-bottom: 20px;
+
+  --icon-width: 24px;
+
+  display: grid;
+
+  grid-template-columns: var(--icon-width) 1fr var(--icon-width);
+  justify-content: space-between;
+  justify-items: center;
+
+  &--menu {
+    grid-template-columns: var(--icon-width) 1fr;
+  }
+
+  &__menu-desktop {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-link {
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: $green;
+    }
+  }
+
+  @include onDesktop {
+    grid-template-columns: 51% 1fr var(--icon-width);
+    justify-items: start;
+  }
+
+  @media (max-width: 1024px) {
+    &__menu-desktop {
+      display: none;
+    }
+  }
+}
