@@ -1,0 +1,108 @@
+.wmw {
+  overflow-x: hidden;
+  padding-bottom: 10px;
+
+  &__content {
+    position: relative;
+  }
+
+  &__rotate {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    color: #344f10;
+
+    @include onDesktop {
+      margin: 0 0 40px;
+
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__info {
+    margin: 0 0 30px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    &-hidden {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin: 0 0 40px;
+      }
+    }
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__full {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      max-height: 318px;
+    }
+
+    @include onDesktop {
+      min-height: 530px;
+    }
+
+    &-img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      pointer-events: none;
+
+      @include onTablet {
+        width: 110%;
+      }
+
+      @include onDesktop {
+        width: 100%;
+      }
+    }
+  }
+
+  &__half {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      right: -18vw;
+      bottom: 0;
+      height: 430px;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right;
+    }
+  }
+}
