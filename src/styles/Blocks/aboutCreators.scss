@@ -1,0 +1,63 @@
+.aboutCreators {
+
+  &__content-container {
+    position: relative;
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0 0 20px;
+
+    @include onDesktop {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 580px;
+    object-fit: cover;
+    object-position: right;
+
+    &-container {
+      height: 100%;
+      display: none;
+
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include onPad {
+        display: block;
+      }
+    }
+  }
+
+  &__text {
+    &--desktop {
+      @include onDesktop {
+        grid-template-columns: repeat(12, 1fr);
+        grid-column: 2 / 6;
+        column-gap: 24px;
+      }
+    }
+  }
+
+  &__image--desktop {
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      grid-column: 7 / 13;
+      column-gap: 24px;
+    }
+  }
+}

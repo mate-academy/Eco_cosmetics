@@ -1,0 +1,51 @@
+.benefits {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 0;
+      justify-content: space-around;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000;
+
+  }
+
+  &__image {
+    height: 80px;
+    width: max-content;
+    margin: 0 auto;
+    padding-bottom: 20px;
+
+    display: flex;
+
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onDesktop {
+      padding-bottom: 40px;
+    }
+
+    &-item {
+      height: 100%;
+      width: 100%;
+      padding: 0;
+    }
+  }
+}

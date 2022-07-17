@@ -1,0 +1,97 @@
+.ingridients {
+
+  &__content-container {
+    position: relative;
+  }
+
+  &--mobile {
+    display: block;
+
+    @include onPad {
+      display: none;
+    }
+  }
+
+  &--pad {
+    display: none;
+
+    @include onPad {
+      display: block;
+    }
+  }
+
+  &__toothPowder {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+
+    @include onPad {
+      padding-left: -50px;
+    }
+
+    &-titles {
+      padding: 20px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    &-image {
+      height: 100%;
+      background-image: url(../images/jar.svg);
+      background-repeat: no-repeat;
+      background-position: left;
+
+      &-container {
+        height: 400px;
+        flex-grow: 2;
+        overflow-x: hidden;
+      }
+    }
+
+    &--mobile {
+      margin-bottom: 30px;
+    }
+
+    &--desktop {
+      @include onDesktop {
+        grid-template-columns: repeat(12, 1fr);
+        grid-column: 7 / 13;
+        column-gap: 24px;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 100%;
+    padding-right: 20px;
+    box-sizing: border-box;
+    text-align: end;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateX(150%);
+      display: block;
+      background-color: #333;
+      height: 1px;
+      width: 75px;
+    }
+  }
+
+  &__desktop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      grid-column: 2 / 6;
+      column-gap: 24px;
+    }
+  }
+}

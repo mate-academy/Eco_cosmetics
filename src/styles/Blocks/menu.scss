@@ -1,0 +1,77 @@
+.menu {
+  background-color: $colorDarkGrey;
+  z-index: 1;
+
+  @include onPad {
+    padding-top: $headerTopPaddingPad;
+  }
+
+  &__content {
+    padding-top: $headerTopPaddingPhone;
+    box-sizing: border-box;
+    height: 100vh;
+
+    overflow-y: auto;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+
+    padding: 80px 0 0;
+
+    @include onPad {
+      padding: 140px 0 0;
+    }
+
+    &--desktop {
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      gap: 40px;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 30px;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid $colordarkWhite;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+
+    &--desktop {
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__link {
+    list-style: none;
+    text-decoration: none;
+    color: $colordarkWhite;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+
+    &--desktop {
+      font-weight: 500;
+      line-height: 150%;
+      color: $colorDarkGreen;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+.contact {
+  &--pad {
+    display: none;
+
+    @include onPad {
+      display: block;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &-item {
+      border-bottom: 1px solid $colorLightGrey;
+      background: none;
+
+      &:hover {
+        outline: none;
+        border-bottom: 1px solid $colorDarkGrey;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    &-field {
+      display: block;
+      box-sizing: border-box;
+      height: 25px;
+      width: 100%;
+      padding-bottom: 5px;
+      background: none;
+      border: none;
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        text-transform: capitalize;
+      }
+
+      &:hover {
+        outline: none;
+      }
+
+      @include onDesktop {
+        height: 30px;
+        padding-bottom: 10px;
+      }
+
+      &--textarea {
+        height: 70px;
+        resize: none;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        text-transform: capitalize;
+        font-family: inherit;
+      }
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 580px;
+    object-fit: cover;
+    object-position: right;
+
+    &-container {
+      height: 100%;
+      display: none;
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include onPad {
+        display: block;
+      }
+    }
+  }
+
+  &__image--desktop {
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      grid-column: 7 / 13;
+      column-gap: 24px;
+    }
+  }
+
+  &__form--desktop {
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      grid-column: 2 / 7;
+      column-gap: 24px;
+    }
+  }
+}

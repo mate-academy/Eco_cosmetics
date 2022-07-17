@@ -1,0 +1,105 @@
+.welcome {
+  position: relative;
+
+  &::after {
+    display: none;
+
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 40%;
+
+    content: "";
+    background-color: rgba(52, 79, 16, 0.5);
+
+    @include onDesktop {
+      display: block;
+    }
+
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+
+    justify-content: space-between;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__image {
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+
+    &-container {
+      margin-bottom: 25px;
+      height: 260px;
+      flex-grow: 1;
+      
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include onPad {
+        margin-bottom: 50px;
+        height: 500px;
+      }
+
+      @include onDesktop {
+        height: 450px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 130%;
+
+    @include onPad {
+      font-size: 36px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px;
+
+      font-size: 60px;
+      line-height: 130%;
+      text-align: left;
+    }
+  }
+
+  &__action {
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 480px;
+
+    @include onDesktop {
+      margin: 0 20px 0 100px;
+    }
+  }
+
+  &__descrirtion {
+    margin-bottom: 30px;
+
+    @include onPad {
+      margin-bottom: 50px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.welcomeAdd {
+  position: relative;
+  margin-top: 0;
+
+  @include onPad {
+    display: block;
+  }
+
+  &::after {
+    display: none;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    width: 40%;
+
+    content: "";
+    background-color: rgba(52, 79, 16, 0.5);
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__left {
+    padding: 100px 0;
+    margin: 0;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+  }
+
+  &__right {
+    padding: 0;
+    margin: 0;
+
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $colorDarkGreen;
+    text-align: center;
+
+    @include onDesktop {
+      text-align: left;
+      font-size: 24px;
+      padding-top: 100px;
+    }
+  }
+}
