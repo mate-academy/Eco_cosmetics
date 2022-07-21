@@ -1,0 +1,58 @@
+.preview {
+  &__wrapper {
+    box-sizing: border-box;
+    margin: 100px 0;
+    border: 1px solid transparent;
+  }
+
+  @include onDesktop {
+    // padding-bottom: 130px;
+  }
+
+  &__general-title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $mainGreenColor;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+
+  &__desktop-text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  @include onDesktop {
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+    &::before {
+      width: 45%;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      width: 49%;
+    }
+  }
+}

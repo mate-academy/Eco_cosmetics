@@ -1,0 +1,128 @@
+.shop {
+  &__menu-list {
+    display: flex;
+    justify-content: space-between;
+
+    list-style-type: none;
+  }
+
+  &__menu-item {
+    display: inline-block;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $mainGreyColor;
+    }
+
+    @include onTablet {
+      margin-bottom: 24px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__menu-link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+
+    color: #828282;
+    border-bottom: 1px solid transparent;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $mainGreyColor;
+    }
+
+    @include onDesktop {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+
+  &__img {
+    display: none;
+    flex-grow: 1;
+    margin: 0 -20px 24px;
+    width: calc(100% + 40px);
+    height: 267px;
+
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      margin: 0 0 22px;
+      height: 300px;
+      width: 100%;
+    }
+
+    &--mobile {
+      display: block;
+    }
+
+    &--tablet {
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    @include onDesktop {
+      display: block;
+      height: 500px;
+      width: 380px;
+    }
+  }
+
+  &__description {
+    display: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $mainGreyColor;
+
+    &--mobile {
+      display: block;
+    }
+
+    &--tablet {
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__price {
+    display: block;
+    margin-top: 12px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-top: 16px;
+    }
+  }
+}

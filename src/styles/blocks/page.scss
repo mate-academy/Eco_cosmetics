@@ -1,0 +1,214 @@
+.page {
+  &__section {
+    margin: 0 auto 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+
+    &--about-brand {
+      @include onDesktop {
+        padding-top: 200px;
+        box-sizing: border-box;
+        border: 1px solid transparent;
+      }
+    }
+
+    &--ingredients {
+      position: relative;
+      max-width: 1280px;
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 12px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $mainGreenColor;
+
+    &--ingredients {
+      padding: 0 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+      font-size: 36px;
+      line-height: 110%;
+    }
+
+    &--shop {
+      margin-bottom: 20px;
+      text-align: center;
+
+      @include onTablet {
+        margin-bottom: 12px;
+        text-align: left;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 30px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid transparent;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $mainGreenColor;
+
+    text-decoration: none;
+
+    &:hover {
+      border-color: $mainGreenColor;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &--ingredients {
+      position: absolute;
+      margin-left: 20px;
+      transform: translateY(400px);
+
+      @include onTablet {
+        position: static;
+        transform: none;
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__regular-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #333;
+  }
+
+  &__button {
+    width: 100%;
+    height: 60px;
+    margin-top: 30px;
+
+    @include onTablet {
+      width: 280px;
+      margin: 50px auto 0;
+
+      &--section {
+        margin: 50px 0 0;
+      }
+
+      &--contacts {
+        margin: 30px 0 0;
+      }
+    }
+
+    @include onDesktop {
+      margin: 50px 0 0;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      position: absolute;
+      top: -69px;
+      left: 650px;
+
+      transform: none;
+    }
+
+    @media (min-width: 1440px) {
+      left: 734px;
+    }
+  }
+
+  &__side-text {
+    display: none;
+    position: absolute;
+    left: -35px;
+    width: 192px;
+    height: 18px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: rgba(52, 79, 16, 0.5);
+
+    transform: rotate(-90deg);
+
+    @include onDesktop {
+      display: inline-block;
+    }
+
+    &::before {
+      content: "";
+      width: 1px;
+      height: 100px;
+      position: absolute;
+      left: -51px;
+      top: -42px;
+
+      background-color: rgba(52, 79, 16, 0.5);
+      transform: rotate(-90deg);
+
+      @include onDesktop {
+        display: inline-block;
+      }
+    }
+
+    &--brand {
+      top: 1546px;
+    }
+
+    &--shop {
+      top: 2227px;
+    }
+
+    &--creators {
+      top: 3327px;
+    }
+
+    &--ingredients {
+      top: 4244px;
+    }
+
+    &--contacts {
+      top: 5174px;
+    }
+  }
+}
