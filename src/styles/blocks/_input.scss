@@ -1,0 +1,35 @@
+.input {
+  outline: none;
+  box-sizing: border-box;
+  padding: 0;
+  padding-bottom: 5px;
+  width: 100%;
+  color: #828282;
+  border: none;
+  background-color: $mainColor;
+  border-bottom: 1px solid $lightGrey;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  transition-duration: 0.3s;
+  @include onDesktop {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    padding-bottom: 8px;
+  }
+  &:focus {
+    border-color: $secondaryColor;
+  }
+  &:valid {
+    border-color: $green;
+    color: $green;
+  }
+  &:not(:placeholder-shown) {
+    &:invalid {
+      color: #eb5757;
+      border-color: #eb5757;
+    }
+  }
+}

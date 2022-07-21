@@ -1,0 +1,70 @@
+.gifts {
+  // position: relative;
+  &__text {
+    &--1 {
+      display: none;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $grey;
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 42vw;
+        left: 0;
+        top: 822px;
+        background-color: rgba(52, 79, 16, 0.5);
+        @include onScreen {
+          top: 812px;
+        }
+      }
+      @include onDesktop {
+        display: block;
+        margin-top: 312px;
+      }
+      @include onScreen {
+        margin-top: 300px;
+      }
+    }
+    &--2 {
+      margin: 100px auto 0;
+      width: 280px;
+      text-align: start;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 27px;
+      color: $green;
+      &::after {
+        content: "";
+        position: absolute;
+        display: none;
+        height: 1px;
+        width: 53.5vw;
+        right: 0;
+        background-color: rgba(52, 79, 16, 0.5);
+        margin-top: 130px;
+        @include onDesktop {
+          display: block;
+        }
+      }
+      @include onTablet {
+        margin: 130px auto 0;
+        text-align: center;
+      }
+      @include onDesktop {
+        width: 380px;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: start;
+        margin: 316px auto 0;
+      }
+      @include onScreen {
+        margin: 304px auto 0;
+      }
+    }
+  }
+}

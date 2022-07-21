@@ -1,0 +1,117 @@
+.product {
+  position: relative;
+  &__info {
+    margin-top: 102px;
+    @include onTablet {
+      margin-top: 126px;
+    }
+    @include onDesktop {
+      margin-top: 206px;
+    }
+    &-link {
+      display: none;
+      @include onDesktop {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        left: -32px;
+        top: 30px;
+      }
+    }
+    &-title {
+      color: $green;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      width: 280px;
+      @include onDesktop {
+        width: 380px;
+      }
+      @include onDesktop {
+        margin-left: 100px;
+      }
+    }
+    &-list {
+      list-style: none;
+      position: absolute;
+      bottom: 100px;
+      right: 151px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $secondaryColor;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 46px;
+      @include onTablet {
+        bottom: 18px;
+        right: 276px;
+      }
+      @include onDesktop {
+        bottom: 12px;
+        right: 434px;
+      }
+    }
+    &-item {
+      position: relative;
+      width: 103px;
+      text-align: center;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 76px;
+        height: 1px;
+        background-color: $secondaryColor;
+        top: 50%;
+        left: 60px;
+        transform: translateX(50%);
+        margin-left: 20px;
+        @include onDesktop {
+          margin-left: 100px;
+          &::after {
+            content: "123";
+            display: block;
+          }
+        }
+      }
+      &--desktop {
+        display: none;
+        @include onDesktop {
+          display: inline;
+        }
+      }
+      @include onDesktop {
+        width: 180px;
+      }
+    }
+  }
+  &__link {
+    margin: 448px 0 0;
+    @include onTablet {
+      margin: 308px 0 0;
+    }
+    @include onDesktop {
+      margin: 288px 0 0 100px;
+    }
+  }
+  &__img {
+    width: 150px;
+    height: 395px;
+    object-fit: cover;
+    object-position: left bottom;
+    position: absolute;
+    right: -20px;
+    top: 92px;
+    @include onTablet {
+      width: 281px;
+      right: -27px;
+      top: 4px;
+    }
+    @include onDesktop {
+      width: 380px;
+      right: 2px;
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.icon {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  @include hover(transform, scale(1.2));
+  &--menu {
+    height: 13px;
+    width: 20px;
+    background-image: url(../images/icons/menu.svg);
+    @include onDesktop {
+      display: none;
+    }
+  }
+  &--cross {
+    height: 17px;
+    width: 17px;
+    background-image: url(../images/icons/cross.svg);
+  }
+  &--logo {
+    height: 24px;
+    width: 24px;
+    background-image: url(../images/icons/logo.svg);
+    border-radius: 50%;
+    border: 1px solid $green;
+    text-decoration: none;
+    position: relative;
+    @include onDesktop {
+      height: 48px;
+      width: 48px;
+      &::after {
+        content: "witch of mountain winds";
+        color: $green;
+        position: absolute;
+        top: 50%;
+        transform: translate(29%, -50%);
+        width: 210px;
+        font-family: "Poppins", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+    }
+  }
+  &--shop {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icons/shop.svg);
+    @include onDesktop {
+      width: 24px;
+      height: 28px;
+    }
+  }
+  &--facebook {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icons/facebook.svg);
+  }
+  &--insta {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icons/insta.svg);
+  }
+}

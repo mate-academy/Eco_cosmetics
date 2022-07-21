@@ -1,0 +1,159 @@
+.footer {
+  background-color: #8c9772;
+  height: 468px;
+  color: $mainColor;
+  position: relative;
+  @include onTablet {
+    height: 263px;
+  }
+  @include onDesktop {
+    height: 320px;
+  }
+  &__nav {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    width: 60px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    @include onTablet {
+      margin-top: 118px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+    }
+    @include onDesktop {
+      width: 268px;
+      margin-top: 248px;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+    }
+    @include onScreen {
+      margin-top: 242px;
+    }
+  }
+  &__link {
+    @include hover(transform, scale(1.2));
+    &:first-child {
+      margin-top: 30px;
+      @include onDesktop {
+        margin-top: 60px;
+      }
+    }
+    color: $mainColor;
+    text-decoration: none;
+    margin-top: 11px;
+    @include onTablet {
+      margin-top: 14px;
+    }
+    @include onDesktop {
+      margin-top: 60px;
+    }
+  }
+  &__social {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+    margin-top: 20px;
+    @include onDesktop {
+      position: absolute;
+      right: 474px;
+      top: 214px;
+      width: 56px;
+    }
+    @include onScreen {
+      left: 50%;
+    }
+  }
+  &__about {
+    color: $mainColor;
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 40px;
+    position: static;
+    @include onTablet {
+      position: absolute;
+      top: -12px;
+      right: 36px;
+    }
+    @include onDesktop {
+      font-size: 16px;
+      line-height: 24px;
+      top: 22px;
+      right: 146px;
+    }
+    @include onScreen {
+      left: 50%;
+    }
+    &-link {
+      display: block;
+      color: $mainColor;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 21px;
+      @include hover(transform, scale(1.05));
+      @include onDesktop {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      &--email {
+        margin-top: 10px;
+        @include onDesktop {
+          margin-top: 22px;
+        }
+        @include onScreen {
+          margin-top: 18px;
+        }
+      }
+      &--tel {
+        margin-top: 10px;
+        @include onDesktop {
+          margin-top: 14px;
+        }
+        @include onScreen {
+          margin-top: 16px;
+        }
+      }
+    }
+    &-text {
+      &:last-child {
+        margin-top: 8px;
+        @include onDesktop {
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+  &__license {
+    display: block;
+    margin: 46px auto 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    width: 198px;
+    text-align: center;
+    &-desktop {
+      display: none;
+      @include onDesktop {
+        display: inline;
+      }
+    }
+    @include onTablet {
+      width: 100%;
+      text-align: start;
+      margin: 54px auto 0;
+    }
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      text-transform: capitalize;
+      margin: 144px auto 0;
+    }
+  }
+}
