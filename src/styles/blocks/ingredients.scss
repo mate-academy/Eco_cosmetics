@@ -1,0 +1,237 @@
+.ingredients {
+  &__container {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 0 0 0 20px;
+
+    @include onIPad {
+      padding: 0 0 0 27px;
+    }
+
+    @include onTablet {
+      padding: 0 0 0 130px;
+    }
+
+    @include onNotebook {
+      display: flex;
+      gap: 0;
+      padding: 0 50px;
+    }
+
+    @include onDesktop {
+      padding: 0 130px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @include onIPad {
+      margin-bottom: 0;
+      transform: translate(0, 70px);
+    }
+
+    @include onNotebook {
+      font-size: 36px;
+      line-height: 110%;
+      transform: none;
+    }
+  }
+
+  &__item {
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: right;
+    color: #333;
+    margin-right: 10px;
+    padding-top: 38px;
+    width: 103px;
+    transition: color 0.5s;
+    
+    &:nth-child(2) {
+      padding-top: 48px;
+    }
+    
+    &:nth-child(4) {
+      padding-top: 40px;
+    }
+
+    &:nth-child(5) {
+      padding-top: 36px;
+    }
+
+    &:nth-child(6) {
+      padding-top: 46px;
+    }
+
+    @include onIPad {
+      margin-left: 280px;
+    }
+
+    @include onTablet {
+      transition: color 0.5s;
+
+      &:hover {
+        color: rgb(163, 165, 66);
+      }
+    }
+
+    @include onNotebook {
+      margin-left: 38px;
+      margin-right: 20px;
+      width: 162px;
+
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:nth-child(4) {
+        padding-top: 36px;
+      }
+
+      &:nth-child(5) {
+        padding-top: 48px;
+      }
+    }
+
+    @include onDesktop {
+      width: 200px;
+
+      &:nth-child(4) {
+        padding-top: 50px;
+      }
+
+      &:nth-child(5) {
+        padding-top: 48px;
+      }
+    }
+  }
+
+  &__item2 {
+    display: none;
+
+    @include onNotebook {
+      margin-left: 38px;
+
+      display: block;
+      padding-top: 40px;
+
+      font-family: Poppins, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #333;
+      text-align: right;
+
+      margin-right: 10px;
+      width: 162px;
+      transition: color 0.5s;
+  
+      &:hover {
+        color: rgb(163, 165, 66);
+      }
+    }
+
+    @include onDesktop {
+      width: 200px;
+      padding-top: 48px;
+
+    }
+  }
+
+  &__frame {
+    display: block;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__photo {
+    display: block;
+    height: 395px;
+    width: 380px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__learn {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 25px;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #344f10;
+
+    @include onIPad {
+      transform: translate(0, -40px);
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+      transition: all 0.5s;
+
+      &:hover {
+        &::after {
+          position: absolute;
+          display: block;
+          height: 1px;
+          content: "";
+          width: 100%;
+          background: #333;
+          bottom: 0;
+        }
+      }
+    }
+
+    @include onNotebook {
+      height: 30px;
+      transform: translate(-964px, 360px);
+    }
+  }
+
+  &__link {
+    display: none;
+
+    @include onNotebook {
+      display: flex;
+      margin-right: 82px;
+      font-family: Poppins, sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: rgba(52, 79, 16, 0.5);
+
+      text-decoration: none;
+      writing-mode: vertical-rl;
+      transform: scale(-1);
+      left: 0;
+      
+      &:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        background: rgba(52, 79, 16, 0.5);
+        position: absolute;
+        transform: translate(-9px,-110%);
+      }
+    }
+  }
+}

@@ -1,0 +1,163 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background-color: #e5e5e5;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+
+    &--with-slide {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    z-index: 1;
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__brand {
+    margin-bottom: 100px;
+
+    @include onIPad {
+      margin-bottom: 150px;
+    }
+
+    @include onTablet {
+      margin-bottom: 180px;
+    }
+
+    @include onNotebook {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__gifts {
+    margin-bottom: 100px;
+
+    @include onIPad {
+      margin-bottom: 130px;
+    }
+
+    @include onTablet {
+      margin-bottom: 200px;
+
+      &::before {
+        background-color: rgba(52, 79, 16, 0.5);
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: absolute;
+        width: 42%;
+      }
+
+      &::after {
+        background-color: rgba(52, 79, 16, 0.5);
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: absolute;
+        width: 49%;
+        right: 0;
+      }
+    }
+
+    @include onDesktop {
+      &::before {
+        width: 43%;
+      }
+    }
+
+    @include onDesign {
+      &::before {
+        width: 44%;
+      }
+
+      &::after {
+        width: 50%;
+      }
+    }
+
+    @include onDesign {
+      &::before {
+        width: 46%;
+      }
+    }
+  }
+
+  &__about {
+    margin-bottom: 100px;
+
+    @include onIPad {
+      margin-bottom: 130px;
+    }
+
+    @include onTablet {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__slide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    z-index: 1;
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__creators {
+    margin-bottom: 100px;
+
+    @include onIPad {
+      margin-bottom: 63px;
+    }
+
+    @include onTablet {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__ingredients {
+    margin-bottom: 100px;
+
+    @include onIPad {
+      margin-bottom: 110px;
+    }
+
+    @include onNotebook {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__images {
+    margin-bottom: 100px;
+
+    @include onIPad {
+      margin-bottom: 130px;
+    }
+
+    @include onTablet {
+      margin-bottom: 200px;
+    }
+  }
+}

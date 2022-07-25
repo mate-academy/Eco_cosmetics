@@ -1,0 +1,269 @@
+.slide3 {
+  background-color: #e5e5e5;
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: 100vh;
+  
+  &__container {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 15px 20px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+
+    @include onIPad {
+      padding: 24px 28px 30px;
+    }
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+      padding: 40px 50px 81px;
+    }
+
+    @include onNotebook {
+      padding: 40px 0 81px;
+    }
+
+    @include onDesktop {
+      padding: 40px 0 70px;
+    }
+
+    @include onDesign {
+      padding: 40px 0 70px;
+    }
+
+    @include onFullHD {
+      padding: 40px 0 70px;
+    }
+
+    @include onLargeScreens {
+      padding: 40px 200px 70px;
+    }
+
+    &--2 {
+      margin: 0 auto;
+      max-width: 1180px;
+      padding: 0 20px;
+  
+      @include onIPad {
+        display: flex;
+        flex-direction: column;
+        
+        padding: 0 151px;
+      }
+  
+      @include onTablet {
+        padding: 0 278px;
+      }
+  
+      @include onNotebook {
+        padding: 0 365px;
+      }
+  
+      @include onDesktop {
+        padding: 0 445px;
+      }
+  
+      @include onDesign {
+        padding: 0 525px;
+      }
+  
+      @include onFullHD {
+        padding: 0 685px;
+      }
+  
+      @include onLargeScreens {
+        padding: 0 1005px;
+      }
+    }
+  }
+
+  &__logo2 {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 50px;
+      height: 50px;
+      grid-column: 1/7;
+    }
+  }
+
+  &__checkout {
+    margin: 0 auto 20px;
+    max-width: 1180px;
+    padding: 0 20px 5px;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+
+    &::after {
+      display: block;
+      height: 1px;
+      content: "";
+      width: 280px;
+      background: #bdbdbd;
+      bottom: 0;
+    }
+
+    @include onIPad {
+      padding: 0 27px;
+      margin: 36px 0 60px;
+
+      &::after {
+        width: 218px;
+      }
+    }
+
+    @include onTablet {
+      padding: 0 50px;
+    }
+
+    @include onNotebook {
+      padding: 0 76px;
+    }
+
+    @include onDesktop {
+      padding: 0 130px;
+    }
+
+    @include onDesign {
+      padding: 0 210px;
+    }
+
+    @include onFullHD {
+      padding: 0 370px;
+    }
+
+    @include onLargeScreens {
+      padding: 0 890px;
+    }
+  }
+
+  &__payment {
+    margin-bottom: 30px;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  &__choose {
+    margin-bottom: 50px;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #333;
+
+    @include onIPad {
+      margin-bottom: 60px;
+    }
+
+    &--2 {
+      margin-bottom: 40px;
+    }
+
+    &--3 {
+      margin-bottom: 73px;
+    }
+  }
+
+  &__card {
+    margin-bottom: 15px;
+
+    background-image: url(../images/card.svg);
+    height: 31px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  &__delivery {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  &__button {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    
+    background-color: #333;
+    border: none;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    cursor: pointer;
+
+    @include onIPad {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 280px;
+      margin-bottom: 413px;
+    }
+
+    @include onTablet {
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: #e5e5e5;
+        border: 1px solid #333;
+        color: #333;
+      }
+    }
+  }
+}
+
+.card {
+  cursor: pointer;
+  transition: all 0.5s;
+
+  &:hover {
+    .slide3__choose--2 {
+      color: #344f10;
+    }
+
+    .slide3__card {
+      background-image: url(../images/card2.png);
+    }
+  }
+}
+
+.delivery {
+  cursor: pointer;
+  transition: all 0.5s;
+
+  &:hover {
+    .slide3__choose {
+      color: #344f10;
+    }
+  }
+}

@@ -1,0 +1,152 @@
+.brand {
+  &__container {
+    margin: 0 auto;
+    max-width: 1180px;
+
+    @include onTablet {
+      padding: 0 40px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+
+    @include onNotebook {
+      padding: 0 50px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+
+    @include onDesktop {
+      padding: 0 130px ;
+    }
+
+    @include onDesign {
+      padding: 0 210px;
+    }
+
+    @include onFullHD {
+      padding: 0 370px;
+    }
+
+    @include onLargeScreens {
+      padding: 0 690px;
+    }
+  }
+
+  &__frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onIPad {
+      margin-bottom: 50px;
+    }
+
+    @include onTablet {
+      order: 1;
+      grid-column: 7/13;
+    }
+  }
+
+  &__photo {
+    display: block;
+    height: 267px;
+    
+    @include onIPad {
+      height: 500px;
+      width: 714px;
+    }
+
+    @include onTablet {
+      height: 440px;
+    }
+
+    @include onNotebook {
+      height: 451px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    color: #333;
+
+    @include onIPad {
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+      font-size: 40px;
+      line-height: 130%;
+      text-align: left;
+      text-transform: none;
+    }
+
+    @include onNotebook {
+      font-size: 60px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #333;
+
+    @include onIPad {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #333;
+    border: none;
+    text-decoration: none;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    transform: all 0.5s;
+
+    &:hover {
+      background-color: #e5e5e5;
+      border: 1px solid #333;
+      color: #333;
+    }
+
+    @include onIPad {
+      width: 280px;
+    }
+  }
+}

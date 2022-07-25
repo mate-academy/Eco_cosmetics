@@ -1,0 +1,131 @@
+.header {
+  &__container {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 15px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+
+    @include onIPad {
+      padding: 24px 28px 30px;
+    }
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+      padding: 40px 50px 81px;
+    }
+
+    
+    @include onNotebook {
+      padding: 40px 0 81px;
+    }
+
+    @include onDesktop {
+      padding: 40px 0 70px;
+    }
+
+    @include onDesign {
+      padding: 40px 0 70px;
+    }
+
+    @include onFullHD {
+      padding: 40px 0 70px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 20px;
+    height: 13px;
+  
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    &--menu {
+      background-image: url(../images/menu.svg);
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__logo2 {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 50px;
+      height: 50px;
+      grid-column: 1/7;
+    }
+  }
+
+  &__part {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      grid-column: 7/12;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #344f10;
+    transition: all 0.5s;
+
+    &:hover {
+      &::after {
+        position: absolute;
+        display: block;
+        height: 1px;
+        content: "";
+        width: 100%;
+        background: #344f10;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__bag {
+    width: 20px;
+    height: 20px;
+  
+    background-image: url(../images/bag.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      width: 24px;
+      height: 26px;
+      grid-column: 12/13;
+      margin-left: auto;
+    }
+  }
+}
