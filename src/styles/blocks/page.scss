@@ -1,0 +1,52 @@
+@import "../utils";
+
+.page {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  overflow: scroll;
+
+  &__body {
+    margin: 0;
+
+    background-color: $pageBgr;
+    overflow-x: hidden;
+  }
+
+  &__header {
+    height: 100vh;
+  }
+
+  &__menu {
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: transform 0.3s;
+    transform: translateX(-100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__footer {
+    @include onDesktop {
+      width: calc(100% + 70px);
+    }
+  }
+}
