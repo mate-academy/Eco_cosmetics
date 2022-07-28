@@ -1,0 +1,218 @@
+.shopping {
+  background-color: #e4dfd3;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 2;
+  overflow-y: auto;
+  background-repeat: no-repeat;
+  background-size: auto 39%;
+  background-position: 50% 100%;
+  height: 100%;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__priceName {
+    order: 1;
+
+    @include iPhone {
+      grid-column: 2 / 6;
+      order: 2;
+    }
+
+    @include main {
+      grid-column: 7 / 11;
+      order: 2;
+    }
+
+    @include desctop {
+      grid-column: 7 / 11;
+      order: 2;
+    }
+
+    &--name {
+      font-family: "Sharp Sans", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+      margin-top: 12px;
+
+      @include iPhone {
+        font-size: 24px;
+        line-height: 130%;
+        text-transform: none;
+        margin-top: 30px;
+      }
+
+      @include main {
+        font-family: "Avenir", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 130%;
+        text-transform: none;
+        margin-top: 0;
+      }
+
+      @include desctop {
+        font-family: "Avenir", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 130%;
+        text-transform: none;
+        margin-top: 0;
+      }
+    }
+
+    &--price {
+      font-family: "Sharp Sans", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+      margin-top: 5px;
+
+      @include iPhone {
+        color: #344f10;
+        font-size: 18px;
+        line-height: 130%;
+        margin-top: 20px;
+      }
+
+      @include main {
+        font-family: "Avenir", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 130%;
+        margin-top: 20px;
+      }
+
+      @include desctop {
+        font-family: "Avenir", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 130%;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__image {
+    margin-top: 12px;
+    order: 2;
+
+    @include iPhone {
+      grid-column: 2 / 6;
+      order: 1;
+    }
+
+    @include main {
+      grid-column: 1 / 6;
+      order: 5;
+      margin-top: -85%;
+    }
+
+    @include desctop {
+      grid-column: 1 / 6;
+      margin-top: -85%;
+      order: 5;
+    }
+
+    &--4 {
+      width: 100%;
+      height: 248px;
+      object-fit: cover;
+
+      @include iPhone {
+        height: 440px;
+      }
+
+      @include main {
+        height: 468px;
+      }
+
+      @include desctop {
+        height: 468px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-family: "Sharp Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    order: 3;
+
+    @include iPhone {
+      grid-column: 2 / 6;
+      margin-bottom: 80px;
+    }
+
+    @include main {
+      grid-column: 7 / 12;
+      margin-bottom: 0;
+      order: 4;
+    }
+
+    @include desctop {
+      grid-column: 7 / 12;
+      margin-bottom: 0;
+      order: 4;
+    }
+  }
+
+  &__text {
+    order: 4;
+    font-family: "Sharp Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 130%;
+    color: #333;
+    margin-bottom: 20px;
+
+    & span:first-child {
+      color: #344f10;
+    }
+
+    @include iPhone {
+      grid-column: 2 / 6;
+      margin-bottom: 30px;
+    }
+
+    @include main {
+      grid-column: 7 / 12;
+      font-family: "Avenir", sans-serif;
+      font-weight: 400;
+      order: 3;
+      margin-top: 50px;
+    }
+
+    @include desctop {
+      font-family: "Avenir", sans-serif;
+      font-weight: 400;
+      grid-column: 7 / 12;
+      order: 3;
+      margin-top: 50px;
+    }
+  }
+}
