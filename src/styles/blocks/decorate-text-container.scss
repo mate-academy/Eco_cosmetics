@@ -1,0 +1,34 @@
+.decorate-text-container {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    grid-column: 1 / 2;
+    position: relative;
+  }
+
+  &__text {
+    transform-origin: top left;
+    position: absolute;
+    height: 20px;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    font-family: $secondFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+  
+    &::before {
+      content: "";
+      width: 100px;
+      height: 1px;
+      display: block;
+      background-color: rgba(52, 79, 16, 0.5);
+      margin-right: 8px;
+    }
+  }
+}

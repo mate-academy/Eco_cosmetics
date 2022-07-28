@@ -1,0 +1,186 @@
+.powder {
+  &__grid {
+    grid-template-rows: repeat(2, 0fr);
+  }
+
+  &__decorate-text {
+    transform: rotate(-90deg) translateX(-200px);
+    width: 200px;
+
+    @include onDesktop {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    margin-bottom: 37px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+      margin-bottom: 0;
+      width: 250px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      width: 250px;
+      padding-top: 70px;
+    }
+  }
+
+  &__image-container {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    position: relative;
+    justify-self: end;
+    width: 100%;
+    max-width: 320px;
+    height: 397px;
+    box-sizing: border-box;
+    margin-bottom: 21px;
+    padding-top: 40px;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      grid-row: 1 / 3;
+      margin-bottom: 0;
+      margin-left: -80px;
+    }
+
+    @media (min-width: 890px) {
+      margin-left: 0;
+      max-width: 382px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      margin-left: 0;
+      max-width: 382px;
+    }
+  }
+
+  &__image {
+    width: 55%;
+    height: 100%;
+    background-image: url("../images/powder.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+    position: absolute;
+    top: 0;
+    right: -20px;
+
+    @include onTablet {
+      width: 90%;
+      right: -27px;
+    }
+
+    @media (min-width: 970px) {
+      width: 100%;
+      right: 40px;
+    }
+
+    @include onDesktop {
+      right: 0;
+    }
+  }
+
+  &__ingredients {
+    text-align: right;
+    margin-right: 30%;
+
+    @include onTablet {
+      margin-right: 0;
+      position: relative;
+      left: -90px;
+      width: 200px;
+    }
+
+    @media (min-width: 970px) {
+      width: 240px;
+      left: -290px;
+    }
+
+    @include onDesktop {
+      width: 240px;
+      left: -260px;
+    }
+  }
+
+  &__ingredient {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 16px;
+    line-height: 150%;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 76px;
+      background: $dark;
+      margin-left: 12px;
+    }
+
+    @include onDesktop {
+      &::before {
+        content: "";
+        display: block;
+        height: 4px;
+        width: 4px;
+        background-color: $dark;
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    &--kaolin {
+      margin-bottom: 48px;
+    }
+
+    &--sivak {
+      margin-bottom: 44px;
+
+      @include onTablet {
+        margin-bottom: 46px;
+      }
+    }
+
+    &--calcium-carbonate {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 36px;
+      }
+    }
+
+    &--licorice-root {
+      margin-bottom: 52px;
+
+      @include onTablet {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__learn-more {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      grid-row: 2 / 3;
+      align-self: end;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+    }
+  }
+}

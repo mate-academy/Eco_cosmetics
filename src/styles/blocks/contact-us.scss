@@ -1,0 +1,137 @@
+.contact-us {
+  &::before {
+    display: block;
+    content: "";
+    height: 95px;
+    margin: 95px 0 0;
+  }
+
+  &__title {
+    grid-column: 1 / 3;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: lowercase;
+    color: $dark;
+    margin-bottom: 20px;
+    grid-column: 1 / 3;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 2 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / 3;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 3 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__textarea {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    background-color: transparent;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid $lightGrey;
+    padding-bottom: 5px;
+    font-size: 14px;
+    line-height: 21px;
+    color: $dark;
+    margin-bottom: 25px;
+    resize: none;
+
+    @include onDesktop {
+      font-size: 18px;
+      line-height: 27px;
+      padding-bottom: 10px;
+    }
+
+    &--text-area {
+      margin-bottom: 30px;
+      height: 45px;
+
+      @include onDesktop {
+        margin-bottom: 50px;
+        height: 75px;
+      }
+
+      &::placeholder {
+        position: absolute;
+        bottom: 5px;
+
+        @include onDesktop {
+          bottom: 10px;
+        }
+      }
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &::placeholder {
+      font-family: $firstFont;
+      font-size: 14px;
+      line-height: 21px;
+      text-transform: capitalize;
+      color: #828282;
+
+      @include onDesktop {
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      background-image: url("../images/contactUsBg.png");
+      grid-row: 1 / 4;
+      height: 409px;
+    }
+
+    @include onDesktop {
+      height: 584px;
+    }
+  }
+
+  &__decorate-text {
+    transform: rotate(-90deg) translateX(-143px);
+    width: 143px;
+
+    @include onDesktop {
+      grid-column: 1 / 2;
+      grid-row: 1 / 4;
+    }
+  }
+}

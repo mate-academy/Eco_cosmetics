@@ -1,0 +1,152 @@
+.shop-section {
+  &::before {
+    display: block;
+    content: "";
+    height: 95px;
+    margin: -95px 0 0;
+
+    @include onDesktop {
+      height: 150px;
+      margin: -150px 0 0;
+    }
+  }
+
+  &__container {
+    @include onDesktop {
+      width: inherit;
+      overflow: hidden;
+    }
+    
+  }
+
+  &__title {
+    width: fit-content;
+    margin: 0 auto 12px;
+
+    @include onTablet {
+      margin: 0 0 20px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 20px 100px;
+    }
+  }
+
+  &__item-image {
+    margin-bottom: 20px;
+  }
+
+  &__item-name {
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0 20px;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      padding: 0;
+    }
+  }
+
+  &__item-price {
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0 20px;
+
+    @include onTablet {
+      padding: 0;
+    }
+  }
+
+  &__slider {
+    display: none;
+    @include onDesktop {
+      grid-column: 2 / 13;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__grid {
+    box-sizing: border-box;
+    margin-bottom: 78px;
+
+    @include onTablet {
+      padding: 0 27px;
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+      margin: 0 auto 40px;
+      width: 100%;
+      max-width: 1180px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__decorate-text {
+    transform: rotate(-90deg) translateX(-148px);
+    width: 150px;
+  }
+
+  &__decorate-text-container {
+    grid-row: 1 / 2;
+  }
+
+  &__tabs {
+    display: flex;
+    margin-bottom: 22px;
+    justify-content: space-between;
+
+    @include onTablet {
+      justify-content: start;
+    }
+
+    @include onDesktop {
+      margin-bottom: 63px;
+      margin-left: 100px;
+    }
+  }
+
+  &__tab {
+    cursor: pointer;
+    color: $grey;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 10px;
+    transition: all $animationTime;
+
+    &:hover {
+      border-bottom: 1px solid $dark;
+      color: $dark;
+    }
+
+    &--active {
+      border-bottom: 1px solid $dark;
+      color: $dark;
+    }
+
+    @include onTablet {
+      margin-right: 50px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}

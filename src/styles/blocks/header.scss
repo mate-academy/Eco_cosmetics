@@ -1,0 +1,75 @@
+.header {
+  padding-bottom: 12px;
+  box-sizing: border-box;
+  background-color: $pastel;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+
+  @include onTablet {
+    padding-bottom: 30px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 20px;
+  }
+
+  &__row {
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    @include onTablet {
+      padding-top: 23px;
+    }
+  }
+
+  &__open-menu {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    background-color: $dark;
+    height: 100vh;
+    z-index: 1;
+    transition: all 0.3s ease;
+
+    &:target {
+      left: 0;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20px;
+    z-index: 2;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu-line {
+    display: none;
+    
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__shop {
+    transition: all $animationTime;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
