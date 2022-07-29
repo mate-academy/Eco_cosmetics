@@ -1,0 +1,69 @@
+.slogan {
+
+  @include on768px {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__info {
+    display: none;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $c-black;
+
+    @include on1280px {
+      display: inline;
+    }
+
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $c-green;
+
+    @include on768px {
+      justify-self: center;
+      width: 280px;
+    }
+
+    @include on1280px {
+      width: 100%;
+      font-size: 24px;
+    }
+  }
+
+  @include on1280px {
+    text-align: left;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -100px;
+
+      width: calc(50% - 100px);
+      height: 1px;
+      background: rgba(52, 79, 16, 0.5);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -100px;
+
+      width: calc(50%);
+      height: 1px;
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+}

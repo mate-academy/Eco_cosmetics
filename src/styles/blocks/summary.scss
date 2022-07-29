@@ -1,0 +1,29 @@
+.summary {
+  display: none;
+  position: relative;
+
+  @include on1280px {
+    display: inline-block;
+
+    color: rgba(52, 79, 16, 0.5);
+    &__text {
+      position: absolute;
+      width: max-content;
+      transform-origin: left;
+      transform: rotate(-90deg) translateX(-100%);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: calc(100% + 9px);
+
+        width: 88px;
+        height: 1px;
+        
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+
+  }
+}

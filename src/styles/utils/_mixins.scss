@@ -1,6 +1,50 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin on1280px {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin on768px {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media (orientation:landscape) {
+    @content;
+  }
+}
+
+@mixin translateUp {
+  transition: transform 0.5s;
+
   &:hover {
-    #{$_property}: $_toValue;
+    transform: translateY(-5%);
+    overflow: hidden;
+  }
+}
+
+@mixin scale105 {
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(105%);
+  }
+}
+
+@mixin scale115 {
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(115%);
+  }
+}
+
+@mixin underLine {
+  transition: border-bottom 0.5s;
+
+  &:hover {
+    border-bottom: 1px solid white;
   }
 }

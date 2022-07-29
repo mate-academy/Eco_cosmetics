@@ -1,0 +1,89 @@
+.contact-us {
+  gap: 30px;
+
+  &__description {
+    margin-top: 10px;
+    line-height: 150%;
+
+    color: $c-black;
+
+    @include on1280px {
+      margin-top: 30px;
+      font-size: 16px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+
+    outline: none;
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid #bdbdbd;
+
+    @include on1280px {
+      margin-bottom: 30px;
+    }
+
+    &::placeholder {
+      font-size: 14px;
+      color: #828282;
+
+      @include on1280px {
+        font-size: 18px;
+      }
+    }
+
+    &:valid {
+      color: $c-green;
+      border-color: $c-green;
+    }
+
+    &:focus {
+      border-color: $c-black;
+    }
+  }
+
+  &__name {
+    margin-top: 30px;
+
+    @include on1280px {
+      margin-top: 40px;
+    }
+  }
+
+  &__message {
+    margin-top: 45px;
+    margin-bottom: 0;
+
+    @include on1280px {
+      margin-top: 60px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__photo {
+    display: none;
+    width: calc(100% + 27px);
+    height: 430px;
+
+    object-fit: cover;
+    object-position: left;
+
+    @include on768px {
+      display: block;
+    }
+
+    @include on1280px {
+      width: calc(100% + 50px);
+      height: 500px;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.powder {
+
+  &__item {
+    position: relative;
+
+    justify-self: end;
+    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+  }
+
+  &__info {
+    position: absolute;
+    width: max-content;
+    top: 40px;
+    right: 45%;
+
+    cursor: pointer;
+    @include scale115;
+
+    @for $i from 2 through 5 {
+      &--#{$i} {
+        top: calc((66px * #{$i}));
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 20px);
+      display: block;
+      height: 1px;
+      width: 71px;
+
+      background: $c-black;
+    }
+
+    @include on768px {
+      right: 60%;
+    }
+    @include on1280px {
+      right: 70%;
+    }
+
+  }
+
+  &__photo {
+    position: absolute;
+    right: -20px;
+    width: 40%;
+    height: 400px;
+    background-image: url("./../images/powder.png");
+    background-repeat: no-repeat;
+
+    @include on768px {
+      width: 50%;
+    }
+    @include on1280px {
+      width: 58%;
+    }
+  }
+}
