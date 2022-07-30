@@ -1,0 +1,231 @@
+.footer {
+  width: calc(100% + 27px);
+  // height: 320px;
+
+  padding: 60px $mainPaddingX 0;
+
+  margin-top: 80px;
+
+  background: rgba(52, 79, 16, 0.5);
+
+  @include forMobile {
+    padding: 30px 20px 80px;
+    height: 100%;
+  }
+
+  &__content-wrapper {
+    @include limitContentWidth;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 60px;
+
+    @include forTablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+
+      position: relative;
+    }
+
+    @include forMobile {
+      max-width: 280px;
+
+      display: flex;
+      flex-direction: column;
+
+      position: relative;
+    }
+  }
+
+  .nav {
+    &__list {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+
+      padding-left: 0;
+      margin-bottom: 144px;
+
+      position: relative;
+
+      @include forTablet {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        margin: 0;
+      }
+
+      @include forMobile {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        margin: 0;
+      }
+    }
+
+    &__link {
+      @include fontParams(18px, 150%, 500);
+      color: $footerColor;
+      position: relative;
+
+      padding-bottom: 5px;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        border-radius: 4px;
+        background-color: $textColor;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+      }
+
+      @include forTablet {
+        @include fontParams(14px, 150%, 400);
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+
+    @include forMobile {
+      max-width: 200px;
+
+      position: absolute;
+      left: 30px;
+      bottom: -56px;
+    }
+  }
+
+  &__social-link {
+    @include forTablet {
+      position: absolute;
+
+      top: 113px;
+      left: 0;
+    }
+
+    @include forMobile {
+      position: absolute;
+
+      top: 120px;
+    }
+  }
+
+  .social__link-instagram {
+    margin-left: 10px;
+  }
+
+  &__instagram:hover,
+  &__facebook:hover {
+    transform: scale(1.2);
+  }
+
+  &__copyright,
+  &__title {
+    @include fontParams(18px, 150%, 500);
+
+    color: $footerColor;
+
+    @include forTablet {
+      @include fontParams(14px, 150%, 400);
+
+      margin-top: 95px;
+    }
+
+    @include forMobile {
+      @include fontParams(14px, 130%, 600);
+
+      text-align: center;
+    }
+  }
+
+  &__copyright {
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  .country {
+    margin-bottom: 20px;
+
+    @include forTablet {
+      margin-bottom: 7px;
+    }
+  }
+
+  .support {
+    margin-bottom: 20px;
+
+    @include forTablet {
+      margin-bottom: 7px;
+    }
+  }
+
+  .support__info {
+    margin-bottom: 40px;
+  }
+
+  .country,
+  .support,
+  .phone__number,
+  .support__info {
+    @include fontParams(16px, 150%, 400);
+
+    color: $footerColor;
+    display: block;
+
+    transition: transform 0.3s ease-in;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include forTablet {
+      @include fontParams(14px, 150%, 400);
+    }
+
+    @include forMobile {
+      @include fontParams(14px, 150%, 400);
+
+      margin: 10px 0;
+    }
+  }
+
+  &__col-1 {
+    grid-column: 1 / 7;
+
+    @include forTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include forMobile {
+      max-width: 280px;
+    }
+  }
+
+  &__col-2 {
+    grid-column: 7 / -1;
+    margin-top: 16px;
+
+    @include forTablet {
+      grid-column: 4 / -1;
+      margin-top: 0;
+    }
+
+    @include forMobile {
+      margin-top: 80px;
+    }
+  }
+}

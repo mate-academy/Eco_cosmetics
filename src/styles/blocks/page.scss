@@ -1,0 +1,99 @@
+.page {
+  .section__page {
+    display: none;
+    @include forTablet {
+      display: none;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      width: 100vw;
+      height: 100vh;
+
+      padding: $tabletPaddingX;
+
+      background-color: $textColor;
+      transform: translateX(-100%);
+
+      transition: transform 0.3s ease-in;
+
+      &:target {
+        transform: translateX(0);
+        display: block;
+      }
+    }
+
+    @include forMobile {
+      display: none;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      width: 100vw;
+      height: 100vh;
+
+      padding: $mobilePaddingX;
+
+      background-color: $textColor;
+      transition: transform 0.3s ease-in;
+      transform: translateX(-100%);
+
+      &:target {
+        transform: translateX(0);
+        display: block;
+      }
+    }
+  }
+
+  .nav__list-top {
+    @include forTablet {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+
+      row-gap: 40px;
+
+      padding-left: 0;
+      margin-top: 100px;
+
+      text-align: center;
+    }
+
+    @include forMobile {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+
+      row-gap: 40px;
+
+      padding-left: 0;
+      margin-top: 45px;
+
+      text-align: center;
+    }
+  }
+
+  .nav__item-top {
+    @include forTablet {
+      border-bottom: 1px solid $isNotActive;
+      color: $footerColor;
+    }
+
+    @include forMobile {
+      border-bottom: 1px solid $isNotActive;
+      color: $footerColor;
+    }
+  }
+
+  .nav__link-top {
+    @include forTablet {
+      @include fontParams(18px, 130%, 600);
+      color: $footerColor;
+    }
+
+    @include forMobile {
+      @include fontParams(18px, 130%, 600);
+      color: $footerColor;
+    }
+  }
+}

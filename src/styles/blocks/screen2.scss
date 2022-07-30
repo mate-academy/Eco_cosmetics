@@ -1,0 +1,143 @@
+.article__section {
+  @include limitContentWidth;
+
+  // padding: 0 $largePaddingX;
+}
+
+.article__section-wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 30px;
+
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @include forDesktop {
+    display: grid;
+    // grid-template-columns: repeat(12, 1fr);
+  }
+
+  @include forTablet {
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    padding: 0 27px;
+  }
+
+  @include forMobile {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    content: "";
+    width: 530px;
+    height: 1px;
+
+    background: rgba(52, 79, 16, 0.5);
+
+    @include forDesktop {
+      left: 0;
+    }
+
+    @include forTablet {
+      display: none;
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  position: relative;
+
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    content: "";
+    width: 530px;
+    height: 1px;
+
+    background: rgba(52, 79, 16, 0.5);
+
+    @include forDesktop {
+      right: 0;
+    }
+
+    @include forTablet {
+      display: none;
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+}
+
+.article__text {
+  // max-width: 380px;
+  grid-column: 2 / 6;
+  color: #333;
+
+  @include fontParams(16px, 150%, 400);
+
+  @include forDesktop {
+    max-width: 380px;
+    grid-column: 2 / 7;
+  }
+
+  @include forTablet {
+    display: none;
+  }
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.article__title {
+  max-width: 380px;
+  grid-column: 6 / 12;
+  color: #344f10;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  margin-left: 80px;
+
+  @include fontParams(24px, 150%, 600);
+
+  @include forDesktop {
+    // max-width: 380px;
+    grid-column: 7 / -1;
+
+    margin-left: 0;
+  }
+
+  @include forTablet {
+    // grid-template-columns: repeat(2, 1fr);
+    grid-column: 1 /-1;
+    justify-content: center;
+    @include fontParams(18px, 150%, 600);
+    max-width: 280px;
+
+    padding: 30px 0 0;
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  @include forMobile {
+    grid-column: 1 / -1;
+    @include fontParams(18px, 150%, 600);
+    text-align: center;
+    max-width: 280px;
+    padding: 21px 0 100px;
+    margin: 0 auto;
+  }
+}

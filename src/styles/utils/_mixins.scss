@@ -1,6 +1,39 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin limitContentWidth {
+  max-width: $desktopScreen;
+  margin: 0 auto;
+}
+
+@mixin bigLimitContentWidth {
+  max-width: $mainContentWidth;
+  margin: 0 auto;
+}
+
+@mixin fontParams($fontSize, $lineHeight, $fontWeight: 400) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+}
+
+@mixin forDesktop {
+  @media (max-width: $desktopScreen) {
+    @content;
+  }
+}
+
+@mixin forHideImage {
+  @media (max-width: $hideImageScreen) {
+    @content;
+  }
+}
+
+@mixin forTablet {
+  @media (max-width: $tabletScreen) and (min-width: $mobileScreen) {
+    @content;
+  }
+}
+
+@mixin forMobile {
+  @media (max-width: $mobileScreen) {
+    @content;
   }
 }

@@ -1,0 +1,234 @@
+.main__about-brand {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 20px;
+
+  margin-left: 10px;
+
+  position: relative;
+
+  @include forTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    // columns: 2 342px;
+    column-gap: 30px;
+  }
+}
+
+.main__col-1 {
+  grid-column: 2 / 6;
+
+  max-width: 380px;
+
+  @include forTablet {
+    // max-width: 342px;
+
+    grid-column: 1 / 4;
+
+    margin-left: 0;
+  }
+
+  @include forMobile {
+    grid-column: 1 / -1;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+.main__rotated-text {
+  @include fontParams(14px, 130%, 500);
+
+  position: absolute;
+  top: 175px;
+  left: 0;
+
+  transform: rotate(270deg);
+  transform-origin: 0 0;
+
+  margin: 0;
+  color: rgba(52, 79, 16, 0.5);
+
+  // @include forDesktop {
+  //   grid-column: 1;
+  // }
+
+  @include forTablet {
+    display: none;
+  }
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.main__side-line {
+  width: 1px;
+  height: 100px;
+
+  background: rgba(52, 79, 16, 0.5);
+
+  transform-origin: 0 0;
+
+  position: absolute;
+  left: 10px;
+  top: 185px;
+
+  @include forTablet {
+    display: none;
+  }
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.main__about-title {
+  @include fontParams(36px, 110%, 600);
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $greenColor;
+  margin: 0;
+
+  @include forTablet {
+    @include fontParams(24px, 150%, 600);
+    letter-spacing: 0.05em;
+  }
+
+  @include forMobile {
+    @include fontParams(24px, 150%, 600);
+    letter-spacing: 0.05em;
+  }
+}
+
+.main__about-text {
+  @include fontParams(16px, 150%, 400);
+
+  margin-top: 34px;
+  margin-bottom: 40px;
+
+  color: $textColor;
+
+  @include forTablet {
+    @include fontParams(16px, 150%, 400);
+    // width: 342px;
+
+    margin-top: 10px;
+    margin-bottom: 27px;
+  }
+
+  @include forMobile {
+    @include fontParams(14px, 150%, 400);
+
+    margin-top: 10px;
+    margin-bottom: 27px;
+  }
+
+  &:nth-of-type(3) {
+    @include forTablet {
+      display: none;
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+}
+
+.main__learn-more-button {
+  @include fontParams(14px, 130%, 500);
+
+  color: $greenColor;
+
+  border-bottom: 1px solid $greenColor;
+  padding-bottom: 10px;
+
+  &:hover {
+    color: rgba(36, 62, 3, 0.5);
+    border-bottom: 1px solid rgba(36, 62, 3, 0.5);
+  }
+}
+
+.main__col-2 {
+  grid-column: 7 / 12;
+  position: relative;
+  // gap: 20px;
+
+  @include forHideImage {
+    grid-column: 7 / -1;
+    width: calc(100% + 25px);
+  }
+
+  @include forTablet {
+    grid-column: 4 / -1;
+
+    width: calc(100% + 27px);
+  }
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.main__col-3 {
+  grid-column: 12 / -1;
+
+  @include forHideImage {
+    display: none;
+  }
+
+  @include forTablet {
+    display: none;
+  }
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.main__image-2 {
+  background-image: url("/images/main-image-mini.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  // padding-right: 480px;
+  padding-top: 430px;
+  margin-top: 99px;
+
+  transition: transform 0.5s ease-in;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  @include forTablet {
+    display: none;
+  }
+}
+
+.main__image-1 {
+  background-image: url("/images/main-image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 529px;
+  // padding-left: 480px;
+
+  transition: transform 0.5s ease-in;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  // @include forDesktop {
+  //   max-width: 369px;
+  // }
+
+  @include forTablet {
+    // max-width: 369px;
+    // height: 318px;
+    padding-top: 369px;
+    // transform: translateX(27px);
+  }
+}

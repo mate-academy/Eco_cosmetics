@@ -1,0 +1,217 @@
+.main {
+  &__contact-wrapper {
+    @include limitContentWidth;
+
+    margin-top: 53px;
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 60px;
+
+    @include forTablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include forMobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__contact-col-1 {
+    max-width: 480px;
+    grid-column: 2 / 7;
+
+    @include forTablet {
+      grid-column: 1 / 4;
+      max-width: 342px;
+    }
+
+    @include forMobile {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__contact-col-2 {
+    // max-width: 480px;
+    grid-column: 7 / -1;
+
+    @include forTablet {
+      grid-column: 4 / -1;
+      width: calc(100% + 50px);
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  &__contact-image {
+    background-image: url("/images/help-bird.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 584px;
+
+    // transform: translateX(65px);
+    @include forTablet {
+      padding-top: 409px;
+    }
+
+    transition: transform 0.5s ease-in;
+    &:hover {
+      cursor: pointer;
+      transform: scale(0.9);
+    }
+  }
+
+  &__contact-rotated-text {
+    @include fontParams(14px, 130%, 500);
+
+    position: absolute;
+    top: 35px;
+    left: 10px;
+
+    transform: rotate(270deg);
+    transform-origin: 0 0;
+
+    margin: 0;
+    color: rgba(52, 79, 16, 0.5);
+
+    @include forTablet {
+      display: none;
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  &__contact-side-line {
+    width: 1px;
+    height: 100px;
+
+    background: rgba(52, 79, 16, 0.5);
+
+    transform-origin: 0 0;
+
+    position: absolute;
+    top: 45px;
+    left: 20px;
+
+    @include forTablet {
+      display: none;
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  &__contact-title {
+    @include fontParams(36px, 110%, 600);
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $greenColor;
+    margin: 0;
+
+    @include forTablet {
+      @include fontParams(24px, 150%, 600);
+    }
+
+    @include forMobile {
+      @include fontParams(24px, 150%, 600);
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &__contact-text {
+    @include fontParams(15px, 150%, 400);
+
+    color: $textColor;
+
+    margin: 30px 0 40px;
+
+    max-width: 380px;
+
+    @include forTablet {
+      margin: 10px 0 20px;
+    }
+
+    @include forMobile {
+      @include fontParams(14px, 150%, 400);
+    }
+  }
+
+  .contact__name,
+  .contact__email,
+  .contact__number,
+  .contact__message {
+    width: 100%;
+    border: none;
+
+    border-bottom: 1px solid #bdbdbd;
+    background: transparent;
+
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+
+    @include fontParams(14px, 150%, 500);
+    font-family: "Poppins", sans-serif;
+    color: $isNotActive;
+
+    @include forTablet {
+      margin-bottom: 25px;
+    }
+  }
+
+  .contact__message {
+    margin: 0;
+    padding-bottom: 15px;
+  }
+
+  .contact__name::placeholder,
+  .contact__email::placeholder,
+  .contact__message::placeholder,
+  .contact__number::placeholder {
+    font-family: "Poppins", sans-serif;
+    @include fontParams(18px, 150%, 500);
+
+    color: $isNotActive;
+  }
+
+  &__contact-button {
+    @include fontParams(16px, 130%, 600);
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $buttonColor;
+
+    // max-width: 280px;
+    height: 60px;
+    padding: 0 40px;
+    margin-top: 50px;
+    transition: background 0.3s ease-in;
+
+    background-color: $textColor;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+      color: $textColor;
+      background: $buttonColor;
+      box-shadow: 0 0 11px rgba(33,33,33,0.2);
+    }
+
+    @include forTablet {
+      margin-top: 30px;
+    }
+
+    @include forMobile {
+      margin-top: 35px;
+    }
+  }
+}
