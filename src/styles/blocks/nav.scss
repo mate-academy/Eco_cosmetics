@@ -1,0 +1,34 @@
+.nav {
+  display: none;
+
+  @include onDesktop1280 {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin: 0 40px 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: $colorGreen;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+
+    @include hover(border-color, $colorGreen);
+  }
+}

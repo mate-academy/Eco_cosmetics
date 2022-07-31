@@ -1,0 +1,100 @@
+.about-creators {
+  &__subtitle {
+    position: absolute;
+    top: 120px;
+    left: -62px;
+
+    @include onDesktop1440 {
+      left: 16px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    @include onDesktop1280 {
+      margin: 0 0 34px;
+    }
+
+    @include onDesktop1440 {
+      margin-bottom: 0 0 40px;
+    }
+  }
+
+  &__paragraphs-wrapper {
+    margin-bottom: 30px;
+
+    @include onIpad {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0 0 20px;
+    font-size: 14px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include onIpad {
+      margin: 0 0 16px;
+      font-size: 16px;
+    }
+
+    @include onDesktop1280 {
+      margin: 0 0 30px;
+    }
+
+    &--on-desktop {
+      display: none;
+
+      @include onDesktop1280 {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 0 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $colorGreen;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-color, $colorGreen);
+    margin-bottom: 25px;
+
+    @include onIpad {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop1280 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onIpad {
+      display: block;
+      width: 100%;
+      height: 435px;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include onDesktop1280 {
+      width: 100%;
+      height: 669px;
+    }
+
+    @include hover(transform, scale(1.05));
+  }
+}

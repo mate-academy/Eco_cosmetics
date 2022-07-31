@@ -1,0 +1,95 @@
+.powder {
+  &__subtitle {
+    position: absolute;
+    top: 100px;
+    left: -48px;
+
+    @include onDesktop1440 {
+      left: 46px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+
+    @include onIpad {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: end;
+    column-gap: 20px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 30px 0 0;
+    list-style: none;
+
+    &-item {
+      position: relative;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: right;
+      color: $colorGray;
+
+      &:nth-child(2n + 1) {
+        margin: 0 0 52px;
+      }
+
+      &:nth-child(2n) {
+        margin: 0 0 49px;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    width: 182px;
+    height: 397px;
+    margin-right: -20px;
+
+    @include onIpad {
+      width: 398px;
+      margin-right: -27px;
+    }
+
+    @include onDesktop1280 {
+      width: 480px;
+      height: 398px;
+      margin: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: -44px center;
+
+    @include onIpad {
+      object-position: left;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 0 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $colorGreen;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-color, $colorGreen);
+  }
+}

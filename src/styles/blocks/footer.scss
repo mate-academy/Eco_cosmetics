@@ -1,0 +1,119 @@
+.footer {
+  position: relative;
+  height: 468px;
+  padding-top: 30px;
+  background-color: rgba(52, 79, 16, 0.5);
+
+  @include onIpad {
+    height: 263px;
+  }
+
+  @include onDesktop1280 {
+    height: 320px;
+    padding-top: 60px;
+  }
+
+  &__nav {
+    display: block;
+    margin-bottom: 80px;
+
+    @include onIpad {
+      margin-bottom: 90px;
+    }
+
+    @include onDesktop1280 {
+      margin-bottom: 0;
+    }
+
+    &-item {
+      margin: 0 0 10px;
+
+      @include onIpad {
+        margin: 0 0 15px;
+      }
+
+      @include onDesktop1280 {
+        margin: 0 40px 0 0;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop1280 {
+      flex-direction: row;
+    }
+  }
+
+  &__link {
+    color: $colorBackground;
+    text-decoration: none;
+
+    @include hover(color, $colorGreen);
+  }
+
+  &__social-link {
+    position: absolute;
+    top: 154px;
+    left: 20px;
+
+    display: flex;
+    column-gap: 20px;
+    margin-bottom: 40px;
+
+    @include onIpad {
+      margin-bottom: 0;
+      top: 160px;
+      left: 27px;
+    }
+
+    @include onDesktop1280 {
+      position: static;
+      transform: none;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #e4dfd3;
+
+    &:last-child {
+      margin: 0 0 40px;
+
+      @include onIpad {
+        margin: 0;
+      }
+
+      @include onDesktop1280 {
+        margin: 0 0 30px;
+      }
+    }
+
+    @include onDesktop1280 {
+      margin: 0 0 20px;
+      font-size: 16px;
+    }
+
+    &--copiright {
+      padding: 0 40px;
+      text-align: center;
+
+      @include onIpad {
+        padding: 0;
+        text-align: left;
+      }
+    }
+  }
+
+  &__copyright {
+    display: none;
+
+    @include onDesktop1280 {
+      display: inline;
+    }
+  }
+}

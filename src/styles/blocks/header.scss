@@ -1,0 +1,84 @@
+.header {
+  padding-top: 20px;
+
+  @include onIpad {
+    padding-top: 28px;
+  }
+
+  @include onDesktop1280 {
+    padding-top: 40px;
+  }
+
+  &__top-actions {
+    margin-bottom: 26px;
+
+    @include onIpad {
+      margin-bottom: 36px;
+    }
+
+    @include onDesktop1280 {
+      margin-bottom: 92px;
+    }
+
+    @include onDesktop1440 {
+      margin-bottom: 82px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include onDesktop1280 {
+      display: grid;
+    }
+  }
+
+  &__text {
+    margin: 0 0 30px;
+    text-align: center;
+
+    @include onIpad {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop1280 {
+      text-align: left;
+    }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+
+    @include onDesktop1280 {
+      display: block;
+    }
+  }
+
+  &__image-wrapper {
+    margin: 0 -20px;
+
+    @include onIpad {
+      margin: 0;
+    }
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__image {
+    width: 100%;
+    height: 267px;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include onIpad {
+      height: 500px;
+    }
+
+    @include onDesktop1280 {
+      height: 451px;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.menu {
+  height: 100vh;
+  padding-top: 20px;
+  background-color: $colorGray;
+
+  @include onIpad {
+    padding-top: 28px;
+  }
+
+  @include onDesktop1280 {
+    display: none;
+  }
+
+  &__cross {
+    margin-bottom: 46px;
+
+    @include onIpad {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 0;
+    margin: 0 0 30px;
+    text-align: center;
+
+    @include onIpad {
+      margin: 0 0 50px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: calc(100vw - 40px);
+      height: 1px;
+      margin-top: 10px;
+      background-color: #828282;
+
+      @include onIpad {
+        width: calc(100vw - 54px);
+      }
+    }
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    color: $colorBackground;
+    text-decoration: none;
+
+    @include hover(color, #828282);
+  }
+}

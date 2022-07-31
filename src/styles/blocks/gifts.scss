@@ -1,0 +1,62 @@
+.gifts {
+  position: relative;
+  padding: 100px 0;
+
+  @include onDesktop1280 {
+    &::before {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      width: 42%;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 50%;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $colorGreen;
+    text-decoration: none;
+
+    @include onIpad {
+      display: grid;
+      justify-items: center;
+    }
+
+    @include onDesktop1280 {
+      font-size: 24px;
+      justify-items: left;
+      text-align: left;
+    }
+  }
+
+  &__paragraph {
+    position: relative;
+    display: none;
+    margin: 0;
+
+    @include onDesktop1280 {
+      display: block;
+    }
+  }
+}
