@@ -61,25 +61,32 @@
 
   &__section-label {
     display: none;
+    cursor: default;
     @extend %decorative;
     opacity: 0.5;
-    transform: rotate(-90deg);
-    transform-origin: left top;
+    transform: rotate(-90deg) translateX(calc(-100% - 8px));
+    transform-origin: 10px center;
 
-    // @include hover (transform (scale(1.2) rotate(-90deg)));
+    @include hover (
+      transform (
+        scale(1.1)
+        rotate(-90deg)
+        translateX(calc(-100% - 8px))
+      )
+    );
 
     &::before {
       content: "";
-      display: block;
+      display: inline-block;
       width: 100px;
       height: 1px;
       background-color: $c-green;
       opacity: 0.5;
-      margin: 0 0 8px 120px;
+      margin: 0 10px 4px 0;
     }
 
-    // @include onDesktop {
-    //   display: flex;
-    // }
+    @include onDesktop {
+      display: inline-block;
+    }
   }
 }
