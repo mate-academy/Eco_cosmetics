@@ -1,0 +1,36 @@
+.desktop-menu {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+
+  @include onDesktop-1280 {
+    order: 2;
+  }
+
+  &__list {
+    display: none;
+    margin: 0;
+    padding: 0;
+
+    @include onDesktop-1280 {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      align-self: center;
+    }
+  }
+
+  &__item {
+    padding-right: 40px;
+
+    &:last-child {
+      padding: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @extend %menu-text;
+    color: $darkgreen;
+  }
+}
