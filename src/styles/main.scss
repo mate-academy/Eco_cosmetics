@@ -1,7 +1,137 @@
 @import "utils";
-@import "fonts";
-@import "typography";
+@import "blocks/logo-icon.scss";
+@import "blocks/top-action.scss";
+@import "blocks/button.scss";
+@import "blocks/grid.scss";
+@import "blocks/menu.scss";
+@import "blocks/footer.scss";
+@import "blocks/header.scss";
+@import "blocks/intro.scss";
+@import "blocks/about-brand.scss";
+@import "blocks/shop.scss";
+@import "blocks/side-text.scss";
+@import "blocks/product.scss";
+@import "blocks/toothpaste.scss";
+@import "blocks/benefits.scss";
+@import "blocks/form-field.scss";
+@import "blocks/contact-us.scss";
 
-body {
-  background: $c-gray;
+.page {
+  scroll-behavior: smooth;
+  
+  &__section {
+    max-width: 1080px;
+    position: relative;
+    margin-bottom: 100px;
+    scroll-behavior: smooth;
+
+    &--line {
+      display: none;
+      padding: 100px 0 200px 0;
+
+      &__second {
+        text-align: right;
+      }
+
+      @include onDeskTop {
+        display: block;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDeskTop {
+      margin: 0 auto 200px auto;
+      max-width: 1180px;
+    }
+  }
+
+  &--title {
+    margin: 0 0 30px 0;
+    font-size: 24px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDeskTop {
+      text-align: left;
+      font-size: 36px;
+      line-height: 39px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #344F10;
+    font-size: 14px;
+    margin-right: 40px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid #344f10;
+    }
+  }
+
+  &__end-section {
+    left: 0;
+    bottom: 0;
+  }
+
+  &__body {
+    margin: 0;
+    background: $c-gray;
+    font-family:  'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+      overflow: hidden;
+    }
+  }
+}
+
+.container {
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 714px;
+
+  @include onDeskTop {
+    max-width: 1180px;
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+h3 {
+  margin: 0;
 }

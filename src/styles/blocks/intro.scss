@@ -1,0 +1,51 @@
+.intro-container {
+  height: 100%;
+  padding: 0 20px;
+  margin-bottom: 100px;
+  justify-content: center;
+
+  @include onDeskTop {
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex-direction: row-reverse;
+  }
+
+  &--general {
+    margin: 0 auto;
+    text-align: left;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    color: #344f10;
+
+    text-transform: uppercase;
+
+    @include onTablet {
+      text-align: center;
+      width: 280px;
+    }
+
+    @include onDeskTop {
+      width: #{$box-header-width};
+      margin: 0;
+      text-align: left;
+    }
+  }
+
+  &--desktop {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    width: #{$box-header-width};
+
+    display: none;
+
+    @include onDeskTop {
+      display: block;
+      text-align: left;
+    }
+  }
+}
