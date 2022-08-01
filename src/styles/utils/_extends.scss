@@ -1,4 +1,78 @@
 %h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
+}
+
+body {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+a {
+  margin: 0;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+%title-text {
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #344f10;
+
+  @include onDesktop {
+    font-size: 36px;
+    line-height: 110%;
+  }
+}
+
+h1,
+h2 {
+  display: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  margin: 0;
+}
+
+.mobile {
+  display: none;
+
+  @include onMobile {
+    display: block;
+  }
+}
+
+.tablet {
+  display: none;
+
+  @include onTablet {
+    display: block;
+  }
+}
+
+.desktop {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+  }
+}
+
+%img-hover {
+  transition: transform 1s;
+  
+  &:hover {
+    transform: scale(1.06);
+  }
 }

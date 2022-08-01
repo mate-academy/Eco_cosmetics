@@ -1,0 +1,122 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px 0 20px;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: 50% 1fr #{$icon-width};
+    padding: 23px 0 30px;
+  }
+
+  @include onDesktop {
+    padding: 40px 0 81px;
+  }
+
+  @include onDesktopLarge {
+    padding: 40px 0 70px;
+  }
+
+  &__menu-opener {
+    display: block;
+    height: 13px;
+    background-image: url(../images/menu-opener.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    display: block;
+    background-image: url(../images/logo-small.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+    }
+    
+    @include onDesktopLarge {
+      width: 50px;
+      height: 50px;
+    }
+
+    &__tooltip {
+      opacity: 0;
+      @include onDesktop {
+        display: block;
+        position: absolute;
+
+        width: max-content;
+        padding-right: 20px;
+        padding-left: 12px;
+
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+  
+        font-size: 14px;
+        line-height: 130%;
+        color: #292929;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 1;
+        pointer-events: none;
+  
+        transition: opacity 0.3s;
+      }
+    }
+  
+  }
+
+  &__list {
+    display: none;
+    list-style-type: none;
+     
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #344f10;
+
+    border: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: inherit;
+    }
+  }
+
+  &__shopping {
+    display: block;
+    height: 24px;
+    background-image: url(../images/shopping-bag.svg);
+
+    @include onTablet {
+      width: 17px;
+      height: 20px;
+    }
+
+    @include onDesktop {
+      width: 22px;
+      height: 26px;
+    }
+  }
+}
