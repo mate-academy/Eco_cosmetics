@@ -1,4 +1,5 @@
 'use strict';
+document.getElementById('submit').reset();
 
 document.querySelectorAll('a.products__link').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
