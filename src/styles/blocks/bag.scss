@@ -1,0 +1,195 @@
+.bag {
+  background-color: $beige-color;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  overflow-y: auto;
+  z-index: 1;
+
+  &:target {
+    overflow: hidden;
+    transform: translateX(0);
+  }
+
+  @include on1280 {
+    display: none;
+  }
+
+  &__container {
+    margin: 0 auto;
+    width: 280px;
+    
+    @include on768 {
+      width: 714px;
+    }
+  }
+
+  &__nav {
+    margin-top: 15px;
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    @include on768 {
+      margin-top: 20px;
+      width: 714px;
+    }
+  
+    &--link {
+      &-menu {
+        width: 20px;
+        height: 13px;
+      }
+  
+      &-logo {
+        width: 24px;
+        height: 24px;
+      }
+  
+      &-shop {
+        width: 17px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__card {
+    margin-top: 20px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+  
+    @include on768 {
+      width: 466px;
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+  
+    &--320 {
+      @include on768 {
+        display: none;
+      }
+    }
+  
+    &--768 {
+      display: none;
+      @include on768 {
+        display: flex;
+      }
+    }
+  
+    &--name {
+      font-family: "Sharp Sans No2", serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $black-color;
+    
+      @include on768 {
+        order: 1;
+        margin-top: 27px;
+      }
+    }
+  
+    &--price {
+      margin-top: 10px;
+      font-family: "Sharp Sans No2", serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $black-color;
+    
+      @include on768 {
+        margin-top: 25px;
+        order: 2;
+        font-family: "Sharp Sans No2", serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $green-color;
+      }
+    }
+  
+    &--weight {
+      font-family: "Sharp Sans No2", serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $black-color;
+    
+      @include on768 {
+        margin-top: 10px;
+        order: 3;
+      }
+    }
+  
+    &--photo {
+      margin-top: 20px;
+      width: 280px;
+      height: 248px;
+    
+      @include on768 {
+        margin-top: 0;
+        width: 466px;
+        height: 440px;
+        order: 0;
+      }
+    }
+  }
+
+  &__text {
+    font-family: "Sharp Sans No2", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $black-color;
+  
+    @include on768 {
+      font-size: 16px;
+      width: 466px;
+      margin: 0 auto;
+      text-align: justify;
+    }
+  
+    &-1 {
+      margin-top: 50px;
+    
+      @include on768 {
+        margin-top: 60px;
+      }
+    }
+  
+    &-2 {
+      margin-top: 20px;
+    
+      @include on768 {
+        margin-top: 25px;
+      }
+    }
+  
+    &-3 {
+      color: $green-color;
+    }
+  
+    &-4 {
+      color: $green-color;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+.send {
+  &__input {
+    align-self: flex-end;
+    width: 100%;
+    background-color: $beige-color;
+    font-family: "Sharp Sans No2", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #828282;
+    border: none;
+    border-bottom: 1px solid $lightgray;
+    outline: none;
+    
+    &:focus {
+      color: $gray-color;
+      border-bottom: 1px solid $lightgray;
+    }
+  
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      font-size: 15px;
+      -webkit-text-fill-color: #828282;
+      -webkit-box: 0 0 0 1000px $beige-color;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  
+    @include on768 {
+      font-weight: 500;
+    }
+  
+    @include on1280 {
+      font-size: 18px;
+    }
+  
+    &--name {
+      margin-top: 30px;
+      grid-column: 1/-1;
+      grid-row: 3/4;
+      
+      @include on768 {
+        grid-column: 1/4;
+      }
+    
+      @include on1280 {
+        grid-column: 1/7;
+        margin-top: 0;
+      }
+    
+      @include on1440 {
+        grid-column: 2/7;
+      }
+    }
+  
+    &--email {
+      margin-top: 30px;
+      grid-column: 1/-1;
+      grid-row: 4/5;
+    
+      @include on768 {
+        grid-column: 1/4;
+      }
+    
+      @include on1280 {
+        grid-column: 1/7;
+        margin-top: 0;
+      }
+    
+      @include on1440 {
+        grid-column: 2/7;
+      }
+    }
+  
+    &--tel {
+      margin-top: 30px;
+      grid-column: 1/-1;
+      grid-row: 5/6;
+    
+      @include on768 {
+        grid-column: 1/4;
+      }
+    
+      @include on1280 {
+        grid-column: 1/7;
+        margin-top: 0;
+      }
+      @include on1440 {
+        grid-column: 2/7;
+      }
+    }
+  }
+
+  &__textarea {
+    align-self: flex-end;
+    width: 100%;
+    resize: none;
+    background-color: $beige-color;
+    font-family: "Sharp Sans No2", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #828282;
+    border: none;
+    border-bottom: 1px solid $lightgray;
+    outline: none;
+  
+    &::placeholder {
+      transform: translateY(100%);
+    }
+  
+    &:focus {
+      color: $gray-color;
+      border-bottom: 1px solid $lightgray;
+      opacity: 1;
+    }
+  
+    @include on768 {
+      font-weight: 500;
+    }
+  
+    @include on1280 {
+      font-size: 18px;
+    }
+  
+    &-message {
+      margin-top: 30px;
+      grid-column: 1/-1;
+      grid-row: 6/7;
+  
+      @include on768 {
+        grid-column: 1/4;
+      }
+      
+      @include on1280 {
+        grid-column: 1/7;
+        margin-top: 0;
+      }
+      
+      @include on1440 {
+        grid-column: 2/7;
+      }
+    }
+  }
+}

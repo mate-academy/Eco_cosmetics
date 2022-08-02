@@ -1,0 +1,148 @@
+.confirmation {
+  background-color: $beige-color;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  overflow-y: auto;
+  z-index: 1;
+
+  &:target {
+    overflow: hidden;
+    transform: translateX(0);
+  }
+
+  @include on1280 {
+    display: none;
+  }
+
+  &__container {
+    margin: 0 auto;
+    width: 280px;
+    
+    @include on768 {
+      width: 714px;
+    }
+  }
+
+  &__nav {
+    margin-top: 15px;
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+  
+    @include on768 {
+      margin-top: 20px;
+      width: 714px;
+    }
+  
+    &--link {
+      &-menu {
+        width: 20px;
+        height: 13px;
+      }
+  
+      &-logo {
+        width: 24px;
+        height: 24px;
+      }
+  
+      &-shop {
+        width: 17px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__checkout {
+    margin-top: 20px;
+    width: 280px;
+    border-bottom: 1px solid $lightgray;
+    padding-bottom: 5px;
+    font-family: "Sharp Sans No2", serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333333;
+  
+    @include on768 {
+      margin-top: 60px;
+      width: 218px;
+    }
+  }
+
+  &__title {
+    margin-top: 26px;
+    text-align: center;
+    font-family: "Sharp Sans No2", serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $black-color;
+  
+    @include on768 {
+      margin-top: 66px;
+    }
+  }
+
+  &__text {
+    width: 280px;
+    margin: 0 auto;
+    margin-top: 67px;
+    font-family: "Sharp Sans No2", serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    color: $black-color;
+  
+    @include on768 {
+      width: 466px;
+      margin-top: 80px;
+    }
+  }
+
+  &__link {
+    margin-top: 142px;
+    text-align: center;
+  
+    @include on768 {
+      margin-top: 51px;
+    }
+  
+    &--hyper {
+      text-decoration: none;
+      font-family: "Sharp Sans No2", serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 150%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $black-color;
+      border-bottom: 1px solid $black-color;
+      padding-bottom: 5px;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 40px;
+    height: 52px;
+  }
+}
