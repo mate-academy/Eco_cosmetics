@@ -1,0 +1,96 @@
+.footer {
+  background-color: $colorLightGreen;
+  height: 468px;
+
+  @include onDesktop {
+    height: 320px;
+  }
+
+  &__menu {
+    @extend %inputs-menu-all-screen;
+    margin-top: 30px;
+  }
+
+  &__menu-list {
+    margin: 0;
+    padding: 30px 0 10px;
+    list-style: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__menu-item {
+    padding-bottom: 10px;
+  }
+
+  &__menu-link {
+    display: inline-block;
+    text-transform: capitalize;
+    text-decoration: none;
+
+    color: $colorBeige;
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(140%) saturate(140%);
+    }
+  }
+
+  &__social-links {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      order: 10;
+    }
+  }
+
+  &__info-content {
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+
+  }
+  &__info {
+    display: block;
+    text-decoration: none;
+    color: $colorBeige;
+    margin-bottom: 10px;
+
+    @extend %small-text;
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    &--last {
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    transition: all 400ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(140%) saturate(140%);
+    }
+  }
+
+  &__copyright {
+    color: $colorBeige;
+    text-align: center;
+    text-transform: capitalize;
+
+    @extend %copyright;
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+}

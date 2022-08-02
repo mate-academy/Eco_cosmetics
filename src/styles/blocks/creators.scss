@@ -1,0 +1,76 @@
+.creators {
+  &__image {
+    display: none;
+
+    @include onDesktop {
+      display: grid;
+      width: 580px;
+      height: 669px;
+
+      object-fit: cover;
+
+      -webkit-filter: grayscale(60%);
+      filter: grayscale(60%);
+      -webkit-transition: .3s ease-in-out;
+      transition: 400ms ease-in-out;
+
+      &:hover {
+      transform: scale(1.05);
+      -webkit-filter: grayscale(0);
+	    filter: grayscale(0);
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $colorDarkGreen;
+    max-width: 140px;
+
+    margin: 0;
+    padding-bottom: 10px;
+
+    @extend %h4;
+
+    @include onDesktop {
+      max-width: 100%;
+      padding-bottom: 34px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+    padding-bottom: 20px;
+
+    @extend %small-text;
+
+    @include onDesktop {
+      padding-bottom: 30px;
+    }
+
+    &--hidden {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__slim-link {
+    padding-top: 10px;
+
+    @include onDesktop {
+      padding-top: 0px;
+      margin-top: -10px;
+    }
+  }
+
+  &__button {
+    padding-top: 25px;
+
+    @include onDesktop {
+      padding-top: 40px;
+    }
+  }
+}

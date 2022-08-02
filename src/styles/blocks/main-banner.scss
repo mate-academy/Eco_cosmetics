@@ -1,0 +1,111 @@
+.main-banner {
+
+ &__content {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include onDesktop {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+ }
+
+  &__image-container {
+    @include onDesktop {
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 267px;
+
+    margin-bottom: 24px;
+
+    @include onDesktop {
+      height: 450px;
+      width: 580px;
+
+      margin-left: 0;
+      margin-right: 0;
+
+    }
+
+    -webkit-transition: .3s ease-in-out;
+    transition: 400ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+    }
+  }
+
+  &__text-container {
+    text-align: center;
+
+    @include onDesktop {
+    margin-left: 100px;
+    }
+  }
+
+  &__title {
+    @extend %title;
+
+    margin: 0 auto;
+
+    padding-bottom: 10px;
+    max-width: 280px; //
+
+    @include onDesktop {
+      text-align: left;
+
+      margin-bottom: 30px;
+      max-width: 480px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      text-align: left;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button { //delete
+    display: block;
+
+    padding: 0;
+    border: 0;
+    margin: 0 auto;
+
+    width: 280px;
+    height: 60px;
+    background-color: $colorBlack;
+    border-color: $colorBlack;
+
+    @include onDesktop {
+      margin: 0 0;
+    }
+  }
+
+  &__link { //delete
+    display: inline-block;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: $colorPerl;
+  }
+}

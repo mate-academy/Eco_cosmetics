@@ -1,0 +1,70 @@
+.ayurvedic {
+//welcome to hell
+
+  &__title {
+    @extend %h4;
+
+    margin: 0;
+    text-transform: uppercase;
+    color: $colorDarkGreen;
+  }
+
+  &__bottle-container {
+    background: no-repeat url(/images/bottle_mobile.svg);
+    background-position: right;
+    background-size: 150px 380px;
+
+    height: 380px;
+
+    margin-top: 20px;
+
+    @include onDesktop {
+      margin: 0;
+
+      background: no-repeat url(/images/bottle_desktop.svg);
+      background-size: 390px 380px;
+      background-position: right;
+    }
+  }
+
+  &__bottle-text {
+    position: relative;
+    margin: 0;
+
+    text-align: right;
+
+    &::before {
+      position: absolute;
+      top: 12px;
+      right: -96px;
+
+      content: "";
+      background-color: $colorDarkGreen;
+      height: 1px;
+      width: 76px;
+    }
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    width: 65%;
+
+    height: 380px;
+
+    @include onDesktop {
+      width: 25%;
+      justify-content: space-evenly;
+      gap: unset;
+    }
+  }
+
+  &__slim-link {
+    margin-top: 30px;
+
+    @include onDesktop {
+      margin-top: -28px;
+    }
+  }
+}

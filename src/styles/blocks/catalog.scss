@@ -1,0 +1,53 @@
+.catalog {
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include onDesktop {
+      margin-left: 100px;
+      margin-bottom: 30px;
+
+    }
+
+    &-link {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $colorDarkGreen;
+
+      @extend %h4;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+    @extend %text-14-regular;
+    color: $colorGrey3;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 5px 10px 0;
+    color: inherit;
+
+    &--active {
+      border-bottom: 2px solid $colorBlack;
+      color: $colorBlack;
+    }
+  }
+}

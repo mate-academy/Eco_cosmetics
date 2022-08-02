@@ -1,0 +1,70 @@
+.form-field {
+  display: block;
+  box-sizing: border-box;
+  font-family: Poppins;
+
+  width: 100%;
+
+  color: $colorGrey3;
+  text-transform: capitalize;
+
+  padding: 0 0 5px;
+  border-width: 0 0 1px;
+  border-color: $colorLightGrey;
+
+  background-color: $colorBeige;
+
+  @extend %inputs-menu;
+
+  @include onDesktop {
+    padding: 0 0 10px;
+  }
+
+  &:focus {
+    border-color: $colorBlack;
+    outline: none;
+
+    &::placeholder {
+     opacity: 0;
+    }
+  }
+
+  &:not(:focus):not(:placeholder-shown):valid {
+    border-color: $colorDarkGreen;
+    color: $colorDarkGreen;
+  }
+
+  &:not(:focus):not(:placeholder-shown):invalid {
+    color: #EB5757;
+    border-color: #EB5757;
+  }
+
+  &--textarea {
+    height: 50px;
+
+    @include onDesktop {
+      height: 70px;
+    }
+
+    &::placeholder {
+      position: absolute;
+      bottom: 5px;
+
+      @include onDesktop {
+        bottom: 10px;
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px $colorBeige inset;
+}

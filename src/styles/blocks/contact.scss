@@ -1,0 +1,57 @@
+.contact {
+  &__title {
+    margin: 0;
+    text-transform: uppercase;
+    color: $colorDarkGreen;
+
+    @extend %h4;
+  }
+
+  &__text {
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+    @extend %small-text;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+
+      max-width: 380px;
+    }
+  }
+
+  &__field {
+    margin: 0 0 25px;
+
+    @include onDesktop {
+      margin: 0 0 30px;
+    }
+
+    &--last {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+    -webkit-transition: .3s ease-in-out;
+    transition: 400ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

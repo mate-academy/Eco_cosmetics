@@ -1,0 +1,79 @@
+.brand {
+  &__title {
+    text-align: left;
+    text-transform: uppercase;
+    color: $colorDarkGreen;
+
+    @extend %h4;
+
+    margin: 0 auto;
+    padding-bottom: 40px;
+
+    @include onDesktop {
+    font-size: 36px;
+    line-height: 40px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 30px;
+
+   @extend %small-text;
+
+    @include onDesktop {
+      padding-bottom: 40px;
+    }
+
+    &--hide {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+  &__pictures {
+    position: relative;
+
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &--big {
+
+      height: 530px;
+      width: 480px;
+      object-fit: cover;
+
+      transition: all 400ms ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+        filter: brightness(140%) saturate(140%);
+      }
+    }
+
+    &--small {
+      position: absolute;
+      left: 500px;
+      top: 100px;
+
+      height: 430px;
+      max-width: 130px;
+      object-fit: cover;
+
+      transition: all 400ms ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+        filter: brightness(140%) saturate(140%);
+      }
+    }
+  }
+}

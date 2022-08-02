@@ -1,0 +1,55 @@
+.product-card {
+  &:not(:first-child) {
+    display: none;
+
+    @include onDesktop {
+      display: initial;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 20px;
+    object-fit: cover;
+
+    height: 267px;
+    width: 320px; //??
+
+    @include onDesktop {
+      height: 500px;
+      width: 380px;
+    }
+
+    -webkit-filter: grayscale(60%);
+    filter: grayscale(60%);
+    -webkit-transition: .3s ease-in-out;
+    transition: 400ms ease-in-out;
+
+    &:hover {
+      -webkit-filter: grayscale(0);
+	    filter: grayscale(0);
+
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    @extend %h5-all-screen;
+
+    @include onDesktop {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__price {
+    margin-bottom: 30px;
+
+    @extend %price-18;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+}
