@@ -1,0 +1,71 @@
+.confirm {
+
+  &__title {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+
+    margin-bottom: 30px;
+
+    @include On768 {
+      font-size: 24px;
+      width: 466px;
+      margin: 0 auto 30px;
+    }
+
+    @include On1280 {
+      width: 710px;
+      font-size: 48px;
+      line-height: 72px;
+    }
+  }
+
+  &__leaf {
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  &__main-page {
+    position: fixed;
+    bottom: 36px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: max-content;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: inherit;
+    @include hover(color, #8c9772);
+
+    border-bottom: 1px solid $black-color;
+
+    @include On1280 {
+      margin-left: 150px;
+      border: none;
+
+      &::before {
+        content: "";
+        display: block;
+        border-top: 1px solid $black-color;
+        width: 80px;
+        transform: translate(-130%, 12px);
+        @include hover(background-color, $bottom-line);
+      }
+    }
+
+    &:hover {
+      color: #8c9772;
+      border-color: #8c9772;
+    }
+
+    &:hover::before {
+      background-color: $bottom-line;
+    }
+  }
+}

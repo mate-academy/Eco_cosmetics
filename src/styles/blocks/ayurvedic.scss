@@ -1,0 +1,84 @@
+.ayurvedic {
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 140px;
+    display: block;
+    width: 376px;
+    height: 100%;
+
+    @include On768 {
+      right: 0;
+    }
+
+    &-container {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 395px;
+      overflow-x: hidden;
+
+      @include On1280 {
+        width: 50%;
+        overflow-x: visible;
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    left: 0;
+    text-align: end;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 85%;
+
+    @include On1280 {
+      right: 90%;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &-line {
+      position: absolute;
+      display: block;
+      height: 1px;
+      background-color: $black-color;
+      width: 65px;
+      top: 11px;
+      right: -104px;
+      z-index: 2;
+
+      &-end {
+        display: none;
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: $black-color;
+        border-radius: 50%;
+        top: 11px;
+        right: -104px;
+        transform: translateY(-49%);
+
+        @include On1280 {
+          display: block;
+        }
+
+      }
+
+      &--centered {
+        top: 19px;
+
+        &-end {
+          transform: translateY(113%);
+        }
+      }
+    }
+  }
+}

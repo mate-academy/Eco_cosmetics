@@ -1,0 +1,157 @@
+.shop {
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    width: 280px;
+
+    margin: 0 auto 27px;
+
+    @include On768 {
+      margin: 0 0 37px;
+    }
+
+    @include On1280 {
+      margin-bottom: 62px;
+    }
+  }
+
+  &__item {
+    display: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    color: $bottom-line;
+    letter-spacing: 5%;
+    @include hover(color, $black-color);
+
+    @include On1280 {
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    &:hover {
+      color: $black-color;
+    }
+
+    &::after {
+      content: "";
+      opacity: 0;
+      z-index: 1;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $bottom-line;
+      @include hover(opacity, 1);
+    }
+    
+    &:hover::after {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+
+  &__img--small-screen {
+    width: 320px;
+    height: 267px;
+
+    @include On768 {
+      display: none;
+    }
+  }
+
+  &__img--small-screen--2 {
+    display: none;
+
+    @include On768 {
+      display: none;
+    }
+  }
+
+  &__pictures {
+    display: flex;
+    gap: 30px;
+    height: 360px;
+    max-width: 320px;
+
+    @include On768 {
+      height: 413px;
+      max-width: 380px;
+      justify-content: space-between;
+    }
+
+    @include On1280 {
+      height: 630px;
+      width: 380px;
+    }
+
+    &-item {
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      flex-shrink: 0;
+
+      &--On660 {
+        display: none;
+    
+        @include On768 {
+          display: block;
+          max-width: 380px;
+        }
+      }
+
+      @include On1280 {
+        width: 380px;
+      }
+    }
+  }
+
+  &__picture {
+    cursor: zoom-in;
+    object-fit: cover;
+    display: flex;
+    height: 267px;
+    width: 100%;
+    flex-shrink: 0;
+    margin-bottom: 20px;
+    @include hover(transform, scale);
+
+    @include On768 {
+      max-width: 380px;
+      height: 300px;
+    }
+
+    @include On1280 {
+      width: 380px;
+      height: 500px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    
+
+    &-descrip {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      color: $black-color;
+
+      a {
+        color: inherit;
+        @include hover(text-decoration, underline);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &-title {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

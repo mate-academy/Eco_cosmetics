@@ -1,0 +1,56 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  &__nav {
+    display: none;
+
+    @include On1280 {
+      display: block;
+    }
+    
+    &-list {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-item {
+      padding-right: 40px;
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $green-col;
+        opacity: 0;
+        @include hover(opacity, 1);
+      }
+
+      &:hover::after {
+        opacity: 1;
+        z-index: 1;
+      }
+    }
+
+    &-link {
+      font-style: medium;
+      font-size: 18px;
+      line-height: 27px;
+      color: $green-col;
+      @include hover(font-weight, 600);
+
+      &:hover {
+        font-weight: 600;
+      }
+    }
+  }
+}

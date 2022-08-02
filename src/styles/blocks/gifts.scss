@@ -1,0 +1,97 @@
+.gifts {
+
+  &__content {
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    position: relative;
+    padding-right: 114px;
+    width: 50%;
+
+    &--info {
+      justify-content: end;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 1px;
+        top: -100px;
+        right: 110px;
+        left: 0;
+        position: absolute;
+        background-color: $green-col;
+      }
+    }
+
+    &--title {
+
+      &::before {
+        content: "";
+        display: block;
+        height: 1px;
+        position: absolute;
+        right: 0;
+        left: 20px;
+        bottom: -100px;
+        background-color: $green-col;
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    max-width: 280px;
+    color: $green-col;
+
+    margin: 0 auto;
+
+    @include On768 {
+      max-width: 436px;
+    }
+
+    @include On1280 {
+      padding-left: 20px;
+      max-width: 370px;
+      font-size: 24px;
+      line-height: 36px;
+      margin: 0;
+      text-align: start;
+    }
+
+    &--disabled {
+      display: block;
+
+      @include On1280 {
+        display: none;
+      }
+  
+    }
+  }
+
+  &__info {
+    display: none;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include On1280 {
+      display: block;
+      max-width: 380px;
+    }
+  }
+
+  &__article--shown-1280 {
+    display: none;
+
+    @include On1280 {
+      display: flex;
+      justify-content: center;
+      padding: 100px 0;
+    }
+  }
+}

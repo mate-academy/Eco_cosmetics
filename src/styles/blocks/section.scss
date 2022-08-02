@@ -1,0 +1,199 @@
+.section {
+
+  &__article {
+    position: relative;
+    max-width: 436px;
+    margin: 0 auto;
+
+    &--shop {
+      max-width: 100%;
+      margin: 0;
+    }
+
+    &--ayurvedic {
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+      margin: 0;
+
+      @include On768 {
+        flex-direction: row;
+      }
+    }
+
+    &-title {
+      position: relative;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 36px;
+      color: $green-col;
+      text-align: center;
+  
+      margin-bottom: 10px;
+
+      @include On768 {
+        text-align: start;
+      }
+
+      &--barnds {
+        text-align: left;
+      }
+
+      &--ayurvedic {
+        text-align: center;
+        margin-bottom: 30px;
+
+        @include On768 {
+          margin-bottom: 0;
+        }
+
+        @include On1280 {
+          text-align: start;
+        }
+      }
+    }
+  
+    &-text {
+      font-size: 14px;
+      line-height: 21px;
+      display: block;
+      min-width: 280px;
+      margin-bottom: 30px;
+
+      @include On768 {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      &--hidden {
+        display: none;
+
+        @include On1280 {
+          display: block;
+        }
+      }
+
+      &--creators {
+        margin-bottom: 15px;
+
+        &-second {
+          margin-bottom: 20px;
+        }
+      }
+    
+      &--contact-us {
+        max-width: 480px;
+        margin: 0 auto 30px;
+
+        @include On768 {
+          max-width: 100%;
+          margin: 0 0 30px;
+        }
+      }
+    }
+
+    &-add-info {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18px;
+      color: $green-col;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $green-col;
+        transform: translateY(10px);
+        opacity: 0;
+        @include hover(opacity, 1);
+      }
+
+      &:hover::after {
+        opacity: 1;
+        z-index: 1;
+      }
+
+      &--creators {
+        margin-bottom: 36px;
+
+        @include On768 {
+          margin-bottom: 40px;
+        }
+
+        @include On1280 {
+          margin-bottom: 50px;
+        }
+      }
+
+      &-ayurvedic {
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+
+        @include On768 {
+          left: 27px;
+        }
+
+        @include On1280 {
+          left: 144px;
+        }
+      }
+    }
+
+    &-left-add-info {
+      text-transform: none;
+      display: none;
+
+      @include On1280 {
+        display: block;
+        color: rgba(52, 79, 16, 0.5);
+        position: absolute;
+        left: -80px;
+        top: -8px;
+        transform: rotate(-90deg) translateX(-100%);
+        transform-origin: bottom left;
+        font-size: 14px;
+        line-height: 18px;
+
+        @include hover(color, $green-col);
+  
+        &:hover {
+          color: $green-col;
+          z-index: 1;
+        }
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: 100px;
+        background-color: rgba(52, 79, 16, 0.5);
+        transform: translate(-120px, 8px);
+        @include hover(background-color, $green-col);
+      }
+
+      &:hover::before {
+        background-color: $green-col;
+      }
+    }
+
+    &--button {
+      margin: 0 auto;
+    }
+
+    &--info {
+      max-width: 300px;
+
+      @include On768 {
+        max-width: 100%;
+      }
+    }
+  }
+}

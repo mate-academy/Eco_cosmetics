@@ -1,0 +1,78 @@
+.form {
+  max-width: 280px;
+
+  @include On1280 {
+    max-width: 100%;
+  }
+
+  &--contacts {
+    max-width: 480px;
+
+    @include On768 {
+      max-width: 100%;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    text-transform: capitalize;
+    line-height: 21px;
+    background-color: $main-color;
+    border: none;
+    border-bottom: 1px solid $line-color;
+    @include hover(border-color, $black-color);
+
+    margin-bottom: 25px;
+
+    &::placeholder {
+      color: $bottom-line;
+      font-weight: 500;
+    }
+
+    &:invalid {
+      color: red;
+    }
+
+    &:valid {
+      color: #344f10;
+      border-color: #344f10;
+      font-weight: 600;
+    }
+
+    &:hover {
+      border-color: $black-color;
+    }
+
+    &--contacts {
+      font-weight: 400;
+    }
+
+    &--last {
+      margin-bottom: 40px;
+
+      @include On768 {
+        margin-bottom: 50px;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      color: $black-color;
+    }
+  }
+}
+
+textarea {
+  height: 36px;
+  resize: none;
+  line-height: 14px;
+
+  &::placeholder {
+    text-transform: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 21px;
+    color: $bottom-line;
+  }
+}

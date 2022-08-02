@@ -1,0 +1,170 @@
+.add-to-bag {
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  position: fixed;
+  background-color: $main-color;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  overflow: auto;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-200vh);
+  @include hover(transform, translate);
+
+  &:target {
+    transform: translateY(0);
+  }
+
+  &__header {
+    width: max-content;
+    margin: 0 auto;
+
+    @include On1280 {
+      margin: 0;
+    }
+  }
+
+  &__item {
+    display: none;
+
+    @include On768 {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+
+      max-width: 480px;
+      height: 400px;
+
+      @include On1280 {
+        width: 480px;
+        height: 468px;
+      }
+    }
+
+    &--hidden-on768 {
+      display: block;
+      object-position: cover;
+      width: 100%;
+      max-width: 360px;
+      height: 300px;
+      margin: 0 auto 30px;
+
+      @include On768 {
+        display: none;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 100px;
+    @include hover(transform, scale);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: $black-color;
+    @include hover(text-decoration, underline);
+
+    margin-bottom: 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 20px;
+    color: $green-col;
+
+    @include On768 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__add-info {
+    display: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 20px;
+
+    @include On768 {
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__descr {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 100px;
+
+    @include On1280 {
+      width: 380px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto 50px;
+
+    @include On768 {
+      margin: 0 auto 60px;
+    }
+
+    @include On1280 {
+      margin: 0;
+    }
+
+    &--hidden-on1280 {
+      display: grid;
+
+      @include On1280 {
+        display: none;
+      }
+    }
+
+    &--shown-on1280 {
+      display: none;
+
+      @include On1280 {
+        display: grid;
+      }
+    }
+  }
+
+  &__top-bar {
+    margin-bottom: 20px;
+
+    @include On768 {
+      margin-bottom: 30px;
+    }
+
+    @include On1280 {
+      margin-bottom: 50px;
+    }
+
+    @include On1440 {
+      margin-bottom: 70px;
+    }
+  }
+}
