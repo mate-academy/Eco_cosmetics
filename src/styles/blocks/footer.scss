@@ -1,0 +1,125 @@
+.footer {
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  height: 468px;
+  padding: 30px 20px 0;
+
+  background-color: $green-gray-color;
+  color: $white-color;
+
+  @media (min-width: 767px) {
+    height: 268px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 70px 1fr;
+    padding: 60px 50px 0;
+  }
+
+  @media (min-width: 1279px) {
+    height: 268px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 100px;
+    gap: 0 100px;
+  }
+
+  @media (min-width: 1439px) {
+    padding: 60px 130px 0;
+  }
+
+  .nav {
+    display: flex;
+    visibility: visible;
+
+    @media (min-width: 1279px) {
+      flex-direction: row;
+      justify-content: start;
+      align-items: start;
+    }
+
+    &__ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @media (min-width: 1279px) {
+        flex-direction: row;
+        margin: 0;
+      }
+    }
+
+    &__li {
+      color: $white-color;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $green-color;
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    width: 20px;
+    gap: 20px;
+
+    @media (min-width: 767px) {
+      grid-area: 2 / 1 / 3 / 2;
+      align-items: center;
+    }
+
+    @media (min-width: 1279px) {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+
+    transition: transform 0.1s;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__description {
+
+    @media (min-width: 767px) {
+      grid-area: 1 / 2 / 3 / 3;
+    }
+
+    @media (min-width: 1279px) {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+
+    .p-small {
+      line-height: 40px;
+      text-transform: capitalize;
+    }
+  }
+
+  &__year {
+
+    @media (min-width: 767px) {
+      grid-area: 3 / 1 / 4 / 2;
+    }
+
+    @media (min-width: 1279px) {
+      grid-area: 2 / 1 / 3 / 2;
+      margin: auto 0;
+    }
+
+    .p-decor {
+      font-weight: 600;
+      text-align: center;
+
+      @media (min-width: 767px) {
+        text-align: start;
+      }
+    }
+  }
+}

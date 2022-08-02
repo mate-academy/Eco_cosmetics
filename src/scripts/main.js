@@ -14,3 +14,9 @@ document.querySelectorAll('a.products__link').forEach(anchor => {
     el.parentNode.scrollLeft = el.offsetLeft - el.parentNode.offsetLeft;
   });
 });
+
+document.querySelectorAll('#form').forEach(form => {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+  });
+});

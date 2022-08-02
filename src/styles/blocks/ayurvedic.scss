@@ -1,0 +1,108 @@
+.ayurvedic {
+  padding: 50px 20px;
+
+  &__title {
+    color: $green-color;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 1279px) {
+    position: relative;
+    padding: 50px 50px 50px 130px;
+
+    &::before {
+      content: "Ingredients";
+      position: absolute;
+      left: 20px;
+      top: 140px;
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: $green-gray-color;
+
+      transform: rotate(-90deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 280px;
+
+      width: 100px;
+      border-bottom: 1px solid $green-gray-color;
+      transform: rotate(-90deg);
+    }
+  }
+
+  @media (min-width: 1439px) {
+    padding: 50px 200px;
+
+    &::before {
+      left: 85px;
+    }
+
+    &::after {
+      left: 74px;
+    }
+  }
+
+  &__consist {
+    display: flex;
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      padding-top: 40px;
+      text-align: end;
+      gap: 50px;
+    }
+
+    &-item {
+      color: $green-color;
+
+      @media (min-width: 767px) {
+        padding-left: 222px;
+      }
+
+      @media (min-width: 1279px) {
+        padding-left: 470px;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+
+    background-image: url(../images/photos/mobile/ayurvedic.png);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    height: 395px;
+    width: 100%;
+
+    @media (min-width: 767px) {
+      background-image: url(../images/photos/tablet/ayurvedic.png);
+    }
+
+    @media (min-width: 1279px) {
+      right: 50px;
+      height: 400px;
+      background-image: url(../images/photos/desktop/ayurvedic1.png);
+    }
+
+    @media (min-width: 1439px) {
+      right: 130px;
+    }
+  }
+
+  &__btn {
+    @extend %learn-btn;
+    padding-top: 80px;
+
+    &:hover {
+      @extend %learn-btn-hover;
+    }
+  }
+}
