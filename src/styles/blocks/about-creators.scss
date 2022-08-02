@@ -1,4 +1,4 @@
-.about {
+.about-creators {
   display: flex;
   flex-direction: column;
   padding: 0 20px;
@@ -34,7 +34,7 @@
 
       &::before {
         position: absolute;
-        bottom: 200px;
+        bottom: 140px;
         left: 7px;
         content: "";
         display: block;
@@ -68,6 +68,10 @@
     text-transform: uppercase;
     margin: 0;
     padding-bottom: 10px;
+
+    @include onDesktop-1280 {
+      padding-bottom: 34px;
+    }
   }
 
   &__text {
@@ -82,6 +86,14 @@
       @include onTablet {
         font-size: 16px;
       }
+
+      @include onDesktop-1280 {
+        padding-bottom: 30px;
+      }
+    }
+
+    &-paragraph1-1 {
+      padding-bottom: 20px;
 
       @include onDesktop-1280 {
         padding-bottom: 30px;
@@ -110,9 +122,14 @@
     @extend %decorative;
     color: $darkgreen;
     text-decoration: none;
+    padding-bottom: 36px;
+
+    @include onTablet {
+      padding-bottom: 40px;
+    }
 
     @include onDesktop-1280 {
-      padding-bottom: 0;
+      padding-bottom: 50px;
     }
 
     &::after {
@@ -132,33 +149,12 @@
     @include onTablet {
       display: block;
       width: 340px;
-      height: 320px;
+      height: 455px;
     }
 
     @include onDesktop-1280 {
-      display: none;
-    }
-  }
-
-  &__img2 {
-    display: none;
-
-    @include onDesktop-1280 {
-      display: block;
-      width: 380px;
-      height: 530px;
-      padding-right: 20px;
-    }
-  }
-
-  &__img3 {
-    display: none;
-
-    @include onDesktop-1280 {
-      display: block;
-      width: 180px;
-      height: 430px;
-      align-self: end;
+      width: 580px;
+      height: 650px;
     }
   }
 }
