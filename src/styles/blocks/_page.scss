@@ -1,0 +1,112 @@
+.page {
+  scroll-behavior: smooth;
+  min-width: 320px;
+  color: $main-color;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0;
+
+  @include onTablet {
+    font-size: 16px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+
+  &__body {
+    background-color: #e4dfd3;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transform: translateX(-120%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__card {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    transform: translateX(120%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 132px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+
+      &--contact {
+        margin-bottom: 132px;
+      }
+    }
+
+    &--footer {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-label {
+    display: none;
+    cursor: default;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: #344f10;
+    opacity: 0.5;
+    transform: rotate(-90deg) translateX(calc(-100% - 8px));
+    transform-origin: 10px center;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100px;
+      height: 1px;
+      background-color: #344f10;
+      opacity: 0.5;
+      margin: 0 10px 4px 0;
+    }
+
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
+}
