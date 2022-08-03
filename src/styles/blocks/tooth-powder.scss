@@ -1,11 +1,23 @@
 .tooth-powder {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 0 0 100px 20px;
   justify-content: center;
 
   @include onDesktop-1280 {
-    padding: 0 50px 100px 50px;
+    padding: 0 50px 100px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include onDesktop-1280 {
+      padding-right: 50px;
+      padding-left: 82px;
+      max-width: 1000px;
+    }
   }
 
   &__aside-text {
@@ -27,7 +39,7 @@
 
       &::before {
         position: absolute;
-        bottom: 200px;
+        bottom: 90px;
         left: 7px;
         content: "";
         display: block;
@@ -67,14 +79,11 @@
     }
 
     @include onDesktop-1280 {
-      margin: 0 auto;
+      justify-content: flex-end;
     }
   }
 
   &__ingredients {
-     @include onDesktop-1280 {
-      padding-left: 610px
-     }
   }
 
   &__ingredient {
@@ -99,6 +108,28 @@
 
     &:nth-child(5) {
       padding-top: 33px;
+    }
+
+    @include onDesktop-1280 {
+      &:first-child {
+        padding-top: 47px;
+      }
+
+      &:nth-child(2) {
+        padding-top: 20px;
+      }
+
+      &:nth-child(3) {
+        padding-top: 25px;
+      }
+
+      &:nth-child(4) {
+        padding-top: 20px;
+      }
+
+      &:nth-child(5) {
+        padding-top: 20px;
+      }
     }
   }
 
@@ -243,7 +274,7 @@
     text-align: center;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #000000;
+    color: #000;
     padding-top: 20px;
 
     &-1 {
