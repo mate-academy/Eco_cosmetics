@@ -1,0 +1,112 @@
+.about {
+  &__subtitle {
+    position: absolute;
+    top: 140px;
+    left: -82px;
+
+    @include onDesktop1440 {
+      left: 0;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    @include onDesktop1280 {
+      margin: 0 0 34px;
+    }
+
+    @include onDesktop1440 {
+      margin-bottom: 0 0 40px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0 0 20px;
+    font-size: 14px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include onIpad {
+      margin: 0 0 16px;
+      font-size: 16px;
+    }
+
+    @include onDesktop1280 {
+      margin: 0 0 30px;
+
+      &:last-child {
+        margin-bottom: 40px;
+      }
+    }
+
+    &--on-desktop {
+      display: none;
+
+      @include onDesktop1280 {
+        display: block;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onIpad {
+      display: block;
+      width: 100%;
+      height: 318px;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include onDesktop1280 {
+      height: 529px;
+    }
+
+    @include hover(transform, scale(1.05));
+
+    &--on-desktop {
+      @include onDesktop1280 {
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: 430px;
+
+        object-fit: cover;
+        object-position: center;
+      }
+
+      @include hover(transform, scale(1.05));
+    }
+
+    &-wrapper {
+      display: none;
+      position: relative;
+      width: 100%;
+      height: 529px;
+
+      @include onDesktop1280 {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 0 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $colorGreen;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-color, $colorGreen);
+  }
+}

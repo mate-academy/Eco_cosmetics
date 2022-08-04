@@ -1,0 +1,108 @@
+.shop {
+  &__subtitle {
+    position: absolute;
+    top: 68px;
+    left: -20px;
+
+    @include onDesktop1440 {
+      left: 54px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    text-align: center;
+
+    @include onIpad {
+      margin: 0 0 10px;
+      text-align: left;
+    }
+
+    @include onDesktop1280 {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__nav {
+    margin: 0 0 15px;
+
+    @include onIpad {
+      margin: 0 0 25px;
+    }
+
+    @include onDesktop1280 {
+      margin: 0 0 50px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-item {
+      margin: 0 16px 0 0;
+
+      @include onIpad {
+        margin: 0 14px 0 0;
+      }
+
+      @include onDesktop1280 {
+        margin: 0 20px 0 0;
+      }
+    }
+
+    &-link {
+      box-sizing: border-box;
+      padding-bottom: 10px;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #828282;
+      border-bottom: 2px solid transparent;
+
+      transition: all 0.3s;
+
+      &:hover {
+        color: $colorGray;
+        border-color: $colorGray;
+      }
+
+      @include onDesktop1280 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+      }
+    }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    &--on-desktop {
+      display: none;
+
+      @include onDesktop1280 {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    @include onDesktop1280 {
+      display: flex;
+      column-gap: 20px;
+      margin-left: 150px;
+    }
+  }
+
+  &__good {
+    width: 100%;
+  }
+}
