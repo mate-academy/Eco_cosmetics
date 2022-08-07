@@ -1,0 +1,133 @@
+.shop {
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(4);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(4);
+      column-gap: 20px;
+    }
+  }
+
+  &__title {
+    @include onDesktop {
+      grid-column: 2 / 4;
+      grid-row: 1;
+    }
+
+    @include onTablet {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  &__buttons {
+    margin-top: 20px;
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+      grid-row: 2;
+      padding-top: 30px;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 2;
+      padding-top: 10px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    margin-top: 27px;
+
+    @include onDesktop {
+
+      grid-column: 2 / 13;
+      grid-row: 3;
+      padding-top: 62px;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      grid-row: 3;
+      padding-top: 37px;
+    }
+
+    @include onPhone {
+      display: block;
+    }
+  }
+
+  &__card {
+    padding-right: 20px;
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+
+    @include onPhone {
+      padding-right: 0;
+    }
+
+    &--desktop {
+      @include onPhoneTablet {
+        display: none;
+      }
+    }
+
+    &--phone-none {
+      @include onPhone {
+        display: none;
+      }
+    }
+  }
+
+  &__card-title {
+    margin-top: 20px;
+
+    @include onDesktop {
+      padding-top: 20px;
+    }
+
+    @include onTablet {
+      padding-top: 20px;
+    }
+  }
+
+  &__card-price {
+    margin-top: 10px;
+
+    @include onDesktop {
+      padding-top: 13px;
+    }
+
+    @include onTablet {
+      padding-top: 15px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+      grid-row: 4;
+      padding-top: 40px;
+    }
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      grid-column: 2 / 6;
+      grid-row: 4;
+      padding-top: 50px;
+    }
+  }
+}

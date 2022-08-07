@@ -1,0 +1,86 @@
+.intro {
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(3);
+      column-gap: 20px;
+      padding-top: 92px;
+    }
+  }
+
+  &__picture {
+    @include onTablet {
+      grid-column: 1 / 7;
+      padding-top: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      grid-row: 1 / 4;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__description {
+    @include onPhone {
+      padding-top: 25px;
+    }
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      padding-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+      grid-row: 1;
+    }
+  }
+
+  &__paragraph {
+    @include onPhone {
+      padding-top: 10px;
+    }
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      padding-top: 10px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+
+      padding-top: 30px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    @include onPhone {
+      padding-top: 30px;
+    }
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      padding-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 5;
+      margin-top: 50px 0 100px;
+    }
+  }
+}
