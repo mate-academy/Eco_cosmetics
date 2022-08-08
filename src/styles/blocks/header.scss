@@ -1,0 +1,138 @@
+.header {
+  width: 320px;
+  margin: 0 auto;
+  padding: 15px 20px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include on768 {
+    width: 768px;
+    padding: 23px 27px 0;
+  }
+
+  @include on1280 {
+    width: 1180px;
+    padding: 40px 50px 0;
+  }
+
+  @include on1440 {
+    
+    padding: 40px 130px 0;
+  }
+
+  &__container {
+    @include on1280 {
+      width: 270px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+    }
+  
+    &--text {
+      display: none;
+    
+      @include on1280 {
+        display: block;
+        font-style: normal;
+        font-family: "Sharp Sans No2", serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $green-color;
+
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
+    }
+  
+    &--logo {
+      width: 24px;
+      height: 24px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    
+      @include on1280 {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+  
+    @include on1280 {
+      width: 256px;
+      margin-left: 30px;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    &-link {
+      text-decoration: none;
+      font-family: "Sharp Sans No2", serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $green-color;
+
+      &:hover {
+        color: $black-color;
+        border-bottom: 1px solid $black-color;
+      }
+    }
+  }
+
+  &__menu {
+    width: 20px;
+    height: 13px;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  
+    @include on1280 {
+      display: none;
+    }
+  
+    &--icon {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__shop {
+    width: 20px;
+    height: 24px;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  
+    @include on768 {
+      width: 17px;
+      height: 20px;
+    }
+  
+    @include on1280 {
+      width: 22px;
+      height: 26px;
+      order: 1;
+    }
+  
+    &--icon {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.choose {
+  margin-top: 100px;
+
+  @include on768 {
+    margin-top: 130px;
+  }
+
+  @include on1280 {
+    margin-top: 306px;
+    position: relative;
+  }
+
+  &__container {
+    width: 280px;
+    margin: 0 auto;
+    
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  
+    @include on1280 {
+      grid-template-columns: repeat(12,1fr);
+      width: 1180px;
+    }
+  }
+
+  &__paragraph-1 {
+    display: none;
+  
+    @include on1280 {
+      display: block;
+      width: 380px;
+      grid-column: 2/6;
+      font-family: "Sharp Sans No2", serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $black-color;
+
+      &:hover {
+        color: $green-color;
+      }
+    }
+  }
+
+  &__paragraph-2 {
+    grid-column: 1 / -1;
+    font-family: "Sharp Sans No2", serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: $green-color;
+
+    &:hover {
+      color: $black-color;
+    }
+  
+    @include on768 {
+      text-align: center;
+    }
+  
+    @include on1280 {
+      text-align: unset;
+      font-size: 24px;
+      grid-column: 7 / -1;
+      
+    }
+  }
+}

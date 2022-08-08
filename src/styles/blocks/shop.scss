@@ -1,0 +1,137 @@
+.shop {
+  margin-top: 100px;
+
+  @include on768 {
+    margin-top: 130px;
+  }
+
+  @include on1280 {
+    margin-top: 200px;
+  }
+
+  &__container {
+    margin: 0 auto;
+    width: 320px;
+    @include on768 {
+      width: 768px;
+    }
+    @include on1280 {
+      position: relative;
+      overflow: hidden;
+      width: 1280px;
+    }
+  
+    @include on1440 {
+      overflow: unset;
+      width: 1440px;
+    }
+  }
+
+  &__wrapper {
+    width: 320px;
+    margin: 0 auto;
+  
+    @include on768 {
+      width: 714px;
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      column-gap: 30px;
+    }
+  
+    @include on1280 {
+      
+      margin: 0;
+      margin-left: 130px;
+      width: 1110px;
+      grid-template-columns: repeat(12,1fr);
+      column-gap: 20px;
+    }
+  
+    @include on1440 {
+      width: 1180px;
+      column-gap: 10px;
+      margin-left: 220px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-family: "Sharp Sans No2", serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green-color;
+
+    &:hover {
+      color: $black-color;
+      transform: scale(1.05);
+    }
+  
+    @include on768 {
+      text-align: unset;
+      grid-row-start: 1;
+      grid-column: 1/2;
+    }
+  
+    @include on1280 {
+      grid-column: 2/4;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__nav {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+  
+    @include on768 {
+      margin: 0;
+      margin-top: 20px;
+      width: 274px;
+      grid-row-start: 2;
+      grid-column: 1/4;
+    }
+  
+    @include on1280 {
+      margin-top: 30px;
+      width: 400px;
+      grid-column: 2/5;
+    }
+  
+    &-link {
+      text-decoration: none;
+      font-family: "Sharp Sans No2", serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #828282;
+    
+      @include on1280 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+      }
+    
+      &:nth-child(1) {
+        color: $black-color;
+        border-bottom: 2px solid $black-color;
+        padding-bottom: 10px;
+      }
+
+      &:hover {
+        color: $green-color;
+        border-bottom: 2px solid $green-color;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+.brand {
+  margin-top: 20px;
+
+  @include on768 {
+    margin-top: 30px;
+  }
+
+  @include on1280 {
+    margin-top: 92px;
+  }
+
+  @include on1440 {
+    margin-top: 82px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    
+    @include on768 {
+      width: 714px;
+      margin: 0 auto;
+      grid-template-columns: repeat(6,1fr);
+    }
+  
+    @include on1280 {
+      width: 1180px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    order: 1;
+    text-align: center;
+  
+    @include on768 {
+      grid-column: 2 /-2;
+    }
+  
+    @include on1280 {
+      grid-column: 2 / 7;
+      order: unset;
+      text-align: unset;
+    }
+  
+    &--title {
+      margin-top: 5px;
+      font-family: "Sharp Sans No2", serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 130%;
+      color: $black-color;
+
+      &:hover {
+        color: $green-color;
+      }
+    
+      @include on768 {
+        margin-top: 30px;
+        font-size: 36px;
+        line-height: 150%;
+        text-transform: capitalize;
+      }
+    
+      @include on1280 {
+        margin-top: unset;
+        font-size: 60px;
+        line-height: 130%;
+      }
+    }
+  
+    &--text {
+      margin-top: 10px;
+      font-family: "Sharp Sans No2", serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $black-color;
+    
+      @include on1280 {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__photo {
+    grid-column: 1 / -1;
+    order: 0;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  
+    @include on1280 {
+      grid-column: 7 / -1;
+      order: unset;
+    }
+  
+    &--image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

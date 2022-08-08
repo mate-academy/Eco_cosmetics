@@ -1,0 +1,163 @@
+.creators {
+  margin-top: 100px;
+
+  @include on768 {
+    margin-top: 130px;
+  }
+
+  @include on1280 {
+    margin-top: 200px;
+    
+  }
+
+  &__container {
+    width: 280px;
+    margin: 0 auto;
+  
+    @include on768 {
+      width: 768px;
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(6,1fr);
+    }
+  
+    @include on1280 {
+      position: relative;
+      width: 1180px;
+      margin: 0 auto;
+      grid-template-columns: repeat(12,1fr);
+      gap: 20px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+    @include on768 {
+      display: block;
+      grid-column: 4/-1;
+      width: 369px;
+    }
+  
+    @include on1280 {
+      width: 580px;
+      grid-column: 7/-1;
+    }
+  
+    &--image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    @include on768 {
+      padding-left: 27px;
+      grid-column: 1/4;
+    }
+  
+    @include on1280 {
+      padding-left: 0;
+      grid-column: 2/6;
+    }
+  
+    &--title {
+      font-family: "Sharp Sans No2", serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $green-color;
+    
+      @include on1280 {
+        font-size: 36px;
+        line-height: 110%;
+      }
+
+      &:hover {
+        color: $black-color;
+        transform: scale(1.05);
+      }
+    }
+  
+    &--text {
+      font-family: "Sharp Sans No2", serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $black-color;
+    
+      @include on768 {
+        font-size: 16px;
+      }
+
+      &:hover {
+        color: $olive-color;
+      }
+    
+      &-1 {
+        margin-top: 10px;
+    
+        @include on1280 {
+          margin-top: 34px;
+        }
+      }
+    
+      &-2 {
+        margin-top: 20px;
+    
+        @include on768 {
+          margin-top: 15px;
+        }
+    
+        @include on1280 {
+          margin-top: 30px;
+        }
+      }
+    
+      &-3 {
+        display: none;
+    
+        @include on1280 {
+          display: block;
+          margin-top: 30px;
+        }
+      }
+    }
+  
+    &--link {
+      margin-top: 30px;
+    
+      @include on768 {
+        margin-top: 20px;
+      }
+    
+      @include on1280 {
+        margin-top: 20px;
+      }
+    
+      &-hyper {
+        margin-top: 30px;
+        text-decoration: none;
+        font-family: "Sharp Sans No2", serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: $green-color;
+
+        &:hover {
+          padding-bottom: 10px;
+          border-bottom: 1px solid $green-color;
+
+        }
+      }
+    }
+  }
+}
