@@ -1,0 +1,153 @@
+@import "../utils/_vars.scss";
+@import "../utils/_mixins.scss";
+
+.footer {
+  background: rgba(52, 79, 16, 0.5);
+  padding: 61px 130px;
+
+  @include laptop {
+    padding: 61px 50px;
+  }
+
+  @include tablet {
+    padding: 30px 27px;
+  }
+
+  @include mobile {
+    padding: 30px 20px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      grid-column: 1 / 2;
+      margin-bottom: 20px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 20px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__info {
+    margin-bottom: 30px;
+
+    @include tablet {
+      grid-column: 4 / 7;
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__path {
+    transition: $transition;
+  }
+
+  &__link {
+    color: $skin;
+    display: block;
+    text-decoration: none;
+    transition: $transition;
+
+    &:hover {
+      color: $green;
+    }
+
+    &:hover .footer__path {
+      stroke: $green;
+    }
+
+    @include tablet {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    @include mobile {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+  }
+
+  &__text {
+    color: $skin;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: $transition;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: $green;
+    }
+
+    @include tablet {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    @include mobile {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+  }
+
+  &__copyright {
+
+    display: flex;
+
+    @include tablet {
+      grid-column: 1 / 5;
+      margin-bottom: 20px;
+
+      &--1 {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 0;
+      text-align: center;
+
+      &--1 {
+        display: none;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+
+    @include tablet {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      margin-bottom: 20px;
+      justify-self: start;
+      gap: 20px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+      margin-bottom: 40px;
+      justify-self: start;
+    }
+  }
+
+}
