@@ -1,0 +1,131 @@
+.header {
+
+  &__image-photo {
+    display: block;
+    width: 100%;
+    height: 267px;
+    object-fit: cover;
+
+    margin-bottom: 25px;
+
+    @include on768 {
+      height: 500px;
+
+      margin-bottom: 50px;
+    }
+
+    @include on1280 {
+      display: none;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    display: block;
+
+    @include on1280 {
+      display: grid;
+    }
+  }
+
+  &__block-photo {
+    display: none;
+
+    @include on1280 {
+      display: block;
+      height: 451px;
+      background-image: url("../images/img-desktop/header.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+
+    margin-bottom: 20px;
+
+    @include on768 {
+      padding-top: 23px;
+      margin-bottom: 30px;
+    }
+
+    @include on1280 {
+      padding-top: 40px;
+      margin-bottom: 81px;
+    }
+  }
+
+  &__logo {
+    transition: transform 300ms;
+    @include on1280 {
+      display: none;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__large-logo {
+    display: none;
+
+    @include on1280 {
+      display: block;
+    }
+  }
+
+  &__nav-list {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include on1280 {
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-right: 40px;
+    transition: transform 300ms;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @include menuText;
+  }
+
+  &__title {
+    @include headerTitle;
+    margin: 0;
+    margin-bottom: 10px;
+
+    @include on1280 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    @include headerSubtitle;
+
+    margin-bottom: 30px;
+
+    @include on768 {
+      margin-bottom: 50px;
+    }
+  }
+}
