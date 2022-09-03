@@ -1,0 +1,169 @@
+.footer {
+  background-color: #8c9772;
+
+  @include on1280px {
+    padding-left: 80px;
+    margin-top: 70px;
+  }
+
+  @include on1440px {
+    padding-top: 30px;
+  }
+
+  @include on1440px {
+    padding-left: 120px;
+  }
+
+  &__block {
+    @include on768px {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 30px;
+    }
+  }
+
+  &__nav {
+    padding-top: 30px;
+
+    @include on768px {
+      padding-top: 0;
+    }
+
+    &--menu {
+      display: flex;
+      flex-direction: column;
+
+      @include on1280px {
+        flex-direction: row;
+        gap: 40px;
+      }
+
+      @include on1440px {
+        gap: 60px;
+      }
+
+      &-scroll {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        text-transform: capitalize;
+        color: $colorMilk;
+        margin-bottom: 11px;
+        transition: 0.5s;
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+        text-decoration: none;
+
+        @include on768px {
+          margin-bottom: 15px;
+          font-size: 14px;
+          font-weight: 400;
+        }
+
+        &:hover {
+          border-bottom: 1px solid #fff;
+          color: $colorMilk;
+          text-decoration: none;
+          width: max-content;
+        }
+
+      }
+    }
+
+    &--social {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 40px;
+
+      @include on1280px {
+        display: none;
+      }
+
+      &-facebook {
+        background-image: url(../images/facebook.svg);
+        width: 20px;
+        height: 20px;
+        margin-right: 20px;
+        transition: 0.5s;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+
+      &-instagram {
+        background-image: url(../images/instagram.svg);
+        width: 20px;
+        height: 20px;
+        transition: 0.5s;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  &__contact {
+    @include on1280px {
+      margin-right: 150px;
+    }
+    &--adress {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40px;
+
+      &-text {
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: $colorMilk;
+        margin-bottom: 10px;
+        transition: 0.5s;
+
+        &:hover {
+          transform: scale(1.05);
+          color: $colorMilk;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &--social {
+      display: none;
+
+      @include on1280px {
+        display: flex;
+      }
+    }
+  }
+
+  &__avtor {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    color: $colorMilk;
+    padding-bottom: 40px;
+    width: 200px;
+
+    @include on768px {
+      font-weight: 400;
+      text-align: left;
+      margin: 0;
+      width: 250px;
+      padding-bottom: 30px;
+    }
+
+    @include on1440px {
+      margin-bottom: 50px;
+    }
+  }
+}

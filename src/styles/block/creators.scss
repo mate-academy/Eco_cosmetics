@@ -1,0 +1,203 @@
+.creators {
+  @include on768px {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  &__label {
+    display: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    color: rgba(52, 79, 16, 0.5);
+    left: -50px;
+    top: 3180px;
+
+    @include on1440px {
+      top: 3300px;
+      left: 20px;
+    }
+
+    @include on1280px {
+      position: absolute;
+      display: flex;
+      transform: rotate(270deg);
+
+      &::before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        width: 88px;
+        height: 1px;
+        top: 10px;
+        left: -20px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__about {
+    margin: 0 20px;
+
+    @include on1280px {
+      margin-left: 150px;
+      width: 360px;
+    }
+
+    @include on1440px {
+      margin-left: 230px;
+    }
+
+    &--title {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $colorDarkgreen;
+      margin-bottom: 10px;
+      width: 150px;
+
+      @include on768px {
+        width: 300px;
+      }
+
+      @include on1280px {
+        font-size: 36px;
+        line-height: 110%;
+        margin-bottom: 34px;
+      }
+    }
+
+    &--text1 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #333;
+      margin-bottom: 20px;
+
+      @include on768px {
+        font-size: 15px;
+      }
+    }
+
+    &--text2 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #333;
+
+      @include on768px {
+        font-size: 15px;
+      }
+    }
+
+    &--text3 {
+      display: none;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #333;
+
+      @include on1280px {
+        display: flex;
+        margin-top: 20px;
+      }
+    }
+
+    &--more {
+      text-decoration: none;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      display: flex;
+      padding: 30px 0 10px;
+      width: max-content;
+      transition: 0.5s;
+      color: $colorDarkgreen;
+      border-bottom: 1px solid transparent;
+
+      @include on768px {
+        padding-top: 30px;
+      }
+
+      @include on1280px {
+        margin-bottom: 50px;
+      }
+
+      &:hover {
+        border-bottom: 1px solid $colorDarkgreen;
+        color: $colorDarkgreen;
+        text-decoration: none;
+      }
+    }
+
+    &--contact {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #f2f2f2;
+      padding: 20px;
+      text-decoration: none;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      border: 2px solid transparent;
+      box-sizing: border-box;
+      transition: 0.5s;
+      margin: 25px 0 100px;
+
+      @include on768px {
+        width: 280px;
+      }
+
+      &:hover {
+        background-color: $colorMilk;
+        color: #333;
+        text-decoration: none;
+        border: 2px solid #333;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+    background-image: url(../images/creators.svg);
+    background-size: cover;
+    transition: 0.5s;
+    &:hover {
+      filter: drop-shadow(3px 3px 12px #000);
+      transform: scale(0.95);
+    }
+
+    @include on768px {
+      display: flex;
+      min-width: 368px;
+      height: 435px;
+    }
+
+    @include on1280px {
+      width: 580px;
+      height: 669px;
+      margin-right: 50px;
+    }
+
+    @include on1440px {
+      margin-right: 130px;
+    }
+  }
+}

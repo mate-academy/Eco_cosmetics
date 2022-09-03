@@ -1,0 +1,315 @@
+.shop {
+  @include on1280px {
+    margin-left: 120px;
+  }
+
+  @include on1440px {
+    margin-left: 200px;
+  }
+
+  &__label {
+    display: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    color: rgba(52, 79, 16, 0.5);
+    left: 0;
+    top: 2070px;
+
+    @include on1440px {
+      top: 2190px;
+      left: 70px;
+    }
+
+    @include on1280px {
+      position: absolute;
+      display: flex;
+      transform: rotate(270deg);
+
+      &::before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        width: 88px;
+        height: 1px;
+        top: 10px;
+        left: -20px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+
+    &--name {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $colorDarkgreen;
+      text-align: center;
+      margin-bottom: 20px;
+
+      @include on768px {
+        text-align: left;
+        margin-left: 27px;
+        margin-bottom: 10px;
+      }
+
+      @include on1280px {
+        font-size: 36px;
+        line-height: 110%;
+        margin-bottom: 40px;
+      }
+    }
+
+    &--slider {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 20px 10px;
+
+      @include on768px {
+        width: 280px;
+        margin-left: 27px;
+        margin-bottom: 20px;
+      }
+
+      @include on1280px {
+        gap: 55px;
+        margin-bottom: 50px;
+      }
+
+      &-name {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: #828282;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        border-bottom: 1px solid transparent;
+        transition: 0.5s;
+        cursor: pointer;
+
+        @include on1280px {
+          font-size: 18px;
+          line-height: 150%;
+        }
+
+        &:hover {
+          border-bottom: 1px solid #000;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  &__slider {
+    display: flex;
+    flex-direction: row;
+
+    @include on768px {
+      justify-content: space-between;
+      gap: 30px;
+      margin: 0 27px;
+    }
+
+    &--img1 {
+      &-foto {
+        width: 320px;
+        height: 267px;
+        object-fit: cover;
+        transition: 0.5s;
+
+        @include on768px {
+          width: 342px;
+          height: 300px;
+        }
+
+        @include on1280px {
+          width: 360px;
+          height: 500px;
+        }
+
+        &:hover {
+          filter: drop-shadow(3px 3px 12px #000);
+          transform: scale(1.05);
+        }
+      }
+
+      &-name {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #333;
+        margin: 20px 20px 10px;
+      }
+
+      &-price {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #333;
+        margin-left: 20px;
+        margin-bottom: 30px;
+      }
+    }
+
+    &--img2 {
+      display: none;
+
+      @include on768px {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-foto {
+        width: 342px;
+        height: 300px;
+        object-fit: cover;
+        transition: 0.5s;
+        &:hover {
+          filter: drop-shadow(3px 3px 12px #000);
+          transform: scale(1.05);
+        }
+
+        @include on1280px {
+          width: 360px;
+          height: 500px;
+        }
+      }
+
+      &-name {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #333;
+        margin: 20px 20px 10px;
+
+        @include on768px {
+          margin: 20px 0;
+        }
+      }
+
+      &-price {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #333;
+        margin-left: 20px;
+        margin-bottom: 30px;
+
+        @include on768px {
+          margin: 0 0 30px;
+        }
+      }
+    }
+
+    &--img3 {
+      display: none;
+
+      @include on1280px {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-foto {
+        width: 350px;
+        height: 500px;
+        object-fit: cover;
+        transition: 0.5s;
+        &:hover {
+          filter: drop-shadow(3px 3px 12px #000);
+          transform: scale(1.05);
+        }
+      }
+
+      &-name {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #333;
+        margin: 20px 20px 10px;
+
+        @include on768px {
+          margin: 20px 0;
+        }
+      }
+
+      &-price {
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #333;
+        margin-left: 20px;
+        margin-bottom: 30px;
+
+        @include on768px {
+          margin: 0 0 30px;
+        }
+      }
+    }
+  }
+
+  &__link {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 20px;
+    margin: 0 20px 100px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: 0.5s;
+
+    &:hover {
+      text-decoration: none;
+      color: #333;
+      background-color: $colorMilk;
+      border: 2px solid #333;
+    }
+
+    @include on768px {
+      width: 280px;
+      margin: 0 auto 130px;
+    }
+
+    @include on1280px {
+      margin-bottom: 200px;
+
+    }
+  }
+}

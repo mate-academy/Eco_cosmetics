@@ -1,0 +1,105 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px 20px;
+
+  @include on768px {
+    padding: 37px 27px;
+  }
+
+  @include on1440px {
+    margin: 20px 100px 0 0;
+  }
+
+  &__nav {
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+    @include on1280px {
+      display: none;
+    }
+  }
+
+  &__icon {
+    transition: 0.5s;
+
+    @include on1280px {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      margin-left: 50px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    &-logo {
+      @include on1280px {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    &--menu {
+      display: none;
+
+      @include on1280px {
+        display: flex;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $colorDarkgreen;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include on1280px {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      margin-left: 25px;
+    }
+
+    @include on1440px {
+      margin-left: 100px;
+    }
+
+    &--top {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $colorDarkgreen;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+        color: rgba(52, 79, 16, 0.5);
+
+      }
+    }
+  }
+
+  &__bassket {
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,201 @@
+.contact {
+  @include on768px {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  @include on1280px {
+    justify-content: space-between;
+    margin-left: 130px;
+  }
+
+  @include on1440px {
+    margin-left: 200px;
+  }
+
+  &__about {
+    margin: 0 20px;
+
+    @include on768px {
+      margin-left: 27px;
+    }
+
+    &--help {
+      display: none;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      color: rgba(52, 79, 16, 0.5);
+      left: 0;
+      top: 4800px;
+
+      @include on1440px {
+        top: 4910px;
+        left: 70px;
+      }
+
+      @include on1280px {
+        position: absolute;
+        display: flex;
+        transform: rotate(270deg);
+
+        &::before {
+          content: "";
+          position: relative;
+          display: inline-block;
+          width: 88px;
+          height: 1px;
+          top: 10px;
+          left: -20px;
+          background-color: rgba(52, 79, 16, 0.5);
+        }
+      }
+    }
+
+    &--title {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $colorDarkgreen;
+      margin-bottom: 10px;
+
+      @include on1280px {
+        font-size: 36px;
+        line-height: 110%;
+        margin-bottom: 30px;
+      }
+    }
+
+    &--text {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #333;
+
+      @include on768px {
+        font-size: 16px;
+        width: 342px;
+      }
+    }
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 30px;
+
+      &-text {
+        background-color: $colorMilk;
+        border: none;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        text-transform: capitalize;
+        color: #828282;
+        resize: none;
+        border-bottom: 1px solid #bdbdbd;
+
+        @include on1440px {
+          margin-bottom: 25px;
+        }
+
+        &:nth-of-type(3) {
+          margin-bottom: 24px;
+
+          @include on1280px {
+            margin-bottom: 60px;
+          }
+        }
+
+        &:focus {
+          border-bottom: 1px solid #333;
+          outline: none;
+          font-family: "Poppins", sans-serif;
+          text-transform: capitalize;
+          color: $colorDarkgreen;
+        }
+
+        &:invalid:not(:placeholder-shown) {
+          color: #eb5757;
+          border-color: #eb5757;
+          -webkit-text-fill-color: #eb5757;
+        }
+
+        &:valid:not(:focus) {
+          color: $colorDarkgreen;
+          border-color: $colorDarkgreen;
+          -webkit-text-fill-color: $colorDarkgreen;
+        }
+      }
+
+      &-btn {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 130%;
+        text-align: center;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #f2f2f2;
+        background-color: #333;
+        padding: 19px 0;
+        margin-bottom: 100px;
+        display: flex;
+        justify-content: center;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: 0.5s;
+
+        @include on768px {
+          width: 280px;
+        }
+
+        &:hover {
+          background-color: $colorMilk;
+          color: #333;
+          border: 2px solid #333;
+        }
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+    transition: 0.5s;
+
+    &:hover {
+      filter: drop-shadow(3px 3px 12px #000);
+      transform: scale(0.95);
+    }
+
+    @include on768px {
+      display: flex;
+      width: 378px;
+      height: 409px;
+      overflow: hidden;
+      object-fit: cover;
+    }
+
+    @include on1280px {
+      display: flex;
+      width: 610px;
+      height: 484px;
+      justify-content: end;
+    }
+
+    @include on1440px {
+      width: 610px;
+      height: 584px;
+      object-fit: cover;
+    }
+  }
+}
