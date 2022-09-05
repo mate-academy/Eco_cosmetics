@@ -1,0 +1,162 @@
+.order {
+  box-sizing: border-box;
+  padding: 20px;
+
+  &__grid {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__photo {
+    height: 248px;
+    width: 100%;
+    margin-bottom: 30px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/photoShop.png);
+
+    @include onTablet {
+      display: block;
+      grid-column: 2/6;
+      width: 100%;
+      height: 440px;
+      margin-bottom: 27px;
+      object-fit: cover;
+      background-image: url(../images/addto.png);
+
+    }
+
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__price {
+
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    width: 280px;
+    height: 60px;
+    background: #333;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    cursor: pointer;
+
+    &-dec {
+      grid-column: 2/6;
+      text-decoration: none;
+    }
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+
+  }
+
+  &__paragraf {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #333;
+
+    :nth-child(1) {
+      margin-bottom: 20px;
+    }
+
+    @include onTablet {
+      grid-column: 2/6;
+    }
+
+    &-table {
+      display: none;
+      text-align: center;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 25px;
+
+      @include onTablet {
+        display: block;
+        text-align: left;
+        grid-column: 2/6;
+
+      }
+
+    }
+
+    &-table1 {
+      display: none;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #344f10;
+
+      @include onTablet {
+        display: block;
+        grid-column: 2/6;
+      }
+
+    }
+
+    &-table2 {
+      display: none;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        display: block;
+        grid-column: 2/6;
+
+      }
+
+    }
+  }
+
+  &__color {
+    color: #344f10;
+  }
+}
