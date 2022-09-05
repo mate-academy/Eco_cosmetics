@@ -1,0 +1,196 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__section {
+    padding-bottom: 100px;
+
+    @include onDesktop {
+      padding-bottom: 200px;
+    }
+
+    @include onTablet {
+      padding-bottom: 130px;
+    }
+  }
+
+  &__body {
+    background-color: $milk-color;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(103%);
+    }
+
+    &--phone {
+      display: none;
+
+      @include onPhone {
+        display: block;
+        width: 100%;
+        padding-top: 20px;
+      }
+    }
+  }
+
+  &__description {
+    color: $d-grey;
+    @include Poppins600;
+    text-align: center;
+    line-height: 130%;
+
+    @include onPhone {
+      font-size: 24px;
+    }
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+
+      padding-bottom: 10px;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      text-align: left;
+    }
+  }
+
+  &__paragraph {
+    @include Poppins400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: left;
+    color: $d-grey;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    &--desktop {
+      @include onPhoneTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      @include onPhoneTablet {
+        text-align: center;
+      }
+    }
+  }
+
+  &__title {
+    @include Poppins600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $d-green;
+    text-align: left;
+
+    @include onPhone {
+      font-size: 24px;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+    }
+
+    &--first {
+      @include Poppins600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $d-green;
+      text-align: left;
+
+      @include onTablet {
+        font-size: 18px;
+        text-align: center;
+      }
+
+      @include onPhone {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__vertical {
+    width: max-content;
+    @include Poppins500;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+
+    color: rgba(52, 79, 16, 0.5);
+
+    transform: rotate(-90deg);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: calc(100% + 10px);
+      width: 88px;
+      height: 1px;
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__learn {
+    position: relative;
+    text-decoration: none;
+    @include Poppins500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $d-green;
+
+    &:hover::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: $d-green;
+    }
+  }
+
+  &__card-title {
+    @include Poppins600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $d-grey;
+  }
+
+  &__card-price {
+    @include Poppins500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $d-grey;
+  }
+}

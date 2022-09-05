@@ -1,0 +1,52 @@
+.shop-nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    list-style: none;
+    padding-right: 50px;
+
+    @include onPhone {
+      padding-right: 30px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    @include Poppins600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    color: #828282;
+
+    @include onPhoneTablet {
+      @include Poppins400;
+      font-size: 14px;
+      line-height: 130%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: $d-grey;
+      transform: scaleX(0);
+      transition: transform 0.5s;
+    }
+
+    &:hover {
+      color: $d-grey;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

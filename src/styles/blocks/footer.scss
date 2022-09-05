@@ -1,0 +1,148 @@
+.footer {
+  background-color: rgba(51, 79, 16, 0.5);
+  width: 100%;
+  position: sticky;
+
+  &__content {
+    @include onPhone {
+      display: flex;
+      flex-direction: column;
+      height: 468px;
+    }
+
+    @include onTablet {
+      padding-top: 30px;
+      height: 263px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    @include onDesktop {
+      padding-top: 60px;
+      height: 260px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  &__nav {
+    @include onPhone {
+      padding-top: 30px;
+      padding-bottom: 40px;
+      order: 1;
+    }
+
+    @include onTablet {
+      margin-bottom: 20px;
+      grid-column: 1 / 4;
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      grid-row: 1;
+    }
+  }
+
+  &__copyright {
+    @include onTablet {
+      @include Poppins400;
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    @include onPhone {
+      order: 4;
+      align-self: center;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      grid-row: 2;
+    }
+
+    &-link {
+      text-decoration: none;
+      @include Poppins500;
+      font-size: 14px;
+      line-height: 130%;
+      color: $milk-color;
+      @include onTablet {
+        @include Poppins400;
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+  }
+
+  &__info-box {
+    @include onPhone {
+      order: 3;
+    }
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+      grid-row: 1;
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      @include Poppins400;
+      font-size: 14px;
+      line-height: 21px;
+      padding-bottom: 10px;
+    }
+
+    @include onDesktop {
+      @include Poppins400;
+      font-size: 16px;
+      line-height: 150%;
+      padding-bottom: 19px;
+    }
+
+    display: block;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $milk-color;
+
+    @include onPhone {
+      padding-bottom: 10px;
+
+      &:last-child {
+        padding-bottom: 30px;
+      }
+    }
+
+  }
+
+  &__icon {
+    @include onPhone {
+      padding-bottom: 46px;
+      order: 2;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+      grid-row: 2;
+    }
+  }
+}

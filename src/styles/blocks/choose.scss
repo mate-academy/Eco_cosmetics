@@ -1,0 +1,54 @@
+.choose {
+  position: relative;
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+      padding-top: 100px;
+    }
+  }
+
+  &__paragraph {
+    @include onDesktop {
+      grid-column: 2 / 6;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 1px;
+        width: calc(50% - 100px);
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        width: calc(50%);
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.contacts {
+  &__content {
+    position: relative;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__info {
+    grid-column: 1 / 4;
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    grid-column: 1 / 4;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+    grid-column: 1 / 4;
+  }
+
+  &__form {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    background-color: $milk-color;
+    border: 0;
+    border-bottom: 1px solid $l-grey;
+    line-height: 21px;
+    margin-bottom: 25px;
+    font-family: inherit;
+    outline: none;
+
+    &:active {
+      background-color: $milk-color;
+      border-bottom: 1px solid $l-grey;
+    }
+
+    &:focus {
+      background-color: $milk-color;
+      border-bottom: 1px solid $l-grey;
+    }
+
+    &--textarea {
+      margin: 45px 0 30px;
+
+      @include onDesktop {
+        margin: 50px 0;
+      }
+    }
+  }
+
+  &__img-container {
+    grid-column: 4 / 7;
+    position: relative;
+    margin-right: -25px;
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+      margin-right: -50px;
+    }
+  }
+
+  &__img {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.3s;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+
+    @include onTablet {
+      &:hover {
+        box-shadow: 5px 2px 10px $l-grey;
+      }
+    }
+  }
+
+  &__button {
+    width: 280px;
+  }
+
+  &__vertical {
+    @include onPhoneTablet {
+      display: none;
+    }
+    position: absolute;
+    top: 100px;
+    left: -20px;
+
+  }
+}

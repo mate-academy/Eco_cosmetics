@@ -1,0 +1,41 @@
+.nav {
+  @include onPhoneTablet {
+    display: none;
+  }
+
+  &__item {
+    display: inline;
+    padding-right: 40px;
+  }
+
+  &__link {
+    @include Poppins500;
+
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $d-green;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: $d-grey;
+      transform: scaleX(0);
+      transition: transform 0.5s;
+    }
+
+    &:hover {
+      color: $d-grey;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

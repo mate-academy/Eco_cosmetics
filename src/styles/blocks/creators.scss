@@ -1,0 +1,106 @@
+.creators {
+  &__content {
+    position: relative;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(4);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__title {
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 1;
+    }
+  }
+
+  &__vertical {
+    @include onPhoneTablet {
+      display: none;
+    }
+    position: absolute;
+    top: 100px;
+    left: -80px;
+
+  }
+
+  &__paragraph {
+    @include onDesktop {
+      grid-column: 2 / 6;
+      padding-top: 30px;
+    }
+
+    @include onTablet {
+      // grid-row: 2 / 4;
+      grid-column: 1 / 4;
+    }
+
+    @include onPhone {
+      padding-top: 10px;
+    }
+
+    &--desktop {
+      @include onPhoneTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__picture {
+    @include onDesktop {
+      grid-column: 7 / 13;
+      grid-row: 1 / 5;
+      align-self: flex-end;
+      height: 570px;
+    }
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      grid-row: 1 / 5;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        grid-column: 12;
+        grid-row: 1 / 5;
+        align-self: flex-end;
+        width: 100%;
+        height: 430px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      grid-column: 2 / 5;
+      padding-top: 40px;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 4;
+    }
+
+    padding-top: 30px;
+  }
+}
