@@ -1,0 +1,68 @@
+.nav {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50% 1fr 20px;
+
+  padding: 15px 20px 20px;
+
+  &__logo {
+    position: relative;
+
+    width: 24px;
+    height: 24px;
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+    }
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/icon.svg);
+
+    &-tooltip {
+      opacity: 0;
+
+      @include onDesktop {
+        position: absolute;
+
+        display: block;
+        width: max-content;
+        padding-right: 20px;
+        padding-left: 12px;
+
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+
+        font-size: 14px;
+        line-height: 130%;
+        color: #292929;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 1;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__tooltip {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: flex-start;
+      gap: 40px;
+    }
+
+    &--link {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+
+      color: #344f10;
+    }
+  }
+}
