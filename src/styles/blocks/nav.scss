@@ -1,0 +1,49 @@
+.nav {
+  padding: 15px 20px 20px;
+  height: 100vh;
+  display: none;
+
+  &--visible {
+    display: block;
+  }
+
+  &__icon {
+    display: block;
+    margin-bottom: 44px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item {
+    position: relative;
+    text-align: center;
+
+    &::after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 1px;
+      right: 0;
+      position: absolute;
+      background-color: $dark-gray-82;
+      transition: width 1s ease 0s, right 0.5s ease 0s;
+      width: 100%;
+    }
+
+    &:hover:after {
+      width: 0;
+      left: 0;
+    }
+  }
+
+  &__link {
+    @include fs-menu-mobile;
+    color: $light-red;
+    line-height: 43px;
+  }
+}
