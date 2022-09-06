@@ -1,4 +1,15 @@
 .brand {
+  @include tablet {
+    @include padding-tablet;
+  }
+
+  @include pc-1280 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    @include padding-pc-small;
+  }
+
   &__img {
     width: 100%;
     height: 268px;
@@ -7,22 +18,68 @@
     background-size: cover;
     background-position: center;
     margin-bottom: 25px;
+
+    @include tablet {
+      height: 500px;
+      margin-bottom: 50px;
+    }
+
+    @include pc-1280 {
+      flex: 1;
+    }
   }
 
   &__text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     @include padding-mobile;
+
+    @include pc-1280 {
+      padding: 0;
+      flex: 1;
+      align-items: flex-start;
+    }
   }
 
   &__title {
-    @include fs-h1(24px);
+    @include fs-h1(24px, 130%);
     text-align: center;
     margin-bottom: 10px;
+    text-transform: capitalize;
+
+
+    @include tablet {
+      width: 466px;
+      @include fs-h1(36px, 150%);
+    }
+
+    @include pc-1280 {
+      width: auto;
+      @include fs-h1(60px, 130%);
+      text-align: left;
+      padding-left: 100px;
+    }
   }
 
   &__text {
     @include fs-text;
     text-align: center;
     margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include pc-1280 {
+      text-align: left;
+      padding-left: 100px;
+    }
   }
 
+  &__button {
+    @include pc-1280 {
+      margin-left: 100px;
+    }
+  }
 }

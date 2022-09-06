@@ -5,6 +5,25 @@
   }
 }
 
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin pc-1280 {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin pc-1440 {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+
 @mixin bckgrn-img {
   background-repeat: no-repeat;
   background-size: contain;
@@ -19,10 +38,22 @@
   padding: 0 20px;
 }
 
-@mixin fs-h1($fs) {
+@mixin padding-tablet {
+  padding: 0 27px;
+}
+
+@mixin padding-pc-small {
+  padding: 0 50px;
+}
+
+@mixin padding-pc-big {
+  padding: 0 130px;
+}
+
+@mixin fs-h1($fs, $lh) {
   font-weight: 600;
   font-size: $fs;
-  line-height: 130%;
+  line-height: $lh;
 }
 
 @mixin fs-h2 {

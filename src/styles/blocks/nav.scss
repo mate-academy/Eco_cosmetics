@@ -1,10 +1,60 @@
 .nav {
   padding: 15px 20px 20px;
+  background-color: $dark;
   height: 100vh;
   display: none;
+  @include square(100%);
+
+  transition: opacity 1s;
+
+  @include tablet {
+    padding: 23px 27px 30px;
+  }
 
   &--visible {
     display: block;
+    animation: fadeIn $transition;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+  }
+
+  @include pc-1280 {
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  &__pc {
+    display: none;
+
+    @include pc-1280 {
+      display: block;
+    }
+  }
+
+  &__pc-list {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  &__pc-link {
+    @include fs-menu;
+    text-transform: capitalize;
+    color: $green;
+    padding: 10px 0;
+  }
+
+  &__mobile {
+    @include pc-1280 {
+      display: none;
+    }
   }
 
   &__icon {
