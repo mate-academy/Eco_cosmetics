@@ -4,9 +4,6 @@
   }
 
   @include pc-1280 {
-    // display: flex;
-    // flex-direction: row-reverse;
-    // justify-content: center;
     @include padding-pc-small;
     @include grid(12, 20px);
   }
@@ -17,12 +14,7 @@
   }
 
   &__img {
-    width: 100%;
     height: 268px;
-    background-image: url(../images/header-tablet.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     margin-bottom: 25px;
 
     @include tablet {
@@ -31,8 +23,17 @@
     }
 
     @include pc-1280 {
+      height: 450px;
       grid-column: 7 / 13;
+      margin-bottom: 0;
     }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 
   &__text-box {
