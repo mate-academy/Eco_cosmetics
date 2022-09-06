@@ -1,20 +1,27 @@
 .header {
   height: 100vh;
 
+  // @include onMobile {
+  //   &__content {
+  //     display: flex;
+  //     flex-direction: column-reverse;
+  //   }
+  // }
+
   &__image {
     display: flex;
     justify-content: center;
     align-items: center;
 
     width: 100%;
-    margin-bottom: 25px;
+    margin: 0 auto 25px;
 
     @include onTablet {
-      max-width: 714px;
+      margin-bottom: 50px;
     }
 
     @include onDesktop {
-      max-width: 580px;
+      margin: 0;
     }
   }
 
@@ -41,7 +48,14 @@
 
     color: #333;
 
+    @include onTablet {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 150%;
+    }
+
     @include onDesktop {
+      margin-bottom: 30px;
       text-align: left;
     }
 
@@ -74,4 +88,20 @@
   &__button {
     // margin: 0 auto;
   }
+
+  // &::after {
+  //   display: none;
+
+  //   @include onDesktop {
+  //     content: "";
+  //     position: absolute;
+  //     left: 0;
+  //     top: 100%;
+  //     display: block;
+  //     height: 1px;
+  //     width: 530px;
+
+  //     background-color: rgba(52, 79, 16, 0.5);
+  //   }
+  // }
 }

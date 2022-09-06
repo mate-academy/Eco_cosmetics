@@ -6,6 +6,33 @@
   color: #333;
 
   &__body {
+    min-height: 100vh;
     background-color: #e4dfd3;
+  }
+
+  &__section {
+    padding-bottom: 100px;
+
+    @include onTablet {
+      padding-bottom: 130px;
+    }
+
+    @include onTablet {
+      padding-bottom: 200px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
   }
 }

@@ -1,9 +1,18 @@
 .nav {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 50% 1fr 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 
-  padding: 15px 20px 20px;
+  @include onTablet {
+    padding: 28px 0 27px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50% 1fr 20px;
+    padding: 40px 0 80px;
+  }
 
   &__logo {
     position: relative;
@@ -12,8 +21,9 @@
     height: 24px;
 
     @include onDesktop {
-      width: 50px;
+      width: 270px;
       height: 50px;
+      background-image: url(../images/icon-with-text.svg);
     }
 
     background-repeat: no-repeat;
@@ -21,48 +31,58 @@
     background-position: center;
     background-image: url(../images/icon.svg);
 
-    &-tooltip {
-      opacity: 0;
+    // &-tooltip {
+    //   opacity: 0;
+    //   color: #344f10;
 
-      @include onDesktop {
-        position: absolute;
+    //   @include onDesktop {
+    //     position: absolute;
 
-        display: block;
-        width: max-content;
-        padding-right: 20px;
-        padding-left: 12px;
+    //     display: block;
+    //     width: max-content;
+    //     padding-right: 20px;
+    //     padding-left: 12px;
 
-        left: 100%;
-        top: 50%;
-        transform: translateY(-50%);
+    //     left: 100%;
+    //     top: 50%;
+    //     transform: translateY(-50%);
 
-        font-size: 14px;
-        line-height: 130%;
-        color: #292929;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        opacity: 1;
-        pointer-events: none;
-      }
-    }
+    //     font-size: 14px;
+    //     line-height: 130%;
+    //     color: #292929;
+    //     letter-spacing: 2px;
+    //     text-transform: uppercase;
+    //     opacity: 1;
+    //     pointer-events: none;
+    //   }
+    // }
   }
 
-  &__tooltip {
+  &__list {
     display: none;
+    list-style-type: none;
 
     @include onDesktop {
       display: flex;
-      justify-content: flex-start;
+      align-items: center;
       gap: 40px;
     }
+  }
 
-    &--link {
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 150%;
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #344f10;
 
-      color: #344f10;
+    border: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: inherit;
     }
   }
 }

@@ -14,7 +14,8 @@
   }
 
   &--desktop {
-    display: block;
+    display: flex;
+    flex-direction: column;
 
     @include onTablet {
       display: grid;
@@ -22,6 +23,24 @@
 
     @include onDesktop {
       display: grid;
+    }
+  }
+
+  &--order-1 {
+    @include onSmallDev {
+      order: -1;
+    }
+  }
+
+  &--order-2 {
+    @include onDesktop {
+      order: 2;
+    }
+  }
+
+  &--row-1 {
+    @include onTablet {
+      grid-row: 1;
     }
   }
 
