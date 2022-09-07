@@ -11,3 +11,13 @@ window.addEventListener('hashchange', () => {
     nav.classList.remove('nav--visible');
   }
 });
+
+const formInputs = document.querySelectorAll('.form__input');
+
+document.querySelector('.form').addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  for (const input of formInputs) {
+    input.value = '';
+  }
+}, false);
