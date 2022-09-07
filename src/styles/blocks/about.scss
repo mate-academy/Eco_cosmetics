@@ -1,0 +1,149 @@
+.about {
+  &__side-bar {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    transform: rotate(180deg);
+
+    justify-self: start;
+    align-self: start;
+    writing-mode: tb - rl;
+    color: rgba(52, 79, 16, 0.5);
+
+    @include onDesktop {
+      display: flex;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 100px;
+      border-left: 1px solid rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 120px;
+    }
+  }
+
+  &__text {
+    max-width: 100%;
+
+    @include onTablet {
+      max-width: 50%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #344f10;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    &--desktop {
+      display: none;
+      margin-bottom: 40px;
+
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    line-height: 130%;
+    padding-bottom: 10px;
+    text-decoration: none;
+
+    color: #344f10;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.3s ease-in-out;
+    text-transform: uppercase;
+
+    &:hover {
+      border-bottom-color: #344f10;
+    }
+  }
+
+  &__images {
+    display: flex;
+    gap: 20px;
+
+    max-width: 50%;
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+      height: 100%;
+      // width: 342px;
+      // height: 321px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include onDesktop {
+      display: block;
+      width: 100%;
+      height: 100%;
+      // width: 380px;
+      // height: 529px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        align-self: end;
+        width: 100%;
+        height: 100%;
+        // width: 180px;
+        // height: 430px;
+      }
+    }
+  }
+}
