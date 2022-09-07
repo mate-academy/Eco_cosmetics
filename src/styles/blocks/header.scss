@@ -1,7 +1,27 @@
 .header {
   &__content {
-    @include onDesktop {
-      row-gap: 200px;
+    &--top {
+      grid-template-rows: 267px;
+
+      @include onTablet {
+        grid-template-rows: 500px;
+      }
+
+      @include onDesktop {
+        grid-template-rows: 450px;
+      }
+    }
+
+    &--bottom {
+      grid-template-rows: 1fr;
+
+      @include onTablet {
+        grid-template-rows: 1fr;
+      }
+
+      @include onDesktop {
+        grid-template-rows: 344px;
+      }
     }
   }
 
@@ -39,18 +59,17 @@
 
   &__subtitle {
     @include onDesktop {
-      position: relative;
       padding-top: 100px;
 
       &::after {
         content: "";
         display: block;
         background-color: $color-accent-transparent;
-        width: calc(100% + 230px);
-        margin-right: -230px;
+        width: 50%;
         height: 1px;
         position: absolute;
         bottom: 0;
+        right: 0;
       }
     }
   }
@@ -68,27 +87,18 @@
 
     @include onDesktop {
       display: block;
-      position: relative;
+
       padding-top: 100px;
-    }
 
-    &::before {
-      content: "";
-      display: block;
-      background-color: $color-accent-transparent;
-      width: 100%;
-      height: 1px;
-      position: absolute;
-      top: 0;
-
-      @media (min-width: 1280px) {
-        width: calc(100% + 150px);
-        margin-left: -230px;
-      }
-
-      @media (min-width: 1440px) {
-        width: calc(100% + 230px);
-        margin-left: -230px;
+      &::before {
+        content: "";
+        display: block;
+        background-color: $color-accent-transparent;
+        width: calc(50% - 110px);
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
     }
   }

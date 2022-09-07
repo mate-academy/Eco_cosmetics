@@ -12,27 +12,39 @@
 
   &__container {
     margin: 0 auto;
-    max-width: 1180px;
-    padding: 15px 20px 20px;
+
+    @include px-mobile;
 
     @include onTablet {
-      padding: 20px 27px;
+      @include px-tablet;
     }
 
     @include onDesktop {
-      padding-top: 40px;
+      @include px-desktop;
+
+      margin-bottom: 200px;
     }
 
-    @media (min-width: 1280px) {
-      box-sizing: content-box;
-      padding-right: 50px;
-      padding-left: 50px;
+    @include onDesktop-xxl {
+      max-width: 1440px;
+
+      @include px-desktop-xxl;
     }
 
-    @media (min-width: 1440px) {
-      box-sizing: content-box;
-      padding-right: 130px;
-      padding-left: 130px;
+    &--top {
+      padding-top: 15px;
+
+      @include onTablet {
+        padding-top: 20px;
+      }
+
+      @include onDesktop {
+        padding-top: 40px;
+      }
+    }
+
+    &--bottom {
+      position: relative;
     }
   }
 
