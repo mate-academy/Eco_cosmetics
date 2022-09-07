@@ -1,0 +1,24 @@
+.logo {
+  display: inline-block;
+  @include square(24px);
+
+  background-image: url(../images/logo-small.svg);
+  @extend %cover-center-no-repeat;
+
+  cursor: pointer;
+
+  &--small {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--big {
+    @include onDesktop {
+      height: 50px;
+      width: 270px;
+      display: inline-block;
+      background-image: url(../images/logo.svg);
+    }
+  }
+}
