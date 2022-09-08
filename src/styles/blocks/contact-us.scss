@@ -74,6 +74,61 @@
     }
   }
 
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    padding: 25px 0 5px;
+
+    @include onDesktop {
+      padding: 30px 0 10px;
+      font-size: 18px;
+    }
+
+    color: #344f10;
+
+    background-color: #e4dfd3;
+    border: 1px solid transparent;
+    border-bottom-color: #bdbdbd;
+
+    transition: border-bottom-color 0.3s;
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: #828282;
+
+      transition: color 0.3s;
+    }
+
+    &:hover {
+      border-bottom-color: #333;
+
+      &::placeholder {
+        color: #333;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: #333;
+    }
+
+    &--textarea {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
   &__link {
     display: inline-block;
     line-height: 130%;
@@ -106,6 +161,7 @@
     height: 100%;
 
     object-fit: cover;
+    object-position: left;
     transition: transform 1s;
 
     &:hover {
@@ -117,7 +173,7 @@
     }
 
     @include onDesktop {
-      min-height: 529px;
+      height: 529px;
     }
   }
 
