@@ -1,0 +1,225 @@
+.shop {
+  &__box {
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__side-bar {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    transform: rotate(180deg);
+    margin-right: 60px;
+
+    justify-self: start;
+    align-self: start;
+    writing-mode: tb - rl;
+    color: rgba(52, 79, 16, 0.5);
+
+    @include onDesktop {
+      display: flex;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 100px;
+      border-left: 1px solid rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #344f10;
+
+    @include onMobile {
+      text-align: center;
+    }
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  // &__cards {
+  //   display: flex;
+  //   justify-content: center;
+  //   gap: 30px;
+
+  //   @include onDesktop {
+  //     gap: 20px;
+  //   }
+  // }
+
+  &__card {
+    &--desktop {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 34px;
+    margin-bottom: 26px;
+
+    @include onMobile {
+      justify-content: center;
+    }
+
+    @include onTablet {
+      margin-bottom: 36px;
+    }
+
+    @include onDesktop {
+      gap: 50px;
+      margin-bottom: 62px;
+    }
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+
+    @include onDesktop {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: #828282;
+
+    &:hover::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      background-color: #333;
+      height: 2px;
+      top: 0;
+      left: 0;
+    }
+
+    &:hover {
+      color: #333;
+    }
+  }
+
+  &__img-box {
+    margin: 0 auto 25px;
+
+    @include onTablet {
+      min-width: 342px;
+      height: 300px;
+    }
+
+    @include onDesktop {
+      min-width: 530px;
+      height: 500px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    @include onDesktop {
+      // max-width: 530px;
+      height: 100%;
+      margin: 0;
+    }
+    // width: 320px;
+    // max-height: 267px;
+    // margin-bottom: 20px;
+
+    object-fit: cover;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    // @include onTablet {
+    //   width: 350px;
+    //   max-height: 300px;
+    // }
+
+    // @include onDesktop {
+    //   width: 530px;
+    //   max-height: 500px;
+    // }
+
+    &-title {
+      display: block;
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 15px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 12px;
+      }
+
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: #333;
+    }
+
+    &-price {
+      display: block;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: #333;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}
