@@ -1,16 +1,18 @@
 .button {
-  display: inline-block;
+  display: block;
   font-weight: 600;
-  line-height: 130%;
+  width: 280px;
+  height: 60px;
+  line-height: 60px;
   letter-spacing: 1.5px;
 
   color: $color-white;
   background-color: $color-main;
   border: 1px solid transparent;
 
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 20px 115px;
 
   transition: color $duration,
     background-color $duration,
@@ -23,10 +25,27 @@
   }
 
   &__link {
-    margin-bottom: 100px;
+    margin: 0 auto 100px;
 
     @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
       margin: 0 0 130px;
+    }
+  }
+
+  &__grid {
+    grid-area: 4 / 1 / 4 / 3;
+    margin: auto;
+
+    @include onTablet {
+      grid-area: 4 / 2 / 4 / 6;
+    }
+
+    @include onDesktop {
+      grid-area: 4 / 6 / 4 / 9;
     }
   }
 }
