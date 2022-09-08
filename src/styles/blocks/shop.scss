@@ -69,6 +69,20 @@
   //   }
   // }
 
+  &__content {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
   &__card {
     &--desktop {
       display: none;
@@ -132,16 +146,6 @@
 
   &__img-box {
     margin: 0 auto 25px;
-
-    @include onTablet {
-      min-width: 342px;
-      height: 300px;
-    }
-
-    @include onDesktop {
-      min-width: 530px;
-      height: 500px;
-    }
   }
 
   &__img {
@@ -149,13 +153,9 @@
     height: 100%;
 
     @include onDesktop {
-      // max-width: 530px;
       height: 100%;
       margin: 0;
     }
-    // width: 320px;
-    // max-height: 267px;
-    // margin-bottom: 20px;
 
     object-fit: cover;
     transition: transform 1s;
@@ -163,16 +163,6 @@
     &:hover {
       transform: scale(1.05);
     }
-
-    // @include onTablet {
-    //   width: 350px;
-    //   max-height: 300px;
-    // }
-
-    // @include onDesktop {
-    //   width: 530px;
-    //   max-height: 500px;
-    // }
 
     &-title {
       display: block;
