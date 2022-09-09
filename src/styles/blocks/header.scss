@@ -12,8 +12,15 @@
   }
 
   @include pc-1440 {
+    @include grid(12, 20px);
     max-width: 1440px;
     padding: 40px 130px 70px;
+  }
+
+  &__logo {
+    @include pc-1280 {
+      grid-column: 1 / 4;
+    }
   }
 
   &__nav {
@@ -23,6 +30,15 @@
 
     @include pc-1280 {
       position: static;
+      grid-column: 7 / 10;
+    }
+  }
+
+  &__basket {
+    @include pc-1280 {
+      grid-column: 12 / 13;
+      align-self: center;
+      justify-self: end;
     }
   }
 }
