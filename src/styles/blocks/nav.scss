@@ -17,18 +17,24 @@
 
   &__logo {
     display: block;
+    width: 24px;
+    height: 24px;
+
     background-image: url(../images/icon.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
-    width: 24px;
-    height: 24px;
+    transition: transform 0.3s;
 
     @include onDesktop {
       width: 270px;
       height: 50px;
       background-image: url(../images/icon-with-text.svg);
+    }
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
 
@@ -44,6 +50,8 @@
   }
 
   &__link {
+    padding: 10px 0;
+
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;

@@ -1,4 +1,20 @@
 .header {
+  &__image-box {
+    margin: 0 auto 25px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+  }
+
   &__image {
     width: 100%;
     margin: 0 auto 25px;
@@ -9,6 +25,13 @@
 
     @include onDesktop {
       margin: 0;
+    }
+
+    object-fit: cover;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
 

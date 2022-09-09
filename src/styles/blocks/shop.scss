@@ -59,16 +59,6 @@
     }
   }
 
-  // &__cards {
-  //   display: flex;
-  //   justify-content: center;
-  //   gap: 30px;
-
-  //   @include onDesktop {
-  //     gap: 20px;
-  //   }
-  // }
-
   &__content {
     display: flex;
     justify-content: center;
@@ -113,6 +103,7 @@
   }
 
   &__link {
+    padding-bottom: 10px;
     font-weight: 400;
     font-size: 14px;
     line-height: 130%;
@@ -126,26 +117,22 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     text-decoration: none;
-
     color: #828282;
 
-    &:hover::after {
-      position: absolute;
-      content: "";
-      width: 100%;
-      background-color: #333;
-      height: 2px;
-      top: 0;
-      left: 0;
-    }
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color 0.3s, color 0.3s;
 
     &:hover {
       color: #333;
+      border-bottom-color: #344f10;
     }
   }
 
   &__img-box {
     margin: 0 auto 25px;
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
   }
 
   &__img {
@@ -161,7 +148,7 @@
     transition: transform 1s;
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
     }
 
     &-title {
