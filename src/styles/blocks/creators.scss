@@ -22,22 +22,26 @@
   &__learn-more {
     margin-top: 20px;
     display: inline-block;
-    text-transform: uppercase;
+    position: relative;
 
     @extend %text-decorative;
-    color: $color-green;
 
-    &::after {
-      content: "";
-      display: block;
-      margin-top: 10px;
-      height: 1px;
-      width: 100%;
-      background-color: $color-green;
+    transition: all 0.5s;
+
+    &:hover {
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        margin-top: 10px;
+        height: 1px;
+        width: 100%;
+        background-color: $color-green;
+      }
     }
   }
 
   &__button {
-    margin-top: 40px;
+    margin-top: 51px;
   }
 }

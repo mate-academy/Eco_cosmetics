@@ -1,4 +1,6 @@
 .header {
+  padding-bottom: 0;
+
   &__container {
     display: block;
     padding: 40px 50px 80px;
@@ -31,19 +33,24 @@
     &:not(:last-child) {
       margin-right: 40px;
     }
+  }
 
+  &__link {
+    @extend %text-menu;
+    position: relative;
+    transform: all 0.5s ease-in-out;
+
+    &:hover {
+      &::after {
+        position: absolute;
+        bottom: -11px;
+        left: 0;
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $color-green;
+      }
+    }
   }
 }
-
-// .header {
-//   padding: 40px 0 80px 0;
-
-//   &__container {
-//     display: block;
-//   }
-
-//   &__top {
-//     display: flex;
-
-//   }
-// }

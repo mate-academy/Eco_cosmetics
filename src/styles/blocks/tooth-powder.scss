@@ -10,6 +10,28 @@
     height: 100%;
   }
 
+  &__learn-more {
+    display: inline-block;
+    position: relative;
+
+    @extend %text-decorative;
+
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      &::after {
+        position: absolute;
+        bottom: -11px;
+        left: 0;
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $color-green;
+      }
+    }
+  }
+
   &__container--right {
     width: calc(50% + 20px);
   }
