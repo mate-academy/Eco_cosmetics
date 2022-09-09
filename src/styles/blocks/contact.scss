@@ -8,7 +8,7 @@
 
   @include pc-1280 {
     @include grid(12, 20px);
-    @include padding-pc-small
+    @include padding-pc-small;
   }
 
   @include pc-1440 {
@@ -91,26 +91,26 @@
     }
   }
 
-  &__tablet {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  &__img {
+    @include img;
+    transition: transform $transition ease-in-out;
 
-    @include pc-1280 {
-      display: none;
+    &:hover {
+      transform: scale(0.97);
     }
-  }
 
-  &__pc {
-    display: none;
+    &--tablet {
+      @include pc-1280 {
+        display: none;
+      }
+    }
 
-    @include pc-1280 {
-      display: inline;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
+    &--pc {
+      display: none;
+
+      @include pc-1280 {
+        display: inline;
+      }
     }
   }
 }

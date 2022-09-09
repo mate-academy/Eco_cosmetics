@@ -64,12 +64,13 @@
     }
   }
 
-
   &__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    @include img;
+    transition: transform $transition ease-in-out;
+
+    &:hover {
+      transform: scale(0.97);
+    }
   }
 
   &__title {
@@ -131,6 +132,14 @@
 
     &:hover {
       border-bottom-color: $green;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include tablet {
+      margin: 0;
     }
   }
 }
