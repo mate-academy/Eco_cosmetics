@@ -34,6 +34,18 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+    }
   }
 
   &__link {
@@ -114,8 +126,14 @@
     }
   }
 
-  &__brand-gap {
-    @include onTablet {
+  @include onTablet {
+    &__brand-gap {
+      display: none;
+    }
+  }
+
+  @include onDesktop {
+    &__brand-gap {
       display: none;
     }
   }
