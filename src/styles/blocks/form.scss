@@ -45,6 +45,10 @@
       padding-bottom: 10px;
     }
 
+    &:active {
+      background-color: $color-background;
+    }
+
     &::placeholder {
       font-family: inherit;
       font-size: inherit;
@@ -53,6 +57,14 @@
 
     &:focus {
       border-bottom-color: $color-main;
+    }
+
+    &:required:valid {
+      border-bottom-color: $color-accent;
+    }
+
+    &:not(:focus):not(:placeholder-shown):invalid {
+      border-bottom-color: $color-error;
     }
 
     &--textarea {
