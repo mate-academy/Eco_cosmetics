@@ -1,47 +1,50 @@
 .creators {
-  &__content {
-    width: 380px;
-  }
-  &__title {
-    margin-bottom: 34px;
-  }
 
-  &__paragraph {
-
-    &:first-of-type {
-      margin-top: 34px;
+  @include onDesktop {
+    &__content {
+      width: 380px;
+    }
+    &__title {
+      margin-bottom: 34px;
     }
 
-    &:not(:first-of-type) {
-      margin-top: 30px;
+    &__paragraph {
+
+      &:first-of-type {
+        margin-top: 34px;
+      }
+
+      &:not(:first-of-type) {
+        margin-top: 30px;
+      }
+
+      // @extend %text;
     }
 
-    @extend %text;
-  }
+    &__learn-more {
+      margin-top: 20px;
+      display: inline-block;
+      position: relative;
 
-  &__learn-more {
-    margin-top: 20px;
-    display: inline-block;
-    position: relative;
+      // @extend %text-decorative;
 
-    @extend %text-decorative;
+      transition: all 0.5s;
 
-    transition: all 0.5s;
-
-    &:hover {
-      &::after {
-        position: absolute;
-        content: "";
-        display: block;
-        margin-top: 10px;
-        height: 1px;
-        width: 100%;
-        background-color: $color-green;
+      &:hover {
+        &::after {
+          position: absolute;
+          content: "";
+          display: block;
+          margin-top: 10px;
+          height: 1px;
+          width: 100%;
+          background-color: $color-green;
+        }
       }
     }
-  }
 
-  &__button {
-    margin-top: 51px;
+    &__button {
+      margin-top: 51px;
+    }
   }
 }

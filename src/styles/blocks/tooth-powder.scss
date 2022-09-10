@@ -1,38 +1,41 @@
 .tooth-powder {
-  &__container--left {
-    width: calc(50% - 20px);
-  }
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-  }
+  @include onDesktop {
+    &__container--left {
+      width: calc(50% - 20px);
+    }
 
-  &__learn-more {
-    display: inline-block;
-    position: relative;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
 
-    @extend %text-decorative;
+    &__learn-more {
+      display: inline-block;
+      position: relative;
 
-    transition: all 0.5s ease-in-out;
+      // @extend %text-decorative;
 
-    &:hover {
-      &::after {
-        position: absolute;
-        bottom: -11px;
-        left: 0;
-        content: "";
-        display: block;
-        height: 1px;
-        width: 100%;
-        background-color: $color-green;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        &::after {
+          position: absolute;
+          bottom: -11px;
+          left: 0;
+          content: "";
+          display: block;
+          height: 1px;
+          width: 100%;
+          background-color: $color-green;
+        }
       }
     }
-  }
 
-  &__container--right {
-    width: calc(50% + 20px);
+    &__container--right {
+      width: calc(50% + 20px);
+    }
   }
 }

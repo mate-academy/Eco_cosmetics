@@ -1,43 +1,53 @@
 .about {
-  &__content {
-    width: 380px;
+  display: none;
+
+  @include onTablet {
+    display: block;
   }
 
-  &__paragraph {
-    @extend %text;
+  @include onDesktop {
+    display: block;
 
-    &:first-of-type {
-      margin-top: 40px;
+    &__content {
+      width: 380px;
     }
 
-    &:last-of-type {
-      margin-top: 30px;
-    }
-  }
+    &__paragraph {
+      // @extend %text;
 
-  &__learn-more {
-    margin-top: 40px;
-    display: inline-block;
+      &:first-of-type {
+        margin-top: 40px;
+      }
 
-    @extend %text-decorative;
-
-    transition: all 0.5s ease-in-out;
-
-    &:hover {
-      &::after {
-        content: "";
-        display: block;
-        margin-top: 10px;
-        height: 1px;
-        width: 100%;
-        background-color: $color-green;
+      &:last-of-type {
+        margin-top: 30px;
       }
     }
-  }
 
-  &__photos {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    &__learn-more {
+      margin-top: 40px;
+      display: inline-block;
+
+      // @extend %text-decorative;
+
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        &::after {
+          content: "";
+          display: block;
+          margin-top: 10px;
+          height: 1px;
+          width: 100%;
+          background-color: $color-green;
+        }
+      }
+    }
+
+    &__photos {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
   }
 }

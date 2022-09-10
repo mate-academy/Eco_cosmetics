@@ -1,55 +1,98 @@
 .header {
   padding-bottom: 0;
 
+  &__desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__mobile {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
   &__container {
     display: block;
-    padding: 40px 50px 80px;
+    padding: 15px 20px;
+
+    @include onTablet {
+      padding: 15px 20px 20px;
+    }
+    @include onDesktop {
+      padding: 40px 50px 80px;
+
+    }
   }
 }
 
 .top {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onDesktop {
+    height: 24px;
+  }
 
   &__icon {
-    &--logo {
-      width: calc(50% + 10px);
+
+    @include onDesktop {
+      &--logo {
+        width: calc(50% + 10px);
+      }
+    }
+  }
+
+  &__icon--cart {
+    transition: transform ;
+
+    &:hover {
+      transform: rotate(20deg);
     }
   }
 }
 
 .menu {
-  width: calc(50% - 10px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @extend %text-menu;
 
-  &__list {
+  @include onDesktop {
+    width: calc(50% - 10px);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 100%;
-  }
 
-  &__item {
-    &:not(:last-child) {
-      margin-right: 40px;
+    &__list {
+      display: flex;
+      align-items: center;
+      height: 100%;
     }
-  }
 
-  &__link {
-    @extend %text-menu;
-    position: relative;
-    transform: all 0.5s ease-in-out;
+    &__item {
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
 
-    &:hover {
-      &::after {
-        position: absolute;
-        bottom: -11px;
-        left: 0;
-        content: "";
-        display: block;
-        height: 1px;
-        width: 100%;
-        background-color: $color-green;
+    &__link {
+      // @extend %text-menu;
+      position: relative;
+      transform: all 0.5s ease-in-out;
+
+      &:hover {
+        &::after {
+          position: absolute;
+          bottom: -11px;
+          left: 0;
+          content: "";
+          display: block;
+          height: 1px;
+          width: 100%;
+          background-color: $color-green;
+        }
       }
     }
   }

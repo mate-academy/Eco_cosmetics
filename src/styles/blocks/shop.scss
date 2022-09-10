@@ -1,70 +1,73 @@
 .shop {
-  &__container {
-    padding-left: 150px;
-    flex-direction: column;
-  }
 
-  &__categories {
-    display: flex;
-    margin-top: 30px;
+  @include onDesktop {
+    &__container {
+      padding-left: 150px;
+      flex-direction: column;
+    }
 
-    @extend %h5;
-  }
+    &__categories {
+      display: flex;
+      margin-top: 30px;
 
-  &__category {
-    width: 100px;
+      // @extend %h5;
+    }
 
-    &--items {
-      display: inline-block;
-      // border-bottom: 2px black;//чому не спрацювало
-      position: relative;
-      color: #828282;
+    &__category {
+      width: 100px;
 
-      transition: all 0.5s ease-in-out;
+      &--items {
+        display: inline-block;
+        // border-bottom: 2px black;//чому не спрацювало
+        position: relative;
+        color: #828282;
 
-      &:hover {
-        color: $color-green;
-        &::after {
-          position: absolute;
-          bottom: -12px;
-          left: 0;
-          content: "";
-          height: 2px;
-          width: 100%;
-          background-color: $color-green;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          color: $color-green;
+          &::after {
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            content: "";
+            height: 2px;
+            width: 100%;
+            background-color: $color-green;
+          }
+
         }
-
       }
     }
-  }
 
-  &__products {
-    display: flex;
-    margin-top: 62px;
-    justify-content: space-between;
-  }
-
-  &__product {
-    &--left {
-      padding-left: 0;
+    &__products {
+      display: flex;
+      margin-top: 62px;
+      justify-content: space-between;
     }
 
-    &--name {
-      margin-top: 20px;
+    &__product {
+      &--left {
+        padding-left: 0;
+      }
+
+      &--name {
+        margin-top: 20px;
+      }
+
+      &--price {
+        margin-top: 12px;
+
+        // @extend %text-price;
+      }
     }
 
-    &--price {
-      margin-top: 12px;
-
-      @extend %text-price;
+    &__button {
+      margin: 40px auto 0;
     }
-  }
 
-  &__button {
-    margin: 40px auto 0;
-  }
-
-  &__photo1 {
-    display: flex;
+    &__photo1 {
+      display: flex;
+    }
   }
 }
