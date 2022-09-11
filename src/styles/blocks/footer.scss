@@ -1,68 +1,196 @@
 .footer {
+  padding: 30px 20px 40px;
+  min-height: min-content;
+
+  background-color: #344f1080;
+
+  @include onTablet {
+    padding: 30px 27px;
+    min-height: 263px;
+  }
 
   @include onDesktop {
     padding: 60px 50px;
     height: 320px;
-    background-color: #344f1080;
+  }
 
-    &__container {
-      padding: 0;
-      height: 100%;
+  &__container {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 
-    }
-    &__container--left {
-      padding: 0;
-      width: 50%;
+    &--left {
+      @include onTablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;//чому вона його не розтягує
+      }
 
-      // @extend %text-menu;
-      color: $color-bg;
-    }
+      @include onDesktop {
+        padding: 0;
+        width: 50%;
 
-    &__content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-
-    &__container--right {
-      padding-left: 110px;
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    &__link {
-      text-transform: none;
-      color: $color-bg;
-
-      position: relative;
-      transform: all 0.5s ease-in-out;
-
-      &:hover {
-        &::after {
-          position: absolute;
-          bottom: -11px;
-          left: 0;
-          content: "";
-          display: block;
-          height: 1px;
-          width: 100%;
-          background-color: $color-bg;
-        }
+        color: $color-bg;
       }
     }
+  }
 
-    &__info--right {
+  &__content {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      // height: 100%;
+    }
+  }
+
+  &__copyright--tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+
       color: $color-bg;
-      // @extend %text;
-      text-transform: none;
     }
 
-    &__cocial {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu {
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+
+  &__item {
+    &:not(:first-of-type) {
+      margin-top: 11px;
+
+      @include onTablet {
+        margin-top: 15px;
+      }
+
+      @include onDesktop {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__link {
+    text-transform: none;
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    color: $color-bg;
+
+    &:hover {
+      border-color: $color-bg;
+    }
+  }
+
+  &__copyright {
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__social {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__container--right {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      padding-left: 110px;
+
+      width: 50%;
+    }
+  }
+
+  &__info--right {
+    display: block;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    text-transform: none;
+    color: $color-bg;
+
+    @include onDesktop {
+      font-size: 16px;
+    }
+
+    &:not(:first-child) {
+      margin-top: 10px;
+
+      @include onDesktop {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__social--desktop {
+    display: none;
+
+    @include onDesktop {
+      margin-top: 30px;
+
       display: flex;
       gap: 14px;
+    }
+  }
+
+  &__copyright--mobile {
+    margin: 40px auto 0;
+
+    width: 198px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+
+    color: $color-bg;
+
+    @include onTablet {
+      display: none;
     }
   }
 }

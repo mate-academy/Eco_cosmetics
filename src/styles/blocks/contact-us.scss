@@ -1,51 +1,127 @@
 .contact-us {
-
   @include onDesktop {
     padding-bottom: 130px;
+  }
 
-    &__paragraph {
-      margin-top: 30px;
-      width: 380px;
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
 
-      // @extend %text;
+    text-transform: uppercase;
+    color: $color-green;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__paragraph {
+    margin-top: 10px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: $color-gray-dark;
+
+    @include onTablet {
+      width: 342px;
+
+      font-size: 16px;
     }
 
-    &__form {
+    @include onDesktop {
+      margin-top: 30px;
       width: 380px;
+    }
+  }
 
-      display: flex;
-      flex-direction: column;
+  &__form {
+    margin-top: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      margin-top: 15px;
+
+      width: 342px;
     }
 
-    &__field {
+    @include onDesktop {
       margin-top: 30px;
-      border: 0;
+
+      width: 380px;
+    }
+  }
+
+  &__field {
+    padding: 5px 0;
+
+    font-family: inherit;
+
+    border: 0;
+    outline: none;
+
+    background-color: #e4dfd3;
+    border-bottom: 1px solid #bdbdbd;
+
+    @include onDesktop {
       padding: 10px 0;
-      resize: none;
-      outline: none;
+    }
 
-      background-color: #e4dfd3;
-      border-bottom: 1px solid #bdbdbd;
+    &:not(:first-of-type) {
+      margin-top: 20px;
+    }
 
-      // &::placeholder {
-      //   @extend %text-menu;
-      // }
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
 
-      &--last {
-        font-family: "Poppins", sans-serif;
-        position: relative;
-        margin-top: 52px;
-        display: flex;
+      color: #828282;
 
-        &::placeholder {
-          position: absolute;
-          bottom: 10px;
-        }
+      @include onTablet {
+        font-weight: 500;
+      }
+
+      @include onDesktop {
+        font-size: 18px;
       }
     }
 
-    &__button {
+    &--last {
+      resize: none;
+
+      margin-top: 35px;// якщо вдасться скоригувати place Холдер то
+      // замінити на 40 пікселів
+      @include onDesktop {
+        margin-top: 50px;
+      }
+
+      &::placeholder {
+        bottom: 10px;
+        position: absolute;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onDesktop { // doesn`t work
       margin-top: 50px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
     }
   }
 }

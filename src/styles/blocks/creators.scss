@@ -1,4 +1,74 @@
 .creators {
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+    color: $color-green;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: $color-gray-dark;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    &:first-of-type {
+      margin-top: 10px;
+
+      @include onDesktop {
+        margin-top: 34px;
+      }
+    }
+
+    &:last-of-type {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 20px;
+
+      @include onTablet {
+        margin-top: 15px;
+      }
+
+      @include onDesktop {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__learn-more {
+    margin-top: 20px;
+  }
+
+  &__button {
+    margin-top: 25px;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
 
   @include onDesktop {
     &__content {
@@ -7,44 +77,13 @@
     &__title {
       margin-bottom: 34px;
     }
+  }
 
-    &__paragraph {
+  &__photo {
+    display: none;
 
-      &:first-of-type {
-        margin-top: 34px;
-      }
-
-      &:not(:first-of-type) {
-        margin-top: 30px;
-      }
-
-      // @extend %text;
-    }
-
-    &__learn-more {
-      margin-top: 20px;
-      display: inline-block;
-      position: relative;
-
-      // @extend %text-decorative;
-
-      transition: all 0.5s;
-
-      &:hover {
-        &::after {
-          position: absolute;
-          content: "";
-          display: block;
-          margin-top: 10px;
-          height: 1px;
-          width: 100%;
-          background-color: $color-green;
-        }
-      }
-    }
-
-    &__button {
-      margin-top: 51px;
+    @include onTablet {
+      display: block;
     }
   }
 }

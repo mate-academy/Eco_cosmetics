@@ -1,38 +1,88 @@
 .tooth-powder {
+  // tooth-powder__container {
+  //   margin-left: -27px;
+  // }
 
-  @include onDesktop {
-    &__container--left {
+  &__container--left {
+    @include onDesktop {
       width: calc(50% - 20px);
     }
+  }
 
-    &__content {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+    color: $color-green;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__learn-more--top {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__container--right {
+    margin: 21px -20px 0;
+
+    min-height: 397px;
+
+    @include onTablet {
+      // margin: 15px -27px 0 0;
+      margin-top: 15px;
+      // position: relative;
     }
 
-    &__learn-more {
-      display: inline-block;
-      position: relative;
-
-      // @extend %text-decorative;
-
-      transition: all 0.5s ease-in-out;
-
-      &:hover {
-        &::after {
-          position: absolute;
-          bottom: -11px;
-          left: 0;
-          content: "";
-          display: block;
-          height: 1px;
-          width: 100%;
-          background-color: $color-green;
-        }
-      }
+    @include onDesktop {
+      margin-top: 1px 0;
     }
+  }
+
+  &__scheme {
+    min-height: 397px;
+    object-fit: cover;
+    object-position: left;
+
+    @include onTablet {
+      // position: absolute;
+      // display: block;
+    }
+
+    @include onDesktop {
+      min-height: 395px;
+    }
+  }
+
+  &__learn-more--bottom {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  @include onDesktop {
+    // &__content {
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: space-between;
+    //   height: 100%;
+    // }
 
     &__container--right {
       width: calc(50% + 20px);
