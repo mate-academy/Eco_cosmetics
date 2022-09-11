@@ -1,0 +1,74 @@
+.choice {
+  &__container--left {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+
+    color: $color-green;
+
+    text-transform: uppercase;
+
+    @include onTablet {
+      width: 280px;
+      margin: 0 auto;
+    }
+    @include onDesktop {
+      font-size: 24px;
+    }
+
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0;
+    color: $color-gray-dark;
+  }
+
+  @include onDesktop {
+    position: relative;
+
+    &__container {
+      padding-bottom: 100px;
+      padding-top: 100px;
+    }
+
+    &__line-top {
+      position: absolute;
+      left: 0;
+      width: calc(50% - 110px);
+      height: 1px;
+
+      background-color: $color-green;
+    }
+
+    &__text {
+      width: 380px;
+    }
+
+    &__title {
+      width: 380px;
+
+      text-transform: uppercase;
+    }
+
+    &__line-bottom {
+      position: absolute;
+      right: 0;
+      width: calc(50% - 10px);
+      height: 1px;
+
+      background-color: $color-green;
+    }
+  }
+}

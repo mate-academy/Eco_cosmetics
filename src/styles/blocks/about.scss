@@ -1,0 +1,94 @@
+.about {
+  &__content {
+    @include onDesktop {
+      width: 380px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+    color: $color-green;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__paragraph {
+    margin-top: 10px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      &:first-of-type {
+        margin-top: 40px;
+      }
+
+      &:last-of-type {
+        margin-top: 30px;
+      }
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__learn-more {
+    margin-top: 30px;
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__photos {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+
+  &__photo1 {
+    @include onTablet {
+      height: 321px;
+    }
+
+    @include onDesktop {
+      height: 529px;
+    }
+  }
+
+  &__photo2 {
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,157 @@
+.shop {
+  &__container {
+    @include onTablet {
+      flex-direction: column;
+    }
+
+    @include onDesktop {
+      padding-left: 150px;
+    }
+  }
+
+  &__title {
+    align-self: center;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+    color: $color-green;
+
+    @include onTablet {
+      align-self: start;
+
+      font-size: 26px;
+    }
+
+    @include onDesktop {
+      line-height: 110%;
+    }
+  }
+
+  &__categories {
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      margin-top: 10px;
+
+      justify-content: flex-start;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
+  }
+
+  &__category {
+    @include onTablet {
+      min-width: 55px;
+    }
+
+    @include onDesktop {
+      min-width: 100px;
+    }
+
+    &--items {
+      display: inline-block;
+
+      padding-bottom: 12px;
+      border-bottom: 2px solid transparent;
+
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+
+      text-transform: uppercase;
+      color: #828282;
+
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        color: $color-green;
+        border-color: $color-green;
+      }
+
+      @include onDesktop {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+      }
+    }
+  }
+
+  &__products {
+    margin-top: 15px;
+
+    @include onTablet {
+      margin-top: 25px;
+
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      margin-top: 62px;
+    }
+  }
+
+  &__product {
+    &2 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &--name {
+      margin-top: 20px;
+
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+
+      text-transform: uppercase;
+      color: $color-green;
+    }
+
+    &--price {
+      margin-top: 10px;
+
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+
+      text-transform: uppercase;
+      color: $color-green;
+
+      @include onTablet {
+        margin-top: 15px;
+      }
+
+      @include onDesktop {
+        margin-top: 13px;
+      }
+    }
+  }
+
+  &__button {
+    margin: 30px auto 0;
+
+    @include onTablet {
+      margin: 50px auto 0;
+    }
+
+    @include onDesktop {
+      margin: 40px auto 0;
+    }
+  }
+}

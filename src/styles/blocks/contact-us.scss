@@ -1,0 +1,127 @@
+.contact-us {
+  @include onDesktop {
+    padding-bottom: 130px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+    color: $color-green;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__paragraph {
+    margin-top: 10px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: $color-gray-dark;
+
+    @include onTablet {
+      width: 342px;
+
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+      width: 380px;
+    }
+  }
+
+  &__form {
+    margin-top: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      margin-top: 15px;
+
+      width: 342px;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+
+      width: 380px;
+    }
+  }
+
+  &__field {
+    padding: 5px 0;
+
+    font-family: inherit;
+
+    border: 0;
+    outline: none;
+
+    background-color: #e4dfd3;
+    border-bottom: 1px solid #bdbdbd;
+
+    @include onDesktop {
+      padding: 10px 0;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 20px;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+
+      color: #828282;
+
+      @include onTablet {
+        font-weight: 500;
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+    }
+
+    &--last {
+      resize: none;
+
+      margin-top: 35px;// якщо вдасться скоригувати place Холдер то
+      // замінити на 40 пікселів
+      @include onDesktop {
+        margin-top: 50px;
+      }
+
+      &::placeholder {
+        bottom: 10px;
+        position: absolute;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onDesktop { // doesn`t work
+      margin-top: 50px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}
