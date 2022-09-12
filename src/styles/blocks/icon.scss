@@ -1,0 +1,43 @@
+.icon {
+  display: block;
+  width: $icon-size;
+  height: $icon-size;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include hover(transform, scale(1.1));
+
+  &--menu-opener {
+    background-image: url(../images/icons/Menu.svg);
+
+    @include onBigScreen {
+      display: none;
+    }
+    
+  }
+
+  &--logo {
+    background-image: url(../images/icons/logo.svg);
+
+    @include onBigScreen {
+      width: 270px;
+      height: 50px;
+
+      background-image: url(../images/icons/Group14.svg);
+    }
+  }
+
+  &--bag {
+    background-image: url(../images/icons/shop.svg);
+    
+    @include onBigScreen {
+      $icon-size: 32px;
+    }
+  }
+  
+  &--cross {
+    background-image: url(../images/icons/cross.svg);
+  }
+}

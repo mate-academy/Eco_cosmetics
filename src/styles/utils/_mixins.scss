@@ -4,3 +4,33 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin active($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:active {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin focus($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:focus {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin onMiddleScreen {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onBigScreen {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin transformSubtitle($_y) {
+  transform: rotate(-90deg) translate(-50%, $_y);
+}

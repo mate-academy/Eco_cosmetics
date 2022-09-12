@@ -1,0 +1,55 @@
+.about-brand {
+  &__article {
+    margin-bottom: 30px;
+
+    @include onBigScreen {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include hover(transform, scale(1.1));
+
+    &--tablet {
+      display: none;
+
+      @include onMiddleScreen {
+        display: block;
+      }
+
+      @include onBigScreen {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+      height: 528px;
+      width: 100%;
+      object-fit: cover;
+
+      @include onBigScreen {
+        display: block;
+      }
+    }
+
+    &--small {
+      height: 430px;
+    }
+  }
+
+  &__small-img-container {
+    display: none;
+    padding-top: 98px;
+
+    @include onBigScreen {
+      display: block;
+    }
+  }
+
+  &__subtitle {
+    @include transformSubtitle(-770%);
+  }
+}

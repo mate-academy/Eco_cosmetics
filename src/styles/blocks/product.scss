@@ -1,0 +1,104 @@
+.product {
+  box-sizing: border-box;
+  padding: 0 20px;
+
+  &--middleScreen {
+    display: none;
+
+    @include onMiddleScreen {
+      display: block;
+    }
+  }
+
+  &--bigScreen {
+    display: none;
+
+    @include onBigScreen {
+      display: block;
+    }
+  }
+
+  &--card {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0;
+    margin-bottom: 30px;
+
+    @include onMiddleScreen {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__img {
+    height: 300px;
+    width: 100vw;
+    object-fit: cover;
+    margin: 0 -20px 20px;
+
+    @include hover(transform, scale(1.1));
+
+    @include onMiddleScreen {
+      width: 100%;
+      margin: 0 0 20px;
+    }
+
+    @include onBigScreen {
+      width: 380px;
+      height: 500px;
+    }
+
+    &--card {
+      height: auto;
+      width: 100%;
+      margin: 0;
+
+      @include onMiddleScreen {
+        margin-bottom: 27px;
+      }
+    }
+  }
+
+  &__title {
+    @extend %h5;
+    
+    margin-bottom: 10px;
+
+    &--card {
+      @include onMiddleScreen {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $gray1;
+  }
+
+  &__price {
+    margin-bottom: 30px;
+
+    @extend %price;
+    color: $gray1;
+
+    @include onMiddleScreen {
+      margin-bottom: 50px;
+    }
+
+    &--card {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+
+      margin-bottom: 20px;
+
+      @include onMiddleScreen {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        color: $green;
+      }
+    }
+  }
+}

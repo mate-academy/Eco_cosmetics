@@ -1,0 +1,122 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+
+  @include onMiddleScreen {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include onBigScreen {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+
+  &--middleScreen {
+    display: block;
+
+    @include onMiddleScreen {
+      display: grid;
+    }
+
+    @include onBigScreen {
+      display: block;
+    }
+  }
+
+  &--bigScreen {
+    display: block;
+
+    @include onBigScreen {
+      display: grid;
+    }
+  }
+
+  &--fromMiddleScreen {
+    display: block;
+
+    @include onMiddleScreen {
+      display: grid;
+    }
+  }
+
+  &__item {
+    // color: #fff;
+    // perspective: 400px;
+
+    @for $start from 1 through 2 {
+      @for $end from $start through 2 {
+        &--small--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+
+    @for $start from 1 through 6 {
+      @for $end from $start through 6 {
+        &--middle--#{$start}-#{$end} {
+          @include onMiddleScreen {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &--big--#{$start}-#{$end} {
+          @include onBigScreen {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    &--onlyOnBigScreen {
+      display: none;
+
+      @include onBigScreen {
+        display: block;
+      }
+    }
+
+    &--fromMiddleScreen {
+      display: none;
+
+      @include onMiddleScreen {
+        display: block;
+      }
+    }
+
+    &--firstRow {
+      @include onMiddleScreen {
+        grid-row: 1;
+      }
+    }
+
+    &--first2Rows {
+      @include onMiddleScreen {
+        grid-row: 1 / 3;
+      }
+    }
+
+    &--lastOnMiddle {
+      @include onMiddleScreen {
+        order: 1;
+      }
+    }
+
+    &--lastOnBig {
+      @include onBigScreen {
+        order: 1;
+      }
+    }
+
+    &--bottom {
+      @include onMiddleScreen {
+        align-self: end;
+      }
+    }
+  }
+}

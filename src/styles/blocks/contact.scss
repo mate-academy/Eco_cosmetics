@@ -1,0 +1,34 @@
+.contact {
+  &__subtitle {
+    @include transformSubtitle(-380%);
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include onMiddleScreen {
+      margin-bottom: 20px;
+    }
+
+    @include onBigScreen {
+      margin-bottom: 40px;
+    }
+  }
+
+  
+  &__button {
+    @extend %centerButton;
+
+    @include onMiddleScreen {
+      margin: 0;
+    }
+  }
+
+  &__img {
+    @include hover(transform, scale(1.1));
+  }
+}

@@ -1,0 +1,69 @@
+.form {
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 0 0 5px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $gray3;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $gray4;
+    outline: none;
+    resize: none;
+
+    margin-bottom: 25px;
+
+    @include onMiddleScreen {
+      font-weight: 500;
+    }
+
+    @include onBigScreen {
+      padding-bottom: 10px;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    &::placeholder {
+      font-family: "Poppins", sans-serif;
+    }
+
+    @include focus(border-color, $gray1);
+
+    &:valid {
+      border-color: $green;
+      color: $green;
+    }
+
+    &:invalid {
+      border-color: $red;
+      color: $red;
+    }
+
+    &:placeholder-shown {
+      border-color: $gray4;
+      color: $gray3;
+    }
+
+    &--beforeMassage {
+      margin-bottom: 45px;
+
+      @include onBigScreen {
+        margin-bottom: 60px;
+      }
+    }
+
+    &--last {
+      margin-bottom: 30px;
+
+      @include onBigScreen {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

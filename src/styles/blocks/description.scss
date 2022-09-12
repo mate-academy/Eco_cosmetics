@@ -1,0 +1,70 @@
+.description {
+  @include onBigScreen {
+    padding: 100px 0;
+  }
+
+  &::before {
+    content: "";
+
+    display: none;
+    position: absolute;
+    left: 0;
+    transform: translateY(-100px);
+    height: 1px;
+    width: 42%;
+
+    background-color: rgba(52, 79, 16, 0.5);
+
+    @include onBigScreen {
+      display: block;
+    }
+  }
+
+  &::after {
+    content: "";
+
+    display: none;
+    position: absolute;
+    right: 0;
+    transform: translateY(100px);
+    height: 1px;
+    width: 50%;
+
+    background-color: rgba(52, 79, 16, 0.5);
+
+    @include onBigScreen {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin: auto;
+    width: 280px;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @include onBigScreen {
+      // margin: 0;
+      width: fit-content;
+      font-size: 24px;
+      line-height: 150%;
+    }
+  }
+
+  &__text {
+    display: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $gray1;
+
+    @include onBigScreen {
+      display: block;
+    }
+  }
+}

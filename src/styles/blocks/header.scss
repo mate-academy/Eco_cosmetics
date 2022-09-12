@@ -1,0 +1,84 @@
+.header {
+  box-sizing: border-box;
+  color: $gray1;
+
+  
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include onBigScreen {
+      display: grid;
+    }
+  }
+
+  &__img {
+    @extend %img;
+    
+    background-image: url(../images/media_mobile/1.jpg);
+
+    @include hover(transform, scale(1.1));
+
+    @include onMiddleScreen {
+      height: 500px;
+      margin: 0 0 50px;
+      background-image: url(../images/media_tablet/1.jpg);
+    }
+
+    @include onBigScreen {
+      height: 451px;
+      background-image: url(../images/media_desktop/1.jpg);
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+
+    @include onMiddleScreen {
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    @include onBigScreen {
+      margin-bottom: 30px;
+
+      font-size: 60px;
+      line-height: 130%;
+      text-align: left;
+      text-transform: none;
+    }
+  }
+
+  &__discription {
+    margin-bottom: 30px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: $gray1;
+
+    @include onMiddleScreen {
+      margin-bottom: 50px;
+    }
+
+    @include onBigScreen {
+      text-align: left;
+    }
+  }
+
+  &__button {
+    @extend %centerButton;
+
+    @include onBigScreen {
+      margin: 0;
+    }
+  }
+}
