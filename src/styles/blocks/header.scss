@@ -1,0 +1,222 @@
+.header {
+  &__menu__toggle {
+    display: none;
+  }
+
+  @media (max-width: $tablet-width) {
+
+    &__menu__toggle {
+      opacity: 0;
+      position: absolute;
+      top: -100%;
+      left: 0;
+    }
+
+    &__span,
+    &__span::before,
+    &__span::after {
+      display: block;
+      position: absolute;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $darkgreen;
+
+      transition-duration: 0.3s;
+    }
+
+    &__span::before {
+      content: " ";
+      top: -8px;
+    }
+
+    &__span::after {
+      content: " ";
+      top: 8px;
+    }
+
+    &__toggle:checked ~ &__btn > &__span {
+      transform: rotate(45deg);
+    }
+
+    &__toggle:checked ~ &__btn > &__span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+
+    &__toggle:checked ~ &__btn > &__span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    &__toggle:checked ~ .nav__list {
+      visibility: visible;
+      color: $beige;
+    }
+
+    &__btn {
+      display: block;
+      position: relative;
+      margin-top: 15px;
+      left: 50%;
+
+      width: 20px;
+      height: 13px;
+
+      cursor: pointer;
+      z-index: 4;
+    }
+  }
+
+  &__toggle {
+    display: none;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 130px;
+  padding: 0 50px;
+
+  @media (max-width: $tablet-width) {
+    height: 70px;
+    padding: 23px 27px;
+  }
+
+  @media (max-width: $phone-width) {
+    padding: 15px 20px;
+    height: 54px;
+  }
+
+  &__nav {
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @extend %menu-text;
+      width: 270px;
+      color: $green;
+
+      @media (max-width: $tablet-width) {
+        flex-direction: column;
+        justify-content: flex-start;
+        position: absolute;
+        visibility: hidden;
+        margin: 0 auto;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: $lightblack;
+        padding: 143px 27px 0;
+        z-index: 2;
+      }
+
+      @media (max-width: $phone-width) {
+        top: 0;
+        left: 0;
+        background-color: $lightblack;
+        padding: 143px 27px 0;
+        z-index: 2;
+      }
+    }
+
+    &--item {
+      @media (max-width: $tablet-width) {
+        margin-bottom: 50px;
+        width: 100%;
+        text-align: center;
+
+        &::after {
+          display: block;
+          content: "";
+          width: 100%;
+          height: 1px;
+          background-color: $lightgrey;
+        }
+      }
+    }
+
+    &--link {
+      color: inherit;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background-color: transparent;
+        transition: background-color 0.3s;
+      }
+
+      &:hover {
+        &::after {
+          background-color: rgba(52, 79, 16, 0.5);
+        }
+      }
+    }
+
+    @media (max-width: $tablet-width) {
+      order: 1;
+    }
+  }
+
+  &__logo {
+
+    &__link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > img {
+        transition: transform 0.3s;
+      }
+
+      & > img:hover {
+        transform: rotateZ(360deg) scale(1.3);
+      }
+
+      @media (max-width: $tablet-width) {
+        & > img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+
+    &__brand-name {
+      margin-left: 12px;
+      @extend %text2;
+      color: $green;
+
+      @media (max-width: $tablet-width) {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: $tablet-width) {
+    order: 2;
+  }
+
+  &__basket {
+    cursor: pointer;
+
+    &__logo {
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: rotateZ(360deg) scale(1.3);
+      }
+
+      @media (max-width: $tablet-width) {
+        height: 24px;
+        width: 20px;
+      }
+    }
+
+    @media (max-width: $tablet-width) {
+      order: 3;
+    }
+  }
+}
