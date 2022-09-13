@@ -9,10 +9,12 @@
   font-style: normal;
   scroll-behavior: smooth;
   background-color: #e4dfd3;
+  width: 100vw;
+  padding-right: 20px;
 
   &_body {
     position: relative;
-    // overflow-x: hidden;
+    overflow-x: hidden;
 
     max-width: 1280px;
     margin: 0 auto;
@@ -61,8 +63,23 @@
     left: 0;
     right: 0;
 
+    padding-top: 50px;
+
+    @include on1280 {
+      padding-top: 200px;
+    }
+
     transition: transform 1s;
     transform: translateX(-150%);
+
+    @include on760 {
+      margin-top: 60px;
+    }
+
+    @include on1280 {
+      margin-top: 100px;
+      height: calc(100vh);
+    }
 
     &:target {
       transform: translateX(0);
