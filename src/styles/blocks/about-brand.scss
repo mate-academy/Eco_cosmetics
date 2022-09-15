@@ -7,45 +7,56 @@
     }
   }
 
-  &__img {
+  &__swiper {
+    margin: -20px;
+
     display: none;
+    width: 420px;
 
-    @include hover(transform, scale(1.1));
-
-    &--tablet {
-      display: none;
-
-      @include onMiddleScreen {
-        display: block;
-      }
-
-      @include onBigScreen {
-        display: none;
-      }
+    @include onMiddleScreen {
+      display: block;
     }
 
-    &--desktop {
-      display: none;
-      height: 528px;
-      width: 100%;
-      object-fit: cover;
-
-      @include onBigScreen {
-        display: block;
-      }
-    }
-
-    &--small {
-      height: 430px;
+    @include onBigScreen {
+      margin: -30px;
+      width: 980px;
     }
   }
 
-  &__small-img-container {
-    display: none;
-    padding-top: 98px;
+  &__wrapper {
+    align-items: flex-end;
+    padding: 20px;
 
     @include onBigScreen {
-      display: block;
+      padding: 30px;
+    }
+  }
+
+  &__right-slide {
+    & img {
+      object-fit: cover;
+
+      @include onBigScreen {
+        height: 429px;
+      }
+    }
+  }
+
+  &__left-slide {
+    & img {
+      opacity: 0;
+    }
+  }
+
+  &__img {
+    transition: transform 0.3s, height 0.5s, opacity 0.5s;
+
+    @include onBigScreen {
+      height: 529px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 

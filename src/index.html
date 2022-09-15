@@ -152,41 +152,43 @@
                 </p>
               </article>
 
-              <a href="/" class="learn-more">LEARN MORE</a>
+              <a href="#" class="learn-more">LEARN MORE</a>
             </div>
 
             <div class="
               grid__item
               grid__item--middle--4-6
-              grid__item--big--7-11
+              grid__item--big--7-12
             ">
-              <img
-                src="./images/media_tablet/2.jpg"
-                alt="candle"
-                class="about-brand__img about-brand__img--tablet"
-              >
-
-              <img
-                src="./images/media_desktop/2_big.jpg"
-                alt="candle"
-                class="about-brand__img about-brand__img--desktop"
-              >
-            </div>
-
-            <div class="
-              grid__item
-              grid__item--big--12-13
-              about-brand__small-img-container
-            ">
-              <img
-                src="./images/media_desktop/2.1.jpg"
-                alt="candle"
-                class="
-                  about-brand__img
-                  about-brand__img--desktop
-                  about-brand__img--small
-                "
-              >
+              <div class="swiper about-brand__swiper">
+                <div class="swiper-wrapper about-brand__wrapper">
+                  <picture class="swiper-slide about-brand__picture">
+                    <source
+                      media="(min-width: 1280px)"
+                      srcset="./images/media_desktop/2_big.jpg"
+                    >
+                    
+                    <img
+                      src="./images/media_tablet/2.jpg"
+                      alt="candle1"
+                      class="about-brand__img"
+                    >
+                  </picture>
+                  
+                  <picture class="swiper-slide about-brand__picture">
+                    <source
+                      media="(min-width: 1280px)" 
+                      srcset="./images/media_desktop/2_big.jpg"
+                    >
+                    
+                    <img
+                      src="./images/media_tablet/2.jpg"
+                      alt="candle2"
+                      class="about-brand__img"
+                    >
+                  </picture>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -219,7 +221,7 @@
               </ul>
     
               <div class="swiper shop__swiper">
-                <div class="swiper-wrapper">
+                <div class="swiper-wrapper shop__wrapper">
                   <div class="swiper-slide product" data-hash="face">
                     <picture>
                       <source 
@@ -664,7 +666,7 @@
                 </p>
               </article>
     
-              <a href="/" class="learn-more about-creators__learn-more">
+              <a href="#" class="learn-more about-creators__learn-more">
                 LEARN MORE
               </a>
     
@@ -766,7 +768,7 @@
               grid__item--bottom
               grid__item--big--2-3
             ">
-              <a href="/" class="learn-more">
+              <a href="#" class="learn-more">
                 LEARN MORE
               </a>
             </div>
@@ -981,7 +983,7 @@
     <script>
       const tabs = document.querySelectorAll('.tab');
 
-      const swiper = new Swiper('.swiper', {
+      const swiper1 = new Swiper('.shop__swiper', {
         slidesPerView: 1,
         mousewheel: true,
         hashNavigation: {
@@ -1017,6 +1019,21 @@
             }
           }
         }
+      });
+
+      const swiper2 = new Swiper('.about-brand__swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        mousewheel: true,
+        loop: true,
+        speed: 550,
+        breakpoints: {
+          1280: {
+            slidesPerView: 2,
+          }
+        },
+        slideNextClass: 'about-brand__right-slide',
+        slidePrevClass: 'about-brand__left-slide',
       });
     </script>
   </body>
