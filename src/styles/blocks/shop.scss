@@ -128,13 +128,7 @@
     cursor: pointer;
     position: relative;
 
-    transition: color $transition ease-in-out,
-      border-bottom-color $transition ease-in-out;
-
-    &--active {
-      color: $dark;
-      border-bottom-color: $dark;
-    }
+    transition: color $transition ease-in-out;
 
     &::after {
       background: none repeat scroll 0 0 transparent;
@@ -152,6 +146,23 @@
     &:hover:not(.shop__item--active):after {
       width: 100%;
       right: 0;
+    }
+
+    &--active {
+      color: $dark;
+
+      &::after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 1px;
+        right: 0;
+        position: absolute;
+        background-color: $dark;
+        transition: width 1s ease 0s, right 0.5s ease 0s;
+        width: 100%;
+      }
     }
 
   }

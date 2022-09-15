@@ -44,9 +44,9 @@ for (let i = 0; i < buttons.length; i++) {
 function moveTo(pos) {
   hightlight(pos);
 
-  if (window.screen.width < 768) {
+  if (document.body.clientWidth < 768) {
     field.style.transform = `translateX(${-pos * 100}%)`;
-  } else if (window.screen.width < 1280) {
+  } else if (document.body.clientWidth < 1280) {
     field.style.transform = `translateX(calc(${-pos * 50}% - ${pos * 15}px))`;
   } else {
     field.style.transform = `translateX(calc(${-pos * 50}% - ${pos * 10}px))`;
