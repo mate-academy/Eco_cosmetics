@@ -75,15 +75,27 @@
   margin: 0 auto;
 }
 
+%bodyPadding {
+  padding: 15px 20px 0;
+
+  @include onMiddleScreen {
+    padding: 23px 27px 0;
+  }
+
+  @include onBigScreen {
+    padding: 40px 50px 0;
+  }
+}
+
 %translatedSection {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  @extend %bodyPadding;
 
   box-sizing: border-box;
   height: 100vh;
-  padding: 15px 20px 20px;
   overflow-y: auto;
 
   transform: translateX(-100%);
@@ -95,7 +107,7 @@
 }
 
 %checkoutFlex {
-  height: calc(max(100%, 100vh) - 35px);
+  height: calc(100vh - 15px);
 
   display: flex;
   flex-direction: column;
@@ -103,5 +115,12 @@
 
   @include onMiddleScreen {
     justify-content: start;
+
+    height: calc(100vh - 23px);
   }
+}
+
+%checkoutButton {
+  @extend %centerButton;
+  margin-bottom: 20px;
 }
