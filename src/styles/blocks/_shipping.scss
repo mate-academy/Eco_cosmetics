@@ -1,0 +1,140 @@
+.shipping {
+  flex-direction: column;
+  transition: $transitionTime;
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+  background-color: $pageBgColor;
+  position: absolute;
+  top: 0;
+  transform: translateX(-100%);
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @include onTablet() {
+      margin-bottom: 65px;
+    }
+
+    width: 20px;
+    height: 20px;
+    @include bgIconRules();
+
+    &--1 {
+      background-image: url(../images/icons/menu.svg);
+    }
+
+    &--2 {
+      background-image: url(../images/icons/logo.svg);
+    }
+
+    &--3 {
+      background-image: url(../images/icons/shop.svg);
+    }
+  }
+
+  &__checkout {
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $darkColor;
+
+    padding-bottom: 5px;
+    border-bottom: 1px solid $darkColor;
+
+    margin-bottom: 20px;
+
+    @include onTablet() {
+      width: 218px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__title {
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $darkColor;
+
+    margin-bottom: 30px;
+
+    @include onTablet() {
+      font-size: 24px;
+    }
+  }
+
+  &__form {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  &__input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: $pageBgColor;
+    padding: 5px;
+    border-bottom: 1px solid $darkColor;
+
+    margin-bottom: 25px;
+
+    &--last {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    border: 1px solid transparent;
+    background-color: $darkColor;
+
+    &-link {
+      width: 100%;
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $lightColor;
+    }
+
+    transition: $transitionTime;
+
+    &:hover {
+      background-color: $pageBgColor;
+      color: $darkColor;
+      border-color: $darkColor;
+    }
+
+    &:hover > a {
+      transition: $transitionTime;
+      color: $darkColor;
+    }
+  }
+}

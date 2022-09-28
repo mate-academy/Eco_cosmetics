@@ -1,0 +1,236 @@
+.tooth {
+  overflow: hidden;
+  margin-bottom: $mobileSectionIndent;
+
+  @include onTablet() {
+    margin-bottom: $tabletSectionIndent;
+  }
+
+  @include onDesktop() {
+    margin-bottom: $desktopSectionIndent;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__bottle {
+    margin-bottom: 30px;
+    position: relative;
+    transform: translateX(50%);
+
+    @include onTablet() {
+      transform: translateX(80%);
+    }
+
+    @include onDesktop() {
+      transform: unset;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &-image {
+      width: 380px;
+      height: 395px;
+      @include bgIconRules();
+      background-image: url(../images/tooth/tooth-image.svg);
+    }
+  }
+
+  &__points {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10px;
+    right: 280px;
+    gap: 50px;
+
+    @include onTablet() {
+      right: 650px;
+    }
+
+    @include onDesktop() {
+      right: 340px;
+    }
+
+    &-text {
+      display: flex;
+      align-items: center;
+      align-self: flex-end;
+      gap: 20px;
+      @include poppinsFont();
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: right;
+      color: $darkColor;
+
+      &--big {
+        width: 250px;
+
+        @include onDesktop() {
+          width: max-content;
+        }
+      }
+
+      &::after {
+        display: block;
+        content: "";
+        width: 76px;
+        height: 1px;
+        background-color: $darkColor;
+      }
+
+      @include onDesktop() {
+        &::before {
+          display: block;
+          content: "";
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: $darkColor;
+          position: absolute;
+          right: 0;
+        }
+      }
+
+      transition: $transitionTime;
+
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  &__main {
+    margin-bottom: 100px;
+
+    @include onTablet() {
+      margin-bottom: 140px;
+    }
+
+    @include onDesktop() {
+      margin-bottom: 200px;
+      margin-left: 100px;
+
+      &::before {
+        content: "";
+        width: 18px;
+        height: 177px;
+        @include bgIconRules();
+        background-image: url(../images/tooth/tooth-scroll.svg);
+        position: absolute;
+        top: 10px;
+        left: 0;
+      }
+    }
+
+    &-title {
+      margin-bottom: 20px;
+
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $greenColor;
+
+      @include onDesktop() {
+        width: 380px;
+        font-size: 36px;
+        margin-bottom: 290px;
+      }
+    }
+
+    &-link {
+      width: fit-content;
+      @include poppinsFont();
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: $greenColor;
+
+      padding-bottom: 10px;
+      border-bottom: 1px solid transparent;
+
+      transition: $transitionTime;
+
+      &:hover {
+        border-color: $greenColor;
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet() {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+
+    @include onTablet() {
+      width: 218px;
+    }
+
+    @include onDesktop() {
+      width: 380px;
+    }
+
+    &-image {
+      margin-bottom: 20px;
+
+      @include onTablet() {
+        margin-bottom: 28px;
+      }
+
+      @include onDesktop() {
+        margin-bottom: 60px;
+      }
+
+      width: 80px;
+      height: 80px;
+
+      @include bgIconRules();
+
+      &--1 {
+        background-image: url(../images/tooth/tooth-icon-1.svg);
+      }
+
+      &--2 {
+        background-image: url(../images/tooth/tooth-icon-2.svg);
+      }
+
+      &--3 {
+        background-image: url(../images/tooth/tooth-icon-3.svg);
+      }
+
+      transition: $transitionTime;
+
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+
+    &-text {
+      @include poppinsFont();
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $darkColor;
+      text-align: center;
+    }
+  }
+}
