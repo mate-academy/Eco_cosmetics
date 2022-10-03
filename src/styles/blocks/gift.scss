@@ -1,0 +1,68 @@
+.gift {
+  position: relative;
+
+  @include Desktop {
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      height: 1px;
+      width: 43%;
+      background: rgba(52, 79, 16, 0.5);
+    }
+  
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      height: 1px;
+      width: 50%;
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+
+    @include Desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__text {
+    width: 280px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $textColorGreen;
+
+    @include Desktop {
+      width: 380px;
+      padding: 100px 0 130px;
+      font-size: 24px;
+      grid-column: 7 / 11;
+    }
+  }
+
+  &__description {
+    display: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include Desktop {
+      display: block;
+      padding-top: 100px;
+      grid-column: 2 / 6;
+      grid-row: 1 / 2;
+    }
+  }
+}

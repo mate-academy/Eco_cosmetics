@@ -1,0 +1,51 @@
+.brand {
+  &__content {
+    @include Desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__photo {
+    height: 264px;
+    width: 100%;
+    margin-bottom: 25px;
+    object-fit: cover;
+    object-position: center;
+
+    @include Tablet {
+      height: 500px;
+      margin-bottom: 50px;
+    }
+    
+    @include Desktop {
+      grid-column: 7 / 13;
+      height: 450px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__left-side {
+    @include Desktop {
+      grid-column: 2 / 7;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+
+    @include Tablet {
+      margin: 0 0 50px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include Desktop {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,253 @@
+.shop {
+  &__content {
+    @include Tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+
+    @include Desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__first-column {
+    position: relative;
+    display: none;
+
+    @include Desktop {
+      display: grid;
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__mini-title {
+    position: absolute;
+    top: 100%;
+    right: -5%;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include Desktop {
+      grid-column: 2 / 4;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tabs {
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+
+    @include Tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include Desktop {
+      grid-column: 2 / 13;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + label {
+      color: $colorDark;
+    }
+    @for $i from 1 through 4 {
+      &#tab#{$i}:checked {
+        ~ .shop__line {
+          left: #{($i - 1) * 70px};
+        }
+        ~ .shop__catalog #box#{$i} {
+          opacity: 1;
+        }
+      }
+    }
+
+    @include Tablet {
+      @for $i from 1 through 4 {
+        &#tab#{$i}:checked {
+          ~ .shop__line {
+            left: #{($i - 1) * 80px};
+          }
+        }
+      }
+    }
+
+    @include Desktop {
+      @for $i from 1 through 4 {
+        &#tab#{$i}:checked {
+          ~ .shop__line {
+            left: #{($i - 1) * 100px};
+          }
+        }
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    height: 36px;
+    width: 70px;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #828282;
+    cursor: pointer;
+
+    &:hover {
+      color: $colorDark;
+    }
+
+    @include Tablet {
+      width: 80px;
+      margin-bottom: 24px;
+    }
+
+    @include Desktop {
+      width: 100px;
+      margin-bottom: 50px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    height: 2px;
+    background: $colorDark;
+    width: 70px;
+    top: 34px;
+    left: 0;
+    transition: 0.3s ease;
+
+    @include Tablet {
+      width: 80px;
+    }
+
+    @include Desktop {
+      width: 100px;
+    }
+  }
+
+  &__catalog {
+    position: relative;
+    height: 384px;
+
+    @include Tablet {
+      height: 440px;
+    }
+
+    @include Desktop {
+      height: 624px;
+    }
+  }
+
+  &__box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s ease;
+
+    @include Tablet {
+      display: flex;
+      gap: 30px;
+    }
+
+    @include Desktop {
+      gap: 20px;
+    }
+  }
+
+  &__card {
+    display: block;
+
+    &--tablet {
+      display: none;
+
+      @include Tablet {
+        display: block;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include Desktop {
+        display: block;
+      }
+    }
+
+    @include Tablet {
+      flex-grow: 1;
+    }
+
+    @include Desktop {
+      width: 340px;
+    }
+  }
+
+  &__image {
+    height: 248px;
+    width: 100%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    object-position: center;
+
+    @include Tablet {
+      height: 300px;
+    }
+
+    @include Desktop {
+      height: 500px;
+    }
+  }
+
+  &__card-name {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $colorDark;
+
+    @include Tablet {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $colorDark;
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include Tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include Desktop {
+      grid-column: 1 / 13;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+.creators {
+  &__content {
+
+    @include Tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+
+    @include Desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__first-column {
+    position: relative;
+    display: none;
+
+    @include Desktop {
+      display: grid;
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__mini-title {
+    position: absolute;
+    top: 18%;
+    right: -75%;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include Desktop {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__description {
+
+    @include Tablet {
+      grid-column: 1 / 2;
+    }
+
+    @include Desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__text {
+    margin: 0 0 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $colorDark;
+
+    &:nth-of-type(2) {
+      margin-bottom: 30px;
+    }
+
+    @include Tablet {
+      margin-bottom: 16px;
+      font-size: 16px;
+
+      &:nth-of-type(2) {
+        margin-bottom: 20px;
+      }
+    }
+
+    @include Desktop {
+      margin-bottom: 30px;
+
+      &:nth-of-type(2) {
+        margin-bottom: 30px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include Desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include Tablet {
+      margin: 0;
+    }
+  }
+
+  &__button-learn {
+    margin-bottom: 24px;
+
+    @include Tablet {
+      margin-bottom: 30px;
+    }
+
+    @include Desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    display: none;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include Tablet {
+      position: absolute;
+      width: 48%;
+      right: 0;
+      display: block;
+      grid-column: 2 / 3;
+      height: 435px;
+    }
+
+    @include Desktop {
+      position: relative;
+      grid-column: 7 / 13;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
