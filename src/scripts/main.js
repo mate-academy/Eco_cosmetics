@@ -1,14 +1,6 @@
 'use strict';
 
 window.addEventListener('hashchange', () => {
-  if (window.location.hash === '#menu') {
-    document.body.classList.add('page__body--with-menu');
-  } else {
-    document.body.classList.remove('page__body--with-menu');
-  }
-});
-
-window.addEventListener('hashchange', () => {
   if (window.location.hash === '#add') {
     document.body.classList.add('page__body--with-menu');
   } else if (window.location.hash === '#shipping') {
@@ -16,6 +8,8 @@ window.addEventListener('hashchange', () => {
   } else if (window.location.hash === '#payment') {
     document.body.classList.add('page__body--with-menu');
   } else if (window.location.hash === '#confirmation') {
+    document.body.classList.add('page__body--with-menu');
+  } else if (window.location.hash === '#menu') {
     document.body.classList.add('page__body--with-menu');
   } else {
     document.body.classList.remove('page__body--with-menu');
