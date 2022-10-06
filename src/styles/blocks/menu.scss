@@ -1,0 +1,48 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: $black;
+
+  &__button {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/cross.svg);
+    @extend %image-sets;
+    padding: 15px 0;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0 0;
+
+    @include onTablet {
+      padding: 70px 0 0;
+      gap: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @extend %headText;
+    font-size: 18px;
+    color: $whiteBG;
+    padding: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid $grey;
+
+    &:hover {
+      color: $greenBG;
+      border-color: $greenBG;
+    }
+  }
+}

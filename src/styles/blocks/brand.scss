@@ -1,0 +1,125 @@
+.brand {
+  padding: 50px 0;
+  background-color: $whiteBG;
+  position: relative;
+  overflow-x: hidden;
+
+  @include onTablet {
+    padding: 70px 0;
+  }
+
+  @include onDesktop {
+    padding: 100px 0;
+  }
+
+  &__side-link {
+    top: 186px;
+    left: -175px;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      flex-direction: row
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      height: 529px;
+    }
+  }
+
+  &__info {
+
+  }
+
+  &__title {
+    @extend %title;
+    color: $green;
+
+    margin: 0 0 10px;
+  }
+
+  &__text {
+    @extend %text;
+
+    margin: 0 0 20px;
+
+    @include onTablet {
+      max-width: 45%;
+    }
+
+    @include onDesktop {
+      max-width: 380px;
+    }
+
+    &--desktop {
+      display: none;
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+  }
+
+  &__image-wrapper {
+    display: none;
+    @include onTablet {
+      position: absolute;
+      right: -27px;
+      display: block;
+      height: 318px;
+      width: 396px;
+    }
+
+    @include onDesktop {
+      height: 100%;
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      width: max-content;
+      right: -97px;
+
+    }
+  }
+
+  &__image {
+    display: none;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-3%);
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        max-width: 130px;
+        max-height: 430px;
+      }
+    }
+
+    @include onTablet {
+      position: absolute;
+      display: block;
+      height: 318px;
+      width: 396px;
+      object-fit: cover;
+    }
+
+    @include onDesktop {
+      position: initial;
+      width: 480px;
+      height: 529px;
+    }
+  }
+}

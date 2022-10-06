@@ -1,0 +1,125 @@
+.footer {
+  padding: 30px 0 40px;
+  background-color: $greenBG;
+
+  @include onTablet {
+    padding: 70px 0;
+  }
+
+  @include onDesktop {
+    padding: 100px 0;
+  }
+
+  &__wrapper {
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__links {
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    @extend %links;
+    color: $whiteBG;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    transition: 0.3s;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &__socials {
+    margin: 20px 0 40px;
+    display: flex;
+    gap: 20px;
+
+    @include onTablet {
+      margin: 20px 0 50px;
+    }
+
+    &--tablet {
+      display: flex;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+  }
+
+  &__social-link {
+    display: block;
+    width: 21px;
+    height: 21px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &--fb {
+      background-image: url(../images/fb.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--inst {
+      background-image: url(../images/inst.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 0 40px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__text {
+    @extend %text;
+    color: $whiteBG;
+  }
+
+  &__contact-link {
+    @extend %text;
+    color: $whiteBG;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &__subtitles {
+    @extend %headText;
+    font-size: 14px;
+    color: $whiteBG;
+  }
+}
