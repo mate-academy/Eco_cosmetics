@@ -1,6 +1,135 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin grid($col, $gap) {
+  display: grid;
+  grid-template-columns: repeat($col, 1fr);
+  column-gap: $gap;
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
   }
+}
+
+@mixin pc-1280 {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin pc-1440 {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin bckgrn-img {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin square($x) {
+  width: $x;
+  height: $x;
+}
+
+@mixin padding-mobile {
+  padding: 0 20px;
+}
+
+@mixin padding-tablet {
+  padding: 0 27px;
+}
+
+@mixin padding-pc-small {
+  padding: 0 50px;
+}
+
+@mixin padding-pc-big {
+  padding: 0 130px;
+}
+
+@mixin fs-h1($fs, $lh) {
+  font-weight: 600;
+  font-size: $fs;
+  line-height: $lh;
+}
+
+@mixin fs-h2 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 110%;
+  letter-spacing: 0.05em;
+}
+
+@mixin fs-h3 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 150%;
+}
+
+@mixin fs-h4 {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+}
+
+@mixin fs-h5 {
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+}
+
+@mixin fs-text {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@mixin fs-text2 {
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+}
+
+@mixin fs-text3 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+}
+
+@mixin fs-small {
+  font-size: 14px;
+  line-height: 150%;
+}
+
+@mixin fs-menu {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+@mixin fs-menu-mobile {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+@mixin fs-button {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.15em;
+}
+
+@mixin fs-decor {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
 }
