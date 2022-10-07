@@ -1,4 +1,8 @@
 # Eco cosmetics landing page
+[DEMO](https://thevovchik.github.io/Eco_cosmetics/)
+
+Technologies - HTML, CSS, Sass(SCSS), JS, BEM
+
 Landing page according to [Figma design](https://www.figma.com/file/Fz588JKGuPS2Bk21De4KE5/brand_of_eco-cosmetics-(Edit)?node-id=1%3A2
 )
 - The design 1440px
