@@ -1,0 +1,200 @@
+@import "../utils/extends";
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.Shop {
+  display: flex;
+  padding: 40px 50px 0 50px;
+
+  @include Tablet {
+    padding: 30px 27px 0 27px;
+  }
+
+  @include Mobile {
+    padding: 0
+  }
+
+  &__upsidedown {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 500;
+    font-size: 14px;
+    column-gap: 10px;
+    padding-left: 20px;
+    color: $primary_color;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      align-items: center;
+      width: 2px;
+      height: 140px;
+      background: $primary_color;
+    }
+
+    @include Tablet {
+      display: none;
+    }
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+
+
+  &__container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  &__Head {
+    display: block;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: $primary_color;
+
+    @include Mobile {
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+
+
+  &__types {
+    display: flex;
+    column-gap: 40px;
+
+    @include Mobile {
+      column-gap: 0;
+      margin-left: 20px;
+      margin-right: 20px;
+      justify-content: space-between;
+    }
+  }
+
+
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    color: $secondary_color;
+    background: none;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 5px;
+
+    &:hover {
+      border-bottom: 2px solid $secondary_color;
+    }
+  }
+
+  &__img-container {
+    display: flex;
+    margin-top: 62px;
+    overflow: hidden;
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @include Tablet {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+
+    @include Mobile {
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 600;
+    color: $secondary_color;
+
+    @include Mobile {
+      margin-left: 20px;
+    }
+  }
+
+  &__price {
+    font-size: 18px;
+    font-weight: 500;
+    color: $secondary_color;
+    margin-bottom: 40px;
+
+    @include Mobile {
+      margin-left: 20px;
+    }
+  }
+
+  &__all-product-container {
+    display: flex;
+    background: red;
+    justify-content: center;
+  }
+
+  &__btn-center {
+    display: flex;
+    justify-content: center;
+    @include Tablet {
+      justify-content: center;
+    }
+
+    @include Mobile{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+
+  &__product-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18vw;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    background: $secondary_color;
+    color: $btn_footer;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+
+    &:hover{
+      border: 1px solid $secondary_color;
+      color: $secondary_color;
+      background: $btn_hover;
+      transform: scale(1.1);
+    }
+
+    @include Tablet {
+      width: 50%;
+    }
+
+    @include Mobile {
+      width: 100%;
+    }
+  }
+}

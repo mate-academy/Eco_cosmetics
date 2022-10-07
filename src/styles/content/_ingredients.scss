@@ -1,0 +1,151 @@
+@import "../utils/extends";
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.Ingredients {
+  display: flex;
+  overflow: hidden;
+
+  padding: 40px 50px 0 50px;
+
+  @include Tablet {
+    padding: 30px 0 0 27px;
+  }
+
+  @include Mobile {
+    padding: 15px 0 15px 20px;
+  }
+
+  &__upsidedown {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 500;
+    font-size: 14px;
+    column-gap: 10px;
+    padding-left: 20px;
+    color: $primary_color;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      align-items: center;
+      width: 2px;
+      height: 140px;
+      background: $primary_color;
+    }
+
+    @include Tablet {
+      display: none;
+    }
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+  &__box{
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    width: 100%;
+
+    @include Mobile {
+      row-gap: 5vw;
+      flex-direction: column;
+    }
+  }
+
+  &__content-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__Head {
+    display: block;
+    font-size: 36px;
+    font-weight: 600;
+    color: $primary_color;
+
+    @include Mobile {
+      font-size: 24px;
+    }
+  }
+
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    color: $primary_color;
+    background: none;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 5px;
+
+    &:hover {
+      border-bottom: 2px solid $secondary_color;
+    }
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include Mobile {
+      display: flex;
+    }
+  }
+
+  &__btn-mobile {
+    display: none;
+    @extend .Ingredients__btn;
+
+    @include Mobile {
+      display: flex;
+    }
+  }
+
+  &__powder-container {
+    display: flex;
+
+  }
+
+  &__powder-content {
+    display: flex;
+    align-items: flex-end;
+
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  &__name-container {
+    text-align: right;
+
+    &:nth-child(1) {
+      margin-top: -5px;
+    }
+
+    @include Tablet {
+      &:nth-child(1) {
+        margin: 0;
+      }
+    }
+  }
+
+  &__names {
+    font-weight: 400;
+    padding-right: 20px;
+    font-size: 16px;
+    color: $secondary_color;
+  }
+
+}

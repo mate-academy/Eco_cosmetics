@@ -1,0 +1,133 @@
+@import "../utils/extends";
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.About-brand {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  height: auto;
+  column-gap: 5px;
+  padding: 40px 0 0 40px;
+
+  @include Tablet{
+    padding: 30px 0 0 27px;
+  }
+
+  @include Mobile {
+    padding: 20px 20px 13vw 20px;
+  }
+
+
+  &__upsidedown {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 500;
+    font-size: 14px;
+    column-gap: 10px;
+    padding-left: 20px;
+    color: $primary_color;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      align-items: center;
+      width: 2px;
+      height: 140px;
+      background: $primary_color;
+    }
+
+    @include Tablet {
+      display: none;
+    }
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+  &__Head-container {
+    display: flex;
+    height: 497px;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include Tablet {
+      row-gap: 20px;
+    }
+    @include Mobile {
+      row-gap: 20px;
+    }
+  }
+
+  &__Head {
+    display: block;
+    font-size: 36px;
+    font-weight: 600;
+    color: $primary_color;
+
+    @include Mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__Paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 1%;
+    color: $secondary_color;
+
+    @include Tablet {
+      margin: 0;
+    }
+
+    @include Mobile {
+      margin: 0;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    color: $primary_color;
+    background: none;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 5px;
+
+    &:hover {
+      border-bottom: 2px solid $secondary_color;
+    }
+  }
+
+  &__img-container {
+    display: flex;
+    overflow: hidden;
+    align-items: flex-end;
+    column-gap: 10px;
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+  &__img-big {
+    width: 480px;
+    height: 529px;
+  }
+
+  &__img-small {
+    background: yellow;
+    display: flex;
+    align-items: flex-end;
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+  }
+
+}
