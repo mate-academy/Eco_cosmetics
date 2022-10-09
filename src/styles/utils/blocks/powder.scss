@@ -1,0 +1,74 @@
+.powder {
+  margin-bottom: 100px;
+
+  &__bloks2 {
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      gap: 190px;
+    }
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__block1 {
+    max-width: 280px;
+    margin-bottom: 21px;
+
+    @include tablet {
+      grid-row: 1;
+      grid-column: 1 / 3;
+    }
+
+    @include desktop {
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green;
+  }
+
+  &__block2 {
+    margin-bottom: 31px;
+
+    @include tablet {
+      grid-row: 1;
+      grid-column: 3 / 6;
+    }
+
+    @include desktop {
+      grid-column: 6 / 12;
+    }
+  }
+
+  &__learn {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $green;
+    margin-bottom: 110px;
+
+    @include desktop {
+      padding-left: 190px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 86px;
+      height: 1px;
+      margin-top: 10px;
+      background-color: $green;
+    }
+  }
+}
