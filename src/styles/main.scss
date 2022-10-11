@@ -33,9 +33,9 @@ body {
   font-family: $pop;
   box-sizing: border-box;
 
-  @include BigScreen {
-    padding-left: 20%;
-  }
+  // @include BigScreen {
+  //   padding-left: 20%;
+  // }
 }
 
 a {
@@ -73,15 +73,18 @@ input:not(:placeholder-shown):not(:focus):invalid {
   border-bottom: 1px solid $invalid;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 
 
 .up {
   width: 49%;
   border-top: 1px solid rgba(52, 79, 16, 0.5);
-
-  @include BigScreen {
-    margin-left: 2.4%;
-  }
 
   @include Tablet {
     display: none;
