@@ -1,0 +1,51 @@
+.marking {
+  display: flex;
+  justify-content: space-between;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  &__label {
+    @include flex-column;
+    width: $widthBlock;
+    height: 140px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    @include iPad {
+      width: 218px;
+      padding-left: 0;
+    }
+
+    @include mobile {
+      width: 280px;
+      height: max-content;
+      padding-left: 0;
+    }
+  }
+
+  &__mark {
+    margin: 0 auto;
+    object-fit: fill;
+    color: $dark-green;
+
+    @include mobile {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__description {
+    color: #000;
+    @include decorative-text;
+    text-align: center;
+    height: 36px;
+  }
+}

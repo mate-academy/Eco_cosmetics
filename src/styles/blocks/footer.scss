@@ -1,0 +1,146 @@
+.footer {
+  @include page-standart;
+  height: max-content;
+  padding: 60px 130px;
+  background-color: rgba(52, 79, 16, 0.5);
+
+  @include tablet {
+    padding: 60px 50px;
+  }
+
+  @include iPad {
+    padding: 30px 27px;
+  }
+
+  @include mobile {
+    padding: 30px 20px 40px;
+  }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+
+  &__content {
+    @include flex-column;
+    justify-content: space-between;
+  }
+
+  &__contact {
+    @include flex-column;
+    width: $widthBlock;
+
+    @include iPad {
+      width: 342px;
+    }
+
+    @media (min-width: 500px) and (max-width: 768px) {
+      width: 320px;
+    }
+
+    @media (max-width: 500px) {
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+
+  &__contact-block {
+    @include flex-column;
+    gap: 20px;
+
+    @include iPad {
+      gap: 7px;
+    }
+
+    @include mobile {
+      gap: 10px;
+    }
+
+    @media (max-width: 620px) {
+      padding-bottom: 80px;
+    }
+
+    @media (max-width: 500px) {
+      padding-bottom: 116px;
+      padding-top: 80px;
+    }
+  }
+
+  &__contact-info {
+    font-size: 18px;
+    line-height: 130%;
+    @include link;
+    color: $beige;
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
+  }
+
+  &__social-links {
+    padding-top: 30px;
+    display: flex;
+    gap: 14px;
+
+    @include iPad {
+      padding-top: 0;
+      position: absolute;
+      bottom: 100px;
+      left: 29px;
+    }
+
+    @media (max-width: 620px) {
+      padding-top: 0;
+      position: absolute;
+      top: 153px;
+      left: 20px;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+
+    &:first-child {
+      background: url(../images/facebook.svg) no-repeat;
+    }
+
+    &:last-child {
+      background: url(../images/insta.svg) no-repeat;
+    }
+  }
+
+  &__copyright {
+    display: block;
+    flex-direction: row;
+    width: max-content;
+
+    @include iPad {
+      padding-top: 90px;
+    }
+
+    @media (max-width: 620px) {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 198px;
+      text-align: center;
+    }
+  }
+
+  &__copyright-text {
+    font-size: 18px;
+    line-height: 130%;
+    color: $beige;
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+}

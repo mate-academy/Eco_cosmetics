@@ -1,0 +1,115 @@
+.contactUs {
+  @include page-standart;
+  background: url(../images/contact-img.png) right 0 no-repeat;
+  background-size: 42% 100%;
+
+  @include iPad {
+    background-size: 48% 100%;
+  }
+
+  @include mobile {
+    background: none;
+  }
+
+  &__container {
+    width: $widthBlock;
+
+    @include iPad {
+      width: 342px;
+    }
+
+    @include mobile {
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: $dark-green;
+    font-size: 36px;
+    line-height: 150%;
+    text-transform: uppercase;
+
+    @include iPad {
+      font-size: 24px;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    @include h4;
+    letter-spacing: normal;
+    padding-top: 20px;
+
+    @include iPad {
+      padding-top: 10px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+      padding-top: 10px;
+    }
+  }
+
+  &__input {
+    position: relative;
+    padding-top: 30px;
+    width: 480px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $grey;
+    font-size: 18px;
+    line-height: 150%;
+    color: #828282;
+    padding-bottom: 10px;
+
+    &--textarea {
+      &::placeholder {
+        position: absolute;
+        bottom: 10px;
+        resize: vertical;
+
+        @include mobile {
+          bottom: 5px;
+        }
+      }
+    }
+
+    @include iPad {
+      width: 342px;
+      padding-bottom: 5px;
+      padding-top: 25px;
+      font-size: 14px;
+    }
+
+    @include mobile {
+      width: 100%;
+      padding-bottom: 5px;
+      padding-top: 25px;
+      font-size: 14px;
+    }
+  }
+
+  &__button {
+    @include button;
+    @include button-text;
+    @include flex-center;
+    cursor: pointer;
+    margin-top: 50px;
+
+    &:hover {
+      @include hover-button;
+    }
+
+    @include iPad {
+      margin-top: 30px;
+    }
+
+    @include mobile {
+      margin: 30px auto 0;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.scroll-down {
+  @include page-standart;
+  gap: 120px;
+
+  &__text {
+    width: $widthBlock;
+    @include text;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  &__main-info {
+    width: $widthBlock;
+    @include h4;
+    color: $dark-green;
+    text-transform: uppercase;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      width: 280px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+
+  &__line {
+    @include decor-line;
+    position: absolute;
+
+    &--top {
+      width: 610px;
+      left: 0;
+      top: 0;
+    }
+
+    &--bottom {
+      bottom: 0;
+      right: 0;
+      width: 711px;
+    }
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+}

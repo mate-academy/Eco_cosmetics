@@ -1,0 +1,98 @@
+.confirmation {
+  display: none;
+
+  &--active {
+    display: block;
+    position: fixed;
+    box-sizing: border-box;
+    top: 270px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 270px);
+    background-color: $beige;
+    padding: 0 20px;
+    transition: all 0.3s ease 0s;
+    z-index: 3;
+    padding-top: 30px;
+
+    @include mobile {
+      top: 135px;
+      height: calc(100vh - 135px);
+    }
+  }
+
+  &__content {
+    @include flex-column;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    height: 100%;
+    padding-bottom: 60px;
+  }
+
+  &__orderAccept {
+    @include h3;
+    font-size: 48px;
+    text-align: center;
+    width: 574px;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      font-size: 24px;
+      width: 278px;
+    }
+  }
+
+  &__img {
+    background-image: url(../images/лист.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 160px;
+    width: 50px;
+    height: 70px;
+  }
+
+  &__toShop {
+    display: block;
+    @include link;
+    @include upperText;
+    position: absolute;
+    bottom: 60px;
+    left: 150px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 80px;
+      bottom: 10px;
+      left: -100px;
+      background-color: $dark-grey;
+    }
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+
+      &::before {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -5px;
+        width: 100%;
+      }
+    }
+
+    @include iPad {
+      bottom: 30vh;
+    }
+
+    @include mobile {
+      bottom: 30px;
+    }
+  }
+}

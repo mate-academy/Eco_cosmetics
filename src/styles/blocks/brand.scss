@@ -1,0 +1,73 @@
+.brand {
+  @include page-standart;
+  flex-direction: column;
+  z-index: 1;
+  background: url(../images/brand-img.png) 100% 0 no-repeat;
+  background-size: 50% 100%;
+
+  @include tablet {
+    background-size: 48% 100%;
+  }
+
+  @include iPad {
+    background-position: 50% 0;
+    background-size: 714px 500px;
+    align-items: center;
+  }
+
+  @include mobile {
+    background-position: 50% 0;
+    background-size: 320px 267px;
+    align-items: center;
+  }
+
+  &__title {
+    width: 480px;
+    @include h1;
+    color: $dark-grey;
+
+    @include iPad {
+      width: 466px;
+      padding-top: 550px;
+      text-align: center;
+      font-size: 36px;
+    }
+
+    @include mobile {
+      width: 90%;
+      padding-top: 292px;
+      text-align: center;
+      font-size: 24px;
+    }
+  }
+
+  &__special {
+    padding-top: 20px;
+    font-family: "Avenir", "Poppins", sans-serif;
+    color: $dark-grey;
+    font-size: 22px;
+    line-height: 130%;
+
+    @include mobile {
+      width: 90%;
+      padding-top: 12px;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+
+  &__button {
+    margin: 50px 0;
+    @include button;
+    @include flex-center;
+    cursor: pointer;
+
+    &:hover {
+      @include hover-button;
+    }
+
+    @include mobile {
+      margin-top: 46px;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.aboutCreators {
+  @include page-standart;
+  background: url(../images/bird.png) 100% 0 no-repeat;
+  background-size: auto 100%;
+
+  @include tablet {
+    background-size: 480px auto;
+  }
+
+  @include mobile {
+    background: none;
+  }
+
+  &__info {
+    @include flex-column;
+    max-width: $widthBlock;
+
+    @include iPad {
+      max-width: 342px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+      min-width: 280px;
+    }
+  }
+
+  &__title {
+    @include h2;
+    color: $dark-green;
+    line-height: 110%;
+
+    @media (max-width: 1023px) {
+      font-size: 24px;
+    }
+  }
+
+  &__text-block {
+    padding-top: 20px;
+    @include flex-column;
+    gap: 30px;
+    width: 100%;
+
+    @include iPad {
+      padding-top: 10px;
+      gap: 15px;
+    }
+
+    @include mobile {
+      padding-top: 10px;
+      gap: 20px;
+    }
+  }
+
+  &__text {
+    @include text;
+
+    @media (max-width: 1024px) {
+      &:last-child {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__more {
+    padding-top: 20px;
+    @include more;
+  }
+
+  &__form {
+    width: min-content;
+    height: min-content;
+  }
+
+  &__button {
+    @include button;
+    @include flex-center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+      @include hover-button;
+    }
+
+    @include iPad {
+      margin-top: 41px;
+      margin-bottom: 0;
+    }
+
+    @include mobile {
+      position: absolute;
+      left: 50%;
+      margin-top: 36px;
+      margin-bottom: 0;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__img {
+    @include mobile {
+      display: none;
+    }
+  }
+}

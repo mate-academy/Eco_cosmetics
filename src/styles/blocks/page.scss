@@ -1,0 +1,99 @@
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    font-family: "Avenir", "Poppins", sans-serif;
+    color: $dark-grey;
+    width: 100%;
+    background-color: $beige;
+
+    &--lock {
+      overflow: hidden;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    flex: 1 1 auto;
+  }
+
+  &__logo {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__logo-img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    object-position: center;
+
+    @include mobile {
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  &__logo-text {
+    color: $dark-green;
+    font-family: "Semibold", "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  //  переход на вверх страницы - возле каждого блока  //
+  &__block {
+    position: absolute;
+    display: flex;
+    transform-origin: left;
+    transform: rotate(-90deg) translateX(-100%);
+    @include decorative-text;
+    font-family: "Semibold", "Poppins", sans-serif;
+    text-transform: none;
+    @include link;
+    color: rgba(52, 79, 16, 0.5);
+    left: -82px;
+    gap: 10px;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100px;
+      background-color: rgba(52, 79, 16, 0.5);
+      align-self: center;
+      top: 0;
+    }
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+}

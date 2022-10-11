@@ -1,13 +1,559 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Eco_cosmetics</title>
     <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
+
+  <body class="page__body">
+    <div class="page__wrapper">
+      <header class="header">
+        <div class="header__conteiner">
+          <div class="header__logo page__logo">
+            <img
+              class="page__logo-img"
+              src="images/logo.png"
+              alt="logo"
+            >
+            <p class="page__logo-text">witch of mountain winds</p>
+          </div>
+
+          <div class="header__burger">
+            <span class="header__burger-menu">
+            </span>
+          </div>
+
+          <div class="header__nav nav">
+            <ul class="nav__list nav__list--header" id="menu">
+              <li class="nav__items nav__items--header">
+                <a href="#shop" class="nav__link">
+                  Shop
+                </a>
+              </li>
+              <li class="nav__items nav__items--header">
+                <a href="#contactUs" class="nav__link">
+                  Contact
+                </a>
+              </li>
+              <li class="nav__items nav__items--header">
+                <a href="#about" class="nav__link">
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <label class="shopping-bag__block" for="#">
+            <a href="#shopping-bag" class="header__shopping-bag"></a>
+            <span class="shopping-bag__quantity" data-quantity="0"></span>
+          </label>
+
+          <div class="shopping-bag" id="shopping-bag">
+            <div class="shopping-bag__container">
+              <h2 class="shopping-bag__title">Checkout</h2>
+              <div class="shopping-bag__nav">
+                <ul class="shopping-bag__list">
+                  <li>
+                    <a
+                      class="shopping-bag__link shopping-bag__link--active"
+                      href="#shipping"
+                      data-link="shipping"
+                    >shipping</a>
+                  </li>
+                  <li>
+                    <a class="shopping-bag__link" href="#payment" data-link="payment">payment</a>
+                  </li>
+                  <li>
+                    <a class="shopping-bag__link" href="#confirmation" data-link="confirmation">confirmation</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="shopping-bag__phase">
+                <p class="shopping-bag__phase-title shopping-bag__phase-title--active">shipping</p>
+                <p class="shopping-bag__phase-title">payment</p>
+                <p class="shopping-bag__phase-title">confirmation</p>
+              </div>
+
+              <div class="shopping-bag__order">
+                <div class="shopping-bag__shipping shipping" id="shipping">
+                  <form action="URL" class="shipping__form">
+                    <div class="shipping__form-labels">
+                      <label for="name"></label>
+                      <label for="e-mail"></label>
+                      <label for="country"></label>
+                      <label for="city"></label>
+                      <label for="postCode"></label>
+                      <label for="address"></label>
+                    </div>
+                    <input
+                      class="shipping__input"
+                      id="name"
+                      type="text"
+                      placeholder="full name"
+                      minlength="4"
+                      data-input="fullname"
+                      required
+                    >
+                    <input
+                      id="e-mail"
+                      class="shipping__input"
+                      type="email"
+                      placeholder="e-mail"
+                      data-input="email"
+                      required
+                    >
+                    <input
+                      id="country"
+                      class="shipping__input"
+                      type="text"
+                      placeholder="Country"
+                      minlength="4"
+                      data-input="country"
+                      required
+                    >
+                    <input
+                      id="city"
+                      class="shipping__input"
+                      type="text"
+                      placeholder="city"
+                      minlength="4"
+                      data-input="city"
+                      required
+                    >
+                    <input
+                      id="postCode"
+                      class="shipping__input"
+                      type="number"
+                      placeholder="Postal code"
+                      data-input="postCode"
+                      required
+                    >
+                    <input
+                      id="address"
+                      class="shipping__input"
+                      type="text"
+                      placeholder="address"
+                      minlength="4"
+                      data-input="address"
+                      required
+                    >
+                  </form>
+                  <form class="shipping__next shopping-bag__next" action="#" method="get">
+                    <label for="next"></label>
+                    <input
+                      class="shipping__button shopping-bag__button"
+                      type="submit"
+                      value="next"
+                      id="next"
+                    >
+                  </form>
+                </div>
+
+                <div class="shopping-bag__payment payment" id="payment">
+                  <div class="payment__content">
+                    <h3 class="payment__choosePayment">Choose payment option</h3>
+                    <div class="payment__options">
+                      <a
+                        class="payment__option payment__creditCard"
+                        for="creditCard"
+                        data-option="creditCard"
+                        href="#creditCard"
+                      >
+                        Credit card
+                      </a>
+                      <a
+                        class="payment__option payment__onDelivery"
+                        for="onDelivery"
+                        data-option="onDelivery"
+                        href="#onDelivery"
+                      >
+                        Payment on delivery
+                      </a>
+                    </div>
+                    <form
+                      class="payment__next shopping-bag__next"
+                      action="#"
+                      method="get"
+                    >
+                      <label for="shopping-button"></label>
+                      <input
+                        id="shopping-button"
+                        class="payment__button shopping-bag__button"
+                        type="submit"
+                        value="next"
+                        disabled="true"
+                      >
+                    </form>
+                  </div>
+                </div>
+
+                <div class="shopping-bag__confirmation confirmation" id="confirmation">
+                  <div class="confirmation__content">
+                    <span class="confirmation__orderAccept">Your order is accepted</span>
+                    <span class="confirmation__orderAccept">Thank you for choosing us</span>
+                    <span class="confirmation__img"></span>
+                    <a class="confirmation__toShop" href="#shop">back to shop</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="main-content__brand brand">
+          <h1 class="brand__title">Brand of eco-cosmetics and magic candles</h1>
+          <p class="brand__special">20% of sales at a wild bird shelter</p>
+          <form action="#shop" method="get">
+            <button class="brand__button" type="submit">shop</button>
+          </form>
+        </div>
+
+        <div class="main-content__scroll-down scroll-down">
+          <span class="scroll-down__line scroll-down__line--top"></span>
+          <p class="scroll-down__text">
+            Biologists say that birds are indicators of the environmental situation, and over the past half century, the population of seabirds has declined by 70%. Birds die due to environmental problems and human intervention in the natural environment.
+          </p>
+          <h4 class="scroll-down__main-info">if you choose the gifts of nature and care about it’s - scroll down</h4>
+          <span class="scroll-down__line scroll-down__line--bottom"></span>
+        </div>
+
+        <div class="main-content__aboutBrand aboutBrand" id="about">
+          <a class="page__block page__block--aboutBrand" href="#">witch of mountain winds</a>
+          <div class="aboutBrand__content">
+            <h2 class="aboutBrand__title">about our brand</h2>
+            <div class="aboutBrand__info-block">
+              <p class="aboutBrand__info">Our brand cosmetics are made from natural ingredients and we are promoting them to the masses. Shampoo, hair conditioner, soap - in recycled paper. Creams, oils, washing products in glass containers with recycled paper labels. No synthetics and microplastics in cosmetics. And the packaging from it can be returned for recycling or reused.</p>
+              <p class="aboutBrand__info">We are all neighbors of one big House. And we must protect what we have. Destroying everything around for the sake of consumerism and imaginary convenience, we destroy what does not belong to us. Be aware of your choice!</p>
+            </div>
+            <a class="aboutBrand__more" href="#more">LEARN MORE</a>
+          </div>
+          <img
+            class="aboutBrand__main-img"
+            src="images/aboutBrand-img.png"
+            alt="moonLight"
+          >
+          <span class="aboutBrand__additional-img"></span>
+        </div>
+
+        <div class="main-content__shop shop" id="shop">
+          <a class="page__block page__block--shop" href="#">shop</a>
+          <h2 class="shop__title">shop</h2>
+          <ul class="shop__categories">
+            <li>
+              <a
+                class="shop__category shop__category--face shop__category--active"
+                data-category="face"
+              >
+                face
+              </a>
+            </li>
+            <li>
+              <a
+                class="shop__category shop__category--body"
+                data-category="body"
+              >
+                body
+              </a>
+            </li>
+            <li>
+              <a
+                class="shop__category shop__category--hair"
+                data-category="hair"
+              >
+                hair
+              </a>
+            </li>
+            <li>
+              <a class="shop__category shop__category--candles" data-category="candles">candles</a>
+            </li>
+          </ul>
+
+          <div class="shop__block shop__block--face shop__block--active" id="face">
+            <div class="shop__card shop__card--hydrophilicOil">
+              <img class="shop__card-img" src="images/product1.png" alt="hydrophilic Oil">
+              <a class="shop__card-name" href="#hydrophilicOil" data-product-name="hydrophilicOil">Hydrophilic oil</a>
+              <p class="shop__price">160 UAH</p>
+            </div>
+            <div class="shop__card shop__card--faceCream">
+              <img class="shop__card-img" src="images/product2.png" alt="face cream">
+              <a class="shop__card-name" data-product-name="faceCream">Face cream</a>
+              <p class="shop__price">210 UAH</p>
+            </div>
+            <div class="shop__card shop__card--ubtan">
+              <img class="shop__card-img" src="images/product3.png" alt="product3">
+              <a class="shop__card-name" data-product-name="ubtan">ubtan</a>
+              <p class="shop__price">160 UAH</p>
+            </div>
+          </div>
+
+          <div class="shop__block shop__block--body" id="body">
+            <div class="shop__card shop__card--faceCream">
+              <img class="shop__card-img" src="images/product2.png" alt="face cream">
+              <a class="shop__card-name" data-product-name="faceCream">Face cream</a>
+              <p class="shop__price">210 UAH</p>
+            </div>
+            <div class="shop__card shop__card--hydrophilicOil">
+              <img class="shop__card-img" src="images/product1.png" alt="hydrophilic Oil">
+              <a class="shop__card-name" href="#hydrophilicOil" data-product-name="hydrophilicOil">Hydrophilic oil</a>
+              <p class="shop__price">160 UAH</p>
+            </div>
+            <div class="shop__card shop__card--ubtan">
+              <img class="shop__card-img" src="images/product3.png" alt="product3">
+              <a class="shop__card-name" data-product-name="ubtan">ubtan</a>
+              <p class="shop__price">160 UAH</p>
+            </div>
+          </div>
+
+          <div class="shop__block shop__block--hair" id="hair">
+            <div class="shop__card shop__card--lavenderShampoo">
+              <img class="shop__card-img" src="images/lavenderShampoo.png" alt="product Hair 1">
+              <p class="shop__card-name" data-product-name="lavenderShampoo">Almond Shampoo with Lavender Oil</p>
+              <p class="shop__price">70 UAH</p>
+            </div>
+            <div class="shop__card shop__card--faceCream">
+              <img class="shop__card-img" src="images/product2.png" alt="face cream">
+              <a class="shop__card-name" data-product-name="faceCream">Face cream</a>
+              <p class="shop__price">210 UAH</p>
+            </div>
+            <div class="shop__card shop__card--ubtan">
+              <img class="shop__card-img" src="images/product3.png" alt="product3">
+              <a class="shop__card-name" data-product-name="ubtan">ubtan</a>
+              <p class="shop__price">160 UAH</p>
+            </div>
+          </div>
+
+          <div class="shop__block shop__block--candles" id="candles">
+            <div class="shop__card shop__card--lavenderShampoo">
+              <img class="shop__card-img" src="images/lavenderShampoo.png" alt="product Hair 1">
+              <p class="shop__card-name" data-product-name="lavenderShampoo">Almond Shampoo with Lavender Oil</p>
+              <p class="shop__price">170 UAH</p>
+            </div>
+            <div class="shop__card shop__card--ubtan">
+              <img class="shop__card-img" src="images/product3.png" alt="product3">
+              <a class="shop__card-name" data-product-name="ubtan">ubtan</a>
+              <p class="shop__price">110 UAH</p>
+            </div>
+            <div class="shop__card shop__card--faceCream">
+              <img class="shop__card-img" src="images/product2.png" alt="face cream">
+              <a class="shop__card-name" data-product-name="faceCream">Face cream</a>
+              <p class="shop__price">210 UAH</p>
+            </div>
+          </div>
+
+          <form class="shop__form" action="#" method="get">
+            <button class="shop__button" type="submit" id="allProducts">all products</button>
+          </form>
+
+          <div class="product-page" data-product="hydrophilicOil">
+            <div class="product-page__content">
+              <img
+                class="product-page__img"
+                src="images/product1.png"
+                alt="Hydrophilic oil"
+              >
+              <div class="product-page__info-block">
+                <h4 class="product-page__title">Hydrophilic oil</h4>
+                <span class="product-page__price">160 UAH</span>
+                <span class="product-page__weight">65g</span>
+                <p class="product-page__ingredients"><span>Ingredients: </span>cocosulfate, aloe hydrolate, sweet almond oil, wheat proteins, chamomile grass, lavender essential oil.</p>
+                <p class="product-page__application"><span>Application: </span>foam the shampoo in your hands and apply foam on the hair or draw a block over wet hair, foam, massage, rinse, apply balm or conditioner.</p>
+                <form action="#" method="get">
+                  <button class="product-page__button" type="submit">add to bag</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-page" data-product="faceCream">
+            <div class="product-page__content">
+              <img
+                class="product-page__img"
+                src="images/product2.png"
+                alt="face Cream"
+              >
+              <div class="product-page__info-block">
+                <h4 class="product-page__title">Face Cream</h4>
+                <span class="product-page__price">210 UAH</span>
+                <span class="product-page__weight"></span>
+                <p class="product-page__ingredients"><span>Ingredients: </span> cocosulfate, aloe hydrolate, sweet almond oil, wheat proteins, chamomile grass, lavender essential oil.</p>
+                <p class="product-page__application">Application: foam the shampoo in your hands and apply foam on the hair or draw a block over wet hair, foam, massage, rinse, apply balm or conditioner.</p>
+                <form action="#" method="get">
+                  <button class="product-page__button" type="submit">add to bag</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-page" data-product="lavenderShampoo">
+            <div class="product-page__content">
+              <img
+                class="product-page__img"
+                src="images/lavenderShampoo.png"
+                alt="Almond Shampoo with Lavender Oil"
+              >
+              <div class="product-page__info-block">
+                <h4 class="product-page__title">Almond Shampoo with Lavender Oil</h4>
+                <span class="product-page__price">70 UAH</span>
+                <span class="product-page__weight">30 g</span>
+                <p class="product-page__ingredients"><span>Ingredients: </span>cocosulfate, aloe hydrolate, sweet almond oil, wheat proteins, chamomile grass, lavender essential oil.</p>
+                <p class="product-page__application">Application: foam the shampoo in your hands and apply foam on the hair or draw a block over wet hair, foam, massage, rinse, apply balm or conditioner.</p>
+                <form action="#" method="get">
+                  <button class="product-page__button" type="submit">add to bag</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-content__aboutCreators aboutCreators">
+          <a class="page__block page__block--aboutCreators" href="#">about the creators</a>
+          <div class="aboutCreators__info">
+            <h2 class="aboutCreators__title">about the creators</h2>
+            <div class="aboutCreators__text-block">
+              <p class="aboutCreators__text">My name is Victoria, I’m a master at candle making and natural cosmetics. In the past, a cynologist, was engaged in herbs, made layouts on the Tarot.</p>
+              <p class="aboutCreators__text">I am also a volunteer to save wild birds in distress, a consultant to the Phoenix Wildlife Rehabilitation Center, a member of the Society for the Conservation of Birds of Ukraine with the support of Birdlife International.</p>
+              <p class="aboutCreators__text">My husband and I live in the Carpathian region in the city of Chernivtsi. I dream of my center for the rehabilitation of wild birds, as it is very difficult to rescue birds in a rented communal apartment.</p>
+            </div>
+            <a class="aboutCreators__more" href="#moreCreators">LEARN MORE</a>
+            <form class="aboutCreators__form" action="#contactUs" method="get">
+              <button class="aboutCreators__button" type="submit">to contact us</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="main-content__toothPowder toothPowder">
+          <a class="page__block page__block--toothPowder" href="#">Ingredients</a>
+          <div class="toothPowder__main">
+            <h2 class="toothPowder__title">Ayurvedic Tooth Powder</h2>
+            <a class="toothPowder__more" href="#toothPowderMore">LEARN MORE</a>
+          </div>
+          <div class="toothPowder__ingredients-block">
+            <ul class="toothPowder__ingredients">
+              <li class="toothPowder__ingredient">Kaolin</li>
+              <li class="toothPowder__ingredient">Sivak (Persian salvador)</li>
+              <li class="toothPowder__ingredient">Calcium Carbonate</li>
+              <li class="toothPowder__ingredient">Licorice Root</li>
+              <li class="toothPowder__ingredient">Turmeric</li>
+            </ul>
+            <img class="toothPowder__container" src="images/tooth.png" alt="банка">
+          </div>
+        </div>
+
+        <div class="main-content__marking marking">
+          <div class="marking__label">
+            <img
+              class="marking__mark"
+              src="images/noSintetic.png"
+              alt="mark no sintetic"
+            >
+            <p class="marking__description">No synthetics and microplastics</p>
+          </div>
+          <div class="marking__label">
+            <img
+              class="marking__mark"
+              src="images/organic.png"
+              alt="mark organic"
+            >
+            <p class="marking__description">product packaging can be recycled or reused</p>
+          </div>
+          <div class="marking__label">
+            <img
+              class="marking__mark"
+              src="images/eco.png"
+              alt="mark eco"
+            >
+            <p class="marking__description">only natural ingredients</p>
+          </div>
+        </div>
+
+        <div class="main-content__contactUs contactUs" id="contactUs">
+          <a class="page__block page__block--contactUs" href="#">help</a>
+          <div class="contactUs__container">
+            <h2 class="contactUs__title">Contact Us</h2>
+            <p class="contactUs__text">we will help you choose a product that suits you and answer your other questions</p>
+            <form class="contactUs__form" action="#">
+              <label for="contactUs-name"></label>
+              <input
+                class="contactUs__input"
+                type="text"
+                placeholder="Your Name"
+                id="contactUs-name"
+              >
+              <label for="contactUs-Email"></label>
+              <input
+                class="contactUs__input"
+                type="text"
+                placeholder="E-mail"
+                id="contactUs-Email"
+              >
+              <label for="contactUs-number"></label>
+              <input
+                class="contactUs__input"
+                placeholder="Phone Number"
+                id="contactUs-number"
+              >
+              <textarea
+                class="contactUs__input contactUs__input--textarea"
+                type="textarea"
+                placeholder="Your Message"
+              ></textarea>
+              <button class="contactUs__button" type="submit">send a message</button>
+            </form>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__nav nav">
+            <ul class="nav__list nav__list--footer">
+              <li class="nav__items nav__items--footer">
+                <a href="#shop" class="nav__link nav__link--footer">
+                  Shop
+                </a>
+              </li>
+              <li class="nav__items nav__items--footer">
+                <a href="#contactUs" class="nav__link nav__link--footer">
+                  Contact
+                </a>
+              </li>
+              <li class="nav__items nav__items--footer">
+                <a href="#about" class="nav__link nav__link--footer">
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__copyright">
+            <span class="footer__copyright-text">Copyright</span>
+            <img src="images/@.png" alt="@">
+            <span class="footer__copyright-text">2019 witch of mountain winds</span>
+          </div>
+        </div>
+        <div class="footer__contact">
+          <div class="footer__contact-block">
+            <p class="footer__contact-info">Ukraine</p>
+            <a class="footer__contact-info" href="mailto:support.mountain@gmail.com">support.mountain@gmail.com</a>
+            <a class="footer__contact-info" href="tel:+380934476839">+380934476839</a>
+            <p class="footer__contact-info">Support is available Monday - Friday 9am-6pm</p>
+          </div>
+          <div class="footer__social-links">
+            <a class="footer__social-link" href="facebook"></a>
+            <a class="footer__social-link" href="instagram"></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>

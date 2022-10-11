@@ -1,6 +1,189 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+// media //
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin iPad {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin full {
+  @media (min-width: 1920px) and (max-width: 2559px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: 2560px) {
+    @content;
+  }
+}
+
+// font style //
+@mixin h1 {
+  font-family: "Semibold", "Poppins", sans-serif;
+  font-size: 60px;
+  line-height: 130%;
+}
+
+@mixin h2 {
+  font-size: 36px;
+  line-height: 110%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin h3 {
+  font-family: "Semibold", "Poppins", sans-serif;
+  font-size: 36px;
+  line-height: 150%;
+}
+
+@mixin h4 {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+}
+
+@mixin h5 {
+  font-family: "Semibold", "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+}
+
+@mixin text {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@mixin upperText {
+  font-family: "Medium", "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin price-text {
+  font-family: "Medium", "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin decorative-text {
+  font-family: "Medium", "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin input-text {
+  font-family: "Medium", "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+@mixin button-text {
+  font-family: "Semibold", "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+// button //
+@mixin button {
+  height: 60px;
+  width: 280px;
+  background-color: $dark-grey;
+  color: $lite-grey;
+  outline: none;
+  border: none;
+  padding: 0;
+  @include button-text;
+}
+
+@mixin hover-button {
+  border: 1px solid $dark-grey;
+  background-color: $beige;
+  color: $dark-grey;
+  outline: none;
+}
+
+// link //
+@mixin link {
+  color: $dark-green;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+// flex //
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin decor-line {
+  position: absolute;
+  height: 1px;
+  background-color: #344f1080;
+}
+
+@mixin page-standart {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: max-content;
+}
+
+// learn more //
+@mixin more {
+  position: relative;
+  width: max-content;
+  @include link;
+  @include decorative-text;
+  font-weight: 700;
+  color: $dark-green;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin-top: 24px;
+    width: 100%;
+    height: 1px;
+    background-color: $dark-green;
+  }
+}
+
+@mixin body-hidden {
+  .page__body {
+    overflow: hidden;
   }
 }
