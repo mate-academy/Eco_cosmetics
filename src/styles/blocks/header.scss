@@ -1,0 +1,196 @@
+.header {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  &__top {
+    @include top-actions;
+  }
+
+  &__nav {
+    @include top-actions;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+  }
+
+
+  &__menu-opener {
+    display: block;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    text-decoration: none;
+  }
+
+  &__logo {
+    display: block;
+    background-image: url(../images/icon_logo.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+
+    width: 24px;
+    height: 24px;
+
+    @include onDesktop {
+      margin-right: 400px;
+      height: 50px;
+      width: 50px;
+
+      &::after {
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
+        content: "witch of mountain winds";
+        display: block;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $dark-green;
+        width: max-content;
+        padding-left: 62px;
+      }
+    }
+  }
+
+  &__company-name {
+    display: none;
+    align-items: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $dark-green;
+
+    visibility: hidden;
+
+    @include onDesktop {
+      visibility: visible;
+    }
+  }
+
+  &__shop-icon {
+    display: block;
+    background-image: url(../images/icon_shop.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+
+    width: 22px;
+    height: 26px;
+  }
+
+  &__grand-photo {
+    display: block;
+    margin-bottom: 25px;
+
+    object-fit: cover;
+
+    width: 100%;
+
+
+    @include onDesktop {
+      max-width: 560px;
+      order: 1;
+    }
+  }
+
+  &__title {
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    color: $dark-gray;
+    text-align: center;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px;
+      text-align: left;
+      font-size: 60px;
+      line-height: 130%;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-align: center;
+    color: $dark-gray;
+
+    @include onDesktop {
+      margin: 0 0 50px;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 100px;
+
+    @include onDesktop {
+      justify-content: left;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+
+    text-transform: capitalize;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__shop, &__contact, &__about {
+    display: flex;
+
+    @include onDesktop {
+      color: #344F10;
+      text-decoration: none;
+      margin-right: 40px;
+    }
+  }
+
+  &__container-text {
+
+  }
+}
