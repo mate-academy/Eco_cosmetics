@@ -1,17 +1,18 @@
 .footer {
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
   background-color: #8c9772;
 
   @include on1280px {
-    padding-left: 80px;
+    padding-left: 120px;
     margin-top: 70px;
   }
 
   @include on1440px {
     padding-top: 30px;
-  }
-
-  @include on1440px {
-    padding-left: 120px;
+    padding-left: 0;
   }
 
   &__block {
@@ -107,6 +108,10 @@
 
   &__contact {
     @include on1280px {
+      margin-right: 120px;
+    }
+
+    @include on1440px {
       margin-right: 150px;
     }
 
@@ -124,14 +129,15 @@
         margin-bottom: 10px;
         transition: 0.5s;
         text-decoration: none;
+        cursor: pointer;
 
-        &:visited {
+        &:hover {
+          transform: scale(1.05);
           color: $colorMilk;
           text-decoration: none;
         }
 
-        &:hover {
-          transform: scale(1.05);
+        &:visited {
           color: $colorMilk;
           text-decoration: none;
         }
