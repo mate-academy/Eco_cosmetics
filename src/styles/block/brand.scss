@@ -1,0 +1,123 @@
+.brand {
+  @include on768px {
+    padding-bottom: 20px;
+  }
+
+  @include on1280px {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  @include on1440px {
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+
+  &__img {
+    background-image: url(../images/title-img.jpg);
+    min-width: 100%;
+    height: 267px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+
+    @include on768px {
+      min-width: 714px;
+      min-height: 500px;
+      margin: 0 auto;
+    }
+
+    @include on1280px {
+      min-width: 580px;
+      min-height: 451px;
+    }
+  }
+
+  &__about {
+    margin: 25px 20px 0;
+
+    @include on1280px {
+      margin-left: 150px;
+      margin-top: 0;
+    }
+
+    @include on1440px {
+      margin-left: 120px;
+      margin-right: 130px;
+    }
+
+    &--title {
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 130%;
+      text-align: center;
+      color: #333;
+
+      @include on768px {
+        font-size: 36px;
+        line-height: 150%;
+        display: flex;
+        margin: 0 auto;
+        width: 456px;
+        text-transform: capitalize;
+      }
+
+      @include on1280px {
+        font-size: 60px;
+        width: 480px;
+        text-align: left;
+        text-transform: unset;
+      }
+    }
+
+    &--text {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      color: #333;
+      margin-top: 10px;
+
+      @include on1280px {
+        text-align: left;
+      }
+    }
+
+    &--btn {
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #f2f2f2;
+      padding: 19px 115px;
+      background-color: #333;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      border: 2px solid transparent;
+      transition: 0.5s;
+
+      &:hover {
+        background-color: $colorMilk;
+        color: #333;
+        border: 2px solid #333;
+        text-decoration: none;
+      }
+
+      @include on768px {
+        width: 280px;
+        margin: 50px auto;
+      }
+
+      @include on1280px {
+        margin: 50px 0;
+      }
+    }
+  }
+}
