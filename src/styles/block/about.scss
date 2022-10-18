@@ -1,0 +1,106 @@
+.about {
+  overflow: hidden;
+  
+  @include desktop() {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  
+  &--2 {
+    padding-top: 100px;
+    
+    &__img {
+      display: none;
+      @extend %icon;
+      width: 550px;
+      height: 500px;
+      background-image: url(../images/about--2-1.png);
+      position: relative;
+      right: -50px;
+      transition: transform 300ms;
+  
+      @include desktop() {
+        display: block;
+      }
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 70px;
+  }
+  
+  &__images {
+    display: none;
+    justify-content: end;
+    align-items: flex-end;
+    gap: 5px;
+    position: relative;
+    right: 25px;
+    transition: transform 300ms;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+  
+    @media (min-width:760px) {
+      display: flex;
+    }
+  }
+  
+  &__image {
+    position: relative;
+    @extend %icon;
+    width: 400px;
+    height: 500px;
+    background-image: url(../images/about.png);
+  
+    @media (min-width:640px) and (max-width:1000px) {
+      width: 300px;
+      height: 500px;
+    }
+  
+  
+    &--small {
+      display: none;
+      width: 200px;
+      height: 450px;
+  
+      @include desktop() {
+        display: block;
+      }
+    }
+  }
+  
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+  }
+  
+  &__text {
+    font-weight: 300;
+  
+    @include desktop() {
+      width: 500px;
+    }
+  
+    &-paragraph {
+      margin-top: 30px;
+  
+      &-2 {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
