@@ -8,7 +8,7 @@
 
   padding: 40px 50px 0 50px;
 
-  @include BigScreen{
+  @include BigScreen {
     padding-left: 10%;
     padding-right: 10%;
   }
@@ -51,7 +51,7 @@
     }
   }
 
-  &__box{
+  &__box {
     display: flex;
     overflow: hidden;
     justify-content: space-between;
@@ -83,6 +83,7 @@
 
   &__btn {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     color: $primary_color;
     background: none;
@@ -91,10 +92,19 @@
     font-weight: 500;
     border: none;
     cursor: pointer;
-    padding-bottom: 5px;
+    transition: transform 250ms ease-in-out;
 
-    &:hover {
-      border-bottom: 2px solid $secondary_color;
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $primary_color;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
     }
 
     @include Mobile {

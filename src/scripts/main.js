@@ -10,3 +10,10 @@ window.addEventListener('hashchange', () => {
     document.body.style.overflowY = 'auto';
   }
 });
+
+const form = document.getElementById('Myform');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  form.reset();
+});

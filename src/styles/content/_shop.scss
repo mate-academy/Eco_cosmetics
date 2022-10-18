@@ -6,7 +6,7 @@
   display: flex;
   padding: 40px 50px 0 50px;
 
-  @include BigScreen{
+  @include BigScreen {
     padding-left: 10%;
     padding-right: 10%;
   }
@@ -87,6 +87,7 @@
 
   &__btn {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     color: $secondary_color;
     background: none;
@@ -96,9 +97,19 @@
     border: none;
     cursor: pointer;
     padding-bottom: 5px;
+    transition: transform 250ms ease-in-out;
 
-    &:hover {
-      border-bottom: 2px solid $secondary_color;
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $primary_color;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
     }
   }
 
@@ -162,18 +173,19 @@
   &__btn-center {
     display: flex;
     justify-content: center;
+
     @include Tablet {
       justify-content: center;
     }
 
-    @include Mobile{
+    @include Mobile {
       margin-left: 20px;
       margin-right: 20px;
     }
   }
 
 
-  &__product-btn{
+  &__product-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,7 +199,7 @@
     cursor: pointer;
     transition: ease-in-out 0.3s;
 
-    &:hover{
+    &:hover {
       border: 1px solid $secondary_color;
       color: $secondary_color;
       background: $btn_hover;

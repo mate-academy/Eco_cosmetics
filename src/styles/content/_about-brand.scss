@@ -9,12 +9,12 @@
   column-gap: 5px;
   padding: 40px 0 0 40px;
 
-  @include BigScreen{
+  @include BigScreen {
     padding-left: 10%;
     padding-right: 10%;
   }
-  
-  @include Tablet{
+
+  @include Tablet {
     padding: 30px 0 0 27px;
   }
 
@@ -62,6 +62,7 @@
     @include Tablet {
       row-gap: 20px;
     }
+
     @include Mobile {
       row-gap: 20px;
     }
@@ -95,6 +96,7 @@
 
   &__btn {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     color: $primary_color;
     background: none;
@@ -103,11 +105,21 @@
     font-weight: 500;
     border: none;
     cursor: pointer;
-    padding-bottom: 5px;
+    transition: transform 250ms ease-in-out;
 
-    &:hover {
-      border-bottom: 2px solid $secondary_color;
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $primary_color;
+      transition: width 0.3s;
     }
+
+    &:hover::after {
+      width: 100%;
+    }
+
   }
 
   &__img-container {
