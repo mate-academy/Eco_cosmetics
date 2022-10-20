@@ -1,6 +1,117 @@
-@mixin hover($_property, $_toValue) {
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff2") format("woff2"),
+      url("../fonts/#{$file_name}.woff") format("woff");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@mixin hover($_property) {
   transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin anyHoverImage {
+  overflow: hidden;
+  transition: transform 0.3s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      & .ibg__img {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+@mixin toTablet {
+  @media (max-width: 767.8px) {
+    @content;
+  }
+}
+
+@mixin toDesktop {
+  @media (max-width: 1279.8px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin line {
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    background: rgba(52, 79, 16, 0.5);
+    height: 1px;
+    @content;
+  }
+}
+
+@mixin icon {
+  display: block;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@mixin containerWithoutPaddings {
+  max-width: $maxWidthContainer + px;
+
+  @include onTablet {
+    margin: 0 auto;
+    padding: 0 27px;
+  }
+
+  @include onDesktop {
+    display: flex;
+    padding: 0 50px;
+  }
+
+  @content;
+}
+
+@mixin sidePadding() {
+  @include toTablet {
+    padding: 0 20px;
+  }
+}
+
+@mixin cardFont {
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $colorMain;
+}
+
+@mixin paymentText {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: $colorMain;
+
+  @include onDesktop {
+    font-size: 20px;
   }
 }
