@@ -1,0 +1,64 @@
+.ingredients {
+
+  &__box {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    flex-direction: column;
+
+    height: 650px;
+
+    @include onTablet {
+      height: 500px;
+    }
+
+    &--bottom {
+      position: relative;
+      bottom: 5%;
+    }
+  }
+
+  &__image {
+
+    &--mobile {
+      display: block;
+      position: relative;
+      left: 30px;
+      width: 100%;
+      margin-bottom: 30px;
+      margin-right: 0;
+      text-align: end;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none; 
+
+      @include onTablet {
+        display: block;
+        position: absolute;
+        
+        right: 0vw;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none; 
+
+      @include onDesktop {
+        display: block;
+        position: absolute;
+
+        transform: translateX(50%);
+      }
+    }
+
+  }
+}

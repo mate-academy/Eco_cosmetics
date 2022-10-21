@@ -1,0 +1,70 @@
+.main {
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $dark-green;
+
+    margin: 0 0 10px;
+
+    @include onDesktop {
+      margin: 0 0 30px;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 150%;
+      margin: 0 0 40px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: $dark-gray;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__container {
+    order: 1;
+  }
+
+  &__image-candle {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      object-fit: cover;
+      width: 369px;
+      right: 0;
+    }
+
+    @include onDesktop {
+      display: block;
+      position: relative;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      order: 1;
+      margin-right: 20px;
+    }
+  }
+}

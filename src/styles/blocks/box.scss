@@ -1,0 +1,41 @@
+.box {
+
+  &__text {
+    @extend %h5;
+    margin: 0 0 10px;
+  }
+
+  &__price {
+    @extend %price-text;
+  }
+
+  &__image {
+    position: relative;
+    height: 500px;
+    width: 380px;
+    margin: 0 0 20px;
+    object-fit: cover;
+
+    @include hover(transform, scale(1.033));
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

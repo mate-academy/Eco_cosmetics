@@ -1,0 +1,26 @@
+.about {
+  &__image {
+    display: none;
+
+    @include hover(transform, scaleY(1.03));
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  
+      &--copy {
+        display: none;
+
+        @include onDesktop {
+          display: flex;
+          height: calc(100% - 100px);
+          width: calc(100% + 58px);
+          background-position: center;
+          align-self: flex-end;
+        }
+      }
+    }
+  }
+}

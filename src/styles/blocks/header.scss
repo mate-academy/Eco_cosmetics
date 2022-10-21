@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    height: 100vh;
+    height: max-content;
   }
 
   &__top {
@@ -23,7 +23,6 @@
     }
 
   }
-
 
   &__menu-opener {
     display: block;
@@ -104,12 +103,21 @@
 
   &__grand-photo {
     display: block;
-    margin-bottom: 25px;
+    position: relative;
+    padding: 0;
+    margin: 0 0 25px;
 
     object-fit: cover;
+    right: 30px;
 
-    width: 100%;
+    width: calc(100% + 60px);
 
+    @include hover(transform, scale(1.03));
+
+    @include onTablet {
+      width: 100%;
+      right: 0;
+    }
 
     @include onDesktop {
       max-width: 560px;
@@ -157,8 +165,6 @@
     align-items: center;
     justify-content: center;
 
-    margin-bottom: 100px;
-
     @include onDesktop {
       justify-content: left;
     }
@@ -167,11 +173,9 @@
   &__menu {
     display: none;
 
-
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
-
     text-transform: capitalize;
 
     @include onDesktop {
@@ -180,17 +184,22 @@
     }
   }
 
-  &__shop, &__contact, &__about {
+  &__shop,
+  &__contact,
+  &__about {
     display: flex;
 
     @include onDesktop {
-      color: #344F10;
+      color: $dark-green;
       text-decoration: none;
       margin-right: 40px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+      
+      &:hover {
+        border-color: $dark-green;
+      }
     }
-  }
-
-  &__container-text {
-
   }
 }

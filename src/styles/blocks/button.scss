@@ -8,21 +8,25 @@
   top: 819px;
   background: $dark-gray;
 
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 130%;
+  @extend %button-text;
+
+  margin: auto auto;
+
+  @include onTablet {
+    margin: 0;
+  }
 
   text-align: center;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
 
   color: $light-gray;
   outline: none;
   border: 1px solid transparent;
 
+  transition: color 0.3s, background-color 0.3s;
+
   &:hover {
     color: $dark-gray;
-    border: 1px solid #333333;
+    border: 1px solid $dark-gray;
     background-color: $background-color;
   }
 }
