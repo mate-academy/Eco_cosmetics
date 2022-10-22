@@ -3,10 +3,12 @@
   flex-direction: column;
   align-items: center;
 
+  margin-bottom: 100px;
+
   &__blocks-for3 {
     @include tablet {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      display: flex;
+      align-items: center;
       gap: 30px;
     }
 
@@ -81,7 +83,7 @@
     }
 
     @include desktop {
-      grid-column: 2 / 4;
+      grid-column: 3 / 5;
     }
   }
 
@@ -139,8 +141,6 @@
     line-height: 130%;
     color: $green;
 
-    padding-bottom: 110px;
-
     &::after {
       content: "";
       display: block;
@@ -160,11 +160,17 @@
     }
 
     @include desktop {
-      grid-column: 6 / 11;
+      grid-column: 6 / 12;
     }
   }
 
   &__img {
+
+    @include tablet {
+      width: 320px;
+      height: 370px;
+    }
+
     @include desktop {
       width: 480px;
       height: 530px;
