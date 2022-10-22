@@ -8,13 +8,18 @@
   padding: 40px 50px 40px 50px;
 
 
-  @include BigScreen{
+  @include BigScreen {
     padding-left: 10%;
     padding-right: 10%;
   }
-  
+
+  @include Bigdesk {
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+
   @include Tablet {
-    padding: 30px 0 0 27px;
+    padding: 30px 27px 0 27px;
   }
 
   @include Mobile {
@@ -43,6 +48,10 @@
       background: $primary_color;
     }
 
+    @media (max-width:943px) {
+      display: none;
+    }
+
     @include Tablet {
       display: none;
     }
@@ -53,16 +62,27 @@
   }
 
   &__all {
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
     width: 100%;
     justify-content: space-between;
+
+    @media (max-width:943px) {
+      flex-direction: column;
+    }
   }
 
   &__Head-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+
+    @media (max-width:943px) {
+      order: 2;
+      margin-top: 5%;
+    }
+
+    @include BigScreen{
+      width: 70%;
+    }
 
     @include Tablet {
       row-gap: 20px;
@@ -79,6 +99,7 @@
     display: block;
     font-size: 36px;
     font-weight: 600;
+
     color: $primary_color;
 
     @include Mobile {
@@ -120,7 +141,8 @@
   &__message {
     @extend .Contact-us__inputs;
     margin-top: 60px;
-    @include Mobile{
+
+    @include Mobile {
       margin-top: 45px;
     }
   }
@@ -129,7 +151,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 18vw;
+
     padding: 20px;
     font-size: 16px;
     font-weight: 600;
@@ -139,13 +161,16 @@
     cursor: pointer;
     transition: ease-in-out 0.3s;
 
-    &:hover{
+    &:hover {
       border: 1px solid $secondary_color;
       color: $secondary_color;
       background: $btn_hover;
       transform: scale(1.1);
     }
 
+    @media (max-width:943px) {
+      width: 40%;
+    }
 
     @include Tablet {
       width: 80%;
@@ -165,5 +190,9 @@
     @include Mobile {
       display: none;
     }
+  }
+
+  &__Bird {
+    width: 100%;
   }
 }

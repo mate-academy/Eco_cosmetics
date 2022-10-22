@@ -3,19 +3,28 @@
 @import "../utils/vars";
 
 .About-brand {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
+  display: flex;
   height: auto;
   column-gap: 5px;
-  padding: 40px 0 0 40px;
+  padding: 40px 40px 0 40px;
 
   @include BigScreen {
+    justify-content: space-between;
     padding-left: 10%;
     padding-right: 10%;
   }
 
+  @include Bigdesk{
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+
+  @media (max-width:943px) {
+    flex-direction: column;
+  }
+
   @include Tablet {
-    padding: 30px 0 0 27px;
+    padding: 30px 27px 0 27px;
   }
 
   @include Mobile {
@@ -44,6 +53,10 @@
       background: $primary_color;
     }
 
+    @media (max-width:943px) {
+      display: none;
+    }
+
     @include Tablet {
       display: none;
     }
@@ -55,9 +68,17 @@
 
   &__Head-container {
     display: flex;
-    height: 497px;
-    justify-content: space-between;
+    width: 50%;
+    row-gap: 5%;
+
     flex-direction: column;
+
+    @media (max-width:943px) {
+      order: 2;
+      width: 100%;
+      margin-top: 2%;
+      row-gap: 5vw;
+    }
 
     @include Tablet {
       row-gap: 20px;
@@ -80,10 +101,18 @@
   }
 
   &__Paragraph {
+    display: flex;
+    height: 70%;
+    row-gap: 20%;
+    flex-direction: column;
     font-size: 16px;
     font-weight: 400;
     margin-top: 1%;
     color: $secondary_color;
+
+    @media (max-width:943px) {
+      row-gap: 5vw;
+    }
 
     @include Tablet {
       margin: 0;
@@ -93,6 +122,21 @@
       margin: 0;
     }
   }
+
+  &__Paragraph-1 {
+    display: flex;
+    
+  }
+
+  &__Paragraph-2 {
+    @include Tablet{
+      display: none;
+    }
+    @include Mobile{
+      display: none;
+    }
+  }
+
 
   &__btn {
     display: flex;
@@ -128,6 +172,22 @@
     align-items: flex-end;
     column-gap: 10px;
 
+    @media(max-width:943px) {
+      display: block;
+      background: url("../images/insense.svg") center no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 529px;
+    }
+
+    @include Tablet {
+      display: block;
+      background: url("../images/insense.svg") center no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 529px;
+    }
+
     @include Mobile {
       display: none;
     }
@@ -136,7 +196,16 @@
   &__img-big {
     width: 480px;
     height: 529px;
+
+    @media(max-width:943px) {
+      display: none;
+    }
+
+    @include Tablet {
+      display: none;
+    }
   }
+
 
   &__img-small {
     background: yellow;
@@ -145,6 +214,10 @@
     max-width: 280px;
     width: 100%;
     height: auto;
+
+    @media(max-width:1096px) {
+      display: none;
+    }
   }
 
 }

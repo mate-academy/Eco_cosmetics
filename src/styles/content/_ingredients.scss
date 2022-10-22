@@ -13,6 +13,11 @@
     padding-right: 10%;
   }
 
+  @include Bigdesk{
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+
   @include Tablet {
     padding: 30px 0 0 27px;
   }
@@ -56,6 +61,11 @@
     overflow: hidden;
     justify-content: space-between;
     width: 100%;
+
+    @media (max-width:531px) {
+      row-gap: 5vw;
+      flex-direction: column;
+    }
 
     @include Mobile {
       row-gap: 5vw;
@@ -107,6 +117,10 @@
       width: 100%;
     }
 
+    @media (max-width:531px) {
+      display: none;
+    }
+
     @include Mobile {
       display: none;
     }
@@ -114,10 +128,18 @@
 
   &__mobile {
     display: none;
-
-    @include Mobile {
+    @media (max-width:531px) {
       display: flex;
     }
+    // @media (max-width:425px) {
+    //   display: flex;
+      
+    // }
+
+    // @include Mobile {
+    //   display: flex;
+    //   background: red;
+    // }
   }
 
   &__btn-mobile {
@@ -131,13 +153,27 @@
 
   &__powder-container {
     display: flex;
+  }
 
+  &__mid {
+    display: none;
+
+    @include Tablet {
+      display: block;
+    }
+  }
+
+  &__small {
+    display: none;
+
+    @include Mobile {
+      display: block;
+    }
   }
 
   &__powder-content {
     display: flex;
     align-items: flex-end;
-
     justify-content: space-evenly;
     flex-direction: column;
   }
