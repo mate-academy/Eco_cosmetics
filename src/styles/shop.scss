@@ -120,10 +120,6 @@
   &__item {
     margin-right: 20px;
 
-    @media (max-width: $mobile-version-breakpoint) {
-      margin-right: 14px;
-    }
-
     &:last-child {
       margin-right: 0;
     }
@@ -139,13 +135,14 @@
     object-fit: cover;
     transition: $transform-duration-image;
 
-    @media (min-width:1025px) {
+    @media (min-width: 1025px) {
       width: 380px;
       height: 500px;
     }
 
     @media (max-width: $mobile-version-breakpoint) {
-      max-height: 267px;
+      width: 335px;
+      max-height: 320px;
     }
 
     &:hover {
@@ -156,7 +153,11 @@
   &__slider {
     display: flex;
     overflow: hidden;
-    margin: 45px 0 30px ;
+    margin: 45px 0 30px;
+
+    @media (max-width: $mobile-version-breakpoint) {
+      margin: 24px 0 34px;
+    }
 
     &-button {
       border: none;

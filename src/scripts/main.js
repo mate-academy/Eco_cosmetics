@@ -52,15 +52,17 @@ if (hamburgerMenuLink) {
 
 shop.forEach(item => (item.style.overflowX = 'hidden'));
 
+const imageWidth = shopItemImage.width + 20;
+
 shopBtnRight.addEventListener('click', event => {
   shop.forEach(item => {
-    item.scrollLeft += shopItemImage.width + 20;
+    item.scrollLeft += imageWidth;
   });
 });
 
 shopBtnLeft.addEventListener('click', event => {
   shop.forEach(item => {
-    item.scrollLeft -= shopItemImage.width + 20;
+    item.scrollLeft -= imageWidth;
   });
 });
 
