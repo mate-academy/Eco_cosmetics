@@ -160,10 +160,10 @@ a:hover {
   }
 
   &__section {
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 
     @include onTablet {
-      margin-bottom: 130px;
+      margin-bottom: 100px;
     }
 
     @include onDesktop {
@@ -487,6 +487,7 @@ a:hover {
     display: block;
     width: 100%;
     padding: 4px 0;
+    color: $colorMain;
     background-color: $colorBg;
     border-bottom: 1px solid #bdbdbd;
     outline: none;
@@ -506,35 +507,51 @@ a:hover {
       color: #828282;
     }
 
-    &:invalid {
-      color: #eb5757;
-      border-color: #eb5757;
+    &:focus {
+      color: $colorMain;
+      border-color: $colorMain;
     }
 
-    &:valid {
+    &._complete {
       color: $colorSecond;
       border-color: $colorSecond;
     }
 
-    &:focus {
-      border-color: $colorMain;
+    &:-webkit-autofill {
+      box-shadow: 0 0 0 30px $colorBg inset !important;
     }
 
     &:not(:last-child) {
       margin-bottom: 20px;
 
       &:last-of-type {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
 
         @include onDesktop {
           margin-bottom: 50px;
         }
       }
     }
+
+    &._error {
+      color: #eb5757;
+      border-color: #eb5757;
+
+      &::placeholder {
+        color: #eb5757;
+      }
+    }
   }
 
   &__input--textarea {
     resize: none;
+    padding: 8px 0;
+    height: 44px;
+
+    @include onDesktop {
+      padding: 10px 0;
+      height: 50px;
+    }
   }
 
   &__button {
@@ -1022,8 +1039,10 @@ a:hover {
   overflow: hidden;
 
   &__side-wrapper {
-    z-index: 5;
-    padding-top: 170px;
+    @include onDesktop {
+      z-index: 5;
+      padding-top: 170px;
+    }
   }
 
   &__body {
@@ -1156,6 +1175,7 @@ a:hover {
     margin: 0 auto;
   }
 }
+
 //#endregion
 
 .card {
@@ -1275,14 +1295,16 @@ a:hover {
   }
 
   &__button {
-    margin-bottom: 24px;
+    @media (max-width: 767.98px) {
+      margin: 0 auto 24px;
+    }
 
     @include onTablet {
-      margin-bottom: 30px;
+      margin: 0 0 30px;
     }
 
     @include onDesktop {
-      margin-bottom: 40px;
+      margin: 0 0 40px;
     }
   }
 

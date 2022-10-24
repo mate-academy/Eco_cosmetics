@@ -11,6 +11,81 @@ window.addEventListener('hashchange', () => {
   }
 });
 
+const forms = document.querySelectorAll('.form');
+
+function validateEmail(email) {
+  const re = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
+
+  return re.test(String(email).toLowerCase());
+}
+
+function validatePhone(phone) {
+  const re = /^[0-9\s]*$/;
+
+  return re.test(String(phone));
+}
+
+for (let index = 0; index < forms.length; index++) {
+  const form = forms[index];
+  const formInputs = document.querySelectorAll('.form__input');
+  const inputEmail = document.querySelector('.form__input--email');
+  const inputPhone = document.querySelector('.form__input--phone');
+
+  formInputs.forEach(function(input) {
+    input.onblur = function() {
+      if (input.value !== '') {
+        input.classList.add('_complete');
+      } else {
+        input.classList.remove('_complete');
+      }
+    };
+  });
+
+  form.onsubmit = function() {
+    const emailVal = inputEmail.value;
+    const phoneVal = inputPhone.value;
+
+    const emptyInputs = Array.from(formInputs).filter(
+      input => input.value === ''
+    );
+
+    formInputs.forEach(function(input) {
+      if (input.value === '') {
+        input.classList.add('_error');
+      } else {
+        input.classList.remove('_error');
+      }
+
+      input.onfocus = function() {
+        if (this.classList.contains('_error')) {
+          this.classList.remove('_error');
+          this.value = '';
+        }
+      };
+    });
+
+    if (emptyInputs.length > 0) {
+      return false;
+    }
+
+    if (!validateEmail(emailVal)) {
+      inputEmail.classList.add('_error');
+
+      return false;
+    } else {
+      inputEmail.classList.remove('_error');
+    }
+
+    if (!validatePhone(phoneVal)) {
+      inputPhone.classList.add('_error');
+
+      return false;
+    } else {
+      inputPhone.classList.remove('_error');
+    }
+  };
+}
+
 // Tabs
 const tabs = document.querySelectorAll('._tabs');
 
@@ -37,7 +112,6 @@ for (let index = 0; index < tabs.length; index++) {
 }
 
 // init Swiper:
-
 const swiper = new Swiper('.swiper', {
   // Optional parameters
   simulateTouch: true,
