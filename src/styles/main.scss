@@ -144,21 +144,6 @@ a:hover {
     }
   }
 
-  &__menu {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: translateX(-100%);
-    transition: transform 0.3s;
-
-    &:target {
-      transform: translateX(0);
-      overflow: auto;
-    }
-  }
-
   &__section {
     margin-bottom: 60px;
 
@@ -640,18 +625,6 @@ a:hover {
 //#region header
 .header {
   background-color: $colorBg;
-
-  &__content {
-    // padding: 16px 0;
-
-    // @media (min-width: 768px) {
-    //   padding: 22px 0;
-    // }
-
-    // @include onDesktop {
-    //   padding: 36px 0;
-    // }
-  }
 }
 
 .menu-header {
@@ -685,11 +658,22 @@ a:hover {
 
 //#region menu
 .menu {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: $colorMain;
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+    overflow: auto;
+  }
 
   &__content {
     height: 100vh;
-    // @extend .header__content;
   }
 
   &__top-actions {
@@ -1365,9 +1349,15 @@ a:hover {
     }
 
     @include onDesktop {
-      min-width: 684px;
+      min-width: 600px;
       margin-left: auto;
     }
+
+    @include hover(all) {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
   }
 }
 
@@ -1395,12 +1385,24 @@ a:hover {
         margin-bottom: 0;
       }
     }
+
+    @include hover(all) {
+
+      .benefits__image {
+        transform: scale(1.1);
+      }
+
+      .benefits__subtitle {
+        color: $colorSecond;
+      }
+    }
   }
 
   &__image {
     margin: 0 auto 20px;
     min-height: 60px;
     width: 63px;
+    transition: transform 0.3s;
 
     @include onTablet {
       min-height: 76px;
@@ -1419,6 +1421,7 @@ a:hover {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #000;
+    transition: color 0.3s;
   }
 }
 

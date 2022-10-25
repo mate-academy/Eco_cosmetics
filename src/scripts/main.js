@@ -11,10 +11,11 @@ window.addEventListener('hashchange', () => {
   }
 });
 
+// Form
 const forms = document.querySelectorAll('.form');
 
 function validateEmail(email) {
-  const re = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
+  const re = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+.([A-Za-z]{2,4})$/;
 
   return re.test(String(email).toLowerCase());
 }
@@ -32,6 +33,13 @@ for (let index = 0; index < forms.length; index++) {
   const inputPhone = document.querySelector('.form__input--phone');
 
   formInputs.forEach(function(input) {
+    input.onfocus = function() {
+      if (this.classList.contains('_error')) {
+        this.classList.remove('_error');
+        this.value = '';
+      }
+    };
+
     input.onblur = function() {
       if (input.value !== '') {
         input.classList.add('_complete');
@@ -44,29 +52,19 @@ for (let index = 0; index < forms.length; index++) {
   form.onsubmit = function() {
     const emailVal = inputEmail.value;
     const phoneVal = inputPhone.value;
-
     const emptyInputs = Array.from(formInputs).filter(
       input => input.value === ''
     );
 
     formInputs.forEach(function(input) {
-      if (input.value === '') {
+      if (input.value === '' && emptyInputs.length > 0) {
         input.classList.add('_error');
+
+        return false;
       } else {
         input.classList.remove('_error');
       }
-
-      input.onfocus = function() {
-        if (this.classList.contains('_error')) {
-          this.classList.remove('_error');
-          this.value = '';
-        }
-      };
     });
-
-    if (emptyInputs.length > 0) {
-      return false;
-    }
 
     if (!validateEmail(emailVal)) {
       inputEmail.classList.add('_error');
@@ -212,6 +210,8 @@ if (checkoutBlock) {
 function showCard(curentCard) {
   if (curentCard) {
     const cardActive = document.querySelector('._goods-card._open-card');
+    const menuOpenBtns = document.querySelectorAll('.icon--menu-open');
+    const menuLinks = document.querySelectorAll('.menu-header__link');
 
     if (cardActive) {
       cardClose(cardActive);
@@ -219,6 +219,18 @@ function showCard(curentCard) {
 
     body.classList.add('lock');
     curentCard.classList.add('_open-card');
+
+    menuOpenBtns.forEach(el => {
+      el.addEventListener('click', () => {
+        cardClose(curentCard);
+      });
+    });
+
+    menuLinks.forEach(el => {
+      el.addEventListener('click', () => {
+        cardClose(curentCard);
+      });
+    });
 
     curentCard.addEventListener('click', function(e) {
       if (!e.target.closest('._close-card')) {
