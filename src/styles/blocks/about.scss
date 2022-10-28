@@ -1,0 +1,37 @@
+.about {
+  &__images {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  &__image {
+    display: none;
+
+    @include hover(transform, scaleY(1.03));
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include onDesktop {
+      width: 480px;
+    }
+
+    &--copy {
+      display: none;
+      @include hover(transform, scaleY(1.03));
+
+      @include onDesktop {
+        display: block;
+        background-position: center;
+        height: 90%;
+        width: 136px;
+        align-self: end;
+      }
+    }
+  }
+  
+}

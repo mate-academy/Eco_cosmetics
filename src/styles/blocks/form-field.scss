@@ -1,0 +1,84 @@
+.form-field {
+  box-sizing: border-box;
+  display: block;
+  padding: 5px;
+  font-weight: 500;
+  width: 100%;
+  font-size: 18px;
+  line-height: 150%;
+
+  text-transform: capitalize;
+
+  color: #828282;
+  background-color: $background-color;
+  font-family: inherit;
+
+  margin-bottom: 15px;
+
+  @include onDesktop {
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+
+  border: none;
+
+  border-bottom: 1px solid #828282;
+  outline: none;
+
+  &::placeholder {
+    color: #828282;
+  }
+
+  &:hover {
+    border-color: $dark-gray;
+  }
+
+  &:focus {
+    border-color: $dark-green;
+    color: $dark-green;
+    outline: none;
+
+    &::placeholder {
+      color: #828282;
+    }
+  }
+
+  &:valid:not(:focus) {
+    color: $dark-green;
+  }
+
+  &:invalid:not(:placeholder-shown) {
+    color: $red;
+    border-color: $red;
+  }
+
+  &--textarea {
+    margin: 45px 0 30px;
+    text-transform: none;
+    resize: none;
+    line-height: 50%;
+
+    @include onDesktop {
+      margin: 50px 0;
+    }
+  }
+
+  &:-webkit-autofill {
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  &:-webkit-autofill:active,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    border-color: $dark-green;
+    -webkit-font-feature-settings: normal;
+    font-feature-settings: normal;
+
+    -webkit-text-fill-color: $dark-gray;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}

@@ -1,0 +1,117 @@
+.footer {
+  background: $light-green;
+  height: max-content;
+  color: $background-color;
+  padding-bottom: 40px;
+
+  @include onTablet {
+    padding-bottom: 30px;
+  }
+  
+  @include onDesktop {
+    padding-bottom: 60px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__shop,
+  &__contact,
+  &__about {
+    flex-direction: row;
+    gap: 10px;
+    text-decoration: none;
+    color: $background-color;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+
+    text-transform: capitalize;
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+      order: 1;
+      gap: 15px;
+    }
+  }
+
+  &__social-icon {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      order: 2;
+    }
+
+    @include onDesktop {
+      order: 3;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    margin-right: 20px;
+    color: $background-color;
+  }
+
+  &__info {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    list-style: none;
+    margin: 0 0 40px;
+    padding: 0;
+
+    @include onTablet {
+      order: 1;
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    text-decoration: none;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__signature {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+
+    @include onTablet {
+      order: 3;
+      text-align: left;
+      font-weight: 400;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      margin-bottom: 0;
+
+      &::before {
+        content: "Copyright";
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.box {
+
+  margin-bottom: 30px;
+
+  @include onTablet {
+    margin: 0 0 50px;
+  }
+
+  @include onDesktop {
+    margin: 0 0 40px;
+  }
+
+  &__text {
+    @extend %h5;
+    margin: 0 0 10px;
+  }
+
+  &__price {
+    @extend %price-text;
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    max-width: 380px;
+    margin: 0 0 20px;
+    object-fit: cover;
+
+    @include onDesktop {
+      height: 500px;
+    }
+
+    @include hover(transform, scale(1.03));
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
