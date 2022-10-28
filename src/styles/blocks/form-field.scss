@@ -1,0 +1,62 @@
+.form-field {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: $beige;
+  border: none;
+  border-bottom: 1px solid $l-gray;
+  padding: 0 0 5px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: #344F10;
+
+  @include desktop {
+    font-size: 18px;
+  }
+
+  &:-internal-autofill-selected {
+    background-color: $beige;
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #828282;
+
+    @include desktop {
+      font-size: 18px;
+    }
+  }
+
+  &:active {
+    border-color: $black;
+    background-color: $beige;
+
+  }
+
+  &:focus {
+    background-color: $beige;
+    border-color: $black;
+    outline: none;
+  }
+
+  &:not(:focus):not(:placeholder-shown):invalid {
+    color: #EB5757;
+    border-color: #EB5757;
+  }
+
+  &:not(:focus):not(:placeholder-shown):invalid::placeholder {
+    color: #EB5757;
+  }
+
+  &--textarea {
+    resize: unset;
+    height: 27px;
+    overflow-y: visible;
+    text-transform: none;
+  }
+}

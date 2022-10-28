@@ -1,0 +1,155 @@
+.shop {
+  margin-bottom: 100px;
+  overflow: hidden;
+
+  @include tablet {
+    margin-bottom: 130px;
+  }
+
+  @include desktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    @include desktop {
+      display: flex;
+      column-gap: 80px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include tablet {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tabs {
+    box-sizing: border-box;
+    display: flex;
+    column-gap: 16px;
+    padding: 0;
+    margin: 0 0 15px;
+    list-style: none;
+
+    @include tablet {
+      margin-bottom: 25px;
+    }
+
+    @include desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__tab {
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    color: $l-gray;
+
+    @include hover (border-color, $black);
+
+    &--active {
+      border-color: $black;
+      color: $black;
+    }
+  }
+
+  &__link {
+    padding-bottom: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: inherit;
+
+    @include hover (color, $black);
+  }
+
+  &__product-photo {
+    width: 100%;
+    max-height: 300px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    object-position: center;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__product-cards {
+    box-sizing: border-box;
+    column-gap: 20px;
+    display: flex;
+    height: 400px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-bottom: 30px;
+    
+    @include tablet {
+      height: 595px;
+      margin-bottom: 50px;
+      margin-right: -20px;
+    }
+
+    @include desktop {
+      position: relative;
+      left: 100px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__product-card {
+    z-index: 1;
+
+    &--mobile {
+      position: absolute;
+      right: 0;
+      left: 0;
+      display: block;
+      height: 400px;
+      width: 100%;
+      min-width: none;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      position: relative;
+      min-width: 380px;
+      display: none;
+
+
+      @include hover (transform, scale(1.03));
+
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__product-card-photo {
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__product-card-info {
+    padding: 0 20px;
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}

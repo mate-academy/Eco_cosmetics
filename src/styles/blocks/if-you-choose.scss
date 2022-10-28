@@ -1,0 +1,75 @@
+.if-you-choose {
+  position: relative;
+  margin-bottom: 100px;
+
+  @include tablet {
+    margin-bottom: 130px;
+  }
+
+  @include desktop {
+    margin-bottom: 200px;
+  }
+
+  &__dividing-line {
+    display: none;
+    height: 1px;
+    width: 42.3%;
+    background-color: rgba(52, 79, 16, 0.5);
+
+    @include desktop {
+      display: block;
+    }
+
+    &--bottom {
+      position: absolute;
+      right: 0;
+      width: 49.3%;
+    }
+  }
+
+  &__content {
+    @include desktop {
+      padding: 100px 0;
+    }
+  }
+
+  &__title {
+    margin: 0 auto;
+    max-width: 280px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $d-green;
+
+    @include desktop {
+      // position: relative;
+      // bottom: -1px;
+      max-width: 380px;
+      // padding: 100px 0;
+      // border-bottom: 0.5px solid rgba(52, 79, 16, 0.5);
+      // background-color: $beige;
+      // text-align: left;
+    }
+
+    // &::before {
+    //   content: "";
+    //   display: block;
+    //   height: 1px;
+    //   background-color: $beige;
+
+    // }
+  }
+
+  &__paragraph {
+    // position: relative;
+    // top: -1px;
+    display: none;
+    // padding: 100px 0;
+    // border-top: 0.5px solid rgba(52, 79, 16, 0.5);
+    // background-color: $beige;
+
+    @include desktop {
+      display: inline;
+    }
+  }
+}
