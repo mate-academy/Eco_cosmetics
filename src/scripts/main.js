@@ -10,6 +10,7 @@ const hamburgerIconClose = document.querySelector(
 );
 const shopItemImage = document.querySelector('.shop__item--image');
 const hamburgerMenuLink = [...document.querySelectorAll('.small-nav__link')];
+const contactForm = document.querySelector('.contacts__form');
 
 window.addEventListener('resize', shopMediaQuery);
 activeLink();
@@ -79,15 +80,13 @@ function shopMediaQuery() {
   });
 }
 
-const contactForm = document.querySelector('.contacts__form');
-
 contactForm.addEventListener('submit', event => {
   event.preventDefault();
 
-  [...document.querySelectorAll('.contacts__form-input')].map(item => {
-    item.value = '';
+  [...document.querySelectorAll('.contacts__form-input')].map(input => {
+    input.value = '';
 
-    return item;
+    input.value.toLowerCase();
   });
   document.querySelector('.contacts__form-textarea').value = '';
 });
