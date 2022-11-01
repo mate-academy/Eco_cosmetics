@@ -43,3 +43,14 @@ tabs.addEventListener('click', (event) => {
     }
   });
 });
+
+const phoneInput = document.querySelector('[name = tel]');
+const allertMessage = document.querySelector('.allert');
+
+phoneInput.addEventListener('focus', () => {
+  allertMessage.style.display = 'block';
+});
+
+phoneInput.addEventListener('blur', () => {
+  allertMessage.style.display = 'none';
+});
