@@ -49,7 +49,9 @@ for (let index = 0; index < forms.length; index++) {
     };
   });
 
-  form.onsubmit = function() {
+  form.onsubmit = function(e) {
+    e.preventDefault();
+
     const emailVal = inputEmail.value;
     const phoneVal = inputPhone.value;
     const emptyInputs = Array.from(formInputs).filter(
@@ -63,6 +65,7 @@ for (let index = 0; index < forms.length; index++) {
         return false;
       } else {
         input.classList.remove('_error');
+        input.value = '';
       }
     });
 
