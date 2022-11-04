@@ -8,8 +8,6 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-
-
 const forms = document.querySelectorAll('.form__field');
 
 const formField = document.querySelector('.form, .form__shipping');
