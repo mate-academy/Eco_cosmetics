@@ -1,0 +1,226 @@
+.header {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    padding: 0 27px;
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+    padding: 0 50px;
+  }
+
+  &__menu-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px 20px;
+
+    @include onTablet {
+      padding: 24px 0 30px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    @include hover(transform, scale(1.2));
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 0 80px;
+    }
+  }
+
+  &__logo-desk {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__logo {
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 24px;
+    height: 24px;
+    @include hover(transform, scale(1.2));
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__menu-text {
+    @include onDesktop {
+      display: inherit;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $colorGreen;
+    }
+  }
+
+  &__list {
+    display: none;
+    @include onDesktop {
+      display: flex;
+      text-align: start;
+      list-style: none;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    @include onDesktop {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $colorGreen;
+      @include hover(color, $colorRed);
+    }
+  }
+
+  &__bag {
+    background-image: url(../images/bag.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 20px;
+    height: 24px;
+    @include hover(transform, scale(1.2));
+
+    @include onDesktop {
+      width: 22px;
+      height: 26px;
+    }
+  }
+
+  &__image {
+    background-image: url(../images/cream.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 267px;
+    margin-bottom: 25px;
+    @include hover(box-shadow, 4px 4px 10px);
+    @include hover(transform, scale(1.05));
+    
+    @include onTablet {
+      height: 500px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      width: 580px;
+      height: 450px;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__image-top {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__image-bottom {
+    @include onDesktop {
+      display: inherit;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include onDesktop {
+      align-items: flex-start;
+      padding: 0;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    width: 280px;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      width: 466px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    @extend %h4;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+  }
+
+  &__scroll {
+    width: 280px;
+    margin: 0 auto;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__text {
+    @extend %h3;
+    color: $colorGreen;
+
+    @include onDesktop {
+      text-align: start;
+      border-bottom: 1px solid #344f1080;
+    }
+  }
+
+  &__scroll-text {
+    @extend %h4;
+    @include onDesktop {
+      border-top: 1px solid #344f1080;
+      display: inherit;
+      text-align: start;
+      padding-top: 100px;
+    }
+  }
+}

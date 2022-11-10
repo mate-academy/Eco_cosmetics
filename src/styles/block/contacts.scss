@@ -1,0 +1,121 @@
+.contacts {
+  
+  margin-bottom: 100px;
+  padding: 0 20px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+    padding: 0 0 0 27px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+    padding: 0 0 0 50px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__field {
+    box-sizing: border-box;
+    border: none;
+    background-color: inherit;
+    border-bottom: 1px solid #bdbdbd;
+    width: 100%;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    outline: none;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $colorGreen;
+    @include hover (border-bottom, 1px solid $colorDarkGray);
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $colorAverageGray;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $colorGreen;
+    }
+
+    &:invalid {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $colorRed;
+    }
+  }
+
+  &__button {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $colorLightGray;
+    margin: 0 auto;
+    @include hover(color, $colorDarkGray);
+  }
+
+  &__image {
+    @include onTablet {
+      background-image: url(../images/bird.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 368px;
+      height: 435px;
+    }
+
+    @include onDesktop {
+      height: 584px;
+      width: 100%;
+    }
+  }
+}

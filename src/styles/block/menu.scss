@@ -1,0 +1,45 @@
+.menu {
+  background-color: $colorDarkGray;
+  height: 100vh;
+  padding: 20px;
+  z-index: 1;
+
+  @include onTablet {
+    padding: 27px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+
+    @include onTablet {
+      padding-top: 100px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    color: $colorNav;
+    @include hover(color, $colorRed);
+    
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: #828282;
+      margin-top: 10px;
+    }
+  }
+}

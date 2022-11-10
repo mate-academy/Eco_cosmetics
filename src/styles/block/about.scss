@@ -1,0 +1,67 @@
+.about {
+  margin-bottom: 100px;
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  &__content {
+    padding: 0 20px;
+    
+    @include onTablet {
+      padding: 0 0 0 27px;
+    }
+
+    @include onDesktop {
+      padding: 0 0 0 50px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__text-bottom {
+    @include onDesktop {
+      display: inherit;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      background-image: url(../images/candles.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 318px;
+      width: 369px;
+      @include hover(box-shadow, 4px 4px 10px);
+      @include hover(transform, scale(1.05));
+    }
+
+    @include onDesktop {
+      height: 529px;
+      width: 100%;
+    }
+  }
+
+  &__image-mini {
+    display: none;
+    @include onDesktop {
+      display: inherit;
+      padding-top: 100px;
+      @include hover(transform, scale(1.05));
+    }
+  }
+}
