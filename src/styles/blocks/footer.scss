@@ -1,0 +1,150 @@
+.footer {
+  background-color: $light-green;
+
+  &__wrapper {
+    margin: 0 auto;
+    padding: 30px 20px 40px;
+
+    @include tablet {
+      @include grid(6, 30px);
+      padding: 29px 27px 30px;
+    }
+
+    @include pc-1280 {
+      @include grid(12, 20px);
+      padding: 60px 50px 62px;
+    }
+
+    @include pc-1440 {
+      max-width: 1440px;
+      padding: 60px 130px 62px;
+    }
+  }
+
+  &__mobile {
+    @include tablet {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+
+    @include pc-1280 {
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+    color: $light-red;
+    @include fs-menu;
+    margin-bottom: 20px;
+
+    @include pc-1280 {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding-bottom: 12px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color $transition ease-in-out;
+
+    &:hover {
+      border-bottom-color: $light-red;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include pc-1280 {
+      display: none;
+    }
+
+    &-contacts {
+      display: none;
+
+      @include pc-1280 {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: $light-red;
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 0;
+      grid-area: 1 / 4 / 2 / 7;
+    }
+
+    @include pc-1280 {
+      gap: 20px;
+      @include fs-text;
+      grid-area: 1 / 8 / 3 / 13;
+    }
+
+    &-link {
+      transition: color $transition ease-in-out;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  &__support {
+    @include pc-1280 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__copyright {
+    margin: 0 auto;
+    width: 200px;
+    text-align: center;
+    color: $light-red;
+
+    @include tablet {
+      text-align: left;
+      align-self: end;
+      width: 100%;
+      grid-area: 2 / 1 / 3 / 3;
+    }
+
+    @include pc-1280 {
+      width: 100%;
+      @include fs-menu;
+      grid-area: 2 / 1 / 3 / 5;
+    }
+
+    &-text {
+      display: none;
+
+      @include pc-1280 {
+        @include fs-menu;
+        display: inline;
+      }
+    }
+
+    &-main {
+      &::before {
+        content: "";
+        display: inline-block;
+        @include square(10px);
+        background-image: url(../images/copy.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}

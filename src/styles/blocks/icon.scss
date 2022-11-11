@@ -1,0 +1,65 @@
+.icon {
+  display: block;
+  @include square(24px);
+  @include bckgrn-img;
+
+  &--menu {
+    background-image: url(../images/Menu.svg);
+
+    @include pc-1280 {
+      display: none;
+    }
+  }
+
+  &--logo {
+    background-image: url(../images/logo.svg);
+
+    @include pc-1280 {
+      width: 270px;
+      height: 50px;
+      background-image: url(../images/logo-big.svg);
+    }
+  }
+
+  &--shop {
+    background-image: url(../images/shop.svg);
+
+    transition: background-image $transition ease-in-out;
+
+    @include pc-1280 {
+      @include square(32px);
+    }
+
+    &:hover {
+      background-image: url(../images/shop-open.png);
+    }
+  }
+
+  &--close {
+    background-position: center;
+    background-size: 15px 15px;
+    background-image: url(../images/close.svg);
+  }
+
+  &--insta {
+    @include square(20px);
+    background-image: url(../images/instagram-white.svg);
+
+    transition: background-image $transition ease-in-out;
+
+    &:hover {
+      background-image: url(../images/Instagram.svg);
+    }
+  }
+
+  &--fb {
+    @include square(20px);
+    background-image: url(../images/facebook__white.svg);
+
+    transition: background-image $transition ease-in-out;
+
+    &:hover {
+      background-image: url(../images/facebook.svg);
+    }
+  }
+}

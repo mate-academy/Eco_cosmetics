@@ -1,0 +1,53 @@
+.benefits {
+  @include padding-mobile;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: baseline;
+    @include padding-tablet;
+    gap: 30px;
+  }
+
+  @include pc-1280 {
+    @include padding-pc-small;
+    gap: 20px;
+  }
+
+  @include pc-1440 {
+    max-width: 1440px;
+    @include padding-pc-big;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    @include tablet {
+      width: 33.33%;
+    }
+
+    @include pc-1280 {
+      gap: 40px;
+    }
+  }
+
+  &__img {
+    @include tablet {
+      width: 80px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__title {
+    @include fs-text2;
+    text-transform: uppercase;
+    color: $black;
+    text-align: center;
+  }
+}

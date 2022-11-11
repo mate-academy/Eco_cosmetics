@@ -1,0 +1,76 @@
+.scroll-down {
+  @include padding-mobile;
+
+  @include tablet {
+    @include padding-tablet;
+  }
+
+  @include pc-1280 {
+    position: relative;
+    @include padding-pc-small;
+    display: flex;
+    align-items: center;
+    height: 344px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 41.4%;
+      border-bottom: 1px solid $transp-green;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 49.22%;
+      border-bottom: 1px solid $transp-green;
+    }
+  }
+
+  @include pc-1440 {
+    @include padding-pc-big;
+    max-width: 1440px;
+  }
+
+  &__box {
+    display: none;
+
+    @include pc-1280 {
+      display: block;
+      flex: 1;
+    }
+  }
+
+  &__text {
+    display: none;
+    @include fs-text;
+
+    @include pc-1280 {
+      display: block;
+      width: 480px;
+      padding-left: 100px;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 600;
+    @include fs-h5;
+    color: $green;
+
+    @include tablet {
+      text-align: center;
+    }
+
+    @include pc-1280 {
+      flex: 1;
+      text-align: left;
+    }
+  }
+}

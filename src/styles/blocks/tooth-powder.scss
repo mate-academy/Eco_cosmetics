@@ -1,0 +1,145 @@
+.tooth-powder {
+  @include tablet {
+    padding-left: 27px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @include pc-1280 {
+    @include padding-pc-small;
+    @include grid(12, 20px);
+
+    grid-template-areas: ". titl titl titl titl im im im im im im im"
+      ". link link . . im im im im im im im";
+  }
+
+  @include pc-1440 {
+    max-width: 1440px;
+    @include padding-pc-big;
+  }
+
+  &__side-bar {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    transform: rotate(180deg);
+    @include fs-decor;
+    justify-self: start;
+    align-self: start;
+    writing-mode: tb - rl;
+    color: $transp-green;
+
+    @include pc-1280 {
+      display: flex;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 88px;
+      border-left: 1px solid $transp-green;
+    }
+  }
+
+  &__title {
+    @include padding-mobile;
+    @include fs-h4;
+    text-transform: uppercase;
+    color: $green;
+    margin-bottom: 20px;
+
+    @include tablet {
+      max-width: 342px;
+      margin-bottom: 310px;
+      padding: 0;
+    }
+
+    @include pc-1280 {
+      max-width: 100%;
+      margin-bottom: 0;
+      font-size: 36px;
+      line-height: 110%;
+      grid-area: titl;
+    }
+  }
+
+  &__box {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 20px;
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 0;
+      padding-left: 0;
+      position: absolute;
+      right: -82px;
+      top: 14px;
+    }
+
+    @include pc-1280 {
+      width: 100%;
+      justify-content: flex-end;
+      position: initial;
+      grid-area: im;
+    }
+  }
+
+  &__list {
+    text-align: right;
+    white-space: nowrap;
+    @include fs-text;
+  }
+
+  &__item {
+    &:nth-child(even) {
+      margin-bottom: 49px;
+    }
+    &:nth-child(odd) {
+      margin-bottom: 52px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img-box {
+    height: 397px;
+  }
+
+  &__img {
+    @include img;
+    object-position: left;
+  }
+
+  &__link {
+    font-family: inherit;
+    display: inline-block;
+    width: fit-content;
+    line-height: 130%;
+    padding-bottom: 10px;
+    color: $green;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color $transition ease-in-out;
+    text-transform: uppercase;
+    margin-left: 20px;
+
+    @include tablet {
+      margin-left: 0;
+    }
+
+    @include pc-1280 {
+      align-self: end;
+      grid-area: link;
+    }
+
+    &:hover {
+      border-bottom-color: $green;
+    }
+  }
+}
