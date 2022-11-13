@@ -60,21 +60,37 @@ function shopMediaQuery() {
   const mediaQuery = window.matchMedia('(max-width: 767px)').matches;
 
   shopBtnRight.addEventListener('click', event => {
-    shop.forEach(item => {
-      if (mediaQuery) {
-        item.scrollLeft += imageWidth;
+    shop.forEach((item) => {
+      if (!mediaQuery) {
+        if (item.scrollLeft >= (shop.length - 1) * imageWidth) {
+          item.scrollLeft = 0;
+        } else {
+          item.scrollLeft += imageWidth * 3;
+        }
       } else {
-        item.scrollLeft += imageWidth * 3;
+        if (item.scrollLeft >= (shop.length + 1) * imageWidth) {
+          item.scrollLeft = 0;
+        } else {
+          item.scrollLeft += imageWidth;
+        }
       }
     });
   });
 
   shopBtnLeft.addEventListener('click', event => {
     shop.forEach(item => {
-      if (mediaQuery) {
-        item.scrollLeft -= imageWidth;
+      if (!mediaQuery) {
+        if (item.scrollLeft <= 0) {
+          item.scrollLeft = (shop.length - 1) * imageWidth;
+        } else {
+          item.scrollLeft -= imageWidth * 3;
+        }
       } else {
-        item.scrollLeft -= imageWidth * 3;
+        if (item.scrollLeft <= 0) {
+          item.scrollLeft = (shop.length + 1) * imageWidth;
+        } else {
+          item.scrollLeft -= imageWidth;
+        }
       }
     });
   });
