@@ -57,18 +57,22 @@ function shopMediaQuery() {
   shop.forEach(item => (item.style.overflowX = 'hidden'));
 
   const imageWidth = shopItemImage.width + 20;
+  const deskTopCarousel = (shop.length - 1) * imageWidth;
+  const mobileCarousel = (shop.length + 1) * imageWidth;
+  const severalImages = imageWidth * 3;
+
   const mediaQuery = window.matchMedia('(max-width: 767px)').matches;
 
   shopBtnRight.addEventListener('click', event => {
     shop.forEach((item) => {
       if (!mediaQuery) {
-        if (item.scrollLeft >= (shop.length - 1) * imageWidth) {
+        if (item.scrollLeft >= deskTopCarousel) {
           item.scrollLeft = 0;
         } else {
-          item.scrollLeft += imageWidth * 3;
+          item.scrollLeft += severalImages;
         }
       } else {
-        if (item.scrollLeft >= (shop.length + 1) * imageWidth) {
+        if (item.scrollLeft >= mobileCarousel) {
           item.scrollLeft = 0;
         } else {
           item.scrollLeft += imageWidth;
@@ -81,13 +85,13 @@ function shopMediaQuery() {
     shop.forEach(item => {
       if (!mediaQuery) {
         if (item.scrollLeft <= 0) {
-          item.scrollLeft = (shop.length - 1) * imageWidth;
+          item.scrollLeft = deskTopCarousel;
         } else {
-          item.scrollLeft -= imageWidth * 3;
+          item.scrollLeft -= severalImages;
         }
       } else {
         if (item.scrollLeft <= 0) {
-          item.scrollLeft = (shop.length + 1) * imageWidth;
+          item.scrollLeft = mobileCarousel;
         } else {
           item.scrollLeft -= imageWidth;
         }
