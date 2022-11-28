@@ -3,11 +3,525 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+
+    <title>Eco Cosmetics</title>
+    <link rel="icon" href="./images/icons/logo.png">
+
+    <link rel="stylesheet" href="./styles/swiper-bundle-min.css">
     <link rel="stylesheet" href="./styles/main.scss">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script defer src="./scripts/main.js"></script>
+    <script defer src="./scripts/form.js"></script>
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
-    <script type="text/javascript" src="scripts/main.js"></script>
+  <body class="container">
+    <header class="container__header header grid-content">
+      <div class="header__menu">
+        <a href="#menu">
+          <svg class="header__menu-img">
+            <use xlink:href="sprite.svg#menu">
+            </use>
+          </svg>
+        </a>
+      </div>
+
+      <div class="header__logo logo">
+        <a href="#">
+          <picture>
+            <source media="(max-width: 1280px)" srcset="./images/icons/logo-small.png">
+            <img 
+              class="logo__img" 
+              src="./images/icons/logo.png" 
+              alt="logo"
+            >
+          </picture>          
+        </a>
+        <span class="logo__title">witch of mountain winds</span>
+      </div>
+
+      <div class="header__wrapper">
+        <nav class="header__nav nav">
+          <ul class="nav__items">
+            <li class="nav__item">
+              <a href="#shop" class="nav__link">Shop</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact-us" class="nav__link">Contact</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__busket">
+          <a href="#">
+            <img src="./images/icons/shop.png" alt="shopper">
+          </a>
+        </div>
+      </div>
+    </header>
+    <body>
+      <section class="menu" id="menu">
+        <div class="menu__content">
+          <div class="menu__wrapper">
+            <a class="menu__close" href="#">
+              <svg class="menu__close-img">
+                <use xlink:href="sprite.svg#close">
+                </use>
+              </svg>
+            </a>
+          </div>
+          <nav class="menu__nav nav">
+            <ul class="nav__items">
+              <li class="nav__item">
+                <a href="#shop" class="nav__link">Shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contact-us" class="nav__link">Contact</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about" class="nav__link">About</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </section>
+      <section class="container__brand brand grid-content">
+        <div class="brand__description">
+          <h1 class="brand__title">Brand of eco-cosmetics and magic candles</h1>
+          <p class="brand__text">20% of sales at a wild bird shelter</p>
+          <a class="brand__button button" href="#shop">shop</a>
+        </div>
+
+        <div class="brand__image">
+          <picture>
+            <source srcset="./images/mobile/brand.jpg" media="(max-width: 768px)">
+            <source srcset="./images/tablet/brand.jpg" media="(max-width: 1280px)">
+            <img src="./images/desktop/brand.jpg" alt="cosmetics jars">
+          </picture>
+        </div>
+      </section>
+      <section class="container__gifts gifts grid-content">
+        <p class="gifts__text">
+          Biologists say that birds are indicators of the environmental
+          situation, and over the past half century, the population of seabirds
+          has declined by 70%. Birds die due to environmental pro40blems and
+          human intervention in the natural environment.
+        </p>
+        <h4 class="gifts__title">
+          if you choose the gifts of nature and care about it’s - scroll down
+        </h4>
+      </section>
+      <section class="container__about about grid-content">
+        <div class="about__side-text side">
+          <p class="side__text">witch of mountain winds</p>
+          <p class="side__line"></p>
+        </div>
+        
+        <article id="about" class="about__article article">
+          <h2 class="article__title">about our brand</h2>
+          <p class="article__text">
+            Our brand cosmetics are made from natural ingredients and we are
+            promoting them to the masses. Shampoo, hair conditioner, soap - in
+            recycled paper. Creams, oils, washing products in glass containers
+            with recycled paper labels. No synthetics and microplastics in
+            cosmetics. And the packaging from it can be returned for recycling
+            or reused.
+          </p>
+          <p class="article__text">
+            We are all neighbors of one big House. And we must protect what we
+            have. Destroying everything around for the sake of consumerism and
+            imaginary convenience, we destroy what does not belong to us. Be
+            aware of your choice!
+          </p>
+          <a 
+            class="article__link" 
+            href="https://www.google.com.ua/" 
+            target="_blank"
+          >learn more</a>
+        </article>
+        <div class="about__img1">
+          <picture>
+            <source srcset="./images/tablet/about.jpg" media="(max-width: 1280px)">
+            <img src="./images/desktop/about-big.jpg" alt="comsmetics">
+          </picture>
+        </div>
+        <div class="about__img2">
+          <img src="./images/desktop/about-small.jpg" alt="decor">
+        </div>
+      </section>
+
+      <section id="shop" class="container__shop shop grid-content">
+        <div class="shop__side-text side">
+          <p class="side__text">shop</p>
+          <p class="side__line"></p>
+        </div>
+        <div class="shop__wrapper">
+          <h2 class="shop__title">shop</h2>
+          <div class="shop__swiper swiper swiper-container">
+            <ul class="shop__list swiper-pagination"></ul>
+            <div class="shop__slides swiper-wrapper">
+              <div class="shop__slide swiper-slide slide">
+                <div class="slide__img-wrapper">
+                  <img 
+                    src="./images/shop/1.jpg" 
+                    alt="hydrohilic oil" 
+                    class="slide__img">
+                </div>
+                <div class="slide__data">
+                  <p class="slide__name">hydrohilic oil</p>
+                  <p class="slide__price">160 uah</p>
+                </div>
+              </div>
+              <div class="shop__slide swiper-slide slide">
+                <div class="slide__img-wrapper">
+                  <img 
+                    src="./images/shop/2.jpg" 
+                    alt="ubtan" 
+                    class="slide__img"
+                  >
+                </div>
+                <div class="slide__data">
+                  <p class="slide__name">ubtan</p>
+                  <p class="slide__price">8 uah</p>
+                </div>
+              </div>
+              <div class="shop__slide swiper-slide slide">
+                <div class="slide__img-wrapper">
+                  <img 
+                    src="./images/shop/3.jpg" 
+                    alt="shampoo" 
+                    class="slide__img"
+                  >
+                </div>
+                <div class="slide__data">
+                  <p class="slide__name">shampoo</p>
+                  <p class="slide__price">60 uah</p>
+                </div>
+              </div>
+              <div class="shop__slide swiper-slide slide">
+                <div class="slide__img-wrapper">
+                  <img 
+                    src="./images/shop/4.jpg" 
+                    alt="mochalki" 
+                    class="slide__img"
+                  >
+                </div>
+                <div class="slide__data">
+                  <p class="slide__name">mochalka</p>
+                  <p class="slide__price">45 uah</p>
+                </div>
+              </div>
+              <div class="shop__slide swiper-slide slide">
+                <div class="slide__img-wrapper">
+                  <img 
+                    src="./images/shop/5.jpg" 
+                    alt="dry hair" 
+                    class="slide__img"
+                  >
+                </div>
+                <div class="slide__data">
+                  <p class="slide__name">dry hair</p>
+                  <p class="slide__price">300 uah</p>
+                </div>
+              </div>
+              <div class="shop__slide swiper-slide slide">
+                <div class="slide__img-wrapper">
+                  <img 
+                    src="./images/shop/6.jpg" 
+                    alt="wet hair" 
+                    class="slide__img"
+                  >
+                </div>
+                <div class="slide__data">
+                  <p class="slide__name">wet hair</p>
+                  <p class="slide__price">120 uah</p>
+                </div>
+              </div>
+              <div class="shop__slide swiper-slide slide">
+                <div class="slide__img-wrapper">
+                  <img 
+                    src="./images/shop/7.jpg" 
+                    alt="candles" 
+                    class="slide__img"
+                  >
+                </div>
+                <div class="slide__data">
+                  <p class="slide__name">in god we trust (candles)</p>
+                  <p class="slide__price">420 uah</p>
+                </div>
+              </div>
+              <div class="shop__slide swiper-slide slide">
+                <div class="slide__img-wrapper">
+                  <img 
+                    src="./images/shop/8.jpg" 
+                    alt="candles" 
+                    class="slide__img"
+                  >
+                </div>
+                <div class="slide__data">
+                  <p class="slide__name">with belief in science (candles)</p>
+                  <p class="slide__price">2080 uah</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#contact-us" class="shop__button button">all products</a>
+        </div>
+      </section>
+
+      <section class="container__creators creators grid-content">
+        <div class="creators__side-text side">
+          <p class="side__text">about the creators</p>
+          <p class="side__line"></p>
+        </div>
+        <article class="creators__article article">
+          <h2 class="article__title">about the creators</h2>
+          <p class="article__text">
+            My name is Victoria, I’m a master at candle making and natural
+            cosmetics. In the past, a cynologist, was engaged in herbs, made
+            layouts on the Tarot.
+          </p>
+          <p class="article__text">
+            I am also a volunteer to save wild birds in distress, a consultant
+            to the Phoenix Wildlife Rehabilitation Center, a member of the
+            Society for the Conservation of Birds of Ukraine with the support of
+            Birdlife International.
+          </p>
+          <p class="article__text">
+            My husband and I live in the Carpathian region in the city of
+            Chernivtsi. I dream of my center for the rehabilitation of wild
+            birds, as it is very difficult to rescue birds in a rented communal
+            apartment.
+          </p>
+          <a class="article__link" href="https://www.google.com.ua/">learn more</a>
+          <a href="#contact-us" class="creators__button button">to contact us</a>
+        </article>
+        <div class="creators__img-wrapper">
+          <img
+            class="creators__img"
+            src="./images/desktop/creators.jpg"
+            alt="bird in hands"
+          >
+        </div>
+      </section>
+      <section class="container__powder powder">
+        <div class="powder__wrapper-main grid-content">
+          <div class="powder__side-text side">
+            <p class="side__text">ingredients</p>
+            <p class="side__line"></p>
+          </div>
+          <article class="powder__article article">
+            <h2 class="article__title">Ayurvedic Tooth Powder</h2>
+            <a 
+              class="article__link" 
+              href="https://www.google.com.ua/" 
+              target="_blank"
+            >learn more</a>
+          </article>
+          <ul class="powder__list grid-content">
+            <li 
+              class="powder__item" 
+              title="Kaolin is an aluminosilicate soft white mineral named after the hill in China (Kao-ling) from which it was mined for centuries."
+            >
+              <span>Kaolin</span>
+            </li>
+            <li 
+              class="powder__item" 
+              title="Something interesting could be here if I could find anything about it"
+            >
+              <span>Sivak</span>
+            </li>
+            <li 
+              class="powder__item" 
+              title="Calcium is a mineral most often associated with healthy bones and teeth, although it also plays an important role in blood clotting, helping muscles to contract, and regulating normal heart rhythms and nerve functions."
+            >
+              <span>Calcium</span>
+            </li>
+            <li 
+              class="powder__item" 
+              title="Licorice is an herb that grows in parts of Europe and Asia."
+            >
+              <span>Licorice root</span>
+            </li>
+            <li 
+              class="powder__item" 
+              title="Turmeric is a common spice that comes from the root of Curcuma longa. It contains a chemical called curcumin, which might reduce swelling."
+            >
+              <span>Turmeric</span>
+            </li>
+          </ul>
+          <div class="powder__img-wrapper">
+            <picture>
+              <source srcset="./images/mobile/jar.png" media="(max-width: 768px)">
+              <source srcset="./images/tablet/jar.png" media="(max-width: 1280px)">
+              <img 
+                class="powder__img" 
+                src="./images/desktop/jar.png" 
+                alt="jar schema"
+              >
+            </picture>
+          </div>
+        </div>
+        <ul class="powder__cards grid-content">
+          <li class="powder__card">
+            <div class="powder__card-img-wrapper">
+              <img 
+                src="./images/bird.png" 
+                alt="bird" 
+                class="powder__card-img"
+              >
+            </div>
+            <p class="powder__text">No synthetics and microplastics</p>
+          </li>
+          <li class="powder__card">
+            <div class="powder__card-img-wrapper">
+              <img
+                src="./images/recycling.png"
+                alt="recycling"
+                class="powder__card-img"
+              >
+            </div>
+            <p class="powder__text">
+              product packaging can be recycled or reused
+            </p>
+          </li>
+          <li class="powder__card">
+            <div class="powder__card-img-wrapper">
+              <img 
+                src="./images/leaves.png" 
+                alt="leaves" 
+                class="powder__card-img"
+              >
+            </div>
+            <p class="powder__text">only natural ingredients</p>
+          </li>
+        </ul>
+      </section>
+      <section id="contact-us" class="container__contact-us contact-us grid-content">
+        <div class="contact-us__side-text side">
+          <p class="side__text">help</p>
+          <p class="side__line"></p>
+        </div>
+        <article class="contact-us__article article">
+          <h2 class="article__title">contact us</h2>
+          <p class="article__text">
+            We will help you choose a product that suits you and answer your
+            other questions
+          </p>
+          <form 
+            class="form contact-us__form" 
+            action="#" 
+            id="form"
+          >
+            <label class="form__name form__label" for="name">
+              <input 
+                class="form__input" 
+                id="name" 
+                type="text" 
+                placeholder="Your Name"
+              >
+            </label>
+            <label class="form__email form__label" for="email">
+              <input 
+                class="form__input" 
+                id="email" 
+                type="text" 
+                placeholder="E-Mail"
+              >
+            </label>
+            <label class="form__phone form__label" for="phone">
+              <input
+                class="form__input"
+                id="phone"
+                type="text"
+                placeholder="Phone Number"
+              >
+            </label>
+            <label class="form__message form__label" for="message">
+              <textarea
+                class="form__input form__textarea"
+                name="text-message"
+                id="message"
+                maxlength="300"
+                rows="1"
+                placeholder="Your Message"
+              ></textarea>
+            </label>
+            <label class="form__send " for="send-button">
+              <button 
+                class="form__send-button button" 
+                type="submit" 
+                id="send-button" 
+              >
+                Send
+              </button>
+            </label>
+          </form>
+        </article>
+        <div class="contact-us__img-wrapper">
+          <img
+            class="contact-us__img"
+            src="./images/desktop/contact-us.jpg"
+            alt="bird"
+          >
+        </div>
+      </section>
+    </body>
+    <footer class="container__footer footer">
+      <ul class="footer__list grid-content">
+        <li class="footer__item">
+          <nav class="footer__nav nav">
+            <ul class="nav__items">
+              <li class="nav__item"><a href="#shop" class="nav__link">Shop</a></li>
+              <li class="nav__item"><a href="#contact-us" class="nav__link">Contact</a></li>
+              <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+            </ul>
+          </nav>
+        </li>
+        <li class="footer__item">
+          <address>
+            <ul class="footer__contact-items">
+              <li class="footer__contact-item">
+                <a href="https://goo.gl/maps/KiebzDhBptug9Yyt7" target="_blank">Ukraine</a>
+              </li>
+              <li class="footer__contact-item">
+                <a href="mailto:support.mountain@gmail.com" target="_blank">support.mountain@gmail.com</a>
+              </li>
+              <li class="footer__contact-item">
+                <a href="tel:+380934476839" target="_blank">+380934476839</a>
+              </li>
+              <li class="footer__contact-item">Support is available Monday - Friday 9am-6pm</li>
+            </ul>            
+          </address>
+        </li>
+        <li class="footer__item">
+          <div class="footer__copy">
+            <span class="footer__copy-1">Copyright</span><span class="footer__copy-2">&copy; 2019 witch of mountain winds</span>
+          </div>
+        </li>
+        <li class="footer__item">
+          <ul class="footer__socials-items">
+            <li class="footer__social-item">
+              <a href="https://www.facebook.com" target="_blank">
+                <svg class="icon footer__social-img">
+                  <use xlink:href="sprite.svg#facebook">
+                  </use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer__social-item ">
+              <a href="https://www.instagram.com" target="_blank">
+                <svg class="icon footer__social-img">
+                  <use xlink:href="sprite.svg#instagram">
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>
