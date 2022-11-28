@@ -1,0 +1,127 @@
+.contact-us {
+  position: relative;
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $grey-color;
+    background-color: transparent;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+
+    color: $dark-grey;
+
+    &--focus {
+      border-color: $green-color;
+    }
+
+    &--invalid {
+      color: red;
+      border-color: red;
+    }
+
+    &--complete {
+      color: $green-color;
+      border-color: $green-color;
+    }
+
+    &:-webkit-autofill,
+    textarea:-webkit-autofill {
+      border: none;
+      outline: none;
+      color: $green-color;
+      border-bottom: 1px solid $green-color;
+      box-shadow: 0 0 0 1000px $secondary-color inset;
+      -webkit-box-shadow: 0 0 0 1000px $secondary-color inset;
+      -webkit-text-fill-color: $green-color;
+    }
+
+    @include desktop {
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+    }
+
+    &:nth-child(3) {
+      margin-bottom: 45px;
+
+      @include desktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &--textarea {
+      resize: none;
+      height: 27px;
+      margin-bottom: 30px;
+
+      font-family: Poppins, sans-serif;
+
+      @include desktop {
+        height: 38px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__button {
+    border: none;
+
+    @include tablet {
+      margin-left: 0;
+      margin-bottom: 2px;
+    }
+
+    @include desktop {
+      margin-bottom: 44px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include tablet {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: calc(100% / 2 - #{$container-padding_tablet} / 2);
+
+      display: block;
+      height: 100%;
+
+      background-image: url(../images/Contact-us/image.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include desktop {
+      right: 0;
+      width: calc((100% - #{$container-padding_desktop} * 2)
+      / 2.4 - #{$grid-gap_desktop}
+      / 2 + #{$container-padding_desktop});
+      background-image: url(../images/Contact-us/image_desktop.png);
+    }
+  }
+}

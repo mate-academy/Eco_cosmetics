@@ -1,0 +1,144 @@
+.block {
+  display: block;
+  text-decoration: none;
+
+  &__hover {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  &__hover-text {
+    position: absolute;
+    left: 5px;
+    bottom: 10px;
+    color: #fff;
+    z-index: -1;
+  }
+
+  &--ubtan {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &--cream {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+
+    background-image: url(../images/Store/oil.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include tablet {
+      height: 300px;
+    }
+    
+    @include desktop {
+      height: 500px;
+    }
+
+    &--positioned {
+      position: relative;
+      width: 100vw;
+      height: 267px;
+      left: -$container-padding_mob;
+
+      @include tablet {
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: 300px;
+      }
+
+      @include desktop {
+        height: 500px;
+      }
+    }
+
+    &--cream {
+      background-image: url(../images/Store/cream.png);
+    }
+
+    &--ubtan {
+      background-image: url(../images/Store/powder.png);
+    }
+
+    &--lavender {
+      background-image: url(../images/Store/lavender.png);
+    }
+  }
+
+  &__image-hover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--oil {
+      background-image: url(../images/Store/oil.hover.png);
+    }
+
+    &--cream {
+      background-image: url(../images/Store/cream_hover.png);
+    }
+
+    &--ubtan {
+      background-image: url(../images/Store/powder_hover.png);
+    }
+
+    &--lavender {
+      background-image: url(../images/Store/lavender_hover.png);
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+
+    @include tablet {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__price {
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &:hover .block__image-hover {
+    z-index: 1;
+    backdrop-filter: blur(4px);
+  }
+
+  &:hover .block__hover {
+    background-color: $green-color;
+    opacity: 0.4;
+    z-index: 1;
+  }
+
+  &:hover .block__hover-text {
+    z-index: 1;
+  }
+}

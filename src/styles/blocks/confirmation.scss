@@ -1,0 +1,57 @@
+.confirmation {
+  background-color: $secondary-color;
+  padding-bottom: 30px;
+
+  @include tablet {
+    padding-bottom: 505px;
+  }
+
+  &__top {
+    @extend %sticky-top;
+
+    & .top__link--arrow {
+      display: none;
+    }
+  }
+
+  &__checkout {
+    margin-bottom: 67px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__text {
+    position: relative;
+    margin-bottom: 223px;
+
+    @include tablet {
+      margin-bottom: 132px;
+    }
+
+    &::after {
+      position: absolute;
+      left: 50%;
+      display: block;
+      width: max-content;
+      transform: translateX(-50%);
+      margin-top: 30px;
+      content: url(../images/Confirmation/leaf.svg);
+    }
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    text-decoration: none;
+    color: $main-color;
+    border-bottom: 1px solid $main-color;
+    padding-bottom: 5px;
+    margin: 0 auto;
+
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}

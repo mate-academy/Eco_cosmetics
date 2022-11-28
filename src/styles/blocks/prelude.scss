@@ -1,0 +1,53 @@
+.prelude {
+  position: relative;
+
+  @include desktop {
+    padding: 100px 0;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      width: calc((100% - 100px) / 2.4 + 40px) ;
+      height: 1px;
+      background-color: $mixed-color;
+    }
+
+    &::after {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      content: "";
+      width: calc((100% - 100px) / 2 + 40px) ;
+      height: 1px;
+      background-color: $mixed-color;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__thesis {
+    color: $green-color;
+
+    @include tablet {
+      width: 280px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @include desktop {
+      width: 100%;
+      text-align: left;
+      margin: 0;
+    }
+  }
+}

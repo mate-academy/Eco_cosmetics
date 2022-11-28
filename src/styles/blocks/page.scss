@@ -1,0 +1,45 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $secondary-color;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    background-color: transparent;
+    margin-bottom: 100px;
+
+    @include tablet {
+      margin-bottom: $page_pad-bot_tablet;
+    }
+
+    @include desktop {
+      margin-bottom: 200px;
+    }
+
+    &:first-child {
+      margin-top: 100px;
+
+      @include tablet {
+        margin-top: $page_pad-bot_tablet;
+      }
+
+      @include desktop {
+        margin-top: 200px;
+      }
+    }
+  }
+
+  &__card,
+  &__shipping,
+  &__payment,
+  &__confirmation,
+  &__products,
+  &__menu {
+    @extend %position;
+  }
+}
