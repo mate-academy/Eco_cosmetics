@@ -334,6 +334,11 @@ const form = document.querySelector('#form_contact-us');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
+  const validField
+    = document.querySelectorAll('.contact-us__field').forEach(field => {
+      field.classList.remove('contact-us__field--complete');
+    });
+
   const doesNameValid = checkName();
   const doesEmailValid = checkEmail();
   const doesPhoneValid = checkPhone();
@@ -346,6 +351,8 @@ form.addEventListener('submit', function(e) {
 
   if (isFormValid) {
     form.reset();
+
+    return validField;
   }
 });
 
@@ -448,6 +455,11 @@ const formShipping = document.querySelector('#form');
 formShipping.addEventListener('submit', function(e) {
   e.preventDefault();
 
+  const validPoint
+    = document.querySelectorAll('.shipping__point').forEach(field => {
+      field.classList.remove('shipping__point--complete');
+    });
+
   const doesNameValid = confirmName();
   const doesEmailValid = confirmEmail();
   const doesCountryValid = confirmCountry();
@@ -463,9 +475,11 @@ formShipping.addEventListener('submit', function(e) {
       && doesAddressValid;
 
   if (isFormValid) {
-    formShipping.reset() && window.location.replace('#payment');
+    formShipping.reset();
+
+    return validPoint & window.location.replace('#payment');
   };
-}, false);
+});
 
 const Required = (value) => value !== '';
 
