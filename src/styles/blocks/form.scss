@@ -1,0 +1,94 @@
+:root {
+  --field-height: 26px;
+  --font-size: 18px;
+  --line-height: var(--field-height);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    position: relative;
+    width: 100%;
+    height: 38px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      height: 27px;
+      margin-bottom: 25px;
+    }
+
+    &:nth-child(4) {
+      text-align: end;
+    }
+
+    & > textarea {
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: var(--field-height);
+    border: none;
+    outline: none;
+
+    font-family: "Poppins", sans-serif;
+    font-size: var(--font-size);
+    color: $green;
+
+    border-bottom: 1px solid $grey-light;
+    background-color: transparent;
+    resize: none;
+    transition: 0.3s;
+    
+    &::placeholder {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+    }
+    
+    &--error::placeholder {
+      transition: 0.3s;
+      color: $red;
+    }
+
+    &:focus, &:hover {
+      transition: 0.3s;
+      border-bottom: 1px solid $grey-dark;
+      box-shadow: 0 1px 0 $grey;
+      text-shadow: 0 0 1px $grey;
+    }
+  }
+
+  &__send-button {
+    position: absolute;
+    bottom: 0;
+
+    font-size: var(--font-size);
+    cursor: pointer;
+    outline: none;
+
+    @include onTablet {
+      position: relative;
+      margin-top: 40px;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  font-size: var(--font-size);
+  -webkit-text-fill-color: $green;
+  background-color: transparent;
+  transition: background-color 5000s ease-in-out 0s;
+}

@@ -1,0 +1,117 @@
+.powder {
+  position: relative;
+
+  &__wrapper-main {
+    margin-bottom: 200px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+  }
+  
+  &__img-wrapper {
+    grid-column: 8 / 13;
+
+    @include onTablet {
+      grid-column: auto;
+    }
+
+    @include onPhone {
+      position: absolute;
+      right: calc((100vw - 320px) / 2);
+      top: 70px;
+    }
+  }
+
+  & .article {
+    position: relative;
+
+    @include onPhone {
+      height: 548px;
+    }
+
+    &__link {
+      bottom: 10px;
+      position: absolute;
+    }
+  }
+
+  &__list {
+    @extend %text-1;
+    grid-column: 6 / 8;
+    display: flex;
+    flex-direction: column;
+    margin-top: 38px;
+    text-align: end;
+    align-self: flex-start;
+    gap: 49px;
+
+    @include onTablet {
+      position: absolute;
+      right: 50%;
+      margin-top: 36px;
+      gap: 50px;
+    }
+
+    @include onPhone {
+      position: absolute;
+      right: 56%;
+      top: 72px;
+      gap: 50px;
+    }
+  }
+
+  &__item > span {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $grey-dark;
+      transition: 0.3s;
+    }
+
+    &:hover::before {
+      width: 100%;
+      transition: 0.3s;
+    }
+  }
+
+  &__cards {
+    grid-column: 1 / -1;
+    grid-auto-flow: row;
+    row-gap: 50px;
+  }
+
+  &__card {
+    @extend %text-2;
+    text-transform: uppercase;
+    align-self: start;
+    text-align: center;
+
+    grid-column: auto / span 4;
+
+    @include onTablet {
+      grid-column: auto / span 2;
+    }
+  }
+
+  &__card-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    margin-bottom: 36px;
+  }
+
+  &__card-img {
+    &:hover {
+      rotate: 360deg;
+      transition: 1s;
+    }
+  }
+}

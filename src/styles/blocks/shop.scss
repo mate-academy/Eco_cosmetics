@@ -1,0 +1,43 @@
+.shop {
+
+  &__side-text {
+    grid-column: 0 / 1;
+  }
+
+  &__wrapper {
+    grid-column: 2 / 13;
+
+    @include onTablet {
+      grid-column: 1 / - 1;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 10px;
+      font-size: 24px;
+      line-height: 150%;
+    }
+  }
+
+  &__swiper {
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  &__slides {
+    & > :nth-child(even) {
+      @include onPhone {
+        visibility: hidden;
+        background-color: red;
+      }
+    }
+  }
+}
