@@ -1,0 +1,134 @@
+.footer {
+  color: #e4dfd3;
+  background: #8c9772;
+  padding: 30px 0 40px;
+
+  @include onTablet {
+    padding: 30px 0;
+  }
+
+  @include onTabletOnly {
+    margin-top: 200px;
+  }
+
+  @include onDesktop {
+    padding: 60px 0 62px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 20px;
+    list-style: none;
+
+    @include onTablet {
+      gap: 15px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__item {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  &__link {
+    color: #e4dfd3;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: inherit;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    transition: transform 0.3s;
+
+    &--facebook {
+      background-image: url(../images/facebook-icon.png);
+    }
+
+    &--inst {
+      background-image: url(../images/inst-icon.png);
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 40px;
+    font-size: 14px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      font-size: 16px;
+    }
+
+    &--tel,
+    &--email {
+      color: #e4dfd3;
+      border: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+
+      &:hover {
+        border-color: #e4dfd3;
+      }
+    }
+  }
+
+  &__contacts-info:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__brand {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+
+    @include onTablet {
+      justify-content: flex-start;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  &__brand-gap {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__brand-span {
+    display: none;
+    @include onDesktop {
+      display: inline;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.contact-us {
+  &__title {
+    @extend %title-text;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    @extend %img-hover;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__field {
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    background-color: #e4dfd3;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    color: #344f10;
+
+    &:hover {
+      border-color: #333;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    &--last {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__field:-webkit-autofill {
+    // -webkit-text-fill-color: #344f10;
+    transition: background-color 100000s ease-in-out 0s;
+  }
+  
+  &__button {
+    align-self: center;
+
+    @include onTablet {
+      align-self: flex-start;
+    }
+  }
+}
