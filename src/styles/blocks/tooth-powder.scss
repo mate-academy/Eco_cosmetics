@@ -7,7 +7,12 @@
     margin-bottom: 447px;
 
     @include tablet {
+      width: 342px;
       margin-bottom: 310px;
+    }
+
+    @media (min-width: 1000px) {
+      width: 100%;
     }
 
     @include desktop {
@@ -18,14 +23,22 @@
   &__container {
     position: absolute;
     top: 93px;
-    right: 101px;
+    left: 5%;
 
     display: flex;
     gap: 20px;
 
+    @media (min-width: 650px) {
+      left: calc(100% + 5% - 650px);
+    }
+
     @include tablet {
       top: 0;
-      right: 233px;
+      left: 319px;
+    }
+
+    @media (min-width: 900px) {
+      left: calc(319px + 100% - 900px);
     }
 
     @include desktop {

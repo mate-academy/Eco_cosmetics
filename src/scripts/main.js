@@ -4,10 +4,11 @@ document.querySelector('#payment_form').addEventListener('submit', function() {
   const choose = document.querySelector('#payment_form').reportValidity();
 
   if (choose === true) {
-    document.getElementById('payment_form').reset()
-    && window.location.replace('#confirmation');
+    document.getElementById('payment_form').reset();
   };
-}, false);
+
+  return window.location.replace('#confirmation');
+});
 
 const green = document.querySelectorAll('.store__link');
 
@@ -616,6 +617,8 @@ const confirmAddress = () => {
 
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#menu') {
+    document.body.classList.add('page__body--with-menu');
+  } else if (window.location.hash === '#products') {
     document.body.classList.add('page__body--with-menu');
   } else if (window.location.hash === '#oil') {
     document.body.classList.add('page__body--with-menu');

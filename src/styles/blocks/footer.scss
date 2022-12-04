@@ -50,29 +50,31 @@
     }
   }
 
-  &__network {
-    display: block;
-    text-decoration: none;
-    width: 20px;
-    height: 20px;
-
-    &:hover .footer__image--blue {
-      stroke: blue;
-      stroke-width: 1px;
-    }
-
-    &:hover .footer__image--pink * {
-      stroke: rgb(248, 50, 205);
-      stroke-width: 1px;
-    }
-  }
-
   &__image {
     width: 20px;
     height: 20px;
 
     object-fit: cover;
     object-position: center;
+
+    &--hover {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+
+  &__network {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    width: 20px;
+    height: 20px;
+
+    &:hover .footer__image--hover {
+      z-index: 1;
+    }
   }
 
   &__info {
