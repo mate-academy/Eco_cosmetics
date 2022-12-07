@@ -48,9 +48,11 @@ fieldName.addEventListener('input', () => {
     = fieldName.classList.contains('contact-us__field--invalid');
   const fieldComplete
     = fieldName.classList.contains('contact-us__field--complete');
+  const message = document.getElementById('contact_name_message');
 
   if (fieldInvalid || !fieldName.value) {
     fieldName.classList.remove('contact-us__field--invalid');
+    message.textContent = '';
   } else if (fieldComplete) {
     fieldName.classList.remove('contact-us__field--complete');
   }
@@ -78,9 +80,11 @@ fieldEmail.addEventListener('input', () => {
     = fieldEmail.classList.contains('contact-us__field--invalid');
   const fieldComplete
     = fieldEmail.classList.contains('contact-us__field--complete');
+  const message = document.getElementById('contact_email_message');
 
   if (fieldInvalid || !fieldEmail.value) {
     fieldEmail.classList.remove('contact-us__field--invalid');
+    message.textContent = '';
   } else if (fieldComplete) {
     fieldEmail.classList.remove('contact-us__field--complete');
   }
@@ -108,9 +112,11 @@ fieldPhone.addEventListener('input', () => {
     = fieldPhone.classList.contains('contact-us__field--invalid');
   const fieldComplete
     = fieldPhone.classList.contains('contact-us__field--complete');
+  const message = document.getElementById('contact_phone_message');
 
   if (fieldInvalid || !fieldPhone.value) {
     fieldPhone.classList.remove('contact-us__field--invalid');
+    message.textContent = '';
   } else if (fieldComplete) {
     fieldPhone.classList.remove('contact-us__field--complete');
   }
@@ -138,9 +144,11 @@ fieldMessage.addEventListener('input', () => {
     = fieldMessage.classList.contains('contact-us__field--invalid');
   const fieldComplete
     = fieldMessage.classList.contains('contact-us__field--complete');
+  const message = document.getElementById('contact_message_message');
 
   if (fieldInvalid) {
     fieldMessage.classList.remove('contact-us__field--invalid');
+    message.textContent = '';
   } else if (fieldComplete) {
     fieldMessage.classList.remove('contact-us__field--complete');
   }
@@ -169,9 +177,11 @@ pointName.addEventListener('input', () => {
     = pointName.classList.contains('shipping__point--invalid');
   const fieldComplete
     = pointName.classList.contains('shipping__point--complete');
+  const message = document.getElementById('name-message');
 
   if (fieldInvalid || !pointName.value) {
     pointName.classList.remove('shipping__point--invalid');
+    message.textContent = '';
   } else if (fieldComplete) {
     pointName.classList.remove('shipping__point--complete');
   }
@@ -199,9 +209,11 @@ pointEmail.addEventListener('input', () => {
     = pointEmail.classList.contains('shipping__point--invalid');
   const fieldComplete
     = pointEmail.classList.contains('shipping__point--complete');
+  const message = document.getElementById('email-message');
 
   if (fieldInvalid || !pointEmail.value) {
     pointEmail.classList.remove('shipping__point--invalid');
+    message.textContent = '';
   } else if (fieldComplete) {
     pointEmail.classList.remove('shipping__point--complete');
   }
@@ -229,9 +241,11 @@ pointCountry.addEventListener('input', () => {
     = pointCountry.classList.contains('shipping__point--invalid');
   const fieldComplete
     = pointCountry.classList.contains('shipping__point--complete');
+  const message = document.getElementById('country-message');
 
   if (fieldInvalid || !pointCountry.value) {
     pointCountry.classList.remove('shipping__point--invalid');
+    message.textContent = '';
   } else if (fieldComplete) {
     pointCountry.classList.remove('shipping__point--complete');
   }
@@ -257,9 +271,11 @@ pointCity.addEventListener('input', () => {
   const fieldInvalid = pointCity.classList.contains('shipping__point--invalid');
   const fieldComplete
     = pointCity.classList.contains('shipping__point--complete');
+  const message = document.getElementById('city-message');
 
   if (fieldInvalid || !pointCity.value) {
     pointCity.classList.remove('shipping__point--invalid');
+    message.textContent = '';
   } else if (fieldComplete) {
     pointCity.classList.remove('shipping__point--complete');
   }
@@ -285,9 +301,11 @@ pointCode.addEventListener('input', () => {
   const fieldInvalid = pointCode.classList.contains('shipping__point--invalid');
   const fieldComplete
     = pointCode.classList.contains('shipping__point--complete');
+  const message = document.getElementById('code-message');
 
   if (fieldInvalid || !pointCode.value) {
     pointCode.classList.remove('shipping__point--invalid');
+    message.textContent = '';
   } else if (fieldComplete) {
     pointCode.classList.remove('shipping__point--complete');
   }
@@ -315,9 +333,11 @@ pointAddress.addEventListener('input', () => {
     = pointAddress.classList.contains('shipping__point--invalid');
   const fieldComplete
     = pointAddress.classList.contains('shipping__point--complete');
+  const message = document.getElementById('address-message');
 
   if (fieldInvalid) {
     pointAddress.classList.remove('shipping__point--invalid');
+    message.textContent = '';
   } else if (fieldComplete) {
     pointAddress.classList.remove('shipping__point--complete');
   }
@@ -335,11 +355,6 @@ const form = document.querySelector('#form_contact-us');
 form.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const validField
-    = document.querySelectorAll('.contact-us__field').forEach(field => {
-      field.classList.remove('contact-us__field--complete');
-    });
-
   const doesNameValid = checkName();
   const doesEmailValid = checkEmail();
   const doesPhoneValid = checkPhone();
@@ -353,7 +368,9 @@ form.addEventListener('submit', function(e) {
   if (isFormValid) {
     form.reset();
 
-    return validField;
+    document.querySelectorAll('.contact-us__field').forEach(field => {
+      field.classList.remove('contact-us__field--complete');
+    });
   }
 });
 
@@ -377,16 +394,25 @@ const isPhoneValid = (phone) => {
   return re.test(phone);
 };
 
+const invalidField = (input, message) => {
+  const formField = input.parentElement;
+
+  input.classList.remove('contact-us__field--complete');
+  input.classList.add('contact-us__field--invalid');
+
+  const error = formField.querySelector('.contact-us__message');
+
+  error.textContent = message;
+};
+
 const checkName = () => {
   let valid = false;
   const name = itemName.value.trim();
 
   if (!isRequired(name)) {
-    itemName.classList.remove('contact-us__field--complete');
-    itemName.classList.add('contact-us__field--invalid');
+    invalidField(itemName, 'Field cannot be blank');
   } else if (!isNameValid(name)) {
-    itemName.classList.remove('contact-us__field--complete');
-    itemName.classList.add('contact-us__field--invalid');
+    invalidField(itemName, 'Enter your first name only please');
   } else {
     valid = true;
   }
@@ -399,11 +425,9 @@ const checkEmail = () => {
   const email = itemEmail.value.trim();
 
   if (!isRequired(email)) {
-    itemEmail.classList.remove('contact-us__field--complete');
-    itemEmail.classList.add('contact-us__field--invalid');
+    invalidField(itemEmail, 'Field cannot be blank');
   } else if (!isEmailValid(email)) {
-    itemEmail.classList.remove('contact-us__field--complete');
-    itemEmail.classList.add('contact-us__field--invalid');
+    invalidField(itemEmail, 'Please enter a valid e-mail address');
   } else {
     valid = true;
   }
@@ -416,11 +440,9 @@ const checkPhone = () => {
   const phone = itemPhone.value.trim();
 
   if (!isRequired(phone)) {
-    itemPhone.classList.remove('contact-us__field--complete');
-    itemPhone.classList.add('contact-us__field--invalid');
+    invalidField(itemPhone, 'Field cannot be blank');
   } else if (!isPhoneValid(phone)) {
-    itemPhone.classList.remove('contact-us__field--complete');
-    itemPhone.classList.add('contact-us__field--invalid');
+    invalidField(itemPhone, 'Phone number should contain digits only');
   } else {
     valid = true;
   }
@@ -433,8 +455,7 @@ const checkMessage = () => {
   const message = itemMessage.value.trim();
 
   if (!isRequired(message)) {
-    itemMessage.classList.remove('contact-us__field--complete');
-    itemMessage.classList.add('contact-us__field--invalid');
+    invalidField(itemMessage, 'Type your message please');
   } else {
     valid = true;
   }
@@ -456,11 +477,6 @@ const formShipping = document.querySelector('#form');
 formShipping.addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const validPoint
-    = document.querySelectorAll('.shipping__point').forEach(field => {
-      field.classList.remove('shipping__point--complete');
-    });
-
   const doesNameValid = confirmName();
   const doesEmailValid = confirmEmail();
   const doesCountryValid = confirmCountry();
@@ -478,7 +494,10 @@ formShipping.addEventListener('submit', function(e) {
   if (isFormValid) {
     formShipping.reset();
 
-    return validPoint & window.location.replace('#payment');
+    document.querySelectorAll('.shipping__point').forEach(field => {
+      field.classList.remove('shipping__point--complete');
+    });
+    window.location.replace('#payment');
   };
 });
 
@@ -509,9 +528,20 @@ const validCity = (city) => {
 };
 
 const validCode = (code) => {
-  const re = /^(\d+)$/;
+  const re = /^[0-9]{3,7}$/;
 
   return re.test(code);
+};
+
+const invalidPoint = (input, message) => {
+  const formPoint = input.parentElement;
+
+  input.classList.remove('shipping__point--complete');
+  input.classList.add('shipping__point--invalid');
+
+  const wrong = formPoint.querySelector('.shipping__message');
+
+  wrong.textContent = message;
 };
 
 const confirmName = () => {
@@ -519,11 +549,9 @@ const confirmName = () => {
   const name = Name.value.trim();
 
   if (!Required(name)) {
-    Name.classList.remove('shipping__point--complete');
-    Name.classList.add('shipping__point--invalid');
+    invalidPoint(Name, 'Field cannot be blank');
   } else if (!validName(name)) {
-    Name.classList.remove('shipping__point--complete');
-    Name.classList.add('shipping__point--invalid');
+    invalidPoint(Name, 'Enter your full name please');
   } else {
     valid = true;
   }
@@ -536,11 +564,9 @@ const confirmEmail = () => {
   const name = Email.value.trim();
 
   if (!Required(name)) {
-    Email.classList.remove('shipping__point--complete');
-    Email.classList.add('shipping__point--invalid');
+    invalidPoint(Email, 'Field cannot be blank');
   } else if (!validEmail(name)) {
-    Email.classList.remove('shipping__point--complete');
-    Email.classList.add('shipping__point--invalid');
+    invalidPoint(Email, 'E-mail address is not valid');
   } else {
     valid = true;
   }
@@ -553,11 +579,9 @@ const confirmCountry = () => {
   const name = Country.value.trim();
 
   if (!Required(name)) {
-    Country.classList.remove('shipping__point--complete');
-    Country.classList.add('shipping__point--invalid');
+    invalidPoint(Country, 'Field cannot be blank');
   } else if (!validCountry(name)) {
-    Country.classList.remove('shipping__point--complete');
-    Country.classList.add('shipping__point--invalid');
+    invalidPoint(Country, 'Please use latin alphabet');
   } else {
     valid = true;
   }
@@ -570,11 +594,9 @@ const confirmCity = () => {
   const name = City.value.trim();
 
   if (!Required(name)) {
-    City.classList.remove('shipping__point--complete');
-    City.classList.add('shipping__point--invalid');
+    invalidPoint(City, 'Field cannot be blank');
   } else if (!validCity(name)) {
-    City.classList.remove('shipping__point--complete');
-    City.classList.add('shipping__point--invalid');
+    invalidPoint(City, 'Please use latin alphabet');
   } else {
     valid = true;
   }
@@ -587,11 +609,9 @@ const confirmCode = () => {
   const name = Code.value.trim();
 
   if (!Required(name)) {
-    Code.classList.remove('shipping__point--complete');
-    Code.classList.add('shipping__point--invalid');
+    invalidPoint(Code, 'Field cannot be blank');
   } else if (!validCode(name)) {
-    Code.classList.remove('shipping__point--complete');
-    Code.classList.add('shipping__point--invalid');
+    invalidPoint(Code, 'Postal code must be 3 to 7 digits');
   } else {
     valid = true;
   }
@@ -604,8 +624,7 @@ const confirmAddress = () => {
   const name = Address.value.trim();
 
   if (!Required(name)) {
-    Address.classList.remove('shipping__point--complete');
-    Address.classList.add('shipping__point--invalid');
+    invalidPoint(Address, 'Field cannot be blank');
   } else {
     valid = true;
   }
