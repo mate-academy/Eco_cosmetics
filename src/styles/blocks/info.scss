@@ -1,0 +1,79 @@
+.info {
+  overflow: hidden;
+
+  &__content {
+    @include desktop {
+      height: 346px;
+      @include grid;
+    }
+  }
+
+  &__box--1 {
+    display: none;
+
+    @include desktop {
+      display: block;
+      grid-column: 2 / 6;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 610px;
+        height: 1px;
+        background-color: $c-light-green;
+      }
+    }
+  }
+
+  &__box--2 {
+    @include tablet {
+      display: flex;
+      justify-content: center;
+    }
+
+    @include desktop {
+      grid-column: 7 / 11;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 711px;
+        height: 1px;
+        background-color: $c-light-green;
+      }
+    }
+  }
+
+  &__description {
+    margin-top: 100px;
+    font-weight: 400;
+  }
+
+  &__choose {
+    width: 280px;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-green;
+
+    @include tablet {
+      text-align: center;
+    }
+
+    @include desktop {
+      margin-top: 105px;
+      width: 100%;
+      font-size: 24px;
+      text-align: initial;
+    }
+  }
+}

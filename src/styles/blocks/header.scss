@@ -1,0 +1,146 @@
+.header {
+  padding-top: 15px;
+
+  @include tablet {
+    padding-top: 24px;
+  }
+
+  @include desktop {
+    padding-top: 40px;
+  }
+
+  &__top {
+    margin: 0 20px 20px;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      margin: 0 0 30px;
+    }
+
+    @include desktop {
+      @include grid;
+      margin-bottom: 70px;
+      align-items: center;
+    }
+  }
+
+  &__full-logo {
+    display: none;
+
+    @include desktop {
+      display: block;
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__logo {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include desktop {
+      display: block;
+      grid-column: 7 / 10;
+    }
+  }
+
+  &__shop {
+    grid-column: 12 / -1;
+    justify-self: end;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 25px;
+
+    @include tablet {
+      gap: 50px;
+    }
+
+    @include desktop {
+      @include grid;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+
+    @include tablet {
+      margin: 0;
+    }
+
+    @include desktop {
+      align-items: initial;
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+
+    @include tablet {
+      & span {
+        text-transform: uppercase;
+      }
+
+      line-height: 150%;
+      max-width: 466px;
+      font-size: 36px;
+    }
+
+    @include desktop {
+      & span {
+        text-transform: initial;
+      }
+
+      text-align: initial;
+      font-size: 60px;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    margin: 10px 0 30px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      margin-top: 30px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 268px;
+    object-fit: cover;
+
+    @include tablet {
+      height: 500px;
+    }
+
+    @include desktop {
+      height: auto;
+      grid-column: 7 / -1;
+    }
+  }
+}

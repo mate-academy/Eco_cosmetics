@@ -1,0 +1,30 @@
+.marker {
+  display: none;
+
+  @include desktop {
+    display: block;
+    width: max-content;
+    height: max-content;
+    padding: 10px 0;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $c-light-green;
+
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -110px;
+      left: 50%;
+      display: block;
+      width: 1px;
+      height: 100px;
+      background-color: $c-light-green;
+    }
+  }
+}
