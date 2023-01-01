@@ -29,6 +29,7 @@ ul, li {
 }
 
 .btn {
+  display: block;
   width: 100%;
   width: 280px;
   padding: 19px 0 20px;
@@ -36,18 +37,16 @@ ul, li {
   background-color: #333;
   font-weight: 600;
   font-size: 16px;
-  line-height: 130%;
   text-align: center;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: all .3s ease-in-out;
-  // outline: none;
+  border: 1px solid transparent;
 
   &:hover {
     border: 1px solid #333;
     background: #E4DFD3;
     color:#333;
-    outline: none;
   }
 }
 
@@ -87,6 +86,7 @@ ul, li {
 
 .section {
   padding: 100px 0 0;
+  // overflow: hidden;
 }
 
 // ------ header --------
@@ -138,13 +138,30 @@ ul, li {
     line-height: 150%;
     text-transform: capitalize;
     color: #344F10;
-    padding: 50px 0;
+    padding: 20px 0;
+
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    // padding-top: 10px;
+    transition: all .3s ease;
+
+
+    &:hover {
+      border-bottom: 2px solid #344F10;;
+      // color: #333;
+    }
   }
 }
 
 .cart {
   height: 26px;
   right: 0;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 // --- hero section ---------
@@ -219,6 +236,7 @@ ul, li {
   display: flex;
   padding-left: 80px;
   align-items:flex-start;
+  justify-content: space-between;
   // padding-bottom: 100px;
   // padding-top: 100px;
   // border-bottom: 1px solid rgba(52, 79, 16, 0.5);
@@ -232,14 +250,10 @@ ul, li {
 
   &__text-left {
     max-width:380px;
-    margin-right: 120px;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: #333;
-    // display: flex;
-    // align-items: flex-start;
-    // margin-top: 100px;
 
     &::before {
       display: block;
@@ -264,8 +278,7 @@ ul, li {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #344F10;
-    // padding-bottom: 100px;
-    // margin-bottom: 100px;
+    margin-right: 120px;
 
     // border-bottom: 1px solid rgba(52, 79, 16, 0.5);
     // padding-top:200px ;
@@ -289,6 +302,7 @@ ul, li {
 .about {
   position: relative;
   padding-top: 200px;
+  // overflow: hidden;
 
 }
 
@@ -297,6 +311,7 @@ ul, li {
   margin-bottom: 100px;
   // padding-top: 100px;
   // padding-top: 100px;
+  overflow: hidden;
 }
 
 .vertical-text {
@@ -351,27 +366,53 @@ ul, li {
   //   }
   // }
 }
+.wrapp {
+  max-width: 380px;
+  height: 530px;
+
+      display: flex;
+    align-items: end;
+  // object-fit: cover;
+  // object-position: center;
+
+}
 
 .about-right {
-  width: 480px;
-  height: 530px;
-  position: relative;
+  // width: 380px;
+  // height: 530px;
+
   display: flex;
+  gap: 20px;
 
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     margin-right: 20px;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__img2 {
+    max-width: 180px;
     height: 430px;
     display: flex;
     align-items: flex-end;
-    position: absolute;
-    right: -410px;
+    // position: absolute;
+    // right: -410px;
     bottom: 0;
+    transition: transform 0.3s;
+
+    object-fit: cover;
+    object-position: left;
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
   }
 }
@@ -380,13 +421,13 @@ ul, li {
 
 .shop-container {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   padding-bottom: 100px;
 }
 
-.shop-wrapper {
-  margin-right: -100px;
-}
+// .shop-wrapper {
+//   margin-right: -100px;
+// }
 
 .shop-tabs {
   display: flex;
@@ -417,26 +458,38 @@ ul, li {
   }
 }
 
-
 .img-wrapper {
-  max-width: 380px;
+  max-width: 530px;
+  width: 530px;
+  // width: 530px;
+  // width: 530px;
+  // height: auto;
   max-height: 500px;
+  height: 500px;
   margin-bottom: 20px;
   // position: absolute;
 
   &__photo {
     width: 100%;
+    height: 100%;
     object-fit: cover;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 
 .shop__products {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
   margin-bottom: 40px;
 }
 
-.procuct-card {
+.product-card {
 
   &__name {
     margin-bottom: 13px;
@@ -482,7 +535,8 @@ ul, li {
 
 .creators-right {
   width: 580px;
-  height: 669px;
+  // height: 669px;
+  height: 645px;
 
   &__img {
     width: 100%;
@@ -502,6 +556,7 @@ ul, li {
 
 .tooth-container {
   display: flex;
+  // justify-content: space-between;
   margin-bottom: 200px;
 }
 
@@ -517,6 +572,9 @@ ul, li {
 .right {
   display: flex;
   align-items: center;
+  justify-content: end;
+
+  // justify-content: space-between;
 
 }
 
@@ -620,6 +678,12 @@ ul, li {
     display: block;
     margin: 0 auto;
 
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
   }
 
   &__text {
@@ -631,9 +695,7 @@ ul, li {
     text-transform: uppercase;
     color: #000;
     margin-top: 40px;
-
   }
-
 }
 
 
@@ -643,6 +705,7 @@ ul, li {
 .contact {
   // position: relative;
   display: flex;
+  padding-bottom: 100px;
 }
 
 .contact-container {
@@ -653,7 +716,7 @@ ul, li {
 }
 
 .contact-left {
-  width: 480px;
+  width: 380px;
   margin-right: 120px;
 
   &__text {
@@ -668,8 +731,9 @@ ul, li {
 
 .wrapper {
     // margin-right: -130px;
-    width: 1210px;
+    // width: 1210px;
     display: flex;
+    justify-content: space-between;
 }
 
 .contact-title {
@@ -677,20 +741,28 @@ ul, li {
 }
 
 .contact-right {
-  width: 610px;
-  height: 584px;
+  // width: 610px;
+  // height: 584px;
+  width: 580px;
+  height: 539px;
 
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    // justify-content: center;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 
 // ------- form ---------
 
 .form {
-  margin-bottom: 50px;
 
 
   &__input {
@@ -713,13 +785,15 @@ ul, li {
       resize: none;
       font-family: inherit;
       padding-top: 60px;
+      margin-bottom: 50px;
     }
 
     // &::placeholder {
-    //   font-weight: 400;
-    //   font-size: 14px;
-    //   line-height: 20px;
-    //   color: #7e7e83;
+      // font-weight: 400;
+      // font-size: 14px;
+      // line-height: 20px;
+      // color: #7e7e83;
+      // color: #333;
     // }
 
     // &:hover {
@@ -729,17 +803,157 @@ ul, li {
     &:focus {
       border-bottom: 1px solid #333;
       outline: none;
+      color: #333;
+    }
+  }
+}
+
+.form__input.success {
+  border-color: #344F10;
+
+   &::placeholder {
+      color: #344F10;
+    }
+}
+
+.form__input.error  {
+  border-color: #EB5757;
+  color: #EB5757;
+
+  &::placeholder {
+    color: #EB5757;
+  }
+}
+
+
+
+//   ----------------  footer --------------------
+.footer {
+  padding: 60px 0 65px;
+  background: rgba(52, 79, 16, 0.5);
+  margin-top: 100px;
+
+
+  &__list {
+    display: flex;
+    // align-items: ;
+    gap: 40px;
+    margin-bottom: 145px;
+
+  }
+
+  &__item {
+
+
+  }
+
+  &__link {
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    // padding-top: 10px;
+    transition: all .3s ease;
+
+
+    &:hover {
+      border-bottom: 2px solid #333;;
+      color: #333;
+    }
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px;
+}
+
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: #E4DFD3;
+
+  &__nav {
+
+  }
+
+  &__copyright {
+    // display: flex;
+    // align-items: flex-end;
+    text-align: end;
+  }
+
+}
+
+
+.footer-contacts {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #E4DFD3;
+
+  &__list {
+    // gap: 20px;
+    margin-bottom: 20px;
+
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    transition: all .3s ease;
+
+    &:hover {
+      color: #333;
     }
   }
 
-  // &__field {
-  //   height: 97px;
-  //   resize: none;
-  //   font-family: inherit;
-  //   padding-top: 60px;
 
-  // }
+  &__scedule {
+
+
+  }
 }
 
+.footer-social {
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+
+  // &__link {
+  //   transition: transform .3s;
+  //   transition: color .3s ease;
+
+  //   &:hover {
+  //     color: #333;
+  //   }
+
+  // }
+
+  &__img {
+    height: 20px;
+    object-fit: cover;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+// .footer-social__link {
+//   &:hover {
+//         color: #333;
+//       }
+
+// }
 
 
