@@ -1,64 +1,66 @@
 'use strict';
 
-const username = document.getElementById('name');
-// const email = document.getElementById('email');
-// const phone = document.getElementById('phone');
-// const message = document.getElementById('message');
+const userName = document.getElementById('name');
+const email = document.getElementById('email');
 
 const form = document.getElementById('form');
 
-// const errorElement = document.getElementById('error');
+const messages = document.getElementById('error');
 
-function checkInputs() {
-  const usernameValue = username.value.trim();
-  // const emailValue = email.value.trim();
-  // const phoneValue= phone.value.trim();
-  // const messageValue= message.value.trim();
+// show error function
+function showError(input, message) {
+  const inputControl = input;
 
-  if (usernameValue === '') {
-    // show error
-    // add error class
-    setError(username);
-  } else {
-    // add successful class
-    setSuccsess(username);
-  }
+  inputControl.className = 'form__input error';
+
+  messages.textContent = message;
 }
 
-function setError(input) {
-  const formInput = document.querySelector('name');
+// shoe success function
+function showSuccess(input) {
+  const inputControl = input;
 
-  formInput.className = 'form__input error';
+  inputControl.className = 'form__input success';
+  messages.textContent = '';
 }
 
-function setSuccsess(input) {
-  const formInput = document.querySelector('name');
+const isEmailValid = (input) => {
+  // eslint-disable-next-line
+  const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-  formInput.className = 'form__input success';
-}
+  return regex.test(input);
+};
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  checkInputs();
+  if (userName.value === '') {
+    showError(userName, 'UserName is required');
+  } else if (userName.value.length < 3 || userName.value.length > 15) {
+    showError(userName, 'UserName must be at least 3 chsaracters');
+  } else if (userName.value.length > 15) {
+    showError(userName, 'UserName must be less than 15 characters');
+  } else {
+    showSuccess(userName);
+  }
+
+  if (email.value === '') {
+    showError(email, 'Email is required');
+  } else if (!isEmailValid(email.value)) {
+    showError(email, 'Email is not valid');
+  } else {
+    showSuccess(email);
+  }
 });
 
-//   const messages = [];
+userName.addEventListener('focus', () => {
+  userName.classList.remove('error');
+  userName.classList.remove('success');
+  messages.textContent = '';
+});
 
-// if (name.value === '' || name.value == null) {
-//   messages.push('Fill out the form');
-// }
-
-//   if (phone.length < 13) {
-//     messages.push('Number must be longer than 13 characters');
-//   };
-
-//   if (phone.length >= 14) {
-//     messages.push('Number must be less than 14 characters');
-//   };
-
-//   if (messages.length > 0) {
-//     e.preventDefault();
-
-//     errorElement.innerHTML = messages.join(', ');
-//   }
+email.addEventListener('focus', () => {
+  email.classList.remove('error');
+  email.classList.remove('success');
+  messages.textContent = '';
+});

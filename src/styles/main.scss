@@ -1,5 +1,45 @@
+@mixin oniPad {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesctop {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+// @mixin onMobile {
+//   @media (min-width: 768px) {
+//     @content;
+//   }
+// }
+
+// @mixin onDesktop {
+//   @media (min-width: 1024px) {
+//     @content;
+//   }
+// }
+
+// @include oniPad {
+//   font-size: 56px;
+//   padding: 120px 0 80px;
+// }
+
+// @include onMobile {
+//   padding: 55px 0 40px;
+// }
+
+$error: #EB5757;
+$green: #344F10;
+
+
 * {
   box-sizing: border-box;
+}
+.page {
+  scroll-behavior: smooth;
 }
 
 .page, .home-page {
@@ -54,7 +94,7 @@ ul, li {
   font-weight: 500;
   font-size: 14px;
   line-height: 130%;
-  color: #344F10;
+  color: $green;
   padding-bottom: 10px;
   border-bottom: 1px solid transparent;
   padding-top: 10px;
@@ -62,7 +102,7 @@ ul, li {
   text-transform: uppercase;
 
   &:hover {
-    border-bottom: 1px solid #344F10;
+    border-bottom: 1px solid $green;
   }
 }
 
@@ -73,20 +113,22 @@ ul, li {
   line-height: 110%;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #344F10;
+  color: $green;
   margin-bottom: 40px;
-
 }
 
 .container {
   margin: 0 auto;
   max-width: 1180px;
   min-width: 280px;
+
+  @include oniPad {
+    max-width: 714px;
+  }
 }
 
 .section {
   padding: 100px 0 0;
-  // overflow: hidden;
 }
 
 // ------ header --------
@@ -96,11 +138,22 @@ ul, li {
   margin-right: 280px;
   align-items: center;
 
+
+  @include oniPad {
+    margin-right: 0;
+  }
+
   &__pic {
     display: block;
     width: 50px;
     height: 50px;
     margin-right: 12px;
+
+    @include oniPad {
+      margin-right: 0;
+      width: 25px;
+      height: 25px;
+    }
   }
 
   &__name {
@@ -110,7 +163,22 @@ ul, li {
     line-height: 130%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #344F10;
+    color: $green;
+
+    @include oniPad {
+      display: none;
+    }
+  }
+}
+
+.burger {
+  display: none;
+
+
+  @include oniPad {
+    display: block;
+    width: 20px;
+    height: 13px;
   }
 }
 
@@ -119,10 +187,20 @@ ul, li {
   align-items: center;
   margin-top: 40px;
   margin-bottom: 70px;
+
+  @include oniPad {
+    justify-content: space-between;
+    margin-top: 23px;
+    margin-bottom: 43px;
+  }
 }
 
 .nav {
   margin-right: 296px;
+
+  @include oniPad {
+    display: none;
+  }
 
   &__list {
     display: flex;
@@ -137,18 +215,16 @@ ul, li {
     font-size: 18px;
     line-height: 150%;
     text-transform: capitalize;
-    color: #344F10;
+    color: $green;
     padding: 20px 0;
 
     padding-bottom: 10px;
     border-bottom: 2px solid transparent;
-    // padding-top: 10px;
     transition: all .3s ease;
 
 
     &:hover {
-      border-bottom: 2px solid #344F10;;
-      // color: #333;
+      border-bottom: 2px solid $green;;
     }
   }
 }
@@ -156,11 +232,15 @@ ul, li {
 .cart {
   height: 26px;
   right: 0;
-
   transition: transform 0.3s;
 
   &:hover {
     transform: scale(1.2);
+  }
+
+  @include oniPad {
+    width: 16px;
+    width: 19px;
   }
 }
 
@@ -168,27 +248,56 @@ ul, li {
 
 .hero-section {
   padding: 0 0 200px;
+
+  @include oniPad {
+    padding: 0 0 65px;
+  }
 }
 
 .hero {
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   justify-content: space-between;
   padding-left: 80px;
 
+  @include oniPad {
+    flex-direction: column;
+    padding-left: 0;
+    justify-content: center;
+  }
+
   &__left {
     max-width: 480px;
-    // order: 2;
+
+    @include oniPad {
+      order: 2;
+      text-align: center;
+      margin: 0 auto;
+    }
   }
 
   &__right {
-    max-width: 580px;
-    width:580px;
+    // max-width: 580px;
+    width: 580px;
+    width: 451px;
     // order: 1;
+
+    @include oniPad {
+      order: 1;
+      width: 714px;
+      height:500px;
+      background-image: url(../images/hero-tablet.png);
+      margin-bottom: 50px;
+    }
   }
 
   &__img {
     width: 100%;
+
+    @include oniPad {
+      width: auto;
+      display: none;
+    }
   }
 
   &__title {
@@ -198,6 +307,11 @@ ul, li {
     font-size: 60px;
     line-height: 130%;
     color: #333;
+
+    @include oniPad {
+      font-size: 36px;
+      margin-bottom: 50px;
+    }
   }
 
   &__text {
@@ -208,27 +322,13 @@ ul, li {
     line-height: 150%;
     color: #333;
   }
+}
 
-  // &__btn {
-  //   width: 100%;
-  //   width: 280px;
-  //   padding: 19px 0 20px;
-  //   color: #F2F2F2;
-  //   background-color: #333;
-  //   font-weight: 600;
-  //   font-size: 16px;
-  //   line-height: 130%;
-  //   text-align: center;
-  //   letter-spacing: 0.15em;
-  //   text-transform: uppercase;
-  //   transition: all 0.3s ease-in-out ;
+.hero__btn {
+  @include oniPad {
+    margin: 0 auto;
+  }
 
-  //   &:hover {
-  //     border: 1px solid #333;
-  //     background: #E4DFD3;
-  //     color:#333;
-  //   }
-  // }
 }
 
 // --------- science----------
@@ -237,16 +337,22 @@ ul, li {
   padding-left: 80px;
   align-items:flex-start;
   justify-content: space-between;
-  // padding-bottom: 100px;
-  // padding-top: 100px;
-  // border-bottom: 1px solid rgba(52, 79, 16, 0.5);
 
+  @include oniPad {
+    text-align: center;
+    justify-content: center;
+    padding-left: 0;
+  }
 }
 
 .science {
   position: relative;
-  padding-bottom: 100px;
-  padding-top: 100px;
+  padding: 100px 0;
+
+  @include oniPad {
+    padding: 65px 0;
+  }
+
 
   &__text-left {
     max-width:380px;
@@ -254,6 +360,10 @@ ul, li {
     font-size: 16px;
     line-height: 150%;
     color: #333;
+
+    @include oniPad {
+      display: none;
+    }
 
     &::before {
       display: block;
@@ -277,8 +387,12 @@ ul, li {
     line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #344F10;
+    color: $green;
     margin-right: 120px;
+
+    @include oniPad {
+      margin-right: 0;
+    }
 
     // border-bottom: 1px solid rgba(52, 79, 16, 0.5);
     // padding-top:200px ;
@@ -293,6 +407,10 @@ ul, li {
       margin-top: 130px;
       position: absolute;
       right: 0;
+
+      @include oniPad {
+        display: none;
+      }
     }
   }
 }
@@ -302,16 +420,21 @@ ul, li {
 .about {
   position: relative;
   padding-top: 200px;
-  // overflow: hidden;
 
+  @include oniPad {
+    padding-top: 65px;
+  }
 }
 
 .about-container {
   display: flex;
   margin-bottom: 100px;
-  // padding-top: 100px;
-  // padding-top: 100px;
   overflow: hidden;
+
+
+  @include oniPad {
+    margin-bottom: 30px;
+  }
 }
 
 .vertical-text {
@@ -327,6 +450,10 @@ ul, li {
   margin-left: 1px;
   padding-left: 64px;
 
+  @include oniPad {
+    display: none;
+  }
+
   &::before {
     display: inline-block;
     content: '';
@@ -337,9 +464,32 @@ ul, li {
   }
 }
 
+.creators-left {
+  width: 380px;
+  margin-right: 120px;
+
+  @include oniPad {
+    // height: 440px;
+    margin-right: 30px;
+  }
+
+}
+
 .about-left {
   width: 380px;
   margin-right: 120px;
+
+  @include oniPad {
+    width: 342px;
+    margin-right: 30px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    margin-bottom: 10px;
+  }
 
   &__text {
     width: 100%;
@@ -348,52 +498,62 @@ ul, li {
     line-height: 150%;
     color: #333;
     margin-bottom: 30px;
+
+    @include oniPad {
+      margin-bottom: 15px;
+    }
+
+    &:last-of-type{
+      @include oniPad {
+        display: none;
+      }
+    }
   }
-
-  // &__link {
-  //   font-weight: 500;
-  //   font-size: 14px;
-  //   line-height: 130%;
-  //   color: #344F10;
-  //   padding-bottom: 10px;
-  //   border-bottom: 1px solid transparent;
-  //   padding-top: 10px;
-  //   transition: all 0.3s ease;
-  //   text-transform: uppercase;
-
-  //   &:hover {
-  //     border-bottom: 1px solid #344F10;
-  //   }
-  // }
 }
+
 .wrapp {
   max-width: 380px;
   height: 530px;
+  display: flex;
+  align-items: end;
 
-      display: flex;
-    align-items: end;
-  // object-fit: cover;
-  // object-position: center;
+  @include oniPad {
+    width: 342px;
+    height: 321px;
+  }
+}
+
+.wrapp2 {
+  @include oniPad {
+    display: none;
+  }
 
 }
 
 .about-right {
-  // width: 380px;
-  // height: 530px;
-
   display: flex;
   gap: 20px;
+
+  // @include oniPad {
+  //   width: 342px;
+  //   height: 321px;
+  // }
 
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    margin-right: 20px;
-
+    // margin-right: 20px;
     transition: transform 0.3s;
 
     &:hover {
       transform: scale(1.05);
+    }
+
+    @include oniPad {
+      // width: 342px;
+      height: auto;
+      // margin-right: 30px;
     }
   }
 
@@ -402,18 +562,18 @@ ul, li {
     height: 430px;
     display: flex;
     align-items: flex-end;
-    // position: absolute;
-    // right: -410px;
     bottom: 0;
     transition: transform 0.3s;
-
     object-fit: cover;
     object-position: left;
+
+    @include oniPad {
+      display: none;
+    }
 
     &:hover {
       transform: scale(1.05);
     }
-
   }
 }
 
@@ -421,17 +581,20 @@ ul, li {
 
 .shop-container {
   display: flex;
-  // justify-content: center;
   padding-bottom: 100px;
-}
 
-// .shop-wrapper {
-//   margin-right: -100px;
-// }
+  @include oniPad {
+    padding-bottom: 30px;
+  }
+}
 
 .shop-tabs {
   display: flex;
   margin-bottom: 50px;
+
+  @include oniPad {
+    margin-bottom: 25px;
+  }
 
   &__item {
     margin-right: 50px;
@@ -450,7 +613,6 @@ ul, li {
     padding-top: 10px;
     transition: all .3s ease;
 
-
     &:hover {
       border-bottom: 2px solid #333;;
       color: #333;
@@ -461,19 +623,20 @@ ul, li {
 .img-wrapper {
   max-width: 530px;
   width: 530px;
-  // width: 530px;
-  // width: 530px;
-  // height: auto;
   max-height: 500px;
   height: 500px;
   margin-bottom: 20px;
-  // position: absolute;
+
+  @include oniPad {
+    width: 342px;
+    height: 300px;
+  }
+
 
   &__photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
     transition: transform 0.3s;
 
     &:hover {
@@ -487,10 +650,14 @@ ul, li {
   justify-content: space-between;
   gap: 20px;
   margin-bottom: 40px;
+
+  @include oniPad {
+    gap: 30px;
+    margin-bottom: 50px;
+  }
 }
 
 .product-card {
-
   &__name {
     margin-bottom: 13px;
     font-weight: 600;
@@ -498,7 +665,7 @@ ul, li {
     line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #333333;
+    color: #333;
   }
 
   &__price {
@@ -507,9 +674,8 @@ ul, li {
     line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #333333;
+    color: #333;
   }
-
 }
 
 .shop-btn {
@@ -517,29 +683,64 @@ ul, li {
   margin: 0 auto;
 }
 
+.shop__title {
+
+  @include oniPad {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+}
 //---------- creators--------
 
 .creators-container {
   display: flex;
   margin-bottom: 100px;
+
+  @include onDesctop {
+    margin-bottom: 75px;
+  }
 }
 
 .creators-title {
   margin-bottom: 20px;
+
+  @include onDesctop {
+    margin-bottom: 34px;
+  }
+
+  @include oniPad {
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+  }
 }
 
 .screators-btn {
   margin-top: 40px;
   display: block;
+
+  @include oniPad {
+     margin-top: 30px;
+  }
 }
 
 .creators-right {
-  width: 580px;
-  // height: 669px;
+  max-width: 580px;
   height: 645px;
 
+
+  @include oniPad {
+    width: 342px;
+    height: 440px;
+  }
+
   &__img {
-    width: 100%;
+    // width: 100%;
     height: 100%;
     object-fit: cover;
   }
@@ -552,12 +753,21 @@ ul, li {
 // --------- tooth-title ----------
 .tooth {
   padding-bottom: 100px;
+
+  @include oniPad {
+    padding-bottom: 65px;
+    padding-top: 65px;
+    overflow: hidden;
+  }
 }
 
 .tooth-container {
   display: flex;
-  // justify-content: space-between;
   margin-bottom: 200px;
+
+  @include oniPad {
+    margin-bottom: 120px;
+  }
 }
 
 .tooth-title {
@@ -573,9 +783,6 @@ ul, li {
   display: flex;
   align-items: center;
   justify-content: end;
-
-  // justify-content: space-between;
-
 }
 
 .right-boolets {
@@ -589,12 +796,8 @@ ul, li {
     text-align: right;
     color: #333;
     display: flex;
-
-    // direction: vertical;
     justify-content: flex-end;
-    // margin-bottom: 52px;
     align-items: center;
-
     position: relative;
 
 
@@ -617,11 +820,8 @@ ul, li {
       height: 5px;
       border-radius: 50%;
       background: #333;
-      // margin-left: 20px;
       position: absolute;
-
     }
-
 
     &::after {
       display: block;
@@ -645,11 +845,8 @@ ul, li {
   }
 }
 
-
 .tooth-img {
-  // width: 100%;
   margin-right: 0px;
-  // height: 100%;
   height: auto;
 }
 
@@ -660,17 +857,16 @@ ul, li {
   &__list {
     display: flex;
     gap: 20px;
-    // justify-content: center;
     justify-content: space-around;
-
-
   }
 
   &__item {
     max-width: 380px;
-    // align-items: center;
     justify-content: center;
 
+    @include oniPad {
+      max-width: 218px;
+    }
   }
 
   &__img {
@@ -683,7 +879,6 @@ ul, li {
     &:hover {
       transform: scale(1.2);
     }
-
   }
 
   &__text {
@@ -698,26 +893,29 @@ ul, li {
   }
 }
 
-
-
 // -------   conntact-us ------------
 
 .contact {
-  // position: relative;
   display: flex;
   padding-bottom: 100px;
+
+  @include oniPad {
+    padding-top: 65px;
+  }
 }
 
 .contact-container {
   display: flex;
-  // margin-right: 120px;
-  // max-width: 1300px;
-  // margin-right: -130px;
 }
 
 .contact-left {
   width: 380px;
   margin-right: 120px;
+
+  @include oniPad {
+    margin-right: 30px;
+    width: 342px;
+  }
 
   &__text {
     width: 100%;
@@ -730,32 +928,46 @@ ul, li {
 }
 
 .wrapper {
-    // margin-right: -130px;
-    // width: 1210px;
     display: flex;
     justify-content: space-between;
 }
 
 .contact-title {
   margin-bottom: 30px;
+
+  @include oniPad {
+
+    font-size: 24px;
+line-height: 150%;
+/* identical to box height, or 36px */
+
+letter-spacing: 0.05em;
+
+    margin-bottom: 20px;
+  }
 }
 
 .contact-right {
-  // width: 610px;
-  // height: 584px;
   width: 580px;
   height: 539px;
+
+  @include oniPad {
+    width: 342px;
+    height: 407px;
+  }
 
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    // justify-content: center;
-
     transition: transform 0.3s;
 
     &:hover {
       transform: scale(1.05);
+    }
+
+    @include oniPad {
+      object-fit: fill;
     }
   }
 }
@@ -763,7 +975,15 @@ ul, li {
 // ------- form ---------
 
 .form {
+  &__error {
+    font-size: 12px;
+    color: #EB5757;
+    position: absolute;
 
+    @include oniPad {
+      padding-top: 20px;
+    }
+  }
 
   &__input {
     width: 100%;
@@ -772,7 +992,6 @@ ul, li {
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
-    text-transform: capitalize;
     color: #828282;
     border-top: none;
     background-color: #E4DFD3;
@@ -780,25 +999,29 @@ ul, li {
     border-left: none;
     border-right: none;
 
+    @include oniPad {
+      padding:  25px 10px 10px 0;
+    }
+
     &--textarea {
       height: 97px;
       resize: none;
       font-family: inherit;
       padding-top: 60px;
       margin-bottom: 50px;
+
+      &:focus {
+        border-right: none;
+        border-bottom: 1px solid #333;
+        outline: none;
+        color: #333;
+      }
+
+      @include oniPad {
+        margin-bottom: 30px;
+        padding-top: 40px;
+      }
     }
-
-    // &::placeholder {
-      // font-weight: 400;
-      // font-size: 14px;
-      // line-height: 20px;
-      // color: #7e7e83;
-      // color: #333;
-    // }
-
-    // &:hover {
-    //   border-color: #d5d7de;
-    // }
 
     &:focus {
       border-bottom: 1px solid #333;
@@ -809,50 +1032,60 @@ ul, li {
 }
 
 .form__input.success {
-  border-color: #344F10;
+  border-color: $green;
+  color: $green;
 
    &::placeholder {
-      color: #344F10;
+      color: $green;
+    }
+
+    &:focus {
+      border-color: #333;
+        color: #333;
     }
 }
 
 .form__input.error  {
-  border-color: #EB5757;
-  color: #EB5757;
+  border-color: $error;
+  color: $error;
 
   &::placeholder {
-    color: #EB5757;
+    color: $error;
+  }
+
+  &:focus {
+    border-color: #333;
+      color: #333;
   }
 }
 
-
-
 //   ----------------  footer --------------------
 .footer {
-  padding: 60px 0 65px;
+  padding: 60px 0;
   background: rgba(52, 79, 16, 0.5);
   margin-top: 100px;
 
+  @include oniPad {
+    margin-top: 65px;
+    padding: 30px 0;
+  }
 
   &__list {
     display: flex;
-    // align-items: ;
     gap: 40px;
     margin-bottom: 145px;
 
-  }
-
-  &__item {
-
-
+    @include oniPad {
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
   }
 
   &__link {
     padding-bottom: 10px;
     border-bottom: 2px solid transparent;
-    // padding-top: 10px;
     transition: all .3s ease;
-
 
     &:hover {
       border-bottom: 2px solid #333;;
@@ -865,30 +1098,47 @@ ul, li {
   display: flex;
   justify-content: space-between;
   padding-right: 100px;
-}
 
+  @include oniPad {
+    padding-right: 0;
+  }
+}
 
 .footer-left {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   font-weight: 500;
   font-size: 18px;
   line-height: 150%;
   text-transform: capitalize;
   color: #E4DFD3;
 
+  @include oniPad {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
   &__nav {
+    margin-bottom: 50px;
 
   }
 
   &__copyright {
-    // display: flex;
-    // align-items: flex-end;
     text-align: end;
-  }
 
+    @include oniPad {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include oniPad {
+        display: block;
+      }
+    }
+  }
 }
 
 
@@ -898,10 +1148,12 @@ ul, li {
   line-height: 150%;
   color: #E4DFD3;
 
-  &__list {
-    // gap: 20px;
-    margin-bottom: 20px;
+  @include oniPad {
+    font-size: 14px;
+  }
 
+  &__list {
+    margin-bottom: 20px;
   }
 
   &__item {
@@ -915,11 +1167,15 @@ ul, li {
       color: #333;
     }
   }
+}
 
+.footer-social1 {
+  display: none;
 
-  &__scedule {
-
-
+  @include oniPad {
+    display: block;
+    display: flex;
+    gap: 20px;
   }
 }
 
@@ -928,15 +1184,9 @@ ul, li {
   margin-top: 30px;
   gap: 20px;
 
-  // &__link {
-  //   transition: transform .3s;
-  //   transition: color .3s ease;
-
-  //   &:hover {
-  //     color: #333;
-  //   }
-
-  // }
+  @include oniPad {
+    display: none;
+  }
 
   &__img {
     height: 20px;
@@ -948,12 +1198,4 @@ ul, li {
     }
   }
 }
-
-// .footer-social__link {
-//   &:hover {
-//         color: #333;
-//       }
-
-// }
-
 
