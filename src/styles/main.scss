@@ -10,11 +10,11 @@
   }
 }
 
-// @mixin onMobile {
-//   @media (min-width: 768px) {
-//     @content;
-//   }
-// }
+@mixin onMobile {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
 
 // @mixin onDesktop {
 //   @media (min-width: 1024px) {
@@ -40,7 +40,6 @@ $green: #344F10;
 }
 .page {
   scroll-behavior: smooth;
-  overflow: hidden;
 }
 
 .page, .home-page {
@@ -73,7 +72,7 @@ ul, li {
   display: block;
   width: 100%;
   width: 280px;
-  padding: 19px 0 20px;
+  padding: 17px 0 17px;
   color: #F2F2F2;
   background-color: #333;
   font-weight: 600;
@@ -126,11 +125,19 @@ ul, li {
   @include oniPad {
     max-width: 714px;
   }
+
+  @include onMobile() {
+    max-width: 280px;
+  }
 }
 
 .section {
   padding: 100px 0 0;
   overflow: hidden;
+
+  @include onMobile() {
+    padding: 70px 0 0;
+  }
 }
 
 // ------ header --------
@@ -155,6 +162,11 @@ ul, li {
       margin-right: 0;
       width: 25px;
       height: 25px;
+    }
+
+    @include onMobile() {
+      width: 24px;
+      height: 24px;
     }
   }
 
@@ -194,6 +206,11 @@ ul, li {
     justify-content: space-between;
     margin-top: 23px;
     margin-bottom: 43px;
+  }
+
+  @include onMobile() {
+    margin-top: 15px;
+    margin-bottom: 20px;
   }
 }
 
@@ -242,7 +259,12 @@ ul, li {
 
   @include oniPad {
     width: 16px;
-    width: 19px;
+    height: 19px;
+  }
+
+  @include onMobile() {
+    width: 20px;
+    height: 24px;
   }
 }
 
@@ -253,6 +275,10 @@ ul, li {
 
   @include oniPad {
     padding: 0 0 65px;
+  }
+
+  @include onMobile() {
+    padding: 0 0 50px;
   }
 }
 
@@ -281,15 +307,26 @@ ul, li {
   &__right {
     // max-width: 580px;
     width: 580px;
-    width: 451px;
+    height: 451px;
     // order: 1;
 
     @include oniPad {
       order: 1;
+      max-width: 714px;
       width: 714px;
-      height:500px;
+      max-height:500px;
       background-image: url(../images/hero-tablet.png);
       margin-bottom: 50px;
+    }
+
+    @include onMobile() {
+      margin-bottom: 25px;
+
+      // position: absolute;
+      // left: 0;
+      // right: 0;
+      width: 100%;
+      height: 267px;
     }
   }
 
@@ -314,6 +351,10 @@ ul, li {
       font-size: 36px;
       margin-bottom: 10px;
     }
+
+    @include onMobile(){
+      font-size: 24px;
+    }
   }
 
   &__text {
@@ -323,6 +364,10 @@ ul, li {
     font-size: 16px;
     line-height: 150%;
     color: #333;
+
+    @include onMobile(){
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -392,6 +437,10 @@ ul, li {
     padding: 65px 0;
   }
 
+  @include onMobile() {
+    padding: 50px 0;
+  }
+
 
   &__text-left {
     max-width:380px;
@@ -433,6 +482,11 @@ ul, li {
       margin-right: 0;
     }
 
+    @include onMobile() {
+      font-size: 18px;
+      text-align: start;
+    }
+
     // border-bottom: 1px solid rgba(52, 79, 16, 0.5);
     // padding-top:200px ;
 
@@ -463,6 +517,10 @@ ul, li {
   @include oniPad {
     padding-top: 65px;
   }
+
+  @include onMobile() {
+    padding-top: 50px;
+  }
 }
 
 .about-container {
@@ -470,9 +528,12 @@ ul, li {
   margin-bottom: 100px;
   overflow: hidden;
 
-
   @include oniPad {
     margin-bottom: 30px;
+  }
+
+   @include onMobile() {
+    margin-bottom: 0;
   }
 }
 
@@ -523,6 +584,10 @@ ul, li {
     margin-right: 30px;
   }
 
+  @include onMobile() {
+    margin-right: 0;
+  }
+
   &__title {
     font-weight: 600;
     font-size: 24px;
@@ -541,6 +606,11 @@ ul, li {
     @include oniPad {
       margin-bottom: 15px;
     }
+
+    @include onMobile() {
+      font-size: 14px;
+    }
+
 
     &:last-of-type{
       @include oniPad {
@@ -572,6 +642,11 @@ ul, li {
 .about-right {
   display: flex;
   gap: 20px;
+
+  @include onMobile() {
+    display: none;
+
+  }
 
   // @include oniPad {
   //   width: 342px;
@@ -627,6 +702,10 @@ ul, li {
   }
 }
 
+.shop-wrapper {
+  width: 100%;
+}
+
 .shop-tabs {
   display: flex;
   margin-bottom: 50px;
@@ -635,8 +714,16 @@ ul, li {
     margin-bottom: 25px;
   }
 
+  @include onMobile() {
+    justify-content: space-between;
+  }
+
   &__item {
     margin-right: 50px;
+
+    @include onMobile() {
+      margin-right: 0;
+    }
   }
 
   &__link {
@@ -656,6 +743,12 @@ ul, li {
       border-bottom: 2px solid #333;;
       color: #333;
     }
+
+    @include onMobile(){
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+    }
   }
 }
 
@@ -671,6 +764,12 @@ ul, li {
     height: 300px;
   }
 
+  @include onMobile(){
+    // position: absolute;
+    left: 0;
+    right: 0;
+    height: 267px;
+  }
 
   &__photo {
     width: 100%;
@@ -694,9 +793,17 @@ ul, li {
     gap: 30px;
     margin-bottom: 50px;
   }
+
+  @include onMobile() {
+    margin-bottom: 30px;
+  }
 }
 
 .product-card {
+  @include onMobile {
+    width: 100%;
+  }
+
   &__name {
     margin-bottom: 13px;
     font-weight: 600;
@@ -705,6 +812,11 @@ ul, li {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #333;
+
+    @include onMobile {
+      margin-bottom: 10px;
+    }
+
   }
 
   &__price {
@@ -715,11 +827,23 @@ ul, li {
     text-transform: uppercase;
     color: #333;
   }
+
+  &--mobile {
+    @include onMobile {
+      display: none;
+    }
+  }
 }
 
 .shop-btn {
   display: block;
   margin: 0 auto;
+
+  @include onMobile() {
+    margin-bottom: 0;
+    text-align: center;
+  }
+
 }
 
 .shop__title {
@@ -730,6 +854,11 @@ ul, li {
     line-height: 150%;
     letter-spacing: 0.05em;
     margin-bottom: 10px;
+  }
+
+  @include onMobile() {
+    margin-bottom: 20px;
+    text-align: center;
   }
 
 }
@@ -795,9 +924,12 @@ ul, li {
   position: relative;
 
   @include oniPad {
-    padding-bottom: 65px;
-    padding-top: 65px;
+    padding: 65px 0;
     overflow: hidden;
+  }
+
+  @include onMobile() {
+    padding: 50px 0;
   }
 }
 
@@ -807,6 +939,16 @@ ul, li {
 
   @include oniPad {
     margin-bottom: 120px;
+  }
+
+  @include onMobile() {
+    flex-direction: column;
+    position: relative;
+
+    margin-bottom: 70px;
+    // padding-bottom: 30px;
+
+    // padding-bottom: 37px;
   }
 }
 
@@ -820,6 +962,10 @@ ul, li {
     line-height: 150%;
     letter-spacing: 0.05em;
   }
+
+  @include onMobile() {
+    margin-bottom: 20px;
+  }
 }
 
 .left {
@@ -828,7 +974,22 @@ ul, li {
 
   @include oniPad {
     width: 350px;
+  }
 
+  // @include onMobile() {
+  //   display: none;
+  // }
+}
+
+.creators-link {
+  @include oniPad {
+    position: absolute;
+    bottom: 0;
+    margin-top: 70px;
+  }
+
+  @include onMobile {
+    margin-top: 0;
   }
 }
 
@@ -842,13 +1003,28 @@ ul, li {
     position: absolute;
     right: 0;
     overflow: hidden;
+  }
 
+  @include onMobile() {
+    position: relative;
+    padding-bottom: 67px;
   }
 }
 
 .right-boolets {
   margin-right: 20px;
   padding: 47px 0;
+
+  @include onMobile() {
+    padding: 0 0;
+  }
+
+  // @include onMobile() {
+  //   padding-bottom: 67px;
+
+  // }
+
+
 
   &__item {
     font-weight: 400;
@@ -913,13 +1089,14 @@ ul, li {
   width: 100%;
     height: 100%;
     object-fit: cover;
+    // object-position: left;
 
   // margin-right: 0px;
   // height: auto;
   // position: absolute;
   @include oniPad {
     object-position: left;
-    margin-right: -20px;
+    // margin-right: -20px;
   }
 
 
@@ -934,6 +1111,11 @@ ul, li {
     display: flex;
     gap: 20px;
     justify-content: space-around;
+
+    @include onMobile() {
+      flex-direction: column;
+      gap: 50px;
+    }
   }
 
   &__item {
@@ -943,14 +1125,22 @@ ul, li {
     @include oniPad {
       max-width: 218px;
     }
+
+    @include onMobile() {
+      margin: 0 auto;
+    }
   }
 
   &__img {
     height: 70px;
     display: block;
     margin: 0 auto;
-
     transition: transform 0.3s;
+
+    @include onMobile() {
+      width: 79px;
+      height: 74px;
+    }
 
     &:hover {
       transform: scale(1.2);
@@ -966,6 +1156,10 @@ ul, li {
     text-transform: uppercase;
     color: #000;
     margin-top: 40px;
+
+    @include onMobile() {
+      margin-top: 20px;
+    }
   }
 }
 
@@ -978,6 +1172,12 @@ ul, li {
   @include oniPad {
     padding-top: 65px;
   }
+
+  @include onMobile() {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
 }
 
 .contact-container {
@@ -994,6 +1194,11 @@ ul, li {
     left: 0;
   }
 
+  @include onMobile() {
+    width: 100%;
+    margin-right: 0;
+  }
+
   &__text {
     width: 100%;
     font-weight: 400;
@@ -1001,6 +1206,10 @@ ul, li {
     line-height: 150%;
     color: #333;
     margin-bottom: 10px;
+
+    @include onMobile() {
+      font-size: 14px;
+    }
   }
 }
 
@@ -1027,6 +1236,10 @@ ul, li {
   @include oniPad {
     width: 342px;
     height: 407px;
+  }
+
+  @include onMobile() {
+    display: none;
   }
 
   &__img {
@@ -1076,6 +1289,10 @@ ul, li {
     @include oniPad {
       padding:  23px 10px 5px 0;
       font-size: 14px;
+    }
+
+    @include onMobile() {
+      padding:  25px 10px 5px 0;
     }
 
     &--textarea {
@@ -1146,6 +1363,12 @@ ul, li {
     padding: 30px 0;
   }
 
+  @include onMobile() {
+    margin-top: 50px;
+    position: relative;
+    padding-bottom: 115px;
+  }
+
   &__list {
     display: flex;
     gap: 40px;
@@ -1156,12 +1379,20 @@ ul, li {
       gap: 15px;
       margin-bottom: 20px;
     }
+
+    @include onMobile() {
+      gap: 10px;
+    }
   }
 
   &__link {
     padding-bottom: 10px;
     border-bottom: 2px solid transparent;
     transition: all .3s ease;
+
+    @include onMobile(){
+      font-size: 18px;
+    }
 
     &:hover {
       border-bottom: 2px solid #333;;
@@ -1177,6 +1408,10 @@ ul, li {
 
   @include oniPad {
     padding-right: 0;
+  }
+
+  @include onDesctop() {
+    flex-direction: column;
   }
 }
 
@@ -1198,6 +1433,10 @@ ul, li {
   &__nav {
     margin-bottom: 50px;
 
+    @include onMobile() {
+      margin-bottom: 40px;
+    }
+
   }
 
   &__copyright {
@@ -1212,6 +1451,15 @@ ul, li {
 
       @include oniPad {
         display: block;
+      }
+
+      @include onMobile() {
+        position: absolute;
+        bottom: 40px;
+        width: 200px;
+        margin-left: 42px;
+        // margin-bottom: 20px;
+        text-align: center;
       }
     }
   }
@@ -1228,12 +1476,20 @@ ul, li {
     font-size: 14px;
   }
 
+  @include onMobile() {
+    font-size: 14px;
+  }
+
   &__list {
     margin-bottom: 20px;
   }
 
   &__item {
     margin-bottom: 20px;
+
+    @include onMobile() {
+      margin-bottom: 10px;
+    }
   }
 
   &__link {
