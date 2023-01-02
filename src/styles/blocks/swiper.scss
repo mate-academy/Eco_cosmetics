@@ -9,6 +9,12 @@
     padding-top: 90px !important;
   }
 
+  &-slide {
+    @include desktop {
+      width: 380px !important;
+    }
+  }
+
   &-pagination {
     position: absolute;
     top: 0;
@@ -41,7 +47,7 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: $c-gray;
-      transition: color 0.3s;
+      transition: color $animation-time;
 
       @include desktop {
         font-weight: 600;
@@ -55,13 +61,9 @@
         bottom: -10px;
         display: block;
         width: 0;
-        height: 1px;
+        height: 2px;
         background-color: $c-black;
-        transition: width 0.3s;
-
-        @include desktop {
-          height: 2px;
-        }
+        transition: width $animation-time;
       }
 
       &:hover,
