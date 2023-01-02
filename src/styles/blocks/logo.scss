@@ -1,0 +1,41 @@
+.logo {
+  display: flex;
+  text-decoration: none;
+  transition: transform $transition-time;
+
+  &:hover {
+    transform: scale(110%);
+  }
+
+  @include onDesktop {
+    margin-left: 0;
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(103%);
+    }
+  }
+
+  &__image {
+    height: 24px;
+    margin-right: 12px;
+
+    @include onDesktop {
+      height: 50px;
+    }
+  }
+
+  &__text {
+    display: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-green;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
