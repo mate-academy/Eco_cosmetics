@@ -16,21 +16,6 @@
   }
 }
 
-// @mixin onDesktop {
-//   @media (min-width: 1024px) {
-//     @content;
-//   }
-// }
-
-// @include oniPad {
-//   font-size: 56px;
-//   padding: 120px 0 80px;
-// }
-
-// @include onMobile {
-//   padding: 55px 0 40px;
-// }
-
 $error: #EB5757;
 $green: #344F10;
 
@@ -389,7 +374,9 @@ ul, li {
   top: 0;
   left: 0;
   right: 0;
-  display: none;
+  transform: translate(-100%);
+
+  // display: none;
 
   &__close {
     width: 15px;
@@ -412,7 +399,10 @@ ul, li {
     text-align: center;
     color: #E4DFD3;
   }
+}
 
+.show-burger {
+  transform: translate(0);
 }
 
 // --------- science----------
@@ -758,6 +748,9 @@ ul, li {
   max-height: 500px;
   height: 500px;
   margin-bottom: 20px;
+  display: block;
+  cursor: pointer;
+
 
   @include oniPad {
     width: 342px;
@@ -799,6 +792,10 @@ ul, li {
   }
 }
 
+.hide {
+  display: none;
+}
+
 .product-card {
   @include onMobile {
     width: 100%;
@@ -812,6 +809,8 @@ ul, li {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #333;
+
+    display: block;
 
     @include onMobile {
       margin-bottom: 10px;
@@ -983,13 +982,14 @@ ul, li {
 
 .creators-link {
   @include oniPad {
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
     margin-top: 70px;
   }
 
   @include onMobile {
     margin-top: 0;
+    position: absolute;
   }
 }
 
@@ -1406,11 +1406,11 @@ ul, li {
   justify-content: space-between;
   padding-right: 100px;
 
-  @include oniPad {
+  @include oniPad (){
     padding-right: 0;
   }
 
-  @include onDesctop() {
+  @include onMobile(){
     flex-direction: column;
   }
 }

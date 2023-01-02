@@ -64,3 +64,17 @@ email.addEventListener('focus', () => {
   email.classList.remove('success');
   messages.textContent = '';
 });
+
+// ----------- menu ------------
+
+const toggleBurger = document.querySelector('.burger');
+const closeBtn = document.querySelector('.burger-menu__close');
+const burgerMenu = document.querySelector('.burger-menu');
+
+toggleBurger.addEventListener('click', function() {
+  burgerMenu.classList.toggle('show-burger');
+});
+
+closeBtn.addEventListener('click', function() {
+  burgerMenu.classList.remove('show-burger');
+});
