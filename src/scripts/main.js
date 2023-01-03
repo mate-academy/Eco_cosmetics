@@ -1,11 +1,11 @@
 'use strict';
 
-const userName = document.getElementById('name');
-const email = document.getElementById('email');
+const userName = document.querySelector('.name');
+const email = document.querySelector('.email');
 
 const form = document.getElementById('form');
 
-const messages = document.getElementById('error');
+const messages = document.querySelector('error');
 
 // show error function
 function showError(input, message) {
@@ -82,42 +82,18 @@ closeBtn.addEventListener('click', function() {
 
 // -------------- tabs -------------
 
-// const tab = function() {
-//   const tubs = document.querySelectorAll('.shop-tabs__item');
-//   const productCard = document.querySelectorAll('.product-card');
-//   let tabName;
-
-//   tubs.forEach(item => {
-//     item.addEventListener('click', selectTab);
-//   });
-
-//   function selectTab() {
-//     tubs.forEach(item => {
-//       item.classList.remove('is-active');
-//     });
-//     this.classList.add('is-active');
-//     tabName = this.getAttribute('data-tab');
-//     selectTabContent(tabName);
-//   };
-
-//   function selectTabContent(tabN) {
-//     productCard.forEach(item => {
-//       item.classList.contains(tabN)
-//         ? item.classList.add('is-active')
-//         : item.classList.remove('is-active');
-//     });
-//   }
-// };
-
-// tab();
-// -----------
-
 const tubs = document.querySelectorAll('.shop-tabs__item');
 const productCard = document.querySelectorAll('.product-card');
+
+// eslint-disable-next-line no-console
+// console.log(productCard);
 
 tubs.forEach(tab => {
   tab.addEventListener('click', () => {
     const currentTab = tab.getAttribute('data-tab');
+
+    // eslint-disable-next-line no-console
+    console.log(currentTab);
 
     tubs.forEach(item => {
       item.classList.contains(currentTab)
@@ -135,40 +111,15 @@ tubs.forEach(tab => {
 
 // -------------- tabs -------------
 
-// const tabs = document.querySelectorAll('.shop-tabs__item');
-// const productCards = document.querySelectorAll('.product-card');
-
-// tabs.forEach(item => {
-//   item.addEventListener('click', () => {
-//     const tab = item;
-//     const tabId = tab.getAttribute('data-tab');
-//     const currentTab = document.querySelector(tabId);
-
-//     if (!item.classList.contains('is-active')) {
-//       tabs.forEach(element => {
-//         element.classList.remove('is-active');
-//       });
-
-//       productCards.forEach(card => {
-//         card.classList.remove('is-active');
-//       });
-
-//       item.classList.add('is-active');
-//       currentTab.classList.add('is-active');
-//     }
-//   });
-// });
-
-// make first tab active
-// document.querySelector('.shop-tabs__item').click();
-
-// -------------- all products btn ---------------
+// ---------- all products btn -----
 
 const btn = document.querySelector('.shop-btn');
 const productCard2 = document.querySelectorAll('.product-card');
 
 btn.addEventListener('click', () => {
   productCard2.forEach(card => {
-    card.classList.add('is-active');
+    if (!card.classList.contains('is-active')) {
+      card.classList.add('is-active');
+    }
   });
 });
