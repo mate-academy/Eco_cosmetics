@@ -1,0 +1,60 @@
+.contact-us {
+  &__title {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    @extend %description;
+
+    @include onTablet {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__field {
+    margin: 0 0 25px;
+
+    &--last {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+
+      &--last {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+    cursor: pointer;
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(105%);
+    }
+
+    @include onTablet {
+      display: block;
+      height: 409px;
+    }
+
+    @include onDesktop {
+      display: block;
+      height: 584px;
+    }
+  }
+}
