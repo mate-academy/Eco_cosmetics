@@ -49,12 +49,6 @@
       color: $c-gray;
       transition: color $animation-time;
 
-      @include desktop {
-        font-weight: 600;
-        font-size: 18px;
-        line-height: 150%;
-      }
-
       &::after {
         content: "";
         position: absolute;
@@ -66,14 +60,26 @@
         transition: width $animation-time;
       }
 
-      &:hover,
-      &-active {
-        color: $c-black;
+      @include desktop {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+
+        &:hover {
+          color: $c-black;
+
+          &::after {
+            width: 100%;
+          }
+        }
       }
 
-      &:hover::after,
-      &-active::after {
-        width: 100%;
+      &-active {
+        color: $c-black;
+
+        &::after {
+          width: 100%;
+        }
       }
     }
   }
