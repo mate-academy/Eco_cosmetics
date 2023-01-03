@@ -35,7 +35,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border-bottom: 1px solid #828282;
+  border: 1px solid #828282;
   -webkit-text-fill-color: #828282;
   -webkit-box-shadow: 0 0 0px 1000px #E4DFD3 inset;
   transition: background-color 5000s ease-in-out 0s;
@@ -253,6 +253,7 @@ ul, li {
     border-bottom: 2px solid transparent;
     transition: all .3s ease;
 
+
     &:hover {
       border-bottom: 2px solid $green;;
     }
@@ -321,8 +322,10 @@ ul, li {
   }
 
   &__right {
+    // max-width: 580px;
     width: 580px;
     height: 451px;
+    // order: 1;
 
     @include oniPad {
       order: 1;
@@ -407,10 +410,16 @@ ul, li {
   right: 0;
   transform: translate(-100%);
 
+  // display: none;
+
   &__close {
     width: 15px;
     height: 15px;
     margin-bottom: 50px;
+  }
+
+  &__list {
+    // margin: 0 auto;
   }
 
   &__item {
@@ -502,6 +511,9 @@ ul, li {
       text-align: start;
     }
 
+    // border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    // padding-top:200px ;
+
     &::after {
       display: block;
       content: '';
@@ -586,8 +598,15 @@ ul, li {
   margin-right: 120px;
 
   @include oniPad {
+    // height: 440px;
     margin-right: 30px;
   }
+
+  // @include onTablet() {
+  //   margin-right: 800px;
+
+  // }
+
 }
 
 .about-left {
@@ -626,6 +645,11 @@ ul, li {
     @include onTablet() {
       font-size: 14px;
     }
+
+    // @include onMobile() {
+    //   font-size: 14px;
+    // }
+
 
     &:last-of-type{
       @include oniPad {
@@ -667,10 +691,16 @@ ul, li {
 
   }
 
+  // @include oniPad {
+  //   width: 342px;
+  //   height: 321px;
+  // }
+
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    // margin-right: 20px;
     transition: transform 0.3s;
 
     &:hover {
@@ -678,7 +708,9 @@ ul, li {
     }
 
     @include oniPad {
+      // width: 342px;
       height: auto;
+      // margin-right: 30px;
     }
 
     @include onTablet() {
@@ -728,6 +760,21 @@ ul, li {
     padding-right: 0px;
   }
 }
+// .shop-wrapper--mobile {
+//   @include onMobile() {
+//     display: none;
+//   }
+// }
+
+// .shop {
+//   align-items: center;
+// }
+
+.shop-wrapper {
+  @include onMobile() {
+    // margin-left: -10px;
+  }
+}
 
 .shop-tabs__item.is-active {
   border-bottom: 2px solid #333;;
@@ -735,7 +782,7 @@ ul, li {
 
 }
 
-.is-active__mobile {
+.is-active__mobile{
   @include onMobile() {
     display: none;
   }
@@ -751,6 +798,7 @@ ul, li {
 
   @include onMobile() {
     justify-content: space-between;
+    padding-right: 20px
   }
 
   &__item {
@@ -785,6 +833,31 @@ ul, li {
       margin-right: 0;
     }
   }
+
+  &__link {
+    // font-weight: 600;
+    // font-size: 18px;
+    // line-height: 150%;
+    // letter-spacing: 0.05em;
+    // text-transform: uppercase;
+    // color: #828282;
+
+    // padding-bottom: 10px;
+    // border-bottom: 2px solid transparent;
+    // padding-top: 10px;
+    // transition: all .3s ease;
+
+    // &:hover {
+    //   border-bottom: 2px solid #333;;
+    //   color: #333;
+    // }
+
+    // @include onMobile(){
+    //   font-weight: 400;
+    //   font-size: 14px;
+    //   line-height: 130%;
+    // }
+  }
 }
 
 .img-wrapper {
@@ -808,6 +881,8 @@ ul, li {
   }
 
   @include onMobile(){
+    // left: 0;
+    // right: 0;
     height: 267px;
     width: 320px;
     position: relative;
@@ -907,10 +982,13 @@ ul, li {
   @include onMobile() {
     margin-bottom: 0;
     text-align: center;
+    margin-left: 0;
   }
+
 }
 
 .shop__title {
+
   @include oniPad {
     font-weight: 600;
     font-size: 24px;
@@ -923,6 +1001,7 @@ ul, li {
     margin-bottom: 20px;
     text-align: center;
   }
+
 }
 //---------- creators--------
 
@@ -977,12 +1056,14 @@ ul, li {
   max-width: 580px;
   height: 645px;
 
+
   @include oniPad {
     width: 342px;
     height: 440px;
   }
 
   &__img {
+    // width: 100%;
     height: 100%;
     object-fit: cover;
 
@@ -1054,6 +1135,10 @@ ul, li {
   @include oniPad {
     width: 350px;
   }
+
+  // @include onMobile() {
+  //   display: none;
+  // }
 }
 
 .tooth-left {
@@ -1065,6 +1150,8 @@ ul, li {
 
 .creators-link {
   @include oniPad {
+    // position: absolute;
+    // bottom: 0;
     margin-top: 70px;
   }
 
@@ -1078,6 +1165,7 @@ ul, li {
   @include oniPad {
     margin-top: 0px;
   }
+
 }
 
 .right {
@@ -1114,6 +1202,13 @@ ul, li {
   @include onMobile() {
     padding: 0 0;
   }
+
+  // @include onMobile() {
+  //   padding-bottom: 67px;
+
+  // }
+
+
 
   &__item {
     font-weight: 400;
@@ -1163,12 +1258,21 @@ ul, li {
 .tooth-right {
   width: 380px;
   height: 397px;
+  // position: relative;
 
   @include oniPad {
+    // width: 300px;
+    // position: relative;
+    // overflow: hidden;
+    // width: 380px;
     margin-right: -80px;
   }
 
   @include onTablet() {
+    // width: 300px;
+    // position: relative;
+    // overflow: hidden;
+    // width: 380px;
     margin-right: -140px;
   }
 
@@ -1177,17 +1281,26 @@ ul, li {
 .tooth-img {
 
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+    height: 100%;
+    object-fit: cover;
+    // object-position: left;
 
+  // margin-right: 0px;
+  // height: auto;
+  // position: absolute;
   @include oniPad {
     object-position: left;
+    // margin-right: -20px;
   }
 
   @include onMobile() {
     position: absolute;
     height: 380px;
+    // margin-right: -20px;
   }
+
+
+
 }
 
 // -------- advantages --------
@@ -1264,6 +1377,7 @@ ul, li {
     padding-top: 50px;
     padding-bottom: 50px;
   }
+
 }
 
 .contact-container {
@@ -1306,6 +1420,10 @@ ul, li {
       font-size: 14px;
       margin-bottom: 0px;
     }
+
+    // @include onMobile() {
+    //   font-size: 14px;
+    // }
   }
 }
 
@@ -1457,7 +1575,6 @@ ul, li {
 }
 
 //   ----------------  footer --------------------
-
 .footer {
   padding: 60px 0;
   background: rgba(52, 79, 16, 0.5);
@@ -1548,6 +1665,7 @@ ul, li {
     @include onMobile() {
       margin-bottom: 40px;
     }
+
   }
 
   &__copyright {
@@ -1569,11 +1687,13 @@ ul, li {
         bottom: 40px;
         width: 200px;
         margin-left: 42px;
+        // margin-bottom: 20px;
         text-align: center;
       }
     }
   }
 }
+
 
 .footer-contacts {
   font-weight: 400;

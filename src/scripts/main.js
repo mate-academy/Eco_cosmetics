@@ -1,11 +1,11 @@
 'use strict';
 
-const userName = document.querySelector('.name');
-const email = document.querySelector('.email');
+const userName = document.getElementById('name');
+const email = document.getElementById('email');
 
 const form = document.getElementById('form');
 
-const messages = document.querySelector('error');
+const messages = document.getElementById('error');
 
 // show error function
 function showError(input, message) {
@@ -85,15 +85,9 @@ closeBtn.addEventListener('click', function() {
 const tubs = document.querySelectorAll('.shop-tabs__item');
 const productCard = document.querySelectorAll('.product-card');
 
-// eslint-disable-next-line no-console
-// console.log(productCard);
-
 tubs.forEach(tab => {
   tab.addEventListener('click', () => {
     const currentTab = tab.getAttribute('data-tab');
-
-    // eslint-disable-next-line no-console
-    console.log(currentTab);
 
     tubs.forEach(item => {
       item.classList.contains(currentTab)
@@ -111,15 +105,13 @@ tubs.forEach(tab => {
 
 // -------------- tabs -------------
 
-// ---------- all products btn -----
+// ----------- all products btn -----
 
 const btn = document.querySelector('.shop-btn');
 const productCard2 = document.querySelectorAll('.product-card');
 
 btn.addEventListener('click', () => {
   productCard2.forEach(card => {
-    if (!card.classList.contains('is-active')) {
-      card.classList.add('is-active');
-    }
+    card.classList.add('is-active');
   });
 });
