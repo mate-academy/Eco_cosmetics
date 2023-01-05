@@ -35,11 +35,15 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 1px solid #828282;
+  border-bottom: 1px solid #828282;
   -webkit-text-fill-color: #828282;
   -webkit-box-shadow: 0 0 0px 1000px #E4DFD3 inset;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+// .your-class::-webkit-input-placeholder {
+//   color: #b2cde0
+// }
 
 * {
   box-sizing: border-box;
@@ -760,21 +764,11 @@ ul, li {
     padding-right: 0px;
   }
 }
-// .shop-wrapper--mobile {
+
+// .shop-wrapper {
 //   @include onMobile() {
-//     display: none;
 //   }
 // }
-
-// .shop {
-//   align-items: center;
-// }
-
-.shop-wrapper {
-  @include onMobile() {
-    // margin-left: -10px;
-  }
-}
 
 .shop-tabs__item.is-active {
   border-bottom: 2px solid #333;;
@@ -782,7 +776,7 @@ ul, li {
 
 }
 
-.is-active__mobile{
+.product-card.is-active.mobile-hide{
   @include onMobile() {
     display: none;
   }
@@ -833,31 +827,6 @@ ul, li {
       margin-right: 0;
     }
   }
-
-  &__link {
-    // font-weight: 600;
-    // font-size: 18px;
-    // line-height: 150%;
-    // letter-spacing: 0.05em;
-    // text-transform: uppercase;
-    // color: #828282;
-
-    // padding-bottom: 10px;
-    // border-bottom: 2px solid transparent;
-    // padding-top: 10px;
-    // transition: all .3s ease;
-
-    // &:hover {
-    //   border-bottom: 2px solid #333;;
-    //   color: #333;
-    // }
-
-    // @include onMobile(){
-    //   font-weight: 400;
-    //   font-size: 14px;
-    //   line-height: 130%;
-    // }
-  }
 }
 
 .img-wrapper {
@@ -868,7 +837,6 @@ ul, li {
   margin-bottom: 20px;
   display: block;
   cursor: pointer;
-
 
   @include oniPad {
     width: 342px;
@@ -881,8 +849,6 @@ ul, li {
   }
 
   @include onMobile(){
-    // left: 0;
-    // right: 0;
     height: 267px;
     width: 320px;
     position: relative;
@@ -921,10 +887,6 @@ ul, li {
     margin-bottom: 30px;
   }
 }
-
-// .hidden {
-//   display: none;
-// }
 
 .is-active {
   display: block;
@@ -1485,9 +1447,13 @@ ul, li {
     color: #EB5757;
     position: absolute;
 
-    @include oniPad {
-      padding-top: 20px;
-    }
+    // @include oniPad {
+    //   padding-top: 20px;
+    // }
+
+    // @include onMobile() {
+    //   padding-top: 0px;
+    // }
   }
 
   &__input {
@@ -1545,6 +1511,7 @@ ul, li {
     }
   }
 }
+
 
 .form__input.success {
   border-color: $green;

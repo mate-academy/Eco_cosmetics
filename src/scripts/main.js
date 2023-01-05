@@ -2,10 +2,13 @@
 
 const userName = document.getElementById('name');
 const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const textarea = document.getElementById('textarea');
 
 const form = document.getElementById('form');
 
-const messages = document.getElementById('error');
+const messagesName = document.getElementById('name__error');
+const messagesEmail = document.getElementById('email__error');
 
 // show error function
 function showError(input, message) {
@@ -13,7 +16,8 @@ function showError(input, message) {
 
   inputControl.className = 'form__input error';
 
-  messages.textContent = message;
+  messagesName.textContent = message;
+  messagesEmail.textContent = message;
 }
 
 // shoe success function
@@ -21,7 +25,9 @@ function showSuccess(input) {
   const inputControl = input;
 
   inputControl.className = 'form__input success';
-  messages.textContent = '';
+
+  messagesName.textContent = '';
+  messagesEmail.textContent = '';
 }
 
 const isEmailValid = (input) => {
@@ -51,18 +57,33 @@ form.addEventListener('submit', (e) => {
   } else {
     showSuccess(email);
   }
+
+  if (userName && email) {
+    userName.value = '';
+    email.value = '';
+    phone.value = '';
+    textarea.value = '';
+
+    // userName.classList.add('your-class');
+    // userName.placeholder.style.color = 'yellow';
+    // userName.sfontcolor('grey');
+    // userName.style.color = '#828282';
+
+    userName.classList.remove('success');
+    email.classList.remove('success');
+  }
 });
 
 userName.addEventListener('focus', () => {
   userName.classList.remove('error');
   userName.classList.remove('success');
-  messages.textContent = '';
+  messagesName.textContent = '';
 });
 
 email.addEventListener('focus', () => {
   email.classList.remove('error');
   email.classList.remove('success');
-  messages.textContent = '';
+  messagesEmail.textContent = '';
 });
 
 // ----------- menu -----------------
