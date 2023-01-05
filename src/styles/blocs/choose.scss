@@ -1,0 +1,63 @@
+.choose {
+  &__grid {
+    display: grid;
+    grid-template-columns: 85px repeat(10, 1fr) 85px;
+    grid-template-rows: 100px auto 100px;
+
+    @include onTablet {
+      padding-bottom: $padding-bot-tab;
+      display: flex;
+      margin: 0 auto;
+    }
+
+    @include onPhone {
+      padding-bottom: $padding-bot-phon;
+    }
+  }
+
+  &__descr {
+    max-width: 380px;
+    margin-right: 100px;
+    grid-column: 2 / 6;
+    grid-row: 2 / 3;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__subheader {
+    max-width: 380px;
+    font-size: 24px;
+    line-height: 150%;
+    grid-column: 7 / 11;
+    grid-row: 2 / 3;
+
+    @include onTablet {
+      margin: 0 auto;
+      width: 280px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    @include onPhone {
+      text-align: left;
+    }
+  }
+
+  &__line {
+    width: 40%;
+    height: 2px;
+    background: rgba(52, 79, 16, 0.5);
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--r {
+      width: 50%;
+      margin-left: auto;
+
+    }
+  }
+}

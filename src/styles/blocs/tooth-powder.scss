@@ -1,0 +1,204 @@
+.tooth-powder {
+  position: relative;
+  height: 100%;
+  padding-bottom: $padding-bot-desc;
+  padding-right: 50px;
+
+  @include onTablet {
+    padding-right: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: $grid-col-desc;
+    grid-template-rows: auto auto auto auto;
+    gap: 5px;
+
+    @include onTablet {
+      padding-bottom: $padding-bot-tab;
+    }
+
+    @include onPhone {
+      padding-bottom: $padding-bot-phon;
+    }
+  }
+
+  &__header {
+    width: 380px;
+
+    grid-column: 2 / 6;
+    grid-row: 1 / 2;
+
+    @include onTablet {
+      
+      grid-column: 1 / 6;
+
+      width: 342px;
+      font-size: 24px;
+      line-height: 150%;
+    }
+
+    @include onPhone {
+      width: 300px;
+      grid-column: 1 / 13;
+    }
+  }
+
+  &__link {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onPhone {
+      grid-column: 1 / 12;
+      margin-top: 30px;
+    }
+  }
+
+  &__descr-box {
+    margin-left: auto;
+    max-width: 250px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px;
+    align-items: end;
+
+    grid-column: 6 / 9;
+    grid-row: 1 / 4;
+
+    @include onTablet {
+      grid-column: 5 / 10;
+    }
+
+    @include onPhone {
+      grid-column: 1 / 9;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__jar-options {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    width: 200px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: right;
+    color: #333;
+
+    @include onPhone {
+      width: 100%;
+    }
+  }
+
+  &__arrow {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+
+    &--line {
+      width: 75px;
+      height: 1px;
+      background-color: $text-green;
+    }
+
+    &--dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 100%;
+      background-color: $text-green;
+    }
+  }
+
+  &__jar {
+    background: url("../images/jar.png") center left / cover no-repeat;
+
+    grid-column: 9 / 13;
+    grid-row: 1 / 4;
+
+    @include onTablet {
+      grid-column: 9 / 13;
+      
+    }
+
+    @include onPhone {
+      scale: 110%;
+      grid-column: 8 / 13;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__footer-box {
+    margin-top: 200px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    grid-column: 1 / 13;
+    grid-row: 4 / 5;
+
+    @include onTablet {
+      margin-top: 130px;
+    }
+
+    @include onPhone {
+      display: block;
+      padding-right: 0;
+      margin-top: 100px;
+    }
+  }
+
+  &__items {
+    max-width: 380px;
+    margin: 0 auto;
+
+    @include onPhone {
+      width: 100%;
+      margin-bottom: 50px;
+      padding-right: 0;
+      
+    }
+
+    &--img {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      width: 80px;
+      height: 60px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      &--1 {
+        background-image: url("../images/icons/footer1.svg");
+      }
+      &--2 {
+        background-image: url("../images/icons/footer2.svg");
+      }
+      &--3 {
+        background-image: url("../images/icons/footer3.svg");
+      }
+    }
+
+    &--text {
+      font-size: 14px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+  }
+
+  &__part {
+    top: 55px;
+    left: -50px;
+  }
+}
