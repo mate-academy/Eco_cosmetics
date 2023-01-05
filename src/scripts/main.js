@@ -5,10 +5,10 @@ const email = document.querySelector('.email');
 const phone = document.querySelector('.phone');
 const textarea = document.querySelector('.message');
 
-const form = document.getElementById('form');
+const form = document.querySelector('.form');
 
-const messagesName = document.getElementById('name__error');
-const messagesEmail = document.getElementById('email__error');
+// const messagesName = document.getElementById('name__error');
+// const messagesEmail = document.getElementById('email__error');
 
 // show error function
 function showError(input, message) {
@@ -16,8 +16,8 @@ function showError(input, message) {
 
   inputControl.className = 'form__input error';
 
-  messagesName.textContent = message;
-  messagesEmail.textContent = message;
+  // messagesName.textContent = message;
+  // messagesEmail.textContent = message;
 }
 
 // shoe success function
@@ -26,8 +26,8 @@ function showSuccess(input) {
 
   inputControl.className = 'form__input success';
 
-  messagesName.textContent = '';
-  messagesEmail.textContent = '';
+  // messagesName.textContent = '';
+  // messagesEmail.textContent = '';
 }
 
 const isEmailValid = (input) => {
@@ -42,13 +42,20 @@ form.addEventListener('submit', (e) => {
 
   if (userName.value === '') {
     showError(userName, 'UserName is required');
-  } else if (userName.value.length < 3 || userName.value.length > 15) {
+  } else if (userName.value.length < 3) {
     showError(userName, 'UserName must be at least 3 chsaracters');
   } else if (userName.value.length > 15) {
     showError(userName, 'UserName must be less than 15 characters');
   } else {
     showSuccess(userName);
   }
+
+  //   console.log('userName', userName);
+  // console.log('userName value', userName.value);
+
+  // if (userName.value > 0 && userName.value.length > 3 && userName.value.length < 15) {
+  //   showSuccess(userName);
+  // }
 
   if (email.value === '') {
     showError(email, 'Email is required');
@@ -69,21 +76,21 @@ form.addEventListener('submit', (e) => {
     // userName.sfontcolor('grey');
     // userName.style.color = '#828282';
 
-    userName.classList.remove('success');
-    email.classList.remove('success');
+    // userName.classList.remove('success');
+    // email.classList.remove('success');
   }
 });
 
 userName.addEventListener('focus', () => {
   userName.classList.remove('error');
   userName.classList.remove('success');
-  messagesName.textContent = '';
+  // messagesName.textContent = '';
 });
 
 email.addEventListener('focus', () => {
   email.classList.remove('error');
   email.classList.remove('success');
-  messagesEmail.textContent = '';
+  // messagesEmail.textContent = '';
 });
 
 // ----------- menu -----------------
