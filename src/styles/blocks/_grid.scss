@@ -1,0 +1,21 @@
+.grid {
+  display: grid;
+  grid-template-columns: (2, 1fr);
+  column-gap: 20px;
+
+  @include onTablet {
+    grid-template-columns: (6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: (12, 1fr);
+    column-gap: 20px;
+  }
+
+  &__item {
+    &--2-6 {
+      grid-column: 2 / 7;
+    }
+  }
+}
