@@ -3,19 +3,39 @@
   grid-template-columns: (2, 1fr);
   column-gap: 20px;
 
-  @include onTablet {
-    grid-template-columns: (6, 1fr);
-    column-gap: 30px;
-  }
-
   @include onDesktop {
     grid-template-columns: (12, 1fr);
     column-gap: 20px;
   }
 
+  @include onTablet {
+    grid-template-columns: (12, 1fr);
+    column-gap: 20px;
+  }
+
+  &--desktop-tablet {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
   &__item {
-    &--2-6 {
-      grid-column: 2 / 7;
+    @include onDesktop {
+      &--2-6-desktop {
+        grid-column: 2 / 7;
+      }
+    }
+
+    @include onTablet {
+      &--1-3-tablet {
+        grid-column: 1 / 4;
+      }
     }
   }
 }
