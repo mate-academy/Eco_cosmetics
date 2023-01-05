@@ -96,10 +96,31 @@
   }
 
   &__copyright {
+    display: flex;
     font-weight: 600;
     font-size: 14px;
     line-height: 130%;
     text-align: center;
     color: #e4dfd3;
+    width: max-content;
+
+    @include onTablet {
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    &-desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
   }
 }
