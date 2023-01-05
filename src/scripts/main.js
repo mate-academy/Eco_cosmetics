@@ -1,9 +1,9 @@
 'use strict';
 
-const userName = document.getElementById('name');
-const email = document.getElementById('email');
-const phone = document.getElementById('phone');
-const textarea = document.getElementById('textarea');
+const userName = document.querySelector('.name');
+const email = document.querySelector('.email');
+const phone = document.querySelector('.phone');
+const textarea = document.querySelector('.message');
 
 const form = document.getElementById('form');
 
