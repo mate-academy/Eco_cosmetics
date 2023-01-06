@@ -4,31 +4,14 @@ const userName = document.querySelector('.name');
 const email = document.querySelector('.email');
 const phone = document.querySelector('.phone');
 const textarea = document.querySelector('.message');
-
 const form = document.querySelector('.form');
-
-// const messagesName = document.getElementById('name__error');
-// const messagesEmail = document.getElementById('email__error');
 
 // show error function
 function showError(input, message) {
   const inputControl = input;
 
   inputControl.className = 'form__input error';
-
-  // messagesName.textContent = message;
-  // messagesEmail.textContent = message;
 }
-
-// shoe success function
-// function showSuccess(input) {
-//   const inputControl = input;
-
-//   inputControl.className = 'form__input success';
-
-  // messagesName.textContent = '';
-  // messagesEmail.textContent = '';
-// }
 
 const isEmailValid = (input) => {
   // eslint-disable-next-line
@@ -41,39 +24,24 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   if (userName.value === '') {
-    showError(userName, 'UserName is required');
+    showError(userName);
   }
 
-  if (userName.value.length < 3) {
-    showError(userName, 'UserName must be at least 3 chsaracters');
-  }
-
-  if (userName.value.length > 15) {
-    showError(userName, 'UserName must be less than 15 characters');
-  }
-
-  // else {
-  //   showSuccess(userName);
+  // if (userName.value.length < 3) {
+  //   showError(userName, 'UserName must be at least 3 chsaracters');
   // }
 
-  //   console.log('userName', userName);
-  // console.log('userName value', userName.value);
-
-  // if (userName.value > 0 && userName.value.length > 3 && userName.value.length < 15) {
-  //   showSuccess(userName);
+  // if (userName.value.length > 15) {
+  //   showError(userName, 'UserName must be less than 15 characters');
   // }
 
-  if (email.value === '') {
-    showError(email, 'Email is required');
-  }
+  // if (email.value === '') {
+  //   showError(email, 'Email is required');
+  // }
 
   if (!isEmailValid(email.value)) {
-    showError(email, 'Email is not valid');
+    showError(email);
   }
-
-  // else {
-  //   showSuccess(email);
-  // }
 
   if (userName.value && email.value) {
     userName.value = '';
@@ -103,7 +71,7 @@ email.addEventListener('focus', () => {
   // messagesEmail.textContent = '';
 });
 
-// ----------- menu -----------------
+// --------- menu burger ---------
 
 const toggleBurger = document.querySelector('.burger');
 const closeBtn = document.querySelector('.burger-menu__close');
@@ -116,9 +84,9 @@ toggleBurger.addEventListener('click', function() {
 closeBtn.addEventListener('click', function() {
   burgerMenu.classList.remove('show-burger');
 });
-// ----------- menu -----------------
+// --------- menu burger ----------
 
-// -------------- tabs -------------
+// -------------- tabs ------------
 
 const tubs = document.querySelectorAll('.shop-tabs__item');
 const productCard = document.querySelectorAll('.product-card');
@@ -145,11 +113,13 @@ tubs.forEach(tab => {
 
 // ----------- all products btn -----
 
-const btn = document.querySelector('.shop-btn');
+const btns = document.querySelectorAll('.btn');
 const productCard2 = document.querySelectorAll('.product-card');
 
-btn.addEventListener('click', () => {
-  productCard2.forEach(card => {
-    card.classList.add('is-active');
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    productCard2.forEach(card => {
+      card.classList.add('is-active');
+    });
   });
 });
