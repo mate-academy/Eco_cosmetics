@@ -21,14 +21,14 @@ function showError(input, message) {
 }
 
 // shoe success function
-function showSuccess(input) {
-  const inputControl = input;
+// function showSuccess(input) {
+//   const inputControl = input;
 
-  inputControl.className = 'form__input success';
+//   inputControl.className = 'form__input success';
 
   // messagesName.textContent = '';
   // messagesEmail.textContent = '';
-}
+// }
 
 const isEmailValid = (input) => {
   // eslint-disable-next-line
@@ -42,13 +42,19 @@ form.addEventListener('submit', (e) => {
 
   if (userName.value === '') {
     showError(userName, 'UserName is required');
-  } else if (userName.value.length < 3) {
-    showError(userName, 'UserName must be at least 3 chsaracters');
-  } else if (userName.value.length > 15) {
-    showError(userName, 'UserName must be less than 15 characters');
-  } else {
-    showSuccess(userName);
   }
+
+  if (userName.value.length < 3) {
+    showError(userName, 'UserName must be at least 3 chsaracters');
+  }
+
+  if (userName.value.length > 15) {
+    showError(userName, 'UserName must be less than 15 characters');
+  }
+
+  // else {
+  //   showSuccess(userName);
+  // }
 
   //   console.log('userName', userName);
   // console.log('userName value', userName.value);
@@ -59,13 +65,17 @@ form.addEventListener('submit', (e) => {
 
   if (email.value === '') {
     showError(email, 'Email is required');
-  } else if (!isEmailValid(email.value)) {
-    showError(email, 'Email is not valid');
-  } else {
-    showSuccess(email);
   }
 
-  if (userName && email) {
+  if (!isEmailValid(email.value)) {
+    showError(email, 'Email is not valid');
+  }
+
+  // else {
+  //   showSuccess(email);
+  // }
+
+  if (userName.value && email.value) {
     userName.value = '';
     email.value = '';
     phone.value = '';

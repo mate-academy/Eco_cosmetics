@@ -1,23 +1,29 @@
+@mixin onDesctop {
+  @media (max-width: 1280.98px) {
+    @content;
+  }
+}
+
+@mixin onTabletMedium {
+  @media (max-width: 960.98px) {
+    @content;
+  }
+}
+
 @mixin oniPad {
-  @media (max-width: 768px) {
+  @media (max-width: 768.98px) {
     @content;
   }
 }
 
 @mixin onTablet {
-  @media (max-width: 640px) {
-    @content;
-  }
-}
-
-@mixin onDesctop {
-  @media (max-width: 1280px) {
+  @media (max-width: 640.98px) {
     @content;
   }
 }
 
 @mixin onMobile {
-  @media (max-width: 320px) {
+  @media (max-width: 320.98px) {
     @content;
   }
 }
@@ -142,6 +148,10 @@ ul, li {
   padding: 100px 0 0;
   overflow: hidden;
 
+  @include onTabletMedium() {
+    padding: 80px 0 0;
+  }
+
   @include onMobile() {
     padding: 70px 0 0;
   }
@@ -155,9 +165,13 @@ ul, li {
   align-items: center;
 
 
-  @include oniPad {
+  @include onTabletMedium() {
     margin-right: 0;
   }
+
+  // @include oniPad {
+  //   margin-right: 0;
+  // }
 
   &__pic {
     display: block;
@@ -186,9 +200,13 @@ ul, li {
     text-transform: uppercase;
     color: $green;
 
-    @include oniPad {
+    @include onTabletMedium() {
       display: none;
     }
+
+    // @include oniPad {
+    //   display: none;
+    // }
   }
 }
 
@@ -209,8 +227,15 @@ ul, li {
   margin-top: 40px;
   margin-bottom: 70px;
 
-  @include oniPad {
+  @include onTabletMedium() {
     justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+
+  }
+
+  @include oniPad {
+    // justify-content: space-between;
     margin-top: 23px;
     margin-bottom: 43px;
   }
@@ -228,6 +253,10 @@ ul, li {
 
 .nav {
   margin-right: 296px;
+
+  @include onTabletMedium() {
+    margin-right: 0px;
+  }
 
   @include oniPad {
     display: none;
@@ -285,9 +314,13 @@ ul, li {
 .hero-section {
   padding: 0 0 200px;
 
-  @include oniPad {
-    padding: 0 0 65px;
+  @include onTabletMedium() {
+    padding: 0 0 66px;
   }
+
+  // @include oniPad {
+  //   padding: 0 0 65px;
+  // }
 
   @include onTablet() {
     margin-left: 20px;
@@ -384,6 +417,10 @@ ul, li {
     line-height: 150%;
     color: #333;
 
+    @include onTabletMedium(){
+      margin-bottom: 20px;
+    }
+
     @include onMobile(){
       margin-bottom: 30px;
     }
@@ -442,7 +479,7 @@ ul, li {
 // --------- science----------
 .science-container {
   display: flex;
-  padding-left: 80px;
+  padding-left: 85px;
   align-items:flex-start;
   justify-content: space-between;
 
@@ -489,6 +526,14 @@ ul, li {
       float: left;
       margin-bottom: 100px;
       bottom: 245px;
+
+      @include onDesctop() {
+        max-width: 530px;
+      }
+
+      @include onTabletMedium() {
+        max-width: 460px;
+      }
     }
   }
 
@@ -500,7 +545,11 @@ ul, li {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: $green;
-    margin-right: 120px;
+    margin-right: 200px;
+
+    @include onTabletMedium() {
+      margin-right: 50px;
+    }
 
     @include oniPad {
       margin-right: 0;
@@ -525,6 +574,14 @@ ul, li {
       position: absolute;
       right: 0;
 
+      @include onDesctop() {
+        max-width: 630px;
+      }
+
+      @include onTabletMedium() {
+        max-width: 430px;
+      }
+
       @include oniPad {
         display: none;
       }
@@ -537,6 +594,10 @@ ul, li {
 .about {
   position: relative;
   padding-top: 200px;
+
+  @include onTabletMedium() {
+    padding-top: 150px;
+  }
 
   @include oniPad {
     padding-top: 65px;
@@ -551,6 +612,14 @@ ul, li {
   display: flex;
   margin-bottom: 100px;
   overflow: hidden;
+  justify-content: end;
+
+
+  @include onTabletMedium() {
+    // margin-righ: 30px;
+    margin-bottom: 75px;
+    padding-left: 20px;
+  }
 
   @include oniPad {
     margin-bottom: 30px;
@@ -597,6 +666,12 @@ ul, li {
   width: 380px;
   margin-right: 120px;
 
+  @include onTabletMedium() {
+    // height: 440px;
+    margin-right: 50px;
+  }
+
+
   @include oniPad {
     // height: 440px;
     margin-right: 30px;
@@ -612,6 +687,12 @@ ul, li {
 .about-left {
   width: 380px;
   margin-right: 120px;
+
+  @include onTabletMedium() {
+    // width: 342px;
+    // margin-right: 120px;
+    margin-right: 50px;
+  }
 
 
   @include oniPad {
@@ -638,9 +719,15 @@ ul, li {
     color: #333;
     margin-bottom: 30px;
 
-    @include oniPad {
+    @include onTabletMedium() {
+      // width: 342px;
+      // margin-right: 30px;
       margin-bottom: 15px;
     }
+
+    // @include oniPad {
+    //   margin-bottom: 15px;
+    // }
 
     @include onTablet() {
       font-size: 14px;
@@ -664,6 +751,10 @@ ul, li {
   height: 530px;
   display: flex;
   align-items: end;
+
+  // @include onTabletMedium() {
+  //   height: 0;
+  // }
 
   @include oniPad {
     width: 342px;
@@ -745,15 +836,27 @@ ul, li {
 .shop-container {
   display: flex;
   padding-bottom: 100px;
+  // justify-content: end;
+
+  // display: block;
+    width: 100%;
+
+    @include onTabletMedium(){
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 75px;
+      // padding-top: 75px;
+      // padding-right: 20px;
+    }
 
   @include oniPad {
     padding-bottom: 30px;
   }
 
-  @include onTablet() {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  // @include onTablet() {
+  //   padding-left: 20px;
+  //   padding-right: 20px;
+  // }
 
   @include onMobile() {
     padding-left: 0px;
@@ -833,6 +936,11 @@ ul, li {
   margin-bottom: 20px;
   display: block;
   cursor: pointer;
+
+  @include onTabletMedium() {
+    width: 382px;
+    height: 350px;
+  }
 
   @include oniPad {
     width: 342px;
@@ -967,6 +1075,10 @@ ul, li {
   display: flex;
   margin-bottom: 100px;
 
+  @include onTabletMedium() {
+    padding-left: 20px;
+  }
+
   @include onDesctop {
     margin-bottom: 75px;
   }
@@ -1040,6 +1152,12 @@ ul, li {
   padding-bottom: 100px;
   position: relative;
 
+  @include onTabletMedium() {
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+  }
+
   @include oniPad {
     padding: 65px 0;
     overflow: hidden;
@@ -1072,6 +1190,11 @@ ul, li {
 
 .tooth-title {
   margin-bottom: 205px;
+
+  @include oniPad {
+    margin-bottom: 210px;
+
+  }
 
   @include oniPad {
     margin-bottom: 310px;
@@ -1131,11 +1254,22 @@ ul, li {
   align-items: center;
   justify-content: end;
 
-  @include oniPad {
+  // @include onTabletMedium() {
+  //   margin-right: -20px;
+  // }
+
+  @include onTabletMedium() {
     position: absolute;
     right: 0;
     overflow: hidden;
+    margin-right: -100px;
   }
+
+  // @include oniPad {
+  //   position: absolute;
+  //   right: 0;
+  //   overflow: hidden;
+  // }
 
   @include onMobile() {
     position: relative;
@@ -1144,6 +1278,8 @@ ul, li {
 }
 
 .tooth-right2 {
+
+
   @include onMobile() {
     margin-right: -30px
   };
@@ -1152,6 +1288,10 @@ ul, li {
 .right-boolets {
   margin-right: 20px;
   padding: 47px 0;
+
+  @include onTabletMedium() {
+    padding: 20px 0;
+  }
 
   @include onTablet() {
     margin-right: 10px;
@@ -1218,6 +1358,11 @@ ul, li {
   height: 397px;
   // position: relative;
 
+  @include onTabletMedium() {
+    margin-right: -30px;
+    // height: 400px;
+  };
+
   @include oniPad {
     // width: 300px;
     // position: relative;
@@ -1246,6 +1391,12 @@ ul, li {
   // margin-right: 0px;
   // height: auto;
   // position: absolute;
+
+  @include onTabletMedium() {
+    width: auto;
+  //  object-fit: fill
+  };
+
   @include oniPad {
     object-position: left;
     // margin-right: -20px;
@@ -1327,6 +1478,10 @@ ul, li {
   display: flex;
   padding-bottom: 100px;
 
+  @include onTabletMedium() {
+    padding-left: 20px;
+  }
+
   @include oniPad {
     padding-top: 65px;
   }
@@ -1354,6 +1509,12 @@ ul, li {
 .contact-left {
   width: 380px;
   margin-right: 120px;
+
+  @include onTabletMedium() {
+    margin-right: 20px;
+    // width: 342px;
+    // left: 0;
+  }
 
   @include oniPad {
     margin-right: 30px;
@@ -1492,8 +1653,14 @@ ul, li {
         color: #333;
       }
 
+      &::placeholder {
+        @include oniPad {
+          font-size: 14px;
+        }
+      }
+
       @include oniPad {
-        height: 72px;
+        // height: 72px;
         margin-bottom: 30px;
         padding-top: 44px;
       }
@@ -1593,6 +1760,11 @@ ul, li {
   display: flex;
   justify-content: space-between;
   padding-right: 100px;
+
+  @include onTabletMedium (){
+    padding-left: 20px ;
+    // padding-right:20px ;
+  }
 
   @include oniPad (){
     padding-right: 0;
