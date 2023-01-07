@@ -7,7 +7,7 @@ const textarea = document.querySelector('.message');
 const form = document.querySelector('.form');
 
 // show error function
-function showError(input, message) {
+function showError(input) {
   const inputControl = input;
 
   inputControl.className = 'form__input error';
@@ -27,18 +27,6 @@ form.addEventListener('submit', (e) => {
     showError(userName);
   }
 
-  // if (userName.value.length < 3) {
-  //   showError(userName, 'UserName must be at least 3 chsaracters');
-  // }
-
-  // if (userName.value.length > 15) {
-  //   showError(userName, 'UserName must be less than 15 characters');
-  // }
-
-  // if (email.value === '') {
-  //   showError(email, 'Email is required');
-  // }
-
   if (!isEmailValid(email.value)) {
     showError(email);
   }
@@ -48,27 +36,17 @@ form.addEventListener('submit', (e) => {
     email.value = '';
     phone.value = '';
     textarea.value = '';
-
-    // userName.classList.add('your-class');
-    // userName.placeholder.style.color = 'yellow';
-    // userName.sfontcolor('grey');
-    // userName.style.color = '#828282';
-
-    // userName.classList.remove('success');
-    // email.classList.remove('success');
   }
 });
 
 userName.addEventListener('focus', () => {
   userName.classList.remove('error');
   userName.classList.remove('success');
-  // messagesName.textContent = '';
 });
 
 email.addEventListener('focus', () => {
   email.classList.remove('error');
   email.classList.remove('success');
-  // messagesEmail.textContent = '';
 });
 
 // --------- menu burger ---------
@@ -84,9 +62,8 @@ toggleBurger.addEventListener('click', function() {
 closeBtn.addEventListener('click', function() {
   burgerMenu.classList.remove('show-burger');
 });
-// --------- menu burger ----------
 
-// -------------- tabs ------------
+// ----- tabs ------
 
 const tubs = document.querySelectorAll('.shop-tabs__item');
 const productCard = document.querySelectorAll('.product-card');
@@ -109,9 +86,7 @@ tubs.forEach(tab => {
   });
 });
 
-// -------------- tabs -------------
-
-// ----------- all products btn -----
+// ---- all products btn -----
 
 const btns = document.querySelectorAll('.btn');
 const productCard2 = document.querySelectorAll('.product-card');
