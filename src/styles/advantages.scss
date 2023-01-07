@@ -1,0 +1,59 @@
+.advantages {
+
+  &__list {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+
+
+    @include onMobile() {
+      flex-direction: column;
+      gap: 50px;
+      padding-top: 112px;
+    }
+  }
+
+  &__item {
+    max-width: 380px;
+    justify-content: center;
+
+    @include oniPad {
+      max-width: 218px;
+    }
+
+    @include onMobile() {
+      margin: 0 auto;
+    }
+  }
+
+  &__img {
+    height: 70px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s;
+
+    @include onMobile() {
+      width: 79px;
+      height: 74px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000;
+    margin-top: 40px;
+
+    @include onMobile() {
+      margin-top: 20px;
+    }
+  }
+}

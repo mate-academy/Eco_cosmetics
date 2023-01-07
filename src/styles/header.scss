@@ -1,0 +1,138 @@
+.logo {
+  display: flex;
+  margin-right: 280px;
+  align-items: center;
+
+  @include onTabletMedium() {
+    margin-right: 0;
+  }
+
+  &__pic {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+
+    @include oniPad {
+      margin-right: 0;
+      width: 25px;
+      height: 25px;
+    }
+
+    @include onMobile() {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__name {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344F10;
+
+    @include onTabletMedium() {
+      display: none;
+    }
+  }
+}
+
+.burger {
+  display: none;
+
+
+  @include oniPad {
+    display: block;
+    width: 20px;
+    height: 13px;
+  }
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 70px;
+
+  @include onTabletMedium() {
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+
+  }
+
+  @include oniPad {
+    margin-top: 23px;
+    margin-bottom: 43px;
+  }
+
+  @include onTablet() {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  @include onMobile() {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+}
+
+.nav {
+  margin-right: 296px;
+
+  @include onTabletMedium() {
+    margin-right: 0px;
+  }
+
+  @include oniPad {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin-right: 40px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #344F10;
+    padding: 20px 0;
+
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    transition: all .3s ease;
+
+    &:hover {
+      border-bottom: 2px solid #344F10;;
+    }
+  }
+}
+
+.cart {
+  height: 26px;
+  right: 0;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  @include oniPad {
+    width: 16px;
+    height: 19px;
+  }
+
+  @include onMobile() {
+    width: 20px;
+    height: 24px;
+  }
+}
