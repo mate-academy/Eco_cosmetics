@@ -6,7 +6,6 @@ const phone = document.querySelector('.phone');
 const textarea = document.querySelector('.message');
 const form = document.querySelector('.form');
 
-// show error function
 function showError(input) {
   const inputControl = input;
 
