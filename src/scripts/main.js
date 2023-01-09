@@ -85,7 +85,7 @@ tubs.forEach(tab => {
   });
 });
 
-// ---- all products btn -----
+// ---- all products btn ----->
 
 const btns = document.querySelectorAll('.btn');
 const productCard2 = document.querySelectorAll('.product-card');
