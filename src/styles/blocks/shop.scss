@@ -1,0 +1,182 @@
+.shop {
+  position: relative;
+
+  @include onDesktop {
+    padding-left: $flex-padding;
+  }
+
+  &__title {
+    @extend %title;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    @include onTablet {
+      justify-content: start;
+      gap: 28px;
+      margin-bottom: 25px;
+    }
+
+    @include onDesktop {
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #828282;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    transition: all $animat-time;
+
+    @include onTablet {
+      justify-content: start;
+      gap: 28px;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    &:hover {
+      border-color: $c-gray;
+      color: $c-gray;
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      gap: 20px;
+      width: 100vw;
+      overflow: scroll;
+    }
+  }
+
+  &__element {
+    width: 100%;
+
+    @include onDesktop {
+      min-width: 380px;
+    }
+
+    &--second {
+      @include onPhone {
+        display: none;
+      }
+
+      @include onTablet {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &--third {
+      @include onPhone {
+        display: none;
+      }
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &--fourth {
+      @include onPhone {
+        display: none;
+      }
+
+      @include onTablet {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__photo-container {
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 100vw;
+
+    @include onTablet {
+      transform: translateX(0);
+      left: 0;
+      width: 100%;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &__photo {
+    height: 270px;
+    margin-bottom: 20px;
+    transition: all $animat-time;
+
+    @include onTablet {
+      height: 300px;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    transition: all $animat-time;
+
+    &:hover {
+      color: #8c9772;
+    }
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+  }
+}

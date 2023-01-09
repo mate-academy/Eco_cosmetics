@@ -1,0 +1,65 @@
+.choose {
+  @include onDesktop {
+    display: flex;
+    flex-direction: row;
+    gap: 120px;
+  }
+
+  &__block-one {
+    @extend %text16regular;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 380px;
+      padding-left: $flex-padding;
+      padding-top: 100px;
+
+      &::before {
+        display: block;
+        position: absolute;
+        width: 40%;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 1px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__block-two {
+    width: 280px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-green;
+    margin: 0 auto;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+      width: 380px;
+      text-align: left;
+      margin: 0;
+      padding: 100px 0;
+
+      &::after {
+        display: block;
+        position: absolute;
+        height: 1px;
+        background-color: rgba(52, 79, 16, 0.5);
+        width: 50%;
+        right: 0;
+        content: "";
+
+        bottom: 0;
+      }
+    }
+  }
+}

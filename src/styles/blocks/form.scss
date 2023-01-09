@@ -1,0 +1,71 @@
+.form {
+  &__field {
+    @extend %text14Regular;
+    box-sizing: border-box;
+    display: block;
+    height: 38px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+
+    font-family: "Avenir", sans-serif;
+    text-transform: capitalize;
+    color: $c-green;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      width: 342px;
+    }
+
+    @include onDesktop {
+      height: 48px;
+      width: 480px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    &:hover {
+      border-color: $c-gray;
+    }
+
+    &:focus {
+      border-color: $c-green;
+      outline: none;
+    }
+
+    &:-moz-ui-invalid {
+      color: #eb5757;
+      border-color: #eb5757;
+    }
+
+    &--textarea {
+      height: 65px;
+      resize: none;
+      position: relative;
+      color: #828282;
+
+      @include onDesktop {
+        height: 78px;
+      }
+
+      &::placeholder {
+        position: absolute;
+        bottom: 5px;
+
+        @include onDesktop {
+          bottom: 10px;
+        }
+      }
+    }
+
+    &--last {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
