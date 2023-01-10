@@ -1,5 +1,9 @@
 .shop {
   padding: 100px 0;
+
+  @include oniPhone() {
+    padding: 70px 0;
+  }
 }
 .shop-container {
   display: flex;
@@ -13,12 +17,17 @@
   @include oniPad {
     padding-bottom: 30px;
     padding-left: 0px;
-      padding-right: 0px;
+    padding-right: 0px;
   }
 
   @include onTablet() {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  @include oniPhone() {
+    justify-content: center;
+    padding-bottom: 0;
   }
 
   @include onMobile() {
@@ -28,6 +37,10 @@
 }
 
 .shop-wrapper {
+  @include oniPhone() {
+    width: 335px;
+  }
+
   @include onMobile() {
     margin-right: -20px;
   }
@@ -39,7 +52,7 @@
 }
 
 .product-card.is-active.mobile-hide{
-  @include onMobile() {
+  @include oniPhone() {
     display: none;
   }
 }
@@ -50,6 +63,10 @@
 
   @include oniPad {
     margin-bottom: 25px;
+  }
+
+  @include oniPhone() {
+    justify-content: space-between;
   }
 
   @include onMobile() {
@@ -79,13 +96,13 @@
       color: #333;
     }
 
-    @include onMobile(){
+    @include oniPhone(){
       font-weight: 400;
       font-size: 14px;
       line-height: 130%;
     }
 
-    @include onMobile() {
+    @include oniPhone() {
       margin-right: 0;
     }
   }
@@ -115,11 +132,17 @@
     height: 260px;
   }
 
-  @include onMobile(){
+  @include oniPhone(){
+    width: 100%;
+    height: 320px;
+    left: 0;
+    position: relative;
+  }
+
+  @include onMobile() {
+    margin-left: -20px;
     height: 267px;
     width: 320px;
-    position: relative;
-    margin-left: -20px;
   }
 
   &__photo {
@@ -132,7 +155,7 @@
       transform: scale(1.05);
     }
 
-    @include onMobile(){
+    @include oniPhone(){
       position: absolute;
     }
   }
@@ -150,7 +173,7 @@
     margin-bottom: 50px;
   }
 
-  @include onMobile() {
+  @include oniPhone() {
     margin-bottom: 30px;
   }
 }
@@ -167,7 +190,7 @@
 .product-card {
   display: none;
 
-  @include onMobile {
+  @include oniPhone {
     width: 100%;
   }
 
@@ -182,7 +205,7 @@
 
     display: block;
 
-    @include onMobile {
+    @include oniPhone {
       margin-bottom: 10px;
     }
   }
@@ -207,6 +230,10 @@
   display: block;
   margin: 0 auto;
 
+  @include oniPhone() {
+    margin-left: 0;
+  }
+
   @include onMobile() {
     margin-bottom: 0;
     text-align: center;
@@ -223,7 +250,7 @@
     margin-bottom: 10px;
   }
 
-  @include onMobile() {
+  @include oniPhone() {
     margin-bottom: 20px;
     text-align: center;
   }
