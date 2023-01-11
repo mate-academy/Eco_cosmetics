@@ -1,6 +1,5 @@
 .tooth-powder {
   position: relative;
-  height: 100%;
   padding-bottom: $padding-bot-desc;
   padding-right: 50px;
 
@@ -30,7 +29,6 @@
     grid-row: 1 / 2;
 
     @include onTablet {
-      
       grid-column: 1 / 6;
 
       width: 342px;
@@ -49,11 +47,11 @@
     grid-row: 3 / 4;
 
     @include onTablet {
-      grid-column: 1 / 6;
+      grid-column: 1 / 4;
     }
 
     @include onPhone {
-      grid-column: 1 / 12;
+      grid-column: 1 / 8;
       margin-top: 30px;
     }
   }
@@ -119,14 +117,15 @@
   }
 
   &__jar {
-    background: url("../images/jar.png") center left / cover no-repeat;
+    max-width: 382px;
+    height: 397px;
+    background: url("../images/jar.svg") center left / cover no-repeat;
 
     grid-column: 9 / 13;
     grid-row: 1 / 4;
 
     @include onTablet {
       grid-column: 9 / 13;
-      
     }
 
     @include onPhone {
@@ -158,33 +157,51 @@
 
   &__items {
     max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
     margin: 0 auto;
 
     @include onPhone {
       width: 100%;
       margin-bottom: 50px;
       padding-right: 0;
-      
     }
 
     &--img {
       display: block;
       margin: 0 auto;
       margin-bottom: 40px;
-      width: 80px;
-      height: 60px;
+      width: 79px;
+      height: 74px;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      transition: $time;
 
       &--1 {
+        width: 80px;
+        height: 60px;
+        margin-bottom: 54px;
         background-image: url("../images/icons/footer1.svg");
+
+        &:hover {
+          scale: 130%;
+        }
       }
       &--2 {
         background-image: url("../images/icons/footer2.svg");
+
+        &:hover {
+          scale: 130%;
+        }
       }
       &--3 {
         background-image: url("../images/icons/footer3.svg");
+
+        &:hover {
+          scale: 130%;
+        }
       }
     }
 
