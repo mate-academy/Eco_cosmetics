@@ -1,0 +1,89 @@
+.about {
+  padding-bottom: $padding-bot-mob;
+
+  @include onTab {
+    padding-bottom: $padding-bot-tab;
+  }
+
+  @include onDesk {
+    padding-bottom: $padding-bot-desk;
+  }
+
+  &__header {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+
+    @include onTab {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesk {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__descr {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+
+    @include onTab {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesk {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__p {
+    display: block;
+
+    &--active {
+      display: none;
+
+      @include onDesk {
+        display: block;
+      }
+    }
+  }
+
+  &__btn {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
+
+  @include onTab {
+    grid-column: 2 / 6;
+  }
+
+  &__img {
+    display: none;
+    width: 100%;
+    height: 100%;
+
+    @include onTab {
+      display: block;
+      background: url("../images/choos1.jpg") center / contain no-repeat;
+      grid-column: 6 / 10;
+      grid-row: 1 / 4;
+    }
+
+    @include onDesk {
+      background: url("../images/choos-desk1.jpg") center / cover no-repeat;
+      grid-column: 8 / 12;
+    }
+  }
+
+  &__img-l {
+    display: none;
+    width: 100%;
+    height: 100%;
+
+    @include onDesk {
+      display: block;
+      background: url("../images/choos-desk2.jpg") center / cover no-repeat;
+      grid-column: 12 / 15  ;
+      grid-row: 2 / 4;
+    }
+  }
+}

@@ -1,63 +1,67 @@
 .choose {
-  &__grid {
-    display: grid;
-    grid-template-columns: 85px repeat(10, 1fr) 85px;
-    grid-template-rows: 100px auto 100px;
+  padding-bottom: $padding-bot-mob;
 
-    @include onTablet {
-      padding-bottom: $padding-bot-tab;
-      display: flex;
-      margin: 0 auto;
-    }
+  @include onTab {
+    padding-bottom: $padding-bot-tab;
+  }
 
-    @include onPhone {
-      padding-bottom: $padding-bot-phon;
+  @include onDesk {
+    padding-bottom: $padding-bot-desk;
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesk {
+      display: block;
+      grid-column: 2 / 7;
+      grid-row: 2 / 3;
     }
   }
 
   &__descr {
-    max-width: 380px;
-    margin-right: 100px;
-    grid-column: 2 / 6;
-    grid-row: 2 / 3;
-
-    @include onTablet {
-      display: none;
-    }
-  }
-
-  &__subheader {
-    max-width: 380px;
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 18px;
     line-height: 150%;
-    grid-column: 7 / 11;
-    grid-row: 2 / 3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $text-green;
 
-    @include onTablet {
-      margin: 0 auto;
-      width: 280px;
+    grid-column: 2 / 4;
+
+    @include onTab {
       text-align: center;
-      font-size: 18px;
+      grid-column: 4 / 8;
     }
 
-    @include onPhone {
+    @include onDesk {
       text-align: left;
+      grid-column: 8 / 12;
+      grid-row: 2 / 3;
     }
   }
 
-  &__line {
-    width: 40%;
-    height: 2px;
-    background: rgba(52, 79, 16, 0.5);
+  &__hov {
+    display: none;
 
-    @include onTablet {
-      display: none;
+    @include onDesk {
+      display: block;
+      width: 40%;
+
+      margin-bottom: 100px;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
     }
 
     &--r {
-      width: 50%;
-      margin-left: auto;
+      display: none;
 
+      @include onDesk {
+        display: block;
+        width: 50%;
+        margin: 100px 0 0;
+        margin-left: auto;
+      }
     }
   }
 }

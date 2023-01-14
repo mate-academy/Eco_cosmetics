@@ -1,0 +1,96 @@
+.product-card {
+  
+  &__nav {
+    grid-column: 2 / -2;
+    grid-row: 1 / 2;
+  }
+
+  &__nav-desk {
+    grid-column: 1 / 14;
+    grid-row: 1 / 2;
+  }
+
+  &__name {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+
+    @include onTab {
+      grid-column: 3 / 5;
+      grid-row: 3 / 4;
+    }
+
+    @include onTab {
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__price {
+    color: $text-green;
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+
+    @include onTab {
+      grid-column: 3 / 5;
+      grid-row: 4 / 5;
+    }
+
+    @include onTab {
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    min-height: 250px;
+    background: url("../images/card-img.jpg") center / cover no-repeat;
+    grid-column: 2 / 4;
+    grid-row: 4 / 5;
+
+    @include onTab {
+      min-height: 440px;
+      grid-column: 3 / 9;
+      grid-row: 2 / 3;
+    }
+
+    @include onDesk {
+      margin-top: 60px;
+      grid-column: 2 / 8;
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+    margin-top: 30px;
+    grid-column: 2 / 4;
+    grid-row: 5 / 6;
+
+    @include onTab {
+      grid-column: 3 / 9;
+    }
+
+    @include onDesk {
+      margin: 0;
+      grid-column: 8 / 11;
+      grid-row: 3 / 5;
+    }
+  }
+
+  &__descr {
+    margin-top: 60px;
+    grid-column: 2 / 4;
+    grid-row: 6 / 7;
+
+    @include onTab {
+      grid-column: 3 / 9;
+    }
+
+    @include onDesk {
+      grid-column: 8 / 14;
+      grid-row: 2 / 3;
+    }
+  }
+}
+
+.span {
+  color: $text-green;
+}

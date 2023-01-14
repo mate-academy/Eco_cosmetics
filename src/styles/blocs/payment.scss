@@ -1,39 +1,69 @@
 .payment {
-  width: 100%;
-  height: 100vh;
-  padding: 30px 0;
-  background-color: $c-main;
-  z-index: 2;
+  &__nav {
+    grid-column: 2 / -2;
+    grid-row: 1 / 2;
+  }
+
+  &__nav-desk {
+    grid-column: 1 / -2;
+    grid-row: 1 / 2;
+  }
+
+  &__checkout {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+  }
 
   &__header {
-    margin-bottom: 30px;
-  }
-
-  &__subheader {
-    margin-bottom: 60px;
-  }
-
-  &__card {
-    margin-bottom: 35px;
-  }
-
-  &__img {
-    border: none;
-    display: block;
     margin: 0 auto;
-    width: 58px;
-    height: 33px;
-    
-    &--1 {
-      background: url("../images/icons/card.svg") center / cover no-repeat;
-    }
+    grid-column: 2 / -2;
+    grid-row: 3 / 4;
 
-    &--2 {
-      background: url("../images/icons/deliver.svg") center / cover no-repeat;
+    @include onDesk {
+      margin-top: 60px;
     }
+  }
+
+  &__descr {
+    text-transform: none;
+    margin: 30px auto 0;
+    grid-column: 2 / -2;
+    grid-row: 4 / 5;
+  }
+
+  &__option-wrapper {
+    margin: 0 auto;
+    grid-column: 2 / -2;
+    grid-row: 5 / 6;
+  }
+
+  &__option {
+    
+    margin-top: 30px;
+  }
+
+  &__option-img {
+    margin: 0 auto;
+    width: 55px;
+    height: 31px;
+    background: center / contain no-repeat;
+
+    &--1 {
+      background-image: url("../images/icons/card.svg");
+    }
+    &--2 {
+      background-image: url("../images/icons/deliver.svg");
+    }
+  }
+
+  &__option-descr {
+    margin-top: 10px;
+    text-align: center;
   }
 
   &__btn {
-    margin: 50px auto;
+    margin: 60px auto 0;
+    grid-column: 2 / -2;
+    grid-row: 6 / 7;
   }
 }

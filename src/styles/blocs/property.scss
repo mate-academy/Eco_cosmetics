@@ -1,0 +1,64 @@
+.property {
+  padding: 0 20px;
+  padding-bottom: $padding-bot-mob;
+
+  @include onTab {
+    padding: 0 30px;
+    padding-bottom: $padding-bot-tab;
+  }
+
+  @include onDesk {
+    padding: 0 50px;
+    padding-bottom: $padding-bot-desk;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @include onTab {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  &__item {
+    cursor: pointer;
+    transition: $time;
+
+    &:hover {
+      scale: 110%;
+    }
+  }
+
+  &__img {
+    margin: 0 auto;
+    width: 64px;
+    height: 60px;
+    background: center / cover no-repeat;
+
+    &--1 {
+      background-image: url("../images/icons/footer1.svg");
+    }
+
+    &--2 {
+      background-image: url("../images/icons/footer2.svg");
+    }
+
+    &--3 {
+      background-image: url("../images/icons/footer3.svg");
+    }
+  }
+
+  &__descr {
+    max-width: 280px;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
