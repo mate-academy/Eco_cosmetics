@@ -1,0 +1,72 @@
+.contacts {
+  position: relative;
+
+  @include onTablet {
+    display: flex;
+  }
+
+  &__contact-us {
+    @include onTablet {
+      width: 50%;
+    }
+
+    @include onDesktop {
+      padding-left: $flex-padding;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @extend %text14Regular;
+    max-width: 360px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__photo {
+    @extend %photo;
+    display: none;
+    height: 580px;
+    width: 50%;
+    background-position: left;
+
+    background-image: url(../images/photos/bird2.svg);
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}
