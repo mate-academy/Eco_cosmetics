@@ -8,7 +8,7 @@ form.addEventListener('submit', (event) => {
 });
 
 window.addEventListener('hashchange', () => {
-  if (window.location.hash === '#menu'
+  if (window.location.hash === '#menu' 
     || window.location.hash === '#shop-card') {
     document.body.classList.add('page__body--with--menu');
   } else {
