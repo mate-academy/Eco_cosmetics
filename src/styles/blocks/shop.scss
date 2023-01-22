@@ -1,0 +1,89 @@
+.shop {
+  overflow: hidden;
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 4;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    @extend %text2;
+    margin-bottom: 15px;
+
+    @include onTablet {
+      justify-content: start;
+      margin-bottom: 25px;
+      gap: 14px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-list;
+    @include hover(color, $c-dark);
+    transition: all 0.3s;
+
+    &--1 {
+      color: $c-dark;
+    }
+
+    &:active,
+    &--1 {
+      &::after {
+        content: "";
+        display: block;
+        background-color: $c-dark;
+        height: 2px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__cards {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 13;
+      width: calc(100% + 95px);
+      height: 100%;
+      margin-bottom: 40px;
+      gap: 20px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+  }
+}

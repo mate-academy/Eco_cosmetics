@@ -1,0 +1,95 @@
+.top-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  @include onTablet {
+    margin-bottom: 30px;
+  }
+
+  @include onDesktop {
+    height: 50px;
+    margin-bottom: 81px;
+  }
+
+  &__menu {
+    height: 24px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    height: 24px;
+    text-decoration: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      height: 50px;
+    }
+
+    @include onDesktop {
+      &::after {
+        content: "witch of mountain winds";
+        color: $c-green-2;
+        padding-left: 37px;
+        transition: all 0.3s;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+    }
+
+    &:hover::after {
+      color: $c-red;
+    }
+
+    &:hover path {
+      fill: $c-red;
+    }
+
+    &:hover circle {
+      stroke: $c-red;
+    }
+  }
+
+  &__list {
+    display: none;
+    @extend %inputs;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-green-2;
+    @include hover(color, $c-red);
+  }
+
+  &__buy {
+    height: 24px;
+
+    &--1 {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+}

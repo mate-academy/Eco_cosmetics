@@ -1,0 +1,179 @@
+.open-card {
+  overflow-y: scroll;
+  height: 100%;
+  background-color: $c-beige;
+  @extend %content;
+
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 20px;
+
+  transform: translateX(100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translate(0);
+  }
+
+  @include onTablet {
+    padding-bottom: 72px;
+  }
+
+  &__product {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__img-box {
+    position: relative;
+    width: 100%;
+    padding-bottom: 88.58%;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      grid-row: 1 / 2;
+      margin-bottom: 27px;
+      padding-bottom: 94%;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 12;
+      grid-row: 1 / 4;
+      padding-bottom: 110%;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__block {
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    @extend %h5;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 25px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__price {
+    @extend %text2;
+    color: $c-green-2;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+
+    }
+  }
+
+  &__size {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 2 / 6;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 5%;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__button {
+    margin-bottom: 50px;
+    flex-shrink: 1;
+
+    @include onTablet {
+      grid-column: 3 / 5;
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 4;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__par {
+    @extend %small-text;
+
+    &:last-child {
+      margin-top: 20px;
+
+      @include onTablet {
+        margin-top: 25px;
+      }
+
+      @include onDesktop {
+        margin-top: 10px;
+      }
+    }
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+}
