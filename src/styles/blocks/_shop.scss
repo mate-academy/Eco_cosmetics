@@ -1,8 +1,11 @@
 .shop {
-
   &__title {
     text-align: center;
     padding-bottom: 20px;
+
+    @include onTabletAndDesktop {
+      text-align: start;
+    }
   }
 
   &__nav {
@@ -38,6 +41,11 @@
     }
   }
 
+  &__photos {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__photo-container {
     position: relative;
 
@@ -52,7 +60,7 @@
     }
 
     @include onTabletAndDesktop {
-      width: 100%;
+      width: 49%;
       height: 451px;
     }
 
@@ -81,6 +89,24 @@
     }
   }
 
+  &__names {
+    display: flex;
+    width: 104%;
+    
+    &-oil {
+      width: 49%;
+    }
+
+    &-ubtan {
+      width: 49%;
+      display: none;
+
+      @include onTabletAndDesktop {
+        display: block;
+      }
+    }
+  }
+
   &__product-name {
     font-weight: bold;
     font-size: 18px;
@@ -99,5 +125,11 @@
 
   &__button {
     margin-bottom: 50px;
+
+    &-container {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
   }
 }

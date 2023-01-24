@@ -31,19 +31,64 @@
     @include onDesktop {
       padding: 0 50px 300px;
     }
-  }
 
-  &__section-title {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-    color: #344f10;
-    text-transform: uppercase;
-    padding-bottom: 15px;
+    &-title {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+      color: #344f10;
+      text-transform: uppercase;
+      padding-bottom: 20px;
 
-    @include onDesktop {
-      font-size: 36px;
-      padding-bottom: 40px;
+      @include onDesktop {
+        font-size: 36px;
+        padding-bottom: 40px;
+      }
+    }
+
+    &-text {
+      font-size: 14px;
+      color: #333;
+      width: 100%;
+      padding-bottom: 20px;
+
+      & > p:last-child {
+        padding-bottom: 30px;
+
+        @include onDesktop {
+          padding-bottom: 40px;
+        }
+      }
+
+      @include onTabletAndDesktop {
+        font-size: 16px;
+      }
+
+      &-desktop {
+        display: none;
+
+        @include onDesktop {
+          display: grid;
+        }
+      }
+    }
+
+    &-link {
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #344f10;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 86px;
+        height: 1px;
+        background-color: #344f10;
+        margin-bottom: 30px;
+        margin-top: 10px;
+      }
     }
   }
+
 }
