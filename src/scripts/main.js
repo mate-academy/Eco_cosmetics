@@ -12,6 +12,8 @@ window.addEventListener('hashchange', () => {
     window.location.hash === '#menu'
     || window.location.hash === '#shop-card'
     || window.location.hash === '#shipping'
+    || window.location.hash === '#payment'
+    || window.location.hash === '#confirm'
   ) {
     document.body.classList.add('page__body--with--menu');
   } else {
