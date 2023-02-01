@@ -1,0 +1,53 @@
+.top-actions {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  padding: 16px 0 20px;
+
+  @include onTablet {
+    padding: 24px 0 32px;
+  }
+
+  @include onDesktop {
+    padding: 40px 0 80px;
+  }
+
+  &__menu-icon {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: none;
+    position: absolute;
+    left: calc(50% + 10px);
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 40px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    color: $c-green;
+    @extend %menu;
+  }
+}
