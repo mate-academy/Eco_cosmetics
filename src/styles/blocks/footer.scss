@@ -1,0 +1,140 @@
+.footer {
+  background: rgba(52, 79, 16, 0.5);
+  padding: 30px 0 40px;
+  height: 468px;
+  box-sizing: border-box;
+
+  @include onTablet {
+    height: 264px;
+    padding: 30px 0;
+  }
+
+  @include onDesktop {
+    height: 320px;
+    padding: 60px 0;
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+  }
+
+  &__info {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+    
+    &--text {
+      font-size: 14px;
+      line-height: 150%;
+      color: $color-background;
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 7px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 16px;
+        font-size: 16px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &--link {
+      box-sizing: border-box;
+      display: block;
+      text-decoration: none;
+      transition: color $duration;
+
+      &:hover {
+        color: $color-green;
+      }
+    }
+  }
+
+  &__image--facebook {
+    height: 20px;
+    width: 20px;
+    padding-right: 20px;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__image--instagram {
+    height: 20px;
+    width: 20px;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__image--mob {
+    display: flex;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__image--desk {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__end {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: $color-background;
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      text-align: start;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    &--mob {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tab {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desk {
+      display: none;
+      @include onDesktop {
+        display: grid;
+      }
+    }
+  }
+}

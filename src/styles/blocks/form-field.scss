@@ -1,0 +1,52 @@
+.form-field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  color: $color-green;
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+  padding-bottom: 5px;
+
+  @include onDesktop {
+    padding-bottom: 10px;
+  }
+  transition: all $duration;
+
+  &::placeholder {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #828282;
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-bottom: 1px solid $color-gray;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-green;
+  }
+
+  &:focus:valid {
+    border-color: $color-green;
+    color: $color-green;
+  }
+
+  &:focus:invalid {
+    border-color: #eb5757;
+    color: #eb5757;
+  }
+
+  &--text {
+    resize: none;
+    font-family: inherit;
+  }
+}

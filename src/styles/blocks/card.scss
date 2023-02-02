@@ -1,0 +1,36 @@
+.card {
+  scroll-behavior: smooth;
+  z-index: 1;
+  background-color: $color-background;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__top {
+    @include top-action;
+  }
+
+  &__content {
+    overflow: scroll;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: $header-top-padding-mob 0 0;
+
+    @include onTablet {
+      padding: $header-top-padding-tab 0 0;
+    }
+  }
+
+  &__product {
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin: 0 auto 60px;
+    }
+  }
+}

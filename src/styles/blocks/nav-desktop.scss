@@ -1,0 +1,61 @@
+.nav-desktop {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    margin-bottom: 11px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+    @include onDesktop {
+      margin: 0 40px 0 0;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $color-green;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all $duration;
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+    }
+    
+    &:hover {
+      color: $color-green;
+
+      @include onDesktop {
+        border-bottom: 2px solid $color-green;
+        padding-bottom: 12px;
+      }
+    }
+
+    &--footer {
+      color: $color-background;
+    }
+  }
+}
