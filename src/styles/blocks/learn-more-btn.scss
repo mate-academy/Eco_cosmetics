@@ -1,0 +1,32 @@
+.learn-more-btn {
+  display: inline-block;
+  width: fit-content;
+
+  @extend %decorative-text;
+  text-transform: uppercase;
+
+  color: $oliveColor;
+
+  &::after {
+    content: "";
+
+    display: block;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+
+    margin-top: 10px;
+
+    background-color: $oliveColor;
+
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  @include active(transform, scale(0.95));
+}

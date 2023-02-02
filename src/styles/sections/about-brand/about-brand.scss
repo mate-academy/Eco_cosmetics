@@ -1,0 +1,91 @@
+.about-brand {
+  @extend %container;
+
+  @extend .grid;
+
+  &__title-decoration {
+    display: none;
+
+    @extend .grid__item--desktop-1-1;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__main {
+    @extend .grid__item--tablet-1-3;
+    @extend .grid__item--desktop-2-5;
+  }
+
+  &__title {
+    @extend %section-title;
+
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+
+    @include onTheDesign {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    @extend %p;
+
+    margin-bottom: 30px;
+  }
+
+  &__description-addition {
+    display: none;
+    @extend %p;
+
+    @include onDesktop {
+      display: block;
+
+      margin-bottom: 40px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include photo(0, 0);
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--main {
+      @extend .grid__item--tablet-4-6;
+      @extend .grid__item--desktop-7-11;
+
+      @include onTablet {
+        width: calc(100% + #{$tabletHorzPaddings});
+        height: 318px;
+      }
+
+      @include onDesktop {
+        width: 100%;
+        height: 529px;
+      }
+    }
+
+    &--secondary {
+      @extend .grid__item--desktop-12-12;
+
+      @include onDesktop {
+        align-self: end;
+
+        width: calc(100% + #{$desktopHorzPaddings});
+        height: 430px;
+      }
+
+      @include onTheDesign {
+        width: calc(100% + #{$theDesignHorzPaddings});
+      }
+    }
+  }
+}

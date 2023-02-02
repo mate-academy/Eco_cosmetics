@@ -1,0 +1,83 @@
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 15px;
+
+  @include onTablet {
+    padding-top: 23px;
+  }
+
+  @include onDesktop {
+    padding-top: 40px;
+  }
+
+  &__link {
+    @include hover(transform,scale(1.15));
+
+    @include onDesktop {
+      @include hover(transform,scale(1.1));
+    }
+
+    &--menu {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--home {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: "witch of mountain winds";
+        display: none;
+
+        font-family: $mainFontFamily;
+        @extend %secondary-text;
+
+        color: $oliveColor;
+
+        margin-left: 12px;
+
+        @include onDesktop {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__menu-icon {
+    width: 20px;
+    height: 13px;
+  }
+
+  &__home-icon {
+    width: 24px;
+    height: 24px;
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__basket-icon {
+    width: 20px;
+    height: 24px;
+
+    @include onDesktop {
+      width: 22px;
+      height: 26px;
+    }
+  }
+}

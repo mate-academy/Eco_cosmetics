@@ -1,0 +1,81 @@
+.payment-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title,
+  &__method-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    color: $blackColor;
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__methods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    cursor: pointer;
+  }
+
+  &__method-photo {
+    margin-bottom: 15px;
+
+    &--credit-card {
+      width: 55px;
+      height: 31px;
+    }
+
+    &--truck {
+      width: 53.5em;
+      height: 31px;
+    }
+
+    &--checked {
+      display: none;
+    }
+
+    &--unchecked {
+      display: block;
+    }
+
+    @include onTablet {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__method-input {
+    display: none;
+
+    
+    &:checked + * .payment-selection__method-photo--unchecked {
+      display: none;
+    }
+
+    &:checked + * .payment-selection__method-photo--checked {
+      display: block;
+    }
+
+    &:checked + * .payment-selection__method-title {
+      color: $oliveColor;
+    }
+  }
+}

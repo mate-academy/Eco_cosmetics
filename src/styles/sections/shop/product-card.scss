@@ -1,0 +1,51 @@
+.product-card {
+  color: $blackColor;
+
+  &__photo {
+    @include photo(calc(100% + #{$mobileHorzPaddings*2}), 267px);
+
+    margin-left: #{-$mobileHorzPaddings};
+    margin-bottom: 20px;
+
+    @include onTablet {
+      width: 100%;
+      min-width: 335px;
+      height: 300px;
+
+      margin-left: 0;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+  }
+
+  &__title {
+    @extend %h4;
+
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+
+    list-style-position: 0.5em;
+    text-transform: uppercase;
+  }
+
+  &__weight,
+  &__ingredients,
+  &__application {
+    display: none;
+  }
+}

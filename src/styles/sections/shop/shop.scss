@@ -1,0 +1,104 @@
+.shop {
+  @extend %container;
+
+  @extend .grid;
+
+  position: relative;
+
+  &__title-decoration {
+    display: none;
+
+    @extend .grid__item--desktop-1-1;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    @extend %section-title;
+
+    text-align: center;
+
+    @extend .grid__item--tablet-1-2;
+    @extend .grid__item--desktop-2-3;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__shopping-categories {
+    @extend .grid__item--tablet-1-6;
+    @extend .grid__item--desktop-2-12;
+
+    margin-bottom: 27px;
+
+    @include onTablet {
+      margin-bottom: 37px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 62px;
+    }
+  }
+
+  &__product-cards-container {
+    display: contents;
+  }
+
+  &__product-cards {
+    width: 100%;
+
+    @extend .grid__item--tablet-1-6;
+    @extend .grid__item--desktop-2-12;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      width: auto;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      overflow-x: visible;
+    }
+  }
+
+  &__button {
+    @extend .grid__item--tablet-1-6;
+    @extend .grid__item--desktop-2-12;
+
+    @include onTablet {
+      justify-self: center;
+    }
+  }
+
+  &__goods-card,
+  &__shipping,
+  &__payment,
+  &__confirmation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 100%;
+    overflow-y: auto;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

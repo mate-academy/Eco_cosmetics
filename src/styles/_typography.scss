@@ -1,3 +1,78 @@
-h1 {
-  @extend %h1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+}
+
+%h1 {
+  font-size: 24px;
+  line-height: 130%;
+
+  @include onTablet {
+    font-size: 36px;
+    line-height: 150%;
+    
+    text-transform: capitalize;
+  }
+
+  @include onDesktop {
+    font-size: 60px;
+    line-height: 130%;
+
+    text-transform: none;
+  }
+}
+
+%h2 {
+  font-size: 18px;
+  line-height: 150%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  @include onDesktop {
+    font-size: 24px;
+  }
+}
+
+%h4 {
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+%h5 {
+  font-size: 16px;
+  line-height: 150%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+%h6 {
+  font-size: 16px;
+  line-height: 150%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 14px;
+  }
+}
+
+%p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+
+  color: $blackColor;
+
+  @include onTablet {
+    font-size: 16px;
+  }
 }
