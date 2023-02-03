@@ -1,0 +1,120 @@
+.input {
+  @include hover("border-bottom-color", $black);
+  height: 2rem;
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+  outline: none;
+  border-radius: 0;
+  font-size: 112.5%;
+
+  &::placeholder {
+    font-family: "Sharp", sans-serif;
+    font-size: 87.5%;
+    line-height: 131.25%;
+    color: #828282;
+  }
+
+  &:focus {
+    border-bottom-color: $black;
+  }
+
+  &:valid {
+    color: $green;
+    border-bottom-color: $green;
+  }
+
+  &:invalid {
+    color: #eb5757;
+    border-bottom-color: #eb5757;
+  }
+
+  &:active {
+    color: $green;
+  }
+}
+
+.button-fill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.15rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 16px;
+  color: $gray-10;
+  background-color: $black;
+  padding: 1.25rem 0;
+  border: 1px solid $black;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: $black;
+    background-color: inherit;
+  }
+}
+
+.button-empty-lowwer {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  padding-bottom: 12px;
+  color: $green;
+  transition: all 0.3s;
+
+  &::after {
+    transition: all 0.3s;
+    display: block;
+    position: absolute;
+    content: "";
+    top: 14px;
+    height: 1px;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  &:hover {
+    transition: all 0.3s;
+    &::after {
+      top: 100%;
+      background-color: $green;
+    }
+  }
+}
+
+.button-empty-capitalize {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  padding-bottom: 20px;
+  color: #828282;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  &::after {
+    transition: all 0.3s;
+    display: block;
+    position: absolute;
+    content: "";
+    top: 18px;
+    height: 1px;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  &:hover {
+    transition: all 0.3s;
+    color: $black;
+    &::after {
+      top: 100%;
+      background-color: $black;
+    }
+  }
+}
