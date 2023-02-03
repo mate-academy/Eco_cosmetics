@@ -102,43 +102,9 @@ contactForm.addEventListener('submit', function(event) {
   contactForm.reset();
 });
 
-const textAreaMessage = document.getElementById('contact-form-message');
-let messageLastScrollHeight = textAreaMessage.scrollHeight;
-
-textAreaMessage.oninput = function() {
-  let rows = parseInt(textAreaMessage.getAttribute('rows'));
-
-  if (textAreaMessage.scrollHeight > messageLastScrollHeight) {
-    rows++;
-  } else if (textAreaMessage.scrollHeight < messageLastScrollHeight) {
-    rows--;
-  }
-
-  messageLastScrollHeight = textAreaMessage.scrollHeight;
-  textAreaMessage.setAttribute('rows', rows);
-};
-
 const buyingForm = document.querySelector('.buying-form');
 const shippingButton = document.querySelector('.shipping__next-button');
 
 shippingButton.addEventListener('click', function() {
   buyingForm.reset();
 });
-
-const contactFormInputs = document.querySelectorAll('.form__field');
-const buyingFormInputs = document.querySelectorAll('.buying-form__input-field');
-
-changeInputStyle(contactFormInputs, 'form__field--filled');
-changeInputStyle(buyingFormInputs, 'buying-form__input-field--filled');
-
-function changeInputStyle(inputs, classForFilledInputs) {
-  for (let i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener('change', function() {
-      if (inputs[i].value.length !== 0) {
-        inputs[i].classList.add(classForFilledInputs);
-      } else {
-        inputs[i].classList.remove(classForFilledInputs);
-      }
-    });
-  }
-}
