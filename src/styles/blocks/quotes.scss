@@ -1,0 +1,67 @@
+.quoutes {
+  position: relative;
+
+  &__text {
+    display: none;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #333333;
+
+    @include onDesktop {
+      display: block;
+      padding-top: 100px;
+    }
+  }
+
+  &__text--2 {
+    margin: 0 auto;
+
+    font-weight: 600;
+    font-size: 18px;
+
+    line-height: 150%;
+    text-align: left;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #344F10;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      padding: 100px 0 130px;
+
+      font-size: 24px;
+    }
+  }
+
+  @include onDesktop {
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+
+      width: 45%;
+      height: 1px;
+
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+
+      width: 45%;
+      height: 1px;
+
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+}
