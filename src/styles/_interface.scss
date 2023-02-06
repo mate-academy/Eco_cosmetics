@@ -71,23 +71,25 @@
     display: block;
     position: absolute;
     content: "";
-    top: 14px;
+    bottom: 0;
     height: 1px;
     width: 100%;
-    background-color: transparent;
+    background-color: $green;
   }
 
   &:hover {
     transition: all 0.3s;
     &::after {
-      top: 100%;
-      background-color: $green;
+      bottom: 14px;
+      background-color: transparent;
     }
   }
 }
 
 .button-empty-capitalize {
-  display: inline-flex;
+  display: inline-block;
+  width: min-content;
+  white-space: nowrap;
   align-items: center;
   position: relative;
   font-weight: 600;
@@ -98,6 +100,7 @@
   color: #828282;
   text-transform: uppercase;
   transition: all 0.3s;
+
   &::after {
     transition: all 0.3s;
     display: block;
@@ -116,5 +119,33 @@
       top: 100%;
       background-color: $black;
     }
+  }
+}
+
+.decor {
+  pointer-events: none;
+  user-select: none;
+  position: relative;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  writing-mode: vertical-lr;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: $green;
+
+  &:before {
+    top: -110px;
+    left: 9px;
+    display: block;
+    position: absolute;
+    height: 100px;
+    width: 1px;
+    content: "";
+    background-color: $green;
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
   }
 }
