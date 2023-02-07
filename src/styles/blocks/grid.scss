@@ -12,6 +12,10 @@
     column-gap: 20px;
   }
 
+  &__row--tablet {
+    grid-row: 1;
+  }
+  
   &--desktop {
     display: block;
 
@@ -20,7 +24,20 @@
     }
   }
 
+  &--tablet {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
   &__item {
+
+    &--end {
+      align-self: end;
+    }
+
     @include onTablet {
       @for $start from 1 through 6 {
         @for $end from $start through 6 {

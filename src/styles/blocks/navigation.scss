@@ -1,7 +1,6 @@
 .nav {
   &__list {
     display: none;
-    margin: 0;
 
     @include onDesktop {
       display: flex;
@@ -18,22 +17,21 @@
     position: relative;
 
     font-weight: 500;
-    font-size: 18px;
-    line-height: 150%;
+    @extend %mediumText;
 
     text-decoration: none;
-    color: #344F10;
+    color: $c-green;
 
     &::after {
-      content:'';
+      content: "";
       display: block;
       position: absolute;
 
       height: 2px;
       width: 0;
 
-      background-color: #344F10;
-      transition-duration: 0.3s;
+      background-color: $c-green;
+      transition: width 0.3s;
     }
 
     &:hover::after {
