@@ -1,0 +1,54 @@
+.menu {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  padding: 20px 0;
+  grid-template-rows: 124px auto;
+  transition: $time;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include onDesk {
+    display: none;
+  }
+
+  &__close {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url("../images/icons/close.svg") center / contain no-repeat;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    &:hover {
+      scale: 105%;
+    }
+  }
+
+  &__wrapper {
+    grid-column: 2 / -2;
+    grid-row: 2 / 3;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    margin-bottom: 40px;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    text-decoration: none;
+    text-align: center;
+    color: #e4dfd3;
+    border-bottom: 1px solid #e4dfd3;
+  }
+}

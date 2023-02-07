@@ -1,0 +1,121 @@
+.footer {
+  padding: 35px 0;
+  background-color: $bg-footer;
+
+  @include onDesk {
+    padding: 65px 0;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    @include onDesk {
+      flex-direction: row;
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__links {
+    height: 30px;
+    color: $footer-text;
+    border: 1px solid inherit;
+
+    &:hover {
+      border-bottom: 1px solid $footer-text;
+    }
+  }
+
+  &__social {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    @include onDesk {
+      grid-column: 9 / 11;
+    }
+  }
+
+  &__fb {
+    background: url("../images/icons/facebook.svg") center / cover no-repeat;
+    transition: $time;
+    
+    &:hover {
+      scale: 120%;
+    }
+  }
+
+  &__insta {
+    background: url("../images/icons/Instagram.svg") center / cover no-repeat;
+    transition: $time;
+    
+    &:hover {
+      scale: 120%;
+    }
+  }
+
+  &__info-wrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+
+    @include onTab {
+      margin-top: 0;
+      grid-column: 6 / 10;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesk {
+      grid-column: 9 / 14;
+    }
+  }
+
+  &__info {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $footer-text;
+  }
+
+  &__descr {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    color: $footer-text;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    grid-column: 2 / 4;
+    grid-row: 4 / 5;
+
+    @include onTab {
+      margin-top: 0;
+      justify-self: start;
+      grid-column: 2 / 6;
+    }
+
+    @include onDesk {
+      grid-row: 2 / 3;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 11px;
+      height: 11px;
+      background: url("../images/icons/c.svg") center / cover no-repeat;
+    }
+  }
+}
