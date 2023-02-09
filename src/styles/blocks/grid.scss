@@ -15,19 +15,21 @@
   &__row--tablet {
     grid-row: 1;
   }
-  
+
+  &__row--desktop {
+    @include onDesktop {
+      grid-row: 1;
+    }
+  }
+
+  &__footer {
+    grid-auto-flow: column;
+  }
+
   &--desktop {
     display: block;
 
     @include onDesktop {
-      display: grid;
-    }
-  }
-
-  &--tablet {
-    display: block;
-
-    @include onTablet {
       display: grid;
     }
   }

@@ -5,6 +5,7 @@
 
   @include onTablet {
     margin-bottom: 130px;
+    padding-top: 27px;
   }
 
   @include onDesktop {
@@ -17,17 +18,12 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 20px;
     margin-bottom: 20px;
-
-    @include onDesktop {
-      padding: 0;
-    }
   }
 
   &__menu--opener {
     display: block;
-    height: 15px;
+    height: 16px;
 
     background-image: url(../images/menu.svg);
 
@@ -42,4 +38,100 @@
 
     background-image: url(../images/shopper.svg);
   }
+
+  &__photo-container {
+    display: flex;
+    height: 100%;
+
+
+  }
+
+  &__photo {
+    display: block;
+
+    width: 100%;
+    min-height: 267px;
+
+    object-fit: cover;
+
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: 50px;
+    }
+  }
+
+  &__description {
+    text-align: center;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      max-width: 480px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+
+    color: $c-dark-gray;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+
+      text-transform: capitalize;
+    }
+
+    @include onDesktop {
+      max-width: 480px;
+      margin-bottom: 30px;
+
+      text-align: left;
+      font-size: 60px;
+      text-transform: none;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 30px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    color: $c-dark-gray;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      max-width: 480px;
+
+      text-align: left;
+    }
+  }
+
+  &__shop-button {
+    margin: 0 auto 100px;
+
+    @include onTablet {
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
 }
+
