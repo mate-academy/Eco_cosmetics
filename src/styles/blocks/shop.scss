@@ -68,10 +68,11 @@
     &::after {
       content: "";
       position: absolute;
-      height: 2px;
-      width: 0%;
       left: 0;
       bottom: 0;
+
+      height: 2px;
+      width: 0;
 
       background-color: $c-dark-gray;
       transition: width 0.3s;
@@ -97,15 +98,6 @@
     @media (min-width:500px) {
       max-height: 500px;
     }
-
-    transition: transform 0.3s;
-
-    @include onDesktop {
-      &:hover {
-        transform: scale(105%);
-        cursor: pointer;
-      }
-    }
   }
 
   &__photo {
@@ -119,9 +111,19 @@
     @include onDesktop {
       min-height: 500px;
     }
+
+    transition: transform 0.3s;
+
+    @include onDesktop {
+      &:hover {
+        transform: scale(105%) translateX(-20px);
+        cursor: pointer;
+      }
+    }
   }
 
   &__product-name {
+    display: inline-block;
     padding-top: 20px;
 
     @extend %mediumText;
@@ -133,7 +135,7 @@
 
     &:hover {
       cursor: pointer;
-      color: $c-green;
+      color: $c-dark-beige;
     }
   }
 
