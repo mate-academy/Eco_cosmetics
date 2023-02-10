@@ -9,7 +9,7 @@ window.addEventListener('hashchange', () => {
 });
 
 const form = document.querySelector('.form');
-const inputs = document.querySelectorAll('.form-field');
+const inputs = document.querySelectorAll('.form__field');
 
 function handler(event) {
   event.preventDefault();
