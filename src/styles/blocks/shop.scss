@@ -87,6 +87,16 @@
     }
   }
 
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: background-color 0.3s ease;
+  }
+
   &__photo-container {
     display: flex;
     position: relative;
@@ -108,32 +118,22 @@
 
       background-color: rgba(0, 0, 0, 0.3);
     }
-
-    &:hover .shop__hover-button {
-      opacity: 1;
-    }
-  }
-
-  &__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    transition: background-color 0.3s ease;
   }
 
   &__hover-button {
     position: absolute;
     width: 100%;
-    left:0;
+    left: 0;
     top: 50%;
 
     text-align: center;
     opacity: 0;
 
-    transition: opacity .3s ease, transform .3s;
+    transition: opacity 0.3s ease, transform 0.3s;
+  }
+
+  &__photo-container:hover .shop__hover-button {
+    opacity: 1;
   }
 
   &__hover-link {
