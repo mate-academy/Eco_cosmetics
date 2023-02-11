@@ -89,7 +89,10 @@
 
   &__photo-container {
     display: flex;
+    position: relative;
+
     max-height: 267px;
+    width: 100%;
 
     @media (min-width:350px) {
       max-height: 350px;
@@ -98,9 +101,54 @@
     @media (min-width:500px) {
       max-height: 500px;
     }
+
+    &:hover .shop__overlay {
+      display: block;
+      cursor: pointer;
+
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover .shop__hover-button {
+      opacity: 1;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: background-color 0.3s ease;
+  }
+
+  &__hover-button {
+    position: absolute;
+    width: 100%;
+    left:0;
+    top: 50%;
+
+    text-align: center;
+    opacity: 0;
+
+    transition: opacity .3s ease, transform .3s;
+  }
+
+  &__hover-link {
+    padding: 15px 40px;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: $c-main;
+    border: 1px solid $c-main;
   }
 
   &__photo {
+    position: relative;
     object-fit: cover;
     width: 100%;
 
@@ -110,15 +158,6 @@
 
     @include onDesktop {
       min-height: 500px;
-    }
-
-    transition: transform 0.3s;
-
-    @include onDesktop {
-      &:hover {
-        transform: scale(105%) translateX(-20px);
-        cursor: pointer;
-      }
     }
   }
 
