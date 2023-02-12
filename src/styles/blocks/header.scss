@@ -1,0 +1,170 @@
+.header {
+  padding: 15px 0 0;
+
+  @include onTablet {
+    padding: 23px 0 0;
+  }
+
+  @include onDesktop {
+    padding: 40px 0 200px;
+
+    &--shop {
+      padding: 40px 0 0;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding-bottom: 30px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 70px;
+    }
+  }
+
+  &__icon {
+    @extend %photo;
+    display: block;
+    height: 13px;
+    width: 20px;
+    background-image: url(../images/nav/menu_icon.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__big-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__logo {
+    @extend %photo;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/nav/menu_logo.svg);
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__point {
+    display: none;
+    @extend %text14regular18;
+
+    @include onDesktop {
+      display: block;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-basic-page;
+    }
+  }
+
+  &__basket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-menu {
+      @extend %photo;
+      display: block;
+      height: 24px;
+      width: 20px;
+      background-image: url(../images/nav/menu_basket.svg);
+    }
+
+    @include onTablet {
+      height: 24px;
+      width: 24px;
+    }
+
+    @include onDesktop {
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  &__photo {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+
+    @include onTablet {
+      display: grid;
+      width: 100%;
+      margin-left: 0;
+      max-height: 600px;
+      object-fit: cover;
+      object-position: center;
+      padding: 0 0 25px;
+
+      @include onDesktop {
+        padding: 0 0 50px;
+        width: 580px;
+      }
+    }
+  }
+
+  &__block {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      gap: 20px;
+    }
+  }
+
+  &__info {
+
+    @include onDesktop {
+      margin-left: 100px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      margin: 0 auto;
+      max-width: 466px;
+      padding-bottom: 30px;
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      line-height: 74px;
+      text-align: start;
+    }
+  }
+
+  &__subtitle {
+    @extend %text16regular;
+    text-align: center;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      text-align: start;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.page {
+  font-family: "Avenir", sans-serif;
+  background: $color-page-bcgd;
+  scroll-behavior: smooth;
+  color: $color-total_page;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform $animation-time;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__about {
+    padding-bottom: 10px;
+
+    @include onDesktop {
+      margin: 200px 0 0;
+    }
+  }
+
+  &__shop {
+    margin: 110px 0 0;
+
+    @include onTablet {
+      margin: 130px 0;
+    }
+
+    @include onDesktop {
+      margin: 200px 0;
+    }
+  }
+
+  &__creators {
+    margin: 100px 0;
+
+    @include onTablet {
+      margin: 130px 0;
+    }
+
+    @include onDesktop {
+      margin: 200px 0;
+    }
+  }
+
+  &__tooth-powder {
+    margin: 0 0 110px;
+
+    @include onTablet {
+      margin: 0 0 150px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 220px;
+    }
+  }
+
+  &__contacts {
+    margin: 100px 0;
+
+    @include onTablet {
+      margin: 130px 0;
+    }
+
+    @include onDesktop {
+      margin: 200px 0;
+    }
+  }
+}

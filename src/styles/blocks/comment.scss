@@ -1,0 +1,42 @@
+.comment {
+  display: none;
+
+  @include onDesktop {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -18px;
+    transform: rotate(-90deg) translateX(-50%);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-with-opacity;
+
+    &__shop {
+      left: 42px;
+    }
+
+    &__creators {
+      left: 0;
+    }
+
+    &__tooth-powder {
+      left: 24px;
+    }
+
+    &__contacts {
+      left: 44px;
+    }
+
+    &::before {
+      position: absolute;
+      transform: translateX(-110%) translateY(10px);
+      display: block;
+      content: "";
+      height: 1px;
+      width: 100px;
+      align-items: center;
+      background-color: $color-with-opacity;
+    }
+  }
+}
