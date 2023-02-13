@@ -28,6 +28,15 @@
     }
   }
 
+  &__half2 {
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      width: 49%;
+    }
+  }
+
   &__icon {
     @extend %photo;
     display: block;
@@ -79,6 +88,7 @@
 
     &-menu {
       @extend %photo;
+      background-size: contain;
       display: block;
       height: 24px;
       width: 20px;
@@ -99,15 +109,16 @@
   &__photo {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    padding: 0 0 25px;
 
     @include onTablet {
       display: grid;
       width: 100%;
       margin-left: 0;
+      padding: 0 0 50px;
       max-height: 600px;
       object-fit: cover;
       object-position: center;
-      padding: 0 0 25px;
 
       @include onDesktop {
         padding: 0 0 50px;
@@ -142,15 +153,17 @@
     @include onTablet {
       margin: 0 auto;
       max-width: 466px;
-      padding-bottom: 30px;
       font-size: 36px;
       line-height: 54px;
+      text-transform: capitalize;
     }
 
     @include onDesktop {
       font-size: 60px;
       line-height: 74px;
       text-align: start;
+      padding-bottom: 30px;
+      text-transform: none;
     }
   }
 
