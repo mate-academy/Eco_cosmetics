@@ -28,7 +28,7 @@ window.addEventListener('load', (events) => {
       document.querySelector('.popup-image').src
         = el.childNodes[1].childNodes[5].src;
       popup.classList.add('show');
-      body.style.overflow = 'hidden';
+      body.style.overflowY = 'hidden';
     }, true);
   });
 
@@ -36,7 +36,7 @@ window.addEventListener('load', (events) => {
     if (event.target === popup
       || event.target.classList.contains('close-popup')) {
       popup.classList.remove('show');
-      body.style.overflow = 'scroll';
+      body.style.overflowY = 'scroll';
     }
   });
 
