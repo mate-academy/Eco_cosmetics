@@ -1,5 +1,4 @@
 .input {
-  @include hover("border-bottom-color", $black);
   height: 2rem;
   background-color: inherit;
   border: none;
@@ -7,30 +6,39 @@
   outline: none;
   border-radius: 0;
   font-size: 112.5%;
+  color: #828282;
+  font-family: "Sharp", sans-serif;
+  font-weight: 600;
 
   &::placeholder {
     font-family: "Sharp", sans-serif;
     font-size: 87.5%;
     line-height: 131.25%;
     color: #828282;
+    font-weight: 400;
   }
 
   &:focus {
     border-bottom-color: $black;
+    color: $black;
   }
 
   &:valid {
+    &::placeholder {
+      color: $green;
+    }
+
     color: $green;
     border-bottom-color: $green;
   }
 
-  &:invalid {
+  &:focus:invalid {
+    &::placeholder {
+      color: #eb5757;
+    }
+
     color: #eb5757;
     border-bottom-color: #eb5757;
-  }
-
-  &:active {
-    color: $green;
   }
 }
 
