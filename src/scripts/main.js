@@ -3,6 +3,7 @@
 window.addEventListener('load', (events) => {
   const shopSlides = document.querySelectorAll('.shop__slide');
   const shopIcon = document.querySelectorAll('.opencart');
+  const shopIconFixed = document.querySelector('.fixedCart');
   const closeIcon = document.querySelector('.close-cart');
   const popup = document.querySelector('.popup');
   const cart = document.querySelector('.cart-out');
@@ -45,6 +46,15 @@ window.addEventListener('load', (events) => {
 
     const products = document.querySelector('.shop__allproducts');
 
+    if (products.style.width === '100%') {
+      products.style.borderBottomColor = 'transparent';
+      products.style.overflow = 'hidden';
+      products.style.width = '0';
+      products.style.height = '0';
+
+      return;
+    }
+
     products.style.width = '100%';
 
     setTimeout(() => {
@@ -75,11 +85,18 @@ window.addEventListener('load', (events) => {
 
   const buyButton = document.querySelectorAll('.product__button');
   const cartCounter = document.querySelector('.card-counter');
+  const cartCounterFixed = document.querySelector('.card-counter-f');
 
   cartCounter.style.opacity = 0;
+  cartCounterFixed.style.opacity = 0;
 
   const buyButtonCounter = [];
   let globalBuyCounter = 0;
+
+  if (globalBuyCounter === 0) {
+    shopIconFixed.style.opacity = 0;
+    shopIconFixed.pointerEvents = 'none';
+  }
 
   buyButtonCounter.length = buyButton.length;
   buyButtonCounter.fill(0);
@@ -98,7 +115,9 @@ window.addEventListener('load', (events) => {
           amount.innerHTML = buyButtonCounter[i] * num;
           globalBuyCounter = buyButtonCounter.reduce((acc, elem) => acc + elem);
           cartCounter.innerHTML = globalBuyCounter;
+          cartCounterFixed.innerHTML = globalBuyCounter;
           cartCounter.style.opacity = 1;
+          cartCounterFixed.style.opacity = 1;
 
           return;
         }
@@ -158,8 +177,22 @@ window.addEventListener('load', (events) => {
         buyButtonCounter[i] += 1;
         globalBuyCounter = buyButtonCounter.reduce((acc, elem) => acc + elem);
         cartCounter.innerHTML = globalBuyCounter;
+        cartCounterFixed.innerHTML = globalBuyCounter;
         cartCounter.style.opacity = 1;
+        cartCounterFixed.style.opacity = 1;
+        shopIconFixed.style.opacity = 1;
+        shopIconFixed.pointerEvents = 'auto';
       }
     });
+  });
+
+  window.addEventListener('scroll', e => {
+    if (window.scrollY < 150 || globalBuyCounter === 0) {
+      shopIconFixed.style.opacity = 0;
+      shopIconFixed.pointerEvents = 'none';
+    } else {
+      shopIconFixed.style.opacity = 1;
+      shopIconFixed.pointerEvents = 'auto';
+    }
   });
 });
