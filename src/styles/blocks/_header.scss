@@ -11,9 +11,6 @@
   }
 
   &__main {
-    display: flex;
-    flex-direction: column-reverse;
-
     &-content {
       order: 1;
       display: flex;
@@ -26,6 +23,15 @@
 
       @include onDesktop {
         width: 480px;
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column-reverse;
+
+      @include onDesktop {
+        display: contents;
       }
     }
   }
@@ -77,6 +83,14 @@
       color: #344f10;
       text-decoration: none;
       font-weight: 500;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 20px;
+
+      &:hover {
+        cursor: pointer;
+
+        border-color: #344f10;
+      }
     }
   }
 
