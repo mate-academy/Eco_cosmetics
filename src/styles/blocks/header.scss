@@ -1,0 +1,64 @@
+.header {
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  &__nav {
+    @include onTablet {
+      display: none;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $c-green;
+    border-bottom: 2px solid transparent;
+    transition: all $animat-time;
+
+    &:hover {
+      border-color: $c-green;
+    }
+  }
+
+  &__logo {
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+  }
+
+  &__logo-text {
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $c-green;
+  }
+}

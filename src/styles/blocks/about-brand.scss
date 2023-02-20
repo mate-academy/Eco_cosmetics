@@ -1,0 +1,97 @@
+.about-brand {
+  position: relative;
+
+  @include onTablet {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  @include onDesktop {
+    gap: 20px;
+  }
+
+  &__description {
+    box-sizing: border-box;
+
+    @include onTablet {
+      width: 50%;
+    }
+
+    @include onDesktop {
+      padding-left: $flex-padding;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text {
+    @extend %text14Regular;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      width: 380px;
+    }
+
+    &--second {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__photo-container {
+    position: relative;
+  }
+
+  &__photo {
+    @extend %photo;
+    display: none;
+
+    background-image: url(../images/photos/Photo2.png);
+    height: 320px;
+
+    &--first {
+      @include onTablet {
+        display: block;
+        width: 50%;
+      }
+
+      @include onDesktop {
+        height: 530px;
+        width: 480px;
+      }
+    }
+
+    &--second {
+      height: 430px;
+      width: 220px;
+      bottom: 0;
+      align-self: flex-end;
+
+      @include onTablet {
+        display: none;
+      }
+
+      @include onDesktop {
+        position: absolute;
+        display: block;
+      }
+    }
+  }
+}
