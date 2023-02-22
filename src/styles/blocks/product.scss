@@ -1,0 +1,75 @@
+.product {
+  position: relative;
+  padding: 0 20px;
+
+  @include onTablet {
+    padding: 0;
+  }
+
+  &__title {
+    margin-bottom: 22px;
+  }
+
+  &__powder {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    justify-content: space-between;
+    margin-bottom: 31px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      gap: 119px;
+      justify-content: end;
+    }
+
+    &:first-child {
+      padding-bottom: 10px;
+    }
+
+    &--composition {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      text-align: end;
+      gap: 40px;
+    }
+
+    &-item {
+      position: relative;
+      width: 103px;
+      transition: all 0.5s;
+
+      &:first-child {
+        margin-bottom: 12px;
+      }
+
+      &:hover {
+        transform: translateX(40px);
+      }
+
+      &:after {
+        position: absolute;
+        content: "";
+        bottom: 50%;
+        right: -100%;
+        display: block;
+        height: 1px;
+        width: 76px;
+        background-color: $colorBlack;
+      }
+    }
+
+    &-jar {
+      width: 380px;
+      height: 395px;
+    }
+  }
+
+  &__learn {
+    transform: translateY(-22px);
+  }
+}

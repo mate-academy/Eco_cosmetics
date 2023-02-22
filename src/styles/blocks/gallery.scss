@@ -1,0 +1,77 @@
+.gallery {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    height: 0;
+
+    // &-corner {
+    //   background:transparent;
+    // }
+  }
+
+  @include onTablet {
+    gap: 30px;
+  }
+
+  @include onDesktop {
+    gap: 20px;
+  }
+
+  &__product {
+    display: block;
+    box-sizing: border-box;
+
+    &-photo {
+      display: block;
+      box-sizing: border-box;
+      object-fit: cover;
+      object-position: center;
+      height: 267px;
+      width: 375px;
+      margin-bottom: 20px;
+
+      transition: all 0.5s;
+
+      @include onTablet {
+        height: 300px;
+        width: 342px;
+      }
+
+      @include onDesktop {
+        height: 500px;
+        width: 380px;
+      }
+
+    }
+
+    &-describe {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0 20px;
+
+      @include onTablet {
+        padding: 0;
+      }
+    }
+
+    &-name {
+      font-weight: 600;
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 15px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 13px;
+      }
+    }
+  }
+}

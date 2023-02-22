@@ -1,0 +1,144 @@
+.footer {
+  background-color: $colorLightGreen;
+  height: 468px;
+  box-sizing: border-box;
+  padding: 30px 20px 40px;
+
+  @include onTablet {
+    height: 263px;
+    padding: 29px 0 30px;
+  }
+
+  @include onDesktop {
+    height: 320px;
+    padding: 60px 0 62px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      gap: 15px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    &-link {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $colorBiege;
+      transition: all 0.5s;
+
+      @include onTablet {
+        font-weight: 400;
+        font-size: 14px;
+      }
+
+      @include onDesktop {
+        font-weight: 500;
+        font-size: 18px;
+      }
+
+      &:hover {
+        border-bottom: 1px solid $colorBiege;
+      }
+    }
+  }
+
+  &__network {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+
+    &-link {
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    @include onTablet {
+      margin-bottom: 45px;
+      grid-row: 2;
+    }
+
+    @include onDesktop {
+      margin-right: 14px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $colorBiege;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      gap: 9px;
+    }
+
+    @include onDesktop {
+      gap: 19px;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $colorBiege;
+
+      &:hover {
+        transition: all 0.5s;
+        color: $colorGreen;
+      }
+    }
+  }
+
+  &__creator {
+    width: 198px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    color: $colorBiege;
+    text-align: center;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: max-content;
+      font-weight: 400;
+      line-height: 150%;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    &-text {
+      display: inline-block;
+      &:first-child {
+        display: none;
+
+        @include onDesktop {
+          display: contents;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.page {
+  scroll-behavior: smooth;
+
+  &--with-menu {
+    overflow: hidden;
+  }
+
+  &__body {
+    background-color: $colorBiege;
+    font-family: $fontFamily;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $colorBlack;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transform: translateX(-100%);
+    // transition: all 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__section {
+    overflow: hidden;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+}

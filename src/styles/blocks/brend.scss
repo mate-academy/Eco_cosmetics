@@ -1,0 +1,69 @@
+.brend {
+
+  &__content {
+    padding: 0 20px;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    &-title {
+      margin-bottom: 10px;
+    }
+
+    &-text {
+
+      &-1 {
+        margin-bottom: 30px;
+      }
+
+      &-2 {
+        display: none;
+
+        @include onDesktop {
+          display: block;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+
+    &-1 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        height: 318px;
+        width: 100%;
+      }
+
+      @include onDesktop {
+        display: block;
+        height: 529px;
+        width: 480px;
+      }
+    }
+
+    &-2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        object-fit: cover;
+        object-position: left top;
+        height: 430px;
+        width: 100%;
+        align-self: flex-end;
+        justify-self: start;
+        // overflow: scroll;
+      }
+    }
+  }
+}
