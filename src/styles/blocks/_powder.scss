@@ -20,7 +20,6 @@
     display: flex;
     flex-direction: column;
     height: 322px;
-    width: 120px;
     justify-content: space-between;
 
     @include onTablet {
@@ -28,14 +27,37 @@
     }
 
     @include onDesktop {
-      width: 180px;
-      padding-right: 20px;
+      padding-right: 23px;
+      width: 200px;
     }
 
     &-item {
       font-size: 16px;
       color: #333;
       text-align: end;
+      display: flex;
+      justify-content: space-between;
+
+      &--text {
+        width: 100%;
+      }
+
+      &--pat {
+        display: none;
+
+        @include onDesktop {
+          display: flex;
+          padding-left: 20px;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &-rect {
+          background-color: #333;
+          width: 76px;
+          height: 1px;
+        }
+      }
     }
   }
 
@@ -60,8 +82,8 @@
 
     @include onDesktop {
       background-image: url(../images/Powder-desktop.svg);
-      width: 480px;
-      height: 397px;
+      width: 380px;
+      height: 395px;
 
       position: relative;
       right: inherit;

@@ -19,9 +19,6 @@
 
       @include onDesktop {
         align-items: start;
-      }
-
-      @include onDesktop {
         width: 480px;
       }
     }
@@ -107,11 +104,14 @@
   &__photo-container {
     order: 0;
     position: relative;
-    display: flex;
 
     box-sizing: border-box;
     width: 100%;
-    max-height: 500px;
+    max-height: 450px;
+
+    @include onTablet {
+      max-height: 700px;
+    }
 
     &::after {
       content: "";
