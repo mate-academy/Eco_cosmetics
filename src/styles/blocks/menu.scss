@@ -1,0 +1,70 @@
+.menu {
+  position: fixed;
+  height: 100vh;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  margin: 0;
+  background-color: $black;
+  color: $white;
+  transform: translateX(-100%);
+
+  transition: transform $duration;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include onDesktop {
+    min-height: 695px;
+  }
+
+  &__cross {
+    position: absolute;
+
+    height: 15px;
+    width: 15px;
+    top: 20px;
+    display: inline-block;
+    z-index: 3;
+
+    @include onTablet {
+      height: 28px;
+      width: 28px;
+      top: 27px;
+    }
+  }
+
+  &__nav {
+    display: block;
+    padding-top: 80px;
+
+    @include onTablet {
+      padding-top: 140px;
+    }
+  }
+
+  &__list {
+    display: block;
+  }
+
+  &__item {
+    display: block;
+    text-align: center;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $white;
+    border-bottom: 1px solid $grey;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+}

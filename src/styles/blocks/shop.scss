@@ -1,0 +1,110 @@
+.shop {
+  &__title {
+    text-align: center;
+
+    @include onTablet {
+      text-align-last: left;
+    }
+
+    @include onDesktop {
+      transform: translateX(100px) ;
+    }
+  }
+
+  &__tabs {
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onDesktop {
+      transform: translateX(100px);
+    }
+
+    &--tab {
+      display: inline-block;
+      color: $grey;
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+
+      @include onTablet {
+        margin-bottom: 25px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+
+      &-active {
+        color: $black;
+        border-bottom: 2px solid $black;
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: 30px;
+
+    @include onDesktop {
+      gap: 20px;
+      transform: translateX(100px);
+    }
+  }
+
+  &__card {
+    flex-grow: 1;
+
+    &:nth-child(n + 2) {
+      display: none;
+    }
+
+    @include onTablet {
+      &:nth-child(3) {
+        display: block;
+      }
+    }
+
+    @include onDesktop {
+      &:nth-child(n) {
+        display: block;
+      }
+    }
+
+    &--photo {
+      margin: 0 -27px 20px;
+
+      @include onTablet {
+        margin: 0 0 20px;
+      }
+      &-img {
+        width: 100%;
+      }
+    }
+
+    &--title {
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 15px;
+      }
+    }
+
+    &--price {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      transform: translateX(50px);
+    }
+  }
+}

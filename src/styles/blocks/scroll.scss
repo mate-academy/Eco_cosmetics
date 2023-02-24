@@ -1,0 +1,58 @@
+.scroll {
+  position: relative;
+
+  &__line {
+    display: none;
+    position: absolute;
+    height: 1px;
+    background-color: $green;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &--top {
+      width: calc(50vw - 110px);
+      left: 0;
+    }
+
+    &--bottom {
+      width: calc(50vw - 10px);
+      bottom: 200px;
+      right: 0;
+    }
+  }
+
+  &__grid {
+    position: relative;
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+      padding: 100px 0;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    color: $green;
+
+    @include onTablet {
+      width: 280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+}
