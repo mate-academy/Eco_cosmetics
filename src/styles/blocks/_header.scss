@@ -1,0 +1,126 @@
+.header {
+  padding: 15px 0 0;
+
+  @include onTablet {
+    padding: 28px 0 0;
+  }
+
+  &__nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 51% 1fr auto;
+      column-gap: 0;
+      justify-items: start;
+      margin-bottom: 36px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 92px;
+      align-items: center;
+    }
+
+    &--desktop {
+      display: none;
+      gap: 40px;
+
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+  }
+
+  &__menu {
+    border-bottom: 2px solid transparent;
+    padding: 12px 0 20px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: $color-green;
+    text-transform: capitalize;
+    text-decoration: none;
+
+    &:hover {
+      border-bottom: 2px solid $color-green;
+    }
+  }
+
+  &__image {
+    display: flex;
+    position: relative;
+    left: -20px;
+    right: -20px;
+    height: 268px;
+    object-fit: cover;
+    width: 108%;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      height: 500px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      height: 452px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+
+    @include onTablet {
+      width: 466px;
+    }
+
+    @include onDesktop {
+      align-items: start;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      line-height: 78px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+}

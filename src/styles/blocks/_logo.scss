@@ -1,0 +1,34 @@
+.logo {
+  background-image: url(../images/logomobile.svg);
+  height: 24px;
+  width: 24px;
+
+  @extend %image;
+
+  @include hover(scale, 110%);
+
+  @include onDesktop {
+    height: 50px;
+    width: 50px;
+    display: block;
+    position: relative;
+
+
+    &::after {
+      content: "witch of mountain winds";
+      display: block;
+      width: max-content;
+      position: absolute;
+      right: -12px;
+      top: +50%;
+      transform: translate(+100%, -50%);
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      color: $color-green;
+    }
+  }
+}
+

@@ -1,0 +1,58 @@
+.info {
+  position: relative;
+
+  @include onTablet {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 27px;
+
+    @include onTablet {
+      width: 280px;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+      line-height: 36px;
+      text-align: left;
+      padding: 100px 0 130px;
+      width: 100%;
+
+      &::after {
+        content: "";
+        border: 1px solid $color-green;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        opacity: 50%;
+        display: block;
+
+      }
+    }
+  }
+
+  &__paragraph {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      padding: 100px 0 130px;
+
+      &::before {
+        content: "";
+        border: 1px solid $color-green;
+        opacity: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 42%;
+      }
+    }
+  }
+}

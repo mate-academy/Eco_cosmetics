@@ -1,0 +1,36 @@
+.icon {
+  height: 24px;
+  width: 24px;
+
+  @include hover(scale, 110%);
+
+  @include onDesktop {
+    height: 32px;
+    width: 32px;
+  }
+
+  @extend %image;
+
+  &--menu {
+    background-image: url(../images/menu.svg);
+    display: block;
+    height: 14px;
+    width: 20px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--basket {
+    background-image: url(../images/basket.svg);
+  }
+
+  &--facebook path {
+    stroke: $color-background;
+  }
+
+  &--cross path {
+    fill: $color-background;
+  }
+}

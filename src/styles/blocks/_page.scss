@@ -1,0 +1,82 @@
+.page {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  background-color: $color-background;
+  color: $color-dark-grey;
+  scroll-behavior: smooth;
+
+  &__body {
+    
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-green;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: $color-dark-grey;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-green;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-bottom: 2px solid $color-green;
+    }
+  }
+}
