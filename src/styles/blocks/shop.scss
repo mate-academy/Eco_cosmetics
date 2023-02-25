@@ -25,6 +25,11 @@
       color: $grey;
       padding-bottom: 10px;
       margin-bottom: 15px;
+      transition: transform $duration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
 
       @include onTablet {
         margin-bottom: 25px;
@@ -34,9 +39,13 @@
         margin-bottom: 50px;
       }
 
-      &-active {
+      &-selected {
         color: $black;
         border-bottom: 2px solid $black;
+
+        &:hover {
+          transform: none;
+        }
       }
     }
   }
@@ -44,6 +53,7 @@
   &__cards {
     display: flex;
     gap: 30px;
+
 
     @include onDesktop {
       gap: 20px;
@@ -53,6 +63,8 @@
 
   &__card {
     flex-grow: 1;
+    text-decoration: none;
+    color: $black;
 
     &:nth-child(n + 2) {
       display: none;

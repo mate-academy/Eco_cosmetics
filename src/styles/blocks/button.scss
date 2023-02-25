@@ -2,6 +2,7 @@
   display: block;
   height: 60px;
   width: 100%;
+  box-sizing: border-box;
   text-align: center;
   background-color: $black;
   color: $white;
@@ -9,10 +10,18 @@
   line-height: 60px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  border: none;
+  border: 1px solid $black;
+  cursor: pointer;
+
+  transition: all $duration;
 
   @include onTablet {
     width: 280px;
     margin: 0 auto;
+  }
+
+  &:hover {
+    color: $black;
+    background-color: $lightOlive;
   }
 }

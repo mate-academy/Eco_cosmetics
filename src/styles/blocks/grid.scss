@@ -31,3 +31,25 @@
     }
   }
 }
+
+.grid980 {
+  @include onTablet {
+    display: grid;
+  }
+
+  grid-template-columns: repeat(var(--column-number), 1fr);
+
+  @include on980 {
+    --column-number: 12;
+    column-gap: 20px;
+    &__item {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &--900-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}
