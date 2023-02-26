@@ -1,0 +1,133 @@
+.item {
+  background-color: $c-nude-main;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+
+  transform: translateX(144%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &.show {
+    transform: translateX(12%);
+  }
+
+  &__wrapper {
+    padding: 70px 20px 60px;
+
+    @include onTablet {
+      padding: 70px 27px 60px;
+    }
+
+    @include onDesktop {
+      padding: 70px 50px 60px;
+    }
+
+    @include offDesktop {
+      padding: 70px 130px 60px;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+    width: 85%;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-gray;
+
+    padding-bottom: 15px;
+
+    align-self: flex-start;
+  }
+
+  &__price {
+    align-self: flex-start;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-green;
+  }
+
+  &__weight {
+    align-self: flex-start;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-gray;
+  }
+
+  &__button {
+    @include toTablet {
+      width: 240px;
+    }
+
+    @include onTablet {
+      width: 280px;
+    }
+  }
+
+  &__description {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: justify;
+
+    &-paragraph {
+      &--first {
+        color: $c-green;
+        display: inline;
+      }
+
+    }
+  }
+
+  &__details {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__image {
+    width: 60%;
+  }
+
+  &__cross {
+    background-color: transparent;
+    border: none;
+    color: $c-green;
+    align-self: flex-start;
+    margin: 27px 25px;
+    cursor: pointer;
+    position: absolute;
+  }
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}

@@ -1,0 +1,135 @@
+.contact-us {
+
+  &__aside {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: rotate(180deg);
+      margin-right: 60px;
+
+      justify-self: start;
+      align-self: start;
+      writing-mode: tb - rl;
+      color: rgba(52, 79, 16, 0.5);
+
+      &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        border-left: 1px solid rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+  &__info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $c-green;
+
+      @include onDesktop {
+        font-size: 36px;
+        line-height: 110%;
+      }
+    }
+
+    &-description {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $c-gray;
+
+      @include onDesktop {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    height: 100%;
+    width: 100%;
+
+    max-height: 539px;
+    object-fit: cover;
+
+    margin-bottom: -2%;
+  }
+
+  &__form {
+    &-input {
+      &--textarea {
+        resize: none;
+        font-family: inherit;
+        font-size: inherit;
+      }
+
+      height: 27px;
+      width: 100%;
+      background-color: transparent;
+      border: transparent;
+      border-bottom: 1px solid #bdbdbd;
+      outline: none;
+
+      font-weight: 500;
+
+      padding-bottom: 5px;
+      margin-bottom: 25px;
+
+      &::placeholder {
+        font-size: 14px;
+        line-height: 150%;
+        font-family: "Poppins", sans-serif;
+
+        @include onDesktop {
+          font-size: 18px;
+        }
+      }
+
+      &:focus {
+        border-bottom-color: $c-gray;
+      }
+
+      &:valid:not(:placeholder-shown) {
+        border-bottom-color: $c-green;
+        color: $c-green;
+        -webkit-text-fill-color: $c-green;
+      }
+
+      &:invalid:not(:placeholder-shown) {
+        border-bottom-color: #eb5757;
+        color: #eb5757;
+        -webkit-text-fill-color: #eb5757;
+      }
+    }
+  }
+
+  @include toTablet {
+    &__button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
