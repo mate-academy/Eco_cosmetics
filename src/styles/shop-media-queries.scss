@@ -4,6 +4,7 @@
     display: none;
   }
   .shop {
+    margin-top: 100px;
     &__header-title {
       display: flex;
       align-items: center;
@@ -40,6 +41,20 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      &-title-title {
+        margin: 0 0 20px;
+      }
+
+      &-link-text {
+        margin: 0;
+      }
+    }
+
+    &__cards-container {
+      margin: 27px 0 0;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     &__cards-1 {
@@ -59,14 +74,17 @@
 
     &__button-link {
       width: 90%;
+      text-decoration: none;
     }
 
     &__cards-1-first-text {
       width: 90%;
+      margin: 20px 0 0;
     }
 
     &__cards-1-second-text {
       width: 90%;
+      margin: 10px 0 0;
     }
 
     &__button {
@@ -76,14 +94,10 @@
     &__button-container {
       width: 100%;
       box-sizing: border-box;
+      margin: 30px 0 0;
     }
 
     &__cards-1-photo {
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    &__cards-container {
       width: 100%;
       box-sizing: border-box;
     }
@@ -185,6 +199,40 @@
       align-items: flex-end;
     }
 
+    &__header-title-title {
+      margin-bottom: 30px;
+      position: relative;
+
+      &::after {
+        display: unset;
+        content: "about the creators";
+        position: absolute;
+        height: 18px;
+        width: 192px;
+        bottom: -60px;
+        left: -130px;
+        border-radius: 8px;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        transform: rotate(271deg);
+      }
+
+      &::before {
+        display: unset;
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 1px;
+        left: -84px;
+        top: 250px;
+        transform: rotate(90deg);
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+
     &__cards-1 {
       width: 30%;
     }
@@ -197,7 +245,14 @@
       width: 100%;
     }
 
+    &__button-container {
+      margin-top: 40px;
+
+    }
+
     &__cards-container {
+      margin-top: 62px;
+      margin-right: 20px;
       width: 100%;
       display: flex;
       flex-direction: row;
@@ -222,19 +277,5 @@
 
   .second {
     margin-top: 20px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .shop {
-    &-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    &__cards-container {
-      width: 95%;
-    }
   }
 }
