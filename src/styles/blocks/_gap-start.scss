@@ -1,0 +1,61 @@
+.gap-start {
+  display: none;
+
+  @include onTabletAndDesktop {
+    display: block;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+
+    &-text {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        width: 380px;
+        padding-right: 120px;
+      }
+    }
+
+    &-title {
+      font-size: 18px;
+      width: 280px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #344f10;
+
+      font-weight: bold;
+
+      @include onDesktop {
+        width: 380px;
+        text-align: start;
+        font-size: 24px;
+      }
+    }
+  }
+
+  @include onDesktop {
+    &::before {
+      content: "";
+      display: block;
+      width: 40%;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+      margin-bottom: 100px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 40%;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+      margin-top: 100px;
+      margin-left: 60%;
+    }
+  }
+}
+
