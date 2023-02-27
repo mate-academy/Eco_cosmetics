@@ -1,0 +1,146 @@
+.header {
+  padding-top: 15px;
+
+  @include onTablet {
+    padding-top: 23px;
+  }
+
+  @include onDeskTop {
+    padding-top: 40px;
+  }
+
+  &__top {
+    margin: 0 20px 20px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      margin: 0 0 70px;
+    }
+
+    @include onDeskTop {
+      @include grid;
+      margin-bottom: 70px;
+      align-items: center;
+    }
+  }
+
+  &__full-logo {
+    display: none;
+
+    @include onDeskTop {
+      display: block;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__logo {
+    @include onDeskTop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    @include onDeskTop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDeskTop {
+      display: block;
+      grid-column: 7 / 11;
+    }
+  }
+
+  &__shop {
+    grid-column: 12 / -1;
+    justify-self: end;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 25px;
+
+    @include onTablet {
+      gap: 50px;
+    }
+
+    @include onDeskTop {
+      @include grid;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    @include onDeskTop {
+      align-items: initial;
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+
+    @include onTablet {
+      & span {
+        text-transform: uppercase;
+      }
+
+      line-height: 150%;
+      max-width: 466px;
+      font-size: 36px;
+    }
+
+    @include onDeskTop {
+      & span {
+        text-transform: initial;
+      }
+
+      text-align: initial;
+      font-size: 60px;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    margin: 10px 0 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDeskTop {
+      margin-top: 30px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 267px;
+    object-fit: cover;
+
+    @include onTablet {
+      height: 500px;
+    }
+
+    @include onDeskTop {
+      height: auto;
+      grid-column: 7 / -1;
+    }
+  }
+}

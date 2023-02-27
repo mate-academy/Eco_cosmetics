@@ -1,0 +1,35 @@
+.nav {
+  &__list {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: $c-green;
+    text-decoration: none;
+    transition: color $animation-time;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: $c-black;
+      transition: width $animation-time;
+    }
+
+    &:hover {
+      color: $c-black;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
