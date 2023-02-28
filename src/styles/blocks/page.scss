@@ -12,6 +12,10 @@
     line-height: 150%;
     background-color: $colorWhite;
     color: $colorMain;
+
+    &--with-menus {
+      overflow: hidden;
+    }
   }
 
   &__header {
@@ -20,5 +24,19 @@
     left: 0;
     right: 0;
     width: 100%;
+  }
+
+  &__menus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
   }
 }
