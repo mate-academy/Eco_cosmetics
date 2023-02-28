@@ -10,30 +10,25 @@
   transform: translateX(144%);
   transition: transform 0.3s ease;
   overflow-y: auto;
-  z-index: 1;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  z-index: 5;
 
   &.show {
     transform: translateX(12%);
   }
 
   &__wrapper {
-    padding: 70px 20px 60px;
+    padding: 25px 20px 60px;
 
     @include onTablet {
-      padding: 70px 27px 60px;
+      padding: 25px 27px 60px;
     }
 
     @include onDesktop {
-      padding: 70px 50px 60px;
+      padding: 25px 50px 60px;
     }
 
     @include offDesktop {
-      padding: 70px 130px 60px;
+      padding: 25px 130px 60px;
     }
 
     display: flex;
@@ -41,8 +36,6 @@
     align-items: center;
     flex-direction: column;
     gap: 30px;
-
-    width: 85%;
   }
 
   &__name {
@@ -52,14 +45,10 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: $c-gray;
-
     padding-bottom: 15px;
-
-    align-self: flex-start;
   }
 
   &__price {
-    align-self: flex-start;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
@@ -69,17 +58,21 @@
   }
 
   &__weight {
-    align-self: flex-start;
-
+    display: none;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: $c-gray;
+
+    @include onTablet {
+      display: block;
+    }
   }
 
   &__button {
+    order: 3;
+
     @include toTablet {
       width: 240px;
     }
@@ -90,11 +83,14 @@
   }
 
   &__description {
-    width: 60%;
+    order: 2;
     display: flex;
     flex-direction: column;
     gap: 25px;
     text-align: justify;
+
+    max-width: 466px;
+    max-height: auto;
 
     &-paragraph {
       &--first {
@@ -106,24 +102,40 @@
   }
 
   &__details {
-    width: 60%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    align-self: center;
     gap: 10px;
+
+    @include onTablet {
+      flex-direction: column;
+    }
+
+    order: 1;
   }
 
   &__image {
-    width: 60%;
+    width: 100%;
+
+    max-width: 466px;
+    max-height: auto;
   }
 
   &__cross {
     background-color: transparent;
-    border: none;
     color: $c-green;
-    align-self: flex-start;
-    margin: 27px 25px;
     cursor: pointer;
     position: absolute;
+    border: 2px solid;
+    border-radius: 20%;
+
+    height: 30px;
+    width: 30px;
+    display: grid;
+    place-items: center;
+
+    top: 20%;
+    right: 25px;
   }
 }
 

@@ -1,4 +1,18 @@
 .about {
+  position: relative;
+  margin: 0 auto;
+
+  max-width: 320px;
+
+  @include onTablet {
+    max-width: 770px;
+  }
+
+  @include onDesktop {
+    max-width: 1280px;
+    padding-top: 100px;
+  }
+
   &__title {
     font-weight: 600;
     font-size: 24px;
@@ -54,7 +68,6 @@
         }
       }
     }
-
   }
 
   &__link {
@@ -79,50 +92,45 @@
     }
   }
 
-  &__img {
-    display: none;
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    transition: transform 0.3s;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-
-    @include onTablet {
-      display: block;
-    }
-
-    @include onDesktop {
-      min-height: 529px;
-    }
-  }
-
-  &__img-2 {
-    display: none;
-    width: 100%;
-    height: 75%;
-    transition: transform 0.3s;
-
-    @include onDesktop {
-      display: block;
-    }
-
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-
   &__img-container {
-    width: 100%;
-    max-height: 550px;
-    overflow: hidden;
+    &-1 {
+      display: none;
+
+      background: url("/images/desktop/Moonlicht_candle_desktop.png") no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include onTablet {
+        display: block;
+        position: absolute;
+        right: 0;
+        left: 0;
+        height: 369px;
+      }
+
+      @include onDesktop {
+        position: static;
+        width: auto;
+        height: 529px;
+      }
+    }
 
     &-2 {
-      display: grid;
-      align-items: end;
+      display: none;
+      background: url("/images/desktop/Moonlicht_candle_desktop.png") no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: calc(100% - 430px);
+      height: 430px;
+      width: 300%;
+
+      @include onDesktop {
+        display: block;
+      }
     }
   }
 }

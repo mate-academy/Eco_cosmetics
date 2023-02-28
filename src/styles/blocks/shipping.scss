@@ -1,0 +1,134 @@
+.shipping {
+  background-color: $c-nude-main;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+
+  transform: translateX(144%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  z-index: 5;
+
+  &.show {
+    transform: translateX(12%);
+  }
+
+  &__wrapper {
+    padding: 25px 20px 60px;
+
+    @include onTablet {
+      padding: 25px 27px 60px;
+    }
+
+    @include onDesktop {
+      padding: 25px 50px 60px;
+    }
+
+    @include offDesktop {
+      padding: 25px 130px 60px;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__subheader {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-gray;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #bdbdbd;
+    max-width: 218px;
+    align-self: flex-start;
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__header {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    text-align: center;
+    color: $c-gray;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  &__form {
+    max-width: 278px;
+  }
+
+  &__input {
+    height: 27px;
+    width: 100%;
+    background-color: transparent;
+    border: transparent;
+    border-bottom: 1px solid #bdbdbd;
+    outline: none;
+
+    font-weight: 500;
+
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 150%;
+      font-family: "Poppins", sans-serif;
+
+      text-transform: capitalize;
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+    }
+
+    &:focus {
+      border-bottom-color: $c-gray;
+    }
+
+    &:valid:not(:placeholder-shown) {
+      border-bottom-color: $c-green;
+      color: $c-green;
+      -webkit-text-fill-color: $c-green;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-bottom-color: #eb5757;
+      color: #eb5757;
+      -webkit-text-fill-color: #eb5757;
+    }
+  }
+
+  &__button {
+    @include toTablet {
+      width: 240px;
+    }
+
+    @include onTablet {
+      width: 280px;
+    }
+  }
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}

@@ -1,4 +1,16 @@
 .contact-us {
+  max-width: 320px;
+  padding-top: 100px;
+
+  @include onTablet {
+    max-width: 770px;
+    padding-top: 130px;
+  }
+
+  @include onDesktop {
+    max-width: 1280px;
+    padding-top: 200px;
+  }
 
   &__aside {
     display: none;
@@ -27,9 +39,10 @@
   &__info {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     gap: 10px;
+    height: auto;
 
     @include onTablet {
       justify-content: space-between;
@@ -42,10 +55,12 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
       color: $c-green;
+      padding-bottom: 10px;
 
       @include onDesktop {
         font-size: 36px;
         line-height: 110%;
+        padding-bottom: 30px;
       }
     }
 
@@ -54,27 +69,38 @@
       font-size: 14px;
       line-height: 150%;
       color: $c-gray;
+      padding-bottom: 30px;
+
+      @include onTablet {
+        padding-bottom: 20px;
+      }
 
       @include onDesktop {
         font-size: 16px;
+        padding-bottom: 40px;
       }
     }
   }
 
-  &__img {
+  &__img-container {
     display: none;
-
-    @include onTablet {
-      display: block;
-    }
-
+    position: absolute;
+    right: 0;
     height: 100%;
     width: 100%;
 
-    max-height: 539px;
-    object-fit: cover;
+    background: url("/images/desktop/contact-us_bird-desk.jpg") no-repeat;
 
-    margin-bottom: -2%;
+    @include onTablet {
+      display: block;
+      max-height: 409px;
+      max-width: 368px;
+    }
+
+    @include onDesktop {
+      max-height: 584px;
+      max-width: 529px;
+    }
   }
 
   &__form {
@@ -125,11 +151,15 @@
     }
   }
 
-  @include toTablet {
-    &__button-container {
+  &__button-container {
+    @include toTablet {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    @include onDesktop {
+      padding-top: 50px;
     }
   }
 }
