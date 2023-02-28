@@ -1,0 +1,70 @@
+@import "../utils/mixins";
+@import "../utils/extends";
+@import "../utils/vars";
+
+.gifts {
+
+  @include onDesctop {
+    position: relative;
+    padding: 100px 0;
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+    &::before {
+      width: 44%;
+      height: 1px;
+      top: 0;
+      left: 0;
+
+      @media(min-width: 2600px) {
+        width: 46%;
+      }
+    }
+
+    &::after {
+      width: 50%;
+      height: 1px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__container {
+    @extend %grid;
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesctop {
+      display: block;
+      margin: 0;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    margin: 0 auto;
+    max-width: 280px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @include onDesctop {
+      font-size: 24px;
+      max-width: 100%;
+      grid-column: 7 / 11;
+    }
+  }
+}
