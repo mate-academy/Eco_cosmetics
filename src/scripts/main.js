@@ -19,7 +19,7 @@ const navMenu = document.querySelectorAll('.menu__list');
 hamburger.forEach(item => (
   item.addEventListener('click', () => {
     item.classList.toggle('active');
-    navMenu.forEach(nav => (nav.classList.toggle('active')));
+    navMenu.forEach(nav => nav.classList.toggle('active'));
 
     document.body.style.overflowY = (
       document.body.style.overflowY === 'hidden'
@@ -27,6 +27,19 @@ hamburger.forEach(item => (
     );
   })
 ));
+
+document.querySelectorAll('.menu__link').forEach(link => (
+  link.addEventListener('click', () => {
+    hamburger.forEach(item => item.classList.remove('active'));
+    navMenu.forEach(nav => nav.classList.remove('active'));
+
+    document.body.style.overflowY = 'visible';
+    closeItem(confirmation);
+    closeItem(shopItem);
+    closeItem(shipping);
+    closeItem(payment);
+  }))
+);
 
 // SWITCHER BETWEEN SHOP ITEMS
 
