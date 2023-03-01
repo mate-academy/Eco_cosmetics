@@ -20,6 +20,7 @@
     @include onTablet {
       justify-content: start;
       gap: 24px;
+      margin-bottom: 25px;
     }
 
     @include onDesktop {
@@ -58,8 +59,12 @@
     @include onTablet {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
       gap: 30px;
+    }
+
+    @include onDesktop {
+      justify-content: space-between;
+      position: relative;
     }
   }
 
@@ -75,6 +80,14 @@
     &--2 {
       display: none;
 
+      @include onDesktop {
+        display: flex;
+      }
+    }
+
+    &--3 {
+      display: none;
+
       @include onTablet {
         display: flex;
       }
@@ -82,36 +95,37 @@
   }
 
   &__image-container {
-    position: relative;
     width: 100%;
-    height: 268px;
+    height: 267px;
     margin-bottom: 20px;
 
     @include onTablet {
-      width: 100%;
       min-height: 300px;
+      max-height: 500px;
     }
 
     @include onDesktop {
       height: 500px;
     }
-
-    @include hover(scale, 110%);
   }
 
   &__image {
-    position: absolute;
+    display: block;
+    position: relative;
     object-fit: cover;
-    left: -20px;
-    right: -20px;
+    width: 100vw;
     height: 100%;
-    width: 114%;
+    left: -20px;
 
     @include onTablet {
-      position: relative;
       left: 0;
       right: 0;
-      width: 100%;
+      max-width: 100%;
+      height: 100%;
+    }
+
+    @include onDesktop {
+      min-width: 380px;
     }
   }
 
@@ -122,6 +136,7 @@
     text-transform: uppercase;
     color: $color-dark-grey;
     margin-bottom: 10px;
+    text-decoration: none;
 
     &--price {
       font-weight: 500;
