@@ -44,4 +44,28 @@
     width: 100%;
     height: 100%;
   }
+
+  &__primary {
+    display: block;
+    width: max-content;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $c-green;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      margin-top: 10px;
+      display: block;
+      width: 0;
+      height: 1px;
+      background-color: $c-green;
+      transition: width $animation-time;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
 }
