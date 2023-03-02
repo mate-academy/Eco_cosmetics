@@ -7,8 +7,8 @@ window.addEventListener('hashchange', () => {
     document.body.classList.remove('page__body--with-menus');
   }
 });
+
 // const swiper = new Swiper('.swiper', {
-//   // Default parameters
 //   slidesPerView: 1,
 //   spaceBetween: 10,
 //   breakpoints: {
