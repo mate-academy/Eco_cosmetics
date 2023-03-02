@@ -1,0 +1,168 @@
+.about {
+  overflow: hidden;
+
+  &__note {
+    display: none;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: rgba($color-green, 0.5);
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: end;
+
+    &::before {
+      display: inline-block;
+      height: 100px;
+      content: "";
+      margin-bottom: 10px;
+      border-left: 1px solid;
+    }
+
+    @include onDesktop {
+      display: block;
+
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    color: $basic-text-color;
+
+    &--paragraph {
+      margin: 0 0 30px;
+
+      &:last-child {
+        margin: 0 0 40px;
+      }
+    }
+
+    &--paragraph-disable {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__more {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $color-green;
+
+    &--with-button {
+      margin-bottom: 25px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+
+    &::after {
+      display: block;
+      width: 86px;
+      content: "";
+      border-bottom: 1px solid $background-page;
+      padding-top: 10px;
+    }
+
+    &:hover {
+      filter: invert(10%);
+
+      &::after {
+        border-bottom: 1px solid $color-green;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+    width: 110%;
+    height: 100%;
+    min-height: 318px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onTablet {
+      display: block;
+      background-image: url("../images/about/about-right-tablet.png");
+      transition: $duration;
+
+      &:hover {
+        transform: scale(105%, 105%);
+      }
+    }
+
+    @include onDesktop {
+      width: 100%;
+      min-height: 530px;
+      background-image: url("../images/about/about-right-desktop.png");
+    }
+
+    &--creators {
+      @include onTablet {
+        background-image: url("../images/about/about_creators_tablet.png");
+      }
+
+      @include onDesktop {
+        background-image: url("../images/about/about_creators_desktop.png");
+      }
+    }
+
+    &--add {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        height: 100%;
+        grid-column: 12 / -1;
+        width: calc(100% + 55px);
+        max-height: 430px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-image: url("../images/about/about-right-desktop.png");
+        align-self: flex-end;
+        transition: $duration;
+
+        &:hover {
+          transform: scale(105%, 105%);
+        }
+      }
+    }
+  }
+
+  &__button {
+    display: block;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.marker {
+  width: 100%;
+  align-items: baseline;
+
+  &--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: $basic-text-color;
+
+    max-width: 90px;
+    min-width: 103px;
+
+    @include onDesktop {
+      min-width: 162px;
+    }
+  }
+
+  &__line {
+    position: relative;
+    transform: translateY(-0.3rem);
+
+    @include onDesktop {
+      grid-template-columns: 1fr 80px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      border-top: 1px solid $basic-text-color;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 0;
+      height: 5px;
+      background-color: $basic-text-color;
+      border-radius: 50%;
+      transform: translateY(-50%);
+
+      @include onDesktop {
+        width: 5px;
+      }
+    }
+  }
+}
