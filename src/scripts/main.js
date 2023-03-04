@@ -26,3 +26,8 @@ const swiper = new Swiper('.swiper', {
 });
 
 swiper.enable();
+
+document.querySelector('.contact__form').addEventListener('submit', (event) => {
+  event.preventDefault();
+  document.querySelector('.contact__form').reset();
+});
