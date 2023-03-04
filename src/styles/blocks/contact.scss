@@ -31,6 +31,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    background-color: $background-page;
   }
 
   &__input {
@@ -39,13 +40,12 @@
 
     font-size: 18px;
     line-height: 150%;
-    text-transform: capitalize;
     color: $color-line;
-
     background-color: $background-page;
     border-style: none;
     border-bottom: 1px solid $color-input-line;
     padding: 30px 0 10px;
+    transition: $duration;
 
     &:first-child {
       padding: 0 0 10px;
@@ -123,4 +123,17 @@
       background-image: url("../images/contact/img_contact_desktop.png");
     }
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $color-line;
+  -webkit-box-shadow: 0 0 0 1000px $background-page inset;
 }
