@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="icon" href="images/favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
     <title>Eco Cosmetics</title>
   </head>
   <body class="page__body">
@@ -186,8 +187,140 @@
           </div>
         </div>
       </section>
+
+      <section class="page__section shop" id="shop">
+        <div class="container container--full">
+          <div class="shop__wrapper">
+            <div class="marker">
+              shop
+            </div>
+      
+            <div class="shop__content">
+              <h2 class="page__title page__title--center">
+                shop
+              </h2>
+      
+              <div class="shop__slider">
+                <div class="swiper mySwiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="shop-card">
+                        <div class="shop-card__image-container">
+                          <img 
+                            src="images/shop/face.jpg" 
+                            alt="shop image" 
+                            class="shop-card__image"
+                          >
+                        </div>
+                        <div class="shop-card__description">
+                          <h3>
+                            Face cream
+                          </h3>
+                          <p>
+                            210 UAH
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="shop-card">
+                        <div class="shop-card__image-container">
+                          <img 
+                            src="images/shop/body.jpg" 
+                            alt="shop image" 
+                            class="shop-card__image"
+                          >
+                        </div>
+                        <div class="shop-card__description">
+                          <h3>
+                            ubtan
+                          </h3>
+                          <p>
+                            160 UAH
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="shop-card">
+                        <div class="shop-card__image-container">
+                          <img 
+                            src="images/shop/hair.jpg" 
+                            alt="shop image" 
+                            class="shop-card__image"
+                          >
+                        </div>
+                        <div class="shop-card__description">
+                          <h3>
+                            Hydrophilic oil
+                          </h3>
+                          <p>
+                            160 UAH
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+      
+                      <div class="shop-card">
+                        <div class="shop-card__image-container">
+                          <img 
+                            src="images/shop/candles.jpg" 
+                            alt="shop image" 
+                            class="shop-card__image"
+                          >
+                        </div>
+                        <div class="shop-card__description">
+                          <h3>
+                            scented candle
+                          </h3>
+                          <p>
+                            70 UAH
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#shop" class="button button-center">
+            all products
+          </a>
+        </div>
+      </section>
     </main>
-    
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const menu = ['face', 'body', 'hair', 'candles']
+
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        loop: true,
+        grabCursor: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (menu[index]) + "</span>";
+          },
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1280: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            centeredSlides: true,
+          },
+        },
+      });
+    </script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
