@@ -1,0 +1,91 @@
+.creators {
+  position: relative;
+
+  &__title {
+    @extend %title-text;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 32px;
+    }
+
+    @include onDesktopLarge {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    &--3 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__button {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include onTablet {
+      margin-top: 40px;
+      display: block;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+    }
+  }
+
+  &__image {
+    @extend %img-hover;
+
+    @include onTabletOnly {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include onDesktop {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__side {
+    position: absolute;
+    display: flex;
+    align-items: baseline;
+    transform: rotate(-90deg);
+    transform-origin: left;
+    top: 240px;
+    opacity: 0;
+    pointer-events: none;
+  
+    @include onDesktopLarge {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+  
+  &__line {
+    display: inline-block;
+    width: 89px;
+    height: 1px;
+    background-color: $c-green;
+    margin-right: 10px;
+  }
+  
+  &__texts {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $c-green;
+  }
+}
