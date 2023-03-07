@@ -31,3 +31,8 @@ document.querySelector('.contact__form').addEventListener('submit', (event) => {
   event.preventDefault();
   document.querySelector('.contact__form').reset();
 });
+
+document.getElementById('form').addEventListener('submit', (event) => {
+  event.preventDefault();
+  document.querySelector('.shipping__form').reset();
+});
