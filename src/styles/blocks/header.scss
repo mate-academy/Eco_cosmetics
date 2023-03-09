@@ -1,0 +1,118 @@
+.header {
+  &__content {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+    padding: 28px 0 10px;
+  }
+
+  &__top-actions {
+    @include top-actions;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 92px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__photo {
+    background-image: url(../images/header_mobile.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    max-height: 500px;
+    width: 100%;
+    margin-bottom: 25px;
+
+    @include onDesktop {
+      order: 1;
+      max-width: 580px;
+      height: 100%;
+
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onDesktop {
+      align-items: start;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+
+    color: #333;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+
+      text-transform: capitalize;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      line-height: 130%;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      text-align: left;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+
+    @include onTablet {
+      max-width: 280px;
+    }
+  }
+}
