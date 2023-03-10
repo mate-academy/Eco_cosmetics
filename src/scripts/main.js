@@ -1,5 +1,3 @@
-// 'use strict';
-
 import Swiper from 'swiper';
 
 window.addEventListener('hashchange', () => {
