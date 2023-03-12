@@ -1,0 +1,130 @@
+.footer {
+  background-color: $c-light-green;
+  padding: 30px 0 40px;
+
+  @include onTablet {
+    padding-bottom: 30px;
+  }
+
+  @include onDeskTop {
+    padding-bottom: 60px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      @include grid;
+    }
+  }
+
+  &__nav {
+    @include onTablet {
+      grid-column: 1 / 2;
+    }
+    
+    @include onDeskTop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $c-cream;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onDeskTop {
+      font-size: 16px;
+      gap: 16px;
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    font-weight: 400;
+    font-size: 14px;
+    color: $c-cream;
+    text-decoration: none;
+    transition: color $animation-time;
+
+    @include onDeskTop {
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: $c-black;
+    }
+  }
+
+  &__copyright {
+    display: none;
+
+    @include onDeskTop {
+      margin-top: 30px;
+      @include grid;
+      align-items: center;
+    }
+  }
+
+  &__copyright-text {
+    grid-column: 1 / 6;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $c-cream;
+
+    &--hidden {
+      width: 200px;
+      margin: 45px auto 0;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 130%;
+      text-align: center;
+      text-transform: initial;
+
+      @include onTablet {
+        width: 100%;
+        margin-top: 50px;
+        font-weight: 400;
+        line-height: 150%;
+        text-align: initial;
+      }
+
+      @include onDeskTop {
+        display: none;
+      }
+    }
+  }
+
+  &__social {
+    width: 54px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    grid-column: 8 / 9;
+
+    &--hidden {
+      margin-top: 20px;
+      width: 60px;
+
+      @include onDeskTop {
+        display: none;
+      }
+    }
+  }
+}

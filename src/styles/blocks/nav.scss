@@ -11,6 +11,16 @@
         gap: 50px;
       }
     }
+
+    &--footer {
+      flex-direction: column;
+      gap: 10px;
+
+      @include onDeskTop {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
   }
 
   &__link {
@@ -39,6 +49,29 @@
 
     &:hover::after {
       width: 100%;
+    }
+
+    &--footer {
+      color: $c-cream;
+
+      &::after {
+        bottom: -5px;
+        height: 1px;
+      }
+
+      @include onTablet {
+        font-weight: 400;
+        font-size: 14px;
+      }
+
+      @include onDeskTop {
+        font-size: 18px;
+        font-weight: 500;
+
+        &::after {
+          height: 2px;
+        }
+      }
     }
 
     &--menu {
