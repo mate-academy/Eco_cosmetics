@@ -1,22 +1,23 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  
+  column-gap: 20px;
+
   &--desktop {
     display: block;
-  }
 
-  @include onDesktop {
-    display: grid;
-  }
+    @include onTablet {
+      display: grid;
+    }
 
-  @include onTablet {
-    display: grid;
+    @include onDesktop {
+      display: grid;
+    }
   }
 
   @include onTablet {
     grid-template-columns: repeat(6, 1fr);
-    column-gap: 20px;
+    column-gap: 24px;
 
     &__item-tablet {
       @for $start from 1 through 6 {
@@ -31,7 +32,7 @@
 
   @include onDesktop {
     grid-template-columns: repeat(12, 1fr);
-    column-gap: 20px;
+    column-gap: 24px;
 
     &__item-desktop {
       @for $start from 1 through 12 {
