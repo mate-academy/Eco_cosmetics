@@ -1,3 +1,5 @@
+@import "./../utils/mixin";
+
 .header {
   padding-top: 30px;
 
@@ -24,12 +26,21 @@
 
   &__title {
     margin-bottom: 30px;
+    text-transform: capitalize;
     @extend %h1;
+
+    @include onTablet {
+      text-align: center;
+    }
   }
 
   &__paragraph {
     margin-bottom: 50px;
     @extend %text-1;
+
+    @include onTablet {
+      text-align: center;
+    }
   }
 
   &__image {
