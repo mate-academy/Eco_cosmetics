@@ -1,0 +1,159 @@
+.about {
+  position: relative;
+  margin-bottom: 100px;
+  padding: 0 20px;
+
+  @include on760() {
+    padding: 0;
+    padding-left: 30px;
+    margin-bottom: 130px;
+  }
+
+  @include on1280() {
+    margin-bottom: 200px;
+  }
+
+  &_content {
+    display: block;
+
+    @include on760() {
+      display: grid;
+    }
+
+    &_text {
+      grid-row: 1;
+
+      &_title {
+        margin-bottom: 10px;
+
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #344f10;
+        text-align: center;
+
+        @include on760() {
+          text-align: start;
+        }
+
+        @include on1280() {
+          font-size: 36px;
+          line-height: 110%;
+        }
+      }
+
+      &_paragraph {
+        margin-bottom: 30px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #333;
+      }
+
+      &_paragraph-desktop {
+        display: none;
+
+        @include on1280() {
+          display: block;
+          margin-bottom: 40px;
+        }
+      }
+
+      &_link {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: #344f10;
+        text-decoration: none;
+        padding-bottom: 10px;
+        border-bottom: 1px solid transparent;
+        transition: 1s;
+
+        &:hover {
+          border-color: #344f10;
+        }
+      }
+    }
+
+    &_image {
+      grid-row: 1;
+      display: none;
+
+      height: 320px;
+
+      @include on760() {
+        display: block;
+      }
+
+      @include on1280() {
+        height: 530px;
+      }
+
+      &_img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+        transition: 1s;
+
+        &:hover {
+          transform: scale(0.95);
+        }
+      }
+    }
+
+    &_image-small {
+      display: none;
+      position: absolute;
+      right: -120px;
+      height: 430px;
+      width: 208px;
+      grid-row: 1;
+      margin-top: 100px;
+
+      @include on1280() {
+        display: block;
+      }
+
+      &_img {
+        width: 100%;
+        height: 100%;
+
+        object-position: center;
+        object-fit: cover;
+
+        transition: 1s;
+
+        &:hover {
+          transform: scale(0.95);
+        }
+      }
+    }
+
+    &_desktop {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      grid-row: 1;
+    
+      @include on1280() {
+        display: flex;
+      }
+    
+      &_img1 {
+        width: 18px;
+        height: 192px;
+      }
+    
+      &_img2 {
+        margin-left: 9px;
+        width: 1px;
+        height: 100px;
+      }
+    }
+  }
+}
