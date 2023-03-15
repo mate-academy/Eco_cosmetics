@@ -1,11 +1,21 @@
 .header {
-  &__nav{
+  &__nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0 20px;
+    padding: 20px 0;
 
     @include onDesktop {
       padding-bottom: 70px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
     }
   }
 
@@ -25,16 +35,13 @@
     height: 24px;
     width: 24px;
     background-image: url(./../images/icons/logo.svg);
-    transition: 0.3s;
 
     @include onDesktop {
+      display: flex;
+      align-self: center;
       height: 50px;
       width: 270px;
       background-image: url(./../images/logo.png);
-    }
-
-    &:hover {
-      transform: scale(1.2);
     }
   }
 
