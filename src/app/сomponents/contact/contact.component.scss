@@ -1,0 +1,205 @@
+@import '../../styles/_mixins.scss';
+
+.contact {
+  position: relative;
+  padding: 0 20px;
+  margin-bottom: 100px;
+
+  @include on760 {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 0 0 27px;
+    margin-bottom: 130px;
+  }
+
+  @include on1280 {
+    gap: 120px;
+    padding: 0;
+    margin-bottom: 200px;
+  }
+
+  &_left-text {
+    display: none;
+
+    @include on1280 {
+      display: block;
+    }
+  }
+
+  &_content {
+
+    @include on760 {
+      width: 342px;
+    }
+
+    @include on1280 {
+      width: 480px;
+    }
+
+    &_title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #344f10;
+      margin-bottom: 10px;
+
+      @include on1280 {
+        font-size: 36px;
+        line-height: 110%;
+        margin-bottom: 30px;
+      }
+    }
+
+    &_text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #333333;
+      margin-bottom: 25px;
+
+      @include on1280 {
+        font-size: 16px;
+        margin-bottom: 30px;
+      }
+    }
+    
+    &_form {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      &_input {
+        border: none;
+        border-bottom: 1px solid #bdbdbd;
+        background-color: transparent;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        text-transform: capitalize;
+        color: #333333;
+        padding: 5px 0;
+        outline: none;
+
+        &:focus {
+          border-color: #333333;
+        }
+
+        @include on1280 {
+          padding: 10px 0;
+          font-weight: 500;
+          font-size: 18px;
+        }
+
+        &-last {
+          margin: 20px 0 5px;
+
+          @include on1280 {
+            margin: 50px 0;
+          }
+        }
+
+        &::placeholder {
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 150%;
+          text-transform: capitalize;
+          color: #828282;
+
+          @include on1280 {
+            font-weight: 500;
+            font-size: 18px;
+          }
+        }
+      }
+
+      &_button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 280px;
+        background-color: #333333;
+      
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #f2f2f2;
+        text-decoration: none;
+        transition: all 0.5s;
+
+        &:hover {
+          background-color: #e5e5e5;
+          border: 1px solid #333333;
+          color: #333333;
+        }
+
+        @include on760 {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &_image {
+    display: none;
+    height: 409px;
+    width: 370px;
+
+    @include on760 {
+      display: block;
+    }
+
+    @include on1280 {
+      min-width: 529px;
+      height: 584px;
+    }
+
+    &_img {
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+}
+
+.complete {
+  color: #344f10;
+  background-color: transparent;
+  border-color: #344f10;
+
+  &::placeholder {
+    color: #344f10;
+  }
+}
+
+.error {
+  color: #eb5757;
+  background-color: transparent;
+  border-color: #eb5757;
+
+  &::placeholder {
+    color: #eb5757;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-color: #344f10;
+  -webkit-text-fill-color: #333333;
+  -webkit-box-shadow: 0 0 0px 1000px #e4dfd3 inset;
+}

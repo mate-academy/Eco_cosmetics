@@ -1,0 +1,80 @@
+<section id="contact" class="contact">
+  <app-left-text
+    class="contact_left-text"
+    [text]="'help'"
+    [top]="70"
+    [left]="-40"
+  ></app-left-text>
+  <div class="contact_content">
+    <h2 class="contact_content_title">
+      contact us
+    </h2>
+    <p class="contact_content_text">
+      We will help you choose a product that
+      suits you and answer your other questions.
+    </p>
+    <form
+      class="contact_content_form"
+      (submit)="submitForm($event)"
+    >
+      <input
+        [ngClass]="{'error': nameIsError, 'complete': nameIsValid}"
+        class="contact_content_form_input"
+        type="text"
+        name="name"
+        placeholder="your name"
+        required
+        (blur)="check($event)"
+        (change)="changeValue($event)"
+        [value]="name"
+      >
+      <input
+        [ngClass]="{'error': emailIsError, 'complete': emailIsValid}"
+        class="contact_content_form_input"
+        type="email"
+        name="email"
+        placeholder="e-mail"
+        required
+        (blur)="check($event)"
+        (input)="changeValue($event)"
+        [value]="email"
+      >
+      <input
+        [ngClass]="{'error': telIsError, 'complete': telIsValid}"
+        class="contact_content_form_input"
+        type="tel"
+        name="tel"
+        placeholder="phone number"
+        required
+        (blur)="check($event)"
+        (input)="changeValue($event)"
+        [value]="tel"
+      >
+      <input
+        [ngClass]="{'error': textIsError, 'complete': textIsValid}"
+        class="contact_content_form_input contact_content_form_input-last"
+        type="text"
+        name="text"
+        placeholder="Your message"
+        required
+        (blur)="check($event)"
+        (change)="changeValue($event)"
+        value="{{text}}"
+      >
+      <button
+        type="submit"
+        class="contact_content_form_button"
+        ((click))="submitForm($event)"
+      >
+        send a message
+      </button>
+    </form>
+  </div>
+  <div class="contact_image">
+    <img
+      src="./assets/images/contact_us/1.jpg"
+      alt="bird"
+      class="contact_image_img"
+    >
+  </div>
+</section>

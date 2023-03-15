@@ -1,0 +1,65 @@
+@import '../../styles/_mixins.scss';
+
+.advantages {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 100px;
+
+  @include on760 {
+    flex-direction: row;
+    align-items: start;
+    gap: 30px;
+    margin-bottom: 130px;
+  }
+
+  @include on1280 {
+    margin-bottom: 200px;
+    gap: 20px;
+  }
+
+  &_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 280px;
+    transition: all 0.5s;
+
+    &:hover {
+      transform: scale(1.07);
+    }
+
+    @include on760 {
+      width: 220px;
+      gap: 25px;
+    }
+
+    @include on1280 {
+      gap: 40px;
+      width: 380px;
+    }
+
+    &_img {
+      display: block;
+      width: 62px;
+      height: 62px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    &_text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #000000;
+    }
+  }
+}

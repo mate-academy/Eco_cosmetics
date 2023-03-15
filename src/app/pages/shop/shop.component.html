@@ -1,0 +1,76 @@
+
+<section class="shop">
+  <div class="shop_loading" *ngIf="isLoading">
+    Loading...
+  </div>
+  <div *ngIf="!isLoading" class="shop_values">
+    <label>
+      find in headers
+      <input
+        (input)="handleChange($event)"
+        [value]="inputValue"
+        type="search"
+        class="shop_values_input"
+        placeholder="search..."
+      >
+    </label>
+    <label>
+      number of items per page
+      <select (change)="handleChange($event)" class="shop_values_select">
+        <option value="3">3</option>
+        <option value="6">6</option>
+        <option value="12">12</option>
+        <option value="{{productsFromServer.length}}">All</option>
+      </select>
+    </label>
+  </div>
+  <div class="shop_goods" *ngIf="!isLoading && productsFromServer.length > 0">
+    <div class="shop_goods_conteiner">
+      <div
+        class="product"
+        *ngFor="let product of visibleProducts"
+      >
+        <app-product-cart
+          [product]="product"
+        ></app-product-cart>
+      </div>
+    </div>
+    <div class="shop_loading" *ngIf="!visibleProducts.length">
+      no corect goods
+    </div>
+  </div>
+  <div *ngIf="visibleProducts.length && currectListOfPagin.length > 1" class="shop_pagination">
+    <button
+      *ngIf="currentPage > 2"
+      (click)="changeCurrentPage(paginFirstItem)"
+      class="shop_pagination_button"
+    >
+      {{paginFirstItem}}
+    </button>
+
+    <div *ngIf="currentPage > 2" class="shop_pagination_text">
+      . . .
+    </div>
+
+    <button
+      *ngFor="let item of currectListOfPagin"
+      (click)="changeCurrentPage(item)"
+      class="shop_pagination_button"
+      [ngClass]="{'disabled': currentPage === item}"
+    >
+      {{item}}
+    </button>
+
+    <div *ngIf="currentPage < (paginLastItem - 2)" class="shop_pagination_text">
+      . . .
+    </div>
+
+    <button
+      *ngIf="currentPage < (paginLastItem - 2)"
+      (click)="changeCurrentPage(paginLastItem)"
+      class="shop_pagination_button"
+    >
+      {{paginLastItem}}
+    </button>
+  </div>
+</section>

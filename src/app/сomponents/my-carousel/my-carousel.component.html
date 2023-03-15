@@ -1,0 +1,21 @@
+<div class="carousel" *ngIf="images && images.length > 0">
+  <img
+    *ngFor="let image of images, let i = index"
+    [src]="image.imageSRC"
+    [alt]="image.imageAlt"
+    [ngClass]="{
+      'carousel_image-active': selectedIndex === i,
+      'carousel_image': selectedIndex !== i
+    }"
+  >
+  <button
+    class="button  button-minus"
+    (click)="prev()"
+  ><</button>
+  <button
+    class="button button-add"
+    (click)="next()"
+  >
+    >
+  </button>
+</div>

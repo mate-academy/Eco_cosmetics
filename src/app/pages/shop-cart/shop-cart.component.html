@@ -1,0 +1,70 @@
+<h2 class="title">
+  Shopping Continue
+</h2>
+<hr>
+<div *ngIf="bagItems.length > 0" class="conteiner">
+  <div class="conteiner_content">
+    <h2 class="conteiner_content_title">
+      Shopping cart
+    </h2>
+    <p class="conteiner_content_text">
+      You have {{bagItems.length}} item in your cart
+    </p>
+    <div *ngFor="let product of bagItems" class="conteiner_content_card">
+      <div class="conteiner_content_card_image">
+        <img
+          src="{{product.image_link[0]}}"
+          alt="goods"
+          class="conteiner_content_card_image_img"
+        >
+      </div>
+      <p class="conteiner_content_card_name">
+        {{product.name}}
+      </p>
+
+      <input
+        type="number"
+        class="conteiner_content_card_input"
+        [value]="product.count"
+        (change)="changeCount($event, product)"
+        max="9"
+        min="1"
+      >
+
+      <p class="conteiner_content_card_price">
+        {{product.count && +product.price * product.count}}{{product.price_sign}}
+      </p>
+
+      <div class="conteiner_content_card_delete" (click)="remove(product.id)">
+        X
+      </div>
+    </div>
+  </div>
+  <div class="conteiner_total">
+    <h2>
+      Total: {{total}}$
+    </h2>
+
+    <app-button
+      class=""
+      [text]="'to agree'"
+      [link]="'/step1'"
+      (click)="showMessage($event)"
+    ></app-button>
+    <div *ngIf="isShowMessage" class="window">
+      <p class="window_title">
+        this option will be implemented soon =)
+      </p>
+    </div>
+  </div>
+</div>
+<div *ngIf="bagItems.length === 0" class="empty">
+  <div class="empty_img">
+
+  </div>
+    <app-button
+      class="empty_button"
+      [text]="'Shop'"
+      [link]="'/shop'"
+    ></app-button>
+</div>

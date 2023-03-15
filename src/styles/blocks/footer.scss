@@ -1,0 +1,147 @@
+.footer {
+  background-color: #8c9772;
+  padding: 30px 20px 40px;
+
+  &_conteiner {
+    display: flex;
+    flex-direction: column;
+
+    @include on760() {
+      display: grid;
+      padding: 30px;
+    }
+
+    @include on1280() {
+      padding: 60px 50px;
+    }
+
+    &_navigation {
+      margin-bottom: 40px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+
+      &_link {
+        width: max-content;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        text-transform: capitalize;
+        color: #e4dfd3;
+        text-decoration: none;
+        transition: all 1s;
+
+        &:hover {
+          color: #344f10;
+        }
+      }
+
+      &_social {
+        display: flex;
+        gap: 20px;
+
+        @include on1280() {
+          display: none;
+        }
+
+        &_link {
+          margin-top: 9px;
+
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-size: cover;
+          background-position: center;
+        }
+
+        &_fb {
+          transition: all 1s;
+          background-image: url(../images/footer/fb.svg);
+
+          &:hover {
+            background-image: url(../images/footer/fb1.svg);
+          }
+        }
+
+        &_insta {
+          transition: all 1s;
+          background-image: url(../images/footer/insta.svg);
+
+          &:hover {
+            background-image: url(../images/footer/insta1.svg);
+          }
+        }
+      }
+
+      &_bottom {
+        margin-top: 50px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #e4dfd3;
+
+        @include on1280() {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 150%;
+          color: #e4dfd3;
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    &_contacts {
+      margin-bottom: 40px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &_content {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #e4dfd3;
+        text-decoration: none;
+      }
+
+      &_link {
+        transition: all 1s;
+
+        &:hover {
+          color: #344f10;
+        }
+      }
+
+      &_social {
+        display: none;
+
+        @include on1280() {
+          display: flex;
+          gap: 20px;
+        }
+      }
+    }
+
+    &_bottom {
+      margin: 0 auto;
+
+      @include on760() {
+        display: none;
+      }
+
+      &_text {
+        width: 200px;
+
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 130%;
+        text-align: center;
+        color: #e4dfd3;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

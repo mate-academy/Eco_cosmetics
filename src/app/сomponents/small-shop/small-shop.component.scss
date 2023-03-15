@@ -1,0 +1,151 @@
+@import '../../styles/_mixins.scss';
+
+.small-shop {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 100px;
+
+  @include on760 {
+    margin-bottom: 135px;
+  }
+
+  @include on1280 {
+    margin-bottom: 200px;
+    padding: 0 100px 0 110px;
+  }
+
+  &_left-text {
+    display: none;
+
+    @include on1280 {
+      display: block;
+    }
+  }
+
+  &_box {
+    @include on760 {
+      margin: 0 auto;
+      width: 760px;
+    }
+
+    @include on1280 {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  &_title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #344f10;
+
+    margin-bottom: 20px;
+
+    @include on760 {
+      text-align: left;
+      padding: 0 30px;
+    }
+
+    @include on1280 {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    &_navigation {
+      display: flex;
+      gap: 20px;
+      padding: 0 20px;
+      margin-bottom: 15px;
+
+      @include on760 {
+        padding: 0 30px;
+        margin-bottom: 30px;
+      }
+
+      &_link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #828282;
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 10px;
+
+        @include on1280 {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 150%;
+        }
+
+        &:hover {
+          color: #333333;
+          border-color: #333333;
+        }
+      }
+    }
+
+    &_product {
+      position: relative;
+      overflow: hidden;
+      
+      &_conteiner {
+        width: max-content;
+        display: flex;
+        gap: 25px;
+        position: relative;
+        transition: all 0.5s;
+      }
+
+
+      &_button {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50px;
+        border: 1px solid transparent;
+        background-color: #0000001f;
+        transition: all 0.5s;
+        font-weight: 600;
+        font-size: 48px;
+        color: #000000;
+
+        &:hover {
+          border-color: #333333;
+          background-color: #0000003d;
+        }
+
+        &-left {
+          left: 0;
+        }
+
+        &-right {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &_button {
+    margin: 0 auto;
+  }
+}
+
+.active-link {
+  color: #333333;
+  border-color: #333333;
+}

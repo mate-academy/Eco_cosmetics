@@ -1,0 +1,86 @@
+.choose {
+  position: relative;
+  padding: 0 20px;
+  margin-bottom: 100px;
+
+  @include on760() {
+    margin-bottom: 130px;
+  }
+
+  @include on1280() {
+    margin-bottom: 300px;
+    padding: 130px 0 100px;
+  }
+
+  &::before {
+    display: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 1px;
+    width: 530px;
+    background-color: rgba(52, 79, 16, 0.5);
+
+    @include on1280() {
+      display: block;
+    }
+  }
+
+  &::after {
+    display: none;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    width: 630px;
+    background-color: rgba(52, 79, 16, 0.5);
+
+    @include on1280() {
+      display: block;
+    }
+  }
+
+  &_content {
+    display: flex;
+    justify-content: center;
+
+    @include on1280() {
+      display: grid;
+    }
+
+    &_text-phone {
+      grid-row: 1;
+
+      &_link {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #344f10;
+        text-decoration: none;
+
+        display: block;
+        width: 280px;
+        text-align: center;
+      }
+    }
+
+    &_text {
+      display: none;
+
+      @include on1280() {
+        display: block;
+      }
+
+      &_paragraph {
+        display: block;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #333;
+      }
+    }
+  }
+}

@@ -1,10 +1,4 @@
-# Eco cosmetics landing page
-Implement landing page according to [Figma design](https://www.figma.com/file/Fz588JKGuPS2Bk21De4KE5/brand_of_eco-cosmetics-(Edit)?node-id=1%3A2
-) - Use BEM and SCSS
-- The design 1440px
-- Desktop 1280px
-- Tablet 640px
-- Mobile (> 320px)
+# AngularEcoCosmetics
 
 1. Implement the header with `nav`.
 1. Implement `Brand of eco-cosmetics and magic candles` block.
