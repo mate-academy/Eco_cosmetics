@@ -1,0 +1,65 @@
+<div class="product">
+  <h2 class="product_title">
+    {{product.name}}
+  </h2>
+  <p class="product_price">
+    {{product.price}} {{product.price_sign}}
+  </p>
+
+  <div class="product_image-conteiner">
+    <div class="product_big-image">
+      <img
+        src="{{targetImg}}"
+        alt="image"
+        class="product_big-image_img"
+      >
+      <button
+        class="product_big-image_button product_big-image_button-left"
+        (click)="changeImg(targetImg, -1)"
+        [disabled]="product.image_link.length < 2"
+      >
+        <
+      </button>
+      <button
+        class="product_big-image_button product_big-image_button-right"
+        (click)="changeImg(targetImg, 1)"
+        [disabled]="product.image_link.length < 2"
+      >
+        >
+      </button>
+    </div>
+  
+    <div *ngIf="product.image_link.length > 1" class="product_image-list">
+      <img *ngFor="let str of product.image_link"
+        [src]="str"
+        alt="img"
+        class="product_image-list_img"
+        [class.active]="targetImg === str"
+        (click)="targetImg = str"
+      >
+    </div>
+  </div>
+
+  <div class="product_content-conteiner">
+    <h2 class="product_desctop-title">
+      {{product.name}}
+    </h2>
+  
+    <p class="product_desctop-price">
+      {{product.price}} {{product.price_sign}}
+    </p>
+    
+    <button
+      class="product_button"
+      [ngClass]="{'disabled': isProductInCart | async}"
+      (click)="addCart(product)"
+      [disabled]="isProductInCart | async"
+    >
+      add to bag
+    </button>
+    
+    <p class="product_description">
+      {{product.description}}
+    </p>
+  </div>
+</div>

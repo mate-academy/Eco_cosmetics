@@ -1,0 +1,95 @@
+@import "../../styles/_mixins.scss";
+
+.header {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #e4dfd3;
+
+  @include on1280 {
+    position: static;
+  }
+
+  &_mobile-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px 20px;
+  
+    @include on760 {
+      padding: 30px 20px;
+    }
+  
+    @include on1280 {
+      display: none;
+    }
+  
+    &_link {
+      position: relative;
+      height: 24px;
+      width: 24px;
+  
+      &_img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      &_count {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: -5px;
+        width: 15px;
+        height: 15px;
+        background-color: #790606;
+        border-radius: 50%;
+        font-size: 12px;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+.desctop-navigation {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 55px 81px 50px;
+
+  @include on1280 {
+    display: flex;
+  }
+
+  &_item {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    position: relative;
+
+    &_link {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: #344f10;
+      border-bottom: 2px solid transparent;
+      transition: border-color 1s;
+
+      &:hover {
+        border-color: #344f10;
+      }
+    }
+  }
+}
+
+.active {
+  border-color: #344f10;
+}

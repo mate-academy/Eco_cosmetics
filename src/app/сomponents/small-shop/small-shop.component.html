@@ -1,0 +1,67 @@
+<div class="small-shop">
+  <app-left-text
+    class="small-shop_left-text"
+    [text]="'shop'"
+    [top]="80"
+    [left]="-50"
+  ></app-left-text>
+  <div class="small-shop_box">
+    <h2 class="small-shop_title">
+      shop
+    </h2>
+    <div class="small-shop_content">
+      <nav class="small-shop_content_navigation">
+        <button
+          class="small-shop_content_navigation_link"
+          [class.active-link]="sortValue === 'face'"
+          (click)="changeSortValue('face')"
+        >
+          face
+        </button>
+        <button
+          class="small-shop_content_navigation_link"
+          [class.active-link]="sortValue === 'body'"
+          (click)="changeSortValue('body')"
+        >
+          body
+        </button>
+        <button
+          [class.active-link]="sortValue === 'hair'"
+          class="small-shop_content_navigation_link"
+          (click)="changeSortValue('hair')"
+        >
+          hair
+        </button>
+      </nav>
+      <div class="small-shop_content_product">
+        <div
+          class="small-shop_content_product_conteiner"
+          [style.left]="step + 'px'"
+        >
+          <app-product-cart
+            *ngFor="let product of visibleList"
+            class="small-shop_content_product_conteiner_item"
+            [product]="product"
+          ></app-product-cart>
+        </div>
+        <button
+        (click)="showNext(-1)"
+          class="small-shop_content_product_button small-shop_content_product_button-left"
+        >
+          <
+        </button>
+        <button
+          (click)="showNext(1)"
+          class="small-shop_content_product_button small-shop_content_product_button-right"
+        >
+          >
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-button
+    class="small-shop_button"
+    [text]="'all products'"
+    [link]="'/shop'"
+  ></app-button>
+</div>

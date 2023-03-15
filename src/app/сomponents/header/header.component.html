@@ -1,0 +1,79 @@
+<header class="header">
+  <nav class="header_mobile-navigation">
+    <a class="header_mobile-navigation_link" routerLink="/menu">
+      <img
+        class="header_mobile-navigation_link_img"
+        src="./assets/images/menu.svg"
+        alt="menu"
+      >
+    </a>
+    <a class="header_mobile-navigation_link" routerLink="/">
+      <img
+        class="header_mobile-navigation_link_img"
+        src="./assets/images/logo-phone.svg"
+        alt="phone_logo"
+      >
+    </a>
+    <a class="header_mobile-navigation_link" routerLink="/cart">
+      <img
+        class="header_mobile-navigation_link_img"
+        src="./assets/images/shop.svg"
+        alt="shop"
+      >
+      <div *ngIf="bagList.length > 0" class="header_mobile-navigation_link_count">
+        {{bagList.length}}
+      </div>
+    </a>
+  </nav>
+  
+  <nav class="desctop-navigation">
+    <a class="desctop-navigation_item" routerLink="/">
+      <img src="./assets/images/logo-text.svg" alt="">
+    </a>
+    <ul class="desctop-navigation_item">
+      <li>
+        <a
+          routerLink="home"
+          routerLinkActive="active"
+          class="desctop-navigation_item_link"
+        >
+         Home
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/shop"
+          routerLinkActive="active"
+          class="desctop-navigation_item_link"
+        >
+         Shop
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="contact"
+          routerLinkActive="active"
+          class="desctop-navigation_item_link"
+        >
+          Contact
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="about"
+          routerLinkActive="active"
+          class="desctop-navigation_item_link"
+        >
+          About
+        </a>
+      </li>
+    </ul>
+    <a class="desctop-navigation_item" routerLink="/cart">
+      <img src="./assets/images/shop.svg" alt="">
+
+      <div *ngIf="bagList.length > 0" class="header_mobile-navigation_link_count">
+        {{bagList.length}}
+      </div>
+    </a>
+  </nav>
+</header>

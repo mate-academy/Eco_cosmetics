@@ -1,0 +1,31 @@
+<div class="product">
+  <a
+    [routerLink]="['/shop', product.id]"
+    class="product_image"
+  >
+    <img
+      class="product_image_img"
+      [src]="product.image_link[0]"
+      [alt]="product.name"
+    >
+  </a>
+  <div class="product_content">
+    <a
+      [routerLink]="['/shop', product.id]"
+      class="product_content_title"
+    >
+      {{product.name}}
+    </a>
+    <p class="product_content_price">
+      {{product.price}} {{product.price_sign}}
+    </p>
+  </div>
+  <button
+    (click)="addCart(product)"
+    [disabled]="isProductInCart | async"
+    class="product_button"
+    [ngClass]="{'disabled': isProductInCart | async}"
+  >
+    ADD TO BAG
+  </button>
+</div>

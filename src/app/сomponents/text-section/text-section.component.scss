@@ -1,0 +1,81 @@
+@import '../../styles/_mixins.scss';
+
+.text-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  margin-bottom: 100px;
+  position: relative;
+
+  @include on760 {
+    margin-bottom: 130px;
+  }
+
+  @include on1280 {
+    padding: 100px 250px 100px 150px;
+    margin-bottom: 200px;
+  }
+
+  &_text {
+    display: none;
+    width: 380px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333333;
+
+    @include on1280 {
+      display: block;
+    }
+
+    &::before {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 530px;
+      height: 1px;
+      background: rgba(52, 79, 16, 0.5);
+
+      @include on1280 {
+        display: block;
+      }
+    }
+  }
+
+  &_link {
+    display: block;
+    width: 280px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: #344f10;
+
+    @include on1280 {
+      text-align: start;
+      width: 380px;
+      font-size: 24px;
+    }
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 630px;
+      height: 1px;
+      background: rgba(52, 79, 16, 0.5);
+
+      @include on1280 {
+        display: block;
+      }
+    }
+  }
+}

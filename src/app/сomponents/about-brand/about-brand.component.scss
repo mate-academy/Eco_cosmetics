@@ -1,0 +1,139 @@
+@import '../../styles/_mixins.scss';
+
+.about-brand {
+  position: relative;
+
+  @include on760 {
+    margin-bottom: 130px;
+  }
+
+  @include on1280 {
+    margin-bottom: 200px;
+    padding: 0 50px 0 0;
+  }
+
+  &_left-text {
+    display: none;
+
+    @include on1280 {
+      display: block;
+    }
+  }
+
+  &_container {
+    margin-bottom: 100px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+  
+    @include on760 {
+      padding: 0 0 0 27px;
+      gap: 30px;
+    }
+  
+    @include on1280 {
+      justify-content: flex-end;
+      gap: 120px;
+    }
+
+    &_content {
+      @include on760 {
+        max-width: 367px;
+      }
+  
+      &_title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 150%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #344f10;
+  
+        margin-bottom: 10px;
+
+        @include on1280 {
+          font-size: 36px;
+          line-height: 110%;
+          display: block;
+          width: 380px;
+          margin-bottom: 34px;
+        } 
+      }
+  
+      &_text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: #333333;
+        margin-bottom: 30px;
+
+        @include on1280 {
+          margin-bottom: 30px;
+        }
+      }
+
+      &_desctop-text {
+        display: none;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #333333;
+
+        @include on1280 {
+          display: block;
+          margin-bottom: 40px;
+        }
+      }
+  
+      &_link {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: #344f10;
+        padding-bottom: 10px;
+        border-bottom: 1px solid transparent;
+        text-decoration: none;
+        transition: border-color 0.5s;
+  
+        &:hover {
+          border-color: #344f10;
+        }
+      }
+    }
+
+    &_image {
+      @include on1280 {
+        display: flex;
+        gap: 20px;
+        align-items: flex-end;
+      }
+  
+      &_big-img {
+        display: none;
+        width: 369px;
+        height: 318px;
+        object-fit: cover;
+        object-position: center;
+  
+        @include on760 {
+          display: block;
+        }
+  
+        @include on1280 {
+          width: 480px;
+          height: 529px;
+        }
+      }
+  
+      &_small-img {
+        display: none;
+        width: 130px;
+        height: 430px;
+  
+        @include on1280 {
+          display: block;
+        }
+      }
+    }
+  }
+}
