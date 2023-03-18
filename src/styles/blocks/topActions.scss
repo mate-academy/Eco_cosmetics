@@ -1,0 +1,42 @@
+.top__Actions {
+  padding: 20px 0;
+
+  @include onTablet {
+    padding-bottom: 30px;
+  }
+  
+  &-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+
+    &__link {
+      padding-bottom: 12px;
+      @include menu__text;
+      color: $greenColor;
+      transition: border-bottom 0.3s;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-bottom: 2px solid $greenColor;
+      }
+    }
+  }
+}
