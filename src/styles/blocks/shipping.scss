@@ -1,0 +1,124 @@
+.shipping {
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 0 0 20px;
+
+  @include onTablet {
+    padding: 107px 0 20px;
+  }
+
+  @include onDesktop {
+    padding: 0 0 72px;
+  }
+
+  &__checkout {
+    margin: 0 0 20px;
+    padding-bottom: 5px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-bottom: 1px solid $c-gray;
+    color: $c-darkGray2;
+  
+    @include onTablet {
+      margin: 0 0 60px;
+      width: 218px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-black;
+
+    @include onTablet {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__form {
+
+    @include onTablet {
+      margin: 0 auto;
+      width: 278px;
+    }
+  }
+
+  &__form-field {
+    display: block;
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 0;
+    padding-bottom: 5px;
+    outline: none;
+    font-family: inherit;
+    background-color: $c-lightGray;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    border: 0;
+    border-bottom: 1px solid transparent;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    &:nth-child(6) {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &:required {
+      border-bottom: 1px solid $c-gray;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $c-black;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $c-black;
+    }
+
+    &:-webkit-autofill {
+      -webkit-font-feature-settings: normal;
+      font-feature-settings: normal;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+    
+    &:invalid:not(:placeholder-shown) {
+      color: $c-red;
+      border-bottom: 1px solid $c-red;
+    }
+
+    &:valid:not(:placeholder-shown) {
+      color: $c-green;
+      border-bottom: 1px solid $c-green;
+    }
+
+    color: $c-black;
+    transition: border-bottom 0.3s;
+
+    &::placeholder {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $c-darkGray2;
+    }
+
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+}
