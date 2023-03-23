@@ -1,0 +1,68 @@
+.choose-nature {
+
+  &__header {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: $main-color;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 0;
+
+
+    @include onDesktop {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 36px;
+      text-align: left;
+      margin: 0;
+      max-width: 380px;
+      padding-bottom: 130px;
+      margin-top: 100px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 1px;
+        width: 49%;
+        right: 0;
+        background-color: $main-color;
+        margin-top: 130px;
+      }
+    }
+  }
+
+  &__text {
+    display: none;
+
+    &::before {
+      margin: 0;
+    }
+
+    @include onDesktop {
+      display: block;
+      text-align: left;
+      color: $main-color;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-top: 100px;
+
+      &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        height: 2px;
+        width: 41%;
+        left: 0;
+        background-color: $main-color;
+        margin-top: -100px;
+      }
+    }
+  }
+}

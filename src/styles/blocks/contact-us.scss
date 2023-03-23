@@ -1,0 +1,88 @@
+.contact-us {
+  &__field {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: #828282;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    background-color: transparent;
+    padding: 10px 0;
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-top: 15px;
+
+      @include onDesktop {
+        margin-top: 20px;
+      }
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      color: #828282;
+    }
+
+    &:placeholder-shown {
+      color: #828282;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus:not(:valid) {
+      border-bottom-color: #333;
+    }
+
+    &:valid {
+      color: #344f10;
+      border-color: #344f10;
+    }
+
+    &:invalid:focus:not(:placeholder-shown) {
+      color: #Eb5757;
+      border-color: #Eb5757;
+    }
+
+    &:invalid {
+      border-color: #bdbdbd;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-height: 584px;
+      height: 100%;
+      width: 369px;
+    }
+
+    @include onDesktop {
+      width: 529px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+}
+
+#contact-us__field--last-child {
+  margin-top: 35px;
+  resize: none;
+
+  @include onDesktop {
+    margin-top: 50px;
+  }
+}
