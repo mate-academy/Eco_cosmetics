@@ -1,0 +1,72 @@
+.contacts {
+  margin-bottom: 100px;
+  
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+  
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__side-text {
+    left: 15px;
+  
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      border: 1px solid #344f10;
+      width: 100px;
+      left: -400%;
+      bottom: 45%;
+      opacity: 0.5;
+    }
+  }
+
+  &__title {
+    @include h4;
+    text-transform: uppercase;
+    color: $greenColor;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      @include h2;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      background-image: url(./../images/bg__contacts.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 462px;
+      width: 342px;
+    }
+
+    @include onDesktop {
+      height: 520px;
+      width: 600px;
+    }
+  }
+
+  &__paragraph {
+    @include small__text;
+    color: $grayColor;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      width: 342px;
+    }
+
+    @include onDesktop {
+      @include text;
+      margin-bottom: 40px;
+    }
+  }
+}

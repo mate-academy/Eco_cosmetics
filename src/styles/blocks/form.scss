@@ -1,0 +1,61 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  &__input {
+    display: block;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    background-color: $lightColor;
+    height: 38px;
+    width: 100%;
+    color: $greenColor;
+    border-bottom: 1px solid $grayMetalickColor;
+    outline: none;
+    transition: 0.3s;
+
+    @include onDesktop {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+    
+    &:hover {
+      border-bottom: 1px solid $grayColor;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $greenColor;
+    }
+
+    &:active {
+      border-bottom: 1px solid $greenColor;
+    }
+
+    &::grammar-error {
+      color: $error-red;
+      border-bottom: 1px solid $error-red;
+    }
+
+    &--textarea {
+      font-family: "Poppins", sans-serif;
+      resize: none;
+      white-space: normal;
+      padding: 0 0 5px;
+      margin: 20px 0 30px;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $gray-three;
+        border-radius: 20%;
+      }
+    }
+  }
+}
