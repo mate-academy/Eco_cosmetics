@@ -1,7 +1,16 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} 0.3s ease-in-out;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin hoverImg {
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 10px 9px 23px -5px rgba(0,0,0,0.75);
+    cursor: pointer;
   }
 }
 
