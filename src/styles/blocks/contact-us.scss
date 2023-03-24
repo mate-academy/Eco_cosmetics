@@ -1,0 +1,175 @@
+.contact-us {
+  padding: 0 0 100px;
+
+  @include onTablet {
+    padding: 0 0 130px;
+  }
+
+  @include onDesktop {
+    padding: 0 0 200px;
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+
+      & > :not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+
+    @include onDesktop {
+      position: relative;
+      padding-left: 100px;
+
+      & > :not(:last-child) {
+        margin-right: 120px;
+      }
+
+      &::before {
+        content: "help";
+        position: absolute;
+        top: 35px;
+        left: 0;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        color: rgba(52, 79, 16, 0.5);
+        transform: rotate(-90deg);
+        transform-origin: 0;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 55px;
+        left: 0;
+        display: block;
+        width: 1px;
+        height: 88px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__form-container {
+    @include onDesktop {
+      min-width: 480px;
+    }
+  }
+
+  &__title {
+    @extend %title;
+
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+      width: 380px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    width: 100%;
+
+    font-family: $fontPrimary;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $colorPrimary;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid #bdbdbd;
+    background-color: transparent;
+    transition: 0.3s;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      font-size: 18px;
+    }
+
+    &::placeholder {
+      color: $colorFifth;
+    }
+
+    &:hover {
+      border-color: $colorPrimary;
+    }
+
+    &:focus {
+      border-color: $colorPrimary;
+      color: $colorPrimary;
+    }
+
+    &--phone {
+      margin-bottom: 45px;
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &--textarea {
+      margin-bottom: 30px;
+      resize: none;
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    &-container {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        margin-right: -27px;
+        width: 368px;
+        height: 409px;
+        flex-shrink: 0;
+      }
+
+      @include onDesktop {
+        width: 529px;
+        height: 584px;
+      }
+
+      @include onLargeDesktop {
+        width: 610px;
+      }
+    }
+  }
+}

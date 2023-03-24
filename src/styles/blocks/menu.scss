@@ -1,0 +1,152 @@
+.menu {
+  position: relative;
+  z-index: 1;
+
+  @include onDesktop {
+    padding-left: 26px;
+  }
+
+  &__span {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 1px;
+    margin-bottom: 5px;
+
+    background-color: $colorSecondary;
+    z-index: 1;
+    transition: transform 0.3s,
+      background-color 0.3s,
+      opacity 0.3s ease;
+
+    &:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    padding-top: 80px;
+    background-color: $colorPrimary;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    overflow-y: auto;
+
+    @include onTablet {
+      padding-top: 143px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      height: max-content;
+      padding: 0;
+      background-color: transparent;
+      transform: translateX(0);
+      z-index: 4;
+      overflow: hidden;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 20px;
+    height: 13px;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &:checked ~ .menu__span {
+      background-color: $colorThird;
+      opacity: 1;
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    &:checked ~ .menu__span:nth-last-child(3) {
+      opacity: 0;
+      transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    &:checked ~ .menu__span:nth-last-child(2) {
+      transform: rotate(-45deg) translate(4px, -3px);
+    }
+
+    &:checked ~ .menu__nav {
+      transform: none;
+    }
+
+    &:checked {
+      height: 16px;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+
+    & > :not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    @include onTablet {
+      & > :not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+
+    @include onDesktop {
+      display: flex;
+
+      & > :not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 10px 0;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    color: $colorThird;
+    text-align: center;
+    text-decoration: none;
+
+    border-bottom: 1px solid $colorFifth;
+    transition: border-color 0.3s;
+
+    @include onDesktop {
+      padding: 0;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $colorSecondary;
+      border-color: transparent;
+    }
+
+    &:hover {
+      border-color: $colorThird;
+
+      @include onDesktop {
+        border-color: $colorSecondary;
+      }
+    }
+  }
+}
