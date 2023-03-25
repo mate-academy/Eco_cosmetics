@@ -10,14 +10,19 @@
   }
   
   &__content {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    gap: 30px;
+    display: none;
+    min-width: 138%;
 
     @include onDesktop {
-      gap: 30px;
-      width: 100%;
+      display: block;
+    }
+
+    &--tel-off {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
     }
   }
 
@@ -103,6 +108,7 @@
     cursor: pointer;
     transition: 0.3s;
     width: 100%;
+    color: $grayColor;
 
     @include onDesktop {
       transition: 0.3s;

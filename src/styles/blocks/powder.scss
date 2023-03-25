@@ -10,7 +10,6 @@
   }
 
   &__content {
-    margin-bottom: 60px;
   }
 
   &__title {
@@ -34,18 +33,36 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    height: 325px;
-
-    @include onDesktop {
-      height: 368px;
-    }
+    position: relative;
+    top: -20px;
   }
 
   &__item {
-    margin-bottom: 49px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-bottom: 40px;
+    position: relative;
 
-    &:nth-child(5) {
-      margin-bottom: 0;
+    &::before {
+      content: "";
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      top: 50%;
+      right: 100px;
+      width: 76px;
+      height: 1px;
+      background-color: #344f10;
+
+      @include onTablet {
+        right: 230px;
+      }
+
+      @include onDesktop {
+        right: 450px;
+      }
     }
   }
 
@@ -53,28 +70,40 @@
     margin-right: 200px;
 
     @include onTablet {
-      margin-right: 400px;
+      margin-right: 330px;
     }
 
     @include onDesktop {
-      margin-right: 500px;
+      margin-right: 550px;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
     }
   }
 
   &__image {
     position: absolute;
-    background-image: url(./../images/glass.png);
+    background-image: url(./../images/powder.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 100%;
     right: 0;
-    bottom: 50px;
+    bottom: 15px;
     height: 395px;
     width: 180px;
 
     @include onTablet {
       position: absolute;
-      background-image: url(./../images/glass__tablet.png);
+      background-image: url(./../images/powder__tablet.png);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: 100%;
@@ -85,12 +114,12 @@
 
     @include onDesktop {
       position: absolute;
-      background-image: url(./../images/glass-desktop.png);
+      background-image: url(./../images/powder__desktop.png);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: 100%;
       right: 22px;
-      height: 480px;
+      height: 448px;
       width: 480px;
     }
   }
