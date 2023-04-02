@@ -40,6 +40,22 @@
       resize: none;
       text-transform: none;
 
+      &::-webkit-scrollbar {
+        width: 3px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #fff;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #333;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #828282;
+      }
+
       @include onDesktop {
         margin-bottom: 52px;
       }
@@ -59,6 +75,21 @@
 
     &:focus {
       outline: none;
+    }
+
+    &:-webkit-autofill {
+      -webkit-font-feature-settings: normal;
+      font-feature-settings: normal;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    &:-webkit-autofill:active,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-font-feature-settings: normal;
+      -webkit-text-fill-color: #828282;
+      -webkit-background-clip: text;
     }
   }
 
