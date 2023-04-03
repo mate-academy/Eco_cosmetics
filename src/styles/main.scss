@@ -1,7 +1,563 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+$main-bg-color: #e4dfd3;
+$menu-text-btn-bg-color: #333;
+$footer-bg-color: #8c9772;
+$links-title-color: #344f10;
+$button-text-color: #f2f2f2;
 
-body {
-  background: $c-gray;
+@mixin onDesktop-high {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+
+  &__body {
+    margin: 0 auto;
+    background-color: #e4dfd3;
+    color: $menu-text-btn-bg-color;
+  }
+
+  &__nav-section {
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+    @include onDesktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__inside-section {
+    @include onDesktop {
+      margin-bottom: 100px 0;
+    }
+  }
+
+  &__outside-section {
+    @include onMobile {
+      margin-bottom: 100px;
+    }
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  //????????????
+  &__underline {
+    @include onMobile {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+      margin-top: 100px;
+      margin-bottom: 200px;
+
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+  }
+
+  &__aboveline {
+    @include onMobile {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 100px;
+
+      height: 1px;
+
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+  }
+
+  &__button {
+    @include onMobile {
+      display: flex;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      justify-content: left;
+    }
+  }
+
+  &__simple-text {
+    @include onMobile {
+      // margin-bottom: 30px;
+
+      font-size: 16px;
+      font-weight: 400px;
+      line-height: 24px;
+      text-align: center;
+    }
+
+    // @include onDesktop {
+    //   margin-bottom: 50px;
+    //   text-align: left;
+    // }
+  }
+
+  &__title-text {
+    @include onMobile {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 40px;
+      letter-spacing: 5%;
+
+      color: $links-title-color;
+      text-transform: uppercase;
+      text-align: left;
+    }
+    @include onDesktop {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 40px;
+      letter-spacing: 5%;
+
+      color: $links-title-color;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    @include onDesktop {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 40px;
+      letter-spacing: 5%;
+
+      color: $links-title-color;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}
+
+body,
+a,
+p,
+h1,
+h2,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.container {
+  @include onMobile {
+    padding: 0 20px;
+  }
+
+  @include onTablet {
+    padding: 0 30px;
+  }
+
+  @include onDesktop {
+    padding: 0 50px;
+  }
+
+  @include onDesktop-high {
+    padding: 0 130px;
+  }
+}
+
+.header {
+  @include onMobile {
+    padding-top: 15px;
+  }
+  @include onTablet {
+    padding-top: 20px;
+  }
+  @include onDesktop {
+    padding-top: 40px;
+  }
+
+  &__title {
+    @include onMobile {
+      margin-bottom: 10px;
+
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 31px;
+      text-align: center;
+    }
+
+    @include onTablet {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 54px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 58px;
+      text-align: left;
+    }
+
+    @include onDesktop-high {
+      margin-bottom: 30px;
+
+      font-size: 60px;
+      font-weight: 600;
+      line-height: 78px;
+    }
+
+  }
+
+  &__description {
+    @include onMobile {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    padding: 20px 118px;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+    text-transform: uppercase;
+    background-color: $menu-text-btn-bg-color;
+    color: $button-text-color;
+  }
+
+  &__image-mobile {
+    @include onMobile {
+      display: block;
+      min-height: 267px;
+      margin-bottom: 25px;
+
+      background-image: url(../images/mobile/scrub-jars.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__image-tablet {
+    @include onTablet {
+      display: block;
+      min-height: 500px;
+      margin-bottom: 50px;
+
+      background-image: url(../images/tablet/many-jars.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__image-desktop {
+    @include onMobile {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+      min-height: 451px;
+
+      background-image: url(../images/desktop/many-jars.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+.grid {
+  @include onMobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+
+    &__item {
+      @for $start from 1 through 2 {
+        @for $end from $start through 2 {
+          &--mobile-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+
+    &__item {
+      @for $start from 1 through 6 {
+        @for $end from $start through 6 {
+          &--tablet-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  @include onDesktop {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+
+    &__item {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &--desktop-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}
+
+.icon {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: $links-title-color;
+  width: 20px;
+  height: 20px;
+
+  @include onTablet {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include onDesktop {
+    width: 26px;
+    height: 26px;
+  }
+
+  &--logo {
+    background-image: url(../images/icons/logo-header.svg);
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &--shop {
+    background-image: url(../images/icons/shop.svg);
+  }
+
+  &--menu {
+    background-image: url(../images/icons/Menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  &__grid-top {
+    @include onMobile {
+      display: grid;
+      grid-template-columns: 24px 24px 24px;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 50px 1fr 1fr 26px;
+    }
+  }
+
+  &__logo {
+    &-text {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        align-items: center;
+        margin-left: 12px;
+        text-transform: uppercase;
+
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 2px;
+        color: $links-title-color;
+      }
+    }
+  }
+
+  &__container {
+    @include onMobile {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: flex;
+      height: 50px;  //?????? как сделать что бы контейнер растягивался по
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: #344f10;
+  }
+}
+
+.slogan {
+  @include onDesktop {
+    margin-bottom: 0;
+  }
+
+  &__title-text {
+    @include onMobile {
+      font-size: 18px;
+      line-height: 27px;
+
+      text-align: left;
+    }
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+      line-height: 36px;
+
+      text-align: left;
+    }
+  }
+
+  &__paragraph {
+    @include onMobile {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: contents;
+      text-align: left;
+    }
+  }
+}
+
+.about-us {
+  position: relative;
+  display: block;
+
+  &__aside-paragraph {
+
+    @include onMobile {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: absolute;
+
+      white-space: nowrap;
+      transform-origin: 0 0;
+      left: 0;
+      top: 0;
+
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+
+      color: rgba(52, 79, 16, 0.5);
+      transform: rotate(-90deg);
+
+      &::before {
+        // position: absolute;
+        // display: block;
+        content: "";
+        width: 100px;
+        height: 1px;
+        // top: -40px;
+        // left: -70px;
+        // top: 50%;
+        // left: -50%;
+        // height: 1px;
+        // width: 100px;
+        // background-color: rgba(52, 79, 16, 0.5);
+
+        border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+        // transform: rotate(90deg);
+      }
+    }
+  }
+
+  &__title-text {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+    text-align: left;
+  }
 }
