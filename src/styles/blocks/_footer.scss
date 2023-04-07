@@ -1,0 +1,154 @@
+.footer {
+  height: 100%;
+  position: relative;
+  color: $main-bg-color;
+
+  background-color: rgba(52, 79, 16, 0.5);
+
+  @include onMobile {
+    min-height: 468px;
+    padding-top: 29px;
+  }
+
+  @include onTablet {
+    min-height: 265px;
+    padding-top: 29px;
+  }
+
+  @include onDesktop {
+    padding-top: 60px;
+    min-height: 320px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 12px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 15px;
+    }
+
+    @include onDesktop {
+      gap: 40px;
+    }
+  }
+
+  &__copyright {
+    position: absolute;
+    text-transform: capitalize;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    left: 0;
+    bottom: 40px;
+
+    &--mob-none {
+      display: none;
+    }
+
+    @include onTablet {
+      width: 100%;
+      justify-content: flex-start;
+      left: 30px;
+      bottom: 30px;
+    }
+
+    @include onDesktop {
+      left: 0;
+      bottom: -60px;
+    }
+  }
+
+  &__text {
+    @include onMobile {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 21px;
+      width: 200px;
+    }
+
+    @include onTablet {
+      width: fit-content;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    text-transform: capitalize;
+    color: $main-bg-color;
+    border-bottom: 1px solid transparent;
+    padding: 5px 0;
+
+    &:hover {
+      border-bottom: 1px solid $main-bg-color;
+    }
+
+    @include onTablet {
+      padding: 10px 0;
+    }
+  }
+
+  &__contact-link {
+    color: $main-bg-color;
+  }
+
+  &__list-right {
+    display: flex;
+    flex-direction: column;
+
+    @include onMobile {
+      margin-top: 80px;
+    }
+
+    @include onTablet {
+      margin-top: 0;
+      gap: 10px;
+    }
+
+    @include onDesktop {
+      gap: 15px;
+    }
+  }
+
+  &__img-container {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    bottom: 310px;
+
+    @include onTablet {
+      bottom: 100px;
+    }
+
+    @include onDesktop {
+      bottom: -50px;
+    }
+  }
+
+  &__svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &--instagram {
+      background-image: url(../images/icons/instagram.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/icons/facebook.svg);
+    }
+  }
+}
