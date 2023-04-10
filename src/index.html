@@ -50,7 +50,9 @@
               grid__item--desktop-7-12
               header__image-order-1"
           >
-            <div class="header__image"></div>
+            <div class="header__image--container">
+              <div class="header__image"></div>
+            </div>
           </div>
 
           <div
@@ -223,16 +225,17 @@
             >
               <div class="shop__container">
                 <div class="card">
-                  <img
-                  srcset="./images/mobile/two-bottles-mob.jpg 320w,
-                          ./images/tablet/two-bottles-tablet.jpg 768w,
-                          ./images/desktop/two-bottles.jpg 1280w"
-                  src="./images/desktop/two-bottles.jpg"
-                  alt="Hydrophilic oil"
-                  class="card__img"
-                >
-
-                  <a href="#Hydrophilic-oil" class="card__title page__title-text">
+                  <div class="card__img--container">
+                    <img
+                    srcset="./images/mobile/two-bottles-mob.jpg 320w,
+                            ./images/tablet/two-bottles-tablet.jpg 768w,
+                            ./images/desktop/two-bottles.jpg 1280w"
+                    src="./images/desktop/two-bottles.jpg"
+                    alt="Hydrophilic oil"
+                    class="card__img"
+                  >
+                  </div>
+                  <a href="./Hydrophilic-oil.html" class="card__title page__title-text">
                     Hydrophilic oil
                   </a>
 
@@ -242,12 +245,15 @@
                 </div>
 
                 <div class="card">
-                  <img
-                  srcset="./images/tablet/scrub-jar-tablet.jpg 320w,
-                          ./images/desktop/scrab-jar.jpg 1280w"
-                  src="./images/desktop/scrab-jar.jpg"
-                  alt="Hydrophilic oil"
-                  class="card__img">
+                  <div class="card__img--container">
+                    <img
+                      srcset="./images/tablet/scrub-jar-tablet.jpg 320w,
+                              ./images/desktop/scrab-jar.jpg 1280w"
+                      src="./images/desktop/scrab-jar.jpg"
+                      alt="Hydrophilic oil"
+                      class="card__img"
+                    >
+                  </div>
 
                   <a href="#ubtan" class="card__title page__title-text">
                     ubtan
@@ -262,7 +268,7 @@
           </div>
           <div class="button button--shop-center">
             <a href="#shop" class="button__link">
-              shop
+              all products
             </a>
           </div>
         </div>
@@ -356,19 +362,19 @@
 
               <div class="tooth__image">
                 <ul class="tooth__ingredients-list">
-                  <li class="toth__ingredients-item">
+                  <li class="tooth__item">
                     Kaolin
                   </li>
-                  <li class="toth__ingredients-item">
+                  <li class="tooth__item">
                     Sivak
                   </li>
-                  <li class="toth__ingredients-item">
+                  <li class="tooth__item">
                     Calcium
                   </li>
-                  <li class="toth__ingredients-item toth__ingredients-item--space">
+                  <li class="tooth__item">
                     Licorice root
                   </li>
-                  <li class="toth__ingredients-item">
+                  <li class="tooth__item">
                     Turmeric
                   </li>
                 </ul>
@@ -376,6 +382,25 @@
             </div>
           </div>
         </div>
+        <!-- <div class="tooth__image">
+          <ul class="tooth__ingredients-list">
+            <li class="tooth__item">
+              Kaolin
+            </li>
+            <li class="tooth__item">
+              Sivak
+            </li>
+            <li class="tooth__item">
+              Calcium
+            </li>
+            <li class="tooth__item">
+              Licorice root
+            </li>
+            <li class="tooth__item">
+              Turmeric
+            </li>
+          </ul>
+        </div> -->
       </section>
       <section class="about-product page__outside-section">
         <div class="container">
@@ -461,6 +486,8 @@
                     id="tel"
                     name="tel"
                     placeholder="phone number"
+                    pattern="[+]{1}[0-9]{12}"
+                    oninvalid="this.setCustomValidity('Please input the correct phone number with lenght of 11 digits, example: +12345678900')"
                     class="contact-us__input contact-us__input--mrgn-mob"
                     required
                   >
@@ -498,12 +525,7 @@
     <footer class="footer">
       <div class="container">
         <div class="grid">
-          <div
-            class="
-              grid__item grid__item--desktop-1-5
-              grid__item--tablet-1-1
-              grid__item--mobile-1-2"
-          >
+          <div class="grid__item grid__item--links">
             <ul class="footer__list">
               <li class="footer__list--item">
                 <a href="#shop"
@@ -539,29 +561,26 @@
               </li>
             </ul>
           </div>
-          <div class="footer__copyright">
-            <p class="footer__text">
-              <span class="footer__copyright--mob-none">Copyright</span> &copy; 2019 witch of mountain winds
-            </p>
+          <div class="grid__item--copyright">
+            <div class="footer__copyright">
+              <p class="ooter__text--copyright">
+                <span class="footer__copyright--mob-none">Copyright</span> &copy; 2019 witch of mountain winds
+              </p>
+            </div>
           </div>
-          <div
-            class="
-              grid__item grid__item--desktop-8-12
-              grid__item--tablet-4-6
-              grid__item--mobile-1-2"
-            >
+          <div class="grid__item--right-list">
             <ul class="footer__list-right footer__text">
-              <li>
+              <li class="footer__link--mob">
                 Ukraine
               </li>
 
-              <li>
+              <li class="footer__link--mob">
                 <a href="mailto:support.mountain@gmail.com" class="footer__contact-link">
                   support.mountain@gmail.com
                 </a>
               </li>
 
-              <li>
+              <li class="footer__link--mob">
                 <a href="tel:+380934476839" class="footer__contact-link">
                   +380934476839
                 </a>
@@ -572,7 +591,7 @@
               </li>
             </ul>
           </div>
-          <div class="grid__item grid__item--desktop-8-12">
+          <div class="grid__item--social">
             <div class="footer__img-container">
               <a
                 href="https://www.instagram.com/"
@@ -581,7 +600,6 @@
                 class="
                   footer__svg
                   footer__svg--instagram
-                  footer__contact-link
                   footer__contact-link-social"
               ></a>
 
@@ -592,7 +610,6 @@
                 class="
                   footer__svg
                   footer__svg--facebook
-                  footer__contact-link
                   footer__contact-link-social"
               ></a>
             </div>
