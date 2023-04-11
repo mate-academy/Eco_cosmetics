@@ -1,6 +1,5 @@
 # Eco cosmetics landing page
-Implement landing page according to [Figma design](https://www.figma.com/file/Fz588JKGuPS2Bk21De4KE5/brand_of_eco-cosmetics-(Edit)?node-id=1%3A2
-) - Use BEM and SCSS
+Implement landing page according to [Figma design](https://www.figma.com/file/Fz588JKGuPS2Bk21De4KE5/Brand-of-eco-cosmetics-_FE-students?node-id=21779%3A631&t=Gtk1Kj4TKq6BJit2-1) - Use BEM and SCSS
 - The design 1440px
 - Desktop 1280px
 - Tablet 640px
