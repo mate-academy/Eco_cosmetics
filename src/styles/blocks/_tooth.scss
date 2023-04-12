@@ -32,13 +32,12 @@
   &__item::after {
     margin-left: 20px;
     position: absolute;
-    display: block;
+    display: inline-block;
     content: "";
-    height: 1px;
-    background-color: $menu-link-text-btn-bg-color;
+    border: 0.5px solid $menu-link-text-btn-bg-color;
     width: 32px;
     top: 50%;
-    left: 100%;
+    transform: translateY(-50%);
 
     @include onTablet {
       width: 76px;
@@ -48,20 +47,18 @@
 
   &__item::before {
     position: absolute;
-    display: block;
+    display: inline-block;
     content: "";
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    top: 52%;
-    right: -55%;
+    top: 50%;
+    right: -60%;
     transform: translateY(-50%);
-    background-color: $menu-link-text-btn-bg-color;
+
+    border: 2.5px solid $menu-link-text-btn-bg-color;
+    border-radius: 50%;
 
     @include onTablet {
-      right: 100%;
-      transform: translate(-2px, -50%);
       right: -100px;
+      transform: translateY(-50%);
     }
   }
 

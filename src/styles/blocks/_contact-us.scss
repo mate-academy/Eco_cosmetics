@@ -51,12 +51,6 @@
       &:required:invalid::placeholder {
         color: $invalid-form;
       }
-
-      input:-webkit-autofill,
-      input:-webkit-autofill:hover,
-      input:-webkit-autofill:focus {
-        background-color: none !important;
-      }
     }
 
     @include onTablet {
@@ -140,4 +134,14 @@
       border: 1px solid $menu-link-text-btn-bg-color;
     }
   }
+}
+
+*:-webkit-autofill,
+*:-webkit-autofill:hover,
+*:-webkit-autofill:focus,
+*:-webkit-autofill:active {
+  border-bottom: 1px solid $links-title-color;
+  -webkit-text-fill-color: $links-title-color;
+  -webkit-box-shadow: 0 0 0px 1000px $main-bg-color inset;
+  transition: background-color 9999s ease-in-out 0s;
 }
