@@ -1,0 +1,66 @@
+.about {
+  overflow: hidden;
+
+  &__paragraph {
+
+    @extend %font-paragraph;
+
+    &--impotent {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin: 0 0 40px;
+      }
+    }
+  }
+
+  &__title-link {
+    @extend %link;
+  }
+
+  &__photos {
+
+    @include onDesktop {
+      position: relative;
+      display: flex;
+    }
+  }
+
+  &__photo {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+
+    @include onDesktop {
+      position: absolute;
+    }
+
+    &--1 {
+
+      @include onTablet {
+        height: 318px;
+        background-image: url(../images/photo-ipad.png);
+      }
+
+      @include onDesktop {
+        background-image: url(./../images/about-big-desktop.png);
+        height: 529px;
+      }
+    }
+
+    &--2 {
+
+      @include onDesktop {
+        transform: translateY(99px);
+
+        background-image: url(./../images/about-small-desktop.png);
+    
+        height: 431px;
+        width: 208px;
+      }
+    }
+  }
+}

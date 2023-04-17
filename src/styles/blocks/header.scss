@@ -1,0 +1,143 @@
+.icon {
+  display: block;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--menu {
+    width: 20px;
+    height: 13px;
+    background-image: url(../images/menu.svg);
+
+    @include onDesktop {
+      width: 270px;
+      height: 50px;
+      background-image: url(../images/logo-desktop.svg);
+    }
+  }
+  
+  &--bag {
+    width: 20px;
+    height: 24px;
+    background-image: url(../images/la_shopping-bag.svg);
+
+    @include onDesktop {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &--cross {
+    width: 14px;
+    height: 14px;
+    background-image: url(../images/cross.svg);
+  }
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+
+  &__content {
+    box-sizing: border-box;
+    padding: 15px 0;
+
+    @include onTablet {
+      padding: 23px 0;
+    }
+
+    @include onDesktop {
+      padding: 40px 0;
+    }
+  }
+
+  &__logo {
+    height: 24px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+
+    @include nav;
+  }
+}
+
+.menu {
+  background-color: #333;
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 15px 0;
+
+    @include onTablet {
+      padding: 23px 0;
+    }
+   
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__top {
+    margin-bottom: 45px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      &:last-child {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #828282;
+    text-decoration: none;
+    color: #e4dfd3;
+  
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border: 1px solid #828282;
+      border-radius: 5px;
+    
+      transition: border-color 0.3s;
+    }
+  }
+}
