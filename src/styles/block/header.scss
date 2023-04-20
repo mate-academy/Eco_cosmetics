@@ -1,0 +1,91 @@
+.header {
+  height: 100vh;
+  margin-bottom: 20px;
+  
+  &--add-to-bag {
+    height: initial;
+  }
+  
+  &__wrapper {
+    @include desktop() {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      margin-top: 70px;
+    }
+  }
+  
+  &__img {
+    @extend %icon;
+    background-image: url(../images/header-img.png);
+    padding: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 400px;
+  
+    @include tablet() {
+      position: relative;
+    }
+  
+    @include desktop() {
+      position: static;
+      width: 700px;
+      height: 550px;
+    }
+  }
+  
+  &__content {
+    padding-top: 450px;
+  
+    @include tablet() {
+      padding-top: 0;
+      margin-top: 30px;
+    }
+  
+    @include desktop() {
+      margin-top: 0;
+    }
+  }
+  
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    color: #333;
+  
+    @include tablet() {
+      font-size: 36px;
+      line-height: 42px;
+      width: 570px;
+      margin: 0 auto;
+    }
+  
+    @include desktop() {
+      font-size: 60px;
+      line-height: 78px;
+      width: 500px;
+      text-align: left;
+    }
+  }
+  
+  &__subtitle {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  
+    @include desktop() {
+      margin-top: 30px;
+      text-align: left;
+    }
+  }
+}

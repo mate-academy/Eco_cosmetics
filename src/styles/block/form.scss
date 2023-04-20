@@ -1,0 +1,86 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  
+  &__shiping {
+    @include tablet() {
+      width: 400px;
+      margin: 0 auto;
+    }
+  }
+  
+  &__field {
+    background-color: #e4dfd3;
+    border: 0;
+    border-bottom: 2px solid  #bdbdbd;
+    margin-top: 30px;
+    padding-bottom: 5px;
+    outline: 0;
+    text-align: left;
+  
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #828282;
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: #fff !important;
+    }
+
+    &:last-child {
+      margin: 40px 0;
+      margin-bottom: 65px;
+    }
+
+    &:focus {
+      border-bottom: 2px solid #8c9772;
+    }
+
+    &::placeholder {
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      text-transform: capitalize;
+      color: #828282;
+    }
+
+    &:hover {
+      &::placeholder {
+        color: #333;
+      }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+      -webkit-border-before: #333;
+      -webkit-border-start: #333;
+      -webkit-border-end: #333;
+    }
+  
+    &--last {
+      margin-bottom: 30px;
+    }
+  
+    &--textarea {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
