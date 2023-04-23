@@ -1,0 +1,209 @@
+.toothPowder {
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $greenFontColor;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__title-tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      width: 342px;
+    }
+
+    @include onSmallDesktop {
+      min-width: 380px;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__container {
+    height: 398px;
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+    @include onTablet {
+      padding-left: 27px;
+    }
+
+    @include onSmallDesktop {
+      padding-left: 50px;
+    }
+
+    @include onDesktop {
+      padding-left: 130px;
+    }
+
+    &--image {
+      position: absolute;
+      fill: #344f10;
+      right: -231px;
+
+      @include onTablet {
+        right: -99px;
+      }
+
+      @include onSmallDesktop {
+        right: 51px;
+      }
+
+      @include onDesktop {
+        right: 131px;
+      }
+    }
+
+    &--list {
+      position: absolute;
+      list-style: none;
+      right: 197px;
+      height: 397px;
+
+      @include onTablet {
+        right: 329px;
+      }
+
+      @include onSmallDesktop {
+        right: 550px;
+      }
+
+      @include onDesktop {
+        right: 630px;
+      }
+
+      &--line {
+        position: absolute;
+        right: -96px;
+        width: 76px;
+        height: 1px ;
+        background-color: $greenFontColor;
+        transition: all 0.7s ease;
+
+        &::after {
+          
+          @include onSmallDesktop {
+            display: block;
+            position: absolute;
+            right: 0;
+            border-radius: 50%;
+            content: "";
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 5px;
+            background-color: $grayColor;
+          }
+        }
+      }
+
+      &--item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: right;
+        margin-top: 6px;
+        transition: all 0.7s ease;
+
+        @include onTablet {
+          margin-top: 38px;
+        }
+
+        &:nth-child(2) {
+          margin-top: 52px;
+        }
+
+        &:nth-child(3) {
+          width: 91px;
+          margin-top: 41px;
+        }
+
+        &:nth-child(4) {
+          margin-top: 36px;
+        }
+
+        &:nth-child(5) {
+          margin-top: 49px;
+        }
+
+        &:hover {
+          scale: 1.2;
+          color: $lightGrayFontColor;
+        }
+
+        &:hover .toothPowder__container--list--line {
+          background-color: $lightGrayFontColor;
+          width: 90px;
+        }
+      }
+    }
+  }
+
+  &__button {
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__button-tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  &__singboard {
+    display: none;
+    position: relative;
+
+    @include onSmallDesktop {
+      display: block;
+    }
+
+    &--text {
+      position: absolute;
+      top: 0;
+      left: -26px;
+      transform: rotate(-90deg);
+      white-space: nowrap;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      text-align: center;
+      color: rgba(52, 79, 16, 0.5);
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 50%;
+        right: 96px;
+        transform: translateY(-50%);
+        height: 1px;
+        width: 100px;
+        text-align: center;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+}

@@ -1,0 +1,180 @@
+.footer {
+  background-color: $backgroundFooterColor;
+  color: $backgroundColor;
+  padding: 30px 0 40px;
+
+  @include onTablet {
+    padding: 30px 27px 30px 0;
+  }
+
+  @include onSmallDesktop {
+    padding: 60px 50px;
+  }
+
+  @include onDesktop {
+    padding: 60px 130px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    @include onSmallDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    &--item {
+      text-decoration: none;
+      color: $backgroundColor;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      width: max-content;
+      margin-bottom: 11px;
+      transition: color 0.7s ease;
+
+      @include onTablet {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      @include onSmallDesktop {
+        font-size: 18px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        color: $grayColor;
+      }
+    }
+  }
+
+  &__socials {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onSmallDesktop {
+      display: none;
+    }
+
+    &--link {
+      text-decoration: none;
+      margin-right: 20px;
+
+      &--icon {
+        transition: all 0.7s ease;
+
+        &:hover {
+          scale: 1.2;
+          fill: $grayColor;
+        }
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onSmallDesktop {
+        display: flex;
+      }
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 40px;
+
+    @include onSmallDesktop {
+      margin-bottom: 30px;
+    }
+
+    &--item {
+      display: block;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      margin-bottom: 10px;
+
+      @include onSmallDesktop {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &--link {
+      text-decoration: none;
+      color: $backgroundColor;
+      transition: color 0.7s ease;
+
+      &:hover {
+        color: $grayColor;
+      }
+    }
+  }
+
+  &__copyright {
+    width: 198px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 100%;
+      
+    }
+
+    @include onSmallDesktop {
+      display: none;
+    }
+
+    &--item {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 130%;
+      text-align: center;
+
+      @include onTablet {
+        text-align: left;
+      }
+
+      @include onSmallDesktop {
+        font-size: 18px;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onSmallDesktop {
+        display: block;
+      }
+    }
+  }
+}
+
+.footer-container {
+
+  @include onTablet {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__block {
+    width: 50%;
+
+    @include onSmallDesktop {
+      width: 100%;
+    }
+  }
+}
