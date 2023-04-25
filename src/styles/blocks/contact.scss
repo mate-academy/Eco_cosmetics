@@ -1,0 +1,155 @@
+.contact {
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    margin-bottom: 12px;
+    
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    
+    color: #344f10;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 110%;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    
+    color: #333;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+
+  &__image-box {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 0;
+
+    @include onTablet {
+      display: block;
+      padding-bottom: 122.29%;
+    }
+
+    @include onDesktop {
+      height: 548px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    background-color: #e4dfd3;
+    color: #828282;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0;
+    
+
+    margin-bottom: 24px;
+    padding-bottom: 4px;
+  
+    @include onDesktop {
+      font-size: 18px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 32px;
+      padding-bottom: 8px;
+    }
+
+    &--textarea {
+      margin-bottom: 32px;
+      resize: none;
+      text-transform: none;
+
+      @include onDesktop {
+        margin-bottom: 52px;
+      }
+    }
+
+    &:nth-of-type(3) {
+      margin-bottom: 44px;
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    &:hover {
+      color: #333;
+      border-color: #333;
+    }
+
+    &:focus {
+      outline: none;
+      color: #333;
+      border-color: #333;
+    }
+
+    &:-webkit-autofill {
+      -webkit-font-feature-settings: normal;
+      font-feature-settings: normal;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    &:-webkit-autofill:active,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-color: #333;
+      -webkit-font-feature-settings: normal;
+      font-feature-settings: normal;
+      -webkit-text-fill-color: #333;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      color: #eb5757;
+      border-color: #eb5757;
+      -webkit-text-fill-color: #eb5757;
+    }
+
+    &:valid:not(:focus) {
+      color: #344f10;
+      border-color: #344f10;
+      -webkit-text-fill-color: #344f10;
+    }
+  }
+}
