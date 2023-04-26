@@ -1,0 +1,121 @@
+.shop {
+  &__title {
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__menu {
+    padding: 0 20px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    @include onLaptop {
+      margin-bottom: 85px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onLaptop {
+      display: flex;
+    }
+  }
+
+  &__item {
+    @include onTablet {
+      display: inline-block;
+      margin-right: 32px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include onLaptop {
+      margin-right: 46px;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    line-height: 21px;
+    color: $colorGrey;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    transition: color 0.3s;
+
+    &::after {
+      background-color: $colorGrey;
+    }
+
+    @include onTablet {
+      font-weight: 500;
+      color: #828282;
+    }
+
+    @include onLaptop {
+      line-height: 27px;
+    }
+
+    &:hover {
+      @include onTablet {
+        color: $colorGrey;
+      }
+    }
+
+    &--active {
+      color: $colorGrey;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    margin-bottom: 20px;
+
+    @include onLaptop {
+      margin-bottom: 45px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    padding: 0 20px;
+
+    @include onTablet {
+      width: max-content;
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+
+  &__top-actions {
+    display: block;
+
+    @include onLaptop {
+      display: grid;
+    }
+  }
+}

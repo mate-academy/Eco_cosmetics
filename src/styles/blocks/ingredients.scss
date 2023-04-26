@@ -1,0 +1,123 @@
+.ingredients {
+  overflow: hidden;
+
+  &__title {
+    margin-bottom: 38px;
+
+    @include onTablet {
+      width: calc(100% + 20px);
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+
+    @media (min-width: 530px) {
+      justify-content: flex-end;
+    }
+
+    @include onTablet {
+      right: -80px;
+      margin-bottom: 0;
+    }
+
+    @include onLaptop {
+      right: 0;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: right;
+
+    @include onLaptop {
+      margin-right: 100px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    width: 120px;
+    margin-right: 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: calc(100% + 20px);
+
+      display: block;
+      width: 80px;
+      height: 1px;
+      background-color: $colorGrey;
+
+      @include onLaptop {
+        content: url("../images/bg-ingredients.svg");
+        top: 0;
+        background-color: transparent;
+      }
+    }
+
+    &:nth-child(1) {
+      margin-top: 10px;
+      margin-bottom: 50px;
+
+      @include onTablet {
+        margin-top: 40px;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 40px;
+    }
+
+    &:nth-child(3) {
+      margin-bottom: 35px;
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 50px;
+
+      @include onTablet {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__item-after {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 15px);
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+
+  &__icon-container {
+    position: relative;
+  }
+
+  &__icon {
+    transform: translateX(10%);
+
+    @include onTablet {
+      transform: translateX(7%);
+    }
+
+    @include onLaptop {
+      transform: none;
+    }
+  }
+
+  &__link {
+    @include onTablet {
+      transform: translateY(-300%);
+    }
+  }
+}

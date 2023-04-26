@@ -1,0 +1,131 @@
+.contact-us {
+  &__title {
+    margin-bottom: 12px;
+
+    @include onLaptop {
+      margin-bottom: 20px;
+      text-transform: capitalize;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    color: $colorGrey;
+    text-transform: lowercase;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onLaptop {
+      width: 380px;
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 25px;
+    padding: 5px 0;
+
+    font-family: "Avenir", sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+
+    background-color: $colorBeige;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+
+    outline: none;
+
+    &:nth-child(3) {
+      margin-bottom: 45px;
+
+      @include onLaptop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 30px;
+
+      @include onLaptop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &::placeholder {
+      font-family: "Avenir", sans-serif;
+      font-size: 14px;
+      line-height: 21px;
+      text-transform: capitalize;
+
+      color: #828282;
+
+      @include onTablet {
+        font-weight: 500;
+      }
+
+      @include onLaptop {
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+
+    @include onLaptop {
+      margin-bottom: 30px;
+      padding: 10px 0;
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    @include onDesktop {
+      background-color: #fff;
+    }
+
+    &:focus {
+      border-color: $colorGrey;
+    }
+
+    &:required {
+      color: $colorGrey;
+      border-color: #bdbdbd;
+    }
+
+    &:valid {
+      color: $colorGreen;
+      border-color: $colorGreen;
+    }
+
+    &:focus:invalid {
+      color: #eb5757;
+      border-color: #eb5757;
+    }
+  }
+
+  &__textarea {
+    font-family: "Avenir", sans-serif;
+    resize: none;
+  }
+
+  &__photo-container {
+    @extend %photo-container-position;
+
+    background-image: url("../images/contact-us.png");
+    background-size: cover;
+    background-position: center;
+
+    @include onTablet {
+      width: calc(100% + #{$paddingContainerTablet});
+    }
+  
+    @include onLaptop {
+      width: calc(100% + #{$paddingContainerLaptop});
+    }
+  
+    @include onDesktop {
+      width: calc(100% + #{$paddingContainerDesktop});
+    }
+  }
+}

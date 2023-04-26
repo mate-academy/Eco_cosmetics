@@ -1,0 +1,95 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $colorBeige;
+
+    @include onDesktop {
+      background-color: #fff;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+
+    height: 100vh;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    position: relative;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__section-name {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: max-content;
+
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: right;
+
+    color: rgba(52, 79, 16, 0.5);
+
+    transform-origin: top left;
+    transform: rotate(-90deg) translateX(-100%);
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: calc(100% + 10px);
+      display: block;
+      width: 100px;
+      height: 1px;
+
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 12px;
+    color: $colorGreen;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onLaptop {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      line-height: 40px;
+    }
+  }
+}

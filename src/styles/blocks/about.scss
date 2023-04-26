@@ -1,0 +1,112 @@
+.about {
+  &__title {
+    @include onLaptop {
+      margin-top: 40px;
+    }
+
+    &--creators {
+      @include onLaptop {
+        margin-top: 20px;
+        line-height: 47px;
+      }
+
+      @include onDesktop {
+        line-height: 40px;
+      }
+    }
+  }
+
+  &__info {
+    margin-bottom: 35px;
+    color: $colorGrey;
+
+    @include onTablet {
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    @include onLaptop {
+      margin-bottom: 30px;
+    }
+
+    &:last-child {
+      @include onLaptop {
+        margin-bottom: 45px;
+      }
+    }
+
+    &--hide {
+      display: none;
+
+      @include onLaptop {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onLaptop {
+      margin-top: 0;
+    }
+
+    &--creators {
+      margin-bottom: 40px;
+
+      @include onLaptop {
+        margin-bottom: 62px;
+      }
+    }
+  }
+
+  &__info-container {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+
+  &__photo-container {
+    @extend %photo-container-position;
+    width: calc(100% + #{$paddingContainerTablet});
+
+    background-image: url("../images/about.png");
+    background-size: cover;
+    background-position: center;
+
+    @include onTablet {
+      min-height: 350px;
+    }
+
+    @include onLaptop {
+      width: 100%;
+    }
+
+    &--creators {
+      background-image: url("../images/about-2.png");
+    }
+
+    &--small {
+      display: none;
+      height: calc(100% - 100px);
+
+      @include onLaptop {
+        top: 100px;
+        display: block;
+        width: calc(100% + #{$paddingContainerLaptop});
+      }
+
+      @include onDesktop {
+        width: calc(100% + #{$paddingContainerDesktop});
+      }
+    }
+  }
+}

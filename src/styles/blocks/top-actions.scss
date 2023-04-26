@@ -1,0 +1,78 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+
+  @include onTablet {
+    padding-top: 25px;
+  }
+
+  @include onLaptop {
+    padding-top: 40px;
+  }
+
+  @include onDesktop {
+    display: grid;
+  }
+
+  &__item {
+    @include onLaptop {
+      width: 33.33%;
+
+      &:last-child {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    @include onDesktop {
+      width: max-content;
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+    
+    @include onLaptop {
+      order: -1;
+    }
+  }
+
+  &__nav {
+    display: none;
+    
+    @include onLaptop {
+      display: block;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+
+  &__nav-item {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__nav-link {
+    position: relative;
+    display: block;
+
+    font-family: "Sharp Sans Display No2", sans-serif;
+    font-size: 18px;
+    line-height: 23px;
+    color: $colorGreen;
+
+    &::after {
+      background-color: $colorGreen;
+    }
+  }
+}

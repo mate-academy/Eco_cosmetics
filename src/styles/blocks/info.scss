@@ -1,0 +1,92 @@
+.info {
+  padding: 0 20px;
+
+  @include onLaptop {
+    padding: 0;
+  }
+
+  &__item {
+    @include onLaptop {
+      padding: 100px 0;
+    }
+  }
+
+  &__item-link {
+    @include onTablet {
+      width: 280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @include onLaptop {
+      width: 100%;
+      text-align: left;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: calc(50% - 10px);
+        height: 1px;
+        background-color: $colorGreen;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 27px;
+    color: $colorGreen;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $colorGrey;
+    }
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onLaptop {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  &__item-text {
+    @include onLaptop {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50px;
+        display: block;
+        width: 45%;
+        height: 1px;
+        background-color: $colorGreen;
+      }
+    }
+
+    @include onDesktop {
+      &::before {
+        width: calc(45% + 20px);
+      }
+    }
+  }
+
+  &__text {
+    display: none;
+
+    font-weight: 500;
+    color: $colorGrey;
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+}
