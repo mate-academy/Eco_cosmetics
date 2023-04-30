@@ -1,0 +1,87 @@
+.navigation {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0 20px;
+
+    @include on-tablet {
+      margin: 24px 0 30px;
+    }
+
+    @include on-desktop {
+      display: grid;
+      margin: 40px 0 70px;
+    }
+  }
+
+  &__item {
+    @include on-desktop {
+      &-main-logo {
+        display: flex;
+        align-items: center;
+        order: -1;
+      }
+
+      &-basket {
+        justify-self: end;
+      }
+    }
+  }
+
+  &__menu-nav-block {
+    @include on-desktop {
+      position: relative;
+    }
+  }
+
+  &__menu-list {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__menu-link {
+    @include menu-text;
+    color: $color__Navy-Green;
+
+    &:hover {
+      border-color: $color__Navy-Green;
+    }
+  }
+
+  &__img--menu-logo {
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__img--basket-logo {
+    @include on-desktop {
+      height: 26px;
+    }
+  }
+
+  &__img--main-logo {
+    @include on-desktop {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  &__logo-name {
+    display: none;
+    margin: 0;
+
+    @include text-2;
+    color: $color__Navy-Green;
+
+    @include on-desktop {
+      display: block;
+      margin-left: 12px;
+    }
+  }
+}

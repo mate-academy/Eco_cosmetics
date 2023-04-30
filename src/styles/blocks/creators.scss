@@ -1,0 +1,88 @@
+.creators {
+  &__wrapper {
+    position: relative;
+  }
+
+  &__left-strip {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    @include h4;
+    color: $color__Navy-Green;
+
+    @include on-desktop {
+      margin: 0 0 20px;
+      @include h2;
+    }
+  }
+
+  &__text {
+    margin: 0 0 20px;
+    @include small-text;
+
+    @include on-tablet {
+      margin: 0 0 15px;
+      @include text;
+    }
+
+    @include on-desktop {
+      margin: 0 0 30px;
+    }
+
+    &:nth-child(3) {
+      margin: 0 0 30px;
+
+      @include on-tablet {
+        margin: 0 0 20px;
+      }
+
+      @include on-desktop {
+        margin: 0 0 30px;
+      }
+    }
+
+    &:nth-child(4) {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        margin: 0 0 20px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 35px;
+
+    @include on-tablet {
+      margin-top: 40px;
+      max-width: 280px;
+    }
+
+    @include on-desktop {
+      margin-top: 50px;
+    }
+  }
+
+  &__picture-wrapper {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: calc(100% + 32px);
+      max-height: 435px;
+      pointer-events: none;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      max-height: 670px;
+    }
+  }
+}

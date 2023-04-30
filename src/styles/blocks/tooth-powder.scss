@@ -1,0 +1,175 @@
+.tooth-powder {
+  overflow: hidden;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__left-strip {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    @include h4;
+    color: $color__Navy-Green;
+
+    @include on-desktop {
+      @include h2;
+    }
+  }
+
+  &__jar-wrapper {
+    position: relative;
+    margin: 0 0 30px;
+    height: 395px;
+
+    @include on-tablet {
+      margin: 0 0 -20px;
+    }
+  }
+
+  &__jar-link {
+    position: absolute;
+    margin: 0;
+    @include text;
+    color: inherit;
+    text-align: end;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: calc(-76px - 20px);
+      transform: translateY(-50%);
+      width: 76px;
+      border-bottom: 1px solid $color__Carbon;
+      pointer-events: none;
+    }
+
+    &::before {
+      @include on-desktop {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -100px;
+        transform: translateY(-50%);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $color__Carbon;
+        pointer-events: none;
+      }
+    }
+
+    &--hide {
+      display: none;
+
+      @include on-desktop {
+        display: inline-block;
+      }
+    }
+
+    &:nth-child(1) {
+      top: 6px;
+      right: $strip-moving-to-jar;
+
+      @include on-tablet {
+        top: 40px;
+        right: $strip-moving-to-jar--tablet-screen;
+      }
+
+      @include on-desktop {
+        right: $strip-moving-to-jar--desktop-screen;
+      }
+    }
+
+    &:nth-child(2) {
+      top: 80px;
+      right: $strip-moving-to-jar;
+
+      @include on-tablet {
+        top: 112px;
+        right: $strip-moving-to-jar--tablet-screen;
+      }
+
+      @include on-desktop {
+        width: max-content;
+        right: $strip-moving-to-jar--desktop-screen;
+      }
+    }
+
+    &:nth-child(3) {
+      top: 142px;
+      right: $strip-moving-to-jar;
+
+      @media (min-width: 386px) {
+        top: 154px;
+      }
+
+      @include on-tablet {
+        top: 194px;
+        right: $strip-moving-to-jar--tablet-screen;
+        width: max-content;
+      }
+
+      @include on-desktop {
+        right: $strip-moving-to-jar--desktop-screen;
+      }
+    }
+
+    &:nth-child(4) {
+      top: 230px;
+      right: $strip-moving-to-jar;
+
+      @include on-tablet {
+        top: 266px;
+        right: $strip-moving-to-jar--tablet-screen;
+        width: max-content;
+      }
+
+      @include on-desktop {
+        right: $strip-moving-to-jar--desktop-screen;
+      }
+    }
+
+    &:nth-child(5) {
+      top: 304px;
+      right: $strip-moving-to-jar;
+
+      @include on-tablet {
+        top: 338px;
+        right: $strip-moving-to-jar--tablet-screen;
+      }
+
+      @include on-desktop {
+        right: $strip-moving-to-jar--desktop-screen;
+      }
+    }
+  }
+
+  &__jar-img-wrapper {
+    position: absolute;
+    right: $jar-moving-to-screen;
+    pointer-events: none;
+
+    @include on-tablet {
+      right: calc(#{$jar-moving-to-screen} - 42px);
+    }
+
+    @include on-desktop {
+      right: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+  }
+}
