@@ -1,6 +1,6 @@
 .page {
   &__body {
-    background: $c-gray;
+    background: #e4dfd3;
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
     height: 100vh;
@@ -22,7 +22,6 @@
 
   &__section {
     position: relative;
-
     &--margin-top {
       margin-top: 100px;
 
@@ -58,7 +57,7 @@
   }
 
   &__section-learn-more {
-    display: inline-block;
+    display: block;
     width: fit-content;
     font-size: 14px;
     font-weight: 500;
@@ -66,15 +65,25 @@
     text-align: left;
     color: $main-color;
     text-decoration: none;
-    padding-bottom: 10px;
-    border: 1px solid transparent;
     margin-top: 30px;
     transition: all 0.3s ease-in-out;
 
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: transparent;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    &:hover::after {
+      background-color: $main-color;
+      transition: all 0.3s ease-in-out;
+    }
+
     &--jar {
       grid-row: 6;
-      display: flex;
-      align-items: end;
       margin-top: 60px;
 
       @include onTablet {
@@ -89,10 +98,5 @@
     @include onDesktop {
       margin-top: 30px;
     }
-
-    &:hover {
-      border-bottom: 1px solid $main-color;
-    }
-
   }
 }

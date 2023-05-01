@@ -1,35 +1,31 @@
 .about {
   position: relative;
 
-  &__gallery-img {
+  &__gallery-img-container {
     display: none;
+    overflow: hidden;
+    justify-content: center;
+    width: 100%;
 
     @include hover(scale, 0.9);
 
     @include onTablet {
-      display: block;
-      height: 370px;
-      width: 100%;
+      display: flex;
+      max-height: 321px;
     }
 
     @include onDesktop {
-      height: 530px;
       width: 100%;
       max-width: 480px;
       min-width: 370px;
-
+      height: 100%;
+      max-height: 700px;
     }
   }
 
-  &__img-container {
-    @include onDesktop {
-      position: absolute;
-      max-width: 50%;
-      right: 0;
-      display: flex;
-      gap: 20px;
-      align-items: end;
-    }
+  &__gallery-img {
+    object-fit: cover;
+    width: 100%;
   }
 
   &__gallery-second-img {
@@ -37,11 +33,11 @@
     @include hover(scale, 0.9);
 
     @include onDesktop {
-      display: block;
+      display: flex;
       max-height: 430px;
       height: 100%;
       width: 100%;
-      max-width: 250px;
+      align-items: end;
     }
   }
 }
