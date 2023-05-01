@@ -4,6 +4,11 @@
   &__paragraph {
 
     @extend %font-paragraph;
+    margin: 10px 0 30px;
+
+    @include onDesktop {
+      margin: 40px 0 30px;
+    }
 
     &--impotent {
       display: none;
@@ -20,10 +25,14 @@
   }
 
   &__photos {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
 
     @include onDesktop {
-      position: relative;
-      display: flex;
+      display: block;
     }
   }
 
@@ -32,15 +41,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100%;
-
-    @include onDesktop {
-      position: absolute;
-    }
-
+   
     &--1 {
-
       @include onTablet {
+        margin-right: -27px;
         height: 318px;
         background-image: url(../images/photo-ipad.png);
       }
@@ -48,18 +52,16 @@
       @include onDesktop {
         background-image: url(./../images/about-big-desktop.png);
         height: 529px;
+        width: 100%;
       }
     }
 
     &--2 {
-
       @include onDesktop {
         transform: translateY(99px);
-
         background-image: url(./../images/about-small-desktop.png);
-    
         height: 431px;
-        width: 208px;
+        margin-right: -130px;
       }
     }
   }

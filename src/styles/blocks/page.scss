@@ -1,11 +1,16 @@
 .page {
   font-family: "Poppins", sans-serif;
   font-style: normal;
+  font-weight: 600;
   scroll-behavior: smooth;
 
   &__body {
     background-color: #e4dfd3;
     margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
   }
 
   &__menu {
@@ -36,7 +41,6 @@
   
 
   &__section-title {
-    font-weight: 600;
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 0.05em;
@@ -49,7 +53,6 @@
     }
 
     &--h1 {
-      font-weight: 600;
       font-size: 24px;
       line-height: 31px;
       text-align: center;
@@ -66,6 +69,36 @@
         line-height: 78px;
         text-align: left;
         text-transform: none;
+      }
+    }
+
+    &--h4 {
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #344f10;
+      position: relative;
+      padding-bottom: 131px;
+    
+      @include onTablet {
+        text-align: center;
+      }
+    
+      @include onDesktop {
+        font-size: 24px;
+        line-height: 36px;
+        text-align: left;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 711px;
+          left: 0;
+          bottom: 0;
+          border: 1px solid rgba(52, 79, 16, 0.5);
+        }
       }
     }
   }

@@ -1,24 +1,18 @@
 .brand {
   display: flex;
-  flex-direction: column;
 
-  &__item-text {
+  &__text {
+    display: grid;
     order: 1;
 
-    @include onDesktop {
-      order: 0;
-    }
-  }
-
-  &__item-photo {
-    margin-bottom: 25px;
-
     @include onTablet {
-      margin-bottom: 50px;
+      display: grid;
+      order: 1;
     }
 
     @include onDesktop {
-      margin-bottom: 0;
+      display: grid;
+      order: 0;
     }
   }
 
@@ -36,18 +30,27 @@
     }
   }
 
-  &__photo-container {
-
-    @include onTablet {
-      margin: 0;
-    }
-
-    @include onDesktop {
-      margin: 0;
-    }
+  &__photos {
+    // width: 100vw;
+    // margin-left: calc(-50vw + 50%);
   }
 
   &__photo {
-    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+    height: 267px;
+    background-image: url(../images/brand-phone.png);
+
+    @include onTablet {
+      height: 500px;
+      background-image: url(../images/brand-ipad.png);
+    }
+
+    @include onDesktop {
+      height: 451px;
+      background-image: url(../images/brand-desktop.png);
+    }
   }
 }

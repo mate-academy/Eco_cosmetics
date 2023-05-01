@@ -1,0 +1,78 @@
+.form-field {
+  width: 100%;
+  padding: 0 0 5px;
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+  background-color: transparent;
+  outline: none;
+  vertical-align: bottom;
+
+  position: relative;
+
+  @include onDesktop {
+    padding: 0 0 10px;
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: #828282;
+
+    @include onTablet {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  &:hover {
+    border-bottom: 1px solid #828282;
+  }
+
+  &:focus {
+    border-bottom: 1px solid #333;
+  }
+
+  &:active {
+    color: #344f10;
+    border-bottom: 1px solid #344f10;
+  }
+
+  &::grammar-error {
+    color: #eb5757;
+    border-bottom: 1px solid #eb5757;
+  }
+
+  &--textarea {
+    resize: none;
+    font-family: inherit;
+    height: 71px;
+    box-sizing: border-box;
+
+    @include onDesktop {
+      height: 97px;
+    }
+
+    &::placeholder {
+      // transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 1;
+      position: absolute;
+      bottom: 10px;
+      pointer-events: none;
+
+      &:focus,
+      &:valid {
+        transform: scale(1) translateY(-60px);
+        transform-origin: left center;
+        opacity: 0;
+      }
+    }
+  }
+}
