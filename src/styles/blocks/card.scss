@@ -1,0 +1,115 @@
+.card {
+  background-color: $background-color;
+  &__content {
+    height: 100vh;
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 28px;
+    }
+  }
+
+  &__top {
+    @include theTop;
+    grid-template-columns: 20px 1fr 20px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__cover-mobile {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__cover-tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__name-price-wrapper {
+    @include onTablet {
+      grid-column: 2 / 6;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin: 0 0 25px;
+    }
+  }
+
+  &__price {
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 150%;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__photo-container {
+    margin: 0 0 30px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      margin: 0 0 27px;
+      grid-column: 2 / 6;
+    }
+
+    &--photo_mobile {
+      background-image: url(../images/card-photo-mobile.jpg);
+      padding-bottom: 248px;
+    }
+
+    &--photo_tablet {
+      background-image: url(../images/card-photo-tablet.jpg);
+      padding-bottom: 440px;
+    }
+  }
+
+  &__info-wrapper {
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__product-info {
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 150%;
+    color: $green-color;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include onTablet {
+      font-size: 16px;
+    }
+  }
+}

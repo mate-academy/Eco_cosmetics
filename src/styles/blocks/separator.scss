@@ -1,0 +1,35 @@
+.separator {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    height: 1px;
+    background-color: rgba(52, 79, 16, 0.5);
+  }
+    
+  &--1 {
+    @include onDesktop {
+      grid-column: 1 / 6;
+      margin-left: -50px;
+      margin-bottom: 100px;
+    }
+
+    @include onDesign() {
+      grid-column: 1 / 6;
+      margin-left: -130px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &--2 {
+    @include onDesktop {
+      grid-column: 7 / 13;
+      margin-right: -50px;
+    }
+
+    @include onDesign() {
+      grid-column: 7 / 13;
+      margin-right: -130px;
+    }
+  }
+}
