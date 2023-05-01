@@ -1,0 +1,138 @@
+.footer {
+  box-sizing: border-box;
+  background-color: #8c9772;
+  height: calc(100vh - $footer-height-onMobile);
+  width: 100%;
+  padding: 30px 0 40px;
+
+  @include onTablet {
+    height: calc(100vh - $footer-height-onTablet);
+    padding: 30px 0;
+  }
+
+  @include onDesktop {
+    height: calc(100vh - $footer-height-onDesktop);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+
+    @include onTablet {
+      display: grid;
+      // justify-content: space-between;
+    }
+  }
+
+  &__menu {
+    margin: 0 0 20px;
+
+    @include onDesktop {
+      display: grid;
+      // // grid-template-columns: repeat(3, 1fr);
+      // // grid-template-rows: repeat(6, 1fr);
+      // grid-area: 1 / 1 / 1 / 4;
+    }
+
+    &--list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &--item {
+      width: 100%;
+      margin-bottom: 11px;
+
+      @include onTablet {
+        margin-bottom: 15px;
+      }
+    }
+
+    &--link {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      text-transform: capitalize;
+      color: #e4dfd3;
+      text-decoration: none;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    &--instagram {
+      margin-left: 26px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      display: grid;
+    }
+
+    @include onDesktop {
+      display: grid;
+      margin-bottom: 33px;
+    }
+
+    &-title {
+      margin: 0 0 10px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: $page-color;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &-link {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: $page-color;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  &__endtext {
+    display: block;
+    width: 198px;
+    margin: 0 auto;
+    text-align: center;
+
+    @include onTablet {
+      display: grid;
+      width: 322px;
+      text-align: left;
+    }
+
+    &-with-copyright {
+      margin: 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: $page-color;
+    }
+  }
+}
