@@ -9,10 +9,18 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('hashchange', () => {
-  if (window.location.hash === '#card') {
-    document.body.classList.add('page__body--with-card');
+  if (window.location.hash === '#card-oil') {
+    document.body.classList.add('page__body--with-card-oil');
   } else {
-    document.body.classList.remove('page__body--with-card');
+    document.body.classList.remove('page__body--with-card-oil');
+  }
+});
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#card-ubtan') {
+    document.body.classList.add('page__body--with-card-ubtan');
+  } else {
+    document.body.classList.remove('page__body--with-card-ubtan');
   }
 });
 

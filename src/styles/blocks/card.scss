@@ -1,5 +1,20 @@
 .card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(100%);
   background-color: $background-color;
+  @include transitionElement;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
   &__content {
     height: 100vh;
     padding-top: 20px;
@@ -23,6 +38,10 @@
     @include onTablet {
       display: none;
     }
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &__cover-tablet {
@@ -30,6 +49,10 @@
 
     @include onTablet {
       display: block;
+    }
+
+    @include onDesktop {
+      display: none;
     }
   }
 
@@ -81,15 +104,26 @@
       grid-column: 2 / 6;
     }
 
-    &--photo_mobile {
+    &--photo-oil_mobile {
       background-image: url(../images/card-photo-mobile.jpg);
       padding-bottom: 248px;
     }
 
-    &--photo_tablet {
-      background-image: url(../images/card-photo-tablet.jpg);
+    &--photo-oil_tablet {
+      background-image: url(../images/shop-product-tablet-1.jpg);
       padding-bottom: 440px;
     }
+
+    &--photo-ubtan_mobile {
+      background-image: url(../images/shop-product-tablet-2.jpg);
+      padding-bottom: 248px;
+    }
+
+    &--photo-ubtan_tablet {
+      background-image: url(../images/shop-product-tablet-2.jpg);
+      padding-bottom: 440px;
+    }
+
   }
 
   &__info-wrapper {

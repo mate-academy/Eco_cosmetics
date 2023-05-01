@@ -45,7 +45,7 @@
     padding-bottom: 10px;
     border-bottom: 2px solid transparent;
     color: $light-gray-color;
-    transition: all 0.3s;
+    @include transitionElement;
 
     &:hover {
       color: $button-text-color;
@@ -100,7 +100,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: transform 0.3s;
+    cursor: pointer;
+    @include transitionElement;
 
     &:hover {
       transform: scale(1.05);
@@ -152,6 +153,15 @@
 
     @include onDesktop {
       margin: 0 0 13px;
+    }
+  }
+
+  &__link-to-card {
+    text-decoration: none;
+    color: $button-text-color;
+
+    @include onDesktop {
+      pointer-events: none;
     }
   }
 
