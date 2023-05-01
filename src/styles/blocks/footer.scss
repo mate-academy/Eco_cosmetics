@@ -1,0 +1,225 @@
+.footer {
+  background-color: rgba(52, 79, 16, 0.5);
+
+  &__content {
+    padding: 30px 0 40px;
+
+    @include on1280 {
+      padding: 60px 0;
+    }
+  }
+
+  &__block {
+    @include on768 {
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 50px;
+    }
+
+    @include on1280 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include on1280 {
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-bottom: 11px;
+    transition: transform 300ms;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
+
+    @include on768 {
+      margin-bottom: 15px;
+    }
+
+    @include on1280 {
+      margin-bottom: 0;
+      margin-right: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__link {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: #e4dfd3;
+
+    @include on1280 {
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #344f10;
+      border-radius: 5px;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.5s;
+    }
+  
+    &:hover::after {
+      transform-origin: right;
+      transform: scaleX(1);
+    }
+  }
+
+  &__socials {
+    display: flex;
+
+    &--under-address {
+      display: none;
+
+      @include on1280 {
+        display: flex;
+      }
+    }
+
+    &--under-list {
+      @include on1280 {
+        display: none;
+      }
+    }
+  }
+
+  &__socials-item {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 300ms;
+
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    margin-bottom: 40px;
+
+    @include on768 {
+      margin-bottom: 0;
+    }
+
+    &--face {
+      background-image: url("../images/icons/facebook.svg");
+    }
+
+    &--inst {
+      background-image: url("../images/icons/instagram.svg");
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__address-item {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: #e4dfd3;
+
+    display: block;
+    text-decoration: none;
+    transition: 300ms;
+
+    margin-bottom: 10px;
+
+    &--last {
+      margin-bottom: 40px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #344f10;
+      border-radius: 5px;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.5s;
+    }
+  
+    &:hover::after {
+      transform-origin: right;
+      transform: scaleX(1);
+    }
+
+    @include on1280 {
+      font-size: 16px;
+      margin-bottom: 20px;
+
+      &--last {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:hover:nth-child(n+2):nth-child(-n+3) {
+      transform: scale(1.05);
+    }
+  }
+
+  &__coop {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: #e4dfd3;
+
+    font-weight: 600;
+    line-height: 130%;
+    text-align: center;
+
+    @include on1280 {
+      font-weight: 500;
+      font-size: 18px;
+      text-align: start;
+    }
+  }
+
+  &__span {
+    display: none;
+
+    @include on1280 {
+      display: inline;
+    }
+  }
+}

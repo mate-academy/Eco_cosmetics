@@ -1,0 +1,85 @@
+.about-creators {
+
+  &__content {
+    display: block;
+
+    @include on768 {
+      display: grid;
+    }
+  }
+
+  &__text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+  
+    color: $dark;
+  
+    margin-bottom: 20px;
+
+    @include on768 {
+      width: 342px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    @include on1280 {
+      width: 380px;
+      margin-bottom: 30px;
+    }
+
+    &--2 {
+      margin-bottom: 30px;
+
+      @include on768 {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--3 {
+      display: none;
+
+      @include on1280 {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 25px;
+
+    @include on768 {
+      margin-bottom: 30px;
+    }
+
+    @include on1280 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button-dark {
+    margin: 0;
+  }
+
+  &__photo {
+    display: none;
+    transition: transform 300ms;
+
+    @include on768 {
+      display: block;
+      height: 440px;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    @include on1280 {
+      height: 659px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.tooth {
+
+  &__content {
+    display: none;
+    @include on1280 {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-left: 90px;
+  }
+
+  &__photo-container {
+    display: flex;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: end;
+
+    @include on1280 {
+      display: none;
+    }
+  }
+
+  &__image-photo {
+    display: block;
+    width: min-content;
+    height: 397px;
+
+    @include on768 {
+      margin-top: -36px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    text-align: end;
+    margin-bottom: 50px;
+    margin-right: 10px;
+
+    &:first-child {
+      margin-top: 36px;
+
+      @include on768 {
+        margin-top: 0;
+      }
+
+      @include on1280 {
+        &:first-child {
+          margin-top: 48px;
+        }
+      }
+    }
+  }
+}
