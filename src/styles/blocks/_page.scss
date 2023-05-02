@@ -6,6 +6,15 @@
     background-color: $page-color;
     margin: 0;
     padding: 0;
+    height: calc(100vh - #{$footer-height-onMobile});
+
+    @include onTablet {
+      height: calc(100vh - #{$footer-height-onTablet});
+    }
+
+    @include onDesktop {
+      height: calc(100vh - #{$footer-height-onDesktop});
+    }
   }
 
   &__menu {

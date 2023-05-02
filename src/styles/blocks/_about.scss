@@ -1,6 +1,7 @@
 .about {
   box-sizing: border-box;
   width: 100%;
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -53,25 +54,49 @@
   }
 
   &__image {
+    display: none;
     height: auto;
     width: 342px;
-    max-width: 100%;
-    object-fit: cover;
-    overflow: hidden;
 
     &--photo {
+      width: 100%;
+      height: auto;
+    }
+
+    @include onTablet {
+      display: grid;
+      width: 100%;
+      height: auto;
+    }
+
+    @include onDesktop {
+      display: grid;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &__second-image {
+    display: none;
+    height: auto;
+    width: 180px;
+
+    &--photo {
+      width: 100%;
+      height: auto;
+    }
+
+    @include onTablet {
       display: none;
+    }
+
+    @include onDesktop {
+      display: grid;
+      height: auto;
       width: 100%;
 
-      @include onTablet {
-        display: block;
-        width: 100%;
-      }
-
-      @include onDesktop {
-        display: block;
-        height: 529px;
-        width: 380px;
+      &--photo {
+        align-self: end;
       }
     }
   }
