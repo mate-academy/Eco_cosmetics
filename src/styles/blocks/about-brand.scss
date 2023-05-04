@@ -1,0 +1,69 @@
+.about-brand {
+
+  &__block {
+    display: block;
+
+    @include on768 {
+      display: grid;
+    }
+  }
+
+  &__text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+  
+    color: $dark;
+  
+    @include on768 {
+      font-size: 16px;
+    }
+
+    margin-bottom: 30px;
+
+    &--2 {
+      display: none;
+
+      margin-bottom: 40px;
+
+      @include on1280 {
+        display: block;
+      }
+    }
+  }
+
+  &__photo-container {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__photo {
+    display: none;
+    width: 100%;
+    height: 321px;
+    object-fit: cover;
+    transition: transform 300ms;
+
+    @include on768 {
+      display: block;
+    }
+
+    @include on1280 {
+      height: 529px;
+    }
+
+    &--2 {
+      display: none;
+      height: 430px;
+
+      @include on1280 {
+        display: block;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

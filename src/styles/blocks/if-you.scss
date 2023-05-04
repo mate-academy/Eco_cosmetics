@@ -1,0 +1,77 @@
+.if-you {
+
+  @include on1280 {
+    &::before {
+      content: "";
+      display: block;
+      position: relative;
+      height: 1px;
+      width: 41%;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      left: 51%;
+      height: 1px;
+      width: 49%;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__content {
+
+    @include on1280 {
+      padding: 100px 0;
+    }
+  }
+
+  &__block {
+    display: block;
+
+    @include on1280 {
+      display: grid;
+    }
+  }
+
+  &__paragraph {
+    display: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+  
+    color: $dark;
+
+    @include on1280 {
+      display: block;
+    }
+  }
+
+  &__main-text {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  
+    color: #344f10;
+  
+    min-width: 280px;
+    margin: 0 auto;
+
+    @include on768 {
+      text-align: center;
+    }
+
+    @include on1280 {
+      text-align: start;
+      max-width: 380px;
+      font-size: 24px;
+      margin: 0;
+    }
+  }
+}

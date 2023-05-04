@@ -1,0 +1,80 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background-color: $dark;
+  border: 1px solid transparent;
+  transition: 300ms;
+  cursor: pointer;
+
+  &--learn {
+    display: inline-block;
+    background-color: transparent;
+    align-items: start;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-color: #344f10;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &--learn-1 {
+    @include on1280 {
+      display: none;
+    }
+  }
+
+  &--size-280 {
+    @include on768 {
+      width: 280px;
+    }
+  }
+
+  &__content {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  
+    color: $white;
+    padding: 19px 0;
+    width: 100%;
+    transition: 300ms;
+
+    &:hover {
+      color: $dark;
+    }
+
+    &--learn {
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      text-transform: uppercase;
+    
+      color: #344f10;
+      padding: 0 0 10px;
+      width: auto;
+    }
+  }
+
+  &:hover {
+    background-color: #e4dfd3;
+    border-color: $dark;
+  }
+
+  @include on768 {
+    margin: 0 auto;
+  }
+
+  @include on1280 {
+    margin: 0;
+  }
+}

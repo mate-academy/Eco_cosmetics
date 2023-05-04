@@ -1,0 +1,82 @@
+.form {
+
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+
+    color: $gray;
+
+    @include on768 {
+      font-weight: 500;
+    }
+
+    @include on1280 {
+      font-size: 18px;
+    }
+
+    border: none;
+    border-bottom: 1px solid $lite-gray;
+    box-shadow: 0 0 0 30px #e4dfd3 inset;
+    background-color: transparent;
+    color: #344f10;
+    transition: 300ms;
+
+    margin-bottom: 25px;
+
+    @include on768 {
+      padding: 5px 0;
+    }
+
+    @include on1280 {
+      margin-bottom: 30px;
+    }
+
+    &:invalid {
+      color: #eb5757;
+    }
+
+    &:hover {
+      border-color: $dark;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $dark;
+    }
+
+    &--text {
+      resize: none;
+
+      margin-bottom: 25px;
+
+      @include on1280 {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--phone {
+      @include on768 {
+        margin-bottom: 45px;
+      }
+
+      @include on1280 {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include on768 {
+      width: 280px;
+    }
+  }
+}
