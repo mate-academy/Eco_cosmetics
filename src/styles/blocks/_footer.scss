@@ -4,10 +4,10 @@
   height: $footer-height-onMobile;
   width: 100%;
   padding: 30px 0 40px;
+  position: relative;
 
   @include onTablet {
     height: $footer-height-onTablet;
-    padding: 30px 0;
   }
 
   @include onDesktop {
@@ -19,26 +19,48 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 20px;
 
     @include onTablet {
       display: grid;
-      // justify-content: space-between;
+      grid-template-rows: repeat(5, 1fr);
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
     }
   }
 
   &__menu {
+    display: flex;
+    flex-direction: column;
     margin: 0 0 20px;
+
+    @include onTablet {
+      display: grid;
+    }
 
     @include onDesktop {
       display: grid;
-      
     }
 
     &--list {
+      display: flex;
+      flex-direction: column;
       list-style: none;
       margin: 0;
       padding: 0;
+
+      @include onTablet {
+        display: grid;
+        grid-row: 1 / 3;
+      }
+
+      @include onDesktop {
+        display: grid;
+        grid-row: 1 / 1;
+      }
     }
 
     &--item {
@@ -68,18 +90,21 @@
     margin-bottom: 40px;
 
     @include onTablet {
-      // display: grid;
-      // grid-column: 1 / 2;
+      display: grid;
+      // grid-column: 1 / 1;
+      grid-row: 4 / 4;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-column: 6 / 6;
+      grid-row: 5 / 5;
       margin-bottom: 50px;
     }
 
     &--instagram {
       margin-left: 26px;
-    }
-
-    @include onDesktop {
-      // display: grid;
-      // grid-column: 6 / 6;
     }
   }
 
@@ -91,11 +116,12 @@
 
     @include onTablet {
       display: grid;
+      grid-row: 1 / 4;
     }
 
     @include onDesktop {
       display: grid;
-      margin-bottom: 33px;
+      grid-row: 1 / 4;
     }
 
     &-title {
@@ -122,14 +148,20 @@
 
   &__endtext {
     display: block;
-    width: 198px;
+    width: max-content;
     margin: 0 auto;
     text-align: center;
 
     @include onTablet {
       display: grid;
-      width: 322px;
-      text-align: left;
+      grid-row: 5 / 5;
+      
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-row: 5 / 5;
+      
     }
 
     &-with-copyright {
