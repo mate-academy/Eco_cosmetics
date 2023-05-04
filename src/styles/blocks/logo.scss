@@ -1,0 +1,31 @@
+.logo {
+  display: none;
+  @include onDesktop {
+    display: flex;
+  }
+  &--mobile {
+    display: flex;
+    @include onDesktop {
+      display: none;
+    }
+  }
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    @extend %fontSharpSans700;
+
+    color: $green-color;
+    text-decoration: none;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+  }
+
+  &__image {
+    padding-right: 12px;
+
+    &--mobile {
+      height: 24px;
+    }
+  }
+}

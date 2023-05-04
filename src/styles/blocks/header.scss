@@ -1,0 +1,156 @@
+.header {
+  &__content {
+    padding-top: 20px;
+    box-sizing: border-box;
+
+    @include onDesktop {
+      padding-top: 40px;
+    }
+  }
+
+  &__cart {
+    img {
+      height: 24px;
+      object-fit: contain;
+      object-position: center;
+
+      &:hover {
+        transform: rotate(360deg);
+        transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out;
+        filter: drop-shadow(2px 2px 5px $lime-color);
+      }
+    }
+  }
+
+  &__hero {
+    @include onTablet {
+      margin-top: 30px;
+    }
+    @include onDesktop {
+      margin-top: 70px;
+    }
+  }
+
+  &__hero-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &__title {
+    @extend %fontAvenir;
+    font-size: 24px;
+    margin: 0;
+    white-space: pre-line;
+    color: $black-color;
+
+    @include onTablet {
+      text-align: center;
+      font-size: 36px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      text-align: left;
+      line-height: 72px;
+      white-space: normal;
+      font-size: 60px;
+    }
+  }
+
+  &__subtitle {
+    @extend %fontAvenir;
+    font-weight: 400;
+    font-size: 16px;
+
+    margin: 0;
+    padding-top: 20px;
+    text-align: center;
+
+    line-height: 130%;
+    white-space: nowrap;
+    color: $black-color;
+
+    @include onDesktop {
+      font-weight: 600;
+      text-align: left;
+      font-size: 22px;
+    }
+  }
+
+  &__btn {
+    margin-top: 50px;
+  }
+
+  &__product-image {
+    min-width: 280px;
+    max-width: 100%;
+    margin-top: 20px;
+    object-fit: cover;
+    object-position: center;
+    @include onTablet {
+      min-width: 400px;
+      min-height: 500px;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    position: relative;
+    @extend %flexCenter;
+    margin-top: 100px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 200px;
+      padding: 100px 0;
+    }
+  }
+
+  &__text-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 120px;
+  }
+
+  &__description {
+    @extend %text;
+    margin: 0;
+    width: 380px;
+    color: $black-color;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__description-wrap {
+    display: grid;
+    align-items: center;
+  }
+
+  &__description-title {
+    margin: 0;
+    @extend %fontAvenir;
+    font-size: 18px;
+    line-height: 150%;
+    color: $green-color;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+}

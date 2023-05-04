@@ -1,0 +1,59 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 280px;
+  height: 60px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+
+  @extend %fontSharpSans500;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 0.15em;
+
+  color: $white-color;
+  background-color: $black-color;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @include hover(background-color) {
+    background-color: transparent;
+    color: $black-color;
+    border: 1px solid $black-color;
+  }
+
+  &-link {
+    width: max-content;
+    display: block;
+
+    @extend %fontSharpSans700;
+    font-size: 14px;
+    border-bottom: 1px solid transparent;
+    line-height: 130%;
+    color: $green-color;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @include hover(border-bottom) {
+      border-bottom: 1px solid $green-color;
+    }
+
+    &--footer {
+      @extend %fontSharpSans500;
+      color: $bg-color;
+      white-space: nowrap;
+      text-transform: none;
+      font-weight: 400;
+      @include onDesktop {
+        font-size: 18px;
+      }
+
+      @include hover(border-bottom) {
+        border-bottom: 1px solid $bg-color;
+      }
+    }
+  }
+}
