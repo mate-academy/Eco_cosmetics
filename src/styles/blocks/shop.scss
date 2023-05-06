@@ -1,0 +1,122 @@
+.shop {
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s;
+
+    &__item {
+      padding-bottom: 27px;
+
+      &-link {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #828282;
+
+        &:hover {
+          color: $gray-dark;
+          border-bottom: 2px solid $gray-dark;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &__card {
+    &-photo {
+      box-sizing: border-box;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 267px;
+      width: 100%;
+      margin-bottom: 20px;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include onTablet {
+        height: 400px;
+      }
+
+      @include onDesktopSmall {
+        height: 500px;
+      }
+    }
+
+    &-photo--1 {
+      background-image: url(../images/shop__oil.png);
+
+      @include onTablet {
+        background-image: url(../images/shop__oil-tablet.png);
+      }
+    }
+
+    &-photo--2 {
+      display: none;
+      background-image: url(../images/Ubtan.png);
+
+      @include onTablet {
+        display: block;
+        background-image: url(../images/Ubtan-desktop.png);
+      }
+    }
+
+    &-photo--3 {
+      display: none;
+      background-image: url(../images/face-cream.png);
+
+      @include onDesktopSmall {
+        display: block;
+      }
+    }
+
+    &__description {
+      display: block;
+      text-transform: uppercase;
+      color: $gray-dark;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      padding-bottom: 30px;
+      padding-left: 20px;
+
+      @include onTablet {
+        padding-left: 0;
+      }
+
+      &-name {
+        margin: 0;
+        font-weight: 600;
+        padding-bottom: 10px;
+      }
+
+      &-price {
+        margin: 0;
+      }
+
+      &--2 {
+        display: none;
+
+        @include onTablet {
+          display: block;
+        }
+      }
+
+      &--3 {
+        display: none;
+
+        @include onDesktopSmall {
+          display: block;
+        }
+      }
+    }
+
+    &--2 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+}

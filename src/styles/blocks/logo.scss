@@ -1,0 +1,38 @@
+.logo {
+  text-decoration: none;
+
+  @include onDesktopSmall() {
+    &::before {
+      content: "witch of mountain winds";
+      display: block;
+      width: max-content;
+      font-size: 14px;
+
+      opacity: 0;
+      pointer-events: none;
+      position: relative;
+      transform: translate(100px, 30px);
+
+      color: $green-dark;
+      padding-left: 100px;
+      text-transform: uppercase;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__image {
+    height: 24px;
+    width: 24px;
+    display: block;
+    margin: 0 auto;
+
+    @include onDesktopSmall {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
