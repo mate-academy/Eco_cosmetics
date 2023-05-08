@@ -1,0 +1,92 @@
+.header {
+  height: 100vh;
+  color: $textBlack;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-top: 15px;
+
+    @include onTablet {
+      padding-top: 25px;
+    }
+
+    @include onDesktop {
+      padding-top: 40px;
+    }
+  }
+
+  &__section {
+    display: block;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    &-image {
+      height: 267px;
+      margin: 0 -20px 25px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../images/mobile1.jpg);
+
+      @include onTablet {
+        height: 500px;
+        margin: 0 0 50px;
+        background-image: url(../images/tablet1.jpg);
+      }
+
+      @include onDesktop {
+        width: 580px;
+        height: 451px;
+        margin: 0;
+        background-image: url(../images/desktop1.jpg);
+      }
+    }
+
+    &_about {
+      text-align: center;
+
+      @include onDesktop {
+        margin-right: 20px;
+        text-align: start;
+      }
+    }
+
+    &-title {
+      width: 275px;
+      margin: 0 auto 10px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 31px;
+
+      @include onTablet {
+        width: 466px;
+        font-size: 36px;
+        line-height: 54px;
+        text-transform: capitalize;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
+        width: 480px;
+        font-size: 60px;
+        line-height: 78px;
+      }
+    }
+
+    &-sale {
+      margin: 0 0 30px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+
+      @include minTablet {
+        margin: 0 0 50px;
+      }
+    }
+  }
+}
