@@ -1,0 +1,265 @@
+.header {
+  margin-bottom: 100px;
+
+  @include desktop {
+    margin-bottom: 200px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+
+    @include desktop {
+      display: none;
+      margin-bottom: 90px;
+    }
+  }
+
+  &__nav-3blocks {
+    display: none;
+    
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 92px;
+      padding-top: 52px;
+    }
+  }
+
+  &__nav-1 {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+  }
+
+  &__nav-desc {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+
+    padding-right: 40px;
+    color: $green;
+
+    &:nth-last-child() {
+      padding-right: 0;
+    }
+  }
+
+  &__wrap-for2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+
+    @include tablet {
+      margin-bottom: 130px;
+    }
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      gap: 20px;
+    }
+
+    @include large {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      gap: 20px;
+    }
+  }
+
+  &__wrap-1 {
+    padding-bottom: 25px;
+
+    @include tablet {
+      padding-bottom: 50px;
+    }
+
+    @include desktop {
+      grid-column: 5 / 12;
+      grid-row: 1;
+    }
+
+    @include large {
+      grid-column: 8 / 12;
+
+    }
+  }
+
+  &__photo {
+    width: 320px;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
+
+    @include tablet {
+      width: 710px;
+      height: 500px;
+    }
+
+    @include desktop {
+      width: 580px;
+      height: 450px;
+    }
+  }
+
+  &__wrap-2 {
+    width: 280px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @include desktop {
+      grid-column: 2 / 5;
+      grid-row: 1;
+
+      width: 480px;
+    }
+
+    @include large {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__title {
+    padding-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    color: $grey;
+
+    @include tablet {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 150%;
+      width: 460px;
+
+    }
+
+    @include desktop {
+      font-size: 60px;
+    }
+  }
+
+  &__desc {
+    padding-bottom: 30px;
+    text-align: center;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $grey;
+
+    @include tablet {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__block-for2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+    }
+  }
+
+  &__block-1 {
+    width: 280px;
+
+    @include tablet {
+      margin: auto;
+      text-align: center;
+      width: 280px;
+    }
+
+    @include desktop {
+      grid-column: 10 / 12;
+      grid-row: 1;
+    }
+  }
+
+  &__words {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green;
+
+    @include desktop {
+      &::after {
+        content: "";
+        display: block;
+        background-color: rgba(52, 79, 16, 0.5);
+        width: 530px;
+        height: 1px;
+        margin-top: 130px;
+      }
+    }
+  }
+
+  &__block-2 {
+    display: none;
+
+    @include desktop {
+      display: grid;
+      grid-column: 2 / 5;
+      grid-row: 1;
+
+    }
+  }
+
+  &__sentence {
+    @include desktop {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $grey;
+
+      &::before {
+        content: "";
+        display: block;
+        background-color: rgba(52, 79, 16, 0.5);
+        width: 530px;
+        height: 1px;
+
+        margin-bottom: 100px;
+      }
+    }
+  }
+}

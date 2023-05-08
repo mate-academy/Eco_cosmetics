@@ -1,0 +1,154 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+
+  @include tablet {
+    margin-bottom: 200px;
+  }
+
+  &__block-for2 {
+    @include tablet {
+      display: flex;
+      gap: 140px;
+
+    }
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 121px;
+    }
+  }
+
+  &__block1 {
+    max-width: 280px;
+
+    @include tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include desktop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green;
+
+    padding-bottom: 10px;
+  }
+
+  &__desc {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    padding-bottom: 30px;
+  }
+
+  &__input {
+    border: none;
+    background-color: #e5e5e5;
+    border-bottom: 1px solid #bdbdbd;
+    margin-bottom: 25px;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: #828282;
+
+    
+    @include tablet {
+      width: 342px;
+    }
+
+    @include desktop {
+      width: 480px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+  }
+
+  &__link {
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &__block2 {
+    display: none;
+
+    @include tablet {
+      display: grid;
+      grid-column: 4 / 6;
+    }
+
+    @include desktop {
+      grid-column: 8 / 13;
+    }
+  }
+
+  &__img {
+    @include tablet {
+      width: 368px;
+      height: 409px;
+    }
+
+    @include desktop {
+      width: 529px;
+      height: 584px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
+  }
+
+  &__0block {
+    display: none;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: block;
+      position: absolute;
+      margin-top: 40px;
+      left: 60px;
+      transform: rotate(-90deg);
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__lin {
+    display: none;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: block;
+      position: absolute;
+      margin-top: 110px;
+      left: 71px;
+      height: 100px;
+      width: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+}

@@ -1,0 +1,122 @@
+.powder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet {
+    margin-bottom: 100px;
+  }
+
+  @include desktop {
+    margin-bottom: 100px;
+  }
+
+  &__bloks2 {
+    @include tablet {
+      display: flex;
+      gap: 160px;
+    }
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__block1 {
+    max-width: 280px;
+    margin-bottom: 21px;
+
+    @include tablet {
+      grid-row: 1;
+      grid-column: 2 / 3;
+    }
+
+    @include desktop {
+      grid-column: 3 / 8;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green;
+  }
+
+  &__block2 {
+    margin-bottom: 31px;
+
+    @include tablet {
+      grid-row: 1;
+      grid-column: 3 / 6;
+    }
+
+    @include desktop {
+      grid-column: 8 / 12;
+    }
+  }
+
+  &__learn {
+    
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $green;
+    margin-bottom: 110px;
+
+    @include desktop {
+      padding-left: 90px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 86px;
+      height: 1px;
+      margin-top: 10px;
+      background-color: $green;
+    }
+  }
+
+  &__0block {
+    display: none;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: block;
+      position: absolute;
+      margin-top: 40px;
+      left: 40px;
+      transform: rotate(-90deg);
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__lin {
+    display: none;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: block;
+      position: absolute;
+      margin-top: 110px;
+      left: 71px;
+      height: 100px;
+      width: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+}
