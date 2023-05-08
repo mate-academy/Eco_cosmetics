@@ -1,0 +1,58 @@
+.menu {
+  background-color: $color-gray;
+  z-index: 1;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: $header-top-padding-mob 0;
+
+    @include onTablet {
+      padding: $header-top-padding-tab 0;
+    }
+  }
+
+  &__top {
+    @include top-action;
+    margin-bottom: 44px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    color: #e4dfd3;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #828282;
+    transition: transform $duration;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
