@@ -3,43 +3,38 @@
   width: 100%;
 
   &__content {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
-    margin: 0 auto;
+
+    @include onTablet {
+      display: grid;
+    }
 
     @include onDesktop {
       display: grid;
-      grid-template-rows: 1fr;
-      grid-row: 1 / 1;
-      
     }
   }
 
   &__image {
+    display: block;
+
+    box-sizing: border-box;
     height: auto;
-    width: 320px;
+    min-width: 320px;
     object-fit: cover;
-    margin: 0 0 25px;
+    margin: 0;
 
     &--photo {
       height: auto;
       width: 100%;
     }
-
-    @include onTablet {
-      width: 714px;
-    }
-
-    @include onDesktop {
-      display: grid;
-      width: 580px;
-    }
   }
 
   &__titles {
-    // margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
 
     &--main {
       font-weight: 600;
@@ -93,10 +88,6 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: $button-text-color;
-    }
-
-    @include onDesktop {
-      display: grid;
     }
   }
 }
