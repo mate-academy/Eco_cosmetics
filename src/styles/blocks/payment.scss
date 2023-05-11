@@ -1,0 +1,89 @@
+.payment {
+  background-color: $secondary-color;
+
+  &__top {
+    @extend %sticky-top;
+
+    & .top__link--arrow {
+      display: none;
+    }
+  }
+
+  &__checkout {
+    margin-bottom: 30px;
+  }
+
+  &__subtitle {
+    margin-bottom: 50px;
+
+    @include tablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 55px;
+    height: 31px;
+    margin: 0 auto 15px;
+
+    color: #333;
+
+    object-fit: contain;
+    object-position: center;
+
+    @include tablet {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__radio {
+    position: absolute;
+    opacity: 0;
+
+    &:checked ~ .payment__image {
+      stroke: $green-color;
+      stroke-width: 1px;
+    }
+
+    &:checked ~ .payment__option {
+      color: $green-color;
+    }
+  }
+
+  &__item {
+    display: block;
+    width: max-content;
+    margin: 0 auto 40px;
+
+    @include tablet {
+      margin-bottom: 35px;
+    }
+
+    &--bigger-margin {
+      margin-bottom: 73px;
+
+      @include tablet {
+        margin-bottom: 50px;
+      }
+
+      @include desktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__button {
+    border: none;
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 413px;
+    }
+
+    @include desktop {
+      width: $card-button_desktop;
+      margin: 0 auto 100px;
+    }
+  }
+}

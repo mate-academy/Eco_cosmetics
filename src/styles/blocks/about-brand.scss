@@ -1,0 +1,73 @@
+.about-brand {
+  position: relative;
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include desktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    &--desktop {
+      display: none;
+
+      @include desktop {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__learn-more {
+    @include desktop {
+      margin-bottom: 44px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    background-image: url(../images/About_brand/tablet.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      right: 0;
+      left: calc(50% + #{$grid-gap_tablet});
+      top: 0;
+      height: calc(100% - 3px);
+    }
+
+    @include desktop {
+      position: static;
+      width: 100%;
+      height: 100%;
+    }
+
+    &--part {
+      display: none;
+      background-image: url(../images/About_brand/desktop_part.png);
+
+      @include desktop {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        top: calc(100% - 430px);
+        display: block;
+        height: 430px;
+        width: calc(100% + 50px);
+      }
+    }
+
+    @include desktop {
+      background-image: url(../images/About_brand/desktop_full.png);
+    }
+  }
+}

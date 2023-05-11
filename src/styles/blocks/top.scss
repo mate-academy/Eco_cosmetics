@@ -1,0 +1,99 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: max-content;
+  padding-top: 15px;
+
+  background-color: $secondary-color;
+
+  @include tablet {
+    padding-top: 23px;
+  }
+
+  @include desktop {
+    display: block;
+    padding-top: 40px;
+  }
+
+  &__link {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  &__arrow {
+    width: 24px;
+    height: 24px;
+
+    object-position: center;
+    object-fit: cover;
+  }
+
+  &__menu-image {
+    width: 20px;
+    height: 13px;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__logo-image {
+    width: 24px;
+    height: 24px;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include desktop {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include desktop {
+      display: inline-block;
+      color: $green-color;
+    }
+  }
+
+  &__navigation {
+    display: none;
+
+    & .navigation__link {
+      color: $green-color;
+
+      &:hover {
+        &::after {
+          background-color: $green-color;
+        }
+      }
+    }
+
+    @include desktop {
+      display: flex;
+      gap: 40px;
+      margin-right: 0;
+    }
+  }
+
+  &__basket-image {
+    width: 20px;
+    height: 24px;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include desktop {
+      margin-left: auto;
+    }
+  }
+}

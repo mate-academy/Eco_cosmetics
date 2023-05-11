@@ -1,0 +1,85 @@
+.introdusing {
+  position: relative;
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include desktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 15px;
+    }
+
+    @include desktop {
+      margin-bottom: 30px;
+    }
+
+    &:last-child {
+      margin-bottom: 30px;
+
+      @include tablet {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__learn-more {
+    margin-bottom: 25px;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    margin-left: 0;
+
+    @include desktop {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include tablet {
+      display: block;
+      height: calc(100% - 5px);
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: calc(50% + #{$grid-gap_tablet} / 2);
+
+      background-image: url(../images/Introdusing/bird.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    @include desktop {
+      position: static;
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/Introdusing/bird_desktop.png);
+    }
+  }
+}

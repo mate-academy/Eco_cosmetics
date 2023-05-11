@@ -1,0 +1,121 @@
+.shipping {
+  background-color: $secondary-color;
+
+  &__top {
+    @extend %sticky-top;
+  }
+
+  &__button {
+    border: none;
+
+    @include desktop {
+      width: $card-button_desktop;
+      margin: 0 auto;
+    }
+  }
+
+  &__checkout {
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 20px;
+
+    @include tablet {
+      width: 280px;
+      margin: 0 auto 394px;
+    }
+
+    @include desktop {
+      width: 460px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__point-container {
+    position: relative;
+  }
+
+  &__message {
+    position: absolute;
+    right: 0;
+    bottom: -90%;
+    background-color: whitesmoke;
+    opacity: 0.7;
+    border-radius: 5px;
+    z-index: 1;
+  }
+
+  &__point {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $grey-color;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+
+    color: $dark-grey;
+    background-color: transparent;
+
+    &--focus {
+      border-color: $green-color;
+    }
+
+    &--invalid {
+      color: red;
+      border-color: red;
+    }
+
+    &--complete {
+      color: $green-color;
+      border-color: $green-color;
+    }
+
+    &:-webkit-autofill,
+    textarea:-webkit-autofill {
+      border: none;
+      outline: none;
+      color: $green-color;
+      border-bottom: 1px solid $green-color;
+      box-shadow: 0 0 0 1000px $secondary-color inset;
+      -webkit-box-shadow: 0 0 0 1000px $secondary-color inset;
+      -webkit-text-fill-color: $green-color;
+    }
+
+    &:-webkit-autofill.shipping__point--invalid {
+      border: none;
+      outline: none;
+      color: red;
+      border-bottom: 1px solid red;
+      box-shadow: 0 0 0 1000px $secondary-color inset;
+      -webkit-box-shadow: 0 0 0 1000px $secondary-color inset;
+      -webkit-text-fill-color: red;
+    }
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    &--textarea {
+      resize: none;
+      height: 27px;
+      margin-bottom: 40px;
+
+      font-family: Poppins, sans-serif;
+
+      @include tablet {
+        margin-bottom: 50px;
+      }
+
+      @include desktop {
+        height: 30px;
+        margin-bottom: 60px;
+      }
+    }
+  }
+}

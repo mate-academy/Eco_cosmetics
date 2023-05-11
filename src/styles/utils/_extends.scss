@@ -1,4 +1,129 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
+%position {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  transform: translateY(100%);
+
+  &:target {
+    transform: translateY(0);
+    z-index: 1;
+  }
+}
+
+%sticky-top {
+  position: sticky;
+  top: 0;
+  padding-left: $container-padding_mob;
+  padding-right: $container-padding_mob;
+  padding-bottom: 20px;
+
+  @include tablet {
+    padding-left: $container-padding_tablet;
+    padding-right: $container-padding_tablet;
+    padding-bottom: 40px;
+  }
+
+  @include desktop {
+    padding-left: $container-padding_desktop;
+    padding-right: $container-padding_desktop;
+    padding-bottom: 45px;
+  }
+
+  @include design {
+    padding-left: $container-padding_design;
+    padding-right: $container-padding_design;
+    padding-bottom: 50px;
+  }
+}
+
+%hover_link {
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+}
+
+%section-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: $green-color;
+
+  @include desktop {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+%biggest-text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 31px;
+
+  text-align: center;
+  color: $main-color;
+}
+
+%big-bold {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+%big-text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+%medium-thin {
   font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  color: $main-color;
+}
+
+%medium-bold {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+
+  text-align: center;
+}
+
+%small-bold {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+%thin-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+
+  @include tablet {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+%thin-uppercase {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }

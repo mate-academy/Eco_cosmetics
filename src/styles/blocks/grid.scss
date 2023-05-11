@@ -1,0 +1,124 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+
+  align-items: left;
+
+  @include tablet {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: $grid-gap_tablet;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: $grid-gap_desktop;
+  }
+
+  &--card {
+    grid-template-rows: repeat(12, 50px);
+    row-gap: 20px;
+  }
+
+  &--subgrid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &--subgrid-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &--subgrid-11 {
+    grid-template-columns: repeat(11, 1fr);
+  }
+
+  &--center {
+    align-items: center;
+  }
+
+  &__item {
+    display: contents;
+
+    @include tablet {
+      display: block;
+    }
+
+    @for $start from 1 through 6 {
+      @for $end from $start through 6 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        @include desktop {
+          &--desktop-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    &--ordered {
+      order: 1;
+    }
+
+    &--row {
+      display: contents;
+
+      @include desktop {
+        display: block;
+      }
+
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &-#{$start}-#{$end} {
+            grid-row: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &--ordered {
+    & .grid__item:first-child {
+      order: -2;
+    }
+
+    & .grid__item:nth-child(3) {
+      order: -1;
+    }
+
+    @include desktop {
+      & .grid__item:nth-child(2) {
+        order: 1;
+      }
+    }
+  }
+
+  &--tablet {
+    display: contents;
+
+    @include tablet {
+      display: grid;
+    }
+  }
+
+  &--desktop {
+    display: contents;
+
+    @include desktop {
+      display: grid;
+    }
+  }
+
+  &__item-desktop {
+    display: contents;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.mark {
+  position: relative;
+  display: none;
+
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+  }
+
+  &__line {
+    height: 100px;
+    width: 1px;
+    background-color: $mixed-color;
+    margin-top: 10px;
+
+    &--shorter {
+      height: 88px;
+      margin-top: 9px;
+    }
+  }
+
+  &__text {
+    writing-mode: vertical-lr;
+    color: $mixed-color;
+    transform: rotate(180deg);
+  }
+}

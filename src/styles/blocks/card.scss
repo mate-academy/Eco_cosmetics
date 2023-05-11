@@ -1,0 +1,99 @@
+.card {
+  background-color: $secondary-color;
+
+  &__top {
+    @extend %sticky-top;
+  }
+
+  &__container {
+    display: contents;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+
+    @include tablet {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__price {
+    margin-bottom: 20px;
+
+    @include tablet {
+      color: $green-color;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__weight {
+    display: none;
+
+    @include tablet {
+      display: block;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 248px;
+    margin-bottom: 30px;
+    order: -1;
+
+    background-image: url(../images/Store/oil.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include tablet {
+      height: 440px;
+      margin-bottom: 27px;
+    }
+
+    &--cream {
+      background-image: url(../images/Store/cream.png);
+    }
+
+    &--powder {
+      background-image: url(../images/Store/powder.png);
+    }
+
+    &--lavender {
+      background-image: url(../images/Store/lavender.png);
+    }
+  }
+
+  &__button {
+    margin-bottom: 50px;
+
+    @include tablet {
+      margin-bottom: 60px;
+    }
+
+    @include desktop {
+      order: 1;
+    }
+  }
+
+  &__subtitle {
+    color: $green-color;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 25px;
+
+      & + .card__text {
+        margin-bottom: 72px;
+      }
+    }
+  }
+}

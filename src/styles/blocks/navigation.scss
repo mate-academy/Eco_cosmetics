@@ -1,0 +1,21 @@
+.navigation {
+  list-style-type: none;
+
+  @include desktop {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: $secondary-color;
+
+    &:hover {
+      &:after {
+        @extend %hover_link;
+      }
+    }
+  }
+}
