@@ -2,6 +2,7 @@
   padding-bottom: 100px;
   &__desktop {
     display: none;
+    padding-bottom: 100px;
 
     @include onDesktopSmall {
       display: block;
@@ -129,6 +130,7 @@
 
     &-text--main {
       display: block;
+      position: relative;
       font-weight: 600;
       font-size: 18px;
       line-height: 150%;
@@ -146,11 +148,12 @@
       &--desktop {
         &::after {
           display: block;
+          position: absolute;
           content: "";
-          width: 530px;
+          width: 50vw;
           height: 1px;
-          left: 0;
-          top: 822px;
+          right: -290px;
+          top: 100px;
           background: rgba(52, 79, 16, 0.5);
           margin-top: 130px;
         }
@@ -164,16 +167,19 @@
       font-size: 16px;
       line-height: 150%;
       color: $gray-dark;
+      position: relative;
+      padding-top: 100px;
+    
 
       &::before {
         display: block;
+        position: absolute;
         content: "";
         width: 530px;
         height: 1px;
-        left: 0;
-        top: 822px;
+        top: -10px;
+        left: -180px;
         background: rgba(52, 79, 16, 0.5);
-        margin-bottom: 100px;
       }
     }
   }
