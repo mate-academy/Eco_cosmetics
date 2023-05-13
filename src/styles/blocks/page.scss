@@ -1,12 +1,35 @@
 .page {
+  position: relative;
   background-color: $yellow;
   font-family: Poppins, sans-serif;
   font-weight: 400;
+
+  &--with-menu {
+    overflow: hidden;
+  }
 
   &__header {
     @include design {
       margin: 0 auto;
       max-width: 1180px;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    padding-top: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform $transition;
+
+    @include tablet {
+      padding-top: 28px;
+    }
+
+    &:target {
+      transform: translateX(0);
     }
   }
 }
