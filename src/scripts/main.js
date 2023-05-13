@@ -7,3 +7,23 @@ window.addEventListener('hashchange', () => {
     document.body.classList.remove('page--with-menu');
   }
 });
+
+const sliderWrapper = document.querySelector('.slider__wrapper');
+
+for (let i = 1; i <= 4; i++) {
+  const point = document.querySelector(`.slider__point--${i}`);
+  const translate = 25 * i - 25;
+
+  point.addEventListener('click', () => {
+    sliderWrapper.style.transform = `translateX(-${translate}%)`;
+  });
+}
+
+// const form = document.querySelector('.subscription__form');
+
+// function stopRefreshing(event) {
+//   event.preventDefault();
+//   form.reset();
+// }
+
+// form.addEventListener('submit', stopRefreshing);
