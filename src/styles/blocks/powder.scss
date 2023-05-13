@@ -1,0 +1,117 @@
+.powder {
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+    padding: 0 50px;
+  }
+
+  @include design {
+    padding: 0;
+    margin: 0 auto 200px;
+    max-width: 1180px;
+  }
+
+  &__subtitle {
+    @include design {
+      margin-left: calc(50% - 590px);
+    }
+  }
+
+  &__title {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    font-weight: $big-weight;
+    font-size: $title-size;
+    line-height: $display-title;
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+    color: $green;
+
+    @include tablet {
+      position: absolute;
+      margin-left: 27px;
+      margin-bottom: 0;
+      padding: 0;
+      width: 243px;
+    }
+
+    @include desktop {
+      margin-left: calc((25% - 80px) / 3 + 20px);
+      font-size: $display-title;
+      line-height: 40px;
+      width: 380px;
+    }
+
+    @include design {
+      margin-left: 100px;
+    }
+  }
+
+  &__ingredients {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-right: 7px;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      grid-column: 6 / 13;
+      margin-right: 0;
+    }
+  }
+
+  &__list {
+    margin-top: 38px;
+    margin-right: 20px;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 50px;
+    font-size: $display-size;
+    line-height: $title-size;
+    text-align: right;
+    color: $black;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0 20px;
+    width: fit-content;
+    font-weight: $link-weight;
+    font-size: $main-size;
+    line-height: $bigger-size;
+    color: $green;
+
+    @include tablet {
+      position: absolute;
+      bottom: 0;
+      padding: 0;
+      margin-left: 27px;
+    }
+
+    @include desktop {
+      margin-left: calc((25% - 80px) / 3 + 20px);
+    }
+
+    @include design {
+      margin-left: 100px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      margin-top: 10px;
+      height: 1px;
+      background-color: $green;
+    }
+  }
+}
