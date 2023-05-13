@@ -6,6 +6,14 @@
     &--menu {
       flex-direction: column;
     }
+
+    &--footer {
+      flex-direction: column;
+
+      @include desktop {
+        flex-direction: row;
+      }
+    }
   }
 
   &__item {
@@ -13,6 +21,24 @@
       margin-right: 40px;
 
       &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &--footer {
+      margin-bottom: 11px;
+
+      @include tablet {
+        margin-bottom: 15px;
+      }
+
+      @include desktop {
+        margin-bottom: 0;
+        margin-right: 40px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
         margin-right: 0;
       }
     }
@@ -46,6 +72,25 @@
         width: 100%;
         height: 1px;
         background-color: $dark-gray;
+      }
+    }
+
+    &--footer {
+      font-weight: $link-weight;
+      font-size: $bigger-size;
+      line-height: $title-size;
+      text-transform: capitalize;
+
+      @include tablet {
+        font-weight: 400;
+        font-size: $main-size;
+        line-height: 21px;
+      }
+
+      @include desktop {
+        font-weight: $link-weight;
+        font-size: $bigger-size;
+        line-height: $title-size;
       }
     }
   }

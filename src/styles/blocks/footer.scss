@@ -1,0 +1,168 @@
+.footer {
+  background: rgba(52, 79, 16, 0.5);
+
+  &__container {
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+
+    @include design {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+  }
+
+  &__main-block {
+    @include tablet {
+      grid-column: 1 / 2;
+    }
+
+    @include desktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include desktop {
+        grid-column: 8 / 10;
+        display: flex;
+      }
+    }
+  }
+
+  &__facebook {
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/icons/facebook.svg) no-repeat center;
+  }
+
+  &__instagram {
+    width: 20px;
+    height: 20px;
+    background: url(../images/icons/instagram.svg) no-repeat center;
+  }
+
+  &__contacts {
+    font-size: $main-size;
+    line-height: 21px;
+    color: $yellow;
+
+    @include tablet {
+      grid-column: 2 / 3;
+    }
+
+    @include desktop {
+      grid-column: 8 / 13;
+      font-size: $display-size;
+      line-height: $title-size;
+    }
+  }
+
+  &__description {
+    margin-bottom: 10px;
+
+    @include desktop {
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include tablet {
+        margin-bottom: 0;
+      }
+
+      @include desktop {
+        margin-bottom: 27px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: 10px;
+    color: inherit;
+
+    @include desktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+      grid-column: 1 / 2;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    @include desktop {
+      grid-column: 1 / 6;
+
+      &::before {
+        content: "Copyright";
+        font-weight: $link-weight;
+        font-size: $bigger-size;
+        line-height: 27px;
+        color: $yellow;
+      }
+    }
+  }
+
+  &__icon {
+    margin-right: 7px;
+    width: 16px;
+    height: 16px;
+    background: url(../images/icons/copyright.svg) no-repeat center;
+  }
+  
+  &__text {
+    font-weight: $big-weight;
+    font-size: $main-size;
+    line-height: $bigger-size;
+    color: $yellow;
+
+    @include tablet {
+      font-weight: 400;
+      line-height: 21px;
+    }
+
+    @include desktop {
+      font-weight: $link-weight;
+      font-size: $bigger-size;
+      line-height: 27px;
+    }
+  }
+}
