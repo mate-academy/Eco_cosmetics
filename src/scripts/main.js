@@ -19,11 +19,11 @@ for (let i = 1; i <= 4; i++) {
   });
 }
 
-// const form = document.querySelector('.subscription__form');
+const form = document.querySelector('.form');
 
-// function stopRefreshing(event) {
-//   event.preventDefault();
-//   form.reset();
-// }
+function stopRefreshing(event) {
+  event.preventDefault();
+  form.reset();
+}
 
-// form.addEventListener('submit', stopRefreshing);
+form.addEventListener('submit', stopRefreshing);
