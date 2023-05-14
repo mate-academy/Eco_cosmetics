@@ -27,3 +27,11 @@ function stopRefreshing(event) {
 }
 
 form.addEventListener('submit', stopRefreshing);
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#shop-page') {
+    document.body.classList.add('page--with-shop');
+  } else {
+    document.body.classList.remove('page--with-shop');
+  }
+});
