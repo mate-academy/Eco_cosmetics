@@ -86,16 +86,30 @@
       margin-right: 20px;
     }
   }
+
+  &__picture {
+    display: block;
+    margin-bottom: 20px;
+  }
   
   &__image {
     display: block;
     margin-bottom: 20px;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 84px);
+
+    @include tablet {
+      height: calc(100% - 89px);
+    }
+
+    @include desktop {
+      height: calc(100% - 87px);
+    }
   }
 
   &__name {
     margin-bottom: 10px;
+    padding: 0 20px;
     font-weight: $big-weight;
     font-size: $bigger-size;
     line-height: 27px;
@@ -103,8 +117,21 @@
     text-transform: uppercase;
     color: $black;
 
+    &--tablet {
+      display: none;
+    }
+
     @include tablet {
       margin-bottom: 15px;
+      padding: 0;
+
+      &--mobile {
+        display: none;
+      }
+
+      &--tablet {
+        display: block;
+      }
     }
 
     @include desktop {
@@ -113,12 +140,17 @@
   }
 
   &__price {
+    padding: 0 20px;
     font-weight: $link-weight;
     font-size: $bigger-size;
     line-height: 27px;
     letter-spacing: $letter-spacing;
     text-transform: uppercase;
     color: $black;
+
+    @include tablet {
+      padding: 0;
+    }
   }
 
   @for $point from 1 through 4 {
