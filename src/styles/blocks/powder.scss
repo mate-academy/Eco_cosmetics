@@ -92,6 +92,7 @@
     font-size: $main-size;
     line-height: $bigger-size;
     color: $green;
+    transition: color $transition;
 
     @include tablet {
       position: absolute;
@@ -114,6 +115,15 @@
       margin-top: 10px;
       height: 1px;
       background-color: $green;
+      transition: background-color $transition;
+    }
+
+    &:hover {
+      color: $hover-green;
+
+      &::after {
+        background-color: $hover-green;
+      }
     }
   }
 }

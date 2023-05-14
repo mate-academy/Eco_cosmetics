@@ -13,6 +13,7 @@
     background: none;
     border: none;
     border-bottom: solid 1px $dark-gray;
+    transition: border-color $transition, color $transition;
 
     @include tablet {
       font-weight: $link-weight;
@@ -31,11 +32,21 @@
 
     &::placeholder {
       color: $dark-gray;
+      transition: color $transition;
     }
 
     &:focus {
       outline: none;
       border-color: $black;
+    }
+
+    &:hover {
+      color: $hover-green;
+      border-color: $hover-green;
+
+      &::placeholder {
+        color: $hover-green;
+      }
     }
   }
 
