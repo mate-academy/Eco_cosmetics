@@ -1,0 +1,72 @@
+.about {
+  position: relative;
+
+  &__title {
+    margin: 0;
+    padding: 0 20px 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $c-green;
+
+    @include onDesktop {
+      padding: 0;
+      margin-bottom: 34px;
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+    padding-bottom: 30px;
+    font-size: 14px;
+    line-height: 21px;
+    color: $c-gray;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__photo--small {
+    display: none;
+    max-width: 208px;
+    overflow: hidden;
+    height: calc(100% - 25%);
+    margin-top: 116px;
+    background-image: url(../images/small.png);
+    background-position: center;
+    background-size: cover;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    @media (min-width: 1440px) {
+      width: calc(100% + 128px);
+    }
+  }
+}

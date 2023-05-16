@@ -1,0 +1,67 @@
+.introduction {
+  position: relative;
+
+  @include onDesktop {
+    &::before {
+      content: "";
+      display: block;
+      width: 45%;
+      height: 1px;
+      left: 0;
+  
+      background: rgba(52, 79, 16, 0.5);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: calc(45% + 50px);
+      right: 0;
+      height: 1px;
+  
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $c-green;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      width: 280px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+      margin: 100px 0;
+      width: 100%;
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: $c-gray;
+
+    @include onDesktop {
+      display: block;
+      margin-top: 100px;
+    }
+  }
+}

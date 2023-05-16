@@ -1,0 +1,49 @@
+.page {
+  font-family: "Avenir-book", sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+  overflow: scroll;
+
+  &__body {
+    background-color: $c-base;
+    margin: 0;
+    overflow-x: hidden;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    z-index: 5;
+    padding-top: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    @include onTablet {
+      padding-top: 28px;
+    }
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
