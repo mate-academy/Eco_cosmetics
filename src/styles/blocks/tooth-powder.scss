@@ -1,0 +1,61 @@
+.tooth-powder {
+  position: relative;
+
+  &__mobile {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__ingredient {
+    line-height: 150%;
+    text-align: right;
+    margin-bottom: 50px;
+
+    &:first-child {
+      margin-top: 35px;
+    }
+  }
+
+  &__ingredients--desk {
+    display: none;
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &__ingredients--mob {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__photo {
+    height: 395px;
+    object-fit: contain;
+  }
+
+  &__link--1 {
+    display: none;
+
+    @include onTablet {
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  &__link--2 {
+    position: static;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}
