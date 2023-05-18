@@ -1,0 +1,173 @@
+.header {
+  padding-top: 15px;
+
+  @include onTablet {
+    padding-top: 23px;
+  }
+
+  @include onDesktop {
+    padding-top: 40px;
+  }
+
+  &__top-container {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 81px;
+    }
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__logo-text {
+    display: none;
+
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $greenColor;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+
+      list-style-type: none;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $greenColor;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 0;
+      height: 1px;
+
+      background-color: $greenColor;
+
+      transition: width $duration;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__outer-image {
+    width: 100%;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__inner-image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+      max-height: 500px;
+      margin-bottom: 50px;
+      grid-column: 1 / -1;
+
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__text-wrapper {
+    text-align: center;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+      grid-row: 1 / 2;
+
+      text-align: left;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    color: $mainColor;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+
+      font-size: 60px;
+      line-height: 130%;
+      text-transform: none;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+}
