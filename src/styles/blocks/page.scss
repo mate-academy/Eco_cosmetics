@@ -1,4 +1,27 @@
 .page {
   font-family: $font-family-base;
   background-color: $main-color;
+
+  .page__body {
+    margin: 0;
+    padding: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
 }
