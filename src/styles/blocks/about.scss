@@ -1,0 +1,143 @@
+.about {
+  &__vertical-text-wrapper {
+    position: relative;
+  }
+
+  &__vertical-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      grid-column: 1 / 2;
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: rgba(52, 79, 16, 0.5);
+
+      transform-origin: right top;
+      transform: translateX(-100%) rotateZ(-90deg);
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      width: 100px;
+      height: 1px;
+      margin-right: 10px;
+
+      background-color: rgba(52, 79, 16, 0.5);;
+    }
+  }
+
+  &__text-wrapper {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__additional-text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $greenColor;
+    text-transform: uppercase;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+
+      display: block;
+      content: "";
+      width: 0;
+      height: 1px;
+
+      background-color: $greenColor;
+
+      transition: width $duration;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__image-wrapper {
+    display: none;
+
+    @include onTablet {
+      position: relative;
+
+      display: block;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      padding-top: 140%;
+
+      grid-column: 7 / 11;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include onDesktop {
+      object-position: 67% center;
+    }
+  }
+
+  &__small-image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 11 / -1;
+      align-self: end;
+
+      width: 100%;
+    }
+  }
+}
