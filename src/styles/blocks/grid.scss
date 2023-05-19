@@ -13,6 +13,14 @@
     column-gap: 20px;
   }
 
+  &-mobile {
+    display: block;
+
+    @include minTablet {
+      display: grid;
+    }
+  }
+
   &__menu_desktop {
     display: none;
 
@@ -23,8 +31,19 @@
     }
   }
 
-  &__item_desktop {
+  &__item_tablet {
+    @include onTablet {
+      @for $start from 1 through 6 {
+        @for $end from $start through 6 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
 
+  &__item_desktop {
     @include onDesktop {
       @for $start from 1 through 12 {
         @for $end from $start through 12 {
