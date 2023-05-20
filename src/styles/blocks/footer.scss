@@ -13,20 +13,16 @@
     padding: 60px 0;
   }
 
-  &__nav-wrapper {
-    margin-bottom: 40px;
-
-    @include onTablet {
-      margin-bottom: 0;
-      grid-column: 1 / 4;
-    }
-  }
-
   &__nav {
     margin-bottom: 20px;
 
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
     @include onDesktop {
       margin-bottom: 0;
+      grid-column: 1 / 8;
     }
   }
 
@@ -76,19 +72,17 @@
   &__socials {
     display: flex;
     column-gap: 20px;
+    margin-bottom: 40px;
 
-    @include onDesktop {
-      display: none;
+    @include onTablet {
+      margin-bottom: 50px;
+      grid-column: 1 / 4;
     }
 
-    &--second {
-      display: none;
-
-      @include onDesktop {
-        display: flex;
-        grid-column: 8 / -1;
-        grid-row: 2 / 3;
-      }
+    @include onDesktop {
+      margin-bottom: 0;
+      grid-column: 8 / -1;
+      grid-row: 2 / 3;
     }
   }
 
@@ -121,33 +115,28 @@
   }
 
   &__contacts-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
     margin-bottom: 40px;
+
+    font-size: 14px;
 
     list-style-type: none;
 
     @include onTablet {
       grid-column: 4 / -1;
+      grid-row: 1 / 3;
       margin-bottom: 0;
     }
 
     @include onDesktop {
+      row-gap: 20px;
+      margin-bottom: 30px;
       grid-column: 8 / -1;
-    }
-  }
+      grid-row: 1 / 2;
 
-  &__contacts-item {
-    font-size: 14px;
-
-    @include onDesktop {
       font-size: 16px;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-
-      @include onDesktop {
-        margin-bottom: 20px;
-      }
     }
   }
 
@@ -170,7 +159,7 @@
     text-align: center;
 
     @include onTablet {
-      grid-column: 1 / 4;
+      grid-column: 1 / -1;
 
       font-weight: 400;
       text-align: initial;
