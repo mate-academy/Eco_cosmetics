@@ -1,0 +1,45 @@
+.product-card {
+  @include transition-card;
+
+  &__image {
+    margin-bottom: 2vh;
+    height: 50vh;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    @include onTablet {
+      object-fit: cover;
+      height: 30vh;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+
+    &--1 {
+      @include onDesktop {
+        width: 140%;
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        width: 100%;
+        transform-origin: right;
+        transform: scaleX(0.92);
+      }
+    }
+  }
+
+  &__headline {
+    margin-bottom: 3vh;
+
+    @include h5;
+  }
+
+  &__price {
+    margin-bottom: 4vh;
+    @include price;
+  }
+}

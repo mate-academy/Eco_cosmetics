@@ -1,0 +1,35 @@
+.button-2 {
+  box-sizing: border-box;
+  display: inline-block;
+  padding-bottom: 10px;
+  position: relative;
+  outline: none;
+
+  @include button-2-text;
+  @include transition;
+
+  &:hover {
+    color: $black-color;
+  }
+}
+
+.button-2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: $black-color;
+  transition: width 0.3s ease-in-out;
+}
+
+.button-2:hover::after {
+  width: 100%;
+}
+
+.button-2:active::after {
+  width: 100%;
+  color: $dark-grey-color;
+  background-color: $dark-grey-color;
+}

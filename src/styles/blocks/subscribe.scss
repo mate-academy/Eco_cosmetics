@@ -1,0 +1,131 @@
+.subscribe {
+  margin-bottom: 17vh;
+
+  &__headline {
+    position: relative;
+    margin-bottom: 1.5vh;
+    @include h2;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-bottom: 3vh;
+    }
+  }
+
+  &__headline::after {
+    @include onDesktop {
+      content: "————\00a0\00a0\00a0 help";
+      @include extra-text;
+      position: absolute;
+      top: 120px;
+      left: -5vw;
+      white-space: nowrap;
+      transform: rotate(-90deg);
+      transform-origin: top left;
+    }
+  }
+
+  &__description {
+    display: block;
+    margin-bottom: 3vh;
+
+    @include text;
+    text-align: left;
+
+    @include onDesktop {
+      margin-bottom: 3vh;
+    }
+  }
+
+  &__input {
+    display: block;
+
+    width: 100%;
+    height: 4vh;
+
+    margin-bottom: 3vh;
+    padding-bottom: 3px;
+
+    border: 0;
+    border-bottom: 1px solid $grey-color-line;
+    outline: 0;
+    background-color: transparent;
+
+    @include transition;
+    @include inputs-menu-text;
+    font-size: 14px;
+
+    @include onTablet {
+      padding-bottom: 5px;
+      margin-bottom: 1vh;
+      height: 2vh;
+    }
+
+    @include onDesktop {
+      padding-bottom: 10px;
+      margin-bottom: 2vh;
+      height: 2.5vh;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $black-color;
+    }
+  }
+
+  &__input:not(:placeholder-shown) {
+    border-bottom: 1px solid $black-color;
+  }
+
+  &__input::placeholder {
+    @include inputs-menu-text;
+    font-size: 14px;
+    color: $grey-color;
+    text-align: left;
+  }
+
+  &__phone--input {
+    margin-bottom: 7vh;
+
+    @include onTablet {
+      margin-bottom: 3vh;
+    }
+  }
+
+  &__message--input {
+    resize: none;
+    margin-bottom: 6vh;
+  }
+
+  &__button {
+    @include onTablet {
+      width: 80%;
+    }
+
+    @include onDesktop {
+      width: 60%;
+    }
+  }
+
+  &__background {
+    @include onTablet {
+      width: 100%;
+      height: 100%;
+      background-image: url(./../../src/images/contact-us/contact-us--tablet.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      height: 100%;
+      background-image: url(./../../src/images/contact-us/contact-us--desktop.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}

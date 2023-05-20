@@ -1,0 +1,91 @@
+.about-creators {
+  &__headline {
+    margin-bottom: 1.5vh;
+    position: relative;
+    display: inline-block;
+    @include h2;
+
+    @include onTablet {
+      margin-bottom: 1vh;
+    }
+
+    @include onDesktop {
+      margin-bottom: 4vh;
+    }
+  }
+
+  &__headline::after {
+    @include onDesktop {
+      content: "——————\00a0\00a0\00a0\00a0\00a0 about the creators";
+      @include extra-text;
+      position: absolute;
+      top: 260px;
+      left: -5vw;
+      white-space: nowrap;
+      transform: rotate(-90deg);
+      transform-origin: top left;
+    }
+  }
+
+  &__description {
+    display: block;
+    margin-bottom: 2vh;
+
+    @include text;
+    text-align: left;
+
+    @include onDesktop {
+      margin-bottom: 3vh;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 22vh;
+
+    @include onTablet {
+      width: 80%;
+      margin-bottom: 12vh;
+    }
+
+    @include onDesktop {
+      margin-bottom: 25vh;
+      width: 75%;
+    }
+  }
+
+  &__button-2 {
+    margin-bottom: 7vh;
+
+    @include onTablet {
+      margin-bottom: 3vh;
+    }
+
+    @include onTablet {
+      margin-bottom: 4vh;
+    }
+  }
+
+  &__background {
+    @include onTablet {
+      height: 40vh;
+      width: 100%;
+      background-image: url(./../../src/images/about-creators/about-creators--tablet.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    @include onDesktop {
+      height: 660px;
+      background-image: url(./../../src/images/about-creators/about-creators--desktop.png);
+    }
+  }
+}
