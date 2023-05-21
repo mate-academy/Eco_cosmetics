@@ -1,7 +1,16 @@
-.logo__image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 24px;
-  width: 24px;
+.logo {
+  &__image {
+    height: 24px;
+
+    @include onDesktop {
+      height: 50px;
+    }
+  }
+
+  &--desktop {
+    display: none;
+    @include onDesktop {
+      display: block;
+    }
+  }
 }

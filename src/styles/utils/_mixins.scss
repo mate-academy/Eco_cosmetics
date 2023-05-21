@@ -1,28 +1,51 @@
-@mixin for-tablet() {
-  @media (min-width: 744px) {
+@mixin onMobileLess320 {
+  @media (max-width: 320px) {
     @content;
   }
 }
 
-@mixin for-desktop() {
-  @media (min-width: 1260px) {
+@mixin onTablet {
+  @media (min-width: 640px) {
     @content;
   }
 }
 
-@mixin grid() {
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onDesign {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin mobileGrid {
   display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(2, 130px);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+}
 
-  @include for-tablet() {
-    grid-template-columns: repeat(6, 80px);
-    gap: 24px;
-  }
+@mixin tabledGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 30px;
+}
 
-  @include for-desktop() {
-    grid-template-columns: repeat(12, 63px);
-    gap: 24px;
-  }
+@mixin desktopGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 20px;
+}
+
+@mixin theTop {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+@mixin transitionElement {
+  transition: all 0.3s;
 }

@@ -1,0 +1,51 @@
+.form-field {
+  box-sizing: border-box;
+  border-bottom: 1px solid #bdbdbd;
+  background-color: $background-color;
+  padding-bottom: 5px;
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  line-height: 150%;
+
+  &__label {
+    display: none;
+  }
+
+  @include onDesktop {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+
+  &::placeholder {
+    color: $light-gray-color;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $button-text-color;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &:not(:focus):not(:placeholder-shown):valid {
+    color: $green-color;
+    border-bottom: 1px solid $green-color;
+  }
+
+  &:not(:focus):not(:placeholder-shown):invalid {
+    color: $error-on-form-field-color;
+    border-bottom: 1px solid $error-on-form-field-color;
+  }
+
+  &--textarea {
+    font-family: inherit;
+    resize: none;
+
+    &::placeholder {
+      transform: translateY(3em);
+    }
+  }
+}
