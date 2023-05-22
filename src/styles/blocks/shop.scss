@@ -123,7 +123,8 @@
     }
   }
 
-  &__previous-button, &__next-button {
+  &__previous-button,
+  &__next-button {
     display: none;
 
     @include onDesktop {
@@ -180,19 +181,13 @@
     width: 100%;
 
     margin-right: var(--productsCardsGap);
-
-    &:hover {
-      .shop__image {
-        transform: scale(1.1);
-      }
-    }
   }
 
   &__image-wrapper {
     position: relative;
 
     padding-top: 83%;
-    margin-bottom:  20px;
+    margin-bottom: 20px;
 
     overflow: hidden;
 
@@ -216,6 +211,10 @@
     object-position: center;
 
     transition: transform $duration;
+  }
+
+  &__card:hover &__image {
+    transform: scale(1.1);
   }
 
   &__text {
