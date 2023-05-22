@@ -14,6 +14,7 @@ const previousButton = document.querySelector('.shop__previous-button');
 const nextButton = document.querySelector('.shop__next-button');
 const shopTabRadios = document.querySelectorAll('.shop__tab-radio');
 const allProducts = document.querySelectorAll('.shop__products');
+const productsWrapper = document.querySelector('.shop__products-wrapper');
 let products = document.querySelector('.shop__products--show');
 const productsCount = products.querySelectorAll('.shop__card').length;
 const translateXStep = 100 / productsCount;
@@ -92,12 +93,12 @@ previousButton.addEventListener('click', () => {
   moveProducts();
 });
 
-products.addEventListener('touchstart', (e) => {
+productsWrapper.addEventListener('touchstart', (e) => {
   startX = e.changedTouches[0].clientX;
   startY = e.changedTouches[0].clientY;
 });
 
-products.addEventListener('touchend', (e) => {
+productsWrapper.addEventListener('touchend', (e) => {
   endX = e.changedTouches[0].clientX;
   endY = e.changedTouches[0].clientY;
 
