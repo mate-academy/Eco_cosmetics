@@ -45,13 +45,21 @@
   }
 
   &--cross {
+    @include hoverCross;
+
     background-image: url(../images/icons/cross.svg);
+  }
 
-    transition: transform $duration;
-    will-change: transform;
+  &--cart-cross {
+    @include hoverCross;
 
-    &:hover {
-      transform: rotateZ(90deg);
+    @include onDesktop {
+      width: 32px;
+      height: 32px;
+
+      background-size: 70%;
     }
+
+    background-image: url(../images/icons/cross-green.svg);
   }
 }
