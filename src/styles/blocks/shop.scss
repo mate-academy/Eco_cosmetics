@@ -1,0 +1,184 @@
+.shop {
+  &__title {
+    margin: 0 0 20px;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+      margin: 0 0 10px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 3;
+      margin: 0 0 30px;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 27px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-bottom: 37px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      margin-bottom: 62px;
+    }
+  }
+
+  &__menu-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  &__menu-link {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    color: $light-gray-color;
+    @include transitionElement;
+
+    &:hover {
+      color: $button-text-color;
+      border-bottom: 2px solid $button-text-color;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+
+  &__about-product {
+    margin: 0 0 30px;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 40px;
+    }
+
+    &--product_1 {
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        grid-column: 2 / 7;
+        margin-right: -50px;
+      }
+    }
+
+    &--product_2 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: 4 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 8 / 13;
+        margin-left: -50px;
+      }
+    }
+  }
+
+  &__photo-container {
+    margin: 0 -20px 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    @include transitionElement;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      margin: 0 0 20px;
+    }
+
+    &--photo_1 {
+      background-image: url(../images/shop/shop-product-mobile-1.jpg);
+      padding-bottom: 267px;
+
+      @include onTablet {
+        background-image: url(../images/shop/shop-product-tablet-1.jpg);
+        padding-bottom: 300px;
+      }
+
+      @include onDesktop {
+        background-image: url(../images/shop/shop-product-desktop-1.jpg);
+        padding-bottom: 500px;
+      }
+    }
+
+    &--photo_2 {
+      @include onTablet {
+        background-image: url(../images/shop/shop-product-tablet-2.jpg);
+        padding-bottom: 300px;
+      }
+
+      @include onDesktop {
+        background-image: url(../images/shop/shop-product-desktop-2.jpg);
+        padding-bottom: 500px;
+      }
+
+    }
+  }
+
+  &__name-product {
+    margin: 0 0 10px;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin: 0 0 15px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 13px;
+    }
+  }
+
+  &__link-to-card {
+    text-decoration: none;
+    color: $button-text-color;
+    @include transitionElement;
+
+    &:hover {
+      text-shadow: 3px 5px 6px $light-gray-color;
+    }
+
+    @include onDesktop {
+      pointer-events: none;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}
