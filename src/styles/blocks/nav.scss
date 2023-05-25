@@ -1,0 +1,94 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+
+
+
+  &__text {
+    @include text2;
+    text-transform: uppercase;
+    margin-left: 12px;
+    color: $dark-green;
+  }
+
+  &__desktop-menu {
+    display: none;
+
+    @include onDesktopL {
+      display: block;
+    }
+  }
+
+  &__link {
+    height: 24px;
+    width: 24px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: $dark-green;
+
+    text-decoration: none;
+
+
+
+
+
+    &--menu {
+      background-image: url(../images/icons/Menu.svg);
+      @include onDesktopL {
+        display: none;
+      }
+    }
+
+    &--desktop-menu:not(:first-child) {
+      margin-left: 40px;
+    }
+
+    &--small-logo {
+      background-image: url(../images/logo/LogoSmall.svg);
+    }
+
+    &--big-logo {
+      background-image: url(../images/logo/LogoBig.svg);
+
+      @include onDesktopL {
+        display: block;
+        height: 50px;
+        width: 50px;
+      }
+
+      // &::after {
+      //   content: 'witch of mountain winds';
+      //   display: inline-block;
+      //   white-space: nowrap;
+      //   text-transform: uppercase;
+      //   @include text2;
+      //   position: relative;
+      //   top: 25%;
+      //   left: 125%;
+      // }
+    }
+
+    &--mobile {
+      @include onDesktopL {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktopL {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    &--basket {
+      background-image: url(../images/icons/Bag.svg);
+    }
+  }
+}
