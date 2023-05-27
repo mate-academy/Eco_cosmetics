@@ -1,0 +1,51 @@
+.introduction {
+
+  @include onDesktopL {
+
+    &::before {
+      display: block;
+      content: "";
+      width: 100%;
+      border: 0.5px solid $dark-green;
+      transform: translate(-58%);
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 100%;
+      transform: translate(50.5%);
+      border: 0.5px solid $dark-green;
+    }
+  }
+
+  &__item {
+
+    @include onDesktopL {
+      padding: 100px 0;
+    }
+
+    &--title {
+      text-transform: uppercase;
+      color: $dark-green;
+      width: 280px;
+      margin: 0 auto;
+
+      @include onDesktopL {
+        width: 100%;
+        margin: 0;
+        align-self: stretch;
+
+        @include h4;
+      }
+    }
+
+    &--description {
+      display: none;
+
+      @include onDesktopL {
+        display: block;
+      }
+    }
+  }
+}

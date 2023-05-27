@@ -4,8 +4,6 @@
   align-items: center;
   margin-top: 15px;
 
-
-
   &__text {
     @include text2;
     text-transform: uppercase;
@@ -13,12 +11,36 @@
     color: $dark-green;
   }
 
+  &__desktop-container {
+    align-items: center;
+
+    display: none;
+
+    @include onDesktopL {
+      display: flex;
+    }
+
+  }
+
   &__desktop-menu {
     display: none;
+    margin-left: 330px;
 
     @include onDesktopL {
       display: block;
     }
+  }
+
+  &__mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 45px;
+
+    @include onTablet {
+      margin-top: 100px;
+    }
+
   }
 
   &__link {
@@ -28,12 +50,10 @@
     background-position: center;
     background-repeat: no-repeat;
     color: $dark-green;
+    font-weight: 500;
+    font-size: 18px;
 
     text-decoration: none;
-
-
-
-
 
     &--menu {
       background-image: url(../images/icons/Menu.svg);
@@ -58,22 +78,43 @@
         height: 50px;
         width: 50px;
       }
+    }
 
-      // &::after {
-      //   content: 'witch of mountain winds';
-      //   display: inline-block;
-      //   white-space: nowrap;
-      //   text-transform: uppercase;
-      //   @include text2;
-      //   position: relative;
-      //   top: 25%;
-      //   left: 125%;
-      // }
+    &--cross {
+      background-image: url(../images/icons/Cross.svg);
+      background-size: contain;
     }
 
     &--mobile {
       @include onDesktopL {
         display: none;
+      }
+
+      &-menu {
+        text-align: center;
+        width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $light-grey;
+        height: auto;
+
+        transition: margin $anim-speed,
+        color $anim-speed,
+        border-color $anim-speed;
+
+        @include menuText;
+
+        &:not(:first-child) {
+          margin-top: 30px;
+
+          @include onTablet {
+            margin-top: 50px;
+          }
+        }
+
+        &:hover {
+          border-color: $light-green;
+          color: $light-green;
+        }
       }
     }
 
@@ -89,6 +130,12 @@
 
     &--basket {
       background-image: url(../images/icons/Bag.svg);
+
+      &-active {
+        background-image: url(../images/icons/Bag-active.svg);
+        background-size: contain;
+        height: 20px;
+      }
     }
   }
 }
