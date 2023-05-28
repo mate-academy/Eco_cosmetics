@@ -1,56 +1,82 @@
 .brand {
-  display: flex;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "img" "txt";
 
   &__text {
-    display: grid;
-    order: 1;
+    grid-area: txt;
 
-    @include onTablet {
-      display: grid;
-      order: 1;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @include onDesktop {
-      display: grid;
-      order: 0;
+      align-items: flex-start;
     }
   }
 
+  &__image {
+    grid-area: img;
+
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  @include onTablet {
+    grid-template-areas: "img img img img img img"
+      ". txt txt txt txt .";
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include onDesktop {
+    grid-template-areas: ". txt txt txt txt txt img img img img img img";
+    grid-template-columns: repeat(6, 1fr) repeat(6, 1fr);
+  }
+
   &__paragraph {
-    margin-top: 10px;
+    padding: 10px 0 30px;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     text-align: center;
     color: #333;
 
+    @include onTablet {
+      padding: 10px 0 50px;
+    }
+
     @include onDesktop {
-      text-align: left;
-      margin-top: 30px;
+      padding: 30px 0 50px;
     }
   }
 
-  &__photos {
-    // width: 100vw;
-    // margin-left: calc(-50vw + 50%);
-  }
-
   &__photo {
+    background-image: url(../images/brand-desktop.png);
+
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
-  
+    
     height: 267px;
-    background-image: url(../images/brand-phone.png);
+    width: 100%;
 
     @include onTablet {
       height: 500px;
-      background-image: url(../images/brand-ipad.png);
+      width: 100%;
     }
 
     @include onDesktop {
       height: 451px;
-      background-image: url(../images/brand-desktop.png);
+      width: 100%;
     }
   }
 }

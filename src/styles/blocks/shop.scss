@@ -1,41 +1,5 @@
 .shop {
-  &__wrapper {
-    margin-bottom: 30px;
-
-    @include onTablet {
-      margin-bottom: 50px;
-    }
-
-    @include onDesktop {
-      margin-bottom: 40px;
-    }
-
-  
-    &--2 {
-      display: none;
-
-      @include onTablet {
-        display: block;
-      }
-
-      @include onDesktop {
-        display: block;
-      }
-    }
-
-    &--3 {
-      display: none;
-
-      @include onTablet {
-        display: none;
-      }
-
-      @include onDesktop {
-        display: block;
-        margin-right: -50px;
-      }
-    }
-  }
+  overflow: hidden;
 
   &__button-container {
     display: flex;
@@ -43,26 +7,29 @@
   }
 
   &__photo {
-    width: 100%;
     height: 267px;
+    width: 320px;
     margin: 0 0 20px;
-    transition: transform 0.3s;
+    transition: all 0.3s ease-in-out;
 
-    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 100%;
 
     @include onTablet {
       height: 300px;
+      width: 342px;
     }
 
     @include onDesktop {
       height: 500px;
-      // width: 380px;
+      width: 380px;
     }
 
     &:hover {
-      transform: scale(1.1);
+      transform: scale(1.03);
+      background-size: 105%;
+      box-shadow: 0 0 10px #333;
     }
 
     &--1 {
@@ -103,16 +70,56 @@
     text-transform: uppercase;
     color: #333;
   }
+
+  &__scroll {
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+      width: max-content;
+    }
+  }
+
+  &__wrapper {
+    display: inline-block;
+    margin-right: 12px;
+
+    @include onTablet {
+      margin-right: 24px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #e4dfd3;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #8c9772;
+  border-radius: 9em;
+  box-shadow: inset 1px 1px 10px #f3faf7;
 }
 
 .navigation {
-  margin: 20px 0 15px;
+  margin: 20px 0 27px;
 
   @include onTablet {
-    margin: 10px 0 25px;
+    margin: 10px 0 37px;
   }
   @include onDesktop {
-    margin: 30px 0 50px;
+    margin: 30px 0 62px;
   }
 
   &__list {
@@ -152,13 +159,9 @@
 
     &:hover {
       color: #333;
-    }
-
-    &:hover::after {
-      content: "";
-      display: block;
       padding-bottom: 10px;
       border-bottom: 2px solid #333;
+
     }
   }
 }
