@@ -1,48 +1,36 @@
 .shop {
-  overflow: hidden;
+  &__link {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0 24px 20px 0;
+
+    &:last-child {
+      margin: 0 0 20px;
+    }
+
+    &-photo {
+      height: 267px;
+      width: 320px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+  
+      @include onTablet {
+        height: 300px;
+        width: 342px;
+      }
+  
+      @include onDesktop {
+        height: 500px;
+        width: 380px;
+      }
+    }
+  }
 
   &__button-container {
     display: flex;
     justify-content: center;
-  }
-
-  &__photo {
-    height: 267px;
-    width: 320px;
-    margin: 0 0 20px;
-    transition: all 0.3s ease-in-out;
-
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-
-    @include onTablet {
-      height: 300px;
-      width: 342px;
-    }
-
-    @include onDesktop {
-      height: 500px;
-      width: 380px;
-    }
-
-    &:hover {
-      transform: scale(1.03);
-      background-size: 105%;
-      box-shadow: 0 0 10px $c-gray;
-    }
-
-    &--1 {
-      background-image: url(../images/shop-1.png);
-    }
-
-    &--2 {
-      background-image: url(../images/shop-2.png);
-    }
-
-    &--3 {
-      background-image: url(../images/shop-3.png);
-    }
   }
 
   &__name {
@@ -60,6 +48,7 @@
     @include onDesktop {
       margin: 0 0 13px;
     }
+
   }
   
   &__price {
@@ -69,10 +58,11 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: $c-gray;
+
   }
 
   &__scroll {
-    overflow-x: scroll;
+    overflow: auto;
     white-space: nowrap;
     margin-bottom: 30px;
 
@@ -83,6 +73,20 @@
     @include onDesktop {
       margin-bottom: 40px;
       width: max-content;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+      background-color: $c-beige;
+      transition: background-color 0.3s ease;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: $c-light-green;
+      border-radius: 9em;
+      box-shadow: inset 1px 1px 10px $c-gray;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
   }
 
@@ -98,18 +102,6 @@
       margin-right: 0;
     }
   }
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-  background-color: $c-beige;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: $c-light-green;
-  border-radius: 9em;
-  box-shadow: inset 1px 1px 10px $c-box-shadow;
 }
 
 .navigation {
@@ -130,7 +122,7 @@
   
   &__item {
     position: relative;
-    color: #828282;
+    color: $c-border;
     list-style: none;
 
     &:not(:last-child) {
