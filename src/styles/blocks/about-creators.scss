@@ -1,0 +1,68 @@
+.about-creators {
+  &__description {
+    @include smallText;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    margin-top: 10px;
+
+    @include onDesktopL {
+      margin-top: 34px;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 20px;
+
+      @include onTablet {
+        margin-top: 15px;
+      }
+
+      @include onDesktopL {
+        margin-top: 30px;
+      }
+    }
+
+    &--desktop-visible {
+      display: none;
+
+      @include onDesktopL {
+        display: block;
+      }
+    }
+  }
+
+  &__main-image-container {
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onTablet {
+      background-image: url(../images/desktop/img/7.png);
+      min-height: 440px;
+    }
+
+    @include onDesktopL {
+      min-height: 645px;
+    }
+
+  }
+
+  &__button {
+    margin: 25px auto 0;
+
+    @include onTablet {
+      margin: 30px 0 0;
+    }
+
+    @include onDesktopL {
+      margin: 40px 0 0;
+    }
+  }
+
+  &__link:first-of-type {
+    margin-top: 20px;
+  }
+}

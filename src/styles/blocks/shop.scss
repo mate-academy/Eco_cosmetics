@@ -1,0 +1,100 @@
+.shop {
+
+  &__title {
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__nav {
+    list-style: none;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 20px 0 0;
+
+    text-transform: uppercase;
+
+    @include onTablet {
+      justify-content: start;
+    }
+
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $light-grey;
+    border-bottom: 2px solid transparent;
+
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    transition: border-bottom $anim-speed;
+
+    &:hover,
+    &:focus {
+      color: $dark-grey;
+      border-bottom: 2px solid $dark-grey;
+    }
+
+    @include onTablet {
+      &:not(:first-child) {
+        margin-left: 32px;
+      }
+    }
+  }
+
+  &__product-card {
+
+    margin-top: 15px;
+
+    &--tablet-visible {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+
+    @include onTablet {
+      min-height: 300px;
+    }
+
+    @include onDesktopL {
+      min-height: 500px;
+    }
+  }
+
+  &__product-name {
+    text-transform: uppercase;
+
+    margin-top: 20px;
+  }
+
+  &__product-price {
+    @include h5;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    margin-top: 10px;
+  }
+
+  &__button {
+    margin: 30px auto 0;
+  }
+
+  &__container {
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+  }
+}
