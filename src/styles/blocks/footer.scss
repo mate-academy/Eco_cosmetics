@@ -1,4 +1,84 @@
 .footer {
   background-color: $light-green;
-  height: 320px;
+
+  &__content {
+    padding: 30px 0 40px;
+
+    @include onTablet {
+      padding: 30px 0;
+    }
+
+    @include onDesktopL {
+      padding: 60px 0;
+    }
+  }
+
+  &__info {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__info-item {
+    @include smallText;
+    text-decoration: none;
+    color: $light-brown;
+
+    display: block;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+
+      @include onTablet {
+        margin-top: 7px;
+      }
+
+      @include onDesktopL {
+        margin-top: 20px;
+      }
+    }
+
+    @include onDesktopL {
+      font-size: 16px;
+    }
+  }
+
+  &__copyright {
+    color: $light-brown;
+    @include decorativeText;
+    font-weight: 600;
+
+    margin: 40px auto 0;
+
+    width: 200px;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+      white-space: nowrap;
+
+      margin: 50px 0 0;
+
+      @include smallText;
+    }
+
+    @include onDesktopL {
+      margin: 0;
+      @include menuText;
+      color: $light-brown;
+      line-height: 150%;
+
+      margin-top: 27px;
+    }
+  }
+
+  &__desktop-visible {
+    display: none;
+
+    @include onDesktopL {
+      display: inline-block;
+    }
+  }
 }

@@ -1,7 +1,8 @@
 'use strict';
 
 window.addEventListener('hashchange', () => {
-  if (window.location.hash === '#menu' || window.location.hash === '#product-card') {
+  if (window.location.hash === '#menu'
+    || window.location.hash === '#product-card') {
     document.body.classList.add('page__body--with-menu');
   } else {
     document.body.classList.remove('page__body--with-menu');
