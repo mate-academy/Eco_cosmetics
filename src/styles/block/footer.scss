@@ -1,0 +1,154 @@
+.footer {
+  background-color: $colorFooter;
+  padding: 30px 20px 40px;
+
+  @include onTablet {
+    padding: 30px 27px;
+  }
+
+  @include onDesktop {
+    padding: 60px 50px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $colorNav;
+    @include hover(color, $colorRed);
+  }
+
+  &__chain {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__chain-bottom {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__fasebook {
+    background-image: url(../images/fasebook.svg);
+    width: 20px;
+    height: 20px;
+    @include hover(transform, scale(1.2));
+  }
+
+  &__instagramm {
+    background-image: url(../images/instagramm.svg);
+    width: 20px;
+    height: 20px;
+    @include hover(transform, scale(1.2));
+  }
+
+  &__data {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__data-field {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__data-link {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $colorNav;
+    @include hover(color, $colorRed);
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    @include onTablet {
+      justify-content: flex-start;
+    }
+
+    @include onDesktop {
+      align-items: center;
+    }
+  }
+
+  &__bottom-text {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    color: $colorNav;
+  }
+
+  &__copyright {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $colorNav;
+    }
+  }
+
+  &__copyright-logo {
+    margin-top: 5px;
+  }
+}
