@@ -40,7 +40,7 @@
     border-bottom: 1px solid $c-gray;
   }
 
-  &:active {
+  &:valid {
     color: $c-dark-green;
     border-bottom: 1px solid $c-dark-green;
   }
@@ -51,27 +51,18 @@
   }
 
   &--textarea {
-    resize: none;
     font-family: inherit;
+    resize: none;
+    white-space: normal;
     height: 71px;
-    box-sizing: border-box;
+
+    &::placeholder {
+      transform: translateY(3em);
+    }
+    
 
     @include onDesktop {
       height: 97px;
-    }
-
-    &::placeholder {
-      opacity: 1;
-      position: absolute;
-      bottom: 10px;
-      pointer-events: none;
-
-      &:focus,
-      &:valid {
-        transform: scale(1) translateY(-60px);
-        transform-origin: left center;
-        opacity: 0;
-      }
     }
   }
 }
