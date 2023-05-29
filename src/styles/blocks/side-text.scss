@@ -1,0 +1,29 @@
+.side {
+  @include onTablet {
+    display: none;
+  }
+
+  &__text {
+    @extend %text-decor;
+    color: $green;
+    opacity: 0.5;
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  &__line {
+    position: relative;
+    background-color: rebeccapurple;
+
+    &::before {
+      position: absolute;
+      content: "";
+      height: 100px;
+      width: 1px;
+      left: 8px;
+      top: 10px;
+      background-color: $green;
+      opacity: 0.5;
+    }
+  }
+}

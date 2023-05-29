@@ -1,0 +1,48 @@
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 587px;
+
+  @include onTablet {
+    height: 390px;
+  }
+
+  @include onPhone {
+    height: fit-content;
+  }
+
+  &__img {
+    position: relative;
+    z-index: 8;
+    transition: 0.3s;
+    &:hover {
+      box-shadow: 0 4px 5px $grey-dark;
+    }
+
+    @include onTablet {
+      width: 342px;
+      height: 300px;
+    }
+
+    @include onPhone {
+      width: 320px;
+    }
+  }
+
+  &__name {
+    @extend %h5;
+    color: $grey-dark;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__price {
+    @extend %text-3;
+    color: $grey-dark;
+    text-transform: uppercase;
+  }
+}

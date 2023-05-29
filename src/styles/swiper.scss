@@ -1,0 +1,62 @@
+.swiper {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &-pagination {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+    width: 400px !important;
+    margin-bottom: 62px;
+    align-self: flex-start;
+
+    @extend %h5;
+    text-transform: uppercase;
+
+    @include onTablet {
+      width: 274px !important;
+      margin-bottom: 37px;
+
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    &-bullet {
+      position: relative;
+      width: auto;
+      height: 30px;
+      color: #828282;
+      opacity: 1;
+      margin-right: 50px;
+
+      border-radius: 0;
+      background: transparent;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: $grey;
+        transition: 0.3s;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+
+      &-active {
+        color: $grey-dark;
+        &:hover::before {
+          background-color: $grey-dark;
+        }
+      }
+    }
+  }
+}

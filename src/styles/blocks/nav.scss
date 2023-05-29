@@ -1,0 +1,28 @@
+.nav {
+
+  &__items {
+    display: flex;
+    gap: 15px 40px;
+  }
+
+  &__link {
+    position: relative;
+
+    @extend %text-menu;
+    color: $green;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      transform: translateX(-50%);
+      left: 50%;
+      background-color: $green;
+      transition: 0.3s;
+    }
+    &:hover::before {
+      width: 100%;
+    }
+  }
+}

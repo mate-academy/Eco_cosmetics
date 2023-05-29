@@ -1,0 +1,66 @@
+.header {
+  position: relative;
+  align-items: center;
+  height: 90px;
+
+  &__menu {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__menu-img {
+    @include onTablet {
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      fill: $green;
+    }
+
+  }
+  &__logo {
+    grid-column: 1 / 6;
+    @include onTablet {
+      grid-column: 3 / 5;
+      justify-content: center;
+    }
+    @include onPhone {
+      grid-column: 1 / 3;
+      position: absolute;
+      left: +50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__wrapper {
+    grid-column: 7 / 13;
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      grid-column: 6 / 7;
+      justify-self: end;
+    }
+
+    @include onPhone {
+      grid-column: auto;
+    }
+  }
+
+  &__nav {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__busket {
+    transition: 0.3s;
+    &:hover {
+      scale: 1.2;
+    }
+  }
+}

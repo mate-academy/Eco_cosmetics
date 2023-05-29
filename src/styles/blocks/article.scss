@@ -1,0 +1,64 @@
+.article {
+  grid-column: 2 / 6;
+
+  @include onTablet {
+    grid-column: 1 / 4;
+  }
+
+  @include onPhone {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    @extend %h2;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: $green;
+
+    @include onTablet {
+      margin-bottom: 10px;
+      font-size: 24px;
+      letter-spacing: 0.05em;
+    }
+
+  }
+  &__text {
+    @extend %text-1;
+    margin-bottom: 30px;
+    color: $grey-dark;
+  }
+  &__link {
+    position: relative;
+    bottom: 0;
+
+    @extend %text-decor;
+    text-transform: uppercase;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 1px;
+      bottom: -10px;
+      background-color: $green;
+      transition: 0.3s;
+    }
+
+    &:link {
+      color: $grey-dark;
+    }
+
+    &:visited {
+      color: $green;
+    }
+
+    &:hover {
+      color: $green;
+      &::before {
+        content: "";
+        width: 100%;
+      }
+    }
+  }
+}

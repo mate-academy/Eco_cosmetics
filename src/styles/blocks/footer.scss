@@ -1,0 +1,140 @@
+.footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: $grey-light;
+  background-color: $green-light;
+
+  @include onTablet {
+    font-size: 14px;
+  }
+
+  &__list {
+    @include onTablet {
+      grid-auto-flow: column;
+      & > :nth-child(1) {
+        margin-bottom: 20px;
+      }
+      & > :nth-child(2) {
+        order: 2;
+        grid-row: auto / span 3;
+      }
+      & > :nth-child(3) {
+        order: 1;
+        @include onPhone {
+          order: 2;
+        }
+      }
+      & > :nth-child(4) {
+        margin-bottom: 50px;
+      }
+    }
+    @include onPhone {
+      grid-auto-flow: row;
+    }
+  }
+
+  &__item {
+    grid-column: auto / span 6;
+
+    @include onTablet {
+      grid-column: auto / span 3;
+    }
+    @include onPhone {
+      grid-column: auto / span 2;
+    }
+  }
+
+  &__item a {
+    transition: 0.3s;
+    &::before {
+      background-color: $grey-light;
+    }
+    &:hover {
+      color: #fff;
+
+      &::before {
+        background-color: #fff;
+      }
+    }
+    color: $grey-light;
+
+    @include onTablet {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  &__nav {
+
+    & > .nav__items {
+      @include onTablet {
+        flex-direction: column;
+      }
+
+      & a {
+        @include onPhone {
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  &__copy {
+    @extend %text-menu;
+    @include onTablet {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  &__copy-1 {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__copy-2 {
+    text-transform: capitalize;
+    @include onPhone {
+      display: block;
+      margin: 0 auto;
+      width: 200px;
+      text-transform: none;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  &__contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+    @include onTablet {
+      gap: 7px;
+    }
+    @include onPhone {
+      gap: 10px;
+    }
+  }
+
+  &__socials-items {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__social-img {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #e4dfd3;
+    transition: 0.3s;
+
+    &:hover {
+      scale: 200%;
+      stroke: #fff;
+      filter: drop-shadow(0 0 4px $green);
+    }
+  }
+}

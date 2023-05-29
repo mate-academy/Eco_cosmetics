@@ -1,0 +1,65 @@
+.brand {
+  color: $grey-dark;
+
+  &__description {
+    grid-column: 2 / 7;
+    @include onTablet {
+      grid-column: 2 / 6;
+      text-transform: capitalize;
+      text-align: center;
+    }
+    @include onPhone {
+      grid-column: 1 / 3;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &__title {
+    width: 466px;
+    margin-bottom: 30px;
+    @extend %h1;
+
+    @include onTablet {
+      margin-bottom: 10px;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0;
+    }
+    @include onPhone {
+      width: auto;
+      font-size: 24px;
+      letter-spacing: 0.05em;
+      text-transform: none;
+    }
+  }
+
+  &__text {
+    @extend %text-1;
+    margin-bottom: 50px;
+  }
+
+  &__button {
+    @include onTablet {
+      margin: 0 auto;
+    }
+  }
+
+  &__image {
+    grid-column: 7 / 13;
+    @include onTablet {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      margin-bottom: 50px;
+      text-transform: capitalize;
+    }
+
+    @include onPhone {
+      position: relative;
+      left: -20px;
+    }
+  }
+}
