@@ -2,7 +2,7 @@
 
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#menu'
-    || window.location.hash === '#product-card') {
+    || window.location.hash === '#basket1') {
     document.body.classList.add('page__body--with-menu');
   } else {
     document.body.classList.remove('page__body--with-menu');
