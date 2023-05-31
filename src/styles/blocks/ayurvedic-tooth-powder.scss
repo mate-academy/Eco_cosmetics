@@ -5,7 +5,7 @@
     width: 199px;
 
     position: absolute;
-    right: -20px;
+    right: -25px;
 
     background-image: url(../images/mobile/svg/Powder_mobile.svg);
     background-position: right;
@@ -38,6 +38,10 @@
     height: 395px;
     width: 100%;
 
+    @include onDesktopL {
+      margin-right: 0;
+    }
+
   }
 
   &__description {
@@ -60,6 +64,11 @@
     display: block;
     margin: 0 auto;
     height: 62px;
+    transition: transform $anim-speed;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     @include onTablet {
       height: 80px;
