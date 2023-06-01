@@ -1,13 +1,13 @@
 .page {
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  
+
   &__body {
+    overflow-x: hidden;
     background-color: $light-brown;
     min-width: 320px;
 
     &--with-menu {
-      overflow: hidden;
+      overflow-y: hidden;
     }
   }
 
@@ -38,12 +38,17 @@
       transform: translateX(0);
     }
 
+    &:target .page {
+      overflow: hidden;
+    }
+
     @include onDesktopL {
       display: none;
     }
   }
 
   &__product-card {
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -55,6 +60,14 @@
 
     &:target {
       transform: translateX(0);
+
+      @include onDesktopL {
+        overflow: hidden;
+      }
+    }
+
+    &:target .page {
+      overflow: hidden;
     }
   }
 }
