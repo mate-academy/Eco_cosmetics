@@ -1,0 +1,71 @@
+.confirmation {
+  color: $gray-dark;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  background-color: $color-background;
+
+  &-checkout {
+    position: relative;
+    margin-bottom: 30px;
+
+    &::after {
+      display: block;
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 100%;
+      top: 25px;
+      background: $gray-light;
+
+      @include onTablet {
+        width: 220px;
+      }
+
+      @include onDesktopSmall {
+        width: 200px;
+      }
+    }
+  }
+
+  &-title {
+    text-align: center;
+    margin-bottom: 67px;
+  }
+
+  &-main-info {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  &-photo {
+    background-image: url(../images/leaf.svg);
+    width: 40px;
+    height: 52px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto 140px;
+  }
+
+  &-link {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__overflow {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    min-width: 320px;
+    overflow: hidden;
+
+    @include onTablet {
+      padding-bottom: 72px;
+    }
+
+    @include onTablet {
+      padding-bottom: 100px;
+    }
+  }
+}

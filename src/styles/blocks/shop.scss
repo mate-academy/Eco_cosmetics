@@ -1,4 +1,5 @@
 .shop {
+
   &__nav {
     display: flex;
     justify-content: space-between;
@@ -22,6 +23,12 @@
   }
 
   &__card {
+    &-item {
+      background-color: $color-background;
+      height: 100%;
+      z-index: 1;
+    }
+
     &-photo {
       box-sizing: border-box;
       background-size: cover;
@@ -71,6 +78,34 @@
       }
     }
 
+    &-photo--catalog {
+      display: block;
+      height: 248px;
+      width: 100%;
+      background-image: url(../images/shop__oil.png);
+      margin-bottom: 30px;
+
+      @include onTablet {
+        display: none;
+      }
+
+      &--tablet {
+        display: none;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 440px;
+        width: 100%;
+        margin-bottom: 30px;
+        background-image: url(../images/card-tablet.png);
+
+        @include onTablet {
+          display: block;
+        }
+
+      }
+    }
+
     &__description {
       display: block;
       text-transform: uppercase;
@@ -107,6 +142,41 @@
 
         @include onDesktopSmall {
           display: block;
+        }
+      }
+
+      &--catalog {
+        line-height: 150%;
+
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $gray-dark;
+
+        &--name {
+          font-weight: 600;
+          font-size: 18px;
+        }
+
+        &--price {
+          font-size: 14px;
+          font-weight: 400;
+          color: $green-dark;
+          padding-bottom: 20px;
+
+          @include onTablet {
+            padding-bottom: 10px;
+          }
+        }
+
+        &--weight {
+          display: none;
+          font-size: 18px;
+          font-weight: 500;
+          margin-bottom: 20px;
+
+          @include onTablet {
+            display: block;
+          }
         }
       }
     }

@@ -1,0 +1,55 @@
+.shipping {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $gray-dark;
+  background-color: $color-background;
+
+  &-checkout {
+    position: relative;
+    margin-bottom: 30px;
+
+    &::after {
+      display: block;
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 100%;
+      top: 25px;
+      background: $gray-light;
+
+      @include onTablet {
+        width: 220px;
+      }
+
+      @include onDesktopSmall {
+        width: 200px;
+      }
+    }
+  }
+
+  &-title {
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  &__overflow {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    min-width: 320px;
+    overflow-y: auto;
+
+    @include onTablet {
+      padding-bottom: 72px;
+    }
+
+    @include onTablet {
+      padding-bottom: 100px;
+    }
+  }
+}

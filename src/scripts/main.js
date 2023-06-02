@@ -6,9 +6,17 @@ window.addEventListener('hashchange', () => {
   } else {
     document.body.classList.remove('page__body--with-menu');
   }
+
+  if (window.location.hash === '#confirmation'
+    || window.location.hash === '#shipping') {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
 });
 
 const form = document.querySelector('.form');
+
 const inputs = document.querySelectorAll('.form-field');
 
 function handler(event) {

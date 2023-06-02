@@ -6,7 +6,9 @@
 
   &__body {
     margin: 0;
-    &--with-menu {
+
+    &--with-menu,
+    &--with-card {
       overflow: hidden;
     }
   }
@@ -17,6 +19,31 @@
     left: 0;
     right: 0;
     transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__shop-card {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1;
+  }
+
+  &__card {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    transform: translateX(100%);
     transition: transform 0.3s;
 
     &:target {
