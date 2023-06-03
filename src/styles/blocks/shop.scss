@@ -23,6 +23,12 @@
   }
 
   &__card {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
     &-item {
       background-color: $color-background;
       height: 100%;
@@ -37,6 +43,7 @@
       height: 267px;
       width: 100%;
       margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
 
       &:hover {
         transform: scale(1.05);
@@ -51,7 +58,15 @@
       }
     }
 
-    &-photo--1 {
+    &-photo--3 {
+      display: none;
+
+      @include onDesktopSmall {
+        display: block;
+      }
+    }
+
+    &-photo--body-oil {
       background-image: url(../images/shop__oil.png);
 
       @include onTablet {
@@ -59,23 +74,60 @@
       }
     }
 
-    &-photo--2 {
-      display: none;
+    &-photo--ubtan {
       background-image: url(../images/Ubtan.png);
 
       @include onTablet {
-        display: block;
         background-image: url(../images/Ubtan-desktop.png);
       }
     }
 
-    &-photo--3 {
-      display: none;
-      background-image: url(../images/face-cream.png);
+    &-photo--org-soap {
+      background-image: url(../images/organic-soap.png);
 
-      @include onDesktopSmall {
-        display: block;
+      @include onTablet {
+        background-image: url(../images/organic-soap.png);
       }
+    }
+
+    &-photo--face-cream {
+      background-image: url(../images/face-cream.png);
+    }
+
+    &-photo--lip-balm {
+      background-image: url(../images/lipbalm.png);
+    }
+
+    &-photo--moisturizing {
+      background-image: url(../images/moisturizing.png);
+    }
+
+    &-photo--bath-soak {
+      background-image: url(../images/bath-soak.png);
+    }
+
+    &-photo--org-shampoo {
+      background-image: url(../images/shampoo.png);
+    }
+
+    &-photo--lav-shampoo {
+      background-image: url(../images/lavender-shampoo.png);
+    }
+
+    &-photo--eco-shampoo {
+      background-image: url(../images/shampoo-3.png);
+    }
+
+    &-photo--jasmine-abs {
+      background-image: url(../images/candle-about.png);
+    }
+
+    &-photo--orange-candle {
+      background-image: url(../images/candle-2.png);
+    }
+
+    &-photo--rosemary-candle {
+      background-image: url(../images/candle-1.png);
     }
 
     &-photo--catalog {

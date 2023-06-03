@@ -1,0 +1,155 @@
+.swiper {
+  display: block;
+  width: 100%;
+  height: 267px;
+  margin-bottom: 20px;
+
+  @include onTablet {
+    display: none;
+  }
+
+  &-slide {
+    text-align: center;
+    font-size: 18px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--1 {
+      display: block;
+    }
+  }
+
+  &-button-prev,
+  &-rtl &-button-prev {
+    color: $color-background;
+    right: 20px;
+    left: auto;
+    top: 1350px;
+  }
+  
+  &-button-next,
+  &-rtl &-button-next {
+    color: $color-background;
+    left: 20px;
+    right: auto;
+    top: 1350px;
+  }
+  
+  &-pagination-bullet {
+    background-color: $color-background;
+  }
+
+  &__card {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &-item {
+      background-color: $color-background;
+      height: 100%;
+      z-index: 1;
+    }
+
+    &-photo {
+      box-sizing: border-box;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 267px;
+      width: 100%;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include onTablet {
+        height: 400px;
+      }
+
+      @include onDesktopSmall {
+        height: 500px;
+      }
+    }
+
+    &-photo--body-oil {
+      background-image: url(../images/shop__oil.png);
+
+      @include onTablet {
+        background-image: url(../images/shop__oil-tablet.png);
+      }
+    }
+
+    &-photo--ubtan {
+      background-image: url(../images/Ubtan.png);
+    }
+
+    &-photo--org-soap {
+      background-image: url(../images/organic-soap.png);
+    }
+
+    &-photo--face-cream {
+      background-image: url(../images/face-cream.png);
+    }
+
+    &-photo--lip-balm {
+      background-image: url(../images/lipbalm.png);
+    }
+
+    &-photo--moisturizing {
+      background-image: url(../images/moisturizing.png);
+    }
+
+    &-photo--bath-soak {
+      background-image: url(../images/bath-soak.png);
+    }
+
+    &-photo--org-shampoo {
+      background-image: url(../images/shampoo.png);
+    }
+
+    &-photo--lav-shampoo {
+      background-image: url(../images/lavender-shampoo.png);
+    }
+
+    &-photo--eco-shampoo {
+      background-image: url(../images/shampoo-3.png);
+    }
+
+    &-photo--jasmine-abs {
+      background-image: url(../images/candle-about.png);
+    }
+
+    &-photo--orange-candle {
+      background-image: url(../images/candle-2.png);
+    }
+
+    &-photo--rosemary-candle {
+      background-image: url(../images/candle-1.png);
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $gray-dark;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &-name {
+      font-weight: 600;
+    }
+
+    &-price {
+      font-weight: 500;
+    }
+  }
+}
