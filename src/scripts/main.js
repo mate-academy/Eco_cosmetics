@@ -3,17 +3,27 @@
 'use strict';
 
 window.addEventListener('hashchange', () => {
-  if (window.location.hash === '#menu') {
-    document.body.classList.add('page__body--with-menu');
+  const arrowRight = document.querySelector('#button1');
+  const arrowLeft = document.querySelector('#button2');
+
+  if (window.location.hash === '#menu'
+    || window.location.hash === '#card'
+    || window.location.hash === '#shop'
+    || window.location.hash === '#contact-us'
+    || window.location.hash === '#about-brand') {
+    arrowRight.classList.add('swiper-button-next--with-menu');
+    arrowLeft.classList.add('swiper-button-prev--with-menu');
   } else {
-    document.body.classList.remove('page__body--with-menu');
+    arrowRight.classList.remove('swiper-button-next--with-menu');
+    arrowLeft.classList.remove('swiper-button-prev--with-menu');
   }
 
   if (window.location.hash === '#confirmation'
-    || window.location.hash === '#shipping') {
-    document.body.style.overflow = 'hidden';
+    || window.location.hash === '#shipping'
+    || window.location.hash === '#menu') {
+    document.body.classList.add('page__body--with-menu');
   } else {
-    document.body.style.overflow = 'auto';
+    document.body.classList.remove('page__body--with-menu');
   }
 });
 
@@ -30,17 +40,6 @@ function handler(event) {
 }
 
 form.addEventListener('submit', handler);
-
-const arrowRight = document.querySelector('.swiper-button-next');
-const arrowLeft = document.querySelector('.swiper-button-prev');
-
-if (window.location.hash === '#card') {
-  arrowRight.style.display = 'none';
-  arrowLeft.style.display = 'none';
-} else {
-  arrowRight.style.display = 'block';
-  arrowLeft.style.display = 'block';
-}
 
 const bodyLink = document.querySelector('a[href="#body"]');
 const faceLink = document.querySelector('a[href="#face"]');
