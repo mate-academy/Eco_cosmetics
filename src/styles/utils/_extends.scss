@@ -1,4 +1,147 @@
+@import "./mixins";
+
+%top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+%grid-system {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    position: relative;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+}
+
+%side {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+    position: absolute;
+    grid-column: 1 / 2;
+
+  }
+}
+
 %h1 {
-  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 130%;
+
+  @include onTablet {
+    font-size: 3.6rem;
+    line-height: 150%;
+  }
+
+  @include onDesktop {
+    font-size: 6rem;
+    line-height: 130%;
+  }
+
+}
+
+%h2 {
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: 0.5px;
+}
+
+%h3 {
+  font-size: 3.6rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+%h4 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+
+  @include onDesktop {
+    font-size: 3.6rem;
+    line-height: 110%;
+    letter-spacing: 0.5px;
+  }
+}
+
+%h5 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.5px;
+}
+
+%text {
+  font-size: 1.6rem;
   font-weight: 400;
+  line-height: 150%;
+}
+
+%text2 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+
+  @include onDesktop {
+    font-size: 1.6rem;
+    line-height: 150%;
+    letter-spacing: 0;
+  }
+
+  @include onScreen {
+    font-size: 1.4rem;
+    letter-spacing: 0.6px;
+  }
+}
+
+%text3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.5px;
+}
+
+%small-text {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 150%;
+
+  @include onTablet {
+    font-size: 1.6rem;
+  }
+}
+
+%menu-text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 130%;
+
+  @include onTablet {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  @include onDesktop {
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
+
+%button-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 2.5px;
 }

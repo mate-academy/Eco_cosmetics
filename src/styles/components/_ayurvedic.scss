@@ -1,0 +1,98 @@
+.ayurvedic {
+  overflow: hidden;
+
+  &__content {
+    @extend %grid-system;
+    position: relative;
+    margin-bottom: 112px;
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 210px;
+    }
+  }
+
+  &__side {
+    @extend %side;
+  }
+
+  &__details {
+    @include onDesktop {
+      grid-column: 2/6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 447px;
+    letter-spacing: 1.2px;
+
+    @include onTablet {
+      margin-bottom: 310px;
+      max-width: 380px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 290px;
+      letter-spacing: 1.8px;
+    }
+
+    @include onScreen {
+      margin-bottom: 288px;
+    }
+  }
+
+  &__img-container {
+    display: flex;
+    position: absolute;
+    top: 17%;
+    right: -94%;
+
+    @include onTablet {
+      top: 0;
+      right: -22%;
+    }
+
+    @include onDesktop {
+      grid-column: 6/13;
+      right: 0;
+    }
+  }
+
+  &__img {
+    height: 395px;
+  }
+
+  &__list {
+    max-width: 200px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+    text-align: end;
+
+    @include onDesktop {
+      margin-right: 25px;
+    }
+  }
+
+  &__item {
+    @extend %text;
+
+    &::after {
+      content: url(../images/icons/ayurvedic-small.svg);
+      width: 32px;
+      height: 1px;
+      display: inline-block;
+      margin-left: 20px;
+
+      @include onTablet {
+        content: url(../images/icons/ayurvedic.svg);
+        width: 76px;
+      }
+    }
+  }
+}

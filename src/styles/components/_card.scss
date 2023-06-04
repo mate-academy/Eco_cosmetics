@@ -1,0 +1,69 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: all $transition;
+
+  @include onTablet {
+    padding: 12px 0 0;
+  }
+
+  &__img-container {
+    margin-bottom: 20px;
+    width: 320px;
+    height: 267px;
+
+    @include onTablet {
+      width: 342px;
+      height: 300px;
+    }
+
+    @include onDesktop {
+      width: 530px;
+      height: 500px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__title {
+    margin: 0 20px 12px 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+
+    @include onTablet {
+      margin: 0 0 18px;
+    }
+  }
+
+  &__price {
+    margin: 0 20px 10px 20px;
+    @extend %text3;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &:hover {
+    .card__img-container {
+      transform: scale(1.01);
+    }
+
+    .card__title {
+      color: $color-text-heading;
+    }
+
+    .card__price {
+    color: $color-text-heading;
+    text-shadow: 2px 4px 4px rgba(52, 79, 16, 0.2),
+                 0px -5px 10px rgba(195, 231, 186, 0.15);
+    }
+  }
+}

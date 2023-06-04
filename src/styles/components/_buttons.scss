@@ -1,0 +1,43 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  transition: all $transition;
+
+  &--colored {
+    width: 280px;
+    height: 60px;
+    @extend %button-text;
+    background-color: $color-background-dark;
+    border: 1px solid $color-background-dark;
+    color: $color-text-light;
+
+    &:hover {
+      color: $color-background-main;
+      background-color: $color-background-footer;
+      border-color: $color-background-footer;
+    }
+  }
+
+  &--bordered {
+    width: fit-content;
+    height: 18px;
+    text-decoration: underline 1px solid $color-text-heading;
+    text-underline-offset: 14px;
+    @extend %text2;
+    color: $color-text-heading;
+
+    @include onDesktop {
+      font-size: 1.4rem;
+      line-height: 130%;
+      font-weight: 500;
+    }
+
+    &:hover {
+      font-weight: 600;
+      transform: scale(1.05);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.menu {
+  &__list {
+    display: flex;
+    list-style: none
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+  }
+
+  &__link {
+    @extend %menu-text;
+    text-decoration: none;
+    color: $color-text-heading;
+
+    &:hover {
+      text-decoration: underline 2px $color-text-heading;
+      text-underline-offset: 15px;
+
+      @include onDesktop {
+        text-underline-offset: 17px;
+      }
+    }
+  }
+}

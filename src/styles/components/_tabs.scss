@@ -1,0 +1,54 @@
+.tabs {
+  display: flex;
+  justify-content: space-between;
+
+  @include onTablet {
+    justify-content: flex-start;
+  }
+
+  &__tab {
+    @extend %text2;
+    text-transform: uppercase;
+    color: $color-text-dark;
+    transition: all $transition;
+    cursor: pointer;
+
+    @include onDesktop {
+      font-weight: 600;
+      font-size: 1.8rem;
+      letter-spacing: 0.7px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 14px;
+
+      @include onTablet {
+        margin-right: 33px;
+      }
+
+      @include onDesktop {
+        margin-right: 50px;
+      }
+    }
+
+    &--active {
+      color: $color-background-dark;
+      text-decoration: underline 2px $color-background-dark;
+      text-underline-offset: 15px;
+
+      @include onDesktop {
+        text-underline-offset: 17px;
+      }
+    }
+
+    &:hover {
+      color: $color-background-dark;
+      text-decoration: underline 2px $color-background-dark;
+      text-underline-offset: 15px;
+
+      @include onDesktop {
+        text-underline-offset: 17px;
+      }
+    }
+  }
+}
