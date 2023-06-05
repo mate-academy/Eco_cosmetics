@@ -1,0 +1,93 @@
+.menu {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: -150%;
+  z-index: 10;
+  display: none;
+  height: 100vh;
+  overflow-y: scroll;
+  color: $color-light-1;
+  background-color: $color-grey-1;
+
+  &:target {
+    inset-inline-start: 0;
+    inset-inline-end: 0;
+    display: block;
+  }
+
+  @include onDesktopMedium {
+    &:target {
+      display: none;
+    }
+  }
+
+  &__top {
+    padding-block: 20px;
+    margin-block-end: 15px;
+
+    @include onTablet {
+      padding-block: 28px;
+      margin-block-end: 60px;
+    }
+  }
+
+  &__icon-close {
+    position: relative;
+    display: inline-block;
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    text-align: center;
+
+    @include onTablet {
+      row-gap: 40px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-block: 10px;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      inset-block-end: 0;
+      inset-inline-start: 0;
+      display: block;
+      height: 1px;
+    }
+
+    &:before {
+      z-index: 1;
+      width: 100%;
+      background-color: $color-light-1;
+    }
+
+    &:after {
+      z-index: 2;
+      width: 0;
+      background-color: $color-green-1;
+      transition: width $effectDuration;
+    }
+
+    &:hover:after {
+      width: 50%;
+    }
+
+    &:active:after {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    color: $color-light-1;
+  }
+}

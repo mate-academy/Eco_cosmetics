@@ -1,0 +1,49 @@
+.nav {
+  display: none;
+
+  @include onDesktopMedium {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 40px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-block: 15px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: $color-green-1;
+    transition: color $effectDuration;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset-block-end: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
+      display: block;
+      width: 0;
+      height: 1px;
+      background-color: $color-green-2;
+      transition: width $effectDuration;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
+
+      color: $color-green-2;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
