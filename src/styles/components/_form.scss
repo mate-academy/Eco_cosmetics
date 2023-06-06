@@ -7,7 +7,7 @@
   border: none;
   border-bottom: 1px solid $color-border;
   background-color: inherit;
-   @extend %small-text;
+  @extend %small-text;
 
   @include onDesktop {
     height: 38px;
@@ -46,8 +46,24 @@
 
   &--textarea {
     font-family: inherit;
+    resize: vertical;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-text-heading;
+      border-radius: 20px;
+      border: 3px solid $color-background-footer;
+    }
   }
-   &:focus,
+
+  &:focus,
   &:-webkit-autofill {
     outline: none;
     border-bottom-color: $color-text-heading;
