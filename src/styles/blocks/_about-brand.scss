@@ -11,7 +11,7 @@
   &__info {
     grid-column: 1/-1;
 
-    @include onTablet {
+    @include onTabletLarge {
       grid-column: span 3;
     }
 
@@ -46,7 +46,7 @@
       display: none;
     }
 
-    @include onTablet {
+    @include onTabletLarge {
       font-size: 16px;
     }
 
@@ -66,9 +66,17 @@
   &__images {
     display: none;
 
-    @include onTablet {
+    @include onTabletMedium {
+      grid-column: 1/-1;
+      order: -1;
       display: block;
+      margin-block-end: 25px;
+    }
+
+    @include onTabletLarge {
       grid-column: span 3;
+      order: 0;
+      margin-block-end: 0;
     }
 
     @include onDesktopMedium {
@@ -82,23 +90,17 @@
   &__image {
 
     &--square {
-
-      @include onTablet {
-        position: relative;
-        height: 0;
-        padding-block-end: 100%;
-      }
-
       @include onDesktopMedium {
-        height: 100%;
         padding-block-end: 0;
       }
     }
   }
 
   &__image-wide {
-    position: absolute;
     @include square(100%);
+    /* stylelint-disable */
+    aspect-ratio: 1/1;
+    /* stylelint-enable */
     object-fit: cover;
 
     @include onDesktopMedium {

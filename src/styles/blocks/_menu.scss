@@ -5,6 +5,7 @@
   z-index: 10;
   display: none;
   height: 100vh;
+  padding-inline: 20px;
   overflow-y: scroll;
   color: $color-light-1;
   background-color: $color-grey-1;
@@ -13,6 +14,10 @@
     inset-inline-start: 0;
     inset-inline-end: 0;
     display: block;
+  }
+
+  @include onTabletLarge {
+    padding-inline: 27px;
   }
 
   @include onDesktopMedium {
@@ -25,7 +30,7 @@
     padding-block: 20px;
     margin-block-end: 15px;
 
-    @include onTablet {
+    @include onTabletLarge {
       padding-block: 28px;
       margin-block-end: 60px;
     }
@@ -46,7 +51,7 @@
     row-gap: 20px;
     text-align: center;
 
-    @include onTablet {
+    @include onTabletLarge {
       row-gap: 40px;
     }
   }
@@ -54,6 +59,7 @@
   &__item {
     position: relative;
     padding-block: 10px;
+    width: 100%;
 
     &:before,
     &:after {

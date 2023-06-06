@@ -1,7 +1,7 @@
 @mixin contentPaddingInline {
   padding-inline: 20px;
 
-  @include onTablet {
+  @include onTabletLarge {
     padding-inline: 27px;
   }
 
@@ -26,8 +26,14 @@
   }
 }
 
-@mixin onTablet {
-  @media (min-width: $min-width-tablet) {
+@mixin onTabletLarge {
+  @media (min-width: $min-width-tablet--l) {
+    @content;
+  }
+}
+
+@mixin onTabletMedium {
+  @media (min-width: $min-width-tablet--m) {
     @content;
   }
 }
