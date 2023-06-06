@@ -1,13 +1,21 @@
 .ayurvedic {
   overflow: hidden;
 
+  @include onTablet {
+    padding-top: 10px;
+  }
+
+  @include onDesktop {
+    padding-top: 0;
+  }
+
   &__content {
     @extend %grid-system;
     position: relative;
     margin-bottom: 112px;
 
     @include onTablet {
-      margin-bottom: 110px;
+      margin-bottom: 135px;
     }
 
     @include onDesktop {
@@ -20,6 +28,10 @@
   }
 
   &__details {
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
     @include onDesktop {
       grid-column: 2/6;
     }
@@ -48,31 +60,35 @@
     display: flex;
     position: absolute;
     top: 17%;
-    right: -94%;
 
     @include onTablet {
-      top: 0;
-      right: -22%;
+      top: 3%;
+      left: 31%;
     }
 
     @include onDesktop {
       grid-column: 6/13;
-      right: 0;
+      top: 0;
+      left: 11%;
     }
   }
 
   &__img {
-    height: 395px;
+    height: 400px;
   }
 
   &__list {
-    max-width: 200px;
+    width: 154px;
     margin-right: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     list-style: none;
     text-align: end;
+
+    @include onTablet {
+      min-width: 200px;
+    }
 
     @include onDesktop {
       margin-right: 25px;
