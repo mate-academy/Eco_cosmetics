@@ -5,7 +5,7 @@ Implement landing page according to [Figma design](https://www.figma.com/file/Fz
 - Tablet 640px
 - Mobile (> 320px)
 
-1. Implement the header with `nav`.
+1. the header with `nav`.
 1. Implement `Brand of eco-cosmetics and magic candles` block.
 1. Implement `If you choose the gifts of nature and care about it’s - scroll down` block.
 1. Implement `About our brand` block.
@@ -57,7 +57,7 @@ Use `Sharp Sans No2 Medium` and `Avenir`, which you can find in fonts directory.
 11. `git push origin develop` - to send you code for PR.
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/Eco_cosmetics/).
+  [DEMO LINK](https://victor-buldenko.github.io/Eco_cosmetics/).
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.

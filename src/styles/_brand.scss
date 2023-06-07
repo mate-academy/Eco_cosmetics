@@ -1,0 +1,124 @@
+.brand-out {
+  margin-bottom: 200px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 130px;
+  }
+
+  @media (max-width: 460px) {
+    position: relative;
+    margin-bottom: 100px;
+  }
+}
+
+.brand {
+  @extend .grid;
+
+  &__decor {
+    grid-column: 1 / 2;
+    position: relative;
+    &-text {
+      position: absolute;
+      @extend .decor;
+    }
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__title {
+    grid-column: 2 / 6;
+    grid-row: 1;
+    margin-bottom: 40px;
+
+    @media (max-width: 1024px) {
+      grid-column: 1 / 4;
+    }
+    @media (max-width: 460px) {
+      text-align: center;
+      grid-row: 1;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__text {
+    grid-column: 2 / 6;
+    grid-row: 2;
+    margin-bottom: 30px;
+
+    @media (max-width: 1024px) {
+      grid-column: 1 / 4;
+    }
+    @media (max-width: 460px) {
+      grid-row: 2;
+      grid-column: 1 / 3;
+      text-align: justify;
+    }
+  }
+
+  &__text-sub {
+    grid-column: 2 / 6;
+    grid-row: 3;
+    margin-bottom: 40px;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .button-empty-lowwer {
+    display: inline-block;
+    width: min-content;
+    white-space: nowrap;
+    grid-column: 2 / 6;
+    grid-row: 4;
+    margin-bottom: 40px;
+
+    &:hover {
+      @extend .text-shadow;
+    }
+
+    @media (max-width: 1024px) {
+      grid-column: 1 / 2;
+    }
+    @media (max-width: 460px) {
+      grid-row: 3;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__picture-b {
+    display: flex;
+    grid-column: 7 / 11;
+    grid-row: 1 / 5;
+    transition: 0.3s;
+
+    @media (max-width: 1024px) {
+      grid-column: 4 / 7;
+    }
+    @media (max-width: 460px) {
+      display: none;
+    }
+
+    &:hover {
+      box-shadow: 5px 5px 15px #888;
+    }
+  }
+
+  &__picture-s {
+    display: flex;
+    align-self: self-end;
+    grid-column: 11 / 13;
+    grid-row: 1 / 5;
+    transition: 0.3s;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+
+    &:hover {
+      box-shadow: 5px 5px 15px #888;
+    }
+  }
+}

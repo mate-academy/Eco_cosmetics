@@ -1,4 +1,68 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+.bs {
+  box-shadow: 0 0 5px red;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 20px;
+  justify-content: center;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 30px;
+  }
+
+  @media (max-width: 460px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+  }
+}
+
+.text-shadow,
+.ts {
+  text-shadow: 2px 2px 2px $green-50;
+}
+
+.box-shadow {
+  box-shadow: 2px 2px 2px $green-50;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: $green;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.decor {
+  pointer-events: none;
+  user-select: none;
+  position: relative;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  writing-mode: vertical-lr;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: $green;
+
+  &:before {
+    top: -110px;
+    left: 9px;
+    display: block;
+    position: absolute;
+    height: 100px;
+    width: 1px;
+    content: "";
+    background-color: $green;
+  }
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }

@@ -1,0 +1,137 @@
+.input {
+  height: 2rem;
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+  outline: none;
+  border-radius: 0;
+  font-size: 112.5%;
+  color: #828282;
+  font-family: "Sharp", sans-serif;
+  font-weight: 600;
+
+  &::placeholder {
+    font-family: "Sharp", sans-serif;
+    font-size: 87.5%;
+    line-height: 131.25%;
+    color: #828282;
+    font-weight: 400;
+  }
+
+  &:focus {
+    border-bottom-color: $black;
+    color: $black;
+  }
+
+  &:valid {
+    &::placeholder {
+      color: $green;
+    }
+
+    color: $green;
+    border-bottom-color: $green;
+  }
+
+  &:focus:invalid {
+    &::placeholder {
+      color: #eb5757;
+    }
+
+    color: #eb5757;
+    border-bottom-color: #eb5757;
+  }
+}
+
+.button-fill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  letter-spacing: 0.15rem;
+  font-family: sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 16px;
+  color: $gray-10;
+  background-color: $black;
+  padding: 1.25rem 0;
+  border: 1px solid $black;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: $black;
+    background-color: inherit;
+  }
+}
+
+.button-empty-lowwer {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  padding-bottom: 12px;
+  color: $green;
+  transition: all 0.3s;
+
+  &::after {
+    transition: all 0.3s;
+    display: block;
+    position: absolute;
+    content: "";
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: $green;
+  }
+
+  &:hover {
+    transition: all 0.3s;
+
+    &::after {
+      bottom: 14px;
+      background-color: transparent;
+    }
+  }
+}
+
+.button-empty-capitalize {
+  display: inline-block;
+  width: min-content;
+  white-space: nowrap;
+  align-items: center;
+  position: relative;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  padding-bottom: 20px;
+  color: #828282;
+  text-transform: uppercase;
+  transition: all 0.3s;
+
+  &::after {
+    transition: all 0.3s;
+    display: block;
+    position: absolute;
+    content: "";
+    top: 18px;
+    height: 1px;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  &:hover {
+    transition: all 0.3s;
+    color: $black;
+
+    &::after {
+      top: 100%;
+      background-color: $black;
+    }
+  }
+}
