@@ -17,11 +17,9 @@
   &__item {
     position: relative;
     grid-column: 1/-1;
-    padding-block-start: 75px;
 
     @include onTabletLarge {
       grid-column: 2/6;
-      padding-block-start: 0;
     }
 
     @include onDesktopMedium {
@@ -65,40 +63,73 @@
   }
 
   &__title {
-    position: absolute;
-    inset-block-start: 0;
     margin-block-end: 0;
     font-size: 18px;
     line-height: 150%;
     font-weight: 600;
 
-    @include onTabletLarge {
-      position: static;
-      margin-block-end: 25px;
+    &--top {
+      display: block;
+      margin-block-end: 10px;
+
+      @include onTabletMedium {
+        margin-block-end: 20px;
+      }
+
+      @include onTabletLarge {
+        display: none;
+      }
     }
 
-    @include onDesktopMedium {
-      margin-block-end: 30px;
-      font-size: 32px;
-      line-height: 110%;
+    &--bottom {
+      display: none;
+
+      @include onTabletMedium {
+        margin-block-end: 25px;
+      }
+
+      @include onTabletLarge {
+        display: block;
+      }
+
+      @include onDesktopMedium {
+        margin-block-end: 30px;
+        font-size: 32px;
+        line-height: 110%;
+      }
     }
   }
 
   &__price {
-    position: absolute;
-    inset-block-start: 35px;
     font-size: 14px;
     line-height: 130%;
     font-weight: 400;
 
-    @include onTabletLarge {
-      position: static;
-      margin-block-end: 10px;
+    &--top {
+      display: block;
+      margin-block-end: 20px;
+
+      @include onTabletMedium {
+        margin-block-end: 30px;
+      }
+
+      @include onTabletLarge {
+        display: none;
+      }
     }
 
-    @include onDesktopMedium {
-      margin-block-end: 15px;
-      font-size: 18px;
+    &--bottom {
+      display: none;
+      margin-block-end: 10px;
+
+      @include onTabletLarge {
+        display: block;
+      }
+
+      @include onDesktopMedium {
+        margin-block-end: 15px;
+        font-size: 18px;
+      }
     }
   }
 
