@@ -1,0 +1,127 @@
+.creators {
+  &__content {
+    @extend %grid-system;
+
+    @include onDesktop {
+      grid-template-rows: 0 1fr;
+    }
+  }
+
+  &__side {
+    @extend %side;
+    grid-column: 1 / 3;
+    top: 14px;
+
+    @include onScreen {
+      top: 0;
+    }
+  }
+
+  &__details {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    max-width: 200px;
+    letter-spacing: 1.1px;
+
+    @include onTablet {
+      max-width: none;
+    }
+
+    @include onDesktop {
+      letter-spacing: 1.8px;
+      margin-bottom: 35px;
+    }
+
+    @include onScreen {
+      margin-bottom: 21px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    @extend %small-text;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+
+    &:nth-child(3) {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 25px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:nth-child(4) {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__img-container {
+    display: none;
+    max-height: 659px;
+    transition: all $transition;
+
+    @include onTablet {
+      display: block;
+      height: 100%;
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+  }
+
+  &__button {
+    margin: 0 auto 36px;
+
+    @include onTablet {
+      margin: 0 0 51px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 51px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+}

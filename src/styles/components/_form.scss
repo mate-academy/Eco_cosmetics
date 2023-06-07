@@ -1,0 +1,74 @@
+.form-field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 27px;
+  margin-bottom: 25px;
+  border: none;
+  border-bottom: 1px solid $color-border;
+  background-color: inherit;
+  @extend %small-text;
+
+  @include onDesktop {
+    height: 38px;
+    margin-bottom: 30px;
+  }
+
+  &:nth-child(3) {
+    margin-bottom: 45px;
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &:nth-child(4) {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &::placeholder {
+    @extend %small-text;
+    color: $color-text-dark;
+
+    @include onTablet {
+      font-weight: 500;
+      font-size: 1.4rem;
+    }
+
+    @include onDesktop {
+      font-size: 1.8rem;
+    }
+  }
+
+  &--textarea {
+    font-family: inherit;
+    resize: vertical;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-text-heading;
+      border-radius: 20px;
+      border: 3px solid $color-background-footer;
+    }
+  }
+
+  &:focus,
+  &:-webkit-autofill {
+    outline: none;
+    border-bottom-color: $color-text-heading;
+    color: $color-background-footer;
+    -webkit-text-fill-color: $color-background-dark;
+    box-shadow: 0 0 0 1000px $color-background-main inset;
+  }
+}

@@ -1,0 +1,85 @@
+.contact {
+  @include onTablet {
+    margin-bottom: 133px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 131px;
+  }
+
+  &__content {
+    @extend %grid-system;
+  }
+
+  &__side {
+    @extend %side;
+    top: 5px;
+  }
+
+  &__details {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    letter-spacing: 1.1px;
+
+    @include onDesktop {
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__subtitle {
+    @extend %small-text;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 18px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__img-container {
+    display: none;
+    max-height: 659px;
+    transition: all $transition;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / 7;
+      height: 100%;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}

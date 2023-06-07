@@ -1,0 +1,61 @@
+.choose {
+  &__content {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+
+    @include onScreen {
+      justify-content: left;
+    }
+  }
+
+  &__title {
+    min-width: 280px;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+
+    @include onTablet {
+      width: 280px;
+      margin: 0 auto 10px;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      font-weight: 600;
+      font-size: 24px;
+      max-width: 630px;
+      width: unset;
+      margin: 0 0 0 120px;
+      padding: 105px 250px 131px 0;
+      border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+      text-align: start;
+      letter-spacing: 1.2px;
+    }
+
+    @include onScreen {
+      max-width: 660px;
+      padding: 105px auto 131px;
+    }
+  }
+
+  &__description {
+    display: none;
+    @extend %text2;
+
+    @include onDesktop {
+      display: block;
+      padding: 100px 0;
+      max-width: 380px;
+      border-top: 1px solid rgba(52, 79, 16, 0.5);
+    }
+
+    @include onScreen {
+      font-size: 1.6rem;
+      letter-spacing: 0.6px;
+      max-width: 610px;
+      padding: 100px 0 100px 230px;
+    }
+  }
+}

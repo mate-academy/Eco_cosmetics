@@ -1,0 +1,166 @@
+.footer {
+  padding: 32px 0 40px;
+  background-color: $color-background-footer;
+  color: $color-background-main;
+
+  @include onTablet {
+    padding: 29px 0 30px;
+  }
+
+  @include onDesktop {
+    padding: 60px 0 55px;
+  }
+
+  &__content {
+    @extend %grid-system;
+
+  }
+
+  &__socials {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 20px);
+    column-gap: 20px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      grid-column: 1 / 4;
+      grid-row: 2 / 3;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      grid-column: 8 / 13;
+      grid-row: 2 / 3;
+      column-gap: 16px;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+      grid-row: 1 / 2;
+      margin-bottom: 0;
+    }
+
+    .menu__list {
+      margin: 0;
+      flex-direction: column;
+
+      @include onDesktop {
+        flex-direction: row;
+      }
+    }
+
+    .menu__item {
+      margin-right: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+
+        @include onDesktop {
+          margin-right: 40px;
+        }
+      }
+    }
+
+    .menu__link {
+      color: inherit;
+
+      &:hover {
+        text-decoration: underline 2px $color-background-main;
+      }
+    }
+  }
+
+  &__support-info {
+    margin-bottom: 44px;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      grid-row: 1 / 4;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+      grid-row: 1 / 2;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__text {
+    @extend %small-text;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 9px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 18px;
+      }
+    }
+
+    @include onTablet {
+      font-size: 1.4rem;
+    }
+
+    @include onDesktop {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__link {
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline 1px $color-background-main;
+      text-underline-offset: 5px;
+
+      @include onDesktop {
+        text-underline-offset: 7px;
+      }
+    }
+  }
+
+  &__copyright {
+    max-width: 198px;
+    margin: 0 auto;
+    @extend %text2;
+    font-weight: 600;
+    text-align: center;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 3 / 4;
+      margin: 0;
+      max-width: fit-content;
+      text-align: start;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+      grid-row: 2 / 3;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+
+    &-item:first-child {
+      display: none;
+
+      @include onDesktop {
+        display: inline;
+      }
+    }
+  }
+}
