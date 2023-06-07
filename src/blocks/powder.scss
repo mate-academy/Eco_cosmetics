@@ -1,0 +1,112 @@
+.powder {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 5;
+    overflow: hidden;
+    @include onDesktop {
+      grid-template-columns: auto;
+    }
+
+    &-image {
+      position: relative;
+      grid-column: 3 / 6;
+      grid-row: 1 / 6;
+    }
+
+    &--natural {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__natural {
+    margin-top: 110px;
+    @include onTablet {
+      @include tabletGrid;
+    }
+    &-image {
+      display: block;
+      right: 10px;
+    }
+    .powder__container--natural:nth-of-type(1) {
+      @include onTablet {
+        grid-column: 1 / 3;
+      }
+    }
+    .powder__container--natural:nth-of-type(2) {
+      @include onTablet {
+        grid-column: 3 / 5;
+      }
+    }
+    .powder__container--natural:nth-of-type(3) {
+      @include onTablet {
+        grid-column: 5 / 7;
+      }
+    }
+  }
+
+  &__title {
+    @include onDesktop {
+      grid-column: 2 / 6;
+      grid-row: 1 / 2;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+
+  &__link {
+    @include onDesktop {
+      display: block;
+      margin: auto auto 0 0;
+      grid-row: 1 / 2;
+      grid-column: 2 / 4;
+    }
+  }
+  
+  &__components {
+    grid-row: 1 / 6;
+    grid-column: 1 / 3;
+    display: grid;
+  }
+
+  &__component {
+    text-align: right;
+    position: relative;
+    right: 10px;
+  }
+  &__components .powder__component:nth-of-type(1) {
+    top: 40px;
+  }
+  &__components .powder__component:nth-of-type(2) {
+    top: 32px;
+  }
+  &__components .powder__component:nth-of-type(3) {
+    top: 28px;
+  }
+  &__components .powder__component:nth-of-type(4) {
+    top: 20px;
+  }
+  &__components .powder__component:nth-of-type(5) {
+    top: 11px;
+  }
+
+  &__grid {
+    @include onDesktop {
+      @include desktopGrid;
+    }
+  }
+}

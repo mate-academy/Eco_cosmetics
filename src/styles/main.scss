@@ -1,7 +1,37 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils/mixins";
+@import "../blocks/general.scss";
+@import "../blocks/button.scss";
 
-body {
-  background: $c-gray;
+@import "../blocks/page.scss";
+@import "../blocks/menu.scss";
+@import "../blocks/about.scss";
+@import "../blocks/shop.scss";
+@import "../blocks/powder.scss";
+@import "../blocks/contact.scss";
+@import "../blocks/footer.scss";
+@import "../blocks/header.scss";
+@import "../blocks/icon.scss";
+
+.vertical-text {
+  display: none;
+  @include onDesktop {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    grid-column: 1 / 2;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: rgba(52,79,16,0.5);
+    transform-origin: right top;
+    transform: translateX(-100%) rotate(-90deg);
+    &::before {
+      display: block;
+      content: "";
+      width: 100px;
+      height: 1px;
+      margin-right: 10px;
+      background-color: rgba(52,79,16,0.5);
+    }
+  }
 }

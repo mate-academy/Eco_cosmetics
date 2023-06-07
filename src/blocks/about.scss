@@ -1,0 +1,74 @@
+.about {
+  &__info {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+  &__container-image {
+    @include onTablet {
+      grid-column: 4 / 7;
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      max-height: 650px;
+      overflow: hidden;
+      &::after {
+        content: "";
+        display: block;
+        padding-bottom: 25%;
+      }
+    }
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+  }
+  &__paragraph {
+    display: none;
+    @include onDesktop {
+      display: block;
+      margin-bottom: 40px;
+    }
+  }
+  &__image {
+    display: none;
+    @include onTablet {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      @include zoomPicture;
+    }
+  }
+  @include onTablet {
+    @include tabletGrid;
+  }
+  @include onDesktop {
+    @include desktopGrid;
+  }
+  &__vertical {
+    display: none;
+    @include onDesktop {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      grid-column: 1/2;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: rgba(52,79,16,0.5);
+      transform-origin: right top;
+      transform: translateX(-100%) rotate(-90deg);
+      &::before {
+        display: block;
+        content: "";
+        width: 100px;
+        height: 1px;
+        margin-right: 10px;
+        background-color: rgba(52,79,16,0.5);
+      }
+    }
+  }
+}
