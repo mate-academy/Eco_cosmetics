@@ -1,0 +1,128 @@
+@import "../utils/extends";
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.Navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 50px 0 50px;
+  color: $primary_color;
+
+  @include BigScreen{
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  @include Bigdesk{
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+
+  @include Tablet{
+    padding: 30px 27px 0 27px;
+  }
+
+  @include Mobile {
+    padding: 15px 20px 0 20px;
+  }
+}
+
+.bag{
+  transition: ease-in-out 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.content1 {
+  display: flex;
+  column-gap: 12px;
+  align-items: center;
+
+  &__title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  &__menu {
+    display: none;
+  }
+
+  @include Tablet {
+    &__logo {
+      display: none;
+    }
+
+    &__title {
+      display: none;
+    }
+
+    &__menu {
+      display: flex;
+    }
+
+  }
+
+
+  @include Mobile {
+
+    &__logo {
+      display: none;
+    }
+
+    &__title {
+      display: none;
+    }
+
+    &__menu {
+      display: flex;
+    }
+
+  }
+}
+
+.content2 {
+  display: flex;
+  column-gap: 50px;
+
+  &__links {
+    color: $primary_color;
+    font-weight: 500;
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      color: green;
+      transform: scale(1.1);
+    }
+
+  }
+
+  &__menu {
+    display: none;
+  }
+
+  @include Mobile{
+
+    &__links {
+      display: none;
+    }
+
+    &__menu {
+      display: flex;
+    }
+  }
+
+  @include Tablet {
+
+    &__links {
+      display: none;
+    }
+
+    &__menu {
+      display: flex;
+    }
+  }
+}
+

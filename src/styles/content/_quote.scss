@@ -1,0 +1,62 @@
+@import "../utils/extends";
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.Quote {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 40px 50px 40px 50px;
+  column-gap: 20%;
+
+  @include Tablet {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include Bigdesk{
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+  @include BigScreen{
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  @include Mobile {
+    grid-template-columns: 1fr;
+    margin-bottom: 13vw;
+  }
+
+
+
+  &__txt {
+    display: flex;
+    font-size: 16px;
+    font-weight: 400;
+    color: $secondary_color;
+
+    @include Tablet {
+      display: none;
+    }
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+  &__header {
+    display: flex;
+    font-size: 24px;
+    font-weight: 600;
+    color: $primary_color;
+
+    @include Tablet {
+      text-align: center;
+    }
+
+    @include Mobile {
+      text-align: center;
+    }
+  }
+
+}

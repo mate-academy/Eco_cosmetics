@@ -1,0 +1,203 @@
+@import "../utils/extends";
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.About-creators {
+  display: flex;
+  height: auto;
+  column-gap: 5px;
+  padding: 40px 50px 40px 50px;
+
+  @include BigScreen {
+    padding-left: 20%;
+    justify-content: space-between;
+    padding-right: 20%;
+  }
+
+  @include Bigdesk {
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+
+  @media (max-width:943px) {
+    flex-direction: column;
+
+  }
+
+  @include Tablet {
+    padding: 30px 27px 0 27px;
+  }
+
+  @include Mobile {
+    padding: 20px 20px 13vw 20px;
+  }
+
+
+  &__upsidedown {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 500;
+    font-size: 14px;
+    column-gap: 10px;
+    padding-left: 20px;
+    color: $primary_color;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      align-items: center;
+      width: 2px;
+      height: 140px;
+      background: $primary_color;
+    }
+
+    @media (max-width:943px) {
+      display: none;
+    }
+
+
+    @include Tablet {
+      display: none;
+    }
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+  &__Head-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+
+
+    @media (max-width:943px) {
+      order: 2;
+      margin-top: 5%;
+    }
+
+    @include Tablet {
+      row-gap: 20px;
+      margin-top: 5%;
+    }
+
+    @include Mobile {
+      row-gap: 20px;
+    }
+  }
+
+  &__Head {
+    display: block;
+    font-size: 36px;
+    font-weight: 600;
+    color: $primary_color;
+
+    @include Mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__Paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 1%;
+    color: $secondary_color;
+
+    @include Tablet {
+      margin: 0;
+    }
+
+    @include Mobile {
+      margin: 0;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $primary_color;
+    background: none;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 5px;
+    transition: transform 250ms ease-in-out;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $primary_color;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+
+  &__btn2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    background: $secondary_color;
+    color: $btn_footer;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      outline: 1px solid $secondary_color;
+      color: $secondary_color;
+      background: $btn_hover;
+      transform: scale(1.1);
+    }
+
+
+    @include BigScreen {
+      width: 35%;
+    }
+
+    @include Tablet {
+      width: 80%;
+    }
+
+    @include Mobile {
+      width: 100%;
+    }
+  }
+
+
+  &__img-container {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: flex-end;
+    align-self: center;
+    align-items: flex-end;
+    column-gap: 10px;
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+  &__Bird {
+    width: 100%;
+
+  }
+}

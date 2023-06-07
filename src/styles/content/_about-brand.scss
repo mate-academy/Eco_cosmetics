@@ -1,0 +1,223 @@
+@import "../utils/extends";
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.About-brand {
+  display: flex;
+  height: auto;
+  column-gap: 5px;
+  padding: 40px 40px 0 40px;
+
+  @include BigScreen {
+    justify-content: space-between;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  @include Bigdesk{
+    padding-left: 130px;
+    padding-right: 130px;
+  }
+
+  @media (max-width:943px) {
+    flex-direction: column;
+  }
+
+  @include Tablet {
+    padding: 30px 27px 0 27px;
+  }
+
+  @include Mobile {
+    padding: 20px 20px 13vw 20px;
+  }
+
+
+  &__upsidedown {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-weight: 500;
+    font-size: 14px;
+    column-gap: 10px;
+    padding-left: 20px;
+    color: $primary_color;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      align-items: center;
+      width: 2px;
+      height: 140px;
+      background: $primary_color;
+    }
+
+    @media (max-width:943px) {
+      display: none;
+    }
+
+    @include Tablet {
+      display: none;
+    }
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+  &__Head-container {
+    display: flex;
+    width: 50%;
+    row-gap: 5%;
+
+    flex-direction: column;
+
+    @media (max-width:943px) {
+      order: 2;
+      width: 100%;
+      margin-top: 2%;
+      row-gap: 5vw;
+    }
+
+    @include Tablet {
+      row-gap: 20px;
+    }
+
+    @include Mobile {
+      row-gap: 20px;
+    }
+  }
+
+  &__Head {
+    display: block;
+    font-size: 36px;
+    font-weight: 600;
+    color: $primary_color;
+
+    @include Mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__Paragraph {
+    display: flex;
+    height: 70%;
+    row-gap: 20%;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 1%;
+    color: $secondary_color;
+
+    @media (max-width:943px) {
+      row-gap: 5vw;
+    }
+
+    @include Tablet {
+      margin: 0;
+    }
+
+    @include Mobile {
+      margin: 0;
+    }
+  }
+
+  &__Paragraph-1 {
+    display: flex;
+    
+  }
+
+  &__Paragraph-2 {
+    @include Tablet{
+      display: none;
+    }
+    @include Mobile{
+      display: none;
+    }
+  }
+
+
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $primary_color;
+    background: none;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: transform 250ms ease-in-out;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: $primary_color;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+  }
+
+  &__img-container {
+    display: flex;
+    overflow: hidden;
+    align-items: flex-end;
+    column-gap: 10px;
+
+    @media(max-width:943px) {
+      display: block;
+      background: url("../images/insense.svg") center no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 529px;
+    }
+
+    @include Tablet {
+      display: block;
+      background: url("../images/insense.svg") center no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 529px;
+    }
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+  &__img-big {
+    width: 480px;
+    height: 529px;
+
+    @media(max-width:943px) {
+      display: none;
+    }
+
+    @include Tablet {
+      display: none;
+    }
+  }
+
+
+  &__img-small {
+    background: yellow;
+    display: flex;
+    align-items: flex-end;
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+
+    @media(max-width:1096px) {
+      display: none;
+    }
+  }
+
+}

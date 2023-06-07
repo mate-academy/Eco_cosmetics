@@ -1,7 +1,111 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils/vars";
+@import "./utils/mixins";
+@import "./utils/extends";
+@import "./typography";
 
+@import "../styles/content/navbar";
+@import "../styles/content/menu";
+@import "../styles/content/checkout";
+@import "../styles/content/payment";
+@import "../styles/content/sucess";
+@import "../styles/content/header";
+@import "../styles/content/quote";
+@import "../styles/content/about-brand";
+@import "../styles/content/shop";
+@import "../styles/content/about-creators";
+@import "../styles/content/ingredients";
+@import "../styles/content/pros";
+@import "../styles/content/contact-us.scss";
+@import "../styles/content/footer";
+
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  transition: ease-in-out 0.3s;
+}
+
+html,
 body {
-  background: $c-gray;
+  display: flex;
+  flex-direction: column;
+  background: $btn_hover;
+  font-family: $pop;
+  box-sizing: border-box;
+  transition: ease-in-out 0.3s;
+
+
+}
+
+a {
+  height: fit-content;
+  color: $primary_color;
+  text-decoration: none;
+}
+
+@include Tablet {
+  br {
+    display: none;
+  }
+}
+
+@include Mobile {
+  br {
+    display: none;
+  }
+}
+
+section {
+  margin-bottom: 13vw;
+}
+
+input:focus {
+  border-bottom: 1px solid $secondary_color
+}
+
+input:not(:placeholder-shown) {
+  color: $primary_color;
+  border-color: $primary_color;
+}
+
+input:not(:placeholder-shown):not(:focus):invalid {
+  color: red;
+  border-bottom: 1px solid $invalid;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+
+.up {
+  width: 49%;
+  border-top: 1px solid rgba(52, 79, 16, 0.5);
+
+  @include Tablet {
+    display: none;
+  }
+
+  @include Mobile {
+    display: none;
+  }
+}
+
+.down {
+  width: 50%;
+  border-top: 1px solid rgba(52, 79, 16, 0.5);
+  transform-origin: right;
+  transform: rotate(180deg);
+
+  @include Tablet {
+    display: none;
+  }
+
+  @include Mobile {
+    display: none;
+  }
 }

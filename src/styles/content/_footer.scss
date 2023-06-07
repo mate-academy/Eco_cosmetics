@@ -1,0 +1,171 @@
+@import "../utils/extends";
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.Foot {
+  display: flex;
+  flex-direction: column;
+  background: rgba(52, 79, 16, 0.5);
+  padding: 40px 50px 40px 50px;
+
+  @include BigScreen{
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  @include Tablet {
+    padding: 30px 27px 30px 27px;
+  }
+
+  @include Mobile{
+    padding: 15px 20px 15px 20px;
+  }
+
+
+  &__content-1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @include Tablet{
+      column-gap: 5%;
+    }
+
+    @include Mobile{
+      flex-direction: column;
+    }
+
+  }
+
+  &__Navigation {
+    display: flex;
+    column-gap: 40px;
+
+    @include Tablet{
+      flex-direction: column;
+      row-gap: 15px;
+    }
+
+    @include Mobile{
+      flex-direction: column;
+      row-gap: 15px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+    color: $btn_hover;
+
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      color: green;
+      transform: scale(1.1);
+    }
+  }
+
+
+  &__Adress-time {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    @include Mobile{
+      display: none;
+    }
+  }
+
+  &__txt {
+    font-size: 16px;
+    font-weight: 400;
+    color: $btn_hover;
+    width: fit-content;
+  }
+
+  &__link{
+    @extend .Foot__txt;
+    &:hover{
+      transform:scale(1.1);
+    }
+  }
+
+
+  &__content-2 {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    justify-content: space-between;
+
+    @include Tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    font-size: 18px;
+    font-weight: 500;
+    color: $btn_hover;
+
+    @include Tablet {
+      order: 1;
+    }
+
+    @include Mobile{
+      text-align: center;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    width: 27%;
+    align-items: center;
+    column-gap: 40px;
+
+    @include BigScreen{
+      width: 20%;
+    }
+
+
+    @include Tablet {
+      margin-bottom: 50px;
+      order: 0;
+    }
+
+    @include Mobile{
+      display: none;
+    }
+  }
+
+  &__mobile{
+    display: none;
+
+    @include Mobile{
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+
+  &__social{
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
+  &__socials-mobile{
+    display: flex;
+    width: 27%;
+    align-items: center;
+    margin-top: 20px;
+    column-gap: 20px;
+  }
+
+  &__Adress-time-mobile{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+}
