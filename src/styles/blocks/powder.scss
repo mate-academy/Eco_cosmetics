@@ -1,0 +1,268 @@
+.powder {
+  padding: 50px 0;
+  background-color: $whiteBG;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+
+  @include onTablet {
+    padding: 70px 0;
+  }
+
+  @include onDesktop {
+    padding: 100px 0;
+    display: block;
+    justify-content: start;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__side-link {
+    top: 92px;
+    left: -126px;
+  }
+
+  &__text-wrapper {
+    
+  }
+
+  &__title {
+    @extend %title;
+    color: $green;
+
+    margin: 0 0 447px;
+
+    @include onTablet {
+      max-width: 342px;
+      margin: 0 0 310px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 289px;
+    }
+  }
+
+  &__link {
+
+  }
+
+  &__image-wrapper {
+
+  }
+
+  &__image {
+    width: 380px;
+    position: absolute;
+    top: 95px;
+    right: -250px;
+
+    @include onTablet {
+      top: 5px;
+      right: -120px;
+    }
+
+    @include onDesktop {
+      right: -35px;
+    }
+  }
+
+  &__image-text {
+    @extend %text;
+    font-size: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    position: absolute;
+    text-align: end;
+    width: max-content;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 76px;
+      height: 1px;
+      background-color: $black;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop {
+      &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $black;
+      }
+    }
+
+    &--tablet {
+      display: flex;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+
+    &--1 {
+      top: 105px;
+      right: 85px;
+
+      @include onTablet {
+        top: 15px;
+        right: 215px;
+      }
+
+      @include onDesktop {
+        top: 40px;
+        right: 370px;
+
+        &::before {
+          left: 145px;
+        }
+      }
+    }
+
+    &--2 {
+      top: 173px;
+      right: 85px;
+
+      @include onTablet {
+        top: 83px;
+        right: 215px;
+      }
+
+      @include onDesktop {
+        top: 115px;
+        right: 370px;
+
+        &::before {
+          left: 290px;
+        }
+      }
+    }
+
+    &--3 {
+      top: 240px;
+      right: 85px;
+
+      @include onTablet {
+        top: 150px;
+        right: 215px;
+      }
+
+      @include onDesktop {
+        top: 190px;
+        right: 370px;
+
+        &::before {
+          left: 250px;
+        }
+      }
+    }
+
+    &--4 {
+      top: 321px;
+      right: 85px;
+
+      @include onTablet {
+        top: 241px;
+        right: 215px;
+      }
+
+      @include onDesktop {
+        top: 265px;
+        right: 370px;
+
+        &::before {
+          left: 190px;
+        }
+      }
+    }
+
+    &--5 {
+      top: 393px;
+      right: 85px;
+
+      @include onTablet {
+        top: 303px;
+        right: 215px;
+      }
+
+      @include onDesktop {
+        top: 340px;
+        right: 370px;
+
+        &::before {
+          left: 165px;
+        }
+      }
+    }
+  }
+
+  &__newline {
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    margin: 100px 0 0;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+
+    @include onDesktop {
+      justify-content: space-between;
+    }
+  }
+
+  &__content {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__bottom-image {
+    width: 80px;
+    height: 80px;
+    align-items: center;
+
+    margin: 0 0 20px;
+
+    @include onDesktop {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__bottom-text {
+    @extend %text;
+    line-height: 130%;
+    max-width: 275px;
+    text-transform: uppercase;
+  }
+}

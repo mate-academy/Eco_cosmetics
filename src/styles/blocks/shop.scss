@@ -1,0 +1,152 @@
+.shop {
+  padding: 50px 0;
+  background-color: $whiteBG;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+
+  @include onTablet {
+    padding: 70px 0;
+  }
+
+  @include onDesktop {
+    padding: 100px 0;
+    display: block;
+    justify-content: start;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__side-link {
+    top: 120px;
+    left: -155px;
+  }
+
+  &__upper-wrapper {
+    @include onDesktop {
+      padding: 0 0 615px 135px;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    color: $green;
+  }
+
+  &__filters {
+    margin: 0 0 15px;
+    display: flex;
+    gap: 20px;
+
+
+    @include onTablet {
+      gap: 34px;
+    }
+  }
+
+  &__filter-link {
+    @extend %links;
+    text-decoration: none;
+    line-height: 130%;
+    color: $grey;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+    transition: 0.3s;
+
+    &:hover,
+    &:active,
+    &:target {
+      color: $black;
+      border-bottom: 2px solid $black;
+    }
+  }
+
+  &__slider {
+    display: flex;
+    gap: 30px;
+
+    @include onDesktop {
+      gap: 20px;
+      position: absolute;
+      top: 100px;
+      right: -135px;
+    }
+  }
+
+  &__product {
+    display: none;
+    position: relative;
+
+    &--mobile {
+      display: block;
+      width: 280px;
+    }
+
+    @include onTablet {
+      width: 342px;
+
+      &--tablet {
+        display: block;
+      }
+    }
+
+    @include onDesktop {
+      display: block;
+      width: 100%;
+      transition: 0.3s;
+
+      &:hover {
+        transform: translateY(-3%)
+      }
+    }
+  }
+
+  &__image {
+    height: 267px;
+    width: 100%;
+    object-fit: cover;
+
+    @include onTablet {
+      position: static;
+      width: 342px;
+      height: 300px;
+    }
+
+    @include onDesktop {
+      width: 380px;
+      height: 500px;
+    }
+  }
+
+  &__name {
+    padding: 35px 0 0;
+    @extend %title;
+    font-size: 18px;
+    color: $black;
+    text-transform: uppercase;
+
+    @include onTablet {
+      padding: 0;
+      margin: 20px 0 0;
+    }
+  }
+
+  &__price {
+    @extend %links;
+    color: $black;
+    text-transform: uppercase;
+    margin: 10px 0 30px;
+  }
+
+  &__button {
+    padding: 20px 68px;
+
+    @include onTablet {
+      margin: 0 auto;
+    }
+  }
+}

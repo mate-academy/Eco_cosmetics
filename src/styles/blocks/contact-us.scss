@@ -1,0 +1,140 @@
+.contact-us {
+  padding: 50px 0 100px;
+  background-color: $whiteBG;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+
+  @include onTablet {
+    padding: 70px 0;
+    justify-content: start;
+  }
+
+  @include onDesktop {
+    padding: 100px 0;
+    display: block;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    @include onTablet {
+      width: 100vw;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  &__side-link {
+    top: 65px;
+    left: -102px;
+  }
+
+  &__text-wrapper {
+
+    @include onTablet {
+      max-width: 342px;
+    }
+
+    @include onDesktop {
+      max-width: 480px;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    color: $green;
+
+    margin: 0 0 5px;
+
+    @include onDesktop {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__text {
+    @extend %text;
+
+    margin: 0 0 20px;
+
+    @include onDesktop {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__form {
+
+  }
+
+  &__input {
+    background-color: $whiteBG;
+    border: none;
+    outline: none;
+    padding: 5px 0;
+    border-bottom: 1px solid #bdbdbd;
+    @extend %text;
+    width: 100%;
+    margin: 0 0 20px;
+
+    &:last-of-type {
+      margin: 20px 0 20px;
+    }
+
+    &:hover,
+    &:active,
+    &:target {
+      border-color: $green;
+      outline: none;
+      &::placeholder {
+        color: $green;
+      }
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px;
+
+      &:last-of-type {
+        margin: 30px 0 50px;
+      }
+    }
+  }
+
+  &__button {
+    padding: 20px 56px;
+    width: 280px;
+  }
+
+  &__image-wrapper {
+
+  }
+
+  &__image {
+    display: none;
+    object-fit: cover;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-3%);
+    }
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      width: 368px;
+      height: 409px;
+      top: 0;
+      right: 0;
+    }
+
+    @include onDesktop {
+      width: 610px;
+      height: 584px;
+      position: static;
+    }
+  }
+}
