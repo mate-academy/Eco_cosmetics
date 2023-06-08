@@ -1,0 +1,91 @@
+.about-us {
+  &__information {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    @include onDesktop {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__info {
+    margin: 0 0 30px;
+    font-size: 14px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    &--display_none-block {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin: 0 0 40px;
+      }
+    }
+  }
+
+  &__photo-containers {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__photo-container {
+    &--1 {
+      @include onTablet {
+        background-image: url(../images/about-us/about-us-photo-tablet-1.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding-bottom: 321px;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 5;
+        background-image: url(../images/about-us/about-us-photo-desktop-1.jpg);
+        padding-bottom: 529px;
+      }
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        grid-column: 5 / 7;
+        display: flex;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  &__small-photo-desktop {
+    background-image: url(../images/about-us/about-us-photo-desktop-2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 430px;
+    width: 100%;
+  }
+}

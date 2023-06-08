@@ -1,0 +1,153 @@
+.menu {
+  background-color: $button-text-color;
+
+  @include onDesktop {
+    background-color: $background-color;
+  }
+
+  &__content {
+    padding-top: 20px;
+    box-sizing: border-box;
+    height: 100vh;
+
+    @include onTablet {
+      padding-top: 28px;
+    }
+
+    @include onDesktop {
+      padding-top: 52px;
+      height: max-content;
+      @include desktopGrid;
+    }
+  }
+
+  &__top {
+    @include theTop;
+    grid-template-columns: 20px 1fr;
+    margin-bottom: 45px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      display: block;
+      margin: 0;
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    margin: 0 0 30px;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: 40px;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-align: center;
+    padding-bottom: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 130%;
+    color: $background-color;
+    border-bottom: 1px solid $light-gray-color;
+    @include transitionElement;
+
+    &:hover {
+      text-shadow: 3px 5px 6px $background-color;
+    }
+
+    @include onDesktop {
+      color: $green-color;
+      border: none;
+      padding: 0;
+
+      &:hover {
+        text-shadow: 3px 5px 6px $green-color;
+      }
+    }
+  }
+
+  &__desktop-card-wrapper {
+    display: none;
+    @include onDesktop {
+      grid-column: 12 / 13;
+
+      display: flex;
+      justify-content: flex-end;
+
+    }
+  }
+
+  &__footer-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__footer-item {
+    margin: 0 0 11px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    @include onTablet {
+      margin: 0 0 15px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      margin-right: 40px;
+    }
+  }
+
+  &__footer-link {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $background-color;
+    @include transitionElement;
+
+    &:hover {
+      text-shadow: 3px 5px 6px $background-color;
+    }
+
+    @include onTablet {
+      font-size: 14px;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+  }
+}

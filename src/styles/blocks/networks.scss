@@ -1,0 +1,45 @@
+.networks {
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 20px);
+  column-gap: 20px;
+
+  @include onTablet {
+    margin: 0;
+  }
+
+  &--icons_mobile-tablet {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--icons_desktop {
+    display: none;
+
+    @include onDesktop {
+      display: grid;
+      grid-column: 8 / 9;
+    }
+  }
+
+  &__network {
+    position: relative;
+    display: block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20px;
+    padding-bottom: 20px;
+    @include transitionElement;
+    cursor: pointer;
+
+    &--facebook {
+      background-image: url(../images/networks/facebook-icon.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/networks/instagram-icon.svg);
+    }
+  }
+}
