@@ -1,0 +1,56 @@
+.introduction {
+
+  @include onDesktopL {
+
+    &::before {
+      display: block;
+      content: "";
+
+      width: 50%;
+      transform: translate(-110px);
+
+      border: 0.5px solid $light-green;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      float: right;
+
+      width: 50%;
+      transform: translate(10px);
+
+      border: 0.5px solid $light-green;
+    }
+  }
+
+  &__item {
+
+    @include onDesktopL {
+      padding: 100px 0;
+    }
+
+    &--title {
+      text-transform: uppercase;
+      color: $dark-green;
+      width: 280px;
+      margin: 0 auto;
+
+      @include onDesktopL {
+        width: 100%;
+        margin: 0;
+        align-self: stretch;
+
+        @include h4;
+      }
+    }
+
+    &--description {
+      display: none;
+
+      @include onDesktopL {
+        display: block;
+      }
+    }
+  }
+}

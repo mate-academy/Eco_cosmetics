@@ -1,0 +1,73 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    overflow-x: hidden;
+    background-color: $light-brown;
+    min-width: 320px;
+
+    &--with-menu {
+      overflow-y: hidden;
+    }
+  }
+
+  &__section {
+    margin-top: 100px;
+
+    @include onTablet {
+      margin-top: 130px;
+    }
+
+    @include onDesktopL {
+      margin-top: 200px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1 ;
+
+    transform: translateX(-100%);
+    transition: transform $anim-speed;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    &:target .page {
+      overflow: hidden;
+    }
+
+    @include onDesktopL {
+      display: none;
+    }
+  }
+
+  &__product-card {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    transform: translateX(100%);
+    transition: transform $anim-speed;
+
+    &:target {
+      transform: translateX(0);
+
+      @include onDesktopL {
+        overflow: hidden;
+      }
+    }
+
+    &:target .page {
+      overflow: hidden;
+    }
+  }
+}

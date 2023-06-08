@@ -1,0 +1,27 @@
+.side-info {
+  display: none;
+
+  @include onDesktopL {
+    display: block;
+    position: absolute;
+
+    white-space: nowrap;
+
+    @include decorativeText;
+    color: $light-green;
+    text-align: right;
+    transform-origin: left;
+
+    transform: rotate(-90deg) translateX(-100%) translateY(50%);
+
+    &::before {
+      content: "";
+      height: 100px;
+      border: 1px solid $light-green;
+
+      position: absolute;
+
+      transform: rotate(90deg) translate(-41px , 60px);
+    }
+  }
+}

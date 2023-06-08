@@ -1,0 +1,124 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  position: relative;
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include onDesktopL {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+
+  @include onDesktopXL {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+
+  &--tablet {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &--desktop {
+    display: block;
+
+    @include onDesktopL {
+      display: grid;
+    }
+
+    @include onDesktopXL {
+      display: grid;
+    }
+  }
+
+  &--shop {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+
+    @include onDesktopL {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+
+    @for $start from 1 through $columns-number-desktop {
+      @for $end from $start through $columns-number-desktop {
+        &--tablet-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+        &--desktopL-#{$start}-#{$end} {
+          @include onDesktopL {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+        &--desktopXL-#{$start}-#{$end} {
+          @include onDesktopXL {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    &--header-title {
+
+      @include onDesktopL {
+        grid-row: 1 / 2;
+        text-align: left;
+      }
+    }
+
+    &--product-image {
+      grid-row: 1 / 2;
+    }
+
+    &--introduction-description {
+      grid-row: 1 / 2;
+    }
+
+    &--about-brand-additional-img {
+      align-self: flex-end;
+    }
+
+    &--footer-info {
+      grid-row: 1 / 2;
+    }
+
+    &--footer-copyright {
+      @include onDesktopL {
+        grid-row: 2 / 2;
+      }
+    }
+
+    &--atp-learn-more {
+      @include onTablet {
+        grid-row: 3 / 3;
+        align-self: flex-end;
+      }
+
+      @include onDesktopL {
+        grid-row: 2 / 2;
+      }
+    }
+
+    &--atp-img {
+      @include onDesktopL {
+        grid-row: 1 / 3;
+      }
+    }
+  }
+}

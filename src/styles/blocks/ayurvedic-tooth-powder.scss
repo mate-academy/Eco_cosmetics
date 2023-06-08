@@ -1,0 +1,112 @@
+.ayurvedic-tooth-powder {
+  &__img {
+
+    height: 395px;
+    width: 199px;
+
+    position: absolute;
+    right: -25px;
+
+    background-image: url(../images/mobile/svg/Powder_mobile.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onTablet {
+      background-image: url(../images/tablet/svg/Powder_tablet.svg);
+      width: 100%;
+      background-size: contain;
+    }
+
+    @include onDesktopL {
+      background-image: url(../images/desktop/svg/Powder_desktop.svg);
+      position: relative;
+      width: 100%;
+      right: 0;
+    }
+
+  }
+
+  &__img-container {
+    margin: 20px -20px 0 0;
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    height: 395px;
+    width: 100%;
+
+    @include onDesktopL {
+      margin-right: 0;
+    }
+
+  }
+
+  &__description {
+    margin-top: 40px;
+  }
+
+  &__text-item {
+    text-align: right;
+    &:not(:first-of-type) {
+      margin-top: 49px;
+    }
+    white-space: nowrap;
+  }
+
+  &__link {
+    margin-top: 30px;
+  }
+
+  &__icon {
+    display: block;
+    margin: 0 auto;
+    height: 62px;
+    transition: transform $anim-speed;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onTablet {
+      height: 80px;
+    }
+
+    @include onDesktopL {
+      height: 82px;
+    }
+  }
+
+  &__icon-description {
+    text-align: center;
+    margin-top: 20px;
+
+    @include text2;
+    text-transform: uppercase;
+    color: $black;
+
+    @include onDesktopL {
+      margin: 40px auto 0;
+
+      width: fit-content;
+    }
+
+  }
+
+  &__icon-container {
+    margin-top: 50px;
+    &--first {
+      margin-top: 100px;
+    }
+
+    @include onTablet {
+      margin-top: 100px;
+    }
+
+    @include onDesktopL {
+      margin-top: 200px;
+    }
+  }
+}
