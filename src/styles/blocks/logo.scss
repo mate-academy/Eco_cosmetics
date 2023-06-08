@@ -1,0 +1,29 @@
+.logo {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../images/logo/logo.svg);
+
+  &::after {
+    content: "witch of mountain winds";
+    @extend %text;
+    display: none;
+    width: 208px;
+    color: $c-green;
+    padding: 14px 0 14px 60px;
+  }
+
+  @include hover(transform scale(1.2));
+
+  @include onDesktop {
+    width: 48px;
+    height: 48px;
+
+    &::after {
+      display: block;
+    }
+  }
+}
