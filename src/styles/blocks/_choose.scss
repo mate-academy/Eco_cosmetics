@@ -1,0 +1,63 @@
+.choose {
+  &__wrapper {
+    position: relative;
+    @extend %pageGrid;
+
+    @include onDesktopMedium {
+      padding-block: 100px;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 1px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+
+      &:before {
+        inset-inline-start: 0;
+        inset-block-start: 0;
+        transform: translateX(-($min-width-desktop--m * 0.08));
+      }
+
+      &:after {
+        inset-inline-end: 0;
+        inset-block-end: 0;
+        transform: translateX(($min-width-desktop--m * 0.08));
+      }
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktopMedium {
+      display: block;
+      grid-column: 2/6;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-green-1;
+
+    @include onTabletMedium {
+      text-align: center;
+    }
+
+    @include onDesktopMedium {
+      display: block;
+      grid-column: 7/11;
+      text-align: left;
+      font-size: 24px;
+    }
+  }
+}

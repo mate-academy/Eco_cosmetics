@@ -1,0 +1,119 @@
+.shop {
+  --tabs-height: 42px;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__decor {
+    @extend %sectionDecor;
+  }
+
+  &__title {
+    @extend %sectionTitle;
+    margin-block-end: 8px;
+    text-align: center;
+
+    @include onTabletLarge {
+      margin-block-end: 0;
+      text-align: left;
+    }
+
+    @include onDesktopMedium {
+      margin-block-end: 20px;
+      margin-inline-start: 100px;
+    }
+  }
+
+  &__tabs {
+    height: var(--tabs-height);
+    margin-block-end: 15px;
+
+    @include onTabletLarge {
+      margin-block-end: 25px;
+    }
+
+    @include onDesktopMedium {
+      margin-block-end: 50px;
+      margin-inline-start: 100px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTabletLarge {
+      justify-content: flex-start;
+      column-gap: 35px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    height: var(--tabs-height);
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-grey-2;
+    transition: color $effectDuration;
+
+    &:after {
+      content: "";
+      position: absolute;
+      inset-block-end: 0;
+      inset-inline-start: 0;
+      inset-inline-end: 0;
+      display: block;
+      height: 2px;
+      background-color: $color-grey-1;
+      opacity: 0;
+      transition: opacity $effectDuration;
+    }
+
+    &--is-active {
+      color: $color-grey-1;
+
+      &:after {
+        opacity: 1;
+      }
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &:hover {
+      color: $color-grey-1;
+    }
+
+    @include onDesktopMedium {
+      font-size: 18px;
+    }
+  }
+
+  &__products {
+    margin-block-end: 30px;
+
+    @include onTabletLarge {
+      margin-block-end: 50px;
+    }
+
+    @include onDesktopMedium {
+      margin-inline-start: 100px;
+    }
+  }
+
+  &__button {
+    @extend %darkButton;
+
+    @include onTabletLarge {
+      margin-inline: auto;
+    }
+  }
+}

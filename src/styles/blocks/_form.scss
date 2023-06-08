@@ -1,0 +1,51 @@
+.form {
+
+  &__field {
+    margin-block-end: 20px;
+    padding-block: 5px;
+  }
+
+  &__message {
+    height: 50px;
+    padding-block-start: 20px;
+    margin-block-end: 30px;
+    box-sizing: border-box;
+    resize: none;
+
+    @include onDesktopMedium {
+      margin-block-end: 50px;
+    }
+  }
+
+  &__field,
+  &__message {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    font-family: $font-family-main;
+    line-height: 150%;
+    color: $color-grey-2;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-grey-3;
+    outline: none;
+
+    &:focus {
+      color: $color-grey-1;
+      border-color: $color-grey-1;
+    }
+
+    &:valid {
+      border-color: $color-green-1;
+      color: $color-green-1;
+    }
+
+    &:focus:invalid {
+      border-color: $color-error;
+    }
+  }
+
+  &__btn {
+    @extend %darkButton;
+  }
+}

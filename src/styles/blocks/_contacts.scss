@@ -1,0 +1,63 @@
+.contacts {
+  &__wrapper {
+    position: relative;
+    @extend %pageGrid;
+  }
+
+  &__decor {
+    @extend %sectionDecor;
+  }
+
+  &__info {
+    grid-column: 1/-1;
+
+    @include onTabletLarge {
+      grid-column: span 3;
+    }
+
+    @include onDesktopMedium {
+      grid-column: 2/6;
+    }
+  }
+
+  &__title {
+    @extend %sectionTitle;
+    margin-block-end: 10px;
+
+    @include onDesktopMedium {
+      margin-block-end: 30px;
+    }
+  }
+
+  &__text {
+    margin-block-end: 25px;
+    font-size: 14px;
+    line-height: 150%;
+
+    @include onTabletLarge {
+      margin-block-end: 15px;
+      font-size: 16px;
+    }
+
+    @include onDesktopMedium {
+      margin-block-end: 30px;
+    }
+  }
+
+  &__banner {
+    display: none;
+
+    @include onTabletLarge {
+      display: block;
+      grid-column: span 3;
+    }
+
+    @include onDesktopMedium {
+      grid-column: 7/-1;
+    }
+  }
+
+  &__img {
+    @include square(100%);
+  }
+}

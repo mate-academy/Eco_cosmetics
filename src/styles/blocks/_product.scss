@@ -1,0 +1,59 @@
+.product {
+  @extend %pageGrid;
+
+  @include onDesktopMedium {
+    display: flex;
+    column-gap: 20px;
+  }
+
+  &__item {
+    display: none;
+    grid-column: 1/-1;
+
+    &:first-child {
+      display: block;
+    }
+
+    @include onTabletLarge {
+      display: block;
+    }
+
+    @include onTabletLarge {
+      grid-column: span 3;
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin-block-end: 20px;
+    transition: transform $effectDuration;
+
+    &:hover {
+      z-index: 3;
+      transform: scale(1.05);
+    }
+  }
+
+  &__img {
+    @include square(100%);
+  }
+
+  &__title,
+  &__price {
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-block-end: 10px;
+    font-weight: 600;
+  }
+
+  &__price {
+    font-weight: 500;
+  }
+}
