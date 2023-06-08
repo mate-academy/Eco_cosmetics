@@ -1,0 +1,117 @@
+.about {
+
+  &__title {
+    margin: 0 0 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $textGreen;
+
+    @include onDesktop {
+      margin: 0 0 40px;
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 30px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+    @include minTablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &-desktop {
+      display: none;
+      margin: 0 0 40px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+
+      @include onDesktop {
+        display: grid;
+      }
+    }
+  }
+
+  &__more {
+    display: block;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: $textGreen;
+    border-bottom: 1px solid transparent;
+    width: fit-content;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $textGreen;
+    }
+
+    &-creators {
+      margin-bottom: 25px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+
+    &-tooth--desktop {
+      display: none;
+
+      @include minTablet {
+        display: grid;
+      }
+    }
+
+    &-tooth--mobile {
+      display: grid;
+
+      @include minTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__foto-big {
+    display: none;
+
+    @include onTablet {
+      display: grid;
+      height: 321px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../images/tablet2.jpg);
+    }
+
+    @include onDesktop {
+      display: grid;
+      height: 529px;
+      background-image: url(../images/desktop2.jpg);
+    }
+  }
+
+  &__foto-small {
+    display: none;
+    height: 430px;
+    margin-top: 99px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/desktop3.jpg);
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+}

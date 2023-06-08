@@ -1,0 +1,82 @@
+.section {
+  margin-top: 100px;
+
+  @include onTablet {
+    margin-top: 130px;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: row-reverse;
+    box-sizing: border-box;
+    height: 81px;
+
+    @include onDesktop {
+      height: 344px;
+      padding-top: 100px;
+    }
+
+    &-title {
+      position: relative;
+      margin: 0 auto;
+      width: 280px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $textGreen;
+
+      @include onTablet {
+        text-align: center;
+      }
+
+      @include onDesktop {
+        width: 380px;
+        margin: 0;
+        padding-right: 200px;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: start;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 108%;
+          height: 1px;
+          background-color: $textGreen;
+        }
+      }
+    }
+
+    &-description {
+      position: relative;
+      display: none;
+      width: 380px;
+      margin: 0 120px 0 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+
+      @include onDesktop {
+        display: flex;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: -100px;
+          width: 165%;
+          height: 1px;
+          background-color: $textGreen;
+        }
+      }
+    }
+  }
+}

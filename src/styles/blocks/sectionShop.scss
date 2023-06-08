@@ -1,0 +1,118 @@
+.shop {
+  &__section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 27px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: left;
+      margin-bottom: 37px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      margin-bottom: 62px;
+    }
+
+    &-name {
+      margin: 0;
+      padding-bottom: 20px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      color: #828282;
+
+      &:focus {
+        color: $textBlack;
+        border-color: $textBlack;
+        outline: none;
+      }
+
+      &:hover {
+        color: $textBlack;
+        border-color: $textBlack;
+      }
+
+      @include onDesktop {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+  }
+
+  &__card {
+
+    &-right {
+      display: none;
+
+      @include onTablet {
+        display: grid;
+      }
+
+      @include onDesktop {
+        display: grid;
+        margin-left: -50px;
+      }
+    }
+
+    &-image {
+      &--left {
+        height: 267px;
+        margin: 0 -10px 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-image: url(../images/mobile3.jpg);
+
+        @include onTablet {
+          height: 300px;
+          margin: 0 0 20px;
+          background-size: cover;
+          background-image: url(../images/tablet3.jpg);
+        }
+
+        @include onDesktop {
+          height: 500px;
+          margin: 0 -50px 20px 0;
+          background-image: url(../images/desktop4.jpg);
+        }
+      }
+
+      &--right {
+
+        @include onTablet {
+          height: 300px;
+          margin: 0 0 20px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          background-image: url(../images/tablet4.jpg);
+        }
+
+        @include onDesktop {
+          height: 500px;
+          margin: 0 0 20px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-image: url(../images/desktop5.jpg);
+        }
+      }
+    }
+
+    &-name {
+      margin: 0 0 10px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $textBlack;
+    }
+  }
+}
