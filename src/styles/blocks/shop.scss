@@ -1,0 +1,242 @@
+.shop {
+  --productsCardsGap: 0;
+
+  @include onTablet {
+    --productsCardsGap: 30px;
+  }
+
+  @include onDesktop {
+    --productsCardsGap: 20px;
+  }
+
+  &__content {
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tabs {
+    position: relative;
+
+    display: flex;
+    column-gap: 30px;
+    margin-bottom: 27px;
+
+    list-style-type: none;
+
+    @include onTablet {
+      margin-bottom: 37px;
+    }
+
+    @include onDesktop {
+      column-gap: 50px;
+      margin-bottom: 62px;
+    }
+  }
+
+  &__tab {
+    position: relative;
+
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $grayColor;
+
+    cursor: pointer;
+
+    transition: color $duration;
+
+    @include onDesktop {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    &::after {
+      position: absolute;
+      left: 50%;
+      bottom: -12px;
+      transform: translateX(-50%);
+
+      display: block;
+      content: "";
+      width: 0;
+      height: 2px;
+
+      background-color: $mainColor;
+
+      transition: width $duration;
+    }
+
+    &:hover {
+      color: $mainColor;
+    }
+  }
+
+  &__tab-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 0;
+    height: 0;
+
+    &:checked + .shop__tab {
+      color: $mainColor;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__products-wrapper {
+    position: relative;
+
+    margin: 0 #{-$tabletPadding} 30px;
+
+    overflow: hidden;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__previous-button,
+  &__next-button {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      top: 50%;
+      z-index: 1;
+
+      display: block;
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+
+      cursor: pointer;
+      opacity: 0.6;
+
+      transition: opacity $duration;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__previous-button {
+    left: 0;
+    transform: translate(-40%, -50%);
+
+    border-right-color: #fff;
+  }
+
+  &__next-button {
+    right: 0;
+    transform: translate(40%, -50%);
+
+    border-left-color: #fff;
+  }
+
+  &__products {
+    display: none;
+    width: 400%;
+
+    transition: transform $duration;
+
+    @include onTablet {
+      width: calc(200% + 2 * var(--productsCardsGap));
+    }
+
+    &--show {
+      display: flex;
+    }
+  }
+
+  &__card {
+    width: 100%;
+
+    margin-right: var(--productsCardsGap);
+  }
+
+  &__image-wrapper {
+    position: relative;
+
+    padding-top: 83%;
+    margin-bottom: 20px;
+
+    overflow: hidden;
+
+    @include onTablet {
+      padding-top: 88%;
+    }
+
+    @include onDesktop {
+      padding-top: 94%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform $duration;
+  }
+
+  &__card:hover &__image {
+    transform: scale(1.1);
+  }
+
+  &__text {
+    padding: 0 $tabletPadding;
+    margin-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    &--price {
+      margin-bottom: 0;
+
+      font-weight: 500;
+    }
+  }
+
+  &__button-wrapper {
+    text-align: center;
+  }
+}

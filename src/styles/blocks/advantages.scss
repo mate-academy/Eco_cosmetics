@@ -1,0 +1,57 @@
+.advantages {
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+      grid-row: 1 / 2;
+    }
+
+    @for $index from 0 through 2 {
+      &--#{$index + 1} {
+        @include onTablet {
+          grid-column: #{1 + 2 * $index} / #{3 + 2 * $index};
+        }
+
+        @include onDesktop {
+          grid-column: #{1 + 4 * $index} / #{5 + 4 * $index};
+        }
+      }
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000;
+
+    @include onTablet {
+      grid-row: 2 / 3;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    @for $index from 0 through 2 {
+      &--#{$index + 1} {
+        @include onTablet {
+          grid-column: #{1 + 2 * $index} / #{3 + 2 * $index};
+        }
+
+        @include onDesktop {
+          grid-column: #{1 + 4 * $index} / #{5 + 4 * $index};
+        }
+      }
+    }
+  }
+}
