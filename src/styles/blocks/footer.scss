@@ -1,0 +1,109 @@
+.footer {
+  height: 468px;
+  background-color: $green-light;
+
+  @include onTablet {
+    height: 263px;
+  }
+
+  @include onDesktopSmall {
+    height: 320px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 30px 0 0;
+
+    @include onTablet {
+      padding: 0 0 20px;
+      margin: 0;
+    }
+
+    @include onDesktopSmall {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 144px;
+    }
+  }
+
+  &__item {
+    padding-bottom: 11px;
+  }
+
+  &__link {
+    font-family: inherit;
+    color: $color-background;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  &__logos {
+    padding-bottom: 40px;
+
+    &--tablet {
+      @include onDesktopSmall {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktopSmall {
+        display: block;
+      }
+    }
+  }
+
+  &__logo {
+    padding-right: 20px;
+    text-decoration: none;
+  }
+
+  &__description-container {
+    padding-bottom: 20px;
+  }
+
+  &__description-text {
+    display: block;
+    margin: 0;
+    font-family: inherit;
+    font-style: normal;
+    padding-bottom: 10px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $color-background;
+  }
+
+  &__copyright {
+    display: block;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: $color-background;
+    line-height: 18.2px;
+    text-align: center;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &--mobile {
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}

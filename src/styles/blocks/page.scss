@@ -1,0 +1,152 @@
+.page {
+  font-family: Avenir, sans-serif;
+  background: $color-background;
+  scroll-behavior: smooth;
+  transition: all 0.3s;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu,
+    &--with-card {
+      overflow: hidden;
+      z-index: 7;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__shop-card {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1;
+  }
+
+  &__card {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    &-description {
+      margin: 0;
+      padding-top: 10px;
+      padding-bottom: 30px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $gray-dark;
+
+      @include onTablet {
+        font-size: 16px;
+      }
+
+      @include onDesktopSmall {
+        padding-top: 35px;
+      }
+
+      &--extra {
+        display: none;
+
+        @include onDesktopSmall {
+          display: block;
+        }
+      }
+
+      &-link {
+        box-sizing: border-box;
+        width: max-content;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: $green-dark;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+          border-bottom: 1px solid $green-dark;
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    &-side-text {
+      display: none;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      width: max-content;
+      color: rgba(52, 79, 16, 0.5);
+      writing-mode: vertical-rl;
+      transform: rotate(-180deg);
+
+      @include onDesktopSmall {
+        display: block;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        right: -40px;
+        display: block;
+        height: 1px;
+        width: 100px;
+        text-align: center;
+        background-color: rgba(52, 79, 16, 0.5);
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &__section-title {
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green-dark;
+
+    @include onDesktopSmall {
+      font-size: 36px;
+    }
+
+    &--shop {
+      text-align: center;
+    }
+
+    @include onTablet {
+      display: inline;
+    }
+  }
+}

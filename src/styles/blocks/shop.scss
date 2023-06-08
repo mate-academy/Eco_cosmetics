@@ -1,0 +1,243 @@
+.shop {
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+
+    &__item {
+      padding-bottom: 27px;
+
+      &-link {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #828282;
+
+        &:hover {
+          color: $gray-dark;
+          border-bottom: 2px solid $gray-dark;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &__card {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &-item {
+      background-color: $color-background;
+      height: 100%;
+      z-index: 1;
+    }
+
+    &-photo {
+      box-sizing: border-box;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 267px;
+      width: 100%;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include onTablet {
+        height: 400px;
+      }
+
+      @include onDesktopSmall {
+        height: 500px;
+      }
+    }
+
+    &-photo--3 {
+      display: none;
+
+      @include onDesktopSmall {
+        display: block;
+      }
+    }
+
+    &-photo--body-oil {
+      background-image: url(../images/shop__oil.png);
+
+      @include onTablet {
+        background-image: url(../images/shop__oil-tablet.png);
+      }
+    }
+
+    &-photo--ubtan {
+      background-image: url(../images/Ubtan.png);
+
+      @include onTablet {
+        background-image: url(../images/Ubtan-desktop.png);
+      }
+    }
+
+    &-photo--org-soap {
+      background-image: url(../images/organic-soap.png);
+
+      @include onTablet {
+        background-image: url(../images/organic-soap.png);
+      }
+    }
+
+    &-photo--face-cream {
+      background-image: url(../images/face-cream.png);
+    }
+
+    &-photo--lip-balm {
+      background-image: url(../images/lipbalm.png);
+    }
+
+    &-photo--moisturizing {
+      background-image: url(../images/moisturizing.png);
+    }
+
+    &-photo--bath-soak {
+      background-image: url(../images/bath-soak.png);
+    }
+
+    &-photo--org-shampoo {
+      background-image: url(../images/shampoo.png);
+    }
+
+    &-photo--lav-shampoo {
+      background-image: url(../images/lavender-shampoo.png);
+    }
+
+    &-photo--eco-shampoo {
+      background-image: url(../images/shampoo-3.png);
+    }
+
+    &-photo--jasmine-abs {
+      background-image: url(../images/candle-about.png);
+    }
+
+    &-photo--orange-candle {
+      background-image: url(../images/candle-2.png);
+    }
+
+    &-photo--rosemary-candle {
+      background-image: url(../images/candle-1.png);
+    }
+
+    &-photo--catalog {
+      display: block;
+      height: 248px;
+      width: 100%;
+      background-image: url(../images/shop__oil.png);
+      margin-bottom: 30px;
+
+      @include onTablet {
+        display: none;
+      }
+
+      &--tablet {
+        display: none;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 600px;
+        width: 100%;
+        margin-bottom: 30px;
+        background-image: url(../images/card-tablet.png);
+
+        @include onTablet {
+          display: block;
+        }
+      }
+    }
+
+    &__description {
+      display: block;
+      text-transform: uppercase;
+      color: $gray-dark;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      padding-bottom: 30px;
+      padding-left: 20px;
+
+      @include onTablet {
+        padding-left: 0;
+      }
+
+      &-name {
+        margin: 0;
+        font-weight: 600;
+        padding-bottom: 10px;
+      }
+
+      &-price {
+        margin: 0;
+      }
+
+      &--2 {
+        display: none;
+
+        @include onTablet {
+          display: block;
+        }
+      }
+
+      &--3 {
+        display: none;
+
+        @include onDesktopSmall {
+          display: block;
+        }
+      }
+
+      &--catalog {
+        line-height: 150%;
+
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $gray-dark;
+
+        &--name {
+          font-weight: 600;
+          font-size: 18px;
+        }
+
+        &--price {
+          font-size: 14px;
+          font-weight: 400;
+          color: $green-dark;
+          padding-bottom: 20px;
+
+          @include onTablet {
+            padding-bottom: 10px;
+          }
+        }
+
+        &--weight {
+          display: none;
+          font-size: 18px;
+          font-weight: 500;
+          margin-bottom: 20px;
+
+          @include onTablet {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &--2 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+}
