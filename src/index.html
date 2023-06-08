@@ -1,13 +1,676 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Eco cosmetics</title>
+    <link 
+      rel="shortcut icon" 
+      href="./images/logo.svg" 
+      type="image/x-icon"
+    >
     <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link 
+      rel="preconnect" 
+      href="https://fonts.gstatic.com" 
+    >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
+  <body class="page__body">
+    <header class="section header">
+      <div class="header__nav">
+        <a href="#menu" class="header__nav--menu-opener">
+          <svg 
+            width="20" 
+            height="13" 
+            viewBox="0 0 20 13" 
+            fill="#344F10" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="20" height="1" ></rect>
+            <rect 
+              y="6" 
+              width="20" 
+              height="1" ></rect>
+            <rect 
+              y="12" 
+              width="20" 
+              height="1" ></rect>
+          </svg>            
+        </a>
+        <a href="#" class="header__nav--logo">
+          <svg 
+            width="24" 
+            height="24" 
+            viewBox="0 0 50 50" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle 
+              cx="25" 
+              cy="25" 
+              r="24.5" 
+              fill="#E4DFD3" 
+              stroke="#344F10"></circle>
+            <path 
+            fill-rule="evenodd" 
+            clip-rule="evenodd"
+            d="M24.9533 15.052L27.4066 21.9999H22.5365L24.9806 23.5731L34.2056 17.6353L45 24.5832H27.4268L24.9894 30.4999L22.5624 24.6082H5L15.7944 17.6603L22.5068 21.9808L24.9533 15.052ZM26.9521 34.4999L24.9894 30.5297L23.0268 34.4999H26.9521Z" fill="#344F10"></path>
+          </svg>
+        </a>
+        <a href="#" class="header__nav--bag">
+          <svg 
+            width="20" 
+            height="24" 
+            viewBox="0 0 20 24" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M18.3889 7.09766L19.4661 23.5H0.530591L1.50519 7.09766H18.3889Z" stroke="#344F10"></path>
+            <rect 
+              x="5.45898" 
+              y="0.5" 
+              width="9.02725" 
+              height="11.4303" 
+              rx="4.51362" 
+              stroke="#344F10"></rect>
+            <path d="M3.57129 9H15.8874V13.6853H3.57129V9Z" fill="#E4DFD3"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="header__nav-desktop">
+        <div class="grid">
+          <a href="#" class="header__nav-desktop--logo grid__item grid__item--SmallDesktop-1-6">
+            <svg 
+              class="header__nav-desktop--logo--icon"
+              width="50" 
+              height="50" 
+              viewBox="0 0 50 50" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle 
+                cx="25" 
+                cy="25" 
+                r="24.5" 
+                fill="#E4DFD3" 
+                stroke="#344F10"></circle>
+              <path 
+                fill-rule="evenodd" 
+                clip-rule="evenodd" 
+                d="M24.9533 15.0521L27.4066 22H22.5365L24.9806 23.5732L34.2056 17.6354L45 24.5833H27.4268L24.9894 30.5L22.5624 24.6083H5L15.7944 17.6605L22.5068 21.9809L24.9533 15.0521ZM26.9521 34.5L24.9894 30.5298L23.0268 34.5H26.9521Z" fill="#344F10"></path>
+              <path d="M25 24L27.5 22H22.5L25 24Z" fill="#344F10"></path>
+            </svg>
+            <p class="header__nav-desktop--logo--description">
+              witch of mountain winds
+            </p>
+          </a>
+          <div class="header__nav-desktop--menu grid__item grid__item--SmallDesktop-7-9">
+            <a class="header__nav-desktop--menu--item" href="#shop">Shop</a>
+            <a class="header__nav-desktop--menu--item" href="#contactUs">Contact</a>
+            <a class="header__nav-desktop--menu--item" href="#aboutUs">About</a>
+          </div>
+          <a href="#" class="header__nav-desktop--bag grid__item grid__item--SmallDesktop-12-12">
+            <svg 
+              class="header__nav-desktop--bag--icon"
+              width="24" 
+              height="26" 
+              viewBox="0 0 24 26" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 0C9.25401 0 7.00001 2.254 7.00001 5V6H2.06201L2.00001 6.938L1.00001 24.938L0.937012 26H23.062L23 24.937L22 6.937L21.937 6H17V5C17 2.254 14.746 0 12 0ZM12 2C12.7957 2 13.5587 2.31607 14.1213 2.87868C14.6839 3.44129 15 4.20435 15 5V6H9.00001V5C9.00001 4.20435 9.31608 3.44129 9.87869 2.87868C10.4413 2.31607 11.2044 2 12 2ZM3.93701 8H7.00001V11H9.00001V8H15V11H17V8H20.063L20.938 24H3.06301L3.93701 8Z" fill="#344F10"></path>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+      <img 
+        class="header__image" 
+        src="./images/header_image.jpg" 
+        alt="Brand of eco-cosmetics and magic candles"
+      >
+      <div class="container">
+        <div class="grid">
+          <div class="grid__item grid__item--SmallDesktop-2-6">
+            <h1 class="header__title">
+              Brand of eco-cosmetics and magic candles
+            </h1>
+            <h3 class="header__subtitle">
+              20% of sales at a wild bird shelter
+            </h3>
+            <a href="#shop" class="header__button button">
+              shop
+            </a>
+          </div>
+          <div class="header__block-desktop grid__item grid__item--SmallDesktop-7-12">
+            <img 
+              class="header__block-desktop--image"
+              src="./images/header_image.jpg" 
+              alt="Brand of eco-cosmetics and magic candles"
+            >
+          </div>
+        </div>
+      </div>
+      </div>
+    </header>
+    <nav class="page__menu menu" id="menu">
+      <a href="#" class="menu__cross">
+        <svg 
+          class="menu__cross--image"
+          width="15" 
+          height="15" 
+          viewBox="0 0 15 15" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path 
+            fill-rule="evenodd" 
+            clip-rule="evenodd" 
+            d="M7.45193 6.72586L0.726074 0L0.0189674 0.707107L6.74483 7.43297L0 14.1778L0.707107 14.8849L7.45193 8.14007L14.1611 14.8492L14.8682 14.1421L8.15904 7.43297L14.8492 0.742767L14.1421 0.03566L7.45193 6.72586Z" fill="#E4DFD3"></path>
+        </svg>
+      </a>
+      <div class="menu__list">
+        <a href="#shop" class="menu__list--item">Shop</a>
+        <div class="menu__list--line"></div>
+        <a href="#contactUs" class="menu__list--item">Contact</a>
+        <div class="menu__list--line"></div>
+        <a href="#aboutUs" class="menu__list--item">About</a>
+        <div class="menu__list--line"></div>
+      </div>
+    </nav>
+    <section class="section environmental">
+      <div class="environmental__top-line"></div>
+      <div class="container grid environmental--container">
+        <p class="environmental__desktop-text grid__item grid__item--SmallDesktop-2-5">
+          Biologists say that birds are indicators
+          of the environmental situation, and over
+          the past half century, the population of
+          seabirds has declined by 70%. Birds 
+          die due to environmental problems and 
+          human intervention in the natural 
+          environment.
+        </p>
+        <h2 class="environmental__title grid__item grid__item--SmallDesktop-7-12">
+          if you choose the gifts 
+          of nature and care about it’s - scroll down
+        </h2>
+      </div>
+      <div class="environmental__bottom-line"></div>
+    </section>
+    <section class="section brand grid">
+      <div class="brand__singboard ">
+        <div class="brand__singboard--text">witch of mountain winds</div>
+      </div>
+      <div class="container brand__block grid__item--SmallDesktop-2-5">
+        <h2 class="brand__title">
+          about our brand
+        </h2>
+        <p class="brand__text">
+          Our brand cosmetics are made from natural
+          ingredients and we are promoting them to the masses.
+          Shampoo, hair conditioner, soap - in recycled paper.
+          Creams, oils, washing products in glass containers
+          with recycled paper labels. 
+          No synthetics and microplastics in cosmetics. 
+          And the packaging from it can be returned for 
+          recycling or reused.
+        </p>
+
+        <p class="brand__text brand__text--desktop">
+          We are all neighbors of one big House. 
+          And we must protect what we have. 
+          Destroying everything around for the
+          sake of consumerism and imaginary convenience,
+          we destroy what does not 
+          belong to us. Be aware of your choice!
+        </p>
+        <a href="#" class="brand__button button-learnMore">
+          LEARN MORE
+        </a>
+      </div>
+      <div class="brand__block  grid__item--SmallDesktop-7-11">
+        <img 
+        class="brand__image"
+        src="./images/brand_eco-cosmetics-Tablet.jpg" 
+        alt="barnd eco cosmetics"
+      >
+      </div>
+
+      <div class="brand__block brand__block--desktop">
+        <img 
+        class="brand__image brand__image--desktop"
+        src="./images/brand_eco-cosmetics-Tablet.jpg" 
+        alt="barnd eco cosmetics"
+      >
+      </div>
+    </section>
+    <section class="section shop grid" id="shop">
+      <div class="shop__singboard grid__item grid__item--SmallDesktop-1-1">
+        <div class="shop__singboard--text">shop</div>
+      </div>
+      <div class="grid__item grid__item--SmallDesktop-2-12">
+        <div class="container">
+          <h2 class="shop__title">
+            shop
+          </h2>
+          <div class="shop__menu">
+            <a href="#face" class="shop__menu--item">face</a>
+            <a href="#body" class="shop__menu--item">body</a>
+            <a href="#hair" class="shop__menu--item">hair</a>
+            <a href="#candles" class="shop__menu--item">candles</a>
+          </div>
+        </div>
+        <div class="shop__block">
+          <div class="shop__block--card">
+            <img 
+              class="shop__image" 
+              src="./images/oil.jpg" 
+              alt="Hydrophilic oil"
+            >
+            <div class="container-shop">
+              <h3 class="shop__subtitle">
+                Hydrophilic oil
+              </h3>
+              <p class="shop__price">
+                160 UAH
+              </p>
+            </div>
+          </div>
+          <div class="shop__block--card shop__block--card--desktop">
+            <img 
+              class="shop__image" 
+              src="./images/face_cream.jpg" 
+              alt="face cream"
+            >
+            <div class="container-shop">
+              <h3 class="shop__subtitle">
+                Face cream
+              </h3>
+              <p class="shop__price">
+                210 UAH
+              </p>
+            </div>
+          </div>
+          <div class="shop__block--card">
+            <img 
+              class="shop__image" 
+              src="./images/ubtan.jpg" 
+              alt="ubtan"
+            >
+            <div class="container-shop">
+              <h3 class="shop__subtitle">
+                ubtan
+              </h3>
+              <p class="shop__price">
+                160 UAH
+              </p>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="button shop__button">
+          all products
+        </a>
+      </div>
+
+    </section>
+    <section class="section aboutUs grid" id="aboutUs">
+      <div class="aboutUs__singboard">
+        <div class="aboutUs__singboard--text">about the creators</div>
+      </div>
+      <div class="aboutUs__block container grid__item grid__item--SmallDesktop-2-5">
+        <h1 class="aboutUs__title">
+          about the creators
+        </h1>
+        <p class="aboutUs__text">
+          My name is Victoria, I’m a master at candle
+          making and natural cosmetics. In the past,
+          a cynologist, was engaged in herbs, 
+          made layouts on the Tarot.
+        </p>
+        <p class="aboutUs__text">
+          I am also a volunteer to save wild birds
+          in distress, a consultant to the Phoenix 
+          Wildlife Rehabilitation Center, a member
+          of the Society for the Conservation of
+          Birds of Ukraine with the support of
+          Birdlife International.
+        </p>
+        <p class="aboutUs__text aboutUs__text--desktop">
+          My husband and I live in the Carpathian 
+          region in the city of Chernivtsi. 
+          I dream of my center for the rehabilitation of wild birds,
+          as it is very difficult to rescue birds in a rented
+          communal apartment.
+        </p>
+        <a href="#aboutUs" class="aboutUs__button button-learnMore">LEARN MORE</a>
+        <a href="#contactUs" class="aboutUs__button-contacts button">to contact us</a>
+      </div>
+      <div class="aboutUs__block grid__item grid__item--SmallDesktop-7-12">
+        <img 
+          class="aboutUs__image"
+          src="./images/bird.jpg" 
+          alt="bird"
+        >
+      </div>
+    </section>
+    <section class="section toothPowder">
+      <div class="container">
+        <h1 class="toothPowder__title">
+          Ayurvedic Tooth Powder
+        </h1>
+      </div>
+      <div class="toothPowder__container">
+        <div class="grid">
+          <div class="toothPowder__singboard">
+            <div class="toothPowder__singboard--text">Ingredients</div>
+          </div>
+          <div class="grid__item grid__item--SmallDesktop-2-5">
+            <h1 class="toothPowder__title toothPowder__title-tablet">
+              Ayurvedic Tooth Powder
+            </h1>
+          </div>
+        </div>
+        <svg 
+          class="toothPowder__container--image"
+          width="382" 
+          height="398" 
+          viewBox="0 0 382 398"  
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path 
+            fill-rule="evenodd" 
+            clip-rule="evenodd" 
+            d="M0.868351 14.875C144.779 -4.23708 227.726 -5.66674 381.133 14.8751L382 14.9912V15.8663V82.2515V83.2515H381H372.927V113.697V114.697H371.927H356.735C356.665 115.069 356.575 115.562 356.477 116.153C356.244 117.56 355.965 119.519 355.778 121.726C355.402 126.182 355.423 131.482 356.853 135.309C358.376 139.39 362.228 143.748 365.817 147.152C367.594 148.837 369.272 150.257 370.507 151.256C371.124 151.755 371.629 152.148 371.979 152.415C372.153 152.549 372.289 152.651 372.381 152.72L372.421 152.75L372.484 152.797L372.51 152.815L372.516 152.82L372.517 152.82L372.513 152.826L372.517 152.821L372.927 153.12V153.628V179.082H381H382V180.082V339.307V340.307H381H372.927V376.243V377.055L372.132 377.222C246.233 403.576 165.765 403.617 11.5055 377.229L10.6742 377.087V376.243V340.307H1H0V339.307V180.082V179.082H1H10.6742V153.628V153.045L11.1817 152.758C12.0513 152.266 12.9433 151.783 13.8427 151.297C16.6417 149.784 19.5125 148.232 22.0044 146.226C25.2426 143.619 27.7162 140.329 28.2937 135.539L28.295 135.529L28.2965 135.518C29.2247 129.01 29.3604 124.558 28.3823 114.697H11.6742H10.6742V113.697V83.2515H1H0V82.2515V15.8663V14.9903L0.868351 14.875ZM12.6742 340.419C159.407 356.01 238.271 356.026 370.927 340.432V375.43C246.002 401.51 165.87 401.556 12.6742 375.399V340.419ZM30.392 114.697H354.701C354.642 115.019 354.575 115.398 354.504 115.827C354.265 117.272 353.977 119.286 353.785 121.558C353.537 124.497 353.442 127.94 353.851 131.165H30.8239C31.2258 126.57 31.1231 122.128 30.392 114.697ZM30.6197 133.165H354.178C354.382 134.159 354.645 135.115 354.979 136.009C356.675 140.552 360.829 145.178 364.441 148.603C366.265 150.333 367.985 151.788 369.249 152.811C369.882 153.322 370.401 153.727 370.763 154.004C370.822 154.049 370.877 154.09 370.927 154.128V179.707C231.559 186.462 152.512 185.947 12.6742 179.626V154.214C13.3142 153.858 13.9801 153.498 14.6617 153.13L14.6656 153.128L14.6674 153.127L14.6755 153.123L14.6778 153.121L14.6782 153.121C17.5093 151.591 20.61 149.916 23.2586 147.784C26.7726 144.955 29.6182 141.235 30.278 135.79C30.4073 134.883 30.5214 134.014 30.6197 133.165ZM355.916 112.697H370.927V83.2512H12.6742V112.697H29.2865L29.2865 112.697L355.916 112.697ZM11.6742 81.2515L11.6742 81.2512H371.927V81.2515H380V16.7414C227.641 -3.61303 144.94 -2.20223 2 16.7424V81.2515H11.6742ZM11.6289 181.58L11.6515 181.082H2V338.307H11.6742H11.7273L11.7801 338.313C159.503 354.051 238.308 354.06 371.81 338.314L371.868 338.307H371.927H380V181.082H373.553L373.577 181.58C232.229 188.485 152.97 187.984 11.6289 181.58Z" ></path>
+        </svg>
+        <ul class="toothPowder__container--list">
+          <li class="toothPowder__container--list--item ">Kaolin <div class="toothPowder__container--list--line"></div></li>
+          <li class="toothPowder__container--list--item ">Sivak <div class="toothPowder__container--list--line"></div></li>
+          <li class="toothPowder__container--list--item ">Calcium carbonate <div class="toothPowder__container--list--line"></div></li>
+          <li class="toothPowder__container--list--item ">Licorice root <div class="toothPowder__container--list--line"></div></li>
+          <li class="toothPowder__container--list--item ">Turmeric <div class="toothPowder__container--list--line"></div></li>
+        </ul>
+        <div class="grid">
+          <div class="grid__item grid__item--SmallDesktop-2-5">
+            <a class="toothPowder__button toothPowder__button-tablet button-learnMore" href="#">LEARN MORE</a>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <a class="toothPowder__button button-learnMore" href="#">LEARN MORE</a>
+      </div>
+    </section>
+    <section class="section pros">
+      <div class="container pros__container">
+        <div class="pros__box">
+          <svg 
+            class="pros__box--image"
+            width="64" 
+            height="62" 
+            viewBox="0 0 64 62" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M10.2427 54.3898H1V52.3559C1.51149 16.5776 39.707 20.2084 44.4004 36.5932C47.8675 36.3626 48.992 35.7229 50.0264 32.5254C52.5617 31.2458 54.116 31.2033 55.6524 32.5254C57.1111 28.2279 57.8383 26.2299 58.8672 23.8813H61.6802L58.8672 34.5593C67.2734 49.2548 61.1312 53.7123 55.6524 54.3898C51.8751 54.5469 48.4822 54.5378 44.4004 54.3898M10.2427 54.3898C8.96517 56.9702 8.89509 58.4207 10.2427 61H31.541C37.1224 59.7307 39.9638 58.3476 44.4004 54.3898M10.2427 54.3898H44.4004" stroke="#344F10"></path>
+            <path d="M9.84082 29.983L11.8501 23.3729M11.8501 23.3729L7.83154 12.1864M11.8501 23.3729L17.4761 25.4067L21.0928 19.8135M7.83154 12.1864L9.84082 5.06776M7.83154 12.1864L13.8594 9.64404M21.0928 19.8135V9.64404M21.0928 19.8135L26.3169 24.8983M21.0928 9.64404L25.1113 2.52539M21.0928 9.64404H27.1206" stroke="#344F10"></path>
+            <path d="M54.045 39.644L55.8533 42.4406M57.6617 45.2372L55.8533 42.4406M55.8533 42.4406L57.6617 39.644M55.8533 42.4406L53.2412 45.2372M33.5503 38.1185H25.915V43.7118H33.5503V48.288H15.0649V32.0168L34.354 33.0338L33.5503 38.1185Z" stroke="#344F10"></path>
+            <path d="M50.0262 32.5255L51.3658 24.3899H54.0448V31.7015" stroke="#344F10"></path>
+            <path d="M52.4374 16.7627C53.3266 15.0663 52.8718 14.1826 50.83 12.6949C50.1848 11.1102 50.7313 10.2203 52.4374 8.62712C53.0637 7.1773 52.6477 6.27111 50.83 4.55932C50.3924 2.77976 50.7354 2.01632 52.4374 1" stroke="#344F10"></path>
+            <path d="M60.0731 17.2712C60.8052 15.4856 60.593 14.4838 58.4656 12.6949C58.022 11.5079 58.2128 10.6748 60.0731 8.62712C60.1468 7.03999 59.9791 6.15235 58.4656 4.55932C58.4038 2.7163 58.673 1.87971 60.0731 1" stroke="#344F10"></path>
+            <path d="M28.3262 38.6272V43.7119" stroke="#344F10"></path>
+            <path d="M11.0464 39.644L7.83154 46.2542" stroke="#344F10"></path>
+            <path d="M39.0781 39.6441C39.0781 40.3265 38.659 40.6695 38.3726 40.6695C38.0862 40.6695 37.667 40.3265 37.667 39.6441C37.667 38.9617 38.0862 38.6187 38.3726 38.6187C38.659 38.6187 39.0781 38.9617 39.0781 39.6441Z" stroke="#344F10"></path>
+          </svg>
+
+          <h4 class="pros__box--subtitle">No synthetics and microplastics</h4>
+        </div>
+
+        <div class="pros__box">
+          <svg 
+            class="pros__box--image"
+            width="100" 
+            height="85" 
+            viewBox="0 0 100 85" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M75.8761 14.4104L70.6842 18.1179C56.6754 -0.456073 49.0881 -10.3675 24.9009 22.7522L41.8926 32.9477C44.3077 24.9759 46.3404 20.9144 51.3325 14.4104L56.9964 25.5328L51.3325 29.7037C58.1838 30.3523 61.8531 30.4371 67.8522 29.7037C71.9187 24.8725 73.7952 21.6649 75.8761 14.4104Z" stroke="#344F10"></path>
+            <path d="M63.9291 76.327L63.1441 69.9942C86.1426 66.5214 98.4684 64.5698 80.8822 27.5176L63.8264 37.6056C69.6823 43.5276 72.2836 47.2503 75.6217 54.7396L63.148 54.4226L62.1804 47.4539C58.3464 53.171 56.5237 56.3579 54.3104 61.9839C56.6193 67.8621 58.5445 71.0407 63.9291 76.327Z" stroke="#344F10"></path>
+            <path d="M11.3002 34.7997L17.2174 37.1833C9.10271 58.989 4.83272 70.7193 45.7532 73.2977L45.2031 53.4841C37.1864 55.7362 32.6705 56.2071 24.5043 55.4965L30.8294 44.7367L37.391 47.269C34.2517 41.1426 32.3492 38.0027 28.5037 33.3385C22.245 32.5085 18.5326 32.6517 11.3002 34.7997Z" stroke="#344F10"></path>
+          </svg>
+
+          <h4 class="pros__box--subtitle">product packaging can be recycled or reused</h4>
+        </div>
+
+        <div class="pros__box">
+          <svg 
+            class="pros__box--image"
+            width="81" 
+            height="76" 
+            viewBox="0 0 81 76" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M44.6165 74.9997L41.6895 69.5588M15.6393 21.135L22.9568 34.7372M22.9568 34.7372L26.3151 23.3114M22.9568 34.7372L11.5723 31.4727M22.9568 34.7372L29.3962 46.7071M29.3962 46.7071L33.9407 29.2963M29.3962 46.7071L14.1142 42.3544M29.3962 46.7071L37.0064 60.8534M37.0064 60.8534L43.0914 38.0017M37.0064 60.8534L15.6393 54.8685M37.0064 60.8534L41.6895 69.5588M41.6895 69.5588C63.7885 40.3041 67.4411 24.5606 5.98022 1.54785" stroke="#344F10"></path>
+            <path d="M5.96631 1C-7.88296 67.0958 8.26651 70.6453 41.5665 69.5591M55.2924 47.7956L57.3258 44.6148M68.51 27.1203L61.9012 37.4579M61.9012 37.4579H70.5435M61.9012 37.4579L59.3593 29.2966M61.9012 37.4579L57.3258 44.6148M57.3258 44.6148H68.51M57.3258 44.6148L51.7337 54.8688L64.9514 55.9569" stroke="#344F10"></path>
+            <path d="M44.1082 66.2944C74.969 65.8643 86.669 59.3002 76.3171 13.0591" stroke="#344F10"></path>
+            <path d="M76.644 13.5181C65.4845 16.1016 59.6859 18.3177 52.2421 27.1203" stroke="#344F10"></path>
+          </svg>
+
+          <h4 class="pros__box--subtitle">only natural ingredients</h4>
+        </div>
+      </div>
+
+    </section>
+    <section class="section contactUs grid" id="contactUs">
+      <div class="contactUs__singboard">
+        <div class="contactUs__singboard--text">help</div>
+      </div>
+      <div class="container contactUs__block grid__item grid__item--SmallDesktop-2-5">
+        <h1 class="contactUs__title">
+          contact us
+        </h1>
+        <p class="contactUs__text">
+          We will help you choose a product that suits you and answer your other questions
+        </p>
+        <div class="contactUs__form">
+          <form 
+            class="form"
+            action="#"
+            method="post"
+          >
+            <input 
+              class="form__input"
+              required
+              placeholder="your name"
+              type="text"
+              name="name"
+            >
+            <input 
+              class="form__input"
+              required
+              placeholder="e-mail"
+              type="email" 
+              name="e-mail"
+            >
+            <input 
+              class="form__input"
+              required
+              placeholder="phone number"
+              type="tel" 
+              name="phone number"
+            >
+            <textarea 
+              class="form__input"
+              required
+              placeholder="Your message"
+              rows="1"
+              name="message"
+            ></textarea>
+            <input 
+                  class="button form__button"
+                  type="submit" 
+                  value="send a message"
+            >
+          </form>
+        </div>
+      </div>
+      <div class="contactUs__block grid__item grid__item--SmallDesktop-8-12">
+        <img 
+        class="contactUs__image "
+        src="./images/contactUs_bird.jpg" 
+        alt="bird"
+      >
+      </div>
+
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-container grid">
+          <div class="footer-container__block grid__item grid__item--SmallDesktop-1-6">
+            <div class="footer__menu ">
+              <a class="footer__menu--item" href="#shop">Shop</a>
+              <a class="footer__menu--item" href="#contactUs">Contact</a>
+              <a class="footer__menu--item" href="#aboutUs">About</a>
+            </div>
+            <div class="footer__socials">
+              <a 
+                class="footer__socials--link"
+                target="_blank"
+                href="https://www.facebook.com/">
+                <svg 
+                  class="footer__socials--link--icon"
+                  width="20" 
+                  height="21" 
+                  viewBox="0 0 20 21" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M17.3049 19.502H13.5184L13.5289 13.3551H15.4982C15.9736 13.3551 16.3738 12.9994 16.4298 12.5274L16.7028 10.2237C16.769 9.66566 16.3331 9.17508 15.7713 9.17508H13.5175V7.74797C13.5175 7.33239 13.5814 7.1222 13.678 7.00754C13.7583 6.91217 13.9534 6.77851 14.5134 6.77851H14.5136L15.6741 6.77797H15.6742C16.1919 6.77765 16.6117 6.35782 16.6117 5.83984V3.89732C16.6117 3.37916 16.1916 2.9592 15.6736 2.9592H13.7826C12.529 2.9592 11.4215 3.34351 10.626 4.12979C9.82889 4.9176 9.40054 6.05405 9.40054 7.44904V9.17504H8.04716C7.52767 9.17504 7.10705 9.5972 7.10904 10.1167V10.1168L7.11794 12.4205C7.11993 12.9371 7.53929 13.355 8.05601 13.355H9.41191L9.40135 19.5019H2.69504C1.48273 19.5019 0.5 18.5191 0.5 17.3068V2.69699C0.5 1.48469 1.48278 0.501953 2.69504 0.501953H17.3048C18.5171 0.501953 19.4998 1.48469 19.4999 2.69699V17.307C19.4999 18.5192 18.5171 19.502 17.3049 19.502Z" stroke="#E4DFD3"></path>
+                </svg>
+              </a>
+    
+              <a 
+                class="footer__socials--link"
+                target="_blank"
+                href="https://www.instagram.com/"
+              >
+                <svg 
+                  class="footer__socials--link--icon"
+                  width="20" 
+                  height="21" 
+                  viewBox="0 0 20 21" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect 
+                    x="0.5" 
+                    y="0.501953" 
+                    width="19" 
+                    height="19" 
+                    rx="4.5" 
+                    stroke="#E4DFD3"
+                  ></rect>
+                  <circle 
+                    cx="10" 
+                    cy="10.002" 
+                    r="3.5" 
+                    stroke="#E4DFD3"
+                  ></circle>
+                  <circle 
+                    cx="15.5" 
+                    cy="4.50195" 
+                    r="1" 
+                    stroke="#E4DFD3"
+                  ></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__contacts footer-container__block grid__item--SmallDesktop-8-12">
+            <p class="footer__contacts--item">Ukraine</p>
+            <a 
+              class="footer__contacts--item footer__contacts--link" 
+              target="_blank" 
+              href="mailto:support.mountain@gmail.com"
+            >
+              support.mountain@gmail.com
+            </a>
+            <a 
+              class="footer__contacts--item footer__contacts--link" 
+              target="_blank" 
+              href="tel:+380934476839"
+            >
+              +380934476839
+            </a>
+            <p class="footer__contacts--item">Support is available Monday - Friday 9am-6pm</p>
+          </div>
+          <div class="footer__copyright--desktop grid__item grid__item--SmallDesktop-1-6">
+            <p class="footer__copyright--item">
+              Copyright © 2019 witch of mountain winds
+            </p>
+          </div>
+          <div class="footer__socials--desktop grid__item grid__item--SmallDesktop-8-12">
+            <a 
+              class="footer__socials--link"
+              target="_blank"
+              href="https://www.facebook.com/">
+              <svg 
+                class="footer__socials--link--icon"
+                width="20" 
+                height="21" 
+                viewBox="0 0 20 21" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M17.3049 19.502H13.5184L13.5289 13.3551H15.4982C15.9736 13.3551 16.3738 12.9994 16.4298 12.5274L16.7028 10.2237C16.769 9.66566 16.3331 9.17508 15.7713 9.17508H13.5175V7.74797C13.5175 7.33239 13.5814 7.1222 13.678 7.00754C13.7583 6.91217 13.9534 6.77851 14.5134 6.77851H14.5136L15.6741 6.77797H15.6742C16.1919 6.77765 16.6117 6.35782 16.6117 5.83984V3.89732C16.6117 3.37916 16.1916 2.9592 15.6736 2.9592H13.7826C12.529 2.9592 11.4215 3.34351 10.626 4.12979C9.82889 4.9176 9.40054 6.05405 9.40054 7.44904V9.17504H8.04716C7.52767 9.17504 7.10705 9.5972 7.10904 10.1167V10.1168L7.11794 12.4205C7.11993 12.9371 7.53929 13.355 8.05601 13.355H9.41191L9.40135 19.5019H2.69504C1.48273 19.5019 0.5 18.5191 0.5 17.3068V2.69699C0.5 1.48469 1.48278 0.501953 2.69504 0.501953H17.3048C18.5171 0.501953 19.4998 1.48469 19.4999 2.69699V17.307C19.4999 18.5192 18.5171 19.502 17.3049 19.502Z" stroke="#E4DFD3"></path>
+              </svg>
+            </a>
+  
+            <a 
+              class="footer__socials--link"
+              target="_blank"
+              href="https://www.instagram.com/"
+            >
+              <svg 
+                class="footer__socials--link--icon"
+                width="20" 
+                height="21" 
+                viewBox="0 0 20 21" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect 
+                  x="0.5" 
+                  y="0.501953"
+                  width="19" 
+                  height="19" rx="4.5" 
+                  stroke="#E4DFD3"
+                >
+                </rect>
+                <circle 
+                  cx="10" 
+                  cy="10.002" 
+                  r="3.5" 
+                  stroke="#E4DFD3"></circle>
+                <circle 
+                  cx="15.5" 
+                  cy="4.50195" 
+                  r="1" 
+                  stroke="#E4DFD3"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          <p class="footer__copyright--item">
+            © 2019 witch of mountain winds
+          </p>
+        </div>
+      </div>
+    </footer>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,216 @@
+.header {
+
+  @include onSmallDesktop {
+    padding: 0 50px;
+  }
+
+  @include onDesktop {
+    padding: 0 130px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px 20px;
+
+    @include onTablet {
+      padding: 23px 27px 30px;
+    }
+
+    @include onSmallDesktop {
+      display: none;
+    }
+    
+    &--menu-opener {
+      transition: all 0.7s ease;
+
+      &:hover {
+        scale: 1.2;
+      }
+    }
+
+    &--logo {
+      transition: all 0.7s ease;
+
+      &:hover {
+        scale: 1.2;
+      }
+
+    }
+
+    &--bag {
+      transition: all 0.7s ease;
+
+      &:hover {
+        scale: 1.2;
+      }
+      
+    }
+  }
+
+  &__nav-desktop {
+    display: none;
+    align-items: center;
+    padding: 40px 0 81px;
+
+    @include onSmallDesktop {
+      display: block;
+    }
+
+    &--logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+
+      &--icon {
+        transition: all 0.7s ease;
+
+        &:hover {
+          scale: 1.2;
+        }
+
+        &:hover path {
+          fill: $lightGrayFontColor;
+        }
+      }
+
+      &--description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $greenFontColor;
+
+        @include onDesktop {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &--menu {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      &--item {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        text-transform: capitalize;
+        color: $greenFontColor;
+        border-bottom: 1px solid transparent;
+        transition: border-bottom 0.7s ease;
+
+        &:hover {
+          border-bottom: 1px solid $greenFontColor;
+        }
+      }
+    }
+
+    &--bag {
+      display: flex;
+      margin-left: auto;
+      align-items: center;
+
+      &--icon {
+        transition: all 0.7s ease;
+
+        &:hover {
+          scale: 1.2;
+        }
+
+        &:hover path {
+          fill: $lightGrayFontColor;
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      max-height: 600px;
+      object-fit: cover;
+      padding: 0 27px;
+      margin-bottom: 30px;
+    }
+
+    @include onSmallDesktop {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+      width: 466px;
+      margin: 0 auto 10px;
+    }
+
+    @include onSmallDesktop {
+      text-align: left;
+      font-weight: 600;
+      font-size: 60px;
+      line-height: 130%;
+      margin: 0 0 30px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onSmallDesktop {
+      text-align: left;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include onSmallDesktop {
+      margin: 0;
+    }
+  }
+
+  &__block-desktop {
+    overflow: hidden;
+
+    &--image {
+      display: none;
+      width: 100%;
+      transition: scale 0.7s ease;
+
+      @include onSmallDesktop {
+        display: block;
+      }
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+}

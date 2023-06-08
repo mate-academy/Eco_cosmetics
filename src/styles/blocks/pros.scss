@@ -1,0 +1,62 @@
+.pros {
+
+  &__box {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      width: 33.3%;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--image {
+      display: block;
+      height: 80px;
+      margin: 0 auto 20px;
+      transition: all 0.7s ease;
+
+      @include onSmallDesktop {
+        height: 84px;
+        margin-bottom: 40px;
+      }
+
+      &:hover {
+        scale: 1.2;
+        fill: $lightGrayFontColor;
+      }
+
+      &:hover path {
+        stroke: $blackColor;
+      }
+    }
+
+    &--subtitle {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #000;
+    }
+  }
+
+  &__container {
+    
+    @include onTablet {
+      padding: 0 27px;
+      display: flex;
+    }
+
+    @include onSmallDesktop {
+      padding: 0 50px;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      padding: 0 130px;
+    }
+  }
+}
