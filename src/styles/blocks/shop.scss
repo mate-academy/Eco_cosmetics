@@ -1,0 +1,73 @@
+.shop {
+  &__container {
+    position: relative;
+
+    @include tablet {
+      padding: 0 27px;
+    }
+
+    @include desktop {
+      padding: 0 50px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+
+    @include design {
+      padding: 0;
+    }
+  }
+
+  &__slider-container {
+    @include desktop {
+      grid-column: 2 / 13;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-weight: $big-weight;
+    font-size: $title-size;
+    line-height: $display-title;
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+    color: $green;
+    text-align: center;
+
+    @include tablet {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    @include desktop {
+      margin-bottom: 30px;
+      font-size: $display-title;
+      line-height: 40px;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+
+    @include tablet {
+      width: 280px;
+    }
+
+    @include desktop {
+      grid-column: 5 / 9;
+    }
+  }
+}

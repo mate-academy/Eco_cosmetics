@@ -1,0 +1,129 @@
+.about {
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+  }
+
+  @include desktop {
+    position: relative;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+
+  &__main-content {
+    @include tablet {
+      grid-column: 1 / 2;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-between;
+    }
+
+    @include desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-weight: $big-weight;
+    font-size: $title-size;
+    line-height: $display-title;
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+    color: $green;
+
+    @include desktop {
+      margin-bottom: 40px;
+      font-size: $display-title;
+      line-height: 40px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-size: $main-size;
+    line-height: 21px;
+    color: $black;
+
+    @include tablet {
+      font-size: $display-size;
+      line-height: $title-size;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include desktop {
+        margin-top: 30px;
+        margin-bottom: 40px;
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    width: fit-content;
+    font-weight: $link-weight;
+    font-size: $main-size;
+    line-height: $bigger-size;
+    color: $green;
+    transition: color $transition;
+    
+    &::after {
+      content: "";
+      display: block;
+      margin-top: 10px;
+      height: 1px;
+      background-color: $green;
+      transition: background-color $transition;
+    }
+
+    &:hover {
+      color: $hover-green;
+
+      &::after {
+        background-color: $hover-green;
+      }
+    }
+  }
+
+  &__image-container {
+    display: none;
+
+    @include tablet {
+      grid-column: 2 / 3;
+      display: block;
+    }
+
+    @include desktop {
+      grid-column: 7 / 13;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+      align-items: end;
+    }
+  }
+
+  &__picture {
+    @include desktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+
+  &__desktop-image {
+    display: none;
+
+    @include desktop {
+      grid-column: 5 / 7;
+      display: block;
+      width: 100%;
+    }
+  }
+}

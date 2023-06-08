@@ -1,0 +1,117 @@
+.nav {
+  &__list {
+    display: flex;
+    list-style: none;
+
+    &--menu {
+      flex-direction: column;
+    }
+
+    &--footer {
+      flex-direction: column;
+
+      @include desktop {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__item {
+    &--header {
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &--footer {
+      margin-bottom: 11px;
+
+      @include tablet {
+        margin-bottom: 15px;
+      }
+
+      @include desktop {
+        margin-bottom: 0;
+        margin-right: 40px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $yellow;
+
+    &--header {
+      color: $green;
+      transition: color $transition;
+
+      &:hover {
+        color: $hover-green;
+      }
+    }
+
+    &--menu {
+      margin-bottom: 30px;
+      padding: 0 20px;
+      font-weight: $big-weight;
+      font-size: $bigger-size;
+      line-height: 23px;
+      text-align: center;
+      transition: color $transition;
+
+      @include tablet {
+        margin-bottom: 50px;
+        padding: 0 27px;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        margin-top: 10px;
+        width: 100%;
+        height: 1px;
+        background-color: $dark-gray;
+        transition: background-color $transition;
+      }
+
+      &:hover {
+        color: $hover-yellow;
+
+        &::after {
+          background-color: $hover-yellow;
+        }
+      }
+    }
+
+    &--footer {
+      font-weight: $link-weight;
+      font-size: $bigger-size;
+      line-height: $title-size;
+      text-transform: capitalize;
+      transition: color $transition;
+
+      @include tablet {
+        font-weight: 400;
+        font-size: $main-size;
+        line-height: 21px;
+      }
+
+      @include desktop {
+        font-weight: $link-weight;
+        font-size: $bigger-size;
+        line-height: $title-size;
+      }
+
+      &:hover {
+        color: $hover-yellow;
+      }
+    }
+  }
+}

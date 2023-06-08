@@ -1,0 +1,79 @@
+.contact {
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+
+  &__subtitle {
+    @include design {
+      margin-left: calc(50% - 590px);
+    }
+  }
+
+  &__main-content {
+    @include tablet {
+      grid-column: 1 / 2;
+    }
+
+    @include desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-weight: $big-weight;
+    font-size: $title-size;
+    line-height: $display-title;
+    letter-spacing: $letter-spacing;
+    text-transform: uppercase;
+    color: $green;
+
+    @include desktop {
+      margin-bottom: 30px;
+      font-size: $display-title;
+      line-height: 40px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    font-size: $main-size;
+    line-height: 21px;
+    color: $black;
+
+    @include tablet {
+      margin-bottom: 20px;
+      font-size: $display-size;
+      line-height: $title-size;
+    }
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @include tablet {
+      grid-column: 2 / 3;
+      display: block;
+    }
+
+    @include desktop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+}

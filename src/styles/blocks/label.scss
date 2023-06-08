@@ -1,0 +1,31 @@
+.label {
+  display: none;
+
+  @include desktop {
+    position: absolute;
+    left: 50px;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    font-weight: $link-weight;
+    font-size: $main-size;
+    line-height: $bigger-size;
+    color: $green;
+    opacity: 0.5;
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: top left;
+  }
+
+  @include design {
+    left: 0;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    margin-right: 10px;
+    width: 100px;
+    height: 1px;
+    background-color: $green;
+  }
+}

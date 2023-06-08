@@ -1,0 +1,83 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__input {
+    margin-bottom: 25px;
+    padding: 0 0 5px;
+    font-family: inherit;
+    font-size: $main-size;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: $black;
+    background: none;
+    border: none;
+    border-bottom: solid 1px $dark-gray;
+    transition: border-color $transition, color $transition;
+
+    @include tablet {
+      font-weight: $link-weight;
+    }
+
+    @include desktop {
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      font-size: $bigger-size;
+      line-height: 27px;
+    }
+
+    &--textarea {
+      padding: 0 0 5px;
+      resize: none;
+      vertical-align: middle;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+        height: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $green;
+        border-radius: 4px;
+      }
+    }
+
+    &::placeholder {
+      padding: 21px 0 0;
+      vertical-align: bottom;
+      color: $dark-gray;
+      transition: color $transition;
+
+      @include desktop {
+        padding-top: 25px;
+      }
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $yellow inset;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $black;
+    }
+
+    &:hover {
+      color: $hover-green;
+      border-color: $hover-green;
+
+      &::placeholder {
+        color: $hover-green;
+      }
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    border: none;
+
+    @include tablet {
+      width: 280px;
+    }
+  }
+}

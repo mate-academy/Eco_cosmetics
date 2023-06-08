@@ -1,0 +1,69 @@
+.page {
+  position: relative;
+  background-color: $yellow;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+
+  &--with-menu {
+    overflow: hidden;
+  }
+
+  &--with-shop {
+    overflow: hidden;
+  }
+
+  &__header {
+    @include design {
+      margin: 0 auto;
+      max-width: 1180px;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    padding-top: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform $transition;
+
+    @include tablet {
+      padding-top: 28px;
+    }
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__footer {
+    padding: 30px 20px 40px;
+
+    @include tablet {
+      padding: 29px 27px 30px;
+    }
+
+    @include desktop {
+      padding: 60px 50px;
+    }
+
+    @include design {
+      padding: 60px 0;
+    }
+  }
+
+  &__shop-page  {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform $transition;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
