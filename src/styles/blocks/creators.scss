@@ -1,0 +1,164 @@
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.creators {
+  padding: 50px 0;
+
+  @include onTalet {
+    padding: 65px 0;
+    overflow: hidden;
+  }
+
+  @include onDesctop {
+    padding: 100px 0;
+  }
+
+  &__container {
+
+    @include onTalet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesctop {
+      position: relative;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__content {
+
+    @include onTalet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesctop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    @include onDesctop {
+      margin: 0 0 34px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 20px;
+
+    @include onTalet {
+      margin: 0 0 15px;
+    }
+
+    @include onDesctop {
+      margin: 0 0 30px;
+    }
+
+    &:nth-child(3) {
+      margin: 0 0 30px;
+
+      @include onTalet {
+        margin: 0 0 20px;
+      }
+
+      @include onDesctop {
+        margin: 0 0 30px;
+      }
+    }
+
+    &--desctop {
+      display: none;
+
+      @include onDesctop {
+        display: block;
+        margin: 0 0 20px;
+      }
+    }
+  }
+
+  &__learn {
+    display: block;
+    margin-bottom: 36px;
+
+    @include onTalet {
+      margin-bottom: 41px;
+    }
+
+    @include onDesctop {
+      margin-bottom: 51px;
+    }
+  }
+
+  &__link {
+    margin: 0 auto;
+  }
+
+  &__image {
+    display: none;
+
+    @include onTalet {
+      position: relative;
+      display: block;
+      grid-column: 4 / -1;
+
+      height: 435px;
+    }
+
+    @include onDesctop {
+      grid-column: 7 / -1;
+      height: 669px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 108%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @include onDesctop {
+      width: 100%;
+    }
+  }
+
+  &__aside-wrapper {
+    display: none;
+
+    @include onDesctop {
+      display: block;
+      position: absolute;
+      top: 58px;
+      left: -5px;
+    }
+  }
+
+  &__aside {
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.5);
+    transform: rotate(-90deg);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: -78%;
+      margin-left: -10px;
+      content: "";
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+}

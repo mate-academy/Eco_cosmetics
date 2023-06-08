@@ -1,0 +1,50 @@
+@import "../utils/vars";
+
+.page {
+  position: relative;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  &__body {
+    width: 100vw;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    background-color: $colorWhite;
+    color: $colorMain;
+
+    &--with-menus {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    &--payment {
+      position: relative;
+      z-index: 7;
+    }
+  }
+
+  &__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  &__menus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

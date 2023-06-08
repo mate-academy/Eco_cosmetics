@@ -1,0 +1,56 @@
+.menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  column-gap: 40px;
+
+  &--footer {
+    flex-direction: column;
+    column-gap: 0;
+
+    @include onDesctop {
+      flex-direction: row;
+      column-gap: 40px;
+    }
+  }
+
+  &__item {
+    list-style: none;
+
+    &--footer {
+      &:not(:last-child) {
+        margin-bottom: 11px;
+
+        @include onTalet {
+          margin-bottom: 15px;
+        }
+
+        @include onDesctop {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $colorTitle;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+
+    &:hover {
+      border-bottom: 2px solid $colorTitle;
+    }
+
+    &--footer {
+      color: $colorWhite;
+
+      &:hover {
+        border-bottom: 2px solid $colorWhite;
+      }
+    }
+  }
+}

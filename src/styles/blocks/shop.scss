@@ -1,0 +1,125 @@
+@import "../utils/extends";
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.shop {
+  padding: 50px 0;
+  overflow: hidden;
+
+  @include onTalet {
+    padding: 65px 0;
+  }
+
+  @include onDesctop {
+    padding: 100px 0;
+  }
+
+  &__container {
+
+    @include onDesctop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+      position: relative;
+    }
+  }
+
+  &__content {
+    grid-column: 2 / -1;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    text-align: center;
+
+    @include onTalet {
+      margin: 0 0 15px;
+      text-align: start;
+    }
+  }
+
+  &__menu {
+    margin: 0 0 27px;
+    padding: 0;
+    display: flex;
+    column-gap: 30px;
+
+    @include onTalet {
+      margin: 0 0 37px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__link {
+    padding-bottom: 10px;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #828282;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+
+    @include onDesctop {
+      font-weight: 600;
+    }
+
+    &:hover {
+      color: $colorMain;
+      border-bottom: 2px solid $colorMain;
+    }
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+
+  &__slide-wrap {
+
+    @include onDesctop {
+      width: 1280px;
+      margin: 0 auto;
+      padding-left: 100px;
+      box-sizing: border-box;
+
+    }
+  }
+
+  &__aside-wrapper {
+    display: none;
+
+    @include onDesctop {
+      display: block;
+      position: absolute;
+      top: 12px;
+      left: 44px;
+    }
+  }
+
+  &__aside {
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.5);
+    transform: rotate(-90deg);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: -100px;
+      margin-left: -10px;
+      content: "";
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+}

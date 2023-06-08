@@ -1,0 +1,311 @@
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.powder {
+  padding: 50px 0;
+
+  @include onTalet {
+    padding: 65px 0;
+  }
+
+  @include onDesctop {
+    padding: 100px 0;
+  }
+
+  &__container {
+    overflow: hidden;
+
+    @include onTalet {
+      display: flex;
+    }
+
+    @include onDesctop {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__aside-wrapper {
+    display: none;
+
+    @include onDesctop {
+      display: block;
+      position: absolute;
+      top: 34px;
+      left: 20px;
+    }
+  }
+
+  &__aside {
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.5);
+    transform: rotate(-90deg);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: -123%;
+      margin-left: -10px;
+      content: "";
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__main {
+
+    @include onTalet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @include onDesctop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    max-width: 360px;
+
+    @include onDesctop {
+      max-width: 380px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    margin-left: 50%;
+    margin-bottom: 30px;
+    width: 380px;
+    height: 395px;
+
+    @include onTalet {
+      margin-left: 0;
+      margin-bottom: 0;
+      transform: translateX(120px);
+    }
+
+    @media(min-width: 910px) {
+      transform: translateX(220px);
+    }
+
+    @media(min-width: 1040px) {
+      transform: translateX(280px);
+    }
+
+    @include onDesctop {
+      grid-column: 9 / -1;
+      transform: translateX(0);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    @include onTalet {
+      height: 396px;
+      width: 380px;
+      object-fit: cover;
+    }
+  }
+
+  &__description {
+    position: absolute;
+    transform: translateX(-100%);
+
+    &::before {
+      display: none;
+
+      @include onDesctop {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $colorMain;
+      }
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 76px;
+      height: 1px;
+      background-color: $colorMain;
+    }
+
+    &:nth-child(2) {
+      top: 4px;
+      left: -19px;
+
+      @include onTalet {
+        top: 40px;
+      }
+
+      @include onDesctop {
+        top: 34px;
+        left: -92px;
+      }
+
+      &::before {
+        top: 12px;
+        left: 142px;
+      }
+
+      &::after {
+        transform: translate(68px, -10px,);
+      }
+    }
+
+    &:nth-child(3) {
+      top: 74px;
+      left: -12px;
+
+      @include onTalet {
+        top: 111px;
+      }
+
+      @include onDesctop {
+        text-align: end;
+        left: -119px;
+      }
+
+      &::before {
+        top: 11px;
+        left: 205px;
+      }
+
+      &::after {
+        transform: translate(60px, -10px);
+
+        @include onDesctop {
+          transform: translate(131px, -35px);
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      top: 140px;
+      left: -48px;
+      max-width: 90px;
+      text-align: end;
+
+      @include onTalet {
+        top: 180px;
+      }
+
+      @include onDesctop {
+        max-width: 162px;
+        text-align: center;
+        top: 183px;
+        left: -120px;
+      }
+
+      &::before {
+        top: 11px;
+        left: 250px;
+      }
+
+      &::after {
+        transform: translate(110px, -23px);
+
+        @include onDesctop {
+          transform: translate(176px, -11px);
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      top: 224px;
+      left: -48px;
+      text-align: end;
+
+      @include onTalet {
+        top: 260px;
+      }
+
+      @include onDesctop {
+        left: -120px;
+      }
+
+      &::before {
+        top: 12px;
+        left: 190px;
+      }
+
+      &::after {
+        transform: translate(119px, -10px);
+
+        @include onDesctop {
+          transform: translate(117px, -10px);
+        }
+      }
+    }
+
+    &:nth-child(6) {
+      top: 296px;
+      left: -48px;
+      text-align: end;
+
+      @include onTalet {
+        top: 334px;
+      }
+
+      @include onDesctop {
+        left: -120px;
+      }
+
+      &::before {
+        top: 12px;
+        left: 170px;
+      }
+
+      &::after {
+        transform: translate(97px, -10px);
+      }
+    }
+  }
+
+  &__link {
+
+    &--onMobile {
+      width: max-content;
+
+      @include onTalet {
+        display: none;
+      }
+    }
+
+    &--onTablet {
+      display: none;
+
+      @include onTalet {
+        width: max-content;
+        display: block;
+      }
+    }
+  }
+
+  &__description-desctop {
+    display: none;
+
+    @include onDesctop {
+      display: inline;
+    }
+  }
+}

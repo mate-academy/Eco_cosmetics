@@ -1,0 +1,71 @@
+@import "../utils/mixins";
+@import "../utils/vars";
+
+.comfirm {
+  padding: 59px 0 30px;
+
+  @include onTalet {
+    padding: 107px 0 20px;
+  }
+
+  @include onDesctop {
+    padding: 171px 0 72px;
+  }
+
+  &__checkout {
+    @extend %checkout;
+  }
+
+  &__title {
+    margin: 0 0 67px;
+
+    @extend %title;
+
+    @include onTalet {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__text {
+    margin: 0 auto 30px;
+    max-width: 330px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    color: #333;
+
+    @include onTalet {
+      max-width: 466px;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 140px;
+
+    @include onTalet {
+      margin: 0 auto 50px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid $colorMain;
+    }
+  }
+}

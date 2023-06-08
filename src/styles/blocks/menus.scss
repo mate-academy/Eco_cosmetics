@@ -1,0 +1,49 @@
+@import "../utils/mixins";
+@import "../utils/vars";
+@import "../utils/extends";
+
+.menus {
+  height: 100vh;
+  background-color: $colorMain;
+  z-index: 2;
+
+  &__container {
+    position: relative;
+  }
+
+  &__icon-header {
+    margin-bottom: 30px;
+    @extend %headerNav;
+  }
+
+  &__icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+    text-align: center;
+    border-bottom: 1px solid #828282;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding-bottom: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    text-decoration: none;
+    color: $colorWhite;
+  }
+}
