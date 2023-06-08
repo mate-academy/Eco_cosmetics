@@ -1,0 +1,75 @@
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $black-color;
+
+  opacity: 0;
+  z-index: -1;
+
+  @include transition;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &:target {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  &__cross {
+    position: relative;
+    top: 20px;
+
+    display: block;
+    background-image: url(./../../src/images/menu/cross.svg);
+    background-repeat: no-repeat;
+    height: 14px;
+    width: 14px;
+
+    @include onTablet {
+      top: 25px;
+    }
+  }
+
+  &__items {
+    margin-top: 14vh;
+
+    @include onDesktop {
+      display: none;
+    }
+
+  }
+
+  &__item {
+    display: block;
+
+    @include menu;
+    padding-bottom: 2vh;
+    margin-bottom: 5vh;
+    border-bottom: 1px solid $dark-grey-color;
+
+    @include transition;
+
+    &:hover {
+      border-bottom: 1px solid $white-color;
+    }
+
+    &:active {
+      border-bottom: 1px solid $white-color;
+    }
+  }
+}
+
+// styles for shop.html
+
+.shop-mobile {
+  @include onTablet {
+    display: none;
+  }
+}

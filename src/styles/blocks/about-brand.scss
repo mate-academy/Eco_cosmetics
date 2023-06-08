@@ -1,0 +1,108 @@
+.about-brand {
+  margin-bottom: 22vh;
+
+  @include onTablet {
+    margin-bottom: 12vh;
+  }
+
+  @include onDesktop {
+    margin-bottom: 25vh;
+  }
+
+  &__headline {
+    margin-bottom: 1.5vh;
+    position: relative;
+    display: inline-block;
+    @include h2;
+
+    @include onDesktop {
+      margin-bottom: 4vh;
+    }
+  }
+
+  &__headline::after {
+    @include onDesktop {
+      content: "——————\00a0\00a0\00a0\00a0\00a0 witch of mountain winds";
+      @include extra-text;
+      position: absolute;
+      top: 310px;
+      left: -5vw;
+      white-space: nowrap;
+      transform: rotate(-90deg);
+      transform-origin: top left;
+    }
+  }
+
+  &__description {
+    display: inline-block;
+    margin-top: 2vh;
+
+    @include text;
+    text-align: left;
+
+    @include onTablet {
+      margin-top: 1vh;
+    }
+  }
+
+  &__description-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-top: 3vh;
+
+      @include text;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    margin-top: 6vh;
+
+    @include onTablet {
+      margin-top: 2vh;
+    }
+
+    @include onDesktop {
+      margin-top: 5vh;
+    }
+  }
+
+  &__background {
+    &--tablet {
+      @include onTablet {
+        height: 33vh;
+        width: 100%;
+        background-image: url(./../images/about-brand/about-brand--tablet.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop-1 {
+      @include onDesktop {
+        min-height: 530px;
+        width: 100%;
+        background-image: url(./../images/about-brand/about-brand--desktop-1.png);
+        background-repeat: no-repeat;
+        background-size: auto;
+      }
+    }
+
+    &--desktop-2 {
+      @include onDesktop {
+        margin-top: 100px;
+        min-height: 430px;
+        width: 100%;
+        background-image: url(./../images/about-brand/about-brand--desktop-2.png);
+        background-repeat: no-repeat;
+        background-size: auto;
+      }
+    }
+  }
+}

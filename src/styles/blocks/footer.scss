@@ -1,0 +1,154 @@
+.footer {
+  height: 83vh;
+  background-color: $background-color-2;
+
+  @include onTablet {
+    height: 26vh;
+  }
+
+  @include onDesktop {
+    height: 38vh;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 5vh;
+
+    @include onTablet {
+      margin-top: 3vh;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__link {
+    margin-bottom: 2vh;
+    @include footer-links;
+
+    @include onTablet {
+      @include text;
+      color: $background-color;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-right: 40px;
+      font-size: 16px;
+    }
+  }
+
+  &__link:last-child {
+    margin-bottom: 1.5vh;
+
+    @include onTablet {
+      margin-bottom: 2vh;
+    }
+  }
+
+  &__socials-mobile {
+    display: flex;
+    margin-bottom: 7vh;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--facebook {
+      margin-right: 6vw;
+
+      height: 20px;
+      width: 20px;
+
+      background-image: url(./../../src/images/footer/facebook.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include onTablet {
+        margin-right: 2vw;
+      }
+    }
+
+    &--instagram {
+      height: 20px;
+      width: 20px;
+
+      background-image: url(./../../src/images/footer/instagram.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &__socials-desktop {
+    display: none;
+
+    @include onDesktop {
+      margin-top: 4vh;
+      display: flex;
+    }
+
+    &--facebook {
+      margin-right: 20px;
+
+      height: 20px;
+      width: 20px;
+
+      background-image: url(./../../src/images/footer/facebook.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &--instagram {
+      height: 20px;
+      width: 20px;
+
+      background-image: url(./../../src/images/footer/instagram.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      margin-top: 3vh;
+    }
+  }
+
+  &__info {
+    margin-bottom: 2vh;
+
+    @include text;
+    text-align: left;
+    color: $background-color;
+
+    &--mobile {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      @include onMobile {
+        display: none;
+      }
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 1vh;
+    }
+  }
+}

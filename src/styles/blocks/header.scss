@@ -1,0 +1,75 @@
+.header {
+  margin-top: 10.5vh;
+
+  @include onTablet {
+    margin-top: 7.2vh;
+  }
+
+  @include onDesktop {
+    margin-top: 25vh;
+  }
+
+  &__background {
+    height: 50vh;
+    background-image: url(./../images/header/header-image--mobile.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    z-index: -1
+    ;
+
+    @include onTablet {
+      background-image: url(./../images/header/header-image--tablet.png);
+    }
+
+    @include onDesktop {
+      position: absolute;
+      height: 450px;
+      width: 580px;
+      left: 50%;
+      background-image: url(./../images/header/header-image--desktop.png);
+    }
+  }
+
+  &__headline {
+    margin-top: 4vh;
+
+    @include h1;
+
+    @include onTablet {
+      margin-left: 15vw;
+      margin-right: 15vw;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__text {
+    margin-top: 2vh;
+
+    @include text;
+
+    @include onDesktop {
+      margin-top: 4vh;
+    }
+  }
+
+  &__button {
+    margin-top: 8vh;
+
+    @include onDesktop {
+      margin-top: 6vh;
+    }
+  }
+
+  &__line {
+    @include onDesktop {
+      width: 40vw;
+
+      margin-top: 31vh;
+    }
+  }
+}
