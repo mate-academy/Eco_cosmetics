@@ -1,19 +1,18 @@
 .menu {
   position: fixed;
-  inset-block-start: 0;
-  inset-inline-start: -150%;
   z-index: 10;
-  display: none;
+  inset-block-start: 0;
+  inset-inline: 0;
   height: 100vh;
   padding-inline: 20px;
-  overflow-y: scroll;
+  transform: translateX(-150%);
+  overflow-y: auto;
   color: $color-light-1;
   background-color: $color-grey-1;
+  transition: transform $effectDuration;
 
   &:target {
-    inset-inline-start: 0;
-    inset-inline-end: 0;
-    display: block;
+    transform: translateX(0);
   }
 
   @include onTabletLarge {
@@ -21,9 +20,7 @@
   }
 
   @include onDesktopMedium {
-    &:target {
-      display: none;
-    }
+    display: none;
   }
 
   &__top {
