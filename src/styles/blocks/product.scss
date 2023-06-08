@@ -1,0 +1,124 @@
+.product {
+  display: flex;
+  flex-direction: column;
+
+  &--2 {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__photo {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: transform $duration;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      height: 350px;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+
+    &--oil {
+      height: 248px;
+      margin-bottom: 0;
+      @include onTablet {
+        height: 440px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__photo--mobile {
+    height: 267px;
+    width: 100vw;
+    transform: translateX(-$container-mob);
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1) translateX(-$container-mob);
+    }
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+
+    &--link {
+      box-sizing: border-box;
+      text-decoration: none;
+      color: inherit;
+      width: max-content;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 4px;
+      cursor: pointer;
+      transition: all $duration;
+
+      &:hover {
+        color: $color-green;
+        border-color: $color-green;
+      }
+    }
+
+    &--oil {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    &--oil {
+      margin-bottom: 20px;
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    &--text {
+      font-size: 14px;
+      line-height: 150%;
+      margin-bottom: 20px;
+
+      @include onTablet {
+        font-style: 16px;
+        margin-bottom: 25px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &--name {
+      color: $color-green;
+    }
+  }
+}
