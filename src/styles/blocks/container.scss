@@ -1,4 +1,25 @@
 .container {
-  max-width: 1180px;
+  max-width: 1280px;
   margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  @media (max-width: $tablet) {
+    max-width: calc(1180px + 27px + 27px);
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+
+  @media (max-width: $mobile) {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &--mobile {
+    @media (max-width: $mobile) {
+      padding: 0;
+      max-width: 100%;
+    }
+  }
 }
