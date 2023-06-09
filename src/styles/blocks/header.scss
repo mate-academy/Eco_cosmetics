@@ -1,0 +1,174 @@
+.header {
+  &__content {
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 28px;
+    }
+
+    @include onDesktop {
+      padding-top: 52px;
+    }
+  }
+
+  &__top {
+    @include theTop;
+    grid-template-columns: 20px 1fr 20px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 92px;
+    }
+  }
+
+  &__photo-info-container {
+    grid-column: 1 / 3;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+      grid-column: 1 / 7;
+      @include tabledGrid;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 13;
+      margin-bottom: 200px;
+      @include desktopGrid;
+      position: relative;
+    }
+  }
+
+  &__photo-container {
+    margin: 0 -20px 25px;
+    background-image: url(../images/header-photo-mobile.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 267px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      margin: 0 0 50px;
+      background-image: url(../images/header-photo-tablet.jpg);
+      padding-bottom: 500px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      margin: 0;
+      background-image: url(../images/header-photo-desktop.jpg);
+      padding-bottom: 451px;
+    }
+  }
+
+  &__info-container {
+    @include onTablet {
+      grid-column: 2 / 6;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      grid-column: 2 / 7;
+
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px;
+      grid-column: 1 / 6;
+      text-align: left;
+      font-size: 60px;
+      line-height: 130%;
+    }
+  }
+
+  &__info {
+    margin: 0 0 30px;
+    line-height: 150%;
+    text-align: center;
+
+    @include onTablet {
+      margin: 0 0 50px;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      margin: 0 0 50px;
+      text-align: left;
+    }
+  }
+
+  &__last-info-container {
+    @include onTablet {
+      grid-column: 3 / 5;
+      margin: 0 -30px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 11;
+      margin: 0;
+
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      column-gap: 20px;
+      position: relative;
+      margin-bottom: 131px;
+    }
+  }
+
+  &__last-info-title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green-color;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+      grid-column: 6 / 10;
+      text-align: left;
+    }
+  }
+
+  &__last-info {
+    margin: 0;
+    line-height: 150%;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 1 / 5;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
