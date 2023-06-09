@@ -1,0 +1,77 @@
+.brand {
+  display: flex;
+  justify-content: space-between;
+
+  &__container {
+    display: flex;
+    gap: 120px;
+
+    @media (max-width: $tablet) {
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    @media (max-width:$tablet) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    max-width: 380px;
+    color: $dark-gray;
+
+    @media (max-width:$tablet) {
+      width: 100%;
+    }
+
+    @media (max-width:$mobile) {
+      font-size: 14px;
+    }
+
+    &--hidden {
+      margin-bottom: 40px;
+
+      @media (max-width:$tablet) {
+        display: none;
+      }
+    }
+  }
+
+  &__image-part {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+
+    @media (max-width:$tablet) {
+      align-items: baseline;
+    }
+  }
+
+  &__candles-photo {
+    width: 380px;
+    height: 529px;
+    object-fit: cover;
+    @include hoverPhoto;
+
+    @media (max-width:$tablet) {
+      width: 342px;
+      height: 321px;
+    }
+
+    @media (max-width:$mobile) {
+      display: none;
+    }
+  }
+
+  &__flower-photo {
+    @include hoverPhoto;
+
+    @media (max-width: 1040px) {
+      display: none;
+    }
+  }
+}

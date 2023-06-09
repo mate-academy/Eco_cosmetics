@@ -1,0 +1,60 @@
+.page {
+  font-family: $font-family-base;
+  background-color: $main-color;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 82px;
+    color: rgba($dark-green, 0.5);
+
+    &-text {
+      font-size: 14px;
+      line-height: 18px;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+    }
+
+    &::after {
+      display: block;
+      background-color: rgba($dark-green, 0.5);
+      width: 1px;
+      height: 100px;
+      content: "";
+      margin-top: 10px;
+    }
+
+    @media (max-width: 1024px) {
+      margin-right: 40px;
+    }
+
+    @media (max-width:$tablet) {
+      display: none;
+    }
+  }
+
+  &__title-of-section {
+    font-weight: $font-weight-bold;
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $dark-green;
+
+    @media (max-width:$tablet) {
+      font-size: 24px;
+    }
+  }
+}

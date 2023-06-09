@@ -1,0 +1,130 @@
+.contact-us {
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 0 95%;
+
+    @media (max-width: $mobile) {
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    max-width: 380px;
+  }
+
+  &__description {
+    margin: 30px 0 40px;
+    max-width: 380px;
+    font-weight: $font-weight-normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $dark-gray;
+
+    @media (max-width:$tablet) {
+      margin: 10px 0 20px;
+      max-width: 340px;
+    }
+  }
+
+  &__form {
+    max-height: 380px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    height: 38px;
+    margin-bottom: 30px;
+    background-color: $main-color;
+    font-weight: $font-weight-medium;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $additional-gray;
+    border: $main-color;
+    border-bottom: 1px solid $light-gray;
+    outline: 0;
+    outline-offset: 0;
+    transition: 0.3s;
+    font-family: inherit;
+
+    &:nth-child(4) {
+      margin-bottom: 50px;
+    }
+
+    @media (max-width:$tablet) {
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    &:focus {
+      color: $dark-gray;
+      border-bottom-color: $dark-gray;
+    }
+
+    &:valid {
+      color: $dark-gray;
+      border-bottom-color: $dark-gray;
+    }
+
+    &:-webkit-autofill {
+      -webkit-font-feature-settings: normal;
+      font-feature-settings: normal;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      color: $basic-red;
+      border-color: $basic-red;
+      -webkit-text-fill-color: $basic-red;
+    }
+
+    &:-webkit-autofill:focus,
+    :-webkit-autofill:active {
+      border-color: $dark-gray;
+      -webkit-font-feature-settings: normal;
+      font-feature-settings: normal;
+      -webkit-text-fill-color: $dark-gray;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    &--email {
+      text-transform: none;
+    }
+  }
+
+  &__photo-holder {
+    display: flex;
+    max-width: 580px;
+    max-height: 539px;
+    line-height: 0;
+
+    @media (max-width:$tablet) {
+      max-width: 342px;
+      height: 100%;
+    }
+
+    @media (max-width:$mobile) {
+      display: none;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+
+    @include hoverPhoto;
+
+    @media (max-width: 1024px) {
+      max-width: 400px;
+
+    }
+  }
+}
