@@ -1,0 +1,188 @@
+.footer {
+  height: 470px;
+  background-color: rgba(52, 79, 16, 0.5);
+
+  @include onTablet {
+    height: 260px;
+  }
+
+  @include onDesktop {
+    height: 320px;
+  }
+
+  &__content {
+    padding-top: 30px;
+
+    @include onDesktop {
+      padding-top: 60px;
+    }
+  }
+
+  &__part {
+    @include onTablet {
+      display: flex;
+    }
+
+    &--two {
+      @include onTablet {
+        flex-direction: column-reverse;
+        justify-content: start;
+        gap: 50px;
+      }
+
+      @include onDesktop {
+        flex-direction: row;
+        gap: 0;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      width: 50%;
+      gap: 15px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $c-bcgr;
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    margin: auto;
+    width: 200px;
+
+    @include onTablet {
+      text-align: left;
+      margin: 0;
+      width: 50%;
+    }
+  }
+
+  &__copyright-name {
+    display: none;
+    color: $c-bcgr;
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      display: inline-block;
+    }
+  }
+
+  &__copyright-text {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    color: $c-bcgr;
+
+    @include onTablet {
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      display: inline-block;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    @extend %text14Regular;
+    display: block;
+    text-decoration: none;
+    color: $c-bcgr;
+    margin-bottom: 7px;
+
+    @include onDesktop {
+      margin-bottom: 19px;
+    }
+  }
+
+  &__info-link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__icons {
+    &--phone {
+      display: inline-block;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    color: $c-bcgr;
+    margin-right: 14px;
+
+    &--fb {
+      background-image: url(../images/fb.png);
+    }
+
+    &--insta {
+      background-image: url(../images/Instagram.png);
+    }
+  }
+}
