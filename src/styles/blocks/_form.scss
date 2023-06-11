@@ -1,0 +1,65 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-transform: capitalize;
+
+  @include onDesktop {
+    gap: 30px;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    background-color: $color-background;
+    outline: none;
+    border: none;
+    font-family: inherit;
+    padding: 0 0 5px;
+    border-bottom: 1px solid $color-light-grey;
+
+    &::placeholder {
+      font-family: inherit;
+      color: $color-light-grey;
+    }
+
+    &:focus {
+      color: $color-dark-grey;
+      border-bottom: 1px solid $color-dark-grey;
+    }
+
+    &:valid {
+      color: $color-green;
+      border-bottom: 1px solid $color-green;
+    }
+
+    &::grammar-error {
+      color: #eb5757;
+      border-bottom: 1px solid #eb5757;
+    }
+
+    &--textarea {
+      resize: none;
+      white-space: normal;
+      padding: 0 0 5px;
+      margin: 20px 0 30px;
+
+      @include onDesktop {
+        margin: 30px 0 50px;
+      }
+
+      &::-webkit-scrollbar {
+        width: 5px;
+        height: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: $color-background;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: $color-light-grey;
+        border-radius: 4px;
+      }
+    }
+  }
+}

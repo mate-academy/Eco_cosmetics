@@ -1,0 +1,150 @@
+.shop {
+  overflow: hidden;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tab {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      justify-content: start;
+      gap: 24px;
+      margin-bottom: 25px;
+    }
+
+    @include onDesktop {
+      gap: 50px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    background-color: inherit;
+    font-family: inherit;
+    border: none;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid transparent;
+    color: $color-light-grey;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    @include onDesktop {
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    &:hover {
+      color: $color-green;
+    }
+
+    &--active {
+      color: $color-green;
+      border-bottom: 2px solid $color-green;
+    }
+  }
+
+  &__content {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      justify-content: space-between;
+      position: relative;
+      width: 105%;
+    }
+  }
+
+  &__place {
+    display: block;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &--3 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__image-container {
+    width: 100%;
+    height: 267px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      min-height: 300px;
+      max-height: 500px;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    object-fit: cover;
+    width: 100vw;
+    height: 100%;
+    left: -20px;
+
+    @include onTablet {
+      left: 0;
+      right: 0;
+      max-width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__item {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-dark-grey;
+    margin-bottom: 10px;
+    text-decoration: none;
+
+    &--price {
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}
