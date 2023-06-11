@@ -1,0 +1,120 @@
+.about-brand {
+  overflow: hidden;
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+      position: relative;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 4;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+      margin-bottom: 34px;
+    }
+
+    @include onDesign {
+      margin-bottom: 40px;
+    }
+
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    &--1 {
+      grid-column: 1 / 4;
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        grid-column: 2 / 6;
+      }
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        grid-column: 2 / 6;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__more {
+    grid-column: 1 / 4;
+
+    @include onDesktop {
+      grid-column: 2 / 4;
+      margin-bottom: 44px;
+    }
+
+    @include onDesign {
+      margin-bottom: 38px;
+    }
+
+  }
+
+  &__side {
+    @include onDesktop {
+      position: absolute;
+      left: -140px;
+      top: 140px;
+      grid-area: 1 / 1 / 5 / 2;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-area: 1 / 4 / 5 / -1;
+      margin-right: -27px;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 7 / 5 / 12;
+      margin: 0;
+    }
+  }
+
+  &__photo-small {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-area: 1 / 12 / 5 / -1;
+      margin: 96px calc((1180px - 100vw) / 2) 0 0;
+    }
+
+    @include onDesign {
+      margin: 96px -130px 0 0;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
