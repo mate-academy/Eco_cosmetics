@@ -1,0 +1,150 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-top: 15px;
+
+  @include onTablet {
+    padding-bottom: 30px;
+    padding-top: 25px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 80px;
+  }
+
+  &__brand {
+    display: none;
+
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  &__logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include onDesktop {
+    &__brand {
+      display: inherit;
+    }
+
+    &__logo {
+      display: none;
+    }
+  }
+
+  &__cart {
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: $c-green;
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+
+    &:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}
+
+.menu {
+  order: 0;
+
+  &__list {
+    @include onDesktop {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
+
+    display: none;
+  }
+
+  &__item {
+    margin: 16px 0;
+  }
+
+  &__link {
+    color: $c-green;
+    text-decoration: none;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: $c-green;
+      transform-origin: bottom right;
+      transition: transform 0.3s ease-out;
+    }
+
+    &:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  &__hamburger {
+    @include onDesktop {
+      display: none;
+    }
+
+    display: block;
+    cursor: pointer;
+    width: max-content;
+    top: 0;
+
+    &-bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: $c-green;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &.active &-bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    &.active &-bar:nth-child(1) {
+      background-color: $c-nude-main;
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    &.active &-bar:nth-child(3) {
+      background-color: $c-nude-main;
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+}
+
+.shop__item-nav {
+  position: relative;
+  width: 100%;
+  padding: 0;
+}

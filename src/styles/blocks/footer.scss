@@ -1,0 +1,159 @@
+.footer {
+  background-color: #8c9772;
+  padding-top: 30px;
+  width: 100vw;
+
+  &__wrapper {
+    max-width: 320px;
+
+    @include onTablet {
+      max-width: 770px;
+    }
+
+    @include onDesktop {
+      max-width: 1280px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+    width: max-content;
+    height: min-content;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $c-nude-main;
+      text-transform: capitalize;
+      font-size: 18px;
+
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $c-nude-main;
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+      }
+
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      @include onTablet {
+        font-size: 14px;
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 40px;
+    font-size: 14px;
+
+    @include onTablet {
+      margin-left: -30px;
+    }
+
+    @include onDesktop {
+      margin-left: 0;
+    }
+
+    &-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @include onDesktop {
+        gap: 20px;
+      }
+
+      &-item {
+        text-decoration: none;
+        color: $c-nude-main;
+        transition: all 0.3s;
+
+        &:hover {
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  &__copyrights {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: flex-start;
+    }
+
+    &-content {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 130%;
+      color: $c-nude-main;
+      max-width: 200px;
+      text-align: center;
+
+      @include onTablet {
+        max-width: 100%;
+        font-weight: 400;
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+        line-height: 150%;
+      }
+
+      &--desk {
+        display: none;
+
+        @include onDesktop {
+          display: block;
+          font-size: 18px;
+          line-height: 150%;
+          text-transform: capitalize;
+          color: $c-nude-main;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.socials {
+  padding-bottom: 40px;
+  display: flex;
+  gap: 10px;
+
+  &__item {
+    text-decoration: none;
+    height: 20px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

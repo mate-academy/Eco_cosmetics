@@ -1,0 +1,145 @@
+.item {
+  background-color: $c-nude-main;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+
+  transform: translateX(144%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  z-index: 5;
+
+  &.show {
+    transform: translateX(12%);
+  }
+
+  &__wrapper {
+    padding: 25px 20px 60px;
+
+    @include onTablet {
+      padding: 25px 27px 60px;
+    }
+
+    @include onDesktop {
+      padding: 25px 50px 60px;
+    }
+
+    @include offDesktop {
+      padding: 25px 130px 60px;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-gray;
+    padding-bottom: 15px;
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-green;
+  }
+
+  &__weight {
+    display: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__button {
+    order: 3;
+
+    @include toTablet {
+      width: 240px;
+    }
+
+    @include onTablet {
+      width: 280px;
+    }
+  }
+
+  &__description {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: justify;
+
+    max-width: 466px;
+    max-height: auto;
+
+    &-paragraph {
+      &--first {
+        color: $c-green;
+        display: inline;
+      }
+
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column-reverse;
+    align-self: center;
+    gap: 10px;
+
+    @include onTablet {
+      flex-direction: column;
+    }
+
+    order: 1;
+  }
+
+  &__image {
+    width: 100%;
+
+    max-width: 466px;
+    max-height: auto;
+  }
+
+  &__cross {
+    background-color: transparent;
+    color: $c-green;
+    cursor: pointer;
+    position: absolute;
+    border: 2px solid;
+    border-radius: 20%;
+
+    height: 30px;
+    width: 30px;
+    display: grid;
+    place-items: center;
+
+    top: 20%;
+    right: 25px;
+  }
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}

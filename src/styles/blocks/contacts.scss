@@ -1,0 +1,173 @@
+.contact {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  max-width: 320px;
+  padding-top: 100px;
+
+  @include onTablet {
+    max-width: 770px;
+    padding-top: 130px;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  @include onDesktop {
+    max-width: 1280px;
+    padding-top: 200px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include onDesktop {
+      max-width: 400px;
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $c-green;
+
+      padding-bottom: 10px;
+
+      @include onDesktop {
+        font-size: 36px;
+        padding-bottom: 34px;
+      }
+    }
+
+    &-description {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $c-gray;
+
+      @include onTablet {
+        font-size: 16px;
+      }
+
+      &--first {
+        padding-bottom: 30px;
+      }
+
+      &--second {
+        padding-bottom: 30px;
+
+        @include onTablet {
+          padding-bottom: 20px;
+        }
+      }
+
+      &--third {
+        display: none;
+
+        @include onDesktop {
+          padding-bottom: 20px;
+          display: block;
+        }
+      }
+    }
+
+    &-link {
+      width: max-content;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: $c-green;
+
+      text-transform: uppercase;
+
+      text-decoration: none;
+      padding-bottom: 10px;
+
+      border-bottom: 1px $c-green solid;
+      transition: all 0.3s;
+
+      &:hover {
+        padding-bottom: 1px;
+        letter-spacing: 2px;
+        font-weight: 900;
+        border-bottom: 2px $c-green solid;
+      }
+
+      &--box {
+        padding-bottom: 30px;
+
+        @include onDesktop {
+          padding-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  &__aside {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: rotate(180deg);
+      margin-right: 60px;
+
+      justify-self: start;
+      align-self: start;
+      writing-mode: tb - rl;
+      color: rgba(52, 79, 16, 0.5);
+
+      &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        border-left: 1px solid rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__img {
+    width: 340px;
+    height: 460px;
+
+    object-fit: cover;
+
+    @include onDesktop {
+      width: 580px;
+      height: 659px;
+    }
+
+    &-container {
+      display: none;
+
+      @include onTablet {
+        display: block;
+
+        max-height: 100%;
+        max-width: auto;
+      }
+    }
+  }
+
+  &__button {
+    &-container {
+      align-self: center;
+      padding-top: 35px;
+
+      @include onTablet {
+        align-self: flex-start;
+        padding-top: 10px;
+      }
+    }
+  }
+}

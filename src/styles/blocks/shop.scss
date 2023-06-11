@@ -1,0 +1,230 @@
+.shop {
+  position: relative;
+  margin: 0 auto;
+
+  max-width: 320px;
+  padding-top: 100px;
+
+  @include onTablet {
+    max-width: 770px;
+    padding-top: 130px;
+  }
+
+  @include onDesktop {
+    max-width: 1280px;
+    padding-top: 200px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    text-align: center;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    color: $c-green;
+  }
+
+  &__aside {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: rotate(180deg);
+
+      justify-self: start;
+      align-self: start;
+      writing-mode: tb - rl;
+      color: rgba(52, 79, 16, 0.5);
+
+      &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        border-left: 1px solid rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: start;
+    }
+
+    @include onDesktop {
+      margin-top: -90px;
+    }
+
+    gap: 34px;
+    padding-bottom: 47px;
+
+    &-link {
+      position: relative;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #828282;
+      padding-bottom: 10px;
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: $c-gray;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      &:focus {
+        color: $c-gray;
+      }
+    }
+  }
+
+  &__item {
+    &-wrapper {
+      display: flex;
+
+      @include onTablet {
+        justify-content: flex-start;
+        gap: 30px;
+      }
+    }
+
+    &-title {
+      padding-top: 20px;
+      display: inline-block;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $c-gray;
+      transition: all 0.5s;
+
+      padding-bottom: 10px;
+
+      @include onTablet {
+        padding-bottom: 40px;
+      }
+
+      @include onDesktop {
+        padding-top: 20px;
+      }
+    }
+
+    &-price {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $c-gray;
+      padding-bottom: 30px;
+
+      @include onTablet {
+        padding-bottom: 40px;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+        z-index: 2;
+      }
+
+      @include onTablet {
+        width: 342px;
+        height: 300px;
+      }
+
+      @include onDesktop {
+        width: 410px;
+        height: 500px;
+      }
+    }
+
+    &-container {
+      max-width: 320px;
+      max-height: 300px;
+
+      @include onTablet {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  &__img-box {
+    width: 450px;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      padding-bottom: 20px;
+    }
+
+    &--tab {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &--desk {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+
+      }
+    }
+
+  }
+
+  &__button-container {
+    display: grid;
+    place-items: center;
+
+    @include toTablet {
+      padding-top: 7em;
+    }
+  }
+}
