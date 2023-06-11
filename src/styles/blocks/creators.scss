@@ -1,0 +1,71 @@
+.creators {
+  &__main {
+    &--title {
+      @extend %text-h2;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+  
+      @include Tablet {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--paragraph {
+      font-size: 14px;
+      margin-bottom: 20px;
+
+      @include Tablet {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+
+      @include Desktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--second-paragraph {
+      margin-bottom: 30px;
+
+      @include Tablet {
+        margin-bottom: 20px;
+      }
+
+      @include Desktop {
+        margin-bottom: 30px;
+      }
+    }
+    
+    &--desktop-paragraph {
+      margin-bottom: 30px;
+    }
+
+    &--link {
+      @extend %links;
+
+      &:hover,
+      &:active {
+        padding-bottom: 10px;
+        border-bottom: 1px solid $secondary-color;
+      }
+    }
+
+    &--button {
+      margin: 40px auto 0;
+
+      @include Tablet {
+        margin: 40px 0 0;
+      }
+    }
+  }
+
+  &__image {
+    background-image: url(../images/png/4.1.png);
+    @extend %bacground-images-settings;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

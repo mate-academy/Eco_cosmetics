@@ -1,0 +1,47 @@
+.choose {
+
+  &__title {
+    @extend %text-h5;
+    color: $secondary-color;
+    text-transform: uppercase;
+    text-align: center;
+    margin: auto;
+    grid-row: 1 / 2;
+
+    @include Desktop {
+      font-size: 24px;
+      width: 100%;
+      text-align: left;
+    }
+  }
+  
+  &__text {
+    @include Desktop {
+
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  &__sepparator {
+    display: none;
+    position: relative;
+    height: 1px;
+    background-color: $sep-footer-color;
+
+    @include Desktop {
+      display: block;
+    }
+
+    &--top {
+      margin-bottom: 100px;
+      width: calc(50% - 110px);
+    }
+
+    &--bottom {
+      margin-top: 100px;
+      left: calc(50% + 10px);
+      width: calc(50% - 10px);
+    }
+  }
+}

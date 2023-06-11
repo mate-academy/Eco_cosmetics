@@ -1,0 +1,103 @@
+.ingridients {
+  &__title {
+    @extend %text-h2;
+    font-size: 24px;
+    text-transform: uppercase;
+    grid-row: 1 / 2;
+    margin-bottom: 20px;
+
+    @include Desktop {
+      font-size: 36px;
+    }
+  }
+
+  &__link-container {
+    align-self: end;
+
+    @include Tablet {
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__link {
+    @extend %links;
+
+    &:hover,
+    &:active {
+      padding-bottom: 10px;
+      border-bottom: 1px solid $secondary-color;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-right: -20px;
+    margin-bottom: 32px;
+
+    @include Tablet {
+      grid-row: 1 / 3;
+      gap: 20px;
+      margin-right: -28px;
+      margin-bottom: 0;
+    }
+
+    @include Desktop {
+      margin-right: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+
+  }
+
+  &__ingridient {
+    font-size: 16px;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 48px;
+      height: 10px;
+      background-size: auto;
+      background-position: center right;
+      background-repeat: no-repeat;
+      background-image: url(../images/svg/arrow_small.svg);
+
+      @include Tablet {
+        width: 92px;
+        background-image: url(../images/svg/arrow_big.svg);
+      }
+    }
+  }
+
+  &__image {
+    background-image: url(../images/svg/jar_mobile.svg);
+    @extend %bacground-images-settings;
+    height: 397px;
+    width: 137px;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include Tablet {
+      background-image: url(../images/svg/jar_tablet.svg);
+      height: 397px;
+      width: 300px;
+    }
+
+    @include Desktop {
+      background-image: url(../images/svg/jar_desktop.svg);
+      height: 397px;
+      width: 380px;
+    }
+  }
+}

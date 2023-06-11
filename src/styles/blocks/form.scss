@@ -1,0 +1,59 @@
+.form {
+  &__input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $contacts-border-color;
+    background-color: $bcg-menu-contacts-color;
+    color: $border-links-color;
+    font-family: inherit;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+
+    @include Desktop {
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+
+    &:nth-child(3) {
+      margin-bottom: 45px;
+      
+      @include Desktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      border-color: $main-color;
+    }
+
+    &:not(:focus):not(:placeholder-shown):valid {
+      color: $secondary-color;
+      border-bottom: 1px solid $secondary-color;
+    }
+
+    &:not(:focus):not(:placeholder-shown):invalid {
+      color: $error-color;
+      border-bottom: 1px solid $error-color;
+    }
+
+    &--textarea {
+      resize: none;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    margin: 30px auto 0;
+
+    @include Tablet {
+      margin: 30px 0 0;
+    }
+    @include Tablet {
+      margin-top: 50px;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+.shop {
+
+  &__title {
+    @extend %text-h2;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include Tablet {
+      margin-bottom: 15px;
+    }
+
+    @include Desktop {
+      margin-bottom: 30px;
+    }
+  }
+  
+  &__nav {
+
+    &--list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      list-style: none;
+      gap: 20px;
+      font-size: 14px;
+      letter-spacing: 5%;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+
+      @include Tablet {
+        margin-bottom: 30px;
+      }
+
+      @include Desktop {
+        margin-bottom: 60px;
+        font-size: 18px;
+      }
+    }
+
+    &--link {
+      color: $border-links-color;
+      text-decoration: none;
+      padding-bottom: 10px;
+
+      &:hover,
+      &:active {
+        color: $main-color;
+        border-bottom: 2px solid $border-links-color;
+      }
+    }
+  }
+
+  &__card {
+    gap: 30px;
+    margin: 0 -20px 25px;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include Tablet {
+      margin: 0 0 50px;
+    }
+    @include Desktop {
+      margin: 0;
+    }
+
+    &--image-container {
+      min-height: 267px;
+      width: 100%;
+      object-fit: cover;
+      @extend %bacground-images-settings;
+      margin-bottom: 20px;
+
+      @include Tablet {
+        min-height: 300px;
+      }
+
+      @include Desktop {
+        height: 530px;
+      }
+    }
+
+    &--image-1 {
+      background-image: url(../images/png/3.1.png);
+    }
+
+    &--image-2 {
+      background-image: url(../images/png/3.2.png);
+    }
+
+    &--second-card {
+      display: none;
+
+      @include Tablet {
+        display: block;
+      }
+    }
+
+    &--title {
+      @extend %text-h5;
+      margin: 0 0 10px;
+      text-align: start;
+
+      @include Tablet {
+        margin-bottom: 15px;
+      }
+
+      @include Desktop {
+        margin-bottom: 13px;
+      }
+    }
+
+    &--price {
+      font-size: 18px;
+      margin-bottom: 30px;
+
+      @include Tablet {
+        margin-bottom: 40px;
+      }
+
+      @include Desktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}

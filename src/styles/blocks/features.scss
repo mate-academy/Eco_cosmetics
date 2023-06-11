@@ -1,0 +1,76 @@
+.features {
+  &__blocks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+
+    @include Tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+    }
+  }
+
+  &__block {
+    width: 280px;
+
+    @include Tablet {
+      width: 218px;
+    }
+
+    @include Desktop {
+      width: 380px;
+    }
+  }
+
+  &__image {
+    margin: 0 auto 20px;
+    width: 80px;
+    height: 50px;
+    @extend %bacground-images-settings;
+    background-size: contain;
+
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include Desktop {
+      margin-bottom: 40px;
+    }
+    
+    &--first {
+      background-image: url(../images/svg/bird.svg);
+      width: 62px;
+      min-height: 60px;
+
+      @include Tablet {
+        width: 80px;
+      }
+    }
+
+    &--second {
+      background-image: url(../images/svg/recycle.svg);
+      width: 100px;
+      min-height: 68px;
+
+      @include Tablet {
+        width: 80px;
+      }
+    }
+
+    &--third {
+      background-image: url(../images/svg/leaves.svg);
+      min-height: 74px;
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 14px;
+  }
+}

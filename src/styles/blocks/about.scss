@@ -1,0 +1,63 @@
+.about {
+  &__info {
+    &--title {
+      margin-bottom: 10px;
+      @extend %text-h2;
+    }
+
+    &--paragraph {
+      margin-bottom: 30px;
+    }
+
+    &--desktop-paragraph {
+      display: none;
+
+      @include Desktop {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+
+    &--link {
+      @extend %links;
+
+      &:hover,
+      &:active {
+        padding-bottom: 10px;
+        border-bottom: 1px solid $secondary-color;
+      }
+    }
+  }
+
+  &__main-image {
+    background-image: url(../images/png/2.1.png);
+    @extend %bacground-images-settings;
+
+    @include Tablet {
+      display: block;
+      height: 529px;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__secondary-image {
+    background-image: url(../images/png/2.2.png);
+    @extend %bacground-images-settings;
+
+    @include Desktop {
+      display: block;
+      align-self: end;
+      height: 430px;
+    }
+  }
+
+  &__main-image,
+  &__secondary-image {
+    display: none;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
