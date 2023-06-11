@@ -1,0 +1,38 @@
+.header {
+
+  &__content {
+
+    @include top-actions;
+
+    @include onDesktop {
+      margin-top: 55px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &--list {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &--link {
+      text-decoration: none;
+      color: $colorOlive;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+
+      &:not(:first-child) {
+        margin-left: 40px;
+      }
+    }
+  }
+}
