@@ -1,0 +1,86 @@
+.about {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+  
+  &__title {
+    @include h4;
+    color: $greenColor;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      @include h2;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__paragraph {
+    @include small__text;
+    margin-bottom: 30px;
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-top: 30px;
+      }
+    }
+
+    @include onTablet {
+      @include text;
+      margin-bottom: 36px;
+    }
+  }
+  
+  &__photo {
+    @include onTablet {
+      height: 321px;
+      width: 100%;
+      background-image: url(./../images/bg__about.png);
+      background-size: cover;
+      background-position: center top;
+    }
+
+    @include onDesktop {
+      height: 530px;
+      width: 100%;
+      background-image: url(./../images/bg__about.png);
+      background-size: cover;
+      background-position: center top;
+    }
+
+    &--litle {
+      @include onDesktop {
+        
+        background-image: url(./../images/bg__about-litle.png);
+        height: 430px;
+        width: 100%;
+        transform: translateY(100px);
+      }
+    }
+  }
+
+  &__side-text {
+    left: -50px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      border: 1px solid #344f10;
+      width: 100px;
+      left: -70%;
+      bottom: 45%;
+      opacity: 0.5;
+    }
+  }
+}

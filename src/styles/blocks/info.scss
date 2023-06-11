@@ -1,0 +1,63 @@
+.info {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__paragraph {
+    position: relative;
+    @include h5;
+    color: $greenColor;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin: 0 auto;
+      width: 280px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      padding: 100px 0 130px;
+      text-align: left;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 565px;
+        left: 0;
+        bottom: 0;
+        opacity: 0.5;
+        border: 1px solid $greenColor;
+      }
+    }
+    
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        position: relative;
+        padding-top: 100px;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 610px;
+          top: 0;
+          right: 0;
+          opacity: 0.5;
+          border: 1px solid $greenColor;
+        }
+      }
+    }
+  }
+}

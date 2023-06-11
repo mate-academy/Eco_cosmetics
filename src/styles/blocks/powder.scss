@@ -1,0 +1,141 @@
+.powder {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+  }
+
+  &__title {
+    @include h4;
+    text-transform: uppercase;
+    width: 260px;
+    margin-bottom: 58px;
+    color: $greenColor;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      @include h2;
+      width: 350px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    top: -20px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-bottom: 40px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      top: 50%;
+      right: 100px;
+      width: 76px;
+      height: 1px;
+      background-color: #344f10;
+
+      @include onTablet {
+        right: 230px;
+      }
+
+      @include onDesktop {
+        right: 450px;
+      }
+    }
+  }
+
+  &__text {
+    margin-right: 200px;
+
+    @include onTablet {
+      margin-right: 330px;
+    }
+
+    @include onDesktop {
+      margin-right: 550px;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    background-image: url(./../images/powder.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100%;
+    right: 0;
+    bottom: 15px;
+    height: 395px;
+    width: 180px;
+
+    @include onTablet {
+      position: absolute;
+      background-image: url(./../images/powder__tablet.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 100%;
+      right: 0;
+      height: 400px;
+      width: 400px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      background-image: url(./../images/powder__desktop.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 100%;
+      right: 22px;
+      height: 448px;
+      width: 480px;
+    }
+  }
+
+  &__side-text {
+    left: -10px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      border: 1px solid #344f10;
+      width: 100px;
+      left: -155%;
+      bottom: 45%;
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.about__creators {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+  
+  &-title {
+    text-transform: uppercase;
+    color: $greenColor;
+    @include h4;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      @include h2;
+      margin-bottom: 35px;
+      width: 200px;
+    }
+  }
+
+  &-paragraphs {
+    @include small__text;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      @include text;
+      margin-bottom: 15px;
+      width: 340px;
+    }
+
+    &--two {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--three {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &-read-button {
+    display: block;
+    width: max-content;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-button {
+    margin: 0;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      height: 442px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @include onDesktop {
+      object-fit: cover;
+      height: 670px;
+      width: 100%;
+    }
+  }
+
+  &__side-text {
+    left: -40px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      border: 1px solid #344f10;
+      width: 100px;
+      left: -95%;
+      bottom: 45%;
+      opacity: 0.5;
+    }
+  }
+}
