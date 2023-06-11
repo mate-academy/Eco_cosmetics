@@ -1,0 +1,86 @@
+.tooth-powder {
+
+  &__info {
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      position: relative;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      width: 40%;
+    }
+
+    @include onDesktop {
+      padding-left: 100px;
+    }
+  }
+
+  &__section {
+    display: flex;
+    height: 395px;
+
+    @include onTablet {
+      width: 60%;
+    }
+  }
+
+  &__ingredients {
+    text-align: right;
+
+    &-item {
+      position: relative;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      margin-top: 36px;
+      width: 100px;
+
+      &:nth-of-type(3n) {
+        margin-top: 15px;
+      }
+
+      @include onDesktop {
+        width: 160px;
+      }
+
+      &--desktop {
+        display: none;
+
+        @include onDesktop {
+          display: inline-block;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        height: 1px;
+        width: 76px;
+        right: 0;
+        background-color: $color-total_page;
+        transform: translate(120%) translateY(-12px);
+      }
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    right: 0;
+    width: 40vw;
+    display: block;
+    background-size: cover;
+    max-width: 380px;
+    height: 395px;
+    background-image: url(../images/tooth-powder/Jar.svg);
+  }
+}

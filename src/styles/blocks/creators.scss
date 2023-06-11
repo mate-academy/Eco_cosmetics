@@ -1,0 +1,97 @@
+.creators {
+
+  &__content {
+
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    @include onDesktop {
+      width: 50%;
+      padding-bottom: 34px;
+    }
+  }
+
+  &__info {
+
+    @include onTablet {
+      width: 50%;
+    }
+
+    @include onDesktop {
+      padding-left: 100px;
+    }
+
+  }
+
+  &__sibtitle {
+    @extend %text14Regular;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+      padding-bottom: 15px;
+    }
+
+    @include onDesktop {
+      width: 380px;
+      padding-bottom: 30px;
+    }
+
+    &:nth-of-type(2n) {
+      padding-bottom: 30px;
+
+      @include onTablet {
+        padding-bottom: 20px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 30px;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        padding-bottom: 20px;
+        display: block;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: calc(50% + 27px);
+      margin-right: -27px;
+      height: 435px;
+      background-size: cover;
+      background-position: center;
+      background-image: url(../images/creators/creators__photo.jpg);
+    }
+
+    @include onDesktop {
+      width: 50%;
+      margin-right: 0;
+      height: 670px;
+    }
+  }
+}

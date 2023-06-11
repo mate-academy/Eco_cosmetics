@@ -1,0 +1,102 @@
+.product {
+
+  &__content {
+
+    @include onTablet {
+      width: 470px;
+      margin: 0 auto;
+    }
+  }
+
+  &__block {
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__title {
+    @extend %text18semiBold;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__price {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      margin-bottom: 10px;
+      color: $color-basic-page;
+    }
+  }
+
+  &__weight {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 0.05em;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__photo {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include onTablet {
+      max-height: 440px;
+    }
+  }
+
+  &__discription {
+    @extend %text14Regular;
+    color: #000;
+    margin: 50px 0 20px;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+      margin: 60px 0 72px;
+    }
+  }
+
+  &__paragraph {
+
+    &--1 {
+      color: $color-basic-page;
+    }
+
+    &:first-child {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}

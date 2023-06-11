@@ -1,0 +1,71 @@
+.card {
+
+  &--2,
+  &--3,
+  &--4 {
+    display: none;
+  }
+
+  &--2 {
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &--3,
+  &--4 {
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__photo {
+    height: 267px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-bottom: 20px;
+    transition: transform $animation-time;
+
+    &:hover {
+      transform: scale(1.06);
+    }
+
+    @include onTablet {
+      width: 100%;
+      height: 300px;
+      margin-left: 0;
+    }
+
+    @include onDesktop {
+      height: 500px;
+      width: 400px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__link {
+    @extend %text18semiBold;
+    display: block;
+    letter-spacing: 0.05em;
+    color: $color-total_page;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+  }
+}

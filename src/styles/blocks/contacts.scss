@@ -1,0 +1,77 @@
+.contacts {
+  overflow: hidden;
+  position: relative;
+
+  @include onDesktop {
+    height: 584px;
+  }
+
+  &__content {
+
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 0;
+    }
+  }
+
+  &__info {
+
+    @include onTablet {
+      width: 50%;
+    }
+
+    @include onDesktop {
+      padding-left: 100px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: calc(50% + 27px);
+      margin-right: -27px;
+      height: 409px;
+      background-image: url(../images/contacts/contacts__photo.jpg);
+      background-size: cover;
+      background-position: left;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      left: calc(50% + 100px);
+      max-width: 770px;
+      height: 584px;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__sibtitle {
+    @extend %text14Regular;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 15px;
+    }
+
+    @include onDesktop {
+      width: 380px;
+      margin-bottom: 30px;
+    }
+  }
+}
