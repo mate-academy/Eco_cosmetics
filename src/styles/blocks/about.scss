@@ -30,17 +30,24 @@
   }
 
   &__main-image {
-    background-image: url(../images/png/2.1.png);
+    display: none;
+    background-image: url(../images/png/about_tablet.png);
     @extend %bacground-images-settings;
 
     @include Tablet {
       display: block;
-      height: 529px;
+      height: 321px;
       grid-row: 1 / 2;
+    }
+
+    @include Desktop {
+      height: 529px;
+      background-image: url(../images/png/2.1.png);
     }
   }
 
   &__secondary-image {
+    display: none;
     background-image: url(../images/png/2.2.png);
     @extend %bacground-images-settings;
 
@@ -53,7 +60,6 @@
 
   &__main-image,
   &__secondary-image {
-    display: none;
     transition: transform 300ms;
 
     &:hover {
