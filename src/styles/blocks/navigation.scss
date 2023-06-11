@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+
+      list-style: none;
+    }
+  }
+
+  &__item {
+    margin-left: 40px;
+  }
+
+  &__link {
+    position: relative;
+
+    font-weight: 500;
+    @extend %mediumText;
+
+    text-decoration: none;
+    color: $c-green;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+
+      height: 2px;
+      width: 0;
+
+      background-color: $c-green;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

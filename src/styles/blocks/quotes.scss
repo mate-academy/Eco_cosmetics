@@ -1,0 +1,63 @@
+.quotes {
+  &__container {
+    @include onDesktop {
+      padding: 100px 0;
+    }
+  }
+
+  &__paragraph {
+    display: none;
+
+    line-height: 150%;
+    color: $c-dark-gray;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    @extend %mediumText;
+    @extend %upperText;
+
+    font-weight: 600;
+    text-align: left;
+
+    color: $c-green;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      width: max-content;
+
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+
+  @include onDesktop {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+
+      width: 45%;
+      height: 1px;
+
+      background-color: $c-green;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+
+      width: 45%;
+      height: 1px;
+
+      background-color: $c-green;
+    }
+  }
+}

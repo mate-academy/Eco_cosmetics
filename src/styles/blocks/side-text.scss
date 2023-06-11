@@ -1,0 +1,34 @@
+.side-text {
+  &__container {
+    display: block;
+    position: relative;
+  }
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  display: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+
+  font-weight: 500;
+  @extend %smallText;
+
+  color: $c-decoration;
+  transform-origin: 0 0 ;
+  transform: rotate(-90deg) translateX(-100%);
+
+  &:before {
+    content: "";
+    width: 100px;
+
+    border-bottom: 1px solid $c-dark-beige;
+  }
+}

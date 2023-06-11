@@ -1,0 +1,36 @@
+.about {
+  &__title {
+    @extend %title;
+  }
+
+  &__photo-container {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+
+    @include onDesktop {
+      height: 530px;
+      
+      object-fit: cover;
+    }
+  }
+
+  &__photo-small {
+    height: 450px;
+    width: 100%;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+}
