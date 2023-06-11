@@ -1,0 +1,151 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 20px;
+
+  @include onDesktop {
+    position: relative;
+  }
+
+  &--static {
+    position: static !important;
+  }
+
+  &--align-end {
+    @include onDesktop {
+      align-items: end;
+    }
+
+  }
+
+  &--display-block--mobile {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &--template-row {
+    grid-template-rows: repeat(6, 1fr);
+
+    @include onDesktop {
+      grid-template-rows: min-content;
+    }
+  }
+
+  &--desktop-flex {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  @include onTablet() {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0 30px;
+  }
+
+  @include onDesktop() {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 0 20px;
+  }
+
+  &--contact-us-info {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 24px;
+    width: max-content;
+
+    @include onDesktop() {
+      &--desktop-1-4 {
+        grid-column: 1 / 4;
+      }
+
+      &--desktop-5-7 {
+        grid-column: 5 / 7;
+      }
+
+    }
+  }
+
+  &--mobile {
+    @include onMobile() {
+      display: grid;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &--mobile-flex {
+
+    @include onMobile() {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    @include onTablet() {
+      display: grid;
+      gap: 24px;
+    }
+  }
+
+  &__item {
+    &--display-none {
+      @media screen and (min-width: 400px) and (max-width: 744px) {
+        display: none;
+      }
+
+      @include onTablet() {
+        display: none;
+      }
+
+      @include onDesktop() {
+        display: grid;
+      }
+    }
+
+    @for $start from 1 to 3 {
+      @for $end from 1 to 3 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+
+    &--position-relative {
+      @include onDesktop {
+        position: relative;
+      }
+    }
+  }
+
+  &__item--tablet {
+    @include onTablet() {
+      @for $start from 1 to 7 {
+        @for $end from 1 to 7 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &__item--desktop {
+    @include onDesktop() {
+      @for $start from 1 to 13 {
+        @for $end from 1 to 13 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+      &--row-start-1 {
+        grid-row-start: 1;
+      }
+    }
+  }
+}

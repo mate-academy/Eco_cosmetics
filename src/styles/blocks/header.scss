@@ -1,0 +1,99 @@
+.header {
+  margin: 15px 0 20px;
+
+  @include onTablet {
+    margin: 23px 0 30px;
+  }
+
+  @include onDesktop {
+    margin: 52px 0 92px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #344f10;
+  }
+
+  &__content-logo-img {
+    height: 24px;
+
+    @include onDesktop {
+      height: 50px;
+    }
+  }
+
+  &__content-logo-text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 5%;
+    }
+  }
+
+  &__list {
+    display: none;
+    list-style: none;
+
+    @include onDesktop {
+      text-decoration: none;
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__list-link {
+    text-decoration: none;
+    color: $main-color;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: transparent;
+      bottom: -10px;
+      width: 100%;
+      height: 1px;
+      transition-property: background-color;
+      transition-duration: 0.3s;
+      transition-timing-function: ease-in-out;
+    }
+
+    &:hover::after {
+      background-color: #344f10;
+    }
+  }
+
+  &__list-item {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+
+    &--footer {
+      color: #e4dfd3;
+    }
+  }
+
+  &__basket {
+    height: 24px;
+    width: 20px;
+
+    @include onDesktop {
+      height: 26px;
+      width: 22px;
+    }
+  }
+}
