@@ -1,0 +1,117 @@
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    height: 0;
+  }
+
+  &__card {
+    box-sizing: border-box;
+    display: block;
+    gap: 30px;
+    margin: 0 -20px 25px;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include Tablet {
+      margin: 0 0 50px;
+    }
+    @include Desktop {
+      margin: 0;
+    }
+
+    &--image-container {
+      display: block;
+      box-sizing: border-box;
+      min-height: 267px;
+      width: 100vw;
+      object-fit: cover;
+      @extend %bacground-images-settings;
+      margin-bottom: 20px;
+
+      @include Tablet {
+        min-height: 300px;
+        width: 342px;
+      }
+
+      @include Desktop {
+        height: 530px;
+        width: 380px;
+      }
+    }
+
+    &--image-1 {
+      background-image: url(../images/png/3.1.png);
+    }
+
+    &--image-2 {
+      background-image: url(../images/png/face_1.png);
+    }
+
+    &--image-3 {
+      background-image: url(../images/png/3.2.png);
+    }
+
+    &--image-4 {
+      background-image: url(../images/png/body_1.png);
+    }
+
+    &--image-5 {
+      background-image: url(../images/png/hair_1.png);
+    }
+
+    &--image-6 {
+      background-image: url(../images/png/hair_2.png);
+    }
+
+    &--image-7 {
+      background-image: url(../images/png/candle_1.png);
+    }
+
+    &--image-8 {
+      background-image: url(../images/png/candle_2.png);
+    }
+
+    &--second-card {
+      display: none;
+
+      @include Tablet {
+        display: block;
+      }
+    }
+
+    &--title {
+      @extend %text-h5;
+      margin: 0 0 10px;
+      text-align: start;
+
+      @include Tablet {
+        margin-bottom: 15px;
+      }
+
+      @include Desktop {
+        margin-bottom: 13px;
+      }
+    }
+
+    &--price {
+      font-size: 18px;
+      margin-bottom: 30px;
+
+      @include Tablet {
+        margin-bottom: 40px;
+      }
+
+      @include Desktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
