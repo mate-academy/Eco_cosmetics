@@ -1,0 +1,93 @@
+.tooth {
+  overflow: hidden;
+
+  &__content {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title-container {
+    width: 100%;
+    margin-bottom: 22px;
+  }
+
+  &__title {
+    @include onTablet {
+      width: $width-title-tooth-tablet;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 380px;
+    }
+  }
+
+  &__img-container {
+    width: $width-bottle-powder;
+    height: 395px;
+    color: $color-green;
+    transition: $duration;
+
+    @include onTablet {
+      position: static;
+    }
+
+    &:hover {
+      transform: scale(95%, 95%);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    @include onTablet {
+      width: 380px;
+      height: 395px;
+    }
+
+    @include onDesktop {
+      position: static;
+    }
+  }
+
+  &__marker-container {
+    padding-top: 50px;
+  }
+
+  &__text-container {
+    padding-top: calc(2.5em);
+  }
+
+  &__marker {
+    padding-top: 4px;
+
+    @include onTablet {
+      padding-top: 40px;
+      justify-self: start;
+    }
+
+    @include onDesktop {
+      position: static;
+      justify-self: flex-end;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: right;
+    width: 180px;
+    color: $basic-text-color;
+  }
+
+  &__more {
+    @include onTablet {
+      transform: translateY(-100%);
+    }
+  }
+}

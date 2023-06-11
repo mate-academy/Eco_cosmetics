@@ -1,0 +1,111 @@
+.shipping {
+  position: absolute;
+  background-color: $background-page;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  transform: translateX(-100%);
+
+  &__input {
+    display: block;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $color-line;
+
+    border-style: none;
+    background-color: $background-page;
+    padding: 0 0 5px;
+    border-bottom: 1px solid $color-line;
+    width: 100%;
+
+    margin: 0 auto 25px;
+
+    @include onTablet {
+      max-width: 288px;
+      margin-bottom: 20px;
+
+      &:nth-child(6) {
+        margin-bottom: 0;
+
+        @include onTablet {
+          margin-bottom: 50px;
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::placeholder {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $color-line;
+    }
+
+    &:focus {
+      outline: 0;
+      border-bottom: 1px solid $basic-text-color;
+    }
+
+    &:not(:placeholder-shown):not(:focus):invalid {
+      color: $color-error;
+      border-bottom: 1px solid $color-error;
+    }
+
+    &:not(:focus):not(:placeholder-shown):valid {
+      color: $color-green;
+      border-bottom: 1px solid $color-green;
+    }
+  }
+}
+
+.checkout {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $basic-text-color;
+
+  margin-bottom: 20px;
+
+  @include onTablet {
+    margin-bottom: 60px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $basic-text-color;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    border-bottom: 1px solid  $basic-text-color;
+    padding-top: 5px;
+
+    @include onTablet {
+      width: 218px;
+    }
+  }
+}

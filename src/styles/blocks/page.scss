@@ -1,0 +1,64 @@
+.page {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  scroll-behavior: smooth;
+  position: relative;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+    background-color: $background-page;
+    height: 100vh;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    transition: $duration;
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__target {
+    transition: $duration;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__header,
+  &__scroll-down,
+  &__about,
+  &__shop,
+  &__tooth,
+  &__eco,
+  &__contact {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-green;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+}

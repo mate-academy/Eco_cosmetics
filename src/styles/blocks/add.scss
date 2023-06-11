@@ -1,0 +1,92 @@
+.add {
+  position: absolute;
+  width: 100%;
+  background-color: $background-page;
+  height: max-content;
+  max-height: max-content;
+  top: 0;
+  z-index: 10;
+  transform: translateX(-120%);
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__top-action {
+    padding: 15px 0 20px;
+
+    @include onTablet {
+      padding: 15px 0 30px;
+    }
+  }
+
+  &__price {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000;
+
+    @include onTablet {
+      max-width: 466px;
+      margin: 0 auto;
+    }
+
+    &--paragraph {
+      margin: 0 0 20px;
+    }
+
+    &--green {
+      color: $color-green;
+    }
+  }
+
+  &__text-title {
+    @include onTablet {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__text-price {
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 30px;
+    width: 100vw;
+
+    @include onTablet {
+      width: 100%;
+    }
+  }
+
+  &__card-img {
+    background-image: url("../images/add_bag/add_bag_tablet.png");
+  }
+}

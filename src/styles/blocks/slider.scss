@@ -1,0 +1,110 @@
+.slider {
+
+  @include onDesktop {
+    margin-bottom: 40px;
+  }
+
+  &__control {
+    display: none;
+  }
+
+  &__container {
+    display: flex;
+    overflow: hidden;
+    height: max-content;
+
+    transition: $duration;
+
+    @include onDesktop {
+      width: 1100px;
+    }
+  }
+
+  &__img-container {
+    display: flex;
+    transition: $duration;
+  }
+
+  &__img {
+    //min-width: calc(100vw - 40px);
+    min-width: 100vw;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include onTablet {
+      margin-right: 20px;
+      min-width: calc((100vw - 56px - 20px) / 2);
+    }
+
+    @include onDesktop {
+      min-width: 380px;
+    }
+
+  }
+
+  #img-1:checked ~ &__container &__img-container {
+    margin-left: 0;
+  }
+
+  #img-2:checked ~ &__container &__img-container {
+    margin-left: calc((100vw) * -1);
+
+    @include onTablet {
+      margin-left: calc(-1 * (100vw - 56px - 20px) / 2 - 20px);
+    }
+
+    @include onDesktop {
+      margin-left: calc(-1 * ((1280px - 40px) / 3) - 20px);
+    }
+  }
+
+  #img-3:checked ~ &__container &__img-container {
+    margin-left: calc((100vw) * -2);
+
+    @include onTablet {
+      margin-left: calc(-2 * (100vw - 56px - 20px) / 2 - 40px);
+    }
+
+    @include onDesktop {
+      margin-left: calc(-2 * ((1280px - 40px) / 3) - 40px);
+    }
+  }
+
+  #img-4:checked ~ &__container &__img-container {
+    margin-left: calc((100vw) * -3);
+
+    @include onTablet {
+      margin-left: calc(-3 * (100vw - 56px - 20px) / 2 - 60px);
+    }
+
+    @include onDesktop {
+      margin-left: calc(-3 * ((1280px - 40px) / 3) - 60px);
+    }
+  }
+
+  #img-5:checked ~ &__container &__img-container {
+    margin-left: calc((100vw) * -4);
+
+    @include onTablet {
+      margin-left: calc(-4 * (100vw - 56px - 20px) / 2 - 80px);
+    }
+
+    @include onDesktop {
+      margin-left: calc(-4 * ((1280px - 40px) / 3) - 80px);
+    }
+  }
+
+  #img-6:checked ~ &__container &__img-container {
+    margin-left: calc((100vw) * -5);
+
+    @include onTablet {
+      margin-left: calc(-5 * (100vw - 56px - 20px) / 2 - 100px);
+    }
+
+    @include onDesktop {
+      margin-left: calc(-5 * ((1280px - 40px) / 3) - 100px);
+    }
+  }
+}

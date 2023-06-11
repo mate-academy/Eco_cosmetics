@@ -1,0 +1,58 @@
+.scroll-down {
+  overflow: hidden;
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      border-bottom: 1px solid rgba($color-green, 0.5);
+      width: 1000%;
+
+      &--up {
+        justify-self: flex-end;
+      }
+    }
+  }
+
+  &__content {
+    @include onDesktop {
+      margin: 100px 0;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: $basic-text-color;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $color-green;
+
+    @include onTablet {
+      max-width: 280px;
+      text-align: center;
+      margin: 0 auto;
+
+      @include onDesktop {
+        max-width: 100%;
+        font-size: 24px;
+        text-align: left;
+        margin: 0;
+      }
+    }
+  }
+}

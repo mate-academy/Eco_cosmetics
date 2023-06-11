@@ -1,0 +1,164 @@
+.footer {
+  background-color: $color-footer;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 20px;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+
+      margin: 60px 0 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+    transition: $duration;
+
+    &:hover {
+      filter: invert(80%);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__links {
+    @include onTablet {
+      margin-top: 30px;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-decoration: none;
+
+    color: $color-text-menu;
+  }
+
+  &__country {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 7px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__support {
+    display: block;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $color-text-menu;
+    transition: $duration;
+
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:hover {
+      filter: invert(80%);
+    }
+
+    &:first-child,
+    &:last-child {
+      &:hover {
+        filter: none;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__socials {
+    margin-bottom: 40px;
+    grid-row: 2 / 3 ;
+  }
+
+  &__facebook,
+  &__instagram {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    transition: $duration;
+
+    &:hover {
+      filter: invert(80%);
+      transform: scale(130%, 130%);
+    }
+  }
+
+  &__bottom {
+    margin: 0 auto;
+    max-width: 198px;
+    text-align: center;
+    padding-bottom: 40px;
+
+    @include onTablet {
+      padding-bottom: 30px;
+      margin: 0;
+      text-align: left;
+      max-width: max-content;
+    }
+  }
+
+  &__bottom-text {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+
+  &__copyright {
+    display: none;
+
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+  }
+}
