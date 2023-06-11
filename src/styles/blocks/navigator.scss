@@ -1,0 +1,32 @@
+.navigator {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    position: relative;
+  }
+
+  &__theme {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    white-space: nowrap;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $colorLightGreen;
+    transform-origin: 0 0;
+    transform: rotate(-90deg) translateX(-100%);
+
+    &::before {
+      content: "";
+      display: block;
+      box-sizing: border-box;
+      width: 100px;
+      height: 1px;
+      background-color: $colorLightGreen;
+    }
+  }
+}
