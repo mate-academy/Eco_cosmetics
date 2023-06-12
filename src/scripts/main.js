@@ -8,6 +8,14 @@ const secDescr = document.querySelectorAll('.about-the-creators__description');
 const buttonForText2 = document.querySelector('#button-more-creators');
 const form = document.querySelector('.form-field');
 
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#side-navigation') {
+    document.body.classList.add('page__body--with-menu');
+  } else {
+    document.body.classList.remove('page__body--with-menu');
+  }
+});
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
