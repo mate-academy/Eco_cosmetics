@@ -1,0 +1,104 @@
+.nav {
+
+  &--header {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    &--side-navigation {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--bottom {
+      width: max-content;
+      flex-direction: column;
+
+      @include onDesktop {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__item {
+
+    &--for-side {
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid $color-5;
+      padding-bottom: 10px;
+    }
+
+    &--margin-bottom {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--margin-left {
+      margin-left: 40px;
+    }
+
+    &--for-hover {
+      border-bottom: 1px solid transparent;
+      transition: 0.3s;
+
+      &:hover {
+        border-bottom: 1px solid $color-7;
+      }
+    }
+
+    &--for-footer-hover {
+      border-bottom: 1px solid transparent;
+      transition: 0.3s;
+
+      &:hover {
+        border-bottom: 1px solid $color-4;
+      }
+    }
+
+    &--for-footer-margins {
+      &:not(:last-child) {
+        margin: 0 0 10px;
+
+        @include onTablet {
+          margin: 0 0 15px;
+        }
+
+        @include onDesktop {
+          margin: 0 40px 0 0;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    &--header-text {
+      @include text-decoration (sharp-sb, $fz-s, $lh-3, $ls-0, $color-7);
+    }
+
+    &--side-text {
+      @include text-decoration (sharp-sb, $fz-s, $lh-3, $ls-0, $color-5);
+      transition: 0.3s;
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+}

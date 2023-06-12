@@ -1,0 +1,94 @@
+.footer {
+  background-color: $color-6;
+  padding-top: 30px;
+
+  @include onDesktop {
+    padding-top: 60px;
+  }
+
+  &__container {
+    @extend %container;
+    @extend %paddings-sides;
+  }
+
+  &__social-mediablock {
+    display: flex;
+
+    &--margins {
+      margin: 20px 0 40px;
+
+      @include onTablet {
+        margin: 20px 0;
+      }
+
+      @include onDesktop {
+        margin: 30px 0;
+      }
+    }
+  }
+
+  &__social-link {
+    display: block;
+    width: 20px;
+    height: 20px;
+    transition: 0.3s;
+
+    &:hover {
+      scale: 1.3;
+    }
+
+    &--margin-right {
+      margin-right: 20px;
+    }
+  }
+
+  &__social-img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__description {
+    @include text-decoration (sharp-m, $fz-2xs, $lh-3, $ls-0, $color-5);
+    margin: 0;
+
+    @include onDesktop {
+      @include text-decoration (sharp-m, $fz-xs, $lh-3, $ls-0, $color-5);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &--link {
+      display: block;
+      width: max-content;
+      text-decoration: none;
+      transition: 0.3s;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid $color-5;
+      }
+    }
+
+    &--text-center {
+      text-align: center;
+
+      @include onTablet {
+        text-align: left;
+      }
+    }
+  }
+}

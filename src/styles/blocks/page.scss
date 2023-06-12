@@ -1,0 +1,69 @@
+.page {
+  scroll-behavior: smooth;
+
+  .page:has(.page__side-navigation:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    background-color: $color-5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  &__side-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.3s;
+    transform: translateY(-100%);
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
+  &__line {
+    transform: translateX(100%);
+  }
+
+  &__side-block {
+
+    &--1 {
+      transform: matrix(1, 0, 0, 1, 0, 110) rotate(-90deg);
+    }
+
+    &--2 {
+      transform: matrix(1, 0, 0, 1, 0, -20) rotate(-90deg);
+    }
+
+    &--3 {
+      transform: matrix(1, 0, 0, 1, 0, 75) rotate(-90deg);
+    }
+
+    &--4 {
+      transform: matrix(1, 0, 0, 1, 0, 20) rotate(-90deg);
+    }
+
+    &--5 {
+      transform: matrix(1, 0, 0, 1, 0, -20) rotate(-90deg);
+    }
+
+  }
+
+  &__tooth-img {
+    position: relative;
+    right: -20px;
+    z-index: -1;
+
+    @include onTablet {
+      right: -27px;
+    }
+
+    @include onDesktop {
+      right: 0;
+    }
+  }
+}

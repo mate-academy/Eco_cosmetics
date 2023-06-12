@@ -1,0 +1,55 @@
+.menu {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  align-items: center;
+  justify-content: space-between;
+
+  &--margins-header {
+    margin: 15px 0 20px;
+
+    @include onTablet {
+      margin: 23px 0 30px;
+    }
+
+    @include onDesktop {
+      margin: 40px 0 81px;
+    }
+
+    @include onBigDesktop {
+      margin: 40px 0 70px;
+    }
+  }
+
+  &--margins-side-navigation {
+    margin: 15px 0 45px;
+
+    @include onTablet {
+      margin: 23px 0 100px;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    &--little-logo {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--burger-menu {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--logo-with-title {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+}
