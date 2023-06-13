@@ -1,6 +1,62 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+
+  }
+}
+
+@mixin top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin formInFocus {
+  display: block;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  border-bottom: 1px solid #bdbdbd;
+  width: 100%;
+  background-color: inherit;
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-family: inherit;
+  line-height: 150%;
+  &::placeholder {
+    color: #828282;
+  }
+  @include onDesktop {
+    font-size: 18px;
+  }
+  &:focus {
+    border-bottom: 1px solid #333;
+  }
+}
+
+@mixin tabletGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 20px;
+}
+
+@mixin desktopGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 20px;
+}
+
+@mixin zoomPicture {
+  transition: transform 0.5s;
+
   &:hover {
-    #{$_property}: $_toValue;
+    transform: scale(105%);
   }
 }
