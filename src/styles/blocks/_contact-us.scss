@@ -1,13 +1,13 @@
-.about {
+.contact-us {
   box-sizing: border-box;
   min-width: 280px;
-  // margin: 0 20px;
 
   &__content {
-    display: grid;
-    // flex-direction: column;
-    justify-content: left;
-    // width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 
     @include onTablet {
       display: grid;
@@ -21,8 +21,8 @@
   &__subtitle {
     @include onDesktop {
       position: absolute;
-      left: -80px;
-      top: 15%;
+      left: 0;
+      top: 0;
     }
   }
 
@@ -36,29 +36,56 @@
 
     @include onDesktop {
       display: grid;
-      margin: 0 0 40px;
+      margin: 0 0 30px;
     }
   }
 
   &__description {
-    margin: 0 0 30px;
+    margin-bottom: 30px;
     padding: 0;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 21px;
-    color: $colorMenu;
+
+    &--text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: $text-color;
+    }
 
     @include onTablet {
+      margin-bottom: 20px;
       display: grid;
+      font-size: 16px;
+      line-height: 24px;
     }
 
     @include onDesktop {
       display: grid;
+      margin-bottom: 40px;
     }
   }
 
-  &__details {
-    margin: 0;
+  &__field {
+    margin: 0 0 25px;
+
+    @include onDesktop {
+      margin: 0 0 30px;
+    }
+
+    &:nth-child(3) {
+      margin: 0 0 45px;
+
+      @include onDesktop {
+        margin: 0 0 60px;
+      }
+    }
+
+    &--last {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
   }
 
   &__image {
@@ -73,30 +100,14 @@
     }
 
     @include onDesktop {
-      max-width: 380px;
+      min-width: 580px;
     }
 
     &--photo {
       width: 100%;
       height: auto;
       overflow: auto;
-      object-fit: cover;
-    }
-  }
-
-  &__second-image {
-    display: none;
-
-    @include onDesktop {
-      display: grid;
-      height: auto;
-      width: 180px;
-      margin-top: 95px;
-    }
-
-    &--photo {
-      width: 100%;
-      height: auto;
+      // object-fit: cover;
     }
   }
 }

@@ -1,5 +1,6 @@
 .page {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 
   &__body {
     font-family: "Poppins", sans-serif;
@@ -15,10 +16,17 @@
     @include onDesktop {
       height: calc(100vh - #{$footer-height-onDesktop});
     }
+
+    &--with-menu {
+      overflow: hidden;
+    }
   }
 
   &__menu {
+    width: 100vw;
+    height: 100vh;
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     right: 0;
@@ -32,6 +40,8 @@
   }
 
   &__section {
+    box-sizing: border-box;
+    position: relative;
     margin-bottom: 100px;
 
     @include onTablet {
@@ -59,13 +69,43 @@
 
     &--link {
       padding-bottom: 10px;
-      border-bottom: 1px solid $linkDesktop-color;
+      border-bottom: 1px solid transparent;
       font-weight: 500;
       font-size: 14px;
       line-height: 18px;
       color: $linkDesktop-color;
       text-decoration: none;
       text-transform: uppercase;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        font-size: 1.1rem;
+        border-bottom: 1px solid $linkDesktop-color;
+      }
+    }
+  }
+
+  &__dividing-line {
+    &--first {
+      display: none;
+      width: 40%;
+
+      @include onDesktop {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 100px;
+      }
+    }
+
+    &--second {
+      display: none;
+      width: 50%;
+
+      @include onDesktop {
+        display: block;
+        margin-right: 0;
+        // margin-bottom: 100px;
+      }
     }
   }
 }

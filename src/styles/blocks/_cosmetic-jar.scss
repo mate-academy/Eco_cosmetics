@@ -1,0 +1,62 @@
+.cosmetic-jar {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    margin: 36px 20px 67px 0;
+    align-items: center;
+
+    @include onTablet {
+      margin-bottom: 8px;
+    }
+
+    &--text {
+      margin-bottom: 50px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: right;
+      color: $text-color;
+      width: max-content;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__image {
+    display: flex;
+    box-sizing: border-box;
+    height: auto;
+    min-width: 182px;
+    flex-grow: 1;
+    object-fit: cover;
+    background-image: url("../images/JarToothPowMobile.svg");
+    // background-size: cover;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      min-width: 398px;
+      height: 397px;
+      background-image: url("../images/JarToothPowWithArr.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center right -98px;
+    }
+
+    @include onDesktop {
+      min-width: 480px;
+      height: 397px;
+      background-image: url("../images/JarToothPowWithArr.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center right;
+    }
+  }
+}

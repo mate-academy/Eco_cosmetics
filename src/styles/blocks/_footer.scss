@@ -4,62 +4,53 @@
   height: $footer-height-onMobile;
   width: 100%;
   padding: 30px 0 40px;
-  position: relative;
 
   @include onTablet {
     height: $footer-height-onTablet;
+    padding: 30px 0;
   }
 
   @include onDesktop {
     height: $footer-height-onDesktop;
+    padding: 60px 0;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
-    margin: 0 20px;
 
     @include onTablet {
-      display: grid;
-      grid-template-rows: repeat(5, 1fr);
-    }
-
-    @include onDesktop {
-      display: grid;
-      grid-template-rows: repeat(2, 1fr);
+      flex-direction: row;
     }
   }
 
   &__menu {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 100%;
+    justify-content: flex-start;
     margin: 0 0 20px;
 
-    @include onTablet {
-      display: grid;
-    }
-
     @include onDesktop {
-      display: grid;
+      display: flex;
+      flex-direction: row;
     }
 
     &--list {
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
       list-style: none;
       margin: 0;
       padding: 0;
 
-      @include onTablet {
-        display: grid;
-        grid-row: 1 / 3;
-      }
-
       @include onDesktop {
-        display: grid;
-        grid-row: 1 / 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
       }
     }
 
@@ -69,6 +60,12 @@
 
       @include onTablet {
         margin-bottom: 15px;
+      }
+
+      @include onDesktop {
+        &:not(:first-child) {
+          margin-left: 40px;
+        }
       }
     }
 
@@ -80,48 +77,54 @@
       text-transform: capitalize;
       color: #e4dfd3;
       text-decoration: none;
-    }
-  }
+      transition: all 0.2s ease-in-out;
 
-  &__icons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 40px;
-
-    @include onTablet {
-      display: grid;
-      // grid-column: 1 / 1;
-      grid-row: 4 / 4;
-      margin-bottom: 50px;
+      &:hover {
+        font-size: 1.3rem;
+      }
     }
 
-    @include onDesktop {
-      display: grid;
-      grid-column: 6 / 6;
-      grid-row: 5 / 5;
-      margin-bottom: 50px;
-    }
+    &-icons {
+      display: flex;
+      flex-direction: row;
+      justify-self: flex-start;
+      justify-content: flex-start;
+      margin-bottom: 40px;
 
-    &--instagram {
-      margin-left: 26px;
+      @include onDesktop {
+        display: none;
+      }
+
+      &--link {
+        display: flex;
+        flex-direction: row;
+
+        &:not(:first-child) {
+          margin-left: 20px;
+        }
+
+        @include onDesktop {
+          display: none;
+        }
+
+        &:hover {
+          transform: scale(1.3);
+          transition: 0.3s;
+        }
+      }
     }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    flex-grow: 1;
+    flex-basis: 100%;
+    justify-content: flex-start;
     margin-bottom: 40px;
 
-    @include onTablet {
-      display: grid;
-      grid-row: 1 / 4;
-    }
-
     @include onDesktop {
-      display: grid;
-      grid-row: 1 / 4;
+      margin-bottom: 0;
     }
 
     &-title {
@@ -134,34 +137,79 @@
       &:last-child {
         margin: 0;
       }
+
+      @include onDesktop {
+        margin: 0 0 20px;
+
+        &:last-child {
+          margin: 0 0 30px;
+        }
+      }
+
+      &--link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: $page-color;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        @include onDesktop {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+        &:hover {
+          font-size: 1.2rem;
+        }
+      }
     }
 
-    &-link {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 21px;
-      color: $page-color;
-      text-decoration: none;
-      cursor: pointer;
+    &-icons {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: row;
+        row-gap: 5px;
+        justify-self: flex-start;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+
+      &--link {
+        display: flex;
+        flex-direction: row;
+
+        &:not(:first-child) {
+          margin-left: 20px;
+        }
+
+        @include onDesktop {
+          display: flex;
+        }
+      }
     }
   }
 
   &__endtext {
     display: block;
-    width: max-content;
+    width: 198px;
     margin: 0 auto;
     text-align: center;
 
     @include onTablet {
-      display: grid;
-      grid-row: 5 / 5;
-      
-    }
-
-    @include onDesktop {
-      display: grid;
-      grid-row: 5 / 5;
-      
+      display: flex;
+      justify-self: flex-start;
+      align-self: flex-end;
+      width: max-content;
+      margin: 0 20px;
     }
 
     &-with-copyright {
@@ -170,6 +218,13 @@
       font-size: 14px;
       line-height: 21px;
       color: $page-color;
+
+      @include onDesktop {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        text-transform: capitalize;
+      }
     }
   }
 }

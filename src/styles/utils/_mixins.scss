@@ -5,14 +5,33 @@
   }
 }
 
+@mixin onMobile {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
 @mixin onTablet {
-  @media (min-width: 620px) {
+  @media (min-width: 640px) {
     @content;
   }
 }
 
 @mixin onDesktop {
-  @media (min-width: 1100px) {
+  @media (min-width: 1180px) {
     @content;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop {
+    max-width: 1180px;
+    padding-inline: 130px;
   }
 }
