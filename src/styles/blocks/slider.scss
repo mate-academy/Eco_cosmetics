@@ -1,0 +1,70 @@
+.slider {
+  width: 100%;
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      justify-content: flex-start;
+    }
+
+    &--margin-bottom {
+      margin-bottom: 15px;
+
+      @include onTablet {
+        margin-bottom: 25px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__item {
+    list-style: none;
+
+    &--margin-right {
+      @include onTablet {
+        margin-right: 50px;
+      }
+    }
+  }
+
+  &__link {
+    @include text-decoration (sharp-l, $fz-2xs, $lh-2, $ls-1, $color-8);
+    width: max-content;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0 0 10px;
+    background-color: $color-5;
+    transition: border-bottom 0.3s;
+    text-transform: uppercase;
+
+    &:hover {
+      @include text-decoration (sharp-l, $fz-2xs, $lh-2, $ls-1, $color-1);
+      border-bottom: 2px solid $color-1;
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include onDesktop {
+      overflow: hidden;
+    }
+  }
+}

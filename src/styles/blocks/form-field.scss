@@ -1,0 +1,69 @@
+.form-field {
+
+  &__input {
+    @extend %input-decoration;
+    @include text-decoration (sharp-l, $fz-2xs, $lh-3, $ls-0, $color-8);
+    text-transform: capitalize;
+
+    @include onDesktop {
+      @include text-decoration (sharp-l, $fz-s, $lh-3, $ls-0, $color-8);
+    }
+
+    &--margin-bottom-1 {
+      margin-bottom: 25px;
+    }
+
+    &--margin-bottom-2 {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__textarea {
+    @extend %input-decoration;
+    @include text-decoration (sharp-l, $fz-2xs, $lh-3, $ls-0, $color-8);
+    text-transform: capitalize;
+
+    @include onDesktop {
+      @include text-decoration (sharp-l, $fz-s, $lh-3, $ls-0, $color-8);
+    }
+    resize: none;
+
+    &--margin-bottom {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__success {
+    border-bottom: 1px solid $color-7;
+    @include text-decoration (sharp-l, $fz-2xs, $lh-3, $ls-0, $color-7);
+
+    @include onDesktop {
+      @include text-decoration (sharp-l, $fz-s, $lh-3, $ls-0, $color-7);
+    }
+  }
+
+  &__error {
+    border-bottom: 1px solid $color-9;
+    @include text-decoration (sharp-l, $fz-2xs, $lh-3, $ls-0, $color-9);
+
+    @include onDesktop {
+      @include text-decoration (sharp-l, $fz-s, $lh-3, $ls-0, $color-9);
+    }
+  }
+
+  &__element-decoration {
+    transition: 0.3s;
+
+    &:focus {
+      border-bottom: 1px solid $color-1;
+    }
+
+    &:focus::placeholder {
+      @include text-decoration (sharp-l, $fz-2xs, $lh-3, $ls-0, $color-1);
+
+      @include onDesktop {
+        @include text-decoration (sharp-l, $fz-s, $lh-3, $ls-0, $color-1);
+      }
+    }
+  }
+}

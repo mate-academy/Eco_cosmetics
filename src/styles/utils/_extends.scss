@@ -1,4 +1,79 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+%container {
+  box-sizing: border-box;
+  max-width: $xl-width;
+  margin: 0 auto;
+}
+
+%paddings-sides {
+  padding: 0 20px;
+
+  @include onTablet {
+    padding: 0 27px;
+  }
+
+  @include onDesktop {
+    padding: 0 50px;
+  }
+
+  @include onBigDesktop {
+    padding: 0 130px;
+  }
+}
+
+%side-text {
+  @include text-decoration (sharp-sb, $fz-2xs, $lh-2, $ls-0, $color-7);
+  margin: 0;
+  white-space: nowrap;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: $color-6;
+    position: absolute;
+    top: 50%;
+    right: 110%;
+    transform: translateY(50%);
+  }
+}
+
+%side-block {
+  display: none;
+
+  @include onDesktop {
+    width: 80px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+%subtitle {
+  @include text-decoration (sharp-b, $fz-m, $lh-3, $ls-1, $color-7);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+
+  @include onDesktop {
+    @include text-decoration (sharp-b, $fz-l, $lh-1, $ls-1, $color-7);
+  }
+}
+
+%text {
+  @include text-decoration (sharp-m, $fz-2xs, $lh-3, $ls-0, $color-1);
+  margin: 0;
+
+  @include onTablet {
+    @include text-decoration (sharp-m, $fz-xs, $lh-3, $ls-0, $color-1);
+  }
+}
+
+%input-decoration {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: $color-5;
+  padding: 0 0 5px;
+  border-bottom: 1px solid $color-3;
 }

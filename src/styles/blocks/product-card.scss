@@ -1,0 +1,145 @@
+.product-card {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  background-color: $color-5;
+  transition: 0.3s;
+  transition-delay: 0.3s ease-in-out;
+
+  @include onTablet {
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__img {
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 500px;
+
+    @include onTablet {
+      height: 300px;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+
+    &--margins {
+      margin: 20px 0 30px;
+
+      @include onTablet {
+        margin: 30px 0;
+      }
+    }
+  }
+
+  &__for-card {
+    display: none;
+  }
+
+  &__for-card--2 {
+    opacity: 0;
+    height: 1px;
+  }
+
+  &__retail {
+    width: 100%;
+    grid-row: 2;
+
+    &--margin-bottom {
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+    }
+
+    @include onTablet {
+      grid-row: 3;
+    }
+  }
+
+  &__subtitle {
+    @include text-decoration (sharp-b, $fz-s, $lh-3, $ls-1, $color-1);
+    margin: 0;
+    text-transform: uppercase;
+
+    &--margin-top {
+      margin-top: 20px;
+
+      @include onTablet {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__price {
+    margin: 0;
+    text-transform: uppercase;
+    @include text-decoration (sharp-sb, $fz-2xs, $lh-2, $ls-1, $color-1);
+
+    @include onTablet {
+      @include text-decoration (sharp-l, $fz-s, $lh-3, $ls-1, $color-1);
+    }
+
+    &--margins {
+      margin: 10px 0 0;
+
+      @include onTablet {
+        margin: 25px 0 10px;
+      }
+    }
+  }
+
+  &__grams {
+    margin: 0;
+    text-transform: uppercase;
+    @include text-decoration (sharp-sb, $fz-2xs, $lh-2, $ls-1, $color-1);
+
+    @include onTablet {
+      @include text-decoration (sharp-l, $fz-s, $lh-3, $ls-1, $color-1);
+    }
+  }
+
+  &__description {
+    width: 100%;
+    @extend %text;
+
+    &--margins {
+      margin: 50px 0 20px;
+
+      @include onTablet {
+        margin: 60px 0 25px;
+      }
+    }
+  }
+
+  &__none {
+    pointer-events: none;
+  }
+
+  &--row-2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  &:hover {
+    box-sizing: border-box;
+    padding: 15px 20px 20px;
+    box-shadow: 1px 1px 8px 5px $color-6;
+    border: 1px solid $color-6;
+  }
+
+  &:hover &__for-card {
+    display: grid;
+  }
+
+  &:hover &__for-card--2 {
+    @include onTablet {
+      height: auto;
+      opacity: 1;
+    }
+  }
+}

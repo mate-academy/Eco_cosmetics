@@ -1,0 +1,70 @@
+.if-block {
+
+  &--margin-bottom {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__container {
+    @extend %container;
+    @extend %paddings-sides;
+  }
+
+  &__description {
+    @extend %text;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__call {
+    @include text-decoration (sharp-sb, $fz-s, $lh-3, $ls-1, $color-7);
+    margin: 0;
+    text-transform: uppercase;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      @include text-decoration (sharp-b, $fz-m, $lh-3, $ls-1, $color-7);
+      text-align: left;
+    }
+  }
+
+  &__line {
+    display: none;
+    height: 1px;
+    background-color: $color-7;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &--left {
+      width: 41%;
+    }
+
+    &--right {
+      width: 50%;
+      transform: translateX(100);
+    }
+
+    &--margin-bottom {
+      margin-bottom: 100px;
+    }
+
+    &--margin-top {
+      margin-top: 120px;
+    }
+  }
+}
