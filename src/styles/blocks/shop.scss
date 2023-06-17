@@ -31,6 +31,11 @@
 
   &__title {
     margin-bottom: 20px;
+    padding: 0 20px;
+
+    @include Tablet {
+      padding: 0;
+    }
 
     @include Desktop {
       grid-column: 2 / 4;
@@ -173,6 +178,7 @@
   }
 
   &__card {
+    z-index: 1;
     display: block;
 
     &--tablet {
@@ -206,6 +212,7 @@
     margin-bottom: 20px;
     object-fit: cover;
     object-position: center;
+    transition: transform 0.3s;
 
     @include Tablet {
       height: 300px;
@@ -214,9 +221,14 @@
     @include Desktop {
       height: 500px;
     }
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__card-name {
+    padding: 0 20px;
     margin-bottom: 10px;
     font-weight: 600;
     font-size: 18px;
@@ -227,16 +239,22 @@
 
     @include Tablet {
       margin-bottom: 16px;
+      padding: 0;
     }
   }
 
   &__price {
+    padding: 0 20px;
     font-weight: 500;
     font-size: 18px;
     line-height: 150%;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: $colorDark;
+
+    @include Tablet {
+      padding: 0;
+    }
   }
 
   &__button {
