@@ -1,0 +1,46 @@
+.eco-friendly {
+  &__content {
+    display: block;
+
+    @include Tablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33%;
+    gap: 24px;
+    height: 140px;
+    margin-bottom: 50px;
+
+    @include Tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    object-position: center;
+    object-fit: contain;
+    height: 72px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000;
+  }
+}
