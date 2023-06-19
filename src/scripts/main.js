@@ -8,25 +8,10 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-const form = document.getElementById('input_form');
+const form = document.querySelector('#input_form');
 
-form.addEventListener('submit', function handleSubmit(event) {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   form.reset();
-});
-
-const phoneInput = document.getElementById('input_form-phone');
-
-phoneInput.addEventListener('input', () => {
-  phoneInput.setCustomValidity('');
-  phoneInput.checkValidity();
-});
-
-phoneInput.addEventListener('invalid', () => {
-  if (phoneInput.value === '') {
-    phoneInput.setCustomValidity('Enter phone number!');
-  } else {
-    phoneInput.setCustomValidity('Enter number in format: 123-456-7890');
-  }
 });

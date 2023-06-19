@@ -81,6 +81,7 @@
 
     &--last {
       margin-bottom: 30px;
+      cursor: default;
 
       @include onDesktop {
         margin-bottom: 50px;
@@ -107,7 +108,16 @@
       width: 100%;
       height: auto;
       overflow: auto;
-      // object-fit: cover;
+
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
     }
   }
 }
