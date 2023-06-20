@@ -1,0 +1,128 @@
+.contact {
+  &__title {
+    margin-bottom: 12px;
+
+    @include onDesktop {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $c-gray;
+    background-color: $c-lightGray;
+    color: $c-darkGray2;
+    font-family: inherit;
+    @extend %input;
+    margin-bottom: 24px;
+    padding-bottom: 4px;
+
+    @include onDesktop {
+      margin-bottom: 32px;
+      padding-bottom: 8px;
+    }
+
+    &--textarea {
+      margin-bottom: 32px;
+      resize: none;
+      text-transform: none;
+
+      @include onDesktop {
+        margin-bottom: 52px;
+      }
+    }
+
+    &:nth-of-type(3) {
+      margin-bottom: 44px;
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    &:hover {
+      color: $c-black;
+      border-color: $c-black;
+    }
+
+    &:focus {
+      outline: none;
+      color: $c-black;
+      border-color: $c-black;
+    }
+
+    &:-webkit-autofill {
+      -webkit-font-feature-settings: normal;
+      font-feature-settings: normal;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    &:-webkit-autofill:active,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-color: $c-black;
+      -webkit-font-feature-settings: normal;
+      font-feature-settings: normal;
+      -webkit-text-fill-color: $c-black;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      color: $c-red;
+      border-color: $c-red;
+      -webkit-text-fill-color: $c-red;
+    }
+
+    &:valid:not(:focus) {
+      color: $c-green;
+      border-color: $c-green;
+      -webkit-text-fill-color: $c-green;
+    }
+  }
+
+  &__image-box {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 0;
+
+    @include onTablet {
+      display: block;
+      padding-bottom: 122.29%;
+    }
+
+    @include onDesktop {
+      height: 548px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

@@ -1,0 +1,120 @@
+.footer {
+  background-color: $c-lightGreen;
+  color: $c-lightGray;
+  padding: 32px 0 40px;
+
+  @include onTablet {
+    padding: 32px 0;
+  }
+
+  @include onDesktop {
+    padding: 60px 0;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    align-items: flex-start;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-items: center;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    margin-bottom: 12px;
+
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+
+    @include onTablet {
+      margin-bottom: 16px;
+    }
+
+    @include onDesktop {
+      margin-right: 40px;
+      margin-bottom: 0;
+
+      &:last-of-type {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    @extend %menu;
+  }
+
+  &__socials {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+
+    @include onDesktop {
+      grid-row: 2 / 3;
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    &:first-of-type {
+      margin-right: 20px;
+
+      @include onDesktop {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &__contacts {
+    @extend %contacts;
+
+    @include onTablet {
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__contact {
+    display: inline-block;
+    margin-bottom: 12px;
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__copyright {
+    @extend %copyright;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      &::before {
+        content: "Copyright";
+        display: inline-block;
+      }
+    }
+  }
+}
