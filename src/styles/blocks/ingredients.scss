@@ -1,0 +1,138 @@
+.ingredients {
+  &__tooth-powder {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__title {
+    grid-row: 1 / 2;
+    margin-bottom: 20px;
+  }
+
+  &__illustrations {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-right: -20px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      grid-row: 1 / 3;
+      gap: 20px;
+      margin-right: -28px;
+    }
+
+    @include onDesktop {
+      margin-right: 0;
+    }
+  }
+
+  &__hints {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+
+  &__hint {
+    @extend %text;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 48px;
+      height: 10px;
+      background-size: auto;
+      background-position: center right;
+      background-repeat: no-repeat;
+      background-image: url(../images/ingredients/hint-mobile.svg);
+
+      @include onTablet {
+        width: 92px;
+        background-image: url(../images/ingredients/hint-tablet.svg);
+      }
+    }
+
+    @include hover(transform translateX(50px));
+  }
+
+  &__illustration {
+    height: 396px;
+    width: 136px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/ingredients/mobile.svg);
+
+    @include onTablet {
+      width: 300px;
+      background-image: url(../images/ingredients/tablet.svg);
+    }
+
+    @include onDesktop {
+      width: 380px;
+      background-image: url(../images/ingredients/desktop.svg);
+    }
+  }
+
+  &__link {
+    align-self: end;
+
+    @include onTablet {
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__features {
+    margin-bottom: 52px;
+    text-align: center;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    height: 88px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 44px;
+    }
+
+    &--safe {
+      background-image: url(../images/ingredients/safe.svg);
+      @include hover(transform scale(1.2));
+    }
+
+    &--recycle {
+      background-image: url(../images/ingredients/recycle.svg);
+      @include hover(transform scale(1.2));
+    }
+
+    &--natural {
+      background-image: url(../images/ingredients/natural.svg);
+      @include hover(transform scale(1.2));
+    }
+  }
+
+  &__text {
+    @extend %text2;
+    color: $c-darkBlack;
+  }
+}
