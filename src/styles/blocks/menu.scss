@@ -1,0 +1,58 @@
+.menu {
+  background-color: $c-dark;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  &__nav {
+    padding: 25px 20px 45px;
+
+    @include onTablet {
+      padding: 28px 0 100px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+  }
+
+  &__link {
+    display: block;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: $c-light-brown;
+
+    transition: color $transition;
+
+    &:hover {
+      color: $c-light;
+    }
+  }
+
+  &__line {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    width: 100%;
+    height: 1px;
+    background: #828282;
+  }
+}

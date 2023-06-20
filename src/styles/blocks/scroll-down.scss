@@ -1,0 +1,68 @@
+.scroll-down {
+  @include onDesktop {
+    position: relative;
+
+    &__content {
+      display: flex;
+      align-items: center;
+      height: 344px;
+      gap: 120px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 41.4%;
+      border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 49.22%;
+      border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__text {
+    display: none;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $c-dark;
+
+    @include onDesktop {
+      display: block;
+      width: 480px;
+      padding-left: 100px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $c-dark-green;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      flex: 1;
+      text-align: left;
+    }
+  }
+}

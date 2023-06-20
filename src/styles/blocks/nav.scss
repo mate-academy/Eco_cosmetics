@@ -1,0 +1,70 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+  @include onTablet {
+    padding: 25px 0 27px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50% 1fr 20px;
+    padding: 40px 0 80px;
+  }
+
+  &__logo {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background-image: url(../images/icon.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    transition: transform $transition;
+
+    @include onDesktop {
+      width: 270px;
+      height: 50px;
+      background-image: url(../images/icon-with-text.svg);
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__list {
+    display: none;
+    list-style-type: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    padding: 10px 0;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $c-dark-green;
+
+    border: none;
+    border-bottom: 1px solid transparent;
+    transition: all $transition;
+
+    &:hover {
+      border-color: inherit;
+    }
+  }
+}

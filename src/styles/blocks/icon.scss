@@ -1,0 +1,73 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include onDesktop {
+    width: 21px;
+    height: 25px;
+  }
+
+  &--menu {
+    width: 20px;
+    height: 13px;
+
+    background-image: url(../images/menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &-closer {
+      display: block;
+      width: 16px;
+      height: 16px;
+
+      background-image: url(../images/cross.svg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &--cart {
+    width: 20px;
+    height: 24px;
+
+    background-image: url(../images/cart.svg);
+    transition: transform $transition;
+
+    &:hover {
+      transform: rotate(20deg);
+    }
+  }
+
+  &--fb {
+    width: 20px;
+    height: 20px;
+    color: $c-light-brown;
+
+    background-image: url(../images/facebook.svg);
+    transition: background-image $transition;
+
+    &:hover {
+      background-image: url(../images/facebook-hov.svg);
+    }
+  }
+
+  &--inst {
+    width: 20px;
+    height: 20px;
+
+    background-image: url(../images/instagram.svg);
+    transition: background-image $transition;
+
+    &:hover {
+      background-image: url(../images/instagram-hov.svg);
+    }
+  }
+}
