@@ -1,24 +1,30 @@
 .form {
   &__input {
+    font-family: inherit;
     width: 100%;
     border: none;
     border-bottom: 1px solid $contacts-border-color;
     background-color: $bcg-menu-contacts-color;
     color: $border-links-color;
-    font-family: inherit;
     padding-bottom: 5px;
     margin-bottom: 25px;
-    text-transform: capitalize;
+    font-size: 14px;
 
-    @include Desktop {
+    &::placeholder {
+      text-transform: capitalize;
+    }
+
+    @include desktop {
       padding-bottom: 10px;
       margin-bottom: 30px;
+      font-size: 18px;
+      font-weight: 500;
     }
 
     &:nth-child(3) {
       margin-bottom: 45px;
       
-      @include Desktop {
+      @include desktop {
         margin-bottom: 60px;
       }
     }
@@ -27,12 +33,12 @@
       outline: none;
     }
     &:hover {
-      border-color: $main-color;
+      border-color: $main-text-color;
     }
 
     &:not(:focus):not(:placeholder-shown):valid {
-      color: $secondary-color;
-      border-bottom: 1px solid $secondary-color;
+      color: $secondary-text-color;
+      border-bottom: 1px solid $secondary-text-color;
     }
 
     &:not(:focus):not(:placeholder-shown):invalid {
@@ -49,10 +55,10 @@
   &__button {
     margin: 30px auto 0;
 
-    @include Tablet {
+    @include tablet {
       margin: 30px 0 0;
     }
-    @include Tablet {
+    @include desktop {
       margin-top: 50px;
     }
   }

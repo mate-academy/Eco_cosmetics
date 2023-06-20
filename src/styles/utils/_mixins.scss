@@ -1,17 +1,10 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
-  }
-}
-
-@mixin Desktop {
+@mixin desktop {
   @media (min-width: 1280px) {
     @content;
   }
 }
   
-@mixin Tablet {
+@mixin tablet {
   @media (min-width: 640px) {
     @content;
   }
@@ -24,30 +17,24 @@
   padding-top: 15px;
   padding-bottom: 20px;
 
-  @include Tablet {
+  @include tablet {
     padding-top: 20px;
     padding-bottom: 30px;
   }
 
-  @include Desktop {
+  @include desktop {
     padding-top: 40px;
   }
 }
 
 @mixin use-grid-tablet {
   display: grid;
-  grid-template-columns: repeat($tablet-columns, 1fr);
+  grid-template-columns: repeat($tablet-grid-columns, 1fr);
   column-gap: $grid-gap-tablet;
 }
 
 @mixin use-grid-desktop {
   display: grid;
-  grid-template-columns: repeat($desktop-columns, 1fr);
+  grid-template-columns: repeat($desktop-grid-columns, 1fr);
   column-gap: $grid-gap-desktop;
-}
-
-@mixin use-grid-tablet {
-  display: grid;
-  grid-template-columns: repeat($tablet-columns, 1fr);
-  column-gap: $grid-gap-tablet;
 }

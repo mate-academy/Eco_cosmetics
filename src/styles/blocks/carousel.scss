@@ -12,39 +12,31 @@
   &__card {
     box-sizing: border-box;
     display: block;
-    margin: 0 -20px 25px;
     transition: transform 300ms;
     text-decoration: none;
-    color: $main-color;
-
-    &:hover {
-      transform: scale(1.05);
-    }
-
-    @include Tablet {
-      margin: 0 0 50px;
-    }
-    @include Desktop {
-      margin: 0;
-    }
+    color: $main-text-color;
 
     &--image-container {
-      display: block;
-      box-sizing: border-box;
-      min-height: 267px;
+      margin: 0 -20px 20px;
+      height: 267px;
       width: 100vw;
       object-fit: cover;
-      @extend %bacground-images-settings;
-      margin-bottom: 20px;
+      @extend %background-images-settings;
+      transition: transform 300ms;
 
-      @include Tablet {
-        min-height: 300px;
-        width: 342px;
+      @include tablet {
+        width: 50vw;
+        margin: 0 0 20px;
+        height: 300px;
       }
 
-      @include Desktop {
-        height: 530px;
-        width: 380px;
+      @include desktop {
+        height: 500px;
+        width: 530px;
+      }
+
+      &:hover {
+        transform: scale(1.05);
       }
     }
 
@@ -85,11 +77,11 @@
       margin: 0 0 10px;
       text-align: start;
 
-      @include Tablet {
+      @include tablet {
         margin-bottom: 15px;
       }
 
-      @include Desktop {
+      @include desktop {
         margin-bottom: 13px;
       }
     }
@@ -98,12 +90,12 @@
       font-size: 18px;
       margin-bottom: 30px;
 
-      @include Tablet {
-        margin-bottom: 40px;
+      @include tablet {
+        margin-bottom: 50px;
       }
 
-      @include Desktop {
-        margin-bottom: 50px;
+      @include desktop {
+        margin-bottom: 40px;
       }
     }
   }

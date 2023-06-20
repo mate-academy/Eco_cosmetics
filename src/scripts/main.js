@@ -36,3 +36,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+const shopFace = document.querySelector('.shop__nav--face');
+const shopBody = document.querySelector('.shop__nav--body');
+const shopHair = document.querySelector('.shop__nav--hair');
+const shopCandles = document.querySelector('.shop__nav--candles');
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#face') {
+    shopFace.classList.add('shop__nav--selected');
+    shopBody.classList.remove('shop__nav--selected');
+    shopHair.classList.remove('shop__nav--selected');
+    shopCandles.classList.remove('shop__nav--selected');
+  }
+
+  if (window.location.hash === '#body') {
+    shopBody.classList.add('shop__nav--selected');
+    shopFace.classList.remove('shop__nav--selected');
+    shopHair.classList.remove('shop__nav--selected');
+    shopCandles.classList.remove('shop__nav--selected');
+  }
+
+  if (window.location.hash === '#hair') {
+    shopHair.classList.add('shop__nav--selected');
+    shopBody.classList.remove('shop__nav--selected');
+    shopFace.classList.remove('shop__nav--selected');
+    shopCandles.classList.remove('shop__nav--selected');
+  }
+
+  if (window.location.hash === '#candles') {
+    shopCandles.classList.add('shop__nav--selected');
+    shopBody.classList.remove('shop__nav--selected');
+    shopHair.classList.remove('shop__nav--selected');
+    shopFace.classList.remove('shop__nav--selected');
+  }
+});

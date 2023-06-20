@@ -1,21 +1,23 @@
 .header {
   
   &__menu {
-    @include Desktop {
+    @include desktop {
       display: none;
     }
   }
 
   &__top {
     @include top-actions;
+    @include desktop {
+      padding-bottom: 82px;
+    }
   }
 
   &__nav {
-    @include Desktop {
+    @include desktop {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      list-style: none;
       gap: 40px;
       font-size: 18px;
       letter-spacing: 5%;
@@ -23,8 +25,14 @@
       text-transform: capitalize;
       
       &--link {
-        color: $secondary-color;
+        color: $secondary-text-color;
         text-decoration: none;
+
+        &:hover,
+        &:active {
+          padding-bottom: 10px;
+          border-bottom: 2px solid $secondary-text-color;
+        }
       }
     }
     display: none;
@@ -34,7 +42,7 @@
     margin-bottom: 0;
     
     &--info {
-      @include Desktop {
+      @include desktop {
         grid-row: 1 / 2;
       }
     }
@@ -44,11 +52,11 @@
 
       @extend %text-h4;
       
-      @include Tablet {
+      @include tablet {
         font-size: 36px;
       }
 
-      @include Desktop {
+      @include desktop {
         text-align: start;
         font-size: 60px;
         line-height: 130%;
@@ -60,11 +68,11 @@
       text-align: center;
       padding-bottom: 30px;
 
-      @include Tablet {
+      @include tablet {
         padding-bottom: 50px;
       }
 
-      @include Desktop {
+      @include desktop {
         text-align: left;
       }
     }
@@ -72,7 +80,7 @@
     &--button {
       margin: 0 auto;
 
-      @include Desktop {
+      @include desktop {
         margin: 0;
       }
     }
@@ -80,10 +88,10 @@
     &--image-container {
       margin: 0 -20px 25px;
 
-      @include Tablet {
+      @include tablet {
         margin: 0 0 50px;
       }
-      @include Desktop {
+      @include desktop {
         margin: 0;
       }
     }

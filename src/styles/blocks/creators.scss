@@ -5,7 +5,7 @@
       text-transform: uppercase;
       margin-bottom: 10px;
   
-      @include Tablet {
+      @include tablet {
         margin-bottom: 20px;
       }
     }
@@ -14,12 +14,12 @@
       font-size: 14px;
       margin-bottom: 20px;
 
-      @include Tablet {
+      @include tablet {
         font-size: 16px;
         margin-bottom: 15px;
       }
 
-      @include Desktop {
+      @include desktop {
         margin-bottom: 30px;
       }
     }
@@ -27,11 +27,11 @@
     &--second-paragraph {
       margin-bottom: 30px;
 
-      @include Tablet {
+      @include tablet {
         margin-bottom: 20px;
       }
 
-      @include Desktop {
+      @include desktop {
         margin-bottom: 30px;
       }
     }
@@ -41,19 +41,20 @@
     }
 
     &--link {
+      font-size: 14px;
       @extend %links;
 
       &:hover,
       &:active {
         padding-bottom: 10px;
-        border-bottom: 1px solid $secondary-color;
+        border-bottom: 1px solid $secondary-text-color;
       }
     }
 
     &--button {
       margin: 40px auto 0;
 
-      @include Tablet {
+      @include tablet {
         margin: 40px 0 0;
       }
     }
@@ -61,7 +62,8 @@
 
   &__image {
     background-image: url(../images/png/4.1.png);
-    @extend %bacground-images-settings;
+    min-width: 347px;
+    @extend %background-images-settings;
     transition: transform 300ms;
 
     &:hover {
