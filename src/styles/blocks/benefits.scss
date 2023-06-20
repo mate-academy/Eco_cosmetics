@@ -1,0 +1,36 @@
+.benefits {
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include media(tablet) {
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: top;
+      column-gap: 20px;
+    }
+  }
+
+  &__item {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  &__text {
+    @extend %text-reg-14;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__icon {
+    transition: transform 0.5s;
+    &:hover {
+      transform: scale(1.5);
+    }
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+}

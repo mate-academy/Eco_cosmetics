@@ -1,0 +1,80 @@
+.shop-card {
+  box-sizing: border-box;
+
+  height: 100vh;
+  padding: 20px;
+
+  background-color: $c-beige;
+  overflow-y: auto;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include media(notebook) {
+      max-width: 700px;
+    }
+  }
+
+  &__title {
+    @extend %h3;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+    order: 1;
+
+    @include media(tablet) {
+      order: 2;
+    }
+  }
+
+  &__price {
+    @extend %text-reg-14;
+    color: $c-dark-main;
+    margin-bottom: 20px;
+    order: 2;
+
+    &--2 {
+      opacity: 0;
+    }
+
+    @include media(tablet) {
+      &--2 {
+        opacity: 1;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__image {
+    object-position: center;
+    object-fit: cover;
+    max-width: 280px;
+    align-self: center;
+    margin-bottom: 30px;
+    order: 3;
+
+    @include media(tablet) {
+      max-width: 470px;
+      order: 1;
+    }
+  }
+
+  &__button {
+    align-self: center;
+    margin-bottom: 50px;
+    order: 5;
+  }
+
+  &__description {
+    &--1 {
+      margin-bottom: 20px;
+      order: 6;
+    }
+    &--2 {
+      order: 7;
+    }
+  }
+}

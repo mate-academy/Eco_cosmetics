@@ -1,6 +1,25 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+
+@mixin onlyOnTablet {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
   }
+}
+
+@mixin media($keys...) {
+  @each $key in $keys {
+    @media (min-width: map-get($media-break, $key)) {
+      @content;
+    }
+  }
+}
+
+@mixin back-position {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin sqr($size) {
+  width: $size;
+  height: $size;
 }

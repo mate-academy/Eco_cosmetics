@@ -1,0 +1,69 @@
+.form {
+  &__input {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #828282;
+    background-color: $c-beige;
+
+    &::placeholder {
+      @extend %small-text;
+      text-transform: capitalize;
+      color: #828282;
+
+      @include media(tablet) {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+      }
+    }
+
+    &:valid {
+      color: $c-dark-main;
+
+      background-color: $c-beige;
+      border: 1px solid transparent;
+      border-bottom: 1px solid #bdbdbd;
+    }
+
+    &:hover {
+      border-bottom-color: $c-dark-main;
+    }
+
+    &:focus {
+      outline: none;
+      color: $c-dark-main;
+
+      background-color: $c-beige;
+      border-bottom-color: $c-dark-main;
+    }
+
+    &:invalid:not(:focus):not(:placeholder-shown) {
+      color: #eb5757;
+      border-bottom-color: #eb5757;
+    }
+  }
+
+  &__button {
+    margin: 30px auto;
+
+    @include media(notebook) {
+      margin-top: 50px;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $c-dark-main;
+  box-shadow: 0 0 0px 1000px $c-beige inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

@@ -1,0 +1,61 @@
+
+.ingredients {
+
+  &__title {
+    position: relative;
+    padding-bottom: 10px;
+    @extend %Section-title;
+    text-align: left;
+
+    @include media (notebook) {
+      position: absolute;
+      top: 0;
+      left: 150px;
+    }
+  }
+
+  &__jar {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+
+    @include media(notebook) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__list {
+    margin-top: 37px;
+
+    &-item {
+      @extend %text-reg-16;
+      text-align: right;
+      display: block;
+      margin-bottom: 50px;
+      transition: transform 0.5s, font-weight 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateX(10px);
+        font-weight: 900;
+      }
+    }
+  }
+
+  &__img-container {
+    background-image: url(../images/svg/jar_desktop.svg);
+    background-repeat: no-repeat;
+    display: block;
+    height: 100%;
+  }
+
+  &__link {
+    position: absolute;
+    top: 500px;
+
+    @include media(notebook) {
+      left: 150px;
+      top: 420px;
+    }
+  }
+}
