@@ -1,0 +1,67 @@
+.menu {
+  background-color: $darkgreycolor;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  @include onThedesign {
+    display: none;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 0;
+
+    @include onTablet {
+      padding: 27px 0;
+    }
+  }
+
+  &__top {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__list {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    text-align: center;
+    border-bottom: 1px solid $greycolor;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    color: $background;
+    text-decoration: none;
+
+    transition: transform 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

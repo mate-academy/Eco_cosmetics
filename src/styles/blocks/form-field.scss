@@ -1,0 +1,57 @@
+.form-field {
+  box-sizing: border-box;
+  display: block;
+  font-family: inherit;
+  width: 100%;
+  border-bottom: 1px solid transparent;
+  padding: 0;
+  padding-bottom: 5px;
+  background-color: $background;
+  border: 0;
+  transition: border-bottom 0.3s;
+  cursor: pointer;
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $greycolor;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    @include onThedesign {
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  &:required {
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  &:hover {
+    border-bottom: 1px solid #333;
+  }
+
+  &:focus {
+    border-bottom: 1px solid #333;
+  }
+
+  &--textarea {
+    padding: 0;
+    height: 26px;
+    resize: none;
+
+    @include onDesktop {
+      height: 37px;
+    }
+  }
+}

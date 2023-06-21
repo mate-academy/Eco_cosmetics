@@ -1,0 +1,45 @@
+.logo {
+  display: flex;
+  text-decoration: none;
+
+  &__image {
+    height: 24px;
+
+    @include onTablet {
+      height: 24px;
+    }
+
+    @include onDesktop {
+      height: 50px;
+      padding-right: 12px;
+    }
+
+    @include onThedesign {
+      height: 50px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      padding: 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      color: $greencolor;
+      transition: transform 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.2);
+        transform-origin: 0%;
+      }
+    }
+  }
+}
