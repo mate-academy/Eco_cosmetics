@@ -1,0 +1,59 @@
+.shop {
+  &__title {
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include onMiddleScreen {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    @include onBigScreen {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0;
+    margin: 0 0 15px;
+    list-style: none;
+
+    @include onMiddleScreen {
+      justify-content: flex-start;
+      gap: 32px;
+
+      margin-bottom: 25px;
+    }
+
+    @include onBigScreen {
+      gap: 46px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__swiper {
+    width: calc(100% + 40px);
+    left: -20px;
+    margin-top: -30px;
+
+    @include onBigScreen {
+      width: calc((100vw - 100%) / 2 + 100%);
+    }
+  }
+
+  &__wrapper {
+    padding-top: 30px;
+  }
+
+  &__button {
+    display: block;
+    margin: auto;
+  }
+
+  &__subtitle {
+    @include transformSubtitle(-400%);
+  }
+}

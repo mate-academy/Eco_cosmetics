@@ -1,0 +1,54 @@
+.powder {
+
+  &__subtitle {
+    @include transformSubtitle(-510%);
+  }
+
+  &__title {
+    margin-bottom: 21px;
+  }
+
+  &__img {
+    margin-bottom: 31px;
+
+    @include onMiddleScreen {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__tags {
+    padding-top: 38px;
+    min-width: 103px;
+    float: right;
+  }
+
+  &__tag {
+    @extend %text;
+
+    max-width: 103px;
+    text-align: right;
+    margin-bottom: 48px;
+
+    @include hover(transform, scale(1.1));
+  
+    &--befor2line {
+      margin-bottom: 41px;
+    }
+
+    &--after2line {
+      margin-bottom: 37px;
+    }
+
+    @include onBigScreen {
+      max-width: 162px;
+    }
+  }
+
+  &__span {
+    display: none;
+
+    @include onBigScreen {
+      display: inline;
+    }
+  }
+}

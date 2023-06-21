@@ -1,0 +1,86 @@
+.card {
+  // box-sizing: border-box;
+  // height: 100vh;
+  // padding: 15px 20px 20px;
+  // overflow-y: auto;
+  z-index: 1;
+  background-color: $background;
+
+  &__description {
+    margin-bottom: 20px;
+
+    @include onMiddleScreen {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    @extend %h5;
+    margin-bottom: 10px;
+
+    @include onMiddleScreen {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__price {
+    @extend %text2;
+
+    @include onMiddleScreen {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      color: $green;
+
+      margin-bottom: 10px;
+    }
+  }
+
+  &__weight {
+    display: none;
+    @extend %price;
+    color: $gray1;
+    
+    @include onMiddleScreen {
+      display: block;
+    }
+  }
+
+  &__img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+
+    margin-bottom: 30px;
+
+    // @include hover(transform, scale(1.1));
+
+    @include onMiddleScreen {
+      margin-bottom: 27px;
+    }
+
+    @include onBigScreen {
+      height: 500px;
+    }
+  }
+
+  &__button {
+    @extend %centerButton;
+
+    margin-bottom: 50px;
+
+    @include onMiddleScreen {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__text {
+    @include onMiddleScreen {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__span {
+    color: $green;
+  }
+}

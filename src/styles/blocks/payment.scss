@@ -1,0 +1,79 @@
+.payment {
+
+  &__content {
+    @extend %checkoutFlex;
+  }
+
+  &__title {
+    @extend %checkoutTitle;
+
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    &--choose {
+      margin-bottom: 50px;
+
+      @include onMiddleScreen {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto 15px;
+
+    &--checked {
+      filter: invert(25%)
+        sepia(30%)
+        saturate(980%)
+        hue-rotate(44deg)
+        brightness(96%)
+        contrast(96%);
+    }
+  }
+
+  &__input {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+    left: 50%;
+  }
+
+  &__label {
+    display: block;
+    color: $gray1;
+    cursor: pointer;
+
+    &--last {
+      margin-bottom: 20px;
+
+      @include onMiddleScreen {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--checked {
+      color: $green;
+    }
+  }
+
+  &__button {
+    @extend %checkoutButton;
+  }
+}

@@ -1,0 +1,129 @@
+.page {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  &__body {
+    margin: 0;
+    background: $background;
+    overflow-x: hidden;
+
+    @extend %bodyPadding;
+
+    &--scrollOff {
+      overflow: hidden;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    @include onMiddleScreen {
+      margin-bottom: 30px;
+    }
+
+    @include onBigScreen {
+      margin-bottom: 81px;
+    }
+  }
+
+  &__menu {
+    @extend %translatedSection;
+
+    @include onBigScreen {
+      display: none;
+    }
+  }
+
+  &__checkout {
+    @extend %translatedSection;
+
+    z-index: 1;
+    background-color: $background;
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onMiddleScreen {
+      margin-bottom: 130px;
+    }
+
+    @include onBigScreen {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onBigScreen {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text {
+    @extend %smallText;
+
+    margin-bottom: 20px;
+
+    @include onMiddleScreen {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    &--desktop {
+      display: none;
+      margin-bottom: 30px;
+
+      @include onBigScreen {
+        display: block;
+      }
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    height: fit-content;
+    width: max-content;
+
+    position: absolute;
+    left: 0;
+
+    @extend %decorative;
+
+    color: rgba(52, 79, 16, 0.5);
+
+    @include onBigScreen {
+      display: block;
+    }
+
+    &::before {
+      content: "";
+
+      display: inline-block;
+      height: 1px;
+      width: 100px;
+      margin-right: 20px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__footer {
+    margin: 0 -20px;
+
+    @include onMiddleScreen {
+      margin: 0 -27px;
+    }
+
+    @include onBigScreen {
+      margin: 0 -50px;
+    }
+  }
+}
