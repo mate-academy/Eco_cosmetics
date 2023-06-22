@@ -50,6 +50,8 @@
 
     @include onTablet {
       display: grid;
+      font-size: 16px;
+      line-height: 24px;
     }
 
     @include onDesktop {
@@ -69,18 +71,20 @@
       box-sizing: border-box;
       justify-content: stretch;
       min-width: 342px;
-      height: auto;
+      // object-fit: fill;
     }
 
     @include onDesktop {
       max-width: 380px;
+      // min-height: 529px;
     }
 
     &--photo {
       width: 100%;
+
       height: auto;
       overflow: auto;
-      object-fit: cover;
+      object-fit: fill;
 
       -webkit-transform: scale(1);
       transform: scale(1);
@@ -90,6 +94,10 @@
       &:hover {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
+      }
+
+      @include onDesktop {
+        min-height: 529px;
       }
     }
   }
@@ -102,6 +110,7 @@
       height: auto;
       width: 180px;
       margin-top: 95px;
+      min-width: 180px;
     }
 
     &--photo {

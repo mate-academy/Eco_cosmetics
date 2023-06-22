@@ -66,6 +66,41 @@ select:-webkit-autofill:focus {
       margin-bottom: 200px;
     }
 
+    &-second {
+      position: relative;
+
+      @include onDesktop {
+        height: 344px;
+        padding: 100px 0;
+      }
+
+      &--dividing-line-first {
+        display: none;
+        border-top: 1px solid $text-color;
+
+        @include onDesktop {
+          position: absolute;
+          display: inline-block;
+          width: 530px;
+          left: 0;
+          top: 0;
+        }
+      }
+
+      &--dividing-line-second {
+        display: none;
+        border-top: 1px solid $text-color;
+
+        @include onDesktop {
+          position: absolute;
+          display: inline-block;
+          width: 630px;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+
     &--title {
       font-weight: 600;
       font-size: 24px;
@@ -86,39 +121,14 @@ select:-webkit-autofill:focus {
       border-bottom: 1px solid transparent;
       font-weight: 500;
       font-size: 14px;
-      line-height: 18px;
+      line-height: 18.2px;
       color: $linkDesktop-color;
       text-decoration: none;
       text-transform: uppercase;
       transition: all 0.2s ease-in-out;
 
       &:hover {
-        font-size: 1.1rem;
         border-bottom: 1px solid $linkDesktop-color;
-      }
-    }
-  }
-
-  &__dividing-line {
-    &--first {
-      display: none;
-      width: 40%;
-
-      @include onDesktop {
-        display: block;
-        margin-left: 0;
-        margin-bottom: 100px;
-      }
-    }
-
-    &--second {
-      display: none;
-      width: 50%;
-
-      @include onDesktop {
-        display: block;
-        margin-right: 0;
-        // margin-bottom: 100px;
       }
     }
   }
