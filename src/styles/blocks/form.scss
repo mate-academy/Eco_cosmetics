@@ -1,0 +1,86 @@
+.form {
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    margin-bottom: 45px;
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    padding-bottom: 10px;
+
+    background-color: transparent;
+
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $greyColor;
+
+    @extend %small-text;
+    text-transform: capitalize;
+    color: $oliveColor;
+
+    transition: all 0.3s;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+
+    &::placeholder {
+      font-family: $mainFontFamily;
+      @extend %small-text;
+
+      text-transform: capitalize;
+      color: #828282;
+
+      @include onTablet {
+        font-weight: 500;
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+    }
+
+    &:focus {
+      border-color: $blackColor;
+    }
+
+    &:valid {
+      border-color: $oliveColor;
+    }
+
+    &:not(:placeholder-shown):invalid {
+      color: #eb5757;
+
+      border-color: #eb5757;
+    }
+
+    &--message {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    cursor: pointer;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}

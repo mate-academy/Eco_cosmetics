@@ -1,0 +1,72 @@
+.contact-us {
+  @extend %container;
+
+  @extend .grid;
+
+  &__title-decoration {
+    display: none;
+
+    @extend .grid__item--desktop-1-1;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__main {
+    @extend .grid__item--tablet-1-3;
+    @extend .grid__item--desktop-2-6;
+  }
+
+  &__title {
+    @extend %section-title;
+
+    margin-bottom: 10px;
+
+    @extend .grid__item--desktop-1-3;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__introduction {
+    @extend %small-text;
+
+    margin-bottom: 30px;
+
+    @extend .grid__item--desktop-1-4;
+
+    @include onTablet {
+      font-size: 16px;
+
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__bird-photo {
+    display: none;
+
+    @extend .grid__item--tablet-4-6;
+    @extend .grid__item--desktop-8-12;
+
+    @include onTablet {
+      display: block;
+      width: calc(100% + #{$tabletHorzPaddings});
+      height: 409px;
+    }
+
+    @include onDesktop {
+      width: calc(100% + #{$desktopHorzPaddings});
+      height: 584px;
+    }
+
+    @include onTheDesign {
+      width: calc(100% + #{$theDesignHorzPaddings});
+    }
+  }
+}

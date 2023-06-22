@@ -1,0 +1,46 @@
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  @include onTablet {
+    gap: 15px;
+  }
+
+  @include onDesktop {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  &__link {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+
+    position: relative;
+
+    &--white {
+      color: $whiteColor;
+      @include linkHover($whiteColor);
+      @include active(transform, scale(1.2));
+    }
+
+    &--olive {
+      color: $oliveColor;
+      @include linkHover($oliveColor);
+      @include active(transform, scale(1.1));
+    }
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+}

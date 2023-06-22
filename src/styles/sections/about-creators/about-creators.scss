@@ -1,0 +1,110 @@
+.about-creators {
+  @extend %container;
+
+  @extend .grid;
+
+  &__title-decoration {
+    display: none;
+
+    @extend .grid__item--desktop-1-1;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__main {
+    @extend .grid__item--tablet-1-3;
+    @extend .grid__item--desktop-2-5;
+  }
+
+  &__title {
+    @extend %section-title;
+
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+
+    @include onTheDesign {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      gap: 15px;
+
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      gap: 30px;
+    }
+  }
+
+  &__details-paragraph {
+    @extend %small-text;
+
+    &--additional {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__learn-more-btn {
+    margin-bottom: 36px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__contact-button {
+    margin: 0 auto;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include photo(0,0);
+
+    @extend .grid__item--tablet-4-6;
+    @extend .grid__item--desktop-7-12;
+
+    @include onTablet {
+      display: block;
+
+      width: calc(100% + #{$tabletHorzPaddings});
+      height: 435px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      height: 669px;
+    }
+  }
+}

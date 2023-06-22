@@ -1,0 +1,79 @@
+.introduction {
+  @extend %container;
+
+  @extend .grid;
+
+  &::before {
+    content: "";
+    display: none;
+
+    @extend %dividing-line;
+    @extend .grid__item--desktop-1-5;
+
+    @include onDesktop {
+      display: block;
+      width: calc(100% + #{$desktopHorzPaddings});
+      margin-left: #{-$desktopHorzPaddings};
+      margin-bottom: 100px;
+    }
+
+    @include onTheDesign {
+      width: calc(100% + #{$theDesignHorzPaddings});
+      margin-left: #{-$theDesignHorzPaddings};
+    }
+  }
+
+  &::after {
+    content: "";
+    display: none;
+
+    @extend %dividing-line;
+    @extend .grid__item--desktop-7-12;
+
+    @include onDesktop {
+      display: block;
+      width: calc(100% + #{$desktopHorzPaddings});
+      margin-right: #{-$desktopHorzPaddings};
+      margin-top: 100px;
+    }
+
+    @include onTheDesign {
+      width: calc(100% + #{$theDesignHorzPaddings});
+      margin-right: #{-$theDesignHorzPaddings};
+    }
+  }
+
+  &__details {
+    display: none;
+
+    @extend .grid__item--desktop-2-5;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__advertisement {
+    width: 280px;
+
+    @extend %h2;
+
+    color: $oliveColor;
+
+    margin: 0 auto;
+
+    @extend .grid__item--tablet-3-4;
+    @extend .grid__item--desktop-7-10;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      text-align: left;
+
+      margin: 0;
+    }
+  }
+}
