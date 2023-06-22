@@ -1,0 +1,99 @@
+.about {
+
+  @include onMobile {
+    margin-bottom: 100px;
+  }
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktopMore {
+    // margin-bottom: 200px;
+  }
+
+  &__block {
+
+    &-title {
+      width: 143px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #344f10;
+
+      @include onTablet {
+        width: 286px;
+      }
+    }
+
+    &-paragraph {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #333;
+      margin-bottom: 20px;
+
+      @include onTablet {
+        font-size: 16px;
+      }
+
+      @include onDesktopMore {
+        margin-bottom: 30px;
+        font-size: 16px;
+      }
+
+      &--desktop {
+        display: none;
+        @include onDesktopMore {
+          display: block;
+        }
+      }
+    }
+
+    &-learn {
+      display: block;
+      padding-bottom: 10px;
+      width: 96px;
+      margin-bottom: 25px;
+
+      &:hover {
+        border-bottom: 1px solid $darkGreen;
+      }
+
+      @include onDesktopMore {
+        margin-bottom: 56px;
+      }
+    }
+
+    &-container {
+      @include onTablet {
+        grid-column: 1 / span 3;
+      }
+
+      @include onDesktopMore {
+        grid-column: 2 / span 5;
+      }
+    }
+  }
+
+  &__bird {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / span 3;
+    }
+
+    @include onDesktopMore {
+      display: block;
+      grid-column: 7 / span 6;
+      margin-left: 33px;
+    }
+
+    &-img {
+      width: 100%;
+    }
+  }
+}
