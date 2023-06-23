@@ -1,0 +1,68 @@
+.about {
+  overflow: hidden;
+
+  &__paragraph {
+
+    @extend %font-paragraph;
+    margin: 10px 0 30px;
+
+    @include onDesktop {
+      margin: 40px 0 30px;
+    }
+
+    &--impotent {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin: 0 0 40px;
+      }
+    }
+  }
+
+  &__title-link {
+    @extend %link;
+  }
+
+  &__photos {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__photo {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+   
+    &--1 {
+      @include onTablet {
+        margin-right: -27px;
+        height: 318px;
+        background-image: url(../images/photo-ipad.png);
+      }
+
+      @include onDesktop {
+        background-image: url(./../images/about-big-desktop.png);
+        height: 529px;
+        width: 100%;
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        transform: translateY(99px);
+        background-image: url(./../images/about-small-desktop.png);
+        height: 431px;
+        margin-right: -130px;
+      }
+    }
+  }
+}

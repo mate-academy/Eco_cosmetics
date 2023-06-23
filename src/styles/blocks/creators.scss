@@ -1,0 +1,62 @@
+.creators {
+  overflow: hidden;
+
+  &__paragraph {
+    @extend %font-paragraph;
+    margin: 10px 0 30px;
+
+    @include onDesktop {
+      margin: 20px 0 30px;
+    }
+
+    &--impotent {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin: 0 0 20px;
+      }
+    }
+  }
+
+  &__title-link {
+    @extend %link;
+    margin-bottom: 40px;
+  }
+
+  &__photos {
+    display: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.03);
+      background-size: 120%;
+    }
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__photo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include onTablet {
+      margin-right: -27px;
+      height: 435px;
+      background-image: url(../images/creators-ipad.png);
+    }
+
+    @include onDesktop {
+      height: 669px;
+      width: 100%;
+      background-image: url(../images/creators.png);
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.ingredients {
+  overflow: hidden;
+
+  &__title {
+    margin-left: -173px;
+
+    @include onTablet {
+      margin-left: 0;
+    }
+  }
+
+  &__image {
+    display: flex;
+  }
+
+  &__title-link {
+    @extend %link;
+  }
+
+  &__compound {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    margin-right: 48px;
+
+    @include onTablet {
+      margin-right: 0;
+    }
+
+    @include onDesktop {
+      margin-right: 0;
+    }
+  }
+  
+  &__list {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+    color: $c-gray;
+
+    position: relative;
+    padding-left: 20px;
+
+    @include onTablet {
+      right: 50%;
+    }
+
+    @include onDesktop {
+      right: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 76px;
+      height: 1px;
+      background-color: $c-gray;
+      top: 50%;
+      margin-left: 20px;
+    }
+
+    @include onDesktop {
+      &::before {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        background-color: $c-gray;
+        border-radius: 50%;
+
+        top: 50%;
+        left: calc(100% + 14px);
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__img {
+    height: 397px;
+    width: 380px;
+    background-image: url(../images/ingredients.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}

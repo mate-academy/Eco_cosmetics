@@ -1,0 +1,70 @@
+.form-field {
+  width: 100%;
+  padding: 0 0 5px;
+  border: none;
+  border-bottom: 1px solid $c-light-beige;
+  background-color: transparent;
+  outline: none;
+  vertical-align: bottom;
+
+  position: relative;
+
+  &:nth-child(4) {
+    padding: 0;
+  }
+
+  @include onDesktop {
+    padding: 0 0 10px;
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: capitalize;
+    color: $c-border;
+
+    @include onTablet {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  &:hover {
+    border-bottom: 1px solid $c-border;
+  }
+
+  &:focus {
+    border-bottom: 1px solid $c-gray;
+  }
+
+  &:valid {
+    color: $c-dark-green;
+    border-bottom: 1px solid $c-dark-green;
+  }
+
+  &::grammar-error {
+    color: $c-red;
+    border-bottom: 1px solid $c-red;
+  }
+
+  &--textarea {
+    font-family: inherit;
+    resize: none;
+    white-space: normal;
+
+    &::placeholder {
+      transform: translateY(0.8em);
+
+      @include onDesktop {
+        transform: translateY(0.5em);
+      }
+    }
+  }
+}
