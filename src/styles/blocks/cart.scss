@@ -1,0 +1,32 @@
+.cart {
+  @include headerPaddingTop;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(110%);
+  z-index: 2;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+
+  background-color: $backgroundColor;
+  box-shadow: 0 0 10px #000;
+
+  transition: transform $duration;
+
+  @include onDesktop {
+    width: 50%;
+  }
+
+  &__cross-wrapper {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 40px;
+  }
+
+  &--open {
+    transform: translateX(0);
+  }
+}

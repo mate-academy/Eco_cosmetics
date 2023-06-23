@@ -1,0 +1,33 @@
+.learn-more-link {
+  position: relative;
+
+  display: inline-block;
+  width: max-content;
+  padding-bottom: 11px;
+
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: $greenColor;
+  text-transform: uppercase;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: block;
+    content: "";
+    width: 0;
+    height: 1px;
+
+    background-color: $greenColor;
+
+    transition: width $duration;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
