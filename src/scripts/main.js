@@ -27,12 +27,14 @@ let endY = 0;
 
 const openMenu = () => {
   menu.classList.add('menu--open');
-  document.body.classList.add('page__body--with-menu');
+  document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed';
 };
 
 const closeMenu = () => {
   menu.classList.remove('menu--open');
-  document.body.classList.remove('page__body--with-menu');
+  document.body.style.overflow = '';
+  document.body.style.position = '';
 };
 
 const closeCart = () => {
