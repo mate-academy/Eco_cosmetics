@@ -1,0 +1,132 @@
+.about {
+  margin-bottom: 200px;
+
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  &__header {
+    color: $c-green;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+
+    @include onTablet {
+      grid-column: 1 / span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2/ span 4;
+      margin-bottom: 40px;
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 150%;
+    color: $c-black;
+
+    margin-bottom: 30px;
+
+    &--dispay--mobile {
+      display: block;
+    }
+
+    &--dispay--desktop {
+      display: none;
+    }
+
+    @include onTablet {
+      font-size: 16px;
+      grid-column: 1 / span 3;
+    }
+
+    @include onDesktop {
+
+      &--dispay--desktop {
+        display: block;
+      }
+
+      grid-column: 2 / span 4;
+    }
+  }
+
+  &__link {
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+
+    margin-bottom: 10px;
+
+    white-space: nowrap;
+    width: min-content;
+    height: min-content;
+    color: $c-green;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-green;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include onDesktop {
+      grid-column: 2;
+
+      margin-bottom: 50px;
+    }
+
+  }
+
+  &__primary-background {
+    @include onTablet {
+      grid-column: 4 / 7;
+      grid-row: 1 / 4;
+      background-image: url(../images/png_pictures/candle-tablet.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/png_pictures/candle.png);
+      grid-column: 7 / span 4;
+      grid-row: 1 / 5;
+    }
+  }
+
+  &__secondary-background {
+    @include onDesktop {
+      grid-column: 11 / span 2;
+      grid-row: 2 / 5;
+      background-image: url(../images/png_pictures/purple-flover.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}

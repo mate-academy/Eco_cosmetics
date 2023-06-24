@@ -1,0 +1,36 @@
+.button {
+  grid-column: span 2;
+
+  @include onTablet {
+    grid-column: 3 / 5;
+    margin-inline: -30px;
+  }
+
+  @include onDesktop {
+    grid-column: 2 / span 3;
+    margin: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    height: 60px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-light-green;
+    background-color: $c-black;
+    transition: hover, $transition-speed;
+
+    &:hover {
+      background-color: $c-beige;
+      color: $c-black;
+      border: 1px solid $c-black;
+    }
+  }
+}
