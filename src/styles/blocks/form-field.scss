@@ -1,0 +1,84 @@
+.form-field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 0;
+  padding-bottom: 5px;
+  outline: none;
+  font-family: inherit;
+  background-color: $background;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  border: 0;
+  border-bottom: 1px solid transparent;
+
+  transition: border-bottom 0.3s;
+  cursor: pointer;
+
+  @include onTablet {
+    font-weight: 500;
+  }
+
+  @include onDesktop {
+    font-size: 18px;
+  }
+
+  &:required {
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  &:hover {
+    border-bottom: 1px solid #333;
+  }
+
+  &:focus {
+    border-bottom: 1px solid #333;
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px $background inset;
+    -webkit-text-fill-color: #344f10;
+    border-bottom: 1px solid #344f10;
+  }
+
+  &:invalid:not(:placeholder-shown) {
+    color: #eb5757;
+    border-bottom: 1px solid #eb5757;
+  }
+
+  &:valid:not(:placeholder-shown) {
+    color: #344f10;
+    border-bottom: 1px solid #344f10;
+  }
+
+  &--textarea {
+    padding: 0;
+    height: 26px;
+    resize: none;
+
+    @include onDesktop {
+      height: 37px;
+    }
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $greycolor;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+
+    @include onThedesign {
+      font-size: 18px;
+    }
+  }
+}

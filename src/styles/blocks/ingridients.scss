@@ -1,0 +1,302 @@
+.ingredients {
+  &__decor {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      top: 16px;
+      left: 50px;
+    }
+
+    @include onThedesign {
+      display: block;
+      position: absolute;
+      top: 16px;
+      left: 50px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-bottom: 22px;
+
+    @include onTablet {
+      padding-bottom: 310px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 250px;
+    }
+
+    @include onThedesign {
+      padding-bottom: 277px;
+    }
+  }
+
+  &__link {
+    display: none;
+    width: max-content;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+
+    @include onThedesign {
+      display: block;
+    }
+  }
+
+  &__image {
+    position: relative;
+    margin-left: 44%;
+    margin-bottom: 30px;
+    width: 380px;
+    height: 395px;
+
+    @include onTablet {
+      margin-left: 0;
+      margin-bottom: 0;
+      transform: translateX(120px);
+    }
+
+    @include onDesktop {
+      transform: translateX(79%);
+    }
+
+    @include onThedesign {
+      transform: translateX(79%);
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__description {
+    position: absolute;
+
+    &::before {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $darkgreycolor;
+      }
+
+      @include onThedesign {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: $darkgreycolor;
+      }
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 76px;
+      height: 1px;
+      background-color: $darkgreycolor;
+    }
+
+    &:nth-child(2) {
+      top: 2px;
+      left: -95px;
+
+      @include onTablet {
+        top: 40px;
+      }
+
+      @include onDesktop {
+        top: 34px;
+        left: -170px;
+      }
+
+      @include onThedesign {
+        top: 34px;
+        left: -170px;
+      }
+
+      &::before {
+        top: 12px;
+        left: 142px;
+      }
+
+      &::after {
+        transform: translate(68px, -10px,);
+      }
+    }
+
+    &:nth-child(3) {
+      top: 74px;
+      left: -96px;
+
+      @include onTablet {
+        top: 111px;
+      }
+
+      @include onDesktop {
+        text-align: end;
+        left: -233px;
+      }
+
+      &::before {
+        top: 11px;
+        left: 205px;
+      }
+
+      &::after {
+        transform: translate(70px, -12px);
+
+        @include onDesktop {
+          transform: translate(129px, -37px);
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      top: 140px;
+      left: -135px;
+      max-width: 90px;
+      text-align: end;
+
+      @include onTablet {
+        top: 180px;
+      }
+
+      @include onDesktop {
+        max-width: 162px;
+        text-align: center;
+        top: 183px;
+        left: -278px;
+      }
+
+      &::before {
+        top: 11px;
+        left: 250px;
+      }
+
+      &::after {
+        transform: translate(110px, -23px);
+
+        @include onDesktop {
+          transform: translate(176px, -11px);
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      top: 224px;
+      left: -145px;
+      text-align: end;
+
+      @include onTablet {
+        top: 260px;
+      }
+
+      @include onDesktop {
+        left: -218px;
+      }
+
+      &::before {
+        top: 12px;
+        left: 190px;
+      }
+
+      &::after {
+        transform: translate(119px, -10px);
+
+        @include onDesktop {
+          transform: translate(117px, -10px);
+        }
+      }
+    }
+
+    &:nth-child(6) {
+      top: 296px;
+      left: -125px;
+      text-align: end;
+
+      @include onTablet {
+        top: 334px;
+      }
+
+      @include onDesktop {
+        left: -197px;
+      }
+
+      &::before {
+        top: 12px;
+        left: 170px;
+      }
+
+      &::after {
+        transform: translate(97px, -10px);
+      }
+    }
+  }
+
+  &__description-des {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+
+  &__link-mob {
+    display: block;
+    width: max-content;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onThedesign {
+      display: none;
+    }
+  }
+}
+
+.decor-ingredients {
+  position: relative;
+  display: inline-block;
+  width: max-content;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  color: rgba(52, 79, 16, 0.5);
+  transform: rotate(-90deg);
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: -130%;
+    margin-left: -10px;
+    content: "";
+    display: block;
+    width: 100px;
+    height: 1px;
+    background-color: rgba(52, 79, 16, 0.5);
+  }
+}

@@ -1,0 +1,102 @@
+.gifts {
+  position: relative;
+
+  &::before {
+    @include onDesktop {
+      position: absolute;
+      display: block;
+      content: "";
+
+      width: 530px;
+      height: 1px;
+
+      background: rgba(52, 79, 16, 0.5);
+    }
+
+    @include onThedesign {
+      @include onDesktop {
+        position: absolute;
+        display: block;
+        content: "";
+
+        width: 610px;
+        height: 1px;
+
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      margin: 0;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: $darkgreycolor;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+
+    text-align: left;
+    width: 280px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $greencolor;
+
+    @include onTablet {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      width: 380px;
+      padding-top: 105px;
+      padding-bottom: 131px;
+      text-align: left;
+      margin: 0;
+    }
+  }
+
+  &::after {
+    @include onDesktop {
+      position: absolute;
+      display: block;
+      content: "";
+
+      width: 630px;
+      height: 1px;
+      bottom: 0;
+      right: 0;
+
+      background: rgba(52, 79, 16, 0.5);
+    }
+
+    @include onThedesign {
+      position: absolute;
+      display: block;
+      content: "";
+
+      width: 50%;
+      height: 1px;
+      bottom: 0;
+      right: 0;
+
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+}

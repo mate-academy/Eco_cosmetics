@@ -1,0 +1,66 @@
+.icon {
+  position: relative;
+  display: block;
+
+  width: 20px;
+  height: 13px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-decoration: none;
+
+  @include onDesktop {
+    width: 32px;
+  }
+
+  @include onThedesign {
+    width: 32px;
+  }
+
+  &--menu {
+    transition: transform 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    background-image: url(../images/menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onThedesign {
+      display: none;
+    }
+  }
+
+  &--cross {
+    background-image: url(../images/cross.svg);
+  }
+
+  &--cart {
+    height: 20px;
+
+    transition: transform 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onDesktop {
+      height: 32px;
+      width: 32px;
+    }
+
+    @include onThedesign {
+      height: 32px;
+      width: 32px;
+    }
+
+    background-image: url(../images/la_shopping-bag.svg);
+  }
+}
