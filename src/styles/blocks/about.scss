@@ -1,0 +1,109 @@
+.about {
+  @include OnDesktop {
+    position: relative;
+    &::before {
+      content: 'witch of mountain winds';
+      position: absolute;
+      color: rgba(52, 79, 16, 0.50);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 130%;
+      transform: rotate(-90deg);
+      top: 100px;
+      left: -100px;
+    }
+  }
+  &__content {
+
+    @include OnTablet {
+        @include pageGrid;
+      }
+
+
+
+    &-title {
+
+      @include OnTablet {
+        grid-column: span 3;
+      }
+
+      @include OnDesktop {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        grid-column: 2 / 6;
+      }
+    }
+  }
+
+  &__tablet-photo {
+
+    &-0 {
+      display: none;
+    }
+
+    &-1 {
+      display: none;
+    }
+
+    &-2 {
+      display: none;
+    }
+
+    @include OnTablet {
+      grid-column: span 3;
+      &-0 {
+        display: block;
+      }
+
+      &-2 {
+        display: none;
+      }
+
+      &-2 {
+        display: none;
+      }
+     }
+
+    @include OnDesktop {
+      grid-column: 7 / 10;
+      &-0 {
+        display: none;
+      }
+      &-1 {
+        display: block;
+      }
+
+      &-2 {
+        display: flex;
+        align-self: end;
+      }
+    }
+  }
+
+  &__text {
+    color: #333;
+    font-size: 14px;
+    line-height: 150%;
+    margin-bottom: 30px;
+
+    @include OnDesktop {
+      margin-bottom: 0;
+    }
+
+    &--show-desktop {
+      display: none;
+
+      @include OnDesktop {
+        margin-bottom: 10px;
+        display: block;
+      }
+    }
+  }
+}
+
+.gg {
+  display: flex;
+  gap: 20px;
+}

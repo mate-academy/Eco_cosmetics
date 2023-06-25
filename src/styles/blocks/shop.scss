@@ -1,0 +1,61 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+
+  &__nav {
+    &-list {
+      display: flex;
+      list-style: none;
+      gap: 34px;
+    }
+
+    &-link {
+      text-align: center;
+      text-decoration: none;
+      color: #828282;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+
+      &:hover {
+        color: #333;
+        padding-bottom: 9px;
+        border-bottom: 2px solid #333;
+        width: fit-content;
+      }
+    }
+  }
+}
+
+.card {
+  &__content {
+    @include pageGrid;
+    margin-block: 30px 30px;
+  }
+
+  &__photo {
+    grid-column: -1 / 1;
+  }
+
+  &__title {
+    grid-column: -1 / 1;
+    margin-block: 20px 10px;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    grid-column: -1 / 1;
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+}

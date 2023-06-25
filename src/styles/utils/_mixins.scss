@@ -4,3 +4,54 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin buttonHover {
+  &:hover {
+    color: $text-color;
+    background-color: $bg-color;
+  }
+}
+
+@mixin OnTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin OnDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin contentPaddintInLine () {
+  padding-inline: 20px;
+
+  @include OnTablet {
+    padding-inline: 27px;
+  }
+
+  @include OnDesktop {
+    margin-inline: auto;
+    max-width: 1280px;
+    padding-inline: 50px;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include OnTablet {
+    column-gap: 30px;
+    --columns: 6;
+  }
+
+  @include OnDesktop {
+    column-gap: 20px;
+    --columns: 12;
+  }
+}
+

@@ -1,0 +1,59 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: #333333;
+  overflow: auto;
+
+  &__top {
+    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    @include OnTablet {
+      margin-bottom: 70px;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include OnTablet {
+      gap: 50px;
+    }
+
+    &--footer {
+      gap: 11px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: #E4DFD3;
+    text-align: center;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 130%;
+
+    padding-bottom: 9px;
+    border-bottom: 1px solid $non-activ-element;
+
+    &--footer {
+      padding: 0;
+      text-align: left;
+      font-weight: 500;
+      line-height: 150%;
+      border: none
+    }
+  }
+}
+

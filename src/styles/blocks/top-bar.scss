@@ -1,0 +1,88 @@
+.top-bar {
+  padding-block: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include OnTablet {
+    padding-block: 20px
+  }
+
+  @include OnDesktop {
+    padding-block: 50px;
+    @include pageGrid;
+    align-items: center;
+  }
+
+  &__logo {
+    display: none;
+
+    @include OnDesktop {
+      display: block;
+      grid-column: span 3;
+      }
+
+    &-img {
+      display: flex;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include OnDesktop {
+      grid-column: 7 / 10;
+      display: flex;
+      list-style: none;
+      column-gap: 30px;
+      }
+  }
+
+  &__link {
+    padding: 10px 10px 10px 0;
+    text-decoration: none;
+    color: #344F10;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+
+  }
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+
+  &__logo-link {
+
+    @include OnDesktop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    background-image: url(./images/icons/Menu.svg);
+
+      @include OnDesktop {
+        display: none;
+        }
+    }
+
+  &__shop {
+    background-image: url(./images/icons/shop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include OnDesktop {
+      height: 32px;
+      width: 32px;
+      grid-column: 12 / -1;
+      justify-self: end;
+      }
+  }
+
+  &__close {
+    background-image: url(./images/icons/close.svg);
+  }
+}
