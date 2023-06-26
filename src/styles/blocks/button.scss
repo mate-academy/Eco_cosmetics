@@ -1,0 +1,48 @@
+.button {
+  display: block;
+  margin: 0 auto;
+  width: 280px;
+  height: 60px;
+  background-color: #333;
+ 
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #f2f2f2;
+ 
+  margin-bottom: 100px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #e4dfd3;
+    border: 1px solid #333;
+    color: #333;
+    cursor: pointer;
+  }
+ 
+  @include onTablet {
+    grid-column: 3 / span 2;
+    margin-bottom: 130px;
+  }
+ 
+  @include onDesktopMore {
+    grid-column: 6 / span 2;
+    margin-bottom: 200px;
+  }
+
+  &--contact {
+    @include onTabletMore {
+      margin: 0;
+    }
+    display: block;
+  }
+
+  &--primary {
+    margin: 0 0 130px;
+    border: none;
+    padding: 0;
+  }
+}

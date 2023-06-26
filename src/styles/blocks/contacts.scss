@@ -1,0 +1,91 @@
+.contacts {
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $darkGreen;
+    padding: 0;
+    margin: 0 0 20px;
+
+    @include onDesktopMore {
+      font-size: 36px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #333;
+
+    @include onTabletMore {
+      width: 352px;
+      font-size: 16px;
+    }
+  }
+
+  &__field {
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: #828282;
+      background-color: $background;
+      transition: background-color 5000s ease-in-out 0s;
+      // box-shadow: inset 0 0 20px 20px #23232329;
+    }
+
+    &-textarea {
+      resize: none;
+    }
+  
+    &--last {
+      margin-bottom: 30px;
+    }
+
+    &--tell {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__grid {
+
+    &-bird {
+      display: none;
+  
+      @include onTablet {
+        display: block;
+        grid-column: 4 / span 3;
+      }
+
+      @include onDesktopMore {
+        display: block;
+        grid-column: 7 / span 5;
+      }
+    }
+
+    &-block {
+      @include onTablet {
+        grid-column: 1 / span 3;
+      }
+
+      @include onDesktopMore {
+        grid-column: 2 / span 4;
+      }
+    }
+  }
+
+  &__bird-img {
+
+    @include onTablet {
+      width: 100%;
+    }
+  }
+
+}

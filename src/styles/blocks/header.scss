@@ -1,0 +1,267 @@
+.header {
+  padding-top: 20px;
+  background-color: $background;
+  padding-bottom: 100px;
+
+  @include onTablet {
+    padding-top: 28px;
+  }
+
+  @include onDesktop {
+    padding-top: 40px;
+  }
+
+  &__nav {
+
+    display: flex;
+    margin-bottom: 20px;
+
+    @include onMobile {
+      justify-content: space-between;
+    }
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+
+    @include onDesktopMore {
+      margin-top: 52px;
+      margin-bottom: 92px;
+      display: grid;
+      grid-template-columns: repeat(12, 80px);
+      gap: 20px;
+      align-items: center;
+    }
+
+    &-grid {
+      @include onDesktopMore {
+        display: block;
+        grid-column: 1 / span 3;
+        grid-row: 1;
+      }
+    }
+
+    &-shop-cart {
+      @include onDesktopMore {
+        grid-column: 12;
+        justify-self: end;
+        grid-row: 1;
+      }
+    }
+
+    &-text-block {
+      display: none;
+
+      @include onDesktopMore {
+        display: flex;
+        gap: 20px;
+        grid-column: 7 / span 3;
+        grid-row: 1;
+      }
+    }
+
+    &-menu {
+      @include onDesktopMore {
+        display: none;
+      }
+    }
+
+    &-text-item {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: #344f10;
+      text-decoration: none;
+    }
+
+    &-img {
+      text-decoration: none;
+    }
+
+    &-logo-mob {
+      @include onDesktopMore {
+        display: none;
+      }
+    }
+
+    &-logo-desktop {
+      display: none;
+
+      @include onDesktopMore {
+        display: inline-block;
+        margin-right: 10px;
+      }
+    }
+
+    &-logo-div {
+      display: none;
+      @include onDesktopMore {
+        display: flex;
+      }
+    }
+
+    &-logo-paragraph {
+      display: inline-block;
+      color: #344f10;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      
+    }
+  }
+
+  &__block {
+    margin: 0 auto;
+
+    &-text {
+      @include onDesktopMore {
+        grid-column: 2 / span 5;
+        grid-row: 1;
+      }
+    }
+
+    &-picture {
+      @include onDesktopMore {
+        grid-column: 7 / span 6;
+        grid-row: 1;
+      }
+
+    }
+
+    &-button {
+      display: block;
+      margin: 0 auto;
+      width: 280px;
+      height: 60px;
+      background-color: $darkGrey;
+      color: $white;
+      text-align: center;
+      line-height: 60px;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: #e4dfd3;
+        border: 1px solid #333;
+        color: #333;
+      }
+
+      @include onDesktopMore {
+        margin: 0;
+      }
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 130%;
+      text-align: center;
+      text-transform: capitalize;
+      color: $darkGrey;
+
+      margin: 0 auto;
+      width: 270px;
+
+      @include onTablet {
+        width: 457px;
+        font-size: 36px;
+        line-height: 150%;
+      }
+
+      @include onDesktopMore {
+        margin-bottom: 30px;
+        font-size: 52px;
+        line-height: 130%;
+        width: 476px;
+        text-align: left;
+      }
+    }
+
+    &-paragraph {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      color: $darkGrey;
+
+      margin-bottom: 30px;
+
+      @include onTabletMore {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktopMore {
+        text-align: start;
+      }
+    }
+
+    &-img {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 25px;
+
+      @include onMobile {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        margin-bottom: 25px;
+      }
+    
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      // @include onDesktopMore {
+      //   // width: 96%;
+      // }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    background-color: $darkGrey;
+    padding-top: 20px;
+    height: 100vh;
+
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &-item {
+      text-decoration: none;
+      border-bottom: 1px solid $beige;
+
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 130%;
+      text-align: center;
+      color: $beige;
+      margin-bottom: 41px;
+      padding-bottom: 10px;
+
+      &:first-child {
+        margin-top: 80px;
+      }
+    }
+  }
+}
