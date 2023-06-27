@@ -1,6 +1,7 @@
 # Eco cosmetics landing page
   [DEMO LINK](https://alina-isakova.github.io/Eco_cosmetics/).
 - Used BEM and SCSS
+
 - The design 1440px
 - Desktop 1280px
 - Tablet 640px
