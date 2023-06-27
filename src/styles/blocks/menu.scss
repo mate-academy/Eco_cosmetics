@@ -1,0 +1,65 @@
+.menu {
+  height: 100vh;
+  background-color: $c-dark;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  z-index: 1;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translate(0);
+  }
+
+  &--2 {
+    z-index: 1;
+  }
+
+  &__content {
+    @extend %content;
+  }
+
+  &__nav {
+    margin-bottom: 45px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__cross {
+    height: 15px;
+    width: 15px;
+    @include hover (scale, 1.1);
+  }
+
+  &__list {
+    text-align: center;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+    @include hover (scale, 1.05);
+
+    &::after {
+      margin-top: 10px;
+      content: "";
+      display: block;
+      background-color: $c-beige;
+      width: 100%;
+      height: 1px;
+    }
+  }
+
+  &__link {
+    color: $c-beige;
+    text-decoration: none;
+  }
+}

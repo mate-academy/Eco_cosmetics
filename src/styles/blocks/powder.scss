@@ -1,0 +1,135 @@
+.powder {
+  &__title {
+    margin-bottom: 22px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__block {
+    position: relative;
+    height: 398px;
+    margin-bottom: 31px;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      margin-bottom: 0;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 13;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: -20px;
+    display: block;
+    height: 100%;
+    width: calc(382px - 231px);
+    background-image: url(../images/logo/Union.svg);
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      right: -27px;
+      width: calc(382px - 99px);
+    }
+
+    @include onDesktop {
+      width: 382px;
+      right: 0;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    list-style: none;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    right: 80px;
+    padding: 10px 0 70px;
+
+    @include onTablet {
+      right: 200px;
+    }
+
+    @include onDesktop {
+      right: calc(380px + 20px);
+      padding-top: 30px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    align-items: center;
+
+    @include onDesktop {
+      &::after {
+        content: "";
+        display: inline-block;
+        background-color: $c-dark;
+        width: 5px;
+        height: 5px;
+      }
+    }
+  }
+
+  &__item-name {
+    width: 100px;
+    text-align: right;
+
+    @include onDesktop {
+      width: 162px;
+    }
+
+    &--sivak {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__visible {
+    display: none;
+
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
+
+  &__line {
+    display: inline-block;
+    background-color: $c-dark;
+    width: 76px;
+    height: 1px;
+    margin-left: 20px;
+  }
+
+  &__more {
+    @extend %learn-more;
+
+    @include onTablet {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      align-self: end;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 4;
+    }
+  }
+}
