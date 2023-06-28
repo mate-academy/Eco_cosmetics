@@ -1,34 +1,136 @@
 .ayurvedic {
-  &__content{
-     min-height: 430px;
+  position: relative;
 
-  &_leftside {
-    position: absolute;
-    margin-top: 37px;
-    right: 200px;
+  @include OnDesktop {
+    @include pageGrid;
   }
 
-  &_photo {
-    right: 0;
-    position: absolute;
+  &__title {
+    display: flex;
+    flex-direction: column;
+
+    @include OnDesktop {
+      justify-content: space-between;
+      grid-column: 2 / 6;
+    }
+
+    &--lean-more-desktop{
+      display: none;
+
+      @include OnDesktop {
+        display: block;
+      }
+    }
+    &--lean-more-mobile{
+
+      @include OnDesktop {
+        display: none;
+      }
+    }
   }
 
-  &_titles {
+  &__content_leftside {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    padding-inline-end: 160px ;
+
+    @include OnTablet {
+      padding-inline-end: 375px ;
+      margin-top: -4px;
+    }
+    @include OnDesktop {
+      padding-inline-end:0;
+      margin-top: 35px;
+      grid-column: 6 / 8;
+    }
+
+  }
+  &__content_titles {
     margin-bottom: 50px;
     color:#333;
     text-align: right;
     font-size: 16px;
     line-height: 150%;
+
+    &--last {
+      margin-bottom: 67px;
+
+      @include OnTablet {
+        margin-bottom: 8px;
+      }
+      @include OnDesktop {
+        margin-bottom: 41px;
+      }
+
+    }
   }
+
+    &__content_photo {
+      position: absolute;
+      top: 48px;
+      right: -8px;
+
+
+      @include OnTablet {
+        top: 16px;
+        right: -13px;
+      }
+
+      @include OnDesktop {
+        position: static;
+        grid-column: 8 / -1;
+      }
+
+      &--mobile {
+        display: block;
+
+        @include OnTablet {
+          display: none;
+        }
+        @include OnDesktop {
+          display: none;
+        }
+      }
+
+      &--tablet {
+        display: none;
+
+        @include OnTablet {
+          display: block;
+        }
+        @include OnDesktop {
+          display: none;
+        }
+      }
+
+      &--desktop {
+        display: none;
+        @include OnTablet {
+          display: none;
+        }
+        @include OnDesktop {
+          display: block;
+        }
+      }
+    }
   }
-
-
-}
-
 .features {
     display: flex;
     flex-direction: column;
     gap: 50px;
+
+
+    @include OnTablet {
+      justify-content: space-around;
+      align-items: end;
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    @include OnDesktop {
+      gap: 22px;
+    }
 
   &__card {
     display: flex;
@@ -39,21 +141,60 @@
 
     &_photo {
       &--one {
-        width: 64px;
-        height: 62px;
+        width: 62px;
+        height: 60px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
         background-image: url(./images/mobile-img/features1.svg);
+
+        @include OnTablet {
+          width: 80px;
+          height: 60px;
+          background-image: url(./images/tablet-img/features1.svg);
+        }
+
+        @include OnDesktop {
+          background-image: url(./images/desktop-img/features1.svg);
+        }
       }
 
       &--two {
         width: 100px;
-        height: 77px;
+        height: 84px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
         background-image: url(./images/mobile-img/features2.svg);
+
+        @include OnTablet {
+          width: 80px;
+          height: 68px;
+          background-image: url(./images/tablet-img/features2.svg);
+        }
+
+        @include OnDesktop {
+          background-image: url(./images/desktop-img/features2.svg);
+        }
       }
 
       &--three {
-        width: 81px;
+        width: 79px;
         height: 74px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
         background-image: url(./images/mobile-img/features3.svg);
+
+        @include OnTablet {
+          width: 80px;
+          height: 75px;
+          background-image: url(./images/tablet-img/features3.svg);
+        }
+
+        @include OnDesktop {
+          background-image: url(./images/desktop-img/features3.svg);
+        }
       }
     }
 

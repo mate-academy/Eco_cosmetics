@@ -16,6 +16,10 @@
 
   &__logo {
     display: none;
+    transition: $transition-duration;
+    &:hover {
+      transform: scale(1.1);
+    }
 
     @include OnDesktop {
       display: block;
@@ -27,6 +31,16 @@
     }
   }
 
+  &__item {
+    transition: all $transition-duration;
+
+      @include OnDesktop {
+        &:hover {
+          transform: scale(1.1)
+        }
+      }
+  }
+
   &__list {
     display: none;
 
@@ -34,18 +48,24 @@
       grid-column: 7 / 10;
       display: flex;
       list-style: none;
-      column-gap: 30px;
+      column-gap: 40px;
       }
   }
 
   &__link {
-    padding: 10px 10px 10px 0;
     text-decoration: none;
     color: #344F10;
     font-size: 18px;
     font-weight: 500;
     line-height: 150%;
+    transition: all $transition-duration;
 
+    &:hover {
+      color: #22330a;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #22330a;
+      width: fit-content;
+    }
   }
 }
 
@@ -54,6 +74,10 @@
   width: 24px;
 
   &__logo-link {
+    transition: $transition-duration;
+    &:hover {
+      transform: scale(1.2);
+    }
 
     @include OnDesktop {
       display: none;
@@ -62,6 +86,11 @@
 
   &__menu {
     background-image: url(./images/icons/Menu.svg);
+
+    transition: $transition-duration;
+    &:hover {
+      transform: scale(1.2);
+    }
 
       @include OnDesktop {
         display: none;
@@ -74,6 +103,11 @@
     background-repeat: no-repeat;
     background-size: cover;
 
+    transition: $transition-duration;
+    &:hover {
+      transform: scale(1.2);
+    }
+
     @include OnDesktop {
       height: 32px;
       width: 32px;
@@ -84,5 +118,10 @@
 
   &__close {
     background-image: url(./images/icons/close.svg);
+
+    transition: $transition-duration;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }

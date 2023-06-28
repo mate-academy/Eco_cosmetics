@@ -1,6 +1,51 @@
 .shop {
-  display: flex;
-  flex-direction: column;
+  @include pageGrid;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include OnTablet {
+      gap: 40px;
+    }
+
+    @include OnDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    grid-column: span 2;
+
+    @include OnTablet {
+      grid-column: 1 / -1;
+    }
+
+    @include OnDesktop {
+      gap: 30px;
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 30px;
+
+    @include OnTablet {
+      margin-top: 50px;
+      grid-column: 2 / -2;
+    }
+
+    @include OnDesktop {
+      grid-column: 5 / 9;
+    }
+  }
 
   &__nav {
     &-list {
@@ -24,23 +69,82 @@
         border-bottom: 2px solid #333;
         width: fit-content;
       }
+
+      @include OnDesktop {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 150%;
+        letter-spacing: 0.9px;
+      }
     }
   }
 }
 
+.cards {
+  display: grid;
+  overflow: hidden;
+
+  @include OnTablet {
+
+    overflow-x: scroll;
+    --columns: 2;
+    column-gap: 20px;
+    grid-template-columns: repeat(var(--columns), 1fr);
+  }
+}
+
 .card {
+
+  &--desktop {
+    display: none;
+
+    @include OnTablet {
+      display: block;
+    }
+  }
+
   &__content {
-    @include pageGrid;
-    margin-block: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   &__photo {
-    grid-column: -1 / 1;
+
+    display: none;
+
+    @include OnDesktop {
+      display: block;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include OnTablet {
+        display: block;
+      }
+
+      @include OnDesktop {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: block;
+
+      @include OnTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__titles {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
   }
 
   &__title {
-    grid-column: -1 / 1;
-    margin-block: 20px 10px;
     color: #333;
     font-size: 18px;
     font-weight: 600;
@@ -50,7 +154,6 @@
   }
 
   &__price {
-    grid-column: -1 / 1;
     color: #333;
     font-size: 18px;
     font-weight: 500;

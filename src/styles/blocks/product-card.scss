@@ -1,0 +1,89 @@
+.poduct {
+  @include pageGrid;
+}
+
+.product__wrapper {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @include OnTablet {
+    grid-column: 2 / -2;
+  }
+
+  @include OnDesktop {
+    grid-column: 4 / -4;
+  }
+}
+
+.product__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+
+  &_top {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &_title {
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    @include OnTablet {
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+
+  &_price {
+    color: #344F10;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    @include OnTablet {
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+
+  &_bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &_button {
+    margin-top: 5px;
+    align-self: center;
+  }
+
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+
+  &__text {
+    color: #344F10;
+    font-size: 14px;
+    line-height: 130%;
+    @include OnTablet {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+}
+

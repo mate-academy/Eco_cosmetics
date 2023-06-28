@@ -14,13 +14,35 @@
 @import "./blocks/top-bar";
 @import "./blocks/buttons";
 @import "./blocks/main-title";
+@import "./blocks/vertical-title.scss";
 
 .page {
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
+  background-color: $bg-color;
+
+  &__header {
+    margin-block: 6px 100px;
+
+    @include OnTablet {
+      margin-block: 8px 130px;
+      padding-inline: 27px;
+    }
+
+    @include OnDesktop {
+      margin-block: 32px 200px;
+      margin-inline: auto;
+      max-width: 1280px;
+      padding-inline: 50px;
+    }
+  }
 
   &__content {
     min-width: 320px;
+  }
+
+  &__product {
+    margin-block: 20px ;
   }
 
   &__menu {
@@ -48,6 +70,14 @@
     right: 0;
     left: 0;
     pointer-events: all;
+
+    @include OnDesktop {
+      padding-block: 30px;
+    }
+
+    @include OnDesktop {
+      padding-block: 60px;
+    }
   }
 }
 
@@ -60,16 +90,16 @@
   &__content {
     display: grid;
     row-gap: 100px;
-    padding-block: 6px 100px;
+    padding-block: 0 100px;
 
     @include OnTablet {
       row-gap: 130px;
-      padding-block: 8px 130px;
+      padding-block: 0 130px;
     }
 
     @include OnDesktop {
       row-gap: 200px;
-      padding-block: 32px 130px;
+      padding-block: 0 130px;
     }
   }
 }
@@ -77,6 +107,3 @@
 .container {
   @include contentPaddintInLine;
 }
-
-
-

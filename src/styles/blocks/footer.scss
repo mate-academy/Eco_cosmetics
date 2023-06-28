@@ -1,17 +1,74 @@
 .footer {
-  height: 80vh;
+  box-sizing: border-box;
+  height: 468px;
+
+  @include OnTablet {
+    height: 263px;
+  }
+
+  @include OnDesktop {
+    height: 320px;
+  }
 
   &__content {
     display: flex;
     flex-direction: column;
     gap: 40px;
 
+    @include OnTablet {
+      @include pageGrid;
+    }
+
+
     &_copyright {
+      display: none;
       color: #E4DFD3;
-      text-align: center;
+      text-align: left;
       font-size: 14px;
       font-weight: 600;
       line-height: 130%;
+
+      &--mobile {
+        grid-column: span 3;
+
+        color: #E4DFD3;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 130%;
+
+        @include OnTablet {
+          display: none;
+        }
+      }
+
+      &--tablet{
+        display: none;
+        grid-column: span 3;
+
+        color: #E4DFD3;
+
+        font-size: 14px;
+        text-align: left;
+        line-height: 150%;
+        font-weight: 500;
+
+        @include OnTablet {
+          display: block;
+        }
+        @include OnDesktop {
+          display: none;
+        }
+      }
+
+      @include OnDesktop {
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 150%;
+        text-transform: capitalize;
+      }
+
     }
   }
 
@@ -20,37 +77,89 @@
     flex-direction: column;
     gap: 20px;
 
+    @include OnDesktop {
+      gap: 140px;
+      grid-column: span 5;
+    }
+
     &_icon {
       display: flex;
-      gap: 24px;
+      gap: 20px;
+
+      @include OnDesktop {
+        display: none;
+        gap: 14px;
+      }
 
       &--fb {
-        height: 24px ;
-        width: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 20px ;
+        width: 20px;
         background-image: url(./images/icons/facebook.svg) ;
+
+        transition: all $transition-duration;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+
       }
 
       &--inst {
-        height: 24px ;
-        width: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 20px ;
+        width: 20px;
         background-image: url(./images/icons/Instagram.svg) ;
+
+        transition: all $transition-duration;
+
+        &:hover {
+          transform: scale(1.2);
+        }
       }
     }
   }
+
 
 
   &__bottom {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
     &_text {
       text-decoration: none;
 
       color: #E4DFD3;
       font-size: 14px;
       line-height: 150%;
+
+      @include OnDesktop {
+        box-sizing: border-box;
+        font-size: 16px;
+      }
     }
-    &_content {
+
+    @include OnTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include OnDesktop {
+      gap: 20px;
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__icon--hide-desktop {
+    display: none;
+
+    @include OnDesktop {
+      display: flex;
+      gap: 14px;
     }
   }
 
