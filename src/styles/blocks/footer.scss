@@ -1,0 +1,136 @@
+.footer {
+  position: relative; //for going below main
+  padding-block: 30px;
+  bottom: 0;
+
+  width: 100%;
+  background-color: $c-green;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    font-weight: normal;
+    line-height: 150%;
+    font-size: 14px;
+    color: $c-beige;
+
+    &--font-weight--bold {
+      font-weight: 500;
+      font-size: 18px;
+      text-transform: capitalize;
+
+      @include onTablet {
+        font-weight: normal;
+        font-size: 14px;
+        text-transform: none;
+      }
+    }
+  }
+
+  &__logo {
+    height: 32px;
+  }
+
+  &__primary-header {
+    padding-top: 24px;
+
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 85%;
+    /* or 41px */
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    /* White */
+    color: #fff;
+
+    @include onTablet {
+      padding-top: 0;
+      padding-bottom: 40px;
+      grid-column: 5 / span 4;
+      grid-row: 1;
+    }
+  }
+
+  &__copyright {
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    font-size: 14px;
+    color: $c-beige;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-inline: 40px;
+    text-transform: none;
+    text-align: center;
+
+    @include onTablet {
+      grid-column: 1 / span 3;
+      margin: 0;
+      font-weight: normal;
+      text-align: left;
+    }
+  }
+
+  &__list {
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    list-style: none;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    &--nav {
+      gap: 20px;
+      margin-block: 0;
+      margin-inline: 0;
+      padding-inline: 0;
+
+      @include onDesktop {
+        flex-direction: row;
+        gap: 40px;
+        grid-column: 1 / span 3;
+      }
+    }
+
+    &--socials {
+      flex-direction: row;
+      gap: 20px;
+
+      @include onTablet {
+        grid-column: 1;
+      }
+
+      @include onDesktop {
+        grid-column: 8;
+      }
+    }
+
+    &--contacts {
+      gap: 10px;
+      @include onTablet {
+        grid-column: 4 / span 3;
+        grid-row: 1 / span 2;
+        margin-bottom: 77px;
+      }
+
+      @include onDesktop {
+        grid-column: 8 / span 5;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
