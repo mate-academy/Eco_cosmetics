@@ -1,0 +1,126 @@
+.tooth-powder {
+
+  @include pageGrid;
+
+  // justify-items: center;
+
+  &__primary-title {
+    grid-column: span 2;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    color: $c-dark-green;
+
+    @include onTablet {
+      margin-right: -70px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / span 4;
+
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__ingrideents {
+    grid-column: 1;
+    margin-right: 32px;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+
+    margin-block: 40px;
+
+    text-align: right;
+
+    @include onTablet {
+      grid-column: 3;
+      white-space: nowrap;
+      margin-left: -30px;
+      margin-right: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: 7;
+      margin-right: 0;
+    }
+
+    &__item {
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-black;
+    }
+  }
+
+  &__secondary-title {
+    grid-column: span 2;
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    margin-bottom: 50px;
+
+    @include onTablet {
+      grid-row: 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__picture {
+    grid-column: 2;
+    height: 400px;
+    margin-left: -20px;
+    margin-right: -32px;
+    background-image: url(../images/svg_pictures/jar-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+
+    @include onTablet {
+      grid-column: 4 / span 3;
+      margin-left: -36px;
+      margin-right: -27px;
+      background-position-x: 10%;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / span 5;
+      margin: 0;
+      background-position: 0 0;
+    }
+  }
+
+  &__link {
+    margin-bottom: 100px;
+  }
+
+  &__icon {
+    justify-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-row: 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+}
