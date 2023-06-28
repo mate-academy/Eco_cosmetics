@@ -1,0 +1,127 @@
+.form {
+  width: 100%;
+
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 4px 0;
+
+    @extend %txt-small;
+
+    border: none;
+    border-bottom: 1px solid $c-gray;
+    color: $c-silver;
+    background-color: $c-gray-main;
+    transition: border-bottom $act-time, border-color $act-time;
+
+    @include onSmTablet {
+      font-weight: 500;
+    }
+
+    @include onSmDesktop {
+      font-size: 18px;
+    }
+
+    &::placeholder {
+      @extend %txt-small;
+      text-transform: capitalize;
+  
+      @include onSmTablet {
+        font-weight: 500;
+      }
+  
+      @include onSmDesktop {
+        font-size: 18px;
+      }
+    }
+
+    &:focus-visible,
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $c-dark;
+    }
+  
+    &:active,
+    &:hover {
+      border-color: $c-dark;
+    }
+  
+    &--main {
+      &:not(:last-child) {
+        margin-bottom: 4px;
+  
+        @include onSmDesktop {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  
+    &--last {
+      margin-bottom: 36px;
+  
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+  
+      @include onSmDesktop {
+        margin-bottom: 64px;
+      }
+    }
+  
+    &--area {
+      height: 36px;
+      resize: none;
+      margin-bottom: 28px;
+  
+      @include onSmDesktop {
+        margin-bottom: 48px;
+      }
+    }
+  
+    &--input {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+  
+        @include onSmDesktop {
+          margin-bottom: 32px;
+        }
+      }
+    }
+  
+    &:-webkit-autofill {
+      &,
+      &:hover,
+      &:focus {
+        @extend %txt-small;
+        border-bottom: 1px solid $c-dark;
+        -webkit-text-fill-color: $c-dark !important;
+        -webkit-box-shadow: 0 0 0 40px $c-gray-main inset;
+      }
+    }
+
+    &--active {
+      color: $c-green;
+      border-color: $c-green;
+
+      &::placeholder {
+        color: $c-green;
+      }
+
+      &:-webkit-autofill {
+        border-bottom: 1px solid $c-green;
+        -webkit-text-fill-color: $c-green !important;
+        -webkit-box-shadow: 0 0 0 40px $c-gray-main inset;
+      }
+    }
+
+    &--unactive {
+      color: $c-red;
+      border-color: $c-red;
+
+      &::placeholder {
+        color: $c-red;
+      }
+    }
+  }
+}

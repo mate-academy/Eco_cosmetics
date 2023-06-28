@@ -1,0 +1,31 @@
+.logo {
+  --logo-size: 24px;
+  width: var(--logo-size);
+  height: var(--logo-size);
+
+  @include bgImgPosition($ps: 50%, $sz: contain);
+  background-image: url(./../images/icons/logo.svg);
+
+  @include hover(opacity, 0.7);
+
+  @include onSmDesktop {
+    --logo-size: 50px;
+  }
+
+  &::after {
+    content: "witch of mountain winds";
+    position: relative;
+    top: 50%;
+    left: 60px;
+    display: none;
+    width: max-content;
+    transform: translateY(-50%);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $c-green;
+
+    @include onSmDesktop {
+      display: inline-block;
+    }
+  }
+}

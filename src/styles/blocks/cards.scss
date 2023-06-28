@@ -1,0 +1,47 @@
+.cards {
+  &__container {
+    position: relative;
+    @extend %container;
+  }
+
+  &__content {
+    padding: 0 0 20px;
+
+    @include onTablet {
+      padding: 0 0 24px;
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+
+  &__link {
+    position: absolute;
+    display: inline-block;
+    padding-right: 8px;
+    @extend %txt-decor;
+
+    transform-origin: top right;
+    transform: translateX(-110%) rotate(270deg);
+    color: $c-decor;
+    @include hover(color, $c-green);
+
+    @include onSmTablet {
+      transform: translateX(-100%) rotate(270deg);
+    }
+
+    @include onSmDesktop {
+      transform: translateX(-113%) rotate(270deg);
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      margin: 0 16px 4px 0;
+      width: 100px;
+      height: 1px;
+      background-color: $c-decor;
+    }
+  }
+}

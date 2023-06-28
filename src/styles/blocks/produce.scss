@@ -1,0 +1,53 @@
+.produce {
+  color: $c-dark;
+
+  &__content {
+    padding: 0 #{$pddg-x-mob};
+
+    @include onTablet {
+      padding: 0;
+    }
+  }
+
+  &__img {
+    margin-bottom: 20px;
+    padding-bottom: 83%;
+    @include hover(border-radius, 20px);
+
+    @include onTablet {
+      padding-bottom: 88%;
+    }
+
+    @include onDesktop {
+      padding-bottom: 95%;
+    }
+
+    @include bgImgPosition($ps: center, $sz: cover);
+
+    &--face {
+      background-image: url(./../images/product/img-01.jpg);
+    }
+
+    &--body {
+      background-image: url(./../images/product/img-02.jpg);
+    }
+
+    &--hair {
+      background-image: url(./../images/product/img-03.jpg);
+    }
+
+    &--candles {
+      background-image: url(./../images/product/img-04.jpg);
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__cost {
+    @extend %txt-price;
+
+    @include coinAfter();
+  }
+}

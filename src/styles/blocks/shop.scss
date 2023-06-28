@@ -1,0 +1,75 @@
+.shop {
+  &__container {
+    @extend %container;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+    color: $c-green;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 12px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__tabs {
+    margin-bottom: 16px;
+    @include flexDJI($fd: row, $jc: space-between, $ai: center);
+
+    @include onTablet {
+      margin-bottom: 28px;
+      justify-content: flex-start;
+      gap: 32px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 52px;
+      gap: 52px;
+    }
+  }
+
+  &__tab {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 2px solid transparent;
+    @extend %txt-regular-two;
+    color: $c-silver;
+    @include hover(color, $c-dark);
+
+    &--active {
+      color: $c-dark;
+      border-color: $c-dark;
+    }
+
+    @include onDesktop {
+      @include fontProp(18px, $wgt: $fw-semibolt, $lh: 150%);
+    }
+  }
+
+  &__produce {
+    display: block;
+    @include hover(color, $c-green);
+  }
+
+  &__slider {
+    margin-bottom: 28px;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__btn {
+    letter-spacing: 0.15em;
+  }
+}

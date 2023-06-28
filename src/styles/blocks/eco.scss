@@ -1,0 +1,95 @@
+.eco {
+  &__container {
+    @extend %container;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__img {
+    margin: 0 auto 20px;
+    width: 100px;
+
+    @include bgImgPosition($ps: center, $sz: contain);
+    @include hover(transform, scale(1.2));
+
+    @include onTablet {
+      margin-top: -8px;
+    }
+
+    @include onSmDesktop {
+      margin-top: 0;
+    }
+
+    &--bird {
+      height: 60px;
+      background-image: url(./../images/eco/bird.svg);
+    
+      @include onSmTablet {
+        height: 70px;
+        background-image: url(./../images/eco/bird-tab.svg);
+      }
+
+      @include onSmDesktop {
+        margin-bottom: 60px;
+        height: 60px;
+      }
+
+      @include onLrgDesktop {
+        margin-bottom: 48px;
+      }
+    }
+
+    &--recycle {
+      height: 84px;
+      background-image: url(./../images/eco/recycle.svg);
+
+      @include onSmTablet {
+        margin-bottom: 20px;
+        height: 70px;
+        background-image: url(./../images/eco/recycle-tab.svg);
+      }
+
+      @include onSmDesktop {
+        margin-bottom: 36px;
+        height: 84px;
+      }
+
+      @include onLrgDesktop {
+        margin-bottom: 44px;
+        height: 68px;
+      }
+    }
+
+    &--leaf {
+      height: 74px;
+      background-image: url(./../images/eco/leaf.svg);
+
+      @include onSmTablet {
+        height: 70px;
+        background-image: url(./../images/eco/leaf-tab.svg);
+      }
+
+      @include onSmDesktop {
+        margin-bottom: 48px;
+        height: 74px;
+      }
+
+      @include onLrgDesktop {
+        margin-bottom: 36px;
+      }
+    }
+  }
+
+  &__text {
+    @extend %txt-regular-two;
+    color: $c-black;
+  }
+}

@@ -1,0 +1,97 @@
+.powder {
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+    @extend %container;
+  }
+
+  &__top {
+    grid-row: 1 / 2;
+  }
+
+  &__center {
+    grid-row: 1 / 3;
+  }
+
+  &__bottom {
+    grid-row: 2 / 3;
+    align-self: flex-end;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    color: $c-green;
+  }
+
+  &__substance {
+    margin-bottom: 28px;
+    @include flexDJI($fd: row, $jc: flex-end, $ai: 0);
+    gap: 12px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      padding-top: 20px;
+      gap: 20px;
+    }
+
+    @include onSmDesktop {
+      padding-top: 0;
+    }
+  }
+
+  &__ingredients {
+    padding: 24px 0;
+    @include flexDJI($fd: column, $jc: space-between, $ai: flex-end);
+    @extend %txt-regular;
+
+    @include onSmDesktop {
+      padding: 20px 0 28px;
+    }
+  }
+
+  &__ingredient {
+    flex: 0 0 auto;
+    padding: 16px 0;
+    @include hover(transform, translateX(20%));
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 50px;
+      height: 10px;
+
+      @include bgImgPosition($ps: center, $sz: 0);
+      background-image: url(./../images/ingredients/hint-mob.svg);
+
+      @include onTablet {
+        width: 96px;
+        background-image: url(./../images/ingredients/hint-tab.svg);
+      }
+    }
+  }
+
+  &__image {
+    margin-right: -#{$pddg-x-mob};
+    max-width: 382px;
+    height: 398px;
+    flex: 1 0 135px;
+
+    @include bgImgPosition($ps: left center, $sz: cover);
+    background-image: url(./../images/ingredients/union.svg);
+  
+    @include onSmTablet {
+      flex: 0 0 252px;
+    }
+
+    @include onTablet {
+      margin-right: -#{$pddg-x-tab};
+      flex: 0 0 308px;
+    }
+
+    @include onDesktop {
+      margin-right: 0;
+      flex: 0 0 382px;
+    }
+  }
+}

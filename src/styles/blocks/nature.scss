@@ -1,0 +1,75 @@
+.nature {
+  @include onLrgDesktop {
+    position: relative;
+  }
+
+  &__container {
+    position: relative;
+    @extend %container;
+
+    @include onLrgDesktop {
+      position: initial;
+    }
+  }
+
+  &__content {
+    @include onSmDesktop {
+      padding: 100px 0;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    display: none;
+    height: 1px;
+    background-color: $c-decor;
+
+    &--before {
+      width: calc(50% - (#{$gr-gap-desk} / 2) - 100px);
+      top: 0;
+      left: 0;
+      
+    }
+
+    &--after {
+      width: calc(50% - (#{$gr-gap-desk} / 2));
+      right: 0;
+      bottom: 0;
+    }
+
+    @include onSmDesktop {
+      display: block;
+    }
+  }
+
+  &__grid-item {
+    &--desk {
+      display: none;
+
+      @include onSmDesktop {
+        display: block;
+        grid-row: 1 / 2;
+      }
+    }
+  }
+
+  &__title {
+    color: $c-green;
+
+    @include onTablet {
+      margin: 0 auto;
+      width: 280px;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      width: auto;
+      text-align: left;
+    }
+  }
+
+  &__description {
+    @extend %txt-regular;
+  }
+}

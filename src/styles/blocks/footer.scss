@@ -1,0 +1,125 @@
+.footer {
+  background-color: $c-green-lite;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__content {
+    padding: 30px 0 40px;
+
+    @include onTablet {
+      padding-bottom: 30px;
+    }
+
+    @include onDesktop {
+      padding: 60px 0;
+    }
+  }
+
+  &__grid-item {
+    &--support {
+      grid-row: 1 / 4;
+    }
+
+    &--copyright {
+      grid-row: 4 / 5;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+  }
+
+  &__social {
+    margin-bottom: 40px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+
+    @include onSmDesktop {
+      margin-bottom: 0;
+      gap: 16px;
+    }
+  }
+  
+  &__social-link {
+    display: block;
+    width: 20px;
+    height: 20px;
+    @include bgImgPosition($ps: center, $sz: contain);
+    @include hover(opacity, 0.7);
+
+    &--fb {
+      background-image: url(./../images/icons/facebook.svg);
+    }
+
+    &--inst {
+      background-image: url(./../images/icons/instagram.svg);
+    }
+  }
+
+  &__support {
+    margin-bottom: 44px;
+    color: $c-gray-main;
+
+    @include onSmDesktop {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__support-item {
+    display: block;
+
+    @include onSmDesktop {
+      @include fontProp(16px, $wgt: $fw-regular, $lh: 150%);
+    }
+
+    &--link {
+      margin-bottom: 8px;
+      color: $c-gray-main;
+      transition: opacity $act-time, text-decoration $act-time;
+
+      &:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+      }
+
+      @include onSmDesktop {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__copyright {
+    width: 200px;
+    margin: 0 auto;
+    @extend %txt-copy;
+    text-align: center;
+    color: $c-gray-main;
+
+    @include onSmTablet {
+      width: auto;
+      @include fontProp(14px, $wgt: $fw-regular, $lh: 150%);
+      text-align: left;
+    }
+
+    @include onSmDesktop {
+      @include fontProp(18px, $wgt: $fw-medium, $lh: 150%);
+      text-transform: capitalize;
+    }
+
+    &--desk {
+      display: none;
+
+      @include onSmDesktop {
+        display: inline-block;
+      }
+    }
+  }
+}

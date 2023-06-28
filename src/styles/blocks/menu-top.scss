@@ -1,0 +1,34 @@
+.menu-top {
+  position: relative;
+  @include flexDJI($fd: row, $jc: space-between, $ai: center);
+
+  &__menu-opener {
+    @include onSmDesktop {
+      display: none;
+    }
+  }
+
+  &__menu-list {
+    display: none;
+
+    @include onSmDesktop {
+      position: absolute;
+      left: calc(50% + (#{$gr-gap-desk} / 2));
+      display: flex;
+      justify-content: flex-start;
+      gap: 40px;
+
+      align-self: flex-end;
+    }
+  }
+
+  &__menu-link {
+    @extend %input;
+    transition: opacity $act-time, border-color $act-time;
+  
+    &:hover {
+      border-color: $c-green;
+      opacity: 0.7;
+    }
+  }
+}
