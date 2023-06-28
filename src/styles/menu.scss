@@ -1,0 +1,62 @@
+.menu {
+  background-color: $menu-and-btn-background;
+  color: $page-backgroun-color;
+  padding-top: 20px;
+  font-weight: 600;
+  line-height: 130%;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+
+  @include tablet {
+    gap: 100px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+    align-items: center;
+    padding-bottom: 40px;
+
+    @include tablet {
+      gap: 61px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    width: 100%;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $page-backgroun-color;
+    }
+  }
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#menu:target {
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+  opacity: 1;
+  overflow: scroll;
+}

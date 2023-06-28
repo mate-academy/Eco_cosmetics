@@ -1,0 +1,144 @@
+.product {
+  background-color: $page-backgroun-color;
+  overflow: scroll;
+
+  &__top {
+    padding: 15px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__title-tablet {
+      display: none;
+
+    @include tablet {
+      display: block;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__price-ubtan {
+    display: none;
+
+    @include tablet {
+      display: block;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: $text-minor-color;
+    }
+  }
+
+  &__load {
+    display: none;
+
+    @include tablet {
+      display: block;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__price {
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__bottom {
+    @include tablet {
+      padding: 0 124px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 88.57%;
+    background-image: url(../images/oil.png);
+    background-size: cover;
+    margin-bottom: 30px;
+
+    @include tablet {
+      padding-bottom: 94.42%;
+      background-image: url(../images/ubtan.png);
+    }
+  }
+
+  &__button {
+    width: 100%;
+    margin-bottom: 50px;
+
+    @include tablet {
+      width: 280px;
+      margin-bottom: 60px;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+
+  &__descriptions {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 20px;
+    max-width: 280px;
+
+    @include tablet {
+      gap: 25px;
+      max-width: 467px;
+    }
+  }
+
+  &__span {
+    color: $text-minor-color;
+  }
+}
+
+#product {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+ bottom: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#product:target {
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+  opacity: 1;
+  overflow: scroll;
+}

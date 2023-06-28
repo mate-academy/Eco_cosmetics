@@ -1,0 +1,237 @@
+.shop {
+  margin-bottom: 100px;
+  position: relative;
+
+  @include tablet {
+    margin-bottom: 130px;
+    padding: 0 27px;
+  }
+
+  @include desktop {
+    max-width: 1280px;
+    margin: 0 auto 200px;
+    padding: 0 50px;
+  }
+
+  @include big-desktop {
+    max-width: 1440px;
+    margin: 0 auto 200px;
+    padding: 0 130px;
+  }
+
+  &__container {
+    @include desktop {
+      padding-left: 100px;
+    }
+
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
+    color: $text-minor-color;
+    padding: 0 20px;
+
+    @include tablet {
+      text-align: start;
+      padding: 0;
+    }
+
+    @include desktop {
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__list {
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $shop-link-color;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 27px;
+    padding: 0 20px;
+
+    @include tablet {
+      padding: 0;
+      gap: 30px;
+      justify-content: start;
+      margin-bottom: 37px;
+    }
+
+    @include desktop {
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+      font-size: 18px;
+      gap: 51px;
+    }
+  }
+
+  &__cards {
+    margin-bottom: 30px;
+    padding: 0;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__product-card {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+
+  &__card-2 {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__image-oil {
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 83.43%;
+    background-image: url(../images/oil.png);
+    background-size: cover;
+    margin-bottom: 20px;
+  }
+
+  &__image-ubtan {
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: 83.43%;
+    background-image: url(../images/ubtan.png);
+    background-size: cover;
+    margin-bottom: 20px;
+  }
+
+  &__producr-title {
+    padding: 0 20px;
+    margin-bottom: 10px;
+
+    @include tablet {
+      padding: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__product-price {
+    padding: 0 20px;
+    font-weight: 500;
+
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &___button-container {
+    padding: 0 20px;
+
+    @include tablet {
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  &__left {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      font-weight: 500;
+      line-height: 130%;
+      font-size: 14px;
+      text-align: center;
+      white-space: nowrap;
+      color: $left-title;
+      position: absolute;
+      transform: rotate(-90deg);
+      transform-origin: right center;
+      left: 18px;
+    }
+
+    @include big-desktop {
+      display: flex;
+      font-weight: 500;
+      line-height: 130%;
+      font-size: 14px;
+      text-align: center;
+      white-space: nowrap;
+      color: $left-title;
+      position: absolute;
+      transform: rotate(-90deg);
+      transform-origin: right center;
+      left: 98px;
+    }
+  }
+
+  &__left-title {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -42px;
+      left: -70px;
+      width: 1px;
+      height: 100px;
+      transform: rotate(-90deg);
+      background-color: $left-title;
+    }
+  }
+
+  &__item {
+    @include desktop {
+      &:hover .shop__link::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    @include desktop {
+      &::after {
+        content: "";
+        position: absolute;
+        right: 100%;
+        left: 0;
+        bottom: -10px;
+        width: 130%;
+        height: 1px;
+        background-color: $menu-and-btn-background;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: scaleX(0);
+      }
+    }
+  }
+}
