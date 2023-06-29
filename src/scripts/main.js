@@ -36,3 +36,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
 menu.addEventListener('transitionend', toggleScroll);
 product.addEventListener('transitionend', toggleScroll);
+
+const form = document.querySelector('.contact__form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  form.reset();
+});
