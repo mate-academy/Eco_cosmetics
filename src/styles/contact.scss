@@ -79,6 +79,11 @@
     transition: all 0.3s ease;
     background-color: $page-backgroun-color;
 
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $page-backgroun-color inset !important;
+      -webkit-text-fill-color: $shop-link-color !important;
+    }
+
     &::placeholder {
       text-transform: capitalize;
     }
@@ -102,10 +107,19 @@
       color: $input-ivalid;
     }
 
+    &:valid:-webkit-autofill {
+      border-bottom: 1px solid $text-minor-color;
+      -webkit-text-fill-color: $text-minor-color !important;
+    }
+
+    &:invalid:-webkit-autofill {
+      border-color: $input-ivalid;
+      -webkit-text-fill-color: $input-ivalid !important;
+    }
+
     @include desktop {
       font-size: 18px;
       font-weight: 500;
-
     }
   }
 
