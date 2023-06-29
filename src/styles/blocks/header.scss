@@ -1,7 +1,4 @@
 .header {
-
-  width: 100%;
-
   &__content {
     @include pageGrid;
     justify-content: center;
@@ -14,7 +11,13 @@
 
   &__bottom {
     grid-column: 1 / -1;
-    @include pageGrid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include onTablet {
+      @include pageGrid;
+    }
 
     @include onDesktop {
       margin-bottom: 200px;
@@ -22,19 +25,15 @@
   }
 
   &__background {
+    width: 100vw;
     margin-inline: -20px;
-    height: 0;
-    padding-top: 100%;
     margin-bottom: 25px;
-    grid-column: 1 / -1;
-    background-image: url(../images/png_pictures/jars-bg.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    object-fit: fill;
 
     @include onTablet {
       margin-inline: 0;
       position: static;
+      width: 100%;
+      grid-column: 1 / -1;
     }
 
     @include onDesktop {
