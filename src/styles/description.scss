@@ -1,0 +1,83 @@
+.description {
+  margin-bottom: 100px;
+
+  @include tablet {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 130px;
+  }
+
+  @include desktop {
+    max-width: 1280px;
+    justify-content: start;
+  }
+
+  @include big-desktop {
+    max-width: 1440px;
+  }
+
+  &__paragraph {
+    display: none;
+
+    @include desktop {
+      display: inline-block;
+      width: 480px;
+      padding: 100px 0 100px 100px;
+      margin-right: 120px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -50px;
+        top: 0;
+        width: 530px;
+        height: 1px;
+        background-color: $text-minor-color;
+
+        @include big-desktop {
+          left: -130px;
+          width: 610px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    color: $text-minor-color;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 150%;
+    font-size: 18px;
+    width: 290px;
+
+    @include tablet {
+      text-align: center;
+      letter-spacing: 0.9px;
+    }
+
+    @include desktop {
+      display: block;
+      width: 380px;
+      padding: 105px 0 131px;
+      text-align: start;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 630px;
+        height: 1px;
+        background-color: $text-minor-color;
+
+        @include big-desktop {
+          right: -330px;
+          width: 711px;
+        }
+      }
+    }
+  }
+}

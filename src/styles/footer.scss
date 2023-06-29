@@ -1,0 +1,150 @@
+.footer {
+  background-color: $footer-background;
+  color: $footer-text-collor;
+  padding: 30px 20px 40px;
+
+  @include tablet {
+    padding: 30px 27px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+  }
+
+  @include desktop {
+    column-gap: 120px;
+    padding: 60px 50px;
+    max-width: 1280px;
+  }
+
+  @include big-desktop {
+    padding: 60px 130px;
+    max-width: 1440px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      gap: 40px;
+      position: relative;
+      flex-direction: row;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__item {
+    height: 100%;
+
+    @include desktop {
+      &:hover .footer__link::after {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__contacts {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+    max-width: 280px;
+
+    @include tablet {
+      max-width: 100%;
+    }
+
+    @include desktop {
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include desktop {
+      gap: 14px;
+      position: absolute;
+      top: 190px;
+      left: 358px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__capcha {
+    font-weight: 600;
+    line-height: 130%;
+    text-align: center;
+    margin: auto;
+    font-size: 14px;
+    max-width: 200px;
+
+    @include tablet {
+      margin: 0;
+      max-width: 320px;
+      text-align: start;
+    }
+
+    @include desktop {
+      font-weight: 500;
+      line-height: 150%;
+      font-size: 18px;
+      text-transform: capitalize;
+      max-width: 100%;
+    }
+  }
+
+  &__copiright {
+    display: none;
+
+    @include desktop {
+      display: inline;
+    }
+  }
+
+  &__link {
+    @include desktop {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 100%;
+        left: 0;
+        bottom: -4px;
+        width: 100%;
+        height: 1px;
+        background-color: $footer-text-collor;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transform: scaleX(0);
+      }
+    }
+  }
+
+  &__roving {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+
+    @include desktop {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

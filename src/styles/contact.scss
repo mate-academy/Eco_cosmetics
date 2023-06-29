@@ -1,0 +1,140 @@
+.contact {
+  margin-bottom: 100px;
+  position: relative;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    margin-bottom: 132px;
+  }
+
+  @include desktop {
+    max-width: 1280px;
+    grid-gap: 120px;
+    margin-bottom: 132px;
+  }
+
+  @include big-desktop {
+    max-width: 1440px;
+  }
+
+  &__title {
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__image {
+    @include tablet {
+      max-width: 100%;
+      height: 0;
+      padding-bottom: 119%;
+      background: url(../images/bird.png) no-repeat right/contain;
+
+      @include desktop {
+        background: url(../images/bird-desctop.png) no-repeat right/contain;
+        width: 580px;
+        height: 539px;
+        padding: 0;
+      }
+    }
+  }
+
+  &__help {
+    max-width: 320px;
+    margin-bottom: 20px;
+
+    @include tablet {
+      max-width: 342px;
+    }
+
+    @include desktop {
+      margin-bottom: 40px;
+      max-width: 380px;
+    }
+  }
+
+  &__element {
+    @include desktop {
+      padding-left: 100px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include desktop {
+      gap: 42px;
+    }
+  }
+
+  &__input {
+    font-size: 14px;
+    line-height: 150%;
+    color: $shop-link-color;
+    border-bottom: 1px solid $shop-link-color;
+    transition: all 0.3s ease;
+    background-color: $page-backgroun-color;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $page-backgroun-color inset !important;
+      -webkit-text-fill-color: $shop-link-color !important;
+    }
+
+    &::placeholder {
+      text-transform: capitalize;
+    }
+
+    &:focus-visible {
+      border-bottom: 1px solid $menu-and-btn-background;
+    }
+
+    &:placeholder-shown:valid {
+      border-bottom: 1px solid $text-minor-color;
+      color: $text-minor-color;
+    }
+
+    &:not(:placeholder-shown):valid {
+      border-bottom: 1px solid $text-minor-color;
+      color: $text-minor-color;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-color: $input-ivalid;
+      color: $input-ivalid;
+    }
+
+    &:valid:-webkit-autofill {
+      border-bottom: 1px solid $text-minor-color;
+      -webkit-text-fill-color: $text-minor-color !important;
+    }
+
+    &:invalid:-webkit-autofill {
+      border-color: $input-ivalid;
+      -webkit-text-fill-color: $input-ivalid !important;
+    }
+
+    @include desktop {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  &__button {
+    @include tablet {
+      width: 280px;
+    }
+  }
+}
+
+#message::placeholder {
+  text-align: bottom;
+  padding-top: 1.5em;
+}
+
+#message {
+  overflow: hidden;
+}
