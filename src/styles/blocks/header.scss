@@ -1,12 +1,10 @@
 .header {
-  width: 100vw;
 
-  @include onDesktop {
-    width: auto;
-  }
+  width: 100%;
 
   &__content {
     @include pageGrid;
+    justify-content: center;
   }
 
   &__top {
@@ -25,15 +23,18 @@
 
   &__background {
     margin-inline: -20px;
-    width: 100vw;
+    height: 0;
+    padding-top: 100%;
     margin-bottom: 25px;
-    grid-column: span 2;
+    grid-column: 1 / -1;
+    background-image: url(../images/png_pictures/jars-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: fill;
 
     @include onTablet {
       margin-inline: 0;
       position: static;
-      width: 100%;
-      grid-column: 1 / -1;
     }
 
     @include onDesktop {
