@@ -1,4 +1,24 @@
 body {
   margin: 0 auto;
   background: #e4dfd3;
+  .disp {
+    @include onMobiles {
+      display: none;
+    }
+    @include onTablet {
+      display: none;
+    }
+    @include onDesktop {
+      display: block;
+    }
+  }
+  .disp1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
 }

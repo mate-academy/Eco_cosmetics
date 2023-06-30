@@ -3,46 +3,91 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 90px;
-
-  .logo {
-    display: flex;
-    justify-content: space-between;
+  margin-top: 40px;
+  padding-bottom: 26px;
+  @include onTablet {
+    padding-bottom: 36px;
+  }
+  @include onDesktop {
+    padding-bottom: 90px;
   }
   &__logo {
-    width: 50px;
-    height: 50px;
-
+    @include onTablet {
+      display: none;
+    }
+    @include onMobiles {
+      display: none;
+    }
+    @include onDesktop {
+      display: block;
+      height: 50px;
+    }
   }
   .logoF {
     display: block;
-    width: 50px;
+    width: 270px;
     height: 50px;
     background-repeat: no-repeat;
     transition: all 0.3s;
-    background-image: url(../images/logo.svg);
+    background-image: url(../images/Group14.svg);
     &:hover {
       background-image: url(../images/shop.svg);
     }
   }
+  .menuMob {
+    display: block;
+    width: 27px;
+    height: 27px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    background-image: url(../images/menu.svg);
+    &:hover {
+      background-image: url(../images/shop.svg);
+    }
+    @include onDesktop {
+      display: none;
+    }
+  }
   .menuF {
     display: block;
-    width: 60px;
-    height: 60px;
+    width: 25px;
+    height: 25px;
     background-repeat: no-repeat;
     transition: all 0.3s;
     background-image: url(../images/shop.svg);
   }
+  .Moblogo {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    background-image: url(../images/logoMob.svg);
+    @include onDesktop {
+      display: none;
+    }
+  }
   .nav__list {
-    display: flex;
-    gap: 48px;
-    align-items: center;
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    @include onMobiles {
+      display: none;
+    }
+    @include onTablet {
+      display: none;
+    }
+    @include onDesktop {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      padding-left: 190px;
+    }
   }
   .nav__item {
-    list-style: none;
     display: block;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 27px;
+    color: $colorH;
+    cursor: pointer;
+    transition: all 0.3s;
   }
 }

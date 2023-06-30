@@ -3,7 +3,41 @@
   font-weight: 600;
   font-size: 60px;
   line-height: 78px;
+  color: $colorH1;
   padding-bottom: 30px;
+}
+
+.header__titleMob {
+  font-style: "semibold";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+  color: $colorH1;
+  padding-bottom: 10px;
+  @include onTablet {
+    text-align: center;
+    font-size: 36px;
+    line-height: 54px;
+  }
+}
+
+.header__title1 {
+  font-style: "semibold";
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 40px;
+  color: $colorH;
+  padding-bottom: 40px;
+}
+
+.header__title1--pad {
+  margin-left: 125px;
+  padding-bottom: 30px;
+}
+
+.header__title2--pad {
+  padding-bottom: 35px;
 }
 
 .header__title-eve {
@@ -11,7 +45,32 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  padding-bottom: 50px;
+  color: $colorH1;
+  padding-bottom: 30px;
+  @include onTablet {
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  @include onDesktop {
+    padding-bottom: 50px;
+  }
+}
+
+.header__title-Desc {
+  display: none;
+  @include onDesktop {
+    display: block;
+    font-style: "semibold";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $colorH1;
+    padding-bottom: 30px;
+  }
+}
+
+.header__title-eve--2 {
+  padding-bottom: 40px;
 }
 
 .header__link {
@@ -23,18 +82,20 @@
   border: 1px solid $c-button;
   background-color: $c-button;
   font-family: inherit;
+  text-transform: uppercase;
   font-weight: 600;
   font-size: 16px;
-  line-height: 100%;
+  line-height: 21px;
   color: $grantext;
   text-decoration: none;
   cursor: pointer;
-
-  margin-bottom: 200px;
   height: 60px;
   width: 100%;
+
+  margin-bottom: 100px;
   @include onTablet {
-    width: 270px;
+    width: 280px;
+    margin-bottom: 130px;
   }
 
   &:hover {
@@ -44,38 +105,86 @@
   }
 }
 
+.header__container {
+  display: flex;
+  justify-content: center;
+}
+
+.pad {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
+  @include onTablet {
+    padding-bottom: 50px;
+  }
+  @include onDesktop {
+    padding-bottom: 200px;
+  }
+}
+
 .img1 {
-  display: block;
-  width: 580px;
-  height: 451px;
-  padding-bottom: 200px;
+  display: flex;
+  overflow: hidden;
+  width: 715px;
+  height: 270px;
+  object-fit: contain;
+  object-position: center;
+  position: relative;
   background-repeat: no-repeat;
   transition: all 0.3s;
   background-image: url(../images/img1.png);
+  @include onTablet {
+    justify-content: center;
+    height: 500px;
+    background-image: url(../images/img1Tab.png);
+  }
+  @include onDesktop {
+    height: 451px;
+  }
+}
+
+.header__line2 {
+  // padding-left: 770px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .line1 {
-  display: block;
-  width: 610px;
-  height: 2px;
-  padding-bottom: 100px;
-  background-repeat: no-repeat;
-  background-image: url(../images/Rectangle.svg);
+  display: none;
+  @include onDesktop {
+    display: block;
+    width: 610px;
+    height: 2px;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-image: url(../images/Rectangle.svg);
+  }
 }
 
 .line2 {
-  display: block;
-  width: 610px;
-  height: 2px;
-  padding-bottom: 200px;
-  background-repeat: no-repeat;
-  background-image: url(../images/Rectangle.svg);
+  display: none;
+  @include onDesktop {
+    display: block;
+    width: 760px;
+    height: 2px;
+    padding-bottom: 200px;
+    background-repeat: no-repeat;
+    background-image: url(../images/Rectangle2.svg);
+  }
 }
 
 .header__title_line {
   font-style: "semibold";
+  text-transform: uppercase;
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 5%;
+  color: $colorH;
   padding-bottom: 130px;
+  @include onDesktop {
+    font-size: 24px;
+    line-height: 36px;
+    padding-bottom: 130px;
+  }
 }

@@ -2,9 +2,8 @@
   display: flex;
   gap: 48px;
   align-items: center;
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+  padding: 0 0 60px;
+  margin: 0;
 }
 
 .shop__item {
@@ -16,30 +15,42 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 1080px;
+  object-fit: cover;
+  width: 100%;
+  height: 500px;
+  margin: 0;
+  padding-bottom: 20px;
 }
 
 .img4 {
-  width: 530px;
+  object-fit: cover;
+  width: 100%;
   height: 500px;
-  padding-bottom: 100px;
   background-repeat: no-repeat;
   transition: all 0.3s;
   background-image: url(../images/shop1.png);
+  padding-right: 20px;
 }
 
 .img5 {
-  width: 530px;
-  height: 500px;
-  padding-bottom: 100px;
-  background-repeat: no-repeat;
-  transition: all 0.3s;
-  background-image: url(../images/shop2.png);
+  display: none;
+  @include onTablet {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    background-image: url(../images/shop2.png);
+  }
 }
 
 .shop-ing {
   display: flex;
   flex-direction: row;
+  padding-bottom: 40px;
+  color: $colorH1;
 }
 
 .shop-padd {
@@ -52,15 +63,152 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-  width: 380px;
+  width: 550px;
   padding-bottom: 13px;
 }
 
-.svg1 {
+.shop__titleTab {
+  display: none;
+  @include onTablet {
+    display: block;
+    font-style: "medium";
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    width: 550px;
+    padding-bottom: 13px;
+  }
+}
+
+.shop__title1 {
+  font-style: "semibold";
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
+  color: $colorH;
+  padding-bottom: 20px;
+  @include onTablet {
+    font-style: 24px;
+    padding-bottom: 288px;
+  }
+  @include onDesktop {
+    font-style: 36px;
+  }
+}
+
+.svgDesc {
+  display: none;
+  @include onDesktop {
+    display: block;
+    width: 480px;
+    height: 397px;
+    padding-bottom: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/GroupDesc.svg);
+  }
+}
+
+.svgTab {
+  display: none;
+  @include onTablet {
+    display: block;
+    width: 397px;
+    height: 398px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/GroupTab.svg);
+    padding-bottom: 130px;
+  }
+  @include onDesktop {
+    display: none;
+  }
+}
+
+.svgMob {
   display: block;
-  width: 610px;
-  height: 100%;
-  padding-bottom: 200px;
+  width: 182px;
+  height: 398px;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-image: url(../images/svg.png);
+  background-image: url(../images/GroupMob.svg);
+  margin: 0;
+  @include onTablet {
+    display: none;
+  }
+}
+
+.shop__contacts-title {
+  display: grid;
+  height: 334px;
+  padding-top: 37px;
+  font-family: inherit;
+  justify-items: end;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.group1 {
+  display: block;
+  width: 82px;
+  height: 75px;
+  padding-bottom: 45px;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+  background-image: url(../images/Group10.svg);
+}
+
+.group2 {
+  display: block;
+  width: 80px;
+  height: 75px;
+  padding-bottom: 45px;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+  background-image: url(../images/Group11.svg);
+}
+
+.group3 {
+  display: block;
+  width: 80px;
+  height: 75px;
+  padding-bottom: 45px;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+  background-image: url(../images/Group91.svg);
+}
+
+.grid-just {
+  display: grid;
+  justify-items: center;
+  padding-bottom: 50px;
+  @include onTablet {
+    padding-bottom: 200px;
+  }
+}
+
+.img7 {
+  display: none;
+  @include onTablet {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 540px;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    background-image: url(../images/shop3.png);
+  }
+
+}
+
+.shop__button {
+  display: flex;
+  justify-content: center;
+  @include onDesktop {
+    padding-right: 200px;
+  }
+
 }
