@@ -1,0 +1,145 @@
+.main {
+  margin-bottom: 100px;
+  overflow: hidden;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  &__wrapper {
+    @include pageGrid;
+
+    @include onDesktop {
+      position: relative;
+      margin-bottom: 200px;
+      padding-block: 100px;
+    }
+
+    &::before {
+      display: none;
+
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $c-green;
+
+      grid-column: 1 / 6;
+
+      margin-left: -50px;
+      padding-right: 50px;
+
+      @include onDesktop {
+        display: block;
+      }
+
+      @include onDesign {
+        margin-left: -130px;
+        padding-right: 130px;
+      }
+    }
+
+    &::after {
+      display: none;
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $c-green;
+
+      grid-column: 7 / -1;
+      margin-right: -50px;
+      padding-left: 50px;
+
+      @include onDesktop {
+        display: block;
+      }
+
+      @include onDesign {
+        margin-right: -130px;
+        padding-left: 130px;
+      }
+    }
+  }
+
+  &__header {
+    margin-block: 100px;
+    color: $c-green;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    grid-column: span 2;
+
+    text-align: center;
+
+    @include onTablet {
+      grid-column: 3 / span 2;
+      margin-inline: -32px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      grid-column: 7 / span 4;
+      margin: 0;
+
+      font-size: 24px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__description {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: relative;
+      line-height: 150%;
+      color: $c-black;
+
+      grid-column: 2 / span 4;
+    }
+  }
+
+  &__about-brand {
+    grid-column: 1 / -1;
+  }
+
+  &__side-text {
+    display: none;
+    @include onDesktop {
+
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 130%;
+
+      color: $c-green;
+
+      grid-column: 1;
+      grid-row: span 2;
+      align-self: self-start;
+
+      text-align: left;
+      display: inline-block;
+      writing-mode: vertical-rl;
+      // text-orientation: mixed;
+
+      transform: rotate(-180deg);
+
+      &::before {
+        display: inline-block;
+        margin-bottom: 10px;
+        content: "";
+        width: 1px;
+        height: 100px;
+        background-color: $c-green;
+      }
+    }
+  }
+}

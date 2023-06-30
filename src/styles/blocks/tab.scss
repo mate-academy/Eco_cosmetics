@@ -1,0 +1,137 @@
+// #region tab v3
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__radio {
+    display: none;
+  }
+}
+
+.tabs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+
+  @include onTablet {
+    justify-content: flex-start;
+    gap: 14px;
+  }
+
+  @include onDesktop {
+    gap: 30px;
+  }
+
+  &__tab {
+    cursor: pointer;
+    display: inline-block;
+    color: $c-dark-gray;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    position: relative;
+
+    &::after {
+      color: $c-black;
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-black;
+      transform: scale(0);
+    }
+  }
+}
+
+.panels {
+  &__panel {
+    display: none;
+
+    &__content {
+      @include pageGrid;
+
+      @include onDesktop {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+.product__card {
+  grid-column: span 2;
+
+  &:last-child() {
+    display: none;
+  }
+
+  @include onMobile {
+    @include pageGrid;
+  }
+
+  @include onTablet {
+    grid-column: span 3;
+
+    &:last-child() {
+      display: block;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    @include onMobile {
+      grid-column: span 2;
+      margin-inline: -20px;
+      margin-bottom: 20px;
+    }
+
+    @include onTablet {
+      margin: 0;
+      overflow: hidden;
+      width: 530;
+      height: 500;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+
+    @include onTablet {
+      transition: transfrom, $transition-speed;
+      object-fit: cover;
+      height: 100%;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+$tabs: 4;
+
+@for $tab from 1 through $tabs {
+  .radio-#{$tab}:checked~.panels .panel-#{$tab} {
+    display: block;
+  }
+}
+
+@for $tab from 1 through $tabs {
+  .radio-#{$tab}:checked~.tabs .tab-#{$tab} {
+    color: $c-black;
+    &::after {
+      transition: transform, $transition-speed;
+      transform: scale(1);
+      transform-origin: bottom left;
+    }
+  }
+}
+// #endregion
