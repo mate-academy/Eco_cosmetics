@@ -1,0 +1,168 @@
+.about {
+  display: flex;
+  overflow: hidden;
+  margin-bottom: $mobileSectionIndent;
+
+  @include onTablet() {
+    margin-bottom: $tabletSectionIndent;
+  }
+
+  @include onDesktop() {
+    margin-bottom: $desktopSectionIndent;
+  }
+
+  &__content {
+    display: flex;
+    height: 275px;
+    position: relative;
+
+    @include onTablet() {
+      height: unset;
+    }
+  }
+
+  &__info {
+
+    @include onTablet() {
+      width: 342px;
+    }
+
+    @include onDesktop() {
+      width: 380px;
+      margin-left: 100px;
+    }
+
+    &::before {
+      @include onDesktop() {
+        content: "";
+        width: 18px;
+        height: 302px;
+
+        @include bgIconRules();
+        background-image: url(../images/about/about-link.svg);
+
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    &-title {
+      width: 280px;
+
+      margin-bottom: 10px;
+
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $greenColor;
+
+      @include onDesktop() {
+        font-size: 36px;
+        line-height: 110%;
+        width: 380px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &-text {
+      margin-bottom: 30px;
+
+      @include poppinsFont();
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $darkColor;
+
+      @include onTablet() {
+        font-size: 16px;
+      }
+
+      &--desktop {
+        display: none;
+
+        @include onDesktop() {
+          display: flex;
+          margin-bottom: 40px;
+        }
+      }
+    }
+
+    &-link {
+      box-sizing: border-box;
+      @include poppinsFont();
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: $greenColor;
+
+      padding-bottom: 10px;
+
+      border-bottom: 1px solid transparent;
+
+      transition: $transitionTime;
+
+      &:hover {
+        border-color: $greenColor;
+      }
+    }
+  }
+
+  &__images {
+    display: none;
+
+    @include onDesktop() {
+      display: flex;
+      gap: 20px;
+      transform: translateX(21%);
+    }
+  }
+
+  &__image {
+    @include bgIconRules();
+    background-image: url(../images/about/about-img.svg);
+
+    @include onTablet() {
+      background-size: cover;
+      width: 369px;
+      height: 318px;
+
+      position: absolute;
+      right: 0;
+    }
+
+    @include onDesktop() {
+      position: relative;
+      right: unset;
+
+      background-size: cover;
+      width: 480px;
+      height: 529px;
+    }
+
+    &--tablet {
+      @include onTablet() {
+        position: absolute;
+        right: 0;
+      }
+
+      @include onDesktop() {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop() {
+        display: flex;
+        background-image: url(../images/about/about-img-small.svg);
+        width: 208px;
+        height: 430px;
+        margin-top: 14%;
+      }
+    }
+  }
+}

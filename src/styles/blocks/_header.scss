@@ -1,0 +1,259 @@
+.header {
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 0;
+
+    @include onTablet() {
+      padding: 25px 0 30px;
+    }
+
+    @include onDesktop() {
+      display: none;
+    }
+
+    &-menu {
+      width: 20px;
+      height: 13px;
+
+      @include bgIconRules();
+      background-image: url(../images/icons/menu.svg);
+
+      transition: $transitionTime;
+
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+
+    &--desktop {
+
+      @include onMobile() {
+        display: none;
+      }
+
+      @include onDesktop() {
+        display: flex;
+        margin-bottom: 92px;
+        padding-bottom: unset;
+      }
+    }
+
+    &-logo {
+      width: 24px;
+      height: 24px;
+
+      @include bgIconRules();
+      background-image: url(../images/icons/logo.svg);
+
+      &--desktop {
+        position: relative;
+        width: 50px;
+        height: 50px;
+
+        &::after {
+          content: "witch of mountain winds";
+
+          position: absolute;
+          bottom: 30%;
+          left: 120%;
+          width: 210px;
+
+          @include poppinsFont();
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 130%;
+          color: $greenColor;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+      }
+
+      transition: $transitionTime;
+
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+
+    &-shop {
+      width: 20px;
+      height: 24px;
+
+      @include bgIconRules();
+      background-image: url(../images/icons/shop.svg);
+
+      &--dwsktop {
+        width: 22px;
+        height: 26px;
+      }
+
+      transition: $transitionTime;
+
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+
+    &-actions {
+      display: flex;
+      gap: 295px;
+    }
+
+    &-list {
+      display: flex;
+      gap: 40px;
+
+      @include poppinsFont();
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    &-link {
+      color: $greenColor;
+
+      transition: $transitionTime;
+
+      &:hover {
+        color: $footerBgColor;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 267px;
+
+    margin-bottom: 25px;
+
+    @include bgIconRules();
+    background-image: url(../images/bg-images/header-bg.svg);
+    background-size: cover;
+
+    &--mobile {
+      @include onTablet() {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet() {
+        display: flex;
+        height: 500px;
+      }
+    }
+
+    &--desktop {
+      @include onMobile() {
+        display: none;
+      }
+    }
+
+    @include onTablet() {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop() {
+      width: 570px;
+      height: 450px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop() {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: $desktopSectionIndent;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    color: $darkColor;
+
+    &-title {
+      width: 280px;
+
+      margin-bottom: $SectionTitleIndent;
+
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 130%;
+
+      text-align: center;
+      align-self: center;
+
+      @include onTablet() {
+        width: 466px;
+        font-size: 36px;
+      }
+
+      @include onDesktop() {
+        font-size: 60px;
+        text-align: unset;
+        align-self: unset;
+
+        margin-bottom: 30px;
+      }
+    }
+
+    &-text {
+      margin-bottom: 30px;
+
+      @include poppinsFont();
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      text-align: center;
+
+      @include onTablet() {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop() {
+        text-align: unset;
+      }
+    }
+
+    &-button {
+      margin-bottom: $mobileSectionIndent;
+      border: 1px solid transparent;
+      @include buttonRulesMobile();
+
+      @include onTablet() {
+        width: 280px;
+        align-self: center;
+        margin-bottom: $tabletSectionIndent;
+      }
+
+      @include onDesktop() {
+        align-self: unset;
+      }
+
+      transition: $transitionTime;
+
+      &:hover {
+        background-color: $pageBgColor;
+        color: $darkColor;
+        border-color: $darkColor;
+      }
+    }
+
+    @include onDesktop() {
+      margin-left: 100px;
+    }
+  }
+}
