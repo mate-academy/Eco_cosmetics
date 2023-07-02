@@ -1,4 +1,5 @@
 .cosmetic-jar {
+  position: relative;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -8,21 +9,27 @@
     display: flex;
     flex-direction: column;
     justify-content: right;
-    margin: 36px 20px 67px 0;
     align-items: center;
+    padding: 37px 20px 37px 0;
 
-    @include onTablet {
-      margin-bottom: 8px;
+    @include onDesktop {
+      padding: 37px 20px 41px 0;
     }
 
     &--text {
-      margin-bottom: 50px;
+      position: relative;
+      margin-bottom: 49px;
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
       text-align: right;
       color: $text-color;
-      width: max-content;
+      width: 180px;
+      height: 24px;
+
+      &:nth-child(even) {
+        margin-bottom: 52px;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -30,33 +37,83 @@
     }
   }
 
+  &__arrows {
+    display: none;
+
+    // @include onTablet {
+    //   padding: 38px 0 41px;
+    // }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 397px;
+      margin-right: 23px;
+
+      padding: 38px 0 41px;
+    }
+
+    &--item {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        background-image: url("../images/hint-tablet.d604c395.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: middle;
+        height: 24px;
+        margin-bottom: 49px;
+        width: 76px;
+
+        &:nth-child(even) {
+          margin-bottom: 52px;
+        }
+
+        &:nth-child(5) {
+          margin-bottom: 0;
+        }
+      }
+
+      // @include onTablet {
+      //   width: 76px;
+      // }
+    }
+  }
+
   &__image {
     display: flex;
     box-sizing: border-box;
-    height: auto;
-    min-width: 182px;
+    height: 397px;
+    width: 182px;
+    position: relative;
     flex-grow: 1;
-    object-fit: cover;
-    background-image: url("../images/JarToothPowMobile.svg");
-    // background-size: cover;
+    background-image: url("../images/свг.svg");
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center right;
+
+    // &--photo {
+    //   object-fit: contain;
+    // }
 
     @include onTablet {
-      min-width: 398px;
-      height: 397px;
-      background-image: url("../images/JarToothPowWithArr.svg");
-      background-size: cover;
+      background-image: url("../images/Frame 2.svg");
+      background-size: contain;
       background-repeat: no-repeat;
-      background-position: center right -98px;
+      background-position: center right;
+      width: 398px;
     }
 
     @include onDesktop {
-      min-width: 480px;
-      height: 397px;
-      background-image: url("../images/JarToothPowWithArr.svg");
-      background-size: cover;
+      background-image: url("../images/PowderOnDesktop.svg");
+      background-size: contain;
       background-repeat: no-repeat;
       background-position: center right;
+      width: 398px;
     }
 
     -webkit-transform: scale(1);

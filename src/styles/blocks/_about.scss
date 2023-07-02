@@ -1,13 +1,10 @@
 .about {
   box-sizing: border-box;
   min-width: 280px;
-  // margin: 0 20px;
 
   &__content {
     display: grid;
-    // flex-direction: column;
     justify-content: left;
-    // width: 100%;
 
     @include onTablet {
       display: grid;
@@ -36,7 +33,7 @@
 
     @include onDesktop {
       display: grid;
-      margin: 0 0 40px;
+      // margin: 0 0 40px;
     }
   }
 
@@ -56,6 +53,18 @@
 
     @include onDesktop {
       display: grid;
+    }
+
+    &--add {
+      display: none;
+
+      @include onDesktop {
+        display: grid;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: $colorMenu;
+      }
     }
   }
 
@@ -81,7 +90,6 @@
 
     &--photo {
       width: 100%;
-
       height: auto;
       overflow: auto;
       object-fit: fill;
@@ -94,10 +102,6 @@
       &:hover {
         -webkit-transform: scale(1.1);
         transform: scale(1.1);
-      }
-
-      @include onDesktop {
-        min-height: 529px;
       }
     }
   }
@@ -116,6 +120,18 @@
     &--photo {
       width: 100%;
       height: auto;
+      overflow: auto;
+      object-fit: fill;
+
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
     }
   }
 }
