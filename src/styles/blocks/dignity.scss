@@ -1,0 +1,53 @@
+.dignity {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px 0;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px 0;
+    width: 100%;
+
+    @include onTablet {
+      gap: 28px;
+    }
+
+    @include onLaptop {
+      gap: 40px;
+      max-width: 380px;
+    }
+  }
+
+  &__image {
+    max-height: 80px;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__text {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      height: 36px;
+    }
+  }
+}
