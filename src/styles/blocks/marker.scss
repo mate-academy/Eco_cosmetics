@@ -1,0 +1,31 @@
+.marker {
+  display: none;
+
+  @include onLaptop {
+    position: relative;
+    display: block;
+    width: max-content;
+    height: max-content;
+    padding-top: 10px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+    color: $color-khaki-dark;
+    opacity: 50%;
+
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: -100px;
+      left: 50%;
+      width: 0.5px;
+      height: 100px;
+      background-color: $color-khaki-dark;
+    }
+  }
+}
