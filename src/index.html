@@ -695,12 +695,18 @@
                   method="post"
                   id="input_form"
                   name="form"
+                  autocomplete="on"
                 >
                   <input 
                     name="name" 
                     type="text"
-                    placeholder="You name"
-                    class="contact-us__field form-field"
+                    placeholder="Your name"
+                    class="
+                      contact-us__field
+                      form-field 
+                      form-field--name
+                      "
+                    autocapitalize="words"
                     required
                   >
 
@@ -709,6 +715,8 @@
                     type="email"
                     placeholder="E-mail"
                     class="contact-us__field form-field"
+                    autocapitalize="none"
+                    autocomplete="off"
                     required
                   >
 
@@ -719,8 +727,8 @@
                     class="contact-us__field form-field"
                     id="input_form-tel"
                     minlength="10"
-                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                    title="Format: 123-456-7890"
+                    pattern="^\+[0-9]{3}\s?[0-9]{2}\s?[0-9]{3}\s?[0-9]{4,5}$"
+                    title="Format: +381234567890"
                     required
                   >
 
@@ -730,6 +738,7 @@
                     cols="30"
                     rows="1"
                     form="input_form"
+                    
                     required
                     class="
                       contact-us__field
@@ -754,13 +763,17 @@
                 grid__item-desktop--col-7-11
                 "
               >
-                <div class="contact-us__image">
+                <picture class="contact-us__image">
+                  <source 
+                    srcset="./images/Photos/Bird_onVase.jpg"
+                    media="(min-width: 1180px)"
+                  >
                   <img
                     src="./images/Photos/ImgWithBirdOnTab.png"
                     alt="Photo with bird on vase"
                     class="contact-us__image--photo"
                   >
-                </div>
+                </picture>
               </div>
             </div>
           </div>
@@ -831,8 +844,6 @@
 
           </div>
             
-          
-            
           <div class="footer__info">
             <p class="footer__info-title">
               Ukraine
@@ -884,16 +895,21 @@
               </a>
       
             </div>
-
-
           </div>
+
+          
         </div>
 
         <div class="footer__endtext">
-          <p class="footer__endtext-with-copyright">
-            &copy 2019 witch of mountain winds
+          <p class="footer__endtext-text">
+            <span class="footer__endtext-text--copyright">
+              Copyright
+            </span>
+              &copy 2019 witch of mountain winds
           </p>
         </div>
+
+        
       </div>
     </footer>
   </body>
