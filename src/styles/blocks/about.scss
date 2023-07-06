@@ -1,0 +1,94 @@
+.about {
+  @include OnTablet {
+    @include pageGrid;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include OnTablet {
+      grid-column: span 3;
+    }
+
+    @include OnDesktop {
+      gap: 40px;
+      grid-column: 2 / 7;
+    }
+
+    &_texts {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    &_text {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 14px;
+      line-height: 150%;
+
+      @include OnDesktop {
+          margin-bottom: 0px;
+        }
+
+      &--show-desktop {
+        display: none;
+
+        @include OnDesktop {
+          display: block;
+        }
+      }
+    }
+
+    &_photo {
+      display: flex;
+      align-items: flex-end;
+      gap: 20px;
+
+      @include OnTablet {
+        width: 100%;
+        grid-column: span 3;
+      }
+
+      @include OnDesktop {
+        grid-column: 7 / -1;
+      }
+
+      &--desktop1 {
+        display: none;
+
+        @include OnTablet {
+          display: block;
+          width: 100%;
+          height: 0;
+          padding-bottom: 94%;
+          background-image: url(./images/tablet-img/about.png);
+          background-size: cover;
+          background-position: center;
+        }
+
+        @include OnDesktop {
+          width: 415px;
+          height: 529px;
+          padding: 0;
+          background-position: center;
+        }
+      }
+
+      &--desktop2 {
+        display: none;
+
+        @include OnDesktop {
+          display: block;
+          width: 195px;
+          height: 430px;
+          background-position: center;
+          background-image: url(./images/desktop-img/about2.png);
+          background-size: cover;
+        }
+      }
+    }
+  }
+}

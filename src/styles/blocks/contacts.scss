@@ -1,0 +1,163 @@
+.contacts {
+
+  @include OnTablet {
+    @include pageGrid;
+  }
+
+  &__content {
+    @include OnTablet {
+      grid-column: span 3;
+    }
+
+    @include OnDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+}
+
+.contact {
+  &__photo {
+
+    @include OnTablet {
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: cover;
+      background-image: url(./images/desktop-img/contacts.png);
+      grid-column: span 3;
+    }
+
+    @include OnDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__container-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include OnTablet {
+      gap: 15px;
+    }
+    @include OnDesktop {
+      gap: 30px;
+    }
+
+  }
+
+  &__title {
+    color: #333;
+    font-size: 14px;
+    line-height: 150%;
+
+    @include OnTablet {
+      font-size: 16px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-block: 15px 20px;
+
+    @include OnTablet {
+      margin-block: 0 15px;
+    }
+
+    @include OnDesktop {
+      margin-block: 0 20px;
+    }
+
+
+    &-input {
+      font-family: 'Poppins', sans-serif;
+      background-color: $bg-color;
+
+
+      color:#344F10;
+      font-size: 14px;
+      line-height: 150%;
+      text-transform: capitalize;
+
+      height: 31px;
+      border: none;
+      border-bottom: 1px solid #828282;
+      outline: 0;
+
+      @include OnTablet {
+
+        font-weight: 500;
+      }
+
+      @include OnDesktop {
+        height: 47px;
+        font-size: 18px;
+      }
+
+      &:focus {
+        border-bottom: 1px solid #333;
+      }
+    }
+
+    &-message {
+      resize: none;
+      width: 100%;
+
+      font-family: 'Poppins', sans-serif;
+      background-color: $bg-color;
+
+      color:#344F10;
+      font-size: 14px;
+      line-height: 150%;
+      text-transform: capitalize;
+
+      height: 51;
+      border: none;
+      border-bottom: 1px solid #828282;
+      outline: 0;
+
+      @include OnTablet {
+        font-weight: 500;
+      }
+
+      @include OnDesktop {
+        height: 77px;
+        font-size: 18px;
+      }
+
+      &:focus {
+        border-bottom: 1px solid #333;
+      }
+
+      &--label {
+        left: 0;
+        position: absolute;
+        top: 35%;
+        color:#828282;
+        font-size: 14px;
+        line-height: 150%;
+        text-transform: capitalize;
+
+        @include OnTablet {
+
+          font-weight: 500;
+        }
+
+        @include OnDesktop {
+          top: 50%;
+          font-size: 18px;
+        }
+      }
+    }
+
+    &-textarea {
+      position: relative;
+    }
+  }
+}
+
+.contact__content-message:focus ~ .contact__content-message--label {
+  opacity: 0;
+}
+

@@ -1,0 +1,127 @@
+.top-bar {
+  padding-block: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include OnTablet {
+    padding-block: 20px
+  }
+
+  @include OnDesktop {
+    padding-block: 50px;
+    @include pageGrid;
+    align-items: center;
+  }
+
+  &__logo {
+    display: none;
+    transition: $transition-duration;
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include OnDesktop {
+      display: block;
+      grid-column: span 3;
+      }
+
+    &-img {
+      display: flex;
+    }
+  }
+
+  &__item {
+    transition: all $transition-duration;
+
+      @include OnDesktop {
+        &:hover {
+          transform: scale(1.1)
+        }
+      }
+  }
+
+  &__list {
+    display: none;
+
+    @include OnDesktop {
+      grid-column: 7 / 10;
+      display: flex;
+      list-style: none;
+      column-gap: 40px;
+      }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #344F10;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    transition: all $transition-duration;
+
+    &:hover {
+      color: #22330a;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #22330a;
+      width: fit-content;
+    }
+  }
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+
+  &__logo-link {
+    transition: $transition-duration;
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include OnDesktop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    background-image: url(./images/icons/Menu.svg);
+
+    transition: $transition-duration;
+    &:hover {
+      transform: scale(1.2);
+    }
+
+      @include OnDesktop {
+        display: none;
+        }
+    }
+
+  &__shop {
+    background-image: url(./images/icons/shop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: $transition-duration;
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include OnDesktop {
+      height: 32px;
+      width: 32px;
+      grid-column: 12 / -1;
+      justify-self: end;
+      }
+  }
+
+  &__close {
+    background-image: url(./images/icons/close.svg);
+
+    transition: $transition-duration;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

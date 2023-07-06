@@ -1,0 +1,155 @@
+.shop {
+  @include pageGrid;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include OnTablet {
+      gap: 40px;
+    }
+
+    @include OnDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    grid-column: span 2;
+
+    @include OnTablet {
+      grid-column: 1 / -1;
+    }
+
+    @include OnDesktop {
+      gap: 30px;
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 30px;
+
+    @include OnTablet {
+      margin-top: 50px;
+      grid-column: 2 / -2;
+    }
+
+    @include OnDesktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      list-style: none;
+      gap: 34px;
+    }
+
+    &-link {
+      text-align: center;
+      text-decoration: none;
+      color: #828282;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+
+      &:hover {
+        color: #333;
+        padding-bottom: 9px;
+        border-bottom: 2px solid #333;
+        width: fit-content;
+      }
+
+      @include OnDesktop {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 150%;
+        letter-spacing: 0.9px;
+      }
+    }
+  }
+}
+
+.cards {
+
+  @include OnTablet {
+    display: grid;
+    --columns: 2;
+    column-gap: 20px;
+    grid-template-columns: repeat(var(--columns), 1fr);
+  }
+
+}
+
+.card {
+
+  &--desktop {
+    display: none;
+
+    @include OnTablet {
+      display: block;
+    }
+
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__photo {
+
+    display: none;
+
+    &--tablet {
+      display: none;
+
+      @include OnTablet {
+        display: block;
+      }
+    }
+
+    &--mobile {
+      display: block;
+
+      @include OnTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__titles {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  &__title {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+}

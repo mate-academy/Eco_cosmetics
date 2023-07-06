@@ -1,0 +1,91 @@
+.creators {
+  @include OnTablet {
+    @include pageGrid;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    @include OnTablet {
+      gap: 30px;
+      grid-column: span 3;
+    }
+
+    @include OnDesktop {
+      gap: 40px;
+      grid-column: 2 / 6;
+    }
+
+    &--title {
+      display: none;
+      @include OnDesktop {
+        display: inline;
+        white-space: nowrap;
+      }
+    }
+    &--mobile {
+      @include OnDesktop {
+        display: none;
+      }
+    }
+
+    &__photo {
+
+      display: none;
+
+      @include OnTablet {
+        height: 50vh;
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-image: url(./images/tablet-img/creators.png);
+        grid-column: span 3;
+      }
+
+      @include OnDesktop {
+        height: 100%;
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-image: url(./images/desktop-img/creators.png);
+        grid-column: 7 / -1;
+      }
+    }
+
+  &_texts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include OnDesktop {
+      gap: 30px;
+    }
+  }
+
+  &_text {
+    color:#333;
+    font-size: 14px;
+    line-height: 150%;
+
+    &--hide-desktop {
+      display: none;
+
+      @include OnDesktop {
+        display: block;
+      }
+    }
+  }
+
+  }
+}
+
