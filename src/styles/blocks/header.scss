@@ -1,12 +1,20 @@
 .header {
-  @include OnTablet {
+  @include OnDesktop {
     @include pageGrid;
+  }
+
+  &__button {
+    display: flex;
+    align-self: center;
+
+    @include OnDesktop {
+      align-self: flex-start;
+    }
   }
 
   &__wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 30px;
 
     @include OnTablet {
@@ -23,8 +31,9 @@
   }
 
   &__photo {
-    &--mobile {
 
+    &--mobile {
+      width: 100%;
       @include OnTablet {
         display: none;
       }
@@ -35,10 +44,11 @@
     }
 
     &--tablet {
-      grid-column: 1 / -1;
+
       display: none;
 
       @include OnTablet {
+        width: 100%;
         display: block;
       }
 
