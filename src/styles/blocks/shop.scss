@@ -81,7 +81,6 @@
 }
 
 .cards {
-overflow: hidden;
 
   @include OnTablet {
     display: grid;
@@ -89,6 +88,7 @@ overflow: hidden;
     column-gap: 20px;
     grid-template-columns: repeat(var(--columns), 1fr);
   }
+
 }
 
 .card {
@@ -100,9 +100,6 @@ overflow: hidden;
       display: block;
     }
 
-    @include OnDesktop {
-      display: block;
-    }
   }
 
   &__content {
@@ -115,19 +112,11 @@ overflow: hidden;
 
     display: none;
 
-    @include OnDesktop {
-      display: block;
-    }
-
     &--tablet {
       display: none;
 
       @include OnTablet {
         display: block;
-      }
-
-      @include OnDesktop {
-        display: none;
       }
     }
 
