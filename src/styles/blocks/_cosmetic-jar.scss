@@ -1,0 +1,129 @@
+.cosmetic-jar {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+    padding: 37px 20px 37px 0;
+
+    @include onDesktop {
+      padding: 37px 20px 41px 0;
+    }
+
+    &--text {
+      position: relative;
+      margin-bottom: 49px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: right;
+      color: $text-color;
+      width: 180px;
+      height: 24px;
+
+      &:nth-child(even) {
+        margin-bottom: 52px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__arrows {
+    display: none;
+
+    // @include onTablet {
+    //   padding: 38px 0 41px;
+    // }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 397px;
+      margin-right: 23px;
+
+      padding: 38px 0 41px;
+    }
+
+    &--item {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        background-image: url("../images/hint-tablet.d604c395.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: middle;
+        height: 24px;
+        margin-bottom: 49px;
+        width: 76px;
+
+        &:nth-child(even) {
+          margin-bottom: 52px;
+        }
+
+        &:nth-child(5) {
+          margin-bottom: 0;
+        }
+      }
+
+      // @include onTablet {
+      //   width: 76px;
+      // }
+    }
+  }
+
+  &__image {
+    display: flex;
+    box-sizing: border-box;
+    height: 397px;
+    width: 182px;
+    position: relative;
+    flex-grow: 1;
+    background-image: url("../images/свг.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+
+    // &--photo {
+    //   object-fit: contain;
+    // }
+
+    @include onTablet {
+      background-image: url("../images/Frame2.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center right;
+      width: 398px;
+    }
+
+    @include onDesktop {
+      background-image: url("../images/PowderOnDesktop.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center right;
+      width: 398px;
+    }
+
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+}

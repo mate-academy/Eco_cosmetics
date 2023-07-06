@@ -1,0 +1,137 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $text-color;
+  -webkit-box-shadow: 0 0 0 1000px $page-color inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.page {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  &__body {
+    font-family: "Poppins", sans-serif;
+    background-color: $page-color;
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - #{$footer-height-onMobile});
+    width: 100%;
+    overflow-x: hidden;
+
+    @include onTablet {
+      height: calc(100vh - #{$footer-height-onTablet});
+    }
+
+    @include onDesktop {
+      height: calc(100vh - #{$footer-height-onDesktop});
+    }
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    box-sizing: border-box;
+    position: relative;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+
+    &-second {
+      position: relative;
+
+      @include onDesktop {
+        height: 344px;
+        padding: 100px 0;
+      }
+
+      &--dividing-line-first {
+        display: none;
+        border-top: 1px solid $text-color;
+
+        @include onDesktop {
+          position: absolute;
+          display: inline-block;
+          width: 530px;
+          left: 0;
+          top: 0;
+        }
+      }
+
+      &--dividing-line-second {
+        display: none;
+        border-top: 1px solid $text-color;
+
+        @include onDesktop {
+          position: absolute;
+          display: inline-block;
+          width: 630px;
+          right: 0;
+          bottom: 0;
+        }
+      }
+    }
+
+    &--title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 36px;
+      text-align: left;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $linkDesktop-color;
+
+      @include onDesktop {
+        font-size: 36px;
+        line-height: 40px;
+      }
+    }
+
+    &--link {
+      padding-bottom: 10px;
+      border-bottom: 1px solid transparent;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18.2px;
+      color: $linkDesktop-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        border-bottom: 1px solid $linkDesktop-color;
+      }
+    }
+  }
+}

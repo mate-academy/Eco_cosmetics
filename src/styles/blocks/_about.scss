@@ -1,0 +1,137 @@
+.about {
+  box-sizing: border-box;
+  min-width: 280px;
+
+  &__content {
+    display: grid;
+    justify-content: left;
+
+    @include onTablet {
+      display: grid;
+    }
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &__subtitle {
+    @include onDesktop {
+      position: absolute;
+      left: -80px;
+      top: 15%;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    text-align: left;
+
+    @include onTablet {
+      display: grid;
+    }
+
+    @include onDesktop {
+      display: grid;
+      // margin: 0 0 40px;
+    }
+  }
+
+  &__description {
+    margin: 0 0 30px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: $colorMenu;
+
+    @include onTablet {
+      display: grid;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include onDesktop {
+      display: grid;
+    }
+
+    &--add {
+      display: none;
+
+      @include onDesktop {
+        display: grid;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: $colorMenu;
+      }
+    }
+  }
+
+  &__details {
+    margin: 0;
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: grid;
+      box-sizing: border-box;
+      justify-content: stretch;
+      min-width: 342px;
+      // object-fit: fill;
+    }
+
+    @include onDesktop {
+      max-width: 380px;
+      // min-height: 529px;
+    }
+
+    &--photo {
+      width: 100%;
+      height: auto;
+      overflow: auto;
+      object-fit: fill;
+
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__second-image {
+    display: none;
+
+    @include onDesktop {
+      display: grid;
+      height: auto;
+      width: 180px;
+      margin-top: 95px;
+      min-width: 180px;
+    }
+
+    &--photo {
+      width: 100%;
+      height: auto;
+      overflow: auto;
+      object-fit: fill;
+
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+    }
+  }
+}

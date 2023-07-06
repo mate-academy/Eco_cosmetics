@@ -1,0 +1,92 @@
+.top-actions {
+  display: grid;
+  grid-template-columns: $icon-on-mobile 1fr $icon-on-mobile;
+  justify-items: center;
+  align-items: center;
+  padding: $topActionTopPadding 0 $topActionDownPadding;
+
+  @include onTablet {
+    padding: 25px 0 30px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: $icon-on-desktop 1fr $icon-on-desktop;
+  }
+
+  &--logo {
+    display: flex;
+    width: 24px;
+    height: 24px;
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+    }
+
+    &::after {
+      content: "witch of mountain winds";
+      display: none;
+      float: left;
+      width: max-content;
+      margin-left: 12px;
+
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $linkDesktop-color;
+
+      @include onDesktop {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+    }
+
+    &-image {
+      &:hover {
+        transform: scale(1.2);
+        transition: 0.3s;
+      }
+    }
+  }
+
+  &--menu {
+    display: none;
+
+    @include onDesktop {
+      // position: absolute;
+      display: flex;
+      align-items: center;
+      margin-left: 330px;
+    }
+
+    &-list {
+      list-style: none;
+      height: 100%;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-text {
+      margin: 0 20px;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: 0.3s;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      text-transform: capitalize;
+      color: #344f10;
+    }
+  }
+}
