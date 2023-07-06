@@ -33,16 +33,27 @@
     display: flex;
     flex-direction: column;
     margin-top: 60px;
-    padding-inline-end: 160px ;
+    padding-inline-end: 190px ;
 
     @include OnTablet {
-      padding-inline-end: 375px ;
+      padding-inline-end: 400px ;
       margin-top: -4px;
     }
-    @include OnDesktop {
-      padding-inline-end:0;
+
+    @media (min-width: 1024px) {
+      padding-inline-end: 30px;
       margin-top: 35px;
-      grid-column: 6 / 8;
+      grid-column: 6 / 9;
+    }
+
+    @media (min-width: 1200px) {
+      padding-inline-end: 30px;
+
+    }
+
+    @media (min-width: 1351px) {
+      padding-inline-end: 80px;
+
     }
 
   }
@@ -62,7 +73,6 @@
       @include OnDesktop {
         margin-bottom: 41px;
       }
-
     }
   }
 
@@ -76,19 +86,32 @@
         top: 16px;
         right: -13px;
       }
+      @media (min-width: 1024px) {
+        right: -25px;
+        top: 0;
+      }
 
-      @include OnDesktop {
-        position: static;
+      @media (min-width: 1140px) {
+        right: -25px;
+        top: 0;
+      }
+      @media (min-width: 1240px) {
+        right: 0;
+        top: 0;
+      }
+
+      @media (min-width: 1351px) {
+        right: 0;
+        top: 0;
         grid-column: 8 / -1;
+
+
       }
 
       &--mobile {
         display: block;
 
         @include OnTablet {
-          display: none;
-        }
-        @include OnDesktop {
           display: none;
         }
       }
@@ -99,17 +122,15 @@
         @include OnTablet {
           display: block;
         }
-        @include OnDesktop {
+        @media (min-width: 1351px) {
           display: none;
         }
+
       }
 
       &--desktop {
         display: none;
-        @include OnTablet {
-          display: none;
-        }
-        @include OnDesktop {
+        @media (min-width: 1351px) {
           display: block;
         }
       }
