@@ -1,0 +1,213 @@
+.creators {
+  background: $color-backround;
+
+  &__content {
+    width: 100%;
+    padding-bottom: 100px;
+
+    @include smartphone {
+      padding-bottom: 150px;
+      @include gridPage;
+    }
+  }
+
+  &__main {
+    @include smartphone {
+      grid-column: 1 / 4;
+    }
+
+    @include smalldesktop {
+      position: relative;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__left {
+    display: none;
+
+    @include smalldesktop {
+      position: absolute;
+      display: block;
+      transform: rotate(-90deg);
+      left: -155px;
+      top: 60px;
+    }
+  }
+
+  &__links {
+    width: 50px;
+    height: 100px;
+    color: $color-link;
+    text-align: center;
+
+    font-size: 14px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+    &::before {
+      position: absolute;
+      content: " ";
+      display: block;
+
+      background-color: $color-link;
+
+      right: 60px;
+      top: 50%;
+      left: -110px;
+      width: 100px;
+      height: 1px;
+      transform: translate(0, -50%);
+      pointer-events: none;
+    }
+  }
+
+  &__title {
+    color: $color-title;
+
+    font-size: 24px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @include smalldesktop {
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+      margin-bottom: 34px;
+    }
+  }
+
+  &__subtitle {
+    color: $color-subtitle;
+
+    font-size: 14px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 20px;
+
+    @include smartphone {
+      font-size: 16px;
+    }
+
+    @include smalldesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle2 {
+    color: $color-subtitle;
+
+    font-size: 14px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 30px;
+
+    @include smartphone {
+      font-size: 16px;
+    }
+
+    @include smalldesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle3 {
+    display: none;
+
+    @include smartphone {
+      display: flex;
+      font-size: 16px;
+      font-family: $font-family;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    color: $color-title;
+
+    font-size: 14px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  &__line {
+    display: flex;
+    width: 86px;
+    border-bottom: 1px solid $color-title;
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+    @include smartphone {
+      margin-bottom: 30px;
+    }
+
+    @include smalldesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__btn {
+    width: 280px;
+    height: 60px;
+    background: $color-subtitle;
+    color: $color-button-text;
+    text-align: center;
+    font-size: 16px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    @include hover (transform, scale(1.1));
+
+    @include smartphone {
+      margin-left: 0;
+    }
+  }
+
+  &__box {
+    display: none;
+
+    @include smartphone {
+      background: url(../images/creators-photo.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      display: flex;
+      grid-column: 4 / -1;
+
+      @include hover (transform, scale(1.05));
+    }
+
+    @include smalldesktop {
+      grid-column: 7 / -1;
+    }
+  }
+}

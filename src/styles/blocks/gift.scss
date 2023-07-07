@@ -1,0 +1,94 @@
+.gift {
+  width: 100%;
+  background: $color-backround;
+  padding-bottom: 100px;
+  padding-top: 100px;
+
+  @include smartphone {
+    padding-top: 130px;
+    padding-bottom: 130px;
+  }
+
+  @include smalldesktop {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+
+  &__content {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @include smalldesktop {
+      @include gridPage;
+      padding-bottom: 130px;
+    }
+  }
+
+  &__title {
+    color: $color-title;
+
+    font-size: 18px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    @include smartphone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 280px;
+      margin: 0 auto;
+    }
+
+    @include smalldesktop {
+      font-size: 24px;
+      letter-spacing: 1.2px;
+      grid-column: 7 / 11;
+      text-align: left;
+      width: 380px;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include smalldesktop {
+      display: flex;
+      width: calc(50% - 80px - 30px);
+      margin-right: auto;
+      border-bottom: 1px solid $color-link;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+
+    @include smalldesktop {
+      display: flex;
+
+      color: $color-subtitle;
+      font-size: 16px;
+      font-family: $font-family;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      grid-column: 2 / 6;
+      grid-row: 1;
+    }
+  }
+
+  &__lines {
+    display: none;
+
+    @include smalldesktop {
+      display: flex;
+      width: calc(50% - 30px);
+      margin-left: auto;
+      border-bottom: 1px solid $color-link;
+    }
+  }
+}

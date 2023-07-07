@@ -1,0 +1,279 @@
+.shop {
+  background-color: $color-backround;
+  padding-bottom: 100px;
+
+  &__top {
+    @include smalldesktop {
+      position: relative;
+    }
+  }
+
+  &__left {
+    display: none;
+
+    @include smalldesktop {
+      position: absolute;
+      display: block;
+      transform: rotate(-90deg);
+      top: 10px;
+      left: 40px;
+
+      @include desktop {
+        left: 140px;
+      }
+    }
+  }
+
+  &__links {
+    width: 50px;
+    height: 100px;
+    color: $color-link;
+    text-align: center;
+
+    font-size: 14px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+    &::before {
+      position: absolute;
+      content: " ";
+      display: block;
+      background-color: $color-link;
+
+      right: 60px;
+      top: 50%;
+      left: -110px;
+      width: 100px;
+      height: 1px;
+      transform: translate(0, -50%);
+      pointer-events: none;
+    }
+  }
+
+  &__menu {
+    @include smalldesktop {
+      @include gridPage;
+    }
+  }
+
+  &__title {
+    color: $color-title;
+
+    font-size: 24px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    @include smartphone {
+      justify-content: left;
+      margin-bottom: 10px;
+    }
+
+    @include smalldesktop {
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+
+    @include smartphone {
+      justify-content: left;
+      gap: 14px;
+    }
+
+    @include smalldesktop {
+      gap: 51px;
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__item {
+    color: gray;
+    font-size: 14px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+
+    border-bottom: 1px solid $color-backround;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-subtitle;
+      border-bottom: 1px solid $color-subtitle;
+    }
+
+    @include smartphone {
+      margin-bottom: 37px;
+    }
+
+    @include smalldesktop {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+    }
+  }
+
+  &__slider {
+    @include gridPage;
+    overflow: hidden;
+    scroll-behavior: smooth;
+
+    @include smartphone {
+      padding: 0 27px;
+    }
+
+    @include smalldesktop {
+      padding: 0 50px;
+    }
+
+    @include desktop {
+      padding: 0 130px;
+    }
+  }
+
+  &__photo1 {
+    @include smartphone {
+      grid-column: 1 /4;
+    }
+
+    @include smalldesktop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__photo2 {
+    @include smartphone {
+      grid-column: 4 / -1;
+    }
+
+    @include smalldesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 320px;
+    height: 267px;
+    transition: 0.5s all;
+
+    @include hover (transform, scale(1.05));
+
+    @include smartphone {
+      width: 100%;
+    }
+
+    @include smalldesktop {
+      height: 500px;
+    }
+  }
+
+  &__name {
+    margin-top: 20px;
+    padding-left: 20px;
+
+    @include smartphone {
+      padding-left: 0;
+    }
+  }
+
+  &__name1 {
+    color: $color-subtitle;
+
+    font-size: 18px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__price {
+    color: $color-subtitle;
+
+    font-size: 18px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding-left: 20px;
+
+    @include smartphone {
+      padding-left: 0;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    @include smartphone {
+      display: none;
+    }
+  }
+
+  &__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: $color-subtitle;
+
+    &:hover {
+      background-color: $color-title;
+    }
+  }
+
+  &__btn {
+    width: 280px;
+    height: 60px;
+    background: $color-subtitle;
+    color: $color-button-text;
+    text-align: center;
+    font-size: 16px;
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    @include hover (transform, scale(1.1));
+
+    @include smartphone {
+      margin-top: 50px;
+    }
+  }
+}
