@@ -9,7 +9,15 @@ window.addEventListener('hashchange', () => {
 });
 
 window.addEventListener('hashchange', () => {
-  if (window.location.hash === '#cart-1' && '#cart-2') {
+  if (window.location.hash === '#cart-1') {
+    document.body.classList.add('page__body--with-cart');
+  } else {
+    document.body.classList.remove('page__body--with-cart');
+  }
+});
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#cart-2') {
     document.body.classList.add('page__body--with-cart');
   } else {
     document.body.classList.remove('page__body--with-cart');

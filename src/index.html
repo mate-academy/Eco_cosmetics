@@ -42,7 +42,7 @@
           <div class="header__info--container">
             <h1 class="header__title">Brand of eco-cosmetics and magic candles</h1>
             <p class="header__text">20% of sales at a wild bird shelter</p>
-            <button class="button">Shop</button>
+            <button onclick="scrollToSection1()" class="button">Shop</button>
           </div>
 
           <div class="header__img"></div>
@@ -98,16 +98,20 @@
             alt="cart-2"
             class="cart-2__img"
           >
-          <h1 class="cart-2__title">Almond Shampoo with Lavender Oil</h1>
-          <p class="cart-2__price">70 UAH</p>
-          <p class="cart-2__weight">30 g</p>
-          <button class="cart-2__button button">Add to bag</button>
-          <p class="cart-2__description">
-            Ingredients: cocosulfate, aloe hydrolate, sweet almond oil, wheat proteins, chamomile grass, lavender essential oil.
-          </p>
-          <p class="cart-2__description">
-            Application: foam the shampoo in your hands and apply foam on the hair or draw a block over wet hair, foam, massage, rinse, apply balm or conditioner.
-          </p>
+          <div class="cart-2__container">
+            <h1 class="cart-2__title">Almond Shampoo with Lavender Oil</h1>
+            <p class="cart-2__price">70 UAH</p>
+            <p class="cart-2__weight">30 g</p>
+            <button class="cart-2__button button">Add to bag</button>
+          </div>
+          <div class="cart-2__container-2">
+            <p class="cart-2__description">
+              Ingredients: cocosulfate, aloe hydrolate, sweet almond oil, wheat proteins, chamomile grass, lavender essential oil.
+            </p>
+            <p class="cart-2__description">
+              Application: foam the shampoo in your hands and apply foam on the hair or draw a block over wet hair, foam, massage, rinse, apply balm or conditioner.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -227,9 +231,6 @@
                 </ul>
               </nav>
 
-
-
-
               <div class="shop__image-1">
                 <img
                   src="./images/shop-img-1.png"
@@ -302,10 +303,10 @@
                   , as it is very difficult to rescue birds in a rented
                     communal apartment.
                 </p>
-                
+
                 <a href="#" class="link">Learn more</a>
                 <div>
-                  <button class="button about__button">to contact us</button>
+                  <button onclick="scrollToSection2()" class="button about__button">to contact us</button>
                 </div>
               </div>
 
@@ -443,7 +444,7 @@
                   class="contacts__form form"
                 >
                   <input
-                    autocomplete="on"
+                    autocomplete="given-name"
                     name="name"
                     type="name"
                     class="form__field"
@@ -451,7 +452,7 @@
                     required
                   >
                   <input
-                    autocomplete="on"
+                    autocomplete="off"
                     name="email"
                     type="email"
                     class="form__field"
@@ -459,7 +460,6 @@
                     required
                   >
                   <input
-                  autocomplete="on"
                     name="number"
                     type="tel"
                     class="
@@ -470,7 +470,6 @@
                     required
                   >
                   <textarea
-                    autocomplete="on"
                     name="message"
                     class="form__field form__field--textarea"
                     required
@@ -577,5 +576,16 @@
     </footer>
 
     <script type="text/javascript" src="scripts/main.js"></script>
+    <script>
+      function scrollToSection1() {
+        const section = document.getElementById('shop');
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      function scrollToSection2() {
+        const section = document.getElementById('contacts');
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    </script>
   </body>
 </html>
