@@ -1,0 +1,66 @@
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  @extend %background-images-settings;
+  transition: 300ms;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @include desktop {
+    width: 32px;
+    height: 32px;
+  }
+  
+  &__menu {
+    background-image: url(../images/svg/menu.svg);
+    height: 13px;
+    background-size: contain;
+  }
+
+  &__basket {
+    background-image: url(../images/svg/shopping-bag.svg);
+
+    &:hover {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__logo {
+    @include desktop {
+      display: block;
+      background-image: url(../images/svg/logo_big.svg);
+      width: 277px;
+      height: 51px;
+    }
+    background-image: url(../images/svg/logo.svg);
+  }
+
+  &__cross {
+    background-image: url(../images/svg/cross.svg);
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+  }
+
+  &__instagram {
+    background-image: url(../images/svg/instagram.svg);
+  }
+
+  &__facebook {
+    background-image: url(../images/svg/facebook.svg);
+    margin-right: 14px;
+  }
+
+  &__instagram,
+  &__facebook {
+    width: 24px;
+    height: 24px;
+    
+    &:hover {
+      box-shadow: 0 0 15px $secondary-text-color;
+    }
+  }
+}

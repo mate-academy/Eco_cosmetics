@@ -1,0 +1,110 @@
+.ingridients {
+  &__title {
+    @extend %text-h2;
+    font-size: 24px;
+    text-transform: uppercase;
+    grid-row: 1 / 2;
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      font-size: 36px;
+    }
+  }
+
+  &__link-container {
+    align-self: end;
+
+    @include tablet {
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    @extend %links;
+
+    &:hover,
+    &:active {
+      padding-bottom: 10px;
+      border-bottom: 1px solid $secondary-text-color;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-right: -20px;
+    margin-bottom: 32px;
+
+    @include tablet {
+      grid-row: 2 / 3;
+      gap: 20px;
+      margin-right: -28px;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      grid-row: 1 / 3;
+      margin-right: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+
+  }
+
+  &__ingridient {
+    font-size: 16px;
+    text-transform: capitalize;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 46px;
+      height: 10px;
+      background-size: auto;
+      background-position: center right;
+      background-repeat: no-repeat;
+      background-image: url(../images/svg/arrow_small.svg);
+
+      @include tablet {
+        width: 86px;
+        background-image: url(../images/svg/arrow_big.svg);
+      }
+    }
+  }
+
+  &__image {
+    background-image: url(../images/svg/jar_mobile.svg);
+    @extend %background-images-settings;
+    height: 397px;
+    width: 137px;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include tablet {
+      background-image: url(../images/svg/jar_tablet.svg);
+      height: 397px;
+      width: 300px;
+    }
+
+    @include desktop {
+      background-image: url(../images/svg/jar_desktop.svg);
+      height: 397px;
+      width: 380px;
+    }
+  }
+}

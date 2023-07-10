@@ -1,0 +1,74 @@
+.about {
+  &__info {
+    &--title {
+      margin-bottom: 10px;
+      @extend %text-h2;
+
+      @include desktop {
+        margin-bottom: 40px;
+      }
+    }
+
+    &--paragraph {
+      margin-bottom: 30px;
+    }
+
+    &--desktop-paragraph {
+      display: none;
+
+      @include desktop {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+
+    &--link {
+      font-size: 14px;
+      @extend %links;
+
+      &:hover,
+      &:active {
+        padding-bottom: 10px;
+        border-bottom: 1px solid $secondary-text-color;
+      }
+    }
+  }
+
+  &__main-image {
+    display: none;
+    background-image: url(../images/png/about_tablet.png);
+    @extend %background-images-settings;
+
+    @include tablet {
+      display: block;
+      height: 321px;
+      grid-row: 1 / 2;
+    }
+
+    @include desktop {
+      height: 529px;
+      background-image: url(../images/png/2.1.png);
+    }
+  }
+
+  &__secondary-image {
+    display: none;
+    background-image: url(../images/png/2.2.png);
+    @extend %background-images-settings;
+
+    @include desktop {
+      display: block;
+      align-self: end;
+      height: 430px;
+    }
+  }
+
+  &__main-image,
+  &__secondary-image {
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

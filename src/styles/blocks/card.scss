@@ -1,0 +1,91 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  
+  @include tablet {
+    width: 466px;
+  }
+
+  &__img {
+    background-image: url(../images/png/3.1.png);
+    @extend %background-images-settings;
+    min-height: 248px;
+    width: 100%;
+    margin: 0 auto 30px;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+   
+    @include tablet {
+      height: 440px;
+      width: 466px;
+      order: -1;
+    }
+  }
+
+  &__button {
+    margin: 0 auto 50px;
+
+    @include tablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+
+    &--title {
+      @extend %text-h5;
+      text-align: start;
+      margin-bottom: 10px;
+      margin-top: 0;
+
+      @include tablet {
+        margin-bottom: 25px;
+      }
+    }
+
+    &--price {
+      font-size: 14px;
+      color: $secondary-text-color;
+      margin-bottom: 20px;
+      margin-top: 0;
+
+      @include tablet {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+    }
+    &--weight {
+      display: none;
+      margin: 0;
+
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__about {
+    font-size: 14px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+    &--text {
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
+    &--text-green {
+      color: $secondary-text-color;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.page {
+  font-family: "Poppins", serif;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+  background-color: $bcg-menu-contacts-color;
+
+  scroll-behavior: smooth;
+
+  min-width: 320px;
+
+  &__body {
+    margin: 0;
+
+    &--no-scroll {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include tablet {
+      margin-bottom: 130px;
+    }
+
+    @include desktop {
+      margin-bottom: 200px;
+    }
+
+    &--tag {
+      display: none;
+      @extend %decorative-text;
+      opacity: 0.5;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 100px;
+        height: 1px;
+        background-color: $sep-footer-color;
+        margin: 0 10px 4px 0;
+      }
+
+      @include desktop {
+        display: inline-block;
+        transform: rotate(-90deg) translateX(-100%);
+        transform-origin: 10px center;
+      }
+    }
+
+    &--footer {
+      margin-bottom: 0;
+      background-color: $sep-footer-color;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  
+    transform: translateX(100%);
+  
+    transition: transform 300ms;
+  
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

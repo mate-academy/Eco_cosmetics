@@ -1,0 +1,102 @@
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    height: 0;
+  }
+
+  &__card {
+    box-sizing: border-box;
+    display: block;
+    transition: transform 300ms;
+    text-decoration: none;
+    color: $main-text-color;
+
+    &--image-container {
+      margin: 0 20px 20px -20px;
+      height: 267px;
+      width: 100vw;
+      object-fit: cover;
+      @extend %background-images-settings;
+      transition: transform 300ms;
+
+      @include tablet {
+        width: 50vw;
+        margin: 0 0 20px;
+        height: 300px;
+      }
+
+      @include desktop {
+        height: 500px;
+        width: 530px;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &--image-1 {
+      background-image: url(../images/png/3.1.png);
+    }
+
+    &--image-2 {
+      background-image: url(../images/png/face_1.png);
+    }
+
+    &--image-3 {
+      background-image: url(../images/png/3.2.png);
+    }
+
+    &--image-4 {
+      background-image: url(../images/png/body_1.png);
+    }
+
+    &--image-5 {
+      background-image: url(../images/png/hair_1.png);
+    }
+
+    &--image-6 {
+      background-image: url(../images/png/hair_2.png);
+    }
+
+    &--image-7 {
+      background-image: url(../images/png/candle_1.png);
+    }
+
+    &--image-8 {
+      background-image: url(../images/png/candle_2.png);
+    }
+
+    &--title {
+      @extend %text-h5;
+      margin: 0 0 10px;
+      text-align: start;
+
+      @include tablet {
+        margin-bottom: 15px;
+      }
+
+      @include desktop {
+        margin-bottom: 13px;
+      }
+    }
+
+    &--price {
+      font-size: 18px;
+      margin-bottom: 30px;
+
+      @include tablet {
+        margin-bottom: 50px;
+      }
+
+      @include desktop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+.shop {
+
+  &__title {
+    @extend %text-h2;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 15px;
+    }
+
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+  
+  &__nav {
+
+    &--list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      list-style: none;
+      gap: 20px;
+      font-size: 14px;
+      letter-spacing: 5%;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+
+      @include tablet {
+        margin-bottom: 30px;
+      }
+
+      @include desktop {
+        margin-bottom: 60px;
+        font-size: 18px;
+      }
+    }
+
+    &--link {
+      color: $border-links-color;
+      text-decoration: none;
+      padding-bottom: 10px;
+
+      &:hover,
+      &:active {
+        color: $main-text-color;
+      }
+    }
+
+    &--selected {
+      color: $main-text-color;
+      border-bottom: 2px solid $border-links-color;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}
