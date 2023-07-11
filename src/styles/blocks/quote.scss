@@ -1,0 +1,74 @@
+.quote {
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &__box {
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      height: 344px;
+    }
+  }
+
+  &__left {
+    @include onDesktop {
+      justify-content: center;
+      border-top: 1px solid black;
+      left: 0;
+    }
+  }
+
+  &__right {
+
+    @include onDesktop {
+      justify-content: start;
+      border-bottom: 1px solid black;
+      right: 0;
+    }
+  }
+
+  &__title {
+    padding-inline: 20px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: start;
+
+    color: #344f10;
+
+    @include onTablet {
+      width: 330px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      width: 380px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-align: start;
+      margin: 0;
+
+      text-transform: uppercase;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+      width: 380px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+}

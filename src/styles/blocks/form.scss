@@ -1,0 +1,97 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  justify-content: space-between;
+
+  &__field {
+    color: #bdbdbd;
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #bdbdbd;
+    background-color: inherit;
+    margin-bottom: 25px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+
+    @include onTablet {
+      padding-bottom: 5px;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 10px;
+      font-size: 18px;
+    }
+
+    &:valid {
+      color: #344f10;
+      border-bottom: 1px solid #344f10;
+    }
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: #bdbdbd;
+    }
+
+    &:focus {
+      color: black;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+    }
+
+    &:invalid:focus {
+      color: #eb5757;
+      border-bottom: 1px solid #eb5757;
+    }
+
+    &--num {
+      margin-bottom: 45px;
+
+      @include onTablet {
+        margin-bottom: 45px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &--textarea {
+      height: 40px;
+
+      resize: none;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  /* Reset styles for background, border, and box-shadow */
+  -webkit-box-shadow: 0 0 0 30px $main-color inset !important;
+  -webkit-text-fill-color: #333 !important;
+  border-color: #333 !important;
+}

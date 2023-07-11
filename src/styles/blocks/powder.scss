@@ -1,0 +1,99 @@
+.powder {
+  &__card {
+    padding-bottom: 31px;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 2 / -1;
+    }
+
+    &--title {
+      padding-bottom: 21px;
+
+      @include onDesktop {
+        width: 500px;
+        margin-left: 100px;
+      }
+    }
+
+    &--list {
+      padding-right: 20px;
+
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      &--item {
+        display: flex;
+        text-align: right;
+        justify-content: right;
+        align-items: center;
+
+        transition: transform 0.3s ease-out;
+
+        &:hover {
+          transform: translateX(30%);
+        }
+
+        &--line {
+          margin-left: 10px;
+
+          position: relative;
+          display: inline;
+          height: 2px;
+          width: 40px;
+          background-color: grey;
+
+          @include onTablet {
+            width: 80px;
+          }
+
+          &:after {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            display: inline-block;
+            height: 5px;
+            width: 5px;
+            content: "";
+            background-color: grey;
+            border-radius: 50%;
+
+            transform: translate(-50% ,-50%);
+          }
+        }
+      }
+    }
+
+    &--description {
+      display: flex;
+      justify-content: right;
+      flex-shrink: 0;
+
+      position: relative;
+
+      right: -20px;
+
+      @include onDesktop {
+        right: 0;
+      }
+    }
+
+    &--photo-container {
+      display: flex;
+      position: relative;
+    }
+
+    &--photo {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    @include onDesktop {
+      margin-left: 100px;
+    }
+  }
+}

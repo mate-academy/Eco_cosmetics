@@ -1,0 +1,51 @@
+.top-bar {
+  padding-block: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onTablet {
+    padding-block: 30px;
+  }
+
+  @include onDesktop {
+    padding-block: 40px 80px;
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      text-align: end;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 40px;
+    display: inline;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+
+    color: #344f10;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

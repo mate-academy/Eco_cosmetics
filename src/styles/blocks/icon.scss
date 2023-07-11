@@ -1,0 +1,53 @@
+.icon {
+  display: block;
+  height: 24px;
+  width: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include onDesktop {
+    height: 32px;
+    width: 32px;
+  }
+
+  &--menu {
+    background-image: url(../images/menu.svg);
+
+    @include onDesktop {
+      background-image: url(../images/logo-big.svg);
+      background-size: contain;
+      width: 305px;
+      height: 50px;
+    }
+  }
+
+  &--logo {
+    background-image: url(../images/logo-small.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--cart-1 {
+    background-image: url(../images/cart.svg);
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--cart-2 {
+    background-image: url(../images/cart.svg);
+    display: none;
+
+    @include onTablet {
+      display: block;
+      background-image: url(../images/cart-2.svg);
+    }
+  }
+
+  &--close {
+    background-image: url(../images/close-white.svg);
+  }
+}

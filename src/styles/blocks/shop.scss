@@ -1,0 +1,130 @@
+.shop {
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    color: #344f10;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 15px;
+    grid-column: 1 / 4;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__link {
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: #828282;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $second-color;
+      border-bottom: 2px solid #828282;
+    }
+  }
+
+  &__image-1 {
+    width: 100%;
+
+    @include onTablet {
+      grid-column: 1 /4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 /7;
+    }
+  }
+
+  &__image-2 {
+    display: none;
+    width: 100%;
+
+    @include onTablet {
+      display: inline-block;
+      grid-column: 4 /7;
+    }
+
+    @include onDesktop {
+      grid-column: 7 /12;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      height: 480px;
+    }
+  }
+
+  &__subtitle {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__price {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    grid-column: 3 / 5;
+
+    @include onDesktop {
+      grid-column: 6 / 8;
+    }
+  }
+}
