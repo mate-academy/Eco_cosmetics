@@ -1,0 +1,92 @@
+.about {
+
+  &__prefix {
+
+    display: none;
+    position: relative;
+    transform: rotate(-90deg) translate(-250px, -30px);
+
+    @include onDesktop {
+      display: block;
+    }
+
+  }
+
+  &__content {
+
+    align-self: center;
+
+    @include onDesktop {
+      align-self: start;
+    }
+
+  }
+
+  &__text {
+
+    font-family: Avenir, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $c-dark;
+
+    margin-bottom: 30px;
+
+    &--onDesktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+  }
+
+  &__image-box {
+
+    display: none;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    position: relative;
+    right: -27px;
+    overflow: hidden;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      position: static;
+    }
+
+  }
+
+  &__image-box2 {
+
+    display: none;
+    position: absolute;
+    height: 430px;
+    width: 230px;
+    right: -47px;
+    left: 0;
+    transform: translateY(100px);
+    overflow: hidden;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__image {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include hover (transform, scale(103%));
+
+  }
+
+}

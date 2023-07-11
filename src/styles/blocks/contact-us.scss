@@ -1,0 +1,134 @@
+.contact-us {
+
+  &__prefix {
+    position: relative;
+    transform: rotate(-90deg) translate(-100px, -30px);
+  }
+
+  &__title {
+    text-transform: none;
+  }
+
+  &__subtitle {
+
+    font-family: Avenir, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-transform: lowercase;
+
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+
+  &__img-box {
+
+    display: none;
+    position: relative;
+    right: -55px;
+    height: 410px;
+    min-width: 370px;
+    width: 100%;
+    overflow: hidden;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      right: 0;
+      width: 610px;
+      height: 584px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @include hover (transform, scale(103%));
+  }
+
+}
+
+.form {
+
+  &:nth-child(3n) {
+    margin-bottom: 67px;
+  }
+
+  &__input {
+
+    display: block;
+    width: 100%;
+
+    background-color: $c-background;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $c-light-grey;
+
+    font-family: Sharp Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 150%;
+
+    text-transform: capitalize;
+
+    color: $c-green;
+
+    margin-bottom: 25px;
+
+    @include onMobile {
+      max-width: 342px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+
+    &:focus {
+      border-color: $c-green;
+    }
+
+    &--margin {
+      margin-bottom: 45px;
+
+      @include onDesktop {
+        margin-bottom: 67px;
+      }
+    }
+
+    &::placeholder {
+
+      font-family: Avenir, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+
+      color: $c-grey-text;
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+    }
+
+    &--textarea {
+      resize: none;
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+}

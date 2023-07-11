@@ -1,0 +1,71 @@
+.scroll-down {
+
+  position: relative;
+
+  @include onDesktop {
+    padding: 100px 0;
+  }
+
+  &__content {
+    align-items: center;
+  }
+
+  &__title {
+
+    font-family: Avenir, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    text-align: center;
+
+    color: $c-green;
+
+    @include onDesktop {
+      font-size: 24px;
+      text-align: left;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 50%;
+        height: 1px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+
+  }
+
+  &__text {
+
+    display: none;
+
+    font-family: Avenir, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-dark;
+
+    @include onDesktop {
+      display: block;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 55%;
+        left: 0;
+        height: 1px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,83 @@
+.header {
+
+  padding: 15px 0;
+
+  @include onTablet {
+    padding: 23px 0;
+  }
+
+  @include onDesktop {
+    padding: 40px 0;
+  }
+
+  &__content {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &__menu-open {
+
+    display: block;
+    background-image: url(../images/icons/menu.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 14px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @include hover (transform, scale(105%));
+
+  }
+
+  &__logo {
+
+    display: block;
+    height: 24px;
+    width: 24px;
+
+    background-image: url(../images/icons/logo--mobile.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onDesktop {
+      height: 50px;
+      width: 249px;
+      background-image: url(../images/icons/logo.svg);
+    }
+
+  }
+
+  &__nav {
+
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+  }
+
+  &__cart {
+
+    display: block;
+    width: 20px;
+    height: 24px;
+
+    background-image: url(../images/icons/cart.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include hover (transform, scale(105%));
+
+  }
+
+}
