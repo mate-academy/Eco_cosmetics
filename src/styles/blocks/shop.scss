@@ -1,0 +1,218 @@
+.shop {
+  padding-bottom: 100px;
+
+  @include onTablet {
+    padding-bottom: 130px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 200px;
+  }
+
+  &__decorative {
+    display: none;
+
+    @include onDesktop {
+    display: flex;
+
+
+    &-text {
+      display: block;
+      width: 18px;
+      height: 35px;
+    }
+
+    &-line {
+      display: block;
+      width: 1px;
+      height: 100px;
+    }
+
+    &-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+  }
+
+
+  }
+
+  &__content {
+    overflow: hidden;
+  }
+
+  &__title {
+    @extend %poppins-600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $colorGreen;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding-bottom: 10px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 110%;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 15px;
+
+    &-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      gap: 34px;
+      padding: 0 20px;
+
+      @include onTablet {
+        padding: 0;
+        gap: 14px;
+      }
+
+      @include onDesktop {
+        gap: 51px;
+      }
+    }
+
+    &-button {
+      @extend %poppins-400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $colorLightGray;
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      padding-bottom: 10px;
+      cursor: pointer;
+
+      &:hover {
+        color: $colorBlack;
+      }
+
+      &--active {
+        color: $colorBlack;
+        border-bottom: 1px solid $colorBlack;
+      }
+    }
+  }
+
+  &__carousel {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 381px;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include onTablet {
+      gap: 30px;
+      height: 449px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+      height: 627px;
+    }
+  }
+
+  &__card {
+    padding-bottom: 30px;
+    scroll-snap-align: start;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 40px;
+    }
+
+    &-image {
+      display: block;
+      content: "";
+      width: 320px;
+      height: 267px;
+      margin-bottom: 20px;
+      object-fit: cover;
+
+      &:hover {
+        border-radius: 15px;
+        box-shadow: rgba($color: #000000, $alpha: 0.5);
+      }
+
+      @include onTablet {
+        width: 342px;
+        height: 300px;
+      }
+
+      @include onDesktop {
+        width: 530px;
+        height: 500px;
+      }
+    }
+
+    &-title {
+      @extend %poppins-600;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: $colorBlack;
+      margin-left: 20px;
+
+      @include onTablet {
+        margin-left: 0;
+        margin-bottom: 15px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 13px;
+      }
+    }
+
+    &-price {
+      @extend %poppins-500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $colorBlack;
+      margin-left: 20px;
+
+      @include onTablet {
+        margin-left: 0;
+      }
+
+    }
+
+  }
+
+  &__button {
+    width: 280px;
+    margin: 0 auto;
+  }
+
+}
