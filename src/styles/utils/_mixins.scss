@@ -4,3 +4,64 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onlyOnTablet {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+//  map holding breakpoint values
+$breakpoints: (
+  mobile : 0,
+  tablet : 768px,
+  tablet-landscape : 1024px,
+  notebook: 1280px,
+  the-design: 1440px,
+  full-hd: 1920px,
+  large-screen: 2560px,
+);
+
+//  mixin to print out media queries (based on map keys passed)
+@mixin media($keys...) {
+  @each $key in $keys {
+    @media (min-width: map-get($breakpoints, $key)) {
+      @content;
+    }
+  }
+}
+
+@mixin grid-6-col {
+  @include media(tablet) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+}
+
+@mixin grid-12-col {
+  @include media(notebook) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+}
+
+@mixin section-title {
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $c-subtitle;
+
+  @include hover(text-shadow, 2px 2px 10px rgba(52,79,16,0.5));
+
+  @include media(tablet) {
+    text-align: left;
+  }
+
+  @include media(notebook) {
+    font-size: 36px;
+    line-height: 110%;
+  }
+}

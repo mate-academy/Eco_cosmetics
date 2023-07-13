@@ -1,0 +1,68 @@
+.page {
+  font-family: "Poppins", sans-serif;
+  color: $c-gray1;
+  scroll-behavior: smooth;
+
+  @include media(notebook) {
+    overflow-x: hidden;
+  }
+
+  &__body {
+    margin: 0;
+
+    background: $c-main-bg;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+
+    &--with-shop {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__product-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    @include media(notebook) {
+      display: none;
+    }
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    padding-bottom: 100px;
+
+    @include media(tablet) {
+      padding-bottom: 130px;
+    }
+
+    @include media(notebook) {
+      padding-bottom: 200px;
+    }
+  }
+}

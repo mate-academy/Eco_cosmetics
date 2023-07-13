@@ -1,0 +1,59 @@
+.menu {
+  box-sizing: border-box;
+
+  height: 100vh;
+  padding: 20px 0;
+
+  background-color: $c-gray1;
+  overflow-y: auto;
+
+  @include media(tablet) {
+    padding: 28px 0;
+  }
+
+  @include media(notebook) {
+    display: none;
+  }
+
+  &__icon {
+    width: 20px;
+    margin-bottom: 45px;
+
+    @include media(tablet) {
+      margin-bottom: 100px;
+
+      @include hover(transform, rotate(1turn));
+    }
+  }
+
+  &__nav-list {
+    list-style: none;
+  }
+
+  &__nav-item {
+    margin-bottom: 30px;
+
+    border-bottom: 1px solid $c-gray3;
+
+    @include media(tablet) {
+      margin-bottom: 50px;
+
+      @include hover(border-bottom-color, #f4efe3);
+    }
+  }
+
+  &__nav-link {
+    display: block;
+
+    padding-bottom: 10px;
+
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    color: #e4dfd3;
+    text-decoration: none;
+
+    @include hover(color, #f4eff3);
+  }
+}

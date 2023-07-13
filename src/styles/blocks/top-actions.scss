@@ -1,0 +1,90 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include media(tablet) {
+    padding-bottom: 30px;
+  }
+
+  @include media(notebook) {
+    @include grid-12-col;
+
+    padding-bottom: 80px;
+  }
+
+  &__menu {
+    width: var(--icon-width);
+
+    @include media(notebook) {
+      display: none;
+    }
+  }
+
+  &__logo-text {
+    display: none;
+    width: 270px;
+
+    @include media(notebook) {
+      display: block;
+      height: 50px;
+    }
+  }
+
+  &__logo {
+    width: var(--icon-width);
+
+    @include media(notebook) {
+      display: none;
+    }
+  }
+
+  &__navigation {
+    display: none;
+
+    @include media(notebook) {
+      display: block;
+      grid-column: 7;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    list-style: none;
+  }
+
+  &__nav-item {
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__nav-link {
+    padding-bottom: 5px;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: $c-subtitle;
+    text-decoration: none;
+
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-bottom-color, $c-subtitle);
+
+    &:active {
+      color: $c-gray1;
+    }
+  }
+
+  &__shop {
+    width: var(--icon-width);
+
+    @include media(notebook) {
+      grid-column: 12;
+      justify-self: end;
+    }
+  }
+}

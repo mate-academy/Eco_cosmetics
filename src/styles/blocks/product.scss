@@ -1,0 +1,134 @@
+.product {
+  overflow: hidden;
+
+  &__content {
+    @include media(tablet) {
+      display: grid;
+      grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    }
+
+    @include grid-12-col;
+  }
+
+  &__title {
+    @include section-title;
+
+    margin-bottom: 20px;
+
+    grid-row: 1;
+
+    @include media(tablet) {
+      margin-bottom: 0;
+    }
+
+    @include media(notebook) {
+      grid-column: 2 / 6;
+      grid-row: 1;
+    }
+  }
+
+  &__ingridients {
+    display: flex;
+
+    margin-bottom: 30px;
+
+    @include media(tablet) {
+      grid-row: 1 / 3;
+
+      margin-bottom: 0;
+    }
+
+    @include media(notebook) {
+      grid-column: 6 / -1;
+      grid-row: 1 / 3;
+      justify-self: end;
+    }
+  }
+
+  &__elements {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 36px 0;
+
+    list-style: none;
+  }
+
+  &__element {
+    position: relative;
+
+    margin-right: calc(20px
+    + var(--element-pointer-width)
+    + 15px)
+    ;
+
+    @extend %text;
+    text-align: right;
+    cursor: default;
+    @include hover(transform, translateX(-20px));
+
+    @include media(tablet) {
+      --element-pointer-width: 76px;
+
+      position: relative;
+
+      margin-right: calc(20px
+      + var(--element-pointer-width)
+      + 25px)
+      ;
+    }
+
+    &::before {
+      position: absolute;
+      right: -20px;
+      bottom: 50%;
+      transform: translate(100%, 50%);
+
+      content: "";
+
+      display: inline-block;
+      width: var(--element-pointer-width);
+      height: 1px;
+
+      background-color: $c-gray1;
+    }
+
+    &::after {
+      position: absolute;
+      right: calc(-20px - var(--element-pointer-width));
+      bottom: 50%;
+      transform: translate(100%, 50%);
+
+      content: "";
+
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+      background-color: $c-gray1;
+    }
+  }
+
+  &__img-container {
+    width: 380px;
+  }
+
+  &__img {
+    display: block;
+    height: 395px;
+  }
+
+  &__link {
+    @include media(tablet) {
+      align-self: end;
+    }
+
+    @include media(notebook) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+      align-self: end;
+    }
+  }
+}

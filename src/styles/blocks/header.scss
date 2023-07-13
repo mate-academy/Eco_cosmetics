@@ -1,0 +1,122 @@
+.header {
+  box-sizing: border-box;
+
+  padding: 15px 0 100px;
+
+  @include media(tablet) {
+    padding: 22px 0 130px;
+  }
+
+  @include media(notebook) {
+    padding: 40px 0 200px;
+  }
+
+  &__content {
+    @include grid-6-col;
+    @include grid-12-col;
+  }
+
+  &__top-actions {
+    margin-bottom: 20px;
+    @include media(tablet) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__img-container {
+    margin: 0 $pad-container-mob * -1 25px;
+    height: 267px;
+
+    // @include hover(transform, scale(1.05));
+
+    @include media(tablet) {
+      grid-column: 1 / -1;
+
+      width: 100%;
+      height: 500px;
+      margin: 0 auto 50px;
+  
+      @include hover(box-shadow, 5px 5px 15px 5px rgba(0,0,0,0.7));
+    }
+
+    @include media (notebook) {
+      grid-column: 7 / -1;
+      grid-row: 2 / 6;
+
+      height: 450px;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+
+    @include media(tablet) {
+      grid-column: 2 / 6;
+
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 150%;
+    }
+
+    @include media(notebook) {
+      grid-column: 2 / 7;
+      margin-bottom: 30px;
+
+      font-weight: 600;
+      font-size: 60px;
+      line-height: 78px;
+      text-align: left;
+    }
+  }
+
+  &__about {
+    margin-bottom: 30px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    @include media(tablet) {
+      grid-column: 1 / -1;
+
+      margin-bottom: 50px;
+    }
+
+    @include media(notebook) {
+      grid-column: 2 / 7;
+
+      text-align-last: left;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include media (tablet) {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+
+    @include media (notebook) {
+      grid-column: 2 / 7;
+      justify-self: start;
+
+      margin: 0;
+    }
+  }
+}

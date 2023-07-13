@@ -1,0 +1,34 @@
+.vertical-title {
+  @extend %decorative-text;
+  position: relative;
+
+  writing-mode: vertical-rl;
+
+  display: none;
+  width: max-content;
+  height: max-content;
+
+  pointer-events: none;
+
+  color: rgba(52, 79, 16, 0.5);
+
+  transform: rotate(180deg);
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: -10px;
+    left: 9px;
+    transform: translateY(-100%);
+
+    display: block;
+    width: 1px;
+    height: 100px;
+
+    background-color: rgba(52, 79, 16, 0.5);
+  }
+  @include media(notebook) {
+    display: inline-block;
+  }
+}

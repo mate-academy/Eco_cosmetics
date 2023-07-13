@@ -1,0 +1,155 @@
+.footer {
+  padding: 30px 0 40px;
+  background-color: #8c9772;
+
+  @include media(notebook) {
+    padding: 60px 0;
+  }
+
+  &__content {
+    @include grid-6-col;
+    @include grid-12-col;
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+
+    list-style: none;
+
+    @include media(tablet) {
+      grid-column: 1 / 4;
+    }
+
+    @include media(notebook) {
+      display: flex;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__nav-item {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media(tablet) {
+      margin-bottom: 15px;
+    }
+
+    @include media(notebook) {
+      margin: 0 40px 0 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__nav-link {
+    @extend %small-text;
+    color: $c-footer-text;
+    text-decoration: none;
+
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-bottom-color, $c-footer-text);
+
+    @include media(notebook) {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    width: max-content;
+
+    margin-bottom: 40px;
+
+    @include media(tablet) {
+      grid-column: 1 / 4;
+
+      margin-bottom: 50px;
+    }
+
+    @include media(notebook) {
+      grid-column: 8 / -1;
+      grid-row: 2 / 3;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    margin-right: 20px;
+
+    @include hover(transform, scale(1.1));
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__contact-info {
+    margin-bottom: 40px;
+
+    @include media(tablet) {
+      grid-column: 4 / -1;
+      grid-row: 1 / 4;
+
+      margin-bottom: 0;
+    }
+
+    @include media(notebook) {
+      grid-column: 8 / -1;
+      grid-row: 1 / 2;
+
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contact-link {
+    display: block;
+    width: max-content;
+    margin-bottom: 10px;
+
+    @extend %small-text;
+    text-decoration: none;
+    color: $c-footer-text;
+
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-bottom-color, $c-footer-text);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include media(notebook) {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    &--copyright {
+      margin: 0 auto;
+      width: 80%;
+      text-align: center;
+
+      @include media(tablet) {
+        grid-column: 1 / 4;
+        width: max-content;
+        margin: 0;
+        text-align: left;
+      }
+
+      @include media(notebook) {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+
+}
