@@ -1,0 +1,142 @@
+.footer {
+  background: rgba(52, 79, 16, 0.5);
+  margin: 0;
+  &__container {
+    padding-top: 30px;
+    padding-bottom: 40px;
+    color: $c-bg;
+    @include onTablet {
+      padding-bottom: 30px;
+    }
+    @include onLaptop {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+  &__nav {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 103px;
+    @include onTablet {
+      height: 94px;
+    }
+    @include onLaptop {
+      margin-bottom: 180px;
+      flex-direction: row;
+      height: 21px;
+    }
+  }
+  &__link {
+    height: 26px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    width: max-content;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $c-bg;
+    border-bottom: 1px solid transparent;
+    transition: all 0.4s ease-in-out;
+    &:hover,
+    &:focus {
+      border-color: $c-bg;
+    }
+  }
+  &__discr {
+    display: block;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    width: max-content;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $c-bg;
+    border-bottom: 1px solid transparent;
+    @include onLaptop {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    &--copy {
+      margin: 0;
+      cursor: default;
+      width: max-content;
+      text-align: center;
+      pointer-events: none;
+      @include onTablet {
+        text-align: left;
+      }
+    }
+    &--link {
+      transition: all 0.4s ease-in-out;
+      &:hover,
+      &:focus {
+        border-bottom: 1px solid $c-bg;
+      }
+    }
+    &--last-child {
+      margin-bottom: 40px;
+      @include onLaptop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--left {
+      display: none;
+      @include onLaptop {
+        display: inline;
+      }
+    }
+    &--right {
+      display: inline;
+      @include onLaptop {
+        display: none;
+      }
+    }
+  }
+
+  // .footer__social-card
+
+  &__social-card {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 62px;
+    height: 21px;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+    @include onLaptop {
+      margin-bottom: 0;
+      display: none;
+    }
+    &--down {
+      display: none;
+      @include onLaptop {
+        display: flex;
+      }
+    }
+
+  }
+
+  &__social {
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.4s ease-in-out;
+    &:hover,
+    &:focus {
+      transform: scale(1.4);
+    }
+  }
+  &__social--fb {
+    background-image: url(../images/icon/fbw.svg);
+  }
+  &__social--inst {
+    background-image: url(../images/icon/instw.svg);
+  }
+}

@@ -1,0 +1,92 @@
+.contacts {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 432px;
+    @include onTablet {
+      height: 407px;
+    }
+    @include onLaptop {
+      height: 540px;
+    }
+  }
+  &__subtitle {
+    &::before {
+      top: -400%;
+    }
+  }
+  &__discription {
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-bt-and-main;
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+    @include onLaptop {
+      margin-bottom: 40px;
+    }
+  }
+  &__fild {
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    width: 100%;
+    height: 28px;
+    border-bottom: 1px solid $grey-2;
+    background: transparent;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: $t-title-green;
+    &--last {
+      overflow: hidden;
+      resize: none;
+      margin-bottom: 30px;
+      @include onLaptop {
+        margin-bottom: 50px;
+      }
+    }
+    @include onLaptop {
+      margin-bottom: 30px;
+    }
+    transition: box-shadow 0.4s ease-in-out;
+    &::placeholder {
+      text-transform: capitalize;
+      color: $grey-3;
+    }
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $grey-3;
+    }
+  }
+  &__iframe {
+    display: none;
+  }
+  &__img-container {
+    display: none;
+    background-color: aliceblue;
+    @include onTablet {
+      height: 407px;
+      display: block;
+    }
+    @include onLaptop {
+      height: 540px;
+    }
+    overflow: hidden;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+
+  }
+  &__button {
+    width: 100%;
+    @include onTablet {
+      width: 280px;
+    }
+  }
+}
