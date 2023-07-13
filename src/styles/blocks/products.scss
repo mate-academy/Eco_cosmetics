@@ -1,0 +1,140 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1280px;
+  padding: 50px 0;
+
+  @media (min-width: 767px) {
+    padding: 50px 27px;
+  }
+
+  @media (min-width: 1279px) {
+    position: relative;
+
+    padding-left: 130px;
+    align-items: flex-start;
+
+    &::before {
+      content: "shop";
+      position: absolute;
+      left: 40px;
+      top: 140px;
+
+      transform: rotate(-90deg);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: $green-gray-color;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 230px;
+
+      width: 100px;
+      border-bottom: 1px solid $green-gray-color;
+      transform: rotate(-90deg);
+    }
+  }
+
+  @media (min-width: 1439px) {
+
+    &::before {
+      left: 110px;
+    }
+
+    &::after {
+      left: 78px;
+    }
+  }
+
+  @media (min-width: 1439px) {
+    padding-left: 210px;
+    padding-right: 100px;
+  }
+
+  &__title {
+    color: $green-color;
+    text-transform: uppercase;
+    text-align: center;
+
+    @media (min-width: 1279px) {
+      font-size: 36px;
+    }
+  }
+
+  &__links-row {
+    display: flex;
+    gap: 34px;
+    padding: 20px;
+
+    @media (min-width: 1279px) {
+      padding: 20px 0;
+
+    }
+  }
+
+  &__link {
+    @extend %btn-on-slid;
+
+    &:hover {
+      @extend %btn-on-slid-hover;
+    }
+
+  }
+
+  .cards {
+    display: flex;
+
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    max-width: 100%;
+    gap: 25px;
+    transition: 1s;
+
+    &__product-item {
+      transition: 1s;
+    }
+
+    &__img {
+      width: 320px;
+
+      @media (min-width: 767px) {
+        width: 344px;
+      }
+
+      @media (min-width: 1279px) {
+        width: 540px;
+      }
+
+      @media (min-width: 1439px) {
+        width: 540px;
+      }
+    }
+
+    &__title {
+      padding: 20px 20px 10px;
+
+    }
+
+    &__price {
+      padding: 0 20px;
+    }
+  }
+
+  &__btn {
+    @extend %btn-default;
+    margin-top: 30px;
+    align-self: center;
+
+    &:hover {
+      @extend %btn-hover;
+    }
+  }
+}

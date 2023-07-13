@@ -1,0 +1,73 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0 50px;
+
+  @media (min-width: 1279px) {
+    flex-direction: row-reverse;
+    padding: 50px;
+  }
+
+  @media (min-width: 1439px) {
+    padding: 50px 130px;
+  }
+
+  &__img {
+    background-image: url(../images/photos/mobile/hero.png);
+    min-height: 267px;
+    background-size: 100%;
+    width: 100%;
+
+    @media (min-width: 767px) {
+      height: 500px;
+      background-image: url(../images/photos/tablet/hero.png);
+
+    }
+
+    @media (min-width: 1279px) {
+      height: 451px;
+      background-image: url(../images/photos/desktop/hero.png);
+      background-size: cover;
+    }
+  }
+
+  &__descriptions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 20px 0;
+
+    @media (min-width: 1279px) {
+      align-items: flex-start;
+      text-align: start;
+      padding-left: 100px;
+    }
+
+    .h4 {
+      padding-bottom: 10px;
+
+      @media (min-width: 767px) {
+        font-size: 36px;
+        padding: 10px 110px;
+      }
+
+      @media (min-width: 1279px) {
+        font-size: 60px;
+        padding: 0;
+      }
+    }
+
+    .p1 {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__btn {
+    @extend %btn-default;
+
+    &:hover {
+      @extend %btn-hover;
+    }
+  }
+}

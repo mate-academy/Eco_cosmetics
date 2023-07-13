@@ -1,0 +1,129 @@
+.about {
+  padding: 50px 20px;
+
+  @media (min-width: 767px) {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 27px;
+  }
+
+  @media (min-width: 1279px) {
+    position: relative;
+
+    padding: 50px;
+    justify-content: space-between;
+
+    &::before {
+      content: "witch of mountain winds";
+      position: absolute;
+      left: -30px;
+      top: 140px;
+
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: $green-gray-color;
+
+      transform: rotate(-90deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 300px;
+
+      width: 100px;
+      border-bottom: 1px solid $green-gray-color;
+      transform: rotate(-90deg);
+    }
+  }
+
+  @media (min-width: 1439px) {
+    padding: 50px 130px;
+
+    &::before {
+      left: 40px;
+    }
+
+    &::after {
+      left: 77px;
+    }
+  }
+
+  &__description {
+
+    @media (min-width: 767px) {
+      width: 46%;
+    }
+
+    @media (min-width: 1279px) {
+      padding: 0 82px;
+    }
+
+    .h4 {
+      padding-bottom: 10px;
+
+      color: $green-color;
+      text-transform: uppercase;
+
+      @media (min-width: 1279px) {
+        font-size: 36px;
+      }
+    }
+
+    .p2 {
+
+      @media (min-width: 1279px) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__btn {
+    @extend %learn-btn;
+    padding-top: 30px;
+
+    &:hover {
+      @extend %learn-btn-hover;
+    }
+  }
+
+  &__imgs {
+    display: none;
+
+    @media (min-width: 767px) {
+      display: flex;
+      justify-content: end;
+    }
+
+    @media (min-width: 1279px) {
+      gap: 20px;
+      align-items: flex-end;
+    }
+  }
+
+  &__img {
+
+    @media (min-width: 767px) {
+      height: 321px;
+      width: 342px;
+      object-fit: cover;
+
+      &:last-child {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1279px) {
+      height: 529px;
+      width: 380px;
+
+      &:last-child {
+        display: flex;
+        height: 430px;
+        width: 180px;
+      }
+    }
+  }
+}
