@@ -1,0 +1,295 @@
+.slide2 {
+  background-color: #e4dfd3;
+  box-sizing: border-box;
+  overflow-y: auto;
+  height: 100vh;
+  
+  &__container {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 15px 20px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+
+    @include onIPad {
+      padding: 24px 28px 30px;
+    }
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+      padding: 40px 50px 81px;
+    }
+
+    @include onNotebook {
+      padding: 40px 0 81px;
+    }
+
+    @include onDesktop {
+      padding: 40px 0 70px;
+    }
+
+    @include onDesign {
+      padding: 40px 0 70px;
+    }
+
+    @include onFullHD {
+      padding: 40px 0 70px;
+    }
+
+    @include onLargeScreens {
+      padding: 40px 200px 70px;
+    }
+
+    &--2 {
+      margin: 0 auto;
+      max-width: 1180px;
+      padding: 0 20px;
+  
+      @include onIPad {
+        display: flex;
+        flex-direction: column;
+        
+        padding: 0 245px;
+      }
+  
+      @include onTablet {
+        padding: 0 278px;
+      }
+  
+      @include onNotebook {
+        padding: 0 365px;
+      }
+  
+      @include onDesktop {
+        padding: 0 445px;
+      }
+  
+      @include onDesign {
+        padding: 0 525px;
+      }
+  
+      @include onFullHD {
+        padding: 0 685px;
+      }
+  
+      @include onLargeScreens {
+        padding: 0 1005px;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 20px;
+    height: 13px;
+  
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  
+    &--menu {
+      background-image: url(../images/menu.svg);
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__logo2 {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 50px;
+      height: 50px;
+      grid-column: 1/7;
+    }
+  }
+
+  &__checkout {
+    margin: 0 auto 20px;
+    max-width: 1180px;
+    padding: 0 20px 5px;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+
+    &::after {
+      display: block;
+      height: 1px;
+      content: "";
+      width: 280px;
+      background: #bdbdbd;
+      bottom: 0;
+    }
+
+    @include onIPad {
+      padding: 0 27px;
+      margin: 36px 0 60px;
+
+      &::after {
+        width: 218px;
+      }
+    }
+
+    @include onTablet {
+      padding: 0 50px;
+    }
+
+    @include onNotebook {
+      padding: 0 76px;
+    }
+
+    @include onDesktop {
+      padding: 0 130px;
+    }
+
+    @include onDesign {
+      padding: 0 210px;
+    }
+
+    @include onFullHD {
+      padding: 0 370px;
+    }
+
+    @include onLargeScreens {
+      padding: 0 890px;
+    }
+  }
+
+  &__shipping {
+    margin-bottom: 30px;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+
+    @include onIPad {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    
+    background-color: #333;
+    border: none;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    cursor: pointer;
+
+    @include onIPad {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 280px;
+      margin-bottom: 394px;
+    }
+
+    @include onTablet {
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: #e4dfd3;
+        border: 1px solid #333;
+        color: #333;
+      }
+    }
+  }
+
+  &__form {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+
+    border: none;
+    box-sizing: border-box;
+    border-bottom: 1px solid #344f10;
+    outline: none;
+    background-color: #e4dfd3;
+    color: #344f10;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    
+    &::placeholder {
+      color: #828282;
+    }
+
+    &:focus {
+      border-bottom: 1px solid #333;
+    }
+
+    &:invalid {
+      color: #eb5757;
+      border-bottom: 1px solid #eb5757;
+    }
+      
+    @include onIPad {
+      margin-bottom: 20px;
+    }
+
+    &--2 {
+      margin-bottom: 40px;
+
+      @include onIPad {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #344f10;
+  box-shadow: 0 0 0 1000px #e4dfd3 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

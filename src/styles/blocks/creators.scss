@@ -1,0 +1,214 @@
+.creators {
+  &__container {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 0 20px;
+
+    @include onIPad {
+      padding: 0 0 0 27px;
+      display: flex;
+    }
+
+    @include onTablet {
+      padding: 0 0 0 130px;
+    }
+
+    @include onNotebook {
+      padding: 0 50px;
+    }
+
+    @include onDesktop {
+      padding: 0 130px;
+    }
+  }
+
+  &__title {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+    margin-bottom: 10px;
+
+    @include onNotebook {
+      font-size: 36px;
+      line-height: 110%;
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text {
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #333;
+    margin-bottom: 20px;
+
+    @include onIPad {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    @include onNotebook {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    &--2 {
+      margin-bottom: 30px;
+
+      @include onIPad {
+        margin-bottom: 20px;
+      }
+
+      @include onNotebook {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__text2 {
+    display: none;
+
+    @include onNotebook {
+      display: block;
+      font-family: Poppins, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #333;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__learn {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 25px;
+    padding-bottom: 8px;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #344f10;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.5s;
+
+    &:hover {
+      &::after {
+        position: absolute;
+        display: block;
+        height: 1px;
+        content: "";
+        width: 86px;
+        background: #333;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: #333;
+    border: none;
+    text-decoration: none;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+
+    @include onIPad {
+      width: 280px;
+    }
+
+    @include onTablet {
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: #e4dfd3;
+        border: 1px solid #333;
+        color: #333;
+      }
+    }
+  }
+
+  &__frame {
+    display: none;
+
+    @include onIPad {
+      display: block;
+      margin-left: 32px;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    @include onTablet {
+      margin-left: 0;
+    }
+  }
+
+  &__photo {
+    display: block;
+    height: 435px;
+    width: 368px;
+
+    @include onTablet {
+      height: 529px;
+      width: 500px;
+    }
+
+    @include onNotebook {
+      height: 669px;
+      width: 580px;
+    }
+  }
+
+  &__link {
+    display: none;
+
+    @include onNotebook {
+      display: flex;
+      margin-right: 82px;
+      font-family: Poppins, sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: rgba(52, 79, 16, 0.5);
+
+      text-decoration: none;
+      writing-mode: vertical-rl;
+      transform: scale(-1);
+      left: 0;
+      
+      &:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        background: rgba(52, 79, 16, 0.5);
+        position: absolute;
+        transform: translate(-9px,-110%);
+      }
+    }
+  }
+}

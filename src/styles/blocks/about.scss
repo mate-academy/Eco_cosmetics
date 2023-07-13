@@ -1,0 +1,196 @@
+.about {
+  &__container {
+    margin: 0 auto;
+    max-width: 1230px;
+    padding: 0 20px;
+
+    @include onIPad {
+      padding: 0 0 0 27px;
+      display: flex;
+    }
+
+    @include onTablet {
+      padding: 0 0 0 130px;
+    }
+
+    @include onNotebook {
+      padding: 0 0 0 50px;
+    }
+
+    @include onDesktop {
+      max-width: 1310px;
+      padding: 0 0 0 130px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    @include onNotebook {
+      margin-bottom: 40px;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #333;
+
+    @include onIPad {
+      font-size: 16px;
+    }
+  }
+
+  &__text2 {
+    display: none;
+
+    @include onNotebook {
+      display: block;
+      margin-bottom: 40px;
+      font-family: Poppins, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #333;
+    }
+  }
+
+  &__learn {
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #344f10;
+    text-decoration: none;
+    transition: all 0.5s;
+
+    &:hover {
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 86px;
+        background-color: #344f10;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  &__frame {
+    display: none;
+
+    @include onIPad {
+      display: block;
+      margin-left: 28px;
+    }
+
+    @include onTablet {
+      margin-left: 0;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    @include onNotebook {
+      margin-right: 20px;
+      margin-left: 0;
+    }
+  }
+  
+  &__frame2 {
+    display: none;
+
+    @include onNotebook {
+      display: flex;
+      align-items: flex-end;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__photo {
+    display: block;
+    height: 318px;
+    width: 369px;
+
+    @include onTablet {
+      height: 529px;
+      width: 500px;
+    }
+
+    @include onNotebook {
+      height: 529px;
+      width: 480px;
+    }
+  }
+
+  &__photo2 {
+    height: 430px;
+    width: 130px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__photo3 {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      height: 430px;
+      width: 208px;
+    }
+  }
+
+  &__link {
+    display: none;
+
+    @include onNotebook {
+      display: flex;
+      margin-right: 82px;
+      font-family: Poppins, sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: rgba(52, 79, 16, 0.5);
+
+      text-decoration: none;
+      writing-mode: vertical-rl;
+      transform: scale(-1);
+      left: 0;
+      
+      &:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        background: rgba(52, 79, 16, 0.5);
+        position: absolute;
+        transform: translate(-9px,-110%);
+      }
+    }
+  }
+}

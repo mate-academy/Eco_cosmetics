@@ -1,0 +1,70 @@
+.gifts {
+  &__container {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 0 20px;
+
+    @include onIPad {
+      padding: 0 243px;
+    }
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+      padding: 100px 50px;
+    }
+
+    @include onDesktop {
+      padding: 100px 130px;
+    }
+
+    @include onDesign {
+      padding: 100px 210px;
+    }
+
+    @include onFullHD {
+      padding: 100px 370px;
+    }
+
+    @include onLargeScreens {
+      padding: 100px 690px;
+    }
+  }
+
+  &__title {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+    
+    @include onIPad {
+      text-align: center;
+    }
+
+    @include onTablet {
+      text-align: left;
+      order: 1;
+      grid-column: 7/11;
+
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      font-family: Poppins, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #333;
+      grid-column: 2/6;
+    }
+  }
+}

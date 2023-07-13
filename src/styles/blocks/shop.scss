@@ -1,0 +1,262 @@
+.shop {
+  &__container {
+    margin: 0 auto;
+    max-width: 1230px;
+    padding: 0;
+
+    @include onIPad {
+      padding: 0 0 0 27px;
+      display: flex;
+    }
+
+    @include onTablet {
+      padding: 0 0 0 50px;
+    }
+
+    @include onNotebook {
+      padding: 0 0 0 50px;
+    }
+
+    @include onDesktop {
+      max-width: 1280px;
+      padding: 0 30px 0 130px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+    text-align: center;
+
+    @include onIPad {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    @include onNotebook {
+      margin-bottom: 30px;
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__selection {
+    display: inline-block;
+    position: relative;
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #828282;
+    margin-bottom: 27px;
+
+    @include onIPad {
+      margin-bottom: 37px;
+    }
+    
+    @include onTablet {
+      cursor: pointer;
+      transition: all 0.5s;
+
+      &:hover {
+        color: #333;
+        padding-bottom: 20px;
+        margin-bottom: 17px;
+
+        &::after {
+          position: absolute;
+          display: block;
+          height: 1px;
+          content: "";
+          width: 100%;
+          background: #333;
+          bottom: 0;
+        }
+      }
+    }
+
+    @include onNotebook {
+      margin-bottom: 62px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      transition: all 0.5s;
+
+      &:hover {
+        margin-bottom: 42px;
+      }
+    }
+  }
+
+  &__hover {
+    @include onTablet {
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__frame {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__photo {
+    height: 267px;
+    width: 100%;
+    object-fit: cover;
+
+    @include onIPad {
+      height: 300px;
+      width: 342px;
+    }
+
+    @include onNotebook {
+      height: 500px;
+      width: 380px;
+    }
+  }
+
+  &__item {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+
+    @include onIPad {
+      padding-left: 0;
+      margin-bottom: 15px;
+    }
+
+    @include onNotebook {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__price {
+    padding-left: 20px;
+    margin-bottom: 30px;
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+
+    @include onIPad {
+      padding-left: 0;
+      margin-bottom: 50px;
+    }
+
+    @include onNotebook {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 280px;
+    height: 60px;
+    box-sizing: border-box;
+    background-color: #333;
+    border: none;
+
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    cursor: pointer;
+    text-decoration: none;
+    
+    @include onIPad {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include onTablet {
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: #e4dfd3;
+        border: 1px solid #333;
+        color: #333;
+      }
+    }
+
+    @include onNotebook {
+      margin: 0;
+      grid-column: 6/9;
+    }
+  }
+
+  &__link {
+    display: none;
+
+    @include onNotebook {
+      display: flex;
+      align-items: flex-start;
+      margin-right: 84px;
+      font-family: Poppins, sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: rgba(52, 79, 16, 0.5);
+
+      text-decoration: none;
+      writing-mode: vertical-rl;
+      transform: scale(-1);
+      left: 0;
+      
+      &:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        background: rgba(52, 79, 16, 0.5);
+        position: absolute;
+        transform: translate(-9px,-110%);
+      }
+    }
+  }
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+  max-width: 1230px;
+
+  @include onNotebook {
+    padding: 0 0 0 10px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+
+  @include onDesktop {
+    max-width: 1280px;
+  }
+}
