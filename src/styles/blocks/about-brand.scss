@@ -1,0 +1,100 @@
+.about-brand {
+  column-gap: 30px;
+
+  &__info {
+    font-size: 14px;
+    line-height: 150%;
+    color: $c-black;
+
+    @include on768px {
+      font-style: 16px;
+    }
+  }
+
+  &__description {
+    margin-top: 10px;
+
+    @include on1280px {
+      margin-top: 34px;
+    }
+
+    &-more {
+      display: none;
+
+      @include on1280px {
+        display: block;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__learn-more {
+    position: relative;
+
+    display: inline-block;
+    width: max-content;
+    margin-top: 30px;
+    padding-bottom: 10px;
+
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $c-green;
+
+    transition: transform 0.5s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: $c-green;
+
+      transition: transform 0.5s;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+
+    @include on1280px {
+      margin-top: 40px;
+    }
+  }
+
+  &__photo {
+    display: none;
+    @include scale105;
+    &-more {
+      display: none;
+    }
+
+    @include on768px {
+      display: block;
+      width: 100%;
+      height: 318px;
+
+      background-image: url("./../images/about-brand.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @include on1280px {
+      height: 529px;
+
+      &-more {
+        align-self: end;
+        display: block;
+        width: calc(100% + 50px);
+        height: 430px;
+
+        background-image: url("./../images/about-brand.png");
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
