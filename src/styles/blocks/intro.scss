@@ -1,0 +1,56 @@
+.intro {
+  @include onDesktop {
+    &::after {
+      content: "";
+      margin-top: 100px;
+      display: block;
+      position: relative;
+      height: 1px;
+      background-color: $colorGreenMedium;
+      width: 50%;
+      left: 50%;
+    }
+  
+    &::before {
+      content: "";
+      margin-bottom: 100px;
+      display: block;
+      position: relative;
+      height: 1px;
+      background-color: $colorGreenMedium;
+      right: 58%;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: $colorGreenDark;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      width: 280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+      text-align: left;
+      width: 100%;
+    }
+
+  }
+
+  &__paragraph {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      font-size: 16px;
+      color: $colorDark;
+    }
+  }
+}

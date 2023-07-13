@@ -1,0 +1,68 @@
+.header {
+  background-color: #e4dfd3;
+
+  &__picture {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 267px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/header_picture.jpg);
+
+    @include onTablet {
+      position: relative;
+      height: 500px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      height: 451px;
+      margin: 0;
+      grid-row: 2 / 5;
+    }
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+    text-align: center;
+    margin: 292px 0 10px;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+      margin: 0 0 10px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      font-size: 60px;
+      line-height: 130%;
+      margin-bottom: 0;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    color: $colorDark;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-row: 3 / 4;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+  }
+}
