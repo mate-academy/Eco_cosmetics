@@ -114,6 +114,7 @@ formCart.addEventListener('submit', function(event) {
 
   if (arrayActive.length === arrayElement.length) {
     formCart.reset();
+
     removeData(formCart, listLengthCart);
 
     window.location.href = domain();
