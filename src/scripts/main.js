@@ -174,3 +174,24 @@ swiper.on('slideChange', function() {
       break;
   }
 });
+
+const massageErr = document.querySelector('.error__icon-close');
+
+massageErr.addEventListener('click', () => {
+  document.querySelector(
+    '.error'
+  ).classList.remove(
+    'error--active'
+  );
+  document.querySelector('.error__list').replaceChildren();
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.error')) {
+    document.querySelector(
+      '.error'
+    ).classList.remove(
+      'error--active'
+    );
+  }
+});
