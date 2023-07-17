@@ -1,0 +1,53 @@
+.product {
+  box-sizing: border-box;
+  background-color: $c-gray-main;
+  overflow-y: auto;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__content {
+    padding: 16px 0 20px;
+
+    @include onTablet {
+      padding: 24px 0;
+    }
+  }
+
+  &--hidden {
+    margin-bottom: 0;
+    display: none;
+  }
+
+  &__menu-top {
+    margin-bottom: 20px;
+    @include onTablet {
+      margin-bottom: 28px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__grid {
+    row-gap: 52px;
+  }
+
+  &__item {
+    padding: 12px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    transition: border-color $act-time, box-shadow $act-time;
+
+    &:hover {
+      border-color: $c-silver;
+      box-shadow: 5px 3px 13px 3px $c-silver;
+    }
+  }
+}

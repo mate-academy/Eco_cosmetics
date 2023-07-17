@@ -1,0 +1,35 @@
+.marker {
+  position: absolute;
+  display: none;
+  @extend %txt-decor;
+
+  transform-origin: top right;
+  transform: translateX(-100%) rotate(270deg);
+  color: $c-decor;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    margin: 0 16px 4px 0;
+    height: 1px;
+    background-color: $c-decor;
+  }
+
+  &--long {
+    &::before {
+      margin: 0 12px 4px 0;
+      width: 100px;
+    }
+  }
+
+  &--short {
+    &::before {
+      margin: 0 8px 4px 0;
+      width: 88px;
+    }
+  }
+
+  @include onDesktop {
+    display: block;
+  }
+}

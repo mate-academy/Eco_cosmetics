@@ -1,0 +1,29 @@
+.btn {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 280px;
+  height: 60px;
+  margin: 0 auto;
+  @include flexDJI($fd: 0, $jc: center, $ai: center);
+
+  @extend %btn;
+  color: $c-gray-lite;
+  background-color: $c-dark;
+  cursor: url(./../images/cursor.webp), pointer;
+
+  transition: background-color $act-time,
+    box-shadow $act-time,
+    color $act-time,
+    border $act-time;
+
+  &:hover {
+    border: 1px solid $c-dark;
+    color: $c-dark;
+    background-color: $c-gray-main;
+    box-shadow: 5px 3px 13px 3px $c-dark;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}

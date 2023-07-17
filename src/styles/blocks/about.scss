@@ -1,0 +1,88 @@
+.about {
+  &__container {
+    position: relative;
+    @extend %container;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    color: $c-green;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    &--top {
+      margin-bottom: 28px;
+    }
+    
+    &--desk {
+      display: none;
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    @include onSmTablet {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__link {
+    margin-bottom: 0;
+  }
+
+  &__grid-marker {
+    position: relative;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__grid-img {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+    max-height: 530px;
+    overflow: hidden;
+    @include hover(box-shadow, 5px 3px 13px 3px $c-dark);
+
+    &--big {
+      @include onSmTablet {
+        display: block;
+      }
+
+      @include onDesktop {
+        height: 530px;
+      }
+    }
+    
+    &--small {
+      @include onSmDesktop {
+        display: block;
+        height: 430px;
+        align-self: end;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__marker {
+    padding-right: 8px;
+  }
+}

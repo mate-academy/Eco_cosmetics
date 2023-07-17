@@ -1,13 +1,1488 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/fav/apple-touch-icon.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/fav/favicon-32x32.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/fav/favicon-16x16.png"
+    >
+    <link rel="manifest" href="/images/fav/site.webmanifest">
+    <link
+      rel="mask-icon"
+      href="/images/fav/safari-pinned-tab.svg"
+      color="#5bbad5"
+    >
+    <link rel="shortcut icon" href="/images/fav/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="/images/fav/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="desktop"
+    >
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Eco cosmetics</title>
+    <meta name="description" content="This cosmetics is for you if you choose the gifts of nature and take care of them.">
+
     <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
+  <body class="page__body">
+    <header class="page__header header">
+      <div class="header__container">
+        <div class="header__content">
+          <div class="header__menu-top menu-top">
+            <a href="#menu" class="
+              menu-top__menu-opener
+              icon
+              icon--menu
+            "></a>
+
+            <a href="#" class="menu-top__logo logo"></a>
+
+            <ul class="menu-top__menu-list">
+              <li class="menu-top__menu-item">
+                <a href="#shop" class="
+                  menu-top__menu-link
+                  link
+                  link--dark
+                ">
+                  Shop
+                </a>
+              </li>
+
+              <li class="menu-top__menu-item">
+                <a href="#contact" class="
+                  menu-top__menu-link
+                  link
+                  link--dark
+                ">
+                  Contact
+                </a>
+              </li>
+
+              <li class="menu-top__menu-item">
+                <a href="#about" class="
+                  menu-top__menu-link
+                  link
+                  link--dark
+                ">
+                  About
+                </a>
+              </li>
+            </ul>
+
+            <div class="menu-top__cart cart" id="cart">
+              <div class="cart__icon">
+                <div class="cart__quantity" id="cart-quantity"></div>
+              </div>
+
+              <div class="cart__cart-content cart-content">
+                <div class="
+                  cart-content__icon-close
+                  icon
+                  icon--close-dark
+                "></div>
+
+                <ul class="cart-content__list">
+                  <div class="cart-content__list-container">
+                  </div>
+                </ul>
+
+                <div class="cart-content__bottom">
+                  <div class="cart-content__fullprice">
+                    <span class="cart-content__total">Total:</span>
+
+                    <span class="cart-content__total-price">0</span>
+                  </div>
+
+                  <form
+                    action="#"
+                    class="form cart-content__form"
+                    method="get"
+                    id="send-order"
+                  >
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your name"
+                      class="form__field form__field--main"
+                      title="Name"
+                    >
+
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="e-mail"
+                      class="form__field form__field--main"
+                      title="example@domain.com"
+                    >
+
+                    <input
+                      type="tel"
+                      name="tel"
+                      title="Format: +1 2222 333 4444"
+                      placeholder="phone number"
+                      class="form__field form__field--main"
+                    >
+
+                    <input
+                      type="text"
+                      name="adress"
+                      placeholder="Your adress"
+                      class="form__field form__field--main"
+                    >
+
+                    <textarea
+                      name="message"
+                      placeholder="Your message"
+                      minlength="5"
+                      maxlength="200"
+                      title="From 5 to 200 characters"
+                      class="
+                        form__field
+                        form__field--area
+                        form-field form-field--textarea"
+                    ></textarea>
+                  </form>
+
+                  <button
+                    type="submit"
+                    class="cart-content__btn btn"
+                    form="send-order"
+                  >
+                    Send order
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="header__error error">
+            <div class="
+              error__icon-close
+              icon
+              icon--close-dark
+            "></div>
+
+            <p class="error__text">
+              Please enter correct information in the form:
+            </p>
+
+            <ul class="error__list"></ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="page__menu menu" id="menu">
+      <div class="menu__container">
+        <div class="menu__content">
+          <div class="menu__top">
+            <a href="#" class="
+              menu__icon
+              icon
+              icon--close
+            ">
+            </a>
+          </div>
+
+          <div class="menu__bottom">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#shop" class="menu__link">
+                  Shop
+                </a>
+              </li>
+
+              <li class="menu__item">
+                <a href="#contact" class="menu__link">
+                  Contact
+                </a>
+              </li>
+
+              <li class="menu__item">
+                <a href="#about" class="menu__link">
+                  About
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="page__main main">
+      <section class="main__section brand" id="brand">
+        <div class="brand__container">
+          <div class="brand__content">
+            <div class="brand__grid grid">
+              <div class="
+                brand__grid-item
+                brand__grid-item--img
+                grid__item
+                grid__item--1-2
+                grid__item--tablet-1-6
+                grid__item--sm-desktop-7-12
+              ">
+                <div class="brand__img"></div>
+              </div>
+
+              <div class="
+                brand__grid-item
+                grid__item
+                grid__item--1-2
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-2-6
+              ">
+                <h1 class="brand__title">
+                  Brand of eco-cosmetics and magic candles
+                </h1>
+              </div>
+
+              <div class="
+                brand__grid-item
+                grid__item
+                grid__item--1-2
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-2-5
+              ">
+                <p class="brand__description">
+                  20% of sales at a wild bird shelter
+                </p>
+              </div>
+
+              <div class="
+                brand__grid-item
+                grid__item
+                grid__item--1-2
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-2-4
+              ">
+                <a href="#shop" class="brand__btn btn">
+                  shop
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section nature">
+        <div class="nature__container">
+          <div class="nature__content">
+            <div class="nature__line nature__line--before"></div>
+
+            <div class="nature__grid grid">
+              <div class="
+                nature__grid-item
+                grid__item
+                grid__item--1-2
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-10
+              ">
+                <h4 class="nature__title">
+                  If you choose the gifts of nature and care about it's - scroll down
+                </h4>
+              </div>
+
+              <div class="
+                nature__grid-item
+                nature__grid-item--desk
+                grid__item
+                grid__item--1-2
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-2-5
+              ">
+                <p class="nature__description">
+                  Biologists say that birds are indicators of the environmental situation, and over the past half century, the population of seabirds has declined by 70%. Birds die due to environmental problems and human intervention in the natural environment.
+                </p>
+              </div>
+            </div>
+
+            <div class="nature__line nature__line--after"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section about" id="about">
+        <div class="about__container">
+          <div class="about__content">
+            <div class="
+              about__marker
+              marker
+              marker--first
+              marker--long
+            ">
+              witch of mountain winds
+            </div>
+
+            <div class="about__grid grid">
+              <div class="
+                about__grid-item
+                grid__item
+                grid__item--1-2
+                grid__item--tablet-1-3
+                grid__item--sm-desktop-2-5
+              ">
+                <h2 class="about__title">
+                  About our brand
+                </h2>
+
+                <p class="about__text about__text--top">
+                  Our brand cosmetics are made from natural ingredients and we are promoting them to the masses. Shampoo, hair conditioner, soap - in recycled paper. Creams, oils, washing products in glass containers with recycled paper labels. No synthetics and microplastics in cosmetics. And the packaging from it can be returned for recycling or reused.
+                </p>
+
+                <p class="about__text about__text--desk">
+                  We are all neighbors of one big House. And we must protect what we have. Destroying everything around for the sake of consumerism and imaginary convenience, we destroy what does not belong to us. Be aware of your choice!
+                </p>
+
+                <a href="#" class="
+                  about__link
+                  link
+                  link--decor
+                  link--dark
+                  link--upper
+                ">
+                  Learn more
+                </a>
+              </div>
+
+              <div class="
+                about__grid-img
+                about__grid-img--big
+                grid__item
+                grid__item--tablet-4-6
+                grid__item--sm-desktop-7-10
+              ">
+                <img
+                  src="./images/product/img-04.jpg"
+                  class="about__img"
+                  alt="Our cosmetics"
+                >
+              </div>
+
+              <div class="
+                about__grid-img
+                about__grid-img--small
+                grid__item
+                grid__item--sm-desktop-11-12
+              ">
+                <img
+                  src="./images/main/about-small.jpg"
+                  class="about__img"
+                  alt="Our cosmetics"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section shop" id="shop">
+        <div class="shop__container">
+          <div class="shop__content">
+            <div class="
+              shop__marker
+              marker
+              marker--long
+            ">
+              shop
+            </div>
+
+            <div class="grid grid--sm-desktop">
+              <div class="
+                grid__item
+                grid__item--sm-desktop-2-12
+              ">
+                <h2 class="shop__title">
+                  Shop
+                </h2>
+
+                <div class="shop__tabs">
+                  <button class="shop__tab shop__tab--active" data-produce="face">
+                    face
+                  </button>
+
+                  <button class="shop__tab" data-produce="body">
+                    body
+                  </button>
+
+                  <button class="shop__tab" data-produce="hair">
+                    hair
+                  </button>
+
+                  <button class="shop__tab" data-produce="candles">
+                    candles
+                  </button> 
+                </div>
+
+                <div class="shop__slider swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper__slide" data-produce="face">
+                      <a href="#card-1" class="shop__produce produce">
+                        <div class="produce__img produce__img--face"></div>
+
+                        <div class="produce__content">
+                          <h5 class="produce__title">
+                            Hydrophilic oil
+                          </h5>
+
+                          <div class="produce__cost">
+                            160
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide swiper__slide" data-produce="body">
+                      <a href="#card-2" class="shop__produce produce">
+                        <div class="produce__img produce__img--body"></div>
+
+                        <div class="produce__content">
+                          <h5 class="produce__title">
+                            ubtan
+                          </h5>
+
+                          <div class="produce__cost">
+                            160
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide swiper__slide" data-produce="hair">
+                      <a href="#card-3" class="shop__produce produce">
+                        <div class="produce__img produce__img--hair"></div>
+
+                        <div class="produce__content">
+                          <h5 class="produce__title">
+                            Almond Shampoo
+                          </h5>
+
+                          <div class="produce__cost">
+                            70
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="swiper-slide swiper__slide" data-produce="candles">
+                      <a href="#card-4" class="shop__produce produce">
+                        <div class="produce__img produce__img--candles"></div>
+
+                        <div class="produce__content">
+                          <h5 class="produce__title">
+                            Candle Moonlight
+                          </h5>
+
+                          <div class="produce__cost">
+                            160
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="#product" class="shop__btn btn">
+              all products
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section creators" id="creators">
+        <div class="creators__container">
+          <div class="creators__content">
+            <div class="
+              creators__marker
+              marker
+              marker--short
+            ">
+              about the creators
+            </div>
+
+            <div class="
+              creators__grid
+              grid
+              grid--tablet
+            ">
+              <div class="
+                creators__item
+                grid__item
+                grid__item--tablet-1-3
+                grid__item--sm-desktop-2-5
+              ">
+                <h2 class="creators__title">
+                  About the creators
+                </h2>
+
+                <div class="creators__description">
+                  <p class="creators__text">
+                    My name is Victoria, I’m a master at candle making and natural cosmetics. In the past, a cynologist, was engaged in herbs, made layouts on the Tarot.
+                  </p>
+     
+                  <p class="creators__text">
+                    I am also a volunteer to save wild birds in distress, a consultant to the Phoenix Wildlife Rehabilitation Center, a member of the Society for the Conservation of Birds of Ukraine with the support of Birdlife International.
+                  </p>
+
+                  <p class="creators__text creators__text--desk">
+                    My husband and I live in the Carpathian region in the city of Chernivtsi. I dream of my center for the rehabilitation of wild birds, as it is very difficult to rescue birds in a rented communal apartment.
+                  </p>
+                </div>
+
+                <a href="#" class="
+                  creators__link
+                  link link--decor
+                  link--dark
+                  link--upper
+                ">
+                  Learn more
+                </a>
+
+                <a href="#contact" class="creators__btn btn">
+                  to contact us
+                </a>
+              </div>
+
+              <div class="
+                creators__item-img
+                grid__item
+                grid__item--tablet-4-6
+                grid__item--sm-desktop-7-12
+              ">
+                <div class="creators__img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section powder" id="powder">
+        <div class="powder__container">
+          <div class="powder__content">
+            <div class="
+              powder__marker
+              marker
+              marker--short
+            ">
+              Ingredients
+            </div>
+
+            <div class="grid grid--tablet">
+              <div class="
+                powder__top
+                grid__item
+                grid__item--tablet-1-3
+                grid__item--sm-desktop-2-5
+              ">
+                <h2 class="powder__title">
+                  Ayurvedic Tooth Powder
+                </h2>
+              </div>
+
+              <div class="
+                powder__center
+                grid__item
+                grid__item--tablet-2-6
+                grid__item--sm-desktop-6-12
+              ">
+                <div class="powder__substance">
+                  <div class="powder__ingredients">
+                    <p class="powder__ingredient">
+                      Kaolin
+                    </p>
+
+                    <p class="powder__ingredient">
+                      Sivak
+                    </p>
+
+                    <p class="powder__ingredient">
+                      Calcium
+                    </p>
+
+                    <p class="powder__ingredient">
+                      Licorice root
+                    </p>
+
+                    <p class="powder__ingredient">
+                      Turmeric
+                    </p>
+                  </div>
+
+                  <div class="powder__image"></div>
+                </div>
+              </div>
+
+              <div class="
+                powder__bottom
+                grid__item
+                grid__item--tablet-1-2
+                grid__item--sm-desktop-2-3
+              ">
+                <a href="#" class="
+                  powder__link
+                  link link--decor
+                  link--dark
+                  link--upper
+                ">
+                  Learn more
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section eco">
+        <div class="eco__container">
+          <div class="eco__content">
+            <div class="grid grid--tablet">
+              <div class="
+                eco__item
+                grid__item
+                grid__item--tablet-1-2
+                grid__item--sm-desktop-1-4
+              ">
+                <div class="eco__img eco__img--bird"></div>
+                <p class="eco__text">
+                  No synthetics and microplastics
+                </p>
+              </div>
+
+              <div class="
+                eco__item
+                grid__item
+                grid__item--tablet-3-4
+                grid__item--sm-desktop-5-8
+              ">
+                <div class="eco__img eco__img--recycle"></div>
+
+                <p class="eco__text">
+                  Product packaging can be recycled or reused
+                </p>
+              </div>
+
+              <div class="
+                eco__item
+                grid__item
+                grid__item--tablet-5-6
+                grid__item--sm-desktop-9-12
+              ">
+                <div class="eco__img eco__img--leaf"></div>
+
+                <p class="eco__text">
+                  Only natural ingredients
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="main__section contact" id="contact">
+        <div class="powder__container">
+          <div class="eco__content">
+            <div class="eco__marker marker marker--short">
+              help
+            </div>
+
+            <div class="grid grid--tablet">
+              <div class="
+                grid__item
+                grid__item--tablet-1-3
+                grid__item--sm-desktop-2-5
+              ">
+                <h2 class="contact__title">
+                  Contact us
+                </h2>
+
+                <p class="contact__text">
+                  We will help you choose a product that suits you and answer your other questions
+                </p>
+
+                <form
+                  action="#"
+                  class="form contact__form"
+                  method="post"
+                >
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    class="
+                      form__field
+                      form__field--name
+                      form__field--input"
+                    title="Your Name"
+                  >
+
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="e-mail"
+                    class="
+                      form__field
+                      form__field--email
+                      form__field--input"
+                      title="example@domain.com"
+                  >
+
+                  <input
+                    type="tel"
+                    name="tel"
+                    title="Format: +1 2222 333 4444"
+                    placeholder="Phone number"
+                    class="
+                      form__field
+                      form__field--tel
+                      form__field--last"
+                  >
+
+                  <textarea
+                    name="message"
+                    placeholder="Your message"
+                    minlength="5"
+                    maxlength="200"
+                    title="From 5 to 200 characters"
+                    class="
+                      form__field
+                      form__field--message
+                      form__field--area"
+                  ></textarea>
+
+                  <button
+                    type="submit"
+                    class="contact__btn button btn"
+                  >
+                    send a message
+                  </button>
+                </form>
+              </div>
+
+              <div class="
+                contact__grid-img
+                grid__item
+                grid__item--tablet-4-6
+                grid__item--sm-desktop-7-12
+              ">
+                <div class="contact__img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section
+      class="
+        page__product
+        product
+        product--hidden"
+      id="product"
+    >
+      <div class="product__container">
+        <div class="product__content">
+          <h2 class="product__title">
+            Products
+          </h2>
+
+          <div class="product__grid grid">
+            <div class="
+              product__item
+              grid__item
+              grid__item--1-2
+              grid__item--tablet-1-3
+              grid__item--sm-desktop-1-4
+            ">
+              <div class="product__card card">
+                <div class="card__top">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/product/img-01-desk.jpg"
+                      alt="Hydrophilic oil"
+                      class="card__img"
+                    >
+                  </div>
+
+                  <div class="card__content">
+                    <a href="#card-1" class="card__link link">
+                      <h5 class="card__title">
+                        Hydrophilic oil
+                      </h5>
+                    </a>
+
+                    <div class="card__cost card__cost--common">
+                      160
+                    </div>
+
+                    <div class="card__cost card__cost--discount">
+                      0
+                    </div>
+                  </div>
+                </div>
+
+                <a href="#card-1" class="btn card__link-btn">
+                  view details
+                </a>
+              </div>
+            </div>
+
+            <div class="
+              product__item
+              grid__item
+              grid__item--1-2
+              grid__item--tablet-4-6
+              grid__item--sm-desktop-5-8
+            ">
+              <div class="product__card card">
+                <div class="card__top">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/product/img-02-desk.jpg"
+                      alt="Ubtan"
+                      class="card__img"
+                    >
+                  </div>
+
+                  <div class="card__content">
+                    <a href="#card-2" class="card__link">
+                      <h5 class="card__title">
+                        ubtan
+                      </h5>
+                    </a>
+
+                    <div class="card__cost card__cost--common">
+                      160
+                    </div>
+
+                    <div class="card__cost card__cost--discount">
+                      0
+                    </div>
+                  </div>
+                </div>
+
+                <a href="#card-2" class="btn card__link-btn">
+                  view details
+                </a>
+              </div>
+            </div>
+
+            <div class="
+              product__item
+              grid__item
+              grid__item--1-2
+              grid__item--tablet-1-3
+              grid__item--sm-desktop-9-12
+            ">
+              <div class="product__card card">
+                <div class="card__top">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/product/img-03.jpg"
+                      alt="Almond Shampoo with Lavender Oil"
+                      class="card__img"
+                    >
+                  </div>
+
+                  <div class="card__content">
+                    <a href="#card-3" class="card__link">
+                      <h5 class="card__title">
+                        Almond Shampoo with Lavender Oil
+                      </h5>
+                    </a>
+
+                    <div class="card__cost card__cost--common">
+                      70
+                    </div>
+
+                    <div class="card__cost card__cost--discount">
+                      0
+                    </div>
+                  </div>
+                </div>
+
+                <a href="#card-3" class="btn card__link-btn">
+                  view details
+                </a>
+              </div>
+            </div>
+
+            <div class="
+              product__item
+              grid__item
+              grid__item--1-2
+              grid__item--tablet-4-6
+              grid__item--sm-desktop-1-4
+            ">
+              <div class="product__card card">
+                <div class="card__top">
+                  <div class="card__img-container">
+                    <img
+                      src="./images/product/img-04.jpg"
+                      alt="Candle Moonlight"
+                      class="card__img"
+                    >
+                  </div>
+
+                  <div class="card__content">
+                    <a href="#card-4" class="card__link">
+                      <h5 class="card__title">
+                        Candle Moonlight
+                      </h5>
+                    </a>
+
+                    <div class="card__cost card__cost--common">
+                      160
+                    </div>
+
+                    <div class="card__cost card__cost--discount">
+                      0
+                    </div>
+                  </div>
+                </div>
+
+                <a href="#card-4" class="btn card__link-btn">
+                  view details
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page__cards cards cards--hidden" id="cards">
+      <div class="cards__container">
+        <a href="#product" class="cards__link">Products</a>
+
+        <div class="cards__content">
+          <div
+            class="
+              cards__card
+              card
+              card--hidden"
+            id="card-1"
+          >
+            <div class="
+              grid
+              grid--tablet
+              card__grid
+            ">
+              <div class="
+                card__grid-item--content
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <div class="card__content">
+                  <h5 class="card__title">
+                    Hydrophilic oil
+                  </h5>
+
+                  <div class="card__cost card__cost--common">
+                    160
+                  </div>
+
+                  <div class="card__cost card__cost--discount">
+                    0
+                  </div>
+
+                  <div class="card__weight">
+                    30 g
+                  </div>
+                </div>
+              </div>
+
+              <div class="
+                card__grid-item--img
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-1-6
+              ">
+                <div class="card__img-container">
+                  <img
+                    src="./images/product/img-01-desk.jpg"
+                    alt="Hydrophilic oil"
+                    class="card__img"
+                  >
+                </div>
+              </div>
+
+              <div class="
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <button class="btn card__btn card__btn--card">Add to bag</button>
+              </div>
+
+              <div class="
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <div class="card__description">
+                  <p class="card__paragraph">
+                    <span class="card__important">
+                      Ingredients:
+                    </span>
+
+                    cocosulfate, aloe hydrolate, sweet almond oil, wheat proteins, chamomile grass, lavender essential oil.
+                  </p>
+
+                  <p class="card__paragraph">
+                    <span class="card__important">
+                      Application:
+                    </span>
+
+                    foam the shampoo in your hands and apply foam on the hair or draw a block over wet hair, foam, massage, rinse, apply balm or conditioner.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="
+              cards__card
+              card
+              card--hidden"
+            id="card-2"
+          >
+            <div class="grid grid--tablet card__grid">
+              <div class="
+                card__grid-item--content
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <div class="card__content">
+                  <h5 class="card__title">
+                    Ubtan
+                  </h5>
+
+                  <div class="card__cost card__cost--common">
+                    160
+                  </div>
+
+                  <div class="card__cost card__cost--discount">
+                    0
+                  </div>
+
+                  <div class="card__weight">
+                    80 g
+                  </div>
+                </div>
+              </div>
+
+              <div class="
+                card__grid-item--img
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-1-6
+              ">
+                <div class="card__img-container">
+                  <img
+                    src="./images/product/img-02-desk.jpg"
+                    alt="Ubtan"
+                    class="card__img"
+                  >
+                </div>
+              </div>
+
+              <div class="
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <button class="
+                  btn
+                  card__btn
+                  card__btn--card
+                ">
+                  Add to bag
+                </button>
+              </div>
+
+              <div class="
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <div class="card__description">
+                  <p class="card__paragraph">
+                    <span class="card__important">
+                      Ingredients:
+                    </span>
+
+                    chamomile, calendula, bur-marigold, nettle, black elderberry flowers, coltsfoot, field horsetail, dill, parsley, hops, licorice, sage, mint, yellow clay, blue clay, dark blue clay, green clay, white clay, pink clay, red clay, oatmeal flour, cream powder, vitamin e, guar gum, aloe vera extract, a combination of essential oils of jasmine, ylang-ylang, sandalwood, tangerine.
+                  </p>
+
+                  <p class="card__paragraph">
+                    <span class="card__important">
+                      Application:
+                    </span>
+
+                    Take a small bowl, with a dry wooden spoon take 1 to 1/2 tsp of ubtan and mix with your favourite mystic Naturals facial mist or Toner. Apply a thin layer on the face and wait for 15 to 20 mins, then spray your favourite mystic naturals facial mist and massage in circulation motion for a min, wash off with cold water.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="
+              cards__card
+              card
+              card--hidden"
+            id="card-3"
+          >
+            <div class="
+              grid
+              grid--tablet
+              card__grid
+            ">
+              <div class="
+                card__grid-item--content
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <div class="card__content">
+                  <h5 class="card__title">
+                    Almond Shampoo with Lavender Oil
+                  </h5>
+
+                  <div class="card__cost card__cost--common">
+                    70
+                  </div>
+
+                  <div class="card__cost card__cost--discount">
+                    0
+                  </div>
+
+                  <div class="card__weight">
+                    30 g
+                  </div>
+                </div>
+              </div>
+
+              <div class="
+                card__grid-item--img
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-1-6
+              ">
+                <div class="card__img-container">
+                  <img
+                    src="./images/product/img-03.jpg"
+                    alt="Almond Shampoo with Lavender Oil"
+                    class="card__img"
+                  >
+                </div>
+              </div>
+
+              <div class="
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <button class="
+                  btn
+                  card__btn
+                  card__btn--card
+                ">
+                  Add to bag
+                </button>
+              </div>
+
+              <div class="
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <div class="card__description">
+                  <p class="card__paragraph">
+                    <span class="card__important">
+                      Ingredients:
+                    </span>
+
+                    cocosulfate, aloe hydrolate, sweet almond oil, wheat proteins, chamomile grass, lavender essential oil.
+                  </p>
+
+                  <p class="card__paragraph">
+                    <span class="card__important">
+                      Application:
+                    </span>
+
+                    foam the shampoo in your hands and apply foam on the hair or draw a block over wet hair, foam, massage, rinse, apply balm or conditioner.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="
+              cards__card
+              card
+              card--hidden"
+            id="card-4"
+          >
+            <div class="
+              grid
+              grid--tablet
+              card__grid
+            ">
+              <div class="
+                card__grid-item--content
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <div class="card__content">
+                  <h5 class="card__title">
+                    Candle Moonlight
+                  </h5>
+
+                  <div class="card__cost card__cost--common">
+                    160
+                  </div>
+
+                  <div class="card__cost card__cost--discount">
+                    0
+                  </div>
+
+                  <div class="card__weight">
+                    30 g
+                  </div>
+                </div>
+              </div>
+
+              <div class="
+                card__grid-item--img
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-1-6
+              ">
+                <div class="card__img-container">
+                  <img
+                    src="./images/product/img-04.jpg"
+                    alt="Candle Moonlight"
+                    class="card__img"
+                  >
+                </div>
+              </div>
+
+              <div class="
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <button class="
+                  btn
+                  card__btn
+                  card__btn--card
+                ">
+                  Add to bag
+                </button>
+              </div>
+
+              <div class="
+                card__grid
+                grid__item
+                grid__item--tablet-2-5
+                grid__item--sm-desktop-7-12
+              ">
+                <div class="card__description">
+                  <p class="card__paragraph">
+                    <span class="card__important">
+                      Ingredients:
+                    </span>
+
+                    natural waxes, a concentrated blend of pure essential oils, white sage, jasmine flowers, camphor, myrrh.
+                  </p>
+
+                  <p class="card__paragraph">
+                    <span class="card__important">
+                      Application:
+                    </span>
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fuga provident modi nihil impedit repellendus animi officia maxime maiores quae.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page__footer footer">
+      <div class="footer__container">
+        <div class="footer__content">
+          <div class="grid grid--tablet">
+            <div class="
+              footer__grid-item
+              grid__item
+              grid__item--tablet-1-2
+              grid__item--sm-desktop-1-4
+            ">
+              <nav class="footer__nav nav">
+                <ul class="nav__list">
+                  <li class="nav__item">
+                    <a href="#shop" class="
+                      nav__link
+                      link
+                      link--light
+                      link--cptlz
+                    ">
+                        Shop
+                    </a>
+                  </li>
+
+                  <li class="nav__item">
+                    <a href="#contact" class="
+                      nav__link
+                      link
+                      link--light
+                      link--cptlz
+                    ">
+                      Contact
+                    </a>
+                  </li>
+
+                  <li class="nav__item">
+                    <a href="#about" class="
+                      nav__link
+                      link
+                      link--light
+                      link--cptlz
+                    ">
+                      About
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="
+              footer__grid-item
+              grid__item
+              grid__item--tablet-1-2
+              grid__item--sm-desktop-8-10">
+              <div class="footer__social">
+                <a
+                  href="https://facebook.com/"
+                  class="footer__social-link footer__social-link--fb"
+                  target="_blank"
+                ></a>
+   
+                <a
+                  href="https://www.instagram.com/"
+                  class="footer__social-link footer__social-link--inst"
+                  target="_blank"
+                ></a>
+              </div>
+            </div>
+
+            <div class="
+              footer__grid-item
+              footer__grid-item--support
+              grid__item
+              grid__item--tablet-4-6
+              grid__item--sm-desktop-8-12
+            ">
+              <div class="footer__support">
+                <a
+                  href="https://goo.gl/maps/EFwXCCnq5B1i6uic6"
+                  class="footer__support-item footer__support-item--link"
+                  target="_blank"
+                >
+                  Ukraine
+                </a>
+
+                <a
+                  href="mailto:support.mountain@gmail.com"
+                  class="footer__support-item footer__support-item--link"
+                >
+                  support.mountain@gmail.com
+                </a>
+
+                <a
+                  href="tel:+380934476839"
+                  class="footer__support-item footer__support-item--link"
+                >
+                  +380934476839
+                </a>
+
+                <p class="footer__support-item">
+                  Support is available Monday - Friday 9am-6pm
+                </p>
+              </div>
+            </div>
+
+            <div class="
+              footer__grid-item
+              footer__grid-item--copyright
+              grid__item
+              grid__item--tablet-1-3
+              grid__item--sm-desktop-1-6
+            ">
+              <div class="footer__copyright">
+                <span class="footer__copyright footer__copyright--desk">
+                  Copyright
+                </span>
+
+                <span>&#169;</span>
+
+                2019 witch of mountain winds
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="test ">
+      
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
+    <script type="text/javascript" src="scripts/cart.js"></script>
+    <script type="text/javascript" src="scripts/validate.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
+
 </html>

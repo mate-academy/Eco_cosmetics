@@ -1,0 +1,95 @@
+.cart-content {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  box-sizing: border-box;
+  padding: 30px 0 12px;
+  min-width: 280px;
+  height: max-content;
+  border: 1px solid $c-silver;
+
+  background-color: $c-gray-main;
+
+  box-shadow: 5px 3px 13px 3px $c-silver;
+  transition: opacity $act-time, visibility $act-time;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  @include hover(box-shadow, 5px 3px 13px 3px $c-dark);
+
+  &--active {
+    visibility: visible;
+    z-index: 5;
+  }
+
+  @include onSmTablet {
+    display: flex;
+    flex-direction: row;
+  }
+
+  @include onSmDesktop {
+    top: 40px;
+  }
+
+  &__list {
+    margin-bottom: 16px;
+    max-height: 316px;
+    overflow-y: auto;
+
+    @include onSmTablet {
+      max-height: 444px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__list-container {
+    min-height: 100px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__bottom {
+    padding: 0 12px;
+    @include flexDJI($fd: column, $jc: space-between, $ai: center);
+
+    @include onSmTablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &__fullprice {
+    min-width: max-content;
+    margin-bottom: 12px;
+    padding-right: 12px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+    @extend %txt-regular;
+
+    @include onSmTablet {
+      order: 1;
+    }
+  }
+
+  &__total-price {
+    @extend %h5;
+
+    @include coinAfter($pdg: 8px);
+  }
+
+  &__btn {
+    @include onSmTablet {
+      order: 2;
+    }
+  }
+
+  &__icon-close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
+}

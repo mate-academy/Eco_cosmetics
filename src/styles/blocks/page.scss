@@ -1,0 +1,41 @@
+.page {
+  @extend %txt-small;
+  color: $c-dark;
+  scroll-behavior: smooth;
+
+  &__body {
+    background: $c-gray-main;
+    overflow-anchor: none;
+
+    &--hidden {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-110%);
+    transition: transform $act-time;
+
+    &:target {
+      transform: translateX(0);
+      z-index: 2;
+    }
+  }
+
+  &__main {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 132px;
+    }
+
+    &--hidden {
+      margin-bottom: 0;
+      display: none;
+    }
+  }
+}

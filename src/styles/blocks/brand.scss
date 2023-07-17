@@ -1,0 +1,61 @@
+.brand {
+  &__container {
+    @extend %container;
+  }
+
+  &__img {
+    margin: 0 -#{$pddg-x-mob} 24px;
+    min-width: 320px;
+    padding-bottom: 95%;
+
+    @include bgImgPosition($ps: center, $sz: cover);
+    background-image: url(./../images/main/brand.jpg);
+
+    @include hover(box-shadow, 5px 3px 13px 3px $c-dark);
+
+    @include onSmTablet {
+      background-image: url(./../images/main/brand-tab.jpg);
+    }
+
+    @include onTablet {
+      margin: 0 0 52px;
+      padding-bottom: 70.5%;
+    }
+
+    @include onSmDesktop {
+      margin: 0;
+      padding-bottom: 78%;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 12px;
+
+    @include onSmDesktop {
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    margin-bottom: 28px;
+    text-align: center;
+    @extend %txt-regular;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onSmDesktop {
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+  &__grid-item {
+    &--img {
+      grid-row: 1 / 4;
+    }
+  }
+}

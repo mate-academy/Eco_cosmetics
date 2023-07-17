@@ -1,0 +1,53 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $c-dark;
+
+  @media (max-height: 450px) {
+    overflow-y: scroll;
+  }
+
+  &__container {
+    @extend %container;
+  }
+
+  &__content {
+    padding: 16px 0 20px;
+
+    @include onTablet {
+      padding: 24px 0 28px;
+    }
+  }
+
+  &__top {
+    margin-bottom: 44px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+    text-align: center;
+    box-sizing: border-box;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding-bottom: 12px;
+    border-bottom: 1px solid $c-silver;
+    @extend %txt-menu;
+    color: $c-gray-main;
+    transition: color $act-time, border-color $act-time;
+
+    &:hover {
+      color: $c-green-lite;
+      border-color: $c-green-lite;
+    }
+  }
+}
