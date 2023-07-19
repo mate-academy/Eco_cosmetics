@@ -1,0 +1,49 @@
+.vertical-container {
+  display: none;
+
+  @include onDesktop {
+    grid-column: 1/2;
+    grid-row: 1/4;
+
+    display: flex;
+    align-items: flex-end;
+
+    position: relative;
+  }
+
+  &__vertical-text {
+    position: absolute;
+    width: 300px;
+    top: 0;
+    left: -150%;
+
+    display: inline-block;
+    color: $dark-green;
+    text-align: center;
+    /* Decorative - 14 Medium */
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    /* 18.2px */
+    transform: rotate(-90deg) translateX(-50%);
+
+    // &::after {
+    //   position: absolute;
+    //   content: "";
+    //   width: 1px;
+    //   height: 100px;
+    //   background-color: $dark-green;
+    //   left: -80px;
+    //   top: 0;
+
+    //   transform: rotate(-90deg) translateX(-50%);
+    // }
+  }
+
+  &__line {
+    font-family: serif;
+    padding-right: 20px;
+  }
+}

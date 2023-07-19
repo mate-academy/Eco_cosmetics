@@ -1,0 +1,138 @@
+.top {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+
+  &__container {
+    &--menu {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--logo {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--leftside {
+      @include onDesktop {
+        grid-column: 1/6;
+      }
+    }
+
+    &--big-logo {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        grid-column: 1/6;
+        width: max-content;
+      }
+    }
+
+    &--logo-and-name {
+      @include onDesktop {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        align-items: center;
+      }
+    }
+
+    &--nav {
+      @include onDesktop {
+        grid-column: 7/11;
+      }
+    }
+
+    &--shop {
+      @include onDesktop {
+        grid-column: 12/-1;
+      }
+
+      .top__link {
+        @include onDesktop {
+          display: flex;
+          justify-content: end;
+        }
+      }
+    }
+  }
+
+  &__brand-name {
+    color: $dark-green;
+    /* Text 2 - 14 Regular Uppercase */
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    /* 18.2px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+  }
+
+  .nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &__nav-list {
+      flex-direction: row;
+      gap: 40px;
+      align-items: center;
+    }
+
+    &__nav-item {
+      width: 100%;
+    }
+
+    &__link {
+      text-align: left;
+      color: $dark-green;
+      /* Inputs & Menu - 18 SemiBold */
+      font-family: Poppins, sans-serif;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      /* 27px */
+      text-transform: capitalize;
+      display: block;
+      width: max-content;
+      position: relative;
+      box-sizing: border-box;
+
+      &::after {
+        width: 0;
+        background-color: $dark-green;
+        transition: width 0.4s ease-in-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .top__link img {
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .top__link img:hover {
+    transform: scale(1.1);
+  }
+}
