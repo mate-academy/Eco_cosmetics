@@ -1,0 +1,62 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  &__field {
+    display: block;
+    background-color: transparent;
+    border-bottom: 1px solid $silver;
+
+    padding: 5px 0;
+
+    //font
+    color: $dark-green;
+    /* Inputs & Menu - 18 SemiBold */
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    /* 27px */
+
+    @include onDesktop {
+      font-size: 18px;
+      padding: 10px 0;
+    }
+
+    &::placeholder {
+      color: $silver;
+      /* Inputs & Menu - 18 SemiBold */
+      font-family: Poppins, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      /* 27px */
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+    }
+
+    &:hover {
+      border-color: $light-gray;
+    }
+
+    &:focus {
+      border-color: $dark-green;
+    }
+
+    &:required:valid:not(:placeholder-shown) {
+      border-color: $dark-green;
+      color: $dark-green;
+    }
+
+    &:required:invalid:not(:placeholder-shown) {
+      border-color: red;
+      color: red;
+    }
+  }
+}

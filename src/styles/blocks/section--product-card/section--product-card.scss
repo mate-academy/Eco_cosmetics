@@ -1,0 +1,73 @@
+.section--product-card {
+  .product {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      grid-column: 2/-1;
+    }
+
+    @include onTablet {
+      grid-column: 2/-2;
+    }
+
+    &__parametrs {
+      padding-bottom: 30px;
+
+      @include onMobile {
+        order: 1;
+        padding-bottom: 20px;
+      }
+    }
+
+    &__image-container {
+      @include onMobile {
+        order: 2;
+      }
+    }
+
+    &__text-container {
+      @include onMobile {
+        order: 4;
+      }
+    }
+
+    &__text span {
+      color: $dark-green;
+    }
+
+    &__price {
+      color: $dark-green;
+      padding-bottom: 10px;
+    }
+
+    &__weight {
+      color: $dark-grey;
+      /* Price - 18 Medium Uppercase */
+      font-family: Poppins, sans-serif;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      /* 27px */
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+
+      @include onMobile {
+        display: none;
+      }
+    }
+
+    &__button-container {
+      padding-bottom: 60px;
+
+      @include onMobile {
+        order: 3;
+      }
+    }
+
+    &__button {
+      margin: 0 auto;
+    }
+  }
+}

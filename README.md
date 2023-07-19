@@ -29,7 +29,7 @@ Use `Sharp Sans No2 Medium` and `Avenir`, which you can find in fonts directory.
 5. The speed of animations is the same throughout the landing page (for example, increasing when hovering or moving blocks when scrolling)
 6. Placeholders in the forms suggest what to enter, and if there is a validation of the form, then it is clear in what format to enter the phone number
 7. Make sure everything looks neat on mobile and without horizontal scrolling
-8. Add favicon
+8. Add favicon //
 9. Add a smooth scroll for the whole page
 13. The user must have the opportunity to write 2-3 lines of text in the message field
 14. It would be more realistic if the "shopping cart" button was active and clickable
@@ -57,7 +57,7 @@ Use `Sharp Sans No2 Medium` and `Avenir`, which you can find in fonts directory.
 11. `git push origin develop` - to send you code for PR.
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/Eco_cosmetics/).
+  [DEMO LINK](https://aliliolek.github.io/Eco_cosmetics/).
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.

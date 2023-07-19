@@ -1,0 +1,51 @@
+.section--slogan {
+  .section__container {
+    @include onDesktop {
+      padding: 100px 0;
+    }
+
+    &--1 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        grid-column: 2/6;
+        position: relative;
+
+        & .section__line-on-desktop--left {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 1px;
+          background-color: $dark-green;
+          top: 0;
+          right: 0;
+          left: 0;
+          width: auto;
+        }
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-column: 3/5;
+      }
+
+      @include onDesktop {
+        grid-column: 7/11;
+        position: relative;
+
+        & .section__line-on-desktop--right {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 1px;
+          background-color: $dark-green;
+          bottom: 0;
+          right: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}
