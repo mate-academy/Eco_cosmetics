@@ -1,0 +1,26 @@
+.learn-link {
+  position: relative;
+  color: $darkGreenColor;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -10px;
+    height: 2px;
+    width: 100%;
+    background-color: $darkGreenColor;
+
+    transition: transform $transitionTime;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
