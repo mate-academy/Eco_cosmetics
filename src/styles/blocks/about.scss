@@ -1,0 +1,181 @@
+.about {
+
+  &__grid {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+
+    &-our {
+
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        grid-column: 2 / 6;
+      }
+    }
+  }
+
+  &__photo {
+
+    &-first {
+      display: none;
+      object-fit: contain;
+      background-size: cover;
+      background-position: center;
+
+      &-font {
+
+        @include onTablet {
+          height: 318px;
+          width: 100%;
+        }
+
+        @include onDesktop {
+          width: 100%;
+          height: 529px;
+        }
+      }
+
+      @include onTablet {
+        display: block;
+        grid-column: 4 / 7;
+        width: 100%;
+        height: 318px;
+
+      }
+      @include onDesktop {
+        width: 100%;
+        height: 529px;
+        display: block;
+        grid-column: 7 / 12;
+      }
+    }
+
+    &-second {
+      display: none;
+
+      @include onDesktop {
+        align-self: flex-end;
+        display: block;
+        grid-column: -2;
+      }
+
+      &-font {
+
+        @include onDesktop {
+          width: 100%;
+          height: 430px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / 6;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__choose {
+    margin: 0 0 100px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+    text-decoration: none;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      margin: 0 0 130px;
+      text-align: center;
+    }
+    @include onDesktop {
+      grid-column: 7 / 11;
+      text-align: start;
+    }
+
+    &--del {
+      display: none;
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__our {
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344f10;
+
+    @include onDesktop {
+
+      margin-bottom: 40px;
+    }
+  }
+
+  &__paragraf {
+    margin: 0 0 30px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #333;
+
+    @include onTablet {
+      margin: 0 0 39px;
+    }
+
+    &-desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__learn {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #344f10;
+    cursor: pointer;
+
+    &:hover {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 86px;
+        height: 1px;
+        background: #344f10;
+        margin-top: 10px;
+      }
+    }
+  }
+}

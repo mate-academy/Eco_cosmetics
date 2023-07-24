@@ -1,0 +1,233 @@
+.shop {
+
+  &__grid {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #344f10;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      padding-left: 20px;
+      grid-column: 1 / 4;
+      text-align: start;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      padding: 0;
+      font-size: 36px;
+      text-align: start;
+    }
+
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 27px;
+    padding: 0 20px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      justify-content: flex-start;
+      margin-bottom: 37px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+      grid-column: 2 / 6;
+      justify-content: flex-start;
+      margin-bottom: 30px;
+    }
+
+    &-font {
+      margin: 0;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+
+      @include onTablet {
+        padding-right: 14px;
+      }
+
+      &--color {
+        color: #828282;
+      }
+      &--after {
+        &::after {
+          content: "";
+          display: block;
+          width: 37px;
+          height: 2px;
+          background: #333;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  &__photo {
+
+    &-one {
+      height: 267px;
+      width: 100%;
+      margin-bottom: 30px;
+      background-size: cover;
+      background-position: center;
+      background-image: url(../images/photoShop.png);
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include onTablet {
+        grid-column: 1 / 4;
+        height: 300px;
+        margin-bottom: 20px;
+
+      }
+
+      @include onDesktop {
+        grid-column: 2 / 6;
+        height: 500px;
+      }
+    }
+
+    &-two {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        grid-column: 6 / 10;
+        height: 500px;
+        width: 100%;
+        margin-bottom: 20px;
+        background-size: cover;
+        background-position: center;
+        background-image: url(../images/tablet5.png);
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    &-three {
+      display: none;
+      height: 500px;
+      width: 100%;
+      margin-bottom: 20px;
+      background-size: cover;
+      background-position: center;
+      background-image: url(../images/tablet2.png);
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include onTablet {
+        display: block;
+        grid-column: 4 / 7;
+        height: 300px;
+
+      }
+      @include onDesktop {
+        display: block;
+        grid-column: 10 / 13;
+        height: 500px;
+        width: 100%;
+      }
+
+    }
+  }
+
+  &__description {
+
+    &-one {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        grid-column: 1 / 3;
+        margin-bottom: 50px;
+      }
+      @include onDesktop {
+        grid-column: 2 / 6;
+        margin-bottom: 40px;
+
+      }
+    }
+
+    &-two {
+      display: none;
+      @include onDesktop {
+        display: block;
+        grid-column: 6 / 10;
+
+      }
+
+    }
+
+    &-three {
+      display: none;
+      @include onTablet {
+        display: block;
+        grid-column: 4 / 7;
+
+      }
+      @include onDesktop {
+        display: block;
+        grid-column: 10 / 13;
+
+      }
+    }
+
+    &-name {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    &-price {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #333;
+    }
+
+    &-pad {
+      padding: 0 20px;
+    }
+
+  }
+
+}

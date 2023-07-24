@@ -1,0 +1,178 @@
+.bird {
+
+  &__grid {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #344f10;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 5;
+      text-align: left;
+      font-size: 36px;
+      margin-bottom: 34px;
+    }
+
+  }
+
+  &__paragraf {
+
+    &-row {
+      @include onTablet {
+        grid-column: 1 / 4;
+        font-size: 16px;
+      }
+      @include onDesktop {
+        grid-column: 2 / 6;
+
+        font-size: 16px;
+      }
+    }
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #333;
+
+    &-desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &-bottom {
+      margin-bottom: 20px;
+      @include onTablet {
+        margin-bottom: 18px;
+      }
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &-botlust {
+      margin-bottom: 30px;
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
+    }
+
+  }
+
+  &__photo {
+
+    &-one {
+      display: none;
+      height: 435px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-image: url(../images/tablet3.png);
+
+      @include onTablet {
+        display: block;
+        grid-column: 4 / 7;
+        grid-row: 1 / 5;
+        margin-bottom: 30px;
+      }
+      @include onDesktop {
+        display: block;
+        grid-column: 7 / 13;
+        grid-row: 1 / 6;
+        height: 669px;
+      }
+    }
+  }
+
+  &__learn {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: #344f10;
+    margin-bottom: 25px;
+    cursor: pointer;
+
+    &:hover {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 86px;
+        height: 1px;
+        background: #344f10;
+        margin-top: 6px;
+      }
+    }
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-bottom: 40px;
+    }
+    @include onDesktop {
+      grid-column: 2 / 4;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    background: #333;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      background: #e5e5e5;
+      color: #333;
+
+    }
+
+    @include onTablet {
+      margin: 0;
+      width: 280px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 4 ;
+    }
+
+  }
+}
