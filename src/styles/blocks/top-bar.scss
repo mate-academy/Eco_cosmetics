@@ -12,8 +12,6 @@
 
   &--desktop {
     display: none;
-    padding-block: 15px 20px;
-
 
     @include onTablet {
       padding-block: 20px 30px;
@@ -30,6 +28,17 @@
     justify-content: space-between;
     align-items: center;
     gap: 108px;
+
+    @include onDesktop {
+      @include pageGrid;
+    }
+
+  }
+
+  &__nav {
+    @include onDesktop {
+      grid-column: 8 / 9;
+    }
   }
 
   &__nav-list {
@@ -42,11 +51,30 @@
   }
 
   &__nav-link {
+    position: relative;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 150%;
     text-transform: capitalize;
     color: $darkGreenColor;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -10px;
+      height: 2px;
+      width: 100%;
+      background-color: $darkGreenColor;
+
+      transition: transform $transitionTime;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
   }
 }

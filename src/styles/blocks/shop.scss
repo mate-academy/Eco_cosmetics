@@ -4,7 +4,7 @@
       @include pageGrid;
       grid-template-rows: none;
     }
-}
+  }
 
   &__title {
     text-align: center;
@@ -87,6 +87,23 @@
 
     &:hover::after {
       transform: scale(1);
+    }
+
+    &--active {
+      color: $darkGrayColor;
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -10px;
+        height: 2px;
+        width: 100%;
+        background-color: $darkGrayColor;
+
+        transition: transform $transitionTime;
+        transform: scale(1);
+        transform-origin: left;
+      }
     }
   }
 

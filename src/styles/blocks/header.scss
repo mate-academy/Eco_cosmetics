@@ -1,6 +1,9 @@
 .header {
   &__content {
-    height: 100vh;
+    @include onDesktop {
+      position: relative;
+      height: 100vh;
+    }
   }
 
   &__bottom {
@@ -8,7 +11,7 @@
     flex-direction: column-reverse;
 
     @include onDesktop {
-      @include pageGrid
+      @include pageGrid;
     }
   }
 
@@ -19,17 +22,19 @@
     margin-inline: -20px;
     margin-bottom: 25px;
 
+    @include hover(transform, scale(1.05));
+
     @include onTablet {
       margin-inline: 0;
       margin-bottom: 50px;
       height: 500px;
+      background-image: url(../images/header-picture-tablet.png);
     }
 
     @include onDesktop {
+      grid-column: 7 / -1;
       margin-bottom: 0;
       height: 451px;
-
-      grid-column: 7 / -1;
     }
   }
 
@@ -46,6 +51,7 @@
     font-size: 24px;
     font-weight: 600;
     line-height: 130%;
+    color: $darkGrayColor;
     margin-bottom: 10px;
 
     @include onTablet {
@@ -83,7 +89,7 @@
   &__button {
     @include onTablet {
       width: 280px;
-      margin: 0 auto
+      margin: 0 auto;
     }
 
     @include onDesktop {
