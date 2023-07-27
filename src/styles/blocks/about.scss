@@ -1,0 +1,70 @@
+.about {
+  &__content {
+    @include pageGrid;
+  }
+
+  &__information {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__picture {
+
+    &--tablet {
+      @include onTablet {
+        grid-column: span 3;
+        background-image: url(../images/photo_for_sections/about.png);
+        background-size: cover;
+        background-position: center;
+        min-height: 321px;
+
+        @include hover(transform, scale(1.05));
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 11;
+        height: 529px;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        grid-column: 11 / -1;
+        display: block;
+        background-image: url(../images/photo_for_sections/about-desktop.png);
+        background-size: cover;
+        height: 430px;
+        align-self: flex-end;
+
+        @include hover(transform, scale(1.05));
+      }
+    }
+  }
+
+  &__text {
+    line-height: 150%;
+    color: $darkGrayColor;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+  }
+
+  &__text--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 40px;
+    }
+  }
+}

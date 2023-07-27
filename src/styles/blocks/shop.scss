@@ -1,0 +1,113 @@
+.shop {
+  &__content {
+    @include onDesktop {
+      @include pageGrid;
+      grid-template-rows: none;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 3;
+    }
+  }
+
+  &__products {
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 27px;
+
+    @include onTablet {
+      margin-bottom: 37px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 62px;
+      grid-column: 2 / 3;
+    }
+  }
+
+  &__nav-list {
+    @extend %reset-nav-style;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 34px;
+
+    @include onTablet {
+      justify-content: flex-start;
+      gap: 14px;
+    }
+
+    @include onDesktop {
+      gap: 51px;
+    }
+  }
+
+  &__nav-link {
+    color: $lightGrayrayColor;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    position: relative;
+
+    transition: color $transitionTime;
+
+    @include onDesktop {
+      font-weight: 600;
+      line-height: 150%;
+    }
+    @include hover(color, $darkGrayColor);
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -10px;
+      height: 2px;
+      width: 100%;
+      background-color: $darkGrayColor;
+
+      transition: transform $transitionTime;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &--active {
+      color: $darkGrayColor;
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -10px;
+        height: 2px;
+        width: 100%;
+        background-color: $darkGrayColor;
+
+        transition: transform $transitionTime;
+        transform: scale(1);
+        transform-origin: left;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}

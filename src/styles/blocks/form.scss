@@ -1,0 +1,66 @@
+.form-field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 0 0 10px;
+
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+  background: #e4dfd3;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400;
+  color: $lightGrayrayColor;
+
+  @include onDesktop {
+    font-size: 18px;
+    line-height: 150%;
+    font-weight: 500;
+  }
+
+  &::placeholder {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: $lightGrayrayColor;
+
+    @include onDesktop {
+      font-size: 18px;
+      line-height: 150%;
+      font-weight: 500;
+    }
+  }
+
+  &:valid {
+    color: $darkGreenColor;
+    border-color: $darkGreenColor;
+    font-weight: 500;
+  }
+
+  &:focus,
+  &:hover {
+    outline: none;
+    border-bottom-color: $darkGrayColor;
+    background: #e4dfd3;
+  }
+
+  &:not(:placeholder-shown):invalid {
+    color: #eb5757;
+    border-color: #eb5757;
+    font-weight: 500;
+  }
+
+  &--textarea {
+    resize: none;
+    margin-top: 45px;
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+  }
+}

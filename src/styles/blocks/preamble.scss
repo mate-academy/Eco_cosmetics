@@ -1,0 +1,86 @@
+.preamble {
+  &__content {
+    margin-top: 130px;
+
+    @include onDesktop {
+      @include pageGrid;
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    color: $darkGreenColor;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      width: 280px;
+      text-align: center;
+      margin: 0 auto;
+
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+      width: 100%;
+      text-align: left;
+      letter-spacing: 1.2px;
+
+      grid-column: 7 / 11;
+
+      position: relative;
+      padding-top: 100px;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 630px;
+        height: 1px;
+        background-color: $darkGreenColor;
+
+        @include onDesign {
+          width: 711px;
+        }
+      }
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / 6;
+
+      position: relative;
+      padding-block: 100px;
+
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      color: #333;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 530px;
+        height: 1px;
+        background-color: $darkGreenColor;
+
+        @include onDesign {
+          width: 610px;
+        }
+      }
+    }
+  }
+}

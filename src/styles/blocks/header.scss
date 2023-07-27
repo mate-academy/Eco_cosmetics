@@ -1,0 +1,99 @@
+.header {
+  &__content {
+    @include onDesktop {
+      position: relative;
+      height: 100vh;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__picture {
+    background-image: url(../images/header-picture.png);
+    background-size: cover;
+    height: 267px;
+    margin-inline: -20px;
+    margin-bottom: 25px;
+
+    @include hover(transform, scale(1.05));
+
+    @include onTablet {
+      margin-inline: 0;
+      margin-bottom: 50px;
+      height: 500px;
+      background-image: url(../images/header-picture-tablet.png);
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      margin-bottom: 0;
+      height: 451px;
+    }
+  }
+
+  &__information {
+    align-self: center;
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+    color: $darkGrayColor;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      width: 466px;
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      line-height: 130%;
+      text-align: left;
+      text-transform: none;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 30px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      width: 280px;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+}

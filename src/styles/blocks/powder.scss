@@ -1,0 +1,120 @@
+.powder {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    align-self: start;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+
+      padding-bottom: 310px;
+    }
+  }
+
+  &__picture {
+    background-image: url(../images/photo_for_sections/powder-mobile.svg);
+    background-repeat: no-repeat;
+    height: 397px;
+    width: 300px;
+    margin-bottom: 30px;
+
+    // @include onTablet {
+    //   background-image: url(../images/photo_for_sections/ayurvedic_tooth_powder-tablet.png);
+    //   height: 397px;
+    //   width: 100%;
+    //   margin-bottom: 0;
+
+    //   grid-column: 4 / -1;
+    // }
+
+    // @include onDesktop {
+    //   background-image: url(../images/photo_for_sections/ayurvedic_tooth_powder-desktop.png);
+    //   background-position: right;
+    //   height: 100%;
+    //   width: 100%;
+    //   grid-column: 6 / -1;
+    // }
+
+    @include onTablet {
+      background-image: url(../images/photo_for_sections/powder-tablet.svg);
+      background-repeat: no-repeat;
+      height: 397px;
+      width: 100%;
+      margin-bottom: 0;
+
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/photo_for_sections/powder-desktop.svg);
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__ingredients {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 8;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @extend %reset-nav-style;
+  }
+
+  &__item {
+    color: #333;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__learn-link {
+    align-self: start;
+
+    @include onTablet {
+      grid-column: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__eco {
+    margin-top: 100px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin-top: 128px;
+    }
+
+    @include onDesktop {
+      margin-top: 200px;
+    }
+  }
+}

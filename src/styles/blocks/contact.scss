@@ -1,0 +1,72 @@
+.contact {
+  &__content {
+    @include pageGrid;
+    padding-bottom: 100px;
+
+    @include onTablet {
+      padding-bottom: 130px;
+    }
+  }
+
+  &__subtitle {
+    color: $darkGrayColor;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__information {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @include onTablet {
+      grid-column: span 3;
+      display: block;
+      background-image: url(../images/photo_for_sections/contact.png);
+      background-size: cover;
+      background-position: left;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      background-image: url(../images/photo_for_sections/contact-desktop.png);
+    }
+  }
+
+  &__button {
+    @extend %button-style;
+  }
+
+  &__field {
+    margin-bottom: 25px;
+
+    &--last {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

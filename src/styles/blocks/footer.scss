@@ -1,0 +1,205 @@
+.footer {
+  background-color: #8c9772;
+
+  &__content {
+    padding: 30px 0 40px;
+
+    @include onTablet {
+      @include pageGrid;
+      row-gap: 50px;
+      padding-block: 30px;
+    }
+
+    @include onDesktop {
+      row-gap: 30px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 2;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @extend %reset-nav-style;
+
+    @include onTablet {
+      gap: 15px;
+      padding-bottom: 20px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+      padding-bottom: 0;
+    }
+
+  }
+
+  &__nav-link {
+    @extend %footer-link-style;
+    text-transform: capitalize;
+  }
+
+  &__contact {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+      grid-row: 1 / 2;
+      margin-bottom: 0;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @extend %reset-nav-style;
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__contact-link {
+    font-size: 14px;
+    font-weight: 400;
+    @extend %footer-link-style;
+  }
+
+  &__contact-shedule {
+    font-size: 14px;
+    font-weight: 400;
+    @extend %footer-link-style;
+
+  }
+
+  &__social {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
+
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      @include onTablet {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__social-list {
+    @extend %reset-nav-style;
+
+    display: flex;
+    gap: 20px;
+
+    @include onDesktop {
+      gap: 14px;
+    }
+  }
+
+  &__social-link {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    &--facebook {
+      background-image: url(../images/icons/facebook.svg);
+
+      transition: background-image $transitionTime;
+
+      &:hover {
+        background-image: url(../images/icons/facebook-hover.svg);
+      }
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/Instagram.svg);
+
+      transition: background-image $transitionTime;
+
+      &:hover {
+        background-image: url(../images/icons/Instagram-hover.svg);
+      }
+    }
+  }
+
+  &__bottom {
+    color: #e4dfd3;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 130%;
+    text-align: center;
+    width: 198px;
+    margin: 0 auto;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+
+      width: 100%;
+      font-weight: 400;
+      line-height: 150%;
+      text-align: left;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      grid-row: 2 / 2;
+    }
+  }
+}
