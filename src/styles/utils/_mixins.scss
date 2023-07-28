@@ -1,6 +1,142 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover {
+  transition: all 0.3s ease;
+
   &:hover {
-    #{$_property}: $_toValue;
+    transform: scale(1.2);
   }
+}
+
+@mixin hoverWithTranslate {
+  transition: $transform;
+
+  &:hover {
+    transform: translateX(20px) scale(1.2);
+  }
+}
+
+@mixin title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+
+  color: $dark-gray;
+
+  @include onDesktop {
+    font-size: 36px;
+  }
+}
+
+@mixin text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+
+  color: $dark-gray;
+}
+
+@mixin button-text {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: $dark-white;
+}
+
+@mixin learnMore-button {
+  display: inline-block;
+  padding-bottom: 10px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  text-transform: uppercase;
+
+  color: $green;
+  border-bottom: 1px solid $green;
+}
+
+@mixin h5 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin footer-menu-link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+
+  color: $body;
+
+  @include onTablet {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+@mixin side-desktop-text {
+  color: rgba(52, 79, 16, 0.5);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+
+}
+
+@mixin onMobile {
+  @media (min-width: 320px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onLarge {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin side-text {
+  position: absolute;
+  writing-mode: vertical-rl;
+
+  @include side-desktop-text;
+  white-space: nowrap;
+}
+
+@mixin side-line {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100px;
+  background-color: rgba(52, 79, 16, 0.5);
 }
