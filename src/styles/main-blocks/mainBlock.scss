@@ -1,0 +1,81 @@
+.main {
+  @include onDesktop {
+    display: flex;
+    flex-direction: row-reverse;
+
+    margin: $side-margins-big;
+  }
+
+  @include onLarge {
+    margin: $side-margings-large;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 50px;
+
+    @include onDesktop {
+      align-items: start;
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      margin: $side-margins-tab;
+    }
+  }
+
+  &__img {
+    width: -webkit-fill-available;
+
+    @include onDesktop {
+      width: 580px;
+      height: 452px;
+    }
+  }
+
+  &__title {
+    overflow: hidden;
+    margin: 25px 0 10px;
+
+    @include title;
+    line-height: 130%;
+
+    text-align: center;
+
+    @include onTablet {
+      margin: 50px 0 10px;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+      max-width: 480px;
+
+      font-size: 60px;
+      line-height: 130%;
+      text-align: left;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 30px;
+
+    @include text;
+    font-size: 16px;
+    text-align: center;
+
+    @include onDesktop {
+      margin: 30px 0 50px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    height: $button-height;
+
+    @include hoverWithTranslate;
+  }
+}

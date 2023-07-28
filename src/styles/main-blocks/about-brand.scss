@@ -1,0 +1,133 @@
+.about-brand {
+  margin-bottom: $section-gap-mob;
+
+  @include onTablet {
+    margin-bottom: $section-gap-tab;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include onDesktop {
+    margin: 0 50px $section-gap-big;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+
+    &::before {
+      content: "witch of mountain winds";
+      @include side-text;
+
+      transform: rotate(180deg);
+    }
+
+    &::after {
+      @include side-line;
+      left: 10px;
+      top: 190px;
+    }
+  }
+
+  @include onLarge {
+    margin: 0 $margin-large $section-gap-big;
+  }
+
+  &__title {
+    overflow: hidden;
+    margin-bottom: 10px;
+    @include title;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    color: $green;
+
+    @include onTablet {
+      width: 280px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      width: 380px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+
+    @include text;
+
+    @include onTablet {
+      width: 344px;
+
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      font-size: 16px;
+    }
+  }
+
+  &__additional-text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 40px;
+
+      @include text;
+      font-size: 16px;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    padding-bottom: 10px;
+
+    transition: $transform;
+
+    &:hover {
+      transform: translateX(15%) scale(1.2);
+    }
+  }
+
+  &__image {
+    display: none;
+
+    margin-right: $margin-tab;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+
+      margin-right: 20px;
+    }
+
+    &--small {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+
+        & > img {
+          position: relative;
+          bottom: -98px;
+        }
+      }
+    }
+
+    &--tab {
+      height: auto !important;
+      min-width: 342px;
+    }
+  }
+}

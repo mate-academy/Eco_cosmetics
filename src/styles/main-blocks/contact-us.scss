@@ -1,0 +1,131 @@
+.contact-us {
+  margin-bottom: $halfOfMobGap;
+
+  @include onTablet {
+    margin-bottom: $section-gap-tab;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include onDesktop {
+    margin-bottom: 130px;
+
+    display: flex;
+    justify-content: space-between;
+
+    &::before {
+      content: "help";
+      @include side-text;
+      transform: rotate(180deg);
+
+      margin-left: $margin-big;
+    }
+
+    &::after {
+      @include side-line;
+      left: calc(#{$margin-big} + 10px);
+      transform: translateY(50px);
+    }
+  }
+
+  @include onLarge {
+    &::before {
+      margin-left: $margin-large;
+    }
+
+    &::after {
+      left: calc(#{$margin-large} + 10px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include title;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $green;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include text;
+
+    @include onTablet {
+      font-size: 16px;
+
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+
+    & > textarea {
+      resize: vertical;
+      margin-bottom: 30px;
+
+      &::placeholder {
+        padding-top: 20px;
+      }
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__input {
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    width: 100%;
+
+    @include text;
+
+    border: none;
+    border-bottom: 1px solid $light-gray;
+    background-color: transparent;
+
+    &:nth-of-type(3n) { // phone number
+      @include onTablet {
+        margin-bottom: 45px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &::placeholder {
+      @include text;
+
+      color: $bottom-border;
+    }
+  }
+
+  &__button {
+    height: $button-height;
+    margin-bottom: 50px;
+
+    @include hoverWithTranslate;
+  }
+
+  &__img {
+    height: 100%;
+  }
+}
