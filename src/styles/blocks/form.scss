@@ -1,0 +1,67 @@
+.form {
+
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    @include formText;
+    border: none;
+    border-bottom: 1px solid $gray4;
+    box-shadow: 0 0 0 30px #e4dfd3 inset !important;
+    background-color: transparent;
+    color: #344f10;
+    transition: 300ms;
+
+    margin-bottom: 25px;
+
+    @include on768 {
+      padding: 5px 0;
+    }
+
+    @include on1280 {
+      margin-bottom: 30px;
+    }
+
+    &:invalid {
+      color: #eb5757;
+    }
+
+    &:hover {
+      border-color: $gray1;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $gray1;
+    }
+
+    &--text {
+      resize: none;
+
+      margin-bottom: 30px;
+
+      @include on1280 {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--phone {
+      @include on768 {
+        margin-bottom: 45px;
+      }
+
+      @include on1280 {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include on768 {
+      width: 280px;
+    }
+  }
+}

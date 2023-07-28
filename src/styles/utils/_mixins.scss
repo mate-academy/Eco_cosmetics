@@ -1,6 +1,210 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin on320 {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin on768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on1280 {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin headerTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 130%;
+  text-align: center;
+
+  color: $gray1;
+
+  @include on768 {
+    font-size: 38px;
+    text-transform: capitalize;
+    line-height: 150%;
+  }
+
+  @include on1280 {
+    font-size: 60px;
+    line-height: 130%;
+    text-transform: none;
+    text-align: start;
+  }
+}
+
+@mixin headerSubtitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+
+  color: $gray1;
+
+  @include on1280 {
+    text-align: start;
+  }
+}
+
+@mixin buttonBlackText {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: $gray6;
+}
+
+@mixin buttonTransparentText {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  text-transform: uppercase;
+
+  color: #344f10;
+}
+
+@mixin textifYou {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #344f10;
+
+  @include on1280 {
+    font-size: 24px;
+  }
+}
+
+@mixin textBio {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: $gray1;
+}
+
+@mixin sectionTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #344f10;
+
+  @include on1280 {
+    font-size: 36px;
+    line-height: 110%;
+  }
+}
+
+@mixin sectionText {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+
+  color: $gray1;
+
+  @include on768 {
+    font-size: 16px;
+  }
+}
+
+@mixin shopNavText {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: $gray3;
+
+  @include on1280 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+  }
+}
+
+@mixin svgText {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: #000;
+}
+
+@mixin menuText {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+
+  color: #344f10;
+}
+
+@mixin shopPhotoTitleText {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  color: $gray1;
+}
+
+@mixin footerText {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+
+  color: #e4dfd3;
+
+  @include on1280 {
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
+
+@mixin formText {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: capitalize;
+
+  color: $gray3;
+
+  @include on768 {
+    font-weight: 500;
+  }
+
+  @include on1280 {
+    font-size: 18px;
   }
 }
