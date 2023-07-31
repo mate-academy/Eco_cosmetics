@@ -25,33 +25,63 @@
   font-style: "semibold";
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 24px;
+  line-height: 150%;
   color: $colorH;
-  padding-bottom: 40px;
+  padding-bottom: 10px;
+  @include onTablet {
+    padding-bottom: 10px;
+  }
+  @include onDesktop {
+    font-size: 36px;
+    line-height: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 .header__title1--pad {
-  margin-left: 125px;
-  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+  @include onTablet {
+    justify-content: start;
+    padding-bottom: 10px;
+  }
+  @include onDesktop {
+    padding-bottom: 30px;
+  }
 }
 
 .header__title2--pad {
-  padding-bottom: 35px;
+  padding-bottom: 10px;
+  @include onDesktop {
+    padding-bottom: 35px;
+  }
 }
 
 .header__title-eve {
   font-style: "semibold";
   font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 150%;
   color: $colorH1;
   padding-bottom: 30px;
+  text-align: center;
   @include onTablet {
-    text-align: center;
-    padding-bottom: 50px;
+    text-align: left;
+    padding-bottom: 30px;
   }
   @include onDesktop {
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 50px;
+    text-align: left;
+  }
+}
+
+.header__title-eve--1 {
+  @include onTablet {
+    text-align: center;
     padding-bottom: 50px;
   }
 }
@@ -70,14 +100,21 @@
 }
 
 .header__title-eve--2 {
-  padding-bottom: 40px;
+  padding-bottom: 30px;
+  text-align: left;
+  @include onTablet {
+    padding-bottom: 20px;
+  }
+  @include onDesktop {
+    padding-bottom: 40px;
+    width: 380px;
+  }
 }
 
 .header__link {
   display: flex;
   justify-content: center;
   align-items: center;
-
   box-sizing: border-box;
   border: 1px solid $c-button;
   background-color: $c-button;
@@ -91,11 +128,13 @@
   cursor: pointer;
   height: 60px;
   width: 100%;
-
   margin-bottom: 100px;
   @include onTablet {
     width: 280px;
     margin-bottom: 130px;
+  }
+  @include onDesktop {
+    margin-bottom: 200px;
   }
 
   &:hover {
@@ -108,12 +147,20 @@
 .header__container {
   display: flex;
   justify-content: center;
+  @include onDesktop {
+    justify-content: start;
+  }
+}
+
+.header__container--creator {
+  justify-content: start;
 }
 
 .pad {
   display: flex;
   justify-content: center;
   padding-bottom: 25px;
+  margin: 0 -20px;
   @include onTablet {
     padding-bottom: 50px;
   }
@@ -174,6 +221,8 @@
 }
 
 .header__title_line {
+  display: flex;
+  justify-content: center;
   font-style: "semibold";
   text-transform: uppercase;
   font-weight: 600;
@@ -181,10 +230,15 @@
   line-height: 27px;
   letter-spacing: 5%;
   color: $colorH;
-  padding-bottom: 130px;
+  padding-bottom: 100px;
+  @include onTablet {
+    text-align: center;
+    padding-bottom: 130px;
+  }
   @include onDesktop {
+    text-align: left;
     font-size: 24px;
     line-height: 36px;
-    padding-bottom: 130px;
+    padding-bottom: 120px;
   }
 }

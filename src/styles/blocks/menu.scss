@@ -1,0 +1,184 @@
+.page_menu {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+  background-color: #333;
+  &:target {
+    transform: translateX(0);
+  }
+}
+
+.menu {
+  display: block;
+  box-sizing: border-box;
+  top: 0;
+  height: 100vh;
+  z-index: 9;
+  overflow: auto;
+  margin: 28px 27px;
+}
+
+.icon-cross {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-size: contain;
+  background-position: 10%;
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+.ic--cross {
+  background-image: url(../images/cross.svg);
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  padding-top: 45px;
+  gap: 41px;
+  @include onTablet {
+    padding-top: 100px;
+    gap: 61px;
+  }
+}
+
+.menu__item {
+  display: block;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 27px;
+  color: #e4dfd3;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  text-align: center;
+}
+
+.page_shopF {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+  background-color: $backgr;
+  overflow: auto;
+  &:target {
+    transform: translateX(0);
+  }
+  // @include onDesktop {
+  //   &:target {
+  //     transform: translateX(-1);
+  //   }
+  // }
+}
+
+.shopF {
+  display: block;
+  box-sizing: border-box;
+  top: 0;
+  height: 100vh;
+  z-index: 9;
+
+  margin: 28px 27px;
+}
+
+.imgF {
+  display: flex;
+  width: 100%;
+  height: 270px;
+  object-fit: contain;
+  object-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+  transition: all 0.3s;
+  background-image: url(../images/imgF2.png);
+  @include onTablet {
+    justify-content: center;
+    height: 440px;
+    background-image: url(../images/imgF.svg);
+  }
+  @include onDesktop {
+    height: 451px;
+  }
+}
+
+.shop--padd {
+  display: block;
+  text-transform: uppercase;
+  @include onTablet {
+    display: none;
+  }
+}
+
+.shop--padd1 {
+  display: none;
+  @include onTablet {
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+  }
+}
+
+.disp1 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.padF {
+  padding-bottom: 25px;
+  @include onTablet {
+    padding-bottom: 27px;
+  }
+}
+
+.shop__buttonpad {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  top: 0;
+}
+
+.header__link-shop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid $c-button;
+  background-color: $c-button;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: $grantext;
+  text-decoration: none;
+  cursor: pointer;
+  height: 60px;
+  width: 100%;
+  margin-bottom: 60px;
+  @include onTablet {
+    width: 280px;
+    margin-bottom: 60px;
+  }
+  &:hover {
+    transition: 0.5s;
+    background-color: $c-button;
+    border: 1px solid $c-button;
+  }
+}
+
+.disp2 {
+  padding-bottom: 72px;
+}
