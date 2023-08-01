@@ -1,0 +1,109 @@
+.nav {
+  padding: 15px 20px 20px;
+  background-color: $dark;
+  width: 100%;
+  height: 100vh;
+  display: none;
+
+  transition: opacity 1s;
+
+  @include tablet {
+    padding: 23px 27px 30px;
+  }
+
+  &--visible {
+    display: block;
+    animation: fadeIn $transition;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @include pc-1280 {
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  &__pc {
+    display: none;
+
+    @include pc-1280 {
+      display: block;
+    }
+  }
+
+  &__pc-list {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  &__pc-link {
+    @include fs-menu;
+    text-transform: capitalize;
+    color: $green;
+    border-bottom: 1px solid transparent;
+    padding: 12px 0;
+    transition: border-bottom-color $transition ease-in-out;
+
+    &:hover {
+      border-bottom-color: $green;
+    }
+  }
+
+  &__mobile {
+    @include pc-1280 {
+      display: none;
+    }
+  }
+
+  &__icon {
+    display: block;
+    margin-bottom: 44px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item {
+    position: relative;
+    text-align: center;
+
+    &::after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 1px;
+      right: 0;
+      position: absolute;
+      background-color: $dark-gray-82;
+      transition: width 1s ease 0s, right 0.5s ease 0s;
+      width: 100%;
+    }
+
+    &:hover:after {
+      width: 0;
+      left: 0;
+    }
+  }
+
+  &__link {
+    @include fs-menu-mobile;
+    color: $light-red;
+    line-height: 43px;
+  }
+}

@@ -1,0 +1,44 @@
+.header {
+  padding: 15px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+
+  @include tablet {
+    padding: 23px 27px 30px;
+  }
+
+  @include pc-1280 {
+    padding: 40px 50px 81px;
+  }
+
+  @include pc-1440 {
+    @include grid(12, 20px);
+    max-width: 1440px;
+    padding: 40px 130px 70px;
+  }
+
+  &__logo {
+    @include pc-1280 {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include pc-1280 {
+      position: static;
+      grid-column: 7 / 10;
+    }
+  }
+
+  &__basket {
+    @include pc-1280 {
+      grid-column: 12 / 13;
+      align-self: center;
+      justify-self: end;
+    }
+  }
+}
