@@ -153,21 +153,47 @@
           shop
         </h2>
 
-        <div class="shop__nav">
-          <ul class="shop__nav-list">
-            <li class="shop__nav-item">
-              <a href="#shop" class="shop__nav-link">face</a>
-            </li>
-            <li class="shop__nav-item">
-              <a href="#shop" class="shop__nav-link">body</a>
-            </li>
-            <li class="shop__nav-item">
-              <a href="#shop" class="shop__nav-link">hair</a>
-            </li>
-            <li class="shop__nav-item">
-              <a href="#shop" class="shop__nav-link">candles</a>
-            </li>
-          </ul>
+        <div class="shop__tabs">
+          <input
+            id="face"
+            type="radio"
+            value="face"
+            name="tab"
+            class="shop__tab-radio"
+            checked
+          >
+
+          <label for="face" class="shop__tab">face</label>
+
+          <input
+            id="body"
+            type="radio"
+            value="body"
+            name="tab"
+            class="shop__tab-radio"
+          >
+
+          <label for="body" class="shop__tab">body</label>
+
+          <input
+            id="hair"
+            type="radio"
+            value="hair"
+            name="tab"
+            class="shop__tab-radio"
+          >
+
+          <label for="hair" class="shop__tab">hair</label>
+
+          <input
+            id="candles"
+            type="radio"
+            value="candles"
+            name="tab"
+            class="shop__tab-radio"
+          >
+
+          <label for="candles" class="shop__tab">candles</label>
         </div>
 
         <div class="shop__card-first">
@@ -251,7 +277,7 @@
             </a>
           </div>
 
-          <a href="#contact-us" class="shop__button button">to contact us</a>
+          <a href="#contact-us" class="about-creators__button button">to contact us</a>
         </div>
 
         <picture class="about-creators__picture">
@@ -359,7 +385,11 @@
             We will help you choose a product that suits you and answer your other questions
           </p>
 
-          <form action="#" class="contact-us__form">
+          <form
+            class="contact-us__form"
+            onsubmit="this.reset();
+            return false;"
+          >
             <input
               class="contact-us__form-input"
               type="name"

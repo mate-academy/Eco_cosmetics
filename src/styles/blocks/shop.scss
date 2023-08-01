@@ -24,10 +24,12 @@
     }
   }
 
-  &__nav {
+  &__tabs {
     grid-column: 1 /-1;
     margin: 0 auto;
     margin-bottom: 30px;
+    display: flex;
+    gap: 34px;
 
     @include onTablet {
       grid-column-start: 1;
@@ -38,43 +40,38 @@
     @include onDesktop {
       grid-column-start: 2;
       margin-bottom: 50px;
+      gap: 50px;
+    }
+  }
+
+  &__tab {
+    padding-bottom: 10px;
+    font-weight: $font-weight-regular;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $dark-grey-c;
+    border-bottom: 2px solid transparent;
+    transition-duration: $transition-duration;
+
+    @include onDesktop {
+      font-weight: $font-weight-bold;
+      font-size: 18px;
+      line-height: 150%;
     }
 
-    &-list {
-      display: flex;
-      gap: 34px;
-      padding-bottom: 10px;
-
-      @include onDesktop {
-        gap: 50px;
-      }
+    &:hover {
+      color: $black-c;
+      cursor: pointer;
     }
 
-    &-link {
-      padding-bottom: 10px;
-      font-weight: $font-weight-regular;
-      font-size: 14px;
-      line-height: 130%;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: $dark-grey-c;
-      border-bottom: 2px solid transparent;
-      transition-duration: $transition-duration;
+    &-radio {
+      position: absolute;
+      width: 0;
+      height: 0;
 
-      &:hover {
-        border-bottom: 2px solid $black-c;
-        color: $black-c;
-      }
-
-      @include onTablet {
-        font-weight: $font-weight-bold;
-        font-size: 18px;
-        line-height: 150%;
-      }
-    }
-
-    &-item {
-      &:first-child .shop__nav-link {
+      &:checked + .shop__tab {
         color: $black-c;
         border-bottom: 2px solid $black-c;
       }
