@@ -1,0 +1,66 @@
+.call-to-scroll {
+  @include pageGrid;
+
+  &__title {
+    position: relative;
+    grid-column: 1 / -1;
+    min-width: 280px;
+    padding-block: 100px;
+
+    &-link {
+      display: inline-block;
+      @extend %h3;
+      color: $dark-green-c;
+
+      @include hover (transform, scale(1.1));
+    }
+
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      height: 1px;
+      width: 50vw;
+      background-color: rgba($dark-green-c, 0.5);
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    @include onTablet {
+      grid-column: 3 / 5;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      text-align: left;
+      font-size: 24px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: none;
+    @extend %main-text;
+    padding-block: 100px;
+
+    &::before {
+      position: absolute;
+      right: 0;
+      top: 0;
+      content: "";
+      height: 1px;
+      width: 50vw;
+      background-color: rgba($dark-green-c, 0.5);
+    }
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / 6;
+    }
+  }
+}

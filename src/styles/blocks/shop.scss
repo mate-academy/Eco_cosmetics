@@ -1,0 +1,166 @@
+.shop {
+  @include pageGrid;
+  position: relative;
+
+  &__label {
+    grid-column-start: 1;
+  }
+
+  &__title {
+    grid-column: 1 /-1;
+    text-align: center;
+    @extend %h2;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+      grid-column-start: 1;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      grid-column-start: 2;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tabs {
+    grid-column: 1 /-1;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      grid-column-start: 1;
+      justify-content: start;
+      margin-bottom: 25px;
+      gap: 34px;
+    }
+
+    @include onDesktop {
+      grid-column-start: 2;
+      margin-bottom: 50px;
+      gap: 50px;
+    }
+  }
+
+  &__tab {
+    padding-bottom: 10px;
+    font-weight: $font-weight-regular;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $dark-grey-c;
+    border-bottom: 2px solid transparent;
+    transition-duration: $transition-duration;
+
+    @include onDesktop {
+      font-weight: $font-weight-bold;
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    &:hover {
+      color: $black-c;
+      cursor: pointer;
+    }
+
+    &-radio {
+      position: absolute;
+      width: 0;
+      height: 0;
+
+      &:checked + .shop__tab {
+        color: $black-c;
+        border-bottom: 2px solid $black-c;
+      }
+    }
+  }
+
+  &__card-first {
+    grid-column: 1 /-1;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      width: 530px;
+      grid-column-start: 2;
+    }
+  }
+
+  &__card-second {
+    display: none;
+
+    @include onTablet {
+      grid-column: 4 /-1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include onDesktop {
+      width: 530px;
+      justify-self: end;
+      grid-column-end: -1 ;
+    }
+  }
+
+  &__card-picture {
+    margin-inline: -20px;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-inline: 0;
+      margin-bottom: 30px;
+    }
+
+    @include hoverImg;
+
+    &-item {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  &__card-title {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+
+    &-link {
+      @extend %h3;
+      color: $black-c;
+      border-bottom: 2px solid transparent;
+      transition: $transition-duration;
+
+      &:hover {
+        border-bottom: 2px solid $black-c;
+      }
+    }
+  }
+
+  &__card-price {
+    @extend %h3;
+    font-weight: $font-weight-medium;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,25 @@
+.side-label {
+  display: none;
+  position: absolute;
+  transform-origin: top left;
+  transform: rotate(-90deg) translateX(-100%);
+
+  &__line {
+    width: 100px;
+    height: 1px;
+    background-color: rgba($dark-green-c, 0.5);
+  }
+
+  &__text {
+    @extend %decorative-text;
+    color: rgba($dark-green-c, 0.5);
+    text-transform: lowercase;
+    padding-inline: 10px;
+  }
+
+  @include onDesktop {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

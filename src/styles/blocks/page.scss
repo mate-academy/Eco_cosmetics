@@ -1,0 +1,57 @@
+.page {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+
+  &__body {
+    overflow-x: hidden;
+    min-width: 320px;
+    background-color: $background-c;
+    color: $black-c;
+    padding: 15px 20px 0;
+
+    @include onTablet {
+      padding: 23px 27px 0;
+    }
+
+    @include onDesktop {
+      padding: 40px 50px 0;
+    }
+
+    @include onBigDesktop {
+      padding: 40px 130px 0;
+    }
+
+    &-footer {
+      margin-inline: -20px;
+
+      @include onTablet {
+        margin-inline: -27px;
+
+      }
+
+      @include onDesktop {
+        margin-inline: -50px;
+      }
+
+      @include onBigDesktop {
+        margin-inline: -130px;
+      }
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
