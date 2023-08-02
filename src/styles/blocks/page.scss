@@ -7,18 +7,18 @@
     min-width: 320px;
     background-color: $background-c;
     color: $black-c;
-    margin: 15px 20px 0;
+    padding: 15px 20px 0;
 
     @include onTablet {
-      margin: 23px 27px 0;
+      padding: 23px 27px 0;
     }
 
     @include onDesktop {
-      margin: 40px 50px 0;
+      padding: 40px 50px 0;
     }
 
     @include onBigDesktop {
-      margin: 40px 130px 0;
+      padding: 40px 130px 0;
     }
 
     &-footer {
@@ -39,7 +39,7 @@
     }
   }
 
-  .page__section {
+  &__section {
     margin-bottom: 100px;
 
     @include onTablet {
@@ -49,5 +49,9 @@
     @include onDesktop {
       margin-bottom: 200px;
     }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
   }
 }
