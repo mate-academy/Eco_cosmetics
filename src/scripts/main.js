@@ -21,7 +21,7 @@ socialContainer.innerHTML += `
   <a
   class="footer__icon-social"
   target="_blank"
-  href="https://www.instagram.com/"
+  href="https://www.instagram.com/eco_cosmetics_choice/"
   >
   <svg
     xmlns="http://www.w3.org/2000/svg"
