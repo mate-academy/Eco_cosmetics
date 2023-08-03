@@ -1,0 +1,59 @@
+.card {
+  width: 100%;
+
+  @include onTablet {
+    width: calc(50% - 30px);
+  }
+
+  @include onLaptop {
+    width: auto;
+  }
+
+  &__img {
+    margin-top: 25px;
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+
+    @include onTablet {
+      height: 350px;
+      margin-top: 37px;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
+
+    @include onLaptop {
+      height: 500px;
+      margin-top: 62px;
+      max-height: 500px;
+      max-width: 530px;
+    }
+  }
+
+  &__caption {
+    margin-top: 20px;
+    text-align: left;
+    padding-inline: 20px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-top: 15px;
+      padding-inline: 0;
+    }
+  }
+
+  &__price {
+    margin-top: 10px;
+    padding-inline: 20px;
+
+    @include onTablet {
+      margin-top: 15px;
+      padding-inline: 0;
+    }
+  }
+}
