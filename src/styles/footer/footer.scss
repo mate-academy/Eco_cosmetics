@@ -1,0 +1,153 @@
+.footer {
+  padding: 30px 0 40px;
+  background: $footer-background;
+
+  @include onTablet {
+    padding: 30px 0;
+  }
+
+  @include onLaptop {
+    padding: 60px 0;
+  }
+
+  &__socials-wrapper {
+    margin-top: 20px;
+    display: flex;
+    grid-column: 1 / -1;
+    gap: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-top: 30px;
+    }
+
+    @include onLaptop {
+      margin-top: 30px;
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__icon-social {
+    stroke: #e4dfd3;
+    transition: stroke 0.3s ease;
+
+    &:hover {
+      stroke: #344f10;
+    }
+  }
+
+  &__link {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    font-size: 14px;
+    color: $footer-text-color;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 1px;
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      background-color: #344f10;
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: #344f10;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &:nth-child(1) {
+      margin-top: 40px;
+
+      &:hover {
+        color: $footer-text-color;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      @include onTablet {
+        margin-top: 0;
+      }
+    }
+
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onLaptop {
+      margin-top: 20px;
+    }
+  }
+
+  &__timetable {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    font-size: 14px;
+    color: $footer-text-color;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onLaptop {
+      margin-top: 20px;
+    }
+  }
+
+  &__copyrighted {
+    grid-column: 1 / -1;
+    font-size: 14px;
+    margin-top: 40px;
+    font-weight: 600;
+    line-height: 130%;
+    color: $footer-text-color;
+    text-align: center;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      text-align: left;
+      font-weight: 400;
+    }
+
+    @include onLaptop {
+      font-size: 18px;
+      grid-column: 1 / 8;
+      grid-row: 2 / 3;
+      margin-top: 0;
+      align-self: end;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+  }
+
+  &__wrapper-right {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      grid-row: 1 / 2;
+    }
+
+    @include onLaptop {
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__text-laptop {
+    display: none;
+
+    @include onLaptop {
+      display: inline;
+    }
+  }
+}
