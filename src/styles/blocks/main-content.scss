@@ -1,6 +1,20 @@
 .main {
+
+  // @include onTablet {
+  //   @include pageGrid
+  // }
+
   &__photo {
-    margin-top: 59px;
+    @include onMobile {
+      width: 320px;
+      height: 267px;
+    }
+
+    @include onTablet {
+      width: 714px;
+      height: 500px;
+      padding-inline: 27px;
+    }
   }
 
   &__title {
@@ -12,6 +26,10 @@
     font-style: normal;
     font-weight: 600;
     line-height: 130%; /* 31.2px */
+
+    @include onTablet {
+      font-size: 36px;
+    }
   }
 
   &__info {
@@ -25,6 +43,8 @@
   }
 
   &__button {
+    display: flex;
     margin-top: 30px;
+    justify-content: center;
   }
 }
