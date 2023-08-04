@@ -1,0 +1,71 @@
+.choose {
+  padding-bottom: 100px;
+
+  @include onTablet {
+    padding-bottom: 130px;
+  }
+
+  @include onLaptop {
+    padding-bottom: 200px;
+  }
+
+  &__info {
+    display: none;
+
+    @include onLaptop {
+      grid-column: 2 / 6;
+      line-height: 150%;
+      display: block;
+      color: $main-text-color;
+      text-align: left;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: $secondary-text-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(50vw - 100px);
+        transform: translateX(-28%);
+      }
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    color: $secondary-text-color;
+    font-size: 18px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      text-align: center;
+      max-width: 265px;
+      margin: 0 auto;
+    }
+
+    @include onLaptop {
+      font-size: 24px;
+      grid-column: 7 / 11;
+      text-align: left;
+      max-width: 350px;
+      margin-top: 100px;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: $secondary-text-color;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: calc(50vw - 20px);
+        transform: translateX(0%);
+      }
+    }
+  }
+}
