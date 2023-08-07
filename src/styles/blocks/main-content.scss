@@ -5,15 +5,25 @@
   // }
 
   &__photo {
-    @include onMobile {
-      width: 320px;
-      height: 267px;
-    }
+    &-general {
+      @include onMobile {
+        background-image: url(../images/picture/header-picture-mobile.png);
+        background-repeat: no-repeat;
+        object-fit: cover;
+        width: 320px;
+        height: 267px;
+      }
 
+      @include onTablet {
+        display: none;
+      }
+    }
     @include onTablet {
-      width: 714px;
+      background-image: url(../images/picture/header-picture-tablet.png);
+      background-repeat: no-repeat;
+      object-fit: cover;
+      width: 100%;
       height: 500px;
-      padding-inline: 27px;
     }
   }
 

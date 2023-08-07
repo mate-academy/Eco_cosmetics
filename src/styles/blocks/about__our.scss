@@ -1,4 +1,10 @@
 .about__our {
+  &-wrapper {
+    @include onTablet {
+      @include pageGrid
+    }
+
+  }
   &-title {
     margin-top: 100px;
     font-family: "Poppins", sans-serif;
@@ -13,6 +19,10 @@
     @include onTablet {
       padding-inline: 244px;
       text-align: center;
+    }
+
+    @include onTablet {
+      grid-column: 3 / 5;
     }
   }
 
@@ -44,5 +54,13 @@
 
   &-button {
     margin-top: 25px;
+  }
+
+  &-picture {
+    @include onTablet {
+      background-image: url(../images/picture/about-our-picture-tablet.png);
+      width: 342px;
+      height: 321px;
+    }
   }
 }
