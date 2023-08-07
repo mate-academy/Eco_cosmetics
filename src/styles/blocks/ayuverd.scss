@@ -1,0 +1,90 @@
+.ayurved {
+  margin-top: 100px;
+
+  @include grid;
+  grid-column: 1 / - 1;
+
+  @include onTablet {
+    grid-column: 1 / -1;
+    margin: 65px 27px;
+  }
+
+  @include onDesktop {
+    margin: 100px 50px;
+  }
+
+  &__content {
+    grid-column: 1 / - 1;
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / - 1;
+
+    @include onTablet {
+      text-align: start;
+    }
+  }
+
+  &__link {
+    grid-column: 1 / - 1;
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__img {
+    display: flex;
+    grid-column: 1 / - 1;
+    height: 300px;
+    justify-content: space-between;
+
+    @include onTablet {
+      grid-column: 3 / - 1;
+      justify-content: center;
+      margin-top: -65px;
+      margin-left: -50px;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / -1;
+      margin-top: -200px;
+      margin-left: -50px;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+
+      margin-left: 10%;
+      @include onTablet {
+        margin-right: 25px;
+      }
+    }
+
+    &-ingr {
+      list-style: none;
+      margin-top: 30%;
+      text-align: end;
+    }
+  }
+
+  &__bank {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 10%;
+
+    @include onTablet {
+      width: 60%;
+      object-position: 20%;
+    }
+    @include onDesktop {
+      width: 65%;
+      object-fit: contain;
+    }
+  }
+}
