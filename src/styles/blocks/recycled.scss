@@ -24,6 +24,10 @@
       flex-direction: row;
       gap: 30px;
     }
+    @include onDesktop {
+      grid-column: 1 / - 1;
+      gap: 1px;
+    }
   }
 
   &__item {
@@ -31,20 +35,33 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     @include onTablet {
       grid-column: span 4;
     }
+
   }
 
   &__icon {
+
     margin-bottom: 20px;
+
+    &--last {
+      margin-bottom: 1px;
+    }
   }
 
   &__title {
+    min-width: 280px;
+    font-size: 14px;
     text-align: center;
     font-weight: 400;
     line-height: 130%; /* 18.2px */
     letter-spacing: 0.7px;
     text-transform: uppercase;
+
+    @include onTablet {
+      min-width: 218px;
+    }
   }
 }
