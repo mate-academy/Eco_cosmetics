@@ -1,4 +1,17 @@
 .contact-us {
+  &-wrapper {
+    @include onTablet {
+      @include pageGrid;
+    }
+    
+  }
+
+  &--content {
+    @include onTablet {
+      grid-row-start: 1;
+      grid-column: 1 / 4;
+    }
+  }
   &__title {
     font-family: "Poppins", sans-serif;
     font-size: 24px;
@@ -9,6 +22,10 @@
     text-transform: uppercase;
     color: #344f10;
     margin-top: 100px;
+
+    @include onTablet {
+      margin-top: 130px;
+    }
   }
 
   &__info {
@@ -53,5 +70,22 @@
 
   &__button {
     margin-bottom: 100px;
+  }
+
+  &__photo {
+    background-image: url(../images/picture/contact-us-picture-tablet.png);
+    width: 342px;
+    height: 407px;
+    align-self: center;
+    object-fit: cover;
+    background-position: center;
+
+    &-wrapper {
+      margin-top: 100px;
+      @include onTablet {
+        grid-column: 4 / 7;
+        margin-top: 130px;
+      }
+    }
   }
 }

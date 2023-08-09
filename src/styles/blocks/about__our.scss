@@ -39,7 +39,6 @@
     &-wrapper {
       @include onTablet {
         margin-top: 130px;
-        grid-column: 1 / 3;
       }
     }
   }
@@ -52,12 +51,6 @@
     font-weight: 400;
     line-height: 150%;
     color: #333;
-
-    &-wrapper {
-      @include onTablet {
-        grid-column: 1 / 4;
-      }
-    }
   }
 
   &-button {
@@ -66,21 +59,24 @@
 
   &-picture {
     @include onTablet {
+      align-self: center;
+      object-fit: cover;
+      background-position: center;
       background-image: url(../images/picture/about-our-picture-tablet.png);
-      width: 342px;
       height: 321px;
     }
 
     &--wrapper {
       @include onTablet {
-        grid-column: 3 / 7;
+        grid-column: 4 / 7;
+        margin-top: 130px;
       }
     }
   }
 
-  &-link {
-    &--wrapper {
-      grid-column: 1 / 2;
+  &--content {
+    @include onTablet {
+      grid-column: 1 / 4;
     }
   }
 }

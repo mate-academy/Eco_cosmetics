@@ -1,4 +1,12 @@
 .creators {
+
+  &-wrapper {
+    @include onTablet {
+      @include pageGrid;
+      margin-top: 130px;
+    }
+  }
+
   &__title {
     color: #344f10;
     font-family: "Poppins", sans-serif;
@@ -36,5 +44,33 @@
     &--wrapper {
       margin-bottom: 25px;
     }
+  }
+
+  &-picture {
+    @include onTablet {
+      background-image: url(../images/picture/creators-picture-tablet.png);
+      width: 342px;
+      height: 440px;
+      align-self: center;
+      object-fit: cover;
+      background-position: center;
+    }
+
+    &--wrapper {
+      @include onTablet {
+        align-self: self-end;
+        grid-column: 4 / 7;
+      }
+    }
+  }
+
+  &-content {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &-button {
+    justify-content: start;
   }
 }
