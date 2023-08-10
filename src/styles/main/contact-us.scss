@@ -1,0 +1,173 @@
+.contact-us {
+  padding-bottom: 100px;
+
+  @include onTablet {
+    padding-bottom: 130px;
+  }
+
+  &__topic-name {
+    display: none;
+
+    @include onLaptop {
+      display: block;
+      grid-column: 1 / 2;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      text-align: right;
+      justify-self: start;
+      color: rgba(52, 79, 16, 0.5);
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        background: rgba(52, 79, 16, 0.5);
+        position: absolute;
+        bottom: 50px;
+        right: 13px;
+      }
+    }
+  }
+
+  &__wrapper-left {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onLaptop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 10px;
+    color: $main-text-color;
+    font-size: 14px;
+    line-height: 150%; /* 21px */
+    grid-column: 1 / -1;
+
+    @include onLaptop {
+      margin-top: 30px;
+    }
+  }
+
+  &__form {
+    margin-top: 30px;
+
+    @include onLaptop {
+      margin-top: 40px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #bdbdbd;
+    margin-top: 25px;
+    padding-bottom: 5px;
+    transition: border-bottom 0.3s ease;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    &::placeholder {
+      color: #828282;
+      font-size: 14px;
+      line-height: 150%; /* 21px */
+      text-transform: capitalize;
+
+      @include onLaptop {
+        font-size: 18px;
+      }
+    }
+
+    @include onLaptop {
+      margin-top: 30px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #333;
+    }
+
+    &:focus:valid {
+      border-bottom: 1px solid #344f10;
+    }
+
+    &:focus:invalid {
+      border-bottom: 1px solid #eb5757;
+    }
+  }
+
+  &__message {
+    display: block;
+    font-family: inherit;
+    padding-top: 5px;
+    margin-top: 45px;
+    width: 100%;
+    font-weight: 500;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #bdbdbd;
+    height: 35px;
+    resize: none;
+
+    &::placeholder {
+      color: #828282;
+      font-size: 14px;
+      line-height: 150%; /* 21px */
+      text-transform: capitalize;
+
+      @include onLaptop {
+        font-size: 18px;
+      }
+    }
+
+    @include onLaptop {
+      margin-top: 60px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #333;
+    }
+
+    &:focus:valid {
+      border-bottom: 1px solid #344f10;
+    }
+
+    &:focus:invalid {
+      border-bottom: 1px solid #eb5757;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: span 3;
+      max-width: 100%;
+      object-position: left;
+      width: 100%;
+      height: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
+
+    @include onLaptop {
+      grid-column: 7 / -1;
+    }
+  }
+}

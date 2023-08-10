@@ -1,7 +1,61 @@
 @import "utils";
-@import "fonts";
-@import "typography";
+@import "container";
+@import "title";
+@import "button";
+@import "header/header";
+@import "header/menu";
+@import "header/nav";
+@import "main/choose";
+@import "main/about-us";
+@import "main/shop";
+@import "main/card";
+@import "main/creators";
+@import "main/powder";
+@import "main/benefits";
+@import "main/contact-us";
+@import "footer/footer";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  background: $body-background;
+  margin: 0;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+}
+
+.block-scroll {
+  overflow: hidden;
+}
+
+.movable-cell {
+  --y: 2;
+  --x: 2;
+  position: absolute;
+  top: calc(var(--x) * 75px + 10px + var(--x) * 10px);
+  left: calc(var(--y) * 75px + 10px + var(--y) * 10px);
+  width: 75px;
+  height: 75px;
+  color: #776e65;
+  border-radius: 5px;
+  box-sizing: border-box;
+  animation: fadeAndScaleIn 0.25s;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: top 0.2s ease, left 0.2s ease, transform 0.1s ease;
 }

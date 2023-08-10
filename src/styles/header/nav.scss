@@ -1,0 +1,102 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    &--footer {
+      @include onLaptop {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+
+    &--header {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    &--menu {
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+    text-transform: capitalize;
+  }
+
+  &__link {
+    color: $footer-text-color;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 1px;
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      background-color: #344f10;
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: #344f10;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &--header {
+      color: #344f10;
+
+      &::after {
+        background-color: #8c9772;
+      }
+
+      &:hover {
+        color: #8c9772;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    &--menu {
+      color: #e4dfd3;
+      display: block;
+      text-align: center;
+
+      &::after {
+        width: 100%;
+        background-color: #828282;
+      }
+    }
+  }
+
+  &--header {
+    display: none;
+
+    @include onLaptop {
+      display: block;
+      padding-left: 20px;
+    }
+  }
+
+  &--footer {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onLaptop {
+      grid-column: 1 / 8;
+    }
+  }
+}
