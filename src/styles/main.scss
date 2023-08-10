@@ -37,12 +37,15 @@ body {
   height: 32px;
   background-image: url(../images/bag.svg);
   background-size: cover;
+  cursor: pointer;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
 
   &__text {
     color: $green;
@@ -69,6 +72,7 @@ body {
   line-height: 150%;
   text-transform: capitalize;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .header__content {
@@ -120,6 +124,7 @@ body {
     align-items: center;
     margin-top: 50px;
     box-sizing: border-box;
+    cursor: pointer;
 
     color: $white;
     font-family: "Poppins", sans-serif;
@@ -190,11 +195,16 @@ body {
   font-size: 18px;
   font-weight: 600;
   line-height: 130%;
-  text-decoration: none;
   width: 89.46vw;
-
+  cursor: pointer;
   border-bottom: 1px solid $beige;
   padding-bottom: 10px;
+  text-decoration-color: transparent;
+  transition: 0.3s;
+
+  &:hover {
+    text-decoration-color: $beige;
+  }
 }
 
 .close__link {
@@ -202,6 +212,7 @@ body {
   height: 20px;
   background-image: url(../images/x-mark.svg);
   background-size: cover;
+  cursor: pointer;
 }
 
 .section-text {
@@ -255,6 +266,7 @@ body {
     @include contentPaddingInline;
     display: flex;
     gap: 120px;
+    justify-content: end;
   }
 }
 
@@ -264,14 +276,17 @@ body {
 }
 
 .section__title {
-  transform: rotate(-90deg);
-  margin-top: 62px;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+  max-width: 100px;
   height: fit-content;
-  gap: 9px;
+  transform: translate(-50%, -50%) rotate(-90deg);
 
+  white-space: nowrap;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+  
   color: $green;
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -279,12 +294,20 @@ body {
   font-weight: 500;
   line-height: 130%;
   position: relative;
+}
 
-  &-line {
-    width: 100px;
-    height: 1px;
-    background: $green;
-  }
+.section__title-line {
+  position: absolute;
+  left: -70%;
+  transform: translateX(-50%);
+  bottom: 7px;
+  width: 100px;
+  height: 1px;
+  background: $green;
+}
+
+.shop__title-line {
+  left: -190%;
 }
 
 .section__text {
@@ -331,6 +354,7 @@ body {
   line-height: 130%;
   position: relative;
   width: fit-content;
+  cursor: pointer;
 
   &::after {
     content: "";
@@ -365,7 +389,8 @@ body {
 }
 
 .products__container {
-  gap: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .tabs {
@@ -383,6 +408,7 @@ body {
   letter-spacing: 0.7px;
   text-transform: uppercase;
   position: relative;
+  cursor: pointer;
 
   &::after {
     content: "";
@@ -447,10 +473,6 @@ body {
   justify-content: space-between;
 }
 
-.components__container {
-  overflow: hidden;
-}
-
 .components {
   display: flex;
   flex-direction: column;
@@ -505,6 +527,10 @@ body {
   }
 }
 
+.components__container {
+  gap: 0;
+}
+
 .components__container-small {
   display: none;
   overflow: hidden;
@@ -514,6 +540,10 @@ body {
   display: flex;
   gap: 40px;
   align-items: center;
+}
+
+.ingredients {
+  overflow: hidden;
 }
 
 .advantages {
@@ -591,7 +621,7 @@ body {
 }
 
 .footer {
-  background: $green;
+  background: $light-green;
   display: flex;
   justify-content: center;
   margin-top: 200px;
@@ -684,7 +714,13 @@ body {
   font-weight: 500;
   line-height: 150%;
   text-transform: capitalize;
-  text-decoration: none;
+  cursor: pointer;
+  text-decoration-color: transparent;
+  transition: 0.3s;
+
+  &:hover {
+    text-decoration-color: $white;
+  }
 }
 
 .footer__right {
@@ -708,8 +744,14 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
-  text-decoration: none;
   margin-top: 19px;
+  cursor: pointer;
+  text-decoration-color: transparent;
+  transition: 0.3s;
+
+  &:hover {
+    text-decoration-color: $white;
+  }
 }
 
 .phone {
@@ -718,8 +760,13 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
-  text-decoration: none;
   margin-top: 20px;
+  text-decoration-color: transparent;
+  transition: 0.3s;
+
+  &:hover {
+    text-decoration-color: $white;
+  }
 }
 
 .work__hours {
@@ -761,6 +808,10 @@ body {
 
 @media (max-width: 1280px) {
   .header {
+    justify-content: unset;
+  }
+
+  .header__container {
     justify-content: unset;
   }
 
@@ -863,6 +914,13 @@ body {
 
   .section__img1 {
     width: 100%;
+  }
+}
+
+@media (max-width: 1225px) {
+  .components__container {
+    overflow: hidden;
+    justify-content: unset;
   }
 }
 
@@ -1103,6 +1161,7 @@ body {
 
   .components__container-small {
     display: flex;
+    justify-content: unset;
   }
 
   .components__container {
