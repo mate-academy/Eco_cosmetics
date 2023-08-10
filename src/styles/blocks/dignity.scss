@@ -1,0 +1,54 @@
+.dignity {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+
+    @include tablet {
+      justify-content: space-between;
+      width: 218px;
+      height: 130px;
+    }
+
+    @include desktop {
+      height: 160px;
+      width: 380px;
+    }
+  }
+
+  &__image {
+    width: 80px;
+    transition: transform $animation-time;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000;
+
+    @include tablet {
+      height: 36px;
+    }
+  }
+}

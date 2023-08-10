@@ -1,0 +1,78 @@
+.ingredients {
+  position: relative;
+
+  &__content {
+    @include desktop {
+      @include grid;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 548px;
+    max-width: 342px;
+
+    @include tablet {
+      height: 410px;
+    }
+
+    @include desktop {
+      width: 100%;
+      height: 100%;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    right: 202px;
+    bottom: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: max-content;
+    height: 322px;
+
+    @include tablet {
+      right: 418px;
+      bottom: 40px;
+    }
+
+    @include desktop {
+      position: static;
+      width: 100%;
+      margin-top: 36px;
+      grid-column: 6 / 8;
+    }
+  }
+
+  &__item {
+    font-weight: 400;
+    text-align: right;
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+    width: 182px;
+    height: 398px;
+    background-image: url(../images/powder/powder-mobile.svg);
+    background-size: cover;
+
+    @include tablet {
+      width: 398px;
+      bottom: 0;
+      background-image: url(../images/powder/powder-tablet.svg);
+    }
+
+    @include desktop {
+      position: static;
+      width: 100%;
+      grid-column: 8 / -1;
+      background-image: url(../images/powder/powder-desktop.svg);
+    }
+  }
+}

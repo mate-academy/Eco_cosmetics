@@ -1,0 +1,86 @@
+.swiper {
+  padding-top: 45px !important;
+
+  @include tablet {
+    padding-top: 55px !important;
+  }
+
+  @include desktop {
+    padding-top: 90px !important;
+  }
+
+  &-slide {
+    @include desktop {
+      width: 380px !important;
+    }
+  }
+
+  &-pagination {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    height: max-content;
+    padding: 0 20px;
+
+    @include tablet {
+      padding: 0;
+      width: 264px !important;
+    }
+
+    @include desktop {
+      width: 400px !important;
+    }
+
+    &-bullet {
+      width: max-content !important;
+      height: max-content !important;
+      background-color: transparent !important;
+      margin: 0 !important;
+      opacity: 1 !important;
+      position: relative;
+
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $c-gray;
+      transition: color $animation-time;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        display: block;
+        width: 0;
+        height: 2px;
+        background-color: $c-black;
+        transition: width $animation-time;
+      }
+
+      @include desktop {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 150%;
+
+        &:hover {
+          color: $c-black;
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+
+      &-active {
+        color: $c-black;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

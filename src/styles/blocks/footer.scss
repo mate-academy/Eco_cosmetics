@@ -1,0 +1,130 @@
+.footer {
+  background-color: $c-light-green;
+  padding: 30px 0 40px;
+
+  @include tablet {
+    padding-bottom: 30px;
+  }
+
+  @include desktop {
+    padding: 60px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include tablet {
+      @include grid;
+    }
+  }
+
+  &__nav {
+    @include tablet {
+      grid-column: 1 / 2;
+    }
+
+    @include desktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $c-cream;
+
+    @include tablet {
+      grid-column: 4 / -1;
+    }
+
+    @include desktop {
+      font-size: 16px;
+      gap: 16px;
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    font-weight: 400;
+    font-size: 14px;
+    color: $c-cream;
+    text-decoration: none;
+    transition: color $animation-time;
+
+    @include desktop {
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: $c-black;
+    }
+  }
+
+  &__copyright {
+    display: none;
+
+    @include desktop {
+      margin-top: 30px;
+      @include grid;
+      align-items: center;
+    }
+  }
+
+  &__copyright-text {
+    grid-column: 1 / 6;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $c-cream;
+
+    &--hidden {
+      width: 200px;
+      margin: 45px auto 0;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 130%;
+      text-align: center;
+      text-transform: initial;
+
+      @include tablet {
+        width: 100%;
+        margin-top: 50px;
+        font-weight: 400;
+        line-height: 150%;
+        text-align: initial;
+      }
+
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__social {
+    width: 54px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    grid-column: 8 / 9;
+
+    &--hidden {
+      margin-top: 20px;
+      width: 60px;
+
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+}

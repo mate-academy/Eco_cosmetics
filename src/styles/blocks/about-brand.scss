@@ -1,0 +1,69 @@
+.about-brand {
+  &__content {
+    @include grid;
+  }
+
+  &__text {
+    @include tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    margin: 10px 0 30px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include desktop {
+      margin-top: 40px;
+    }
+
+    &--hidden {
+      display: none;
+      margin: 0 0 40px;
+
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__image-container {
+    display: none;
+
+    @include tablet {
+      display: block;
+      grid-column: 4 / -1;
+      @include img-hover-container (322px);
+    }
+
+    @include desktop {
+      grid-column: 7 / 11;
+      @include img-hover-container (528px);
+    }
+
+    &--hidden {
+      display: none;
+
+      @include desktop {
+        display: block;
+        grid-column: 11 / -1;
+        @include img-hover-container (430px);
+        align-self: flex-end;
+      }
+    }
+  }
+
+  &__image {
+    @include img-rules;
+  }
+}
