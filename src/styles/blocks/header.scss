@@ -1,0 +1,152 @@
+.header {
+  &__top-bar {
+    @include pageGrid;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onLaptop {
+      margin-bottom: 81px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onLaptop {
+      display: block;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__img-mobile {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    max-height: 400px;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__img-tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      overflow: hidden;
+      grid-column: 1 / -1;
+      max-height: 500px;
+      margin: 0 auto 30px;
+    }
+
+    @include onLaptop {
+      display: none;
+    }
+  }
+
+  &__img-laptop {
+    display: none;
+
+    @include onLaptop {
+      display: block;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+
+    @include onLaptop {
+      text-align: initial;
+      @include pageGrid;
+    }
+
+    @include onLaptop {
+      grid-row: 50px;
+    }
+  }
+
+  &__text-part {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onLaptop {
+      gap: 0;
+      text-align: initial;
+      grid-column: 2 / 7;
+      max-height: 398px;
+
+      display: grid;
+      column-gap: 20px;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31.2px;
+    text-align: center;
+    max-width: 420px;
+    margin: 0 auto;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+      max-width: 526px;
+      text-transform: capitalize;
+    }
+
+    @include onLaptop {
+      text-transform: none;
+      text-align: initial;
+      font-size: 60px;
+      line-height: 78px;
+      margin: 0 0 30px;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+    }
+  }
+
+  &__donation {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 35px;
+    }
+
+    @include onLaptop {
+      grid-column: 1 / -1;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include onLaptop {
+      margin: 0;
+    }
+  }
+}
