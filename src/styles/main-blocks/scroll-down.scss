@@ -1,14 +1,14 @@
+@import "../utils";
+
 .scroll-down {
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  margin: $halfOfMobGap;
-
-  @include hoverWithTranslate;
+  margin-bottom: $section-gap-mob;
 
   @include onTablet {
-    margin: calc(#{$section-gap-tab} - 50px) 0;
+    margin: $section-gap-tab 0;
   }
 
   @include onDesktop {
@@ -18,10 +18,6 @@
     align-items: flex-start;
 
     margin: $section-gap-big 0;
-
-    &:hover {
-      transform: scale(1);
-    }
   }
 
   &__container {
@@ -33,20 +29,20 @@
 
         @include onDesktop {
           display: block;
-          padding-left: 150px;
+          padding-left: $margin-big-side;
 
           border-top: 1px solid rgba(52, 79, 16, 0.5);
         }
 
         @include onLarge {
           display: block;
-          padding-left: 230px;
+          padding-left: $side-margin-large--shop;
         }
       }
 
       &--2 {
         @include onDesktop {
-          padding-bottom: 200px;
+          padding-bottom: $section-gap-big;
           padding-right: 250px;
 
           border-bottom: 1px solid rgba(52, 79, 16, 0.5);
@@ -54,14 +50,6 @@
 
         @include onLarge {
           padding-right: 330px;
-        }
-
-        & a > h5 {
-          transition: $transform;
-
-          &:hover {
-            transform: scale(1.2) translateX(50px);
-          }
         }
       }
     }

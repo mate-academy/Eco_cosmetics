@@ -62,50 +62,62 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// function handleFormSubmit(event) {
-//   event.preventDefault();
+const form = document.getElementById('form');
 
-//   const nameInput = document.getElementById('name');
-//   const emailInput = document.getElementById('email');
-//   const numberInput = document.getElementById('number');
-//   const textarea = document.getElementById('textarea');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  form.reset();
+});
 
-//   console.log('Ім\'я: ' + nameInput.value);
-//   console.log('Email:' + emailInput.value);
-//   console.log('Номер телефона:' + numberInput.value);
-//   console.log('Повідомлення:' + textarea.value);
+function handleFormSubmit(event) {
+  event.preventDefault(); // Перешкоджаємо відправці форми
 
-//   document.querySelector('.contact-us__form').reset();
-// }
+  // Отримуємо значення з інпутів
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const numberInput = document.getElementById('number');
 
-// function handleFormNumber(event) {
-//   event.preventDefault();
+  // Регулярні вирази для перевірки валідності даних
+  const nameRegex = /^[A-Z][a-z]* [A-Z][a-z]*$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const numberRegex = /^\+\d+ \d+$/;
 
-//   const nameInput = document.getElementById('name');
-//   const phoneNumberInput = document.getElementById('number');
+  // Перевірка ім'я
+  if (nameRegex.test(nameInput.value)) {
+    nameInput.style.backgroundColor = '#344f10';
+    // Зелений колір для правильного вводу
+    document.getElementById('nameError').textContent = '';
+    // Видаляємо повідомлення про помилку
+  } else {
+    nameInput.style.backgroundColor = '#Eb5757';
 
-//   const nameRegex = /^[A-Z][a-z]*$/;
-//   const numberRegex = /^\+\d{1,3}\d{9}$/;
+    // Червоний колір для неправильного вводу
+    document.getElementById('nameError').textContent
+      = 'Введіть ім\'я та прізвище у форматі: Ім\'я Прізвище';
+    // Повідомлення про помилку
+  }
 
-//   // Check name format
-//   if (!nameRegex.test(nameInput.value)) {
-//     alert('Name should start with an uppercase letter
-// and contain only English alphabet characters.');
+  // Перевірка електронної пошти
+  if (emailRegex.test(emailInput.value)) {
+    emailInput.style.backgroundColor = '#344f10';
+    document.getElementById('emailError').textContent = '';
+  } else {
+    emailInput.style.backgroundColor = '#Eb5757';
 
-//     return false;
-//   }
+    document.getElementById('emailError').textContent
+      = 'Введіть дійсну адресу електронної пошти у форматі: mail@пошта.домен';
+  }
 
-//   // Check phone number format
-//   if (!numberRegex.test(phoneNumberInput.value)) {
-//     alert('Phone number should start with a plus sign,
-// followed by the country code and a 9-digit number.');
+  // Перевірка номера телефону
+  if (numberRegex.test(numberInput.value)) {
+    numberInput.style.backgroundColor = '#344f10';
+    document.getElementById('numberError').textContent = '';
+  } else {
+    numberInput.style.backgroundColor = '#Eb5757';
 
-//     return false;
-//   }
+    document.getElementById('numberError').textContent
+      = 'Введіть номер телефону у форматі: +код країни телефонний номер';
+  }
+}
 
-//   alert('Form submitted successfully!');
-
-//   // Uncomment the following line to submit the form:
-//   // event.target.submit();
-//   return true;
-// }
+handleFormSubmit();

@@ -1,3 +1,5 @@
+@import "../utils";
+
 .footer {
   background-color: $light-green;
 
@@ -49,10 +51,6 @@
 
     & > a {
       margin-right: 20px;
-
-      & > img {
-        stroke: $body;
-      }
     }
 
     &--desktop {
@@ -96,14 +94,6 @@
     & > li {
       margin-bottom: 12px;
 
-      transition: color 0.3s ease;
-
-      &:hover {
-        & a {
-          color: white;
-        }
-      }
-
       @include onTablet {
         margin-bottom: 16px;
       }
@@ -115,6 +105,10 @@
 
       &:last-of-type {
         margin-bottom: 0;
+      }
+
+      &:hover > a {
+        color: $dark-white;
       }
     }
   }
@@ -130,10 +124,8 @@
 
     color: $body;
 
-    transition: color 0.3s ease;
-
     &:hover {
-      color: white;
+      color: $dark-white;
     }
 
     @include onDesktop {
@@ -161,7 +153,6 @@
       padding-bottom: 40px;
       margin-block-start: 0;
       margin-block-end: 0;
-
       margin: 0;
       width: 198px;
 

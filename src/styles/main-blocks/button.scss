@@ -1,3 +1,5 @@
+@import "../utils";
+
 .button {
   overflow: hidden;
 
@@ -10,7 +12,11 @@
   width: $button-width;
   max-width: $button-width;
 
-  @include hover;
+  @include hover-bigButton;
+
+  @include onTablet {
+    max-width: $button-width;
+  }
 
   &__text {
     overflow: hidden;
@@ -19,10 +25,6 @@
 
   &__learnMore {
     @include learnMore-button;
-    @include hover;
-  }
-
-  @include onTablet {
-    max-width: $button-width;
+    @include hover-learnMore;
   }
 }

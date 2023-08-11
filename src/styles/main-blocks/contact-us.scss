@@ -1,5 +1,7 @@
+@import "../utils";
+
 .contact-us {
-  margin-bottom: $halfOfMobGap;
+  margin-bottom: $section-gap-mob;
 
   @include onTablet {
     margin-bottom: $section-gap-tab;
@@ -9,7 +11,7 @@
   }
 
   @include onDesktop {
-    margin-bottom: 130px;
+    margin-bottom: $section-gap-tab;
 
     display: flex;
     justify-content: space-between;
@@ -74,18 +76,24 @@
 
     & > textarea {
       resize: vertical;
-      margin-bottom: 30px;
+      height: 40px;
+      // margin-bottom: 30px;
+      padding-top: 10px;
+      // padding-bottom: 5px;
 
       &::placeholder {
-        padding-top: 20px;
+        // padding-top: 20px;
+        // padding-bottom: 5px;
       }
 
       @include onTablet {
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
       }
 
       @include onDesktop {
-        margin-bottom: 50px;
+        overflow: hidden;
+        // padding-top: 0;
+        // margin-bottom: 50px;
       }
     }
   }
@@ -96,23 +104,48 @@
     width: 100%;
 
     @include text;
+    font-weight: 500;
+
+    @include onDesktop {
+      font-size: 18px;
+    }
 
     border: none;
     border-bottom: 1px solid $light-gray;
     background-color: transparent;
 
+    &:valid {
+      color: $green;
+      border-bottom: 1px solid $green;
+    }
+
+    &:focus {
+      color: black;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+    }
+    
     &:nth-of-type(3n) { // phone number
-      @include onTablet {
-        margin-bottom: 45px;
-      }
+      margin-bottom: 45px;
 
       @include onDesktop {
         margin-bottom: 60px;
       }
     }
 
+    &:invalid:focus {
+      color: $red;
+      border-bottom: 1px solid $red;
+    }
+
     &::placeholder {
       @include text;
+      font-weight: 500;
+  
+      @include onDesktop {
+        font-size: 18px;
+      }
 
       color: $bottom-border;
     }
@@ -120,9 +153,6 @@
 
   &__button {
     height: $button-height;
-    margin-bottom: 50px;
-
-    @include hoverWithTranslate;
   }
 
   &__img {

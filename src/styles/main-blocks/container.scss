@@ -1,3 +1,5 @@
+@import "../utils";
+
 .container {
   &__header {
     padding: $side-margins-mob;
@@ -90,17 +92,19 @@
 
     @include onTablet {
       margin: $side-margins-tab;
+      width: 100%;
 
-      max-width: 342px;
+      // max-width: calc(100vw / 2 - (#{$margin-tab * 2}));
     }
 
     @include onDesktop {
-      margin: 0 0 0 $margin-big-side;
-      max-width: 380px;
+      margin: 0 120px 0 $margin-big-side;
+      // max-width: calc((100vw - #{$section-gap-big}) / 2);
     }
 
     @include onLarge {
-      margin: 0 0 0 $side-margin-large--shop;
+      margin: 0 120px 0 $side-margin-large--shop;
+      // max-width: calc((100vw - #{$section-gap-big}) / 2);
     }
   }
 
@@ -108,20 +112,28 @@
     display: none;
     overflow: hidden;
 
+    & > picture {
+      overflow: hidden;
+    }
+
     @include onTablet {
-      display: block;
+      display: flex;
+      justify-content: flex-end;
 
       margin-right: $margin-tab;
+      width: 580px;
+      height: auto;
     }
 
     @include onDesktop {
-      display: block;
+      display: flex;
+      justify-content: flex-end;
 
       margin-right: $margin-big;
     }
 
     @include onLarge {
-      margin-right: $side-margin-large--shop;
+      margin-right: $margin-large;
     }
   }
 

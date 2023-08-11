@@ -6,11 +6,35 @@
   }
 }
 
-@mixin hoverWithTranslate {
-  transition: $transform;
+@mixin hover-bigButton {
+  transition: all 0.3s ease;
 
   &:hover {
-    transform: translateX(20px) scale(1.2);
+    background-color: $body;
+    border: 1px solid $dark-gray;
+
+    & > div {
+      color: $dark-gray;
+    }
+  }
+}
+
+@mixin hover-learnMore {
+  &:after {
+    content: "";
+    position: relative;
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    background-color: $green;
+
+    transition: transform 0.3s;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
   }
 }
 
@@ -50,7 +74,7 @@
 
 @mixin learnMore-button {
   display: inline-block;
-  padding-bottom: 10px;
+  // padding-bottom: 11px;
 
   font-style: normal;
   font-weight: 500;
@@ -59,7 +83,6 @@
   text-transform: uppercase;
 
   color: $green;
-  border-bottom: 1px solid $green;
 }
 
 @mixin h5 {

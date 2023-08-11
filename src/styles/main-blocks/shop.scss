@@ -1,3 +1,5 @@
+@import "../utils";
+
 .shop {
   margin-bottom: $halfOfMobGap;
 
@@ -19,7 +21,7 @@
     display: flex;
     flex-direction: column;
 
-    margin-bottom: calc(#{$section-gap-big} - #{$margin-big});
+    margin-bottom: $section-gap-big;
 
     &::before {
       content: "shop";
@@ -95,8 +97,8 @@
     flex-direction: row;
     justify-content: space-between;
 
-    padding-bottom: 8px;
-    margin-bottom: 10px;
+    // padding-bottom: 8px;
+    // margin-bottom: 10px;
     padding-inline-start: 0;
     list-style-type: none;
 
@@ -120,19 +122,16 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
 
+    padding-bottom: 10px;
     border-bottom: 2px solid transparent;
+    transform-origin: left;
+    transition: all 0.3s ease;
 
     color: $bottom-border;
-
-    @include hover;
 
     @include onTablet {
       width: max-content;
       margin-right: 14px;
-
-      &:hover {
-        transform: translateX(8px) scale(1.2);
-      }
     }
 
     @include onDesktop {
@@ -140,10 +139,6 @@
       margin-right: 50px;
       font-size: 18px;
       line-height: 150%;
-
-      &:hover {
-        transform: translateX(8px) scale(1.2);
-      }
     }
 
     &:hover,
@@ -215,18 +210,27 @@
 
   &__item-image {
     margin-bottom: 20px;
+    overflow: hidden;
 
     @include onMobile {
       width: 100vw;
+      height: 100vw;
     }
 
     @include onTablet {
       max-width: 342px;
+      max-height: 300px;
+    }
+
+    @include onDesktop {
+      max-width: 530px;
+      height: 500px;
     }
   }
 
   &__item-img {
     width: 100%;
+    height: 100%;
   }
 
   &__item-title {
@@ -288,8 +292,6 @@
     align-self: center;
 
     margin-bottom: 50px;
-
-    @include hoverWithTranslate;
 
     @include onTablet {
       margin-bottom: 20px;
