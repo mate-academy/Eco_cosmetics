@@ -1,0 +1,92 @@
+.advantages {
+  @include container;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 50px;
+
+  @include onTablet {
+    margin-top: 128px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include onDesktop {
+    margin-top: 203px;
+  }
+
+  &__module {
+    @include onTablet {
+      width: 220px;
+    }
+
+    @include onDesktop {
+      width: 380px;
+    }
+  }
+
+  &__photo {
+    @include onTablet {
+      height: 90px;
+    }
+  }
+
+  &__img {
+    cursor: pointer;
+    @include hover(transform, scale(1.2));
+    
+    &--1 {
+      width: 62px;
+      height: 60px;
+
+      @include onTablet {
+        width: 80px;
+      }
+    }
+
+    &--2 {
+      width: 100px;
+      height: 84px;
+
+      @include onTablet {
+        width: 80px;
+        height: 68px;
+      }
+
+      @include onDesktop {
+        width: 100px;
+        height: 84px;
+      }
+    }
+
+    &--3 {
+      width: 79px;
+      height: 74px;
+
+      @include onTablet {
+        width: 80px;
+        height: 75px;
+      }
+
+      @include onDesktop {
+        width: 79px;
+        height: 74px;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+    @extend %p;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: #000;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}

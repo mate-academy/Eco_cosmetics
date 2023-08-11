@@ -1,0 +1,47 @@
+.menu {
+  @include container;
+  box-sizing: border-box;
+
+  @include onDesktop {
+    padding-inline: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &#menu {
+    @media (max-width: $desktop-min-width) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      width: 100%;
+      background-color: $black-color;
+
+      transition: all $effectDuration;
+      opacity: 0;
+      transform: translateY(-100%);
+      pointer-events: none;
+
+      &:target {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__close-img {
+    margin-top: 20px;
+
+    @include onTablet {
+      margin-top: 28px;
+    }
+
+    @include hover(transform, scale(1.2));
+  }
+}

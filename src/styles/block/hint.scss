@@ -1,0 +1,31 @@
+.hint {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+  }
+
+  &__block {
+    width: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__line {
+    width: 1px;
+    height: 100px;
+    background-color: $light-green-color;
+  }
+
+  &__text {
+    @extend %p;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+    color: $light-green-color;
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+  }
+}
