@@ -4,12 +4,14 @@
   margin-bottom: 100px;
 
   @include onDesktop {
+    grid-column: 1 / - 1;
     &::before {
       content: "";
       position: absolute;
       top: -100px;
       left: -20px;
       width: 45%;
+      grid-column: 1 / - 1;
       border-bottom: 1px solid rgba(52, 79, 16, 0.5);
     }
     &::after {
@@ -17,8 +19,9 @@
       position: absolute;
       bottom: -100px;
       right: -20px;
-      width: 45%;
+      width: 75%;
       border-bottom: 1px solid #828282;
+      grid-column: 5 / - 1;
     }
 
     @include grid;
@@ -29,7 +32,7 @@
 
     @include onDesktop {
       display: block;
-      grid-column: 2 / 6;
+      grid-column: 2 / 5;
       color: $c-gray;
     }
   }
