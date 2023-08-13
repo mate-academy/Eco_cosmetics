@@ -1,0 +1,50 @@
+.nav {
+  &__list {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+
+    @include onTablet {
+      margin-top: 100px;
+      gap: 50px;
+    }
+
+    @include onDesktop {
+      gap: 40px;
+      flex-direction: row;
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    @extend %h5;
+    line-height: 130%;
+    letter-spacing: 0;
+    color: $main-color;
+
+    @include onDesktop {
+      color: $green-color;
+    }
+  }
+
+  &__item {
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $grey-color;
+    transition: $effectDuration;
+
+    @include onDesktop {
+      border: none;
+    }
+
+    &:hover {
+      width: 30%;
+      scale: 1.2;
+      border-color: $light-grey-color;
+    }
+  }
+}

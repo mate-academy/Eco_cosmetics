@@ -1,0 +1,71 @@
+.start {
+  margin-top: 100px;
+  position: relative;
+
+  @include onTablet {
+    margin-top: 130px;
+  }
+
+  @include onDesktop {
+    margin-top: 300px;
+    padding-bottom: 100px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 42%;
+      background-color: $light-green-color;
+      top: -100px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 49%;
+      background-color: $light-green-color;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__container {
+    @include container;
+
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__text {
+    @extend %p;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 380px;
+      grid-column: 2 / 6;
+      position: relative;
+    }
+  }
+
+  &__title {
+    margin: 0 auto;
+    @extend %h5;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: $green-color;
+    width: 280px;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      text-align: left;
+      grid-column: 7 / 11;
+    }
+  }
+}

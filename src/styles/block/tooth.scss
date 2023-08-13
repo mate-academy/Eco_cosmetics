@@ -1,0 +1,159 @@
+.tooth {
+  margin-top: 100px;
+
+  @include onTablet {
+    margin-top: 140px;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__grid {
+    @include onTablet {
+      @include container;
+      @include pageGrid;
+    }
+  }
+
+  &__hint {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: min-content;
+      height: min-content;
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__title {
+    @include container;
+    @extend %h4;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: $green-color;
+
+    @include onTablet {
+      padding-inline: 0;
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__photo {
+    height: 412px;
+
+    @include onTablet {
+      height: 382px;
+    }
+
+    @include onDesktop {
+      display: block;
+      height: 365px;
+      position: relative;
+      grid-column: 9 / -1;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    height: 397px;
+    right: 0;
+
+    &--1 {
+      top: 56px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--2 {
+      display: none;
+
+      @include onTablet {
+        top: 15px;
+        display: block;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--3 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+
+  &__list-box {
+    @include onDesktop {
+      display: block;
+      height: 395px;
+      position: relative;
+      grid-column: 6 / 8;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    text-align: right;
+    position: absolute;
+    top: 90px;
+    right: 200px;
+
+    @include onTablet {
+      top: 52px;
+      right: 420px;
+    }
+
+    @include onDesktop {
+      top: 35px;
+      right: 0;
+    }
+  }
+
+  &__word {
+    @extend %p;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__learn {
+    padding-inline: 20px;
+    margin-top: 30px;
+
+    @include onTablet {
+      padding-inline: 0;
+      grid-column: 1 / 3;
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      padding-inline: 100px;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
