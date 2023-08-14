@@ -1,0 +1,50 @@
+.groups {
+  display: flex;
+  justify-content: center;
+
+  @include onDesktop {
+    padding-inline: $desktopPaddingInline;
+  }
+  @include onBigDesktop {
+    padding-inline: $bigDesktopPaddinhInline;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__img {
+    width: 62px;
+    height: 60px;
+    display: block;
+    margin: 0 auto 20px;
+  }
+
+  &__text {
+    margin: auto;
+    text-transform: uppercase;
+    text-align: center;
+    width: 280px;
+
+    @include onTablet {
+      width: 218px;
+    }
+
+    @include onBigDesktop {
+      width: 380px;
+    }
+  }
+}

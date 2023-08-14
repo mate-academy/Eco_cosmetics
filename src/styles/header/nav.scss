@@ -1,0 +1,46 @@
+.nav {
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    gap: 40px;
+    list-style: none;
+    text-align: center;
+    padding-inline: $phonePaddingInline;
+
+    @include onTablet {
+      padding-inline: $tabletPaddingInline;
+      gap: 60px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    @include hover (transform, scale(1.2));
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 1px;
+      background-color: $pearlBush;
+
+      &:hover::after {
+        scale: 50%;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $pearlBush;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+  }
+}

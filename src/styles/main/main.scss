@@ -1,0 +1,54 @@
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__section {
+    position: relative;
+    padding: 100px 0 0;
+    padding-inline: $phonePaddingInline;
+
+    @include onTablet {
+      padding: 130px 0 0;
+      padding-inline: $tabletPaddingInline;
+
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      padding: 200px 0 0;
+      padding-inline: $desktopPaddingInline;
+    }
+
+    @include onBigDesktop {
+      padding-inline: $bigDesktopPaddinhInline;
+    }
+
+    &--first {
+      @include onDesktop {
+        padding-block: 100px;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 1px;
+          background: rgba(52, 79, 16, 0.5);
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 50%;
+          height: 1px;
+          background: rgba(52, 79, 16, 0.5);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.marker {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    position: relative;
+    color: rgba(52, 79, 16, 0.5);
+    transform: rotate(-180deg);
+    writing-mode: vertical-lr;
+    width: max-content;
+    height: max-content;
+    padding-top: 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      width: 1px;
+      height: 100px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+}

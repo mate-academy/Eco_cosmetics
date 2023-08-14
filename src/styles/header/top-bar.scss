@@ -1,0 +1,68 @@
+.top-bar {
+  padding-inline: $phonePaddingInline;
+  padding-block: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onTablet {
+    padding-inline: $tabletPaddingInline;
+    padding-block: 23px 30px;
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__forDesktop {
+    display: none;
+
+    @include onDesktop {
+      padding-inline: $desktopPaddingInline;
+      padding-block: 40px 92px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+
+    &--logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      @include hover(transform, scale(1.2));
+    }
+
+    &--text {
+      color: $navyGreen;
+    }
+
+    &--nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &--list {
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      text-align: center;
+      gap: 40px;
+    }
+
+    &--item {
+      @include hover(transform, scale(1.2));
+    }
+
+    &--link {
+      text-decoration: none;
+      color: $navyGreen;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+  }
+}
