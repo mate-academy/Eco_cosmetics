@@ -1,0 +1,44 @@
+.choose {
+  &__line {
+    display: none;
+    height: 1px;
+    background-color: $c-green;
+    opacity: 0.5;
+
+    &--top {
+      width: calc(50% - 110px);
+      margin-bottom: 100px;
+    }
+
+    &--bottom {
+      width: calc(50% - 10px);
+      position: relative;
+      left: calc(50% + 10px);
+      margin-top: 100px;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    width: 280px;
+    text-align: center;
+    margin: auto;
+
+    @include onDesktop {
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-row: 1 / 2;
+    }
+  }
+}

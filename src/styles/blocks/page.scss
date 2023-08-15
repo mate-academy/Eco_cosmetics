@@ -1,0 +1,92 @@
+.page {
+  scroll-behavior: smooth;
+  min-width: 320px;
+  color: $c-black;
+  font-family: "Poppins", sans-serif;
+  @extend %main;
+
+  &__body {
+    background-color: $c-lightGray;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.7s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__card {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    transform: translateX(100%);
+    transition: transform 0.7s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 132px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+
+      &--contact {
+        margin-bottom: 132px;
+      }
+    }
+
+    &--footer {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-label {
+    display: none;
+    cursor: default;
+    @extend %decorative;
+    opacity: 0.5;
+    transform: rotate(-90deg) translateX(calc(-100% - 8px));
+    transform-origin: 10px center;
+
+    @include hover (
+      transform (
+        scale(1.1)
+        rotate(-90deg)
+        translateX(calc(-100% - 8px))
+      )
+    );
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100px;
+      height: 1px;
+      background-color: $c-green;
+      opacity: 0.5;
+      margin: 0 10px 4px 0;
+    }
+
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
+}
