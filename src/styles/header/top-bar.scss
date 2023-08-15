@@ -14,6 +14,20 @@
     display: none;
   }
 
+  &__forCard {
+    @include onDesktop {
+      display: flex;
+      padding-inline: $desktopPaddingInline;
+      padding-block: 40px 92px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include onBigDesktop {
+      padding-inline: $bigDesktopPaddinhInline;
+    }
+  }
+
   &__forDesktop {
     display: none;
 
@@ -24,7 +38,10 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
 
+    @include onBigDesktop {
+      padding-inline: $bigDesktopPaddinhInline;
     }
 
     &--logo {

@@ -1,0 +1,76 @@
+.shampoo {
+  display: none;
+
+  @include onTablet {
+    padding-inline: $tabletPaddingInline;
+    display: block;
+
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    padding-inline: $desktopPaddingInline;
+  }
+
+  @include onBigDesktop {
+    padding-inline: $bigDesktopPaddinhInline;
+  }
+
+  &__content {
+    @include onTablet {
+      grid-column: 2 / -2;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / -4;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    margin-bottom: 27px;
+  }
+
+  &__title {
+    margin: 0 0 25px;
+  }
+
+  &__price {
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    color: $navyGreen;
+  }
+
+  &__weight {
+    text-transform: uppercase;
+    margin: 0 0 30px;
+  }
+
+  &__button {
+    grid-column: 3 / -3;
+    width: 280px;
+    margin-bottom: 60px;
+
+    @include onDesktop {
+      grid-column: 6 / -6;
+    }
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0 0 25px;
+
+    &:last-of-type {
+      margin: 0 0 72px;
+    }
+  }
+
+  &__highlight {
+    color: $navyGreen;
+  }
+}
