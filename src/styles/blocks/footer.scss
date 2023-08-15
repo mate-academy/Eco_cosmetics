@@ -1,12 +1,13 @@
 .footer {
   background-color: #8c9772;
-  position: relative;
+  @include contentPaddingInline;
 
   @include onTablet {
     @include pageGrid;
   }
 
   &__title {
+    display: block;
     color: #e4dfd3;
     font-family: "Poppins", sans-serif;
     font-size: 18px;
@@ -14,6 +15,12 @@
     font-weight: 500;
     line-height: 150%; /* 27px */
     text-transform: capitalize;
+    text-decoration: none;
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     &-wrapper {
       padding-top: 30px;
@@ -50,7 +57,7 @@
     }
 
     &-wrapper {
-      margin-top: 40px;
+      margin-top: 30px;
       margin-bottom: 40px;
       grid-row-start: 1;
 
@@ -89,6 +96,8 @@
       padding-bottom: 40px;
 
       @include onTablet {
+        justify-content: left;
+        width: 322px;
         grid-column: 1 / 3;
       }
     }

@@ -9,47 +9,58 @@
     text-transform: uppercase;
     color: #344f10;
     margin-top: 100px;
+
+    @include onTablet {
+      margin-top: 139px;
+    }
   }
 
   &__content {
 
     &-wrapper {
-      background-image: url(../images/product-mobile.png);
-      background-repeat: no-repeat;
-      height: 397px;
-      object-fit: cover;
-      background-position-x: right;
-      position: relative;
+      // background-image: url(../images/product-mobile.png);
+      // background-repeat: no-repeat;
+      // height: 397px;
+      // object-fit: cover;
+      // background-position-x: right;
+      position: absolute;
+
     }
 
     &-title {
+      display: flex;
       font-family: "Poppins", sans-serif;
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
       line-height: 150%; /* 24px */
       color: #333;
-      position: absolute;
-      text-align: right;
+      justify-content: right;
+
+      @include contentPaddingInline;
+
+      @include onTablet {
+        padding-left: 246px;
+      }
 
       &-1 {
-        margin-top: 38px;
+        margin-top: 58px;
       }
 
       &-2 {
-        margin-top: 114px;
+        margin-top: 52px;
       }
 
       &-3 {
-        margin-top: 187px;
+        margin-top: 49px;
       }
 
       &-4 {
-        margin-top: 263px;
+        margin-top: 52px;
       }
 
       &-5 {
-        margin-top: 336px;
+        margin-top: 49px;
       }
     }
   }
@@ -71,6 +82,18 @@
       border: 1px solid #344f10;
       width: 86px;
       margin-top: 10px;
+    }
+  }
+
+  &__photo {
+    &-wrapper {
+      position: relative;
+      left: 138px;
+      margin-top: 20px;
+
+      @include onTablet {
+        left: 363px;
+      }
     }
   }
 }

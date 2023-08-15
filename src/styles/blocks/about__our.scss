@@ -3,6 +3,10 @@
     @include onTablet {
       @include pageGrid;
     }
+
+    @include onDesktop {
+      margin-top: 100px;
+    }
   }
 
   &-title {
@@ -15,12 +19,17 @@
     letter-spacing: 0.9px;
     text-transform: uppercase;
     color: #344f10;
+    display: flex;
+    justify-content: center;
+
+    @include onDesktop {
+      margin-top: 0;
+    }
 
     &-wrapper {
-      @include onTablet {
-        padding-inline: 244px;
-        text-align: center;
-        grid-column: 3 / 5;
+      @include onDesktop {
+        grid-column: 7 / 11;
+        grid-row-start: 1;
       }
     }
   }
@@ -35,6 +44,10 @@
     letter-spacing: 1.2px;
     text-transform: uppercase;
     color: #344f10;
+
+    @include onDesktop {
+      font-size: 36px;
+    }
 
     &-wrapper {
       @include onTablet {
@@ -51,6 +64,17 @@
     font-weight: 400;
     line-height: 150%;
     color: #333;
+
+    &--second {
+      @include onMobile {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: block;
+        margin-top: 30px;
+      }
+    }
   }
 
   &-button {
@@ -64,6 +88,16 @@
       background-position: center;
       background-image: url(../images/picture/about-our-picture-tablet.png);
       height: 321px;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      align-self: center;
+      object-fit: cover;
+      background-position: center;
+      width: 380px;
+      height: 529px;
+      background-image: url(../images/picture/about-our-picture-desktop.png);
     }
 
     &--wrapper {
@@ -71,12 +105,83 @@
         grid-column: 4 / 7;
         margin-top: 130px;
       }
+
+      @include onDesktop {
+        grid-column: 7 / 11;
+      }
+    }
+  }
+
+  &-second-picture {
+    @include onDesktop {
+      background-image: url(../images/picture/about-our-second-photo--desktop.png);
+      width: 180px;
+      height: 430px;
+      align-self: center;
+      object-fit: cover;
+      background-position: center;
+    }
+
+    &--wrapper {
+      grid-column: 11 / 13;
+      align-self: flex-end;
     }
   }
 
   &--content {
     @include onTablet {
       grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: #333;
+    position: relative;
+
+    @include onMobile {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &-wrapper {
+      grid-column: 2 / 6;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      border: 1px solid rgba(52, 79, 16, 0.5);
+      width: 530px;
+      margin-top: -100px;
+      left: -150px;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      border: 1px solid rgba(52, 79, 16, 0.5);
+      width: 630px;
+      margin-top: 100px;
+      right: -750px;
+    }
+  }
+
+  &-container {
+    @include onDesktop {
+      margin-top: 300px;
+      @include pageGrid;
     }
   }
 }
