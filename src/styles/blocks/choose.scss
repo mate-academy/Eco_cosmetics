@@ -1,0 +1,92 @@
+.choose {
+  display: flex;
+  flex-direction: column;
+
+  @include onDesktop {
+    padding-block: 100px;
+  }
+
+  &__content {
+    @include grid-tablet;
+    align-items: center;
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: $green-color;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -3;
+      font-size: 24px;
+      text-align: left;
+    }
+
+    @include scroll-anim(120%, 0%);
+  }
+
+  .scroll-anim-active &__title {
+    @include show-scroll-anim(0.4s);
+  }
+
+  &__text {
+    display: none;
+    @extend %main-text;
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      display: block;
+    }
+
+    @include scroll-anim(-120%, 0%);
+  }
+
+  .scroll-anim-active &__text {
+    @include show-scroll-anim(0.2s);
+  }
+
+  &__line {
+    display: none;
+    height: 1px;
+    background-color: $green-color;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &--left {
+      width: 42.5%;
+      @include scroll-anim(-120%, -100px);
+    }
+
+    .scroll-anim-active &--left {
+      @include show-scroll-anim(0.6s);
+      transform: translateY(-100px);
+    }
+
+    &--right {
+      width: 49.5%;
+      @include scroll-anim(120%, 100px);
+      align-self: flex-end;
+    }
+
+    .scroll-anim-active &--right {
+      @include show-scroll-anim(0.6s);
+      transform: translateY(100px);
+    }
+  }
+}

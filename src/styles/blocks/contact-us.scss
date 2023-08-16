@@ -1,0 +1,68 @@
+.contact-us {
+  &__content {
+    @include grid-tablet;
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__text-content {
+    grid-column: 1 / 4;
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+
+    @include scroll-anim(-110%, 0%);
+  }
+
+  .scroll-anim-active &__text-content {
+    @include show-scroll-anim(0.2s);
+  }
+
+  &__text {
+    margin: 0 0 30px;
+    @extend %main-text;
+
+    @include onDesktop {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+  }
+
+  &__body-img {
+    display: none;
+    position: relative;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+
+    @include scroll-anim(110%, 0%);
+  }
+
+  .scroll-anim-active &__body-img {
+    @include show-scroll-anim(0.4s);
+  }
+
+  &__img {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-position: left;
+    object-fit: cover;
+    @include img-hover;
+  }
+}

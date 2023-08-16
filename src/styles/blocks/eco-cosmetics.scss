@@ -1,0 +1,120 @@
+.eco-cosmetics {
+  &__content {
+    max-width: #{$container-max-width + px};
+    margin: 0 auto;
+    @include onTablet {
+      padding-inline: 27px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    @include grid-desktop;
+  }
+
+  &__body-img {
+    order: -1;
+
+    position: relative;
+    height: 268px;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      height: 500px;
+      margin-bottom: 50px;
+      @include adaptive-property(padding-inline, 0, 50, 0);
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      order: 1;
+
+      height: 451px;
+      padding: 0;
+      margin-bottom: 0;
+    }
+    @include scroll-anim(0%, 110%);
+  }
+
+  .scroll-anim-active &__body-img {
+    @include show-scroll-anim(0.2s);
+  }
+
+  &__text {
+    grid-column: 2 / 7;
+
+    display: flex;
+    flex-direction: column;
+    padding-inline: 20px;
+
+    @include onTablet {
+      padding-inline: 27px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
+
+    @include scroll-anim(0%, 110%);
+  }
+
+  .scroll-anim-active &__text {
+    @include show-scroll-anim(0.2s);
+  }
+
+  &__img {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    @include img-hover;
+  }
+
+  &__sale {
+    margin: 0 0 30px;
+    text-align: center;
+    @extend %main-text;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 130%;
+    color: $dark-color;
+
+    @include onTablet {
+      max-width: 480px;
+      @include adaptive-property(font-size, 36, 60, 0);
+    }
+
+    @include onDesktop {
+      max-width: fit-content;
+      margin-bottom: 30px;
+      text-align: left;
+      line-height: 130%;
+    }
+  }
+
+  &__button {
+    margin: auto;
+
+    @include onDesktop {
+      margin: 0 0 50px;
+    }
+  }
+}

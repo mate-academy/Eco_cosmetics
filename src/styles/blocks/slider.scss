@@ -1,0 +1,110 @@
+.slider {
+  &__content {
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  &__scroll {
+    min-width: 280px;
+    max-width: 535px;
+    display: inline-block;
+    column-gap: 20px;
+
+    transform: translateX(0);
+    transition: all 0.4s ease-in-out;
+    white-space: nowrap;
+
+    @include onTablet {
+      display: flex;
+      column-gap: 20px;
+      flex-wrap: nowrap;
+      max-width: 1180px;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: $dark-color;
+
+    @include onTablet {
+      flex: 1 0 calc((100% - 20px) / 2);
+    }
+  }
+
+  &__dots {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      margin-bottom: 25px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__dots-item {
+    padding: 10px 0;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 130%;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #828282;
+    cursor: pointer;
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+    }
+
+    &--active {
+      padding-bottom: 10px;
+      color: $dark-color;
+      border-bottom: 2px solid $dark-color;
+    }
+  }
+
+  &__title {
+    margin: 0 0 15px;
+    font-weight: 600;
+  }
+
+  &__img-body {
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 535px;
+    height: 268px;
+    margin: 0 0 20px;
+    object-fit: cover;
+    object-position: center;
+    @include img-hover;
+
+    @include onTablet {
+      @include adaptive-property(height, 270, 500, 0);
+      min-width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    font-weight: 500;
+  }
+}
