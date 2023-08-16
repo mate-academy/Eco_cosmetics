@@ -55,6 +55,12 @@
     &-wrapper {
       display: flex;
     }
+
+    &-title--wrapper {
+      @include onDesktop {
+        padding-left: 100px;
+      }
+    }
   }
 
   &__picture {
@@ -128,6 +134,9 @@
       height: 267px;
       margin-top: 15px;
       background-repeat: no-repeat;
+      object-fit: cover;
+      background-position: center;
+      background-size: contain;
 
       @include onTablet {
         display: none;
@@ -147,6 +156,18 @@
 
       &-wrapper {
         margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      &--ubtan {
+        @include onMobile {
+          display: none;
+        }
+
+        @include onTablet {
+          display: block;
+        }
       }
     }
 
@@ -160,6 +181,21 @@
       text-transform: uppercase;
       color: #333;
       margin-bottom: 30px;
+
+      &--ubtan {
+        @include onMobile {
+          display: none;
+        }
+
+        @include onTablet {
+          display: block;
+        }
+      }
+
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 
