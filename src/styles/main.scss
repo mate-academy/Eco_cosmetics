@@ -1,6 +1,10 @@
 @import "utils";
 @import "typography";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background: $beige;
@@ -273,6 +277,7 @@ body {
     display: flex;
     gap: 120px;
     justify-content: end;
+    position: relative;
   }
 }
 
@@ -282,38 +287,103 @@ body {
 }
 
 .section__title {
-  max-width: 100px;
   height: fit-content;
+  margin-top: 50px;
+  margin-left: -30px;
   transform: translate(-50%, -50%) rotate(-90deg);
 
-  white-space: nowrap;
-  
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 9px;
-  
   color: $green;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 130%;
-  position: relative;
+  position: absolute;
+  left: 39px;
 }
 
 .section__title-line {
   position: absolute;
-  left: -70%;
   transform: translateX(-50%);
   bottom: 7px;
   width: 100px;
   height: 1px;
   background: $green;
+
+  &::before {
+    content: "ok";
+  }
 }
 
-.shop__title-line {
-  left: -190%;
+.help__title {
+  margin-top: 96px;
+
+  &-line {
+    &::before {
+      content: "help";
+      position: absolute;
+      top: -10px;
+      right: -45px;
+    }
+  }
+}
+
+
+.components__title {
+  margin-top: 145px;
+
+  &-line {
+    &::before {
+      content: "Ingredients";
+      position: absolute;
+      top: -10px;
+      right: -95px;
+    }
+  }
+}
+
+.creators__title {
+  margin-top: 202px;
+
+  &-line {
+    &::before {
+      display: flex;
+      width: 140px;
+      content: "about the creators";
+      position: absolute;
+      left: 120px;
+      top: -9px;
+    }
+  }
+}
+
+.shop__title {
+  margin-top: 100px;
+
+  &-line {
+    &::before {
+      content: "shop";
+      position: absolute;
+      left: 110px;
+      top: -9px;
+    }
+  }
+}
+
+.about__title {
+  margin-top: 247px;
+  margin-left: -28px;
+
+  &-line {
+    &::before {
+      display: flex;
+      width: 175px;
+      content: "witch of mountain winds";
+      position: absolute;
+      top: -9px;
+      left: 120px;
+    }
+  }
 }
 
 .section__text {
@@ -396,7 +466,6 @@ body {
 
 .products__container {
   display: flex;
-  justify-content: space-between;
 }
 
 .tabs {
@@ -829,16 +898,12 @@ body {
     justify-content: unset;
   }
 
-  .header__container {
-    justify-content: unset;
-  }
-
   .header__content-left {
     width: 500px;
   }
 
   .section {
-    justify-content: unset;
+    justify-content: end;
   }
 
   .footer {
@@ -847,6 +912,11 @@ body {
 
   .section__container {
     gap: 80px;
+    justify-content: space-between;
+  }
+
+  .header__container {
+    justify-content: unset;
   }
 
   .creator__container {
@@ -907,6 +977,22 @@ body {
   .about__images {
     align-items: end;
   }
+
+  .components__container {
+    gap: 42px;
+  }
+
+  .components__text {
+    justify-content: space-between;
+  }
+
+  .product {
+    width: 510px;
+  }
+
+  .about__title {
+    margin-left: -71px;
+  }
 }
 
 @media (max-width: 1250px) {
@@ -931,6 +1017,14 @@ body {
   }
 
   .section__img1 {
+    width: 100%;
+  }
+
+  .section__title {
+    display: none;
+  }
+
+  .product {
     width: 100%;
   }
 }
@@ -1216,8 +1310,16 @@ body {
     font-size: 24px;
   }
 
+  .intro {
+    @include contentPaddingInline
+  }
+
   .intro__link {
-    width: 82.4vw;
+    width: 100%;
+  }
+
+  .products__link {
+    width: 326px;
   }
 
   .header__content-right {
