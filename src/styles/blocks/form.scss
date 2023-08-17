@@ -4,9 +4,12 @@
   row-gap: 25px;
 
   &__submit {
-    padding: 0;
-    border: none;
-    border-bottom: 1px solid $dark-color;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 280px;
+    border: 1px solid transparent;
   }
 
   &__field {
@@ -54,5 +57,12 @@
       resize: none;
       font-family: inherit;
     }
+  }
+
+  &__field:-webkit-autofill,
+  &__field:-webkit-autofill:hover,
+  &__field:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px $background-color inset;
+    -webkit-text-fill-color: #828282;
   }
 }
