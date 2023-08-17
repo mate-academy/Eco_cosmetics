@@ -1,0 +1,72 @@
+.creators {
+
+  &__content {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    color: $navyGreen;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+
+  &__paragraph--first {
+    margin: 0 0 20px;
+
+    @include onTablet {
+      margin: 0 0 15px;
+    }
+  }
+
+  &__paragraph--second {
+    margin: 0 0 36px;
+
+    @include onTablet {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__button-learn-more {
+    margin: 0 0 25px;
+
+    @include onTablet {
+      margin: 0 0 42px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 52px;
+    }
+  }
+
+  &__button-contact-us {
+    @include onTablet {
+      max-width: 280px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include hover(transform, scale(1.1));
+
+    @include onTablet {
+      display: block;
+      height: 440px;
+      width: 100%;
+      grid-column: 4 / -1;
+      object-fit: cover;
+    }
+
+    @include onDesktop {
+      width: 580px;
+      height: 659px;
+      grid-column: 7 / -1;
+    }
+  }
+}

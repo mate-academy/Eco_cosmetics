@@ -1,0 +1,71 @@
+.brand {
+  &__content {
+    @include onTablet {
+      grid-column: 1 / span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    color: $navyGreen;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin: 0 0 30px;
+
+    &--forDesktop {
+      display: none;
+
+      @include onDesktop {
+        margin: 0 0 40px;
+        display: block;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 321px;
+    object-fit: cover;
+    display: none;
+    @include hover(transform, scale(1.1));
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__imgDesktop {
+    display: none;
+
+    @include hover(transform, scale(1.1));
+
+    @include onDesktop {
+      display: block;
+      object-fit: cover;
+    }
+
+    &--first {
+      width: 100%;
+      height: 529px;
+      grid-column: 7 / 11;
+    }
+
+    &--second {
+      height: 430px;
+      width: 100%;
+      align-self: flex-end;
+      grid-column: 11 / -1;
+    }
+  }
+}

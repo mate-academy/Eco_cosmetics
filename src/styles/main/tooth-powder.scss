@@ -1,0 +1,114 @@
+.tooth-powder {
+  padding-inline: 0;
+
+  @include onDesktop {
+    padding-inline: $desktopPaddingInline;
+  }
+
+  @include onBigDesktop {
+    padding-inline: $bigDesktopPaddinhInline;
+  }
+
+  &__title {
+    color: $navyGreen;
+    text-transform: uppercase;
+    padding-inline: $phonePaddingInline;
+    margin: 0 0 20px;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      padding-inline: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    gap: 50px;
+    margin: 38px 0 0;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__img-forPhones {
+    height: 397px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__img-forTablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      height: 397px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__img-forDesktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: 395px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin: 0 0 30px;
+    padding: 0;
+
+    @include onTablet {
+      margin: 0;
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__button {
+    padding-inline: $phonePaddingInline;
+
+    @include onTablet {
+      display: none;
+      grid-column: 1 / 3;
+    }
+
+    &-forTablet {
+      display: none;
+      text-decoration: none;
+
+      @include onTablet {
+        padding-inline: $tabletPaddingInline;
+        margin-right: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-end;
+      }
+
+      @include onDesktop {
+        padding-inline: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.oil {
+  padding-inline: $phonePaddingInline;
+
+  @include onTablet {
+    display: none;
+  }
+
+  &__section {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $dune;
+    margin: 0 0 10px;
+  }
+
+  &__text {
+    color: $dune;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+  }
+
+  &__img {
+    height: 248px;
+    width: 100%;
+    object-fit: cover;
+    margin: 0 0 30px;
+
+    @include hover (transform, scale(1.2));
+  }
+
+  &__button {
+    margin: 0 0 50px;
+  }
+
+  &__paragraph1 {
+    color: $dune;
+    margin: 0 0 20px;
+  }
+
+  &__section--forTablet {
+    display: none;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+}
