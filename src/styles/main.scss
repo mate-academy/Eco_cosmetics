@@ -345,6 +345,7 @@ body {
   display: flex;
   align-items: center;
   gap: 20px;
+  position: relative;
 
   &__name {
     color: $black;
@@ -355,10 +356,22 @@ body {
     line-height: 150%;
     width: 180px;
   }
+
+  &::after {
+    content: "";
+    top: 9px;
+    left: 99%;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background-color: $black;
+    border-radius: 100%;
+  }
 }
 
 .components__text {
   display: flex;
+  justify-content: space-between;
 }
 
 .creator__container {
@@ -375,18 +388,6 @@ body {
   width: 76px;
   height: 1px;
   background: $black;
-  position: relative;
-
-  &::after {
-    content: "";
-    top: -2px;
-    left: 100%;
-    width: 5px;
-    height: 5px;
-    position: absolute;
-    background-color: $black;
-    border-radius: 100%;
-  }
 }
 
 .components__container {
