@@ -1,0 +1,110 @@
+.brand {
+  &__content {
+    @include grid-tablet;
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__text-content {
+    grid-column: 1 / 4;
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+
+    @include scroll-anim(0%, 110%);
+  }
+
+  .scroll-anim-active &__text-content {
+    @include show-scroll-anim(0.2s);
+  }
+
+  &__body-img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: relative;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+
+    @include scroll-anim(0%, 110%);
+  }
+
+  .scroll-anim-active &__body-img {
+    @include show-scroll-anim(0.2s);
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    @include img-hover;
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+
+    &--hidden {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        max-height: 430px;
+        grid-column: 5 / -1;
+        align-self: flex-end;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    @extend  %main-text;
+
+    &--hidden {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    margin-bottom: 10px;
+  }
+}

@@ -1,6 +1,84 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin background($size) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: $size;
+}
+
+@mixin adaptive-property($property, $min-value-size, $max-value-size, $type) {
+  $value: calc(
+    #{$min-value-size + px} + (#{$max-value-size} - #{$min-value-size}) * (
+      (100vw - 768px) / #{$container-max-width - 768}
+    )
+  );
+
+  @if ($type == 0) {
+    @media (max-width: #{$container-max-width + px}) {
+      #{$property}: $value;
+    }
+
+    @media (min-width: #{$container-max-width + px}) {
+      #{$property}: #{$max-value-size + px};
+    }
+  }
+  @else if ($type == 1) {
+    #{$property}: $value;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $transition-duraction;
+
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $toValue;
+  }
+}
+
+@mixin grid-tablet {
+  @media (min-width: $tablet-min-width) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+}
+
+@mixin grid-desktop {
+  @media (min-width: $desktop-min-width) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+}
+
+@mixin scroll-anim($horizont, $vertical) {
+  transform: translate($horizont, $vertical);
+  opacity: 0;
+}
+
+@mixin show-scroll-anim($deley) {
+  opacity: 1;
+  transform: translate(0);
+  transition: all 0.6s ease $deley;
+}
+
+@mixin img-hover {
+  border-radius: 0;
+  transform: scale(1);
+  transition: all $transition-duraction ease 0s;
+
+  &:hover {
+    transform: scale(0.95);
+    border-radius: 5%;
   }
 }

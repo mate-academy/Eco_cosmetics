@@ -1,0 +1,74 @@
+.header {
+  &__content {
+    display: none;
+    padding-block: 40px;
+    @include grid-desktop;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__slogan {
+    grid-column: 1 / 7;
+
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+  }
+
+  &__links {
+    grid-column: 7 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $green-color;
+
+    &::after {
+      --scale: 0;
+
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      height: 1px;
+      background-color: $green-color;
+
+      transform: scaleX(var(--scale));
+      transform-origin: var(--x) 50%;
+      transition: transform 0.3s cubic-bezier(0.51, 0.92, 0.24, 1);
+    }
+
+    &:hover::after {
+      --scale: 1;
+    }
+  }
+}

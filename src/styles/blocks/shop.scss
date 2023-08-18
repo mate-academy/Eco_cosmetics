@@ -1,0 +1,65 @@
+.shop {
+  &__content {
+    @include grid-tablet;
+    column-gap: 20px;
+    justify-content: center;
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 2;
+    margin: 0 0 10px;
+
+    @include onDesktop {
+      grid-column: 2 / 3;
+      margin: 0 0 30px;
+    }
+
+    @include scroll-anim(0%, 110%);
+  }
+
+  .scroll-anim-active &__title {
+    @include show-scroll-anim(0.2s);
+  }
+
+  &__slider {
+    margin-bottom: 30px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+      margin-bottom: 40px;
+    }
+
+    @include scroll-anim(0%, 110%);
+  }
+
+  .scroll-anim-active &__slider {
+    @include show-scroll-anim(0.2s);
+  }
+
+  &__button {
+    margin: auto;
+
+    @include onTablet {
+      grid-column: 3 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+
+    @include scroll-anim(0%, 110%);
+  }
+
+  .scroll-anim-active &__button {
+    @include show-scroll-anim(0.2s);
+  }
+}
