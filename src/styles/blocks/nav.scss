@@ -1,0 +1,107 @@
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  @include onTablet {
+    margin-top: 28px;
+    padding-bottom: 36px;
+  }
+  @include onDesktop {
+    margin-top: 40px;
+    padding-bottom: 90px;
+  }
+  &__logo {
+    @include onTablet {
+      display: none;
+    }
+    @include onMobiles {
+      display: none;
+    }
+    @include onDesktop {
+      display: block;
+      height: 50px;
+    }
+  }
+  .logoF {
+    display: block;
+    width: 270px;
+    height: 50px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    background-image: url(../images/Group14.svg);
+    &:hover {
+      background-image: url(../images/Group14H.svg);
+    }
+  }
+  .menuMob {
+    display: block;
+    width: 20px;
+    height: 19px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    background-image: url(../images/menu.svg);
+    &:hover {
+      background-image: url(../images/menuh.svg);
+    }
+    @include onDesktop {
+      display: none;
+    }
+  }
+  .menuF {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    background-image: url(../images/shop.svg);
+    &:hover {
+      background-image: url(../images/shopH.svg);
+    }
+  }
+  .Moblogo {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    background-image: url(../images/logoMob.svg);
+    &:hover {
+      background-image: url(../images/logoMobH.svg);
+    }
+    @include onDesktop {
+      display: none;
+    }
+  }
+  .nav__list {
+    @include onMobiles {
+      display: none;
+    }
+    @include onTablet {
+      display: none;
+    }
+    @include onDesktop {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      padding-left: 200px;
+    }
+    @include ondesing {
+      padding-left: 150px;
+    }
+  }
+  .nav__item {
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 27px;
+    color: $colorH;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      color: #c0cdd7;
+    }
+  }
+}
