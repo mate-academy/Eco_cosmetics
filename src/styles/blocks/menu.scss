@@ -61,6 +61,12 @@
   text-align: center;
 }
 
+.nav__menu {
+  @include onDesktop {
+    pointer-events: none;
+  }
+}
+
 .page_shopF {
   z-index: 1;
   position: fixed;
@@ -74,11 +80,6 @@
   &:target {
     transform: translateX(0);
   }
-  @include onDesktop {
-    &:target {
-      transform: translateX(-100%);
-    }
-  }
 }
 
 .shopF {
@@ -87,7 +88,6 @@
   top: 0;
   height: 100vh;
   z-index: 9;
-
   margin: 28px 27px;
 }
 
