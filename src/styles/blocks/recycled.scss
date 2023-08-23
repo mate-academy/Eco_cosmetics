@@ -1,16 +1,20 @@
 .recycled {
-  margin-top: 100px;
+  max-width: 1180px;
+  margin: 0 auto;
 
-  @include grid;
-  grid-column: 1 / - 1;
+  &__container {
+    padding: 50px 20px;
+    @include grid;
+    grid-column: 1 / - 1;
 
-  @include onTablet {
-    grid-column: 1 / -1;
-    margin: 65px 27px;
-  }
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin: 65px 27px;
+    }
 
-  @include onDesktop {
-    margin: 100px 50px;
+    @include onDesktop {
+      margin: 100px 50px;
+    }
   }
   &__items {
     grid-column: 1 / - 1;
@@ -35,23 +39,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
 
     @include onTablet {
       grid-column: span 4;
     }
-
   }
 
   &__icon {
-
-    margin-bottom: 20px;
-
-    &--last {
-      margin-bottom: 1px;
-    }
+    width: 70px;
+    height: 70px;
+    flex: 0 0 auto;
   }
 
   &__title {
+    flex: 1 auto;
     min-width: 280px;
     font-size: 14px;
     text-align: center;

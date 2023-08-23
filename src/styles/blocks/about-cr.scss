@@ -1,19 +1,22 @@
 .about-cr {
-  margin-top: 100px;
+  max-width: 1180px;
+  margin: 0 auto;
 
-  @include grid;
+  &__container {
+    padding: 50px 20px;
+    @include grid;
 
-  grid-column: 1 / - 1;
+    grid-column: 1 / - 1;
 
-  @include onTablet {
-    grid-column: 1 / -1;
-    margin: 65px 27px;
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin: 65px 27px;
+    }
+
+    @include onDesktop {
+      margin: 100px 50px;
+    }
   }
-
-  @include onDesktop {
-    margin: 100px 50px;
-  }
-
   &__content {
     margin-bottom: 30px;
     font-size: 14px;
@@ -52,7 +55,9 @@
 
   &__link {
     position: relative;
+    display: block;
     padding-bottom: 10px;
+    margin-bottom: 36px;
     width: fit-content;
     text-transform: uppercase;
     color: $coloBbgMenu;
@@ -72,15 +77,6 @@
     @include onTablet {
       display: block;
     }
-    @include onDesktop {
-      grid-column: 7 / -1;
-    }
-  }
-}
-
-.about {
-  &__button {
-    margin-top: 25px;
     @include onDesktop {
       grid-column: 7 / -1;
     }

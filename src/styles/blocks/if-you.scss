@@ -1,7 +1,5 @@
 .if-you {
   grid-column: 1 / - 1;
-  // position: relative;
-  margin-bottom: 100px;
 
   @include onDesktop {
     position: relative;
@@ -20,12 +18,20 @@
       position: absolute;
       bottom: -100px;
       right: -20px;
-      width: 75%;
+      width: 50%;
       border-bottom: 1px solid #828282;
       grid-column: 5 / - 1;
     }
-
+  }
+  &__container {
+    padding: 50px 20px;
+    margin: 0 auto;
+    max-width: 1180px;
     @include grid;
+    @include onDesktop {
+      display: grid;
+      color: $c-gray;
+    }
   }
 
   &__text {
@@ -33,7 +39,7 @@
 
     @include onDesktop {
       display: block;
-      grid-column: 2 / 5;
+      grid-column: 2 / 6;
       color: $c-gray;
     }
   }

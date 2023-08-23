@@ -1,10 +1,13 @@
 .page {
-
   &__menu {
     position: fixed;
     top: 0;
-    right: 0;
     left: 0;
+    right: 0;
+    height: 400vh;
+
+    box-sizing: border-box;
+    background-color: $c-gray;
     opacity: 0;
     pointer-events: none;
 
@@ -20,7 +23,11 @@
 }
 
 .header {
-  margin-bottom: 100px;
+  &__container {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
   &__top {
     margin: 15px 20px;
 
@@ -53,12 +60,15 @@
     }
   }
 
+  &__cart {
+    order: 2;
+  }
   &--cart {
     display: block;
     width: 24px;
     height: 24px;
     background: url(../images/icons/cart.svg) no-repeat center;
-    order: 2;
+
     @include hover(transform ,scale(1.2));
 
     @include onDesktop {
@@ -105,7 +115,7 @@
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 130%; /* 18.2px */
+    line-height: 130%;
     letter-spacing: 0.7px;
     text-transform: uppercase;
 

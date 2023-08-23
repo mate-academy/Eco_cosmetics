@@ -1,18 +1,21 @@
 .shop {
-  margin-top: 100px;
+  max-width: 1180px;
+  margin: 0 auto;
 
-  @include grid;
-  grid-column: 1 / - 1;
+  &__container {
+    padding: 50px 20px;
 
-  @include onTablet {
-    grid-column: 1 / -1;
-    margin: 65px 27px;
+    @include grid;
+    grid-column: 1 / - 1;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin: 65px 27px;
+    }
+    @include onDesktop {
+      margin: 100px 50px;
+    }
   }
-
-  @include onDesktop {
-    margin: 100px 50px;
-  }
-
   &__wrapper {
     grid-column: 1 / -1;
 
@@ -67,11 +70,11 @@
   margin-bottom: 27px;
 
   &__link {
-
     font-size: 14px;
     font-weight: 400;
-    line-height: 130%; /* 18.2px */
+    line-height: 130%;
     letter-spacing: 0.7px;
+    color: $c-gray3;
     text-transform: uppercase;
     text-decoration: none;
     list-style: none;
@@ -149,11 +152,8 @@
 }
 
 .button {
-  @include onTablet {
-    grid-column: 3 / -1;
-  }
-
-  @include onDesktop {
-    grid-column: 6 / -1;
+  &__link {
+    margin: 0 auto;
+    grid-column: 1 / -1;
   }
 }
