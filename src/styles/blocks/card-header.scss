@@ -1,0 +1,71 @@
+.header {
+  &__card {
+
+    @include onTablet {
+      margin: 25px 27px 130px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__foto {
+    order: 2;
+  }
+
+  &__img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+
+    @include hover(transform ,scale($scale));
+
+    @include onTablet {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 20px 1px;
+    @include onDesktop {
+      display: block;
+      margin: 1px 1px 1px 100px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+
+    @include onTablet {
+      text-transform: capitalize;
+    }
+
+    @include onDesktop {
+      max-width: 480px;
+
+      text-align: left;
+      font-size: 55px;
+      line-height: 130%;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+}
