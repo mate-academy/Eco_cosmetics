@@ -1,0 +1,172 @@
+.shop {
+  &__content {
+    position: relative;
+    @include pageGrid;
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    column-gap: 34px;
+    margin-bottom: 27px;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      justify-content: start;
+      margin-bottom: 37px;
+    }
+
+    @include onDesktop {
+      column-gap: 51px;
+      margin-bottom: 62px;
+    }
+
+    &-item {
+      position: relative;
+      letter-spacing: 0.7px;
+      color: $c-dark-gray;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: $transition-time;
+
+      @include onDesktop {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 150%;
+        letter-spacing: 0.9px;
+      }
+
+      &:hover {
+        color: inherit;
+        transition: $transition-time;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          display: block;
+          height: 1px;
+          width: 100%;
+          background-color: $c-main;
+
+          @include onDesktop {
+            height: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  &-title {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__products {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+
+    @include onDesktop {
+      column-gap: 20px;
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__product--tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__subtitle {
+    top: -85px;
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: 6 / 8;
+    }
+  }
+}
+
+.item--active {
+  position: relative;
+  color: inherit;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $c-main;
+
+    @include onDesktop {
+      height: 2px;
+    }
+  }
+}
+
+.product {
+  &__photo {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    color: $c-main;
+    text-decoration: none;
+
+    &:hover {
+      .product__photo {
+        transform: scale(1.04);
+        transition: $transition-time;
+      }
+    }
+  }
+
+  &__price {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+  }
+}

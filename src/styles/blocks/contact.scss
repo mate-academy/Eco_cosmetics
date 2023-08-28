@@ -1,0 +1,136 @@
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.form__properties {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+
+  width: 100%;
+  height: 100%;
+  margin-top: 25px;
+  border: none;
+  border-bottom: 1px solid $c-medium-gray;
+  box-sizing: border-box;
+  background-color: $c-bg-main;
+
+  @include onDesktop {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &:focus {
+    border: none;
+    border-bottom: 1px solid $c-main;
+    transition: all $transition-time;
+  }
+}
+
+.contact {
+  &__content {
+    position: relative;
+    @include pageGrid;
+    column-gap: 30px;
+
+    @include onDesktop {
+      column-gap: 0;
+    }
+  }
+
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__text {
+    margin-top: 10px;
+
+    @include onTablet {
+      margin-top: 30px;
+      font-size: 16px;
+    }
+  }
+
+  &__img {
+    display: none;
+    width: 100%;
+    height: auto;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      height: 539px;
+      object-fit: cover;
+    }
+  }
+
+  &__btn {
+    margin: 0;
+    margin-top: 30px;
+    @include onDesktop {
+      margin-top: 50px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  &__textarea {
+    height: 26px;
+    margin-top: 45px;
+    resize: none;
+
+    @include onDesktop {
+      height: 32px;
+      margin-top: 60px;
+    }
+  }
+
+  &__subtitle {
+    top: -88px;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: none;
+  border-bottom: 1px solid $c-main;
+  color: $c-main;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  box-shadow: inset 0 0 5px $c-medium-gray;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $c-green;
+  border-radius: 8px;
+}
