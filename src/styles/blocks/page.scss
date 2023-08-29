@@ -119,3 +119,26 @@
     background-color: $c-bg-main;
   }
 }
+
+.link-after {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: $transition-time;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    display: block;
+    height: 1px;
+    width: 100%;
+    transition: $transition-time;
+    transform: scale(0);
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}

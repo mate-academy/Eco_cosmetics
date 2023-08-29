@@ -8,14 +8,27 @@
   }
 
   &__link {
+    position: relative;
     font-size: 18px;
     font-weight: 500;
     color: $c-dark-green;
-    text-decoration: transparent;
+    text-decoration: none;
     transition: $transition-time;
 
-    &:hover {
-      text-decoration: underline;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-dark-green;
+      transition: $transition-time;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
     }
   }
 }
