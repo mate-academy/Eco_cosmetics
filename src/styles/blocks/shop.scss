@@ -50,23 +50,29 @@
         letter-spacing: 0.9px;
       }
 
-      &:hover {
-        color: inherit;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $c-main;
+        transition: $transition-time;
+        transform: scale(0);
+        transform-origin: left;
 
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: -10px;
-          display: block;
-          height: 1px;
-          width: 100%;
-          background-color: $c-main;
-          transition: $transition-time;
-
-          @include onDesktop {
-            height: 2px;
-          }
+        @include onDesktop {
+          height: 2px;
         }
+      }
+
+      &:hover {
+        color: $c-main;
+      }
+
+      &:hover::after {
+        transform: scale(1);
       }
     }
   }
@@ -118,7 +124,17 @@
 
 .item--active {
   position: relative;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  cursor: pointer;
   color: inherit;
+
+  @include onDesktop {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+  }
 
   &::after {
     content: "";
