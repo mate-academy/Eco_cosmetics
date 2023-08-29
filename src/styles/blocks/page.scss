@@ -33,7 +33,7 @@
     opacity: 0;
     pointer-events: none;
     transform: translateY(-100%);
-    transition: $transition-time ease;
+    transition: ease;
 
     &:target {
       opacity: 1;
@@ -53,6 +53,7 @@
   color: $c-dark-green;
   text-decoration: none;
   text-transform: uppercase;
+  transition: $transition-time;
 
   @include onTablet {
     margin-top: 10px;
@@ -76,6 +77,7 @@
   }
 
   &:hover::after {
+    // transition: ;
     transform: scale(1);
   }
 }
@@ -101,15 +103,19 @@
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
+  transition: $transition-time;
 
   @include onTablet {
     width: 280px;
     margin-top: 50px;
   }
 
+  @include onDesktop {
+    margin-inline: 0;
+  }
+
   &:hover {
     color: $c-main;
     background-color: $c-bg-main;
-    transition: $transition-time;
   }
 }
