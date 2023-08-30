@@ -1,0 +1,100 @@
+.creators {
+  &__wrapper {
+    @include contentPaddingInline;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__decor {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-self: start;
+      justify-self: start;
+    }
+  }
+
+  &__photo {
+    background-image: url(../images/creators/1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    display: none;
+    transition: all 0.3s ease 0s;
+
+    @include onTablet {
+      display: block;
+      height: 100%;
+      width: 100%;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.content-creators {
+  @include onTablet {
+    grid-column: 1 / 4;
+  }
+
+  @include onDesktop {
+    grid-column: 2 / 6;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__text p {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__text p:nth-child(3) {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__text p:not(:last-child) {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    width: fit-content;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+}

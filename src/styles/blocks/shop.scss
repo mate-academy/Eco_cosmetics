@@ -1,0 +1,195 @@
+.shop {
+  &__wrapper {
+    @include onTablet {
+      @include contentPaddingInline;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__box {
+    @include onDesktop {
+      display: flex;
+      gap: 90px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__decor {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-self: flex-start;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+    }
+    @include onDesktop {
+      grid-column: 2;
+    }
+  }
+
+  &__items {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    width: 280px;
+    margin: 0 auto;
+  }
+}
+
+.tabs-shop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 27px;
+  @include contentPaddingInline;
+
+  @include onTablet {
+    padding-inline: 0;
+    justify-content: start;
+    gap: 20px;
+    margin-bottom: 37px;
+
+    @include onDesktop {
+      gap: 50px;
+      margin-bottom: 62px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: $c-light-grey;
+    transition: all 0.3s ease 0s;
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+    }
+
+    &:hover {
+      color: $c-text;
+      cursor: pointer;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: $c-text;
+
+      transition: transform 0.3s ease 0s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.items-shop {
+  @include onTablet {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.card-shop {
+  &--oil {
+    @include onTablet {
+      flex: 1 1 50%;
+    }
+  }
+
+  &--hide {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      flex: 1 1 50%;
+    }
+  }
+
+  &__image {
+    position: relative;
+    height: 0;
+    padding-bottom: 83%;
+  }
+
+  &__image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__title {
+    @include contentPaddingInline;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: $c-text;
+
+    @include onTablet {
+      padding-inline: 0;
+    }
+  }
+
+  &__price {
+    @include contentPaddingInline;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: $c-text;
+
+    @include onTablet {
+      padding-inline: 0;
+    }
+  }
+}
