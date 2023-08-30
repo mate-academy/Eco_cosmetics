@@ -1,0 +1,284 @@
+.header {
+  padding-bottom: 100px;
+  @include onTablet {
+    padding-bottom: 130px;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+  }
+}
+
+.top-header {
+  @include contentPaddingInline;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+
+  @include onTablet {
+    padding-bottom: 30px;
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__link-menu {
+    background-image: url(../images/icons/menu.svg);
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__logo {
+    background-image: url(../images/logo.svg);
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__cart {
+    background-image: url(../images/icons/shop.svg);
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: 20px;
+    height: 24px;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.desk-header {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    @include contentPaddingInline;
+
+    @include onBigDesktop {
+      padding-bottom: 70px;
+    }
+  }
+
+  &__logo-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__logo {
+    background-image: url(../images/logo.svg);
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+  }
+
+  &__logo-name {
+    font-family: "Poppins", sans-serif;
+    color: $c-green;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+  }
+
+  &__cart {
+    background-image: url(../images/icons/shop.svg);
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.header-menu {
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $c-green;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    transition: all 0.3s ease 0s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-green;
+
+      transition: transform 0.3s ease 0s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.main-header {
+  display: grid;
+
+  @include onTablet {
+    @include contentPaddingInline;
+  }
+
+  @include onDesktop {
+    @include pageGrid;
+  }
+
+  &__image {
+    background-image: url(../images/main-page/main.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    box-sizing: border-box;
+    order: -1;
+    width: 100%;
+    height: 267px;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      height: 500px;
+    }
+
+    @include onDesktop {
+      order: 1;
+      height: 451px;
+
+      margin-bottom: 0;
+      grid-column: 7 / -1;
+    }
+  }
+}
+
+.content-header {
+  @include contentPaddingInline;
+
+  @include onDesktop {
+    padding-inline: 0;
+
+    grid-column: 2 / 7;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+    text-align: center;
+    color: $c-text;
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+
+    @include onTablet {
+      font-size: 36px;
+      margin: 0 auto 10px;
+      line-height: 150%;
+      max-width: 466px;
+      padding-inline: 0;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      line-height: 130%;
+      max-width: 480px;
+      text-align: left;
+      margin: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+
+  &__text p {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__button {
+    @include onTablet {
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+}

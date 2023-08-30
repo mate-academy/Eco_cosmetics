@@ -1,0 +1,235 @@
+.footer {
+  background-color: #8c9772;
+  &__wrapper {
+    @include contentPaddingInline;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+    @include onTablet {
+      @include pageGrid;
+      padding-bottom: 30px;
+    }
+
+    @include onDesktop {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 20px;
+  }
+
+  &__social {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__copy {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 130%;
+    color: $c-light-yellow;
+    max-width: 198px;
+    text-align: center;
+    margin: 0 auto;
+    text-transform: capitalize;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      max-width: fit-content;
+      text-align: left;
+      margin: 0;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      grid-column: 1 / 6;
+      font-weight: 500;
+    }
+  }
+
+  &__copy span {
+    display: none;
+
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
+}
+
+.menu-footer {
+  @include onTablet {
+    grid-column: 1;
+  }
+
+  @include onDesktop {
+    grid-column: span 3;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $c-light-yellow;
+    transition: all 0.3s ease 0s;
+
+    @include onTablet {
+      font-weight: 400;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-light-yellow;
+
+      transition: transform 0.3s ease 0s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.social {
+  display: flex;
+  gap: 20px;
+
+  @include onTablet {
+    grid-column: 1;
+  }
+
+  @include onDesktop {
+    grid-column: 8;
+  }
+
+  &__item {
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &--facebook {
+      background-image: url(../images/icons/facebook.png);
+      display: flex;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-decoration: none;
+      width: 20px;
+      height: 20px;
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/instagram.png);
+      display: flex;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-decoration: none;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.contact-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include onTablet {
+    grid-row: 1;
+    grid-column: 4 / -1;
+  }
+
+  @include onDesktop {
+    grid-column: 8 / -1;
+    gap: 20px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $c-light-yellow;
+    transition: all 0.3s ease 0s;
+
+    @include onDesktop {
+      font-size: 16px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-light-yellow;
+
+      transition: transform 0.3s ease 0s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
