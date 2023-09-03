@@ -1,7 +1,29 @@
 @import "utils";
-@import "fonts";
+@import "blocks";
 @import "typography";
 
-body {
-  background: $c-gray;
+.container {
+  width: 100%;
+  padding-inline: 20px;
+  margin: 0 auto;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop {
+    padding-inline: 50px;
+    max-width: 1180px;
+  }
+}
+
+h1,
+h2,
+button {
+  font-family: Poppins, Helvetica, sans-serif;
+}
+
+.main {
+  display: grid;
+  row-gap: 100px;
 }

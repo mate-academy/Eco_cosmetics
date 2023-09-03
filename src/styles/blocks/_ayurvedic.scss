@@ -1,0 +1,94 @@
+.ayurvedic {
+  position: relative;
+  overflow: hidden;
+
+  &__container {
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__composition {
+    @include onDesktop {
+      grid-column: 2 / 13;
+    }
+  }
+
+  &__title {
+    margin-bottom: 430px;
+
+    @include onTablet {
+      max-width: 342px;
+      margin-bottom: 324px;
+    }
+
+    @include onDesktop {
+      max-width: 380px;
+      margin-bottom: 268px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 92px;
+    right: -297px;
+
+    @include onTablet {
+      top: 20px;
+      right: -165px;
+    }
+
+    @include onDesktop {
+      top: 0;
+      right: calc((100vw - 1080px) / 2);
+    }
+  }
+
+  &__link {
+    @include morelink;
+  }
+
+  &__advantages {
+    margin-top: 110px;
+    display: grid;
+    gap: 50px;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 13;
+    }
+  }
+
+  &__advantage {
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+      transition: all $effectDuration;
+
+      &:hover {
+        transform: scale(1.1) translateY(-20px);
+        border-radius: 50px;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  &__descr {
+    text-align: center;
+    margin-top: 20px;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+  }
+}

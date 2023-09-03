@@ -1,0 +1,49 @@
+.shop {
+
+  &__title {
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 13;
+    }
+  }
+
+  &__container {
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__tabs {
+    margin-top: 10px;
+    position: relative;
+    height: calc(var(--height) + 165px);
+
+    @include onDesktop {
+      height: calc(var(--height) + 200px);
+      grid-column: 2 / 13;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: table;
+    }
+
+    &::after {
+      clear: both;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include onDesktop {
+      grid-column: 2 / 13;
+    }
+  }
+}

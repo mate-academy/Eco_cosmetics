@@ -1,0 +1,68 @@
+.about {
+  &__paragraph {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    @include morelink;
+  }
+
+  &__img-tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / 7;
+      width: 100%;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__img-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      width: 100%;
+      align-self: self-end;
+      @include imgHover;
+
+      &--big {
+        grid-column: 7 / 11;
+      }
+
+      &--small {
+        grid-column: 11 / 13;
+
+        &:hover {
+          transform: rotate(-3deg) scale(1.05);
+        }
+      }
+    }
+
+  }
+
+  &__container {
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      padding-top: 100px;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+}

@@ -1,6 +1,68 @@
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  --width: auto;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 20px;
+
+  @include onTablet {
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+    column-gap: 20px;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $effectDuration;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin imgHover {
+  transition: all $effectDuration;
+  &:hover {
+    transform: rotate(3deg) scale(1.05);
+    border-radius: 50px;
+  }
+}
+
+@mixin icon {
+  box-sizing: content-box;
+  padding: 10px;
+  width: 24px;
+  height: 24px;
+
+  img {
+    width: 100%;
+  }
+}
+
+@mixin morelink {
+  color: $dark-green;
+  line-height: 130%;
+  text-decoration: none;
+  padding-block: 10px;
+  border-bottom: 1px solid $dark-green;
+
+  @include onDesktop {
+    @include hover(color, $light-green);
+    @include hover(border-bottom-color, $light-green);
   }
 }
