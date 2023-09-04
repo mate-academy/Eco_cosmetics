@@ -1,0 +1,128 @@
+.top-action {
+  padding: 15px 0;
+  margin-bottom: 10px;
+
+  @include onTablet {
+    padding: 24px 0;
+    margin-bottom: 10px;
+  }
+
+  @include onDesktop {
+    padding: 40px 0;
+    margin-bottom: 40px;
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+  &__item {
+    &:first-child {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    @include onDesktop {
+      flex: 0 0 580px;
+    }
+  }
+
+  &__logo-container {
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
+  &__logo {
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__logo-text {
+    display: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: $dark-green;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__last-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__desktop-menu {
+    display: none;
+    align-items: center;
+    gap: 20px;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__desktop-menu-item {
+    color: $dark-green;
+  }
+
+  &__desktop-menu-link {
+    padding: 5px 0;
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 101%;
+      height: 2px;
+      background-color: $dark-green;
+
+      transform: translate(0, 15px);
+      transition-duration: 300ms;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 101%;
+      height: 2px;
+      background-color: $dark-green;
+
+      transform: translate(0, -15px);
+      transition-duration: 300ms;
+    }
+
+    &:hover {
+      &::before {
+        transform: translate(0, 0);
+      }
+      &::after {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
