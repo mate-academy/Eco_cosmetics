@@ -1,0 +1,141 @@
+.footer {
+  background-color: $color-khaki;
+
+  &__content {
+    padding: 30px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      padding: 29px 0 30px;
+
+      @include pageGrid;
+      row-gap: 50px;
+    }
+
+    @include onLaptop {
+      padding: 60px 0 62px;
+      row-gap: 27px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onLaptop {
+      grid-column: span 7;
+    }
+  }
+
+  &__social {
+    display: flex;
+
+    &--mobile {
+      gap: 20px;
+
+      @include onLaptop {
+        display: none;
+      }
+    }
+
+    &--laptop {
+      display: none;
+
+      @include onLaptop {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        grid-column: span 5;
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $accent-main-color;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onLaptop {
+      gap: 20px;
+      grid-column: span 5;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $accent-main-color;
+
+    transition: color $effectDuration;
+
+    &:hover {
+      color: $color-khaki-dark;
+    }
+
+    @include onLaptop {
+      font-size: 16px;
+    }
+  }
+
+  &__bottom {
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+
+    @include onLaptop {
+      @include pageGrid;
+    }
+  }
+
+  &__copyright {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $accent-main-color;
+
+    &--mobile {
+      text-align: center;
+
+      @include onTablet {
+        text-align: initial;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 150%;
+      }
+
+      @include onLaptop {
+        display: none;
+      }
+    }
+
+    &--laptop {
+      display: none;
+
+      @include onLaptop {
+        display: block;
+        grid-column: span 7;
+      }
+    }
+  }
+}
