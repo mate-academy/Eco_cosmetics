@@ -1,0 +1,127 @@
+.shop {
+  &--margin-bottom-100 {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__category-row {
+    margin-bottom: 16px;
+    display: flex;
+    gap: 32px;
+    color: $light-grey;
+  }
+  &__category-item {
+    padding-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    transition-duration: 300ms;
+
+    &._curent {
+      color: $gray-main;
+      border-bottom: 2px solid $gray-main;
+    }
+
+    &:hover {
+      color: $gray-main;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+  }
+  &__product-row {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+  &__product-item {
+    &:last-child {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    @include onTablet {
+      flex: 1;
+    }
+  }
+  &__product-image-box {
+    height: 260px;
+    width: calc(100% + 40px);
+    margin: 0 0 20px -20px;
+    overflow: hidden;
+
+    @include onTablet {
+      height: 300px;
+      margin: 0 0 20px 0;
+      width: 100%;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+  }
+  &__product-image {
+    width: calc(100% + 20px);
+    height: 100%;
+
+    object-fit: cover;
+    transition-duration: 300ms;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+  &__product-subtitle {
+    color: $gray-main;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+  &__product-price {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,149 @@
+.footer {
+  background-color: $footer-background;
+  color: $main-background;
+  padding: 30px 0 40px;
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+  &__navigation-row {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+  &__navigation {
+    margin-bottom: 20px;
+  }
+  &__navigation-list {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+  &__navigation-item {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__navigation-link {
+    transition-duration: 300ms;
+    &:hover {
+      color: $gray-main;
+    }
+  }
+
+  &__copirate-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+  }
+  &__row {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      gap: 30px;
+    }
+  }
+  &__item {
+
+  }
+  &__social-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    &--tablet {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        gap: 20px;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+  &__social-item {
+    width: 20px;
+    height: 20px;
+  }
+  &__contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contact-info-link {
+    transition-duration: 300ms;
+    &:hover {
+      color: $gray-main;
+    }
+  }
+
+  &__support-avialible-time {
+
+  }
+  &__copirate-mobile {
+    display: block;
+    max-width: 210px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 130%;
+
+    @include onTablet {
+      margin: 0;
+      max-width: 100%;
+      text-align: left;
+      font-weight: 400;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

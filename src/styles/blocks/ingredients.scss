@@ -1,0 +1,68 @@
+.ingredients {
+  position: relative;
+
+  &--margin-bottom-100 {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  .container {
+    @include onDesktop {
+      position: relative;
+    }
+  }
+
+  &__title {
+    margin-bottom: 450px;
+
+    @include onTablet {
+      max-width: 360px;
+      margin-bottom: 310px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 280px;
+    }
+  }
+  &__list {
+    position: absolute;
+    top: 50%;
+    right: 200px;
+    transform: translateY(-50%);
+
+    @include onTablet {
+      right: 420px;
+    }
+
+    @include onDesktop {
+      right: 550px;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: flex-end;
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+  &__button {
+    margin: 0;
+  }
+  &__image {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    @include onDesktop {
+      right: 50px;
+    }
+  }
+}
