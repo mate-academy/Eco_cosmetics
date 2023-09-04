@@ -1,0 +1,41 @@
+.icon {
+  display: block;
+  height: 24px;
+  width: 24px;
+  background-size: cover;
+  background-position: center;
+
+  @include hover(transform, scale(1.2));
+
+  @include onLaptop {
+    height: 32px;
+    width: 32px;
+  }
+
+  &--menu {
+    background-image: url("../images/icons/menu-burger.svg");
+
+    @include onLaptop {
+      display: none;
+    }
+  }
+
+  &--basket {
+    background-image: url("../images/icons/basket.svg");
+  }
+
+  &--close {
+    background-image: url("../images/icons/close.svg");
+  }
+
+  &--social {
+    stroke: $accent-main-color;
+    transition: stroke $effectDuration;
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+      stroke: $color-khaki-dark;
+    }
+  }
+}

@@ -1,0 +1,188 @@
+.shop {
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+      @include contentPaddingInline;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0 20px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      text-align: initial;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+
+    @include onLaptop {
+      grid-column: 2 / -1;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__nav {
+    padding: 0 20px;
+    margin-bottom: 27px;
+
+    @include onTablet {
+      padding: 0;
+      margin-bottom: 37px;
+      grid-column: 1 / -1;
+    }
+
+    @include onLaptop {
+      grid-column: 2 / -1;
+      margin-bottom: 62px;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    padding: 0;
+    gap: 34px;
+  }
+
+  &__nav-link {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: $color-gray-3;
+
+    @include hover(color, $main-text-color);
+
+    @include onLaptop {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -10px;
+      height: 2px;
+      width: 100%;
+      background-color: $main-text-color;
+
+      transition: transform $effectDuration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+  }
+
+  &__cards {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin-bottom: 50px;
+      @include pageGrid;
+    }
+
+    @include onLaptop {
+      grid-column: 2 / -1;
+      display: flex;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__card {
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    &--hidden {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &-img-link {
+      display: flex;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    &-img-box {
+      width: 100%;
+    }
+
+    &-img {
+      display: block;
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+
+      @include hover(transform, scale(1.03));
+
+      @include onTablet {
+        max-height: 440px;
+      }
+
+      @include onLaptop {
+        max-height: 500px;
+      }
+    }
+
+    &-name {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      padding: 0 20px;
+
+      @include onTablet {
+        padding: 0;
+        margin-bottom: 15px;
+      }
+
+      @include onLaptop {
+        margin-bottom: 13px;
+      }
+    }
+
+    &-price {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      padding: 0 20px;
+
+      @include onTablet {
+        padding: 0;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    padding: 20px;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    @include onLaptop {
+      grid-column: 5 / 9;
+    }
+  }
+}

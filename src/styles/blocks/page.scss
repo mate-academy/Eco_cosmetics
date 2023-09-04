@@ -1,0 +1,77 @@
+.page {
+  background: $accent-main-color;
+  font-family: Poppins, sans-serif;
+  color: $main-text-color;
+  @extend %text;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    min-width: 320px;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+
+    &--with-oil {
+      overflow: hidden;
+    }
+
+    &--with-ubtan {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+
+    transition: all $effectDuration;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &__product-card {
+    background-color: $accent-main-color;
+    height: 100vh;
+    overflow: auto;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    transition: all $effectDuration;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &__section {
+    padding-block-start: 50px;
+
+    @include onTablet {
+      padding-block-start: 65px;
+    }
+
+    @include onLaptop {
+      padding-block-start: 100px;
+    }
+  }
+}
