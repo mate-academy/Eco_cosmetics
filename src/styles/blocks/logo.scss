@@ -1,0 +1,33 @@
+.logo {
+  display: block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--small {
+    height: 24px;
+    width: 24px;
+    background-image: url("../images/icons/logo.svg");
+
+    @include hover(transform, scale(1.2));
+
+    @include onLaptop {
+      display: none;
+    }
+  }
+
+  &--large {
+    display: none;
+    
+    @include onLaptop {
+      background-image: url("../images/icons/large-logo.svg");
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 270px;
+
+      @include hover(transform, scale(1.1));
+    }
+  }
+}

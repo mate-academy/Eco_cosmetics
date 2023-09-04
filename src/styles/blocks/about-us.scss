@@ -1,0 +1,97 @@
+.about-us {
+  &__content {
+    @include pageGrid;
+  }
+
+  &__text-part {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onLaptop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onLaptop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description-box {
+    margin-bottom: 30px;
+
+    @include onLaptop {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    &--hidden {
+      display: none;
+
+      @include onLaptop {
+        display: block;
+      }
+    }
+  }
+
+  &__image-box {
+    @include onTablet {
+      grid-column: span 3;
+      overflow: hidden;
+      max-height: 412px;
+    }
+
+    @include onLaptop {
+      max-height: 100%;
+      grid-column: 7 / 11;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 70%;
+
+    &--large {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        object-position: center;
+      }
+
+      @include onLaptop {
+        object-position: center;
+      }
+    }
+
+    &--small {
+      display: none;
+
+      @include onLaptop {
+        display: block;
+        box-sizing: border-box;
+        padding-top: 100px;
+        grid-column: 11 / -1;
+      }
+    }
+  }
+}
