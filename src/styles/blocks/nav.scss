@@ -1,0 +1,100 @@
+.nav {
+  &__list {
+    display: flex;
+    gap: 40px;
+
+    &--menu {
+      text-align: center;
+      flex-direction: column;
+      gap: 30px;
+
+      @include onTablet {
+        gap: 50px;
+      }
+    }
+
+    &--footer {
+      flex-direction: column;
+      gap: 11px;
+
+      @include onTablet {
+        gap: 15px;
+      }
+
+      @include onLaptop {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 100%;
+
+      transition: transform $effectDuration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &--header {
+      color: $color-khaki-dark;
+
+      &::after {
+        bottom: -10px;
+        background-color: $color-khaki-dark;
+      }
+    }
+
+    &--menu {
+      display: block;
+      padding-bottom: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 130%;
+      color: $accent-main-color;
+      border-bottom: 1px solid $color-gray-3;
+
+      transition: all $effectDuration;
+
+      &:hover {
+        color: $color-khaki;
+        border-color: $color-khaki;
+      }
+    }
+
+    &--footer {
+      color: $accent-main-color;
+
+      &::after {
+        background-color: $accent-main-color;
+        bottom: -5px;
+      }
+
+      @include onTablet {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      @include onLaptop {
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

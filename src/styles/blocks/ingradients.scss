@@ -1,0 +1,89 @@
+.ingredients {
+  position: relative;
+  overflow: hidden;
+
+  &__content {
+    position: relative;
+
+    // @include onLaptop {
+    //   @include pageGrid;
+    // }
+  }
+
+  &__text-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 548px;
+
+    @include onTablet {
+      height: 411px;
+    }
+
+    @include onLaptop {
+      height: 402px;
+      margin-top: -95px;
+      margin-left: 100px;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    left: 0;
+    bottom: 96px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: max-content;
+    height: 322px;
+    text-align: right;
+
+    @media (min-width: 550px) {
+      left: auto;
+      right: 390px;
+    }
+
+    @include onTablet {
+      bottom: 37px;
+      right: auto;
+      left: 225px;
+    }
+
+    @media (min-width: 875px) {
+      right: 500px;
+      left: auto;
+    }
+
+    @include onLaptop {
+      bottom: 38px;
+      right: 500px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    left: 120px;
+    bottom: 60px;
+    background-image: url("../images/ingradients/ingradients.png");
+    background-size: cover;
+    width: 480px;
+    height: 397px;
+
+    @media (min-width: 550px) {
+      right: -110px;
+      left: auto;
+    }
+
+    @include onTablet {
+      bottom: 0;
+      right: auto;
+      left: 340px;
+    }
+
+    @media (min-width: 875px) {
+      right: 0;
+      left: auto;
+    }
+  }
+}

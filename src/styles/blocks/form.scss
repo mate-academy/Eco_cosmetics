@@ -1,0 +1,77 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include onTablet {
+    align-items: initial;
+  }
+
+  &__field {
+    padding-bottom: 5px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $color-gray-4;
+    background-color: transparent;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $main-text-color;
+
+    transition: all $effectDuration;
+
+    &:-webkit-autofill {
+      transition: background-color 999999s;
+      -webkit-text-fill-color: $main-text-color;
+    }
+
+    &:nth-child(-n+2) {
+      margin-bottom: 25px;
+
+      @include onLaptop {
+        margin-bottom: 30px;
+      }
+    }
+
+    @include onLaptop {
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+
+    &--textarea {
+      margin: 45px 0 30px;
+      resize: none;
+
+      @include onLaptop {
+        margin: 60px 0 50px;
+      }
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $color-gray-3;
+    }
+
+    &:valid {
+      color: $color-khaki-dark;
+      border-color: $color-khaki-dark;
+    }
+
+    &:focus,
+    &:hover {
+      border-color: $main-text-color;
+    }
+
+    &:not(:placeholder-shown):invalid {
+      color: #eb5757;
+      border-color: #eb5757;
+    }
+  }
+}
