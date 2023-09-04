@@ -1,0 +1,122 @@
+.tab {
+  float: left;
+
+  &__switch {
+    display: none;
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    padding-block: 10px;
+    margin-inline: 12px;
+    color: #828282;
+    cursor: pointer;
+    top: 0;
+    transition: all $effectDuration;
+
+    @include onTablet {
+      margin-inline: 17px;
+
+      &--ml {
+        margin-left: 0;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      margin-inline: 25px;
+
+      &--ml {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    margin: 0 auto;
+    left: 0;
+    padding-top: 15px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: all $effectDuration;
+
+    @include onDesktop {
+      padding-top: 50px;
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: space-between;
+      column-gap: 30px;
+    }
+  }
+
+  &__content-item {
+    width: 280px;
+
+    @include onTablet {
+      width: calc(50% - 15px);
+    }
+
+    @include onDesktop {
+      cursor: pointer;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    @include onDesktop {
+      @include imgHover;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+
+  &__price {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+}
+
+.tab__switch:checked + .tab__label {
+  color: $dark-gray;
+  border-bottom: 2px solid $dark-gray;
+  transition: all $effectDuration;
+  z-index: 1;
+}
+
+.tab__switch:checked + label + .tab__content {
+  z-index: 2;
+  opacity: 1;
+  transition: all $effectDuration;
+}

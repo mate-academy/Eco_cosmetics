@@ -1,0 +1,57 @@
+.form {
+  display: grid;
+  row-gap: 20px;
+  padding-top: 25px;
+
+  &__item {
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    padding-block: 5px;
+    color: $dark-green;
+    font-family: Poppins, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+    background: transparent;
+    width: 100%;
+
+    &::placeholder {
+      color: #828282;
+      line-height: 150%;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px $page-bg-color inset !important;
+      -webkit-text-fill-color: $dark-green !important;
+      -webkit-standard: poppins, helvetica, sans-serif !important;
+    }
+
+    &:focus {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $dark-gray;
+    }
+
+    &:valid {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $dark-green;
+      color: $dark-green;
+    }
+    
+    &:not(:focus):not(:placeholder-shown):invalid {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #eb5757;
+      color: #eb5757;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    margin-top: 30px;
+  }
+
+  &__button {
+    margin-top: 10px;
+  }
+}

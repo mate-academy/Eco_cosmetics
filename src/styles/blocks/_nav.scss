@@ -1,0 +1,32 @@
+.nav {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    column-gap: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $dark-green;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    padding: 10px;
+  }
+
+  &__item {
+    list-style: none;
+
+    @include onDesktop {
+      @include hover(transform, scale(1.1));
+    }
+  }
+}

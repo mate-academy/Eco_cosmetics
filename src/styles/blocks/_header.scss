@@ -1,0 +1,88 @@
+.header {
+  padding-bottom: 100px;
+  &__mobile-img {
+    width: 100%;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__tablet-img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      @include imgHover;
+    }
+  }
+
+  &__title {
+    margin-top: 25px;
+    color: $dark-gray;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+    max-width: 466px;
+    margin-inline: auto;
+
+    @include onTablet {
+      margin-top: 50px;
+      font-size: 36px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+      font-size: 57px;
+      line-height: 130%;
+      text-align: left;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+
+    @include onDesktop {
+      margin-top: 30px;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    margin: 30px auto 0;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin: 50px 0 0;
+    }
+  }
+
+  &__content {
+    @include onDesktop {
+      @include pageGrid;
+      padding-top: 40px;
+    }
+  }
+
+  @include onDesktop {
+    padding-bottom: 200px;
+
+    &__text {
+      grid-area: 1 / 2 / 2 / 7;
+    }
+  }
+}

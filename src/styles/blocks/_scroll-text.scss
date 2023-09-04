@@ -1,0 +1,64 @@
+.scroll-text {
+  &__paragraph {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $dark-green;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 280px;
+
+    @include onTablet {
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      display: block;
+      grid-column: 7 / 11;
+      text-align: left;
+      font-size: 22px;
+      letter-spacing: 1.2px;
+      width: 100%;
+      @include hover(color, $light-green);
+    }
+  }
+
+  &__container {
+    @include onDesktop {
+      @include pageGrid;
+      padding: 100px 0;
+    }
+  }
+
+  &__line {
+    display: none;
+    @include onDesktop {
+      display: block;
+      height: 1px;
+      background: rgba(52, 79, 16, 0.5);
+      position: absolute;
+
+      &--left {
+        width: 50%;
+        left: -100px;
+      }
+
+      &--right {
+        width: calc(50% - 10px);
+        right: 0;
+      }
+    }
+  }
+}
