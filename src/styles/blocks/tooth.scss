@@ -1,0 +1,112 @@
+.tooth {
+
+  padding-block: 100px;
+  @include onTablet {
+    padding-block: 130px;
+  }
+
+  @include onDesktop {
+    padding-block: 200px;
+  }
+
+  &__content {
+    @include pageGrid;
+  }
+
+  &__position {
+    position: relative;
+  }
+
+  &__top {
+    position: relative;
+    display: grid;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 2/-3;
+    }
+
+    @include onDesktop {
+      grid-column: 8/10;
+    }
+  }
+
+  &__section-title {
+    grid-column: 1/-1;
+
+    @include onDesktop {
+      grid-column: 2/-1;
+    }
+  }
+
+  &__list {
+    padding-top: 40px;
+    list-style: none;
+    display: grid;
+    row-gap: 57px;
+
+  }
+
+  &__photo {
+    position: absolute;
+    top: 0;
+    right: -220px;
+
+    @include onTablet {
+      right: -280px;
+    }
+    @include onDesktop {
+      right: -350px;
+    }
+
+  }
+
+  &__image {
+    margin-top: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 400px;
+    height: 397px;
+  }
+
+  &__button {
+    width: fit-content;
+    margin-top: 30px;
+    grid-column: 1/-1;
+
+    @include onDesktop {
+      grid-column: 2/-1;
+    }
+  }
+
+  &__bottom {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    &--position {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__photo {
+      margin: 0 auto;
+      @include hover (transform, scale(1.2));
+    }
+
+    &__text {
+      text-align: center;
+    }
+
+  }
+}

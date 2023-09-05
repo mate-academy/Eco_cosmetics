@@ -1,0 +1,51 @@
+.icon {
+  display: block;
+  height: 24px;
+  width: 24px;
+  background-repeat: no-repeat;
+  @include hover (transform, scale(1.2));
+
+  @include onDesktop {
+    height: 32px;
+    width: 32px;
+  }
+
+  &--menu {
+    background-image: url(../images/icons/icon-menu.svg);
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--basket {
+    background-image: url(../images/icons/icon-basket.svg);
+  }
+
+  &--logo {
+    position: relative;
+    @include onDesktop {
+      height: 50px;
+      width: 50px;
+
+      &::after {
+        content: url(../images/logo-text.svg);
+        height: 50px;
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: 70px;
+      }
+    }
+  }
+
+  &--close {
+    background-image: url(../images/icons/icon-close.svg);
+  }
+
+  &--facebook {
+    background-image: url(../images/footer-icons/facebook.svg);
+  }
+  &--instagram {
+    background-image: url(../images/footer-icons/instagram.svg);
+  }
+}
