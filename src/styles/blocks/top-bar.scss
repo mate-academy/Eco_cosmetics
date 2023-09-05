@@ -1,0 +1,45 @@
+.top-bar {
+  padding-block: 20px;
+
+  @include onDesktop {
+    display: none;
+    pointer-events: all;
+  }
+
+  &-desktop {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: none;
+    pointer-events: none;
+
+    padding-block: 40px;
+    background-color: $c-bg-main;
+
+    @include onDesktop {
+      display: block;
+      pointer-events: all;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+
+    @include onDesktop {
+      display: none;
+      pointer-events: none;
+    }
+  }
+}

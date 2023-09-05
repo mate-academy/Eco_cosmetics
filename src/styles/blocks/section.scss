@@ -1,0 +1,97 @@
+.section {
+  &-text__content {
+    justify-content: center;
+    text-align: center;
+    @include pageGrid;
+  }
+
+  &-descr {
+    grid-column: 1 / -1;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    line-height: 150%;
+    color: $c-dark-green;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      padding-block: 100px;
+      text-align: left;
+      border-bottom: 1px solid $c-rgba-green;
+    }
+
+    &--desktop {
+      display: none;
+      font-size: 16px;
+      font-weight: 400;
+
+      @include onDesktop {
+        grid-column: span 5;
+        display: inline-block;
+        padding-block: 100px;
+        padding-left: 150px;
+        text-align: left;
+        border-top: 1px solid $c-rgba-green;
+      }
+    }
+  }
+
+  &-title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+    letter-spacing: 1.2px;
+    color: $c-dark-green;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: $c-dark-green;
+    }
+  }
+
+  &__subtitle {
+    position: absolute;
+
+    @include onDesktop {
+      height: 18px;
+      color: $c-green;
+      transform: translateY(118px)  rotate(-90deg);
+    }
+
+    &-text {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        display: inline-block;
+        max-width: 192px;
+        height: fit-content;
+
+        white-space: nowrap;
+        color: $c-green;
+      }
+    }
+  }
+}
+
+.subtitle__line {
+  display: none;
+
+  @include onDesktop {
+    position: absolute;
+    display: inline-block;
+    left: -70px;
+    bottom: 7px;
+    height: 1px;
+    width: 100px;
+    transform: translateX(-50%);
+    background: $c-green;
+  }
+}
