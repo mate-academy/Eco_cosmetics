@@ -1,0 +1,98 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  @include onTablet {
+    @include contentPaddingInline;
+  }
+
+  &__content {
+    @include pageGrid;
+    align-content: start;
+
+    @include onDesktop {
+      column-gap: 20px;
+    }
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+      order: -1;
+    }
+  }
+
+  &__img {
+    height: auto;
+    width: 100%;
+
+    @include onTablet {
+      width: 714px;
+      height: 500px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+    color: $c-main;
+
+    @include onTablet {
+      margin-top: 50px;
+      font-size: 36px;
+      font-weight: 600;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      margin-bottom: 30px;
+      font-size: 60px;
+      font-weight: 600;
+      line-height: 130%;
+      text-align: left;
+    }
+  }
+
+  &__descr {
+    font-weight: 400px;
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+
+  &__btn {
+    &-wrapper {
+      padding-inline: 20px;
+
+      @include onTablet {
+        padding: 0;
+      }
+    }
+  }
+}

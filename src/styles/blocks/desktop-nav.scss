@@ -1,0 +1,34 @@
+.desktop-nav {
+  &__list {
+    display: flex;
+    column-gap: 40px;
+    padding: 0;
+    list-style: none;
+
+  }
+
+  &__link {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    color: $c-dark-green;
+    text-decoration: none;
+    transition: $transition-time;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-dark-green;
+      transition: $transition-time;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

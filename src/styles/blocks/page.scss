@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+}
+
+.page {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  scroll-behavior: smooth;
+  @include onMobile {
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 5%;
+  }
+
+  &__body {
+    overflow-y: overlay;
+    background: $c-bg-main;
+    box-sizing: border-box;
+  }
+
+  .container {
+    @include contentPaddingInline;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100%);
+    transition: $transition-time;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden; /*disable scrolling the page when menu is open */
+  }
+}
+
+.learn-more-link {
+  position: relative;
+  font-weight: 500;
+  color: $c-dark-green;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: $transition-time;
+
+  @include onTablet {
+    margin-top: 10px;
+  }
+
+  @include onDesktop {
+    margin: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    display: block;
+    height: 1px;
+    width: 95px;
+    background-color: $c-dark-green;
+    transition: $transition-time;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    // transition: ;
+    transform: scale(1);
+  }
+}
+
+.primary-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 60px;
+  margin-top: 30px;
+  margin-inline: auto;
+  border: 1px solid $c-main;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 2.4px;
+  color: $c-light-gray;
+  background-color: $c-main;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: $transition-time;
+
+  @include onTablet {
+    width: 280px;
+    margin-top: 50px;
+  }
+
+  @include onDesktop {
+    margin-inline: 0;
+  }
+
+  &:hover {
+    color: $c-main;
+    background-color: $c-bg-main;
+  }
+}
+
+.link-after {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: $transition-time;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    display: block;
+    height: 1px;
+    width: 100%;
+    transition: $transition-time;
+    transform: scale(0);
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
