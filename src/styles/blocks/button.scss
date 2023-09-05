@@ -1,0 +1,47 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 60px;
+  width: 280px;
+  background-color: $main-text-color;
+  border: 1px solid $main-text-color;
+  color: $color-gray-6;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  @extend %button;
+  transition: all $effectDuration;
+
+  &:hover {
+    background-color: transparent;
+    color: $main-text-color;
+  }
+
+  &__primary {
+    display: block;
+    width: max-content;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $color-khaki-dark;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      display: block;
+      margin-top: 10px;
+      width: 0;
+      height: 1px;
+      background-color: $color-khaki-dark;
+      transition: width $effectDuration;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

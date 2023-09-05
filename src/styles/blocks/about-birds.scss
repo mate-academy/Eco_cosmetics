@@ -1,0 +1,68 @@
+.about-birds {
+  overflow: hidden;
+
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__description {
+    display: none;
+
+    @include onLaptop {
+      position: relative;
+      display: block;
+      padding: 100px 0;
+      grid-column: 2 / 6;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 610px;
+        height: 1px;
+        background-color: $color-khaki-dark;
+      }
+    }
+  }
+
+  &__choose {
+    color: $color-khaki-dark;
+    max-width: 387px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 5%;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include onTablet {
+      max-width: 477px;
+      grid-column: 2 / 6;
+      text-align: center;
+    }
+
+    @include onLaptop {
+      grid-column: 7 / 11;
+      text-align: initial;
+      font-size: 24px;
+      position: relative;
+      padding-top: 105px;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 711px;
+        height: 1px;
+        background-color: $color-khaki-dark;
+      }
+    }
+  }
+}
