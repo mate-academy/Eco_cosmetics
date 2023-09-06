@@ -1,0 +1,29 @@
+.vertical-text {
+  position: absolute;
+
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+    align-items: center;
+    grid-column: 1 / 2;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.5);
+
+    transform-origin: right top;
+    transform: translateX(-100%) rotateZ(-90deg);
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100px;
+    height: 1px;
+    margin-right: 10px;
+
+    background-color: rgba(52, 79, 16, 0.5);
+  }
+}

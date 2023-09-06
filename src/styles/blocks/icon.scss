@@ -1,0 +1,65 @@
+.icon {
+  width: 24px;
+  height: 24px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  &--burger {
+    background-image: url(../images/icons/burger.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--logo {
+    background-image: url(../images/icons/logo.svg);
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+
+      background-size: contain;
+    }
+  }
+
+  &--cart {
+    background-image: url(../images/icons/cart.svg);
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    transition: border-color $duration;
+
+    @include onDesktop {
+      width: 32px;
+      height: 32px;
+
+      background-size: 70%;
+    }
+
+    &:hover {
+      border-color: $greenColor;
+    }
+  }
+
+  &--cross {
+    @include hoverCross;
+
+    background-image: url(../images/icons/cross.svg);
+  }
+
+  &--cart-cross {
+    @include hoverCross;
+
+    @include onDesktop {
+      width: 32px;
+      height: 32px;
+
+      background-size: 70%;
+    }
+
+    background-image: url(../images/icons/cross-green.svg);
+  }
+}
