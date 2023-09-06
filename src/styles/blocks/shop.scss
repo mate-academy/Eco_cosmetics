@@ -1,0 +1,225 @@
+.shop {
+  &__content {
+    @include onPhone {
+      padding: 0 20px;
+    }
+  }
+
+  &__side {
+    padding: 10px 0;
+    grid-column: 1 / 2;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.5);
+    transform: rotate(-180deg);
+    writing-mode: vertical-lr;
+    width: max-content;
+    height: max-content;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 100px;
+      width: 1px;
+      background: rgba(52, 79, 16, 0.5);
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__description {
+    grid-column: 2 / 6;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__name {
+    @include HeaderName;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    @include onPhone {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+
+  &__main-button {
+    grid-row: 4 / 5;
+    grid-column: 1 / 13;
+    align-self: center;
+    justify-self: center;
+    width: 280px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+    }
+
+    @include onPhone {
+      width: 100%;
+    }
+
+    &:hover {
+      background-size: 100% 0.1em;
+    }
+  }
+
+  &__link {
+    @include SectionButton;
+  }
+
+  &__list {
+    grid-row: 2 / 3;
+    grid-column: 2 / 13;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      margin-bottom: 25px;
+    }
+
+    @include onPhone {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    width: min-content;
+    align-items: center;
+    justify-content: start;
+    margin-right: 20px;
+  }
+
+  &__menu-link {
+    display: flex;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #828282;
+    letter-spacing: 1.2px;
+    background-image: linear-gradient($green, $green);
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease-in-out;
+
+    &--active {
+      color: #333;
+      background-image: linear-gradient($green, $green);
+      background-size: 100% 0.1em;
+      background-position-y: 100%;
+      background-position-x: 0%;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      background-size: 100% 0.1em;
+      color: #333;
+    }
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+    }
+  }
+
+  &__cards {
+    grid-row: 3 / 4;
+    grid-column: 2 / 13;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      gap: 30px;
+    }
+
+    @include onPhone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__product-card {
+    &--1 {
+      grid-column: 1 / 2;
+    }
+
+    &--2 {
+      grid-column: 2 / 3;
+      @include onPhone {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+    height: 500px;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      height: 300px;
+    }
+
+    @include onPhone {
+      width: 100%;
+    }
+  }
+
+  &__item-name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 1.2px;
+    margin-bottom: 15px;
+
+    @include onPhone {
+      margin-bottom: 10px;
+
+    }
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #333;
+    letter-spacing: 1.2px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onPhone {
+      margin-bottom: 30px;
+    }
+  }
+}

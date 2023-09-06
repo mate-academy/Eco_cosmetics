@@ -1,6 +1,70 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onLarge {
+  @media (min-width: 1440px) {
+    @content;
   }
 }
+
+@mixin onTablet {
+  @media (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin onPhone {
+  @media (max-width: 639px) {
+    @content;
+  }
+}
+
+@mixin HeaderName {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 150%;
+  letter-spacing: 1.2px;
+  color: $green;
+  text-transform: uppercase;
+
+  @include onTablet {
+    font-size: 24px;
+  }
+}
+
+@mixin Description {
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $black;
+
+  @include onPhone {
+    font-size: 14px;
+  }
+}
+
+@mixin SectionButton {
+  width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+  color: $green;
+  background-color: transparent;
+}
+
+// @mixin grid {
+//   margin: 0;
+//   padding: 0;
+//   display: grid;
+//   grid-template-columns: repeat(12, 1fr);
+//   column-gap: 20px;
+
+//   @include onTablet {
+//     grid-template-columns: repeat(6, 1fr);
+//     column-gap: 30px;
+//   }
+
+//   @include onPhone {
+//     display: block;
+//   }
+// }

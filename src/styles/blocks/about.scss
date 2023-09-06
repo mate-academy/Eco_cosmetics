@@ -1,0 +1,127 @@
+.about {
+  &__content {
+    @include onPhone {
+      padding: 0 20px;
+    }
+  }
+
+  &__side {
+    padding: 10px 0;
+    grid-column: 1 / 2;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.5);
+    transform: rotate(-180deg);
+    writing-mode: vertical-lr;
+    width: max-content;
+    height: max-content;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 100px;
+      width: 1px;
+      background: rgba(52, 79, 16, 0.5);
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__description {
+    grid-column: 2 / 6;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__name {
+    @include HeaderName;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 30px;
+    @include Description;
+
+    &--1 {
+      margin-bottom: 40px;
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    width: 86px;
+    padding-bottom: 10px;
+    background-color: transparent;
+    background-image: linear-gradient($green, $green);
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease-in-out;
+
+    &:hover {
+      background-size: 100% 0.1em;
+    }
+  }
+
+  &__link {
+    @include SectionButton;
+  }
+
+  &__big-photo {
+    grid-column: 7 / 11;
+    background-image: url(../images/about_big_image.jpg);
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__small-photo {
+    align-self: end;
+    grid-column: 11 / 13;
+    background-image: url(../images/about_small_image.jpg);
+    height: 430px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

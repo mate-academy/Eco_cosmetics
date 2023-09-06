@@ -1,0 +1,65 @@
+.menu {
+  height: 100vh;
+  display: block;
+  background-color: $black;
+  z-index: 50;
+
+  &__nav {
+    min-width: 320;
+    background-color: $black;
+    margin-bottom: 100px;
+    display: block;
+
+    @include onPhone {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 45px;
+    }
+  }
+
+  &__cross {
+    background-color: $black;
+    background-image: url(../images/cross.svg);
+    background-position: center;
+    background-size: contain;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    display: block;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__content {
+    display: block;
+    background-color: $black;
+  }
+
+  &__link {
+    margin: 0 auto 50px;
+    display: block;
+    padding-bottom: 10px;
+    background-color: $black;
+    font-size: 18px;
+    line-height: 130%;
+    color: $ivory;
+    font-weight: 600;
+    border-bottom: 1px solid #828282;
+    text-align: center;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      color: $light-green;
+    }
+
+    @include onPhone {
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.contact {
+  &__content {
+    @include onPhone {
+      padding: 0 20px;
+    }
+  }
+
+  &__side {
+    padding: 10px 0;
+    grid-column: 1 / 2;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.5);
+    transform: rotate(-180deg);
+    writing-mode: vertical-lr;
+    width: max-content;
+    height: max-content;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 100px;
+      width: 1px;
+      background: rgba(52, 79, 16, 0.5);
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__description {
+    grid-column: 2 / 6;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__name {
+    @include HeaderName;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 30px;
+    @include Description;
+  }
+
+  &__button {
+    width: 86px;
+    padding-bottom: 10px;
+    background-color: transparent;
+    background-image: linear-gradient($green, $green);
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease-in-out;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onPhone {
+      margin-bottom: 25px;
+    }
+
+    &:hover {
+      background-size: 100% 0.1em;
+    }
+  }
+
+  &__link {
+    @include SectionButton;
+  }
+
+  &__big-photo {
+    grid-column: 7 / 13;
+    background-image: url(../images/contact-us.jpg);
+    width: 100%;
+    background-position: start start;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__main-button {
+    grid-column: 2 / 7;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    text-transform: uppercase;
+    padding: 20px 114px;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+    color: $white;
+    transition: all 0.3s;
+
+    @include onPhone {
+      padding: 13px 90px;
+    }
+
+    &:hover {
+      color: $black;
+    }
+  }
+}

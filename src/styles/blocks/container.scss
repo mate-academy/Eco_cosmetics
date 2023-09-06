@@ -1,0 +1,63 @@
+.container {
+  box-sizing: border-box;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include onTablet {
+    max-width: 800px;
+  }
+
+  @include onPhone {
+    padding: 0;
+  }
+
+  &--1 {
+    background-color: #8c9772;
+  }
+
+  &--2 {
+    padding: 100px 0;
+    position: relative;
+    margin-bottom: 200px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 800px;
+      height: 2px;
+      background: #8c9772;
+      left: -300px;
+      top: 0;
+      position: absolute;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 900px;
+      height: 0.5px;
+      background: #8c9772;
+      left: 620px;
+      bottom: 0;
+      position: absolute;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+      padding: 0 20px;
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    @include onPhone {
+      padding: 0;
+      margin-bottom: 0;
+    }
+  }
+}
