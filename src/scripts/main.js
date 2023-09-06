@@ -1,5 +1,4 @@
 'use strict';
-// menu
 
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#menu') {
