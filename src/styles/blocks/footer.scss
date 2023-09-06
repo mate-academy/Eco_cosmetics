@@ -1,0 +1,182 @@
+.footer {
+  padding: 30px 0 40px;
+
+  color: $backgroundColor;
+
+  background-color: #8c9772;
+
+  @include onTablet {
+    padding: 30px 0;
+  }
+
+  @include onDesktop {
+    padding: 60px 0;
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      grid-column: 1 / 8;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 11px;
+
+    list-style-type: none;
+
+    @include onTablet {
+      row-gap: 15px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      row-gap: 0;
+      column-gap: 40px;
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: capitalize;
+
+    transition: color $duration;
+    will-change: color;
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    &:hover {
+      color: $mainColor;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    column-gap: 20px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      grid-column: 8 / -1;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__social-link {
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image $duration;
+    will-change: background-image;
+
+    &--facebook {
+      background-image: url(../images/icons/facebook.svg);
+
+      &:hover {
+        background-image: url(../images/icons/facebook-black.svg);
+      }
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/instagram.svg);
+
+      &:hover {
+        background-image: url(../images/icons/instagram-black.svg);
+      }
+    }
+  }
+
+  &__contacts-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 40px;
+
+    font-size: 14px;
+
+    list-style-type: none;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+      grid-row: 1 / 3;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      row-gap: 20px;
+      margin-bottom: 30px;
+      grid-column: 8 / -1;
+      grid-row: 1 / 2;
+
+      font-size: 16px;
+    }
+  }
+
+  &__contacts-link {
+    text-decoration: none;
+    color: inherit;
+
+    transition: color $duration;
+    will-change: color;
+
+    &:hover {
+      color: $mainColor;
+    }
+  }
+
+  &__copyright {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+
+      font-weight: 400;
+      text-align: initial;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      grid-column: 1 / 8;
+    }
+  }
+
+  &__copyright-word {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+}
