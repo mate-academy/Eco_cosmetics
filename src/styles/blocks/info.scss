@@ -1,0 +1,46 @@
+.info {
+  overflow-x: hidden;
+  &__long {
+    grid-column: 2 / 6;
+    width: 380px;
+    font-weight: 400;
+    font-size: 16px;
+    color: $black;
+    justify-self: center;
+    align-self: center;
+    line-height: 150%;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__short {
+    grid-column: 7 / 13;
+    text-transform: uppercase;
+    width: 380px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 1px;
+    color: $green;
+
+    @include onTablet {
+      width: 282px;
+      margin-bottom: 130px;
+      grid-column: 1 / 7;
+      font-size: 18px;
+      align-self: center;
+      justify-self: center;
+      text-align: center;
+    }
+
+    @include onPhone {
+      padding: 0 20px;
+      margin-bottom: 100px;
+      display: flex;
+      justify-self: start;
+      text-align: start;
+    }
+  }
+}

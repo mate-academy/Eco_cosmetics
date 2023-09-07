@@ -1,0 +1,99 @@
+.page {
+
+  &__body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+
+    &--with-menu {
+      z-index: 100;
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 24px;
+    }
+
+    @include onPhone {
+      margin-top: 20px;
+    }
+  }
+
+  &__menu {
+    padding: 28px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    @include onPhone {
+      padding: 20px;
+    }
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding-top: 60px;
+
+    @include onTablet {
+      padding-top: 30px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 200px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onPhone {
+      margin-bottom: 100px;
+    }
+
+    &--creators {
+      @include onTablet {
+        margin-bottom: 140px;
+      }
+    }
+
+    &--t-powder {
+      @include onTablet {
+        margin-bottom: 120px;
+      }
+
+      @include onPhone {
+        margin-bottom: 80px;
+      }
+    }
+
+    &--contact {
+      margin-bottom: 130px;
+
+      @include onTablet {
+        margin-bottom: 132px;
+      }
+
+      @include onPhone {
+        margin-bottom: 100px;
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.nav {
+  min-width: 320;
+
+  @include onPhone {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  &__logo {
+    grid-column: 1 / 5;
+    background-image: url(../images/logo_wide.svg);
+    width: 270px;
+    height: 50px;
+    transition: all 0.3s;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__menu {
+    grid-column: 7 / 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 256px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__menu-item {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: $green;
+    background-image: linear-gradient($green, $green);
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease-in-out;
+
+    &:hover {
+      background-size: 100% 0.1em;
+    }
+  }
+
+  &__shop {
+    grid-column: 12 / 13;
+    justify-self: end;
+    background-image: url(../images/shop_icon.svg);
+    background-position: center;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      grid-column: 6 / 7;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__menu-icon {
+    grid-column: 1 / 2;
+    background-image: url(../images/menu-opener.svg);
+    background-position: center;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    display: none;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      display: flex;
+      width: 24px;
+      height: 24px;
+    }
+
+    &--1 {
+      background-image: url(../images/logo_small.svg);
+      grid-column: 3 / 5;
+      justify-self: center;
+    }
+
+    &--2 {
+      background-image: url(../images/cross.svg);
+    }
+  }
+}
