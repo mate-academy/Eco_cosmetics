@@ -23,26 +23,28 @@
           <a href="#" class="icon icon--basket"></a>
         </div>
 
-        <nav class="nav ">
+        <nav class="nav">
           <ul class="nav__list nav__header__list">
-            <a href="#shop" class="nav__link">
-              <li class="nav__item">Shop</li>
-            </a>
-            <a href="#contact" class="nav__link">
-              <li class="nav__item">Contact</li>
-            </a>
-            <a href="#about" class="nav__link">
-              <li class="nav__item">About</li>
-            </a>
+            <li class="nav__item">
+              <a href="#shop" class="nav__link">Shop</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About</a>
+            </li>
           </ul>
         </nav>
       </div>
       <div class="header__bottom">
-        <img
-          src="./images/background-image.png"
-          alt="header__photo"
-          class="header__photo"
-        >
+        <div class="header__image">
+          <img
+            src="./images/background-image.png"
+            alt="header__photo"
+            class="header__photo"
+          >
+        </div>
         <div class="header__bottom__content">
           <div class="container">
             <h1 class="header__title">Brand of eco-cosmetics and magic candles</h1>
@@ -132,19 +134,20 @@
             <p class="credo">shop</p>
             <nav class="shop__nav">
               <ul class="shop__nav__list">
-                <a href="#face" class="shop__nav__category">
-                  <li class="shop__nav__item">face</li>
-                </a>
-                <a href="#body" class="shop__nav__category">
-                  <li class="shop__nav__item">body</li>
-                </a>
-                <a href="#hair" class="shop__nav__category">
-                  <li class="shop__nav__item">hair</li>
-                </a>
-                <a href="#candles" class="shop__nav__category">
-                  <li class="shop__nav__item">candles</li>
-                </a>
+                <li class="shop__nav__item">
+                  <a href="#face" class="shop__nav__category shop__nav__category--face">face</a>
+                </li>
+                <li class="shop__nav__item">
+                  <a href="#body" class="shop__nav__category">body</a>
+                </li>
+                <li class="shop__nav__item">
+                  <a href="#hair" class="shop__nav__category">hair</a>
+                </li>
+                <li class="shop__nav__item">
+                  <a href="#candles" class="shop__nav__category">candles</a>
+                </li>
               </ul>
+
             </nav>
           </div>
         </div>
@@ -262,49 +265,55 @@
               <p class="credo">help </p>
               <p class="contact__text">We will help you choose a product that suits you and answer your other questions</p>
               <form
-                action="get"
-                class="form form--margin"
+                method="get"
+                class="contact__form form form--margin"
                 onsubmit="this.reset(); return false;"
               >
                 <label>
                   <input
-                  type="text"
-                  id="fname"
-                  class="form__item form__name"
-                  placeholder="Your name"
-                  autocomplete="off"
-                  required
-                >
-                </label>
-                <label>
-                  <input
-                    type="email"
-                    class="form__item form__email"
-                    placeholder="e-mail"
-                    autocomplete="off"
-                    required
-                  >
-                </label>
-                <label>
-                  <input
-                    type="tel"
-                    class="form__item form__phone"
-                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                    placeholder="phone number"
-                    autocomplete="off"
-                    required
-                  >
-                </label>
-                <label>
-                  <input
                     type="text"
+                    class="form__item"
+                    placeholder="Your name"
+                    autocomplete="off"
+                    required
+                  >
+                </label>
+                <label>
+                  <input
+                      type="email"
+                      class="form__item"
+                      placeholder="e-mail"
+                      autocomplete="off"
+                      required
+                    >
+                </label>
+                <label>
+                  <input
+                      type="tel"
+                      class="form__item form__phone"
+                      pattern="[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{3}"
+                      placeholder="phone number"
+                      autocomplete="off"
+                      required
+                    >
+                </label>
+                <label>
+                  <textarea
+                    name="message"
                     placeholder="Your message"
+                    cols="10"
+                    rows="2"
                     class="form__item"
                     required
+                ></textarea>
+                </label>
+                <label>
+                  <input type="submit"
+                  value="send a message"
+                  class="contact__button button"
                   >
                 </label>
               </form>
-              <a href="#contact" class="contact__button button">send a message</a>
             </div>
             <div class="contact__image"></div>
           </div>
@@ -315,7 +324,7 @@
     <footer class="footer">
       <div class="container">
         <div class="footer__content">
-          <nav class="footer__nav nav">
+          <!-- <nav class="footer__nav nav">
             <ul class="footer__nav__list nav__list">
               <a href="#shop" class="footer__nav__link nav__link">
                 <li class="nav__item">Shop</li>
@@ -327,11 +336,35 @@
                 <li class="nav__item">About</li>
               </a>
             </ul>
+          </nav> -->
+
+          <nav class="footer__nav nav">
+            <ul class="footer__nav__list nav__list">
+              <li class="nav__item">
+                <a href="#shop" class="footer__nav__link nav__link">Shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contact" class="footer__nav__link nav__link">Contact</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about" class="footer__nav__link nav__link">About</a>
+              </li>
+            </ul>
           </nav>
 
           <div class="footer__icons">
-            <a href="#menu" class="icon icon--facebook"></a>
-            <a href="#menu" class="icon icon--instagram"></a>
+            <a
+              href="https://uk-ua.facebook.com/"
+              class="icon icon--facebook"
+              target="_blank"
+            >
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              class="icon icon--instagram"
+              target="_blank"
+            >
+            </a>
           </div>
 
           <div class="footer__information">
@@ -342,11 +375,11 @@
             >
             Ukraine
             </a>
-            <a href="malito:support.mountain@gmail.com" class="footer__information__item" >support.mountain@gmail.com</a>
+            <a href="mailto:support.mountain@gmail.com" class="footer__information__item">support.mountain@gmail.com</a>
             <a href="tel:+380934476839" class="footer__information__item">+380934476839</a>
             <a href="#" class="footer__information__item">Support is available Monday - Friday 9am-6pm</a>
           </div>
-          <div class="footer__copyright">2019 witch of mountain winds</div>
+          <div class="footer__copyright">&#169; 2019 witch of mountain winds</div>
         </div>
       </div>
 
