@@ -4,3 +4,88 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onMobile {
+  @media (min-width: $mobile-min-width) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop1440 {
+  @media (min-width: $large-desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --column-count: 2;
+  --column-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count), 1fr);
+  column-gap: var(--column-gap);
+
+  @include onTablet {
+    --column-count: 6;
+    --column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --column-count: 12;
+    --column-gap: 20px;
+  }
+}
+
+@mixin contentPaddingInLine {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop {
+    padding-inline: 50px;
+  }
+
+  @include onDesktop1440 {
+    padding-inline: 130px;
+  }
+}
+
+@mixin top-actions {
+  --icon-width-menu: 20px;
+  --icon-width-shop: 20px;
+  display: grid;
+  grid-template-columns: var(--icon-width-menu) 1fr var(--icon-width-shop);
+  grid-auto-rows: var(--icon-height-shop);
+  justify-items: center;
+  align-items: center;
+
+  @include onTablet {
+    --icon-width-shop: 24px;
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+}
+
+@mixin top-actions--desktop {
+  --icon-width-logo: 270px;
+  --icon-width-shop: 32px;
+  display: grid;
+  grid-template-columns: var(--icon-width-logo) 1fr var(--icon-width-shop);
+  justify-items: center;
+  align-items: center;
+}
