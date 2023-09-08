@@ -1,0 +1,31 @@
+.header {
+  box-sizing: border-box;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: $headerTopPadding 0 20px;
+
+    @include onTablet {
+      $headerTopPadding: 23px;
+      padding: $headerTopPadding 0 30px;
+    }
+
+    @include onDesktop {
+      $headerTopPadding: 40px;
+      padding: $headerTopPadding 0 70px;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+  }
+  
+  &__desktop {
+    display: none;
+
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+}
