@@ -26,6 +26,7 @@
   }
 
   &__list {
+    position: relative;
     margin: 0;
     padding: 0;
 
@@ -58,6 +59,23 @@
     color: $c-light-gray;
 
     text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      height: 1px;
+      width: 70px;
+      border-bottom: 1px solid $c-light-gray;
+      transition: $transition-time;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
 
     @include onTablet {
       font-weight: 400;
@@ -99,6 +117,8 @@
 
     width: 20px;
     height: 20px;
+
+    @include hover(transform, scale(1.2));
   }
 
   &__logo--instagram {
@@ -106,6 +126,8 @@
 
     width: 20px;
     height: 20px;
+
+    @include hover(transform, scale(1.2));
   }
 
   &__support {
@@ -154,7 +176,11 @@
   }
 
   &__e-mail {
+    display: block;
     padding-bottom: 10px;
+
+    text-decoration: none;
+    color: $c-light-gray;
 
     @include onDesktop {
       padding-bottom: 20px;
@@ -162,7 +188,12 @@
   }
 
   &__phone {
+    display: block;
+
     padding-bottom: 10px;
+
+    text-decoration: none;
+    color: $c-light-gray;
 
     @include onDesktop {
       padding-bottom: 20px;
