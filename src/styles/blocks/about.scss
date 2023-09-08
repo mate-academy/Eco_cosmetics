@@ -1,0 +1,86 @@
+.about {
+  padding-bottom: 100px;
+  @include onTablet {
+    padding-block: 130px;
+  }
+  @include onDesktop {
+    padding-block: 200px;
+  }
+  &__content {
+    @include pageGrid;
+    position: relative;
+
+  }
+  &__section-title {
+    grid-column: 1/-1;
+
+    @include onDesktop {
+      margin: 0;
+      grid-column: 2/-1;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      grid-column: 2/6;
+    }
+
+    &--last {
+      display: none;
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__bg-image {
+    @include onTablet {
+      background-image: url(../images/about/bg-flowers.png);
+      background-position: center;
+      background-size: cover;
+      display: block;
+      background-repeat: no-repeat;
+      grid-column: 4/-1;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    @include onDesktop {
+      grid-column: 7/-3;
+    }
+  }
+
+  &__small-image {
+    @include onDesktop {
+      background-image: url(../images/about/flowers-small.png);
+      grid-column: -3/-1;
+      position: absolute;
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 80%;
+      bottom: 0;
+    }
+  }
+
+  &__button {
+    margin-top: 60px;
+    grid-column: 1/-1;
+    width: fit-content;
+    @include onDesktop {
+      margin-top: 40px;
+      grid-column: 2/-1;
+    }
+  }
+}

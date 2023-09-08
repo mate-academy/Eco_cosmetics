@@ -1,0 +1,45 @@
+.contact {
+  padding-bottom: 100px;
+  @include onTablet {
+    padding-bottom: 130px;
+  }
+  &__content {
+    @include pageGrid;
+    position: relative;
+  }
+
+  &__filling {
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 1/3;
+    }
+
+    @include onDesktop {
+      grid-column: 2/5;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    border: none;
+
+    @include onTablet {
+      width: 280px;
+      margin: 0;
+    }
+  }
+
+  &__image {
+    @include hover (transform, scale(1.05));
+    @include onTablet {
+      grid-column: 4/-1;
+      background-image: url(../images/contact-bird.png);
+      background-repeat: no-repeat;
+    }
+    @include onDesktop {
+      grid-column: 7/-1;
+
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.header {
+  background-color: $background-color;
+  padding-bottom: 130px;
+
+  &__bottom {
+    position: relative;
+
+    &__content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include onDesktop {
+        justify-content: start;
+        width: 50%;
+      }
+    }
+
+  }
+
+  &__image {
+    @include onTablet {
+      @include contentPaddingInline;
+    }
+  }
+
+  &__photo {
+    height: 267px;
+    width: 100%;
+    object-fit: cover;
+
+    @include onTablet {
+      height: 500px;
+
+    }
+
+    @include onDesktop {
+      position: absolute;
+      width: 42%;
+      height: 451px;
+      left: 50%;
+    }
+
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 25px;
+    color: $menu-color;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $menu-color;
+    text-align: center;
+
+    @include onDesktop {
+      text-align: left;
+    }
+
+    &--margin {
+      margin: 0;
+      margin-top: 10px;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+      @include onDesktop {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      width: 20%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+    }
+
+    @include onDesktop {
+      left: 130px;
+      transform: translateX(0);
+    }
+
+  }
+}

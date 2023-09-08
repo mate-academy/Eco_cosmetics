@@ -1,0 +1,40 @@
+.nav {
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__menu {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+  }
+  &__header__list {
+    @include onDesktop {
+      position: absolute;
+      top: 50px;
+      left: 52%;
+    }
+  }
+
+  &__link {
+    color: $nav-color;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 130%;
+    text-transform: capitalize;
+  }
+
+  &__item {
+    @include hover (transform, scale(1.2));
+    list-style: none;
+  }
+}

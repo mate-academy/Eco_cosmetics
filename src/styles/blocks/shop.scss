@@ -1,0 +1,159 @@
+.shop {
+  &__section-title {
+    text-align: center;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 2/-1;
+    }
+  }
+
+  &__content {
+    @include pageGrid;
+    position: relative;
+
+  }
+
+  &__nav {
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 1/3;
+    }
+
+    @include onDesktop {
+      grid-column: 2/6;
+    }
+    &__list {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+
+    }
+
+    &__category {
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      color: $nav-hover-color;
+      width: fit-content;
+      transition: 0.3s;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $text-color;
+        transition: transform 0.3s;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 150%;
+      }
+
+      &:hover {
+        color: $text-color;
+      }
+
+      &--face {
+        color: $text-color;
+
+        &::after {
+          transform: scale(1);
+        }
+      }
+
+    }
+  }
+
+  &__bottom {
+    @include contentPaddingInline;
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 30px;
+
+    }
+
+    @include onDesktop {
+      column-gap: 20px;
+      padding-left: 150px;
+    }
+    @include onDesktop1440 {
+      padding-left: 230px;
+    }
+
+  }
+
+  &__photo {
+    padding: 0;
+    @include hover (transform, scale(1.05));
+    &--oil {
+      width: 100%;
+
+      @include onTablet {
+        width: 100%;
+      }
+    }
+
+    &--ubtan {
+      width: 100%;
+    }
+  }
+
+  &__product {
+    &--ubtan {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &__name {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      color: $text-color;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__cost {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: $text-color;
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    @include onTablet {
+      width: 280px;
+      margin: 0 auto;
+    }
+  }
+}
