@@ -9,6 +9,7 @@
   }
 
   &__nav {
+    position: relative;
     grid-column: 1 / -1;
 
     padding-top: 30px;
@@ -60,23 +61,6 @@
 
     text-decoration: none;
 
-    &::after {
-      content: "";
-      position: absolute;
-      display: flex;
-      bottom: 0;
-      height: 1px;
-      width: 70px;
-      border-bottom: 1px solid $c-light-gray;
-      transition: $transition-time;
-      transform: scale(0);
-      transform-origin: left;
-    }
-
-    &:hover::after {
-      transform: scale(1);
-    }
-
     @include onTablet {
       font-weight: 400;
       font-size: 14px;
@@ -87,6 +71,58 @@
       font-weight: 500;
       font-size: 18px;
       line-height: 130%;
+    }
+
+    &--shop {
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 47px;
+        border-bottom: 1px solid $c-light-gray;
+        transition: $transition-time;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+    &--contact {
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 74px;
+        border-bottom: 1px solid $c-light-gray;
+        transition: $transition-time;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+    &--about {
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 55px;
+        border-bottom: 1px solid $c-light-gray;
+        transition: $transition-time;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
     }
   }
 
@@ -182,6 +218,8 @@
     text-decoration: none;
     color: $c-light-gray;
 
+    @include hover (transform, scale(1.01));
+
     @include onDesktop {
       padding-bottom: 20px;
     }
@@ -194,6 +232,8 @@
 
     text-decoration: none;
     color: $c-light-gray;
+
+    @include hover (transform, scale(1.01));
 
     @include onDesktop {
       padding-bottom: 20px;
