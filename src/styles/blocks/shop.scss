@@ -1,0 +1,141 @@
+.shop {
+  position: relative;
+  margin-top: 100px;
+
+  @include onTablet {
+    margin-top: 130px;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__background-image {
+    &-mobile {
+      background-image: url(../images/shop-background-image-mobile.png);
+      display: block;
+      position: absolute;
+      top: 101px;
+      left: 0;
+      right: 0;
+      min-height: 267px;
+      background-size: cover;
+      z-index: -1;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &-tablet-wrapper {
+      display: none;
+
+      @include onTablet {
+        margin-top: 25px;
+        grid-column: 1 / -1;
+        display: flex;
+        gap: 30px;
+      }
+
+      @include onDesktop {
+        margin-top: 50px;
+        grid-column: 2 / -1;
+        gap: 20px;
+      }
+    }
+
+    &-tablet-first {
+      display: none;
+
+      @include onTablet {
+        @include hover(transform, scale(1.03));
+        display: block;
+        background-image: url(../images/shop-background-image-first.png);
+        background-repeat: no-repeat;
+        height: 300px;
+        width: 50%;
+        background-size: cover;
+      }
+
+      @include onDesktop {
+        height: 500px;
+      }
+    }
+
+    &-tablet-second {
+      display: none;
+
+      @include onTablet {
+        @include hover(transform, scale(1.03));
+        display: block;
+        background-image: url(../images/shop-background-image-second.png);
+        background-repeat: no-repeat;
+        height: 300px;
+        width: 50%;
+        background-size: cover;
+      }
+
+      @include onDesktop {
+        height: 500px;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 305px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include onTablet {
+      margin-top: 20px;
+      gap: 15px;
+    }
+
+    @include onDesktop {
+      gap: 13px;
+    }
+
+    &--first {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        grid-column: 2 / 5;
+      }
+    }
+
+    &--second {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: 4 / -1;
+      }
+
+      @include onDesktop {
+        margin-left: 8.6%;
+        grid-column: 7 / -1;
+      }
+    }
+
+    &-text {
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 5%;
+      color: $grey-color;
+      text-transform: uppercase;
+
+      &--thin {
+        font-weight: 500;
+      }
+
+      &--bold {
+        font-weight: 600;
+      }
+    }
+  }
+}

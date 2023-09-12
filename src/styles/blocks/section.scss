@@ -1,0 +1,80 @@
+.section {
+  &-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 5%;
+    color: $green-color;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 39.6px;
+    }
+
+    &--second {
+      grid-column: 1 / -1;
+      text-align: center;
+
+      @include onTablet {
+        text-align: left;
+        grid-column: 1 / 2;
+      }
+
+      @include onDesktop {
+        grid-column: 2 / 4;
+      }
+    }
+  }
+
+  &-text {
+    font-size: 14px;
+    line-height: 21px;
+    color: $grey-color;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &--first {
+      margin-top: 10px;
+
+      @include onDesktop {
+        margin-top: 40px;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+
+      &--first {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &-learn-more {
+    text-transform: uppercase;
+    border-bottom: 1px solid $green-color;
+    width: max-content;
+    padding-bottom: 10px;
+    color: $green-color;
+    @include hover(transform, scale(1.2));
+    cursor: pointer;
+
+    &--first {
+      margin-top: 30px;
+
+      @include onDesktop {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+

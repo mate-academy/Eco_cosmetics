@@ -4,3 +4,77 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin active($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:active {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin disabled($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:disabled {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onLargeScreens {
+  @media (min-width: $large-screens-min-width) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --colomns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--colomns), 1fr);
+
+  @include onTablet {
+    --colomns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    column-gap: 20px;
+    --colomns: 12;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop() {
+    padding-inline: 50px;
+  }
+
+  @include onLargeScreens() {
+    padding-inline: 130px;
+  }
+}
+
+.container {
+  @include contentPaddingInline;
+  @include pageGrid;
+}
+
+@mixin fontPoppins {
+  font-family: 'Poppins', Arial, sans-serif;
+}
