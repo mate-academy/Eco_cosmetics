@@ -7,12 +7,25 @@
   font-weight: 500;
   line-height: 130%;
   color: #344f10;
+  position: relative;
+  padding-bottom: 10px;
 
   &::after {
-    content: "";
     display: block;
+    position: absolute;
+    content: "";
     border: 1px solid #344f10;
     width: 86px;
-    margin-top: 10px;
+    bottom: 0;
+    left: 0;
+
+    transition: transform 0.3s;
+    transform: scale(0);
+    transform-origin: left;
   }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+
 }

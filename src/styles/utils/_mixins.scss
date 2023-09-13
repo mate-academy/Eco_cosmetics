@@ -22,7 +22,11 @@
     column-width: 80px;
   }
 
-  // дописати на великі діагоналі
+  @include onLargeDesktop {
+    --columns: 12;
+    column-gap: 20px;
+    column-width: 80px;
+  }
 }
 
 @mixin onMobile {
@@ -67,4 +71,8 @@
 
 .container {
   @include contentPaddingInline;
+}
+
+@mixin transition($transition-1, $transition-2, $transition-3, $transition-4) {
+  transition: $transition-1, $transition-2, $transition-3, $transition-4;
 }

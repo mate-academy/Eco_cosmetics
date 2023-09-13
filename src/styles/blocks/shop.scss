@@ -37,19 +37,29 @@
     letter-spacing: 0.7px;
     text-transform: uppercase;
 
+    &:hover {
+      color: #333;
+    }
+
     &:last-child {
       padding-right: 0;
     }
 
-    &--active {
-      color: #333;
+    &::after {
+      content: " ";
+      display: block;
+      border: 1px solid #333;
+      margin-top: 10px;
+      left: 0;
+      bottom: 0;
 
-      &::after {
-        content: " ";
-        display: block;
-        border: 1px solid #333;
-        margin-top: 10px;
-      }
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
     }
 
     &-wrapper {
@@ -57,6 +67,7 @@
     }
 
     &-title--wrapper {
+      position: relative;
       @include onDesktop {
         padding-left: 100px;
       }
@@ -77,6 +88,9 @@
     }
 
     &-ubtan {
+
+      transition: all $duration;
+
       @include onTablet {
         background-image: url(../images/picture/shop-picture-ubtan-mobile.png);
         object-fit: cover;
@@ -89,6 +103,10 @@
         &-container {
           display: flex;
           justify-content: center;
+
+          @include onDesktop {
+            display: block;
+          }
         }
       }
 
@@ -102,6 +120,10 @@
         height: 500px;
       }
 
+      &:hover {
+        scale: 102%;
+      }
+
       &-wrapper {
         @include onTablet {
           margin-top: 25px;
@@ -113,6 +135,8 @@
         }
       }
     }
+
+    transition: all $duration;
 
     @include onTablet {
       background-image: url(../images/picture/shop-picture-tablet-1.png);
@@ -132,6 +156,10 @@
       background-repeat: no-repeat;
       width: 530px;
       height: 500px;
+    }
+
+    &:hover {
+      scale: 103%;
     }
 
     &-general {
@@ -206,6 +234,10 @@
     &-container {
       display: flex;
       justify-content: center;
+
+      @include onDesktop {
+        display: block;
+      }
     }
   }
 

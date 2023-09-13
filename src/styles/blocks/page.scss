@@ -2,6 +2,8 @@ body {
   background-color: #e4dfd3;
   padding: 0;
   margin: 0;
+
+  overflow-x: hidden;
 }
 
 h1 {
@@ -27,4 +29,37 @@ input {
 textarea {
   padding: 0;
   margin: 0;
+}
+
+.menu {
+  overflow: auto; /* to scroll the menu if needed */
+}
+
+.menu__top {
+  position: sticky; /* to keep cross always visible */
+  top: 0;
+  z-index: 1;
+  background-color: #e5e5e5;
+}
+
+.body:has(.menu__page:target) {
+  overflow: hidden; /* not to scroll the page */
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-bottom: 1px solid #344f10;
+  color: #344f10;
+  -webkit-box-shadow: 0 0 0 1000px #e4dfd3 inset;
 }
