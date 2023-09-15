@@ -1,0 +1,309 @@
+.footer {
+
+  &__content {
+    @include contentPaddingInLine;
+
+    @include pageGrid;
+
+    background-color: $c-footer;
+  }
+
+  &__nav {
+    position: relative;
+    grid-column: 1 / -1;
+
+    padding-top: 30px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      padding-top: 29px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 8;
+
+      padding-top: 60px;
+    }
+  }
+
+  &__list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include onDesktop {
+      display: flex;
+
+      gap: 40px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      padding-bottom: 11px;
+
+      @include onTablet {
+        padding-bottom: 15px;
+      }
+    }
+  }
+
+  &__link {
+    margin: 0;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+
+    color: $c-light-gray;
+
+    text-decoration: none;
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 130%;
+    }
+
+    &--shop {
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 47px;
+        border-bottom: 1px solid $c-light-gray;
+        transition: $transition-time;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+    &--contact {
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 74px;
+        border-bottom: 1px solid $c-light-gray;
+        transition: $transition-time;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+    &--about {
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 55px;
+        border-bottom: 1px solid $c-light-gray;
+        transition: $transition-time;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__messengers {
+    grid-column: 1 / -1;
+
+    display: flex;
+    padding-top: 20px;
+    gap: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      padding-top: 7px;
+    }
+
+    @include onDesktop {
+      grid-column: 8  / -1;
+      grid-row: 2;
+
+      padding-top: 30px;
+      padding-bottom: 66px;
+      gap: 14px;
+    }
+  }
+
+  &__logo--facebook {
+    content: url(../images/icons/facebook-image.svg);
+
+    width: 20px;
+    height: 20px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__logo--instagram {
+    content: url(../images/icons/Instagram-image.svg);
+
+    width: 20px;
+    height: 20px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__support {
+    grid-column: 1 / -1;
+    padding-top: 40px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: $c-light-gray;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+      grid-row: 1;
+
+      padding-top: 29px;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
+
+      padding-top: 61px;
+
+      font-size: 16px;
+    }
+  }
+
+  &__country,
+  &__e-mail,
+  &__phone,
+  &__available {
+    margin: 0;
+
+  }
+  &__country {
+    padding-bottom: 10px;
+
+    @include onTablet {
+      padding-bottom: 7px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 19px;
+    }
+  }
+
+  &__e-mail {
+    display: block;
+    padding-bottom: 10px;
+
+    text-decoration: none;
+    color: $c-light-gray;
+
+    @include hover (transform, scale(1.01));
+
+    @include onDesktop {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__phone {
+    display: block;
+
+    padding-bottom: 10px;
+
+    text-decoration: none;
+    color: $c-light-gray;
+
+    @include hover (transform, scale(1.01));
+
+    @include onDesktop {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__mountain {
+    position: relative;
+    grid-column: 1 / -1;
+
+    margin: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-inline: 40px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+
+    color: $c-light-gray;
+
+    text-align: center;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+
+      font-weight: 400;
+
+      padding-top: 50px;
+      padding-inline: 0;
+      padding-bottom: 30px;
+
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 8;
+
+      padding: 0;
+      padding-top: 30px;
+      padding-bottom: 62px;
+
+      font-size: 18px;
+    }
+  }
+
+  &__copyright {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+    }
+
+    &--svg {
+      @include onDesktop {
+        font-size: 14px;
+        vertical-align: text-top;
+      }
+    }
+  }
+
+  &__svg {
+    vertical-align: text-top;
+
+    @include onTablet {
+      vertical-align: baseline;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

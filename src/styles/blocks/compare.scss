@@ -1,0 +1,135 @@
+.compare {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  padding-bottom: 100px;
+
+  @include onTablet {
+    padding-bottom: 130px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 200px;
+  }
+
+  &__content {
+    @include pageGrid;
+
+    @include onTablet {
+      @include contentPaddingInLine;
+    }
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      height: 500px;
+    }
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__bottom {
+    grid-column: 1 / -1;
+
+    padding-inline: 20px;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+
+      padding: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+      order: -1;
+    }
+  }
+
+  &__image {
+    display: flex;
+    content: url(../images/photos/header-image-mobile.png);
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+
+    cursor: default;
+
+    @include onTablet {
+      content: url(../images/photos/header-image-tablet.png);
+
+      width: 100%;
+
+    }
+
+    @include onDesktop {
+      content: url(../images/photos/header-image-desktop.png);
+      width: 100%;
+    }
+  }
+
+  &__title {
+    padding-top: 25px;
+
+    font-size: 24px;
+    line-height: 150%;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      padding-top: 50px;
+
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 0;
+
+      text-transform: capitalize;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      padding-top: 0;
+
+      font-size: 60px;
+      line-height: 130%;
+      text-align: left;
+
+      text-transform: none;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 5%;
+    margin: 0;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    &:hover {
+      background-color: $c-light-gray;
+      color: $c-gray-1;
+    }
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+}

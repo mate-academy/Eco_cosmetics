@@ -1,0 +1,246 @@
+.creators {
+  @include contentPaddingInLine;
+
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 139px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    position: relative;
+    @include pageGrid;
+  }
+
+  &__subtitle {
+    position: absolute;
+    top: 29px;
+    height: 18px;
+    color: $c-dark-green-transparent;
+    transform: translateY(118px) rotate(-90deg);
+
+    &-text {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        display: inline-block;
+        max-width: 132px;
+        height: fit-content;
+
+        white-space: nowrap;
+      }
+    }
+
+    &-line {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        display: inline-block;
+        left: -55px;
+        bottom: 4px;
+        height: 1px;
+        width: 88.08px;
+        transform: translateX(-50%);
+        background: $c-dark-green-transparent;
+      }
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+
+    color: $c-dark-green;
+
+    text-transform: uppercase;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+    }
+
+    @include onDesktop1440 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 20px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: $c-gray-1;
+
+    @include onTablet {
+      margin-bottom: 15px;
+
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        margin-bottom: 20px;
+
+        display: block;
+
+        font-size: 16px;
+        line-height: 150%;
+
+      }
+    }
+  }
+
+  &__button--learn {
+    position: relative;
+    display: block;
+
+    height: 29px;
+
+    margin-top: 30px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+
+    color: $c-dark-green;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: 0;
+      height: 1px;
+      width: 86px;
+      border-bottom: 1px solid $c-dark-green;
+      transition: $transition-time;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: start;
+    }
+  }
+
+  &__button--contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    width: 280px;
+    height: 60px;
+
+    margin-top: 25px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+
+    color: $c-gray-6;
+    background-color: $c-gray-1;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      transition: $transition-time;
+
+      border: 1px solid $c-gray-1;
+      background-color: $c-light-gray;
+      color: $c-gray-1;
+    }
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__image {
+    background-size: cover;
+    background-position: center;
+    cursor: default;
+
+    @include onTablet {
+      display: grid;
+
+      grid-column: 4 / -1;
+
+      background-image: url(../images/photos/creators-image-tablet.png);
+
+      width: 100%;
+      height: 440px;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/photos/creators-image-desktop.png);
+
+      grid-column: 7 / -1;
+
+      height: 659px;
+    }
+
+    @include onDesktop1440 {
+      background-image: url(../images/photos/creators-image-desktop-1440.png);
+
+      height: 645px;
+    }
+  }
+}

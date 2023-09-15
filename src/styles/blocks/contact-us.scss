@@ -1,0 +1,207 @@
+.contact-us {
+  padding-bottom: 100px;
+
+  @include contentPaddingInLine;
+
+  &__content {
+    @include pageGrid;
+  }
+
+  &__comment {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    top: -125px;
+    left: -39px;
+    height: 18px;
+
+    color: $c-dark-green-transparent;
+    transform: translateY(118px) rotate(-90deg);
+
+    &--text {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        display: inline-block;
+
+        max-width: 35px;
+
+        height: fit-content;
+
+        white-space: nowrap;
+      }
+    }
+
+    &--line {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        display: inline-block;
+
+        left: -53px;
+        bottom: 5px;
+        height: 1px;
+        width: 88.08px;
+
+        transform: translateX(-50%);
+        background: $c-dark-green-transparent;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-bottom: 10px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.6px;
+
+    color: $c-dark-green;
+
+    text-transform: uppercase;
+
+    @include onDesktop {
+      padding-bottom: 30px;
+
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding-bottom: 30px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: $c-gray-1;
+
+    @include onTablet {
+      padding-bottom: 20px;
+
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__form {
+    margin: 0;
+  }
+
+  &__field {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+
+    height: 17px;
+
+    background-color: $c-light-gray;
+
+    width: 280px;
+
+    border: none;
+    border-bottom: 1px solid $c-gray-4;
+
+    padding-bottom: 5px;
+
+    @include onDesktop {
+      padding-bottom: 10px;
+    }
+
+    &:not(:nth-child(3)) {
+      margin-bottom: 25px;
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &::placeholder {
+      color: $c-gray;
+
+      @include onDesktop {
+        font-size: 18px;
+        line-height: 130%;
+      }
+    }
+
+    &:focus {
+      border: none;
+      border-bottom: 1px solid $c-gray-1;
+      transition: $transition-time;
+
+      outline: none;
+    }
+  }
+
+  &__textarea {
+    margin-top: 45px;
+    resize: none;
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__button {
+    margin: 0;
+
+    width: 280px;
+    height: 60px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+
+    color: $c-gray-6;
+    background-color: $c-gray-1;
+    cursor: pointer;
+
+    text-transform: uppercase;
+
+    border: none;
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__image {
+    cursor: default;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+
+    @include onTablet {
+      content: url(../images/photos/contact-us-image-tablet.png);
+
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      content: url(../images/photos/contact-us-image-desktop.png);
+
+      grid-column: 7 / -1;
+    }
+  }
+}

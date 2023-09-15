@@ -1,0 +1,54 @@
+.menu {
+  background-color: $c-gray-1;
+
+  box-sizing: border-box;
+  height: 100vh;
+
+  overflow-y: auto;
+
+  &__content {
+    $headerTopPadding: 20px;
+
+    padding: $headerTopPadding 0;
+
+    @include onTablet {
+      $headerTopPadding: 28px;
+
+      padding: $headerTopPadding 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    row-gap: 41px;
+    margin: 0;
+    padding: 45px 0 0;
+
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -10px;
+      height: 1px;
+      width: 100%;
+      background-color: $c-gray;
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 130%;
+    color: $c-light-gray;
+    text-decoration: none;
+  }
+}

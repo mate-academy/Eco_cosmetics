@@ -1,0 +1,187 @@
+.ing {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 121px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+    @include contentPaddingInLine;
+  }
+
+  &__content {
+    @include pageGrid;
+  }
+
+  &__subtitle {
+    position: relative;
+    top: -53px;
+    left: -40px;
+    height: 18px;
+    color: $c-dark-green-transparent;
+    transform: translateY(118px) rotate(-90deg);
+
+    &--text {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        display: inline-block;
+        max-width: 80px;
+        height: fit-content;
+
+        white-space: nowrap;
+      }
+    }
+
+    &--line {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        display: inline-block;
+        left: -55px;
+        bottom: 5px;
+        height: 1px;
+        width: 88.08px;
+        transform: translateX(-50%);
+        background: $c-dark-green-transparent;
+      }
+    }
+  }
+
+  &__title {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+
+    margin: 0;
+    margin-bottom: 20px;
+    padding-inline: 20px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.6px;
+
+    color: $c-dark-green;
+
+    text-transform: uppercase;
+
+    @include onTablet {
+      grid-column: 1 / span 3;
+      grid-row: 2;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__list {
+    grid-column: 1;
+    grid-row: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include onTablet {
+      grid-column: 2 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 8;
+    }
+  }
+
+  &__image {
+    content: url(../images/photos/powder-image-mobile.png);
+
+    grid-column: 2;
+    grid-row: 2;
+
+    cursor: default;
+    width: 100%;
+
+    @include onTablet {
+      content: url(../images/photos/powder-image-tablet.png);
+
+      grid-column: 4 / span 6;
+    }
+
+    @include onDesktop {
+      content: url(../images/photos/powder-image-desktop.png);
+
+      grid-column: 8 / span 4;
+    }
+  }
+
+  &__item {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.8px;
+
+    color: $c-gray-1;
+    text-align: right;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    grid-column: 1 / span 2;
+    grid-row: 3;
+
+    margin: 0;
+    margin-top: 30px;
+    padding-inline: 20px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+
+    color: $c-dark-green;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: flex;
+      bottom: -10px;
+      height: 1px;
+      width: 86px;
+      border-bottom: 1px solid $c-dark-green;
+      transition: $transition-time;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include onTablet {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+      align-self: end;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / span 2;
+      grid-row: 2;
+      align-self: end;
+    }
+  }
+}

@@ -1,0 +1,202 @@
+.about-our-brand {
+  padding-top: 100px;
+  margin-bottom: 111px;
+
+  @include contentPaddingInLine;
+
+  @include onTablet {
+    padding-top: 130px;
+    margin-bottom: 100px;
+  }
+
+  @include onDesktop {
+    padding-top: 200px;
+  }
+
+  &__content {
+    position: relative;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__left {
+    position: relative;
+    grid-column: 1 / 4;
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__right {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    grid-column: 4 / -1;
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__subtitle {
+    position: absolute;
+    top: 72px;
+    height: 18px;
+    color: $c-dark-green-transparent;
+    transform: translateY(118px) rotate(-90deg);
+
+    &-text {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        display: inline-block;
+        max-width: 192px;
+        height: fit-content;
+
+        white-space: nowrap;
+      }
+    }
+    &-line {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        display: inline-block;
+        left: -70px;
+        bottom: 7px;
+        height: 1px;
+        width: 100px;
+        transform: translateX(-50%);
+        background: $c-dark-green-transparent;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-bottom: 10px;
+
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    color: $c-dark-green;
+
+    @include onDesktop {
+      padding-bottom: 40px;
+
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+
+    }
+  }
+
+  &__text-2 {
+    display: none;
+
+    margin: 0;
+    padding-bottom: 30px;
+
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+
+    color: $c-gray-1;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__text-1 {
+    margin: 0;
+    padding-bottom: 30px;
+
+    font-size: 14px;
+    line-height: 130%;
+    font-weight: 400;
+
+    color: $c-gray-1;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__button {
+    position: relative;
+    font-size: 14px;
+    line-height: 130%;
+    font-weight: 500;
+    padding-bottom: 8px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $c-dark-green;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -10px;
+      height: 1px;
+      width: 86px;
+      border-bottom: 1px solid $c-dark-green;
+      transition: $transition-time;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__image-1 {
+    display: none;
+
+    cursor: default;
+
+    width: 100%;
+
+    @include onTablet {
+      display: flex;
+      height: 321px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      background-image: url(../images/photos/about-image-1-tablet.png);
+    }
+
+    @include onDesktop {
+      background-image: url(../images/photos/about-image-1-desktop.png);
+      width: 380px;
+      height: 529px;
+    }
+  }
+
+  &__image-2 {
+    display: none;
+
+    cursor: default;
+
+    @include onDesktop {
+      display: flex;
+      width: 180px;
+      height: 430px;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      background-image: url(../images/photos/about-image-2-desktop.png);
+    }
+  }
+}

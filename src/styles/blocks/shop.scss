@@ -1,0 +1,238 @@
+.shop {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    @include pageGrid;
+
+    @include onTablet {
+      @include contentPaddingInLine;
+    }
+
+  }
+
+  &__subtitle {
+    position: relative;
+    top: -118px;
+    left: -40px;
+    height: 18px;
+    color: $c-dark-green-transparent;
+    transform: translateY(118px) rotate(-90deg);
+
+    &-text {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        display: inline-block;
+        max-width: 35px;
+        height: fit-content;
+
+        white-space: nowrap;
+      }
+    }
+
+    &-line {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        display: inline-block;
+        left: -60px;
+        bottom: 5px;
+        height: 1px;
+        width: 100px;
+        transform: translateX(-50%);
+        background: $c-dark-green-transparent;
+      }
+    }
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+
+    padding-inline: 20px;
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+      padding-inline: 0;
+    }
+  }
+
+  &__product {
+    margin-top: 15px;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      display: flex;
+
+      margin-top: 25px;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+
+      margin-top: 50px;
+      gap: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.8px;
+
+    color: $c-dark-green;
+
+    text-transform: uppercase;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 10px;
+
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__nav {
+    &-list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      column-gap: 34px;
+    }
+
+    &-item {
+      position: relative;
+      padding-bottom: 8px;
+      cursor: pointer;
+      transition: $transition-time;
+    }
+
+    &-link {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.7px;
+      color: $c-gray;
+
+      text-decoration: none;
+      text-transform: uppercase;
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 2px solid $c-gray-1;
+        transition: $transition-time;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+
+      &:hover {
+        color: $c-gray-1;
+      }
+    }
+  }
+
+  &__product--tablet {
+    display: none;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    place-self: center;
+
+    margin-top: 30px;
+
+    @include onTablet {
+      padding-top: 50px;
+    }
+
+    @include onDesktop {
+      padding-top: 40px;
+    }
+  }
+
+  &__button--text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+
+    width: 280px;
+    height: 60px;
+
+    color: $c-gray-6;
+    background-color: $c-gray-1;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      transition: $transition-time;
+
+      border: 1px solid $c-gray-1;
+      color: $main-text-color;
+      background-color: $c-light-gray;
+    }
+  }
+}
+
+.link--active {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0.7px;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  position: relative;
+  padding-bottom: 9px;
+  color: inherit;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid $c-gray-1;
+  }
+}
