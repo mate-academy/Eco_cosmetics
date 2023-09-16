@@ -1,0 +1,90 @@
+.header {
+  // height: 100vh; // next elements will go over if turnd on
+  box-sizing: border-box;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &-image {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      height: 267px;
+      margin-bottom: 25px;
+    }
+
+    &-title {
+      margin-inline: 20px;
+      margin-bottom: 10px;
+      color: $c-grey-dark;
+      font-size: 24px;
+      font-weight: 600;
+      font-family: inherit;
+      line-height: 130%;
+    }
+
+    &-paragraph {
+      margin-inline: 20px;
+      margin-bottom: 30px;
+      color: $c-grey-dark;
+      line-height: 150%;
+    }
+
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: $c-grey-dark;
+  transform: translateX(-100%);
+  transition: ease-in-out 500ms;
+
+  &:target {
+    transform: translateX(0);
+    transition: ease-in-out 300ms;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 20px 20px;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 80px 20px;
+
+    &-link {
+      position: relative;
+      color: $bg-color;
+      text-decoration: none;
+      margin-bottom: 40px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 130%;
+      width: 100%;
+      text-align: center;
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 100%;
+        bottom: -10px;
+        height: 1px;
+        background-color: $bg-color;
+      }
+
+    }
+  }
+}
