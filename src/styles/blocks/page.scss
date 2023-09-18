@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: $main-black-color;
+  transition: all 0.3s;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  height: 100vh;
+
+  &-body {
+    background-color: $main-beige-color;
+    min-width: 320px;
+
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 1;
+    transform: translateX(-200%);
+    transition: transform 0.3s;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+      background-color: $main-black-color;
+      z-index: 100;
+    }
+  }
+
+  &__product {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    height: 100%;
+    transform: translateX(-200%);
+    transition: transform 0.3s;
+    pointer-events: none;
+    overflow: auto;
+    background-color: $main-beige-color;
+    padding-block-end: 20px;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+      background-color: $main-beige-color;
+      z-index: 150;
+    }
+  }
+
+  &__cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    height: 100vh;
+    transform: translateX(-200%);
+    transition: transform 0.3s;
+    pointer-events: none;
+    overflow: auto;
+    background-color: $main-beige-color;
+    padding-block-end: 20px;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+      background-color: $main-beige-color;
+      z-index: 200;
+    }
+  }
+}

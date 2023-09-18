@@ -1,0 +1,52 @@
+.top-bar {
+  padding-block: 15px;
+  @include onTablet {
+    padding-block: 23px;
+  }
+  @include onDesktop {
+    padding-block: 40px;
+  }
+
+  &--mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+  }
+
+  &__nav__link {
+    transition: all 0.3s ease;
+    padding-bottom: 10px;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid $dark-green-color;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__logo {
+    height: 50px;
+  }
+
+  &--product {
+    margin-bottom: 20px;
+  }
+}

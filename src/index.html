@@ -1,13 +1,1612 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Eco cosmetics</title>
+    <link
+      rel="shortcut icon"
+      href="images/logo-075.png"
+      type="image/x-icon"
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    >
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
+  <body class="page-body">
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__content">
+          <div class="top-bar">
+            <div class="top-bar--mobile">
+              <a href="#menu" class="icon icon--menu"></a>
+              <a href="#" class="icon icon--logo"></a>
+              <a href="#cart" class="icon icon--buy"></a>
+            </div>
+
+            <div class="top-bar--desktop">
+              <a href="#" class="top-bar__logo-link">
+                <img
+                  src="images/logo-2x.png"
+                  alt="Logo img"
+                  class="top-bar__logo"
+                >
+              </a>
+              <nav class="nav top-bar__nav">
+                <ul class="nav__list top-bar__nav-list">
+                  <li class="nav__item">
+                    <a href="#product" class="nav__link top-bar__nav__link">shop</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="#contacts" class="nav__link top-bar__nav__link">contact</a>
+                  </li>
+                  <li class="nav__item">
+                    <a href="#about-creators" class="nav__link top-bar__nav__link">about</a>
+                  </li>
+                </ul>
+              </nav>
+              <a href="#cart" class="icon icon--buy"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <aside class="menu page__menu" id="menu">
+      <div class="top-bar menu__top">
+        <a href="#" class="icon icon--close--white"></a>
+      </div>
+
+      <nav class="menu__nav top-bar__nav">
+        <ul class="nav__list menu__list">
+          <li class="nav__item">
+            <a href="#product" class="nav__link">shop</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contacts" class="nav__link">contact</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about-creators" class="nav__link">about</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <aside class="cart page__cart" id="cart">
+      <div class="container">
+        <div class="top-bar top-bar--mobile top-bar--product">
+          <a href="#menu" class="icon icon--menu"></a>
+          <a href="#" class="icon icon--logo"></a>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+
+        <div class="top-bar top-bar--desktop">
+          <a href="#" class="top-bar__logo-link">
+            <img
+              src="images/logo-2x.png"
+              alt="Logo img"
+              class="top-bar__logo"
+            >
+          </a>
+          <nav class="nav top-bar__nav">
+            <ul class="nav__list top-bar__nav-list">
+              <li class="nav__item">
+                <a href="#products" class="nav__link">shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">contact</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about-creators" class="nav__link">about</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+      </div>
+
+      <div class="cart__content">
+        <div class="cart__content--top">
+          <div class="cart__order">
+            <h3 class="cart__title">Your order</h3>
+            <div class="cart__order--flex">
+              <img
+                src="images/products/body-butter.png"
+                alt="Body butter"
+                class="cart__img"
+              >
+              <div class="cart__product">
+                <p class="cart__product--title">Bali body butter</p>
+                <p class="cart__product--quantity">1 piece</p>
+              </div>
+            </div>
+            <hr class="hr-line">
+          </div>
+          <div class="cart__checkout-form">
+            <div class="cart__checkout--flex">
+              <p class="cart--text">Subtotal:</p>
+              <p class="cart--price">200UAH</p>
+            </div>
+            <div class="cart__checkout--flex">
+              <p class="cart--text">Shipping:</p>
+              <p class="cart--price">80UAH</p>
+            </div>
+            <hr class="hr-line--total">
+            <div class="cart__checkout--flex">
+              <p class="cart--text">Total:</p>
+              <p class="cart--price">280UAH</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart__content--bottom">
+          <div class="cart__payment">
+            <p class="cart__payment--title cart--text">Express checkout</p>
+            <div class="cart__buttons">
+              <button
+                class="
+                  btn
+                  cart__btn
+                  cart__btn--paypal"
+              >
+                <img src="images/paypal.svg" alt="paypal">
+              </button>
+              <button
+                class="
+                  btn
+                  cart__btn
+                  cart__btn--gpay"
+              >
+                <img
+                  class="gpay-img"
+                  src="images/gpay.svg"
+                  alt="Google Pay"
+                >
+              </button>
+            </div>
+          </div>
+          <div class="cart__contacts">
+            <form
+              action="#"
+              method="post"
+              onsubmit="this.reset(); return false;"
+            >
+              <div>
+                <label for="cart-email">Email</label>
+                <input
+                  type="email"
+                  class="cart__input"
+                  id="cart-email"
+                  placeholder="you@your-email.com"
+                  required
+                >
+              </div>
+              <div>
+                <label for="cart-country">Country</label>
+                <input
+                  type="text"
+                  class="cart__input"
+                  id="cart-country"
+                  placeholder="Write your country"
+                  required
+                >
+              </div>
+              <div>
+                <label for="cart-name">First Name</label>
+                <input
+                  type="text"
+                  class="cart__input"
+                  id="cart-name"
+                  placeholder="First Name"
+                  required
+                >
+              </div>
+              <div>
+                <label for="cart-surname">Last Name</label>
+                <input
+                  type="text"
+                  class="cart__input"
+                  id="cart-surname"
+                  placeholder="Last Name"
+                  required
+                >
+              </div>
+              <div>
+                <label for="cart-address1">Address</label>
+                <input
+                  type="text"
+                  class="cart__input"
+                  id="cart-address1"
+                  placeholder="Street Address"
+                  required
+                >
+              </div>
+              <div>
+                <label for="cart-address2">Address 2</label>
+                <input
+                  type="text"
+                  class="cart__input"
+                  id="cart-address2"
+                  placeholder="Apt, Suite etc. | Optional"
+                  required
+                >
+              </div>
+              <div>
+                <label for="cart-city">City</label>
+                <input
+                  type="text"
+                  class="cart__input"
+                  id="cart-city"
+                  placeholder="City"
+                  required
+                >
+              </div>
+              <div>
+                <label for="cart-state">State</label>
+                <input
+                  type="text"
+                  class="cart__input"
+                  id="cart-state"
+                  placeholder="State"
+                  required
+                >
+              </div>
+              <div>
+                <label for="cart-zip">Zip</label>
+                <input
+                  type="text"
+                  class="cart__input"
+                  id="cart-zip"
+                  placeholder="Zip / Postal Code"
+                  required
+                >
+              </div>
+              <div>
+                <label for="cart-phone">Phone</label>
+                <input
+                  type="tel"
+                  class="cart__input"
+                  id="cart-phone"
+                  placeholder="Phone Number | Required"
+                  required
+                >
+              </div>
+              <button class="btn cart__btn--form">Continue</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="container">
+        <div class="main__content">
+          <section class="hero" id="hero">
+            <img
+              src="images/products/facecream.png"
+              alt="face cream img"
+              class="hero__img"
+            >
+            <div class="hero__wrapper">
+              <h2
+                class="
+                  section-title
+                  section-title--hero"
+              >
+                Brand of eco-cosmetics and magic candles
+              </h2>
+              <p
+                class="
+                  section-description
+                  section-description--hero"
+              >
+                20% of sales at a wild bird shelter
+              </p>
+              <button class="btn hero__btn">
+                <a href="#product" class="btn__link hero__link">Shop</a>
+              </button>
+            </div>
+          </section>
+
+          <section class="information" id="information">
+            <span class="line information__line "></span>
+            <p
+              class="
+              section-description
+              section-description--information"
+            >
+              Biologists say that birds are indicators of the environmental situation,
+              and over the past half century, the population of seabirds has declined by 70%.
+              Birds die due to environmental problems and human intervention in the natural environment.
+            </p>
+            <h2
+              class="
+              information__title"
+            >
+              if you choose the gifts of nature and care about it’s - scroll down
+            </h2>
+            <span class="line information__line--2"></span>
+          </section>
+
+          <section class="about-brand" id="about-brand">
+            <div class="vertical-menu about-brand__vertical-menu">
+              <span class="line vertical-line"></span>
+              <p class="vertical-text aboud-brand__vertical-text">witch of mountain winds</p>
+            </div>
+
+            <div class="about-brand__grid">
+              <div class="about-brand__wrapper">
+                <h2
+                  class="
+                  section-title section-title--about-brand"
+                >
+                  about our brand
+                </h2>
+                <p
+                  class="
+                  section-description
+                  section-description--about-brand--top"
+                >
+                  Our brand cosmetics are made from natural ingredients and we are promoting them to the masses.
+                  Shampoo, hair conditioner, soap - in recycled paper.
+                  Creams, oils, washing products in glass containers with recycled paper labels.
+                  No synthetics and microplastics in cosmetics.
+                  And the packaging from it can be returned for recycling or reused.
+                </p>
+                <p
+                  class="
+                    section-description
+                    section-description--about-brand--bottom"
+                >
+                  We are all neighbors of one big House.
+                  And we must protect what we have.
+                  Destroying everything around for the sake of consumerism and imaginary convenience,
+                  we destroy what does not belong to us.
+                  Be aware of your choice!
+                </p>
+                <button class="learn-btn about-brand__btn">
+                  <a href="#" class="learn-link about-brand__link">Learn More</a>
+                </button>
+              </div>
+              <div class="about-brand__img-container"></div>
+              <img
+                src="images/products/crocus.png"
+                alt="Candle img"
+                class="about-brand__img--2"
+              >
+            </div>
+          </section>
+
+          <section class="product" id="product">
+            <div class=" product__vertical-menu">
+              <span class="product__vertical-line"></span>
+              <p class="product__vertical-text">shop</p>
+            </div>
+            <h2
+              class="
+              section-title
+              section-title--product"
+            >
+              shop
+            </h2>
+            <div class="product__wrapper">
+              <input
+                type="radio"
+                class="product__input"
+                name="product__tab"
+                id="tab1"
+                checked
+              >
+              <label
+                for="tab1"
+                class="product__label"
+              >
+                Face
+              </label>
+              <div class="product__content product__content--grid">
+                <div class="product__content--left">
+                  <a href="#product1" class="product__link">
+                    <img
+                      src="images/products/hydrophilic-oil.png"
+                      alt="Hydrophilic Oil"
+                      class="product__img"
+                      href="#product1"
+                    >
+                  </a>
+                  <h3 class="product__title">
+                    <a href="#product1" class="product__title-link">
+                      Hydrophilic oil
+                    </a>
+                  </h3>
+                  <p class="product__price">160 UAH</p>
+                </div>
+
+                <div class="product__content--right">
+                  <a href="#product1-2" class="product__link">
+                    <img
+                      src="images/products/ubtan.png"
+                      alt="Ubtan"
+                      class="product__img"
+                    >
+                  </a>
+                  <a href="#product1-2" class="product__title-link">
+                    <h3 class="product__title">Ubtan</h3>
+                  </a>
+                  <p class="product__price">160 UAH</p>
+                </div>
+              </div>
+              <input
+                type="radio"
+                class="product__input"
+                name="product__tab"
+                id="tab2"
+              >
+              <label
+                for="tab2"
+                class="product__label"
+              >
+                Body
+              </label>
+              <div class="product__content product__content--grid">
+                <div class="product__content--left">
+                  <a href="#product2" class="product__link">
+                    <img
+                    src="images/products/body-butter.png"
+                    alt="Body butter"
+                    class="product__img"
+                  >
+                  </a>
+                  <a href="#product2" class="product__title-link">
+                    <h3 class="product__title">Bali body butter</h3>
+                  </a>
+                  <p class="product__price">200 UAH</p>
+                </div>
+
+                <div class="product__content--right">
+                  <a href="#product2-2" class="product__link">
+                    <img
+                    src="images/products/foam-body-cleanser.png"
+                    alt="Body cleanser"
+                    class="product__img"
+                  >
+                  </a>
+                  <a href="#product2-2" class="product__title-link">
+                    <h3 class="product__title">Firm foam cleanser</h3>
+                  </a>
+                  <p class="product__price">80 UAH</p>
+                </div>
+              </div>
+              <input
+                type="radio"
+                class="product__input"
+                name="product__tab"
+                id="tab3"
+              >
+              <label
+                for="tab3"
+                class="product__label"
+              >
+                Hair
+              </label>
+              <div class="product__content product__content--grid">
+                <div class="product__content--left">
+                  <a href="#product3" class="product__link">
+                    <img
+                    src="images/products/shampoo.png"
+                    alt="Shampoo"
+                    class="product__img"
+                  >
+                  </a>
+                  <a href="#product3" class="product__title-link">
+                    <h3 class="product__title">Almond Shampoo with Lavender Oil</h3>
+                  </a>
+                  <p class="product__price">80 UAH</p>
+                </div>
+
+                <div class="product__content--right">
+                  <a href="#product3-2" class="product__link">
+                    <img
+                    src="images/products/hair-conditioner.png"
+                    alt="Hair conditioner"
+                    class="product__img"
+                  >
+                  </a>
+                  <a href="#product3-2" class="product__title-link">
+                    <h3 class="product__title">Avocado hair conditioner</h3>
+                  </a>
+                  <p class="product__price">200 UAH</p>
+                </div>
+              </div>
+              <input
+                type="radio"
+                class="product__input"
+                name="product__tab"
+                id="tab4"
+              >
+              <label
+                for="tab4"
+                class="product__label"
+              >
+                Candles
+              </label>
+              <div class="product__content product__content--grid">
+                <div class="product__content--left">
+                  <a href="#product4" class="product__link">
+                    <img
+                    src="images/products/candle-2.png"
+                    alt="Candle 2"
+                    class="product__img"
+                  >
+                  </a>
+                  <a href="#product4" class="product__title-link">
+                    <h3 class="product__title">Perfect love candle</h3>
+                  </a>
+                  <p class="product__price">200 UAH</p>
+                </div>
+
+                <div class="product__content--right">
+                  <a href="#product4-2" class="product__link">
+                    <img
+                    src="images/products/candles-3.png"
+                    alt="Candle 3"
+                    class="product__img"
+                  >
+                  </a>
+                  <a href="#product4-2" class="product__title-link">
+                    <h3 class="product__title">Lita candles</h3>
+                  </a>
+                  <p class="product__price">220 UAH</p>
+                </div>
+              </div>
+            </div>
+            <button class="btn product__btn">
+              <a href="#" class="btn__link">All products</a>
+            </button>
+          </section>
+
+          <section class="about-creators" id="about-creators">
+            <div class="about-creators__wrapper">
+              <h2
+                class="
+                section-title
+                section-title--about-creators"
+              >
+                About the creators
+              </h2>
+              <div class="section-description--about-creators--container">
+                <p
+                  class="
+                    section-description
+                    section-description--about-creators--top"
+                >
+                  My name is Victoria, I’m a master at candle making and natural cosmetics.
+                  In the past, a cynologist, was engaged in herbs, made layouts on the Tarot.
+                </p>
+                <p
+                  class="
+                    section-description
+                    section-description--about-creators--center"
+                >
+                  I am also a volunteer to save wild birds in distress,
+                  a consultant to the Phoenix Wildlife Rehabilitation Center,
+                  a member of the Society for the Conservation of Birds of Ukraine
+                  with the support of Birdlife International.
+                </p>
+                <p
+                  class="
+                    section-description
+                    section-description--about-creators--bottom"
+                >
+                  My husband and I live in the Carpathian region in the city of Chernivtsi.
+                  I dream of my center for the rehabilitation of wild birds,
+                  as it is very difficult to rescue birds in a rented communal apartment.
+                </p>
+              </div>
+              <button class="learn-btn about-creators__btn">
+                <a href="#" class="learn-link about-creators__link">Learn More</a>
+              </button>
+              <button class="about-creators__btn--contact btn">
+                <a href="#contacts" class="btn__link">To contact us</a>
+              </button>
+            </div>
+            <img
+              src="images/bird-1.png"
+              alt="Bird in the hands"
+              class="about-creators__img"
+            >
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <aside class="page__product" id="product1">
+      <div class="container">
+        <div
+          class="
+            top-bar
+            top-bar--mobile
+            top-bar--product"
+        >
+          <a href="#menu" class="icon icon--menu"></a>
+          <a href="#" class="icon icon--logo"></a>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+        <div class="top-bar top-bar--desktop">
+          <a href="#" class="top-bar__logo-link">
+            <img
+              src="images/logo-2x.png"
+              alt="Logo img"
+              class="top-bar__logo"
+            >
+          </a>
+          <nav class="nav top-bar__nav">
+            <ul class="nav__list top-bar__nav-list">
+              <li class="nav__item">
+                <a href="#products" class="nav__link">shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">contact</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about-creators" class="nav__link">about</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+      </div>
+      <div class="product__content--page">
+        <div class="product__aside">
+          <div class="product__aside--left">
+            <h3 class="
+              product__title
+              product__title--aside--hidden"
+            >
+              Hydrophilic oil
+            </h3>
+            <p class="
+              product__price
+              product__price--aside--hidden"
+            >
+              160 UAH
+            </p>
+            <img
+              src="images/products/hydrophilic-oil.png"
+              alt="Hydrophilic Oil"
+              class="product__img--page"
+            >
+          </div>
+          <div class="product__aside--right">
+            <h3
+              class="
+                product__title
+                product__title--aside"
+            >
+              Hydrophilic oil
+            </h3>
+            <p class="product__price product__price--aside">160 UAH</p>
+            <p class="product__size product__size--aside">30 G</p>
+            <button class="btn product__btn product__btn--aside">
+              <a href="#product" class="btn__link">Add to bag</a>
+            </button>
+            <p class="product__description--ingrid">
+              <span class="product__description--green">Ingredients:</span>
+              cocosulfate, aloe hydrolate, sweet almond oil, wheat proteins,
+              chamomile grass, lavender essential oil.
+            </p>
+            <p class="product__description--appl">
+              <span class="product__description--green">Application:</span>
+              foam the shampoo in your hands and apply foam on the hair
+              or draw a block over wet hair, foam, massage, rinse,
+              apply balm or conditioner.
+            </p>
+            <button
+              class="
+                btn
+                product__btn
+                product__btn--aside
+                product__btn--aside--desktop"
+            >
+              <a href="#product" class="btn__link">Add to bag</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="page__product" id="product1-2">
+      <div class="container">
+        <div
+          class="
+            top-bar
+            top-bar--mobile
+            top-bar--product"
+        >
+          <a href="#menu" class="icon icon--menu"></a>
+          <a href="#" class="icon icon--logo"></a>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+
+        <div class="top-bar top-bar--desktop">
+          <a href="#" class="top-bar__logo-link">
+            <img
+              src="images/logo-2x.png"
+              alt="Logo img"
+              class="top-bar__logo"
+            >
+          </a>
+          <nav class="nav top-bar__nav">
+            <ul class="nav__list top-bar__nav-list">
+              <li class="nav__item">
+                <a href="#products" class="nav__link">shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">contact</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about-creators" class="nav__link">about</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+      </div>
+      <div class="product__content--page">
+        <div class="product__aside">
+          <div class="product__aside--left">
+            <h3 class="
+              product__title
+              product__title--aside--hidden"
+            >
+              Ubtan
+            </h3>
+            <p class="
+              product__price
+              product__price--aside--hidden"
+            >
+              160 UAH
+            </p>
+            <img
+              src="images/products/ubtan.png"
+              alt="Ubtan"
+              class="product__img--page"
+            >
+          </div>
+          <div class="product__aside--right">
+            <h3 class="product__title product__title--aside">Ubtan</h3>
+            <p class="product__price product__price--aside">160 UAH</p>
+            <p class="product__size product__size--aside">100 G</p>
+            <button class="btn product__btn product__btn--aside">
+              <a href="#product" class="btn__link">Add to bag</a>
+            </button>
+            <p class="product__description--ingrid">
+              <span class="product__description--green">Ingredients:</span>
+               caloe powder, damask rose powder, kaolin, micronized rice powder,
+               lotus seed powder, betaine, niacinamide, allantoin.
+            </p>
+            <p class="product__description--appl">
+              <span class="product__description--green">Application:</span>
+                1 tsp displace the powder with warm water, apply on the face,
+                leave for 5 minutes and rinse.
+            </p>
+            <button
+              class="
+                btn
+                product__btn
+                product__btn--aside
+                product__btn--aside--desktop"
+            >
+              <a href="#product" class="btn__link">Add to bag</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="page__product" id="product2">
+      <div class="container">
+        <div
+          class="
+            top-bar
+            top-bar--mobile
+            top-bar--product"
+        >
+          <a href="#menu" class="icon icon--menu"></a>
+          <a href="#" class="icon icon--logo"></a>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+
+        <div class="top-bar top-bar--desktop">
+          <a href="#" class="top-bar__logo-link">
+            <img
+              src="images/logo-2x.png"
+              alt="Logo img"
+              class="top-bar__logo"
+            >
+          </a>
+          <nav class="nav top-bar__nav">
+            <ul class="nav__list top-bar__nav-list">
+              <li class="nav__item">
+                <a href="#products" class="nav__link">shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">contact</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about-creators" class="nav__link">about</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+
+      </div>
+      <div class="product__content--page">
+        <div class="product__aside">
+          <div class="product__aside--left">
+            <h3 class="
+              product__title
+              product__title--aside--hidden"
+            >
+              Bali body butter
+            </h3>
+            <p class="
+              product__price
+              product__price--aside--hidden"
+            >
+              200 UAH
+            </p>
+            <img
+              src="images/products/body-butter.png"
+              alt="Body butter"
+              class="product__img--page"
+            >
+          </div>
+          <div class="product__aside--right">
+            <h3 class="product__title product__title--aside">Bali body butter</h3>
+            <p class="product__price product__price--aside">200 UAH</p>
+            <p class="product__size product__size--aside">85 ml</p>
+            <button class="btn product__btn product__btn--aside">
+              <a href="#product" class="btn__link">Add to bag</a>
+            </button>
+            <p class="product__description--ingrid">
+              <span class="product__description--green">Ingredients:</span>
+              secret recipe
+            </p>
+            <p
+              class="
+                product__description--appl
+                product__description--appl--product2"
+            >
+              <span class="product__description--green">Application:</span>
+              First you need to make a warm hand bath.
+              Brew your favorite herbs or green tea,
+              cool it and immerse your hands in the broth for 10 minutes.
+              Blot gently with a clean towel and apply a generous bali butter to your skin,
+              or even a light massage.
+              Then, put on mittens or cover your hands with a towel for 15-20 minutes.
+              After the procedure, you can remove the remains of the butter from the skin with a napkin.
+            </p>
+            <button
+              class="
+                btn
+                product__btn
+                product__btn--aside
+                product__btn--aside--desktop"
+            >
+              <a href="#product" class="btn__link">Add to bag</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="page__product" id="product2-2">
+      <div class="container">
+        <div
+          class="
+            top-bar
+            top-bar--mobile
+            top-bar--product"
+        >
+          <a href="#menu" class="icon icon--menu"></a>
+          <a href="#" class="icon icon--logo"></a>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+
+        <div class="top-bar top-bar--desktop">
+          <a href="#" class="top-bar__logo-link">
+            <img
+              src="images/logo-2x.png"
+              alt="Logo img"
+              class="top-bar__logo"
+            >
+          </a>
+          <nav class="nav top-bar__nav">
+            <ul class="nav__list top-bar__nav-list">
+              <li class="nav__item">
+                <a href="#products" class="nav__link">shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">contact</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about-creators" class="nav__link">about</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+        <div class="product__content--page">
+          <div class="product__aside">
+            <div class="product__aside--left">
+              <h3 class="
+                product__title
+                product__title--aside--hidden"
+              >
+                Firm foam cleanser
+              </h3>
+              <p class="
+                product__price
+                product__price--aside--hidden"
+              >
+                80 UAH
+              </p>
+              <img
+                src="images/products/foam-body-cleanser.png"
+                alt="Body cleanser"
+                class="product__img--page"
+              >
+            </div>
+            <div class="product__aside--right">
+              <h3 class="product__title product__title--aside">Firm foam cleanser</h3>
+              <p class="product__price product__price--aside">80 UAH</p>
+              <p class="product__size product__size--aside">Piece</p>
+              <button class="btn product__btn product__btn--aside">
+                <a href="#product" class="btn__link">Add to bag</a>
+              </button>
+              <p class="product__description--ingrid">
+                <span class="product__description--green">Ingredients:</span>
+                secret recipe
+              </p>
+              <p class="product__description--appl">
+                <span class="
+                  product__description--green">Application:</span>
+                  Application: wet your face and rub the film while wet.
+                  2-3 times a day
+              </p>
+              <button
+                class="
+                  btn
+                  product__btn
+                  product__btn--aside
+                  product__btn--aside--desktop"
+              >
+                <a href="#product" class="btn__link">Add to bag</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="page__product" id="product3">
+      <div class="container">
+        <div
+          class="
+            top-bar
+            top-bar--mobile
+            top-bar--product"
+        >
+          <a href="#menu" class="icon icon--menu"></a>
+          <a href="#" class="icon icon--logo"></a>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+
+        <div class="top-bar top-bar--desktop">
+          <a href="#" class="top-bar__logo-link">
+            <img
+              src="images/logo-2x.png"
+              alt="Logo img"
+              class="top-bar__logo"
+            >
+          </a>
+          <nav class="nav top-bar__nav">
+            <ul class="nav__list top-bar__nav-list">
+              <li class="nav__item">
+                <a href="#products" class="nav__link">shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">contact</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about-creators" class="nav__link">about</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+
+      </div>
+      <div class="product__content--page">
+        <div class="product__aside">
+          <div class="product__aside--left">
+            <h3 class="
+              product__title
+              product__title--aside--hidden"
+            >
+              Almond Shampoo with Lavender Oil
+            </h3>
+            <p class="
+              product__price
+              product__price--aside--hidden"
+            >
+              80 UAH
+            </p>
+            <img
+              src="images/products/shampoo.png"
+              alt="Shampoo"
+              class="product__img--page"
+            >
+          </div>
+          <div class="product__aside--right">
+            <h3 class="product__title product__title--aside">Almond Shampoo with Lavender Oil</h3>
+            <p class="product__price product__price--aside">80 UAH</p>
+            <p class="product__size product__size--aside">40 g</p>
+            <button class="btn product__btn product__btn--aside">
+              <a href="#product" class="btn__link">Add to bag</a>
+            </button>
+            <p class="product__description--ingrid">
+              <span class="product__description--green">Ingredients:</span>
+              coconut sulfate, purified water, cold pressed hemp oil,
+              wheat proteins, nettle herb, lavender essential oil, citric acid.
+            </p>
+            <p class="product__description--appl">
+              <span class="
+                product__description--green">Application:</span>
+                In fact, all shampoos are suitable for all hair types,
+                but if you rely on hair types,
+                Lavender shampoo is more suitable for normal to oily types, as well as dandruff.
+                I repeat, everything is individual,
+                I can only assume what might suit you based on your type.
+            </p>
+            <button
+              class="
+                btn
+                product__btn
+                product__btn--aside
+                product__btn--aside--desktop"
+            >
+              <a href="#product" class="btn__link">Add to bag</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="page__product" id="product3-2">
+      <div class="container">
+        <div
+          class="
+            top-bar
+            top-bar--mobile
+            top-bar--product"
+        >
+          <a href="#menu" class="icon icon--menu"></a>
+          <a href="#" class="icon icon--logo"></a>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+
+        <div class="top-bar top-bar--desktop">
+          <a href="#" class="top-bar__logo-link">
+            <img
+              src="images/logo-2x.png"
+              alt="Logo img"
+              class="top-bar__logo"
+            >
+          </a>
+          <nav class="nav top-bar__nav">
+            <ul class="nav__list top-bar__nav-list">
+              <li class="nav__item">
+                <a href="#products" class="nav__link">shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">contact</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about-creators" class="nav__link">about</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+        <div class="product__content--page">
+          <div class="product__aside">
+            <div class="product__aside--left">
+              <h3 class="
+                product__title
+                product__title--aside--hidden"
+              >
+                Avocado hair conditioner
+              </h3>
+              <p class="
+                product__price
+                product__price--aside--hidden"
+              >
+                200 UAH
+              </p>
+              <img
+                src="images/products/hair-conditioner.png"
+                alt="Hair conditioner"
+                class="product__img--page"
+              >
+            </div>
+            <div class="product__aside--right">
+              <h3 class="product__title product__title--aside">Avocado hair conditioner</h3>
+              <p class="product__price product__price--aside">200 UAH</p>
+              <p class="product__size product__size--aside">100 ml</p>
+              <button class="btn product__btn product__btn--aside">
+                <a href="#product" class="btn__link">Add to bag</a>
+              </button>
+              <p class="product__description--ingrid">
+                <span class="product__description--green">Ingredients: </span>
+                purified water, emulsifier Degiquart, hydrolyzate of wheat proteins,
+                avocado oil, betaine, rosewood essential oil, bio-preservative Euxil.
+              </p>
+              <p class="product__description--appl">
+                <span class="product__description--green">Application: </span>
+                  Apply a small amount of conditioner to clean,
+                  damp hair (avoiding roots),
+                  leave for a few minutes and rinse with warm water.
+              </p>
+              <button
+                class="
+                  btn
+                  product__btn
+                  product__btn--aside
+                  product__btn--aside--desktop"
+              >
+                <a href="#product" class="btn__link">Add to bag</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="page__product" id="product4">
+      <div class="container">
+        <div
+          class="
+            top-bar
+            top-bar--mobile
+            top-bar--product"
+        >
+          <a href="#menu" class="icon icon--menu"></a>
+          <a href="#" class="icon icon--logo"></a>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+
+        <div class="top-bar top-bar--desktop">
+          <a href="#" class="top-bar__logo-link">
+            <img
+              src="images/logo-2x.png"
+              alt="Logo img"
+              class="top-bar__logo"
+            >
+          </a>
+          <nav class="nav top-bar__nav">
+            <ul class="nav__list top-bar__nav-list">
+              <li class="nav__item">
+                <a href="#products" class="nav__link">shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">contact</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about-creators" class="nav__link">about</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+
+      </div>
+      <div class="product__content--page">
+        <div class="product__aside">
+          <div class="product__aside--left">
+            <h3 class="
+              product__title
+              product__title--aside--hidden"
+            >
+              Perfect love candle
+            </h3>
+            <p class="
+              product__price
+              product__price--aside--hidden"
+            >
+              200 UAH
+            </p>
+            <img
+              src="images/products/candle-2.png"
+              alt="Candle 2"
+              class="product__img--page"
+            >
+          </div>
+          <div class="product__aside--right">
+            <h3 class="product__title product__title--aside">Perfect love candle</h3>
+            <p class="product__price product__price--aside">200 UAH</p>
+            <p class="product__size product__size--aside">100 ml / 20 hours</p>
+            <button class="btn product__btn product__btn--aside">
+              <a href="#product" class="btn__link">Add to bag</a>
+            </button>
+            <p class="product__description--ingrid">
+              <span class="product__description--green">Ingredients: </span>
+              ylang-ylang oil, other are secret
+            </p>
+            <p class="product__description--appl">
+              <span class="product__description--green">Application:</span>
+                set on fire.
+                keep away from flammable objects.
+                You turn off the light and .. enjoy
+            </p>
+            <button
+              class="
+                btn
+                product__btn
+                product__btn--aside
+                product__btn--aside--desktop"
+            >
+              <a href="#product" class="btn__link">Add to bag</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="page__product" id="product4-2">
+      <div class="container">
+        <div
+          class="
+            top-bar
+            top-bar--mobile
+            top-bar--product"
+        >
+          <a href="#menu" class="icon icon--menu"></a>
+          <a href="#" class="icon icon--logo"></a>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+
+        <div class="top-bar top-bar--desktop">
+          <a href="#" class="top-bar__logo-link">
+            <img
+              src="images/logo-2x.png"
+              alt="Logo img"
+              class="top-bar__logo"
+            >
+          </a>
+          <nav class="nav top-bar__nav">
+            <ul class="nav__list top-bar__nav-list">
+              <li class="nav__item">
+                <a href="#products" class="nav__link">shop</a>
+              </li>
+              <li class="nav__item">
+                <a href="#contacts" class="nav__link">contact</a>
+              </li>
+              <li class="nav__item">
+                <a href="#about-creators" class="nav__link">about</a>
+              </li>
+            </ul>
+          </nav>
+          <a href="#cart" class="icon icon--buy"></a>
+        </div>
+        <div class="product__content--page">
+          <div class="product__aside">
+            <div class="product__aside--left">
+              <h3 class="
+                product__title
+                product__title--aside--hidden"
+              >
+                Lita candles
+              </h3>
+              <p class="
+                product__price
+                product__price--aside--hidden"
+              >
+                220 UAH
+              </p>
+              <img
+                src="images/products/candles-3.png"
+                alt="Shampoo"
+                class="product__img--page"
+              >
+            </div>
+            <div class="product__aside--right">
+              <h3 class="product__title product__title--aside">Lita candles</h3>
+              <p class="product__price product__price--aside">220 UAH</p>
+              <p class="product__size product__size--aside">100 ml / 20 hours</p>
+              <button class="btn product__btn product__btn--aside">
+                <a href="#product" class="btn__link">Add to bag</a>
+              </button>
+              <p class="product__description--ingrid">
+                <span class="product__description--green">Ingredients: </span>
+                soy wax, essential oils of thyme and oregano,
+                herbs, petals, chalcedony, biodegradable glitter.
+              </p>
+              <p class="product__description--appl">
+                <span class="product__description--green">Application:</span>
+                  set on fire.
+                  keep away from flammable objects.
+                  You turn off the light and .. enjoy
+              </p>
+              <button
+                class="
+                  btn
+                  product__btn
+                  product__btn--aside
+                  product__btn--aside--desktop"
+              >
+                <a href="#product" class="btn__link">Add to bag</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <section class="toothpaste" id="toothpaste">
+      <div class=" product__vertical-menu toothpaste__vertical-menu">
+        <span class="product__vertical-line"></span>
+        <p class="product__vertical-text">ingridients</p>
+      </div>
+      <div class="toothpaste__flex--top">
+        <h2 class="section-title section-title--toothpaste">Ayurvedic Tooth Powder</h2>
+        <div class="toothpaste__wrapper">
+          <div class="toothpaste__ingridients">
+            <p class="toothpaste__ingridient">Kaolin</p>
+            <p class="toothpaste__ingridient">Sivak</p>
+            <p class="toothpaste__ingridient">Calcium</p>
+            <p class="toothpaste__ingridient">Licorice root</p>
+            <p class="toothpaste__ingridient">Tumeric</p>
+          </div>
+          <div class="toothpaste__img-container">
+            <img
+              src="images/ingridients/toothpaste-mobile.svg"
+              alt="Toothpaste"
+              class="toothpaste__img toothpaste__img--mobile"
+            >
+            <img
+              src="images/ingridients/toothpaste-tablet.svg"
+              alt="Toothpaste"
+              class="toothpaste__img toothpaste__img--tablet"
+            >
+            <img
+              src="images/ingridients/toothpaste-desktop.svg"
+              alt="Toothpaste"
+              class="toothpaste__img toothpaste__img--desktop"
+            >
+          </div>
+        </div>
+      </div>
+      <button class="learn-btn toothpaste__btn">
+        <a href="#" class="learn-link toothpaste__link">Learn More</a>
+      </button>
+      <div class="toothpaste__flex--bottom">
+        <div
+          class="
+            toothpaste__testimonials
+            toothpaste__testimonials--snail"
+        >
+          <img
+            src="images/ingridients/snail.svg"
+            alt="Snail img"
+            class="
+              toothpaste__testimonials-img
+              toothpaste__testimonials-img--snail"
+          >
+          <p class="toothpaste__testimonials-text">No synthetics and microplastics</p>
+        </div>
+
+        <div
+          class="
+            toothpaste__testimonials
+            toothpaste__testimonials--recyclable"
+        >
+          <img
+            src="images/ingridients/recyclable.svg"
+            alt="recyclable img"
+            class="
+              toothpaste__testimonials-img
+              toothpaste__testimonials-img--recyclable"
+          >
+          <p
+            class="
+              toothpaste__testimonials-text
+              toothpaste__testimonials-text--rec"
+          >
+            product packaging can be recycled or reused
+          </p>
+        </div>
+
+        <div
+          class="
+            toothpaste__testimonials
+            toothpaste__testimonials--leaves"
+        >
+          <img
+            src="images/ingridients/leaves.svg"
+            alt="Leaves img"
+            class="
+              toothpaste__testimonials-img
+              toothpaste__testimonials-img--leaves"
+          >
+          <p class="toothpaste__testimonials-text">only natural ingredients</p>
+        </div>
+      </div>
+    </section>
+    <main class="main">
+      <div class="container">
+        <div class="main__content">
+          <section class="contacts" id="contacts">
+            <div class="contacts__vertical-menu vertical-menu">
+              <span class="vertical-line"></span>
+              <p class="vertical-text">help</p>
+            </div>
+            <div class="contacts__wrapper">
+              <h2
+                class="
+                  section-title
+                  section-title--contacts"
+              >
+                contact us
+              </h2>
+              <p
+                class="
+                  section-description
+                  section-description--contacts"
+              >
+                We will help you choose a product that suits you and answer your other questions
+              </p>
+              <form
+                action="#"
+                method="post"
+                name="contact-form"
+                class="contacts__form"
+                onsubmit="this.reset(); return false;"
+              >
+                <input
+                  type="text"
+                  class="contacts__input"
+                  name="contact-name"
+                  placeholder="Your name"
+                  required
+                >
+                <input
+                  type="email"
+                  class="contacts__input"
+                  name="contact-email"
+                  placeholder="E-mail"
+                  required
+                >
+                <input
+                  type="tel"
+                  class="contacts__input"
+                  name="contact-number"
+                  placeholder="Phone number"
+                  required
+                >
+                <textarea
+                  name="contact-message"
+                  rows="2"
+                  class="contacts__textarea"
+                  placeholder="Your message"></textarea>
+                <button class="btn contacts__btn">
+                  Send a message
+                </button>
+              </form>
+            </div>
+            <img
+              src="images/bird-2.png"
+              alt="Bird 2"
+              class="contacts__img"
+            >
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer__content">
+
+          <div class="footer__top">
+            <nav class="footer__nav">
+              <ul
+                class="
+                  nav__list
+                  footer__list
+                  footer__list--top"
+              >
+                <li class="nav__item">
+                  <a href="#product" class="footer__link">shop</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#contacts" class="footer__link">contact</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#about-creators" class="footer__link">about</a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="footer__socials footer__socials--tablet">
+              <a
+                href="https://uk-ua.facebook.com/"
+                class="icon icon--facebook"
+                target="_blank">
+
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                class="icon icon--instagram"
+                target="_blank">
+              </a>
+            </div>
+          </div>
+
+          <div class="footer__bottom">
+            <ul
+              class="
+                nav__list
+                footer__list
+                footer__list--bottom"
+            >
+              <li class="nav__item footer__item">Ukraine</li>
+              <li class="nav__item footer__item">
+                <a
+                  href="mailto:support.mountain@gmail.com"
+                  class="footer__bottom-link"
+                >
+                  support.mountain@gmail.com
+                </a>
+              </li>
+              <li class="nav__item footer__item">
+                <a
+                  href="tel:+380934476839"
+                  class="footer__bottom-link"
+                >
+                  +380934476839
+                </a>
+              </li>
+              <li class="nav__item footer__item">Support is available Monday - Friday 9am-6pm</li>
+            </ul>
+          </div>
+          <div class="footer__socials footer__socials--desktop">
+            <a
+              href="https://uk-ua.facebook.com/"
+              class="icon icon--facebook"
+              target="_blank">
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              class="icon icon--instagram"
+              target="_blank">
+            </a>
+          </div>
+          <div class="footer__copyright">
+            <span class="footer__copyright--word">Copyright</span>&#169;
+            2019 witch of mountain winds
+          </div>
+        </div>
+      </div>
+    </footer>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
