@@ -1,0 +1,31 @@
+.link {
+  display: block;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  color: $green;
+  position: relative;
+  padding-bottom: 10px;
+
+  &::after {
+    display: block;
+    position: absolute;
+    content: "";
+    border: 1px solid $green;
+    width: 86px;
+    bottom: 0;
+    left: 0;
+
+    transition: transform 0.3s;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+
+}

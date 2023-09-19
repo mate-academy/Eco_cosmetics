@@ -1,0 +1,245 @@
+.shop {
+
+  &-wrapper {
+    @include onTablet {
+      @include pageGrid;
+    }
+
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: $green;
+
+    &-wrapper {
+      margin-top: 100px;
+      @include onTablet {
+        margin-top: 130px;
+      }
+    }
+  }
+
+  &__category {
+    margin-top: 20px;
+    padding-right: 34px;
+    color: $gray-color;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $black-color;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &::after {
+      content: " ";
+      display: block;
+      border: 1px solid $black-color;
+      margin-top: 10px;
+      left: 0;
+      bottom: 0;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &-wrapper {
+      display: flex;
+      cursor: pointer;
+    }
+
+    &-title--wrapper {
+      position: relative;
+      @include onDesktop {
+        padding-left: 100px;
+      }
+    }
+  }
+
+  &__picture {
+
+    &-wrapper {
+      margin-top: 25px;
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        grid-column: 2 / 7;
+      }
+    }
+
+    &-ubtan {
+
+      transition: all $duration;
+
+      @include onTablet {
+        background-image: url(../images/picture/shop-picture-ubtan-mobile.png);
+        object-fit: cover;
+        background-position: center;
+        width: 342px;
+        height: 300px;
+        background-repeat: no-repeat;
+
+        &-container {
+          display: flex;
+          justify-content: center;
+
+          @include onDesktop {
+            display: block;
+          }
+        }
+      }
+
+      @include onDesktop {
+        background-image: url(../images/picture/shop-picture-ubtan-desktop.png);
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 500px;
+      }
+
+      &:hover {
+        scale: 102%;
+      }
+
+      &-wrapper {
+        @include onTablet {
+          margin-top: 25px;
+          grid-column: 4 / 7;
+        }
+
+        @include onDesktop {
+          grid-column: 7 / 13;
+        }
+      }
+    }
+
+    transition: all $duration;
+
+    @include onTablet {
+      background-image: url(../images/picture/shop-picture-tablet-1.png);
+      object-fit: cover;
+      background-position: center;
+      width: 342px;
+      height: 300px;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/picture/shop-picture-desktop-1.png);
+      object-fit: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 500px;
+    }
+
+    &:hover {
+      scale: 103%;
+    }
+
+    &-general {
+      background-image: url(../images/picture/shop-picture-mobile.png);
+      height: 267px;
+      margin-top: 15px;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      background-position: center;
+      background-size: contain;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &-title {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%; /* 27px */
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      color: $black-color;
+      margin-bottom: 10px;
+
+      &-wrapper {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      &--ubtan {
+        @include onMobile {
+          display: none;
+        }
+
+        @include onTablet {
+          display: block;
+        }
+      }
+    }
+
+    &-price {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      color: $black-color;
+      margin-bottom: 30px;
+
+      &--ubtan {
+        @include onMobile {
+          display: none;
+        }
+
+        @include onTablet {
+          display: block;
+        }
+      }
+
+      &-wrapper {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &-container {
+      display: flex;
+      justify-content: center;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &-button {
+    display: flex;
+    justify-content: center;
+  }
+}

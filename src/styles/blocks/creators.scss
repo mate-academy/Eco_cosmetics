@@ -1,0 +1,125 @@
+.creators {
+
+  &-wrapper {
+    position: relative;
+    @include onTablet {
+      @include pageGrid;
+      margin-top: 130px;
+    }
+  }
+
+  &__title {
+    color: $green;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+      font-size: 36px;
+    }
+
+    &-wrapper {
+      margin-top: 100px;
+    }
+  }
+
+  &__info {
+    color: $black-color;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    padding-bottom: 20px;
+
+    @include onDesktop {
+      padding-bottom: 30px;
+      font-size: 16px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-wrapper {
+      margin-top: 10px;
+    }
+
+    &--desktop {
+      @include onMobile {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &-link {
+    &--wrapper {
+      margin-bottom: 25px;
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &-picture {
+    @include onTablet {
+      background-image: url(../images/picture/creators-picture-tablet.png);
+      width: 342px;
+      height: 440px;
+      align-self: center;
+      object-fit: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/picture/creators-picture-desktop.png);
+      width: 580px;
+      height: 659px;
+      align-self: center;
+      object-fit: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &--wrapper {
+      @include onTablet {
+        align-self: self-end;
+        grid-column: 4 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 13;
+      }
+    }
+  }
+
+  &-content {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &-button {
+    justify-content: start;
+  }
+}

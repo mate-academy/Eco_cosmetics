@@ -1,0 +1,168 @@
+.contact-us {
+  &-wrapper {
+    position: relative;
+    @include onTablet {
+      @include pageGrid;
+    }
+
+  }
+
+  &__form {
+    margin-top: 30px;
+  }
+
+  &--content {
+    @include onTablet {
+      grid-row-start: 1;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: $green;
+    margin-top: 100px;
+
+    @include onTablet {
+      margin-top: 130px;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      margin-top: 219px;
+    }
+  }
+
+  &__info {
+    margin-top: 10px;
+    color: $black-color;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 16px;
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+
+    &--desktop {
+      @include onMobile {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    background-color: $white-color;
+    border: none;
+    border-bottom: 1px solid $white-color-2;
+    color: $gray-color;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    outline-width: 0;
+
+    &:nth-child(3) {
+      @include onTablet {
+        margin-bottom: 45px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+
+    &--message {
+      height: 21px;
+      padding-bottom: 10px;
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+
+    transition: border-bottom $duration, color $duration;
+
+    &:focus {
+      border-bottom: 1px solid $black-color;
+    }
+
+    &:valid {
+      border-bottom: 1px solid $green;
+      color: $green;
+    }
+
+    &:not(:placeholder-shown):invalid {
+      border-bottom: 1px solid $red-color;
+      color: $red-color !important;
+    }
+  }
+
+  &__button {
+    margin-bottom: 100px;
+
+    @include onDesktop {
+      margin-bottom: 130px;
+    }
+  }
+
+  &__photo {
+    @include onTablet {
+      background-image: url(../images/picture/contact-us-picture-tablet.png);
+      width: 342px;
+      height: 407px;
+      align-self: center;
+      object-fit: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/picture/contact-us-picture-desktop.png);
+      align-self: center;
+      object-fit: cover;
+      background-position: center;
+      width: 580px;
+      height: 539px;
+    }
+
+    &-wrapper {
+      @include onTablet {
+        grid-column: 4 / 7;
+        margin-top: 130px;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 13;
+        margin-top: 219px;
+      }
+    }
+  }
+}
