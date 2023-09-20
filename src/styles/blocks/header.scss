@@ -3,17 +3,24 @@
 
   &__bottom {
     @include pageGrid;
+
+    @include onDesktop {
+      position: relative;
+    }
   }
 
   &__photo {
     margin-inline: -20px;
     grid-column: 1 / -1;
+    transition: all $effectDuration;
 
     @include onTablet {
       margin-inline: 0;
     }
 
     @include onDesktop {
+      @include hover (transform, scale(1.1));
+      position: absolute;
       grid-column: 7 / -1;
       height: 451px;
     }
@@ -28,6 +35,8 @@
     @extend %h1;
     text-align: center;
     grid-column: 1 / -1;
+    transition: all $effectDuration;
+    @include hover (color, $dark-green);
 
     @include onTablet {
       grid-column: 2 / -2;

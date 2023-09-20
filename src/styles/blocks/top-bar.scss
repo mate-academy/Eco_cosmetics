@@ -17,8 +17,10 @@
 
   &__logo {
     display: none;
+    transition: all $effectDuration;
 
     @include onDesktop {
+      @include hover (transform, scale(1.1));
       grid-column: 1 / 4;
       display: flex;
       align-items: center;
@@ -49,6 +51,8 @@
       font-weight: $font-weight-medium;
       font-size: 18px;
       color: $dark-green;
+      transition: all $effectDuration;
+      @include hover (color, $main-text-color);
     }
   }
 }
