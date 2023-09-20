@@ -1,0 +1,65 @@
+.offer {
+  position: relative;
+  overflow: hidden;
+
+  &__top-line {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+      height: 1px;
+      grid-column: 1 / 6;
+    }
+
+    &::after {
+      @include offerLine;
+    }
+  }
+
+  &__bottom-line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: 1px;
+      grid-column: 7 / -1;
+    }
+
+    &::after {
+      @include offerLine;
+    }
+  }
+
+  &__additional-text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $greenColor;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      max-width: 280px;
+      justify-self: center;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      max-width: none;
+      justify-self: initial;
+      text-align: initial;
+      font-size: 24px;
+    }
+  }
+}
