@@ -1,5 +1,12 @@
 .powder {
+  position: relative;
   margin-bottom: 100px;
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
 
   &__title {
     color: $c-green;
@@ -9,19 +16,33 @@
     letter-spacing: 1.2px;
     text-transform: uppercase;
     margin: 0;
-    margin-bottom: 20px;
+    @include onTablet {
+      grid-column: 1/3;
+    }
+    @include onDesktop {
+      font-size: 36px;
+      letter-spacing: 1.8px;
+      grid-column: 2/6;
+    }
   }
 
   &__box {
-    box-sizing: border-box;
+
     position: relative;
     display: flex;
     justify-content: right;
     align-items: center;
     flex-basis: 320px;
-
-    margin-bottom: 30px;
     gap: 20px;
+    @include onTablet {
+      grid-column: 4/-1;
+      left: 26px;
+
+    }
+    @include onDesktop {
+      grid-column: 9/-1;
+      grid-row: 1/3;
+    }
 
     &-list {
       display: flex;
@@ -30,14 +51,42 @@
       margin: 0;
       padding: 0;
       list-style: none;
+
     }
 
     &-item {
-      //items
+
+      display: flex;
+      justify-content: right;
+
     }
 
     &-img {
-      //img
+      margin-right: -20px;
+      &--phone {
+        @include onTablet {
+          display: none;
+        }
+      }
+      &--tablet {
+        @include onPhone {
+          display: none;
+        }
+        @include onDesktop {
+          display: none;
+        }
+      }
+      &--desktop {
+        @include onPhone {
+          display: none;
+        }
+        @include onTablet {
+          display: none;
+        }
+        @include onDesktop {
+          display: block;
+        }
+      }
     }
   }
 }

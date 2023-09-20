@@ -15,15 +15,23 @@
     @content;
   }
 }
+@mixin onPhone () {
+  @media (max-width: $phone-max-width) {
+    @content;
+  }
+}
 
 @mixin pageGrid {
   --comumns: 2;
   display: grid;
   column-gap: 20px;
+  @include onTablet() {
+    column-gap: 30px;
+  }
   grid-template-columns: repeat(var(--comumns), 1fr);
   @include onTablet() {
     --comumns: 6;
-    column-gap: 24px;
+    column-gap: 30px;
   }
   @include onDesktop() {
     --comumns: 12;
