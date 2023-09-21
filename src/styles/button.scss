@@ -33,9 +33,9 @@
   width: 280px;
   height: 60px;
   background-color: $c-grey-dark;
-  border-radius: 4px;
 
   &__inside {
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,11 +47,18 @@
     letter-spacing: 2.4px;
     height: 100%;
     width: 100%;
+    transition: $trans-duration;
 
+    &:hover {
+      background-color: $bg-color;
+      color: $c-grey-dark;
+      border: 1px solid $c-grey-dark;
+    }
   }
 }
 
 .learn-box {
+
   @include onTablet {
     grid-column: 1/4;
   }
@@ -89,7 +96,15 @@
       bottom: -10px;
       height: 1px;
       background-color: $c-green;
+      transform: scale(0);
+      transition: $trans-duration;
+      transform-origin: left;
     }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
   }
 }
 
