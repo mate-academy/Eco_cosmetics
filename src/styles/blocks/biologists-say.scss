@@ -1,0 +1,68 @@
+.biologists-say {
+  grid-column: 1 / - 1;
+
+  @include onDesktop {
+    position: relative;
+    grid-column: 1 / - 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: -20px;
+      width: 45%;
+      grid-column: 1 / - 1;
+      border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      right: -20px;
+      width: 50%;
+      border-bottom: 1px solid #828282;
+      grid-column: 5 / - 1;
+    }
+  }
+  &__container {
+    padding: 50px 20px;
+    margin: 0 auto;
+    max-width: 1180px;
+    @include grid;
+    @include onDesktop {
+      display: grid;
+      color: $gray1;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / 6;
+      color: $gray1;
+    }
+  }
+
+  &__tagline {
+    grid-column: 1 / -1;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: $dark-color;
+    text-align: center;
+
+    @include onTablet {
+      grid-column: span 3 ;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      text-align: start;
+    }
+  }
+}

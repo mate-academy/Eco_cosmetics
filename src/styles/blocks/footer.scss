@@ -1,0 +1,199 @@
+.footer {
+  background-color: $footer;
+  width: 100vw;
+
+  &__container {
+    max-width: 1180px;
+    margin: 0 auto;
+
+    padding-left: 20px;
+    color: $background;
+
+    @include grid;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+      order: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+      order: 1;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 11px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $background;
+    transition: $duration;
+    &:hover {
+      transform: scale(1.05);
+    }
+    @include onDesktop {
+      position: relative;
+      @include lineHoverFooter;
+    }
+  }
+
+  &__contacts {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+      order: 2;
+      margin-top: 30px;
+    }
+    @include onDesktop {
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__country {
+    display: block;
+    color: $background;
+    text-decoration: none;
+    transition: $duration;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__email {
+    display: block;
+    color: $background;
+    text-decoration: none;
+    transition: $duration;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__tel {
+    display: block;
+    color: $background;
+    text-decoration: none;
+    transition: $duration;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__support {
+    display: block;
+    margin-bottom: 40px;
+    color: $background;
+    text-decoration: none;
+    transition: $duration;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__copyright {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    @include onTablet {
+      grid-column: 1 / -1;
+      order: 4;
+    }
+    @include onDesktop {
+      grid-column: 1 / 6;
+      justify-content: start;
+      order: 2;
+    }
+  }
+
+  &__copyright-label {
+    display: none;
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__copyright-text {
+    max-width: 200px;
+    text-align: center;
+
+    @include onTablet {
+      text-align: start;
+      max-width: 100%;
+    }
+  }
+}
+
+.social {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+
+  @include onTablet {
+    grid-column: 1;
+    order: 3;
+  }
+  @include onDesktop {
+    grid-column: 8 / -1;
+  }
+
+  &__facebook {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/social/facebook.png);
+    transition: $duration;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__instagram {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/social/instagram.png);
+    transition: $duration;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

@@ -1,0 +1,156 @@
+.shop {
+  max-width: 1180px;
+  margin: 0 auto;
+
+  &__container {
+    padding: 50px 20px;
+
+    @include grid;
+    grid-column: 1 / - 1;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin: 65px 27px;
+    }
+    @include onDesktop {
+      margin: 100px 50px;
+    }
+  }
+
+  &__wrapper {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / - 1;
+    text-align: center;
+
+    @include onTablet {
+      text-align: start;
+    }
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / - 1;
+
+    @include onTablet {
+      grid-column: 1 / - 1;
+    }
+  }
+
+  &__menu {
+    grid-column: 1 / - 1;
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+}
+
+.menu-shop {
+  display: flex;
+  gap: 34px;
+  margin-bottom: 27px;
+
+  &__link {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    color: $gray2;
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style: none;
+
+    @include onDesktop {
+      position: relative;
+      @include lineHover;
+    }
+  }
+}
+
+.card-shop {
+  &__wrapper {
+
+    @include grid;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__item {
+    grid-column: 1/ - 1;
+
+    &:last-child {
+      display: none;
+    }
+
+    @include onTablet {
+      grid-column: span 3;
+
+      &:last-child {
+        display: block;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__photo {
+    grid-column: 1 / - 1;
+    margin: 1px -20px;
+    @include onTablet {
+      margin: 1px ;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: contain;
+    @include hover(transform ,scale($scale));
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%; /* 27px */
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    font-size: 18px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.button {
+  &__link {
+    margin: 0 auto;
+    grid-column: 1 / -1;
+  }
+}

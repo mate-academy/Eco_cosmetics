@@ -1,0 +1,99 @@
+.ayurvedic {
+  max-width: 1180px;
+  margin: 0 auto;
+
+  &__container {
+    padding: 50px 0 50px 20px;
+    @include grid;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin: 65px 27px;
+    }
+
+    @include onDesktop {
+      margin: 100px 50px;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / - 1;
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / - 1;
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      text-align: start;
+    }
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__link {
+    grid-column: 1 / - 1;
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__img {
+    display: flex;
+    grid-column: 1 / - 1;
+    height: 300px;
+    justify-content: space-between;
+
+    @include onTablet {
+      grid-column: 3 / - 1;
+      justify-content: center;
+      margin-top: -65px;
+      margin-left: -50px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      margin-top: -180px;
+      margin-left: -100px;
+    }
+
+    &-content {
+      margin-left: 8%;
+      @include onTablet {
+        margin-right: 55px;
+      }
+    }
+
+    &-ingredient {
+      list-style: none;
+      margin-top: 30%;
+      text-align: end;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  &__jar {
+    width: 49%;
+
+    object-fit: cover;
+    object-position: 10%;
+
+    @include onTablet {
+      width: 50%;
+      object-position: 20%;
+    }
+    @include onDesktop {
+      width: 65%;
+      object-fit: contain;
+    }
+  }
+}

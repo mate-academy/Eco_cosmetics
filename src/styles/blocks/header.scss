@@ -1,0 +1,199 @@
+.page {
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 400vh;
+
+    box-sizing: border-box;
+    background-color: $gray1;
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
+
+.header {
+  &__container {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  &__top {
+    margin: 15px 20px;
+
+    @include onTablet {
+      margin: 23px 27px 30px;
+    }
+
+    @include onDesktop {
+      margin: 40px 50px 80px;
+    }
+  }
+
+  &__main {
+    @include onTablet {
+      margin: 25px 27px 130px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__photo {
+    order: 2;
+  }
+
+  &__img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+
+    @include hover(transform ,scale($scale));
+
+    @include onTablet {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 20px 1px;
+    @include onDesktop {
+      display: block;
+      margin: 1px 1px 1px 100px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+
+    @include onTablet {
+      text-transform: capitalize;
+    }
+
+    @include onDesktop {
+      max-width: 480px;
+
+      text-align: left;
+      font-size: 55px;
+      line-height: 130%;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.icon {
+  &__burger {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background: url(../images/icons/burger.svg) no-repeat center;
+    order: 1;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__cart {
+    order: 2;
+  }
+
+  &__link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/icons/cart.svg) no-repeat center;
+
+    @include hover(transform ,scale(1.2));
+
+    @include onDesktop {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__close {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/icons/close.svg) no-repeat center;
+  }
+}
+
+.logo {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  order: 1;
+
+  @include hover(transform ,scale($scale));
+
+  @include onDesktop {
+    width: 50px;
+    height: 50px;
+    order: -1;
+  }
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+  }
+
+  &__img {
+    margin-right: 12px;
+  }
+
+  &__text {
+    display: none;
+    color: $dark-color;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      min-width: 300px;
+    }
+  }
+}
