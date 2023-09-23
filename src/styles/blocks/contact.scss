@@ -1,3 +1,13 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: $gray1;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #e9e9e900;
+}
+
 .contact {
   max-width: 1180px;
   margin: 0 auto;
@@ -103,7 +113,7 @@
   background: url(../images/contact/contact.jpg) no-repeat;
   background-size: cover;
   background-position: 50%;
-
+  @include hover(transform ,scale($scale));
   @include onTablet {
     display: block;
   }
