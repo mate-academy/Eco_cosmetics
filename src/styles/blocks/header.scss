@@ -1,0 +1,130 @@
+.page {
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 400vh;
+
+    box-sizing: border-box;
+    background-color: $c-gray;
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
+
+.header {
+  &__container {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  &__top {
+    margin: 15px 20px;
+
+    @include onTablet {
+      margin: 23px 27px 30px;
+    }
+
+    @include onDesktop {
+      margin: 40px 50px 80px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.icon {
+  &--burger {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    background: url(../images/burger.svg) no-repeat center;
+    order: 1;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__cart {
+    order: 2;
+  }
+
+  &--cart {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/cart.svg) no-repeat center;
+
+    @include hover(transform, scale(1.2));
+
+    @include onDesktop {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &--close {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../images/close.svg) no-repeat center;
+  }
+}
+
+.logo {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  order: 1;
+
+  @include hover(transform, scale($scale));
+
+  @include onDesktop {
+    width: 50px;
+    height: 50px;
+    order: -1;
+  }
+
+  &__link {
+    display: flex;
+    text-decoration: none;
+  }
+
+  &__img {
+    margin-right: 12px;
+  }
+
+  &__text {
+    display: none;
+    color: $coloBbgMenu;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      min-width: 300px;
+    }
+  }
+}
