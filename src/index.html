@@ -1,20 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="page" lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Witch of mountain winds</title>
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    >
+    <link rel="manifest" href="/site.webmanifest">
   </head>
   <body class="page__body">
-    <div class="page__container">
 
+    <nav class="page__menu" id="menu">
+      <div class="page__container">
+        <div class="page__menu-content">
+          <a href="#" class="page__menu-content-close-icon"></a>
+          <nav class="page__menu-content-links">
+            <a href="#shop" class="page__menu-content-link">Shop</a>
+            <a href="#contact" class="page__menu-content-link">Contact</a>
+            <a href="#about" class="page__menu-content-link">About</a>
+          </nav>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="page__cart" id="cart">
+      <div class="page__container">
+        <div class="page__cart-content">
+          <div class="page__cart-content-top">
+            <a href="#" class="page__cart-content-close-icon"></a>
+          </div>
+          <div class="main__shop-products">
+            <div class="main__shop-products-left">
+              <img
+                src="images/Hydrophilic_oil.jpg"
+                alt="Hydrophilic oil"
+                class="main__shop-products-image"
+              >
+              <h3 class="main__shop-products-title">Hydrophilic oil</h3>
+              <div class="main__shop-products-price">160 uah</div>
+            </div>
+            <div class="main__shop-products-right">
+              <img
+                src="images/ubtan.jpg"
+                alt="Hydrophilic oil"
+                class="main__shop-products-image"
+              >
+              <h3 class="main__shop-products-title">ubtan</h3>
+              <div class="main__shop-products-price">160 uah</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page__container">
       <header class="header">
         <div class="header__top">
-          <div class="header__top-menu-icon"></div>
+          <a href="#menu" class="header__top-menu-icon"></a>
           <div class="header__top-logo">
             <img
               src="images/logo.png"
@@ -27,16 +88,16 @@
           </div>
           <ul class="header__top-menu">
             <li class="header__top-menu-item">
-              <a href="#" class="header__top-menu-link">Shop</a>
+              <a href="#shop" class="header__top-menu-link">Shop</a>
             </li>
             <li class="header__top-menu-item">
-              <a href="#" class="header__top-menu-link">Contact</a>
+              <a href="#contact" class="header__top-menu-link">Contact</a>
             </li>
             <li class="header__top-menu-item">
-              <a href="#" class="header__top-menu-link">About</a>
+              <a href="#about" class="header__top-menu-link">About</a>
             </li>
           </ul>
-          <div class="header__top-cart-icon"></div>
+          <a href="#cart" class="header__top-cart-icon"></a>
         </div>
         <img class="header__image" src="images/header-img.png" alt="Eco cosmetics">
         <div class="header__content">
@@ -44,7 +105,7 @@
             <h1 class="header__title h1">Brand of eco-cosmetics and magic candles</h1>
             <div class="header__info">20% of sales at a wild bird shelter</div>
             <div class="header__button">
-              <button class="button" type="button">Shop</button>
+              <a href="#shop"><button class="button" type="button">Shop</button></a>
             </div>
           </div>
           <div class="header__content-right">
@@ -67,7 +128,7 @@
           </div>
         </section>
 
-        <section class="main__about">
+        <section id="about" class="main__about">
           <div class="main__about-left">
             <div class="main__sideblock">
               <div class="main__sideblock-text">
@@ -92,7 +153,7 @@
           </div>
         </section>
 
-        <section class="main__shop">
+        <section id="shop" class="main__shop">
           <div class="main__sideblock">
             <div class="main__sideblock-text">
               shop
@@ -158,7 +219,7 @@
               </div>
               <a href="#" class="main__learn-more">Learn more</a>
               <div class="main__creators-button">
-                <button class="button" type="button">to contact us</button>
+                <a href="#contact"><button class="button" type="button">to contact us</button></a>
               </div>
             </div>
           </div>
@@ -226,7 +287,7 @@
           </div>
         </section>
 
-        <section class="main__contact">
+        <section id="contact" class="main__contact">
           <div class="main__contact-left">
             <div class="main__sideblock">
               <div class="main__sideblock-text">
@@ -252,21 +313,25 @@
                     class="main__contact-form-input"
                     type="email"
                     placeholder="e-mail"
+                    required
                   >
                 </label>
                 <label>
                   <input
                     class="main__contact-form-input"
                     type="tel"
+                    pattern="[0-9]{10}"
                     placeholder="phone number"
+                    required
                   >
                 </label>
                 <label>
-                  <input
+                  <textarea
                     class="main__contact-form-input main__contact-form-input--message"
-                    type="text"
+                    rows="3"
                     placeholder="Your message"
                   >
+                  </textarea>
                 </label>
                 <button class="button" type="submit">send a message</button>
               </form>
@@ -286,31 +351,31 @@
           <div class="footer__links">
             <ul class="footer__nav">
               <li class="footer__nav-item">
-                <a href="#" class="footer__nav-link">Shop</a>
+                <a href="#shop" class="footer__nav-link">Shop</a>
               </li>
               <li class="footer__nav-item">
-                <a href="#" class="footer__nav-link">Contact</a>
+                <a href="#contact" class="footer__nav-link">Contact</a>
               </li>
               <li class="footer__nav-item">
-                <a href="#" class="footer__nav-link">About</a>
+                <a href="#about" class="footer__nav-link">About</a>
               </li>
             </ul>
             <div class="footer__copyright footer__copyright--desktop">
               &copy 2019 witch of mountain winds
             </div>
             <div class="footer__social">
-              <img class="footer__social-icon" src="images/facebook.svg" alt="Facebook">
-              <img class="footer__social-icon" src="images/insta.svg" alt="Instagramm">
+              <a href="https://facebook.com/" target="_blank"><img class="footer__social-icon" src="images/facebook.svg" alt="Facebook"></a>
+              <a href="https://www.instagram.com/" target="_blank"><img class="footer__social-icon" src="images/insta.svg" alt="Instagramm"></a>
             </div>
           </div>
           <div class="footer__info">
             <p class="footer__text">Ukraine</p>
-            <p class="footer__text">support.mountain@gmail.com</p>
-            <p class="footer__text">+380934476839</p>
+            <p class="footer__text"><a class="footer__text--link" href="mailto:support.mountain@gmail.com">support.mountain@gmail.com</a></p>
+            <p class="footer__text"><a class="footer__text--link" href="tel: +380934476839">+380934476839</a></p>
             <p class="footer__text">Support is available Monday - Friday 9am-6pm</p>
             <div class="footer__social footer__social--desktop">
-              <img class="footer__social-icon" src="images/facebook.svg" alt="Facebook">
-              <img class="footer__social-icon" src="images/insta.svg" alt="Instagramm">
+              <a href="https://facebook.com/" target="_blank"><img class="footer__social-icon" src="images/facebook.svg" alt="Facebook"></a>
+              <a href="https://www.instagram.com/" target="_blank"><img class="footer__social-icon" src="images/insta.svg" alt="Instagramm"></a>
             </div>
           </div>
         </div>
@@ -321,5 +386,12 @@
     </footer>
 
     <script type="text/javascript" src="scripts/main.js"></script>
+    <script>
+      const form = document.querySelector('.main__contact-form');
+      form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      form.reset();
+      });
+    </script>
   </body>
 </html>

@@ -1,12 +1,9 @@
-@import "utils/vars";
-
 .main {
 
   display: flex;
   flex-direction: column;
 
   &__title {
-
     &--center {
       text-align: center;
 
@@ -26,6 +23,7 @@
     border-bottom: 1px solid transparent;
     padding-bottom: 10px;
     padding-top: 20px;
+    transition: border-bottom 0.3s;
 
     &:hover {
       border-bottom: 1px solid $darkGreen;
@@ -283,6 +281,13 @@
         flex-direction: column;
         width: 100%;
 
+        transition: 0.3s;
+        transition-property: transform;
+
+        &:hover {
+          transform: scale(105%);
+        }
+
         @include onIpad {
           width: 50%;
         }
@@ -290,6 +295,12 @@
 
       &-right {
         display: none;
+        transition: 0.3s;
+        transition-property: transform;
+
+        &:hover {
+          transform: scale(105%);
+        }
 
         @include onIpad {
           display: flex;
@@ -671,6 +682,11 @@
 
         &:focus {
           border-bottom: 1px solid $black;
+
+          &:invalid {
+            border-bottom: 1px solid red;
+            color: red;
+          }
         }
 
         &--message {
