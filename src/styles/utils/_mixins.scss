@@ -4,3 +4,36 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet () {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+@mixin onDesktop () {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+@mixin onPhone () {
+  @media (max-width: $phone-max-width) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --comumns: 2;
+  display: grid;
+  column-gap: 20px;
+  @include onTablet() {
+    column-gap: 30px;
+  }
+  grid-template-columns: repeat(var(--comumns), 1fr);
+  @include onTablet() {
+    --comumns: 6;
+    column-gap: 30px;
+  }
+  @include onDesktop() {
+    --comumns: 12;
+  }
+}

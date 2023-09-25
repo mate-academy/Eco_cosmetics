@@ -1,7 +1,50 @@
 @import "utils";
-@import "fonts";
+// @import "fonts";
 @import "typography";
+@import "./nav.scss";
+@import "./header.scss";
+@import "./par-before.scss";
+@import "./about.scss";
+@import "./shop.scss";
+@import "./button.scss";
+@import "./about-creator.scss";
+@import "./powder.scss";
+@import "./whyus.scss";
+@import "./contact.scss";
+@import "./footer.scss";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  margin: 0;
+  background: $c-grey-light;
+  background-color: $bg-color;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  // height: 100vh; //maybe here
+}
+
+.container {
+  margin-inline: 20px;
+  box-sizing: border-box;
+
+  @include onTablet {
+    margin-inline: 27px;
+  }
+  @include onDesktop {
+    margin-inline: 50px;
+
+  }
+}
+
+.grid {
+
+  @include onTablet {
+    @include pageGrid;
+  }
+  @include onDesktop {
+    @include pageGrid;
+  }
 }

@@ -1,0 +1,100 @@
+.par {
+  position: relative;
+  margin-bottom: 100px;
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+}
+
+.par-before {
+  // display: flex;
+  // justify-content: center;
+
+  @include onTablet {
+    grid-column: 3/6;
+  }
+  @include onDesktop {
+    margin-top: 100px;
+    justify-content: start;
+    grid-column: 7/-1;
+  }
+  &::after {
+    @include onPhone {
+      display: none;
+    }
+    @include onTablet {
+      display: none;
+    }
+    @include onDesktop {
+      display: block;
+    }
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 50%;
+    bottom: 0;
+    right: 0;
+
+    background-color: $bg-green;
+  }
+
+  &__content {
+    padding: 0;
+    margin: 0;
+    color: $c-green;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      text-align: center;
+      width: 280px;
+
+    }
+    @include onDesktop {
+      text-align: left;
+      width: 380px;
+
+      font-size: 24px;
+      letter-spacing: 1.2px;
+    }
+  }
+}
+
+.par-desktop {
+  @include onPhone {
+    display: none;
+  }
+
+  @include onTablet {
+    display: none;
+  }
+
+  @include onDesktop {
+    display: block;
+  }
+
+  grid-column: 2/6;
+  &::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 40%;
+    top: 0;
+    left: 0;
+    background-color: $bg-green;
+  }
+
+  &__content {
+
+    margin: 0;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    color: $c-grey-dark;
+  }
+}

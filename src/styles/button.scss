@@ -1,0 +1,153 @@
+
+.button-box {
+  display: flex;
+  justify-content: center;
+  @include onTablet {
+    grid-column: 1/4;
+  }
+  @include onDesktop {
+    grid-column: 2/6;
+  }
+  &--header {
+    @include onDesktop {
+      justify-content: left;
+    }
+  }
+  &--creator {
+    @include onTablet {
+      justify-content: left;
+
+    }
+  }
+  &--contact {
+
+    @include onTablet {
+      justify-content: left;
+      align-items: end;
+    }
+  }
+}
+
+.button {
+
+  width: 280px;
+  height: 60px;
+  background-color: $c-grey-dark;
+
+  &__inside {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+    height: 100%;
+    width: 100%;
+    transition: $trans-duration;
+
+    &:hover {
+      background-color: $bg-color;
+      color: $c-grey-dark;
+      border: 1px solid $c-grey-dark;
+    }
+  }
+}
+
+.learn-box {
+
+  @include onTablet {
+    grid-column: 1/4;
+  }
+  @include onDesktop {
+    grid-column: 2/5;
+    grid-row: 5;
+    margin-bottom: 51px;
+  }
+  &--creator {
+    @include onPhone {
+      margin-bottom: 36px;
+    }
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      grid-column: 2/5;
+      grid-row: 5;
+      margin-bottom: 51px;
+    }
+  }
+
+  &__more {
+    position: relative;
+    font-weight: 500;
+    color: $c-green;
+    text-decoration: none;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      left: 0;
+      bottom: -10px;
+      height: 1px;
+      background-color: $c-green;
+      transform: scale(0);
+      transition: $trans-duration;
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+  }
+}
+
+.side {
+  position: absolute;
+  top: 190px;
+  left: 4.5%;
+  &--shop {
+    top: 30px;
+  }
+  &--about-creator {
+    top: 150px;
+  }
+  &--powder {
+    top: 90px;
+  }
+  &--contact {
+    top: 25px;
+  }
+
+  @include onPhone {
+    display: none;
+  }
+  @include onTablet {
+    display: none;
+  }
+  @include onDesktop {
+    display: block;
+    grid-column: 1/2;
+
+    &__box {
+
+      &-par {
+        transform: rotate(-90deg);
+        transform-origin: left;
+        margin: 0;
+        color: #344f1080;
+      }
+
+      &-img {
+        width: 1px;
+        background-color: #344f1080 50%;
+      }
+    }
+  }
+}

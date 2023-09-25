@@ -1,0 +1,146 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+
+  @include onTablet {
+    margin-top: 28px;
+    margin-bottom: 30px;
+    grid-column: 1/-1;
+  }
+  @include onDesktop {
+    display: none;
+  }
+
+  &__link {
+
+    &-image {
+      //image
+
+    }
+  }
+}
+
+.nav-desktop {
+  margin-top: 40px;
+  margin-bottom: 81px;
+  display: none;
+  @include onDesktop {
+    display: block;
+    grid-column: 1/-1;
+  }
+
+  &__content {
+    // display: flex;
+    // justify-content: space-between;
+    @include pageGrid;
+
+    .logo {
+      display: flex;
+      gap: 12px;
+
+      grid-column: 1/6;
+
+      &__par {
+        color: $c-green;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+        line-height: 130%;
+      }
+    }
+
+    .list {
+      display: flex;
+      padding: 0;
+      gap: 40px;
+      list-style: none;
+
+      grid-column: 8/10;
+
+      &__item {
+        &-link {
+          text-decoration: none;
+          color: $c-green;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 150%;
+        }
+      }
+    }
+
+    .desktop-shop {
+
+      grid-column: 12;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.shop-box {
+  grid-column: 12;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: $c-grey-dark;
+  transform: translateX(-100%);
+  transition: ease-in-out 500ms;
+  z-index: 1;
+
+  &:target {
+    transform: translateX(0);
+    transition: ease-in-out 300ms;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    @include onTablet {
+      margin-top: 28px;
+
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 80px 20px;
+
+    &-link {
+      position: relative;
+      color: $bg-color;
+      text-decoration: none;
+      margin-bottom: 40px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 130%;
+      width: 100%;
+      text-align: center;
+      @include onTablet {
+        margin-bottom: 61px;
+      }
+
+      &::after {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 100%;
+        bottom: -10px;
+        height: 1px;
+        background-color: $bg-color;
+      }
+
+    }
+  }
+}

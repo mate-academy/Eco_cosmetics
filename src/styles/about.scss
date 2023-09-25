@@ -1,0 +1,108 @@
+.about {
+  box-sizing: border-box;
+  position: relative;
+
+  margin-bottom: 100px;
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {              //MAIN CONTENT BOX
+    display: flex;
+    flex-direction: column;
+    @include onTablet {
+      grid-column: 1/4;
+    }
+    @include onDesktop {
+      grid-column: 2/6;
+      grid-row: 1/4;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+    color: $c-green;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    @include onTablet {
+      grid-column: 1/4;
+    }
+    @include onDesktop {
+      grid-column: 2/6;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__parg {
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 30px;
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      grid-column: 2/6;
+      font-size: 16px;
+    }
+
+    &--desktop {
+      @include onPhone {
+        display: none;
+      }
+      @include onTablet {
+        display: none;
+      }
+      @include onDesktop {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__pic {
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      grid-column: 4/-1;
+    }
+
+    @include onDesktop {
+      grid-column: 7/11;
+    }
+    &--side {
+      @include onTablet {
+        display: none;
+      }
+      @include onDesktop {
+        display: flex;
+        align-items: end;
+        grid-column: 11/13;
+        grid-row: 1/3;
+      }
+    }
+
+    &-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      @include onDesktop {
+        height: 100%;
+        width: 100%;
+      }
+
+      &--side {
+        height: 80%;
+      }
+    }
+  }
+}
