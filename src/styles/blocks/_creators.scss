@@ -1,0 +1,176 @@
+.creators {
+  margin-bottom: $mobileSectionIndent;
+
+  @include onTablet() {
+    margin-bottom: $tabletSectionIndent;
+  }
+
+  @include onDesktop() {
+    margin-bottom: $desktopSectionIndent;
+  }
+
+  &__content {
+    display: flex;
+
+    @include onDesktop() {
+      justify-content: space-between;
+      position: relative;
+    }
+  }
+
+  &__info {
+
+    @include onTablet() {
+      width: 342px;
+    }
+
+    @include onDesktop() {
+      margin-left: 100px;
+    }
+
+    @include onDesktop() {
+      &::before {
+        width: 18px;
+        height: 229px;
+        content: "";
+        @include bgIconRules();
+        background-image: url(../images/creators/creators-scroll.svg);
+
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    &-title {
+      margin-bottom: 10px;
+
+      width: 280px;
+
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $greenColor;
+
+      @include onTablet() {
+        width: unset;
+      }
+
+      @include onDesktop() {
+        font-size: 36px;
+        line-height: 110%;
+      }
+    }
+
+    &-text {
+      margin-bottom: 20px;
+
+      @include poppinsFont();
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $darkColor;
+
+      @include onDesktop() {
+        margin-bottom: 30px;
+        font-size: 16px;
+      }
+
+      &--desktop {
+        display: none;
+
+        @include onDesktop() {
+          display: flex;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &-link {
+      margin-bottom: 25px;
+
+      display: block;
+      width: fit-content;
+
+      @include poppinsFont();
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      color: $darkColor;
+      padding-bottom: 10px;
+      border-bottom: 1px solid transparent;
+
+      transition: $transitionTime;
+
+      &:hover {
+        border-color: $greenColor;
+      }
+
+      @include onTablet() {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop() {
+        margin-bottom: 40px;
+      }
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      height: 60px;
+      background-color: $darkColor;
+      border: 1px solid transparent;
+
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $lightColor;
+
+      transition: $transitionTime;
+
+      &:hover {
+        background-color: $pageBgColor;
+        color: $darkColor;
+        border-color: $darkColor;
+      }
+
+      @include onTablet() {
+        width: 280px;
+      }
+    }
+  }
+
+  &__image {
+    width: 368px;
+    height: 435px;
+    @include bgIconRules();
+    background-image: url(../images/creators/creators-image.svg);
+
+    @include onMobile() {
+      display: none;
+    }
+
+    @include onTablet() {
+      display: flex;
+      position: absolute;
+      right: 0;
+    }
+
+    @include onDesktop() {
+      width: 580px;
+      height: 669px;
+
+      position: relative;
+    }
+  }
+}

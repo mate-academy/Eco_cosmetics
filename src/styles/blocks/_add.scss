@@ -1,0 +1,154 @@
+.add {
+  transition: $transitionTime;
+  width: 100%;
+  height: 100vh;
+  padding-top: 20px;
+  background-color: $pageBgColor;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  transform: translateX(-100%);
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    width: 20px;
+    height: 20px;
+    @include bgIconRules();
+
+    &--1 {
+      background-image: url(../images/icons/menu.svg);
+    }
+
+    &--2 {
+      background-image: url(../images/icons/logo.svg);
+    }
+
+    &--3 {
+      background-image: url(../images/icons/shop.svg);
+    }
+  }
+
+  &__info {
+    @include onTablet() {
+      display: none;
+    }
+
+    &--desktop {
+      @include onMobile() {
+        display: none;
+      }
+
+      @include onTablet() {
+        display: flex;
+        flex-direction: column;
+        width: 466px;
+        margin-left: 105px;
+      }
+    }
+  }
+
+  &__title {
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $darkColor;
+
+    margin-bottom: 10px;
+
+    @include onTablet() {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__price {
+    @include poppinsFont();
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $darkColor;
+
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 248px;
+    @include bgIconRules();
+    background-image: url(../images/shop/shop-image-1.svg);
+
+    margin-bottom: 30px;
+
+    @include onTablet() {
+      margin: 27px auto;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 60px;
+    background-color: $darkColor;
+
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $lightColor;
+    border: 1px solid transparent;
+
+    transition: $transitionTime;
+
+    &:hover {
+      background-color: $pageBgColor;
+      color: $darkColor;
+      border-color: $darkColor;
+    }
+
+    margin-bottom: 50px;
+
+    @include onTablet() {
+      width: 280px;
+      margin: 50px auto;
+    }
+  }
+
+  &__text {
+    @include poppinsFont();
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $darkColor;
+
+    &-word {
+      color: $greenColor;
+    }
+
+    margin-bottom: 20px;
+
+    @include onTablet() {
+      width: 466px;
+      margin: 25px auto;
+    }
+  }
+}

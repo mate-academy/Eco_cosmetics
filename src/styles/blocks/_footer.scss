@@ -1,0 +1,189 @@
+.footer {
+  background-color: $footerBgColor;
+
+  &__main {
+    @include onTablet() {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav {
+    padding-top: 30px;
+    margin-bottom: 40px;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 20px;
+
+      @include onDesktop() {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+
+    &-item {
+      @include poppinsFont();
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    &-link {
+      color: $pageBgColor;
+
+      transition: $transitionTime;
+
+      &:hover {
+        color: $darkColor;
+      }
+    }
+
+    &-icons {
+      display: flex;
+      gap: 20px;
+
+      @include onDesktop() {
+        display: none;
+      }
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      @include bgIconRules();
+
+      &--facebook {
+        background-image: url(../images/footer/facebook.svg);
+      }
+
+      &--instagram {
+        background-image: url(../images/footer/instagram.svg);
+      }
+
+      transition: $transitionTime;
+
+      &:hover {
+        transform: scale(1.1) rotate(360deg);
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet() {
+      margin-top: 30px;
+    }
+
+    &-icons {
+
+      @include onMobile() {
+        display: none;
+      }
+
+      @include onDesktop() {
+        display: flex;
+      }
+      display: flex;
+      gap: 20px;
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      @include bgIconRules();
+
+      &--facebook {
+        background-image: url(../images/footer/facebook.svg);
+      }
+
+      &--instagram {
+        background-image: url(../images/footer/instagram.svg);
+      }
+
+      transition: $transitionTime;
+
+      &:hover {
+        transform: scale(1.1) rotate(360deg);
+      }
+    }
+  }
+
+  &__link {
+    margin-bottom: 10px;
+
+    @include poppinsFont();
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $pageBgColor;
+
+    transition: $transitionTime;
+
+    &:hover {
+      color: $darkColor;
+    }
+  }
+
+  &__timetable {
+    margin-bottom: 40px;
+
+    @include poppinsFont();
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $pageBgColor;
+  }
+
+  &__copyright {
+    margin: 0 auto;
+    width: 198px;
+
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    color: $pageBgColor;
+
+    @include onTablet() {
+      margin: unset;
+      width: 322px;
+      padding-bottom: 30px;
+      text-align: unset;
+    }
+
+    &-desktop {
+      @include onMobile() {
+        display: none;
+      }
+
+      @include onDesktop() {
+        display: inline-block;
+      }
+    }
+
+    &-symbol {
+      &-tablet {
+        @include onDesktop() {
+          display: none;
+        }
+      }
+
+      &-desktop {
+        @include onTablet() {
+          display: none;
+        }
+
+        @include onDesktop() {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+.contacts {
+  margin-bottom: $mobileSectionIndent;
+
+  @include onTablet() {
+    margin-bottom: $tabletSectionIndent;
+  }
+
+  @include onDesktop() {
+    margin-bottom: $desktopSectionIndent;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__main {
+    position: relative;
+    @include onTablet() {
+      width: 342px;
+    }
+
+    @include onDesktop() {
+      margin-left: 100px;
+
+      &::before {
+        display: block;
+        content: "";
+        width: 18px;
+        height: 132px;
+        @include bgIconRules();
+        background-image: url(../images/contacts/contacts-scroll.svg);
+        position: absolute;
+        top: 10px;
+        left: -100px;
+      }
+    }
+
+    &-title {
+      margin-bottom: 10px;
+
+      @include poppinsFont();font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $greenColor;
+
+      @include onDesktop() {
+        font-size: 36px;
+        margin-bottom: 30px;
+      }
+    }
+
+    &-text {
+      margin-bottom: 30px;
+
+      @include poppinsFont();
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $darkColor;
+
+      @include onTablet() {
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      @include onDesktop() {
+        margin-bottom: 40px;
+      }
+    }
+
+    &-form {
+      width: 342px;
+    }
+
+    &-input {
+      margin-bottom: 25px;
+
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: $pageBgColor;
+      padding-bottom: 5px;
+      border-bottom: 1px solid $secondGreyColor;
+
+      @include poppinsFont();
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: #828282;
+
+      @include onDesktop() {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      &--textarea {
+        margin-bottom: 30px;
+        resize: none;
+
+        @include onDesktop() {
+          margin-bottom: 50px;
+        }
+      }
+
+      &:focus {
+        border-color: $darkColor;
+      }
+
+      &:active {
+        color: $greenColor;
+        border-color: $greenColor;
+      }
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 60px;
+      background-color: $darkColor;
+
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $lightColor;
+
+      transition: $transitionTime;
+
+      &:hover {
+        background-color: $pageBgColor;
+        color: $darkColor;
+        border-color: $darkColor;
+      }
+    }
+  }
+
+  &__image {
+    width: 368px;
+    height: 409px;
+    @include bgIconRules();
+    background-image: url(../images/contacts/contacts-image.svg);
+
+    @include onMobile() {
+      display: none;
+    }
+
+    @include onTablet() {
+      display: flex;
+      position: absolute;
+      right: 0;
+    }
+
+    @include onDesktop() {
+      width: 529px;
+      height: 584px;
+    }
+  }
+}
