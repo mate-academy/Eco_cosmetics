@@ -1,0 +1,96 @@
+.info {
+  margin-bottom: $mobileSectionIndent;
+
+  @include onTablet() {
+    margin-bottom: $tabletSectionIndent;
+  }
+
+  @include onDesktop() {
+    margin-bottom: $desktopSectionIndent;
+  }
+
+  &__content {
+
+    @include onDesktop() {
+      display: none;
+    }
+  }
+
+  &__text {
+    width: 280px;
+
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $greenColor;
+
+    @include onTablet() {
+      width: 280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  &-desktop {
+    position: relative;
+    flex-direction: column;
+    display: none;
+
+    @include onDesktop() {
+      display: flex;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 43%;
+        border-top: 1px solid #000;
+        content: "";
+      }
+
+      &::after {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 43%;
+        border-top: 1px solid #000;
+        content: "";
+      }
+    }
+
+    &__content {
+      display: flex;
+      gap: 200px;
+    }
+
+    &__description {
+      width: 380px;
+
+      @include poppinsFont();
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $darkColor;
+
+      padding: 100px 0;
+    }
+
+    &__text {
+      width: 380px;
+
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $greenColor;
+
+      padding: 100px 0;
+
+    }
+  }
+}

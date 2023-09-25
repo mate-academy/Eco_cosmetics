@@ -1,0 +1,349 @@
+.shop {
+  overflow-x: auto;
+  position: relative;
+  margin-bottom: $mobileSectionIndent;
+
+  @include onTablet() {
+    margin-bottom: $tabletSectionIndent;
+  }
+
+  @include onDesktop() {
+    margin-bottom: $desktopSectionIndent;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__content {
+    @include onDesktop() {
+      margin-left: 100px;
+    }
+
+    @include onDesktop() {
+      &::before {
+        width: 16px;
+        height: 150px;
+
+        content: "";
+        @include bgIconRules();
+        background-image: url(../images/shop/shop-scroll.svg);
+
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $greenColor();
+    text-align: center;
+
+    @include onTablet() {
+      text-align: unset;
+    }
+
+    @include onDesktop() {
+      font-size: 36px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 15px;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet() {
+      width: 290px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    @include poppinsFont();
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include onDesktop() {
+      font-size: 18px;
+    }
+  }
+
+  &__link {
+    border-bottom: 2px solid transparent;
+    color: $darkColor;
+
+    padding-bottom: 10px;
+
+    transition: $transitionTime;
+
+    &:hover {
+      color: $firstGreyColor;
+
+      border-color: $darkColor;
+    }
+
+    &--1 {
+      &:target {
+        &__cards {
+          transform: translateX(50px);
+        }
+      }
+    }
+  }
+
+  &__image {
+
+    @include onTablet() {
+      display: none;
+    }
+
+    margin-bottom: 20px;
+    width: 100%;
+    height: 267px;
+    @include bgIconRules();
+    background-image: url(../images/shop/shop-image-1.svg);
+    background-size: cover;
+
+    &--body {
+      background-image: url(../images/shop/shop-image-2.svg);
+    }
+
+    &--hair {
+      background-image: url(../images/shop/shop-image-3.svg);
+    }
+  }
+
+  &__info {
+
+    @include onTablet() {
+      display: none;
+    }
+
+    &-title {
+      margin-bottom: 10px;
+
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $darkColor;
+    }
+
+    &-price {
+      margin-bottom: 30px;
+
+      @include poppinsFont();
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $darkColor;
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      height: 60px;
+      background-color: $darkColor;
+
+      border: 1px solid transparent;
+
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 130%;
+      text-align: center;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $lightColor;
+
+      transition: $transitionTime;
+
+      &:hover {
+        background-color: $pageBgColor;
+        color: $darkColor;
+        border-color: $darkColor;
+      }
+    }
+  }
+
+  &__cards {
+    position: relative;
+    margin-bottom: 50px;
+
+    @include onMobile() {
+      display: none;
+    }
+
+    @include onTablet() {
+      display: flex;
+      gap: 30px;
+    }
+
+    @include onDesktop() {
+      margin-left: 100px;
+    }
+  }
+
+  &__card {
+
+    &-image {
+      display: flex;
+      margin-bottom: 20px;
+
+      width: 342px;
+      height: 300px;
+
+      @include bgIconRules();
+      background-image: url(../images/shop/shop-image-1.svg);
+      background-size: cover;
+
+      &--2 {
+        background-image: url(../images/shop/shop-image-2.svg);
+      }
+
+      &--3 {
+        background-image: url(../images/shop/shop-image-3.svg);
+      }
+
+      @include onDesktop() {
+        width: 380px;
+        height: 500px;
+      }
+
+      transition: $transitionTime;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &-title {
+      margin-bottom: 15px;
+
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $darkColor;
+    }
+
+    &-price {
+      @include poppinsFont();
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 150%;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $darkColor;
+    }
+
+    &--body {
+      position: absolute;
+      top: 105px;
+      width: 100%;
+      transform: translateX(-100%);
+      background-color: $pageBgColor;
+
+      transition: $transitionTime;
+
+      &:target {
+        transform: translateX(0);
+      }
+    }
+
+    &--hair {
+      position: absolute;
+      top: 105px;
+      width: 100%;
+      transform: translateX(-100%);
+
+      background-color: $pageBgColor;
+
+      transition: $transitionTime;
+
+      &:target {
+        transform: translateX(0);
+      }
+    }
+
+    &--candles {
+      position: absolute;
+      top: 105px;
+      width: 100%;
+      transform: translateX(-100%);
+
+      background-color: $pageBgColor;
+
+      transition: $transitionTime;
+
+      &:target {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__button {
+
+    @include onMobile() {
+      display: none;
+    }
+
+    @include onTablet() {
+      display: flex;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 280px;
+    height: 60px;
+    background-color: $darkColor;
+
+    border: 1px solid transparent;
+
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $lightColor;
+
+    transition: $transitionTime;
+
+    &:hover {
+      background-color: $pageBgColor;
+      color: $darkColor;
+      border-color: $darkColor;
+    }
+
+    @include onDesktop() {
+      margin-left: 550px;
+    }
+  }
+}

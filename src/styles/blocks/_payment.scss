@@ -1,0 +1,168 @@
+.payment {
+  width: 100%;
+  height: 100vh;
+  z-index: 99;
+  background-color: $pageBgColor;
+  transition: $transitionTime;
+  position: absolute;
+  top: 0;
+  transform: translateX(-100%);
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @include onTablet() {
+      margin-bottom: 65px;
+    }
+
+    width: 20px;
+    height: 20px;
+    @include bgIconRules();
+
+    &--1 {
+      background-image: url(../images/icons/menu.svg);
+    }
+
+    &--2 {
+      background-image: url(../images/icons/logo.svg);
+    }
+
+    &--3 {
+      background-image: url(../images/icons/shop.svg);
+    }
+  }
+
+  &__checkout {
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $darkColor;
+
+    padding-bottom: 5px;
+    border-bottom: 1px solid $firstGreyColor;
+
+    margin-bottom: 20px;
+
+    @include onTablet() {
+      width: 218px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__title {
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $darkColor;
+
+    margin-bottom: 30px;
+
+    @include onTablet() {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $darkColor;
+
+    margin-bottom: 50px;
+
+    @include onTablet() {
+      font-size: 24px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    &-image {
+      @include bgIconRules();
+      width: 55px;
+      height: 31px;
+      margin-bottom: 15px;
+
+      &--1 {
+        background-image: url(../images/payment/card.svg);
+      }
+
+      &--2 {
+        background-image: url(../images/payment/delivery.svg);
+      }
+    }
+
+    &-text {
+      @include poppinsFont();
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      color: $darkColor;
+    }
+
+    &--last {
+      margin-bottom: 73px;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 60px;
+
+    background-color: $darkColor;
+
+    @include poppinsFont();
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $lightColor;
+
+    border: 1px solid transparent;
+
+    transition: $transitionTime;
+
+    &:hover {
+      background-color: $pageBgColor;
+      color: $darkColor;
+      border-color: $darkColor;
+    }
+
+    @include onTablet() {
+      margin: 0 auto;
+      width: 280px;
+    }
+  }
+}
