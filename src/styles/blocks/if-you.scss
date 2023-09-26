@@ -1,4 +1,26 @@
 .if-you {
+  @include onDesktop {
+    position: relative;
+    padding-block: 100px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -20px;
+      width: 45%;
+      border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 49.5%;
+      border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    }
+  }
+
   &__text {
     @include pageGrid;
     grid-column: 1 / -1;
@@ -12,7 +34,6 @@
 
     @include onDesktop {
       display: block;
-
       grid-column: 2 / 6;
     }
   }

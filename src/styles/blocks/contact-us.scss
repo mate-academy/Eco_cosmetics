@@ -1,0 +1,98 @@
+.contact-us {
+  &__content {
+    @include pageGrid;
+  }
+
+  &__left {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    @extend %h4;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: $font-weight-regular;
+    font-size: 16px;
+    line-height: 150%;
+    color: $main-text-color;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 25px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+
+    &--textarea {
+      font-family: inherit;
+      resize: none;
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__photo {
+    display: none;
+    line-height: 0;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+
+    &-item {
+      object-fit: cover;
+      object-position: left;
+      width: 100%;
+      height: 430px;
+
+      @include onDesktop {
+        height: 100%;
+      }
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      width: 280px;
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 5;
+    }
+  }
+}
