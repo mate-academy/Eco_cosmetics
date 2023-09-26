@@ -1,0 +1,61 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-block: 15px 20px;
+
+  @include onTablet {
+    padding-block: 23px 30px;
+  }
+
+  @include onDesktop {
+    @include pageGrid;
+    padding-block: 40px 0;
+    margin-bottom: 70px;
+  }
+
+  &__logo {
+    display: none;
+    transition: all $effectDuration;
+
+    @include onDesktop {
+      @include hover (transform, scale(1.1));
+      grid-column: 1 / 4;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    &__title {
+      @extend %text2;
+      color: $dark-green;
+      text-transform: uppercase;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+      display: block;
+    }
+
+    &__list {
+      display: flex;
+      gap: 40px;
+    }
+
+    &__item {
+      transition: all $effectDuration;
+      @include hover (transform, scale(1.1));
+    }
+
+    &__link {
+      font-weight: $font-weight-medium;
+      font-size: 18px;
+      color: $dark-green;
+    }
+  }
+}

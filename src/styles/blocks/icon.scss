@@ -1,0 +1,47 @@
+.icon {
+  display: block;
+  height: 24px;
+  width: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all $effectDuration;
+
+  @include onDesktop {
+    height: 32px;
+    width: 32px;
+  }
+
+  &:hover {
+    @include hover (transform, scale(1.2));
+  }
+
+  &--menu {
+    background-image: url(../images/icons/icon-menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--logo {
+    background-image: url(../images/icons/icon-logo.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--shop {
+    background-image: url(../images/icons/icon-shop.svg);
+
+    @include onDesktop {
+      grid-column: -2;
+      justify-self: end;
+    }
+  }
+
+  &--close {
+    background-image: url(../images/icons/icon-close.svg);
+  }
+}

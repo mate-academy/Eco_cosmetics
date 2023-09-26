@@ -1,0 +1,48 @@
+.page {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+
+  &__body {
+    min-width: 320px;
+    background-color: $background-color;
+    color: $main-text-color;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(-100%);
+    pointer-events: none;
+  }
+
+  &__menu:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}

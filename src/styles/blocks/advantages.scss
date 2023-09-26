@@ -1,0 +1,45 @@
+.advantages {
+  &__content {
+    @include pageGrid;
+  }
+
+  &__list {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 13;
+    }
+  }
+
+  &__advantage {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+
+    &__photo {
+      align-self: center;
+      transition: all $effectDuration;
+      @include hover (transform, scale(1.2));
+      
+      &-item {
+        width: 100px;
+      }
+    }
+
+    &__title {
+      @extend %text2;
+      text-transform: uppercase;
+    }
+  }
+}
