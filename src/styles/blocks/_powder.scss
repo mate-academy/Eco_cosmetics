@@ -1,0 +1,102 @@
+.powder {
+  &__title {
+    width: 200px;
+    padding-left: 20px;
+
+    @include onDesktop {
+      width: 380px;
+      padding: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+
+    padding-bottom: 30px;
+  }
+
+  &__composition {
+    padding-top: 37px;
+    padding-right: 190px;
+    display: flex;
+    flex-direction: column;
+    height: 322px;
+    justify-content: space-between;
+
+    @include onTablet {
+      padding-right: 230px;
+    }
+
+    @include onDesktop {
+      padding-right: 23px;
+      width: 200px;
+    }
+
+    &-item {
+      font-size: 16px;
+      color: #333;
+      text-align: end;
+      display: flex;
+      justify-content: space-between;
+
+      &--text {
+        width: 100%;
+      }
+
+      &--pat {
+        display: none;
+
+        @include onDesktop {
+          display: flex;
+          padding-left: 20px;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &-rect {
+          background-color: #333;
+          width: 76px;
+          height: 1px;
+        }
+      }
+    }
+  }
+
+  &__photo {
+    display: block;
+    width: 182px;
+    height: 397px;
+    background-image: url(../images/Powder.svg);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    right: 0;
+
+    @include onTablet {
+      background-image: url(../images/Powder-tablet.svg);
+      width: 398px;
+      height: 397px;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/Powder-desktop.svg);
+      width: 380px;
+      height: 395px;
+
+      position: relative;
+      right: inherit;
+    }
+  }
+
+  &__link {
+    margin-left: 20px;
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+}

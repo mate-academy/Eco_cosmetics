@@ -1,0 +1,172 @@
+.shop {
+  &__title {
+    text-align: center;
+    padding-bottom: 20px;
+
+    @include onTabletAndDesktop {
+      text-align: start;
+    }
+
+    @include onTablet {
+      padding-left: 20px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 27px;
+
+    @include onTablet {
+      justify-content: flex-start;
+      padding: 0 20px 37px;
+    }
+
+    @include onDesktop {
+      justify-content: flex-start;
+      padding: 0 0 62px;
+    }
+
+    &-link {
+      text-transform: uppercase;
+      color: #828282;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 20px;
+      transition: 0.5s;
+
+      @include onTablet {
+        margin-right: 20px;
+        font-size: 16px;
+      }
+
+      @include onDesktop {
+        margin-right: 30px;
+        font-size: 18px;
+      }
+
+      &--face {
+        border-color: #333;
+        color: #333;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        color: #333;
+        border-color: #333;
+      }
+    }
+  }
+
+  &__photos {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__photo-container {
+    position: relative;
+
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 70vw;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTabletAndDesktop {
+      width: 49%;
+      height: 451px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onTabletAndDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    align-self: center;
+    transition: transform 0.5s;
+
+    &--desktop {
+      display: none;
+
+      @include onTabletAndDesktop {
+        display: block;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__names {
+    display: flex;
+    width: 104%;
+    padding: 0 20px;
+
+    @include onTabletAndDesktop {
+      padding: 0;
+    }
+
+    &-oil {
+      width: 49%;
+    }
+
+    &-ubtan {
+      width: 49%;
+      display: none;
+
+      @include onTabletAndDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__product-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 20px 0 10px;
+  }
+
+  &__product-price {
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    padding-bottom: 30px;
+    color: #333;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 50px;
+
+    &-container {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,134 @@
+.footer {
+  background-color: #8c9772;
+
+  &__content {
+    padding-left: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__icons {
+    padding-top: 30px;
+
+    @include onDesktop {
+      padding-bottom: 150px;
+      padding-top: 60px;
+    }
+
+    & > a {
+      display: block;
+      font-size: 18px;
+      color: #e4dfd3;
+      text-decoration: none;
+      font-weight: 500;
+      padding-bottom: 11px;
+      border-bottom: 1px solid transparent;
+      transition: 0.5s;
+
+      &:hover {
+        cursor: pointer;
+
+        border-color: #e4dfd3;;
+      }
+
+      @include onDesktop {
+        display: inline;
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__media {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    width: 60px;
+
+    @include onDesktop {
+      position: absolute;
+      right: 35%;
+      padding-bottom: 60px;
+    }
+
+    &-facebook {
+      display: block;
+      background-image: url(../../src/images/facebook.png);
+      width: 20px;
+      height: 20px;
+
+      background-position: center;
+      background-repeat: no-repeat;
+
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+
+    &-instagram {
+      display: block;
+      background-image: url(../../src/images/instagram.svg);
+      width: 20px;
+      height: 20px;
+
+      background-position: center;
+      background-repeat: no-repeat;
+
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
+
+  &__contacts {
+    padding: 0 25px 30px 0;
+
+    &-text {
+      color: #e4dfd3;
+      padding-bottom: 10px;
+      font-size: 14px;
+
+      @include onDesktop {
+        padding-bottom: 19px;
+        font-size: 16px;
+      }
+
+      & > a {
+        text-decoration: none;
+        color: #e4dfd3;
+      }
+    }
+
+    @include onTablet {
+      padding-top: 30px;
+    }
+
+    @include onDesktop {
+      padding-top: 60px;
+    }
+  }
+
+  &__text {
+    color: #e4dfd3;
+    font-weight: bold;
+    font-size: 14px;
+    padding-bottom: 40px;
+    text-align: center;
+
+    @include onTablet {
+      text-align: start;
+      font-weight: 400;
+    }
+
+    @include onDesktop {
+      text-align: start;
+      padding-bottom: 60px;
+      font-size: 18px;
+      font-weight: normal;
+    }
+  }
+}

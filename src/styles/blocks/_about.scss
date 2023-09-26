@@ -1,0 +1,39 @@
+.about {
+  &__photo {
+    width: 100%;
+
+    &--all {
+      display: none;
+
+      @include onTabletAndDesktop {
+        display: block;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      @include onTablet {
+        background-image: url(../images/About_candle-tablet.png);
+      }
+
+      @include onDesktop {
+        max-height: 600px;
+        background-image: url(../images/About_candle-desktop.png);
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        height: 430px;
+        padding-top: 73%;
+      }
+    }
+
+    &:hover {
+      cursor: auto;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.button {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  width: 280px;
+  height: 60px;
+  color: white;
+  background-color: #333;
+  border: #333 1px solid;
+  transition: 0.5s;
+
+  &__about {
+    margin-top: 40px;
+  }
+
+  &-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    &--about {
+      justify-content: start;
+    }
+
+    &--contact {
+      @include onDesktop {
+        margin-top: 20px;
+      }
+
+      @include onTabletAndDesktop {
+        justify-content: start;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #e4dfd3;
+    color: #333;
+    border-color: #333;
+  }
+}
