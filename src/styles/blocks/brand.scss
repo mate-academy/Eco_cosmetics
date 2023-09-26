@@ -1,0 +1,62 @@
+.brand {
+  width: 100%;
+
+  @include pageGrid {
+    row-gap: 25px;
+  }
+
+  &__image-container {
+    grid-column: 1 / -1;
+
+    @include imageContainer(94%, 70%, 78%) {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__image {
+    @include image;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 1 / -1;
+    order: 3;
+    height: min-content;
+
+    @include onDesktop {
+      align-items: flex-start;
+      grid-column: 2 / 7;
+      order: -1;
+    }
+  }
+
+  &__title {
+    width: 280px;
+    text-transform: capitalize;
+    text-align: center;
+    @include font(600, 24px, 31px);
+
+    @include onDesktop {
+      @include font(600, 60px, 78px);
+      text-transform: none;
+      width: 480px;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    @include font(400, 16px, 24px);
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
+  }
+}

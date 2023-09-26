@@ -1,0 +1,101 @@
+.ingredients {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: -$padding-mobile;
+
+  @include onDesktop {
+    margin-right: 0;
+    @include pageGrid;
+  }
+
+  &__decoration {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      @include positionDecoration(178px);
+    }
+  }
+
+  &__title {
+    width: 280px;
+
+    @include onTablet {
+      width: 342px;
+      position: absolute;
+      top: -14px;
+    }
+
+    @include onDesktop {
+      width: 380px;
+      top: 0;
+      left: 0;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-block: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+      justify-self: end;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    height: 322px;
+    margin-right: 20px;
+    @include font(400, 16px, 24px);
+  }
+
+  &__item {
+    @include hover(transform, scale(1.2)) {
+      color: $title-color;
+    }
+  }
+
+  &__image-container {
+    width: 182px;
+    @include imageHeight(397px);
+
+    @include onTablet {
+      width: 398px;
+    }
+
+    @include onDesktop {
+      width: 480px;
+    }
+  }
+
+  &__image {
+    @include image;
+  }
+
+  &__link {
+    width: fit-content;
+
+    @include onTablet {
+      position: absolute;
+      bottom: 10px;
+    }
+
+    @include onDesktop {
+      left: 0;
+      grid-column: 2 / 4;
+    }
+  }
+}

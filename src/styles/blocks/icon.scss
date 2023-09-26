@@ -1,0 +1,96 @@
+.icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &--logo {
+    @include icon(24px, 24px, "icons/logo-mobile.svg");
+    @include hover(transform, rotateY(180deg) scale(1.2));
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+      @include hover(transform, rotateY(180deg));
+    }
+  }
+
+  &--menu {
+    order: -1;
+    @include icon(20px, 20px, "icons/menu.svg");
+    @include hover(transform, scale(1.2));
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--bag {
+    @include icon(24px, 24px, "icons/bag-mobile.svg");
+    grid-column: 12 / -1;
+    justify-self: end;
+    @include hover(transform, rotateY(180deg) scale(1.2));
+
+    @include onDesktop {
+      @include icon(32px, 32px, "icons/bag.svg");
+    }
+  }
+
+  &--close {
+    @include icon(15px, 15px, "icons/menu-close.svg");
+    @include hover(transform, scale(1.2));
+  }
+
+  &--instagram {
+    @include icon(20px, 20px, "/footer/instagram.svg");
+
+    @include hover(background-image, url("../images/footer/instagram-hover.svg")) {
+      transform: scale(1.2);
+    }
+  }
+
+  &--facebook {
+    @include icon(20px, 20px, "/footer/facebook.svg");
+
+    @include hover(background-image, url("../images/footer/facebook-hover.svg")) {
+      transform: scale(1.2);
+    }
+  }
+
+  &--1 {
+    @include icon(62px, 60px, "/icons-block/icon-mobile-1.svg");
+
+    @include onTablet {
+      @include icon(80px, 60px, "/icons-block/icon-desktop-1.svg");
+    }
+
+    @include hover(transform, rotateY(180deg));
+  }
+
+  &--2 {
+    @include icon(100px, 84px, "/icons-block/icon-mobile-2.svg");
+
+    @include onTablet {
+      @include icon(80px, 68px, "/icons-block/icon-desktop-2.svg");
+    }
+
+    @include onDesktop {
+      @include icon(100px, 84px, "/icons-block/icon-mobile-2.svg");
+    }
+
+    @include onDesktopPlus {
+      @include icon(80px, 68px, "/icons-block/icon-desktop-2.svg");
+    }
+
+    @include hover(transform, rotate(180deg));
+  }
+
+  &--3 {
+    @include icon(79px, 74px, "/icons-block/icon-mobile-3.svg");
+
+    @include onTablet {
+      @include icon(80px, 75px, "/icons-block/icon-desktop-3.svg");
+    }
+
+    @include hover(transform, rotateX(180deg));
+  }
+}

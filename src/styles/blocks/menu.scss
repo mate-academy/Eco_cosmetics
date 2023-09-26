@@ -1,0 +1,38 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 177.5vw;
+  padding: 20px;
+  background-color: $main-color;
+  gap: 45px;
+
+  @include onTablet {
+    padding: 28px 27px;
+    gap: 100px;
+    height: 133.3vw;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include onTablet {
+      gap: 50px;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $link-color;
+  }
+
+  &__link {
+    align-self: center;
+    color: $main-background-color;
+    @include font(600, 18px, 23px);
+    @include hover(color, $footer-color);
+  }
+}

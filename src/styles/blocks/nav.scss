@@ -1,0 +1,33 @@
+.nav {
+  grid-column: 7/ 10;
+
+  &__list {
+    display: flex;
+    width: 256px;
+    justify-content: space-between;
+  }
+
+  &__link {
+    position: relative;
+    @include font(500, 18px, 27px);
+
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: $main-color;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    @include hover(color, $main-color) {
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.page {
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    @include onDesktop {
+      margin-block: 20px;
+      top: 20px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+  }
+
+  &__header + &__menu {
+    transition: transform ease 0.5s;
+    transform: translateY(-100%);
+  }
+
+  &__menu:target {
+    transition: transform 0.5s;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  color: $title-color;
+  @include font(600, 24px, 36px);
+  letter-spacing: 1.2px;
+
+  @include onDesktop {
+    @include font(600, 36px, 40px);
+    letter-spacing: 1.8px;
+  }
+}
+
+.decoration {
+  &--about {
+    @include decoration(302px, 100px, 192px) {
+      text-align: center;
+    }
+  }
+
+  &--shop {
+    @include decoration(145px, 100px, 35px);
+  }
+
+  &--creators {
+    @include decoration(230px, 88px, 132px);
+  }
+
+  &--ingredients {
+    @include decoration(178px, 88px, 80px);
+  }
+
+  &--help {
+    @include decoration(132px, 88px, 35px);
+  }
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.button {
+  width: 100%;
+  border: 1px solid transparent;
+  background-color: $main-color;
+  color: $text-button-color;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  height: 60px;
+  @include font(600, 16px, 60px);
+  transition: all 0.3s;
+
+  @include onTablet {
+    width: 280px;
+  }
+
+  &:hover {
+    background: none;
+    border: 1px solid $main-color;
+    color: $main-color;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(51, 51, 51, 0.6);
+    transform: translateY(-5px);
+  }
+}
+
+.link {
+  display: inline-block;
+
+  @include font(500, 14px, 18px);
+  color: $title-color;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: $title-color;
+    width: 100%;
+    position: relative;
+    top: 10px;
+    transform: scale(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}

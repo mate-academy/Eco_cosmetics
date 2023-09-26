@@ -1,0 +1,84 @@
+.about {
+  position: relative;
+  @include pageGrid;
+
+  &__decoration {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      @include positionDecoration(302px);
+    }
+  }
+
+  &__wrapper {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      @include font(400, 16px, 24px);
+    }
+
+    :nth-child(1) {
+      margin-top: 10px;
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-top: 40px;
+      }
+    }
+
+    :nth-child(2) {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__image-container {
+    &--1 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: 4 / -1;
+
+        @include imageHeight(94%);
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 11;
+        padding-bottom: 139%;
+      }
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        grid-column: 11 / 13;
+        align-self: end;
+        position: relative;
+        height: 0;
+        padding-bottom: 239%;
+      }
+    }
+  }
+
+  &__image {
+    @include image;
+  }
+}

@@ -1,0 +1,138 @@
+.footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: $footer-color;
+  padding: 30px 20px 40px;
+  color: $main-background-color;
+  height: 468px;
+  pointer-events: all;
+
+  @include onTablet {
+    padding: 30px 27px;
+    height: fit-content;
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    padding: 60px 50px;
+  }
+
+  @include onDesktopPlus {
+    padding-inline: 130px;
+  }
+
+  &__nav {
+    @include onTablet {
+      grid-column: 1 / 4;
+      order: 5;
+    }
+  }
+
+  &__contacts {
+    @include onTablet {
+      grid-column: 4 / -1;
+      order: 6;
+    }
+
+    @include onTablet {
+      grid-column: 8 / -1;
+    }
+  }
+
+  &-link {
+    color: $main-background-color;
+    pointer-events: all;
+    @include hover(color, $main-color);
+  }
+
+  &__networks-container {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    gap: 20px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+      grid-column: 1 / 4;
+      order: 7;
+      padding-top: 0;
+    }
+
+    @include onDesktop {
+      gap: 14px;
+      padding-top: 30px;
+      padding-bottom: 0;
+      grid-column: 8 / 10;
+      order: 9;
+    }
+  }
+
+  &__copyright {
+    @include font(600, 14px, 18.2px);
+    display: flex;
+    align-self: center;
+    text-align: center;
+    flex-grow: 1;
+    align-items: end;
+    max-width: 200px;
+
+    @include onTablet {
+      @include font(400, 14px, 21px);
+      align-self: start;
+      text-align: start;
+      grid-column: 1 / -1;
+      order: 8;
+      max-width: 100%;
+    }
+
+    @include onDesktop {
+      @include font(500, 18px, 27px);
+      grid-column: 1 / 6;
+      align-self: end;
+    }
+  }
+
+  &__copyright-before {
+    display: none;
+
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
+}
+
+.footer-nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    @include font(500, 18px, 27px);
+
+    @include onTablet {
+      gap: 15px;
+      @include font(400, 14px, 21px);
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+      @include font(500, 18px, 27px);
+    }
+  }
+}
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include onDesktop {
+    @include font(400, 16px, 24px);
+    gap: 20px;
+  }
+}

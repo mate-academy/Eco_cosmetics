@@ -1,0 +1,144 @@
+.contact {
+  position: relative;
+  @include pageGrid;
+
+  &__decoration {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      @include positionDecoration(132px);
+    }
+  }
+
+  &__container {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__info {
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      @include font(400, 16px, 24px);
+      margin-bottom: 20px;
+      max-width: 342px;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+      margin-bottom: 40px;
+      max-width: 380px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__image-container {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+      position: relative;
+      height: 0;
+      padding-bottom: 119%;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      padding-bottom: 92.9%;
+    }
+  }
+
+  &__image {
+    @include image;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input {
+    margin-bottom: 25px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #bdbdbd;
+    ::placeholder {
+      color: $link-color;
+    }
+
+    &:last-of-type {
+      margin-bottom: 45px;
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 30px;
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &:valid {
+      border-bottom-color: $title-color;
+      color: $title-color;
+    }
+
+    &:invalid:focus {
+      border-bottom-color: $form-error-color;
+      color: $form-error-color;
+
+      &::placeholder {
+        color: $form-error-color;
+      }
+    }
+
+    &:invalid:not(:focus) {
+      &::placeholder {
+        color: $link-color;
+      }
+    }
+
+    &:valid:focus {
+      border-bottom-color: $main-color;
+      color: $main-color;
+
+      &::placeholder {
+        color: $link-color;
+      }
+    }
+
+    @include onTablet {
+      @include font(500, 14px, 21px);
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      @include font(500, 18px, 27px);
+    }
+  }
+}
