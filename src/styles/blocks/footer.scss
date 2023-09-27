@@ -7,7 +7,6 @@
   background-color: $footer-color;
   padding: 30px 20px 40px;
   color: $main-background-color;
-  height: 468px;
   pointer-events: all;
 
   @include onTablet {
@@ -130,6 +129,18 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  :last-child {
+    width: 280px;
+    margin-bottom: 40px;
+  }
+
+  @include onTablet {
+    :last-child {
+      width: fit-content;
+      margin-bottom: 0;
+    }
+  }
 
   @include onDesktop {
     @include font(400, 16px, 24px);

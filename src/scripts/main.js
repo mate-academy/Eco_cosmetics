@@ -3,7 +3,7 @@ import 'intersection-observer';
 
 const header = document.querySelector('.header');
 const elements = document.querySelectorAll('.animation-wrapper');
-const menu = document.querySelector('.icon-menu');
+const menu = document.querySelector('.icon--menu');
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 20) {
