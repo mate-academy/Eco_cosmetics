@@ -1,0 +1,172 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.footer {
+  background-image: url(../../images/footer.png);
+  width: 100%;
+  &__content {
+    box-sizing: border-box;
+    padding: 30px 20px 0;
+    max-width: 1200px;
+    margin: 100px auto 0;
+
+    @include onTablet {
+      margin-top: 130px;
+      padding: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 200px;
+      padding: 60px 50px 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: 11px;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-decoration: none;
+
+    color: $colorFooter;
+
+    &:hover {
+      color: $colorHover;
+    }
+
+    @include onTablet {
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    &--last {
+      margin-bottom: 20px;
+    }
+
+    &--transform {
+      @include onDesktop {
+        transform: translateX(-10px);
+      }
+
+      &--contact {
+        @include onTablet {
+          transform: translateY(-80px);
+        }
+
+        @include onDesktop {
+          transform: translateY(0);
+        }
+      }
+
+      &--about {
+        @include onTablet {
+          transform: translateY(-85px);
+        }
+
+        @include onDesktop {
+          transform: translateY(0);
+        }
+      }
+
+      &--image {
+        @include onTablet {
+          transform: translateY(-85px);
+        }
+
+        @include onDesktop {
+          transform: translateY(0);
+        }
+      }
+
+      &--copyright {
+        @include onTablet {
+          transform: translateY(-90px);
+        }
+
+        @include onDesktop {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    &--row {
+      grid-row: 1;
+    }
+
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: $colorFooter;
+    margin-bottom: 10px;
+    margin-top: 0;
+
+    @include onTablet {
+      margin-bottom: 7px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    &--link {
+      display: block;
+      text-decoration: none;
+
+      &:hover {
+        color: $colorHover;
+      }
+    }
+
+    &--center {
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+      margin: 0;
+
+      @include onTablet {
+        display: block;
+        padding-top: 50px;
+      }
+
+      @include onDesktop {
+        display: block;
+        padding-top: 0;
+      }
+    }
+
+    &--last {
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__image {
+    display: inline-block;
+    margin: 0 14px 40px 0;
+    height: max-content;
+
+    &--hover {
+      transition: transform 0.3s;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      &--row {
+        grid-row: 2;
+      }
+    }
+  }
+}

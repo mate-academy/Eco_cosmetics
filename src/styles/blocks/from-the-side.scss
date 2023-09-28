@@ -1,0 +1,40 @@
+@import "../utils/mixins";
+
+.from-the-side {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+    transform: translateY(-70px);
+    writing-mode: vertical-lr;
+
+    &__text {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+
+      color: rgba(52, 79, 16, 0.5);
+
+      &-2 {
+        transform: translateY(-60px);
+      }
+    }
+
+    &__line {
+      content: " ";
+      transform: rotate(-90deg) translate(-60px, -28px);
+
+      height: 1px;
+      width: 100px;
+      background: rgba(52, 79, 16, 0.5);
+
+      &-2 {
+        transform: rotate(-90deg) translate(0, -28px);
+      }
+
+      &-3 {
+        transform: rotate(-90deg) translate(-60px, -28px);
+      }
+    }
+  }
+}
