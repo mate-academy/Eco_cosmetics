@@ -1,0 +1,131 @@
+.hero-section {
+  padding-bottom: 200px;
+
+  @include onTabletMedium() {
+    padding: 0 0 50px;
+  }
+
+  @include oniPad {
+    padding: 0 0 65px;
+  }
+
+  @include onTablet() {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  @include onMobile() {
+    padding: 0 0 50px;
+  }
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 80px;
+
+  @include oniPad {
+    flex-direction: column;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  &__left {
+    max-width: 480px;
+
+    @include oniPad {
+      order: 2;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  &__right {
+    width: 580px;
+    height: 451px;
+
+    @include oniPad {
+      order: 1;
+      max-width: 714px;
+      width: 100%;
+      max-height: 500px;
+      background-image: url(../images/hero-tablet.png);
+      margin-bottom: 50px;
+    }
+
+    @include oniPhone() {
+      margin-bottom: 25px;
+      width: 375px;
+      height: 340px;
+      margin-left: -20px;
+      position: relative;
+    }
+
+    @include onMobile() {
+      width: 320px;
+      height: 267px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    @include oniPad {
+      width: auto;
+      display: none;
+    }
+
+    @include onMobile() {
+      position: absolute;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 130%;
+    color: #333;
+
+    @include onTabletMedium() {
+      font-size: 50px;
+    }
+
+    @include oniPad {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    @include oniPhone(){
+      font-size: 30px;
+    }
+
+    @include onMobile(){
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    margin-bottom: 50px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+
+    @include onTabletMedium(){
+      margin-bottom: 20px;
+    }
+
+    @include onMobile(){
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.hero__btn {
+  @include oniPad {
+    margin: 0 auto;
+  }
+}

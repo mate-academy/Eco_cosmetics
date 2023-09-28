@@ -1,0 +1,198 @@
+.footer {
+  padding: 60px 0;
+  background: rgba(52, 79, 16, 0.5);
+  margin-top: 100px;
+
+  @include oniPad {
+    margin-top: 65px;
+    padding: 30px 0;
+  }
+
+  @include oniPhone() {
+    margin-top: 50px;
+    position: relative;
+    padding-bottom: 115px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+  @include onMobile() {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 145px;
+
+    @include oniPad {
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    @include oniPhone() {
+      gap: 10px;
+    }
+  }
+
+  &__link {
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    transition: all .3s ease;
+
+    @include oniPhone(){
+      font-size: 18px;
+    }
+
+    &:hover {
+      border-bottom: 2px solid #333;;
+      color: #333;
+    }
+  }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px;
+
+  @include onTabletMedium (){
+    padding-left: 20px ;
+  }
+
+  @include oniPad (){
+    padding-right: 0;
+  }
+
+  @include onTablet(){
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include oniPhone(){
+    flex-direction: column;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 60px;
+  }
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: #E4DFD3;
+
+  @include oniPad {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  &__nav {
+    margin-bottom: 50px;
+
+    @include oniPhone() {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__copyright {
+    text-align: end;
+
+    @include oniPad {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include oniPad {
+        display: block;
+      }
+
+      @include oniPhone() {
+        position: absolute;
+        bottom: 40px;
+        text-align: center;
+      }
+
+      @include onMobile() {
+        margin-left: 42px;
+        width: 200px;
+      }
+    }
+  }
+}
+
+.footer-contacts {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #E4DFD3;
+
+  @include oniPad {
+    font-size: 14px;
+  }
+
+  @include oniPhone() {
+    font-size: 14px;
+  }
+
+  &__list {
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include oniPhone() {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__link {
+    transition: all .3s ease;
+
+    &:hover {
+      color: #333;
+    }
+  }
+}
+
+.footer-social1 {
+  display: none;
+
+  @include oniPad {
+    display: block;
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.footer-social {
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+
+  @include oniPad {
+    display: none;
+  }
+
+  &__img {
+    height: 20px;
+    object-fit: cover;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+

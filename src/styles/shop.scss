@@ -1,0 +1,257 @@
+.shop {
+  padding: 100px 0;
+
+  @include oniPhone() {
+    padding: 70px 0;
+  }
+}
+.shop-container {
+  display: flex;
+  width: 100%;
+
+  @include onTabletMedium(){
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include oniPad {
+    padding-bottom: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  @include onTablet() {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include oniPhone() {
+    justify-content: center;
+    padding-bottom: 0;
+  }
+
+  @include onMobile() {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.shop-wrapper {
+  @include oniPhone() {
+    width: 335px;
+  }
+
+  @include onMobile() {
+    margin-right: -20px;
+  }
+}
+
+.shop-tabs__item.is-active {
+  border-bottom: 2px solid #333;;
+  color: #333;
+}
+
+.product-card.is-active.mobile-hide{
+  @include oniPhone() {
+    display: none;
+  }
+}
+
+.shop-tabs {
+  display: flex;
+  margin-bottom: 50px;
+
+  @include oniPad {
+    margin-bottom: 25px;
+  }
+
+  @include oniPhone() {
+    justify-content: space-between;
+  }
+
+  @include onMobile() {
+    justify-content: space-between;
+    padding-right: 20px
+  }
+
+  &__item {
+    margin-right: 50px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #828282;
+
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    padding-top: 10px;
+    transition: all .3s ease;
+
+    &:hover {
+      border-bottom: 2px solid #333;;
+      color: #333;
+    }
+
+    @include oniPhone(){
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+    }
+
+    @include oniPhone() {
+      margin-right: 0;
+    }
+  }
+}
+
+.img-wrapper {
+  max-width: 530px;
+  width: 530px;
+  max-height: 500px;
+  height: 500px;
+  margin-bottom: 20px;
+  display: block;
+  cursor: pointer;
+
+  @include onTabletMedium() {
+    width: 382px;
+    height: 350px;
+  }
+
+  @include oniPad {
+    width: 342px;
+    height: 300px;
+  }
+
+  @include onTablet() {
+    width: 280px;
+    height: 260px;
+  }
+
+  @include oniPhone(){
+    width: 100%;
+    height: 320px;
+    left: 0;
+    position: relative;
+  }
+
+  @include onMobile() {
+    margin-left: -20px;
+    height: 267px;
+    width: 320px;
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include oniPhone(){
+      position: absolute;
+    }
+  }
+}
+
+.shop__products {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+
+  @include oniPad {
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  @include oniPhone() {
+    margin-bottom: 30px;
+  }
+}
+
+.is-active {
+  display: block;
+
+}
+
+.product-card.is-active {
+  display: block;
+}
+
+.product-card {
+  display: none;
+
+  @include oniPhone {
+    width: 100%;
+  }
+
+  &__name {
+    margin-bottom: 13px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+
+    display: block;
+
+    @include oniPhone {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #333;
+  }
+
+  &--mobile {
+    @include onMobile {
+      display: none;
+    }
+  }
+}
+
+.shop-btn {
+  display: block;
+  margin: 0 auto;
+
+  @include oniPhone() {
+    margin-left: 0;
+  }
+
+  @include onMobile() {
+    margin-bottom: 0;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+.shop__title {
+  @include oniPad {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+
+  @include oniPhone() {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}

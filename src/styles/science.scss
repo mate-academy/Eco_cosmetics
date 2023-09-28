@@ -1,0 +1,111 @@
+.science-container {
+  display: flex;
+  padding-left: 85px;
+  align-items:flex-start;
+  justify-content: space-between;
+
+  @include oniPad {
+    text-align: center;
+    justify-content: center;
+    padding-left: 0;
+  }
+}
+
+.science {
+  position: relative;
+  padding: 100px 0;
+
+  @include oniPad {
+    padding: 65px 0;
+  }
+
+  @include oniPhone() {
+    padding: 50px 0;
+  }
+
+  &__text-left {
+    max-width:380px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+
+    @include oniPad {
+      display: none;
+    }
+
+    &::before {
+      display: block;
+      content: '';
+      height: 1px;
+      width: 100%;
+      max-width: 610px;
+      background: rgba(52, 79, 16, 0.5);
+      position: absolute;
+      left: 0;
+      float: left;
+      margin-bottom: 100px;
+      bottom: 245px;
+
+      @include onDesctop() {
+        max-width: 530px;
+      }
+
+      @include onTabletMedium() {
+        max-width: 460px;
+      }
+    }
+  }
+
+  &__text-right {
+    max-width:380px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #344F10;
+    margin-right: 200px;
+
+    @include onTabletMedium() {
+      margin-right: 50px;
+    }
+
+    @include oniPad {
+      margin-right: 0;
+    }
+
+    @include oniPhone {
+      font-size: 20px;
+    }
+
+    @include onMobile() {
+      font-size: 18px;
+      text-align: start;
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      height: 1px;
+      width: 100%;
+      max-width: 710px;
+      background: rgba(52, 79, 16, 0.5);
+      margin-top: 130px;
+      position: absolute;
+      right: 0;
+
+      @include onDesctop() {
+        max-width: 630px;
+      }
+
+      @include onTabletMedium() {
+        max-width: 430px;
+      }
+
+      @include oniPad {
+        display: none;
+      }
+    }
+  }
+}
