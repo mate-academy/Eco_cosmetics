@@ -1,0 +1,57 @@
+.about {
+  margin-top: 100px;
+
+  @include onTablet {
+    margin-top: 130px;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__picture-big {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      height: 321px;
+      grid-column: 4 / -1;
+      background-image: url(../images/about-picture-tablet.png);
+      background-size: cover;
+      @include hover(transform, scale(1.03));
+    }
+
+    @include onDesktop {
+      height: 529px;
+      background-image: url(../images/about-picture-big-desktop.png);
+      grid-column: 7 / 11;
+    }
+  }
+
+  &__picture-small {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: 430px;
+      grid-column: 11 / -1;
+      background-image: url(../images/about-picture-small-desktop.png);
+      @include hover(transform, scale(1.03));
+      margin-top: 99px;
+    }
+  }
+
+  &__info-wrapper {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      height: 321px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      height: 529px;
+    }
+  }
+}

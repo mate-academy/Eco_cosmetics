@@ -1,0 +1,56 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 15px;
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    padding-block: 23px;
+  }
+
+  @include onDesktop {
+    padding-block: 40px;
+  }
+
+  &__logo {
+
+    &-wrapper {
+      cursor: pointer;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      @include hover(transform, scale(1.25));
+
+      @include onDesktop {
+        order: -1;
+      }
+    }
+
+    &-picture {
+      display: block;
+      height: 24px;
+      width: 24px;
+
+      @include onDesktop {
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    &-text {
+      display: none;
+      font-size: 14px;
+      line-height: 18.2px;
+      letter-spacing: 5%;
+      color: $green-color;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      @include onDesktop {
+        display: block;
+        padding: 15px 0;
+      }
+    }
+  }
+}

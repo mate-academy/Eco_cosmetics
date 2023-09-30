@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  @include fontPoppins;
+  font-weight: 400;
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $header-background-color;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    opacity: 0;
+    transition: all $effectDuration;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+  }
+}

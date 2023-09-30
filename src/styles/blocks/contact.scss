@@ -1,0 +1,122 @@
+.contact {
+  margin-top: 100px;
+
+  @include onTablet {
+    margin-top: 130px;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__wrapper-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 432px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      height: 407px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      height: 540px;
+      grid-column: 2 / 6;
+    }
+
+    &-form-input {
+      border: none;
+      border-bottom: 1px solid $input-color-default;
+      padding-bottom: 5px;
+      background-color: $header-background-color;
+      outline: none;
+      font-size: 14px;
+      line-height: 21px;
+      color: $input-color-default;
+      font-weight: 400;
+
+        @include onTablet {
+          font-weight: 500;
+        }
+
+        @include onDesktop {
+          font-size: 18px;
+          line-height: 27px;
+        }
+
+      &:focus {
+        border-bottom: 1px solid $grey-color;
+      }
+
+      &:not(:focus):not(:placeholder-shown):invalid {
+        color: $red-color;
+        border-bottom: 1px solid $red-color;
+      }
+
+      &:valid {
+        color: $green-color;
+        border-bottom: 1px solid $green-color;
+      }
+
+      &:webkit-autofil,
+      &:webkit-autofil:hover,
+      &:webkit-autofil:focus {
+      background-color: $header-background-color;
+      border: none;
+      border-bottom: 1px solid $input-color-default;
+      }
+
+      @include onDesktop {
+        padding-bottom: 10px;
+      }
+
+      &::placeholder {
+        font-size: 14px;
+        line-height: 21px;
+        color: $light-grey-color;
+        font-weight: 400;
+
+        @include onTablet {
+          font-weight: 500;
+        }
+
+        @include onDesktop {
+          font-size: 18px;
+          line-height: 27px;
+        }
+      }
+    }
+  }
+
+  &__background-image {
+    display: none;
+
+    @include onTablet {
+      @include hover(transform, scale(1.03));
+      display: block;
+      background-image: url(../images/contact-us-tablet.png);
+      height: 407px;
+      grid-column: 4 / -1;
+      background-size: cover;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      height: 540px;
+      background-image: url(../images/contact-us-desktop.png);
+    }
+
+  }
+
+  &__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    @include onDesktop {
+      gap: 30px;
+    }
+  }
+}

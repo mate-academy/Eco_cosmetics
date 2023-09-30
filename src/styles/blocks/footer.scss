@@ -1,0 +1,149 @@
+.footer {
+  margin-top: 100px;
+  background-color: $footer-background-color;
+  padding: 30px 0 40px;
+
+  @include onTablet {
+    margin-top: 132px;
+    padding: 29px 0 30px;
+  }
+
+  @include onDesktop {
+    margin-top: 130px;
+    padding: 60px 0 62px;
+  }
+
+  &__links-wrapper {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+    @include onTablet {
+      margin-top: 0;
+      gap: 7px;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      gap: 19px;
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__links-link {
+    text-decoration: none;
+    color: $footer-color;
+    font-size: 14px;
+    line-height: 21px;
+    display: block;
+    font-weight: 400;
+
+    @include onDesktop {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__socials-wrapper {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    grid-column: 1 / 2;
+
+    @include onDesktop {
+      margin-top: 30px;
+      gap: 14px;
+      grid-column: 8 / 9;
+    }
+  }
+
+  &__socials-logo {
+    height: 20px;
+    width: 20px;
+    display: block;
+    @include hover(transform, scale(1.25));
+    cursor: pointer;
+
+    &--instagram {
+      background-image: url(../images/logo/instagram-logo.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/logo/facebook-logo.svg);
+    }
+  }
+
+  &__end {
+    margin-top: 40px;
+    grid-column: 1 / -1;
+    font-size: 14px;
+    line-height: 18.2px;
+    font-weight: 600;
+    text-align: center;
+    color: $footer-color;
+    display: flex;
+    margin-inline: auto;
+    gap: 4px;
+
+    &-text {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18.2px;
+      color: $footer-color;
+
+      @include onTablet {
+        font-weight: 400;
+        line-height: 21px;
+      }
+
+      @include onDesktop {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+      }
+    }
+
+    @include onTablet {
+      margin-top: 50px;
+      line-height: 21px;
+      text-align: left;
+      grid-column: 1 / 4;
+      margin-inline: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      font-size: 18px;
+      line-height: 27px;
+      margin-top: -27px;
+    }
+
+    &-c {
+      background-image: url(../images/logo/c-logo.svg);
+      height: 10.49px;
+      width: 10.41px;
+      align-self: center;
+
+      @include onDesktop {
+        margin-left: -2px;
+        margin-top: -2px;
+      }
+    }
+
+    &-desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+}
+
+
+.hover {
+  @include hover(transform, scale(1.1));
+}

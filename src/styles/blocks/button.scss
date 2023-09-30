@@ -1,0 +1,75 @@
+.button {
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 20.8px;
+  letter-spacing: 15%;
+  padding: auto;
+  height: 60px;
+  width: 280px;
+  color: $button-color;
+  background-color: $grey-color;
+  font-weight: 600;
+  border: none;
+  transition: $effectDuration;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $grey-color;
+    color: $grey-color;
+    background-color: $header-background-color;
+  }
+
+  &:active {
+    border: none;
+    background-color: $grey-color;
+    color: $button-color;
+  }
+
+  &--header {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+    margin-inline: auto;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 5;
+      margin-top: -120px;
+      margin-inline: 0;
+    }
+  }
+
+  &--shop {
+    grid-column: 1 / -1;
+    margin-inline: auto;
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 50px;
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+      grid-column: 5 / 9;
+    }
+  }
+
+  &--about-the-creators {
+    align-self: center;
+
+    @include onTablet {
+      align-self: start;
+    }
+  }
+
+  &--contact {
+    align-self: center;
+
+    @include onTablet {
+      align-self: flex-start;
+    }
+  }
+}

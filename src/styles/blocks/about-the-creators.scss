@@ -1,0 +1,48 @@
+.about-the-creators {
+  margin-top: 100px;
+
+  @include onTablet {
+    margin-top: 130px;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__background-image {
+    display: none;
+
+    @include onTablet {
+      @include hover(transform, scale(1.03));
+      display: block;
+      height: 440px;
+      grid-column: 4 / -1;
+      background-image: url(../images/about-the-creators-background-image-tablet.png);
+      background-size: cover;
+    }
+
+    @include onDesktop {
+      height: 659px;
+      grid-column: 7 / -1;
+      background-image: url(../images/about-the-creators-background-image-desktop.png);
+    }
+  }
+
+  &__info-wrapper {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 420px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      height: 440px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      height: 659px;
+    }
+  }
+}
