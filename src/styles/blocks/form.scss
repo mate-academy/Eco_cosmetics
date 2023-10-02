@@ -2,12 +2,12 @@
   &__input {
     box-sizing: border-box;
     padding: 0;
-    height: 38px;
+    height: 39px;
     width: 100%;
     background: $c-gray;
-    border-style: solid;
-    border-color: #eee #eee #BDBDBD #eee;
-    margin-bottom: 16px;
+    border: none;
+    border-bottom: 1px solid #BDBDBD;
+    margin-bottom: 13px;
 
     color: $underline-color;
     text-transform: capitalize;
@@ -19,20 +19,29 @@
     }
 
     &:hover {
-      border: 1px solid #D5D7DE;
+      border-bottom-color: #333;
     }
 
     &:focus {
-      border: 1px solid #292929;
+      outline: none;
+      border-bottom-color: #333;
+    }
+
+    &:valid {
+      color: #344f10;
+      border-bottom: 1px solid #344f10;
+    }
+
+    &:invalid {
+      color: #EB5757;
+      // border-bottom-color: #EB5757;
     }
   }
 
   &__textarea {
     box-sizing: border-box;
-    text-indent: 0;
-    padding: 16px 14px;
-    height: 148px;
-    margin-bottom: 32px;
+    height: 38px;
+    margin-block: 30px 0;
     resize: none;
   }
 }
