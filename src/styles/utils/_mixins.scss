@@ -4,3 +4,84 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onSmallDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onLargeDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin paddingInline {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onSmallDesktop {
+    padding-inline: 50px;
+  }
+
+  @include onLargeDesktop {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+}
+
+
+@function gridTemplateColumns($columns) {
+  @return repeat($columns, 1fr);
+}
+
+@mixin pageGrid($columns) {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: gridTemplateColumns($columns);
+    column-gap: 30px;
+  }
+
+  @include onSmallDesktop {
+    grid-template-columns: gridTemplateColumns(12);
+    column-gap: 20px;
+  }
+}
+
+@mixin hoverIncrease {
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@mixin formStyles {
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+  border: none;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: capitalize;
+  background-color: $color-tertiary;
+  width: 100%;
+  color: $color-hover;
+  border-bottom: 1px solid $color-hover;
+
+  &::placeholder {
+    color: $color-hover;
+  }
+}
+
+@mixin animationSlide ($direction) {
+    animation: slideTo#{$direction} 2s ease-in-out;
+}

@@ -1,0 +1,73 @@
+.nature-and-care {
+  @include animationSlide(Right);
+
+  &__wrapper {
+    @include onSmallDesktop {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 530px;
+        opacity: 0.5;
+        height: 1px;
+        background-color: $color-secondary;
+        left: 0;
+        top: 0;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 630px;
+        opacity: 0.5;
+        height: 1px;
+        background-color: $color-secondary;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__content {
+    @include onSmallDesktop {
+      padding-block: 100px;
+      @include pageGrid(12);
+    }
+  }
+
+  &__title {
+    font-weight: $font-weight-semibold;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: $color-secondary;
+
+    @include onTablet {
+      max-width: 280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @include onSmallDesktop {
+      font-size: 24px;
+      letter-spacing: 1.2px;
+      order: 1;
+      grid-column: 7 / 11;
+      text-align: left;
+      max-width: 380px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+      font-size: 16px;
+      line-height: 150%;
+      max-width: 380px;
+      grid-column: 2 / 6;
+    }
+  }
+}
