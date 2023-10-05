@@ -1,0 +1,64 @@
+.vision {
+  margin-block: 100px;
+  @include pageGrid;
+
+  @include onTablet {
+    margin-block: 130px;
+  }
+
+  @include onDesktop {
+    margin-block: 200px;
+  }
+
+  &__strip {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 100px;
+      grid-column: 1/6;
+      width: 100%;
+      height: 1px;
+      background-color: $shadow-green;
+
+      &--bottom {
+        margin-top: 100px;
+        margin-bottom: 0;
+        grid-column: 7/-1;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    grid-column: 1/-1;
+    justify-self: center;
+
+    &.active {
+      @include appearOnScrollLeft;
+    }
+
+    @include onDesktop {
+      grid-column: 7/-1;
+      justify-self: flex-start;
+
+      &.active {
+        @include appearOnScrollRight;
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+
+    @include onDesktop {
+      display: initial;
+      position: relative;
+      grid-column: 2/6;
+
+      &.active {
+        @include appearOnScrollLeft;
+      }
+    }
+  }
+}

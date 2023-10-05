@@ -1,0 +1,102 @@
+.about-creators {
+  margin-top: 100px;
+  @include pageGrid;
+
+  &__content {
+    grid-column: 1/-1;
+
+    &.active {
+      @include appearOnScrollLeft;
+    }
+
+    @include onTablet {
+      grid-column: 1/4;
+
+      &.active {
+        @include appearOnScrollTop;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 2/6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+
+    &--second-part {
+      margin-top: 20px;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-top: 15px;
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-block: 30px;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: initial;
+        margin: 0;
+      }
+    }
+  }
+
+  &__link {
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    margin-top: 35px;
+
+    @include onTablet {
+      margin-inline: 0;
+      margin-top: 40px;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: initial;
+      grid-column: 4/-1;
+      height: 440px;
+      width: 100%;
+
+      background: url(../images/about-creators/about-creators-bird-img.png);
+      background-size: cover;
+
+      &.active {
+        @include appearOnScrollBottom;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 7/-1;
+      height: 659px;
+    }
+  }
+}

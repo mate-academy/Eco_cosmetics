@@ -1,0 +1,68 @@
+.top {
+  &--mobile-and-tablet {
+    margin-bottom: 20px;
+    grid-column: 1/-1;
+    @include contentPaddingInline;
+
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      padding-inline: 0;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--single-product {
+      padding: 0;
+    }
+  }
+
+  &__logo-desktop {
+    display: none;
+
+    @include onDesktop {
+      grid-column: 1/4;
+      align-self: center;
+
+      display: flex;
+      align-items: center;
+      height: 20px;
+      gap: 12px;
+
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 18px;
+
+      @include hover (transform, scale(1.2));
+    }
+  }
+
+  &__text-logo {
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: $base-green;
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 7/10;
+    }
+  }
+
+  &__cart--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: initial;
+      grid-column: -2/-1;
+      justify-self: end;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.product {
+  display: flex;
+  flex-direction: column;
+
+  &--single-product {
+    display: grid;
+  }
+
+  &__image {
+    width: 320px;
+    height: 267px;
+
+    @include onTablet {
+      width: 342px;
+      height: 300px;
+    }
+
+    @include onDesktop {
+      width: 530px;
+      height: 500px;
+    }
+
+    &--single-product {
+      grid-column: 1/-1;
+
+      @include onTablet {
+        margin-top: 30px;
+        grid-row: 1/2;
+      }
+    }
+  }
+
+  &__name {
+    @include contentPaddingInline;
+    margin: 0;
+    height: max-content;
+    margin-top: 20px;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $base-grey;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    &--single-product {
+      grid-column: 1/-1;
+      padding: 0;
+
+      @include onTablet {
+        margin-top: 27px;
+        grid-row: 2/3;
+      }
+    }
+  }
+
+  &__price {
+    margin: 0;
+    margin-top: 10px;
+    @include contentPaddingInline;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+
+    @include onTablet {
+      margin-top: 15px;
+      padding: 0;
+    }
+
+    &--single-product {
+      grid-column: 1/-1;
+      margin-bottom: 20px;
+      padding: 0;
+
+      @include onTablet {
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

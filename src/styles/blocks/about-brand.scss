@@ -1,0 +1,115 @@
+.about-brand {
+  @include pageGrid;
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    position: relative;
+    grid-column: 1/-1;
+
+    &.active {
+      @include appearOnScrollRight;
+    }
+
+    @include onTablet {
+      grid-column: 1/4;
+
+      &.active {
+        @include appearOnScrollBottom;
+      }
+    }
+    @include onDesktop {
+      grid-column: 2/6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 21px;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      grid-column: 4/-1;
+      grid-row: 1/2;
+      display: block;
+      height: 321px;
+      background-image: url(../images/about-us/about-us-img.png);
+      background-size: cover;
+      background-position: center;
+
+      &.active {
+        @include appearOnScrollRight;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 7/11;
+      height: 529px;
+      background-image: url(../images/about-us/about-us-img-desktop.png);
+
+      &.active {
+        @include appearOnScrollTop;
+      }
+    }
+  }
+
+  &__thin-image {
+    display: none;
+
+    @include onDesktop {
+      grid-column: -3/-1;
+      align-self: flex-end;
+      display: block;
+      height: 430px;
+      background-image: url(../images/about-us/about-us-img-thin.png);
+      background-size: cover;
+
+      &.active {
+        @include appearOnScrollBottom;
+      }
+    }
+  }
+
+}
