@@ -1,0 +1,125 @@
+.footer {
+  margin-top: 100px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  @include pageGrid;
+  background: $footer-background;
+
+  @include onTablet {
+    padding-bottom: 30px;
+  }
+
+  @include onDesktop {
+    padding-top: 60px;
+    padding-bottom: 62px;
+  }
+
+  &__nav {
+    grid-column: 1/2;
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onTablet {
+      grid-row: 1/2;
+    }
+  }
+
+  &__socials {
+    margin-top: 20px;
+    grid-column: 1/2;
+
+    display: flex;
+    gap: 20px;
+
+    @include onTablet {
+      margin-top: 0;
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+      grid-column: 8/-1;
+    }
+  }
+
+  &__content {
+    margin-top: 40px;
+    grid-column: 1/-1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include onTablet {
+      margin-top: 0;
+      grid-column: 4/-1;
+      grid-row: 1/2;
+    }
+
+    @include onDesktop {
+      grid-column: 8/-1;
+      grid-row: 1/2;
+      gap: 20px;
+    }
+  }
+
+  &__text,
+  &__link {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 21px;
+    color: $background-grey;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__copyright {
+    margin-top: 40px;
+    grid-column: 1/-1;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: center;
+    color: $background-grey;
+
+    @include onTablet {
+      margin-top: 50px;
+      grid-column: 1/4;
+      text-align: start;
+
+      font-weight: 400;
+      line-height: 21px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        grid-row: 2/3;
+        margin: 0;
+        align-self: flex-end;
+
+        font-size: 18px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+    }
+
+    &--wrap {
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}

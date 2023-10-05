@@ -1,0 +1,74 @@
+.contact-us {
+  margin-top: 100px;
+  @include pageGrid;
+
+  @include onTablet {
+    margin-top: 130px;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__content {
+    grid-column: 1/-1;
+
+    &.active {
+      @include appearOnScrollRight;
+    }
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      grid-column: 2/6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__form {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4/-1;
+      grid-row: 1/-1;
+      height: 407px;
+      background-image: url(../images/contact-us/contact-us-bird.png);
+      background-size: cover;
+
+      &.active {
+        @include appearOnScrollRight;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 7/-1;
+      height: 539px;
+    }
+  }
+}

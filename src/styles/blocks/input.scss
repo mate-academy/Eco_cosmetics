@@ -1,0 +1,78 @@
+.input {
+  padding: 0;
+  height: 27px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $form-border;
+  outline: 0;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: $second-light-grey;
+
+  @include onDesktop {
+    height: 38px;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+  }
+
+  &::placeholder {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: $second-light-grey;
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+    }
+  }
+
+  &:focus {
+    border-bottom: 1px solid $base-grey;
+  }
+
+  &:valid {
+    color: $base-green;
+    border-bottom: 1px solid $base-green;
+  }
+
+  &:not(:focus):not(:placeholder-shown):invalid {
+    color: #eb5757;
+    border-bottom: 1px solid #eb5757;
+  }
+
+  &--message {
+    margin-top: 20px;
+    resize: none;
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
+  }
+}
+
+/* Change autocomplete styles in WebKit */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover {
+  border: none;
+  border-bottom: 1px solid $form-border;
+  -webkit-text-fill-color: $second-light-grey;
+  caret-color: $second-light-grey;
+  -webkit-box-shadow: none;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus {
+  border-bottom: 1px solid $base-grey;
+}
