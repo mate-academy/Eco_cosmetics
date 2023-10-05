@@ -1,0 +1,121 @@
+.about-brand {
+  @include animationSlide(Left);
+
+  &__content {
+    @include onTablet {
+      @include pageGrid(6);
+    }
+
+    @include onSmallDesktop {
+      @include pageGrid(12);
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__block {
+    display: none;
+
+    @include onSmallDesktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      grid-column: 1 / 2;
+      opacity: 0.5;
+
+      .block-content {
+        font-size: 14px;
+        font-weight: $font-weight-medium;
+        line-height: 130%;
+        color: $color-secondary;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+      }
+
+      .block-line {
+        background-color: $color-secondary;
+        width: 1px;
+        height: 100px;
+        order: 1;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onSmallDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 150%;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+  }
+
+  &__text-desktop {
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+      font-size: 16px;
+      line-height: 150%;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    @include hoverIncrease;
+
+    @include onTablet {
+      background-image: url("/images/tablet/about-brand-tablet.png");
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 321px;
+      background-repeat: no-repeat;
+      grid-column: 4 / 7;
+    }
+
+    @include onSmallDesktop {
+      background-image: url("/images/desktop/about-brand-desktop.png");
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 529px;
+      background-repeat: no-repeat;
+      grid-column: 7 / 11;
+    }
+  }
+
+  &__image-small {
+    @include onSmallDesktop {
+      @include hoverIncrease;
+      display: block;
+      align-self: end;
+      background-image: url("/images/desktop/about-brand-desktop2.png");
+      background-size: cover;
+      background-position: center;
+
+      width: 100%;
+      height: 430px;
+      background-repeat: no-repeat;
+      grid-column: 11 / -1;
+    }
+  }
+}

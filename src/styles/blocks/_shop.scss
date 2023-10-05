@@ -1,0 +1,227 @@
+.shop {
+  @include animationSlide(Right);
+
+  &__content {
+    @include onTablet {
+      @include pageGrid(6);
+    }
+
+    @include onSmallDesktop {
+      @include pageGrid(12);
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__block {
+    display: none;
+
+    @include onSmallDesktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      grid-column: 1 / 2;
+      opacity: 0.5;
+
+      .block-content {
+        font-size: 14px;
+        font-weight: $font-weight-medium;
+        line-height: 130%;
+        color: $color-secondary;
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+      }
+
+      .block-line {
+        background-color: $color-secondary;
+        width: 1px;
+        height: 100px;
+        order: 1;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    @include onSmallDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 27px;
+
+    @include onTablet {
+      margin-bottom: 37px;
+    }
+
+    @include onSmallDesktop {
+      margin-bottom: 62px;
+    }
+
+    .nav {
+      &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        list-style: none;
+        gap: 34px;
+        margin: 0;
+        padding: 0;
+
+        @include onTablet {
+          justify-content: flex-start;
+          gap: 14px;
+        }
+
+        @include onSmallDesktop {
+          gap: 20px;
+        }
+      }
+
+      &__link {
+        position: relative;
+        font-size: 14px;
+        line-height: 130%;
+        font-weight: $font-weight-regular;
+        color: $color-hover;
+        text-decoration: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 0.7px;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $color-secondary;
+          transition: transform 0.3s;
+          transform: scale(0);
+          transform-origin: left;
+        }
+
+        &:hover::after {
+          transform: scale(1);
+        }
+
+        &:hover {
+          color: $color-primary;
+        }
+
+        @include onSmallDesktop {
+          font-size: 18px;
+          font-weight: $font-weight-semibold;
+          line-height: 150%;
+          letter-spacing: 0.9px;
+        }
+      }
+    }
+  }
+
+  &__card {
+    @include onTablet {
+      @include pageGrid(6);
+    }
+
+    @include onSmallDesktop {
+      @include pageGrid(12);
+    }
+
+    &--first {
+      @include onTablet {
+        grid-column: span 3;
+      }
+
+      @include onSmallDesktop {
+        grid-column: span 6;
+      }
+    }
+
+    &--second {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: span 3;
+      }
+
+      @include onSmallDesktop {
+        grid-column: span 6;
+      }
+    }
+
+    &__title {
+      line-height: 150%;
+      font-weight: $font-weight-semibold;
+      margin-bottom: 10px;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 15px;
+      }
+
+      @include onSmallDesktop {
+      }
+    }
+
+    &__price {
+      line-height: 150%;
+      font-weight: $font-weight-medium;
+      margin-bottom: 10px;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onSmallDesktop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.image {
+  @include hoverIncrease;
+  object-fit: cover;
+  width: 100%;
+  height: 267px;
+
+  @include onTablet {
+    height: 300px;
+  }
+
+  @include onSmallDesktop {
+    height: 500px;
+  }
+}
