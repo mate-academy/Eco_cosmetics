@@ -130,9 +130,27 @@
       color: $color-tertiary;
       text-decoration: none;
       cursor: pointer;
+      position: relative;
 
       @include onSmallDesktop {
         font-size: 16px;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -5px;
+        width: 100%;
+        height: 2px;
+        background-color: $color-tertiary;
+        transition: transform 0.3s;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
       }
     }
   }
