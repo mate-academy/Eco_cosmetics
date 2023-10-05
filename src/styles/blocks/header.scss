@@ -6,14 +6,6 @@
   display: flex;
   flex-direction: column;
 
-  &__content {
-    @include contentPaddingInline;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
   &__img {
     background-image: url(/images/img-header.jpg);
     background-size: cover;
@@ -27,6 +19,15 @@
 
     @include onDesktop {
       max-width: 1180px;
+      margin-inline: auto;
+    }
+  }
+
+  &__content {
+    @include contentPaddingInline;
+
+    @include onTablet {
+      max-width: 466px;
       margin-inline: auto;
     }
   }
