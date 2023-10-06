@@ -13,11 +13,50 @@
     column-gap: 20px;
   }
 
+  &__menu {
+    display: flex;
+    order: -1;
+  }
+
   &__nav {
     display: none;
 
     @include onDesktop {
       display: block;
     }
+  }
+}
+
+.toggle--header:checked + .menu {
+  transition: transform ease-out 0.5s;
+  transform: translateY(0);
+}
+
+.counter {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: $main-color;
+  color: $main-background-color;
+  @include font(500, 14px, 20px);
+  width: 14px;
+  height: 14px;
+  padding: 3px;
+  border-radius: 50%;
+  top: -27%;
+  right: -37%;
+
+  @include onDesktop {
+    width: 16px;
+    height: 16px;
+    @include font(500, 16px, 21px);
+    top: -15%;
+    right: -25%;
+  }
+
+  &--visible {
+    display: flex;
   }
 }

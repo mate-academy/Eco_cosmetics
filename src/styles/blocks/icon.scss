@@ -2,6 +2,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  transition: transform 0.3s;
 
   &--logo {
     @include icon(24px, 24px, "icons/logo-mobile.svg");
@@ -15,7 +16,6 @@
   }
 
   &--menu {
-    order: -1;
     @include icon(20px, 20px, "icons/menu.svg");
     @include hover(transform, scale(1.2));
 
@@ -25,10 +25,12 @@
   }
 
   &--bag {
+    position: relative;
+    z-index: 0;
     @include icon(24px, 24px, "icons/bag-mobile.svg");
     grid-column: 12 / -1;
     justify-self: end;
-    @include hover(transform, rotateY(180deg) scale(1.2));
+    @include hover(transform, scale(1.2));
 
     @include onDesktop {
       @include icon(32px, 32px, "icons/bag.svg");
@@ -63,7 +65,10 @@
       @include icon(80px, 60px, "/icons-block/icon-desktop-1.svg");
     }
 
-    @include hover(transform, rotateY(180deg));
+    &:has(+ .icons__title:hover) {
+      transition: transform 0.3s;
+      transform: rotateY(360deg);
+    }
   }
 
   &--2 {
@@ -81,7 +86,10 @@
       @include icon(80px, 68px, "/icons-block/icon-desktop-2.svg");
     }
 
-    @include hover(transform, rotate(180deg));
+    &:has(+ .icons__title:hover) {
+      transition: transform 0.3s;
+      transform: rotate(360deg);
+    }
   }
 
   &--3 {
@@ -91,6 +99,9 @@
       @include icon(80px, 75px, "/icons-block/icon-desktop-3.svg");
     }
 
-    @include hover(transform, rotateX(180deg));
+    &:has(+ .icons__title:hover) {
+      transition: transform 0.3s;
+      transform: rotateX(360deg);
+    }
   }
 }

@@ -51,23 +51,16 @@
 
   &__image-container {
     display: none;
+    @include imageContainer(0, 119%, 92.9%);
 
     @include onTablet {
       display: block;
       grid-column: 4 / -1;
-      position: relative;
-      height: 0;
-      padding-bottom: 119%;
     }
 
     @include onDesktop {
       grid-column: 7 / -1;
-      padding-bottom: 92.9%;
     }
-  }
-
-  &__image {
-    @include image;
   }
 }
 
@@ -101,11 +94,6 @@
       @include onDesktop {
         margin-bottom: 50px;
       }
-    }
-
-    &:valid {
-      border-bottom-color: $title-color;
-      color: $title-color;
     }
 
     &:invalid:focus {

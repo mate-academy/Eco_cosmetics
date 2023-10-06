@@ -1,0 +1,168 @@
+.product {
+  position: relative;
+  @include pageGrid;
+
+  &__decoration {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      @include positionDecoration(230px);
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 2 / -2;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+      max-width: 450px;
+    }
+
+    &--top {
+      :nth-child(1) {
+        margin-bottom: 10px;
+
+        @include onTablet {
+          margin-bottom: 25px;
+        }
+      }
+
+      :nth-child(2) {
+        margin-bottom: 20px;
+
+        @include onTablet {
+          margin-bottom: 10px;
+          color: $title-color;
+        }
+
+        @include onDesktop {
+          margin-bottom: 20px;
+        }
+      }
+
+      :nth-child(3) {
+        display: none;
+
+        @include onTablet {
+          display: block;
+        }
+      }
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        order: -1;
+        margin-bottom: 0;
+      }
+    }
+
+    &--bottom {
+      display: flex;
+      flex-direction: column;
+
+      @include onDesktop {
+        position: absolute;
+        bottom: 0;
+        height: 65%;
+        flex-grow: 1;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__title {
+    color: $main-color;
+    @include font(600, 18px, 27px);
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      @include font(600, 32px, 38px);
+      letter-spacing: 1.6px;
+      max-width: 450px;
+    }
+  }
+
+  &__price {
+    @include price;
+    width: fit-content;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__volume {
+    @include price;
+    width: fit-content;
+    @include hover(transform, scale(1.2));
+  }
+
+  &__text {
+    @include font(400, 16px, 24px);
+    text-align: justify;
+
+    &--ingredients {
+      &::before {
+        content: "Ingredients: ";
+        color: $title-color;
+        font-weight: 500;
+      }
+
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 25px;
+      }
+    }
+
+    &--application {
+      &::before {
+        content: "Application: ";
+        color: $title-color;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+      align-self: center;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      align-self: start;
+    }
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+    margin-bottom: 30px;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    @include imageHeight(88.5%);
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      order: -1;
+      padding-bottom: 94.4%;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      padding-bottom: 93.6%;
+      margin-bottom: 0;
+    }
+  }
+}

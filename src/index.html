@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco cosmetics</title>
-    <link rel="icon" href="./images/favicon.ico">
+    <link rel="icon" href="./images/favicon.svg">
     <link rel="stylesheet" href="./styles/main.scss">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
@@ -14,7 +14,30 @@
         <a href="#" class="icon icon--logo"></a>
         <p class="logo__text">witch of mountain winds</p>
       </div>
-      <a href="#menu" class="icon icon--menu"></a>
+
+      <div class="header__menu">
+        <label class="icon icon--menu" for="open"></label>
+        <input
+          type="radio"
+          name="menu"
+          class="toggle toggle--header"
+          id="open"
+        >
+        <label class="page__menu menu">
+          <input
+            type="radio"
+            name="menu"
+            class="toggle toggle--aside"
+          >
+          <div class="icon icon--close"></div>
+          <nav class="menu__nav">
+            <a href="#shop" class="menu__link">Shop</a>
+            <a href="#contact" class="menu__link">Contact</a>
+            <a href="#about" class="menu__link">About</a>
+          </nav>
+        </label>
+      </div>
+
       <nav class="header__nav nav">
         <ul class="nav__list">
           <li class="nav__item">
@@ -28,25 +51,109 @@
           </li>
         </ul>
       </nav>
-      <a href="#" class="icon icon--bag"></a>
+
+      <a href="#" class="icon icon--bag">
+        <div class="counter counter--small counter--big">12</div>
+      </a>
     </header>
 
-    <aside class="page__menu menu" id="menu">
-      <a href="#" class="icon icon--close"></a>
-      <nav class="menu__nav">
-        <ul class="menu__list">
-          <li class="menu__item">
-            <a href="#shop" class="menu__link">Shop</a>
-          </li>
-          <li class="menu__item">
-            <a href="#contact" class="menu__link">Contact</a>
-          </li>
-          <li class="menu__item">
-            <a href="#about" class="menu__link">About</a>
-          </li>
-        </ul>
-      </nav>
-    </aside>
+    <div class="page__products products animation-wrapper" id="products">
+      <div class="products__select select">
+        <button class="select__button button">
+          all products
+          <div class="select__angle"></div>
+        </button>
+        <div class="select__wrapper">
+          <div class="select__list">
+            <label class="select__label">
+              all products
+              <input
+                type="radio"
+                name="select"
+                value="all products"
+                class="toggle"
+                checked
+              >
+            </label>
+            <label class="select__label">
+              face
+              <input
+                type="radio"
+                name="select"
+                value="face"
+                class="toggle"
+              >
+            </label>
+            <label class="select__label">
+              body
+              <input
+                type="radio"
+                name="select"
+                value="body"
+                class="toggle"
+              >
+            </label>
+            <label class="select__label">
+              hair
+              <input
+                type="radio"
+                name="select"
+                value="hair"
+                class="toggle"
+              >
+            </label>
+            <label class="select__label">
+              candles
+              <input
+                type="radio"
+                name="select"
+                value="candles"
+                class="toggle"
+              >
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="products__container"></div>
+    </div>
+
+    <div class="page__product animation-wrapper" id="product">
+      <section class="product animation-left">
+        <div class="product__decoration decoration--product">
+          <div class="decoration__line"></div>
+          <p class="decoration__text">about the product</p>
+        </div>
+
+        <div class="product__content product__content--top">
+          <h2 class="product__title">Anti-stress face mask</h2>
+          <p class="product__price">220 UAH</p>
+          <p class="product__volume">100 ML</p>
+        </div>
+
+        <div class="product__image">
+          <img
+            src="./images/shop/face-1.jpg"
+            alt="Product foto"
+            class="image image--product"
+          >
+        </div>
+
+        <div class="product__content product__content--bottom">
+          <button
+            class="product__button button add"
+            data-product-id="1"
+          ></button>
+          <div class="product__text-container">
+            <p class="product__text product__text--ingredients">
+              aloe powder, damask rose powder, kaolin, micronized rice powder, lotus seed powder, betaine, niacinamide, allantoin.
+            </p>
+            <p class="product__text product__text--application">
+              1 tsp displace the powder with warm water, apply on the face, leave for 5 minutes and rinse. Do not allow the mask to dry, if necessary, moisten with water. Use 1-3 times a week.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <main class="page__main main">
       <section class="main__section animation-wrapper">
@@ -58,26 +165,10 @@
             <p class="brand__text">
               20% of sales at a wild bird shelter
             </p>
-            <button class="brand__button button">shop</button>
+            <a href="#shop" class="brand__button button">shop</a>
           </div>
           <div class="brand__image-container">
-            <picture>
-              <source
-                media="(min-width: 1280px)"
-                srcset="./images/brand/brand-desktop.png"
-                class="image"
-              >
-              <source
-                media="(min-width: 640px)"
-                srcset="./images/brand/brand-tablet.png"
-                class="image"
-              >
-              <img
-                src="./images/brand/brand-mobile.png"
-                alt="Brand foto"
-                class="image"
-              >
-            </picture>
+            <div class="brand__image"></div>
           </div>
         </div>
       </section>
@@ -123,21 +214,21 @@
               <source
                 media="(min-width: 1280px)"
                 srcset="./images/about/about-desktop-1.png"
-                class="about__image"
+                class="image"
               >
               <img
                 src="./images/about/about-tablet.png"
                 alt="Product foto"
-                class="about__image"
+                class="image"
               >
             </picture>
           </div>
           <div class="about__image-container about__image-container--2">
             <img
-                src="./images/about/about-desktop-2.png"
-                alt="Product foto"
-                class="about__image"
-              >
+              src="./images/about/about-desktop-2.png"
+              alt="Product foto"
+              class="image"
+            >
           </div>
         </section>
       </div>
@@ -148,67 +239,70 @@
             <div class="decoration__line"></div>
             <p class="decoration__text">shop</p>
           </div>
+
           <h3 class="shop__title title">shop</h3>
+
           <nav class="shop__nav nav-shop">
             <ul class="nav-shop__list">
               <li class="nav-shop__item">
-                <a href="#face" class="nav-shop__link">face</a>
+                <input
+                  type="radio"
+                  name="shop"
+                  id="face"
+                  class="nav-shop__radio"
+                  checked
+                >
+                <label for="face" class="nav-shop__link">face</label>
               </li>
               <li class="nav-shop__item">
-                <a href="#body" class="nav-shop__link">body</a>
+                <input
+                  type="radio"
+                  name="shop"
+                  id="body"
+                  class="nav-shop__radio"
+                >
+                <label for="body" class="nav-shop__link">body</label>
               </li>
               <li class="nav-shop__item">
-                <a href="#hair" class="nav-shop__link">hair</a>
+                <input
+                  type="radio"
+                  name="shop"
+                  id="hair"
+                  class="nav-shop__radio"
+                >
+                <label for="hair" class="nav-shop__link">hair</label>
               </li>
               <li class="nav-shop__item">
-                <a href="#candles" class="nav-shop__link">candles</a>
+                <input
+                  type="radio"
+                  name="shop"
+                  id="candles"
+                  class="nav-shop__radio"
+                >
+                <label for="candles" class="nav-shop__link">candles</label>
               </li>
             </ul>
           </nav>
+
           <div class="shop__product-container animation-right">
-            <div class="shop__product shop__product--1 product">
-              <div class="product__image-container">
-                <picture>
-                  <source
-                    media="(min-width: 1280px)"
-                    srcset="./images/shop/product-desktop-1.png"
-                    class="product__image"
-                  >
-                  <source
-                    media="(min-width: 640px)"
-                    srcset="./images/shop/product-tablet-1.png"
-                    class="product__image"
-                  >
-                  <img
-                    src="./images/shop/product-mobile-1.png"
-                    alt="Product foto"
-                    class="product__image"
-                  >
-                </picture>
-              </div>
-              <h3 class="product__title">hydrophilic oil</h3>
-              <p class="product__price">160 UAH</p>
+            <div class="shop__product shop__product--1 shop-product">
+              <a href="#product" class="shop-product__link">
+                <div class="shop-product__image shop-product__image--1 shop-product__image--face-1"></div>
+              </a>
+              <h3 class="shop-product__title">anti-stress face mask</h3>
+              <p class="shop-product__price">220 UAH</p>
             </div>
-            <div class="shop__product shop__product--2 product">
-              <div class="product__image-container">
-                <picture>
-                  <source
-                    media="(min-width: 1280px)"
-                    srcset="./images/shop/product-desktop-2.png"
-                    class="product__image"
-                  >
-                  <img
-                    src="./images/shop/product-tablet-2.png"
-                    alt="Product foto"
-                    class="product__image"
-                  >
-                </picture>
-              </div>
-              <h3 class="product__title">ubtan</h3>
-              <p class="product__price">160 UAH</p>
+
+            <div class="shop__product shop__product--2 shop-product">
+              <a href="#product" class="shop-product__link">
+                <div class="shop-product__image shop-product__image--2 shop-product__image--face-2"></div>
+              </a>
+              <h3 class="shop-product__title">mineral powder</h3>
+              <p class="shop-product__price">300 UAH</p>
             </div>
           </div>
-          <button class="shop__button button">all products</button>
+
+          <a href="#products" class="shop__button button">all products</a>
         </section>
       </div>
 
@@ -219,39 +313,31 @@
             <p class="decoration__text">about the creators</p>
           </div>
 
-          <div class="creators__container">
-            <article class="creators__article">
-              <h2 class="creators__title title">about the creators</h2>
-              <div class="animation-top">
-                <div class="creators__content">
-                  <p class="creators__text">
-                    My name is Victoria, I&prime;m a master at candle making and natural cosmetics. In the past, a cynologist, was engaged in herbs, made layouts on the Tarot.
-                  </p>
-                  <p class="creators__text">
-                    I am also a volunteer to save wild birds in distress, a consultant to the Phoenix Wildlife Rehabilitation Center, a member of the Society for the Conservation of Birds of Ukraine with the support of Birdlife International.
-                  </p>
-                  <p class="creators__text">
-                    My husband and I live in the Carpathian region in the city of Chernivtsi. I dream of my center for the rehabilitation of wild birds, as it is very difficult to rescue birds in a rented communal apartment.
-                  </p>
-                </div>
+          <article class="creators__container">
+            <h2 class="creators__title title">about the creators</h2>
+            <div class="creators__wrapper animation-top">
+              <div class="creators__content">
+                <p class="creators__text">
+                  My name is Victoria, I&prime;m a master at candle making and natural cosmetics. In the past, a cynologist, was engaged in herbs, made layouts on the Tarot.
+                </p>
+                <p class="creators__text">
+                  I am also a volunteer to save wild birds in distress, a consultant to the Phoenix Wildlife Rehabilitation Center, a member of the Society for the Conservation of Birds of Ukraine with the support of Birdlife International.
+                </p>
+                <p class="creators__text">
+                  My husband and I live in the Carpathian region in the city of Chernivtsi. I dream of my center for the rehabilitation of wild birds, as it is very difficult to rescue birds in a rented communal apartment.
+                </p>
                 <a href="#" class="creators__link link">learn more</a>
               </div>
-            </article>
-            <button class="creators__button button">to contact us</button>
-          </div>
+              <button class="creators__button button">to contact us</button>
+            </div>
+          </article>
+
           <div class="creators__image-container">
-            <picture>
-              <source
-                media="(min-width: 1280px)"
-                srcset="./images/creators/creators-desktop.png"
-                class="creators__image"
-              >
-              <img
-                src="./images/creators/creators-tablet.png"
-                alt="Product foto"
-                class="creators__image"
-              >
-            </picture>
+            <img
+              src="./images/creators/creators.png"
+              alt="Product foto"
+              class="image"
+            >
           </div>
         </section>
       </div>
@@ -264,7 +350,6 @@
 
         <h2 class="ingredients__title title">Ayurvedic Tooth Powder</h2>
 
-        </div>
         <div class="ingredients__container animation-right">
           <ul class="ingredients__list">
             <li class="ingredients__item">Kaolin</li>
@@ -273,27 +358,27 @@
             <li class="ingredients__item">Licorice root</li>
             <li class="ingredients__item">Turmeric</li>
           </ul>
-
           <div class="ingredients__image-container">
             <picture>
               <source
-                media="(min-width: 1280px)"
+                media="(min-width: 1068px)"
                 srcset="./images/ingredients/ingredients-desktop.svg"
-                class="ingredients__image"
+                class="image"
               >
               <source
                 media="(min-width: 640px)"
                 srcset="./images/ingredients/ingredients-tablet.svg"
-                class="ingredients__image"
+                class="image"
               >
               <img
                 src="./images/ingredients/ingredients-mobile.svg"
                 alt="Ingredients foto"
-                class="ingredients__image"
+                class="image"
               >
             </picture>
           </div>
         </div>
+
         <a href="#" class="ingredients__link link">learn more</a>
       </section>
 
@@ -378,7 +463,6 @@
                   required
                 ></textarea>
               </div>
-
               <button
                 type="submit"
                 value="send a message"
@@ -394,12 +478,12 @@
               <source
                 media="(min-width: 1280px)"
                 srcset="./images/contact/contact-desktop.png"
-                class="contact__image"
+                class="image"
               >
               <img
-                src="./images/contact/contact-tablet.png"
+                src="./images/contact/contact.png"
                 alt="Contact foto"
-                class="contact__image"
+                class="image"
               >
             </picture>
           </div>
@@ -421,6 +505,7 @@
           </li>
         </ul>
       </nav>
+
       <div class="footer__networks-container">
         <a href="https://instagram.com" class="icon icon--instagram"></a>
         <a href="https://facebook.com" class="icon icon--facebook"></a>
@@ -442,9 +527,10 @@
           Support is available Monday - Friday 9am-6pm
         </li>
       </ul>
+
       <p class="footer__copyright">
         <span class="footer__copyright-before">Copyright</span>&copy;
-        2019 witch of mountain winds
+        2023 witch of mountain winds
       </p>
     </footer>
 

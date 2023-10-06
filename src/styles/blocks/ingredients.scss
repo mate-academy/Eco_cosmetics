@@ -60,6 +60,7 @@
     height: 322px;
     margin-right: 20px;
     @include font(400, 16px, 24px);
+    transition: transform 0.3s;
   }
 
   &__item {
@@ -71,18 +72,22 @@
   &__image-container {
     width: 182px;
     @include imageHeight(397px);
+    object-fit: cover;
+    object-position: center;
 
-    @include onTablet {
+    @media (min-width: 640px) {
       width: 398px;
     }
 
-    @include onDesktop {
+    @media (min-width: 1068px) {
       width: 480px;
     }
   }
 
   &__image {
-    @include image;
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 
   &__link {
@@ -98,4 +103,9 @@
       grid-column: 2 / 4;
     }
   }
+}
+
+.ingredients__list:has(~ .ingredients__image-container:hover) {
+  transition: transform 0.3s;
+  transform: scale(1.2) translateX(-38%);
 }

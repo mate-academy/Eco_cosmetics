@@ -1,0 +1,83 @@
+.select {
+  position: sticky;
+  top: 80px;
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  z-index: 4;
+  gap: 1px;
+
+  @include onTablet {
+    top: 100px;
+  }
+
+  &__angle {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-image: url("./../images/icons/angle.png");
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3;
+
+    &--close {
+      transition: transform 0.3;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    @include font(600, 16px, 40px);
+    padding-left: 20px;
+    padding-right: 17px;
+    box-shadow: 2px 2px 4px rgba(228, 223, 211, 0.7);
+    @include hover(transform, translateY(-4px));
+
+    &:hover .select__angle {
+      background-image: url("./../images/icons/angle-hover.png");
+    }
+  }
+
+  &__wrapper {
+    // width: 100%;
+    overflow: hidden;
+  }
+
+  &__list {
+    transition: all 0.8s;
+    transform: translateY(-140%);
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(51, 51, 51, 0.6);
+
+    &--open {
+      transition: transform 0.8;
+      transform: translateY(0);
+    }
+  }
+
+  &__label {
+    padding: 5px 20px;
+    color: $main-background-color;
+    text-transform: uppercase;
+    @include font(500, 14px, 18px);
+    letter-spacing: 0.7px;
+
+    @include hover(color, $link-color) {
+      background-color: rgba(228, 223, 211, 0.7);
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(228, 223, 211, 0.7);
+    }
+
+    &:has(.toggle:checked) {
+      color: $footer-color;
+    }
+  }
+}

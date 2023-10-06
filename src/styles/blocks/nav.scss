@@ -7,9 +7,15 @@
     justify-content: space-between;
   }
 
+  &__item {
+    @include hover(transform, scale(1.1));
+  }
+
   &__link {
     position: relative;
     @include font(500, 18px, 27px);
+    color: inherit;
+    @include hover(color, $main-color);
 
     &::after {
       content: "";
@@ -24,8 +30,10 @@
       transform: scale(0);
     }
 
-    @include hover(color, $main-color) {
+    &--active {
+      color: $main-color;
       &::after {
+        transition: transform 0.3s;
         transform: scale(1);
       }
     }

@@ -121,7 +121,14 @@
       transform-origin: left;
     }
 
-    @include hover(color, $main-color) {
+    @include hover(color, $main-color);
+  }
+
+  &__radio {
+    display: none;
+
+    &:checked + .nav-shop__link {
+      color: $main-color;
       &::after {
         transform: scale(1);
       }
@@ -129,16 +136,80 @@
   }
 }
 
-.product {
+.shop-product {
   width: 100%;
   text-transform: uppercase;
 
-  &__image-container {
+  &__image {
+    display: flex;
+    position: relative;
     @include imageContainer(95%, 87.5%, 94.5%);
+    transition: background-image 0.5s;
+    background-size: cover;
+    background-position: center;
+    pointer-events: all;
+    &::before {
+      display: flex;
+      content: "read more";
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(51, 51, 51, 0.7);
+      @include font(400, 14px, 18px);
+      letter-spacing: 0.7px;
+      @include onDesktop {
+        @include font(600, 18px, 27px);
+        letter-spacing: 0.9px;
+      }
+      color: $text-button-color;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &:hover {
+      &::before {
+        transition: opacity 0.3s;
+        opacity: 1;
+      }
+    }
+
+    &--1 {
+      background-image: url("./../images/shop/face-1.jpg");
+    }
+
+    &--2 {
+      background-image: url("./../images/shop/face-2.jpg");
+    }
+
+    $properties: "face", "body", "hair", "candles";
+
+    @each $property in $properties {
+      &--#{$property}-1 {
+        transition: all 0.3s;
+        background-image: url("./../images/shop/#{$property}-1.jpg");
+      }
+
+      &--#{$property}-2 {
+        transition: all 0.3s;
+        background-image: url("./../images/shop/#{$property}-2.jpg");
+      }
+    }
   }
 
-  &__image {
-    @include image;
+  &__link {
+    display: block;
+    overflow: hidden;
+    position: relative;
+
+    &:has(+ .shop-product__title:hover) > .shop-product__image {
+      transition: transform 0.3s;
+      transform: scale(1.2);
+    }
   }
 
   &__title {
@@ -155,6 +226,12 @@
     @include onDesktop {
       margin-bottom: 13px;
     }
+
+    &:hover {
+      color: $title-color;
+    }
+
+    @include hover(color, $title-color);
   }
 
   &__price {
