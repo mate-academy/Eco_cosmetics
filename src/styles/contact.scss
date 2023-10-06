@@ -1,0 +1,159 @@
+@import "./mixins.scss";
+
+.contact {
+  grid-column: 1 / -1;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    grid-column: 1 / 4;
+  }
+
+  @media (min-width: 1280px) {
+    grid-column: 2 / 6;
+  }
+
+  &__name {
+    margin: 0;
+    margin-top: 100px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 5%;
+    color: #344f10;
+    text-transform: uppercase;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      margin-top: 130px;
+    }
+
+    @media (min-width: 1280px) {
+      margin-top: 200px;
+    }
+  }
+
+  &__deskription {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #333;
+    margin: 0;
+    margin-top: 10px;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    @media (min-width: 1280px) {
+      margin-top: 30px;
+      font-size: 16px;
+    }
+  }
+
+  &__input {
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    width: 98%;
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #828282;
+    text-underline-offset: 3px;
+    background-color: #e4dfd3;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      font-weight: 500;
+      margin-top: 32px;
+    }
+
+    @media (min-width: 1280px) {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      margin-top: 40px;
+    }
+
+    &--margin {
+      margin-top: 25px;
+
+      @media (min-width: 1280px) {
+        margin-top: 30px;
+      }
+    }
+
+    &--BigMargin {
+      margin-top: 45px;
+
+      @media (min-width: 1280px) {
+        margin-top: 60px;
+      }
+    }
+
+    &:focus {
+      border: initial;
+      outline: initial;
+      border-bottom: 1px solid #bdbdbd;
+    }
+  }
+
+  &__button {
+    border: none;
+    background-color: #333;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 15%;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      width: 280px;
+    }
+
+    @media (min-width: 1280px) {
+      width: 280px;
+      margin-top: 90px;
+    }
+  }
+}
+
+.contacts {
+  display: none;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    display: block;
+    grid-column: 4 / 8;
+    margin-top: 130px;
+  }
+
+  @media (min-width: 1280px) {
+    display: block;
+    grid-column: 7 / 13;
+    margin-top: 200px;
+  }
+
+  &__foto {
+    display: none;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      display: block;
+      background-image: url(../images/contact__tablet.svg);
+      width: 100%;
+      height: 407px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media (min-width: 1280px) {
+      display: block;
+      background-image: url(../images/footer__desktop.svg);
+      width: 100%;
+      height: 539px;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}

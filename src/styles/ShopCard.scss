@@ -1,0 +1,231 @@
+@import "./mixins.scss";
+
+.card {
+  grid-column: 1 / -1;
+  margin: 0;
+  margin-top: 20px;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    grid-column: 1 / 4;
+    margin-top: 10px;
+  }
+
+  @media (min-width: 1280px) {
+    grid-column: 2 / 7;
+    margin-top: 30px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      justify-content: start;
+    }
+
+    @media (min-width: 1280px) {
+      justify-content: start;
+    }
+  }
+
+  &__item {
+    color: #828282;
+    text-transform: uppercase;
+    margin-left: 34px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18.2px;
+    letter-spacing: 5%;
+
+    &--margin {
+      margin-left: 0;
+    }
+
+    @media (min-width: 1280px) {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 5%;
+    }
+  }
+
+  &__foto {
+    background-image: url(../images/shop__mobile.svg);
+    height: 267px;
+    width: 100%;
+    background-size: cover;
+    margin: 0;
+    margin-top: 27px;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      margin-top: 37px;
+      background-image: url(../images/shop__tablet.svg);
+      width: 100%;
+      height: 300px;
+      background-size: 100%;
+      background-position: center;
+    }
+
+    @media (min-width: 1280px) {
+      background-image: url(../images/shop__desktop.svg);
+      width: 100%;
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+      margin-top: 62px;
+    }
+  }
+
+  &__name {
+    text-transform: uppercase;
+    color: #333;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 5%;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  &__price {
+    color: #333;
+    margin: 0;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 5%;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      margin-top: 15px;
+    }
+
+    @media (min-width: 1280px) {
+      margin-top: 13px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    color: #f2f2f2;
+    background-color: #333;
+    width: 100%;
+    height: 60px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20.8px;
+    letter-spacing: 15%;
+    margin: 0;
+    margin-top: 30px;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      margin-top: 50px;
+      width: 280px;
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+
+    @media (min-width: 1280px) {
+      margin-top: 40px;
+      width: 280px;
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+  }
+}
+
+.cards {
+  display: none;
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    display: block;
+    grid-column: 4 / 7;
+  }
+
+  @media (min-width: 1280px) {
+    display: block;
+    grid-column: 7 / 13;
+  }
+
+  &__two {
+    display: none;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      display: block;
+      background-image: url(../images/ShopNext__tablet.svg);
+      height: 300px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      margin-top: 80px;
+    }
+
+    @media (min-width: 1280px) {
+      display: block;
+      background-image: url(../images/ShopNext__desktop.svg);
+      width: 100%;
+      height: 500px;
+      background-size: cover;
+      background-position: center;
+      margin-top: 135px;
+    }
+  }
+
+  &__name {
+    display: none;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      text-transform: uppercase;
+      color: #333;
+      display: block;
+      margin: 0;
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 5%;
+    }
+
+    @media (min-width: 1280px) {
+      text-transform: uppercase;
+      color: #333;
+      display: block;
+      margin: 0;
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 5%;
+    }
+  }
+
+  &__price {
+    display: none;
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      color: #333;
+      display: block;
+      margin: 0;
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 5%;
+    }
+
+    @media (min-width: 1280px) {
+      display: block;
+      color: #333;
+      margin: 0;
+      margin-top: 15px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 5%;
+    }
+  }
+}
