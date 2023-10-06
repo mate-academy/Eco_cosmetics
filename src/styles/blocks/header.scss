@@ -1,27 +1,56 @@
 .header {
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  // &__content {
+  //   // display: flex;
+  //   // flex-direction: column;
+  //   // justify-content: space-between;
+
+
+  // }
 
   &__bottom {
     @include paddingInline;
+
+    @include onTablet {
+      @include pageGrid
+    };
+
   }
 
   &__image {
     background-image: url(../images/header-img-big.png);
     height: 270px;
     background-size:cover;
+
+    @include onTablet {
+      @include paddingInline;
+      height: 500px;
+    }
   }
 
   &__title {
     text-align: center;
     margin-block: 25px 10px;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+      margin-top: 50px;
+      grid-column: 2 / -2;
+    }
   }
 
   &__text {
     text-align: center;
     font-size: 16px;
+    grid-column: 2 / -2;
+  }
+
+  &__button {
+    margin-inline: 20px;
+
+    @include onTablet {
+      margin: auto;
+    }
   }
 }

@@ -10,6 +10,12 @@
   }
 }
 
+@mixin onSmallDesktop {
+  @media (min-width: $minidesktop-min-width) {
+    @content;
+  }
+}
+
 @mixin onDesktop {
   @media (min-width: $desktop-min-width) {
     @content;
@@ -20,13 +26,17 @@
   padding-inline: 20px;
 
   @include onTablet {
-    padding-inline: 72px;
+    padding-inline: 27px;
+  }
+
+  @include onSmallDesktop {
+    padding-inline: 50px;
   }
 
   @include onDesktop {
     margin-inline: auto;
-    max-width: 1020px;
-    padding-inline: 120px;
+    max-width: 1440px;
+    padding-inline: 130px;
   }
 }
 
@@ -38,11 +48,12 @@
 
   @include onTablet {
     --columns: 6;
-    column-gap: 24px;
+    column-gap: 30px;
   }
 
   @include onDesktop {
     --columns: 12;
+    column-gap: 20px;
   }
 }
 
