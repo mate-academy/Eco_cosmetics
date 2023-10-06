@@ -54,16 +54,13 @@ const select = document.querySelector('.select');
 
 let index = 0;
 let timerId;
-const style = getComputedStyle(preview);
-const pathIndex = style.backgroundImage.lastIndexOf('/')
-const url = style.backgroundImage.slice(0, pathIndex + 1);
 
 function changeImage() {
   if (index > 18) {
     index = 0;
     preview.src = imageList[index];
   }
-  preview.style.backgroundImage = `${url}${imageList[index]}")`;
+  preview.style.backgroundImage = `url("https://kshvetsova.github.io/Eco_cosmetics/${imageList[index]}")`;
   index++;
   clearTimeout(timerId);
   timerId = setTimeout(changeImage, 2500);
