@@ -1,7 +1,11 @@
 .shop {
   &-nav {
-    margin-block: 15px 27px;
+    margin-block: 20px;
     @include paddingInline;
+
+    @include onTablet {
+      margin-block: 10px 37px;
+    }
 
     &__link {
       text-decoration: none;
@@ -38,21 +42,56 @@
       list-style: none;
       display: flex;
       justify-content: space-between;
+
+      @include onTablet {
+        gap: 30px;
+        justify-content: normal;
+      }
     }
   }
+
+  &__product {
+    &-wrap--hidden {
+      display: none;
+    }
+
+    @include onTablet {
+      @include pageGrid;
+      @include paddingInline;
+
+      &-wrap {
+        grid-column: span 3;
+
+        &--hidden {
+          display: block;
+        }
+      }
+    }
+  }
+
+
 
   &__photo {
     height: 270px;
     width: 100%;
     object-fit: cover;
+
+    @include onTablet {
+      height: 300px;
+      background-position: center;
+    }
   }
 
   &__content {
-    @include paddingInline;
+    margin-left: 20px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    @include onTablet {
+      margin-left: 0;
+    }
   }
 
   &__price {
@@ -65,6 +104,15 @@
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  &__button {
+    margin-inline: 20px;
+    
+    @include onTablet {
+      margin: auto;
+      margin-top: 50px;
     }
   }
 }

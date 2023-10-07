@@ -1,7 +1,29 @@
 .contacts {
   @include paddingInline;
 
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  &__content {
+    grid-column: span 3;
+  }
+
   &__text {
     margin-bottom: 20px;
+    
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__bird-img {
+    @include onTablet {
+      background-image: url(../images/page-photo/contacts-bird.png);
+      height: 407px;
+      background-size:cover;
+      background-position: center;
+      grid-column: span 3;
+    }
   }
 }

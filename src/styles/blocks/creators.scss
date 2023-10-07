@@ -1,8 +1,42 @@
 .creators {
   @include paddingInline;
-  
+
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  &__wrap {
+    @include onTablet {
+      grid-column: span 3;
+    }
+  }
+
   &__content {
     @include flaxColumnGap20;
     margin-top: 10px;
+
+    @include onTablet {
+      gap: 15px;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      font-size: 16px;
+    }
+  }
+
+  &__bird-img {
+    @include onTablet {
+      background-image: url(../images/page-photo/creators-bird.png);
+      height: 440px;
+      background-size:cover;
+      background-position: center;
+      grid-column: span 3;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
   }
 }
