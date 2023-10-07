@@ -58,9 +58,8 @@ let timerId;
 function changeImage() {
   if (index > 18) {
     index = 0;
-    preview.src = imageList[index];
   }
-  preview.style.backgroundImage = `url("https://kshvetsova.github.io/Eco_cosmetics/${imageList[index]}")`;
+  preview.className = `brand__image--${index}`
   index++;
   clearTimeout(timerId);
   timerId = setTimeout(changeImage, 2500);
