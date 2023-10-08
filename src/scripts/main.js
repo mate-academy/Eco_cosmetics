@@ -79,6 +79,9 @@ function validateInput(inputElement) {
   }
 }
 
+window.scrollToAnchor = scrollToAnchor;
+window.scrollAuthor = scrollAuthor;
+
 document.addEventListener('DOMContentLoaded', function() {
   const inputElements = document.querySelectorAll('.contact__input');
 
