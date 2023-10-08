@@ -1,11 +1,26 @@
 'use strict';
 
+// eslint-disable-next-line no-unused-vars
+function scrollToAnchor() {
+  const targetElement = document.getElementById('shop');
+
+  targetElement.scrollIntoView({ behavior: 'smooth' });
+}
+
+// eslint-disable-next-line no-unused-vars
+function scrollAuthor() {
+  const targetElement = document.getElementById('contact');
+
+  targetElement.scrollIntoView({ behavior: 'smooth' });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   const inputElements = document.querySelectorAll('.contact__input');
 
   inputElements.forEach(function(inputElement) {
     inputElement.addEventListener('blur', function() {
       if (this.value.trim() !== '') {
+        // eslint-disable-next-line no-undef
         if (validateInput(this)) {
           this.classList.add('completed');
           this.classList.remove('error');
@@ -19,24 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-});
 
-function validateInput(inputElement) {
-  const value = inputElement.value.trim();
-  const type = inputElement.type;
-
-  if (type === 'email') {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    return emailRegex.test(value);
-  } else if (type === 'tel') {
-    return value.length >= 6;
-  } else {
-    return value.length >= 6;
-  }
-}
-
-document.addEventListener('DOMContentLoaded', function() {
   const form = document.querySelector('.contact__form');
 
   form.addEventListener('submit', function(event) {
@@ -46,6 +44,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const email = form.querySelector('[placeholder="E-Mail"]').value;
     const phone = form.querySelector('[placeholder="Phone Number"]').value;
     const message = form.querySelector('[placeholder="Your Message"]').value;
+
+    // Очистить состояния ошибок у всех полей ввода
+    inputElements.forEach(function(inputElement) {
+      inputElement.classList.remove('completed', 'error');
+    });
 
     // eslint-disable-next-line no-undef
     fetch('https://mate.academy/', {
@@ -61,13 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(data => {
         // eslint-disable-next-line no-console
         console.log('Данные успешно отправлены', data);
-
         form.reset();
       })
       .catch(error => {
         // eslint-disable-next-line no-console
         console.error('Ошибка при отправке данных:', error);
-
         form.reset();
       });
   });
