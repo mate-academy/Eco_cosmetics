@@ -1,0 +1,85 @@
+.header {
+
+  &__layout {
+    @include pageGrid;
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+
+    @include hover(transform, scale(1.05));
+    img {
+      margin-left: -20px;
+      width: calc(100% + 40px);
+
+      @include onTablet {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__bottom {
+    grid-column: 1 / -1;
+
+    margin-top: 25px;
+
+    @include onTablet {
+      margin-top: 50px;
+      grid-column: 2 / -2;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+      grid-column: 2 / 7;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      text-align: start;
+      font-size: 60px;
+      line-height: 130%;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    margin-top: 10px;
+    color: $clr--gray-1;
+
+    @include onDesktop {
+      margin-top: 30px;
+      text-align: start;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    width: 100%;
+
+    @include onTablet {
+      margin: 50px auto 0;
+      width: 280px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      margin-top: 50px;
+    }
+  }
+}

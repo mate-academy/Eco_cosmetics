@@ -1,0 +1,75 @@
+.top-bar {
+  grid-column: 1 / -1;
+
+  padding: 15px 0 20px;
+  @include pageGrid;
+
+  @include onTablet {
+    padding: 23px 0 30px;
+  }
+
+  @include onDesktop {
+    padding: 0;
+    padding-top: 40px;
+    align-items: center;
+  }
+
+  &__logo {
+    display: none;
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    &--img {
+      width: 50px;
+      height: 50px;
+      @include hover(transform, scale(1.1));
+    }
+
+    &--text {
+      @extend %logo--text;
+    }
+  }
+
+  &__icons {
+    grid-column: 1 / -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include onDesktop {
+      grid-column: 12 / -1;
+      justify-content: end;
+    }
+  }
+}
+
+.nav-header {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+
+    grid-column: 7 / 10;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__link {
+    display: inline-block;
+
+    @extend %nav--link;
+
+    @include hover(transform, scale(1.2));
+  }
+}
