@@ -1,0 +1,85 @@
+.choose {
+
+  &__layout {
+    @include onDesktop {
+      @include pageGrid;
+    }
+
+  }
+
+  &__line {
+    height: 1px;
+    background: rgba(52, 79, 16, 0.50);
+
+    &--top {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        grid-column: 1 / 6;
+        width: calc(100% + 50px);
+        margin-left: -50px;
+      }
+
+      @include onWideScreen {
+        width: calc(100% + 130px);
+        margin-left: -130px;
+      }
+
+    }
+
+    &--bottom {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        grid-column: 7 / -1;
+        width: calc(100% + 50px);
+        margin-right: -50px;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+        width: calc(100% + 130px);
+        margin-right: -130px;
+      }
+    }
+  }
+
+  &__title {
+    text-align: start;
+    font-size: 18px;
+    letter-spacing: 0.9px;
+
+    @include onTablet {
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      width: 100%;
+
+      grid-column: 7 / -3;
+      grid-row: 2 / 3;
+      align-self: center;
+      text-align: start;
+      font-size: 24px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin: 100px 0;
+
+      grid-column: 2 / 6;
+      color: $clr--gray-1;
+      font-family: $font--main;
+    }
+  }
+}

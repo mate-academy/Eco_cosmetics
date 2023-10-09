@@ -1,0 +1,45 @@
+.footer__menu {
+  margin-top: 30px;
+  grid-column: 1 / 2;
+
+  @include onTablet {
+    grid-column: 1 / 3;
+  }
+
+  @include onDesktop {
+    margin-top: 60px;
+
+    grid-column: 1 / 4;
+  }
+
+  &--list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    @include onTablet {
+      gap: 14px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &--link {
+    display: inline-block;
+    @include hover(transform, scale(1.2));
+    @extend %footer-menu;
+
+    @include onTablet {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}
