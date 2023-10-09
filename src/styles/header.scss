@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import "./mixins.scss";
+
+.header {
+  @include PageGrid;
+  align-items: center;
+
+  @media (max-width: 1279px) and (min-width: 0) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__image {
+    background-image: url(../images/logo2.svg);
+    width: 270px;
+    height: 50px;
+    background-size: 270px;
+    grid-column: 1 / 4;
+
+    @media (max-width: 1279px) and (min-width: 0) {
+      background-image: url(../images/menu.svg);
+      width: 20px;
+      height: 13px;
+      background-size: 20px;
+      transition-duration: 0.3s;
+      transform: scale(1);
+
+      &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__href {
+    color: #333;
+    text-decoration: none;
+    margin-right: 40px;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    grid-column: 7 / 10;
+    padding-left: 0;
+
+    @media (max-width: 1279px) and (min-width: 0) {
+      text-indent: -9999px;
+      background-image: url(../images/center__icon.svg);
+      width: 24px;
+      height: 24px;
+      background-size: 24px;
+      transition-duration: 0.3s;
+      transform: scale(1);
+
+      &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__item {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+
+    &--margin {
+      margin: 0;
+    }
+  }
+
+  &__basket {
+    background-image: url(../images/basket.svg);
+    width: 32px;
+    height: 32px;
+    background-size: 32px;
+    grid-column: 12;
+    justify-self: end;
+
+    @media (max-width: 1279px) and (min-width: 0) {
+      width: 24px;
+      height: 24px;
+      background-size: 24px;
+    }
+  }
+}
