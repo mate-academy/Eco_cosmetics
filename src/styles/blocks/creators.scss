@@ -1,0 +1,104 @@
+.creators {
+  &__block {
+    position: relative;
+  }
+
+  &__wrap {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__item {
+    @include onTablet {
+      grid-column: 1 /4;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__tittle {
+    padding-bottom: 10px;
+
+    @include onSmallDesktop {
+      padding-bottom: 34px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding-bottom: 20px;
+      gap: 15px;
+    }
+
+    @include onSmallDesktop {
+      gap: 30px;
+    }
+  }
+
+  &__subtittle {
+    color: $main-text-color;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    &--three {
+      display: none;
+
+      @include onSmallDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      height: 440px;
+      width: 342px;
+      grid-column: 4 /7;
+    }
+
+    @include onSmallDesktop {
+      height: 659px;
+      width: 580px;
+      grid-column: 7/13;
+    }
+  }
+
+  &__link {
+    @include link;
+  }
+
+  &__button {
+    @include button;
+    margin-top: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    transition: 0.4s ease-in-out;
+    border: 1px solid transparent;
+
+    @include onSmallDesktop {
+      margin-top: 50px;
+    }
+
+    &:hover {
+      border: 1px solid $main-iten-color;
+      background-color: transparent;
+      color: $main-iten-color;
+    }
+  }
+}

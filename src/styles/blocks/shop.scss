@@ -1,0 +1,140 @@
+.shop {
+  &__container {
+    @include onTablet {
+      padding-inline: 27px;
+    }
+
+    @include onSmallDesktop {
+      padding-inline: 50px;
+    }
+
+    @include onMediumDesktop {
+      padding-inline: 130px;
+    }
+  }
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__content {
+    @include onSmallDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__tittle {
+    text-align: center;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+      padding-bottom: 10px;
+    }
+
+    @include onSmallDesktop {
+      padding-bottom: 30px;
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__category {
+    @include onSmallDesktop {
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__item {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 2 / 13;
+    }
+  }
+
+  &__card {
+    &--two {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    padding-bottom: 20px;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.04);
+    }
+
+    @include onTablet {
+      width: 342px;
+      height: 300px;
+    }
+
+    @include onSmallDesktop {
+      width: 530px;
+      height: 500px;
+    }
+  }
+
+  &__text {
+    padding: 0 20px 30px;
+
+    @include onTablet {
+      padding: 0 0 50px;
+    }
+
+    @include onSmallDesktop {
+      padding: 0 0 40px;
+    }
+  }
+
+  &__subtittle {
+    color: $main-text-color;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      padding-bottom: 15px;
+    }
+
+    @include onSmallDesktop {
+      padding-bottom: 13px;
+    }
+  }
+
+  &__price {
+    color: $main-text-color;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    @include button;
+    text-transform: uppercase;
+    margin: 0 auto;
+    letter-spacing: 2.4px;
+    transition: 0.4s ease-in-out;
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid $main-iten-color;
+      background-color: transparent;
+      color: $main-iten-color;
+    }
+  }
+}

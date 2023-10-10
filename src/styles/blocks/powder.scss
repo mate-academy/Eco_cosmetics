@@ -1,0 +1,112 @@
+.powder {
+  &__wrap {
+    position: relative;
+  }
+  &__content {
+    @include pageGrid;
+  }
+
+  &__tittle {
+    padding: 0 20px;
+
+    @include onTablet {
+      font-size: 24px;
+      padding: 0;
+    }
+
+    @include onSmallDesktop {
+      padding: 0;
+      font-size: 36px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    text-align: right;
+    grid-column: 1;
+
+    @include onTablet {
+      grid-column: 3;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 6/8;
+    }
+  }
+
+  &__item {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: $main-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__img {
+    background-image: url(../images/powder/powder.png);
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+    height: 400px;
+    overflow-x: hidden;
+    grid-column: 2;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding: 0;
+      grid-column: 4 / -1;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 8 / 13;
+    }
+  }
+
+  &__block {
+    display: none;
+    padding: 0 20px;
+
+    @include onTablet {
+      display: block;
+      padding: 0;
+      grid-column: 1 / 3;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 2 /4;
+    }
+  }
+
+  &__link {
+    @include link;
+  }
+
+  &__block2 {
+    padding: 0 20px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}
