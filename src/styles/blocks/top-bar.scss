@@ -6,10 +6,62 @@
     padding-block: 20px 30px;
   }
 
+  @include onSmallDesktop {
+    padding-block: 40px 80px;
+  }
+
+  &-for-mobo {
+    @include onSmallDesktop {
+      display: none;
+    }
+  }
+
+  &-for-desktop {
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+    }
+  }
+
   &__icons {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
+
+  &__logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    &-text {
+      color: $text-color-green;
+      line-height: 130%;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+
+    }
+  }
+
+  &-nav {
+    &__link {
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+      color: $text-color-green;
+    }
+
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 40px
+    }
+  }
+
 }
 
 
