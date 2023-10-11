@@ -1,4 +1,31 @@
 .about-creators {
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  &__category {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: span 1;
+    }
+
+    &-img {
+      height: 230px;
+    }
+  }
+
+  &__wrap {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
   &__title {
     @include title;
     margin-bottom: 10px;
@@ -7,5 +34,46 @@
   &__text {
     @include text;
     margin-bottom: 20px;
+
+    &--desctop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    margin-bottom: 36px;
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+
+    &--img {
+      @include onTablet {
+        width: 100%;
+        // object-fit: cover;
+        height: 100%;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__button {
+    margin-inline: 0;
   }
 }
