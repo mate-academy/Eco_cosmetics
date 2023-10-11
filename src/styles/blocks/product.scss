@@ -1,12 +1,36 @@
 .product {
-  &__img {
-    width: 100vw;
-    max-width: 1180px;
-    margin-bottom: 20px;
+  margin-bottom: 30px;
+
+  @include onTablet {
+    margin-bottom: 50px;
   }
 
-  &__about {
-    @include contentPaddingInline;
+  @include onDesktop {
+    margin-bottom: 40px;
+  }
+
+  &__desktop {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__img {
+    width: 100vw;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      width: 340px;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    @include onDesktop {
+      width: 530px;
+      height: 500px;
+    }
   }
 
   &__title {
@@ -16,6 +40,13 @@
 
   &__price {
     @include product-price;
-    margin-bottom: 30px;
+  }
+
+  &--2 {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
   }
 }

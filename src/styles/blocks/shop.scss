@@ -1,15 +1,26 @@
 .shop {
   padding-inline: 0;
+  @include onTablet {
+    @include contentPaddingInline;
+  }
 
   &__title {
-    @include contentPaddingInline;
     @include title;
     text-align: center;
     margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 10px;
+    }
   }
 
   &__nav {
     @include contentPaddingInline;
+    @include onTablet {
+      padding-inline: 0;
+      width: 275px;
+    }
   }
 
   &__categoties {
@@ -18,12 +29,20 @@
     list-style: none;
     margin: 0 0 27px;
     padding: 0;
+
+    @include onTablet {
+      margin: 0 0 37px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 62px;
+    }
   }
 
   &__category {
     &__item {
       @include link-item;
-      color: #828282;
+      color: $gray-color;
       font-weight: 400;
 
       &::after {
@@ -37,7 +56,18 @@
     }
   }
 
+  &__products {
+    @include onTablet {
+      display: flex;
+      column-gap: 30px
+    }
+
+    @include onDesktop {
+      column-gap: 20px
+    }
+  }
+
   &__button {
-    @include contentPaddingInline;
+    text-decoration: none;
   }
 }
