@@ -1,17 +1,40 @@
 
 .pros {
-  display: flex;
-  flex-direction: column;
+  @include pageGrid;
   gap: 50px;
+  
+  @include onTablet {
+    gap: 30px;
+  }
 
-  &__item {
-    display: flex;
-    flex-direction: column;
+  @include onDesktop {
     gap: 20px;
   }
 
+  &__item {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
   &--img {
-    height: 80px;
+    display: block;
+    width: 80px;
+    margin: 0 auto 20px;
+
+    @include onTablet {
+      margin-bottom: 25px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
   }
 
   &--description {
