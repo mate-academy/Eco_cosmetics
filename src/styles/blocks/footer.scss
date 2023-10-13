@@ -1,18 +1,31 @@
 .footer {
   color: $main-bg-color;
   background-color: $footer-bgc;
-  padding-block: 30px 40px;
+  margin-top: 100px;
 
   @include onTablet {
-    @include pageGrid;
-    --rows: 3;
-    grid-template-rows: repeat(var(--rows));
-    padding-block: 30px;
+    margin-top: 130px;
   }
 
   @include onDesktop {
-    row-gap: 30px;
-    padding-block: 60px 65px;
+    margin-top: 200px;
+  }
+
+  &__wrap {
+    @include contentPaddingInline;
+    padding-block: 30px 40px;
+
+    @include onTablet {
+      @include pageGrid;
+      --rows: 3;
+      grid-template-rows: repeat(var(--rows));
+      padding-block: 30px;
+    }
+  
+    @include onDesktop {
+      row-gap: 30px;
+      padding-block: 60px 65px;
+    }
   }
 
   &__nav {

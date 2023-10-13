@@ -1,10 +1,24 @@
 .header {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
 
-  // &__box{
-  display: flex;
-  flex-direction: column;
+  @include onDesktop {
+    @include pageGrid;
+    @include contentPaddingInline;
+    --rows: 2;
+    grid-template-rows: repeat(var(--rows));
+  }
+
+  &__top {
+    // @include contentPaddingInline;
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+  }
 
   &__img {
     background-image: url(/images/img-header.jpg);
@@ -18,21 +32,25 @@
     }
 
     @include onDesktop {
-      display: flex;
+      grid-column: 7 / -1;
+      grid-row: 2;
+      margin: 0;
     }
   }
 
   &__content {
-    @include contentPaddingInline;
+    // @include contentPaddingInline;
 
     @include onTablet {
-      max-width: 466px;
+      max-width: 480px;
       margin-inline: auto;
     }
 
     @include onDesktop {
-      // width: 4px;
-
+      grid-column: 2 / 7;
+      grid-row: 2;
+      justify-self: start;
+      padding: 0;
     }
   }
 
@@ -56,6 +74,9 @@
       font-size: 60px;
       text-transform: none;
       line-height: 78px;
+      text-transform: none;
+      text-align: left;
+      padding-bottom: 30px;
     }
   }
 
@@ -65,9 +86,22 @@
     line-height: 24px;
     text-align: center;
     margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+    }
   }
 
   &__button {
     text-decoration: none;
+
+    &--desktop {
+      margin-bottom: 50px;
+      margin-inline: 0;
+    }
   }
 }
