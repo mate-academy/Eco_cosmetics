@@ -1,0 +1,226 @@
+.page {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  color: $color-main;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $color-background;
+  }
+
+  &__container {
+    margin: 0 auto;
+
+    @include px-mobile;
+
+    @include onTablet {
+      @include px-tablet;
+    }
+
+    @include onDesktop {
+      @include px-desktop;
+
+      margin-bottom: 200px;
+    }
+
+    @include onDesktop-xxl {
+      max-width: 1440px;
+
+      @include px-desktop-xxl;
+    }
+
+    &--top {
+      padding-top: 15px;
+
+      @include onTablet {
+        padding-top: 20px;
+      }
+
+      @include onDesktop {
+        padding-top: 40px;
+      }
+    }
+
+    &--bottom {
+      position: relative;
+    }
+
+    &--shop {
+      padding: 0;
+
+      @include onTablet {
+        @include px-tablet;
+      }
+
+      @include onDesktop {
+        @include px-desktop;
+      }
+
+      @include onDesktop-xxl {
+        @include px-desktop-xxl;
+      }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform $duration;
+
+    &:target {
+      transform: translate(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__section-title {
+    color: $color-accent;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    &--center {
+      text-align: center;
+      margin-bottom: 20px;
+
+      @include onTablet {
+        text-align: left;
+      }
+    }
+
+    @include onDesktop {
+      @include h2;
+
+      margin-bottom: 34px;
+    }
+
+    @include onDesktop-xxl {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__section-link {
+    display: inline-block;
+    position: relative;
+
+    color: $color-accent;
+    text-decoration: none;
+
+    padding-bottom: 10px;
+
+    @extend %section-link;
+
+    &::after {
+      content: "";
+      position: absolute;
+
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+
+      background-color: transparent;
+
+      transition: background-color $duration-long;
+    }
+
+    &:hover::after {
+      background-color: $color-accent;
+    }
+  }
+
+  &__section-text {
+    @extend %section-text;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    &--hidden {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__text-center {
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+
+  &__text-green {
+    color: $color-accent;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+      line-height: 36px;
+      text-align: left;
+    }
+  }
+
+  &__mx {
+    margin: 0 -20px 25px;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__side-text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      grid-area: 1 / 1 / 1 / 2;
+    }
+  }
+
+  &__side-text-shop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      grid-row: 1 / 3;
+    }
+  }
+}

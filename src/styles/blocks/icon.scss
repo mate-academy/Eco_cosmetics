@@ -1,0 +1,42 @@
+.icon {
+  &__menu {
+    display: inline-block;
+    height: 13px;
+    width: 20px;
+
+    background-image: url(../images/menu.svg);
+    @extend %cover-center-no-repeat;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__buy {
+    display: inline-block;
+    @include square(24px);
+
+    background-image: url(../images/buy.svg);
+    @extend %cover-center-no-repeat;
+
+    transition: transform $duration-long;
+
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop {
+      @include square(32px);
+    }
+  }
+
+  &__cross {
+    display: inline-block;
+    @include square(15px);
+
+    background-image: url(../images/cross.svg);
+    @extend %cover-center-no-repeat;
+  }
+}

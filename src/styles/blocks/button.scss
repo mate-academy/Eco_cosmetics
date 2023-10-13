@@ -1,0 +1,59 @@
+.button {
+  display: block;
+  font-weight: 600;
+  width: 280px;
+  height: 60px;
+  line-height: 60px;
+  letter-spacing: 1.5px;
+
+  color: $color-white;
+  background-color: $color-main;
+  border: 1px solid transparent;
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition: color $duration,
+    background-color $duration,
+    border-color $duration;
+
+  &:hover {
+    color: $color-main;
+    border-color: $color-main;
+    background-color: $color-secondary-hover;
+  }
+
+  &__link {
+    margin: 0 auto 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 130px;
+    }
+  }
+
+  &__grid {
+    grid-area: 4 / 1 / 4 / 3;
+    margin: auto;
+
+    @include onTablet {
+      grid-area: 4 / 2 / 4 / 6;
+    }
+
+    @include onDesktop {
+      grid-area: 4 / 6 / 4 / 9;
+    }
+  }
+
+  &__creators {
+    margin: 0 auto;
+
+    @include onTablet {
+      margin: auto 0 0;
+    }
+  }
+}

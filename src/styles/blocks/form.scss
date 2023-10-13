@@ -1,0 +1,86 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &--last {
+      margin-bottom: 50px;
+
+      @include onDesktop {
+        margin-bottom: 70px;
+      }
+    }
+
+    &:last-of-type {
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding-bottom: 5px;
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 21px;
+
+    outline: none;
+    background-color: $color-background;
+    border-bottom: 1px solid $color-border;
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      padding-bottom: 10px;
+    }
+
+    &:active {
+      background-color: $color-background;
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: inherit;
+      color: $color-secondary;
+    }
+
+    &:focus {
+      border-bottom-color: $color-main;
+    }
+
+    &:required:valid {
+      border-bottom-color: $color-accent;
+    }
+
+    &:not(:focus):not(:placeholder-shown):invalid {
+      border-bottom-color: $color-error;
+    }
+
+    &--textarea {
+      overflow: hidden;
+      resize: none;
+    }
+  }
+
+  &__button {
+    font-family: inherit;
+    font-size: inherit;
+
+    margin: auto;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}

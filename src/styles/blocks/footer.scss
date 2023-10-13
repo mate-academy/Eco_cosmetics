@@ -1,0 +1,144 @@
+.footer {
+  background-color: $color-accent-light;
+  color: $color-background;
+
+  &__container {
+    margin-bottom: 0;
+    padding-top: 30px;
+
+    @include onDesktop {
+      padding-top: 60px;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      @include small-text;
+    }
+
+    @include onDesktop {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      @include menu-text;
+    }
+  }
+
+  &__menu > :not(:last-child) {
+    margin-bottom: 11px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 0;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    display: grid;
+    grid-column: 1 / 3;
+    order: 1;
+    text-align: center;
+
+    @extend %footer-text;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      display: inline-block;
+      grid-column: 1 / 4;
+      grid-auto-flow: column;
+
+      margin-bottom: 30px;
+
+      @include small-text;
+    }
+
+    @include onDesktop {
+      grid-row: 2 / 3;
+      grid-column: 1 / 6;
+
+      @include menu-text;
+    }
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+
+    @include hover(color, $color-accent-transparent);
+  }
+
+  &__info > :not(:last-child) {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__info {
+    @include small-text;
+
+    @include onDesktop {
+      @include text-16;
+    }
+  }
+
+  &__icons {
+    grid-column: 1 / 2;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+    @include onDesktop {
+      grid-row: 2 / 3;
+      grid-column: 8 / 12;
+    }
+  }
+
+  &__fb {
+    display: inline-block;
+    background-image: url(../images/fb.svg);
+
+    @include square(20px);
+    @extend %cover-center-no-repeat;
+
+    margin-right: 20px;
+
+    @include hover(background-image, url(../images/fb-hov.svg));
+  }
+
+  &__insta {
+    display: inline-block;
+    background-image: url(../images/insta.svg);
+
+    @include square(20px);
+    @extend %cover-center-no-repeat;
+
+    @include hover(background-image, url(../images/insta-hov.svg));
+  }
+
+  &__copyright {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+}

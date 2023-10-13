@@ -1,6 +1,82 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin square($size) {
+  height: $size;
+  width: $size;
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onDesktop-xxl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin h2 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+@mixin h5 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+@mixin small-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+@mixin text-16 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin menu-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  letter-spacing: 0;
+}
+
+@mixin px-mobile {
+  padding: 0 20px;
+}
+
+@mixin px-tablet {
+  padding: 0 27px;
+}
+
+@mixin px-desktop {
+  padding: 0 50px;
+}
+
+@mixin px-desktop-xxl {
+  padding: 0 130px;
 }

@@ -1,0 +1,135 @@
+.shop {
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+
+    list-style: none;
+
+    @include px-mobile;
+    margin-bottom: 15px;
+
+    @include onTablet {
+      padding: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @extend %section-link;
+    font-weight: inherit;
+
+    color: $color-secondary;
+    padding-bottom: 10px;
+
+    @include hover(color, $color-main);
+
+    &--is-active {
+      position: relative;
+      color: $color-main;
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 2px;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        background-color: $color-main;
+      }
+    }
+
+    @include onDesktop {
+      @include h5;
+    }
+  }
+
+  &__picture-container {
+    height: 267px;
+    margin: 0 0 20px;
+    overflow: hidden;
+
+    @include onTablet {
+      height: 300px;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+  }
+
+  &__picture-container-1 {
+    width: 100%;
+
+    color: $color-main;
+    transition: color $duration-long;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__picture-container-2 {
+    width: 100%;
+
+    color: $color-main;
+    transition: color $duration-long;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__picture-container-3 {
+    width: 100%;
+
+    color: $color-main;
+    transition: color $duration-long;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  @for $i from 1 through 3 {
+    &__picture-container-#{$i}:hover .picture__scale {
+      transform: scale(1.02);
+      transform-origin: center;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    @include px-mobile;
+
+    @include onTablet {
+      margin-bottom: 15px;
+      padding: 0;
+    }
+  }
+
+  &__price {
+    margin-bottom: 30px;
+    @include px-mobile;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      padding: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+}

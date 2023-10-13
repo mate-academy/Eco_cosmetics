@@ -1,0 +1,105 @@
+.header {
+  &__content {
+    &--top {
+      grid-template-rows: 267px;
+
+      @include onTablet {
+        grid-template-rows: 500px;
+      }
+
+      @include onDesktop {
+        grid-template-rows: 450px;
+      }
+    }
+
+    &--bottom {
+      grid-template-rows: 1fr;
+
+      @include onTablet {
+        grid-template-rows: 1fr;
+      }
+
+      @include onDesktop {
+        grid-template-rows: 344px;
+      }
+    }
+  }
+
+  &__nav {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__picture-container {
+    max-height: 267px;
+    height: 100%;
+
+    @include onTablet {
+      max-height: 500px;
+      height: 100%;
+    }
+
+    @include onDesktop {
+      max-height: 450px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    @include onDesktop {
+      padding-top: 100px;
+
+      &::after {
+        content: "";
+        display: block;
+        background-color: $color-accent-transparent;
+        width: calc(50% - 12px);
+        height: 1px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+
+  &__info {
+    text-align: center;
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      padding-top: 100px;
+
+      &::before {
+        content: "";
+        display: block;
+        background-color: $color-accent-transparent;
+        width: calc(50% - 110px);
+        height: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
