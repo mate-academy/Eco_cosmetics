@@ -6,17 +6,21 @@
 
   @include onDesktop {
     @include pageGrid;
-    @include contentPaddingInline;
-    --rows: 2;
-    grid-template-rows: repeat(var(--rows));
+    grid-template-rows: 170px 1fr;
   }
 
   &__top {
-    // @include contentPaddingInline;
-
     @include onDesktop {
       grid-column: 1 / -1;
       grid-row: 1;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
     }
   }
 
@@ -39,8 +43,6 @@
   }
 
   &__content {
-    // @include contentPaddingInline;
-
     @include onTablet {
       max-width: 480px;
       margin-inline: auto;
@@ -74,7 +76,6 @@
       font-size: 60px;
       text-transform: none;
       line-height: 78px;
-      text-transform: none;
       text-align: left;
       padding-bottom: 30px;
     }
@@ -97,6 +98,7 @@
   }
 
   &__button {
+    @include contentPaddingInline;
     text-decoration: none;
 
     &--desktop {
