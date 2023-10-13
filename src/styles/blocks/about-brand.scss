@@ -9,11 +9,25 @@
     @include onTablet {
       grid-column: span 3;
     }
+
+    @include onSmallDesktop {
+      grid-column: 2 / 6;
+    }
   }
 
   &__text {
     @include onTablet {
       font-size: 16px;
+    }
+
+    &--hidden {
+      display: none;
+
+      @include onSmallDesktop {
+        display: block;
+        margin-top: 30px;
+        font-size: 16px;
+      }
     }
   }
 
@@ -24,6 +38,23 @@
       background-size:cover;
       background-position: center;
       grid-column: span 3;
+    }
+
+    @include onSmallDesktop {
+      height: 530px;
+      background-position: 67%;
+      grid-column: 7 / 11;
+    }
+
+    &-part {
+      @include onSmallDesktop {
+        background-image: url(../images/page-photo/brand-img-part.png);
+        grid-column: 11 / -1;
+        height: 430px;
+        background-size:cover;
+        background-position: center;
+        align-self: end;
+      }
     }
   }
 }

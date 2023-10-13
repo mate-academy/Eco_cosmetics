@@ -7,6 +7,11 @@
       margin-block: 10px 37px;
     }
 
+    @include onSmallDesktop {
+      grid-column: 2 / 4;
+      padding: 0;
+    }
+
     &__link {
       text-decoration: none;
       color: $main-text-color;
@@ -34,6 +39,12 @@
       &:hover::after {
         transform: scale(1);
       }
+
+      @include onSmallDesktop {
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.9px;
+      }
     }
 
     &__list {
@@ -51,25 +62,34 @@
   }
 
   &__product {
-    &-wrap--hidden {
-      display: none;
+    &-wrap {
+      @include onTablet {
+        grid-column: span 3;
+      }
+
+      @include onSmallDesktop {
+        display: block;
+        margin-left: 100px;
+      }
+
+      &--hidden {
+        display: none;
+
+        @include onTablet {
+          display: block;
+        }
+
+        @include onSmallDesktop {
+          margin-left: 20px;
+        }
+      }
     }
 
     @include onTablet {
       @include pageGrid;
       @include paddingInline;
-
-      &-wrap {
-        grid-column: span 3;
-
-        &--hidden {
-          display: block;
-        }
-      }
     }
   }
-
-
 
   &__photo {
     height: 270px;
@@ -79,6 +99,11 @@
     @include onTablet {
       height: 300px;
       background-position: center;
+    }
+
+    @include onSmallDesktop {
+      height: 500px;
+      width: 530px;
     }
   }
 
@@ -109,10 +134,24 @@
 
   &__button {
     margin-inline: 20px;
-    
+
     @include onTablet {
       margin: auto;
       margin-top: 50px;
+    }
+  }
+
+  &--grid {
+    @include onSmallDesktop {
+      @include pageGrid;
+      @include paddingInline;
+    }
+  }
+
+  &__title {
+    @include onSmallDesktop {
+      grid-column: 2 / 4;
+      padding: 0;
     }
   }
 }
