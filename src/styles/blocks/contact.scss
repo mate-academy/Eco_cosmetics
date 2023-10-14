@@ -1,0 +1,121 @@
+.contact {
+  margin-bottom: 100px;
+
+  &__wrapper {
+    grid-column: span 2;
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__text {
+    margin-top: 10px;
+
+    @include onDesktop {
+      margin-top: 30px;
+      position: relative;
+
+      &::before {
+        content: "help";
+        display: block;
+        transform: rotate(-90deg);
+        position: absolute;
+        text-transform: uppercase;
+        left: -35%;
+        top: -120%;
+
+        color: rgba(52, 79, 16, 0.5);
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 130%;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        transform: rotate(-90deg);
+        position: absolute;
+        top: 55%;
+        left: -44%;
+        width: 100px;
+        height: 1px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+}
+
+.form {
+  grid-column: span 2;
+  padding-block: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @include onDesktop {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    gap: 30px;
+  }
+
+  &__input {
+    display: block;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $ligth-grey;
+    background-color: $beigh;
+    color: $grey;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: capitalize;
+    padding-block: 5px;
+
+    &:focus-visible {
+      outline: none;
+      border-bottom: 1.5px solid $black;
+    }
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: $green;
+      background-color: $beigh;
+      border-bottom: 1.5px solid $green;
+      -webkit-box-shadow: 0 0 0 1000px $beigh inset;
+
+      &:focus {
+        color: $green;
+        border-bottom: 1.5px solid $green;
+        -webkit-box-shadow: 0 0 0 1000px $beigh inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    }
+
+    // &:invalid {
+    //   color: red;
+    //   border-bottom: 1.5px solid red;
+    // }  red on defolt because required
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+      grid-column: span 3;
+      background-repeat: no-repeat;
+      background-image: url(../images/contact.png);
+      @include hover (scale, 1.05);
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      object-fit: cover;
+    }
+  }
+}

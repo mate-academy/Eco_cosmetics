@@ -1,0 +1,80 @@
+.about {
+  @include onDesktop {
+    flex-direction: column;
+    justify-content: end;
+  }
+  &__wrapper {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 3;
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      overflow: hidden;
+      position: relative;
+
+      &::before {
+        content: "witch of mountain winds";
+        display: block;
+        transform: rotate(-90deg);
+        position: absolute;
+        text-transform: uppercase;
+        left: -50%;
+        top: 25%;
+        color: rgba(52, 79, 16, 0.5);
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 130%;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        transform: rotate(-90deg);
+        position: absolute;
+        top: 60%;
+        left: -37%;
+        width: 100px;
+        height: 1px;
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__description {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__big-img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      background-image: url(../images/about.png);
+      background-position: center;
+      width: 100%;
+      grid-column: span 3;
+      @include hover (scale, 1.05);
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+    }
+  }
+
+  &__small-img {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-self: flex-end;
+      grid-column: 11 / -1;
+      @include hover (scale, 1.05);
+    }
+  }
+}
