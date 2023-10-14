@@ -9,20 +9,36 @@
     @include onTablet {
       grid-column: span 3;
     }
+
+    @include onSmallDesktop {
+      grid-column: 2 / 6;
+    }
   }
 
   &__content {
     @include flaxColumnGap20;
-    margin-top: 10px;
+    margin-top: 24px;
 
     @include onTablet {
       gap: 15px;
+    }
+
+    @include onSmallDesktop {
+      gap: 30px;
     }
   }
 
   &__text {
     @include onTablet {
       font-size: 16px;
+    }
+
+    &--hidden {
+      display: none;
+
+      @include onSmallDesktop {
+        display: block;
+      }
     }
   }
 
@@ -33,6 +49,11 @@
       background-size:cover;
       background-position: center;
       grid-column: span 3;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 7 / -1;
+      height: 660px;
     }
   }
 

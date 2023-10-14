@@ -67,20 +67,17 @@
         grid-column: span 3;
       }
 
-      @include onSmallDesktop {
-        display: block;
-        margin-left: 100px;
-      }
-
       &--hidden {
         display: none;
 
         @include onTablet {
           display: block;
         }
+      }
 
+      &--left {
         @include onSmallDesktop {
-          margin-left: 20px;
+          margin-left: 100px;
         }
       }
     }
@@ -88,6 +85,11 @@
     @include onTablet {
       @include pageGrid;
       @include paddingInline;
+    }
+
+    @include onSmallDesktop {
+      display: flex;
+      gap: 20px;
     }
   }
 
@@ -103,7 +105,7 @@
 
     @include onSmallDesktop {
       height: 500px;
-      width: 530px;
+      width: 100%;
     }
   }
 

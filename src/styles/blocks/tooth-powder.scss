@@ -4,6 +4,10 @@
     display: flex;
     justify-content: flex-end;
 
+    @include onSmallDesktop {
+      @include pageGrid;
+      @include paddingInline;
+    }
   }
 
   &__title {
@@ -13,6 +17,9 @@
       width: 342px;
       position: relative;
       top: 75px;
+    }
+    @include onSmallDesktop {
+      margin-left: 100px;
     }
   }
 
@@ -26,6 +33,12 @@
     @include onTablet {
       background-image: url(../images/page-photo/frame-onTab.png);
     }
+
+    @include onSmallDesktop {
+      background-image: url(../images/page-photo/frame-desktop.png);
+      grid-column: 8 / -1;
+      width: 100%;
+    }
   }
 
   &__ingridients {
@@ -35,15 +48,24 @@
     text-align: right;
     padding-top: 38px;
     padding-right: 20px;
+
+    @include onSmallDesktop {
+      grid-column: 6 / 8;
+      padding-right: 0;
+    }
   }
 
   &__learn {
-   @include paddingInline;
+    @include paddingInline;
 
-   &-link {
-    @include onTablet {
-      bottom: 55px;
+    &-link {
+      @include onTablet {
+        bottom: 55px;
+      }
     }
-   }
+
+    @include onSmallDesktop {
+      margin-left: 100px;
+    }
   }
 }
