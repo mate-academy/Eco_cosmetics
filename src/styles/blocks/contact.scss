@@ -69,12 +69,24 @@
     border: none;
     border-bottom: 1px solid $ligth-grey;
     background-color: $beigh;
-    color: $grey;
+    color: $green;
     font-size: 14px;
     font-weight: 400;
     line-height: 150%;
     text-transform: capitalize;
     padding-block: 5px;
+    resize: none;
+    overflow: hidden;
+
+    &::placeholder {
+      background-color: $beigh;
+      color: $grey;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%;
+      text-transform: capitalize;
+      padding-block: 5px;
+    }
 
     &:focus-visible {
       outline: none;
@@ -95,10 +107,10 @@
       }
     }
 
-    // &:invalid {
-    //   color: red;
-    //   border-bottom: 1.5px solid red;
-    // }  red on defolt because required
+    &:focus-visible:invalid {
+      color: red;
+      border-bottom: 1.5px solid red;
+    }
   }
 
   &__img {

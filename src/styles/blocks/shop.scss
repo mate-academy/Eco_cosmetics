@@ -7,7 +7,7 @@
     margin-bottom: 15px;
 
     @include onTablet {
-      grid-column: span 6;
+      grid-column: 1 / 4;
     }
 
     @include onDesktop {
@@ -50,7 +50,6 @@
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scroll-snap-align: start;
-
     @include onTablet {
       grid-column: span 6;
     }
@@ -82,6 +81,10 @@
       width: 44vw;
       margin-right: 30px;
       padding-inline: 0;
+    }
+
+    @include onDesktop {
+      margin-right: 70px;
     }
   }
 
@@ -147,7 +150,13 @@
   }
 
   &__photo {
-    object-fit: cover;
+    width: 310px;
+    height: 320px;
+
+    @include onDesktop {
+      width: 520px;
+      height: 480px;
+    }
   }
 
   &__product {

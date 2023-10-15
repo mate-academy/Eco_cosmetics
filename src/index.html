@@ -116,11 +116,7 @@
         </div>
         <div class="about__big-img"></div>
 
-        <img
-          src="./images/about-small.png"
-          alt="flower"
-          class="about__small-img"
-        >
+        <div class="about__small-img"></div>
       </section>
 
       <section class="shop section" id="shop">
@@ -516,7 +512,7 @@
           <a href="#" class="decor">
             LEARN MORE
           </a>
-          <a href="#form" class="button">
+          <a href="#form" class="button button--creators">
             to contact us
           </a>
         </div>
@@ -587,9 +583,8 @@
           </div>
           <form
             class="form"
-            onsubmit="this.reset(); return false;"
-            action="/submit-form"
-            method="post"
+            id="form"
+            onsubmit="this.submit(); this.reset(); return false;"
           >
             <input
               type="text"
@@ -618,17 +613,18 @@
               required
             >
 
-            <input
-              type="text"
-              name="message"
-              id="message"
+            <textarea
+              rows="1"
               class="form__input"
               placeholder="Your message"
+              required
+            ></textarea>
+            <button class="button button--submit"
             >
+              send a message
+            </button>
           </form>
-          <a href="#" class="button">
-            send a message
-          </a>
+
         </div>
         <div class="form__img"></div>
       </section>
