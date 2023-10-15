@@ -1,0 +1,162 @@
+.footer {
+  background-color: $color-acent-2;
+  color: $color-background;
+  padding-top: 30px;
+  padding-bottom: 40px;
+
+  @include onTablet {
+    padding-top: 29px;
+    padding-bottom: 30px;
+  }
+
+  @include onDesktop {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  &__content {
+    @include pageGrid;
+
+    @include onTablet {
+      grid-template-rows: repeat(3, auto);
+    }
+
+    @include onDesktop {
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+
+  &__nav-list {
+    flex-direction: column;
+    gap: 11px;
+
+    @include onTablet {
+      gap: 15px;
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
+      grid-row: 2 / 3;
+      padding-top: 0;
+      padding-bottom: 0;
+      align-self: center;
+    }
+  }
+
+  &__addres {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 46px;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+      grid-row: 1 / 4;
+      justify-content: flex-start;
+      padding-bottom: 0;
+      gap: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
+      grid-row: 1 / 2;
+      padding-bottom: 3px;
+    }
+
+    & :nth-child(n) {
+      display: block;
+      @extend %small-text;
+
+      @include onTablet {
+        padding-bottom: 7px;
+      }
+
+      @include onDesktop {
+        font-size: 16px;
+        padding-bottom: 19px;
+      }
+    }
+
+    & a:nth-child(n) {
+      transform-origin: left bottom;
+      @include hover(color, $color-acent-1);
+      @include hover(transform, scale(1.1));
+    }
+
+    & :not(:first-child) {
+      height: 20px;
+
+      @include onTablet {
+        height: 30px;
+        padding-bottom: 10px;
+      }
+
+      @include onDesktop {
+        height: 40px;
+        padding-bottom: 20px;
+      }
+    }
+
+    & :last-child {
+      height: auto;
+    }
+  }
+
+  &__copyright {
+    width: 198px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    margin: 0 auto;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 3 / 4;
+      width: auto;
+      text-align: left;
+      margin: 0;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+      grid-row: 2 / 3;
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: capitalize;
+    }
+
+    & :first-child {
+      display: none;
+
+      @include onDesktop {
+        display: inline;
+      }
+    }
+  }
+}

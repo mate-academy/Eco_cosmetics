@@ -1,0 +1,43 @@
+.slider {
+  width: 100vw;
+  overflow-x: hidden;
+  margin-inline: -20px;
+
+  @include onTablet {
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  &__line {
+    position: relative;
+    display: flex;
+
+    animation: 3s alternate-reverse 2s infinite slide linear;
+
+    @include onTablet {
+      animation: none;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__slide {
+    width: 100vw;
+  }
+
+}
+
+@keyframes slide {
+  40% {
+    left: 0;
+  }
+  60% {
+    left: - 100vw;
+  }
+  100% {
+    left: - 100vw;
+  }
+}

@@ -1,0 +1,44 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+
+  @include onDesktop {
+    @include pageGrid;
+  }
+
+  &__title {
+    text-align: center;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding-bottom: 10px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__tabs {
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+
+    @include onTablet {
+      padding-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+      padding-top: 40px;
+    }
+  }
+}

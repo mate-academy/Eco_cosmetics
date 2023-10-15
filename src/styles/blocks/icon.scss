@@ -1,0 +1,76 @@
+.icon {
+  display: block;
+  @include square (24px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include hover(transform, scale(1.2));
+
+  &--menu {
+    width: 20px;
+    height: 13px;
+    background-image: url(../images/icons/menu.svg);
+  }
+
+  &--logo {
+    background-image: url(../images/icons/logo.svg);
+
+    &:after {
+      position: absolute;
+      content: "witch of mountain winds";
+      display: none;
+      color: $color-acent-1;
+      @extend %text2;
+      width: max-content;
+      left: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @include onDesktop {
+      position: relative;
+      background-image: url(../images/icons/logo-desktop.svg);
+      @include square (50px);
+
+      &:after {
+        display: block;
+      }
+    }
+  }
+
+  &--shop {
+    background-image: url(../images/icons/shop.svg);
+
+    @include onDesktop {
+      @include square (32px);
+      background-image: url(../images/icons/shop-desktop.svg);
+    }
+  }
+
+  &--facebook {
+    @include square (20px);
+    background-image: url(../images/icons/facebook.svg);
+
+    &:hover {
+      background-image: url(../images/icons/facebook-acent.svg);
+    }
+  }
+
+  &--instagram {
+    @include square (20px);
+    background-image: url(../images/icons/instagram.svg);
+
+    &:hover {
+      background-image: url(../images/icons/instagram-acent.svg);
+    }
+  }
+
+  &--close {
+    @include square (15px);
+    background-image: url(../images/icons/close.svg);
+
+    &:hover {
+      background-image: url(../images/icons/close-acent.svg);
+    }
+  }
+}
