@@ -1,0 +1,67 @@
+.tabs {
+  &__links-box {
+    display: flex;
+    gap: 34px;
+    padding-bottom: 7px;
+
+    @include onTablet {
+      gap: 14px;
+      padding-bottom: 17px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+      padding-bottom: 42px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    @extend %text2;
+    color: $color-gray-3;
+    padding-bottom: 19px;
+    border-bottom: 1px solid transparent;
+
+    @include onTablet {
+      justify-content: start;
+      min-width: 55px;
+    }
+
+    @include onDesktop {
+      min-width: 80px;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+    }
+
+    @include hover (color, $color-gray-1);
+    @include hover (border-bottom, 1px solid $color-gray-1);
+
+    &--active {
+      display: flex;
+      color: $color-gray-1;
+
+      @include hover(border-bottom, 1px solid transparent);
+      transition: border-bottom 0s;
+
+      & > :first-child {
+        position: relative;
+      }
+
+      & > :first-child::after {
+        position: absolute;
+        content: "";
+        display: block;
+        bottom: -10px;
+        height: 2px;
+        width: 100%;
+        background-color: $color-gray-1;
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+  }
+}

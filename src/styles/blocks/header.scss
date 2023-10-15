@@ -1,0 +1,46 @@
+.header {
+  padding-top: 15px;
+  padding-bottom: 20px;
+
+  @include onTablet {
+    padding-top: 23px;
+    padding-bottom: 30px;
+  }
+
+  @include onDesktop {
+    padding-top: 40px;
+    padding-bottom: 81px;
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onDesktop {
+      @include pageGrid;
+
+      & > :first-child {
+        display: none;
+      }
+
+      & > :last-child {
+        grid-column: -2 / -1;
+        justify-self: end;
+      }
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      grid-column: 7 / -2;
+      display: block;
+
+      & :first-child {
+        gap: 40px;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+.button {
+  display: flex;
+  align-items: center;
+
+  &--first {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    height: 60px;
+    width: 100%;
+    @extend %button;
+    border: 1px solid $color-gray-1;
+    color: $color-gray-6;
+    background-color: $color-gray-1;
+
+    @include onTablet {
+      width: 280px;
+    }
+
+    @include hover(border, 1px solid $color-gray-1);
+    @include hover(color, $color-gray-1);
+    @include hover(background-color, transparent);
+  }
+
+  &--secondary {
+    @extend %menu-text;
+    color: $color-acent-1;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 100%;
+      bottom: -12px;
+      transition: all $effectDuration;
+      transform: translateY(-12px);
+      background-color: transparent;
+    }
+
+    &:hover::after {
+      background-color: $color-acent-1;
+      transform: translateY(0);
+    }
+  }
+
+  &--learn {
+    position: relative;
+    padding-bottom: 11px;
+    width: fit-content;
+    height: min-content;
+    @extend %decorative-text;
+    color: $color-acent-1;
+    justify-content: flex-start;
+    text-transform: uppercase;
+
+    &::after {
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 100%;
+      bottom: 0;
+      transition: all $effectDuration;
+      background-color: $color-acent-1;
+    }
+
+    &:hover::after {
+      background-color: $color-acent-1;
+      transform: translateY(2px);
+    }
+  }
+}

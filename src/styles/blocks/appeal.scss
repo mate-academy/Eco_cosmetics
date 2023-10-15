@@ -1,0 +1,63 @@
+.appeal {
+  display: grid;
+
+  &__horizontal {
+    display: none;
+    height: 1px;
+    background-color: $color-acent-1;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &--start {
+      justify-self: flex-start;
+      width: calc(50% - #{$column-desktop} - #{$grid-gap-desktop} * 1.5);
+    }
+
+    &--end {
+      width: calc(50% - #{$grid-gap-desktop} / 2);
+      justify-self: end;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      @include pageGrid;
+      padding-block: 100px;
+    }
+  }
+
+  &__bird {
+    display: none;
+    @extend %text;
+    color: $color-gray-1;
+    grid-column: 2 / 6;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    color: $color-acent-1;
+
+    @include onTablet {
+      text-align: center;
+      width: 280px;
+    }
+
+    @include onDesktop {
+      width: auto;
+      grid-column: 7 / 11;
+      text-align: left;
+      font-size: 24px;
+      letter-spacing: 1.2px;
+    }
+  }
+}
