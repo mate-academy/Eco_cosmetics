@@ -77,6 +77,22 @@
     padding-block: 5px;
     resize: none;
     overflow: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $beigh;
+      border: 1px solid $black;
+      border-radius: 20px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $green;
+      border-radius: 20px;
+    }
 
     &::placeholder {
       background-color: $beigh;
@@ -119,15 +135,18 @@
     @include onTablet {
       display: block;
       width: 100%;
+      height: 407px;
       grid-column: span 3;
       background-repeat: no-repeat;
       background-image: url(../images/contact.png);
+      background-size: contain;
       @include hover (scale, 1.05);
     }
 
     @include onDesktop {
       grid-column: 7 / -1;
-      object-fit: cover;
+      background-size: contain;
+      height: 539px;
     }
   }
 }
