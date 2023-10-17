@@ -4,38 +4,54 @@ const body = document.querySelector('body');
 const menu = document.querySelector('.menu');
 const menuCloser = document.querySelector('.menu__closer');
 const menuOpener = document.querySelector('.menu__opener');
+// const header = document.querySelector('.header');
 
 menuOpener.addEventListener('click', (event) => {
   menu.classList.add('menu--open');
   body.classList.add('menu-open');
+  body.style.position = 'fixed';
   event.preventDefault();
 }, 1000);
 
 menuCloser.addEventListener('click', (event) => {
   menu.classList.remove('menu--open');
   body.classList.remove('menu-open');
+  body.style.position = 'relative';
   event.preventDefault();
 }, 1000);
 
 document.addEventListener('DOMContentLoaded', function() {
   const menuItems = document.querySelectorAll('.shop__menu-item');
   const carouselItems = document.querySelectorAll('.shop__item');
+  let activeCategory = null; // Зберігаємо активну категорію
 
   menuItems.forEach(function(item) {
-    item.addEventListener('mousemove', function() {
-      const category = item.getAttribute('data-category');
+    // Додаємо обробник події для натискання клавіші "Enter" або "Space"
+    item.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
 
-      setActiveMenuItem(item);
-      showCarouselItem(category);
+        const category = item.getAttribute('data-category');
+
+        // Перевіряємо, чи категорія не є вже активною
+        if (category !== activeCategory) {
+          setActiveMenuItem(item); // Встановлюємо активний пункт меню
+          showCarouselItem(category); // Показуємо відповідні елементи каруселі
+          activeCategory = category; // Оновлюємо активну категорію
+        }
+      }
     });
-  });
 
-  menuItems.forEach(function(item) {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function(event) {
       const category = item.getAttribute('data-category');
 
-      setActiveMenuItem(item);
-      showCarouselItem(category);
+      if (category !== activeCategory) {
+        setActiveMenuItem(item);
+        showCarouselItem(category);
+        activeCategory = category;
+      } else {
+        event.preventDefault();
+      }
     });
   });
 
@@ -52,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const selectedCarouselItems
-      = document.querySelectorAll('.shop__item--' + category);
+    = document.querySelectorAll('.shop__item--' + category);
 
     if (selectedCarouselItems.length > 0) {
       selectedCarouselItems.forEach(function(item) {
