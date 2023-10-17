@@ -1,0 +1,90 @@
+.header {
+  &__bottom {
+    @include paddingInline;
+
+    @include onTablet {
+      @include pageGrid
+    };
+
+    @include onSmallDesktop {
+      display: block;
+      grid-column: 2 / 7;
+      grid-row-start: 1;
+      padding: 0;
+    }
+  }
+
+  &--grid {
+    @include onSmallDesktop {
+      @include paddingInline;
+      @include pageGrid;
+    }
+
+  }
+
+  &__image {
+    background-image: url(../images/header-img-big.png);
+    height: 270px;
+    background-size:cover;
+
+    @include onTablet {
+      @include paddingInline;
+      height: 500px;
+      margin-inline: 27px;
+    }
+
+    @include onSmallDesktop {
+      height: 450px;
+      grid-column: 7 / -1;
+      margin-inline: 0;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-block: 25px 10px;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+      margin-top: 50px;
+      grid-column: 2 / -2;
+    }
+
+    @include onSmallDesktop {
+      text-align: left;
+      margin-block: 0;
+      grid-column: 2 / 7;
+      font-size: 60px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 16px;
+    grid-column: 2 / -2;
+
+    @include onSmallDesktop {
+      text-align: left;
+      margin-top: 30px;
+    }
+  }
+
+  &__button {
+    margin-inline: 20px;
+
+    @include onTablet {
+      margin: auto;
+      margin-top: 50px;
+    }
+
+    @include onSmallDesktop {
+      margin: 0;
+      display: grid;
+      grid-column: 2 / 5;
+      grid-row-start: 1;
+      align-self: end;
+    }
+  }
+}

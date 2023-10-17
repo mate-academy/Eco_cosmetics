@@ -1,0 +1,57 @@
+.preview {
+  @include paddingInline;
+
+  @include onSmallDesktop {
+    @include pageGrid;
+  }
+
+  &__text {
+    color: $text-color-green;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin: auto;
+      width: 280px;
+      text-align: center;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 7 / 11;
+      text-align: left;
+      font-size: 24px;
+      letter-spacing: 1.2px;
+      width: 100%;
+      margin-top: 100px;
+
+      &::after {
+        height: 1px;
+        background: rgba(52, 79, 16, 0.50);
+        content: "";
+        width: 100%;
+        display: block;
+        margin-top: 130px;
+      }
+    }
+
+    &-desktop {
+      display: none;
+
+      @include onSmallDesktop {
+        grid-column: 2 / 6;
+        text-align: left;
+        display: block;
+
+        &::before {
+          height: 1px;
+          background: rgba(52, 79, 16, 0.50);
+          content: "";
+          display: block;
+          margin-bottom: 100px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background: $c-gray;
+    min-width: 320px;
+
+    display: grid;
+    row-gap: 100px;
+
+    @include onTablet {
+      row-gap: 130px;
+    }
+
+    @include onSmallDesktop {
+      row-gap: 200px;
+    }
+
+
+    font-family: 'Poppins', sans-serif;
+    color: $main-text-color;
+  }
+
+  &__menu, &__product-card {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    transform: translateX(-100%);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &:has(.page__product-card:target) {
+    overflow: hidden;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}

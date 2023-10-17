@@ -1,0 +1,36 @@
+.learn-more {
+  width: 86px;
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $text-color-green;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+    margin-top: 30px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      display: block;
+      background-color: $text-color-green;
+      bottom: -10px;
+
+      transform: scale(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.learn-more[hidden] {
+  display: none;
+}

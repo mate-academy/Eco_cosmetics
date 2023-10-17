@@ -1,0 +1,162 @@
+.shop {
+  &-nav {
+    margin-block: 20px;
+    @include paddingInline;
+
+    @include onTablet {
+      margin-block: 10px 37px;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 2 / 4;
+      padding: 0;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $main-text-color;
+      font-size: 14px;
+      line-height: 130%;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 0;
+
+      &::after {
+        height: 2px;
+        background-color: $main-text-color;
+        content: "";
+        position: absolute;
+        width: 100%;
+        display: block;
+        bottom: -10px;
+
+        transform: scale(0);
+        transition: transform 0.3s;
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+
+      @include onSmallDesktop {
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.9px;
+      }
+    }
+
+    &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+
+      @include onTablet {
+        gap: 30px;
+        justify-content: normal;
+      }
+    }
+  }
+
+  &__product {
+    &-wrap {
+      @include onTablet {
+        grid-column: span 3;
+      }
+
+      &--hidden {
+        display: none;
+
+        @include onTablet {
+          display: block;
+        }
+      }
+
+      &--left {
+        @include onSmallDesktop {
+          margin-left: 100px;
+        }
+      }
+    }
+
+    @include onTablet {
+      @include pageGrid;
+      @include paddingInline;
+    }
+
+    @include onSmallDesktop {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  &__photo {
+    height: 270px;
+    width: 100%;
+    object-fit: cover;
+
+    @include hover(transform, scale(1.07));
+
+    @include onTablet {
+      height: 300px;
+      background-position: center;
+    }
+
+    @include onSmallDesktop {
+      height: 500px;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include onTablet {
+      margin-left: 0;
+    }
+  }
+
+  &__price {
+    font-weight: 500;
+  }
+
+  &__title--link {
+    text-decoration: none;
+    color: #333;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__button {
+    margin-inline: 20px;
+
+    @include onTablet {
+      margin: auto;
+      margin-top: 50px;
+    }
+  }
+
+  &--grid {
+    @include onSmallDesktop {
+      @include pageGrid;
+      @include paddingInline;
+    }
+  }
+
+  &__title {
+    @include onSmallDesktop {
+      grid-column: 2 / 4;
+      padding: 0;
+    }
+  }
+}
+

@@ -1,0 +1,72 @@
+.form {
+  &__input {
+    box-sizing: border-box;
+    padding: 0;
+    height: 39px;
+    width: 100%;
+    background: $c-gray;
+    border: none;
+    border-bottom: 1px solid #BDBDBD;
+    margin-bottom: 13px;
+
+    color: $underline-color;
+    text-transform: capitalize;
+    @include fontForm;
+
+    &::placeholder {
+      color: #7E7E83;
+      @include fontForm;
+
+      @include onSmallDesktop {
+        font-size: 18px;
+      }
+    }
+
+    &:hover {
+      border-bottom-color: #333;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: #333;
+    }
+
+    &:valid {
+      color: #344f10;
+      border-bottom: 1px solid #344f10;
+    }
+
+    &:invalid {
+      color: #EB5757;
+      // border-bottom-color: #EB5757;
+    }
+
+    @include onSmallDesktop {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__textarea {
+    box-sizing: border-box;
+    height: 38px;
+    margin-block: 30px 0;
+    resize: none;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+
+    @include onSmallDesktop {
+      margin-top: 25px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      width: 280px;
+    }
+  }
+}
