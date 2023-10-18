@@ -1,0 +1,175 @@
+@import "../utils";
+
+.main {
+  overflow-x: hidden;
+  margin: $side-margins-mob;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include onTablet {
+    margin: $side-margin-big--shop;
+  }
+
+  &__container {
+    width: 280px;
+
+    @include onTablet {
+      width: 466px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include onDesktop {
+      width: 530px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    @include h5;
+
+    align-self: flex-start;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--tab {
+      display: none;
+      @include h5;
+      align-self: flex-start;
+
+      @include onTablet {
+        display: block;
+
+        margin-top: 25px;
+      }
+
+      @include onDesktop {
+        display: block;
+
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__price {
+    @include text;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    align-self: flex-start;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--tab {
+      display: none;
+      @include text;
+      font-size: 18px;
+
+      @include onTablet {
+        display: block;
+        align-self: flex-start;
+
+        margin-top: 10px;
+      }
+
+      @include onDesktop {
+        display: block;
+        align-self: flex-start;
+
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__packaging {
+    display: none;
+    @include text;
+    align-self: flex-start;
+    font-size: 18px;
+
+    @include onTablet {
+      display: block;
+
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      display: block;
+
+      margin-bottom: 30px;
+    }
+  }
+
+  &__image-container {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: $margin-tab;
+    }
+  }
+
+  &__item-img {
+    @include onTablet {
+      width: 466px;
+    }
+
+    @include onDesktop {
+      width: 530px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $button-width;
+    height: 60px;
+    background-color: $dark-gray;
+
+    margin-bottom: 50px;
+
+    @include hover-bigButton;
+  }
+
+  &__button-text {
+    @include button-text;
+    overflow: hidden;
+  }
+
+  &__text {
+    max-width: 279px;
+    @include text;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      max-width: 466px;
+    }
+
+    @include onDesktop {
+      max-width: 530px;
+    }
+  }
+}

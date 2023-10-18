@@ -1,0 +1,95 @@
+@import "../utils";
+
+.scroll-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: $section-gap-mob;
+
+  @include onTablet {
+    margin: $section-gap-tab 0;
+  }
+
+  @include onDesktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin: $section-gap-big 0;
+  }
+
+  &__container {
+    @include onDesktop {
+      padding: 100px 0;
+
+      &--1 {
+        display: none;
+
+        @include onDesktop {
+          display: block;
+          padding-left: $margin-big-side;
+
+          border-top: 1px solid rgba(52, 79, 16, 0.5);
+        }
+
+        @include onLarge {
+          display: block;
+          padding-left: $side-margin-large--shop;
+        }
+      }
+
+      &--2 {
+        @include onDesktop {
+          padding-bottom: $section-gap-big;
+          padding-right: 250px;
+
+          border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+        }
+
+        @include onLarge {
+          padding-right: 330px;
+        }
+      }
+    }
+  }
+
+  &__description {
+    display: none;
+
+    max-width: 380px;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    color: $dark-gray;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__text {
+    min-width: 280px;
+    max-width: 392px;
+
+    margin: 0 $margin-mob;
+    @include h5;
+
+    color: $green;
+
+    @include onTablet {
+      width: 280px;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      width: 380px;
+      margin: 0;
+
+      font-size: 24px;
+    }
+  }
+}

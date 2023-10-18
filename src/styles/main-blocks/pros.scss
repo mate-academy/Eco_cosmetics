@@ -1,0 +1,70 @@
+@import "../utils";
+
+.pros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-bottom: $section-gap-mob;
+
+  @include onTablet {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: $section-gap-tab;
+  }
+
+  @include onDesktop {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: $section-gap-big;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 50px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+      margin-right: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+
+  &__img-container {
+    width: max-content;
+    height: 80px;
+
+    overflow: hidden;
+  }
+
+  &__text {
+    margin-top: 20px;
+    text-align: center;
+    overflow-y: hidden;
+
+    @include text;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: black;
+
+    @include onDesktop {
+      margin-top: 60px;
+      width: 380px;
+    }
+  }
+}
