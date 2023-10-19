@@ -1,15 +1,45 @@
 .about {
+  @include contentPaddingInline;
   margin-top: 100px;
   margin-bottom: 100px;
   @include pageGrid;
 
-
   &--left {
     grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
+    @include OnDesktop {
+      grid-column: span 5;
+    }
   }
 
-  &--photos {
-    grid-column: 1 / -1;
+  &__photo--big {
+    width: 342px;
+    height: 100%;
+    display: none;
+
+    @include onTablet {
+      display: grid;
+      width: 380px;
+      height: auto;
+      grid-column: 4 / 6;
+    }
+
+    @include OnDesktop {
+      grid-column: 7 / -3;
+      height: 100%;
+    }
+  }
+
+  &__photo--small {
+    display: none;
+    @include OnDesktop {
+      display: grid;
+      grid-column: 11 / -1;
+    }
   }
 
   &__title {
@@ -21,15 +51,38 @@
     line-height: 36px;
     letter-spacing: 5%;
     margin-bottom: 10px;
+
+    @include OnDesktop {
+      font-size: 36px;
+      line-height: 40px;
+      margin-bottom: 40px;
+    }
   }
 
   &__description {
+    color: #333333;
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
-    letter-spacing: 0em;
+    letter-spacing: 0;
     text-align: left;
     margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__description--hidden {
+    display: none;
+    @include OnDesktop {
+      color: #333333;
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 40px;
+    }
   }
 
   &__learn-more {
@@ -42,15 +95,4 @@
     border-bottom: 1px solid $green-text-color;
 
   }
-
-  &__photo--big {
-    width: 342px;
-    height: 321px;
-    display: none;
-
-    @include onTablet {
-      display: block;
-    }
-  }
 }
-
