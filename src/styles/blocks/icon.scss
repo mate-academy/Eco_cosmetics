@@ -1,0 +1,98 @@
+.icon {
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &--menu {
+    background-image: url(../images/top-bar-menu.svg);
+    width: 20px;
+    height: 13px;
+    margin-top: 5px;
+
+    @include OnDesktop {
+      display: none;
+
+    }
+  }
+
+  &--desktop {
+    background-image: url(../images/logodesk.svg);
+    width: 50px;
+    height: 50px;
+    display: none;
+    @include hover(transform, scale(1.2));
+
+    @include OnDesktop {
+      display: block;
+    }
+  }
+
+  &--text {
+    display: none;
+    pointer-events: none;
+
+    @include OnDesktop {
+      display: block;
+      margin-top: 15px;
+      margin-right: 380px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: uppercase;
+      color: $green-text-color;
+    }
+  }
+
+  &--logo {
+    background-image: url(../images/top-bar-logo.svg);
+    width: 24px;
+    height: 24px;
+    @include hover(transform, scale(1.2));
+
+    @include OnDesktop {
+      display: none;
+    }
+  }
+
+  &--words {
+    margin-right: 360px;
+    margin-top: 15px;
+
+    display: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+
+    @include OnDesktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &--word {
+    text-decoration: none;
+    @include hover(transform, scale(1.2));
+    color: $green-text-color;
+  }
+
+  &--bag {
+    background-image: url(../images/la_shopping-bag.svg);
+    width: 20px;
+    height: 24px;
+    @include hover(transform, scale(1.2));
+
+    @include OnDesktop {
+      width: 27px;
+      height: 32px;
+    }
+  }
+
+  &--close {
+    background-image: url(../images/icon-close.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    @include hover(transform, scale(1.2));
+  }
+}
