@@ -1,0 +1,50 @@
+.contacts {
+  @include pageGrid;
+  margin-top: 30px;
+
+  &--tablet-pic {
+    display: none;
+    @include onTablet {
+      display: block;
+      float: right;
+      width: 50%;
+      margin-left: 30px;
+      @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__input {
+    grid-column: 1/-1;
+    margin-bottom: 25px;
+    resize: none;
+
+    &-data {
+      font-family: "Poppins", sans-serif;
+      border-style: none;
+      outline: none;
+      background-color: inherit;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      border-bottom: 1px solid $contacts-underline;
+
+      &--message {
+        padding-top: 20px;
+        margin-bottom: 30px;
+
+        @include onTablet {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .button__contacts {
+    margin-top: 0;
+    @include onTablet {
+      display: flex;
+      justify-content: start;
+      margin-top: 30px;
+    }
+  }
+}
