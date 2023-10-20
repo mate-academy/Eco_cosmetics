@@ -11,6 +11,9 @@
       @include pageGrid;
       margin-bottom: 30px;
     }
+    @include onDesktop {
+      margin: 60px 0;
+    }
   }
 
   &__links {
@@ -22,6 +25,11 @@
       gap: 15px;
       grid-column: 1/2;
       grid-row: 1/2;
+    }
+    @include onDesktop {
+      grid-column: 1/3;
+      flex-direction: row;
+      gap: 40px;
     }
   }
 
@@ -38,16 +46,6 @@
       font-weight: 400;
       line-height: 21px;
     }
-
-    // &--shop {
-
-    // }
-    // &--contact {
-
-    // }
-    // &--about {
-
-    // }
   }
 
   &__social {
@@ -61,13 +59,18 @@
       grid-row: 1/1;
       margin-top: 110px;
     }
+    @include onDesktop {
+      grid-column: 7/-1;
+      grid-row: 2;
+      margin: 30px 0 0;
+    }
   }
 
   &__fb-link {
     width: 20px;
     height: 20px;
   }
-  
+
   &__inst-link {
     width: 20px;
     height: 20px;
@@ -88,6 +91,10 @@
       grid-column: 4/-1;
       margin-top: 0;
     }
+    @include onDesktop {
+      grid-column: 7/-1;
+      gap: 20px;
+    }
 
     &-text {
       margin: 0;
@@ -104,21 +111,48 @@
   &__copyright {
     color: $main-bg-color;
     margin-top: 40px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    text-align: center;
+
+    &--style {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      text-align: center;
+
+      @include onTablet {
+        width: fit-content;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+        margin: 30px 0 0;
+      }
+    }
+
+    &--text {
+      display: none;
+      @include onDesktop {
+        display: inline;
+      }
+    }
 
     @include onTablet {
       grid-column: 1/3;
-      width: fit-content;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 21px;
+    }
+    @include onDesktop {
+      grid-column: 1/5;
+      margin: 0;
     }
 
     & br {
       @include onTablet {
+        display: none;
+      }
+      @include onDesktop {
         display: none;
       }
     }

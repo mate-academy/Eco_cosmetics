@@ -1,3 +1,34 @@
+.contact-us {
+  @include onDesktop {
+    @include pageGrid;
+  }
+
+  &-left-side-pic {
+    display: none;
+    @include onDesktop {
+      display: block;
+      grid-column: 1;
+    }
+  }
+
+  &__info {
+    @include onDesktop {
+      grid-row: 1;
+      grid-column: 2/6;
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
 .contacts {
   @include pageGrid;
   margin-top: 30px;
@@ -11,12 +42,22 @@
       margin-left: 30px;
       @include hover(transform, scale(1.05));
     }
+    @include onDesktop {
+      grid-column: 7/-1;
+      margin: 0;
+      width: 580px;
+      height: 540px;
+    }
   }
 
   &__input {
     grid-column: 1/-1;
     margin-bottom: 25px;
     resize: none;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
 
     &-data {
       font-family: "Poppins", sans-serif;
@@ -28,12 +69,38 @@
       line-height: 21px;
       border-bottom: 1px solid $contacts-underline;
 
+      &:invalid {
+        color: $invalid-color;
+        border-bottom: 1px solid $invalid-color;
+      }
+      &:required:placeholder-shown {
+        color: $main-text-color;
+        border-bottom: 1px solid $contacts-underline;
+      }
+      &:required:focus {
+        color: $main-text-color;
+        border-bottom: 1px solid $main-text-color;
+      }
+      &:required:valid {
+        color: $main-title-color;
+        border-bottom: 1px solid $main-title-color;
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+      }
+
       &--message {
         padding-top: 20px;
         margin-bottom: 30px;
 
         @include onTablet {
           margin-bottom: 0;
+        }
+        @include onDesktop {
+          padding-top: 30px;
         }
       }
     }
@@ -45,6 +112,9 @@
       display: flex;
       justify-content: start;
       margin-top: 30px;
+    }
+    @include onDesktop {
+      margin-top: 50px;
     }
   }
 }

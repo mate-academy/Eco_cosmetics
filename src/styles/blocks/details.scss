@@ -2,6 +2,9 @@
   @include onTablet {
     @include pageGrid;
   }
+  @include onDesktop {
+    @include pageGrid;
+  }
   &__detail {
     display: flex;
     flex-direction: column;
@@ -24,7 +27,10 @@
   &__snail {
     @include onTablet {
       grid-column: 1/3;
-
+    }
+    @include onDesktop {
+      grid-column: 1/5;
+      margin-bottom: 18px;
     }
 
     &--wrapper {
@@ -42,6 +48,9 @@
     @include onTablet {
       grid-column: 3/5;
     }
+    @include onDesktop {
+      grid-column: 5/9;
+    }
 
     &--wrapper {
       @include onTablet {
@@ -58,6 +67,10 @@
   &__leaf {
     @include onTablet {
       grid-column: 5/-1;
+    }
+    @include onDesktop {
+      grid-column: 9/-1;
+      margin-bottom: 18px;
     }
 
     &--wrapper {
@@ -80,8 +93,18 @@
     text-align: center;
     text-transform: uppercase;
 
+    & br {
+      display: none;
+      @include onDesktop {
+        display: block;
+      }
+    }
+
     @include onTablet {
-      // justify-content: baseline;
+      line-height: 18.2px;
+    }
+    @include onDesktop {
+      line-height: 18.2px;
     }
   }
 }
