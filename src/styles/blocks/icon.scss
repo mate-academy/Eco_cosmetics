@@ -1,0 +1,60 @@
+.icon {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s;
+
+  @include hover(transform, scale(1.1));
+
+  &--menu {
+    background-image: url(../images/menu.svg);
+    height: 13px;
+    width: 20px;
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--logo {
+    background-image: url(../images/logo.svg);
+    width: 24px;
+    height: 24px;
+
+    @include onDesktop {
+      background-image: url(../images/top-bar__logo-desktop.svg);
+      // background-position: left;
+      width: 270px;
+      height: 100%;
+      grid-column: 1/-1;
+      grid-row: 1;
+    }
+  }
+
+  &--shop {
+    background-image: url(../images/shop.svg);
+    height: 24px;
+    width: 20px;
+    @include onTablet {
+      background-image: url(../images/top-bar__shop-desktop.svg);
+      background-repeat: no-repeat;
+      height: 26px;
+      width: 26px;
+    }
+    @include onDesktop {
+      background-image: url(../images/top-bar__shop-desktop.svg);
+      background-repeat: no-repeat;
+      height: 32px;
+      width: 32px;
+      grid-column: -2/-1;
+      margin-left: auto;
+      grid-row: 1;
+    }
+  }
+
+  &--close {
+    background-image: url(../images/close-icon.png);
+    height: 15px;
+    width: 15px;
+  }
+
+}

@@ -1,0 +1,165 @@
+.compound {
+  position: relative;
+  @include onDesktop {
+    @include pageGrid;
+  }
+  &--section-title {
+    @include onTablet {
+      position: absolute;
+      // width: 100%;
+    }
+    @include onDesktop {
+      grid-column: 2/5;
+
+    }
+
+    & br {
+      display: none;
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__wrapper {
+    margin-top: 20px;
+    margin-right: -20px;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: flex-end;
+      grid-column: 9/-1;
+      grid-row: 1;
+      margin: 0;
+      width: 102.6%;
+    }
+  }
+  &-left-side-pic {
+    display: none;
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__picture {
+    display: flex;
+    min-height: 397px;
+    min-width: 300px;
+    margin-left: auto;
+    background-image: url(../images/tooth-powder-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    overflow: hidden;
+    @include onTablet {
+      background-image: url(../images/tooth-powder-tablet.svg);
+    }
+
+    @include onDesktop {
+      background-image: url(../images/tooth-powder-desktop.svg);
+      width: 100%;
+      // margin-left: auto;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    @include onTablet {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 2;
+    }
+  }
+
+  &__layer {
+    display: none;
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      grid-row: 1;
+      grid-column: -6/-7;
+      gap: 50px;
+    }
+    @include onDesktop2k {
+      grid-column: 7;
+    }
+
+    &--kaolin,
+    &--sivak,
+    &--calcium,
+    &--licorice-root,
+    &--turmeric {
+      @include onDesktop {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: right;
+        width: 100%;
+        margin: 0;
+        text-transform: capitalize;
+      }
+    }
+    &--licorice-root {
+      white-space: nowrap;
+    }
+  }
+  &__cyrcle {
+    display: none;
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: right;
+      grid-column: -6;
+      grid-row: 1;
+      gap: 69px;
+      margin-left: auto;
+    }
+    @include onDesktop2k {
+      grid-column: 8;
+    }
+
+    &-1,
+    &-2,
+    &-3,
+    &-4,
+    &-5 {
+      width: 5px;
+      height: 5px;
+      background: $main-menu-bg-color;
+      border-radius: 50%;
+      align-self: right;
+    }
+  }
+
+  &__line {
+    display: none;
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      grid-column: -6;
+      grid-row: 1;
+      gap: 73px;
+    }
+    @include onDesktop2k {
+      grid-column: 8;
+      align-items: flex-end;
+    }
+
+    &-1,
+    &-2,
+    &-3,
+    &-4,
+    &-5 {
+      border-bottom: 1px solid $main-menu-bg-color;
+      width: 76px;
+    }
+  }
+}

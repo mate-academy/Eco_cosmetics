@@ -1,0 +1,165 @@
+.footer {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  background-color: $footer-bg-color;
+
+  &__content {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    @include onTablet {
+      @include pageGrid;
+      margin-bottom: 30px;
+    }
+    @include onDesktop {
+      margin: 60px 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    @include onTablet {
+      gap: 15px;
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+    @include onDesktop {
+      grid-column: 1/3;
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    @include hover(transform, scale(1.1));
+    color: $main-bg-color;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    width: fit-content;
+    text-decoration: none;
+
+    @include onTablet {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-column: 1/2;
+      grid-row: 1/1;
+      margin-top: 110px;
+    }
+    @include onDesktop {
+      grid-column: 7/-1;
+      grid-row: 2;
+      margin: 30px 0 0;
+    }
+  }
+
+  &__fb-link {
+    @include hover(transform, scale(1.1));
+    width: 20px;
+    height: 20px;
+  }
+
+  &__inst-link {
+    @include hover(transform, scale(1.1));
+    width: 20px;
+    height: 20px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    color: $main-bg-color;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    margin-top: 40px;
+    gap: 10px;
+
+    @include onTablet {
+      grid-row: 1/2;
+      grid-column: 4/-1;
+      margin-top: 0;
+    }
+    @include onDesktop {
+      grid-column: 7/-1;
+      gap: 20px;
+    }
+
+    &-text {
+      margin: 0;
+      width: fit-content;
+    }
+
+    &-link {
+      @include hover(transform, scale(1.1));
+      width: fit-content;
+      text-decoration: none;
+      color: $main-bg-color;
+    }
+  }
+
+  &__copyright {
+    color: $main-bg-color;
+    margin-top: 40px;
+
+    &--style {
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 18px;
+      text-align: center;
+
+      @include onTablet {
+        width: fit-content;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+        margin: 30px 0 0;
+      }
+    }
+
+    &--text {
+      display: none;
+      @include onDesktop {
+        display: inline;
+      }
+    }
+
+    @include onTablet {
+      grid-column: 1/3;
+    }
+    @include onDesktop {
+      grid-column: 1/5;
+      margin: 0;
+    }
+
+    & br {
+      @include onTablet {
+        display: none;
+      }
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+  }
+}
