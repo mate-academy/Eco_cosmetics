@@ -1,0 +1,28 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 1);
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+  transition: all linear 0.3s;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+}
+
+.menu__top {
+  @include contentPaddingInline();
+
+  justify-content: start;
+
+  margin-bottom: 45px;
+}
