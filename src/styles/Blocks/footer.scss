@@ -1,0 +1,137 @@
+.footer {
+  box-sizing: border-box;
+  height: 470px;
+  padding: 30px 20px;
+
+  font-size: 14px;
+  color: $c-main;
+  background-color: $c-light-green;
+
+  @include onTablet {
+    height: 265px;
+    padding: 27px;
+  }
+
+  @include onDesktop {
+    height: 320px;
+    font-size: 16px;
+    padding: 60px 50px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+    list-style: none;
+
+    @include onDesktop {
+      flex-direction: row;
+      padding-bottom: 144px;
+    }
+
+  }
+
+  &__item {
+    padding-bottom: 15px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    @extend %mediumText;
+
+    color: $c-main;
+
+    text-decoration: none;
+    text-transform: capitalize;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-green;
+    }
+  }
+
+  &__copyright {
+    font-weight: 600;
+    line-height: 130%;
+
+    text-align: center;
+    text-transform: capitalize;
+
+    color: $c-main;
+
+    @include onTablet {
+      font-weight: 400;
+      line-height: 150%;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 500;
+      &:before {
+        content: "Copyright";
+      }
+    }
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding-bottom: 40px;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    @include onDesktop {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__contacts {
+    text-decoration: none;
+    color: $c-main;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-green;
+    }
+  }
+
+  &__social {
+    padding-bottom: 40px;
+
+    display: flex;
+    gap: 20px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
+
+    &-logo {
+      transition: transform 0.3s;
+    }
+
+    &-logo:hover {
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.ingredients {
+  padding-right: 0;
+  padding-left: 20px;
+
+  @include onDesktop {
+    padding: 0 50px;
+  }
+
+  &__title {
+    @extend %title;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 30px 0;
+    gap: 40px;
+
+    @include onDesktop {
+      padding-bottom: 0;
+      gap: 120px;
+    }
+  }
+
+  &__photo-container {
+    display: flex;
+    height: 395px;
+    width: 180px;
+
+    @include onTablet {
+      width: 280px;
+    }
+
+    @include onDesktop {
+      width: 380px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+
+    object-fit: cover;
+    object-position: left;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: right;
+
+    position: relative;
+
+    text-align: right;
+    color: $c-dark-gray;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 50%;
+      left: 120%;
+
+      height: 1px;
+      width: 75px;
+
+      background-color: $c-dark-gray;
+    }
+
+    @include onDesktop {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 45%;
+        left: 190%;
+
+        height: 4px;
+        width: 4px;
+
+        border-radius: 50%;
+        background-color: $c-dark-gray;
+      }
+    }
+  }
+}
