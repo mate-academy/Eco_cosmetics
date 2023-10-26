@@ -1,0 +1,30 @@
+.sitebar {
+  position: absolute;
+  display: none;
+  color: $background-color;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+
+  @include onDextop {
+    display: block;
+  }
+
+  &__wrapper {
+    @include onDextop {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &__item {
+    margin: 0;
+    @extend %text-decorative;
+  }
+
+  &__line {
+    width: 1px;
+    height: 100px;
+    background-color: $background-color;
+  }
+}

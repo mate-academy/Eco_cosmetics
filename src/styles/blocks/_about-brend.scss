@@ -1,0 +1,109 @@
+.about {
+  grid-column: 1/-1;
+
+  &__brend {
+    position: relative;
+    @include pageGrid;
+
+    &-information {
+      grid-column: 1/-1;
+      grid-row: 1;
+
+      @include onTablet {
+        grid-column: 1/4;
+      }
+
+      @include onDextop {
+        grid-column: 2/6;
+      }
+    }
+
+    &--text {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      @extend %text-1;
+      padding-top: 10px;
+      padding-bottom: 30px;
+
+      @include onDextop {
+        row-gap: 30px;
+        padding-block: 40px;
+      }
+
+      &-1 {
+        margin: 0;
+      }
+
+      &-2 {
+        display: none;
+        margin: 0;
+
+        @include onDextop {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    &-link {
+      grid-row: 3;
+    }
+  }
+
+  &__content {
+    @include pageGrid;
+    grid-column: 1/-1;
+    grid-row: 1;
+
+    &-photo {
+      @include onTablet {
+        @include pageGrid;
+        grid-column: 1/-1;
+      }
+
+      @include onDextop {
+        @include pageGrid;
+        grid-column: 1/-1;
+        column-gap: 20px;
+      }
+
+      &-1 {
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: none;
+
+        @include onTablet {
+          display: block;
+          background-image: url(../images/photo-tablet/candle-tablet.png);
+          grid-column: 4/-1;
+          height: 321px;
+          background-position: right;
+        }
+
+        @include onDextop {
+          background-image: url(../images/photo-desktop/candle-desktop.png);
+          grid-column: 7/11;
+          grid-row: span 3;
+          width: 380px;
+          height: 530px;
+        }
+      }
+
+      &-2 {
+        background-image: url(../images/photo-desktop/flower-desktop.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: none;
+
+        @include onDextop {
+          display: block;
+          grid-row: 3;
+          grid-column: 11/-1;
+          width: 180px;
+          height: 430px;
+        }
+      }
+    }
+  }
+}

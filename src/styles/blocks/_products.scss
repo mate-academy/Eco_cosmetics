@@ -1,0 +1,107 @@
+.product {
+  @include pageGrid;
+  grid-column: 1/-1;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/-1;
+    grid-row: 1;
+    gap: 20px;
+
+    &--scrub {
+      display: none;
+    }
+
+    @include onTablet {
+      display: flex;
+      grid-column: span 3;
+    }
+  }
+
+  &__block {
+    grid-column: 1/-1;
+    padding-top: 25px;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      @include pageGrid;
+      row-gap: 20px;
+      padding-top: 25px;
+      padding-bottom: 50px;
+    }
+
+    @include onDextop {
+      grid-column: 2/-1;
+      display: flex;
+      gap: 20px;
+      padding-top: 50px;
+      padding-bottom: 40px;
+    }
+
+    &--photo {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      height: 0;
+      padding-bottom: 100%;
+
+      @include onDextop {
+        padding: 0;
+        width: 530px;
+        height: 500px;
+      }
+
+      &-oil {
+        background-image: url(../images/photo-mobile/shop-photo-mobile.png);
+        margin-inline: -20px;
+
+        @include onTablet {
+          margin: 0;
+          background-image: url(../images/photo-tablet/shop-photo-tablet.png);
+        }
+
+        @include onDextop {
+          background-image: url(../images/photo-desktop/shop-photo-desktop.png);
+        }
+      }
+
+      &-scrub {
+        @include onTablet {
+          background-image: url(../images/photo-tablet/scrub-tablet.png);
+        }
+
+        @include onDextop {
+          background-image: url(../images/photo-desktop/scrub-desktop.png);
+        }
+      }
+    }
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      @include onDextop {
+        display: flex;
+        gap: 13px;
+      }
+    }
+
+    &--title {
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    &--price {
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    margin: 0 auto;
+  }
+}

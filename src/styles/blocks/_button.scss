@@ -1,0 +1,39 @@
+.button {
+
+  &__item {
+    height: 60px;
+    width: 280px;
+    background-color: $primary-color;
+    border: none;
+    @extend %text-button;
+    cursor: pointer;
+    color: $background-page;
+    text-transform: uppercase;
+    @include hover(color, $primary-color);
+    @include hover(background-color, $background-page);
+    @include hover(border, 1px solid $color-title);
+  }
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  color: $color-title;
+
+  &::after {
+    content: "";
+    display: block;
+    border-bottom: 1px solid $color-title;
+    position: absolute;
+    border-radius: 1px;
+    bottom: -10px;
+
+    width: 100%;
+    transition: 0.3s;
+    transform: scale(0);
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,80 @@
+.icon {
+  display: flex;
+  background-size: contain;
+  padding: 0;
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+
+  &--menu {
+    background-image: url(../images/svg/icon/Menu.svg);
+    height: 13px;
+    width: 20px;
+
+    @include onDextop {
+      width: 36px;
+      height: 20px;
+    }
+
+    &-point {
+      @include onDextop {
+        display: none;
+      }
+    }
+  }
+
+  &--link {
+    display: flex;
+    grid-column: span 4;
+    text-decoration: none;
+    align-items: center;
+    gap: 12px;
+    z-index: 1;
+
+    &-logo {
+      background-image: url(../images/svg/icon/eco-cosmatics-big-Logo.svg);
+      height: 24px;
+      width: 24px;
+
+      @include onDextop {
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    &-text {
+      cursor: pointer;
+      display: none;
+      margin: 0;
+
+      @include onDextop {
+        display: block;
+        text-transform: uppercase;
+        color: $color-title;
+      }
+    }
+  }
+
+  &--cart {
+    background-image: url(../images/svg/icon/shop.svg);
+    height: 24px;
+    width: 24px;
+
+    @include onDextop {
+      height: 36px;
+      width: 36px;
+      grid-column: -1;
+    }
+  }
+
+  &--close {
+    background-image: url(../images/svg/icon/close.svg);
+    height: 15px;
+    width: 15px;
+
+    @include onDextop {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+.about__creators {
+  @include pageGrid;
+
+  &--information {
+    @include pageGrid;
+    grid-column: 1/-1;
+  }
+
+  &--title {
+    padding-bottom: 10px;
+    grid-column: 1;
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onDextop {
+      grid-column: 2/6;
+      padding-bottom: 34px;
+    }
+  }
+
+  &--block {
+    @include pageGrid;
+    text-align: left;
+    grid-row: 2;
+    @extend %text-1;
+    grid-column: 1/-1;
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      grid-column: 1/-1;
+      row-gap: 20px;
+
+      @include onTablet {
+        grid-column: 1/4;
+        row-gap: 15px;
+      }
+
+      @include onDextop {
+        grid-column: 2/6;
+        row-gap: 30px;
+      }
+
+      &-1 {
+        margin: 0;
+      }
+
+      &-2 {
+        margin: 0;
+      }
+
+      &-3 {
+        display: none;
+        margin: 0;
+
+        @include onDextop {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  &--link {
+    grid-column: 1/-1;
+    padding-top: 30px;
+    padding-bottom: 25px;
+
+    @include onTablet {
+      padding-bottom: 30px;
+      padding-top: 20px;
+      grid-column: 1/4;
+    }
+
+    @include onDextop {
+      padding-bottom: 50px;
+      grid-column: 2/6;
+    }
+  }
+
+  &--button {
+    grid-column: 1/-1;
+    grid-row: 4;
+    margin: 0 auto;
+
+    @include onTablet {
+      grid-column: 1/4;
+      margin: 0;
+    }
+
+    @include onDextop {
+      grid-column: 2/6;
+    }
+  }
+
+  &--content {
+    grid-row: 2;
+
+    @include onTablet {
+      grid-column: 4/-1;
+    }
+
+    @include onDextop {
+      grid-column: 7/-1;
+    }
+  }
+
+  &--photo {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+
+    @include onTablet {
+      display: block;
+      background-image: url(../images/photo-tablet/birdInHend-tablet.png);
+      height: 440px;
+      background-position: center;
+    }
+
+    @include onDextop {
+      background-image: url(../images/photo-desktop/birdInHend-desktop.png);
+      height: 100%;
+    }
+
+    &-1 {
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: none;
+    }
+  }
+}

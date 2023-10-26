@@ -1,0 +1,152 @@
+.productCard {
+  background-color: $background-page;
+  height: 200vh;
+  grid-column: 1/-1;
+
+  &__block {
+    @include pageGrid;
+  }
+
+  &__bar {
+    grid-row: 1;
+    @include onDextop {
+      grid-column: 2/-2;
+    }
+  }
+
+  &__content {
+    @include pageGrid;
+    grid-column: 1/-1;
+    grid-row: 2;
+
+    @include onTablet {
+      grid-column: 2/-2;
+    }
+
+    @include onDextop {
+      grid-column: 2/-2;
+    }
+
+    &--block {
+      grid-column: 1/-1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-bottom: 20px;
+
+      @include onTablet {
+        gap: 25px;
+        padding: 0;
+      }
+
+      @include onDextop {
+        grid-column: 3/-3;
+      }
+
+    }
+
+    &--title {
+      margin: 0;
+      text-transform: uppercase;
+      @extend %h5;
+
+      &-body {
+        padding-top: 27px;
+      }
+
+      @include onDextop {
+        font-size: 36px;
+      }
+    }
+
+    &--price {
+      margin: 0;
+      @extend %text-2;
+
+      @include onDextop {
+        font-size: 24px;
+      }
+
+      &-body {
+        color: $color-title;
+      }
+    }
+
+    &--mass {
+      margin: 0;
+      @extend %text-2;
+
+      @include onDextop {
+        font-size: 24px;
+      }
+    }
+
+    &--wrapper {
+      @include onTablet {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    &--photo {
+      grid-column: 1/-1;
+      justify-items: center;
+      background-image: url(../images/photo-mobile/shop-photo-mobile.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 40vh;
+
+      &-body {
+        background-image: url(../images/photo-tablet/scrub-2-tablet.png);
+        grid-row: 1;
+      }
+
+      @include onDextop {
+        grid-column: 3/-3;
+        height: 60vh;
+      }
+    }
+  }
+
+  &__information {
+    grid-column: 1/-1;
+    grid-row: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 20px;
+    @extend %text-small;
+
+    @include onTablet {
+      grid-column: 2/-2;
+      gap: 25px;
+      padding-block: 30px;
+      font-size: 16px;
+    }
+
+    @include onDextop {
+      grid-column: 4/-3;
+    }
+
+    &--text {
+      margin: 0;
+
+      &-list {
+        color: $color-title;
+      }
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+    margin: 0 auto;
+    grid-row: 3;
+    padding-block: 30px;
+
+    @include onDextop {
+      grid-column: 2/-1;
+    }
+  }
+}

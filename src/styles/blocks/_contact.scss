@@ -1,0 +1,146 @@
+.contact {
+  grid-column: 1/-1;
+
+  &__block {
+    @include pageGrid;
+  }
+
+  &__information {
+    grid-column: 1/-1;
+    grid-row: 1;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 1 /4;
+      padding-bottom: 20px;
+    }
+
+    @include onDextop {
+      grid-column: 2/6;
+      padding-bottom: 40px;
+    }
+
+    &--title {
+      padding-bottom: 10px;
+
+      @include onTablet {
+        padding-bottom: 30px;
+      }
+
+      @include onDextop {
+        padding-bottom: 30px;
+      }
+    }
+
+    &--text {
+      margin: 0;
+      grid-column: 1/-1;
+
+      @include onTablet {
+        grid-column: 1/4;
+        grid-row: 2;
+      }
+
+      @include onDextop {
+        grid-column: 2/6;
+        grid-row: 2;
+      }
+
+      &-wrapper {
+
+        @include onDextop {
+          padding-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  &__photo {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+
+    @include onTablet {
+      grid-column: 4/-1;
+      grid-row: span 3;
+      background-image: url(../images/photo-tablet/bird-tablet.png);
+    }
+
+    @include onDextop {
+      background-image: url(../images/photo-desktop/bird-desktop.png);
+      grid-column: 7/-1;
+    }
+  }
+
+  &__form {
+    @include pageGrid;
+    grid-column: 1/-1;
+    row-gap: 30px;
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onDextop {
+      grid-column: 2/5;
+      row-gap: 50px;
+    }
+
+    &-item {
+      @include pageGrid;
+      grid-column: 1/-1;
+
+      &-input {
+        @include pageGrid;
+        grid-column: 1/-1;
+        row-gap: 25px;
+
+        @include onDextop {
+          row-gap: 30px;
+        }
+      }
+
+      &-textarea {
+        margin: 0;
+        padding-top: 45px;
+        resize: none;
+
+        @include onDextop {
+          padding-top: 60px;
+        }
+      }
+
+      &-style {
+        grid-column: 1/-1;
+        font-family: "Avenir", "Sharp Sans No2 Medium", sans-serif;
+        text-transform: capitalize;
+        list-style: none;
+        border: none;
+        background: none;
+        border-bottom: 1px solid $color-decoration;
+        padding-bottom: 5px;
+
+        @include onTablet {
+          grid-column: 1/-1;
+        }
+
+        @include onDextop {
+          grid-column: 1/5;
+          padding-bottom: 10px;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 150%;
+        }
+      }
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+    margin: 0 auto;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}

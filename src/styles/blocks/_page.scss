@@ -1,0 +1,37 @@
+.page {
+  min-width: 320px;
+  font-family: "Avenir", "Sharp Sans No2 Medium", sans-serif;
+  color: $primary-color;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+
+  &__body {
+    position: relative;
+    margin: 0 auto;
+    background-color: $background-page;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &-point {
+      
+      @include onDextop {
+        opacity: 1;
+        pointer-events: all;
+        position: absolute;
+      }
+    }
+  }
+}
