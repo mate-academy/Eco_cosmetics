@@ -1,0 +1,72 @@
+.menu {
+  @include headerPaddingTop;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  z-index: 2;
+
+  box-sizing: border-box;
+  height: 100vh;
+
+  background-color: $mainColor;
+
+  transition: transform $duration;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__cross {
+    margin-bottom: 45px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    overflow-y: hidden;
+    padding-right: 20px;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid $grayColor;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 130%;
+    text-align: center;
+    color: $backgroundColor;
+    text-transform: capitalize;
+  }
+
+  &--open {
+    overflow-y: hidden;
+    transform: translateX(0);
+  }
+}
+
+.page__body--with-menu {
+  position: fixed;
+  width: 100%;
+}
