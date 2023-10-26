@@ -1,0 +1,45 @@
+.page {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+
+  scroll-behavior: smooth;
+  scroll-margin-block: 50px;
+
+  &__body {
+    margin: 0;
+
+    background-color: $c-main;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    scroll-margin-block-start: 50px;
+
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+      padding: 0;
+    }
+  }
+}

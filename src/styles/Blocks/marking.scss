@@ -1,0 +1,43 @@
+.marking {
+  &__cards {
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__card {
+    padding-bottom: 50px;
+    text-align: center;
+
+    transition: all 0.3s;
+
+    @include onTablet {
+      width: 220px;
+    }
+
+    @include onDesktop {
+      width: 380px;
+
+      &:hover {
+        transform: scale(105%);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__photo {
+    padding-bottom: 44px;
+  }
+
+  &__text {
+    @extend %smallText;
+    @extend %upperText;
+  }
+}

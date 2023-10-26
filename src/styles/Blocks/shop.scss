@@ -1,0 +1,212 @@
+.shop {
+  &__block {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 37px;
+      justify-content: flex-start;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    list-style: none;
+  }
+
+  &__item {
+    &:not(:last-of-type) {
+      margin-right: 16px;
+
+      @include onDesktop {
+        margin-right: 50px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding-bottom: 10px;
+
+    font-weight: 400;
+    @extend %smallText;
+
+    @extend %upperText;
+    text-decoration: none;
+
+    color: $c-dark-beige;
+
+    transition: color 0.3s;
+
+    @include onDesktop {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 150%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      height: 2px;
+      width: 0;
+
+      background-color: $c-dark-gray;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &:hover {
+      color: $c-dark-gray;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: background-color 0.3s ease;
+  }
+
+  &__photo-container {
+    display: flex;
+    position: relative;
+
+    max-height: 267px;
+    width: 100%;
+
+    @media (min-width:350px) {
+      max-height: 350px;
+    }
+
+    @media (min-width:500px) {
+      max-height: 500px;
+    }
+
+    &:hover .shop__overlay {
+      display: block;
+      cursor: pointer;
+
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__hover-button {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+
+    text-align: center;
+    opacity: 0;
+
+    transition: opacity 0.3s ease, transform 0.3s;
+  }
+
+  &__photo-container:hover .shop__hover-button {
+    opacity: 1;
+  }
+
+  &__hover-link {
+    padding: 15px 40px;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: $c-main;
+    border: 1px solid $c-main;
+  }
+
+  &__photo {
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+
+    @include onTablet {
+      max-height: 300px;
+    }
+
+    @include onDesktop {
+      min-height: 500px;
+    }
+  }
+
+  &__product-name {
+    display: inline-block;
+    padding-top: 20px;
+
+    @extend %mediumText;
+    @extend %upperText;
+
+    font-weight: 600;
+
+    color: $c-dark-gray;
+
+    &:hover {
+      cursor: pointer;
+      color: $c-dark-beige;
+    }
+  }
+
+  &__product-price {
+    padding-top: 10px;
+
+    @include onDesktop {
+      padding-top: 15px;
+    }
+
+    font-weight: 500;
+    @extend %mediumText;
+    @extend %upperText;
+
+    color: $c-dark-gray;
+  }
+
+  &__block--3 {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__block--2 {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
