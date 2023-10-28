@@ -1,0 +1,51 @@
+.menu {
+  background-color: $gray-1-color;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(+100%);
+  transition: transform 1s;
+
+  &:target {
+    transform: translateX(0);
+    overflow: auto;
+  }
+
+  &__nav {
+    margin: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 41px;
+  }
+
+  &__link {
+    @extend %menu-text;
+    color: $white-2-menu-color;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      margin: 0 27px;
+      margin-top: 10px;
+      background-color: rgb(130, 130, 130);
+      transition: all 0.5s;
+    }
+
+    &:hover::after {
+      background-color: rgb(37, 37, 37);
+    }
+
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
+  }
+
+}

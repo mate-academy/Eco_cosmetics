@@ -1,0 +1,86 @@
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include desktop {
+      margin: 0 auto;
+      max-width: 1280px;
+      padding: 0 20px;
+
+      display: grid;
+      column-gap: 20px;
+      grid-template-columns: repeat(12, 1fr);
+
+      grid-template-areas: "el1 el2";
+
+    }
+  }
+
+  &__background {
+    height: 100%;
+    background-image: url(../images/img_body_dt.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include desktop {
+      grid-area: el2;
+      max-height: 451px;
+      background-size: cover;
+      background-position: 0 47px;
+    }
+  }
+
+  &__main {
+    padding: 0 20px;
+
+    @include desktop {
+      padding: 0;
+      grid-area: el1;
+    }
+  }
+
+  &__title {
+    font-size: rem(24);
+    line-height: rem(32);
+    text-align: center;
+    margin-top: 25px;
+
+    @include tablet {
+      font-size: rem(36);
+      line-height: rem(54);
+    }
+
+    @include desktop {
+      font-size: rem(60);
+      line-height: rem(78);
+      text-align: left;
+      margin-top: 47px;
+    }
+  }
+
+  &__description {
+    @extend %text;
+    text-align: center;
+    margin: 10px 0 30px;
+
+    @include desktop {
+      text-align-last: left;
+    }
+  }
+
+  &__button {
+    margin: 0 auto 20px;
+
+    @include desktop {
+      margin-left: 0;
+    }
+  }
+}

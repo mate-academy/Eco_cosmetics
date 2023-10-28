@@ -1,0 +1,76 @@
+.nav {
+  width: 100%;
+  padding: 23px 20px;
+  margin: 0 auto;
+  max-width: 1280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: $page-bg-color;
+
+  @include tablet {
+    padding: 23px 30px;
+  }
+
+  @include desktop {
+    padding: 23px 30px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    &__logo {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      order: -1;
+      gap: 12px;
+    }
+
+    &__logo-text {
+      display: block;
+      white-space: nowrap;
+    }
+
+    &__menu-icon {
+      display: none;
+    }
+
+    &__menu-list {
+      display: flex;
+      gap: 40px;
+    }
+
+    &__shop {
+      text-align: right;
+    }
+
+  }
+
+  &__logo-text {
+    @extend %text2;
+    color: $green-1-color;
+  }
+
+  &__menu-link {
+    @extend %menu-text;
+    color: $green-1-color;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: $green-1-color;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
