@@ -5,6 +5,11 @@
   flex-direction: column;
 
   @include pageGrid;
+
+  @include onBigDesktop {
+    @include contentMarginLeft;
+    padding-inline: 0;
+  }
 }
 
 .contact-us__title {
@@ -26,6 +31,10 @@
     font-size: 36px;
     line-height: 39.6px;
     margin-bottom: 30px;
+  }
+
+  @include onBigDesktop {
+    grid-column: 1 / 5;
   }
 }
 
@@ -50,6 +59,10 @@
     line-height: 24px;
     width: 380px;
   }
+
+  @include onBigDesktop {
+    grid-column: 1 / 5;
+  }
 }
 
 .input__wrap {
@@ -59,19 +72,25 @@
   flex-direction: column;
   gap: 25px;
 
-  max-width: 280px;
+  width: 100%;
 
   grid-column: 1 / -1;
 
   @include onTablet {
     margin-top: -150px;
+    width: 280px;
   }
 
   @include onDesktop {
     margin-top: -180px;
     gap: 30px;
+    width: 380px;
 
     grid-column: 2 / 6;
+  }
+
+  @include onBigDesktop {
+    grid-column: 1 / 5;
   }
 }
 
@@ -103,6 +122,8 @@
   width: 280px;
   border: 1px solid rgba(51, 51, 51, 1);
   cursor: pointer;
+
+  @include hover(transform, scale(1.2));
 }
 
 .contact-us__button-text {
@@ -135,5 +156,9 @@
     max-width: 580px;
     grid-column: 7 / -1;
     background-size: cover;
+  }
+
+  @include onBigDesktop {
+    grid-column: 6 / -1;
   }
 }

@@ -47,6 +47,11 @@
   align-items: center;
 
   @include pageGrid;
+  @include contentPaddingInline;
+
+  @include onDesktop {
+    padding-inline: 0;
+  }
 }
 
 .header__main-title {
@@ -97,11 +102,23 @@
 .header__button {
   background-color: rgba(51, 51, 51, 1);
   border: 1px solid rgba(51, 51, 51, 1);
+  padding: 20px 0;
 
   box-sizing: border-box;
-  width: 280px;
+  width: 100%;
+  margin-inline: 20px;
 
   cursor: pointer;
+
+  @include hover(transform, scale(1.2));
+
+  @include onTablet {
+    max-width: 280px;
+  }
+
+  @include onDesktop {
+    margin-inline: 0;
+  }
 
   &__text {
     font-size: 16px;
