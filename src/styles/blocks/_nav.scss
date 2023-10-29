@@ -50,12 +50,29 @@
       justify-content: center;
 
       @include onDextop {
+        position: relative;
         border: none;
         text-align: left;
         color: $color-title;
         font-size: 18px;
         font-weight: 500;
         line-height: 150%;
+
+        &::after {
+          content: "";
+          display: block;
+          border-bottom: 1px solid $color-title;
+          position: absolute;
+          border-radius: 1px;
+          bottom: 0;
+          width: 100%;
+          transform: scale(0);
+          transition: 0.3s;
+        }
+
+        &:hover::after {
+          transform: scale(1);
+        }
       }
     }
   }
