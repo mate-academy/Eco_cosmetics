@@ -1,0 +1,184 @@
+.footer {
+  overflow-x: hidden;
+
+  background-color: rgba(140, 151, 114, 1);
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.footer__wrapper {
+  @include contentPaddingInline;
+  @include pageGrid;
+}
+
+.footer__wrap {
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  grid-column: 1 / -1;
+
+  @include onDesktop {
+    flex-direction: row;
+    grid-column: 1 / 3;
+    margin-bottom: 144px;
+    margin-top: 60px;
+  }
+}
+
+.footer__sidenav {
+  color: rgba(228, 223, 211, 1);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  text-decoration: none;
+
+  grid-column: 1 / -1;
+
+  cursor: pointer;
+
+  &:hover {
+    color: darkcyan;
+  }
+}
+
+.footer__icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  margin-bottom: 40px;
+
+  grid-column: 1 / -1;
+
+  @include onDesktop {
+    grid-column: 8 / -1;
+  }
+}
+
+.footer__icon-facebook {
+  background-image: url(./../images/icons/facebook.svg);
+
+  &:hover {
+    background-image: url(./../images/icons/facebook-white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.footer__icon-instagram {
+  background-image: url(./../images/icons/instagram.svg);
+
+  &:hover {
+    background-image: url(./../images/icons/instagram-white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.footer__about {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-bottom: 40px;
+
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    margin-top: -200px;
+
+    grid-column: 4 / -1;
+  }
+
+  @include onDesktop {
+    grid-column: 8 / -1;
+    margin-top: 60px;
+  }
+}
+
+.footer__about__text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: rgba(228, 223, 211, 1);
+  text-decoration: none;
+  max-width: 280px;
+
+  @include onDesktop {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.footer__bottom__wrap {
+  margin: 0 auto 40px;
+  grid-column: 1 / -1;
+  text-align: center;
+
+  @include onTablet {
+    margin-left: 0;
+    width: 300px;
+    text-align: start;
+  }
+
+  @include onDesktop {
+    max-width: 382px;
+    width: 382px;
+  }
+}
+
+.footer__bottom {
+  color: rgba(228, 223, 211, 1);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.2px;
+  max-width: 298px;
+  text-align: center;
+
+  @include onDesktop {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+    max-width: 382px;
+
+    margin-top: -60px;
+  }
+}
+
+.second__hidden {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+  }
+}
+
+.first__hidden {
+  @include onDesktop {
+    display: none;
+  }
+}
+
+.hidden-onDesktop {
+  @include onDesktop {
+    display: none;
+  }
+}
+
+.hidden-onTablet {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+  }
+}
+
+.footer__hover:hover {
+  color: darkcyan;
+}
