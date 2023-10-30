@@ -42,6 +42,30 @@
         flex-direction: row;
         gap: 40px;
       }
+
+      &-style {
+        position: relative;
+        border: none;
+        text-align: left;
+        color: $background-page;
+
+        &::after {
+          content: "";
+          display: block;
+          border-bottom: 1px solid $background-page;
+          position: absolute;
+          border-radius: 1px;
+          bottom: -8px;
+          width: 100%;
+          transform: scale(0);
+          transition: 0.3s;
+        }
+
+        &:hover::after {
+          transform: scale(1);
+        }
+
+      }
     }
   }
 
@@ -74,6 +98,8 @@
       margin: 0;
       text-decoration: none;
       color: $background-page;
+
+      @include hover(color, $color-decoration);
     }
 
     &--title {
@@ -135,5 +161,9 @@
     grid-column: 8/-1;
     grid-row: 3;
     padding-block: 30px;
+  }
+
+  &__icon-img {
+    @include hover(transform, scale(1.2));
   }
 }

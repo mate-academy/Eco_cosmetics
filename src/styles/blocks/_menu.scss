@@ -1,14 +1,18 @@
 .menu {
-  height: 100vh;
+  height: 100%;
   background: $primary-color;
-  overflow: hidden;
   z-index: 10;
 
   @include onDextop {
-    height: 150px;
-    @include pageGrid;
-    background: none;
-    grid-column: 1/-1;
+    height: 350px;
+    background-color: transparent;
+    opacity: 1;
+    position: absolute;
+    pointer-events: all;
     z-index: 0;
+  }
+
+  &__content {
+    @include pageGrid;
   }
 }

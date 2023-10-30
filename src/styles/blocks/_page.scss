@@ -5,10 +5,14 @@
   scroll-behavior: smooth;
   padding: 0;
   margin: 0;
+  
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
 
   &__body {
     position: relative;
-    margin: 0 auto;
+    margin: 0;
     background-color: $background-page;
     overflow-x: hidden;
   }
@@ -26,13 +30,5 @@
       pointer-events: all;
     }
 
-    &-point {
-
-      @include onDextop {
-        opacity: 1;
-        pointer-events: all;
-        position: absolute;
-      }
-    }
   }
 }

@@ -5,9 +5,8 @@
     padding-top: 30px;
 
     @include onDextop {
-      height: 50px;
-      padding-top: 40px;
-      @include pageGrid;
+      grid-column: 7/-1;
+      padding-top: 52px;
     }
   }
 
@@ -17,24 +16,20 @@
     list-style: none;
 
     &-style {
+      display: flex;
+      flex-direction: column;
       row-gap: 30px;
-      @include pageGrid;
 
       @include onTablet {
         row-gap: 50px;
       }
 
       @include onDextop {
-        grid-column: 7 /-1;
-        display: flex;
-        align-items: end;
-        column-gap: 40px;
+        flex-direction: row;
+        align-items: center;
+        column-gap: 50px;
       }
     }
-  }
-
-  &__item {
-    grid-column: 1 /-1;
   }
 
   &__link {
@@ -48,6 +43,7 @@
       padding-bottom: 10px;
       border-bottom: 1px solid #828282;
       justify-content: center;
+      @include hover(color, $background-color);
 
       @include onDextop {
         position: relative;
