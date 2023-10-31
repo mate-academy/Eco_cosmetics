@@ -1,4 +1,7 @@
 .menu {
+  background-color: #333;
+  height: 100vh;
+  width: 100vw;
 
   position: fixed;
   top: 0;
@@ -6,28 +9,35 @@
   right: 0;
   opacity: 0;
   pointer-events: none;
-  
+
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+
   @include onPhone {
     display: grid;
     grid-template-columns: repeat(2, 130px);
+    justify-content: center;
     gap: 20px;
-    background-color: #333;
-    height: 100vh;
     margin: 0;
-    padding: 0 0 0 20px;
+    //padding: 0 0 0 20px;
   }
   
   @include onTablet {
     display: grid;
     grid-template-columns: repeat(6, 94px);
+    justify-content: center;
     gap: 30px;
-    margin: 0 0 100px;
+    padding: 10px 0 0;
   }
 }
 
 .menu:target {
   opacity: 1;
   pointer-events: all;
+  transition-duration: 2s;
+  transform: translateX(0);
+  overflow-y: hidden;
+
 }
 
 .menu__cros-box {
