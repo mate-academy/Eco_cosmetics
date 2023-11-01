@@ -1,0 +1,183 @@
+.brand {
+  @include onPhone {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    gap: 20px;
+    margin: 0 20px 100px;
+  }
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 94px);
+    gap: 30px;
+    margin: 0 27px 130px;
+  }
+
+  @include onDesctop {
+    display: grid;
+    grid-template-columns: repeat(12, 80px);
+    gap: 20px;
+    margin: 0 50px 200px;
+  }
+
+  .brand__left-size {
+    width: 180px;
+    margin: 0;
+  
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesctop {
+      display: block;
+      grid-row: 1;
+      grid-column: 1/2;
+    }
+    
+    .left-size-text {
+      height: 192px;
+      transform: rotate(-90deg);
+      margin: 0;
+      padding: 0;
+      color: #344f1080;
+      text-align: center;
+      font-family: Poppins, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    .left-size-cros {
+      height: 100px;
+      width: 1px;
+      background-color: #344f1080;
+      margin: 10px 0 0 4px;
+    }
+  }
+
+  .brand__box {
+
+    @include onPhone {
+      grid-column: 1/3;
+    }
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onDesctop {
+      grid-row: 1;
+      grid-column: 2/6;
+    }
+    
+    
+    .brand__title {
+      color: #344f10;
+      font-family: Poppins, Helvetica, sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+
+      @include onDesctop {
+        font-size: 36px;
+      }
+    }
+
+    .brand__description {
+      color: #333;
+      font-family: Poppins, Helvetica, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      margin: 0 0 30px;
+
+      @include onDesctop {
+        font-size: 16px;
+      }
+    }
+
+    .brand__description-2 {
+      @include onPhone {
+        display: none;
+      }
+
+      @include onTablet {
+        display: none;
+      }
+
+      @include onDesctop {
+        display: block;
+      }
+    }
+
+    .brand__link {
+      cursor: pointer;
+      text-decoration: none;
+      width: 86px;
+      padding: 0 0 10px;
+      transition-duration: 2s;
+      text-transform: uppercase;
+
+      .brand__item {
+        text-decoration: none;
+        color: #344f10;
+        font-family: Poppins, Helvetica, sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        padding: 0 0 10px;
+      }
+    }
+  }
+
+  .brand__photo-container {
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: block;
+      grid-column: 4/7;
+      background-image: url(../images/brand/About_brand_Tablet.png);
+      width: 342px;
+      height: 321px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesctop {
+      grid-row: 1;
+      grid-column: 7/10;
+      width: 380px;
+      height: 529px;
+      background-image: url(../images/brand/About_brand_Desctop.png);
+    }
+  }
+
+  .brand__photo-second {
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesctop {
+      display: block;
+      grid-row: 1;
+      grid-column: 11/13;
+      background-image: url(../images/brand/About_brand_Desctop-2.png);
+      background-repeat: no-repeat;
+      margin: 100px 0 0;
+    }
+  }
+}
