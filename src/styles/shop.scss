@@ -1,0 +1,72 @@
+.shop {
+
+  &__content {
+    --columns: 2;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(var(--columns), 1fr);
+
+    @include onDesktop {
+      --columns: 12;
+      column-gap: 20px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__wrap {
+    position: relative;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      display: flex;
+      justify-content: stretch;
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 13;
+    }
+  }
+
+  &__card {
+    display: grid;
+  }
+
+  &__card--two {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__menu {
+    margin: 0 20px;
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: 2 / 5;
+    }
+  }
+}

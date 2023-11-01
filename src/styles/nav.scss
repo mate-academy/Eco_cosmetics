@@ -1,0 +1,72 @@
+.nav {
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+  }
+
+  &__link {
+    display: block;
+    color: #e4dfd3;
+    text-decoration: none;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #828282;
+    margin: 0 20px;
+  }
+
+  &__item--shop {
+    display: flex;
+  }
+
+  &__list--shop {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-top: 20px;
+  }
+
+  &__link--shop {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    list-style: none;
+    color: #828282;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.7px;
+    margin-right: 34px;
+    position: relative;
+    padding-bottom: 10px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-bottom: 2px solid #333;
+      width: 0;
+      transition: width 0.3s;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    &:hover {
+      color: #333;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+    }
+  }
+}

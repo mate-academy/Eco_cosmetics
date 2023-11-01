@@ -1,0 +1,168 @@
+.header {
+  box-sizing: border-box;
+  background-color: #e4dfd3;
+
+  &__container {
+    @include onTablet {
+      @include contentPaddingInline;
+    }
+  }
+
+  &__top {
+    align-items: center;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      padding: 20px 0 30px;
+    }
+  }
+
+  &__title {
+    display: grid;
+    margin: 0;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+    padding: 25px 0 10px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      font-size: 36px;
+      padding-top: 50px;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      text-align: left;
+      padding-top: 0;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__info-sale {
+    display: grid;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+
+  &__content {
+    --columns: 2;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(var(--columns), 1fr);
+
+    @include onTablet {
+      --columns: 6;
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      --columns: 12;
+      column-gap: 20px;
+    }
+  }
+
+  &__photo {
+    display: grid;
+    background-image: url(../images/header_photo_cellphone.png);
+    height: 267px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    grid-column: 1 / -1;
+    transition: 0.4s;
+
+    @include onTablet {
+      height: 500px;
+    }
+
+    @include onDesktop {
+      width: 580px;
+      height: 451px;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__left {
+    display: grid;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 2/7;
+      grid-row: 1;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      display: block;
+      margin-top: 50px;
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  &__nav {
+    display: none;
+
+    &-list {
+      display: flex;
+      column-gap: 40px;
+    }
+
+    &-item {
+      list-style: none;
+    }
+
+    &-link {
+      color: #344f10;
+      text-decoration: none;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      text-transform: capitalize;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e4dfd3;
+      width: fit-content;
+
+      &:hover {
+        border-bottom: 1px solid #344f10;
+      }
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+}

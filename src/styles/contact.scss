@@ -1,0 +1,91 @@
+.contact {
+
+  &__content {
+    display: grid;
+
+    @include onTablet {
+      display: grid;
+      --columns: 6;
+      grid-template-columns: repeat(var(--columns), 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      --columns: 12;
+      column-gap: 20px;
+    }
+  }
+
+  &__item {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__form {
+    margin-top: 30px;
+  }
+
+  &__field {
+    width: 100%;
+    background-color: #e4dfd3;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    padding-top: 51px;
+    outline: none;
+
+    &:hover {
+      border-bottom: 1px solid #333;
+    }
+
+    &:focus {
+      border-bottom: 1px solid #333;
+    }
+
+    &:focus::placeholder {
+      color: #344f10;
+    }
+
+    &:invalid {
+      color: #eb5757;
+    }
+
+    &:valid {
+      border-bottom-color: #333;
+    }
+
+    &--name {
+      padding: 0;
+    }
+
+    &--message {
+      padding: 0;
+      margin: 0;
+      padding-top: 71px;
+      text-indent: initial;
+      resize: none;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      width: 100%;
+      grid-column: 4 / -1;
+
+      @include custom-transition;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      height: 538px;
+      width: 580px;
+    }
+  }
+}
