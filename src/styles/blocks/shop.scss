@@ -1,0 +1,180 @@
+.shop {
+  margin-bottom: 100px;
+  @include onTablet {
+    margin-bottom: 130px;
+    @include contentPaddingInline;
+  }
+  @include OnDesktop {
+    margin-bottom: 200px;
+  }
+  &__title {
+    color: $green-text-color;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 5%;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include OnDesktop {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__categories {
+    @include contentPaddingInline;
+    display: flex;
+    flex-direction: row;
+    gap: 34px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: left;
+      padding-left: 0;
+      gap: 14px;
+    }
+
+    @include OnDesktop {
+      gap: 51px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__category {
+    list-style: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 5%;
+  }
+
+  &__category--link {
+    text-decoration: none;
+    color: #828282;
+  }
+
+  &__category--link--active {
+    color: $main-text-color;
+    padding-bottom: 10px;
+    position: relative;
+  }
+
+  &__category--link--active::after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    background-color: #333;
+    height: 2px;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &__items {
+    margin-top: 27px;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    @include onTablet {
+      width: auto;
+    }
+    @include OnDesktop {
+      width: 530px;
+      height: 500px;
+    }
+  }
+
+  &__oil {
+
+    @include onTablet {
+      display: grid;
+      grid-column: 1 / 3;
+    }
+
+    @include OnDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__ubtan {
+    display: none;
+
+    @include onTablet {
+      display: grid;
+      grid-column: 4 / 6;
+    }
+
+    @include OnDesktop {
+      grid-column: 7 / 12;
+    }
+  }
+
+  &__name {
+    padding-inline: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 5%;
+    color: $main-text-color;
+    text-transform: uppercase;
+
+    @include onTablet {
+      padding-inline: 0;
+    }
+  }
+
+  &__price {
+    padding-inline: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 5%;
+    color: $main-text-color;
+
+    @include onTablet {
+      padding-inline: 0;
+    }
+  }
+  &__button {
+    @include hover(transform, scale(1.2));
+    text-transform: uppercase;
+    margin-top: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #f2f2f2;
+    background-color: $main-text-color;
+    justify-content: center;
+    width: 280px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+
+  }
+}
+
+.button {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,5 +1,6 @@
 .header {
   margin-top: 15px;
+  position: relative;
 
   @include onTablet {
     margin-top: 23px;
@@ -7,6 +8,17 @@
 
   @include OnDesktop {
     margin-top: 40px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -100px;
+      background-color: #344f1080;
+      height: 1px;
+      width: 50%;
+      border-radius: 8px;
+    }
   }
 
   &__content {
@@ -102,4 +114,12 @@
     letter-spacing: 15%;
   }
 
+}
+
+.pip {
+  text-decoration: none;
+  justify-content: center;
+  @include onTablet {
+    justify-content: left;
+  }
 }
