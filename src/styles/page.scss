@@ -1,12 +1,9 @@
-html {
-  scroll-behavior: smooth;
-}
-
 .page {
   scroll-behavior: smooth;
   background-color: #e4dfd3;
 
   &__body {
+    background-color: #e4dfd3;
     min-width: 320px;
     max-width: 1440px;
     margin: 0 auto;
@@ -15,6 +12,9 @@ html {
     font-size: 14px;
     font-weight: 400;
     box-sizing: border-box;
+    &:has(.page__menu:target) {
+      overflow: hidden;
+    }
   }
 
   &__menu {
@@ -23,10 +23,14 @@ html {
     left: 0;
     right: 0;
     opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(-100%);
     pointer-events: none;
+    height: 100vh;
 
     &:target {
       opacity: 1;
+      transform: translateX(0);
       pointer-events: all;
     }
   }

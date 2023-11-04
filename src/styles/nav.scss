@@ -36,26 +36,28 @@
     list-style: none;
     color: #828282;
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
     line-height: 30px;
     letter-spacing: 0.7px;
     margin-right: 34px;
     position: relative;
-    padding-bottom: 10px;
 
     &::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
-      border-bottom: 2px solid #333;
-      width: 0;
-      transition: width 0.3s;
+      bottom: -8px;
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: #333;
+
+      transform-origin: left;
+      transition: transform 0.3s;
+      transform: scale(0);
     }
 
     &:hover::after {
-      width: 100%;
+      transform: scale(1);
     }
 
     &:hover {

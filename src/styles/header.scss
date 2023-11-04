@@ -59,20 +59,7 @@
   }
 
   &__content {
-    --columns: 2;
-    display: grid;
-    column-gap: 20px;
-    grid-template-columns: repeat(var(--columns), 1fr);
-
-    @include onTablet {
-      --columns: 6;
-      column-gap: 30px;
-    }
-
-    @include onDesktop {
-      --columns: 12;
-      column-gap: 20px;
-    }
+    @include pageGrid;
   }
 
   &__photo {
@@ -90,7 +77,6 @@
     }
 
     @include onDesktop {
-      width: 580px;
       height: 451px;
       grid-column: 7 / -1;
     }
@@ -155,9 +141,24 @@
       padding-bottom: 10px;
       border-bottom: 1px solid #e4dfd3;
       width: fit-content;
+      position: relative;
 
-      &:hover {
-        border-bottom: 1px solid #344f10;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: #344f10;
+
+        transform-origin: left;
+        transition: transform 0.3s;
+        transform: scale(0);
+      }
+
+      &:hover::after {
+        transform: scale(1);
       }
     }
 

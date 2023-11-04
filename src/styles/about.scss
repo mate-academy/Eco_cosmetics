@@ -1,18 +1,5 @@
 .about-brand {
-  --columns: 2;
-  display: grid;
-  column-gap: 20px;
-  grid-template-columns: repeat(var(--columns), 1fr);
-
-  @include onTablet {
-    --columns: 6;
-    column-gap: 30px;
-  }
-
-  @include onDesktop {
-    --columns: 12;
-    column-gap: 20px;
-  }
+  @include pageGrid;
 
   &__content {
     grid-column: 1 / -1;
@@ -52,7 +39,7 @@
   }
 
   &__photo-small {
-    width: 180px;
+    width: 100%;
     height: 430px;
     display: none;
     transform: translateY(100px);
@@ -60,7 +47,6 @@
 
     @include onDesktop {
       display: block;
-      grid-column: 12 / -1;
     }
   }
 

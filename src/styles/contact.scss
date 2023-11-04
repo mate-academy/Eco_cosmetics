@@ -1,22 +1,11 @@
 .contact {
 
   &__content {
-    display: grid;
-
-    @include onTablet {
-      display: grid;
-      --columns: 6;
-      grid-template-columns: repeat(var(--columns), 1fr);
-      column-gap: 30px;
-    }
-
-    @include onDesktop {
-      --columns: 12;
-      column-gap: 20px;
-    }
+    @include pageGrid;
   }
 
   &__item {
+    grid-column: 1 / -1;
     @include onTablet {
       grid-column: 1 / 4;
     }
