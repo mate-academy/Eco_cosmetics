@@ -1,0 +1,105 @@
+.page {
+  font-family: Sharp, Avenir, sans-serif;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    box-sizing: border-box;
+    background: $background-color;
+    color: $button-text-color;
+
+    @include onMobileLess320 {
+      min-width: 319px;
+    }
+
+    &--with-menu {
+      overflow: hidden;
+    }
+
+    &--with-card-oil {
+      overflow: hidden;
+    }
+
+    &--with-card-ubtan {
+      overflow: hidden;
+    }
+  }
+
+  &__title {
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $green-color;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 110%;
+    }
+  }
+
+  &__header {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden; /*disable scrolling the page when menu is open */
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(0);
+      @include transitionElement;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+
+    &:nth-child(3) {
+      @include onTablet {
+        margin-bottom: 139px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 200px;
+      }
+    }
+
+    &:last-child {
+      @include onTablet {
+        margin-bottom: 139px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 130px;
+      }
+    }
+  }
+}
