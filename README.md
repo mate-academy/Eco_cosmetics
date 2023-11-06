@@ -1,1 +1,1 @@
-
+Welcome to the Eco Cosmetics project, where sustainability meets beauty! Our mission is to offer a diverse range of eco-friendly cosmetics products while maintaining a commitment to environmental responsibility.
