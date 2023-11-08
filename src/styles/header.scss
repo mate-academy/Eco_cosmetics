@@ -17,6 +17,11 @@
     @include onTablet {
       padding: 20px 0 30px;
     }
+
+    @include onDesktop {
+      @include pageGrid;
+      padding: 40px 0 50px;
+    }
   }
 
   &__title {
@@ -83,10 +88,12 @@
   }
 
   &__left {
+    padding: 0 20px;
     display: grid;
     grid-column: 1 / -1;
 
     @include onTablet {
+      padding: 0;
       grid-column: 2 / 6;
     }
 
@@ -116,10 +123,17 @@
     display: flex;
     gap: 12px;
     align-items: center;
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
   }
 
   &__nav {
     display: none;
+    @include onDesktop {
+      grid-column: 7 / 10;
+    }
 
     &-list {
       display: flex;
