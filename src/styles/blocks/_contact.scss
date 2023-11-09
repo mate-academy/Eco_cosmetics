@@ -1,0 +1,72 @@
+.contact {
+  &__text-container {
+    @include tablet {
+      grid-column: 1 / span 3;
+    }
+    @include desktop {
+      grid-column: 2 / span 5;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 10px;
+  }
+
+  &__info {
+    margin-bottom: 30px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img {
+    display: none;
+    width: 100%;
+    height: 100%;
+
+    @include tablet {
+      display: block;
+      grid-column: 4 / -1;
+    }
+
+    @include desktop {
+      grid-column: 7 / -1;
+    }
+  }
+}
+
+.form {
+  &-field {
+    color: $dark-green;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    resize: none;
+    border: 0;
+    outline: 0;
+    border-bottom: 1.5px solid #bdbdbd;
+    background-color: $beige;
+    padding: 5px 0;
+    margin-bottom: 30px;
+  }
+
+  &__send {
+    @extend %button;
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include desktop {
+      width: 60%;
+    }
+  }
+}
+
+::placeholder {
+  display: block;
+  color: #828282;
+}
