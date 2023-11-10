@@ -1,0 +1,52 @@
+.form {
+  display: grid;
+  gap: 25px;
+
+  width: 100%;
+
+  grid-column: span 2;
+
+  &__label {
+    display: flex;
+    height: 38px;
+    width: 100%;
+
+    &:last-of-type {
+      margin-block: 20px 5px;
+    }
+  }
+
+  &__input {
+    box-sizing: border-box;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $color-text-grey-4;
+    outline: transparent;
+
+    font-size: 18px;
+    font-family: inherit;
+    color: $color-text-grey-3;
+    line-height: 150%;
+
+    &::placeholder {
+      text-transform: capitalize;
+    }
+
+    @include hover(border-bottom-color, $main-text-color);
+
+    &:focus {
+      border-block-color: $main-text-color;
+    }
+
+    &:valid {
+      color: $color-text-green;
+      border-color: $color-text-green;
+    }
+
+    &:invalid {
+      color: #eb5757;
+      border-color: #eb5757;
+    }
+  }
+}

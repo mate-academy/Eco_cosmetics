@@ -2,5 +2,58 @@
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 20px;
+}
+
+@mixin paddingInline {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin display($property, $val-1, $val-2, $val-3) {
+  $display-width: 
+    #{$tablet-width} $val-1,
+    #{$desktop-width} $val-2,
+    #{$desktop-width-wide} $val-3;
+
+  @each $width, $value, $proper in $display-width {
+    @media (min-width: $width) {
+      #{$property}: $value;
+      @content;
+    }
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin onWideDesktop {
+  @media (min-width: $desktop-width-wide) {
+    @content;
   }
 }

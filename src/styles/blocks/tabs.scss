@@ -1,0 +1,66 @@
+.tabs {
+  // display: flex;
+  // justify-content: space-between;
+  // padding-inline: 20px;
+  // text-transform: uppercase;
+  // color: $color-text-grey-3;
+  // letter-spacing: 0.7px;
+  // flex-wrap: wrap;
+
+  // margin-bottom: 27px;
+  
+  &__label {
+    display: inline-block;
+    text-transform: uppercase;
+    color: $color-text-grey-3;
+    letter-spacing: 0.7px;
+  
+    border-bottom: 2px solid transparent;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    margin-bottom: 27px;
+
+    transition: color $transition-duration, border-color $transition-duration;
+  
+    &:hover {
+      color: $main-text-color;
+      border-color: $main-text-color;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    & ~ .product {
+      display: none;
+    }
+
+    &:checked {
+      + .tabs__label {
+      color: $main-text-color;
+      border-color: $main-text-color;
+      }
+    }
+  }
+
+  &--tabs {
+    color: $color-text-grey-3;
+    letter-spacing: 0.7px;
+
+    &:target {
+      border-color: $main-text-color;
+      color: $main-text-color;
+    }
+  }
+}
+
+@each $name in $shop-products {
+  #tabs--#{$name}:checked {
+    ~ .product--#{$name} {
+      display: block;
+    }
+  }
+}
