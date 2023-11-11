@@ -4,7 +4,9 @@
     display: flex;
     justify-content: space-between;
 
-    @include paddingNav;
+    @media (min-width: 1280px) {
+      display: none;
+    }
   }
 
   &__navigation--logo {
@@ -23,10 +25,6 @@
 
   &__photo {
     width: 100%;
-
-    //@media (min-width: 768px) {
-    // margin-inline: 27px;
-    //}
   }
 
   &__bottom {
@@ -74,5 +72,45 @@
       display: flex;
       flex-direction: row-reverse;
     }
+
+    @media (min-width: 1440px) {
+      padding-inline: 230px 130px;
+    }
+  }
+
+  &__desctop {
+    display: none;
+
+    @media (min-width: 1280px) {
+      display: flex;
+      color: $color-green;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 50px 80px;
+    }
+
+    @media (min-width: 1440px) {
+      padding-inline: 130px;
+    }
+  }
+
+  &__desctop--logo {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  &__desctop--list {
+    display: flex;
+    font-size: 18px;
+  }
+
+  &__desctop--link {
+    color: $color-green;
+    padding-inline-start: 40px;
+  }
+
+  &__desctop--slogan {
+    margin-left: 12px;
   }
 }
