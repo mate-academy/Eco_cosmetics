@@ -122,21 +122,11 @@ const creatorsText = document.querySelector('.creators__text-box');
 const verticalText = document.querySelectorAll('.vertical-text');
 const powderArrow = document.querySelectorAll('.powder__arrow');
 
-const observerBegin = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      const mainClass = entry.target.classList[0];
-      entry.target.classList.add(`${mainClass}--active-scroll`);
-      if(entry.isIntersecting) observer.unobserve(entry.target);
-    })
-  },
-);
-
 const observer = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
-        const mainClass = entry.target.classList[0];
+        const mainClass = entry.target.dataset.animateClass;
         entry.target.classList.add(`${mainClass}--active-scroll`);
         if(entry.isIntersecting) observer.unobserve(entry.target);
       }
@@ -150,12 +140,12 @@ const observer = new IntersectionObserver(
 observer.observe(header)
 observer.observe(hero);
 observer.observe(heroInfo);
-heroImage.forEach(image => observer.observe(image));
-
 observer.observe(sloganLine1);
 observer.observe(sloganLine2);
-titles.forEach(item => observer.observe(item));
 observer.observe(brandText);
 observer.observe(creatorsText);
+
+titles.forEach(item => observer.observe(item));
 verticalText.forEach(item => observer.observe(item));
 powderArrow.forEach(item => observer.observe(item));
+heroImage.forEach(image => observer.observe(image));
