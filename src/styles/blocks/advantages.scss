@@ -1,0 +1,43 @@
+.advantages {
+  &__main {
+    @include onTablet {
+      @include pageGrid;
+      @include constentPaddingInline;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+
+    @include hover(transform, scale(1.2));
+
+    @include onTablet {
+      display: block;
+      gap: 0;
+      grid-column: span 2;
+      margin: 0;
+    }
+
+    @include onDesctopmin {
+      grid-column: span 4;
+    }
+
+    &--item {
+      margin: 0;
+      padding: 0;
+      color: $main-text-color;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+  }
+}

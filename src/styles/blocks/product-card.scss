@@ -1,0 +1,152 @@
+.product-card {
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $background-color;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 1;
+  overflow: auto; /* to scroll the menu if needed */
+
+  &__top {
+    top: 0;
+    z-index: 1;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.9px;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--ontablet {
+      display: none;
+      margin-block: 0;
+
+      @include onTablet {
+        display: block;
+        margin: 0;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        letter-spacing: 0.9px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__price {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.7px;
+    margin: 0;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--ontablet {
+      display: none;
+      margin-block: 0;
+
+      @include onTablet {
+        display: block;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        letter-spacing: 0.9px;
+        margin-block: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__weight {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 0.7;
+      margin-block: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__image {
+    height: 248px;
+    background-image: url(../images/product-card1.png);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      height: 440px;
+      background-image: url(../images/product-card2.png);
+      margin-bottom: 27px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    bottom: 0;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__bottom {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 72px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    color: $main-text-color;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 25px;
+    }
+
+  }
+  @include onDesctopmin {
+    display: none;
+  }
+
+  @include onDesctopmax {
+    display: none;
+  }
+}
+
+.strong {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(52, 79, 16, 1);
+}

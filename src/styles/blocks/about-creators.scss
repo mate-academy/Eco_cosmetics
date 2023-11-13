@@ -1,0 +1,112 @@
+.about-creators {
+
+  @include onTablet {
+    @include pageGrid;
+    margin-bottom: 132px;
+  }
+
+  @include onDesctopmin {
+    margin-bottom: 200px;
+
+    &__left {
+        &--text {
+          &::before {
+            bottom: 200px;
+          }
+        }
+      }
+  }
+
+  &__main {
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesctopmin {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__content {
+    color: $main-text-color;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include onDesctopmin {
+      margin-bottom: 30px;
+    }
+
+    &--desc {
+      display: none;
+
+      @include onDesctopmin {
+        display: block;
+        color: $main-text-color;
+        margin: 0;
+        margin-bottom: 20px;
+        padding: 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__details {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    border-bottom: 1px solid $second-color;
+    padding-bottom: 10px;
+    width: fit-content;
+    margin-bottom: 25px;
+    grid-column: 1 / -1;
+    cursor: pointer;
+
+    &:hover {
+      color: $main-text-color;
+      transition: 0.5s;
+      border-bottom: 1px solid $main-text-color;
+    }
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: left;
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      background-image: url(../images/about-creators.png);
+      background-size: cover;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      grid-column: span 3;
+      @include hover(transform, scale(1.1));
+    }
+
+    @include onDesctopmin {
+      grid-column: 7 / 13;
+      background-position: center;
+    }
+  }
+}

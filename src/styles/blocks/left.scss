@@ -1,0 +1,29 @@
+.left {
+  display: none;
+
+  @include onDesctopmin {
+    display: block;
+    margin-top: 10px;
+
+    &--text {
+      margin: 0;
+      writing-mode: vertical-rl;
+      transform: scale(-1, -1);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        color: $second-color;
+        transform: rotate(90deg);
+        left: -41px;
+        height: 1px;
+        width: 100px;
+        background-color: $second-color;
+      }
+    }
+  }
+}

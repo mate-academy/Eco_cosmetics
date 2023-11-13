@@ -1,0 +1,80 @@
+.contacts {
+  @include onTablet {
+    @include pageGrid;
+    margin-bottom: 130px;
+  }
+
+  &__title {
+    text-align: left;
+  }
+
+  &__container {
+    grid-column: span 3;
+
+    @include onDesctopmin {
+      grid-column: 2 / 6;
+    }
+  }
+  &__details {
+    color: $main-text-color;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesctopmin {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__field {
+    display: block;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: left;
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      background-image: url(../images/contacts.png);
+      background-size: contain;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      grid-column: span 3;
+      @include hover(transform, scale(1.1));
+    }
+
+    @include onDesctopmin {
+      grid-column: 7 / 13;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+  &__left {
+    display: none;
+
+    @include onDesctopmin {
+
+      &--text {
+
+        &::before {
+          bottom: 100px;
+        }
+      }
+    }
+  }
+}
