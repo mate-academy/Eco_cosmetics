@@ -1,0 +1,110 @@
+.hero {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    @include onDesktop {
+      @include desktopGrid;
+    }
+  }
+
+  &__info {
+    opacity: 0;
+    transition: 0.9s all linear;
+    &--active-scroll {
+      opacity: 1;
+    }
+
+    @include onDesktop {
+      opacity: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 2/7;
+      grid-row: 1;
+
+      transition: 0.6s transform ease-out, opacity 0.8s linear;
+      opacity: 0;
+      transform: translateX(-20%);
+      &--active-scroll {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__text {
+    @include text;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+
+  &__button-box {
+    display: flex;
+    justify-content: center;
+
+    @include onDesktop {
+      justify-content: start;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      text-align: left;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    width: 100%;
+    aspect-ratio: 1.2/1;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include onTablet {
+      display: block;
+      max-height: 500px;
+      background-image: url(../images/hero-tablet.png);
+    }
+
+    @include onDesktop {
+      grid-column: 7/-1;
+      max-height: 450px;
+      background-image: url(../images/hero-desktop.png);
+
+      transform: translateX(20%);
+      opacity: 0;
+      transition: 0.6s transform ease-out, opacity 0.8s linear;
+      &--active-scroll{
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    &--mobile {
+      display: block;
+      margin-bottom: 25px;
+      background-image: url(../images/hero-mobile.png);
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}

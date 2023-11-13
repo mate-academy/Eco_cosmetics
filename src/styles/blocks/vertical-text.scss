@@ -1,0 +1,31 @@
+.vertical-text {
+  display: none;
+
+  @include onDesktop {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    grid-column: 1/2;
+    transform: translateY(-100%) rotate(-90deg) translatex(-100%);
+    opacity: 0;
+    transform-origin: left top;
+    color: #344F1080;
+    width: max-content;
+
+    transition: 0.3s opacity linear 1s, 0.3s transform ease-out 1s;
+    &--active-scroll {
+      transform: translateY(0) rotate(-90deg) translatex(-100%);
+      opacity: 1;
+    }
+
+
+    &::before {
+      content: '';
+      display: block;
+      height: 0.5px;
+      width: 100px;
+      background-color: #344F1080;
+      margin-right: 10px;
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 15px;
+
+  @include onTablet {
+    padding-top: 24px;
+  }
+
+  @include onDesktop {
+    @include desktopGrid;
+
+    padding-top: 40px;
+  }
+
+  &__link {
+    @include textInputMenu;
+    color: $c-green;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background-color: $c-green;
+      width: 0;
+      transition: $transition;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__logo {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    grid-column: 7/-1;
+  }
+
+
+  &__icon {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &--menu {
+      background-image: url(../images/icons/Eco-menu.svg);
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--small-logo {
+      background-image: url(../images/icons/Eco-logo-small.svg);
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--logo-big {
+      display: none;
+
+      width: 270px;
+      height: 50px;
+      background-image: url(../images/icons/Eco-logo-big.svg);
+
+      @include onDesktop {
+        display: block;
+        grid-column: span 3;
+      }
+    }
+
+    &--shop {
+      background-image: url(../images/icons/Eco-shop.svg);
+    }
+
+    &--close {
+      background-image: url(../images/icons/Eco-close.svg);
+    }
+  }
+}
