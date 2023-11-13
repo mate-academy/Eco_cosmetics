@@ -137,15 +137,15 @@ const observer = new IntersectionObserver(
   }
 );
 
-observer.observe(header)
-observer.observe(hero);
-observer.observe(heroInfo);
-observer.observe(sloganLine1);
-observer.observe(sloganLine2);
-observer.observe(brandText);
-observer.observe(creatorsText);
+if(header) observer.observe(header)
+if(hero) observer.observe(hero);
+if(heroInfo) observer.observe(heroInfo);
+if(sloganLine1) observer.observe(sloganLine1);
+if(sloganLine2) observer.observe(sloganLine2);
+if(brandText) observer.observe(brandText);
+if(creatorsText) observer.observe(creatorsText);
 
-titles.forEach(item => observer.observe(item));
-verticalText.forEach(item => observer.observe(item));
-powderArrow.forEach(item => observer.observe(item));
-heroImage.forEach(image => observer.observe(image));
+titles.forEach(item => {if(item) observer.observe(item)});
+verticalText.forEach(item => {if(item) observer.observe(item)});
+powderArrow.forEach(item =>{if(item) observer.observe(item)});
+heroImage.forEach(item => {if(item) observer.observe(item)});
