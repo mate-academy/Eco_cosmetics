@@ -3,9 +3,23 @@
   background-color: $background-color;
   // height: 100vh;
 
+  &__main {
+    @include onTablet {
+      @include constentPaddingInline;
+    }
+
+    @include onDesctopmin {
+      padding: 0;
+    }
+  }
+
   &__bottom {
     color: $main-text-color;
     @include constentPaddingInline;
+
+    @include onTablet {
+      padding: 0;
+    }
 
     @include onDesctopmin {
       padding: 0;
@@ -68,9 +82,9 @@
     margin-bottom: 25px;
 
     @include onTablet {
-      @include constentPaddingInline;
       margin-bottom: 50px;
     }
+
     &--mobile {
       @include onDesctopmin {
         display: none;
