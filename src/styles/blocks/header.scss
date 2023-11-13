@@ -1,0 +1,120 @@
+.header {
+  box-sizing: border-box;
+  background-color: $background-color;
+  // height: 100vh;
+
+  &__main {
+    @include onTablet {
+      @include constentPaddingInline;
+    }
+
+    @include onDesctopmin {
+      padding: 0;
+    }
+  }
+
+  &__bottom {
+    color: $main-text-color;
+    @include constentPaddingInline;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    @include onDesctopmin {
+      padding: 0;
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__title {
+    font-family: inherit;
+    text-align: center;
+    margin-block: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    @include onDesctopmin {
+      font-size: 60px;
+      line-height: 78px;
+      text-align: left;
+      margin-bottom: 30px;
+
+    }
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesctopmin {
+      text-align: left;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include onDesctopmin {
+      justify-content: left;
+    }
+  }
+
+  &__image {
+    min-height: 267px;
+    width: 100%;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    &--mobile {
+      @include onDesctopmin {
+        display: none;
+      }
+    }
+
+    &--desctop {
+      display: none;
+
+      @include onDesctopmin {
+        display: block;
+        grid-column: 7 / -1;
+        background-image: url(../images/header-cover2.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__main {
+    @include onDesctopmin {
+      @include pageGrid;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    @include onDesctopmax {
+      margin-left: 130px;
+      margin-right: 130px;
+    }
+  }
+}

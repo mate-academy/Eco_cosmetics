@@ -1,0 +1,39 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $main-text-color;
+  font-weight: 700;
+  text-transform: uppercase;
+  overflow: auto; /* to scroll the menu if needed */
+
+  &__top {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-bottom: 45px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 40px;
+  }
+
+  &__bottom {
+    @include constentPaddingInline;
+    color: $background-color;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  @include onDesctopmin {
+    display: none;
+  }
+
+  @include onDesctopmax {
+    display: none;
+  }
+}

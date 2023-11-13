@@ -1,0 +1,95 @@
+.content {
+  @include onTablet {
+    text-align: center;
+  }
+
+  @include onDesctopmin {
+    @include pageGrid;
+    position: relative;
+    margin-block: 300px;
+
+    &::before {
+      padding: 0;
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $second-color;
+      grid-column: 1 / 6;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $second-color;
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__top {
+    @include onDesctopmin {
+      display: block;
+      grid-column: 2 / 6;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+      color: $main-text-color;
+      padding-left: 50px;
+    }
+
+    &--description {
+      display: none;
+      margin: 0;
+
+      @include onDesctopmin {
+        display: block;
+        margin: 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__bottom {
+    @include onDesctopmin {
+      grid-column: 7 / 11;
+      text-align: left;
+    }
+
+    &--title {
+      @include constentPaddingInline;
+
+      margin: 0;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+
+      @include onDesctopmin {
+        display: none;
+      }
+    }
+
+    &--titledesc {
+      display: none;
+
+      @include onDesctopmin {
+        display: block;
+        margin: 0;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

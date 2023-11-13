@@ -1,0 +1,105 @@
+.form-field {
+  display: flex;
+  background-color: $background-color;
+  box-sizing: border-box;
+  border: none;
+  padding: 0;
+  width: 100%;
+  color: $main-text-color;
+  outline: none;
+  border-bottom: 1px solid rgba(130, 130, 130, 1);
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+
+  @include onDesctopmin {
+    margin-bottom: 0;
+  }
+
+  &__phone {
+    margin-bottom: 45px;
+    @include onDesctopmin {
+    margin-bottom: 0;
+    }
+  }
+
+  &__message {
+    width: 100%;
+    font-family: inherit;
+    resize: none;
+    margin-bottom: 30px;
+    padding: 0;
+  }
+
+  &::placeholder {
+    text-align: left;
+    color: rgba(130, 130, 130, 1);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+    @include onDesctopmin {
+      color: rgba(130, 130, 130, 1);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  &:focus {
+    border-color: $main-text-color;
+  }
+
+  @include onTablet {
+    width: 100%;
+  }
+
+  @include onDesctopmin {
+    width: 100%;
+  }
+
+  textarea.form-field__message {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: rgba(189, 189, 189, 1);
+    }
+  }
+
+  @include onDesctopmin {
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-background-color: $background-color;
+  -webkit-box-shadow: 0 0 0 1000px $background-color inset;
+}
+
+input:-webkit-autofill:hover {
+  -webkit-text-fill-background-color: $background-color;
+}
+
+input:-webkit-autofill:focus {
+  -webkit-text-fill-background-color: $background-color;
+}
+
+textarea:-webkit-autofill {
+  border: none;
+  background-color: $background-color;
+}
+
+textarea:-webkit-autofill:hover {
+  background-color: $background-color;
+  border: none;
+}
+
+textarea:-webkit-autofill:focus {
+  background-color: $background-color;
+  border: 1px solid $main-text-color;
+}
+

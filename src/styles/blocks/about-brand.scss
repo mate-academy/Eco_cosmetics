@@ -1,0 +1,90 @@
+.about-brand {
+  @include pageGrid;
+
+  &__main {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesctopmin {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__content {
+    color: $main-text-color;
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__details {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    border-bottom: 1px solid $second-color;
+    width: fit-content;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    &:hover {
+      color: black;
+      transition: 0.5s;
+      border-bottom: 1px solid black;
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      background-image: url(../images/about-brand.png);
+      background-size: cover;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      grid-column: span 3;
+
+      @include hover(transform, scale(1.1));
+    }
+
+    @include onDesctopmin {
+      grid-column: 7 / 11;
+    }
+
+    &-desc {
+      @include onDesctopmin {
+        background-image: url(../images/about-brand2.png);
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        height: 80%;
+        grid-column: 11 / 13;
+        align-self: end;
+        @include hover(transform, scale(1.1));
+      }
+    }
+  }
+
+  &__left {
+    display: none;
+
+    @include onDesctopmin {
+
+      &--text {
+
+        &::before {
+          bottom: 240px;
+        }
+      }
+    }
+  }
+}

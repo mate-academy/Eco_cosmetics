@@ -1,0 +1,49 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 41px;
+
+    @include onTablet {
+      gap: 61px;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: rgba(130, 130, 130, 1);
+    }
+  }
+
+  &__link {
+    color: $background-color;
+    text-decoration: none;
+    line-height: 24px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 600;
+
+    //   transition: transform 0.3s;
+    //   transform: scale(0);
+    //   transform-origin: left;
+    // }
+
+    // &:hover::after {
+    //   transform: scale(1);
+    // }
+  }
+}
