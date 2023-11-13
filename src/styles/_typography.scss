@@ -1,3 +1,29 @@
-h1 {
-  @extend %h1;
+.title-main {
+  @include h1;
+  font-size: 24px;
+
+  @include onTablet {
+    @include h3;
+  }
+
+  @include onDesktop {
+    @include h1;
+  }
+}
+
+.title-secondary {
+  text-transform: uppercase;
+  @include h4;
+
+  @include onDesktop {
+    @include h2;
+  }
+}
+
+.small-text {
+  @include smallText;
+
+  @include onTablet {
+    @include text;
+  }
 }

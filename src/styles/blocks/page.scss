@@ -1,0 +1,61 @@
+.page {
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+
+  &__body {
+    width: 100vw;
+    overflow-x: hidden;
+    background: $c-beige;
+
+    &--menu-active {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 140px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+
+    &--small {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__main {
+    margin-bottom: 130px;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    transform: translateX(-105%);
+    transition: $transition;
+
+    &--active {
+      transform: translateX(0);
+    }
+  }
+}

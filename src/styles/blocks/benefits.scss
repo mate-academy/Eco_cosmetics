@@ -1,0 +1,118 @@
+
+.benefits {
+  &__content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    @include onTablet {
+      overflow: hidden;
+      justify-content: flex-start;
+
+      &:hover * {
+        animation-play-state: paused;
+      }
+
+      &::before {
+        width: 100px;
+        height: 100%;
+        position: absolute;
+        content:"";
+        background: linear-gradient(to right, $c-beige 0%, rgba(255,255,255,0) 100%);
+        z-index: 2;
+        top: 0;
+        left: 0;
+      }
+      &::after {
+        width: 100px;
+        height: 100%;
+        position: absolute;
+        content:"";
+        background: linear-gradient(to right, $c-beige 0%, rgba(255,255,255,0) 100%);
+        z-index: 2;
+        right:0;
+        top:0;
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 0;
+      animation: 30s scroll infinite linear;
+
+      &:hover {
+        animation-play-state: paused;
+      }
+
+
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    &--duplicate {
+      display: none;
+    }
+
+    @include onTablet {
+      width: 380px;
+      gap: 30px;
+
+      &--duplicate {
+        display: flex;
+      }
+    }
+    @include onTablet {
+      gap: 60px;
+    }
+  }
+
+  &__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 80px;
+    height: 80px;
+    transition: $transition;
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &--snail {
+      background-image: url(../images/benefits-1.svg)
+    }
+    &--recycle {
+      background-image: url(../images/benefits-2.svg)
+    }
+    &--leaves {
+      background-image: url(../images/benefits-3.svg)
+    }
+  }
+  &__text {
+    @include text2;
+    color: $c-dark;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  @keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+  }
+}
+

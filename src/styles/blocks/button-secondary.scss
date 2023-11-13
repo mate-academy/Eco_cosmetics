@@ -1,0 +1,27 @@
+.button-secondary {
+  @include decorativeText;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  color: $c-green;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: $c-green;
+    width: 0;
+    transition: $transition;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}

@@ -1,0 +1,52 @@
+.menu {
+  background-color: $c-dark;
+  z-index: 3;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    @include onTablet {
+      gap: 64px;
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    @include onTablet {
+      gap: 50px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: $c-beige;
+    @include textInputMenu;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      opacity: 0;
+      transition: $transition;
+
+      height: 0.5px;
+      width: 100%;
+      background-color: $c-beige;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+}

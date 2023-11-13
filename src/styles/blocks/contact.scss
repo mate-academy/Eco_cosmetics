@@ -1,0 +1,154 @@
+.contact {
+  &__content {
+    @include onTablet {
+      @include tabletGrid;
+    }
+
+    @include onDesktop {
+      @include desktopGrid;
+    }
+  }
+  &__title {
+    color: $c-green;
+    margin-bottom: 10px;
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @include smallText;
+    margin-bottom: 30px;
+    color: $c-dark;
+
+    @include onTablet {
+      @include text;
+      margin-bottom: 20px;
+    }
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    @include onTablet {
+      grid-column: span 3;
+    }
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      gap: 30px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    @include smallText;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      @include textInputMenu;
+    }
+
+    transition: $transition;
+    color: $c-dark;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $c-light-gray;
+    padding-block: 10px;
+    resize: none;
+
+    &--textarea {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      height: 64px;
+
+      &::placeholder {
+        font-weight: 300;
+      }
+
+      &:focus {
+        resize: none;
+        outline: none;
+      }
+    }
+
+    &:hover::placeholder {
+      color: $c-green;
+    }
+
+    & + .contact__error {
+      color: $c-error;
+      font-size: 12px;
+    }
+
+    &::placeholder {
+      color: $c-dark-gray;
+      transition: $transition;
+    }
+
+    &:focus-visible {
+      border-color: $c-dark;
+    }
+
+    &--error {
+      color: $c-error;
+      border-color: $c-error;
+      &::placeholder{
+        color: $c-error;
+      }
+    }
+
+    &--success {
+      color: $c-green;
+      border-color: $c-green;
+      &::placeholder{
+        color: $c-green;
+      }
+    }
+  }
+
+  &__photo {
+    display: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+
+    @include onTablet {
+      display: block;
+      background-image: url(../images/contact-tablet.png);
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/contact-desktop.png);
+      grid-column: 7/-1;
+    }
+  }
+  &__button-box {
+    display: flex;
+    justify-content: center;
+    @include onTablet {
+      justify-content: start;
+    }
+  }
+}

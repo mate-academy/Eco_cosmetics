@@ -1,0 +1,38 @@
+.button-tab {
+  @include text2;
+  text-transform: uppercase;
+  color: $c-dark-gray;
+  padding-bottom: 10px;
+  position: relative;
+  transition: $transition;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: $c-green;
+    width: 0;
+    transition: $transition;
+  }
+
+  &:hover {
+    color: $c-dark;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &--active {
+    color: $c-dark;
+    &::after {
+      width: 100%;
+    }
+  }
+
+  @include onDesktop {
+    @include h5;
+  }
+}
