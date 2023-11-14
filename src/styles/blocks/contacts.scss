@@ -69,6 +69,7 @@ textarea:focus {
   }
 
   &__button {
+    border: none;
     @include hover(transform, scale(1.2));
     text-transform: uppercase;
     cursor: pointer;
@@ -126,14 +127,16 @@ textarea:focus {
   }
 
   &__wrapper {
-    @include pageGrid;
-
+    @include onTablet {
+      @include pageGrid;
+    }
   }
 }
 
 .button__cwrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   @include onTablet {
     justify-content: left;
   }
