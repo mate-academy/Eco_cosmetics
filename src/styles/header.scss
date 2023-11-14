@@ -109,11 +109,32 @@
     }
   }
 
-  &__image {
+  &__wrapper {
+    position: relative;
     min-width: 320px;
     min-height: 270px;
-    height: 80vw;
-    max-height: 500px;
+
+    padding-bottom: 80%;
+
+    @media (max-width: calc(320px + #{$inline_padding})) {
+      position: relative;
+      right: $inline_padding;
+    }
+
+    @include OnDesktop {
+      padding-bottom: 0;
+      width: 580px;
+      height: 450px;
+      grid-column: 7 / -1;
+      grid-row: 1;
+    }
+
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 
 
     @include background("../images/header/background-mobile.png");
@@ -122,28 +143,20 @@
     margin: auto;
     transition: transform 0.3s ease;
 
-    @media (max-width: calc(320px + #{$inline_padding})) {
-      position: relative;
-      right: $inline_padding;
-    }
-
-
     @include OnTablet {
       right: 0;
-      width: 715px;
-      height: 500px;
+      min-width: 715px;
+      min-height: 500px;
 
       @include background("../images/header/header-background-tablet.png");
     }
 
     @include OnDesktop {
+      @include background("../images/header/HeaderImagePC.png");
+      min-width: 0;
+      min-height: 0;
       width: 580px;
       height: 450px;
-      grid-column: 7 / -1;
-      grid-row: 1;
-
-      @include background("../images/header/HeaderImagePC.png");
-
       &:hover {
         transform: scale(1.2);
       }
