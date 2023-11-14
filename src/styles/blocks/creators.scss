@@ -1,7 +1,6 @@
 .creators {
   @media (min-width: 1280px) {
     display: flex;
-    justify-content: space-between;
   }
 
   &__title {
@@ -54,7 +53,7 @@
     font-size: 14px;
     color: $color-green;
     font-weight: 500;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 86px;
     cursor: pointer;
 
@@ -63,8 +62,20 @@
     }
   }
 
+  &__btn--wrap {
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
+
   &__btn {
     margin-bottom: 0;
+    @media (min-width: 768px) {
+      margin-top: 40px;
+    }
   }
 
   &__btn:hover {
@@ -76,26 +87,18 @@
 
     @media (min-width: 768px) {
       display: block;
-      width: 342px;
-      transform: scale(1.1);
       transition: transform 0.3s ease-in-out;
       cursor: pointer;
-    }
-
-    @media (min-width: 1280px) {
-      width: 580px;
-    }
-  }
-
-  &__description {
-    @media (min-width: 768px) {
-      width: 342px;
     }
   }
 
   &__photo {
-    width: 100%;
+    height: 440px;
     cursor: pointer;
+
+    @media (min-width: 1280px) {
+      height: 645px;
+    }
   }
 
   &__photo:hover {
@@ -105,14 +108,13 @@
 
   &__wrap {
     @media (min-width: 768px) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 30px;
+      display: flex;
+      justify-content: space-between;
       //padding-left: 80px;
     }
 
     @media (min-width: 1280px) {
-      grid-gap: 120px;
+      flex-grow: 1;
       padding-left: 80px;
     }
   }

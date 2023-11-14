@@ -1,5 +1,8 @@
 .form {
   margin-top: 30px;
+  @media (min-width: 768px) {
+    margin-top: 20px;
+  }
 
   &__input {
     margin-bottom: 25px;
@@ -13,6 +16,22 @@
     position: relative;
     outline: none;
     line-height: 150%;
+
+    &.form__input--thiner {
+      margin-bottom: 0;
+
+      @media (min-width: 1280px) {
+        margin-bottom: 25px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: 19px;
+    }
+
+    @media (min-width: 1280px) {
+      margin-bottom: 25px;
+    }
 
     &::placeholder {
       position: absolute;
@@ -32,5 +51,9 @@
 
   &__input--message {
     resize: none;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
