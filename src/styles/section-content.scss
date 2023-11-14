@@ -26,25 +26,6 @@
     }
   }
 
-  &--about,
-  &--shop,
-  &--creators,
-  &--powder,
-  &--contact-us {
-    @include OnDesktop {
-      // &::before {
-      //   content: "awdawd";
-      //   position: absolute;
-      //   font-size: 14px;
-      //   font-weight: 500;
-      //   line-height: 18px;
-      //   color: #344F1080;
-      //   grid-column: 1;
-      //   transform: rotate(-90deg) translateX(-50%);
-      // }
-    }
-  }
-
   &--choose-gift {
     @include OnDesktop {
       display: flex;
@@ -74,7 +55,7 @@
     @include OnDesktop {
       position: absolute;
       grid-column: 1 / 2;
-      color: #344F1080;
+      color: #344f1080;
       display: flex;
       width: max-content;
       align-items: center;
@@ -97,7 +78,7 @@
     @include OnDesktop {
       width: 88px;
       height: 1px;
-      background-color: #344F1080;
+      background-color: #344f1080;
     }
   }
 
@@ -190,6 +171,7 @@
     padding: 0;
     letter-spacing: 0.15em;
     grid-column: span 2;
+    transition: background-color 0.3s ease;
 
     &--left {
       @include OnTablet {
@@ -216,6 +198,12 @@
         margin-top: 50px;
         margin-inline: 0;
       }
+    }
+
+    &:hover {
+      color: $custom_gray;
+      cursor: pointer;
+      background-color: $btn_hover_color;
     }
   }
 
@@ -276,20 +264,20 @@
       display: none;
       @include OnTablet {
         display: block;
-        @include background('../images/main/form-image.png');
+        @include background("../images/main/form-image.png");
       }
 
       @include OnDesktop {
         height: 540px;
         width: 580px;
-        @include background('../images/main/FormImagePC.png');
+        @include background("../images/main/FormImagePC.png");
         grid-column: 7 / -1;
       }
     }
 
     &--img {
       display: none;
-      @include background('../images/main/about-brand-tablet.png');
+      @include background("../images/main/about-brand-tablet.png");
 
       @include OnTablet {
         display: block;
@@ -303,12 +291,12 @@
       }
 
       &--second {
-        @include background('../images/main/second-author.png');
+        @include background("../images/main/second-author.png");
 
         @include OnDesktop {
           width: 580px;
           height: 660px;
-          @include background('../images/main/SecondAuthorPC.png');
+          @include background("../images/main/SecondAuthorPC.png");
 
           grid-column: 7 / -1;
         }
@@ -387,7 +375,6 @@
       font-weight: 400;
       line-height: 24px;
       grid-column: 2 / -2;
-
 
       &::after {
         content: "";
@@ -535,15 +522,15 @@
       left: $inline_padding;
       width: calc(60% + #{$inline_padding});
       background-position: left;
-      @include background('../images/main/tooth-powder.svg');
+      @include background("../images/main/tooth-powder.svg");
 
       @include OnTablet {
-        @include background('../images/main/Frame-mobile.svg');
+        @include background("../images/main/Frame-mobile.svg");
         width: calc(80% + #{$inline_padding});
       }
 
       @include OnDesktop {
-        background-image: url('../images/main/FramePC.svg');
+        background-image: url("../images/main/FramePC.svg");
         left: 0;
         width: 480px;
         height: 397px;
@@ -556,7 +543,7 @@
   &__list {
     width: 100%;
     list-style-type: none;
-    padding: 48px 0 0 0;
+    padding: 48px 0 0;
     text-align: right;
 
     @include OnDesktop {
@@ -588,7 +575,7 @@
     font-size: 14px;
     line-height: 18px;
     font-weight: 400;
-    padding: 20px 0 0 0;
+    padding: 20px 0 0;
   }
 
   &__field {
@@ -614,9 +601,28 @@
       background-color: #e4dfd3 !important;
     }
 
-    &::-webkit-input-placeholder {
+    &:-webkit-input-placeholder {
       color: $custom_lightgray !important;
     }
+
+    &:focus {
+      border-bottom: 1px solid $black_color;
+    }
+
+    &:valid {
+      border-bottom: 1px solid $custom_green;
+      color: $custom_green;
+    }
+
+    &--invalid {
+      border-bottom: 1px solid $field_error;
+
+      &::placeholder {
+        color: $field_error;
+      }
+    }
+
+
   }
 
   &__input-box {

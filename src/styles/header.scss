@@ -17,7 +17,6 @@
     grid-column: 1 / -1;
     grid-row: 2;
 
-
     @include OnDesktop {
       grid-row: 1;
       grid-column: 1 / 7;
@@ -62,11 +61,11 @@
       @include OnDesktop {
         display: none;
       }
-      @include background('./../images/header/Menu.svg');
+      @include background("./../images/header/Menu.svg");
     }
 
     &--logo {
-      @include background('../images/header/HeaderLogoPC.svg');
+      @include background("../images/header/HeaderLogoPC.svg");
       background-position: left;
 
       @include OnDesktop {
@@ -80,7 +79,7 @@
         height: 32px;
       }
 
-      @include background('./../images/header/shop.svg');
+      @include background("./../images/header/shop.svg");
     }
   }
 
@@ -117,14 +116,14 @@
       right: $inline_padding;
     }
 
-    @include background('../images/header/background-mobile.png');
+    @include background("../images/header/background-mobile.png");
 
     @include OnTablet {
       right: 0;
       width: 715px;
       height: 500px;
 
-      @include background('../images/header/header-background-tablet.png');
+      @include background("../images/header/header-background-tablet.png");
     }
 
     @include OnDesktop {
@@ -133,7 +132,7 @@
       grid-column: 7 / -1;
       grid-row: 1;
 
-      @include background('../images/header/HeaderImagePC.png');
+      @include background("../images/header/HeaderImagePC.png");
     }
   }
 
@@ -186,9 +185,16 @@
     border: 0;
     padding: 0;
     letter-spacing: 0.15em;
+    transition: background-color 0.3s ease;
 
     @include OnDesktop {
       margin-left: 100px;
+    }
+
+    &:hover {
+      color: $custom_gray;
+      cursor: pointer;
+      background-color: $btn_hover_color;
     }
   }
 }
