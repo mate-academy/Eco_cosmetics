@@ -103,20 +103,30 @@
   &__nav-href {
     text-decoration: none;
     color: $custom_green;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__image {
-    width: 320px;
-    height: 270px;
+    min-width: 320px;
+    min-height: 270px;
+    height: 80vw;
+    max-height: 500px;
+
+
+    @include background("../images/header/background-mobile.png");
+
     grid-column: 1 / -1;
     margin: auto;
+    transition: transform 0.3s ease;
 
     @media (max-width: calc(320px + #{$inline_padding})) {
       position: relative;
       right: $inline_padding;
     }
 
-    @include background("../images/header/background-mobile.png");
 
     @include OnTablet {
       right: 0;
@@ -133,7 +143,12 @@
       grid-row: 1;
 
       @include background("../images/header/HeaderImagePC.png");
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
+
   }
 
   &__title {
@@ -186,6 +201,8 @@
     padding: 0;
     letter-spacing: 0.15em;
     transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
 
     @include OnDesktop {
       margin-left: 100px;

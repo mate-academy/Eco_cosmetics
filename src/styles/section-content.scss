@@ -172,6 +172,8 @@
     letter-spacing: 0.15em;
     grid-column: span 2;
     transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
 
     &--left {
       @include OnTablet {
@@ -262,6 +264,7 @@
 
     &--form {
       display: none;
+      transition: transform 0.3s ease;
       @include OnTablet {
         display: block;
         @include background("../images/main/form-image.png");
@@ -272,11 +275,17 @@
         width: 580px;
         @include background("../images/main/FormImagePC.png");
         grid-column: 7 / -1;
+
+        &:hover {
+          transform: scale(1.2);
+        }
       }
+
     }
 
     &--img {
       display: none;
+      transition: transform 0.3s ease;
       @include background("../images/main/about-brand-tablet.png");
 
       @include OnTablet {
@@ -288,6 +297,10 @@
         width: 380px;
         height: 530px;
         grid-column: 7 / 11;
+
+        &:hover {
+          transform: scale(1.2);
+        }
       }
 
       &--second {
@@ -309,6 +322,8 @@
       transform: translateY(-100%);
       right: 0;
       display: none;
+      transition: transform 0.3s ease;
+
       @include background("../images/header/additionalAboutPc.png");
 
       @include OnDesktop {
@@ -316,6 +331,10 @@
         width: 180px;
         height: 430px;
         grid-column: 11 / -1;
+
+        &:hover {
+          transform: scale(1.2) translateY(-100%);
+        }
       }
     }
 
@@ -457,6 +476,8 @@
   &__product-card {
     width: 100%;
     grid-column: span 2;
+    max-width: 320px;
+    margin: auto;
 
     &:last-of-type {
       display: none;
@@ -466,10 +487,16 @@
       width: 100%;
       text-align: left;
       grid-column: span 3;
+      max-width: 340px;
 
       &:last-of-type {
         display: block;
       }
+    }
+
+    @include OnDesktop {
+      max-width: 530px;
+      margin: 0;
     }
   }
 
@@ -478,6 +505,7 @@
     position: relative;
     width: calc(100% + (2 * #{$inline_padding}));
     right: #{$inline_padding};
+    transition: transform 0.3s ease;
 
     @include OnTablet {
       width: 100%;
@@ -489,6 +517,10 @@
     @include OnDesktop {
       height: 500px;
       width: 530px;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 
@@ -523,9 +555,11 @@
       width: calc(60% + #{$inline_padding});
       background-position: left;
       @include background("../images/main/tooth-powder.svg");
+      background-size: contain;
 
       @include OnTablet {
         @include background("../images/main/Frame-mobile.svg");
+        background-size: contain;
         width: calc(80% + #{$inline_padding});
       }
 
@@ -609,7 +643,7 @@
       border-bottom: 1px solid $black_color;
     }
 
-    &:valid {
+    &--valid {
       border-bottom: 1px solid $custom_green;
       color: $custom_green;
     }
