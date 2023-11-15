@@ -1,0 +1,463 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #333333;
+}
+
+.visible {
+  display: block;
+  height: 100vh;
+  opacity: 1;
+  background-image: url("../images/logo(big).svg");
+  background-size: 35%;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: pulse 2s ease-in-out infinite;
+  transition: opacity;
+}
+
+.non-visibble {
+  opacity: 0;
+  transition: opacity 5s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.section {
+  animation: appear 3s;
+  animation-delay: 5s;
+}
+.section__menu {
+  padding: 20px 20px 20px;
+}
+.section__main {
+  padding: 0 20px;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.greeting {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 0;
+}
+.greeting__img {
+  width: 100vw;
+  display: block;
+  margin: 0 -20px 25px;
+  animation: slideLeft 2s;
+  animation-delay: 5s;
+}
+.greeting__heading {
+  align-items: center;
+  margin-bottom: 10px;
+  animation: slideRight 2s;
+  animation-delay: 5s;
+}
+.greeting__text {
+  margin-bottom: 30px;
+  animation: slideLeft 2s;
+  animation-delay: 5s;
+}
+.greeting__button {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0.15em;
+  text-align: center;
+  width: 100%;
+  animation: slideDown 2s;
+  animation-delay: 5s;
+  margin-bottom: 0;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.topbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px 20px;
+}
+.topbar__logo {
+  transition: scale 0.3s;
+}
+.topbar__logo:hover {
+  scale: 1.1;
+}
+.topbar__logo-img {
+  width: 24px;
+  height: 24px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+.icon-menu {
+  background-image: url(../images/Menu.svg);
+  background-size: center;
+  transition: scale 0.3s;
+}
+.icon-menu:hover {
+  scale: 1.1;
+}
+.icon-bag {
+  background-image: url(../images/shop.svg);
+  background-size: center;
+  transition: scale 0.3s;
+}
+.icon-bag:hover {
+  scale: 1.1;
+}
+.icon-closer {
+  background-image: url(../images/menu-closer.svg);
+  background-repeat: contain;
+  background-repeat: no-repeat;
+  transition: scale 0.3s;
+}
+.icon-closer:hover {
+  scale: 1.1;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.button__main {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0.15em;
+  text-align: center;
+  border: black 1px solid;
+  color: white;
+  background-color: #333333;
+  height: 60px;
+  transition: background-color 0.3s;
+  transition: color 0.3s;
+}
+.button__main:hover {
+  background-color: #e4dfd3;
+}
+.button__main:hover {
+  color: black;
+}
+.button__learn-more {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: medium;
+  line-height: 130%;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #344f10;
+}
+.button__learn-more::after {
+  content: "";
+  width: 90%;
+  height: 1px;
+  position: absolute;
+  background-color: #344f10;
+  bottom: -10px;
+  transition: all 0.4s;
+  transform: scale(0);
+  transform-origin: center;
+}
+.button__learn-more:hover::after {
+  transform: scale(1);
+}
+.button__shopping {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color: #828282;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #333333;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+.dropdown .menu--active {
+  z-index: 2;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu__topbar {
+  margin-bottom: 40px;
+}
+.menu__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.menu__nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  width: 100%;
+  gap: 40px;
+}
+.menu__nav__list__item {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.menu__nav__list__item::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: -10px;
+  background-color: #828282;
+}
+.menu__nav__list__item--link {
+  color: #e4dfd3;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+.main__title {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color: #344f10;
+  width: 100%;
+  margin-bottom: 100px;
+}
+.main__about {
+  margin-bottom: 100px;
+}
+
+.about__heading {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color: #344f10;
+  margin-bottom: 10px;
+}
+.about__text {
+  text-align: justify;
+  margin-bottom: 30px;
+}
+.about__button {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.shop {
+  display: flex;
+  flex-direction: column;
+}
+.shop__title {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color: #344f10;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.shop__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.shop__buttons__button {
+  position: relative;
+}
+.shop__buttons__button.__active::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  background-color: #333333;
+  bottom: -10px;
+  transition: width 0.4s ease-in-out;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #e4dfd3;
+  overflow-x: hidden;
+}
+
+body:has(.menu--active) {
+  overflow: hidden;
+}
+
+body:has(.visible) {
+  overflow: hidden;
+}
+
+/*# sourceMappingURL=msin.css.map */
