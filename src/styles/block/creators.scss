@@ -1,0 +1,69 @@
+.creators {
+  
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  &__text-wrapper {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__text {
+    @include text_small-text;
+
+    @include onTablet {
+      @include text_text
+    }
+  }
+
+  &__paragraph {
+    margin-top: 30px;
+
+    &:last-child {
+      display: none;
+
+      @include onDesktop {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      background-image: url(../images/tablet/image_bird_1.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/desktop/image_bird_1.png);
+      grid-column: 7 / -1;
+
+      @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__button {
+    &--big {
+      @include onTablet {
+        margin-top: 40px;
+        margin-inline: 0;
+      }
+    }
+
+    &--small {
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.tooth-powder {
+  position: relative;
+  @include onDesktop {
+    @include pageGrid;
+  }
+
+  &__wrapper--left {
+    grid-column: span 4;
+  }
+
+  &__image {
+    position: absolute;
+    right: -20px;
+    top: 86px;
+    background-image: url(../images/tooth-powder/tooth-powder-jar.svg);
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 182px;
+    height: 397px;
+
+    @include onTablet {
+      background-image: url(../images/tooth-powder/tooth-powder-jar-tablet.svg);
+      width: 398px;
+    }
+
+    @include onDesktop {
+      top: 0;
+      right: 0;
+      background-image: url(../images/tooth-powder/tooth-powder-jar-desktop.svg);
+      background-size: contain;
+      width: 100%;
+      background-repeat: no-repeat;
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__ingredients {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: 68px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 8;
+      margin-top: 35px;
+    }
+  }
+
+  &__ingredient {
+    @include text_text;
+    text-align: right;
+    list-style: none;
+    margin-bottom: 52px;
+    text-wrap: nowrap;
+    padding-right: 180px;
+
+    @include onTablet {
+      padding-right: 425px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
+  }
+
+  &__ingredient:nth-child(even) {
+    margin-bottom: 49px;
+  }
+
+  &__button {
+    position: absolute;
+    text-wrap: nowrap;
+    bottom: 0;
+
+    @include onTablet {
+      bottom: 0;
+    }
+  }
+}

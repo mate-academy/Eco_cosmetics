@@ -1,0 +1,67 @@
+.about-our-brand {
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  &__text-wrapper {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__text {
+    @include text_small-text;
+
+    @include onDesktop {
+     @include text_text;
+
+     margin-top: 40px;
+    }
+  }
+
+  &__text--option {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-top: 30px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      position: relative;
+      display: block;
+      background-image: url(../images/tablet/image_moonnight.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/desktop/image_moonnight.png);
+      grid-column: 7 / 11;
+
+      @include hover(transform, scale(1.05));
+    }
+
+    &--option {
+      display: none;
+
+      @include onDesktop {
+      display: block;
+      grid-column: 11 / -1;
+      background-image: url(../images/desktop/image_moonnight_crop.png);
+      height: 430px;
+      align-self: end;
+      }
+    }
+  }
+}

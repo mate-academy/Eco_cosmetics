@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  color: $green_200;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+    background-color: $beige;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(-100%);
+    pointer-events: none;
+  }
+
+  &__menu:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  .span {
+    display: none;
+    @include onDesktop {
+
+    margin: 0;
+    height: 1px;
+    display: block;
+
+    &--left {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 43%;
+        height: 1px;
+        background-color: $green_200;
+      }
+    }
+
+    &--right {
+      height: 100px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 49%;
+        height: 1px;
+        background-color: $green_200;
+      }
+     }
+    }
+  }
+}

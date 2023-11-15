@@ -1,0 +1,60 @@
+.advantages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  @include onTablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include onDesktop {
+    grid-column: 1 / -1;
+  }
+}
+
+.advantage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  &--no-plastic {
+    grid-column: 1 / 3;
+  }
+
+  &--recycling {
+    grid-column: 3 / 5;
+  }
+
+  &--natural {
+    grid-column: 5 / -1;
+  }
+
+  &__icon {
+    display: block;
+    width: 62px;
+    height: 62px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &--no-plastic {
+      background-image: url(../images/tooth-powder/no-plastic.svg);
+    }
+
+    &--recycling {
+      background-image: url(../images/tooth-powder/recycling.svg);
+    }
+
+    &--natural {
+      background-image: url(../images/tooth-powder/natural.svg);
+    }
+  }
+}
+
+.preference {
+  @include text_text-2;
+  text-align: center;
+  color: $black;
+}

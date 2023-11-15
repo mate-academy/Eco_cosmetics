@@ -1,0 +1,29 @@
+.decoration {
+  display: none;
+
+  @include onDesktop {
+    grid-column: 1;
+    grid-row: span 3;
+    align-self: start;
+    justify-self: start;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    align-items: center;
+
+    &__header {
+      @include text_decorative;
+      writing-mode: vertical-lr;
+      transform: rotate(-180deg);
+      color: $green_100;
+      text-transform: lowercase;
+    }
+
+    &__line {
+      display: block;
+      width: 1px;
+      height: 100px;
+      background-color: $green_100;
+    }
+  }
+}

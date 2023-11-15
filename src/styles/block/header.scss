@@ -1,0 +1,80 @@
+.header {
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__bottom {
+    @include pageGrid;
+    row-gap: 25px;
+
+    @include onTablet {
+      row-gap: 50px;
+    }
+  }
+
+  &__text {
+    color: $black;
+    grid-column: -1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      grid-row: 1;
+      grid-column: 2 / 7;
+      align-items: self-start;
+    }
+  }
+
+  &__heading {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      @include text_h3
+    }
+
+    @include onDesktop {
+      @include text_h1;
+
+      text-align: left;
+      margin-bottom: 30px;
+      text-transform: none;
+    }
+  }
+
+  &__sub-heading {
+    @include text_text;
+
+    text-align: center;
+  }
+
+  &__image {
+    grid-column: -1 / 1;
+    background-image: url(../images/phone/image_jars.png);
+    background-size: cover;
+    height: 0;
+    padding-bottom: 100%;
+
+    @include onTablet {
+      background-image: url(../images/tablet/image_jars.png);
+    }
+
+    @include onDesktop {
+      background-image: url(../images/desktop/image_jars.png);
+      grid-column: 7 / -1;
+      height: 451px;
+      padding-bottom: 0;
+
+      @include hover(transform, scale(1.05));
+    }
+  }
+}
