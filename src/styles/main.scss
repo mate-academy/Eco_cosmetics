@@ -1,7 +1,45 @@
 @import "utils";
-@import "fonts";
 @import "typography";
+@import "../styles/utils/vars";
+@import "../styles/header.scss";
+@import "../styles/section-content.scss";
+@import "../styles/footer.scss";
+@import "../styles/navigation.scss";
 
-body {
-  background: $c-gray;
+* {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  background-color: #e4dfd3;
+  height: 100%;
+  overflow-x: hidden;
+  &:has(#menu:target) {
+    overflow: hidden;
+  }
+}
+
+.main {
+  padding: 25px $inline_padding 0;
+  max-width: 1280px;
+  margin: auto;
+
+  @include OnTablet {
+    padding: 25px $inline_padding_tablet 0;
+  }
+
+  @include OnDesktop {
+    padding: 25px $inline_padding_pc 0;
+  }
+}
+
+#menu:target {
+  opacity: 1;
+  pointer-events: all;
 }

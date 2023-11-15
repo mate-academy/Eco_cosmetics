@@ -1,0 +1,150 @@
+.footer {
+  background-color: $footer_background;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+    padding: 30px 20px 40px;
+    max-width: 1280px;
+    margin: auto;
+
+    @include OnTablet {
+      padding: 30px 27px;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include OnDesktop {
+      padding: 60px 50px;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__links {
+    grid-column: span 2;
+
+    @include OnTablet {
+      grid-column: span 3;
+    }
+
+    @include OnDesktop {
+      grid-column: span 3;
+      grid-row: 1;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    padding-bottom: 11px;
+    text-decoration: none;
+    color: $link_color;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+    grid-column: span 2;
+
+    @include OnTablet {
+      grid-column: span 6;
+    }
+
+    @include OnDesktop {
+      grid-column: 8 / -1;
+      grid-row: 2;
+    }
+
+    &--facebook,
+    &--instagram {
+      display: block;
+      width: 20px;
+      height: 20px;
+      color: $link_color;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--facebook {
+      @include background("../images/footer/facebook.svg");
+    }
+
+    &--instagram {
+      @include background("../images/footer/Instagram.svg");
+    }
+  }
+
+  &__content {
+    grid-column: span 2;
+
+    @include OnTablet {
+      grid-column: 4 / -1;
+      grid-row: 1;
+    }
+
+    @include OnDesktop {
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__text {
+    display: block;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: $link_color;
+    padding-bottom: 10px;
+    text-decoration: none;
+
+    &[href]:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__copyrighted {
+    grid-column: span 2;
+    padding-inline: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: center;
+    color: $link_color;
+
+    @include OnTablet {
+      text-align: left;
+      font-weight: 400;
+      line-height: 21px;
+      grid-column: span 6;
+      padding-top: 10px;
+      padding-inline: 0;
+    }
+
+    @include OnDesktop {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      grid-column: 1 / 8;
+      grid-row: 2;
+      padding-top: 0;
+    }
+  }
+
+  &__non-obliged {
+    display: none;
+
+    @include OnDesktop {
+      display: inline;
+    }
+  }
+}

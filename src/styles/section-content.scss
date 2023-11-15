@@ -1,0 +1,733 @@
+.section-content {
+  padding-bottom: 100px;
+
+  @include OnTablet {
+    padding-bottom: 130px;
+  }
+
+  &--about,
+  &--shop,
+  &--creators,
+  &--important,
+  &--powder,
+  &--contact-us {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include OnTablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include OnDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &--choose-gift {
+    @include OnDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      width: 100%;
+      padding-bottom: 200px;
+    }
+  }
+
+  &__non-obliged {
+    display: none;
+
+    &--tablet {
+      @include OnTablet {
+        display: inline;
+      }
+    }
+
+    @include OnDesktop {
+      display: inline;
+    }
+  }
+
+  &__preview {
+    display: none;
+    @include OnDesktop {
+      position: absolute;
+      grid-column: 1 / 2;
+      color: #344f1080;
+      display: flex;
+      width: max-content;
+      align-items: center;
+      height: 18px;
+      gap: 10px;
+      transform-origin: center left;
+      transform: rotate(-90deg) translateX(-100%);
+    }
+  }
+
+  &__preview-content {
+    @include OnDesktop {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18px;
+    }
+  }
+
+  &__preview-container {
+    @include OnDesktop {
+      width: 88px;
+      height: 1px;
+      background-color: #344f1080;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: center;
+    color: $custom_gray;
+    padding-bottom: 10px;
+
+    &--text {
+      display: block;
+      margin: auto;
+      max-width: 530px;
+    }
+
+    &--topic {
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+
+      &--left {
+        text-align: left;
+      }
+
+      &--green {
+        color: $custom_green;
+      }
+
+      @include OnDesktop {
+        font-size: 36px;
+        line-height: 40px;
+        font-weight: 600;
+        grid-column: 2 / -1;
+      }
+    }
+
+    &--gridcol {
+      grid-column: span 2;
+
+      @include OnTablet {
+        text-align: left;
+        grid-column: span 6;
+      }
+
+      @include OnDesktop {
+        grid-column: 2 / 6;
+      }
+    }
+
+    &--small {
+      font-size: 18px;
+      line-height: 27px;
+      padding-bottom: 10px;
+
+      &--font {
+        font-weight: 500;
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  &__adv {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    padding-bottom: 30px;
+
+    &--topic {
+      font-size: 14px;
+      line-height: 21px;
+
+      @include OnDesktop {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      &--left {
+        text-align: left;
+      }
+    }
+  }
+
+  &__btn {
+    display: block;
+    width: 280px;
+    margin: auto;
+    background-color: $custom_gray;
+    color: $custom_white;
+    line-height: 60px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 0;
+    padding: 0;
+    letter-spacing: 0.15em;
+    grid-column: span 2;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+
+    &--left {
+      @include OnTablet {
+        margin: 0;
+      }
+    }
+
+    @include OnTablet {
+      grid-column: span 6;
+    }
+
+    @include OnDesktop {
+      grid-column: span 12;
+    }
+
+    &--above {
+      margin-top: 36px;
+
+      @include OnTablet {
+        margin-inline: 0;
+      }
+
+      @include OnDesktop {
+        margin-top: 50px;
+        margin-inline: 0;
+      }
+    }
+
+    &:hover {
+      color: $custom_gray;
+      cursor: pointer;
+      background-color: $btn_hover_color;
+    }
+  }
+
+  &__learn-btn {
+    color: $custom_green;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    width: fit-content;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 10px;
+    transition: border-bottom 0.3s ease;
+
+    &:hover {
+      border-bottom: 1px solid $custom_green;
+      cursor: pointer;
+    }
+
+    @include OnDesktop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__wrapper {
+    display: none;
+    position: relative;
+    min-height: 342px;
+    min-width: 321px;
+    padding-bottom: 94%;
+    grid-column: span 3;
+
+    @include OnTablet {
+      display: block;
+    }
+
+    @include OnDesktop {
+      width: 380px;
+      height: 530px;
+      grid-column: 7 / 11;
+    }
+
+    &--second {
+      min-height: 440px;
+      min-width: 340px;
+
+      @include OnDesktop {
+        width: 580px;
+        height: 645px;
+        grid-column: 7 / -1;
+      }
+    }
+
+  }
+
+  &__grid-container {
+    grid-column: span 2;
+
+    @include OnTablet {
+      grid-column: span 6;
+    }
+
+    @include OnDesktop {
+      grid-column: 2 / -1;
+    }
+
+    &--block {
+      grid-column: span 2;
+
+      @include OnTablet {
+        grid-column: span 3;
+      }
+
+      @include OnDesktop {
+        grid-column: 2 / 6;
+      }
+    }
+
+    &--smallblock {
+      @include OnTablet {
+        grid-column: span 2;
+      }
+
+      @include OnDesktop {
+        grid-column: span 4;
+      }
+    }
+
+    &--form {
+      display: none;
+      transition: transform 0.3s ease;
+      @include OnTablet {
+        display: block;
+        @include background("../images/main/form-image.png");
+      }
+
+      @include OnDesktop {
+        height: 540px;
+        width: 580px;
+        @include background("../images/main/FormImagePC.png");
+        grid-column: 7 / -1;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+
+    }
+
+    &--img {
+      display: none;
+      transform-origin: right 50%;
+      transition: transform 0.3s ease;
+      @include background("../images/main/about-brand-tablet.png");
+
+      @include OnTablet {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-height: 380px;
+        max-width: 400px;
+      }
+
+      @include OnDesktop {
+        max-width: 380px;
+        max-height: 530px;
+
+        @include OnDesktop {
+          max-width: 580px;
+          max-height: 660px;
+        }
+
+        &:hover {
+          transform: scale(1.2) translateX(-40%);
+        }
+      }
+
+      &--second {
+        transform-origin: 50% 50%;
+        @include background("../images/main/second-author.png");
+
+        @include OnTablet {
+          max-height: 380px;
+          max-width: 460px;
+        }
+
+        @include OnDesktop {
+          max-width: 100%;
+          max-height: 100%;
+          @include background("../images/main/SecondAuthorPC.png");
+
+          grid-column: 7 / -1;
+        }
+      }
+    }
+
+    &--img-additional {
+      position: relative;
+      top: 100%;
+      transform: translateY(-100%);
+      right: 0;
+      display: none;
+      transition: transform 0.3s ease;
+
+      @include background("../images/header/additionalAboutPc.png");
+
+      @include OnDesktop {
+        display: block;
+        width: 180px;
+        height: 430px;
+        grid-column: 11 / -1;
+
+        &:hover {
+          transform: scale(1.2) translateY(-100%);
+        }
+      }
+    }
+
+    &--pb {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__alarm-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  &__alarm {
+    color: $custom_green;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: auto;
+    width: 280px;
+
+    @include OnDesktop {
+      padding: 0;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 36px;
+      grid-column: 1 / 5;
+      width: 380px;
+      text-align: left;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: calc(130px + 100%);
+        width: 50vw;
+        height: 1px;
+        background-color: #000;
+      }
+    }
+  }
+
+  &__alarm-text {
+    @include OnDesktop {
+      position: relative;
+      display: block;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      grid-column: 2 / -2;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -100px;
+        right: 0;
+        width: 50vw;
+        height: 1px;
+        background-color: #000;
+      }
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    width: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    gap: 34px;
+    padding: 20px 0 27px;
+  }
+
+  &__tab {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    width: fit-content;
+    text-transform: uppercase;
+    color: $custom_lightgray;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 28px;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $custom_gray;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+      color: $custom_gray;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &--active {
+      color: $custom_gray;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__product {
+    grid-column: span 2;
+
+    @include OnTablet {
+      grid-column: span 6;
+      display: flex;
+      gap: 30px;
+    }
+
+    @include OnDesktop {
+      grid-column: 2 / -1;
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  &__product-card {
+    width: 100%;
+
+    &:last-of-type {
+      display: none;
+    }
+
+    @include OnTablet {
+      width: 100%;
+      text-align: left;
+
+      &:last-of-type {
+        display: block;
+      }
+    }
+
+    @include OnDesktop {
+      max-width: 530px;
+      margin: 0;
+    }
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    width: calc(100% + (2 * #{$inline_padding}));
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+    max-width: 530px;
+    max-height: 500px;
+    margin: auto;
+
+    @include OnTablet {
+      width: 100%;
+      right: 0;
+    }
+
+    @media (max-width: 531px) {
+      right: #{$inline_padding};
+    }
+
+    min-height: 267px;
+
+    @include OnDesktop {
+      height: 500px;
+      width: 530px;
+
+      &:hover {
+        transform: scale(1.06);
+      }
+    }
+  }
+
+  &__card-info {
+    padding: 20px 0 0;
+  }
+
+  &__image-menu {
+    display: flex;
+
+    grid-column: span 2;
+
+    @include OnTablet {
+      grid-column: 3 / -1;
+    }
+
+    @include OnDesktop {
+      grid-column: 6 / -1;
+    }
+
+    &--list {
+      width: 40%;
+
+      @include OnTablet {
+        width: 20%;
+      }
+    }
+
+    &--img {
+      position: relative;
+      left: $inline_padding;
+      width: calc(60% + #{$inline_padding});
+      background-position: left;
+      @include background("../images/main/tooth-powder.svg");
+      background-size: contain;
+
+      @include OnTablet {
+        @include background("../images/main/Frame-mobile.svg");
+        background-size: contain;
+        width: calc(80% + #{$inline_padding});
+      }
+
+      @include OnDesktop {
+        background-image: url("../images/main/FramePC.svg");
+        left: 0;
+        width: 480px;
+        height: 397px;
+        background-position: center;
+
+      }
+    }
+  }
+
+  &__list {
+    width: 100%;
+    list-style-type: none;
+    padding: 48px 0 0;
+    text-align: right;
+
+    @include OnDesktop {
+      padding: 35px 20px 0 0;
+    }
+  }
+
+  &__listitem {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    &:nth-child(2n) {
+      padding-bottom: 49px;
+    }
+
+    &:nth-child(2n + 1) {
+      padding-bottom: 52px;
+    }
+  }
+
+  &__svg {
+    display: block;
+    margin: auto;
+    height: 100px;
+    width: 85px;
+  }
+
+  &__svg-description {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    padding: 20px 0 0;
+  }
+
+  &__field {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid $custom_lightgray;
+    outline: 0;
+    color: $custom_lightgray;
+    width: 100%;
+    padding-bottom: 5px;
+    resize: none;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px #e4dfd3 inset;
+    }
+
+    &:-moz-autofill {
+      background-color: #e4dfd3 !important;
+    }
+
+    &:-ms-input-placeholder {
+      color: $custom_lightgray !important;
+      background-color: #e4dfd3 !important;
+    }
+
+    &:-webkit-input-placeholder {
+      color: $custom_lightgray !important;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $black_color;
+    }
+
+    &--valid {
+      border-bottom: 1px solid $custom_green;
+      color: $custom_green;
+    }
+
+    &--invalid {
+      border-bottom: 1px solid $field_error;
+
+      &::placeholder {
+        color: $field_error;
+      }
+    }
+  }
+
+  &__input-box {
+    padding-bottom: 25px;
+
+    @include OnDesktop {
+      padding-bottom: 30px;
+    }
+
+    &--area {
+      padding: 20px 0 30px;
+      resize: none;
+
+      @include OnDesktop {
+        padding: 60px 0 50px;
+      }
+    }
+  }
+}
