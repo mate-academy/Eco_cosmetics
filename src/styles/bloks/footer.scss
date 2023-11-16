@@ -1,18 +1,22 @@
 .footer {
-  grid-column: 1 / -1;
-
-  @include contentPaddingInline;
-  @include pageGrid;
+  width: 100%;
 
   color: $backgroundColorMain;
   background-color: rgba($color: $colorGreen, $alpha: 0.5);
 
   padding-block: 30px;
 
-  overflow: hidden;
-
   @include onDesktop {
     padding-block: 60px;
+  }
+  
+  &__wrapper {
+    grid-column: 1 / -1;
+
+    @include contentPaddingInline;
+    @include pageGrid;
+
+    overflow: hidden;
   }
 
   &__nav {
@@ -22,6 +26,10 @@
 
     @include onTablet {
       grid-column: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
     }
 
     @include animationApperLeft;
