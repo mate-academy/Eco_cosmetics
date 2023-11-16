@@ -24,9 +24,9 @@ The project utilizes the following technologies:
 
 ## Preview
 
-You can preview the Eco Cosmetics Landing Page [here](https://SerhiiBabskyi.github.io/layout_eco_cosmetics/).
+You can preview the Eco Cosmetics Landing Page [eco-cosmetics Preview](https://serhiibabskyi.github.io/eco_cosmetics/).
 
 ## Design Mockup
 
-The design mockup for this project can be found on Figma [here](https://www.figma.com/file/Fz588JKGuPS2Bk21De4KE5/Brand-of-eco-cosmetics-_FE-students?node-id=21779%3A631&t=Gtk1Kj4TKq6BJit2-1).
+The design mockup for this project can be found on Figma [eco-cosmetics Design Layout](https://www.figma.com/file/Fz588JKGuPS2Bk21De4KE5/Brand-of-eco-cosmetics-_FE-students?node-id=21779%3A631&t=Gtk1Kj4TKq6BJit2-1).
 
