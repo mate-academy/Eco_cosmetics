@@ -2,25 +2,33 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  height: 100vh;
 
   &__img {
     margin-top: 20px;
     width: 100%;
 
     @include onTablet {
-      padding-inline: 20px;
+      grid-column: 1/-1;
     }
-  }
 
-  &__container {
-    display: grid;
-    max-width: 1280px;
+    @include onDesktop {
+      grid-column: 7/-1;
+    }
   }
 
   &__bottom {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+
+    @include onTablet {
+      grid-column: 2 / -2;
+    }
+
+    @include onDesktop {
+      order: -1;
+      grid-column: 1 / 6;
+    }
   }
 
   &__title {
@@ -29,6 +37,20 @@
     color: $color-main;
     text-align: center;
     margin-top: 25px;
+
+    @include onTablet {
+      font-size: 36px;
+      width: 466px;
+      height: 108px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      width: 480px;
+      height: 234px;
+      line-height: 130%;
+    }
   }
 
   &__subtitle {

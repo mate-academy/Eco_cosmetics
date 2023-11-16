@@ -1,3 +1,25 @@
 .container {
-  margin: 0 auto;
+  --column-count: 1;
+  --column-width: 1fr;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count),var(--column-width));
+  column-gap: 20px;
+
+  @include padddingInline;
+
+  &--header {
+    padding-inline: 0;
+
+    @include onTablet {
+      --column-count: 6;
+      column-gap: 30px;
+      padding-inline: 27px;
+    }
+
+    @include onDesktop {
+      --column-count: 12;
+      padding-inline-start: 150px;
+      padding-inline-end: 50px;
+    }
+  }
 }
