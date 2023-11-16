@@ -1,0 +1,80 @@
+.youChoose {
+  grid-column: 1 / -1;
+
+  @include onDesktop {
+    @include pageGrid;
+  }
+
+  &__wrapper {
+    grid-column: 1 / -1;
+
+    @include contentPaddingInline;
+    @include pageGrid;
+  }
+
+  &__slogan {
+    grid-column: 1 / -1;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    color: $colorGreen;
+    text-transform: uppercase;
+
+    @include onTablet {
+      grid-column: 3 / span 2;
+
+      text-align: center;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / span 4;
+
+      font-size: 24px;
+      letter-spacing: 1.2;
+      text-align: left;
+    }
+
+    @include animationScale;
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / span 4;
+      grid-row: 1;
+
+      font-size: 16px;
+
+      @include animationScale;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: 1px;
+      background-color: $colorGreen;
+      opacity: 0.5;
+    }
+
+    &--left {
+      grid-column: 1 / span 5;
+      margin-bottom: 100px;
+
+      @include animationApperLeft;
+    }
+
+    &--right {
+      grid-column: 7 / span 6;
+      margin-top: 100px;
+
+      @include animationApperRight;
+    }
+  }
+}

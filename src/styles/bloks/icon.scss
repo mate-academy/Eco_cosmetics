@@ -1,0 +1,43 @@
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include hover(transform, scale(1.1));
+
+  &--menu {
+    background-image: url(../images/_icons/menu.png);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--logo {
+    background-image: url(../images/_icons/logo.png);
+
+    @include onDesktop {
+      background-image: url(../images/_icons/logo-desktop.svg);
+
+      width: 270px;
+      height: 50px;
+    }
+  }
+
+  &--bag {
+    background-image: url(../images/_icons/shopping-bag.png);
+
+    @include onDesktop {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &--close {
+    fill: $backgroundColorMain;
+    @include hover(fill, $colorGreen);
+  }
+}
