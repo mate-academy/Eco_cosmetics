@@ -1,11 +1,38 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
-  @include padddingInline;
+  align-items: center;
+
+  &--tablet {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 40px;
+  }
 
   &__item {
 
+    &--header {
+      color: $color-text-green;
+
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+      text-transform: capitalize;
+      text-decoration: none;
+    }
     &--shop {
       position: relative;
       text-decoration: none;
@@ -31,10 +58,11 @@
         transform-origin: left;
       }
 
-      &:hover::after {
+      &:hover::after,
+      &:hover {
         transition: transform 0.3s;
         transform: scale(1);
-
+        color: $color-main;
       }
     }
   }

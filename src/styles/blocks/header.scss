@@ -1,14 +1,21 @@
 .header {
-
   box-sizing: border-box;
-  // height: 100vh;
   display: flex;
   flex-direction: column;
-  // display: none; //dont forget
+  height: 100vh;
 
   &__img {
     margin-top: 20px;
     width: 100%;
+
+    @include onTablet {
+      padding-inline: 20px;
+    }
+  }
+
+  &__container {
+    display: grid;
+    max-width: 1280px;
   }
 
   &__bottom {
@@ -33,10 +40,6 @@
   }
 
   &__button {
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
     margin: 0 auto;
     margin-top: 30px;
   }
