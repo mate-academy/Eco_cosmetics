@@ -1,0 +1,55 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: $color-black;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: hidden;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__name {
+    margin-top: 40px;
+    text-decoration: none;
+    color: $color-lightGray;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: $color-gray;
+      width: 100%;
+      bottom: -10px;
+    }
+  }
+
+  &__nav {
+    text-align: center;
+
+    @media (min-width: 768px) {
+      margin-top: 100px;
+    }
+  }
+
+  &__list {
+    margin-top: 40px;
+  }
+
+  @media (min-width: 768px) {
+    padding: 27px;
+  }
+
+  @media (min-width: 1280px) {
+    display: none;
+  }
+}

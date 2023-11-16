@@ -1,0 +1,139 @@
+.shop {
+  text-transform: uppercase;
+  font-weight: 600;
+
+  @media (min-width: 768px) {
+    padding-inline: 27px;
+  }
+
+  @media (min-width: 1280px) {
+    display: flex;
+    padding: 0;
+  }
+
+  &__title {
+    text-align: center;
+    color: $color-green;
+    font-size: 24px;
+    letter-spacing: 1.2px;
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 36px;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: $color-gray;
+    font-size: 14px;
+    font-weight: 400;
+    padding-inline: 20px;
+
+    @media (min-width: 768px) {
+      padding-inline: 0;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  &--products--active,
+  &--products:hover {
+    color: $color-black;
+    border-bottom: 2px solid $color-black;
+    cursor: pointer;
+  }
+
+  &__sections {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+      margin-top: 25px;
+    }
+
+    @media (min-width: 1280px) {
+      grid-gap: 20px;
+    }
+  }
+
+  &__section--second {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__sections--first--bottom {
+    padding-inline: 20px;
+
+    @media (min-width: 768px) {
+      padding-inline: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  &__img:hover {
+    transform: scale(1.1);
+  }
+
+  &__subtitle {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  &__prg {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 18px;
+
+    @media (min-width: 1280px) {
+      margin-top: 13px;
+    }
+  }
+
+  &__btn {
+    padding-inline-end: 20px;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+
+    @media (min-width: 768px) {
+      padding-inline-end: 0;
+      display: flex;
+      justify-content: center;
+      margin-left: 0;
+    }
+  }
+
+  &__main {
+    @media (min-width: 1280px) {
+      padding-left: 80px;
+    }
+  }
+
+  &__section--first,
+  &__section--second {
+    overflow: hidden;
+  }
+}
