@@ -88,10 +88,15 @@
     }
 
     &:valid {
+      -webkit-text-fill-color: $colorGreen;
+
+      color: $colorGreen;
       border-bottom: 1px solid $colorGreen;
     }
 
     &:not(:focus):not(:placeholder-shown):invalid {
+      -webkit-text-fill-color: $colorFormError;
+
       color: $colorFormError;
       border-bottom: 1px solid $colorFormError;
     }
@@ -138,5 +143,13 @@
     @include onTablet {
       margin-bottom: 130px;
     }
+  }
+
+  :-webkit-autofill,
+  :-webkit-autofill:hover,
+  :-webkit-autofill:focus {
+    -webkit-background-color: $backgroundColorMain;
+    -webkit-box-shadow: 0 0 0 1000px $backgroundColorMain inset;
+    transition: background-color 5000s ease-in-out 0s;
   }
 }
