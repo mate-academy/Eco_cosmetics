@@ -68,20 +68,15 @@
   &__photo {
     &-oil {
       width: 100%;
-      height: 267px;
+      height: 100%;
 
       transition: transform $duration ease;
 
       @include onTablet {
-        height: 300px;
+        height: 100%;
 
         &:hover {
           transform: scale(1.04);
-        }
-
-        @include onDesktop {
-          width: 530px;
-          height: 500px;
         }
       }
 
@@ -104,17 +99,12 @@
       transition: transform $duration ease;
 
       @include onTablet {
-        height: 300px;
+        height: 100%;
         width: 100%;
 
         &:hover {
           transform: scale(1.04);
         }
-      }
-
-      @include onDesktop {
-        width: 530px;
-        height: 500px;
       }
 
       &-link {
@@ -153,6 +143,24 @@
       padding-inline: 20px;
       display: block;
 
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $main-title-color;
+
+        transition: transform $duration;
+
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+
       @include onTablet {
         padding-inline: 0;
         width: 100%;
@@ -174,6 +182,24 @@
       text-decoration: none;
 
       display: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $main-title-color;
+
+        transition: transform $duration;
+
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
 
       @include onTablet {
         margin-top: 20px;

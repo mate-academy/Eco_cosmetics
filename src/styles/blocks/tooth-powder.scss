@@ -1,7 +1,6 @@
 .tooth-powder {
   @include onTablet {
     @include pageGrid;
-    @include contentPaddingInline;
   }
 
   position: relative;
@@ -57,7 +56,7 @@
       position: absolute;
       width: 250px;
       margin-top: 139px;
-      padding-inline: 20px;
+      padding-inline: 27px;
     }
 
     @include onDesktop {
@@ -196,7 +195,7 @@
         width: 100%;
         background-color: $main-title-color;
 
-        transition: $duration;
+        transition: transform $duration;
 
         transform: scale(0);
         transform-origin: left;
@@ -221,7 +220,7 @@
       justify-content: space-between;
       align-items: start;
       grid-column: 1 / 7;
-      padding-inline: 0;
+      padding-inline: 27px;
     }
 
     &-chicken {
@@ -313,10 +312,13 @@
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0;
-    width: 218px;
 
     &-chicken {
       margin-top: 28px;
+
+      @include onTablet {
+        width: 218px;
+      }
 
       @include onDesktop {
         width: 380px;
@@ -327,6 +329,10 @@
 
     &-recycle {
       margin-top: 23px;
+
+      @include onTablet {
+        width: 218px;
+      }
 
       @include onDesktop {
         width: 380px;
