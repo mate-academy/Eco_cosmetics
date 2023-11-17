@@ -1,0 +1,351 @@
+.tooth-powder {
+  @include onTablet {
+    @include pageGrid;
+    @include contentPaddingInline;
+  }
+
+  position: relative;
+
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &__left {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      transform: rotate(-90deg);
+      left: -86px;
+      top: 220px;
+    }
+
+    &-line {
+      height: 1px;
+      width: 88px;
+      background-color: $decor-color;
+    }
+
+    &-title {
+      @include onDesktop {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: $decor-color;
+
+        width: 192px;
+        height: 18px;
+
+        margin: 0;
+        text-align: left;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    padding-inline: 20px;
+    margin: 0;
+    grid-column: 1 / 2;
+    grid-row: 1;
+
+    @include onTablet {
+      position: absolute;
+      width: 250px;
+      margin-top: 139px;
+      padding-inline: 20px;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+
+      grid-column: 2 / 5;
+      padding-inline: 0;
+      width: 400px;
+      position: relative;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: 2 / 7;
+
+    @include onDesktop {
+      grid-column: 6 / 13;
+    }
+  }
+
+  &__photo {
+    @include onDesktop {
+      grid-column: 5 / 13;
+    }
+
+    &-mobile {
+      background-image: url(/styles/images/tooth-powder-mobile.svg);
+      height: 397px;
+      width: 182px;
+
+      margin-top: 21px;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &-tablet {
+      background-image: url(/styles/images/tooth-powder-tablet.svg);
+      display: none;
+      width: 398px;
+      height: 397px;
+
+      @include onTablet {
+        display: block;
+        margin-top: 154px;
+        margin-right: 7px;
+        padding-inline: 0;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &-desktop {
+      background-image: url(/styles/images/tooth-powder-desktop.svg);
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        width: 480px;
+        height: 397px;
+        margin-top: 201px;
+      }
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 150%;
+    color: $header-text-color;
+    width: 98px;
+
+    margin-right: 20px;
+
+    @include onTablet {
+      height: 374px;
+      margin-top: 139px;
+    }
+
+    &-text {
+      text-align: right;
+      margin: 0;
+
+      &:first-child {
+        margin-top: 58px;
+
+        @include onTablet {
+          margin-top: 52px;
+        }
+
+        @include onDesktop {
+          margin-top: 100px;
+        }
+      }
+
+      &:not(:first-child) {
+        margin-top: 52px;
+      }
+
+      &:nth-child(4) {
+        margin-top: 49px;
+      }
+
+      &:nth-child(5) {
+        margin-top: 46px;
+      }
+    }
+  }
+
+  &__learn {
+    margin-left: 20px;
+
+    @include onTablet {
+      margin-left: 27px;
+      margin-top: -34px;
+      grid-column: 1 / 3;
+    }
+
+    &-more {
+      position: relative;
+      margin-right: auto;
+
+      &::after {
+        content: "";
+        position: absolute;
+        margin-top: 8px;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $main-title-color;
+
+        transition: $duration;
+
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__natural {
+    padding-inline: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+      grid-column: 1 / 7;
+      padding-inline: 0;
+    }
+
+    &-chicken {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-recycle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-leaves {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__icon {
+    &-chicken {
+      margin-top: 111px;
+
+      height: 60px;
+      width: 62px;
+
+      @include onTablet {
+        width: 80px;
+        height: 60px;
+
+        margin-top: 128px;
+      }
+
+      @include onDesktop {
+        margin-top: 205px;
+      }
+    }
+
+    &-recycle {
+      width: 100px;
+      height: 84px;
+
+      margin-top: 50px;
+
+      @include onTablet {
+        width: 80px;
+        height: 68px;
+
+        margin-top: 125px;
+      }
+
+      @include onDesktop {
+        height: 84px;
+        width: 99px;
+
+        margin-top: 202px;
+      }
+    }
+
+    &-leaves {
+      width: 79px;
+      height: 74px;
+
+      margin-top: 50px;
+
+      @include onTablet {
+        width: 80px;
+        height: 75px;
+
+        margin-top: 121px;
+      }
+
+      @include onDesktop {
+        margin-top: 207px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: $tooth-powder-text-color;
+
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+    width: 218px;
+
+    &-chicken {
+      margin-top: 28px;
+
+      @include onDesktop {
+        width: 380px;
+        margin-top: 61px;
+        margin-right: 20px;
+      }
+    }
+
+    &-recycle {
+      margin-top: 23px;
+
+      @include onDesktop {
+        width: 380px;
+        margin-top: 40px;
+        margin-right: 20px;
+      }
+    }
+
+    &-leaves {
+      margin-bottom: 100px;
+
+      @include onTablet {
+        margin-bottom: 148px;
+      }
+
+      @include onDesktop {
+        width: 380px;
+        margin-top: 45px;
+      }
+    }
+  }
+}

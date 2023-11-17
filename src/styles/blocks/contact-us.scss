@@ -1,0 +1,233 @@
+.contact-us {
+  @include pageGrid;
+  @include contentPaddingInline;
+
+  position: relative;
+
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &__left {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      transform: rotate(-90deg);
+      left: -86px;
+      top: -20px;
+    }
+
+    &-line {
+      height: 1px;
+      width: 88px;
+      background-color: $decor-color;
+    }
+
+    &-title {
+      @include onDesktop {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: $decor-color;
+
+        width: 192px;
+        height: 18px;
+
+        margin: 0;
+        text-align: left;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__text {
+    margin-top: 10px;
+    margin-bottom: 0;
+
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+
+      margin-top: 30px;
+    }
+  }
+
+  &__form {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__input {
+    background: $page-background-color;
+    outline: none;
+    border: none;
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: $underline-color;
+
+    border-bottom: 1px solid $contact-line-color;
+    width: 100%;
+
+    grid-column: span 2;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+
+    &:focus {
+      border-bottom-color: $header-text-color;
+    }
+  }
+
+  &__name {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__email {
+    margin-top: 25px;
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
+  }
+
+  &__phone {
+    margin-top: 25px;
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
+  }
+
+  &__message {
+    resize: none;
+    overflow: auto;
+
+    font-family: "Poppins", sans-serif;
+    margin-top: 45px;
+    height: 22px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $scrollbar-color;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: $scrollbar-color;
+      cursor: pointer;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+      height: 35px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    outline: none;
+    border: none;
+    line-height: 130%;
+
+    width: 100%;
+
+    @include onTablet {
+      width: 280px;
+    }
+
+    @include onDesktop {
+      margin-top: 65px;
+    }
+  }
+
+  &__photo {
+    background-image: url(../styles/images/contact-us-bird-tablet.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      grid-column: 4 / 7;
+      grid-row: 1 / 4;
+
+      width: 342px;
+      height: 407px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      width: 580px;
+      height: 539px;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+
+  -webkit-text-fill-color: $underline-color;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

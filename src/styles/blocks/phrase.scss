@@ -1,0 +1,57 @@
+.phrase {
+  @include pageGrid;
+  @include contentPaddingInline;
+
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &__title {
+    color: $main-title-color;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: left;
+
+    grid-column: span 2;
+
+    @include onTablet {
+      margin-top: 130px;
+      margin-bottom: 130px;
+      text-align: center;
+      width: 280px;
+
+      margin-left: auto;
+      margin-right: auto;
+
+      grid-column: 3 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      margin-top: 105px;
+      margin-bottom: 131px;
+
+      font-size: 24px;
+      letter-spacing: 1.2px;
+      text-align: left;
+      width: 100%;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      grid-column: 2 / 6;
+      margin: 100px 0;
+      position: relative;
+    }
+  }
+}
