@@ -2,19 +2,45 @@
   display: flex;
   flex-direction: column;
 
+
   &__title {
-    @include h5;
-    width: 100%;
+    @include onTablet {
+      @include grid;
+
+      grid-column: 3 / 5;
+    }
+
+    &__text {
+      @include h5;
+      width: 100%;
+
+      @include onTablet {
+        text-align: center;
+        grid-column: 2 / 6;
+      }
+    }
 
     margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
   }
 
   &__about {
     margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
   }
 
   &__shop {
     margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
   }
 
   &__creators {

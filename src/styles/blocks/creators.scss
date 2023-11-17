@@ -2,30 +2,71 @@
   display: flex;
   flex-direction: column;
 
-  &__heading {
-    @include h4;
-
-    margin-bottom: 10px;
+  @include onTablet {
+    @include grid;
   }
 
-  &__article {
-    margin-bottom: 30px;
-
-    &-a1 {
-      text-align: justify;
-      margin-bottom: 20px;
+  &__text {
+    @include onTablet {
+      grid-column: 1 / 4;
     }
 
-    &-a2 {
-      text-align: justify;
+    &__heading {
+      @include h4;
+
+      margin-bottom: 10px;
+
+      @include onTablet {
+        grid-column: 1 /4;
+      }
+    }
+
+    &__article {
+      margin-bottom: 30px;
+
+      &-a1 {
+        text-align: justify;
+        margin-bottom: 20px;
+      }
+
+      &-a2 {
+        text-align: justify;
+      }
+    }
+
+    &__button {
+      position: relative;
+      justify-content: left;
+      width: fit-content;
+
+      margin-bottom: 25px;
+    }
+
+    &__contact-button {
+      width: 100%;
+      align-self: flex-end;
+
+      margin: 0;
+      @include onTablet {
+        grid-column: 1 / 4;
+        grid-row: 2;
+      }
     }
   }
 
-  &__button {
-    position: relative;
-    justify-content: left;
-    width: fit-content;
+  &__img {
+    display: none;
 
-    margin-bottom: 25px;
+    @include onTablet {
+      display: flex;
+      width: 100%;
+      background-image: url(../images/creators-img.svg);
+      object-fit: cover;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      grid-column: 4 / -1;
+    }
   }
 }

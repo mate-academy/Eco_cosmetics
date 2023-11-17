@@ -2,10 +2,18 @@
   display: flex;
   flex-direction: column;
 
+  @include onTablet {
+    @include grid;
+  }
+
   &__heading {
     @include h4;
-
+    width: 100%;
     margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
   }
 
   &__ingredients {
@@ -15,6 +23,14 @@
 
     margin-bottom: 30px;
 
+    @include onTablet {
+      gap: 15px;
+      width: 100%;
+      grid-column: 3 / -1;
+
+      margin-bottom: 0;
+    }
+
     &-names {
       display: flex;
       flex-direction: column;
@@ -22,6 +38,17 @@
       justify-content: center;
       text-align: right;
       align-items: end;
+
+      @include onTablet {
+        gap: 30px;
+        @media (min-width: 820px) {
+          gap: 35px;
+        }
+
+        @media (min-width: 1024px) {
+          gap: 50px;
+        }
+      }
 
       &-name {
         display: flex;
@@ -35,10 +62,17 @@
       flex-direction: column;
       width: 100%;
       height: 400px;
-      background-image: url("/images/tooth-paste.svg");
+      background-image: url("../images/tooth-paste.svg");
       background-repeat: no-repeat;
       background-position: -10%;
       background-size: cover;
+
+      @include onTablet {
+        grid-column: 4 / 6;
+        background-position: center;
+        background-size: contain;
+        display: block;
+      }
     }
   }
 
@@ -46,5 +80,9 @@
     position: relative;
     justify-content: left;
     width: fit-content;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
   }
 }

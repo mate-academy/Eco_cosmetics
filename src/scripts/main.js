@@ -16,7 +16,7 @@ document.querySelector('.button__shop').addEventListener('click', function() {
   scrollToSection('shop');
 });
 
-document.querySelector('.creators__contact-button').addEventListener(
+document.querySelector('.creators__text__contact-button').addEventListener(
   'click', function() {
     scrollToSection('contact-us');
   });

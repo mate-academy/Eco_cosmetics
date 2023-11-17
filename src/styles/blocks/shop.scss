@@ -2,11 +2,20 @@
   display: flex;
   flex-direction: column;
 
+  @include onTablet {
+    @include grid;
+  }
+
   &__title {
     @include h4;
     text-align: center;
 
     margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+      grid-column: 1 / 2;
+    }
   }
 
   &__buttons {
@@ -15,6 +24,10 @@
     justify-content: space-between;
 
     margin-bottom: 25px;
+
+    @include onTablet {
+      grid-column: span 6;
+    }
 
     &__button {
       position: relative;
@@ -30,5 +43,15 @@
     display: flex;
 
     margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: span 6;
+    }
+  }
+
+  &__buttons__button__allProd {
+    @include onTablet {
+      grid-column: 3 / 5;
+    }
   }
 }

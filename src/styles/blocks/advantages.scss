@@ -2,8 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: first baseline;
 
   gap: 50px;
+
+  @include onTablet {
+    @include grid;
+  }
 
   &__no-synthetic {
     display: flex;
@@ -12,6 +17,10 @@
 
     gap: 20px;
 
+    @include onTablet {
+      grid-column: span 2;
+    }
+
     &__img {
       width: 62px;
       height: 60px;
@@ -19,6 +28,7 @@
 
     &__title {
       @include underLogo;
+      white-space: pre;
     }
   }
 
@@ -28,6 +38,10 @@
     align-items: center;
 
     gap: 20px;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
 
     &__img {
       width: 62px;
@@ -45,6 +59,10 @@
     align-items: center;
 
     gap: 20px;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
 
     &__img {
       width: 62px;

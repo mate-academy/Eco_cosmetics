@@ -1,18 +1,63 @@
 .about {
-  &__heading {
-    @include h4;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: stretch;
 
-    margin-bottom: 10px;
+
+  @include onTablet {
+    display: block;
+    @include grid;
   }
+
 
   &__text {
-    text-align: justify;
+    &__heading {
+      @include h4;
 
-    margin-bottom: 30px;
+      margin-bottom: 10px;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &__article {
+      text-align: justify;
+
+      margin-bottom: 30px;
+    }
+
+    &__button {
+      position: relative;
+      margin-bottom: 0;
+
+      justify-content: left;
+      width: fit-content;
+
+      @include onTablet {
+        grid-column: 1 / 3;
+      }
+    }
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
   }
 
-  &__button {
-    position: relative;
-    margin-bottom: 0;
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      width: 100%;
+      background-image: url(../images/about-img.svg);
+      object-fit: cover;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      grid-column: 4 / -1;
+    }
   }
 }
