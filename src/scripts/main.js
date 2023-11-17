@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
   dots.forEach(function(dot, index) {
     dot.addEventListener('click', function() {
       // remove the .slider__dot--active class from all dot
-      dots.forEach(function() {
-        dot.classList.remove('slider__dot--active');
+      dots.forEach(function(otherDot) {
+        otherDot.classList.remove('slider__dot--active');
       });
 
       // add the class .slider__dot--active to the selected dot
