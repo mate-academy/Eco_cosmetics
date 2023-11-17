@@ -1,28 +1,46 @@
 .section {
-  &--shop {
-    padding-inline: 0;
-  }
+  @include marginTopSection;
 
-  &__box {
-    display: flex;
-    flex-direction: column;
-    max-width: 1280px;
-    margin: 0 auto;
-
+  &--if-u-choose {
     position: relative;
 
-    @include marginTopSEction;
-    @include padddingInline;
-
-    @include onTablet {
-      flex-direction: row;
-      justify-content: space-between;
+    @include onDesktop {
+      padding-block: 100px;
     }
 
-    &--shop {
-      display: flex;
-      flex-direction: column;
+    &::before {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: " ";
+      width: 530px;
+      height: 1px;
+      background-color: $color-text-green;
+
+      @include onDesktop {
+        display: block;
+      }
     }
+
+    &::after {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      content: " ";
+      width: 530px;
+      height: 1px;
+      background-color: $color-text-green;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &--shop {
+    padding-inline: 0;
   }
 
   &__suptitle {
@@ -36,22 +54,39 @@
     max-width: 280px;
 
     margin: 0 auto;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 2 / -2;
+    }
 
     @include onDesktop {
+      grid-column: 7 / -2;
       max-width: 380px;
+      font-size: 24px;
+      letter-spacing: 1.2px;
+      text-align: start;
     }
   }
 
   &__title {
+    grid-column: 1 / -1;
+
     color: $color-text-green;
     font-size: 24px;
     font-weight: 600;
     line-height: 150%; /* 36px */
     letter-spacing: 1.2px;
     text-transform: uppercase;
+    text-align: center;
 
-    &--shop {
-      text-align: center;
+    @include onTablet {
+      grid-column: 1 / 3;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / span 3;
     }
   }
 
@@ -62,6 +97,14 @@
     line-height: 150%;
     margin-bottom: 30px;
     max-width: 380px;
+    text-align: center;
+    margin-top: 10px;
+
+    @include onTablet {
+      margin-top: 40px;
+      font-size: 16px;
+      text-align: start;
+    }
 
     &--if-u-choose {
       display: none;
@@ -69,6 +112,15 @@
       @include onDesktop {
         display: block;
 
+      }
+    }
+
+    &--about-us-hide {
+      display: none;
+      margin-top: 30px;
+
+      @include onDesktop {
+        display: block;
       }
     }
   }
@@ -93,34 +145,41 @@
     }
   }
 
-  &__container {
+  &__nav {
+    grid-column: 1 / -1;
 
-    &--shop {
-      position: relative;
-      height: 400px;
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / span 4;
     }
   }
 
-  &__layer {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
+  &__content {
+    grid-column: 1 / -1;
+    justify-self: center;
 
-    transform: translateX(-100%);
-    opacity: 0;
-
-    &:target {
-      transform: translateX(0);
-      opacity: 1;
+    @include onTablet {
+      grid-column: 1 / 4;
     }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+
+  }
+
+  &__container {
+    position: relative;
   }
 
   &__aside-label {
     display: none;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 90px;
     transform: rotate(-90deg);
     transform-origin: bottom;
 
@@ -129,6 +188,14 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 130%;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &--shop {
+      left: 150px;
+    }
 
     &::after {
       display: block;
@@ -140,5 +207,14 @@
       transform: rotate(90deg);
       transform-origin: top left;
     }
+  }
+
+  &__card-product-slider {
+    grid-column: 1 / -1;
+  }
+  &__button {
+    grid-column: 1 / -1;
+    margin: 0 auto;
+    margin-top: 30px;
   }
 }

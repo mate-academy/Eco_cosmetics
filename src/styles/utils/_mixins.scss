@@ -1,7 +1,45 @@
+@mixin onMobile {
+  @media (min-width: $mobile-min-width) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin gridRules {
+  --column-count: 2;
+  --column-width: 1fr;
+  display: grid;
+  grid-template-columns: repeat(var(--column-count),var(--column-width));
+  column-gap: 20px;
+  min-width: 320px;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  @include onTablet {
+    --column-count: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --column-count: 12;
   }
 }
 
@@ -13,28 +51,26 @@
   }
 
   @include onDesktop {
-    padding-inline-start: 150px;
-    padding-inline-end: 50px;
+    padding-inline: 50px;
   }
 }
 
-@mixin marginTopSEction {
+@mixin marginTopSection {
   margin-top: 100px;
-}
 
-@mixin onMobile {
-  @media (min-width: $mobile-min-width) {
-    @content;
-  }
-}
-@mixin onTablet {
-  @media (min-width: $tablet-min-width) {
-    @content;
+  @include onDesktop {
+    margin-top: 200px;
   }
 }
 
-@mixin onDesktop {
-  @media (min-width: $desktop-min-width) {
-    @content;
+@mixin marginTopShop {
+  margin-top: 20px;
+
+  @include onTablet {
+    margin-top: 13px;
+  }
+
+  @include onDesktop {
+    margin-top: 30px;
   }
 }

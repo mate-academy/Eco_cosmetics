@@ -1,0 +1,33 @@
+.card-product-slider {
+
+  &__tab {
+    @include gridRules;
+  }
+
+  &__item {
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / span 6;
+    }
+
+    &:last-child {
+      display: none;
+
+      @include onTablet {
+        grid-column: -4 / span 3;
+        display: block;
+      }
+
+      @include onDesktop {
+        grid-column: -7 / span 6;
+        display: block;
+      }
+    }
+  }
+}

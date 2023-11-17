@@ -1,18 +1,21 @@
 .pictures {
-  display: flex;
-  gap: 20px;
-  align-items: baseline;
+  display: none;
+
+  @include onTablet {
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    grid-column: 4 / -1;
+  }
+
+  @include onDesktop {
+    grid-column: 7 / -1;
+  }
 
   &__item {
     display: none;
   }
   &--about-us {
-    // @include onTablet {
-    //   display: flex;
-    //   flex-direction: row;
-    //   align-items: baseline;
-    //   gap: 20px;
-    // }
 
     @include onTablet {
       & :first-child {
