@@ -1,0 +1,39 @@
+.message {
+  margin: 0;
+
+  @include onTablet {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include onDesktop {
+    @include pageGrid;
+  }
+
+  &__heading {
+    @include text_h5;
+    text-align: left;
+
+    @include onTablet {
+      width: clamp(20ch, 100%, 28ch);
+      text-align: center;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      text-align: left;
+      align-self: center;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop {
+      @include text_text;
+
+      display: block;
+      grid-column: 2 / 6;
+    }
+  }
+}

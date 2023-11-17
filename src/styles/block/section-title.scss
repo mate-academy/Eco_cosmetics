@@ -1,0 +1,37 @@
+.section-title {
+  @include text_h4;
+  margin-bottom: 10px;
+
+  @include onTablet {
+    text-wrap: nowrap;
+  }
+
+  @include onDesktop {
+    @include text_h2;
+  }
+
+  &--center {
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &--wide {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &--wrap {
+    @include onDesktop {
+      text-wrap: wrap;
+    }
+  }
+}

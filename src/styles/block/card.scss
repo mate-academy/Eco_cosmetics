@@ -1,0 +1,75 @@
+.shop__cards {
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    grid-column: 2 / -1;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+
+.card {
+  @include onTablet {
+    grid-column: span 3;
+  }
+
+  @include onDesktop {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &--ubtan {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__image {
+    display: block;
+    background-image: url(../images/phone/image_bottles.png);
+    background-size: cover;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    right: -20px;
+    margin-left: -40px;
+
+    @include onTablet {
+      right: 0;
+      margin-left: 0;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/desktop/image_bottles.png);
+      
+      @include hover(transform, scale(1.05));
+    }
+
+    &--ubtan {
+      background-image: url(../images/tablet/image_powders.png);
+
+      @include onDesktop {
+        background-image: url(../images/desktop/image_powders.png)
+      }
+    }
+  }
+
+  &__heading {
+    margin-top: 20px;
+    color: $black;
+
+    @include text_h5;
+  }
+
+  &__price {
+    margin-bottom: 10px;
+    color: $black;
+
+    @include text_price;
+  }
+}

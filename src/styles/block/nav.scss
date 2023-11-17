@@ -1,0 +1,92 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+
+    &--footer {
+      gap: 12px;
+
+      @include onTablet {
+        gap: 15px;
+      }
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      padding: 0;
+    }
+  }
+
+  &__item {
+    &--aside {
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+    @include onDesktop {
+      list-style: none;
+    }
+
+     &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $beige;
+
+      @include onDesktop {
+        display: none;
+      }
+     }
+    }
+  }
+
+  &__link {
+    color: $beige;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 130%;
+    color: $green_200;
+    transition-duration: .3s;
+
+    &--aside {
+      color: $beige;
+    }
+
+    @include onDesktop {
+      text-decoration: none;
+
+      &:hover {
+        color: $green_100;
+      }
+    }
+
+    &--footer {
+      color: $beige;
+      @include onTablet {
+        @include text_small-text;
+      }
+
+      @include onDesktop {
+        @include text_inputs-menu;
+
+        &:hover {
+          color: $green_200;
+        }
+      }
+    }
+
+    &--aside {
+      color: $beige;
+    }
+  }
+}

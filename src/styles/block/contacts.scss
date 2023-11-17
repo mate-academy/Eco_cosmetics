@@ -1,0 +1,88 @@
+.contacts {
+
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  &__wrapper {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__text {
+    @include text_small-text;
+    color: $black;
+    margin-bottom: 5px;
+
+    @include onTablet {
+      @include text_text
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    outline: none;
+    margin-top: 25px;
+    background-color: inherit;
+    border: none;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: capitalize;
+    border-bottom: 1px solid $gray_200;
+    color: $gray_300;
+
+    &:focus {
+      border-bottom: 1px solid $black;
+    }
+
+    &:valid {
+      color: $green_200;
+      border-bottom: 1px solid $green_200;
+    }
+  }
+
+  &__text-area {
+    margin-top: 45px;
+    resize: none;
+  }
+
+  &__image {
+    @include onTablet {
+      position: relative;
+      display: block;
+      background-image: url(../images/tablet/image_bird_2.png);
+      background-size: cover;
+      background-position: left;
+      background-repeat: no-repeat;
+      grid-column: 4 / -1;
+
+      @include onDesktop {
+        background-image: url(../images/desktop/image_bird_2.png);
+        grid-column: 7 / -1;
+        @include hover(transform, scale(1.05));
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    border: 0;
+  }
+}
