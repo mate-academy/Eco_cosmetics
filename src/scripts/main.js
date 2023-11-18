@@ -1,6 +1,6 @@
 'use strict';
 
-// block the scroll of the page when the menu is open
+/* <<<--- block the scroll of the page when the menu is open --->>> */
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#menu') {
     document.body.classList.add('page__body--with-menu');
@@ -9,52 +9,38 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-// slider
+/* <<<--- slider --->>> */
 document.addEventListener('DOMContentLoaded', function() {
   const dots = document.querySelectorAll('.slider__dot');
+  const slides = document.querySelectorAll('.slider__product');
 
-  // add an event handler for each element .slider__dot
+  // Add a click event listener to each 'slider__dot'
   dots.forEach(function(dot, index) {
     dot.addEventListener('click', function() {
-      // remove the .slider__dot--active class from all dot
+      // Remove the 'slider__dot--active' class from all other dots
       dots.forEach(function(otherDot) {
         otherDot.classList.remove('slider__dot--active');
       });
 
-      // add the class .slider__dot--active to the selected dot
+      // Add the 'slider__dot--active' class to the clicked dot
       dot.classList.add('slider__dot--active');
 
-      // find the desired slide and his position
-      const slides = document.querySelectorAll('.slider__product');
-      const slideMargin = getSlideMargin();
-      // add indent width
-      const slideWidth = slides[0].offsetWidth + slideMargin;
-      const newPosition = -(index * slideWidth);
+      // Hide all slides
+      slides.forEach(function(slide) {
+        slide.style.display = 'none';
+      });
 
-      // slide the slides to the appropriate position
-      const sliderLine = document.querySelector('.slider__line');
+      // Determine the index of the next slide
+      const nextIndex = (index < slides.length - 1) ? index + 1 : 0;
 
-      sliderLine.style.transform = `translateX(${newPosition}px)`;
+      // Display the current and next slides
+      slides[index].style.display = 'flex';
+      slides[nextIndex].style.display = 'flex';
     });
   });
 });
 
-// determining the distance between slides
-function getSlideMargin() {
-  const windowWidth = window.innerWidth;
-
-  if (windowWidth >= 1280) {
-    return 20;
-  } else if (windowWidth >= 768) {
-    return 30;
-  } else {
-    return 0;
-  }
-}
-
-// const initialMargin = getSlideMargin();
-
-// fotrm managment
+/* <<<--- fotrm managment --->>> */
 const form = document.querySelector('form');
 
 form.addEventListener('submit', function(evt) {
@@ -62,28 +48,41 @@ form.addEventListener('submit', function(evt) {
   form.reset();
 });
 
-// animation when scrolling
+/* <<<--- animation when scrolling --->>> */
 const animation = document.querySelectorAll('.animation');
 
+/* Add a scroll event listener to the window,
+   triggering the 'animationOnScroll' function */
 window.addEventListener('scroll', animationOnScroll);
 
+// Function to handle animations on scroll
 function animationOnScroll() {
+  // Loop through each element with the class 'animation'
   for (let i = 0; i < animation.length; i++) {
     const animEl = animation[i];
     const animElHeight = animEl.offsetHeight;
     const animElOffset = offset(animEl).top;
     const animStart = 4;
 
+    // Calculate the point at which the animation should start
     let animElPoint = window.innerHeight - animElHeight / animStart;
 
+    /* Adjust the start point if the element's height
+       is greater than the window height */
     if (animElHeight > window.innerHeight) {
       animElPoint = window.innerHeight - animElHeight / animStart;
     }
 
-    if ((window.scrollY > animElOffset - animElPoint)
-      && window.scrollY < (animElOffset + animElHeight)) {
+    // Check if the element is in the viewport
+    if (
+      window.scrollY > animElOffset - animElPoint
+      && window.scrollY < animElOffset + animElHeight
+    ) {
       animEl.classList.add('show');
     } else {
+      /* If the element is not in the viewport and does not have
+         the 'animation--no-hide' class, remove the 'show' class
+         to hide the element */
       if (!animEl.classList.contains('animation--no-hide')) {
         animEl.classList.remove('show');
       }
@@ -91,13 +90,15 @@ function animationOnScroll() {
   }
 }
 
+// Function to get the offset of an element
 function offset(el) {
   const rect = el.getBoundingClientRect();
   const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
   const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
   return {
-    top: rect.top + scrollTop, left: rect.left + scrollLeft,
+    top: rect.top + scrollTop,
+    left: rect.left + scrollLeft,
   };
 }
 
