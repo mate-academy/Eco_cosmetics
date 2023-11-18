@@ -1,0 +1,57 @@
+.benefits {
+  grid-column: 1 / -1;
+
+  @include contentPaddingInline;
+  @include pageGrid;
+  row-gap: 50px;
+
+  &__item {
+    grid-column: span 2;
+
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $colorBlack;
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__img {
+    display: flex;
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    margin-bottom: 20px;
+
+    &--1 {
+      background-image: url(../images/_icons/_benefits/benefits-1.png);
+    }
+
+    &--2 {
+      background-image: url(../images/_icons/_benefits/benefits-2.png);
+    }
+
+    &--3 {
+      background-image: url(../images/_icons/_benefits/benefits-3.png);
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    @include hover(scale, 1.2);
+    @include animationScale;
+  }
+
+  &__text {
+    @include animationApperBelow;
+    transition-delay: $effectDuration;
+  }
+}

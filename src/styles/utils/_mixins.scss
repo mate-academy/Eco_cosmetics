@@ -1,6 +1,133 @@
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin paddingTopBar {
+  padding: 15px 0 20px;
+
+  @include onTablet {
+    padding: 23px 0 30px;
+  }
+
+  @include onDesktop() {
+    padding: 40px 0 70px;
+  }
+}
+
+@mixin contentPaddingInline {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 50px;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop() {
+    --columns: 12;
+    column-gap: 20px;
+  }
+}
+
+@mixin widthProductCard {
+  --widthCard: 320px;
+  max-width: var(--widthCard);
+
+  @include onTablet {
+    --widthCard: 342px;
+    --gapCard: 30px;
+    max-width: calc(var(--widthCard) * 2 + var(--gapCard));
+  }
+
+  @include onDesktop {
+    --widthCard: 530px;
+    --gapCard: 20px;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $effectDuration;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+// animations
+@mixin animationDuration {
+  transition: $effectDuration ease;
+}
+
+@mixin animationApperRight {
+  opacity: 0;
+  transform: translateX(100%);
+  @include animationDuration();
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin animationApperLeft {
+  opacity: 0;
+  transform: translateX(-100%);
+  @include animationDuration();
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin animationApperBelow {
+  opacity: 0;
+  transform: translateY(100%);
+  @include animationDuration();
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin animationRotation {
+  transform: rotateY(0deg);
+  @include animationDuration();
+
+  &.show {
+    transform: rotateY(360deg);
+  }
+}
+
+@mixin animationScale {
+  transform: scale(0);
+  @include animationDuration();
+
+  &.show {
+    transform: scale(1);
   }
 }

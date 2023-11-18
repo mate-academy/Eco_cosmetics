@@ -1,0 +1,59 @@
+.shop {
+  grid-column: 1 / -1;
+
+  @include pageGrid;
+
+  justify-content: center;
+
+  @include onTablet {
+    @include contentPaddingInline;
+  }
+
+  &__slider {
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+
+    @include animationScale;
+  }
+
+  &__title {
+    grid-column: inherit;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include contentPaddingInline;
+
+    @include onTablet {
+      grid-column: auto;
+      text-align: left;
+      margin-bottom: 15px;
+      padding-inline: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+
+    @include animationScale;
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include contentPaddingInline;
+
+    @include onTablet {
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    @include onDesktop {
+      grid-column-start: 2;
+    }
+
+    @include animationApperBelow;
+  }
+}

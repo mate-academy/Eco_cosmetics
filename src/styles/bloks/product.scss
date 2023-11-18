@@ -1,0 +1,165 @@
+.product {
+  display: flex;
+  flex-direction: column;
+
+  font-size: 18px;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+
+  &__link--img {
+    display: flex;
+    flex: auto;
+
+    @include hover(scale, 1.02);
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link {
+    // display: block;
+    color: $colorMain;
+
+    @include hover(color, $colorGreen);
+  }
+
+  &__price {
+    font-weight: 500;
+  }
+}
+
+.product-card {
+  @include contentPaddingInline;
+  @include pageGrid;
+  gap: 0;
+
+  &__text {
+    grid-column: 1 / -1;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 2 / -2;
+      grid-row: 2;
+
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      grid-row: 1;
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__price {
+    color: $colorGreen;
+  }
+
+  &__amount {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+  
+  &__picture {
+    grid-column: 1 / -1;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 2 / -2;
+      
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+      grid-row: 1 / 4;
+
+      position: relative;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    @include onDesktop {
+      position: absolute;
+    }
+
+    @include hover(scale, 1.02);
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin: auto;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      grid-row: 3;
+
+      margin-left: 0;
+    }
+
+  }
+
+  &__descriptions {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 14px;
+    text-transform: none;
+
+    @include onTablet {
+      grid-column: 2 / -2;
+
+      gap: 25px;
+      font-size: 16px;
+      margin-top: 60px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -2;
+      grid-row: 2 / 3;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description {
+    &--color {
+      &--green {
+        color: $colorGreen;
+      }
+    }
+  }
+}
