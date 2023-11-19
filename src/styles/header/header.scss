@@ -1,0 +1,75 @@
+.header {
+  box-sizing: border-box;
+
+  &__content {
+    @include onSmallDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__top {
+    @include onSmallDesktop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__tint {
+    width: 100%;
+    min-height: 267px;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__image {
+    height: 500px;
+    display: none;
+    background-image: url(../images/header-image.png);
+    background-position: center;
+    background-size: cover;
+
+    @include onTablet {
+      display: block;
+
+    }
+
+    @include onSmallDesktop {
+      width: 49%;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    @include onTablet {
+      gap: 50px;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 1/13;
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 33px;
+      // @include pageGrid;
+    }
+  }
+
+  &__section {
+    @include onSmallDesktop {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+  }
+}

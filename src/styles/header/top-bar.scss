@@ -1,0 +1,78 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0 20px;
+
+  @include onTablet {
+    padding: 27px 0 30px;
+  }
+
+  @include onSmallDesktop {
+    padding: 40px 0 80px;
+
+    @include pageGrid;
+  }
+
+  @include onSmallDesktop {
+    padding: 40px 0 70px;
+  }
+
+  &__logo-link {
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include hover(transform, scale(1.2));
+
+    @include onSmallDesktop {
+      grid-column: 1 / 6;
+
+      @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__logo {
+    @include onSmallDesktop {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__logo-text {
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: $title-color;
+    list-style: none;
+
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onSmallDesktop {
+      display: flex;
+
+      @include onSmallDesktop {
+        grid-column: 7 / 12;
+      }
+    }
+  }
+
+  &__icon {
+    &--bag {
+      @include onSmallDesktop {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

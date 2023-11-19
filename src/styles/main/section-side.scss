@@ -1,0 +1,25 @@
+.section-side {
+  display: none;
+
+  @include onSmallDesktop {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+
+    opacity: 0.5;
+    transform: rotate(-90deg) translateX(calc(-100% - 20px));
+    transform-origin: left;
+    color: rgba(52, 79, 16, 50%);
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 1px;
+      width: 100px;
+      background-color: $title-color;
+      opacity: 0.5;
+      margin: 0 10px 4px 0;
+    }
+  }
+}

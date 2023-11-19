@@ -1,0 +1,62 @@
+.contact-us {
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+    }
+
+  }
+  &__title {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 1;
+    }
+
+    @include onSmallDesktop {
+      margin-bottom: 30px;
+
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__description {
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__form {
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 3;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__image {
+    background-image: url(../images/contact-image.png);
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: span 3;
+      grid-row: 1 / 4;
+      background-position: center;
+      background-size: cover;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 7 / span 6;
+    }
+
+  }
+}

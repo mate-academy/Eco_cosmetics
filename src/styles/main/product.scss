@@ -1,0 +1,65 @@
+.product {
+  &--2 {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__link {
+    @include onTablet {
+      width: 50%;
+    }
+    text-decoration: none;
+    color: $main-text-color;
+  }
+
+  &__text-content {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+
+  &__img-box {
+    position: relative;
+    width: calc(100% + 40px);
+    left: -20px;
+    margin-bottom: 20px;
+    padding-bottom: 95%;
+    overflow: hidden;
+
+    @include onTablet {
+      width: 100%;
+      left: 0;
+      padding-bottom: 85%;
+    }
+
+    @include onSmallDesktop {
+      height: 500px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    @include hover(scale, 1.1);
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    font-weight: 500;
+  }
+}
