@@ -1,0 +1,90 @@
+.about-the-creators {
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onSmallDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__paragraphs {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    @include onSmallDesktop {
+      gap: 30px;
+    }
+  }
+
+  &__paragraph3 {
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: start;
+    }
+  }
+
+  &__button-lear-more {
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onSmallDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: span 3;
+      background-image: url(../images/about-the-creators-image.png);
+      background-position: center;
+      background-size: cover;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 7 /13;
+    }
+  }
+}

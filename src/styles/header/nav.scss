@@ -1,0 +1,92 @@
+.nav {
+  &__list {
+    list-style: none;
+
+    display: flex;
+    gap: 40px;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: capitalize;
+
+    &--menu {
+      display: block;
+      text-align: center;
+    }
+
+    &--footer {
+      flex-direction: column;
+      gap: 11px;
+
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+      text-transform: capitalize;
+
+      @include onTablet {
+        gap: 15px;
+        font-size: 14px;
+      }
+
+      @include onSmallDesktop {
+        flex-direction: row;
+        gap: 40px;
+        font-size: 18px;
+      }
+
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: $title-color;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $title-color;
+
+      transition: transform $effectDuretion;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &--menu {
+      display: block;
+      width: 100%;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 130%;
+      color: $main-background-color;
+      border-bottom: 1px solid #828282;
+      padding-top: 30px;
+      padding-bottom: 10px;
+
+      &:hover::after {
+        transform: scale(0);
+      }
+
+      @include hover(color, $title-color);
+    }
+
+    &--footer {
+      color: #e4dfd3;
+      @include hover(opacity, 0.5);
+
+      &::after {
+        content: "";
+        background-color: #e4dfd3;
+      }
+    }
+  }
+}

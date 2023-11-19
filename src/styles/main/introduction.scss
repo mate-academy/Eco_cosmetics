@@ -1,0 +1,54 @@
+.introduction {
+  &__content {
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+    }
+
+    @include onSmallDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      width: 280px;
+      display: flex;
+      text-align: center;
+    }
+
+    @include onSmallDesktop {
+      width: 100%;
+      grid-column: 7/12;
+      text-align: start;
+    }
+  }
+
+  &__description {
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+      grid-column: 2/6;
+    }
+  }
+
+  .introduction__line {
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+      height: 1px;
+      width: calc(50% - 120px);
+      background-color: rgba(52, 79, 16, 50%);
+      margin-bottom: 100px;
+    }
+
+    &--finish {
+      margin-top: 100px;
+      position: relative;
+      width: 50%;
+      left: 50%;
+    }
+  }
+}
