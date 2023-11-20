@@ -69,7 +69,7 @@ p {
   color: #333333;
 }
 
-.visible {
+#intro .visible {
   display: block;
   height: 100vh;
   opacity: 1;
@@ -80,12 +80,10 @@ p {
   animation: pulse 2s ease-in-out infinite;
   transition: opacity;
 }
-
-.non-visibble {
+#intro .non--visible {
   opacity: 0;
   transition: opacity 5s;
 }
-
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -100,6 +98,7 @@ p {
     opacity: 1;
   }
 }
+
 .section {
   animation: appear 3s;
   animation-delay: 5s;
@@ -676,7 +675,8 @@ p {
 .shop {
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
+  width: 100%;
+  padding: 0;
 }
 @media (min-width: 768px) {
   .shop {
@@ -726,11 +726,13 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0 20px 0;
   margin-bottom: 25px;
 }
 @media (min-width: 768px) {
   .shop__buttons {
-    grid-column: span 6;
+    padding: 0;
+    grid-column: 1/-1;
   }
 }
 .shop__buttons__button {
@@ -753,11 +755,16 @@ p {
 }
 @media (min-width: 768px) {
   .shop__products__cards {
+    padding: 0;
     grid-column: span 6;
   }
 }
+.shop__buttons__button__allProd {
+  margin: 0 20px 0;
+}
 @media (min-width: 768px) {
   .shop__buttons__button__allProd {
+    margin: 0;
     grid-column: 3/5;
   }
 }
@@ -825,7 +832,13 @@ p {
   letter-spacing: 0.05em;
   text-align: left;
   color: #344f10;
+  padding: 0 20px 0;
   margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .cards__face__hydrophilic-oil__title {
+    padding: 0;
+  }
 }
 .cards__face__hydrophilic-oil__price {
   font-size: 18px;
@@ -835,6 +848,12 @@ p {
   letter-spacing: 0.05em;
   text-align: left;
   color: #333333;
+  padding: 0 20px 0;
+}
+@media (min-width: 768px) {
+  .cards__face__hydrophilic-oil__price {
+    padding: 0;
+  }
 }
 .cards__face__ubtan {
   display: none;
@@ -987,7 +1006,6 @@ p {
 .toothpowder {
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
 }
 @media (min-width: 768px) {
   .toothpowder {
@@ -1026,16 +1044,19 @@ p {
   color: #344f10;
   width: 100%;
   margin-bottom: 20px;
+  padding: 0 20px;
 }
 @media (min-width: 768px) {
   .toothpowder__heading {
     grid-column: 1/3;
+    padding: 0;
   }
 }
 .toothpowder__ingredients {
   display: flex;
   flex-direction: row;
   width: 100%;
+  padding: 0 0 0 5px;
   margin-bottom: 30px;
 }
 @media (min-width: 768px) {
@@ -1043,6 +1064,7 @@ p {
     gap: 15px;
     width: 100%;
     grid-column: 3/-1;
+    padding: 0;
     margin-bottom: 0;
   }
 }
@@ -1094,10 +1116,12 @@ p {
   position: relative;
   justify-content: left;
   width: fit-content;
+  padding: 0 20px;
 }
 @media (min-width: 768px) {
   .toothpowder__button {
     grid-column: 1/3;
+    padding: 0;
   }
 }
 
