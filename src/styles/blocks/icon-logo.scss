@@ -1,0 +1,101 @@
+
+.icon--menu {
+  display: block;
+  width: 20px;
+  height: 13px;
+  background-image: url(../images/icons-logo/icon-menu.svg);
+  background-repeat: no-repeat;
+
+  @include onDesktop-small {
+    display: none;
+  }
+}
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__logo-link {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/icons-logo/eco-logo.svg);
+    background-repeat: no-repeat;
+
+    @include onDesktop-small {
+      background-size: 50px 50px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop-small {
+      display: block;
+      position: relative;
+    
+      text-transform: uppercase;
+      font-weight: $small-font;
+      font-size: 14px;
+      line-height: 18.2px;
+      color: $color-green;
+      text-decoration: none;
+      transition: color ;
+
+      &:hover {
+        color: $color-dark-grey;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $color-dark-grey;
+
+        transition: transform $effectDuration;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.icon--bag {
+  display: block;
+  width: 20px;
+  height: 24px;
+  background-image: url(../images/icons-logo/bag-icon.svg);
+  background-repeat: no-repeat;
+
+  @include onDesktop-small {
+    width: 32px;
+    height: 32px;
+    background-size: 23px 26px;
+  }
+}
+
+.icon-close {
+  display: inline-block;
+  background-image: url(../images/icons-logo/icon-close.svg);
+  width: 15px;
+  height: 15px;
+}

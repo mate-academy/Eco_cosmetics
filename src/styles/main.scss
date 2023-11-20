@@ -1,7 +1,47 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "utils/vars";
+@import "utils/mixins";
+@import "blocks/header";
+@import "blocks/icon-logo";
+@import "blocks/sections-titles";
+@import "blocks/buttons";
+@import "blocks/menu";
+@import "blocks/about-brand";
+@import "blocks/tagline";
+@import "blocks/shop";
+@import "blocks/product-card";
+@import "blocks/about-creators";
+@import "blocks/ayurvedic";
+@import "blocks/ecology";
+@import "blocks/contact-us";
+@import "blocks/footer";
 
-body {
-  background: $c-gray;
+.page {
+  position: relative;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+
+  &__body {
+    position: relative;
+    margin: 0;
+    min-width: 320px;
+    background-color: #e4dfd3;
+    overflow-x: hidden;
+  }
+}
+
+.main__content {
+  display: grid;
+  row-gap: 100px;
+  margin-bottom: 100px;
+
+  @include onTablet {
+    row-gap: 130px;
+    margin-bottom: 132px;
+  }
+
+  @include onDesktop-small {
+    row-gap: 200px;
+    margin-bottom: 130px;
+  }
 }

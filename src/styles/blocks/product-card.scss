@@ -1,0 +1,110 @@
+.shop {
+  &__product-card {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+  
+    transition: all 0.5s;
+    opacity: 0;
+    pointer-events: all;
+    transform: translateX(-100%);
+  
+    &:target {
+      opacity: 1;
+      z-index: 10;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
+
+  &__product-card-bar {
+    box-sizing: border-box;
+    max-width: 100%;
+
+    @include onTablet {
+      order: -1;
+    }
+
+    @include onDesktop-small {
+      width: 1280px;
+    }
+  }
+}
+
+.product-card__button {
+  margin: 0 auto;
+}
+
+.product-card {
+  position: fixed;
+
+  @include contentPaddingInLine;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: $main-color;
+
+  &__title {
+    margin: 0;
+    margin-top: 20px;
+
+    font-weight: $bold-font;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $color-dark-grey;
+  }
+
+  &__price {
+    margin: 0;
+    margin-block: 10px 20px;
+
+    font-weight: $small-font;
+    font-size: 14px;
+    line-height: 18.2px;
+    letter-spacing: 0.7px;
+    color: $color-dark-grey;
+  }
+
+  &__picture {
+    width: 100%;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      order: -1;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    transition: transform $effectDuration linear;
+
+    &:hover {
+      @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__description {
+    font-weight: $small-font;
+    font-size: 14px;
+    line-height: 21px;
+    color: $color-dark-grey;
+  }
+
+  &__description--1 {
+    margin-top: 50px;
+  }
+
+  &__description--2 {
+    margin-block: 20px;
+  }
+}
+
+.green-text {
+  color: $color-green;
+}

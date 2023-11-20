@@ -1,0 +1,89 @@
+
+.tagline {
+  height: 100%;
+
+  &__wrapper {
+    width: 100vw;
+    position: relative;
+    margin-top: 100px;
+
+    @include onTablet {
+      margin-top: 130px;
+    }
+
+    @include onDesktop-small {
+      @include pageGrid;
+      margin-top: 200px;
+    }
+
+    &::after {
+      @include onDesktop-small {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 50%;
+        left: 50%;
+        bottom: 1px;
+        height: 1px;
+        background-color: $color-green;
+        opacity: 50%;
+      }
+    }
+
+    &::before {
+      @include onDesktop-small {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 50%;
+        top: 1px;
+        height: 1px;
+        background-color: $color-green;
+        opacity: 50%;
+      }
+    }
+  }
+
+  &__title {
+    margin-left: 20px;
+    width: 280px;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: $bold-font;
+    font-size: 18px;
+    line-height: 27px;
+    color: $color-green;
+    letter-spacing: 0.05em;
+
+    @include onTablet {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @include onDesktop-small {
+      width: 380px;
+      height: 108px;
+      grid-column: 7/11;
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      text-align: left;
+      
+      padding-block: 105px 131px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onDesktop-small {
+      display: block;
+      grid-column: 2/6;
+      width: 380px;
+      font-weight: $small-font;
+      font-size: 16px;
+      line-height: 24px;
+      padding-block: 100px;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+.page__menu {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+
+  transition: all 0.5s;
+  opacity: 0;
+  pointer-events: all;
+  transform: translateX(-100%);
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 10;
+    transform: translateX(0);
+  }
+
+  @include onDesktop-small {
+    display: flex;
+    position: absolute;
+    overflow: visible;
+    pointer-events: all;
+    opacity: 1;
+    top: -1.4%;
+    left: 50%;
+    right: 100%;
+    padding: 0;
+    transform: none;
+  }
+
+  @include onDesktop-large {
+    top: -1.4%;
+  }
+}
+
+.menu {
+  height: 100%;
+  background-color: $color-dark-grey;
+
+  @include contentPaddingInLine;
+
+  @include onDesktop-small {
+    display: flex;
+    background-color: #e4dfd3;
+    padding: 0;
+  }
+
+  &__top {
+    margin: 0;
+    padding: 0;
+    margin-block: 20px 45.12px;
+
+    @include onTablet {
+      margin-block: 28px 100.13px;
+    }
+  }
+}
+
+.nav {
+  padding: 0;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    @include onDesktop-small {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      top: 0;
+      left: 50%;
+    }
+
+    @include onDesktop-large {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      top: 0;
+      left: 50%;
+    }
+  }
+
+  &__item {
+    height: 63px;
+
+    @include onDesktop-small {
+      height: 27px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-decoration: none;
+
+    font-weight: $bold-font;
+    font-size: 18px;
+    line-height: 23.4px;
+    color: $main-color;
+
+    padding-bottom: 10px;
+    border-bottom: 1px solid $color-grey;
+    transition: all $effectDuration;
+
+    &:hover {
+      color: $color-green;
+      box-shadow: 2px 3px 4px 0 rgba(228, 223, 211, 1);
+    }
+
+    @include onDesktop-small {
+      color: $color-green;
+      border-bottom: none;
+    }
+  }
+
+  &__link::after {
+    @include onDesktop-small {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $color-dark-grey;
+
+      transition: all $effectDuration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+  }
+
+  &__link:hover::after {
+    transform: scale(1);
+    box-shadow: 2px 3px 4px 0 rgba(51, 51, 51, 1);
+  }
+}

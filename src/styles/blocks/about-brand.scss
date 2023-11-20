@@ -1,0 +1,146 @@
+.about-brand {
+  height: 100%;
+  position: relative;
+
+  &__wrapper {
+    height: inherit;
+
+    @include contentPaddingInLine;
+   
+    @include pageGrid;
+
+    @include onDesktop-small {
+      width: 99vw;
+    }
+
+    @include onDesktop-large {
+      width: 90vw;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: span 3;
+      grid-row: 1/-1;
+    }
+
+    @include onDesktop-small {
+      grid-column: 2/6;
+    }
+  }
+  
+  &__text--1 {
+    margin: 0;
+    width: 342px;
+    height: 216px;
+    text-align: left;
+
+    @include aboutText;
+
+    @include onDesktop-small {
+      height: 192px;
+    }
+  }
+
+  &__text--2 {
+    display: none;
+
+    @include onDesktop-small {
+      display: block;
+      height: 120px;
+      margin: 0;
+      margin-block: 30px 40px;
+    }
+  }
+
+  &__picture--1 {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+      grid-column: span 3;
+    }
+
+    @include onDesktop-small {
+      height: 529px;
+      grid-column: 7/11;
+      align-items: bottom;
+    }
+  }
+
+  &__img--1 {
+    width: 100%;
+    transition: transform;
+
+    &:hover {
+      @include hover(transform, scale(1.05));
+    }
+
+    @include onDesktop-small {
+      height: 100%;
+    }
+  }
+
+  &__picture--2 {
+    display: none;
+
+    @include onDesktop-small {
+      display: block;
+      margin-top: 99px;
+      
+      width: 100%;
+      height: 430px;
+      grid-column: 11/13;
+    }
+  }
+
+  &__img--2 {
+    width: 100%;
+    height: 100%;
+
+    transition: transform;
+
+    &:hover {
+      @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__line-text {
+    display: none;
+
+    @include onDesktop-small {
+
+      @include leftVerticalText;
+      bottom: 78%;
+      left: -6%;
+    }
+
+    @include onDesktop-large {
+      left: 0;
+      bottom: 77%;
+    }
+  }
+
+  &__line-text::before {
+    @include lineTextBefore;
+    margin-right: -55%;
+  }
+
+  &__left-text {
+    @include leftVerticalTextStyle;
+  }
+}
+
+.text-width {
+  @include onDesktop-small {
+    width: 380px;
+  }
+
+  &__box {
+    position: fixed;
+  }
+}
