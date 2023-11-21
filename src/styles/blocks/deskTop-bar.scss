@@ -1,0 +1,57 @@
+.deskTop-bar {
+  box-sizing: border-box;
+  display: none;
+
+  @include onDesktop1280 {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 81px;
+
+    @include pageGrid;
+
+    &__left {
+      display: flex;
+      align-items: center;
+      grid-column: span 6;
+    }
+
+    &__link--logo {
+      margin-right: 12px;
+    }
+
+    &__right {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      grid-column: span 6;
+    }
+  }
+
+  @include onDesktop1440 {
+    margin-bottom: 70px;
+  }
+}
+
+.nav__list {
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+.nav__item {
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.nav__link {
+  text-decoration: none;
+  color: $green-text-color;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+  text-transform: capitalize;
+}
