@@ -1,0 +1,68 @@
+.introduction {
+  @include paddingInline;
+  margin-top: 100px;
+
+  @include onTablet {
+    margin-top: 130px;
+  }
+
+  @include onDesktopSM {
+    @include pageGrid;
+    padding-inline: 0;
+  }
+
+  &__content {
+    grid-column: span 12;
+
+    @include onDesktopSM {
+      padding-block: 100px;
+      @include paddingInline;
+      @include pageGrid;
+    }
+  }
+
+  &__line {
+    &--right {
+      @include onDesktopSM {
+        grid-column: 7 / -1;
+        border-bottom: solid 1px $dark-green-color;
+      }
+    }
+
+    &--left {
+      @include onDesktopSM {
+        grid-column: span 5;
+        border-top: solid 1px $dark-green-color;
+      }
+    }
+  }
+
+  &__h3 {
+    @include h5;
+    text-transform: uppercase;
+    color: $dark-green-color;
+    letter-spacing: 0.9px;
+
+    @include onTablet {
+      width: 280px;
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    @include onDesktopSM {
+      text-align: left;
+      margin-inline: 0;
+      grid-column: 7 / 11;
+    }
+  }
+
+  &__info {
+    display: none;
+
+    @include onDesktopSM {
+      display: block;
+      @include text;
+      grid-column: 2 / 6;
+    }
+  }
+}

@@ -1,0 +1,162 @@
+.footer {
+  margin-top: 100px;
+  padding: 30px 0 40px;
+  background-color: $artichoke-color;
+  @include paddingInline;
+
+  @include onTablet {
+    padding-block: 30px;
+    margin-top: 132px;
+    @include pageGrid;
+  }
+
+  @include onDesktopSM {
+    margin-top: 130px;
+    padding-block: 60px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 1;
+      gap: 15px;
+    }
+
+    @include onDesktopSM {
+      grid-column: 1 / 4;
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    @include inputs_and_menu;
+    color: $page-bg-color;
+
+    &:hover::after {
+      @include hover-affect;
+      background-color: $page-bg-color;
+    }
+
+    @include onTablet {
+      @include text2;
+      line-height: 21px;
+      color: $page-bg-color;
+    }
+
+    @include onDesktopSM {
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  &__media {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-column: 1;
+    }
+
+    @include onDesktopSM {
+      grid-column: 8;
+    }
+  }
+
+  &__icon {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--fbook {
+      background-image: url(../images/icons/facebook.png);
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/instagram.png);
+    }
+  }
+
+  &__support {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      margin-top: 0;
+      grid-column: 4 / -1;
+      grid-row: 1 / 4;
+      align-self: baseline;
+    }
+
+    @include onDesktopSM {
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__support-text {
+    @include text2;
+    text-decoration: none;
+    color: $page-bg-color;
+    line-height: 21px;
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include onDesktopSM {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__copyright {
+    margin-inline: auto;
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: $page-bg-color;
+    text-align: center;
+    width: 198px;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+      width: max-content;
+      text-align: left;
+    }
+
+    @include onDesktopSM {
+      grid-column: 1 / 4;
+      grid-row: 4;
+      font-size: 18px;
+      text-transform: capitalize;
+      line-height: 24px;
+      font-weight: 500;
+      margin-top: 0;
+      align-self: flex-end;
+    }
+
+    &--tablet {
+      @include onDesktopSM {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktopSM {
+        display: block;
+      }
+    }
+  }
+}
