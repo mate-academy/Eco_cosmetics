@@ -1,17 +1,10 @@
 .scrollDown {
   @include pageGrid;
+  @include contentPaddingInline;
+  grid-column: 1 / -1;
 
-  &__topLine {
-    display: none;
-
-    @include onDesktop1280 {
-      display: block;
-      grid-column: 2 / 6;
-      grid-row: 1 / 2;
-      height: 1px;
-      width: 100%;
-      background-color: $sector-line-color;
-    }
+  @include onDesktop1280 {
+    margin-inline: auto;
   }
 
   &__tittle-wraper {
@@ -46,37 +39,17 @@
       font-size: 24px;
       letter-spacing: 1.2px;
       width: 100%;
-      margin-top: 100px;
     }
   }
 
   &__descriptioin {
     display: none;
-    color: $menuBg-mainText-buttons-color;
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 150%;
 
     @include onDesktop1280 {
       display: flex;
       margin: 0;
       grid-row: 1 / -1;
       grid-column: 2 / 6;
-      margin-top: 100px;
-      margin-bottom: 100px;
-    }
-  }
-
-  &__bottomLine {
-    display: none;
-
-    @include onDesktop1280 {
-      display: block;
-      grid-column: 7 / 11;
-      height: 1px;
-      width: 100%;
-      background-color: $sector-line-color;
     }
   }
 }

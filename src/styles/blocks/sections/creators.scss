@@ -1,0 +1,114 @@
+.creators {
+  @include pageGrid;
+  @include contentPaddingInline;
+
+  @include onDesktop1280 {
+    margin-inline: auto;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop1280 {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__tittle {
+    margin: 0;
+    margin-bottom: 10px;
+
+    @include onDesktop1280 {
+      margin-bottom: 34px;
+    }
+
+    @include onDesktop1440 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+
+    @include onDesktop1280 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description2 {
+    margin: 0;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop1280 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description3 {
+    display: none;
+
+    @include onDesktop1280 {
+      display: block;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__learn-more {
+    margin: 0;
+    margin-bottom: 51px;
+    position: relative;
+    color: $green-text-color;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+    width: max-content;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 0;
+      background-color: $green-text-color;
+      bottom: -10px;
+      transition: width $effect-duration;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      background-image: url(./../images/tablet/bird-in-hands-tablet.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      display: block;
+    }
+
+    @include onDesktop1280 {
+      grid-column: 7 / -1;
+      background-image: url(./../images/desktop/bird-in-hands-desktop.png);
+    }
+  }
+}
