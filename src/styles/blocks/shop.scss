@@ -27,12 +27,13 @@
     margin-bottom: 27px;
     display: flex;
     flex-direction: row;
-    gap: 34px;
+    justify-content: space-between;
 
     list-style: none;
     padding: 0;
 
     @include onTablet {
+      justify-content: flex-start;
       margin-bottom: 37px;
       gap: 14px;
     }
@@ -55,7 +56,8 @@
     letter-spacing: 0.04em;
     color: $color-grey;
 
-    @include onTablet {
+    @include onDesktop-small {
+      font-weight: $bold-font;
       font-size: 18px;
       line-height: 27px;
       letter-spacing: 1px;
@@ -94,12 +96,20 @@
   }
 
   &__link-middle {
+
+    @include onTablet {
+      width: 56px;
+    }
+
     @include onDesktop-small {
       width: 80px;
     }
   }
 
   &__link-last {
+    @include onTablet {
+      width: 66px;
+    }
 
     @include onDesktop-small {
       width: 100px;
@@ -112,14 +122,13 @@
 
   &__picture {
     width: 100%;
-    // height: 100%;
   }
 
   &__img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform;
+    transition: transform $effectDuration;
 
     &:hover {
       @include hover(transform, scale(1.05));
