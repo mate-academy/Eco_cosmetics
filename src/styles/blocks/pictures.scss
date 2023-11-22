@@ -1,34 +1,32 @@
 .pictures {
-  grid-column: 2 / -1;
-  // display: flex;
-  gap: 20px;
   display: none;
 
   @include onTablet {
-    align-items: baseline;
-    grid-column: 4 / -1;
+    display: flex;
+    grid-column: 4 / span 3;
   }
 
   @include onDesktop {
     grid-column: 7 / -1;
   }
 
-  &__item {
-    display: none;
-
-    &--hide {
-      @include onTablet {
-        display: flex;
-      }
-    }
-
-    &--tooth-powder {
-      display: block;
-    }
+  &--about-us {
+    column-gap: 20px;
   }
 
-  &__img {
+  &--tooth-powder {
+    display: flex;
     width: 100%;
+    gap: 20px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 3 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / -1;
+    }
   }
 
   &__ingredients {
@@ -46,32 +44,82 @@
     }
   }
 
-  &--about-us {
-    @include onTablet {
-      & :first-child {
-        display: block;
+  &__item {
+    &--about-us {
+      width: 100%;
+      background-image: url(../images/tablet/image-about-us-tt.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include onDesktop {
+        width: 380px;
+        height: 529px;
+        background-image: url(../images/desktop/image-about-us-dt.png);
       }
     }
 
-    @include onDesktop {
-      & > * {
-        display: block;
+    &--about-the-creators {
+      width: 100%;
+      background-image: url(../images/tablet/image-creators-tt.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include onDesktop {
+        width: 580px;
+        height: 645px;
+        background-image: url(../images/desktop/image-creators-dt.png);
       }
     }
-  }
 
-  &--tooth-powder {
-    @include onTablet {
-      align-items: normal;
-      grid-column: 3 / -1;
+    &--contact-us {
+      width: 100%;
+      height: 407px;
+      background-image: url(../images/tablet/image-contact-tt.png);
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: cover;
+
+      @include onDesktop {
+        width: 580px;
+        height: 539px;
+        background-image: url(../images/desktop/image-contact-dt.png);
+      }
     }
 
-    @include onDesktop {
-      grid-column: 7 / -1;
-    }
-  }
+    &--tooth-powder {
+      width: 100%;
+      max-width: 388px;
+      height: 397px;
+      background-image: url(../images/tablet/image-jar-tt.png);
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: cover;
 
-  &--contact-us {
-    display: grid;
+      // @include onTablet {
+      //   background-size: contain;
+      // }
+
+      @include onDesktop {
+        width: 100%;
+        background-image: url(../images/desktop/image-jar-dt.png);
+      }
+    }
+
+    &--hide {
+      display: none;
+      @include onDesktop {
+        display: flex;
+        align-self: flex-end;
+        width: 180px;
+        height: 430px;
+        background-image: url(../images/desktop/image-about-us-1-dt.png);
+
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
   }
 }
