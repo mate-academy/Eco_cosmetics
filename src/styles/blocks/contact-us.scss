@@ -1,0 +1,77 @@
+.contact {
+  background-color: $c-biege;
+  margin-bottom: 100px;
+
+  &-aside {
+    display: none;
+    writing-mode: vertical-rl;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__temp {
+    @include onTablet {
+      display: flex;
+      gap: 120px;
+    }
+  }
+
+  &__text {
+    color: $c-black;
+    font-size: 14px;
+    line-height: 150%;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+      background-color: $c-biege;
+      border: 0;
+      border-bottom: 1px solid $c-gray2;
+      outline: none;
+      padding-bottom: 5px;
+      width: 100%;
+
+      font-size: 14px;
+
+      margin-bottom: 25px;
+
+      @include onDesktop {
+        font-size: 18px;
+        font-weight: 500;
+
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &-image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__image {
+    width: 342px;
+    height: 407px;
+    object-fit: cover;
+
+    @include onDesktop {
+      width: 580px;
+      height: 539px;
+    }
+  }
+}
