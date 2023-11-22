@@ -1,0 +1,178 @@
+.contactUs {
+  @include pageGrid;
+  @include contentPaddingInline;
+
+  @include onDesktop1280 {
+    margin-inline: auto;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop1280 {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__tittle {
+    margin: 0;
+    margin-bottom: 10px;
+
+    @include onDesktop1280 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop1280 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+      background-image: url(./../images/tablet/bird-tablet.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 407px;
+      width: 100%;
+    }
+
+    @include onDesktop1280 {
+      grid-column: 7 / -1;
+      background-image: url(./../images/desktop/bird-desktop.png);
+      height: 539px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.input__field {
+  padding-bottom: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $form-underlines-color;
+  background-color: $page-bg;
+
+  color: $menu-text-underline-color;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  text-transform: capitalize;
+
+  @include onTablet {
+    font-weight: 500;
+  }
+
+  @include onDesktop1280 {
+    font-size: 18px;
+  }
+
+  &:valid {
+    color: $green-text-color;
+    border-bottom: $green-text-color;
+  }
+
+  &:invalid {
+    color: $invalidForm-red-color;
+    border-bottom: $invalidForm-red-color;
+  }
+
+  &:focus {
+    border-bottom: 1px solid $menuBg-mainText-buttons-color;
+  }
+
+  &::placeholder {
+    color: $menu-text-underline-color;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: capitalize;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop1280 {
+      font-size: 18px;
+    }
+  }
+
+  &--name {
+    margin-bottom: 25px;
+
+    @include onDesktop1280 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &--email {
+    margin-bottom: 25px;
+
+    @include onDesktop1280 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &--phone {
+    margin-bottom: 45px;
+
+    @include onDesktop1280 {
+      margin-bottom: 60px;
+    }
+  }
+
+  &--textarea {
+    margin-bottom: 30px;
+    resize: none;
+
+    @include onDesktop1280 {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.submitButton {
+  box-sizing: border-box;
+  background-color: $menuBg-mainText-buttons-color;
+  width: 280px;
+  height: 60px;
+  outline: none;
+  border: none;
+
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: $button-text-color;
+
+  &:hover {
+    background-color: $page-bg;
+    border: 1px solid $menuBg-mainText-buttons-color;
+    cursor: pointer;
+
+    color: $menuBg-mainText-buttons-color;
+  }
+}

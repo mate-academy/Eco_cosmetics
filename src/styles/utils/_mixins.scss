@@ -121,3 +121,31 @@
     letter-spacing: 1.8px;
   }
 }
+
+@mixin learnMoreStyles {
+  margin: 0;
+  display: block;
+  text-decoration: none;
+  position: relative;
+  color: $green-text-color;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%;
+  width: max-content;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 1px;
+    width: 0;
+    background-color: $green-text-color;
+    bottom: -10px;
+    transition: width $effect-duration;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
