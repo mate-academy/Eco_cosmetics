@@ -2,6 +2,8 @@
   @include pageGrid;
   @include contentPaddingInline;
 
+  position: relative;
+
   @include onDesktop1280 {
     margin-inline: auto;
   }
@@ -53,13 +55,53 @@
     @include onDesktop1280 {
       grid-column: 7 / -1;
       background-image: url(./../images/desktop/bird-desktop.png);
-      height: 539px;
     }
   }
 
   &__form {
     display: flex;
     flex-direction: column;
+  }
+
+  &__flexWraper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: left;
+    }
+  }
+
+  &__vertical {
+    display: none;
+
+    @include onDesktop1280 {
+      grid-column: 1;
+      display: flex;
+      align-items: center;
+      transform-origin: left top;
+      transform: rotate(-90deg);
+      position: absolute;
+      top: 141px;
+      left: 0;
+    }
+  }
+
+  &__verticalLine {
+    height: 1px;
+    width: 100px;
+    background-color: $sector-line-color;
+    margin-right: 10px;
+  }
+
+  &__verticalText {
+    color: $sector-line-color;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
   }
 }
 
