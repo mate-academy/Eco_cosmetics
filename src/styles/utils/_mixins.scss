@@ -11,8 +11,33 @@
   }
 }
 
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onBigDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
 @mixin paddingInLine {
   padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop {
+    padding-inline: 50px;
+  }
+}
+
+@mixin forWrapper {
+  width: 280px;
+  margin: 0 auto;
 }
 
 @mixin forButton {

@@ -1,5 +1,10 @@
 .contacts {
-  padding-inline: 20px;
+  @include paddingInLine;
+
+  &__wrapper {
+    @include forWrapper;
+    margin-bottom: 100px;
+  }
 
   &__title {
     @include forTitles;
@@ -15,10 +20,34 @@
     flex-direction: column;
     gap: 25px;
     margin-bottom: 30px;
+    box-sizing: border-box;
   }
 
-  &__wrapper {
-    margin-bottom: 100px;
+  &__input {
+    box-sizing: border-box;
+    outline: none;
+    background-color: transparent;
+    border: transparent;
+    border-bottom: 1px solid $c-light-gray;
+    padding-bottom: 5px;
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    &:hover::placeholder {
+      color: $c-green;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $c-green;
+    }
+  }
+
+  &__input--message {
+    margin-top: 20px;
+    resize: none;
   }
 
   &__btn {
