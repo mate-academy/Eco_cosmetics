@@ -1,0 +1,57 @@
+.product-card {
+  background-color: $c-oyster;
+  height: 100vh;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+
+  transform: translateX(-100%);
+  transition: all 0.3s;
+
+  opacity: 0;
+  pointer-events: none;
+
+  &:target {
+    pointer-events: all;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &__top__wrapper {
+    @include forWrapper;
+  }
+
+  &__title {
+    @include forTitles;
+    color: $c-black;
+  }
+
+  &__wrapper {
+    @include forWrapper;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    margin-top: 20px;
+  }
+
+  &__image {
+    width: 280px;
+    height: 248px;
+  }
+
+  &__link {
+    @include forButton;
+  }
+
+  &__bottom__wrapper {
+    @include forWrapper;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    margin: 50px auto 20px;
+  }
+}

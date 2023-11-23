@@ -16,11 +16,16 @@
   }
 
   &__nav__list__item {
+    @include forLinks;
     color: $c-oyster;
     text-decoration: none;
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
+
+    &:hover {
+      border-color: inherit;
+    }
   }
 
   &__socials {
@@ -47,6 +52,13 @@
   &__contacts__item {
     text-decoration: none;
     color: inherit;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid $c-oyster;
+      width: fit-content;
+    }
   }
 
   &__right {
