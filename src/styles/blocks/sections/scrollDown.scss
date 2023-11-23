@@ -1,10 +1,14 @@
 .scrollDown {
-  @include pageGrid;
-  @include contentPaddingInline;
-  grid-column: 1 / -1;
+  display: grid;
 
-  @include onDesktop1280 {
-    margin-inline: auto;
+  &__content {
+    @include pageGrid;
+    @include contentPaddingInline;
+    grid-column: 1 / -1;
+
+    @include onDesktop1280 {
+      margin-inline: auto;
+    }
   }
 
   &__tittle-wraper {
@@ -13,7 +17,7 @@
     justify-content: center;
 
     @include onDesktop1280 {
-      grid-row: 1 / -1;
+      grid-row: 1;
       grid-column: 7 / 11;
       justify-content: left;
     }
@@ -46,9 +50,30 @@
 
     @include onDesktop1280 {
       display: flex;
-      margin: 0;
-      grid-row: 1 / -1;
       grid-column: 2 / 6;
     }
   }
+}
+
+.line-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.horizontal-top {
+  grid-column: 1 / 2;
+  background-color: $sector-line-color;
+  height: 1px;
+  width: 100%;
+  margin-bottom: 100px;
+  transform: translateX(-110px);
+}
+
+.horizontal-bottom {
+  grid-column: 2 / 3;
+  background-color: $sector-line-color;
+  height: 1px;
+  width: 100%;
+  margin-top: 100px;
+  transform: translateX(10px);
 }
