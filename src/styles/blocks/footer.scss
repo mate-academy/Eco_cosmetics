@@ -102,6 +102,7 @@
   }
 
   &__support-text {
+    width: fit-content;
     @include text2;
     text-decoration: none;
     color: $page-bg-color;
@@ -110,6 +111,20 @@
 
     &:first-child {
       margin-top: 0;
+    }
+
+    &:nth-child(-n + 3) {
+      position: relative;
+
+      &:hover::after {
+        display: block;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        animation: smooth-line 0.5s ease 1 forwards;
+      }
     }
 
     @include onDesktopSM {
@@ -158,5 +173,15 @@
         display: block;
       }
     }
+  }
+}
+
+@keyframes smooth-line {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(5px);
   }
 }
