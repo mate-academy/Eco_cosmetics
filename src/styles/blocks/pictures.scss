@@ -16,8 +16,9 @@
 
   &--tooth-powder {
     display: flex;
-    width: 100%;
     gap: 20px;
+    justify-content: center;
+    object-fit: contain;
     grid-column: 1 / -1;
 
     @include onTablet {
@@ -89,20 +90,21 @@
     }
 
     &--tooth-powder {
-      width: 100%;
-      max-width: 388px;
+      width: 182px;
       height: 397px;
-      background-image: url(../images/tablet/image-jar-tt.png);
+      background-image: url(../images/image-jar.png);
       background-repeat: no-repeat;
       background-position: left;
-      background-size: cover;
+      background-size: contain;
 
-      // @include onTablet {
-      //   background-size: contain;
-      // }
+      @include onTablet {
+        width: 388px;
+        background-image: url(../images/tablet/image-jar-tt.png);
+        background-size: cover;
+      }
 
       @include onDesktop {
-        width: 100%;
+        width: 480px;
         background-image: url(../images/desktop/image-jar-dt.png);
       }
     }
