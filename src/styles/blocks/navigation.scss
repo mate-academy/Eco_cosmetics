@@ -1,0 +1,129 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 0;
+    grid-column: span 6;
+    margin-top: 23px;
+  }
+
+  @include onDesktopSM {
+    grid-column: span 12;
+    margin-top: 40px;
+    @include pageGrid;
+  }
+
+  &_menu-container {
+    width: 20px;
+    height: 13px;
+
+    @include onDesktopSM {
+      display: none;
+    }
+  }
+
+  &_menu {
+    display: block;
+    background-image: url(../images/icons/menu.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+  }
+
+  &_logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include onDesktopSM {
+      grid-column: span 3;
+    }
+  }
+
+  &_logo {
+    width: 24px;
+    height: 24px;
+
+    @include onDesktopSM {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &_logo-img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/icons/logo_desctop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include onDesktopSM {
+      background-image: url(../images/icons/logo_desctop.svg);
+    }
+  }
+
+  &_logo-text {
+    display: none;
+    @include text2;
+    text-transform: uppercase;
+
+    @include onDesktopSM {
+      display: flex;
+    }
+  }
+
+  &_right-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include onDesktopSM {
+      grid-column: -8 / -1;
+    }
+  }
+
+  &_links {
+    display: none;
+
+    @include onDesktopSM {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &_link {
+    position: relative;
+    @include inputs_and_menu;
+    text-decoration: none;
+
+    &:hover::after {
+      @include hover-affect;
+      background-color: $dark-charcoal-color;
+    }
+  }
+
+  &_shop-container {
+    width: 20px;
+    height: 24px;
+
+    @include onDesktopSM {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &_shop {
+    display: block;
+    height: 100%;
+    background-image: url(../images/icons/shop.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

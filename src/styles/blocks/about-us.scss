@@ -1,0 +1,126 @@
+.about-us {
+  margin-top: 100px;
+  @include paddingInline;
+
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  @include onDesktopSM {
+    margin-top: 200px;
+  }
+
+  &__content {
+    grid-column: span 3;
+    grid-row: 1;
+
+    @include onDesktopSM {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    @include h4;
+    text-transform: uppercase;
+
+    @include onDesktopSM {
+      font-size: 36px;
+      line-height: 39px;
+    }
+  }
+
+  &__info {
+    margin-top: 10px;
+
+    @include onDesktopSM {
+      margin-top: 40px;
+    }
+  }
+
+  &__text {
+    @include text2;
+    line-height: 21px;
+    color: $dark-charcoal-color;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include onDesktopSM {
+      line-height: 18px;
+    }
+
+    &--hide {
+      display: none;
+
+      @include onDesktopSM {
+        display: block;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__learn-more {
+    margin-top: 30px;
+
+    @include onDesktopSM {
+      margin-top: 40px;
+    }
+  }
+
+  &__img-container {
+    grid-column: span 3;
+    grid-row: 1;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onDesktopSM {
+      grid-column: 7 / 11;
+
+      height: 529px;
+    }
+  }
+
+  &__img {
+    background-image: url(../images/about_us_tablet.png);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__img-desktop {
+    display: none;
+
+    @include onDesktopSM {
+      display: block;
+      grid-column: 11 / -1;
+      width: 100%;
+      align-self: end;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__img2 {
+    height: 430px;
+    background-image: url(../images/about_us_desktop_2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__side {
+    display: none;
+
+    @include onDesktopSM {
+      display: block;
+      grid-column: 1;
+    }
+  }
+}

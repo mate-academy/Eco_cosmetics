@@ -1,0 +1,171 @@
+.contact-us {
+  @include paddingInline;
+  margin-top: 100px;
+
+  @include onTablet {
+    margin-top: 130px;
+    @include pageGrid;
+  }
+
+  @include onDesktopSM {
+    margin-top: 200px;
+  }
+
+  &__content {
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktopSM {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    @include h4;
+    text-transform: uppercase;
+
+    @include onDesktopSM {
+      font-size: 36px;
+      line-height: 39px;
+    }
+  }
+
+  &__info {
+    @include text2;
+    line-height: 21px;
+    color: $dark-charcoal-color;
+    margin-top: 10px;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include onDesktopSM {
+      font-size: 14px;
+      margin-top: 30px;
+    }
+  }
+
+  &__form {
+    margin-top: 30px;
+
+    @include onDesktopSM {
+      margin-top: 40px;
+    }
+  }
+
+  &__img-container {
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktopSM {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    background-image: url(../images/contact_us_tablet.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onDesktopSM {
+      background-image: url(../images/contact_us_desktop.png);
+    }
+  }
+
+  &__side {
+    display: none;
+
+    @include onDesktopSM {
+      display: block;
+    }
+  }
+}
+
+.form {
+  &__field-container {
+    margin-top: 25px;
+    width: 100%;
+
+    &:last-child {
+      margin-top: 60px;
+    }
+
+    @include onDesktopSM {
+      margin-top: 30px;
+    }
+  }
+
+  &__field {
+    outline: none;
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px $medium-gray-color;
+    background-color: $page-bg-color;
+    padding-bottom: 5px;
+    @include text2;
+    line-height: 21px;
+
+    @include onDesktopSM {
+      font-size: 18px;
+    }
+
+    &::placeholder {
+      @include text2;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      line-height: 18px;
+      color: $old-silder;
+
+      @include onDesktopSM {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+    &:focus {
+      border-color: $dark-charcoal-color;
+    }
+  }
+
+  &__format {
+    @include text2;
+    color: $old-silder;
+  }
+
+  &__button {
+    height: 60px;
+    margin-top: 30px;
+
+    @include onDesktopSM {
+      margin-top: 50px;
+      width: 280px;
+    }
+  }
+}
+
+textarea {
+  resize: none;
+  &::placeholder {
+    padding-top: 20px;
+  }
+
+  @include onDesktopSM {
+    margin-top: 30px;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px $page-bg-color inset;
+}

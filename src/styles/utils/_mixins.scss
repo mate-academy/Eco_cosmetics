@@ -1,6 +1,124 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet() {
+  @media (min-width: 640px) {
+    @content;
   }
+}
+
+@mixin onDesktopSM() {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onDesktopMD() {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include onDesktopSM {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+}
+
+@mixin paddingInline {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktopSM {
+    padding-inline: 50px;
+  }
+
+  @include onDesktopMD {
+    padding-inline: 130px;
+  }
+}
+
+@mixin h1 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 31px;
+  color: $dark-charcoal-color;
+}
+
+@mixin h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  color: $dark-green-color;
+  letter-spacing: 1.2px;
+}
+
+@mixin h5 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  color: $page-bg-color;
+}
+
+@mixin text {
+  font-size: 16px;
+  line-height: 24px;
+  color: $dark-charcoal-color;
+}
+
+@mixin text2 {
+  font-size: 14px;
+  line-height: 18px;
+  color: $dark-green-color;
+}
+
+@mixin inputs_and_menu {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: $dark-charcoal-color;
+}
+
+@mixin button_text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: $white-smoke-color;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+}
+
+@mixin decorative {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  color: $dark-green-color;
+  text-transform: uppercase;
+}
+
+@mixin price {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: $dark-charcoal-color;
+}
+
+@mixin hover-affect {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: $dark-green-color;
+  animation: hover-underline 0.3s ease-out 1 forwards;
 }
