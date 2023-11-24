@@ -413,32 +413,48 @@
             method="post"
             class="contactUs__form"
           >
-            <input
-              type="text"
-              placeholder="Your Name"
-              required
-              class="input__field input__field--name"
-              pattern="[A-Za-z]+"
-            >
+            <div class="input__field--nameWraper">
+              <input
+                type="text"
+                placeholder="Your Name"
+                required
+                class="input__field input__field--name"
+                pattern="[A-Za-z]+"
+              >
+              <div class="error-message error-message--name">
+                Use "A-z" letters only
+              </div>
+            </div>
 
-            <input
-              type="email"
-              placeholder="E-Mail"
-              required
-              class="input__field input__field--email"
-            >
+            <div class="input__field--emailWraper">
+              <input
+                type="email"
+                placeholder="E-Mail"
+                required
+                class="input__field input__field--email"
+              >
+              <div class="error-message error-message--email">
+                Use format "user@mailbox"
+              </div>
+            </div>
 
-            <input
-              type="tel"
-              pattern="[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{3}"
-              placeholder="Phone Number"
-              class="input__field input__field--phone"
-            >
+            <div class="input__field--phoneWraper">
+              <input
+                type="tel"
+                pattern="[0-9]{12}"
+                placeholder="Phone Number"
+                class="input__field input__field--phone"
+              >
+              <div class="error-message error-message--phone">
+                Input 12 characters "380987654321"
+              </div>
+            </div>
 
             <textarea
               placeholder="Your Message"
               maxlength="100"
               class="input__field input__field--textarea"
+              required
             ></textarea>
 
             <div class="contactUs__flexWraper">
@@ -524,7 +540,7 @@
           </a>
 
           <a href="#" class="copyright copyright--Desktop">
-            Copyright &copy; 2019 witch of mountain winds
+            Copyright &copy; 2023 witch of mountain winds
           </a>
         </div>
       </div>
