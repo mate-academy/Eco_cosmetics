@@ -1,0 +1,86 @@
+.theBrand {
+  @include pageGrid;
+  @include contentPaddingInline;
+  color: $menuBg-mainText-buttons-color;
+  font-family: inherit;
+  text-align: center;
+
+  @include onDesktop1280 {
+    margin-inline: auto;
+    text-align: left;
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    background-image: url(./../images/phone/creams.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 267px;
+    margin-bottom: 25px;
+    margin-inline: -20px;
+
+    @include onTablet {
+      background-image: url(./../images/tablet/cream-tablet.png);
+      height: 500px;
+      margin-bottom: 50px;
+      margin-inline: 0;
+    }
+
+    @include onDesktop1280 {
+      background-image: url(./../images/desktop/cream-desktop.png);
+      height: 451px;
+      grid-column: 7 / -1;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onDesktop1280 {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__tittle {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    @include onDesktop1280 {
+      font-size: 60px;
+      line-height: 130%;
+      text-transform: none;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__flexWraper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include onDesktop1280 {
+      justify-content: left;
+    }
+  }
+}

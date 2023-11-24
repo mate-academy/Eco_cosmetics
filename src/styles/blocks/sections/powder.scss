@@ -1,0 +1,271 @@
+.powder {
+  display: grid;
+
+  &__tittle {
+    margin-bottom: 21px;
+
+    @include onTablet {
+      margin-bottom: 310px;
+    }
+
+    @include onDesktop1280 {
+      grid-column: 2 / 6;
+      margin-bottom: 287px;
+    }
+  }
+
+  &__main {
+    position: relative;
+    padding-left: 20px;
+
+    @include onTablet {
+      padding-left: 27px;
+    }
+
+    @include onDesktop1280 {
+      @include pageGrid;
+      @include contentPaddingInline;
+      margin-inline: auto;
+    }
+  }
+
+  &__learn-more {
+    margin-bottom: 13px;
+
+    @include onDesktop1280 {
+      grid-column: 2 / 3;
+    }
+  }
+
+  &__vertical {
+    display: none;
+
+    @include onDesktop1280 {
+      grid-column: 1;
+      display: flex;
+      align-items: center;
+      transform-origin: left top;
+      transform: rotate(-90deg);
+      position: absolute;
+      top: 190px;
+      left: 0;
+    }
+  }
+
+  &__verticalLine {
+    height: 1px;
+    width: 100px;
+    background-color: $sector-line-color;
+    margin-right: 10px;
+  }
+
+  &__verticalText {
+    color: $sector-line-color;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+}
+
+.composition {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 30px;
+
+  @include onTablet {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    margin-bottom: 0;
+  }
+
+  @include onDesktop1280 {
+    top: 0;
+    right: 50px;
+  }
+
+  @include onDesktop1440 {
+    top: 0;
+    right: 130px;
+  }
+
+  &__ingredients {
+    list-style: none;
+    padding: 40px 0 0;
+  }
+
+  &__ingredient {
+    margin: 0 20px 52px 0;
+    text-align: right;
+
+    @include onTablet {
+      margin: 0 20px 49px 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__scheme {
+    background-image: url(./../schemes/phone/creameScheme-phone.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 397px;
+    width: 180px;
+
+    @include onTablet {
+      background-image: url(./../schemes/tablet/creameScheme-tablet.svg);
+      width: 398px;
+    }
+
+    @include onDesktop1280 {
+      background-image: url(./../schemes/desktop/creameScheme-desktop.svg);
+      width: 480px;
+    }
+
+  }
+}
+
+.signs {
+  @include pageGrid;
+  @include contentPaddingInline;
+
+  @include onDesktop1280 {
+    margin-inline: auto;
+  }
+  margin-top: 111px;
+  align-items: baseline;
+
+  @include onTablet {
+    margin-top: 131px;
+  }
+
+  @include onDesktop1280 {
+    margin-top: 213px;
+  }
+
+  &__block {
+
+    display: flex;
+    justify-content: center;
+
+    &--bird {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 3;
+      }
+
+      @include onDesktop1280 {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--recycling {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 3 / 5;
+      }
+
+      @include onDesktop1280 {
+        grid-column: 5 / 9;
+      }
+    }
+
+    &--leaves {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 5 / 7;
+      }
+
+      @include onDesktop1280 {
+        grid-column: 9 / -1;
+      }
+    }
+  }
+
+  &__text {
+    color: $signs-text-color;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-top: 25px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop1280 {
+      margin-top: 40px;
+    }
+
+    &--leaves {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.bird-scheme {
+  background-image: url(./../schemes/phone/birdScheme-phone.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 60px;
+  width: 100%;
+
+  @include onTablet {
+    background-image: url(./../schemes/tablet/birdScheme-tablet.svg);
+  }
+
+  @include onDesktop1280 {
+    background-image: url(./../schemes/desktop/birdScheme-desktop.svg);
+  }
+}
+
+.recycling-scheme {
+  background-image: url(./../schemes/phone/recyclingScheme-phone.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 84px;
+  width: 100%;
+
+  @include onTablet {
+    background-image: url(./../schemes/tablet/recyclingScheme-tablet.svg);
+  }
+
+  @include onDesktop1280 {
+    background-image: url(./../schemes/desktop/recyclingScheme-desktop.svg);
+  }
+}
+
+.leaves-scheme {
+  background-image: url(./../schemes/phone/leavesScheme-phone.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 74px;
+  width: 100%;
+
+  @include onTablet {
+    background-image: url(./../schemes/tablet/leavesScheme-tablet.svg);
+  }
+
+  @include onDesktop1280 {
+    background-image: url(./../schemes/desktop/leavesScheme-desktop.svg);
+  }
+}

@@ -1,0 +1,69 @@
+.deskTop-bar {
+  display: none;
+
+  @include onDesktop1280 {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 81px;
+
+    @include pageGrid;
+    @include contentPaddingInline;
+    margin-inline: auto;
+
+    &__left {
+      display: flex;
+      align-items: center;
+      grid-column: span 6;
+    }
+
+    &__link--logo {
+      margin-right: 12px;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &__right {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      grid-column: span 6;
+    }
+
+    &__shop-bag-link:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  @include onDesktop1440 {
+    margin-bottom: 70px;
+  }
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+}
+
+.nav__item {
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.nav__link {
+  text-decoration: none;
+  color: $green-text-color;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+  text-transform: capitalize;
+}

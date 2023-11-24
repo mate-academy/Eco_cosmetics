@@ -1,0 +1,288 @@
+.shop {
+  @include pageGrid;
+  @include contentPaddingInline;
+  position: relative;
+
+  @include onDesktop1280 {
+    margin-inline: auto;
+  }
+
+  &__tittle {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop1280 {
+      grid-column: 2 / -1;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__cards {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+
+    @include onDesktop1280 {
+      grid-column: 2 / -1;
+      column-gap: 20px;
+    }
+  }
+
+  &__card {
+
+    &--oil {
+      grid-column: 1 / -1;
+      margin-inline: -20px;
+
+      @include onTablet {
+        grid-column: 1 / -2;
+        margin-inline: 0;
+      }
+    }
+
+    &--ubtan {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: 2 / -1;
+      }
+    }
+  }
+
+  &__flexWraper {
+    grid-column: 1 / -1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__vertical {
+    display: none;
+
+    @include onDesktop1280 {
+      grid-column: 1;
+      display: flex;
+      align-items: center;
+      transform-origin: left top;
+      transform: rotate(-90deg);
+      position: absolute;
+      top: 145px;
+      left: 0;
+    }
+  }
+
+  &__verticalLine {
+    height: 1px;
+    width: 100px;
+    background-color: $sector-line-color;
+    margin-right: 10px;
+  }
+
+  &__verticalText {
+    color: $sector-line-color;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+}
+
+.cardTittle {
+  text-decoration: none;
+  display: block;
+  color: $menuBg-mainText-buttons-color;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 20px;
+
+  &--oil {
+    padding-left: 20px;
+
+    @include onTablet {
+      padding-left: 0;
+    }
+  }
+
+  @include onTablet {
+    margin-bottom: 15px;
+  }
+
+  @include onDesktop1280 {
+    margin-bottom: 13px;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.cardPrice {
+  display: block;
+  text-decoration: none;
+  color: $menuBg-mainText-buttons-color;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+
+  &--oil {
+    padding-left: 20px;
+
+    @include onTablet {
+      padding-left: 0;
+    }
+  }
+
+  @include onTablet {
+    margin-bottom: 50px;
+  }
+
+  @include onDesktop1280 {
+    margin-bottom: 40px;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.imageWraper {
+  overflow: hidden;
+}
+
+.card-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 267px;
+  width: 100%;
+
+  @include onTablet {
+    height: 300px;
+  }
+
+  @include onDesktop1280 {
+    height: 500px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &--oil {
+    background-image: url(./../images/phone/oil-phone.png);
+
+    @include onTablet {
+      background-image: url(./../images/tablet/oil-tablet.png);
+    }
+
+    @include onDesktop1280 {
+      background-image: url(./../images/desktop/oil-desktop.png);
+    }
+  }
+
+  &--ubtan {
+    background-image: url(./../images/tablet/ubtan-tablet.png);
+
+    @include onDesktop1280 {
+      background-image: url(./../images/desktop/ubtan-desktop.png);
+    }
+  }
+}
+
+.navShop {
+  grid-column: 1 / -1;
+  margin-bottom: 27px;
+
+  @include onTablet {
+    margin-bottom: 37px;
+  }
+
+  @include onDesktop1280 {
+    grid-column: 2 / -1;
+    margin-bottom: 62px;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+
+    @include onTablet {
+      justify-content: left;
+    }
+  }
+
+  &__item {
+    @include onTablet {
+      margin-right: 30px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include onDesktop1280 {
+      margin-right: 51px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $shop-link-color;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 0;
+      background-color: $menuBg-mainText-buttons-color;
+      bottom: -10px;
+      transition: width $effect-duration;
+    }
+
+    &:hover {
+      color: $menuBg-mainText-buttons-color;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}

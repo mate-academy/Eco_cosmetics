@@ -1,0 +1,107 @@
+.aboutUs {
+  position: relative;
+  @include pageGrid;
+  @include contentPaddingInline;
+
+  @include onDesktop1280 {
+    margin-inline: auto;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop1280 {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__tittle {
+    margin-bottom: 10px;
+
+    @include onDesktop1280 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+  }
+
+  &__description-2 {
+    display: none;
+
+    @include onDesktop1280 {
+      display: block;
+      @include regularTextStyle;
+      margin: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__big-image {
+    display: none;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      display: block;
+      background-image: url(./../images/tablet/candle-tablet.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    @include onDesktop1280 {
+      grid-column: 7 / 11;
+      background-image: url(./../images/desktop/candle-big-desktop.png);
+    }
+  }
+
+  &__little-image {
+    display: none;
+
+    @include onDesktop1280 {
+      grid-column: 11 / 13;
+      display: block;
+      background-image: url(./../images/desktop/candle-little-desktop.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: 99px;
+    }
+  }
+
+  &__vertical {
+    display: none;
+
+    @include onDesktop1280 {
+      grid-column: 1;
+      display: flex;
+      align-items: center;
+      transform-origin: left top;
+      transform: rotate(-90deg);
+      position: absolute;
+      top: 283px;
+      left: 0;
+    }
+  }
+
+  &__verticalLine {
+    height: 1px;
+    width: 100px;
+    background-color: $sector-line-color;
+    margin-right: 10px;
+  }
+
+  &__verticalText {
+    color: $sector-line-color;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+}

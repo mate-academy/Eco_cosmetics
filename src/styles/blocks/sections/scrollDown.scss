@@ -1,0 +1,83 @@
+.scrollDown {
+  display: grid;
+
+  &__content {
+    @include pageGrid;
+    @include contentPaddingInline;
+    grid-column: 1 / -1;
+
+    @include onDesktop1280 {
+      margin-inline: auto;
+    }
+  }
+
+  &__tittle-wraper {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+
+    @include onDesktop1280 {
+      grid-row: 1;
+      grid-column: 7 / 11;
+      justify-content: left;
+    }
+  }
+
+  &__tittle {
+    color: $green-text-color;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      text-align: center;
+      width: 280px;
+    }
+
+    @include onDesktop1280 {
+      text-align: left;
+      font-size: 24px;
+      letter-spacing: 1.2px;
+      width: 100%;
+    }
+  }
+
+  &__descriptioin {
+    display: none;
+
+    @include onDesktop1280 {
+      display: flex;
+      grid-column: 2 / 6;
+    }
+  }
+}
+
+.line-grid {
+  display: none;
+
+  @include onDesktop1280 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.horizontal-top {
+  grid-column: 1 / 2;
+  background-color: $sector-line-color;
+  height: 1px;
+  width: 100%;
+  margin-bottom: 100px;
+  transform: translateX(-110px);
+}
+
+.horizontal-bottom {
+  grid-column: 2 / 3;
+  background-color: $sector-line-color;
+  height: 1px;
+  width: 100%;
+  margin-top: 100px;
+  transform: translateX(10px);
+}

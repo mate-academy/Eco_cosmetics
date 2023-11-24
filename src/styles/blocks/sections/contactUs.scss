@@ -1,0 +1,251 @@
+.contactUs {
+  @include pageGrid;
+  @include contentPaddingInline;
+
+  position: relative;
+
+  @include onDesktop1280 {
+    margin-inline: auto;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop1280 {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__tittle {
+    margin-bottom: 10px;
+
+    @include onDesktop1280 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop1280 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+      background-image: url(./../images/tablet/bird-tablet.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop1280 {
+      grid-column: 7 / -1;
+      background-image: url(./../images/desktop/bird-desktop.png);
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__flexWraper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: left;
+    }
+  }
+
+  &__vertical {
+    display: none;
+
+    @include onDesktop1280 {
+      grid-column: 1;
+      display: flex;
+      align-items: center;
+      transform-origin: left top;
+      transform: rotate(-90deg);
+      position: absolute;
+      top: 141px;
+      left: 0;
+    }
+  }
+
+  &__verticalLine {
+    height: 1px;
+    width: 100px;
+    background-color: $sector-line-color;
+    margin-right: 10px;
+  }
+
+  &__verticalText {
+    color: $sector-line-color;
+    text-align: center;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+}
+
+.input__field {
+  padding-bottom: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $form-underlines-color;
+  background-color: $page-bg;
+
+  color: $menu-text-underline-color;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  text-transform: capitalize;
+
+  @include onTablet {
+    font-weight: 500;
+  }
+
+  @include onDesktop1280 {
+    font-size: 18px;
+  }
+
+  &:valid {
+    color: $green-text-color;
+    border-bottom: $green-text-color;
+  }
+
+  &:invalid {
+    color: $invalidForm-red-color;
+    border-bottom: $invalidForm-red-color;
+  }
+
+  &:focus {
+    border-bottom: 1px solid $menuBg-mainText-buttons-color;
+  }
+
+  &::placeholder {
+    color: $menu-text-underline-color;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: capitalize;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop1280 {
+      font-size: 18px;
+    }
+  }
+
+  &--nameWraper {
+    margin-bottom: 25px;
+
+    @include onDesktop1280 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &--emailWraper {
+    margin-bottom: 25px;
+
+    @include onDesktop1280 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &--phoneWraper {
+    margin-bottom: 45px;
+
+    @include onDesktop1280 {
+      margin-bottom: 60px;
+    }
+  }
+
+  &--textarea {
+    margin-bottom: 30px;
+    resize: none;
+
+    @include onDesktop1280 {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.submitButton {
+  box-sizing: border-box;
+  background-color: $menuBg-mainText-buttons-color;
+  width: 280px;
+  height: 60px;
+  outline: none;
+  border: none;
+
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: $button-text-color;
+
+  &:hover {
+    background-color: $page-bg;
+    border: 1px solid $menuBg-mainText-buttons-color;
+    cursor: pointer;
+
+    color: $menuBg-mainText-buttons-color;
+  }
+}
+
+.error-message {
+  font-size: 12px;
+  font-family: inherit;
+  color: red;
+  position: absolute;
+}
+
+.input__field--name:invalid + .error-message--name {
+  display: block;
+}
+
+.input__field--name:valid + .error-message--name,
+.input__field:placeholder-shown + .error-message--name {
+  display: none;
+}
+
+.input__field--email:invalid + .error-message--email {
+  display: block;
+}
+
+.input__field--email:valid + .error-message--email,
+.input__field:placeholder-shown + .error-message--email {
+  display: none;
+}
+
+.input__field--phone:invalid + .error-message--phone {
+  display: block;
+}
+
+.input__field--phone:valid + .error-message--phone,
+.input__field:placeholder-shown + .error-message--phone {
+  display: none;
+}
