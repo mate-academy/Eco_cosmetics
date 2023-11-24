@@ -4,3 +4,124 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onBigDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin paddingInLine {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop {
+    padding-inline: 50px;
+  }
+}
+
+@mixin forWrapper {
+  width: 280px;
+  margin: 0 auto;
+
+  @include onTablet {
+    width: 714px;
+  }
+
+  @include onDesktop {
+    width: 1180px;
+  }
+}
+
+@mixin forButton {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 15%;
+  color: $c-white;
+
+  background-color: $c-black;
+  width: 280px;
+  height: 60px;
+  padding-block: 19px;
+
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $c-oyster;
+    color: $c-black;
+    border: 1px solid $c-black;
+  }
+}
+
+@mixin forLinks {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $c-green;
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    border-bottom: 1px solid $c-green;
+    width: fit-content;
+  }
+}
+
+@mixin forSectionTitle {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $c-grey;
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $c-black;
+    border-bottom: 1px solid $c-black;
+  }
+}
+
+@mixin forTitles {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 5%;
+  color: $c-green;
+}
+
+@mixin forCardsTitle {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 5%;
+}

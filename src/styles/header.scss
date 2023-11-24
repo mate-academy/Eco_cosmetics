@@ -1,0 +1,98 @@
+.header {
+  &__wrapper {
+    height: 553px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onTablet {
+      height: 856px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 20px;
+      height: 582px;
+    }
+  }
+
+  &__center {
+    display: block;
+    width: 320px;
+    height: 267px;
+    background-image: url(..//images/mobile/1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 714px;
+      height: 500px;
+      background-image: url(..//images/tablet/jars.png);
+    }
+
+    @include onDesktop {
+      width: 580px;
+      height: 451px;
+      background-position: right;
+      margin-left: 0;
+    }
+  }
+
+  &__bottom {
+    @include paddingInLine;
+    @include forWrapper;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include onDesktop {
+      align-items: start;
+      width: 480px;
+      padding: 0;
+      margin: 0;
+      margin-left: 150px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      width: 466px;
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    @include onDesktop {
+      width: 480px;
+      font-size: 60px;
+      line-height: 78px;
+      text-align: left;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__btn {
+    @include forButton;
+  }
+}

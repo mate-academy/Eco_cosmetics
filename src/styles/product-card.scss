@@ -1,0 +1,123 @@
+.product-card {
+  background-color: $c-oyster;
+  height: 100vh;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+
+  transform: translateX(-100%);
+  transition: all 0.3s;
+
+  opacity: 0;
+  pointer-events: none;
+
+  &:target {
+    pointer-events: all;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  &__top__wrapper {
+    @include forWrapper;
+  }
+
+  &__title {
+    @include forTitles;
+    color: $c-black;
+  }
+
+  &__subtitle {
+    @include onTablet {
+      @include forCardsTitle;
+      margin-block: 26px;
+    }
+  }
+
+  &__price {
+    @include onTablet {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      color: $c-green;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__price--black {
+    color: $c-black;
+  }
+
+  &__wrapper {
+    @include forWrapper;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+
+    @include onTablet {
+      gap: 0;
+      width: 466px;
+    }
+  }
+
+  &__wrapper--tablet--hidden {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__wrapper--mobile--hidden {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__image {
+    width: 280px;
+    height: 248px;
+
+    @include onTablet {
+      width: 466px;
+      height: 440px;
+    }
+  }
+
+  &__link {
+    @include forButton;
+    @include onTablet {
+      margin: 0 auto;
+      margin-top: 30px;
+    }
+  }
+
+  &__bottom__wrapper {
+    @include forWrapper;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 50px auto 20px;
+
+    @include onTablet {
+      width: 466px;
+      margin: 60px auto 72px;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 21px;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24 bpx;
+    }
+  }
+
+  &__description--accent {
+    color: $c-green;
+  }
+}
