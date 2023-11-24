@@ -1,0 +1,71 @@
+.card-product-slider {
+  grid-column: 1 / -1;
+  position: relative;
+
+  @include onDesktop {
+    grid-column: 2 / -1;
+  }
+
+  &__tab {
+    @include gridRules;
+    background-color: $color-background;
+
+    &:not(#face) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transform: translateX(-100%);
+      opacity: 0;
+      z-index: 1;
+
+      transition: all 0.3s;
+      pointer-events: none;
+
+      &:target {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: all;
+      }
+    }
+
+    &--first {
+      position: relative;
+      z-index: 0;
+    }
+  }
+
+  &__item {
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / span 6;
+    }
+
+    &:last-child {
+      display: none;
+
+      @include onTablet {
+        grid-column: -4 / span 3;
+        display: block;
+      }
+
+      @include onDesktop {
+        grid-column: -7 / span 6;
+        display: block;
+      }
+    }
+  }
+
+  &:target .card-product-slider__tab:not(#face) {
+    position: static;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+}

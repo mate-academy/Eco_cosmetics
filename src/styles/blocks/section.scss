@@ -1,0 +1,287 @@
+.section {
+  @include marginTopSection;
+
+  &--if-u-choose {
+    position: relative;
+
+    @include onDesktop {
+      padding-block: 100px;
+    }
+
+    &::before {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: " ";
+      width: 530px;
+      height: 1px;
+      background-color: $color-text-green;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &::after {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      content: " ";
+      width: 530px;
+      height: 1px;
+      background-color: $color-text-green;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &--shop {
+    padding-inline: 0;
+  }
+
+  &__suptitle {
+    color: $color-text-green;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    text-align: center;
+    max-width: 280px;
+
+    margin: 0 auto;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 2 / -2;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -2;
+      max-width: 380px;
+      font-size: 24px;
+      letter-spacing: 1.2px;
+      text-align: start;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    color: $color-text-green;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-align: left;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      grid-column: 2 / span 3;
+    }
+
+    &--tooth-powder {
+      @include onDesktop {
+        line-height: 110%;
+        letter-spacing: 1.8px;
+      }
+    }
+  }
+
+  &__text {
+    color: $color-main;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 30px;
+    max-width: 380px;
+    text-align: left;
+    margin-top: 10px;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    &--if-u-choose {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &--contact-us {
+      margin: 0;
+    }
+
+    &--hide {
+      display: none;
+      margin-top: 30px;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: $color-text-green;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:after {
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      content: " ";
+      width: 86px;
+      height: 1px;
+      background-color: $color-text-green;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transition: transform 0.3s;
+      transform: scale(1);
+    }
+
+    &--tooth-powder {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / span 4;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+
+    &--tooth-powder {
+      @include onTablet {
+        grid-column: 1 / 3;
+      }
+
+      @include onDesktop {
+        width: 100%;
+        grid-column: 2 / span 4;
+      }
+    }
+
+  }
+
+  &__container {
+    position: relative;
+
+  }
+
+  &__aside-label {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 50px;
+    transform: rotate(-90deg);
+    transform-origin: center left;
+
+    color: $color-text-green;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+
+    &--top-150 {
+      top: 150px;
+    }
+
+    &--top-120 {
+      top: 120px;
+    }
+
+    &--top-70 {
+      top: 70px;
+    }
+
+    &--top-30 {
+      top: 30px;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      background-color: $color-text-green;
+
+      width: 100px;
+      height: 1px;
+      position: absolute;
+      top: 8px;
+      left: -105px;
+    }
+  }
+
+  &__pictures {
+    grid-column: 2 / -1;
+  }
+
+  &__card-product-slider {
+    grid-column: 1 / -1;
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-left: 0;
+    }
+
+    &--all-product {
+      margin: 0 auto;
+      margin-top: 30px;
+      
+      @include onTablet {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  &__folder {
+    @include marginTopSection;
+  }
+}

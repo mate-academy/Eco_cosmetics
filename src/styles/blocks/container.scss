@@ -1,0 +1,27 @@
+.container {
+  @include gridRules;
+  @include padddingInline;
+
+  &--header {
+    padding-inline: 0;
+
+    @include onTablet {
+      --column-count: 6;
+      column-gap: 30px;
+      padding-inline: 27px;
+    }
+
+    @include onDesktop {
+      --column-count: 12;
+      padding-inline: 50px;
+    }
+  }
+
+  &--shop {
+    gap: 0;
+  }
+
+  &--contact-us {
+    margin-bottom: 100px;
+  }
+}

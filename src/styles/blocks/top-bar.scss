@@ -1,0 +1,45 @@
+.top-bar {
+  display: grid;
+  --column--count: 1;
+  grid-template-columns: repeat(var(--column-count), 1fr);
+  column-gap: 20px;
+  padding-top: 24px;
+  padding-inline: 20px;
+  min-width: 320px;
+  width: 100%;
+
+  box-sizing: border-box;
+
+  @include onTablet {
+    --column-count: 6;
+    column-gap: 30px;
+    padding-inline: 27px;
+    margin: 0 auto;
+  }
+
+  @include onDesktop {
+    --column-count: 12;
+    column-gap: 20px;
+    padding-inline: 50px;
+    max-width: 1280px;
+  }
+
+  &__logo {
+    grid-column: 1 / 2;
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      column-gap: 12px;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__nav {
+    grid-column: 1/-1;
+
+    @include onDesktop {
+      grid-column: 7/-1;
+    }
+  }
+}
