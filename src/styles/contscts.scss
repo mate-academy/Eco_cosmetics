@@ -4,6 +4,17 @@
   &__wrapper {
     @include forWrapper;
     margin-bottom: 100px;
+
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__top {
+    @include onTablet {
+      width: 342px;
+    }
   }
 
   &__title {
@@ -26,6 +37,7 @@
   &__input {
     box-sizing: border-box;
     outline: none;
+    border-radius: 0;
     background-color: transparent;
     border: transparent;
     border-bottom: 1px solid $c-light-gray;
@@ -53,5 +65,14 @@
 
   &__btn {
     @include forButton;
+  }
+
+  &__bottom {
+    @include onTablet {
+      width: 342px;
+      background-image: url(..//images/tablet/bird2.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
 }

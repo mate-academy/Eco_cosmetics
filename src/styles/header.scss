@@ -1,38 +1,62 @@
 .header {
-  // height: 100vh;
-  // max-height: 568px;
+  &__wrapper {
+    height: 553px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-  // @include onTablet {
-  //   display: flex;
-  //   justify-content: center;
-  // }
+    @include onTablet {
+      height: 856px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 20px;
+      height: 582px;
+    }
+  }
 
   &__center {
+    display: block;
+    width: 320px;
+    height: 267px;
     background-image: url(..//images/mobile/1.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 320px;
-    height: 267px;
     margin: 0 auto;
 
     @include onTablet {
-      background-image: url(..//images/tablet/jars.png);
       width: 714px;
       height: 500px;
+      background-image: url(..//images/tablet/jars.png);
+    }
+
+    @include onDesktop {
+      width: 580px;
+      height: 451px;
+      background-position: right;
+      margin-left: 0;
     }
   }
 
   &__bottom {
     @include paddingInLine;
     @include forWrapper;
-    margin-top: 25px;
 
     @include onTablet {
       display: flex;
       flex-direction: column;
-      // justify-content: center;
       align-items: center;
+    }
+
+    @include onDesktop {
+      align-items: start;
+      width: 480px;
+      padding: 0;
+      margin: 0;
+      margin-left: 150px;
     }
   }
 
@@ -47,6 +71,13 @@
       width: 466px;
       font-size: 36px;
       line-height: 54px;
+    }
+
+    @include onDesktop {
+      width: 480px;
+      font-size: 60px;
+      line-height: 78px;
+      text-align: left;
     }
   }
 

@@ -9,13 +9,13 @@
   </head>
   <body class="body">
     <header class="header" id="header">
-      <div class="header__wrapper">
-        <nav class="nav">
-          <a href="#menu" class="icon icon--menu"></a>
-          <a href="#" class="icon icon--logo"></a>
-          <a href="#product-card" class="icon icon--shop"></a>
-        </nav>
+      <nav class="nav">
+        <a href="#menu" class="icon icon--menu"></a>
+        <a href="#" class="icon icon--logo"></a>
+        <a href="#shop" class="icon icon--shop"></a>
+      </nav>
 
+      <div class="header__wrapper">
         <div class="header__center"></div>
 
         <div class="header__bottom">
@@ -57,12 +57,12 @@
         <a href="#aside__shop-card" class="icon icon--shop"></a>
       </nav>
 
-      <div class="product-card__top__wrapper">
-        <h3 class="product-card__title">Hydrophilic oil</h3>
+      <div class="product-card__top__wrapper product-card__wrapper--mobile--hidden">
+        <h3 class="product-card__title" id="product-card--face">Hydrophilic oil</h3>
         <p class="product-card__price">160 UAH</p>
       </div>
 
-      <div class="product-card__wrapper">
+      <div class="product-card__wrapper product-card__wrapper--mobile--hidden">
         <img
           src="./images/mobile/2.png"
           alt="Hydrophilic oil"
@@ -72,9 +72,23 @@
         <a href="#" class="product-card__link">add to bag</a>
       </div>
 
+      <div class="product-card__wrapper product-card__wrapper--tablet--hidden" id="product-card--hair">
+        <img
+          src="./images/tablet/flower.png"
+          alt="Almond Shampoo with Lavender Oil"
+          class="product-card__image"
+        >
+
+        <h3 class="product-card__subtitle">Almond Shampoo with Lavender Oil</h3>
+        <p class="product-card__price">70 UAH</p>
+        <p class="product-card__price product-card__price--black">30 g</p>
+
+        <a href="#" class="product-card__link">add to bag</a>
+      </div>
+
       <div class="product-card__bottom__wrapper">
-        <p class="product-card__description">Ingredients: cocosulfate, aloe hydrolate, sweet almond oil, wheat proteins, chamomile grass, lavender essential oil.</p>
-        <p class="product-card__description">Application: foam the shampoo in your hands and apply foam on the hair or draw a block over wet hair, foam, massage, rinse, apply balm or conditioner.</p>
+        <p class="product-card__description"><span class="product-card__description--accent">Ingredients:</span> cocosulfate, aloe hydrolate, sweet almond oil, wheat proteins, chamomile grass, lavender essential oil.</p>
+        <p class="product-card__description"><span class="product-card__description--accent">Application:</span> foam the shampoo in your hands and apply foam on the hair or draw a block over wet hair, foam, massage, rinse, apply balm or conditioner.</p>
       </div>
     </aside>
 
@@ -103,10 +117,10 @@
         <div class="shop__wrapper">
           <h2 class="shop__title">shop</h2>
           <nav class="shop__nav">
-            <a href="#face" class="shop__nav__link">face</a>
-            <a href="#body" id="body" class="shop__nav__link">body</a>
-            <a href="#hair" id="hair" class="shop__nav__link">hair</a>
-            <a href="#candles" id="candles" class="shop__nav__link">candles</a>
+            <a href="#product-card--face" class="shop__nav__link">face</a>
+            <a href="#product-card" id="body" class="shop__nav__link">body</a>
+            <a href="#product-card--hair" id="hair" class="shop__nav__link">hair</a>
+            <a href="#product-card" id="candles" class="shop__nav__link">candles</a>
           </nav>
 
           <div class="shop__cards">
@@ -136,22 +150,24 @@
               </div>
             </div>
           </div>
-          
+
           <a href="#" class="shop__link">all products</a>
         </div>
       </section>
 
       <section class="creators" id="creators">
         <div class="creators__wrapper">
-          <h2 class="creators__title">about the<br>creators</h2>
-          <p>My name is Victoria, I’m a master at candle making and natural cosmetics. In the past, a cynologist, was engaged in herbs, made layouts on the Tarot.</p>
-          <br>
+          <div class="creators__wrapper__top">
+            <h2 class="creators__title">about the creators</h2>
+            <p>My name is Victoria, I’m a master at candle making and natural cosmetics. In the past, a cynologist, was engaged in herbs, made layouts on the Tarot.</p>
+            <p class="creators__description">I am also a volunteer to save wild birds in distress, a consultant to the Phoenix Wildlife Rehabilitation Center, a member of the Society for the Conservation of Birds of Ukraine with the support of Birdlife International.</p>
 
-          <p class="creators__description">I am also a volunteer to save wild birds in distress, a consultant to the Phoenix Wildlife Rehabilitation Center, a member of the Society for the Conservation of Birds of Ukraine with the support of Birdlife International.</p>
+            <a href="#" class="creators__link">learn more</a>
 
-          <a href="#" class="creators__link">learn more</a>
+            <a href="#" class="creators__btn">to contact us</a>
+          </div>
 
-          <a href="#" class="creators__btn">to contact us</a>
+          <div class="creators__image"></div>
         </div>
       </section>
 
@@ -185,71 +201,77 @@
 
       <section class="contacts" id="contacts">
         <div class="contacts__wrapper">
-          <h2 class="contacts__title">contact us</h2>
+          <div class="contacts__top">
+            <h2 class="contacts__title">contact us</h2>
 
-          <p class="contacts__description">We will help you choose a product that suits you and answer your other questions</p>
+            <p class="contacts__description">We will help you choose a product that suits you and answer your other questions</p>
 
-          <form
-            onsubmit="this.reset(); return false;"
-            action="#"
-          >
-            <label for="form" class="contacts__form">
-              <input
-                class="contacts__input"
-                type="text"
-                placeholder="Your Name"
-                required
-              >
+            <form
+              onsubmit="this.reset(); return false;"
+              action="#"
+            >
+              <label for="form" class="contacts__form">
+                <input
+                  class="contacts__input"
+                  type="text"
+                  placeholder="Your Name"
+                  required
+                >
 
-              <input
-                class="contacts__input"
-                type="email"
-                id="email"
-                pattern=".+@example\.com"
-                size="30"
-                placeholder="E-Mail"
-                required
-              >
+                <input
+                  class="contacts__input"
+                  type="email"
+                  id="email"
+                  pattern=".+@example\.com"
+                  size="30"
+                  placeholder="E-Mail"
+                  required
+                >
 
-              <input
-                class="contacts__input"
-                type="tel"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                placeholder="Phone Number"
-                required
-              >
+                <input
+                  class="contacts__input"
+                  type="tel"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  placeholder="Phone Number"
+                  required
+                >
 
-              <textarea
-                id="message"
-                type="text"
-                class="contacts__input contacts__input--message"
-              >Your Message
-              </textarea>
-            </label>
+                <textarea
+                  id="message"
+                  type="text"
+                  class="contacts__input contacts__input--message"
+                >Your Message
+                </textarea>
+              </label>
 
-            <button type="submit" class="contacts__btn">send a message</button>
-          </form>
+              <button type="submit" class="contacts__btn">send a message</button>
+            </form>
+          </div>
+
+          <div class="contacts__bottom"></div>
         </div>
       </section>
     </main>
 
     <footer class="footer" id="footer">
       <div class="footer__wrapper">
-        <nav class="footer__nav">
-          <ul class="footer__nav__list">
-            <li><a href="#shop" class="footer__nav__list__item">Shop</a></li>
+        <div class="footer__top">
+          <nav class="footer__nav">
+            <ul class="footer__nav__list">
+              <li><a href="#shop" class="footer__nav__list__item">Shop</a></li>
 
-            <li><a href="#contact" class="footer__nav__list__item">Contact</a></li>
+              <li><a href="#contact" class="footer__nav__list__item">Contact</a></li>
 
-            <li><a href="#about" class="footer__nav__list__item">About</a></li>
-          </ul>
-        </nav>
+              <li><a href="#about" class="footer__nav__list__item">About</a></li>
+            </ul>
+          </nav>
 
-        <div class="footer__socials">
-          <ul class="footer__socials__list">
-            <li><a href="https://www.facebook.com/" class="footer__socials__list__item icon icon--facebook"></a></li>
-            <li><a href="https://www.instagram.com/" class="footer__socials__list__item icon icon--instagram"></a></li>
-          </ul>
+          <div class="footer__socials">
+            <ul class="footer__socials__list">
+              <li><a href="https://www.facebook.com/" class="footer__socials__list__item icon icon--facebook"></a></li>
+              <li><a href="https://www.instagram.com/" class="footer__socials__list__item icon icon--instagram"></a></li>
+            </ul>
+          </div>
         </div>
 
         <div class="footer__contacts">
@@ -261,8 +283,8 @@
           </ul>
         </div>
 
-        <p class="footer__right">&copy; 2019 witch of mountain winds</p>
       </div>
+      <p class="footer__right">&copy; 2019 witch of mountain winds</p>
     </footer>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
