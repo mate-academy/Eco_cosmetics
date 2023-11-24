@@ -1,0 +1,152 @@
+.about-brand {
+  height: 100%;
+  position: relative;
+  max-width: 100vw;
+
+  &__center {
+    margin: 0 auto;
+
+    @include onTablet {
+      margin: auto 0;
+    }
+  }
+
+  &__wrapper {
+    height: inherit;
+
+    @include contentPaddingInLine;
+   
+    @include pageGrid;
+  }
+
+  &__content {
+    position: relative;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: span 3;
+      grid-row: 1/-1;
+    }
+
+    @include onDesktop-small {
+      grid-column: 2/6;
+    }
+  }
+  
+  &__text--1 {
+    margin: 0;
+    width: 342px;
+    height: 216px;
+    text-align: left;
+
+    @include aboutText;
+
+    @include onDesktop-small {
+      height: 192px;
+    }
+  }
+
+  &__text--2 {
+    display: none;
+
+    @include onDesktop-small {
+      display: block;
+      height: 120px;
+      margin: 0;
+      margin-block: 30px 40px;
+    }
+  }
+
+  &__picture--1 {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+      grid-column: span 3;
+    }
+
+    @include onDesktop-small {
+      width: 100%;
+      grid-column: 7/11;
+    }
+  }
+
+  &__img--1 {
+    width: 100%;
+    transition: transform $effectDuration linear;
+
+    &:hover {
+      @include hover(transform, scale(1.05));
+    }
+
+    @include onDesktop-small {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__picture--2 {
+    display: none;
+
+    @include onDesktop-small {
+      display: block;
+      margin-top: 99px;
+      
+      width: 180px;
+      height: 430px;
+      grid-column: 11/13;
+    }
+  }
+
+  &__img--2 {
+    width: 100%;
+    height: 100%;
+    transition: transform $effectDuration;
+
+    &:hover {
+      @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__line-text {
+    display: none;
+
+    @include onDesktop-small {
+
+      @include leftVerticalText;
+      bottom: 78%;
+      left: -60%;
+    }
+
+    @include onDesktop-large {
+      left: -60%;
+      bottom: 78%;
+    }
+  }
+
+  &__line-text::before {
+    @include lineTextBefore;
+    margin-right: -55%;
+  }
+
+  &__left-text {
+    @include leftVerticalTextStyle;
+  }
+}
+
+.text-width {
+  width: 280px;
+
+  @include onTablet {
+    width: 342px;
+  }
+  
+  @include onDesktop-small {
+    width: 380px;
+  }
+
+  &__box {
+    position: fixed;
+  }
+}

@@ -1,6 +1,167 @@
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop-small {
+  @media (min-width: $desktop-min-width-first) {
+    @content;
+  }
+}
+
+@mixin onDesktop-large {
+  @media (min-width: $desktop-min-width-second) {
+    @content;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} 0.5s;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin contentPaddingInLine() {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop-small {
+    margin-inline: auto;
+    padding-inline: 50px;
+  }
+
+  @include onDesktop-large {
+    margin-inline: auto;
+    padding-inline: 130px;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop-small {
+    --columns: 12;
+    column-gap: 20px;
+
+  }
+
+  @include onDesktop-large {
+    --columns: 12;
+    column-gap: 20px;
+  }
+}
+
+@mixin buttons() {
+  padding: 0;
+  display: flex;
+  width: 280px;
+  height: 60px;
+  background-color: $color-dark-grey;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all $effectDuration;
+}
+
+@mixin buttonsHover() {
+  background-color: $main-color;
+  border: 1px solid $color-dark-grey;
+  box-shadow: 2px 3px 4px 0 rgba(51, 51, 51, 1);
+}
+
+@mixin fontStyleButtons {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: $bold-font;
+  color: $color-ligth-grey;
+  font-size: 16px;
+  line-height: 20.8px;
+  transition: color $effectDuration;
+}
+
+@mixin aboutText {
+  font-weight: $small-font;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-dark-grey;
+
+  @include onDesktop-small {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@mixin learnMore () {
+  position: relative;
+  display: block;
+  width: 86px;
+  text-decoration: none;
+  color: $color-green;
+  text-transform: uppercase;
+  
+  font-weight: $middle-font;
+  font-size: 14px;
+  line-height: 18.2px;
+}
+
+@mixin learnMoreHover() {
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    display: block;
+    height: 1px;
+    width: 86px;
+    background-color: $color-green;
+  
+    transition: all $effectDuration;
+    transform: scale(0);
+    transform-origin: left;
+  }
+  
+  &:hover::after {
+    transform: scale(1);
+    box-shadow: 2px 3px 4px 0 rgba(51, 51, 51, 1);
+  }
+}
+
+@mixin leftVerticalText () {
+  display: block;
+  position: absolute;
+  transform: rotate(-90deg);
+
+  text-decoration: none;
+}
+
+@mixin lineTextBefore() {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  height: 1px;
+  background-color: $color-green;
+  position: relative;
+  right: 165px;
+}
+
+@mixin leftVerticalTextStyle() {
+  text-decoration: none;
+  font-weight: $middle-font;
+  font-size: 14px;
+  line-height: 18.2;
+  color: $color-green;
 }
