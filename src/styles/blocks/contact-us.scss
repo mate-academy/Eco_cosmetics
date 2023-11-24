@@ -1,6 +1,14 @@
 .contact-us {
   height: 100%;
   max-width: 100vw;
+
+  &__center {
+    margin: 0 auto;
+
+    @include onTablet {
+      margin: auto 0;
+    }
+  }
  
   &__wrapper {
 
@@ -23,6 +31,14 @@
       display: flex;
       flex-direction: column;
       justify-content: left;
+    }
+  }
+
+  &__form {
+    width: 280px;
+
+    @include onTablet {
+      width: 342px;
     }
   }
 
@@ -189,10 +205,6 @@
 
   &:focus {
     border-bottom: 1px solid $color-green;
-  }
-
-  &:invalid {
-    border-bottom: 1px solid #eb5757;
   }
 
   @include onDesktop-small {
