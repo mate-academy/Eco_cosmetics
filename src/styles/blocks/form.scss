@@ -4,10 +4,14 @@
 
   &__button {
     align-self: center;
-    margin-top: 50px;
+    margin-top: 30px;
 
     @include onTablet {
       align-self: flex-start;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
     }
   }
 
@@ -15,29 +19,31 @@
     background-color: $color-background;
     border: none;
     border-bottom: solid 1px #828282 ;
-    margin-top: 15px;
-    padding-bottom: 5px;
     color: #828282;
     font-size: 14px;
     font-weight: 500;
     line-height: 150%;
+
+    margin-top: 15px;
+    padding-bottom: 5px;
 
     @include onDesktop {
       margin-top: 40px;
       padding-bottom: 10px;
     }
 
-    &:valid {
-      color: $color-text-green;
-      border-bottom: solid 1px $color-text-green ;
-    }
+    // &:valid {
+    //   color: $color-text-green;
+    //   border-bottom: solid 1px $color-text-green ;
+    // }
 
-    &:invalid {
-      color: #eb5757;
-      border-bottom: solid 1px #eb5757 ;
-    }
+    // &:invalid {
+    //   color: #eb5757;
+    //   border-bottom: solid 1px #eb5757 ;
+    // }
 
     &::placeholder {
+      font-family: Avenir, sans-serif;
       color: #828282;
       font-size: 14px;
       font-weight: 500;
@@ -52,6 +58,13 @@
 
     &--textarea {
       resize: none;
+      font-size: 12px;
+      padding: 0;
+
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+      }
     }
   }
 }
