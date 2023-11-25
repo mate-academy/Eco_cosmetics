@@ -3,8 +3,12 @@
   display: flex;
   flex-direction: column;
 
-  &__content {
+  @include desktop {
     height: 100%;
+  }
+
+  &__content {
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,9 +21,7 @@
       display: grid;
       column-gap: 20px;
       grid-template-columns: repeat(12, 1fr);
-
       grid-template-areas: "el1 el2";
-
     }
   }
 
@@ -30,8 +32,11 @@
     background-size: cover;
     background-position: center;
 
+    @include tablet {
+      margin: 0 27px;
+    }
+
     @include desktop {
-      grid-area: el2;
       max-height: 451px;
       background-size: cover;
       background-position: 0 47px;
@@ -72,7 +77,7 @@
     margin: 10px 0 30px;
 
     @include desktop {
-      text-align-last: left;
+      text-align: left;
     }
   }
 
