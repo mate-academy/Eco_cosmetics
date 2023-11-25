@@ -1,0 +1,63 @@
+.description {
+  position: relative;
+
+  &__main {
+    @include desktop {
+      padding: 100px 0;
+    }
+  }
+
+  &__text {
+    @extend %text;
+    align-self: center;
+
+    @include mobile {
+      display: none;
+      text-align: left;
+    }
+
+    @include tablet {
+      display: none;
+      text-align: left;
+    }
+
+    @include desktop {
+      &::before {
+        content: "";
+        border-top: 1px solid rgba(52, 79, 16, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 45%;
+      }
+    }
+  }
+
+  &__title {
+    @extend %h5;
+    align-self: center;
+    text-transform: uppercase;
+    color: $green-1-color;
+
+    @include tablet {
+      text-align: center;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    @include desktop {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 1.2px;
+
+      &::before {
+        content: "";
+        border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.shop {
+  &__content {
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    row-gap: 15px;
+    column-gap: 34px;
+    flex-wrap: wrap;
+    margin-bottom: 27px;
+  }
+
+  &__link {
+    @extend %text2;
+    color: $gray-text-color;
+    position: relative;
+
+    &:focus,
+    &:hover {
+      color: rgb(51, 51, 51);
+    }
+
+    &:focus::before {
+      content: "";
+      border-bottom: 2px solid $gray-1-color;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  &__card:last-child {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}
+
+.card {
+  flex-basis: calc(50% - 10px);
+
+  @include mobile {
+    flex-basis: 100%;
+  }
+
+  &__image {
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 83%;
+    margin-bottom: 20px;
+
+    @include mobile {
+      margin: 0 -20px 20px;
+    }
+
+    &-1 {
+      background-image: url("../images/img_shop_1.png");
+    }
+
+    &-2 {
+      background-image: url("../images/img_shop_2.png");
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: $gray-1-color;
+
+    @include tablet {
+      margin-bottom: 15px;
+    }
+
+    @include desktop {
+      margin-bottom: 15px;
+    }
+
+    & > a {
+      transition: all 0.3s;
+
+      &:hover {
+        font-size: rem(20);
+        color: rgb(119, 119, 119);
+      }
+    }
+  }
+
+  &__price {
+    font-size: rem(18);
+    font-weight: 500;
+    line-height: rem(27);
+    letter-spacing: rem(0.9);
+    text-transform: uppercase;
+  }
+}

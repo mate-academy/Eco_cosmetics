@@ -1,0 +1,73 @@
+.creators {
+  &__text {
+    @extend %text;
+
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+
+      @include tablet {
+        margin-bottom: 15px;
+      }
+
+      @include desktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 30px;
+      display: none;
+
+      @include tablet {
+        margin-bottom: 20px;
+      }
+
+      @include desktop {
+        margin-bottom: 20px;
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin-bottom: 35px;
+    @extend %decorative-text;
+    text-transform: uppercase;
+    color: $green-1-color;
+    position: relative;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      margin-top: 10px;
+      display: block;
+      height: 2px;
+      width: 0;
+      background-color: $green-1-color;
+      transition: all 0.3s ease-in;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__image {
+    @include mobile {
+      display: none;
+    }
+
+    background-image: url("../images/img_creators.png");
+    background-position: center;
+    background-size: cover;
+  }
+}

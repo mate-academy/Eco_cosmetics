@@ -1,0 +1,140 @@
+.powder {
+  &__main {
+    @include mobile {
+      display: grid;
+      column-gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include mobile {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__link {
+    display: none;
+    margin-bottom: 35px;
+    @extend %decorative-text;
+    text-transform: uppercase;
+    color: $green-1-color;
+    position: relative;
+    width: max-content;
+
+    @include mobile {
+      &--mobile {
+        display: inline-block;
+        margin-top: 30px;
+      }
+    }
+
+    @include tablet {
+      margin-bottom: 40px;
+
+      &--dAndt {
+        display: inline-block;
+      }
+    }
+
+    @include desktop {
+      margin-bottom: 40px;
+
+      &--dAndt {
+        display: inline-block;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      margin-top: 10px;
+      display: block;
+      height: 2px;
+      width: 0;
+      background-color: $green-1-color;
+      transition: all 0.3s ease-in;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__icon {
+    right: 0;
+    top: 0;
+    background-image: url("../images/icons/union.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 100%;
+
+    @include tablet {
+      padding-bottom: 80%;
+    }
+
+    @include mobile {
+      padding-bottom: 200%;
+      width: 70%;
+      margin-right: -20px;
+      justify-self: end;
+      background-size: cover;
+      background-position: left;
+    }
+  }
+
+  &__list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @include mobile {
+      margin-right: 30px;
+    }
+  }
+
+  &__item {
+    $width-vector: 71px;
+
+    @include tablet {
+      $width-vector: 50px;
+    }
+
+    text-align: right;
+    position: relative;
+    @extend %text;
+    color: $gray-1-color;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: $width-vector;
+      height: 1px;
+      background-color: $gray-1-color;
+      right: 0;
+      top: 50%;
+      transform: translateX(calc(100% + 20px)) translateY(-50%);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $gray-1-color;
+      right: 0;
+      top: 50%;
+      transform: translateX($width-vector + 20px) translateY(-50%);
+    }
+  }
+}
