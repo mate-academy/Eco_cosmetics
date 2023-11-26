@@ -12,6 +12,12 @@
     padding-right: 0;
   }
 
+  @include onDesktop {
+    @include grid;
+
+    align-items: flex-start;
+  }
+
   &__img {
     width: 100%;
     display: block;
@@ -25,43 +31,85 @@
       width: 100%;
       margin: 0 0 25px;
     }
-  }
 
-  &__heading {
-    text-align: center;
-    align-items: center;
-    margin-bottom: 10px;
-    animation: slideRight 2s;
-    animation-delay: 5s;
-
-    @include onTablet {
-      @include h3;
-      grid-column: 2 / 6;
+    @include onDesktop {
+      display: flex;
+      grid-column: 7 / -1;
     }
   }
 
-  &__text {
-    text-align: center;
-    margin-bottom: 30px;
-    animation: slideLeft 2s;
-    animation-delay: 5s;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
 
     @include onTablet {
+      @include grid;
+
+      padding: 0;
+
       grid-column: 2 / 6;
     }
-  }
+    @include onDesktop {
+      align-items:flex-start;
+      grid-row: 1;
+      grid-column: 1 / 7;
+    }
 
-  &__button {
-    @include main-button-text;
-    width: 80%;
-    animation: slideDown 2s;
-    animation-delay: 5s;
+    &__heading {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      margin-bottom: 10px;
+      animation: slideRight 2s;
+      animation-delay: 5s;
 
-    margin-bottom: 0;
+      @include onTablet {
+        @include h3;
+        grid-column: 1 / -1;
+      }
 
-    @include onTablet {
+      @include onDesktop {
+        @include h1;
+        width: 100%;
+        grid-column: 3 / -1;
+
+        margin-bottom: 30px;
+      }
+    }
+
+    &__text {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: slideLeft 2s;
+      animation-delay: 5s;
+
+      @include onTablet {
+        grid-column: 2 / 6;
+      }
+      @include onDesktop {
+        text-align: left;
+        grid-column: 3 / -1;
+
+        margin-bottom: 50px;
+      }
+    }
+
+    &__button {
+      @include main-button-text;
       width: 100%;
-      grid-column: 3 / 5;
+      animation: slideDown 2s;
+      animation-delay: 5s;
+
+      margin-bottom: 0;
+
+      @include onTablet {
+        grid-column: 2 / 6;
+      }
+
+      @include onDesktop {
+        grid-column: 3 / 8 ;
+      }
     }
   }
 }

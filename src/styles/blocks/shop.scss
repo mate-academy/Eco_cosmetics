@@ -1,11 +1,20 @@
 .shop {
   display: flex;
   flex-direction: column;
-  width: 100%;
 
-  padding: 0;
+  padding: 0 20px;
 
   @include onTablet {
+    padding: 0;
+    @include grid;
+  }
+
+  @include onDesktop {
+    padding-left: 50px;
+    padding-right: 50px;
+
+    margin-bottom: 200px;
+
     @include grid;
   }
 
@@ -19,6 +28,11 @@
       text-align: left;
       grid-column: 1 / 2;
     }
+
+    @include onDesktop {
+      @include h2;
+      grid-column: 2 / 4;
+    }
   }
 
   &__buttons {
@@ -26,16 +40,23 @@
     flex-direction: row;
     justify-content: space-between;
 
-    padding: 0 20px 0;
     margin-bottom: 25px;
 
     @include onTablet {
-      padding: 0;
       grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
     }
 
     &__button {
       position: relative;
+
+      @include onDesktop {
+        @include h5;
+        color: $gray-underline;
+      }
 
       &.__active {
         @include buttonUnderLine;
@@ -46,21 +67,26 @@
 
   &__products__cards {
     display: flex;
+    justify-content: center;
 
     margin-bottom: 30px;
 
     @include onTablet {
-      padding: 0;
       grid-column: span 6;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
     }
   }
 
   &__buttons__button__allProd {
-
-    margin: 0 20px 0;
     @include onTablet {
-      margin: 0;
       grid-column: 3 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 9;
     }
   }
 }

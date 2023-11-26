@@ -5,11 +5,59 @@
 
   &__title {
     padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 
     @include onTablet {
       @include grid;
+      padding: 0;
 
       grid-column: 3 / 5;
+    }
+
+    @include onDesktop {
+      @include grid;
+      height: 346px;
+
+      padding-left: 50px;
+      padding-right: 50px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 45%;
+        height: 1px;
+        background-color: $green-color;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        height: 1px;
+        background-color: $green-color;
+      }
+    }
+
+    &__article {
+      display: none;
+      @include text16;
+
+      @include onDesktop {
+        display: flex;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        text-align: justify;
+
+        grid-column: 2 / 6;
+      }
     }
 
     &__text {
@@ -20,12 +68,26 @@
         text-align: center;
         grid-column: 2 / 6;
       }
+
+      @include onDesktop {
+        grid-column: 7 / 11;
+
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        text-align: left;
+      }
     }
 
     margin-bottom: 100px;
 
     @include onTablet {
       margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
     }
   }
 
@@ -60,4 +122,8 @@
   &__contact-us {
     margin-bottom: 100px;
   }
+}
+
+.container {
+  margin: 0;
 }

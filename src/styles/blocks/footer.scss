@@ -9,6 +9,12 @@
     @include grid;
   }
 
+  @include onDesktop {
+    @include grid;
+
+    padding-top: 60px;
+  }
+
   &__nav {
     display: flex;
     flex-direction: column;
@@ -20,12 +26,21 @@
       grid-row: 1;
     }
 
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+
     &__list {
       display: flex;
       flex-direction: column;
       text-align: left;
 
       gap: 11px;
+
+      @include onDesktop {
+        flex-direction: row;
+        gap: 40px;
+      }
 
       &__item {
         justify-content: center;
@@ -53,6 +68,10 @@
       grid-row: 2;
     }
 
+    @include onDesktop {
+      grid-column: 8 / -1;
+    }
+
     &__list {
       display: flex;
       flex-direction: row;
@@ -69,6 +88,10 @@
     @include onTablet {
       grid-column: 4 / -1;
       grid-row: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
     }
 
     &__list {
@@ -95,6 +118,10 @@
   &__copyright {
     display: flex;
     align-self: center;
+
+    &__text {
+      @include footer-text;
+    }
 
     @include onTablet {
       grid-column: 1 / 4;

@@ -5,6 +5,15 @@
   padding: 0 20px;
 
   @include onTablet {
+    padding: 0;
+    @include grid;
+  }
+
+  @include onDesktop {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 130px;
+
     @include grid;
   }
 
@@ -17,6 +26,10 @@
       grid-column: 1 / 4;
       grid-row: 1;
     }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
   }
 
   &__article {
@@ -28,12 +41,20 @@
       grid-column: 1 / 4;
       grid-row: 2;
     }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
   }
 
   &__form {
     @include onTablet {
       grid-column: 1 / 4;
       grid-row: 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
     }
   }
 
@@ -51,6 +72,10 @@
 
       grid-column: 4 / -1;
       grid-row: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
     }
   }
 }

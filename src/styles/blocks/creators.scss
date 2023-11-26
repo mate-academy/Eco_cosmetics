@@ -5,12 +5,26 @@
   padding: 0 20px;
 
   @include onTablet {
+    padding: 0;
+    @include grid;
+  }
+
+  @include onDesktop {
+    padding-left: 50px;
+    padding-right: 50px;
+
+    margin-bottom: 200px;
+
     @include grid;
   }
 
   &__text {
     @include onTablet {
       grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
     }
 
     &__heading {
@@ -21,6 +35,12 @@
       @include onTablet {
         grid-column: 1 /4;
       }
+
+      @include onDesktop {
+        @include h2;
+
+        margin-bottom: 35px;;
+      }
     }
 
     &__article {
@@ -29,10 +49,30 @@
       &-a1 {
         text-align: justify;
         margin-bottom: 20px;
+
+        @include onDesktop {
+          @include text16;
+          margin-bottom: 30px;
+        }
       }
 
       &-a2 {
         text-align: justify;
+
+        @include onDesktop {
+          @include text16;
+          margin-bottom: 30px;
+        }
+      }
+
+      &-a3 {
+        display: none;
+        text-align: justify;
+
+        @include onDesktop {
+          @include text16;
+          display: flex;
+        }
       }
     }
 
@@ -42,6 +82,10 @@
       width: fit-content;
 
       margin-bottom: 25px;
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
     }
 
     &__contact-button {
@@ -69,6 +113,10 @@
       background-position: center;
 
       grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
     }
   }
 }

@@ -10,12 +10,87 @@
     padding: 15px 0;
   }
 
+  @include onDesktop {
+    @include grid;
+    margin-bottom: 30px;
+    padding: 40px 0;
+  }
+
   &__logo {
     @include hover(scale, 1.1);
+    display: flex;
+    // width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 12px;
 
     &-img {
       width: 24px;
       height: 24px;
+
+      @include onDesktop {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+
+    &__title {
+      @include text2;
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        width: 100%;
+      }
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      grid-column: 7 / 10;
+    }
+    &__list {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+
+      &__item {
+        @include hover(border-bottom, $green-color);
+        @include hoverUnderLine;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+
+        &::after {
+          width: 110%;
+        }
+
+        &--link {
+          @include hover(scale, 1.1);
+          @include topbarLink;
+        }
+      }
+    }
+  }
+
+  &__shoppingbag {
+    @include onDesktop {
+      display: flex;
+      justify-content: end;
+      grid-column: 12;
     }
   }
 }
