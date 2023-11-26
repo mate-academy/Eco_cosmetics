@@ -1,0 +1,61 @@
+.motivation {
+  position: relative;
+  &__content {
+    @include pageGrid;
+  }
+  &__info-text {
+    display: none;
+    text-align: left;
+    @include onDesktop {
+      display: block;
+      grid-column: 2/6;
+      align-self: start;
+      margin-bottom: 0;
+    }
+  }
+  &__main-text {
+    color: $accent-color;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: left;
+    grid-column: span 2;
+    font-size: 18px;
+    line-height: 27px;
+    margin: 0 auto;
+    width: 280px;
+    @include onTablet {
+      grid-column: 1/7;
+      text-align: center;
+    }
+    @include onDesktop {
+      text-align: left;
+      grid-column: 7/11;
+      font-size: 24px;
+      line-height: 36px;
+      margin: 0;
+      width: fit-content;
+    }
+  }
+  &__outer-border {
+    display: none;
+    @include onDesktop {
+      display: block;
+    }
+    height: 1.5px;
+    background-color: $accent-color;
+    width: 50vw;
+    position: relative;
+    &--left {
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      margin-bottom: 100px;
+    }
+    &--right {
+      left: 50%;
+      margin-top: 100px;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.tooth-powder {
+  &__content {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(2, 1 fr);
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+  &__section-title {
+    grid-column: span 2;
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+  &__learn-more-link {
+    grid-column: span 2;
+    @include onDesktop {
+      grid-column: 2/4;
+    }
+  }
+  &__sidebar--desktop {
+    display: none;
+    @include onDesktop {
+      @include verticalText;
+      &::after {
+        @include verticalLine;
+      }
+    }
+  }
+}
+
+.composition {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  @include onTablet {
+    grid-column: span 6;
+  }
+  @include onDesktop {
+    grid-column: 4/13;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: end;
+    @include onTablet {
+      grid-column: 3/4;
+    }
+    @include onDesktop {
+      grid-column: 6/8;
+    }
+  }
+  &__item {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $color-grey;
+    text-align: right;
+    margin-right: 20px;
+    white-space: nowrap;
+  }
+  &__image {
+    justify-self: end;
+    min-width: 182px;
+    min-height: 397px;
+    margin-right: -$mobile-padding;
+    background-image: url(../images/jar-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: cover;
+    @include hover(transform, scale(0.9));
+    @include onTablet {
+      justify-self: end;
+      width: 398px;
+      height: 397px;
+      margin-right: -$mobile-padding;
+      background-image: url(../images/jar-tablet.svg);
+    }
+    @include onDesktop {
+      margin-right: 0;
+      width: 480px;
+      background-image: url(../images/jar-desktop.svg);
+    }
+  }
+}
