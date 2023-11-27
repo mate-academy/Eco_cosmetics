@@ -1,0 +1,194 @@
+.creators {
+  @include onPhone {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    gap: 20px;
+    max-width: 280px;
+    margin: 0 20px 100px;
+  }
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 94px);
+    gap: 30px;
+    max-width: 718px;
+    margin: 0 27px 100px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 80px);
+    gap: 20px;
+    max-width: 1180px;
+    margin: 0 50px 200px;
+  }
+
+  &__left-size {
+    width: 180px;
+    margin: 0;
+
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+      grid-row: 1/4;
+      grid-column: 1/2;
+    }
+  }
+
+  &__container {
+
+    @include onTablet {
+      grid-row: 1;
+      grid-column: 1/3;
+    }
+
+    @include onDesktop {
+      grid-row: 1;
+      grid-column: 2/5;
+    }
+  }
+
+  &__title {
+    width: 342px;
+    color: #344f10;
+    font-family: Poppins, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+
+    @include onPhone {
+      font-size: 24px;
+    }
+
+    @include onTablet {
+      font-size: 26px;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+    }
+  }
+
+  &__describe {
+    margin: 0;
+  }
+
+  &__text {
+    color: #333;
+    font-family: Poppins, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0 0 30px;
+
+    @include onPhone {
+      width: 280px;
+      font-size: 14px;
+    }
+
+    @include onTablet {
+      width: 342px;
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      width: 380px;
+      font-size: 16px;
+    }
+
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text-last {
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__link {
+    display: block;
+  }
+
+  &__item {
+    vertical-align: 1px solid #333;
+    width: 86px;
+    box-sizing: border-box;
+    color: #344f10;
+    font-family: Poppins, Helvetica, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 0 10px;
+  }
+
+  &__button {
+    margin-top: 25px;
+  }
+
+  &__photo {
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: block;
+      grid-row: 1;
+      grid-column: 4/7;
+      width: 342px;
+      height: 440px;
+      background-image: url(../images/creator/creator.png);
+    }
+
+    @include onDesktop {
+      display: block;
+      grid-row: 1;
+      grid-column: 7/13;
+      background-image: url(../images/creator/creator_Desctop.png);
+      background-size: cover;
+      width: 580px;
+      height: 659px;
+    }
+  }
+}
+
+.left-size-text {
+  font-family: Poppins, Helvetica, sans-serif;
+  font-size: 14px;
+  height: 140px;
+  width: 140px;
+  transform: rotate(-90deg);
+  color: #344f1080;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.left-size-cros {
+  height: 100px;
+  width: 1px;
+  background-color: #344f1080;
+  margin: 10px 0 0 9px;
+}
