@@ -15,19 +15,20 @@
   }
   &__image-block {
     display: none;
-    @include hover(transform, scale(1.1));
+    @include hover(transform, scale(0.9));
     @include onTablet {
       display: block;
       grid-column: span 3;
       background-image: url("../images/contact-us-picture.jpg");
       background-repeat: no-repeat;
       object-fit: cover;
-      background-position: center left;
-      background-size: auto 100%;
+      background-position: left center;
+      background-size: 100% auto;
     }
     @include onDesktop {
       grid-column: 7 / 13;
-      background-size: auto auto;
+      background-image: url("../images/contact-us-picture-desktop.jpg");
+      background-size: 100% auto;
     }
   }
   &__button {
@@ -73,4 +74,11 @@
     width: 100%;
     border-bottom: 1px solid rgba(189, 189, 189, 1);
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
 }
