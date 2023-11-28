@@ -1,0 +1,69 @@
+.sidebarPage {
+  position: relative;
+  display: flex;
+
+  padding: 0 20px;
+
+  @include onTablet {
+    @include grid;
+    grid-column: 1 / -1;
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      margin: 0;
+      grid-column: 3 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+
+    padding: 20px;
+
+    background-color: $background-page;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    overflow: hidden;
+
+    .sidebar-closer {
+      align-self: flex-end;
+      width: 25px;
+      height: 25px;
+      background-image: url(../images/icon-back.svg);
+      background-repeat: contain;
+      background-repeat: no-repeat;
+
+
+      @include hover(scale, 1.1);
+    }
+  }
+
+  .sidebarPage-active {
+    z-index: 2;
+    transform: translateX(0);
+    pointer-events: all;
+    overflow: scroll;
+  }
+}
+
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

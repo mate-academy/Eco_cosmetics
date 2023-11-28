@@ -45,15 +45,6 @@ for (let i = 0; i < links.length; i++) {
   });
 }
 
-const intro = document.getElementById('intro');
-
-intro.classList.add('visible');
-
-setTimeout(function() {
-  intro.classList.remove('visible');
-  intro.classList.add('non--visible');
-}, 5000);
-
 // work with buttons //
 const buttons = document.querySelectorAll('.shop__buttons__button');
 
@@ -103,4 +94,16 @@ document.addEventListener('DOMContentLoaded', function() {
       showMessage('Please, fill in all fields before submitting the form!');
     }
   });
+});
+
+const allProdButton = document.querySelector('.sidebarPage__button');
+const cards = document.getElementById('sidebarPage');
+const closer = cards.querySelector('.sidebar-closer');
+
+allProdButton.addEventListener('click', (event) => {
+  cards.classList.add('sidebarPage-active');
+});
+
+closer.addEventListener('click', (event) => {
+  cards.classList.remove('sidebarPage-active');
 });
