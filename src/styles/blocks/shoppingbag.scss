@@ -1,0 +1,40 @@
+.shoppingbag {
+  position: relative;
+
+  &-content {
+    position: fixed;
+    max-height: 400px;
+    top: 50px;
+    right: 50px;
+
+    @include onDesktop {
+      right: 90px;
+      top: 90px;
+    }
+
+    background-color: $background-page;
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-sizing: border-box;
+    border: 1px solid $green-color;
+    border-radius: 10px;
+    padding: 15px;
+
+    &__button {
+      height: auto;
+      width: auto;
+    }
+  }
+
+  .shoppingbag-active {
+    z-index: 2;
+    transform: scale(1);
+    pointer-events: all;
+    overflow: scroll;
+  }
+}

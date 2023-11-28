@@ -2410,11 +2410,12 @@ label {
 }
 .sidebarPage-content .sidebar-closer {
   align-self: flex-end;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   background-image: url(../images/icon-back.svg);
   background-repeat: contain;
   background-repeat: no-repeat;
+  margin-bottom: 15px;
   transition: scale 0.3s;
 }
 .sidebarPage-content .sidebar-closer:hover {
@@ -2543,6 +2544,43 @@ label {
 }
 .allProdCard__info-a2 {
   text-align: justify;
+}
+
+.shoppingbag {
+  position: relative;
+}
+.shoppingbag-content {
+  position: fixed;
+  max-height: 400px;
+  top: 50px;
+  right: 50px;
+  background-color: #e4dfd3;
+  transform: scale(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-sizing: border-box;
+  border: 1px solid #344f10;
+  border-radius: 10px;
+  padding: 15px;
+}
+@media (min-width: 1280px) {
+  .shoppingbag-content {
+    right: 90px;
+    top: 90px;
+  }
+}
+.shoppingbag-content__button {
+  height: auto;
+  width: auto;
+}
+.shoppingbag .shoppingbag-active {
+  z-index: 2;
+  transform: scale(1);
+  pointer-events: all;
+  overflow: scroll;
 }
 
 html {
