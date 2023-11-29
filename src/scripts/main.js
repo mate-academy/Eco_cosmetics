@@ -116,6 +116,8 @@ closer.addEventListener('click', (event) => {
 // shopping bag //
 const shoppingbag = document.getElementById('shoppingbag');
 const bagTriggers = document.querySelectorAll('.shoppingbag__button');
+const cartCloser
+  = document.querySelector('.shoppingbag-content__closer');
 
 bagTriggers.forEach((bagTrigger) => {
   if (bagTrigger instanceof Element) {
@@ -123,6 +125,10 @@ bagTriggers.forEach((bagTrigger) => {
       shoppingbag.classList.toggle('shoppingbag-active');
     });
   }
+});
+
+cartCloser.addEventListener('click', () => {
+  shoppingbag.classList.remove('shoppingbag-active');
 });
 
 // add to shopping bag //
@@ -144,15 +150,16 @@ const Message = function(text) {
 
   setTimeout(function() {
     document.body.removeChild(messageContainer);
-  }, 500);
+  }, 1000);
 };
 
 document.addEventListener('DOMContentLoaded', function() {
   const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-  const shoppingbagContent = document.querySelector('.shoppingbag-content');
+  const shoppingbagContent
+    = document.querySelector('.shoppingbag-content__bag');
 
-  let shoppingCart = [];
-  // let total = 0;
+  const shoppingCart = [];
+  let total = 0;
 
   addToCartButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -169,32 +176,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
       shoppingCart.push(product);
 
-      // total += product.price;
+      total += product.price;
 
       Message('Added successfully');
 
       updateShoppingCartUI();
-
-      shoppingCart = [];
     });
   });
 
   function updateShoppingCartUI() {
+    shoppingbagContent.innerHTML = '';
+
     shoppingCart.forEach(product => {
       const productItem = document.createElement('div');
 
-      productItem.classList.add('shopping-content__item');
+      productItem.classList.add('shoppingbag-content__bag__item');
       productItem.style.display = 'flex';
+      productItem.style.color = 'black';
+      productItem.style.marginBottom = '20px';
+      productItem.style.padding = '5px';
       productItem.style.flexDirection = 'row';
-      productItem.style.justifyContent = 'center';
+      productItem.style.justifyContent = 'left';
       productItem.style.alignItems = 'center';
       productItem.style.gap = '10px';
       productItem.style.width = '100%';
-      productItem.style.justifyContent = 'space-between';
+      productItem.style.borderBottom = '1px solid black';
 
       const productImg = document.createElement('img');
 
-      productImg.classList.add('shopping-content__img');
+      productImg.classList.add('shopping-content__bag__img');
       productImg.src = product.img;
       productImg.style.height = '35px';
       productImg.style.width = '35px';
@@ -208,5 +218,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
       shoppingbagContent.appendChild(productItem);
     });
+
+    if (shoppingCart.length > 0) {
+      const submitButtonContainer = document.createElement('div');
+
+      submitButtonContainer
+        .classList.add('shopping-content__submit-button-container');
+      submitButtonContainer.style.display = 'flex';
+      submitButtonContainer.style.justifyContent = 'flex-end';
+      submitButtonContainer.style.marginTop = '10px';
+      submitButtonContainer.style.width = '100%';
+
+      const submitButton = document.createElement('button');
+
+      submitButton.classList.add('shoppingbag-content__button', 'button__main');
+      submitButton.style.width = '100%';
+      submitButton.textContent = 'Submit and Pay';
+
+      const totalCost = document.createElement('div');
+
+      totalCost.classList.add('shoppingbag-content__bag__item');
+      totalCost.style.display = 'flex';
+      totalCost.style.color = 'black';
+      totalCost.style.marginBottom = '15px';
+      totalCost.style.flexDirection = 'row';
+      totalCost.style.justifyContent = 'left';
+      totalCost.style.alignItems = 'center';
+      totalCost.style.width = '100%';
+
+      totalCost.textContent = `In total: ${total} UAH`;
+
+      shoppingbagContent.appendChild(totalCost);
+
+      submitButtonContainer.appendChild(submitButton);
+      shoppingbagContent.appendChild(submitButtonContainer);
+    }
   }
 });

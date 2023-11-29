@@ -1,39 +1,48 @@
 .shoppingbag {
   position: relative;
+  display: flex;
 
   &-content {
     position: fixed;
-    max-height: 400px;
-    top: 50px;
-    right: 50px;
-
-    @include onDesktop {
-      right: 90px;
-      top: 90px;
-    }
+    max-height: 450px;
+    max-width: 250px;
+    top: 20%;
+    right: 0;
 
     background-color: $background-page;
-    transform: scale(0);
-    transform-origin: right;
+    transform: translateX(+100%);
     transition: transform 0.3s;
 
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
     box-sizing: border-box;
     border: 1px solid $green-color;
-    border-radius: 10px;
     padding: 15px;
 
-    &__button {
-      height: auto;
-      width: auto;
+    &__text {
+      margin: 10px;
+    }
+
+    &__closer {
+      width: 20px;
+      height: 20px;
+
+      margin-bottom: 15px;
+
+      background-image: url(../images/icon-back.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include hover(scale, 1.1);
+    }
+
+    &__bag {
+      color: $gray-underline;
+      margin-bottom: 15px;
     }
   }
 
   .shoppingbag-active {
     z-index: 2;
-    transform: scale(1);
+    transform: translateX(0);
     pointer-events: all;
     overflow: scroll;
   }

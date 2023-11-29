@@ -2548,37 +2548,43 @@ label {
 
 .shoppingbag {
   position: relative;
+  display: flex;
 }
 .shoppingbag-content {
   position: fixed;
-  max-height: 400px;
-  top: 50px;
-  right: 50px;
+  max-height: 450px;
+  max-width: 250px;
+  top: 20%;
+  right: 0;
   background-color: #e4dfd3;
-  transform: scale(0);
-  transform-origin: right;
+  transform: translateX(100%);
   transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
   box-sizing: border-box;
   border: 1px solid #344f10;
-  border-radius: 10px;
   padding: 15px;
 }
-@media (min-width: 1280px) {
-  .shoppingbag-content {
-    right: 90px;
-    top: 90px;
-  }
+.shoppingbag-content__text {
+  margin: 10px;
 }
-.shoppingbag-content__button {
-  height: auto;
-  width: auto;
+.shoppingbag-content__closer {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 15px;
+  background-image: url(../images/icon-back.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: scale 0.3s;
+}
+.shoppingbag-content__closer:hover {
+  scale: 1.1;
+}
+.shoppingbag-content__bag {
+  color: #bdbdbd;
+  margin-bottom: 15px;
 }
 .shoppingbag .shoppingbag-active {
   z-index: 2;
-  transform: scale(1);
+  transform: translateX(0);
   pointer-events: all;
   overflow: scroll;
 }
