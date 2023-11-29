@@ -1,4 +1,49 @@
 .section {
+  scroll-margin-top: 59px;
+
+  @include onTablet {
+    scroll-margin-top: 77px;
+  }
+
+  @include onDesktop {
+    scroll-margin-top: 112px;
+  }
+
+  &__name {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-items: start;
+      width: max-content;
+      grid-column: 1 / 3;
+      grid-row: 1;
+
+      &-text {
+        position: relative;
+        top: 50%;
+        left: -95%;
+        transform-origin: right center;
+        transform: rotateZ(-90deg);
+  
+        color: $color-text-green;
+        text-transform: lowercase;
+
+        &::before {
+          position: absolute;
+          display: block;
+          background-color: $color-text-green;
+          content: "";
+          width: 100px;
+          height: 1px;
+          top: 55%;
+          right: 100%;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+
   &__title {
     color: #344f10;
     text-transform: uppercase;
@@ -8,11 +53,12 @@
     letter-spacing: 1.2px;
 
     margin-bottom: 10px;
+    grid-column: span 2;
 
-    &--shop {
-      text-align: center;
-
-      margin-bottom: 20px;
+    @include onDesktop {
+      font-size: 36px;
+      margin-bottom: 30px;
+      line-height: 110%;
     }
 
     &--choose {
@@ -22,21 +68,100 @@
       color: #344f10;
 
       margin: 0;
+
+      @include onTablet {
+        grid-column: 2 / span 4;
+        text-align: center;
+      }
+
+      @include onDesktop {
+        padding-inline: 0;
+        position: relative;
+        font-size: 24px;
+        text-align: start;
+      }
+    }
+
+    &--shop {
+      text-align: center;
+
+      @include onTablet {
+        text-align: start;
+        grid-column: 1 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 2 / -1;
+      }
+    }
+
+    &--creators {
+      margin-right: 10px;
+
+      @include onTablet {
+        margin-right: 0;
+      }
     }
   
     &--tooth {
       padding-inline: 20px;
       margin-bottom: 20px;
+
+      @include onTablet {
+        padding: 0;
+        margin: 0;
+        grid-column: span 3;
+      }
+
+      @include onDesktop {
+        grid-column: 2 / span 4;
+      }
+    }
+
+    &--contact-us {
+      grid-column: span 4;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-bottom: 30px;
+
+    @include onDesktop {
+      gap: 30px;
+      padding-bottom: 40px;
     }
   }
   
   &__text {
     line-height: 150%;
+    grid-column: span 2;
 
-    margin-bottom: 20px;
+    @include onTablet {
+      font-size: 16px;
+    }
 
-    &:last-of-type {
-      margin-bottom: 30px;
+    &--contact-us {
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 40px;
+        grid-column: span 4;
+      }
+    }
+
+    &--about,
+    &--creators {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
     }
   }
 }

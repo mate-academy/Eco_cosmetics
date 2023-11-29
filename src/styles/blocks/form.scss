@@ -1,22 +1,60 @@
 .form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 25px;
-
-  width: 100%;
 
   grid-column: span 2;
 
+  @include onDesktop {
+    gap: 30px;
+    grid-column: span 4;
+
+    @include pageGrid;
+    --columns: 4;
+    grid-template-rows: repeat(3, 37px) 1fr 60px;
+  }
+
   &__label {
     display: flex;
-    height: 38px;
     width: 100%;
 
+    @include onDesktop {
+      grid-column: 1 / -1;
+    }
+
+    &--textarea {
+      margin: 0;
+      height: 56px;
+
+      @include onDesktop {
+        height: 67px;
+      }
+    }
+
     &:last-of-type {
-      margin-block: 20px 5px;
+      margin-bottom: 5px;
+
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
     }
   }
 
   &__input {
+    &:focus {
+      border-block-color: $main-text-color;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      color: #eb5757;
+      border-color: #eb5757;
+    }
+
+    &:valid:not(:placeholder-shown) {
+      color: $color-text-green;
+      border-color: $color-text-green;
+    }
+
     box-sizing: border-box;
     background-color: transparent;
     width: 100%;
@@ -24,29 +62,33 @@
     border-bottom: 1px solid $color-text-grey-4;
     outline: transparent;
 
-    font-size: 18px;
+    font-size: 14px;
     font-family: inherit;
     color: $color-text-grey-3;
     line-height: 150%;
 
+    @include onDesktop {
+      font-size: 18px;
+      padding-bottom: 8px;
+    }
+
+    &--textarea {
+      resize: none;
+      overflow: hidden;
+
+      &::placeholder {
+        line-height: 75px;
+
+        @include onDesktop {
+          line-height: 100px;
+        }
+      }
+    }
+
     &::placeholder {
       text-transform: capitalize;
     }
-
+    
     @include hover(border-bottom-color, $main-text-color);
-
-    &:focus {
-      border-block-color: $main-text-color;
-    }
-
-    &:valid {
-      color: $color-text-green;
-      border-color: $color-text-green;
-    }
-
-    &:invalid {
-      color: #eb5757;
-      border-color: #eb5757;
-    }
   }
 }

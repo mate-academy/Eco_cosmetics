@@ -1,66 +1,118 @@
 .tabs {
-  // display: flex;
-  // justify-content: space-between;
-  // padding-inline: 20px;
-  // text-transform: uppercase;
-  // color: $color-text-grey-3;
-  // letter-spacing: 0.7px;
-  // flex-wrap: wrap;
+  position: relative;
+  grid-column: 1 / -1;
 
-  // margin-bottom: 27px;
-  
+  @include onTablet {
+    @include pageGrid;
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+    grid-column: 2 / -1;
+  }
+
+  &__labels {
+    display: flex;
+    justify-content: space-between;
+
+    padding-inline: 20px;
+    margin-bottom: 27px;
+
+    @include onTablet {
+      padding: 0;
+      justify-content: start;
+      gap: 34px;
+      grid-column: 1 / -1;
+
+      margin-bottom: 37px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+      margin-bottom: 62px;
+    }
+  }
+
   &__label {
+    position: relative;
     display: inline-block;
     text-transform: uppercase;
     color: $color-text-grey-3;
     letter-spacing: 0.7px;
-  
-    border-bottom: 2px solid transparent;
-    border-bottom-left-radius: 1px;
-    border-bottom-right-radius: 1px;
-    padding-bottom: 10px;
+    width: fit-content;
+
     cursor: pointer;
 
-    margin-bottom: 27px;
+    &::after {
+      position: absolute;
+      content: "";
+      height: 2px;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      background-color: transparent;
+      border-radius: 2px;
 
-    transition: color $transition-duration, border-color $transition-duration;
-  
-    &:hover {
-      color: $main-text-color;
-      border-color: $main-text-color;
+      transition: background-color $transition-duration;
+    }
+
+    @include onDesktop {
+      @include hover(color, $main-text-color);
+
+      &:hover::after {
+        background-color: $main-text-color;
+      }
     }
   }
 
   &__input {
     display: none;
 
-    & ~ .product {
+    & ~ .tab {
       display: none;
     }
-
-    &:checked {
-      + .tabs__label {
-      color: $main-text-color;
-      border-color: $main-text-color;
-      }
-    }
   }
+}
 
-  &--tabs {
-    color: $color-text-grey-3;
-    letter-spacing: 0.7px;
-
-    &:target {
-      border-color: $main-text-color;
+@each $name in $shop-products {
+  #tabs--#{$name}:checked ~ .tabs__labels > {
+    .tabs__label--#{$name} {
       color: $main-text-color;
+
+      &::after {
+        background-color: $main-text-color;
+      }
     }
   }
 }
 
 @each $name in $shop-products {
   #tabs--#{$name}:checked {
-    ~ .product--#{$name} {
-      display: block;
+    ~ .tab--#{$name} {
+      display: grid;
+
+      .product--#{$name}:not(:first-of-type) {
+        display: none;
+      }
+
+      @include onTablet {
+        @include pageGrid;
+        grid-column: span 6;
+        --columns: 6;
+        column-gap: 30px;
+
+        @include onDesktop {
+          grid-column: span 12;
+          column-gap: 20px;
+        }
+
+        .product--#{$name}:nth-of-type(2) {
+          display: flex;
+          grid-column: span 3;
+        }
+      }
     }
   }
 }
