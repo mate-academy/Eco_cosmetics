@@ -1,18 +1,25 @@
-.menu {
+.menu,
+.cart {
   box-sizing: border-box;
   height: 100vh;
-  background-color: $main-text-color;
-
-  @include onDesktop {
-    margin-right: $scroll-bar-width;
-  }
 
   &__top {
-    margin-bottom: 15px;
+    margin-bottom: 45px;
     padding-inline: 0;
+    background-color: transparent;
 
     @include onTablet {
       margin-bottom: 56px;
+    }
+  }
+}
+
+.menu {
+  &__content {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 6;
     }
   }
 }

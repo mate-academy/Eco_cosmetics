@@ -1,5 +1,5 @@
 .page {
-  font-family: "Poppins";
+  font-family: "Poppins", serif;
   font-size: 14px;
   line-height: 130%;
 
@@ -12,7 +12,9 @@
     padding: 0;
   }
 
-  &__menu {
+  &__menu,
+  &__cart,
+  &__all-products {
     position: fixed;
     top: 0;
     left: 100%;
@@ -25,22 +27,62 @@
     @include hover(left, $transition-duration);
   }
 
-  &__menu:target {
+  &__cart {
+    background-color: $bg-color;
+    top: 59px;
+
+    @include onTablet {
+      top: 70px;
+    }
+
+    @include onDesktop {
+      top: 130px;
+    }
+  }
+
+  &__menu-open {
     left: 0;
     right: 0;
     pointer-events: all;
+
+    z-index: 3;
+  }
+
+  &__all-products:target,
+  &__product:target {
+    left: 0;
+    right: 0;
+    pointer-events: all;
+    height: 100vh;
+    overflow: scroll;
+
+    @include onTablet {
+      grid-column: 2 / span 4;
+    }
+  }
+
+  &__product:target {
+    position: fixed;
+  }
+
+  &__cart-open {
+    left: 0;
+    right: 0;
+    pointer-events: all;
+    z-index: 3;
+  }
+
+  &--overflow {
+    overflow: hidden;
+    -moz-overflow: hidden;
+  }
+
+  &:has(.page__product:target),
+  &:has(.page__all-products:target) {
+    overflow: hidden;
   }
 
   &:has(.page__menu:target) {
-    @include onTablet {
-      overflow: hidden;
-    }
-
-    .header {
-      @include onDesktop {
-        width: calc(100% - #{$scroll-bar-width});
-      }
-    }
+    position: relative;
   }
-
 }

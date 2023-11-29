@@ -7,21 +7,127 @@
   background-position: center;
 
   &--menu {
-    background-image: url(../images/icons/icon-menu.svg);
+    position: relative;
+    width: 20px;
+    height: 1px;
+    background-color: $color-text-green;
+    margin-top: 11.5px;
+
+    transition: background-color 0.9s;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 20px;
+      height: 1px;
+      background-color: $color-text-green;
+      top: -6px;
+
+      transition: transform 0.9s, background-color 0.9s;
+    }
+
+    &::after {
+      top: 6px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__container--click {
+    z-index: 999;
+    
+    & > .icons--menu {
+      background-color: transparent;
+
+      &::after {
+        transform: translateY(-6px) rotateZ(45deg);
+        background-color: $color-text-white;
+        animation: scale 0s;
+      }
+
+      &::before {
+        transform: translateY(6px) rotateZ(-45deg);
+        background-color: $color-text-white;
+        animation: scale 0s;
+      }
+    }
+  }
+
+  &__container {
+    &:hover > .icons--menu {
+
+      &::after {
+        animation: scale 0.3s;
+      }
+
+      &::before {
+        animation: scale 0.3s;
+      }
+    }
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &--logo {
     width: 24px;
     background-image: url(../images/icons/icon-logo.svg);
+
+    @include hover(transform, scale(1.2));
+
+    @include onDesktop {
+      position: relative;
+      order: -1;
+      width: 50px;
+      height: 50px;
+      grid-column: span 5;
+
+      &::after {
+        content: "witch of mountain winds";
+        display: inline-block;
+        position: absolute;
+        width: max-content;
+        white-space: nowrap;
+        left: 62px;
+        line-height: 50px;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: $color-text-green;
+      }
+    }
   }
 
-  &--shop {
-    background-image: url(../images/icons/icon-shop.svg);
+  &--cart {
+    cursor: pointer;
+    background-image: url(../images/icons/icon-cart.svg);
+    z-index: 2;
+
+    transform-origin: top center;
+
+    @include hover(transform, rotateZ(30deg)) {
+      transform-origin: top center;
+    }
+
+    @include onDesktop {
+      width: 32px;
+      height: 32px;
+      grid-column: 12;
+      place-self: end;
+      align-self: center;
+    }
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.9);
   }
 
-  &--close {
-    background-image: url(../images/icons/icon-close.svg);
-
-    @include hover(transform, rotate(90deg));
+  to {
+    transform: scale(1.2);
   }
 }
