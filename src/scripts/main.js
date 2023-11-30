@@ -311,6 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// click on cards //
 const oilCardTrigger
   = document.querySelector('.cards__face__hydrophilic-oil__img');
 const ubtanCardTrigger
@@ -328,4 +329,13 @@ ubtanCardTrigger.addEventListener('click', () => {
 
 shampooCardTrigger.addEventListener('click', () => {
   cards.classList.add('sidebarPage-active');
+});
+
+// learn-more-btn //
+const learnButtons = document.querySelectorAll('.button__learn-more');
+
+learnButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    window.location.href = 'https://instagram.com';
+  });
 });

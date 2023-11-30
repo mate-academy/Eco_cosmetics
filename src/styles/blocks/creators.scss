@@ -1,6 +1,7 @@
 .creators {
   display: flex;
   flex-direction: column;
+  position: relative;
 
   padding: 0 20px;
 
@@ -26,12 +27,13 @@
     @include onDesktop {
       @include sideText;
       display: flex;
+      position: absolute;
       flex-direction: row;
       align-self: flex-start;
 
-      -webkit-transform: rotate(-180deg);
-       writing-mode: vertical-lr;
-
+      text-orientation: mixed;
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
 
 
       grid-column: 1 / 2;
@@ -77,6 +79,7 @@
         @include onDesktop {
           @include text16;
           margin-bottom: 30px;
+          text-align: justify;
         }
       }
 
@@ -86,6 +89,7 @@
         @include onDesktop {
           @include text16;
           margin-bottom: 30px;
+          text-align: justify;
         }
       }
 
@@ -96,6 +100,7 @@
         @include onDesktop {
           @include text16;
           display: flex;
+          text-align: justify;
         }
       }
     }

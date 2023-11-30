@@ -1,6 +1,7 @@
 .about {
   display: flex;
   flex-direction: column;
+  position: relative;
 
   padding: 0 20px;
 
@@ -25,16 +26,18 @@
   &__desktop-text {
     display: none;
     align-items: flex-end;
-    position: relative;
+    position: absolute;
 
     @include onDesktop {
       @include sideText;
       display: flex;
+      position: absolute;
       flex-direction: row;
       align-self: flex-start;
 
-      -webkit-transform: rotate(-180deg);
-       writing-mode: vertical-lr;
+      text-orientation: mixed;
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
 
 
 
@@ -87,9 +90,9 @@
       }
 
       &-2 {
+        @include text16;
         display: none;
         text-align: justify;
-        @include text16;
 
         @include onDesktop {
           display: flex;
