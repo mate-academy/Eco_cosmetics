@@ -19,9 +19,18 @@
   }
 
   &__link {
+    position: relative;
     @include footer-text;
     text-decoration: none;
     color: $page-background;
+
+    &::after {
+      @include button_link;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
 
     @include onTablet {
       font-weight: 400;
