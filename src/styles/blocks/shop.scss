@@ -18,6 +18,30 @@
     @include grid;
   }
 
+  &__desktop-text {
+    display: none;
+    align-items: flex-end;
+    position: relative;
+
+    @include onDesktop {
+      @include sideText;
+      display: flex;
+      flex-direction: row;
+      align-self: flex-start;
+
+      -webkit-transform: rotate(-180deg);
+       writing-mode: vertical-lr;
+
+
+
+      grid-column: 1 / 2;
+
+      :before {
+        top: -300%;
+      }
+    }
+  }
+
   &__title {
     @include h4;
     text-align: center;
@@ -49,6 +73,7 @@
     }
 
     @include onDesktop {
+      margin-bottom: 45px;
       grid-column: 2 / 6;
     }
 

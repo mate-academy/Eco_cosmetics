@@ -19,6 +19,7 @@
 
     &__hydrophilic-oil {
       @include card;
+      position: relative;
       display: flex;
       width: 100%;
 
@@ -104,6 +105,93 @@
           display: flex;
         }
       }
+    }
+  }
+
+  &__body {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    color: $gray-underline;
+
+    @include onDesktop {
+      grid-column: 4 / 9;
+    }
+  }
+
+  &__hair {
+    display: flex;
+    width: 100%;
+
+    @include onTablet {
+      @include grid;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+    }
+
+    &__shampoo {
+      @include card;
+      display: flex;
+      width: 100%;
+
+      @include onTablet {
+        max-width: 470px;
+        max-height: 527px;
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        max-width: 569px;
+        max-height: 621px;
+        grid-column: 1 / 7;
+      }
+
+      &__img {
+        @include hover(scale, 1.05);
+        width: 100%;
+
+        margin-bottom: 20px;
+      }
+
+      &__title {
+        @include h5;
+
+        margin-left: 20px;
+        margin-bottom: 10px;
+
+        @include onTablet {
+          margin-left: 0;
+        }
+      }
+
+      &__price {
+        @include textPrice;
+
+        margin-left: 20px;
+
+        @include onTablet {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__candels {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    color: $gray-underline;
+
+    @include onDesktop {
+      grid-column: 4 / 9;
     }
   }
 }

@@ -62,6 +62,52 @@ buttons.forEach(button => {
   });
 });
 
+const faceButton = document.querySelector('.button-face');
+const bodyButton = document.querySelector('.button-body');
+const hairButton = document.querySelector('.button-hair');
+const candelsButton = document.querySelector('.button-candels');
+
+const faceSection = document.querySelector('.cards__face');
+const bodySection = document.querySelector('.cards__body');
+const hairSection = document.querySelector('.cards__hair');
+const candelsSection = document.querySelector('.cards__candels');
+
+bodySection.style.display = 'none';
+hairSection.style.display = 'none';
+candelsSection.style.display = 'none';
+
+faceButton.addEventListener('click', () => {
+  bodySection.style.display = 'none';
+  hairSection.style.display = 'none';
+  candelsSection.style.display = 'none';
+
+  faceSection.style.display = 'flex';
+});
+
+bodyButton.addEventListener('click', () => {
+  faceSection.style.display = 'none';
+  hairSection.style.display = 'none';
+  candelsSection.style.display = 'none';
+
+  bodySection.style.display = 'flex';
+});
+
+hairButton.addEventListener('click', () => {
+  faceSection.style.display = 'none';
+  bodySection.style.display = 'none';
+  candelsSection.style.display = 'none';
+
+  hairSection.style.display = 'flex';
+});
+
+candelsButton.addEventListener('click', () => {
+  faceSection.style.display = 'none';
+  bodySection.style.display = 'none';
+  hairSection.style.display = 'none';
+
+  candelsSection.style.display = 'flex';
+});
+
 // contact-us //
 document.addEventListener('DOMContentLoaded', function() {
   const showMessage = function(text) {
@@ -158,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const shoppingbagContent
     = document.querySelector('.shoppingbag-content__bag');
 
-  const shoppingCart = [];
+  let shoppingCart = [];
   let total = 0;
 
   addToCartButtons.forEach(button => {
@@ -233,6 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       submitButton.classList.add('shoppingbag-content__button', 'button__main');
       submitButton.style.width = '100%';
+      submitButton.style.cursor = 'pointer';
       submitButton.textContent = 'Submit and Pay';
 
       const totalCost = document.createElement('div');
@@ -252,6 +299,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
       submitButtonContainer.appendChild(submitButton);
       shoppingbagContent.appendChild(submitButtonContainer);
+
+      submitButton.addEventListener('click', () => {
+        shoppingbagContent.innerHTML = '';
+        shoppingbagContent.textContent = 'Empty now';
+
+        total = 0;
+        shoppingCart = [];
+      });
     }
   }
+});
+
+const oilCardTrigger
+  = document.querySelector('.cards__face__hydrophilic-oil__img');
+const ubtanCardTrigger
+  = document.querySelector('.cards__face__ubtan__img');
+const shampooCardTrigger
+  = document.querySelector('.cards__hair__shampoo__img');
+
+oilCardTrigger.addEventListener('click', () => {
+  cards.classList.add('sidebarPage-active');
+});
+
+ubtanCardTrigger.addEventListener('click', () => {
+  cards.classList.add('sidebarPage-active');
+});
+
+shampooCardTrigger.addEventListener('click', () => {
+  cards.classList.add('sidebarPage-active');
 });
