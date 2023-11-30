@@ -1,0 +1,116 @@
+.about__brand {
+  &--text {
+    @include onDesktop1280 {
+      width: 400px;
+    }
+  }
+
+  &-block {
+    @include onDesktop1280 {
+      position: relative;
+      padding-left: 82px;
+    }
+  }
+
+  &-line {
+    @include onDesktop1280 {
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin-bottom: 82px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 130%; /* 18.2px */
+      color: rgba(52, 79, 16, 0.5);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 1px;
+        height: 100px;
+        transform: translateX(-50%);
+        background: rgba(52, 79, 16, 0.5);
+      }
+
+      &--text {
+        text-orientation: mixed;
+        writing-mode: tb-rl;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &-head {
+    margin-bottom: 10px;
+    @include h4;
+
+    @include onDesktop1280 {
+      margin-bottom: 40px;
+      @include h2;
+    }
+  }
+
+  &-container {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+  }
+
+  &-text {
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 150%; /* 21px */
+    color: $color-first-text;
+
+    @include onTablet {
+      width: 342px;
+    }
+
+    @include onDesktop1280 {
+      width: 380px;
+      font-size: 16px;
+    }
+  }
+
+  &-img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--onmobile {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+
+      @include onDesktop1280 {
+        display: none;
+      }
+    }
+
+    &--ondesktop1280 {
+      display: none;
+
+      @include onDesktop1280 {
+        display: block;
+      }
+    }
+  }
+
+  &-imgblock {
+    display: none;
+
+    @include onDesktop1280 {
+      display: flex;
+      align-items: end;
+      gap: 20px;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.text {
+  position: relative;
+  z-index: -1;
+
+  &__block {
+    display: block;
+
+    @include onDesktop1280 {
+      padding: 100px 150px;
+      display: flex;
+      justify-content: center;
+      gap: 120px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 530px;
+        height: 1px;
+        background: rgba(52, 79, 16, 0.5);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 630px;
+        height: 1px;
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+
+    &-left {
+      display: none;
+
+      @include onDesktop1280 {
+        width: 380px;
+        display: block;
+        color: $color-first-text;
+      }
+    }
+
+    &-right {
+      @include h5;
+      letter-spacing: 0.09px;
+      color: $color-second-text;
+
+      @include onTablet {
+        margin: 0 auto;
+        width: 280px;
+        text-align: center;
+      }
+
+      @include onDesktop1280 {
+        margin: 0;
+        width: 380px;
+        text-align: left;
+        @include h4;
+      }
+    }
+  }
+}

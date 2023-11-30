@@ -1,0 +1,38 @@
+.button {
+  background-color: $color-first-text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  text-decoration: none;
+  color: $color-text-button;
+  @include text;
+
+  @include onTablet {
+    margin: 0 auto;
+    width: 280px;
+  }
+
+  &__link-text {
+    position: relative;
+    padding-bottom: 10px;
+    @include decorative-text;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: $color-second-text;
+    }
+  }
+
+  &--ondesktop1280 {
+    @include onDesktop1280 {
+      margin: 0;
+    }
+  }
+}

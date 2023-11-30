@@ -1,0 +1,119 @@
+.footer {
+  background: #8c9772;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 20px;
+    list-style-type: none;
+
+    @include onTablet {
+      padding-top: 0;
+    }
+
+    @include onDesktop1280 {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    @include footer-text;
+    text-decoration: none;
+    color: $page-background;
+
+    @include onTablet {
+      font-weight: 400;
+    }
+  }
+
+  &__social {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+
+    @include onDesktop1280 {
+      display: none;
+    }
+
+    &--rightblock {
+      display: none;
+
+      @include onDesktop1280 {
+        margin: 0;
+        display: flex;
+      }
+    }
+  }
+
+  &__info {
+    margin-bottom: 40px;
+
+    @include onDesktop1280 {
+      margin-bottom: 0;
+    }
+
+    &-link {
+      @include small-text;
+      text-decoration: none;
+      color: $page-background;
+
+      @include onDesktop1280 {
+        font-size: 16px;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      list-style-type: none;
+
+      @include onDesktop1280 {
+        gap: 20px;
+      }
+    }
+  }
+
+  &__container {
+    padding-top: 30px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include onDesktop1280 {
+      padding-top: 61px;
+    }
+  }
+
+  &__down {
+    @include onDesktop1280 {
+      display: flex;
+    }
+  }
+}
+
+.copyring {
+  padding: 0 0 40px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 130%; /* 18.2px */
+  color: $page-background;
+  text-transform: capitalize;
+
+  @include onTablet {
+    font-weight: 400;
+    text-align: left;
+  }
+
+  @include onDesktop1280 {
+    padding: 0 0 61px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+  }
+}

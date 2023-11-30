@@ -1,0 +1,55 @@
+.power-img {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+    }
+
+    @include onDesktop1280 {
+      justify-content: space-around;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    @include text2;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+
+    @include onTablet {
+      width: 218px;
+    }
+  }
+}
+
+.power__img {
+  &--onmobile {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--ontablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}
