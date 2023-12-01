@@ -6,11 +6,8 @@
   background-position: center;
   background-size: contain;
   cursor: pointer;
-  transition: all 0.3s;
 
-  &:hover {
-    transform: scale(130%);
-  }
+  @include hover(transform, scale(130%));
 
   &--menu {
     background-image: url(..//images/icons/menu.svg);
@@ -24,6 +21,12 @@
     width: 24px;
     height: 24px;
     background-image: url(..//images/icons/logo.svg);
+
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+      text-decoration: none;
+    }
   }
 
   &--close {

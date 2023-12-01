@@ -9,9 +9,20 @@
     background-image: url(..//images/svg/tablet/jar.svg);
   }
 
+  @include onDesktop {
+    height: 398px;
+    background-image: url(..//images/svg/desctop/svg.svg);
+    position: relative;
+  }
+
   &__wrapper {
     @include paddingInLine;
     @include forWrapper;
+
+    @include onDesktop {
+      display: flex;
+      gap: 170px;
+    }
   }
 
    &__title {
@@ -27,6 +38,11 @@
      @include onTablet {
        margin-left: 32%;
      }
+
+     @include onDesktop {
+      margin: 0;
+      width: 180px;
+     }
    }
 
    &__list {
@@ -37,11 +53,23 @@
     text-align: end;
     padding-top: 22px;
     width: 98px;
+
+    @include onDesktop {
+      padding-top: 40px;
+      font-size: 16px;
+      line-height: 24px;
+    }
    }
 
    &__link {
     display: block;
     @include forLinks;
     margin-top: 80px;
+
+    @include onDesktop {
+      position: absolute;
+      // left: 0;
+      bottom: 0;
+    }
    }
 }

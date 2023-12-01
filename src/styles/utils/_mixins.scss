@@ -31,7 +31,8 @@
   }
 
   @include onDesktop {
-    padding-inline: 50px;
+    padding-left: 150px;
+    padding-right: 50px;
   }
 }
 
@@ -66,13 +67,10 @@
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
-  transition: all 0.3s;
 
-  &:hover {
-    background-color: $c-oyster;
-    color: $c-black;
-    border: 1px solid $c-black;
-  }
+  @include hover(background-color, $c-oyster);
+  @include hover(color, $c-black);
+  @include hover(border, 1px solid $c-black);
 }
 
 @mixin forLinks {
@@ -84,28 +82,34 @@
   padding-bottom: 10px;
   box-sizing: border-box;
   cursor: pointer;
-  transition: all 0.3s;
 
-  &:hover {
-    border-bottom: 1px solid $c-green;
-    width: fit-content;
-  }
+  @include hover(border-bottom, 1px solid $c-green);
+  @include hover(width, fit-content);
 }
 
 @mixin forSectionTitle {
   text-transform: uppercase;
   text-decoration: none;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 5%;
+
   color: $c-grey;
   border-bottom: 1px solid transparent;
   width: fit-content;
   padding-bottom: 10px;
   box-sizing: border-box;
   cursor: pointer;
-  transition: all 0.3s;
 
-  &:hover {
-    color: $c-black;
-    border-bottom: 1px solid $c-black;
+  @include hover(color, $c-black);
+  @include hover(border-bottom, 1px solid $c-black);
+
+  @include onDesktop {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
   }
 }
 
@@ -116,6 +120,11 @@
   line-height: 36px;
   letter-spacing: 5%;
   color: $c-green;
+
+  @include onDesktop {
+    font-size: 36px;
+    line-height: 39px;
+  }
 }
 
 @mixin forCardsTitle {

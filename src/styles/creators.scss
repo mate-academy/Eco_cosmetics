@@ -9,25 +9,59 @@
       display: flex;
       gap: 30px;
     }
+
+    @include onDesktop {
+      margin-block: 200px;
+      gap: 120px;
+    }
   }
 
   &__wrapper__top {
     @include onTablet {
       width: 342px;
     }
+
+    @include onDesktop {
+      width: 380px;
+    }
   }
 
   &__title {
     @include forTitles;
     padding-bottom: 10px;
+
+    @include onDesktop {
+      padding-bottom: 34px;
+    }
+  }
+
+  &__description__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 15px;
+    }
+
+    @include onDesktop {
+      gap: 30px;
+      padding-bottom: 20px;
+    }
   }
 
   &__description {
-    padding-top: 15px;
-    padding-bottom: 30px;
-
     @include onTablet {
-      padding-bottom: 20px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &--hidden {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
     }
   }
 
@@ -42,6 +76,10 @@
     @include onTablet {
       margin-top: 30px;
     }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
   }
 
   &__image {
@@ -52,6 +90,12 @@
       background-size: contain;
       width: 342px;
       height: 440px;
+    }
+
+    @include onDesktop {
+      background-image: url(..//images/desctop/6.png);
+      width: 580px;
+      height: 659px;
     }
   }
 }

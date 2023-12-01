@@ -1,15 +1,65 @@
 .about {
+  position: relative;
+
   &__wrapper {
     @include paddingInLine;
     @include forWrapper;
-    margin-block-end: 100px;
 
     @include onTablet {
       width: 714px;
-      margin-block: 130px;
+      margin-bottom: 130px;
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    @include onDesktop {
+      align-items: flex-start;
+      width: 1080px;
+      padding-left: 150px;
+    }
+  }
+
+  &__introduction__wrapper {
+    margin-block: 100px;
+
+    @include onTablet {
+      margin-top: 130px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 120px;
+
+      &::before {
+        content: "";
+        display: block;
+        border-top: 1px solid rgba($color: $c-green, $alpha: 0.5);
+        width: 530px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        border-top: 1px solid rgba($color: $c-green, $alpha: 0.5);
+        width: 630px;
+        position: absolute;
+        top: 368px;
+        right: 0;
+      }
+    }
+  }
+
+  &__introduction--top {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 380px;
+      font-size: 16px;
     }
   }
 
@@ -28,6 +78,13 @@
       padding-top: 0;
       padding-bottom: 130px;
     }
+
+    @include onDesktop {
+      width: 380px;
+      font-size: 24px;
+      line-height: 36px;
+      text-align: left;
+    }
   }
 
   &__bottom {
@@ -35,17 +92,29 @@
       display: flex;
       gap: 30px;
     }
+
+    @include onDesktop {
+      gap: 120px;
+    }
   }
 
   &__text {
     @include onTablet {
       width: 50%;
     }
+
+    @include onDesktop {
+      width: 380px;
+    }
   }
 
   &__title {
     @include forTitles;
     padding-bottom: 10px;
+
+    @include onDesktop {
+      padding-bottom: 40px;
+    }
   }
 
   &__description {
@@ -55,10 +124,28 @@
       font-size: 16px;
       line-height: 24px;
     }
+
+    @include onDesktop {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__description--hidden {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 
   &__link {
     @include forLinks;
+  }
+
+  &__images {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
   }
 
   &__image {
@@ -68,6 +155,26 @@
       background-size: cover;
       width: 342px;
       height: 321px;
+    }
+
+    @include onDesktop {
+      background-image: url(..//images/desctop/2.png);
+      width: 380px;
+      height: 529px;
+    }
+  }
+
+  &__image--small {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      background-image: url(..//images/desctop/3.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom;
+      width: 180px;
+      height: 430px;
     }
   }
 }
