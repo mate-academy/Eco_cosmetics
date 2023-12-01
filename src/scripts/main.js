@@ -81,7 +81,7 @@ faceButton.addEventListener('click', () => {
   hairSection.style.display = 'none';
   candelsSection.style.display = 'none';
 
-  faceSection.style.display = 'flex';
+  faceSection.style.display = 'grid';
 });
 
 bodyButton.addEventListener('click', () => {
@@ -97,7 +97,7 @@ hairButton.addEventListener('click', () => {
   bodySection.style.display = 'none';
   candelsSection.style.display = 'none';
 
-  hairSection.style.display = 'flex';
+  hairSection.style.display = 'grid';
 });
 
 candelsButton.addEventListener('click', () => {
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(function() {
       document.body.removeChild(messageContainer);
-    }, 5000);
+    }, 7500);
   };
 
   const formButton = document.querySelector('.contact-us__form__button');
@@ -136,12 +136,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const name = document.querySelector('.input-name').value;
     const email = document.querySelector('.input-email').value;
     const phone = document.querySelector('.input-tel').value;
+    const message = document.querySelector('.input-message').value;
 
-    if (name && email && phone) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex
+      = /^\+?\d{1,4}[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+
+    if (name && emailRegex.test(email) && phoneRegex.test(phone) && message) {
       showMessage(`Thank you,
         ${name}, we will contact you as soon as possible.`);
     } else {
-      showMessage('Please, fill in all fields before submitting the form!');
+      showMessage('Please, fill in all fields before submitting the form'
+        + ' ' + 'or make sure you left valid information.');
     }
   });
 });
@@ -336,6 +342,6 @@ const learnButtons = document.querySelectorAll('.button__learn-more');
 
 learnButtons.forEach((button) => {
   button.addEventListener('click', () => {
-    window.location.href = 'https://instagram.com';
+    window.open('https://instagram.com', '_blank');
   });
 });
