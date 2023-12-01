@@ -81,7 +81,7 @@ faceButton.addEventListener('click', () => {
   hairSection.style.display = 'none';
   candelsSection.style.display = 'none';
 
-  faceSection.style.display = 'grid';
+  faceSection.style.display = 'flex';
 });
 
 bodyButton.addEventListener('click', () => {
@@ -97,7 +97,7 @@ hairButton.addEventListener('click', () => {
   bodySection.style.display = 'none';
   candelsSection.style.display = 'none';
 
-  hairSection.style.display = 'grid';
+  hairSection.style.display = 'flex';
 });
 
 candelsButton.addEventListener('click', () => {
