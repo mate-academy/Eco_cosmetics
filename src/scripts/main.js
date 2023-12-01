@@ -14,16 +14,23 @@ const productContainer = document.querySelector('#product-container');
 let productToCart = '';
 let price = '';
 let cartClick = 0;
+let menuClick = 0;
 
 menuIcon.addEventListener('click', () => {
+  menuClick++;
   menuIcon.classList.toggle('icons__container--click');
   menu.classList.toggle('page__menu-open');
-  page.classList.toggle('page--overflow');
+  page.classList.add('page--overflow');
   topBar.classList.toggle('top-bar--menu');
+  cart.classList.remove('page__cart-open');
 
   productContainer.firstElementChild.innerHTML = '';
   productContainer.classList.remove('show');
-  page.classList.remove('page--overflow');
+  // page.classList.remove('page--overflow');
+
+  if (menuClick % 2 === 0) {
+    page.classList.remove('page--overflow');
+  }
 });
 
 logoIcon.addEventListener('click', () => {
