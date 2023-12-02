@@ -1,0 +1,91 @@
+.shop {
+
+  &__content {
+    @include pageGrid;
+  }
+
+  &__title {
+    text-align: center;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      display: flex;
+      justify-content: stretch;
+      column-gap: 30px;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 13;
+    }
+  }
+
+  &__card {
+    display: grid;
+  }
+
+  &__card--two {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__menu {
+    margin: 0 20px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 5;
+    }
+  }
+}
+
+.shop__subtitle {
+  display: none;
+  transform: rotate(-90deg);
+  align-items: center;
+  @include onDesktop {
+    display: flex;
+    position: relative;
+  }
+
+  &-text {
+    width: 192px;
+    color: rgba(52, 79, 16, 0.5);
+    text-align: center;
+    order: 2;
+    position: absolute;
+    top: -27%;
+    left: -50px;
+  }
+
+  &-line {
+    order: 1;
+    width: 100px;
+    height: 1px;
+    background-color: rgba(52, 79, 16, 0.5);
+    flex-shrink: 0;
+    position: absolute;
+    top: -6%;
+    left: -90px;
+  }
+}

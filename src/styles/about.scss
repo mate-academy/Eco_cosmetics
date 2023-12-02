@@ -1,0 +1,109 @@
+.about-brand {
+  @include pageGrid;
+
+  &__content {
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__photos {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    column-gap: 20px;
+
+    &--big {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        grid-column: 4 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 11;
+      }
+    }
+
+    &--small {
+
+      @include onDesktop {
+        grid-column: 11 / 13;
+      }
+    }
+  }
+
+  &__photo-big {
+    width: 100%;
+    display: none;
+    object-fit: cover;
+    @include custom-transition;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      // width: 380px;
+      height: 529px;
+    }
+  }
+
+  &__photo-small {
+    width: 100%;
+    height: 430px;
+    display: none;
+    transform: translateY(100px);
+    @include custom-transition;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
+
+.about-brand__title {
+  display: none;
+  transform: rotate(-90deg);
+  align-items: center;
+  @include onDesktop {
+    display: flex;
+    position: relative;
+  }
+
+  &-text {
+    width: 192px;
+    color: rgba(52, 79, 16, 0.5);
+    text-align: center;
+    order: 2;
+    position: absolute;
+    top: 42%;
+    left: 110px;
+  }
+
+  &-line {
+    order: 1;
+    width: 100px;
+    height: 1px;
+    background-color: rgba(52, 79, 16, 0.5);
+    flex-shrink: 0;
+    position: absolute;
+    top: 44%;
+  }
+}

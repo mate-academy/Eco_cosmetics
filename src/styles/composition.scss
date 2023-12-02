@@ -1,0 +1,73 @@
+.composition {
+  &__wrap {
+    display: grid;
+    place-items: center;
+    gap: 50px;
+
+    @include onTablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    height: 131px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+
+    @include hover(transform, scale(1.2));
+
+    &-icon--bird {
+      background-image: url(../images/icons/bird-icon.png);
+      height: 60px;
+      width: 62px;
+      background-size: cover;
+      background-position: center;
+
+      @include onTablet {
+        width: 80px;
+      }
+    }
+
+    &-icon--arrow {
+      background-image: url(../images/icons/arrow-icon.png);
+      height: 84px;
+      width: 100px;
+      background-size: cover;
+
+      @include onTablet {
+        height: 68px;
+        width: 80px;
+      }
+    }
+
+    &-icon--leaf {
+      background-image: url(../images/icons/leaf-icon.png);
+      height: 74px;
+      width: 79px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &-info {
+      margin: 0;
+      color: #000;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      margin-top: auto;
+      display: flex;
+      height: 32px;
+      align-items: flex-start;
+    }
+  }
+}
+
+ul {
+  padding-inline-start: 0;
+}
