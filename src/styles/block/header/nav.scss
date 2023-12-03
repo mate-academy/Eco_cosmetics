@@ -1,0 +1,51 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    width: 100%;
+    border-bottom: 1px solid $main-border-nav-color;
+    padding-bottom: 10px;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 130%;
+
+    color: $main-text-nav-color;
+
+    text-align: center;
+
+    @include hover-text($hover-text-nav-color);
+
+    @include on-desktop {
+      padding-bottom: 0;
+
+      border-bottom: none;
+
+      font-weight: 500;
+      line-height: 150%;
+
+      color: $secondary-text-page-color;
+
+      text-transform: capitalize;
+      
+      transition-property: border-color;
+
+      @include hover-filterand-underscore;
+    }
+
+    &:hover {
+      border-color: $hover-text-nav-color;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+.creators {
+  @include page-grid;
+  @include constent-padding-inline;
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include on-table {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    text-align: left;
+
+    @include font-text-heading-regular-second-level;
+
+    @include on-desktop {
+      margin-bottom: 34px;
+    }
+
+    @include on-desktop-max {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-bottom: 30px;
+
+    @include on-table {
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      gap: 30px;
+    }
+  }
+
+  &__description {
+    text-align: left;
+
+    @include font-text-regular(14px, $main-text-page-color);
+
+    @include on-table {
+      font-size: 16px;
+    }
+
+    &--bottom {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__link-img {
+    display: none;
+
+    @include on-table {
+      grid-column: 4 / 7;
+      display: block;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      position: relative;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include on-table {
+      @include img-size;
+    }
+
+    @include on-desktop {
+      position: absolute;
+    }
+  }
+}

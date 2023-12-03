@@ -1,0 +1,159 @@
+.footer {
+  background-color: $main-background-footer-color;
+
+  &__content {
+    padding-block: 30px 40px;
+    row-gap: 40px;
+
+    @include page-grid;
+    @include constent-padding-inline;
+
+    @include on-table {
+      row-gap: 50px;
+      padding-block: 30px;
+    }
+
+    @include on-desktop {
+      gap: 30px;
+      padding-block: 60px 65px;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+
+    @include on-table {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__contact {
+    grid-column: 1 / -1;
+
+    display: grid;
+    gap: 10px;
+
+    @include on-table {
+      grid-column: 4 / -1;
+      gap: 7px;
+
+      & :nth-child(2),
+      & :nth-child(3) {
+        margin-bottom: 3px;
+      }
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      gap: 20px;
+
+      & :nth-child(2),
+      & :nth-child(3) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__contact-type {
+    display: block;
+
+    @include font-text-regular(14px, $main-text-footer-color);
+
+    &--link {
+      width: max-content;
+
+      @include hover-text($hover-text-nav-color);
+      @include hover-filterand-underscore;
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    gap: 20px;
+
+    &--nav {
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    &--copyright {
+      display: none;
+
+      @include on-desktop {
+        grid-column: 7 / -1;
+
+        display: flex;
+        gap: 14px;
+      }
+    }
+  }
+
+  &__copyright {
+    grid-column: 1 / -1;
+    padding-inline: 42px 40px;
+
+    @include on-table {
+      padding-inline: 0;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: subgrid;
+      align-items: center;
+    }
+
+    &--description {
+      display: block;
+
+      color: $main-text-footer-color;
+      text-align: center;
+
+      font-size: 14px;
+      line-height: 130%;
+      font-weight: 600;
+
+      @include on-table {
+        text-align: left;
+        font-weight: 400;
+        line-height: 150%;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 7;
+
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: capitalize;
+      }
+    }
+
+    &--description-desktop {
+      display: none;
+
+      @include on-desktop {
+        display: inline;
+      }
+    }
+
+    &--sign {
+      font-weight: 400;
+      font-size: 14px;
+
+      @include on-table {
+        padding-right: 5px;
+      }
+
+      @include on-desktop {
+        display: inline-block;
+
+        margin-left: -5px;
+        margin-top: -1px;
+
+        padding-right: 8px;
+        
+        vertical-align: top;
+      }
+    }
+  }
+}

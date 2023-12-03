@@ -1,0 +1,64 @@
+@mixin on-table {
+  @media (min-width: $tablet-min-wigth) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-wigth) {
+    @content;
+  }
+}
+
+@mixin on-desktop-max {
+  @media (min-width: $desktop-bg-min-wigth) {
+    @content;
+  }
+}
+
+@mixin constent-padding-inline {
+  padding-inline: 20px;
+
+  @include on-table {
+    padding-inline: 27px;
+  }
+
+  @include on-desktop {
+    padding-inline: 50px;
+  }
+
+  @include on-desktop-max {
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 130px;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-table {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+
+    column-gap: 20px;
+  }
+}
+
+@mixin img-size {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+
+  @include hover-zoom(transform, scale(1.05));
+}

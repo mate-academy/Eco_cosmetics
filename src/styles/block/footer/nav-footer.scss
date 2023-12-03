@@ -1,0 +1,39 @@
+.nav-footer {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    padding-bottom: 20px;
+
+    @include on-table {
+      gap: 15px;
+    }
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+
+    text-align: left;
+    text-transform: capitalize;
+
+    @include font-text-nav-footer-bg;
+    @include hover-filterand-underscore;
+    @include hover-text($hover-text-nav-color);
+
+    @include on-table {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    @include on-desktop {
+      @include font-text-nav-footer-bg;
+    }
+  }
+}
