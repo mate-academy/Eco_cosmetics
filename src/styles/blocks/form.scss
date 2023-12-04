@@ -1,0 +1,64 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+
+  gap: 31px;
+}
+
+.input {
+  @include form-input;
+  
+  border: none;
+  border-bottom: 1px solid $gray-underline;
+  padding-bottom: 5px;
+  background: transparent;
+  width: 100%;
+  height: fit-content;
+  color: $green-color;
+
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  :-webkit-autofill:active {
+    -webkit-text-fill-color: $background-page;
+  }
+
+  &:valid {
+    border-bottom: 1px solid $green-color;
+  }
+
+  &-tel {
+    margin-bottom: 45px;
+  }
+
+  &-message {
+    &:placeholder-shown {
+      border-bottom: 1px solid $gray-underline;
+    }
+
+    margin-bottom: 30px;
+  }
+}
+
+label {
+  display: flex;
+  width: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $green-color;
+  transition: background-color 5000s ease-in-out 0s;
+}

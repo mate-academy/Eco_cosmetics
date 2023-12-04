@@ -1,0 +1,35 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  &__main {
+    @include main-button-text;
+
+    border: black 1px solid;
+    color: white;
+    background-color: $button-main;
+    height: 60px;
+
+    @include hover(background-color, $background-page);
+    @include hover(color, black);
+  }
+
+  &__learn-more {
+    @include learn-button;
+    @include hover-under-line;
+
+    padding: 0;
+  }
+
+  &__shopping {
+    padding: 0;
+
+    @include shop-button;
+  }
+}

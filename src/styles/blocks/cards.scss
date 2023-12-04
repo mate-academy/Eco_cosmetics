@@ -1,0 +1,202 @@
+.cards {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  @include on-desktop {
+    @include grid;
+  }
+
+  &__face {
+    display: flex;
+    width: 100%;
+
+    @include on-tablet {
+      @include grid;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+    }
+
+    &__hydrophilic-oil {
+      @include card;
+
+      position: relative;
+      display: flex;
+      width: 100%;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 7;
+      }
+
+      &__img {
+        @include hover(scale, 1.05);
+
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      &__title {
+        @include h5;
+
+        margin-left: 20px;
+        margin-bottom: 10px;
+
+        @include on-tablet {
+          margin-left: 0;
+        }
+      }
+
+      &__price {
+        @include text-price;
+
+        margin-left: 20px;
+
+        @include on-tablet {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &__ubtan {
+      display: none;
+
+      @include card;
+
+      @include on-tablet {
+        display: flex;
+        width: 100%;
+
+        grid-column: 4 / -1;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / -1;
+      }
+
+      &__img {
+        @include hover(scale, 1.05);
+        
+        display: none;
+        margin-bottom: 20px;
+
+        @include on-tablet {
+          display: flex;
+          width: 100%;
+        }
+      }
+
+      &__title {
+        display: none;
+
+        @include h5;
+
+        margin-bottom: 10px;
+
+        @include on-tablet {
+          display: flex;
+        }
+      }
+
+      &__price {
+        display: none;
+
+        @include text-price;
+
+        @include on-tablet {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    color: $gray-underline;
+
+    @include on-desktop {
+      grid-column: 4 / 9;
+    }
+  }
+
+  &__hair {
+    display: flex;
+    width: 100%;
+
+    @include on-tablet {
+      @include grid;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+    }
+
+    &__shampoo {
+      @include card;
+
+      display: flex;
+      width: 100%;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 7;
+      }
+
+      &__img {
+        @include hover(scale, 1.05);
+
+        width: 100%;
+
+        margin-bottom: 20px;
+      }
+
+      &__title {
+        @include h5;
+
+        margin-left: 20px;
+        margin-bottom: 10px;
+
+        @include on-tablet {
+          margin-left: 0;
+        }
+      }
+
+      &__price {
+        @include text-price;
+
+        margin-left: 20px;
+
+        @include on-tablet {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__candels {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    color: $gray-underline;
+
+    @include on-desktop {
+      grid-column: 4 / 9;
+    }
+  }
+}
