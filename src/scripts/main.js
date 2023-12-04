@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(function() {
       document.body.removeChild(messageContainer);
-    }, 7500);
+    }, 5500);
   };
 
   const formButton = document.querySelector('.contact-us__form__button');
