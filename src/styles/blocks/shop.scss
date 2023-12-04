@@ -48,14 +48,14 @@
   &__radio {
     display: none;
     transform: scale(0);
+    transition: $transition-time;
 
     @for $card-number from 1 through 4 {
       &--#{$card-number}:checked~.shop__cards .shop__card--#{$card-number} {
         display: block;
-        transition: $transition-time;
 
         @include on-tablet {
-          transform: scale(101%);
+          transform: scale(105%);
           box-shadow: 1px 0 2px $dark-grey-c;
         }
       }
@@ -115,6 +115,10 @@
       cursor: pointer;
       width: calc(50% - 20px);
       flex-shrink: 0;
+      transition: $transition-time;
+      &:hover{
+        transform: scale(105%);
+      }
     }
 
   }
@@ -125,7 +129,7 @@
 
     @include on-tablet {
       margin: 0;
-      min-width: 342px;
+      min-width: 338px;
       min-height: 300px;
       max-width: 100%;
     }
