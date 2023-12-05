@@ -1,0 +1,48 @@
+.button {
+  background-color: $color-first-text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  text-decoration: none;
+  color: $color-text-button;
+
+  @include text;
+
+  cursor: pointer;
+  transition: 0.5s ease;
+
+  &:hover {
+    box-shadow: rgb(0, 0, 0) 3px 3px 20px, rgb(255, 153, 204) -2px 1px 30px;
+  }
+
+  @include ontablet {
+    margin: 0 auto;
+    width: 280px;
+  }
+
+  &__link-text {
+    position: relative;
+    padding-bottom: 10px;
+
+    @include decorative-text;
+
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: $color-second-text;
+    }
+  }
+
+  &--ondesktop1280 {
+    @include ondesktop1280 {
+      margin: 0;
+    }
+  }
+}
