@@ -1,19 +1,6 @@
 .footer {
   background: #8c9772;
 
-  &__item {
-    position: relative;
-    display: inline-block;
-
-    &::after {
-      @include button-link;
-    }
-
-    &:hover::after {
-      transform: scale(1);
-    }
-  };
-
   &__list {
     display: flex;
     flex-direction: column;
@@ -32,10 +19,21 @@
   }
 
   &__link {
+    position: relative;
+    display: inline-block;
+
     @include footer-text;
 
     text-decoration: none;
     color: $page-background;
+
+    &::after {
+      @include button-link;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
 
     @include ontablet {
       font-weight: 400;
