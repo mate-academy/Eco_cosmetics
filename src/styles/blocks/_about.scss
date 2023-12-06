@@ -1,0 +1,61 @@
+.about {
+  &__text-content {
+    grid-column: 1 / span 3;
+
+    @include desktop {
+      grid-column: 2 / span 4;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 10px;
+  }
+
+  &__info {
+    margin-bottom: 30px;
+
+    @include tablet {
+      max-width: 70ch;
+      margin-right: 15px;
+    }
+  }
+
+  &__learn {
+    @extend %learn-more;
+  }
+
+  &__img {
+    display: none;
+
+    @include tablet {
+      width: 100%;
+      object-fit: cover;
+      max-height: 300px;
+
+      @include desktop {
+        max-height: 520px;
+      }
+    }
+
+    &--big {
+      @include tablet {
+        display: block;
+        grid-column: 4 / -1;
+      }
+
+      @include desktop {
+        grid-column: 7 / span 4;
+      }
+    }
+
+    &--small {
+      @include desktop {
+        display: block;
+        grid-column: 11 / span 2;
+        width: 100%;
+        height: 80%;
+        align-self: end;
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+.shop {
+  &__heading {
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include tablet {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    @include desktop {
+      grid-column: 2 / span 2;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__nav {
+    list-style-type: none;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 15px;
+
+    @include tablet {
+      width: 100%;
+      margin-bottom: 25px;
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+
+    @include desktop {
+      margin-bottom: 50px;
+      grid-column: 2 / span 4;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #828282;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    border-bottom: 1.5px solid $beige;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $dark-green;
+      border-bottom: 1.5px solid $dark-green;
+      cursor: pointer;
+    }
+
+    @include tablet {
+      margin-right: 30px;
+    }
+
+    @include desktop {
+      font-size: 16px;
+    }
+  }
+
+  &__product {
+    &--left {
+      @include tablet {
+        grid-column: 1 / span 3;
+        grid-row: 3;
+      }
+
+      @include desktop {
+        width: 90%;
+        grid-column: 2 / 8;
+      }
+    }
+
+    &--right {
+      display: none;
+
+      @include tablet {
+        display: block;
+        grid-column: 4 / span 3;
+        grid-row: 3;
+      }
+
+      @include desktop {
+        width: 90%;
+        grid-column: 7 / -1;
+        justify-self: end;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    aspect-ratio: 1 / 0.9;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
+
+  &__product-name {
+    color: $dark;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    width: 90%;
+    margin: 0 auto 10px;
+
+    @include tablet {
+      margin-left: 0;
+    }
+  }
+
+  &__price {
+    color: $dark;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    width: 90%;
+    margin: 0 auto 30px;
+
+    @include tablet {
+      margin: 0 0 50px;
+    }
+  }
+
+  &__btn {
+    @extend %button;
+    width: 90%;
+    margin: 0 auto;
+
+    @include tablet {
+      width: 100%;
+      grid-column: 3 / 5;
+      grid-row: 4;
+    }
+
+    @include desktop {
+      width: 90%;
+      grid-column: 5 / span 4;
+    }
+  }
+}

@@ -1,6 +1,153 @@
 @import "utils";
 @import "typography";
+@import "../styles/blocks/header";
+@import "../styles/blocks/menu";
+@import "../styles/blocks/motto";
+@import "../styles/blocks/about";
+@import "../styles/blocks/shop";
+@import "../styles/blocks/creators";
+@import "../styles/blocks/product";
+@import "../styles/blocks/pictograms";
+@import "../styles/blocks/contact";
+@import "../styles/blocks/footer";
+
+.page {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background: $c-gray;
+  box-sizing: border-box;
+  background-color: $beige;
+  font-family: "Poppins", sans-serif;
+  padding-top: 20px;
+  overflow-x: hidden;
+
+  @include tablet {
+    padding-top: 28px;
+  }
+
+  @include desktop {
+    padding-top: 52px;
+  }
+}
+
+.side {
+  display: none;
+  color: rgba(52, 79, 16, 0.5);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%;
+  width: max-content;
+  transform: rotate(-90deg);
+  position: absolute;
+
+  @include desktop {
+    display: block;
+  }
+
+  &::before {
+    content: "";
+    width: 100px;
+    border-bottom: 1.5px solid rgba(52, 79, 16, 0.5);
+    position: absolute;
+    left: -80%;
+    top: 50%;
+  }
+
+  &--about {
+    top: 90px;
+    left: -68px;
+  }
+
+  &--shop {
+    top: 25px;
+    left: -10px;
+
+    &::before {
+      left: -370%;
+    }
+  }
+
+  &--creators {
+    top: 60px;
+    left: -50px;
+
+    &::before {
+      left: -100%;
+    }
+  }
+
+  &--product {
+    top: 50px;
+    left: -28px;
+
+    &::before {
+      left: -170%;
+    }
+  }
+
+  &--contact {
+    top: 20px;
+    left: -6px;
+
+    &::before {
+      left: -420%;
+    }
+  }
+}
+
+.section-grid {
+  width: 90%;
+  position: relative;
+  margin: 0 auto;
+
+  margin-bottom: 110px;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 30px;
+    margin-bottom: 130px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 200px;
+  }
+
+  &--footer {
+    margin-bottom: 0;
+  }
+
+  &--product {
+    width: 92%;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.span {
+  display: none;
+
+  @include desktop {
+    display: block;
+    width: 40%;
+    border-bottom: 1.5px solid rgba(52, 79, 16, 0.5);
+    margin-bottom: 100px;
+  }
+
+  &--motto {
+    width: 45%;
+    transform: translate(123%, -90px);
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
 }
