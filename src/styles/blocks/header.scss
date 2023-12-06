@@ -1,0 +1,69 @@
+.header {
+  &__content {
+    @include page-grid;
+
+    margin: 0;
+
+    &--photo {
+      grid-column: 1/-1;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+
+      @include on-desktop {
+        grid-column: 7/13;
+      }
+    }
+
+    &--text-data {
+      text-align: center;
+
+      @include on-desktop {
+        text-align: left;
+
+        @include page-grid;
+      }
+    }
+
+    &--title {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 130%;
+      grid-column: 1/-1;
+
+      @include on-tablet {
+        font-size: 36px;
+        line-height: 150%;
+
+      }
+
+      @include on-desktop {
+        grid-column: 2/7;
+        margin: 0;
+        font-size: 60px;
+        line-height: 130%;
+      }
+    }
+
+    &--description {
+      grid-column: 1/-1;
+
+      @include on-desktop {
+        grid-column: 2/5;
+      }
+    }
+
+    &--button {
+      grid-column: 1/-1;
+
+      @include on-tablet {
+        grid-column: 3/5;
+      }
+
+      @include on-desktop {
+        grid-column: 2/5;
+      }
+    }
+
+  }
+}
