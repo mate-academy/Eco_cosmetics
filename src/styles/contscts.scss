@@ -1,6 +1,11 @@
 .contacts {
   @include paddingInLine;
 
+  @include onDesktop {
+    width: 1180px;
+    box-sizing: border-box
+  }
+
   &__wrapper {
     @include forWrapper;
     margin-bottom: 100px;
@@ -9,11 +14,19 @@
       display: flex;
       gap: 30px;
     }
+
+    @include onDesktop {
+      gap: 120px;
+    }
   }
 
   &__top {
     @include onTablet {
       width: 342px;
+    }
+
+    @include onDesktop {
+      width: 380px;
     }
   }
 
@@ -24,6 +37,11 @@
 
   &__description {
     padding-bottom: 30px;
+
+    @include onDesktop {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   &__form {
@@ -70,6 +88,12 @@
       background-image: url(..//images/tablet/bird2.png);
       background-size: cover;
       background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      width: 580px;
+      height: 539px;
+      background-image: url(..//images/desctop/7.png);
     }
   }
 }

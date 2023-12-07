@@ -11,6 +11,15 @@
       display: flex;
       gap: 17px;
     }
+
+    @include onDesktop {
+      width: 1180px;
+      padding-inline: 50px;
+      display: grid;
+      grid-template-areas: "shop contacts"
+      ". socials";
+      grid-template-columns: 50%;
+    }
   }
 
   &__top {
@@ -24,6 +33,12 @@
     flex-direction: column;
     gap: 11px;
     margin-bottom: 20px;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+      grid-area: shop;
+    }
   }
 
   &__nav__list__item {
@@ -38,11 +53,19 @@
 
   &__socials {
     margin-bottom: 40px;
+
+    @include onDesktop {
+      grid-area: socials;
+    }
   }
 
   &__socials__list {
     display: flex;
     gap: 20px;
+
+    @include onDesktop {
+      grid-area: socials;
+    }
   }
 
   &__socials__list__item {
@@ -50,11 +73,19 @@
     height: 20px;
   }
 
+  &__contacts {
+    width: 480px;
+  }
+
   &__contacts__list {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-bottom: 40px;
+
+    @include onDesktop {
+      grid-area: contacts;
+    }
   }
 
   &__contacts__item {
@@ -70,5 +101,12 @@
     text-align: center;
     margin: 0 auto;
     padding-bottom: 40px;
+
+    @include onDesktop {
+      font-size: 18px;
+      line-height: 27px;
+      margin: 0;
+      width: 382px;
+    }
   }
 }
