@@ -1,5 +1,6 @@
 .creators {
   @include paddingInLine;
+  position: relative;
 
   &__wrapper {
     @include forWrapper;
@@ -11,10 +12,23 @@
     }
 
     @include onDesktop {
-      width: 1280px;
-      box-sizing: border-box;
       margin-block: 200px;
       gap: 120px;
+    }
+  }
+
+  &__side-element {
+    @include onDesktop {
+      @include forSideText;
+
+      transform: rotate(270deg) translateY(-210%);
+      position: absolute;
+      top: 110px;
+      left: 0;
+
+      &::before {
+        width: 88px;
+      }
     }
   }
 

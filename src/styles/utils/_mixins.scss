@@ -37,6 +37,7 @@
 }
 
 @mixin forWrapper {
+  box-sizing: border-box;
   width: 280px;
   margin: 0 auto;
 
@@ -45,7 +46,7 @@
   }
 
   @include onDesktop {
-    width: 1180px;
+    width: 1080px;
   }
 }
 
@@ -133,4 +134,29 @@
   font-size: 18px;
   line-height: 27px;
   letter-spacing: 5%;
+}
+
+@mixin forSideText {
+  display: none;
+  position: absolute;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba($color: $c-green, $alpha: 0.5);
+
+  &::before {
+    content: "";
+    display: inline-block;
+
+    width: 100px;
+    height: 1px;
+    margin-bottom: 4px;
+    margin-right: 10px;
+    background-color: rgba($color: $c-green, $alpha: 0.5);
+  }
+
+  @include onDesktop {
+    display: block;
+  }
 }

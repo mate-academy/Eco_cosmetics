@@ -1,8 +1,8 @@
 .about {
+  @include paddingInLine;
   position: relative;
 
   &__wrapper {
-    @include paddingInLine;
     @include forWrapper;
 
     @include onTablet {
@@ -15,14 +15,11 @@
 
     @include onDesktop {
       align-items: flex-start;
-      width: 1080px;
-      padding-left: 150px;
+      margin: 0;
     }
   }
 
   &__introduction__wrapper {
-    // margin-block: 100px;
-
     @include onTablet {
       margin-top: 130px;
     }
@@ -95,6 +92,21 @@
 
     @include onDesktop {
       gap: 120px;
+      margin-top: 200px;
+    }
+  }
+
+  &__side-element {
+    @include onDesktop {
+      @include forSideText;
+      width: 302px;
+      height: 18px;
+      display: block;
+      transform: rotate(270deg) translateY(-450%);
+
+      position: absolute;
+      bottom: 382px;
+      left: 0;
     }
   }
 

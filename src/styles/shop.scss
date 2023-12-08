@@ -1,16 +1,30 @@
 .shop {
+  position: relative;
   padding-top: 100px;
-  
+  @include paddingInLine;
+
+  &__wrapper {
+    @include forWrapper;
+  }
+
+  &__side-element {
+    @include onDesktop {
+      @include forSideText;
+
+      transform: rotate(270deg);
+      position: absolute;
+      top: 169px;
+      left: 0;
+    }
+  }
+
   &__nav {
     display: flex;
     gap: 34px;
-    @include paddingInLine;
-    @include forWrapper;
     margin-bottom: 15px;
 
     @include onDesktop {
       margin-bottom: 50px;
-      width: 1280px;
       box-sizing: border-box;
     }
 
@@ -24,30 +38,24 @@
     @include onTablet {
       display: flex;
       gap: 30px;
-      @include paddingInLine;
-      @include forWrapper;
     }
 
     @include onDesktop {
       gap: 20px;
-      width: 1280px;
       box-sizing: border-box;
     }
   }
 
   &__title {
     @include forTitles;
-    @include paddingInLine;
     text-align: center;
     padding-bottom: 20px;
 
     @include onTablet {
-      @include forWrapper;
       text-align: left;
     }
 
     @include onDesktop {
-      width: 1280px;
       box-sizing: border-box;
     }
   }
