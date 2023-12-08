@@ -1,0 +1,114 @@
+.header {
+  &__content {
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__image-wrapper {
+    @include onDesktop {
+      grid-column: 7/-1;
+    }
+  }
+
+  &__image {
+    height: 267px;
+    width: 100%;
+    background-image: url(..//images/header_photo.png);
+    background-size: cover;
+    background-position: center;
+
+    @include onTablet {
+      height: 500px;
+    }
+
+    @include onDesktop {
+      height: 451px;
+    }
+  }
+
+  &__info {
+    padding-top: 25px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    @include onTablet {
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 2/7;
+    }
+  }
+
+
+
+  &__title {
+    text-align: center;
+    margin: 0;
+    font-family: Sharp;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 130%;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      font-size: 60px;
+      line-height: 120%;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+
+  &__button {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include onTablet {
+      padding-top: 50px;
+    }
+
+    @include onDesktop {
+      justify-content: left;
+    }
+  }
+
+  &__link-button {
+    display: block;
+    box-sizing: border-box;
+    height: 60px;
+    width: 280px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 19px 115px 20px 114px;
+    color: $botton-text-color;
+    background-color: $botton-color;
+    font-size: 16px;
+    line-height: 130%;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    cursor: pointer;
+  }
+}
+
+
+
