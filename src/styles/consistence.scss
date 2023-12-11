@@ -1,0 +1,172 @@
+.consistence {
+  // @include Tablet {
+  //   max-width: 1000px;
+  //   margin: 0 auto;
+  // }
+  // @include Desktop {
+  //   max-width: 1280px;
+  //   margin: 0 auto;
+  // }
+
+  @include Tablet {
+    // padding: 130px 27px 140px;
+    padding-left: 27px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @include Desktop {
+    padding: 130px 50px 140px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__text--h {
+    padding: 100px 20px 0;
+    font-family: "Poppins", sans-serif;
+    text-align: initial;
+    line-height: 36px;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $color-text-green;
+    padding-bottom: 10px;
+
+    @include Tablet {
+      padding: 0;
+    }
+    @include Desktop {
+      padding-left: 100px;
+    }
+  }
+
+  &__block--link {
+    padding: 30px 20px 0;
+    @include Tablet {
+      padding: 0 27px;
+    }
+    @include Tablet {
+      padding-left: 100px;
+    }
+  }
+
+  &__block--l {
+    font-family: "Poppins", sans-serif;
+    text-align: initial;
+    line-height: 18.2px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $color-text-green;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      transition: all 0.6s;
+      color: $color-main;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $color-main;
+    }
+  }
+}
+
+.powder {
+  &__block {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 31px;
+    justify-content: right;
+    @include Tablet {
+      gap: 20px;
+      margin-bottom: 0;
+    }
+    @include Desktop {
+      gap: 50px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-name {
+    font-family: "Poppins", sans-serif;
+    width: 98px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    display: flex;
+    justify-content: end;
+  }
+
+  &__line {
+    position: relative;
+    width: 32px;
+    height: 1px;
+    background-color: $color-main;
+    display: flex;
+    justify-content: end;
+
+    &::after {
+      position: absolute;
+      bottom: -2px;
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $color-main;
+    }
+    @include Desktop {
+      width: 52px;
+    }
+  }
+
+  &__list {
+    margin-top: 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+  }
+
+  &__image {
+    height: 390px;
+    width: auto;
+    display: flex;
+    @include Tablet {
+      overflow: hidden;
+      height: 100%;
+      right: -27px;
+      width: 30%;
+    }
+
+    @include Desktop {
+      overflow: visible;
+      position: relative;
+      height: 100%;
+      right: 27px;
+      width: 30%;
+    }
+  }
+
+  &__list--img {
+    display: block;
+    height: 400px;
+    width: auto;
+
+    @include Tablet {
+      display: none;
+    }
+  }
+
+  &__big--img {
+    display: none;
+    height: 400px;
+    width: auto;
+    @include Tablet {
+      display: block;
+    }
+  }
+
+}

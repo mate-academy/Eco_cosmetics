@@ -1,0 +1,159 @@
+.contact {
+  padding: 100px 20px;
+
+  @include Tablet {
+    padding: 130px 27px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @include Desktop {
+    padding: 150px 50px;
+    max-width: 1280px;
+  }
+
+  &__block {
+    @include Tablet {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    @include Desktop {
+      gap: 120px;
+    }
+
+  }
+
+  &__form {
+    @include Tablet {
+      width: 50%;
+    }
+    @include Desktop {
+      padding-left: 100px;
+      max-width: 380px;
+    }
+  }
+
+  &__image {
+    background-image: url(../images/form_bird.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 50%;
+    background-position: 50%;
+    background-size: cover;
+    height: auto;
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    line-height: 36px;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $color-text-green;
+    padding-bottom: 10px;
+  }
+
+  &__us {
+    display: block;
+  }
+
+  &__subtitle {
+    padding-bottom: 30px;
+    font-family: "Poppins", sans-serif;
+    text-align: initial;
+    line-height: 21px;
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-main;
+
+    @include Tablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    padding-bottom: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    &:hover {
+      border-bottom: 1px solid #828282;
+    }
+  }
+
+  &__container-message {
+    width: 100%;
+    height: 25px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    background-color: transparent;
+    resize: none;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+
+    &:hover {
+      border-bottom: 1px solid #828282;
+    }
+    &:focus {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #bdbdbd;
+    }
+  }
+}
+
+/////////////////////////
+input[type="text"] {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 1px solid #bdbdbd;
+  cursor: pointer;
+}
+
+input[type="email"] {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  border-bottom: 1px solid #bdbdbd;
+  cursor: pointer;
+}
+
+input[type="text"]:focus {
+  color: #eb5757;
+  border-bottom: 1px solid #828282;
+  outline: none;
+}
+
+input[type="email"]:focus {
+  color: #eb5757;
+  border-bottom: 1px solid #828282;
+  outline: none;
+}
+
+input[type="text"]:valid {
+  color: $color-text-green;
+  border-bottom: 1px solid $color-text-green;
+  outline: none;
+
+}
+
+input[type="email"]:valid {
+  color: $color-text-green;
+  border-bottom: 1px solid $color-text-green;
+  outline: none;
+}

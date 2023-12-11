@@ -1,0 +1,291 @@
+.shop {
+  padding: 0 20px;
+
+  @include Tablet {
+    padding: 0 27px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  @include Desktop {
+    padding: 0 50px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__block {
+    @include Desktop {
+      padding-left: 100px;
+    }
+  }
+
+  &__text--h {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    line-height: 36px;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $color-text-green;
+    padding-bottom: 20px;
+
+    @include Tablet {
+      text-align: start;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 27px;
+    @include Tablet {
+      justify-content: flex-start;
+      gap: 14px;
+    }
+  }
+
+  &__list--item {
+    font-family: "Poppins", sans-serif;
+    line-height: 18.2px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #828282;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover {
+      color: $color-main;
+      padding-bottom: 10px;
+      border-bottom: 2px solid $color-main;
+    }
+
+    &:disabled {
+      color: $color-main;
+    }
+
+    @include Desktop {
+      font-size: 18px;
+    }
+  }
+
+  &__list--choose {
+    color: $color-main;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $color-main;
+  }
+
+  &__cards {
+    @include Tablet {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      margin-bottom: 90px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 90%;
+    display: block;
+    padding: 0 !important;
+    margin: 0 auto;
+
+    @include Tablet {
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      max-height: 350px;
+    }
+
+    @include Desktop {
+      max-height: 500px;
+      transition: all 3s;
+      &:hover {
+        transform: scale 1s;
+      }
+    }
+  }
+
+  &__card--name {
+    padding-top: 20px;
+    font-family: "Poppins", sans-serif;
+    line-height: 27px;
+    font-size: 18px;
+    font-weight: 600;
+    color: $color-main;
+    text-transform: uppercase;
+  }
+
+  &__card--price {
+    padding: 20px 0 10px;
+    font-family: "Poppins", sans-serif;
+    line-height: 27px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-text-green;
+    text-transform: uppercase;
+  }
+  &__card--g {
+    padding-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    line-height: 27px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-main;
+    text-transform: uppercase;
+  }
+
+  &__card--2 {
+    display: none;
+
+    @include Tablet {
+      display: block;
+      width: 50%;
+    }
+  }
+
+  &__card--1 {
+    @include Tablet {
+      width: 50%;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    @include Tablet {
+      margin: 0 auto;
+    }
+  }
+}
+//////////////////////////////////////
+.card {
+  background-color: $color-background;
+  height: 100%;
+  z-index: 1;
+  overflow: scroll;
+
+  &__container {
+    padding: 0 20px;
+
+    @include Tablet {
+      padding: 0 50px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @include Desktop {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  &__top-card {
+    height: 24px;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+
+    @include Tablet {
+      padding: 23px 27px;
+    }
+
+    @include Desktop {
+      display: none;
+    }
+  }
+
+  &__card--image {
+    padding-top: 20px;
+
+    @include Tablet {
+      max-width: auto;
+      max-height: auto;
+      margin: 0 auto;
+    }
+  }
+
+  &__img {
+    padding-top: 20px;
+
+    @include Tablet {
+      max-width: 700px;
+      max-height: 500px;
+      margin: 0 auto;
+    }
+  }
+
+  &__button {
+    margin: 30px auto 20px;
+    @include Tablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__icon-cross {
+    display: flex;
+    margin-bottom: 45px;
+  }
+
+  &__nav {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+  }
+
+  &__card--text {
+    font-family: "Poppins", sans-serif;
+    line-height: 21px;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 20px;
+
+  }
+
+  &__green {
+    color: $color-text-green;
+  }
+
+  &__link {
+    position: relative;
+    color: $color-main;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    text-decoration: none;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      width: 100%;
+      height: 1px;
+      flex-shrink: 0;
+      background-color: #828282;
+    }
+  }
+
+  &__patern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &__close--link {
+    padding: 0 20px 20px;
+    text-align: center;
+  }
+}

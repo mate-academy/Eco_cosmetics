@@ -1,0 +1,99 @@
+.creators {
+  padding: 100px 20px 0;
+
+  @include Tablet {
+    padding: 130px 27px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @include Desktop {
+    padding: 130px 50px 140px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    @include Desktop {
+      padding-left: 100px;
+      gap: 120px;
+    }
+  }
+
+  &__block--text {
+    width: 100%;
+    @include Desktop {
+      width: 400px;
+    }
+  }
+
+  &__block--h {
+    font-family: "Poppins", sans-serif;
+    text-align: initial;
+    line-height: 36px;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $color-text-green;
+    padding-bottom: 10px;
+  }
+
+  &__block--t {
+    font-family: "Poppins", sans-serif;
+    text-align: initial;
+    line-height: 21px;
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-main;
+
+    @include Tablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__block--hiden {
+    display: none;
+    @include Desktop {
+      display: block;
+      font-family: "Poppins", sans-serif;
+      text-align: initial;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      color: $color-main;
+      padding-top: 20px;
+    }
+  }
+
+  &__block--link {
+    padding: 30px 0 36px;
+  }
+
+  &__block--image {
+    display: none;
+
+    @include Tablet {
+      background-image: url(../images/creator_img.png);
+      background-repeat: no-repeat;
+      display: block;
+      width: 100%;
+      background-position: 50%;
+      background-size: cover;
+      height: auto;
+    }
+
+    @include Desktop {
+      width: 60%;
+      max-height: 600px;
+    }
+  }
+
+  &__img {
+    max-height: 80% !important;
+  }
+}

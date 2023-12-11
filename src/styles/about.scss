@@ -1,0 +1,119 @@
+.about {
+  padding: 0 20px 100px;
+
+  @include Tablet {
+    padding: 0 27px 130px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @include Desktop {
+    padding: 130px 50px 140px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include Desktop {
+      padding-left: 100px;
+      gap: 120px;
+    }
+  }
+
+  &__text {
+    @include Tablet {
+      width: 50%;
+    }
+    @include Desktop {
+      max-width: 380px;
+      width: auto;
+    }
+  }
+
+  &__image {
+    display: none;
+    width: 50%;
+
+    @include Tablet {
+      display: block;
+    }
+    @include Desktop {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      // width: auto;
+      // width: 100%;
+      width: 55%;
+      max-height: 600px;
+    }
+  }
+
+  &__img--f {
+    max-height: 310px;
+    width: 100%;
+
+    @include Desktop {
+      // max-height: 380px;
+      display: block;
+      height: 100%;
+      max-height: 480px;
+    }
+  }
+
+  &__img--s {
+    display: none;
+
+    @include Desktop {
+      position: relative;
+      display: block;
+      height: 80%;
+      bottom: -88px;
+    }
+  }
+
+  &__text--h {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    line-height: 36px;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $color-text-green;
+    padding-bottom: 10px;
+  }
+
+  &__text--t {
+    padding-bottom: 30px;
+    font-family: "Poppins", sans-serif;
+    text-align: initial;
+    line-height: 21px;
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-main;
+
+    @include Tablet {
+      font-size: 16px;
+      line-height: 24px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__text--hiden {
+    display: none;
+    padding-bottom: 30px;
+    font-family: "Poppins", sans-serif;
+    text-align: initial;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    color: $color-main;
+    @include Desktop {
+      display: block;
+    }
+  }
+}
