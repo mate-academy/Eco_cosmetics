@@ -121,7 +121,7 @@ function addMainChooseAnimation() {
   const mainChooseScroll
     = (scrollYPosition <= 1200 && pageWidth >= 1280)
     || (scrollYPosition >= 200 && scrollYPosition <= 1200 && pageWidth >= 768)
-    || (pageWidth < 768);
+    || (pageWidth < 768 && scrollYPosition >= 50);
 
   if (mainChooseScroll) {
     animationMainChoose[0].classList.add(
