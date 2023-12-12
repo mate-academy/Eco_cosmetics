@@ -1,0 +1,75 @@
+.main__choose {
+  @include page-grid;
+
+  justify-content: center;
+  align-items: center;
+
+  @include on-desktop {
+    height: 346px;
+  }
+
+  &__wrapper {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--title {
+    grid-column: 1 / -1;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    line-height: 27px;
+    color: $additional-text-color;
+    text-transform: uppercase;
+    margin: 0;
+
+    @include on-tablet {
+      grid-column: 3 / 5;
+      text-align: center;
+    }
+
+    @include on-desktop {
+      text-align: start;
+      font-size: 24px;
+      line-height: 36px;
+      grid-column: 7 / span 4;
+    }
+  }
+
+  &--description {
+    display: none;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include on-desktop {
+      display: block;
+      position: relative;
+
+      grid-column: 2 / span 4;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+
+    &--left {
+      height: 1px;
+      grid-column: 1 / 6;
+      background-color: $additional-text-color;
+      align-self: start;
+    }
+
+    &--right {
+      height: 1px;
+      grid-column: 7 / -1;
+      background-color: $additional-text-color;
+      align-self: end;
+    }
+  }
+}

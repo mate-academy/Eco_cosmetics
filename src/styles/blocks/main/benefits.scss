@@ -1,0 +1,97 @@
+.main__benefits {
+  @include page-grid;
+
+  &__content {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      gap: 30px;
+    }
+
+    &--item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      grid-column: 1 / -1;
+      height: 100%;
+      row-gap: 20px;
+      opacity: 0;
+
+      @include on-tablet {
+        grid-column: span 2;
+      }
+
+      @include on-desktop {
+        grid-column: span 4;
+        row-gap: 45px;
+      }
+    }
+
+    &--image {
+      width: 80px;
+      height: 75px;
+      display: block;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      transition: transform $effect-duration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &--1 {
+        background-image: url('/src/images/moblie_size/main_media_mobile--benefits_1.png');
+
+        @include on-tablet {
+          background-image: url('/src/images/tablet_size/main_media_tablet--benefits_1.png');
+        }
+
+        @include on-desktop {
+          background-image: url('/src/images/desktop_size/main_media_desktop--benefits_1.png');
+        }
+      }
+
+      &--2 {
+        background-image: url('/src/images/moblie_size/main_media_mobile--benefits_2.png');
+
+        @include on-tablet {
+          background-image: url('/src/images/tablet_size/main_media_tablet--benefits_2.png');
+        }
+
+        @include on-desktop {
+          background-image: url('/src/images/desktop_size/main_media_desktop--benefits_2.png');
+        }
+      }
+
+      &--3 {
+        background-image: url('/src/images/moblie_size/main_media_mobile--benefits_3.png');
+
+        @include on-tablet {
+          background-image: url('/src/images/tablet_size/main_media_tablet--benefits_3.png');
+        }
+
+        @include on-desktop {
+          background-image: url('/src/images/desktop_size/main_media_desktop--benefits_3.png');
+        }
+      }
+    }
+
+    &--text {
+      width: 100%;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18.2px;
+      letter-spacing: 0.05em;
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
