@@ -52,9 +52,13 @@ function shopGenerate() {
       .remove('main__shop--products--card--active'),
   );
 
-  [...itemsLi].forEach(
-    clearItem => clearItem.classList
-      .remove('main__shop--products--item--active'),
+  [...shopImages].forEach(
+    clearItem => {
+      clearItem.classList.remove('main__shop--products--card--active');
+
+      clearItem.children[0].children[0].classList
+        .remove('animation__main__shop--products--card--image');
+    },
   );
 
   itemsLi[0].classList.add('main__shop--products--item--active');
@@ -70,12 +74,21 @@ function shopGenerate() {
   switch (currentShopWidth) {
     case 'mobile':
       shopImages[0].classList.add('main__shop--products--card--active');
+
+      shopImages[0].children[0].children[0].classList
+        .add('animation__main__shop--products--card--image');
       break;
 
     case 'tablet':
     case 'desktop':
       shopImages[0].classList.add('main__shop--products--card--active');
       shopImages[1].classList.add('main__shop--products--card--active');
+
+      shopImages[0].children[0].children[0].classList
+        .add('animation__main__shop--products--card--image');
+
+      shopImages[1].children[0].children[0].classList
+        .add('animation__main__shop--products--card--image');
       break;
   }
 }
@@ -87,8 +100,12 @@ function shopGenerate() {
   );
 
   [...shopImages].forEach(
-    clearItem => clearItem.classList
-      .remove('main__shop--products--card--active'),
+    clearItem => {
+      clearItem.classList.remove('main__shop--products--card--active');
+
+      clearItem.children[0].children[0].classList
+        .remove('animation__main__shop--products--card--image');
+    },
   );
 
   const index = [...itemsLi].indexOf(event.target);
@@ -99,6 +116,9 @@ function shopGenerate() {
     case 'mobile':
       [...shopImages][index]
         .classList.add('main__shop--products--card--active');
+
+      [...shopImages][index].children[0].children[0].classList
+        .add('animation__main__shop--products--card--image');
       break;
 
     case 'tablet':
@@ -106,12 +126,21 @@ function shopGenerate() {
       [...shopImages][index]
         .classList.add('main__shop--products--card--active');
 
+      [...shopImages][index].children[0].children[0].classList
+        .add('animation__main__shop--products--card--image');
+
       if ([...shopImages][index + 1]) {
         [...shopImages][index + 1]
           .classList.add('main__shop--products--card--active');
+
+        [...shopImages][index + 1].children[0].children[0].classList
+          .add('animation__main__shop--products--card--image');
       } else {
         [...shopImages][0]
           .classList.add('main__shop--products--card--active');
+
+        [...shopImages][0].children[0].children[0].classList
+          .add('animation__main__shop--products--card--image');
       }
       break;
   }
