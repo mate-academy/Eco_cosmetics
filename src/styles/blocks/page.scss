@@ -1,0 +1,32 @@
+.page {
+  font-family: "Avenir", sans-serif;
+  background: $c-main;
+  color: $c-gray-1;
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: all 0.3s;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
+}
