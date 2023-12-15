@@ -1,0 +1,62 @@
+.motto {
+  // what another option?
+  @include onDesktop {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 42vw;
+      border-top: 1px solid rgba(52, 79, 16, 0.5);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 49vw;
+      border-top: 1px solid rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__content {
+    @include grid;
+
+    @include onDesktop {
+      padding-block: 100px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $green-color;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 3 / -3;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      font-size: 24px;
+      letter-spacing: 1.2px;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    display: none;
+    margin: 0;
+    font-size: 16px;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / 6;
+    }
+  }
+}
