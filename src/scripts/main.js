@@ -1,7 +1,7 @@
 'use strict';
 
 const slider = document.querySelector('.slider__wrap');
-const sliderItems = Array.from(slider.querySelectorAll('.slider__img'));
+const sliderItems = Array.from(slider.querySelectorAll('.slider__item'));
 const btn1 = document.querySelector('.slider__btn--1');
 const btn2 = document.querySelector('.slider__btn--2');
 const btn3 = document.querySelector('.slider__btn--3');
