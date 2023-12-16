@@ -1,0 +1,133 @@
+.about-us {
+  &__content {
+    position: relative;
+    @include pageGrid;
+  }
+
+  &__info {
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      grid-column: 2/6;
+    }
+  }
+
+  &__text {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      padding-top: 40px;
+    }
+  }
+
+  &__main-text {
+    margin: 0;
+  }
+
+  &__additional-text {
+    display: none;
+    margin: 0;
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+
+  &__button {
+    padding-top: 30px;
+
+    &::after {
+      content:" ";
+      width: 20px;
+      height: 1px;
+      color: $accent-text-color;
+    }
+
+    @include onDesktop {
+      padding-top: 40px;
+    }
+  }
+
+  &__link {
+    font-family: Sharp, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: $accent-text-color;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__link-line-wrapper {
+    padding-top: 10px;
+  }
+
+  &__link-line {
+    width: 85.02px;
+    height: 1px;
+    background-color: $accent-text-color;
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4/-1;
+    }
+
+    @include onDesktop {
+      grid-column: 7/11;
+    }
+  }
+
+  &__main-image {
+    height: 100%;
+    background-image: url(..//images/about-us/moonlight.png);
+    background-size: cover;
+    background-position: center;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__desktop-image {
+    display: none;
+    @include onDesktop {
+      display: block;
+      height: 530px;
+      background-image: url(..//images/about-us/moonlight-desktop-big.png);
+      background-size: cover;
+      background-position: center right;
+    }
+  }
+  &__add-image-wrapper{
+    display: none;
+    height: 430px;
+
+    @include onDesktop {
+      padding-top: 100px;
+      grid-column: 11/-1;
+      display: block;
+    }
+  }
+
+  &__add-image {
+    display: block;
+    height: 100%;
+    background-image: url(..//images/about-us/moonlight-desktop-small.png);
+    background-size: cover;
+    background-position: center left;
+  }
+}

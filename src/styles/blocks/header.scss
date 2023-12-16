@@ -1,34 +1,55 @@
 .header {
   &__content {
     @include onDesktop {
-      @include pageGrid;
+      display: flex;
+      gap: 20px;
+      max-width: 1180px;
+      margin-inline: auto;
+      padding-inline: 50px;
     }
   }
 
   &__image-wrapper {
+    height: 400px;
+    order: 2;
+
+    @include onTablet {
+      height: 500px;
+      padding-inline: 27px;
+    }
+
     @include onDesktop {
-      grid-column: 7/-1;
+      height: 400px;
+      width: 580px;
+      padding-inline: 0;
     }
   }
 
   &__image {
-    height: 267px;
+    height: 100%;
     width: 100%;
     background-image: url(..//images/header_photo.png);
     background-size: cover;
     background-position: center;
+  }
+
+  &__info-wrapper {
+    order: 1;
+    padding-inline: 20px;
+    padding-top: 25px;
 
     @include onTablet {
-      height: 500px;
+      padding-inline: 27px;
+      padding-top: 50px;
     }
 
     @include onDesktop {
-      height: 451px;
+      padding-inline: 0;
+      padding-top: 0;
     }
   }
 
   &__info {
-    padding-top: 25px;
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -38,27 +59,30 @@
     }
 
     @include onDesktop {
-      grid-column: 2/7;
+      padding-left: 100px;
+      min-width: 430px;
+      max-width: 480px;
     }
   }
 
   &__title {
+    max-width: 500px;
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
     font-family: Sharp, sans-serif;
     font-weight: bold;
     font-size: 24px;
-    line-height: 120%;
+    line-height: 110%;
 
     @include onTablet {
       font-size: 36px;
-      line-height: 130%;
+      line-height: 120%;
     }
 
     @include onDesktop {
       text-align: left;
       font-size: 60px;
-      line-height: 120%;
+      line-height: 110%;
     }
   }
 
@@ -85,25 +109,9 @@
 
     @include onDesktop {
       justify-content: left;
+      padding-left: 100px;
     }
   }
 
-  &__link-button {
-    display: block;
-    box-sizing: border-box;
-    height: 60px;
-    width: 280px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 19px 115px 20px 114px;
-    color: $botton-text-color;
-    background-color: $botton-color;
-    font-size: 16px;
-    line-height: 130%;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2.4px;
-    cursor: pointer;
-  }
+
 }

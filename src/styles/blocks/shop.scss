@@ -1,0 +1,182 @@
+.shop {
+  // &__decor {
+  //   @include contentPaddingInline;
+  //   @include onDesktop {
+  //     @include pageGrid;
+  //   }
+  // }
+
+  &__title-wrapper {
+    @include contentPaddingInline;
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 2/-1;
+    }
+  }
+
+  &__nav {
+    @include contentPaddingInline;
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0 0;
+
+    @include onTablet {
+      padding-top: 10px;
+      justify-content:left;
+      gap: 34px;
+    }
+
+    @include onDesktop {
+      padding-top: 30px;
+      @include pageGrid;
+    }
+  }
+
+  &__nav-item {
+    &--face {
+      grid-column: 2/ span 1;
+    }
+
+    &--body,
+    &--hair {
+      grid-column: span 1;
+    }
+
+    &--candels {
+      grid-column: span 2;
+    }
+  }
+
+  &__nav-link {
+    font-family: Sharp, sans-serif;
+    font-weight: normal;
+    color: #828282;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    &:hover {
+      color: $main-text-color;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        left: 0;
+        top: calc(100% + 10px);
+        content: "";
+        height: 2px;
+        width: 100%;
+        background-color: $main-text-color;
+      }
+    }
+  }
+
+  &__products {
+    padding-top: 27px;
+
+    @include onTablet {
+      padding-top: 37px;
+      @include contentPaddingInline;
+    }
+
+    @include onDesktop {
+      padding-top: 62px;
+      @include pageGrid;
+    }
+  }
+
+  &__products-content {
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+      grid-column: 2/-1;
+    }
+  }
+
+  &__product {
+    &--oil {
+      flex: 1;
+    }
+
+    &--ubtan {
+      flex: 1;
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+  }
+
+  &__product-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include onTablet {
+      max-height: 400px;
+    }
+
+    @include onDesktop {
+      max-height: 500px;
+    }
+  }
+
+  &__product-info {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    @include contentPaddingInline;
+    @include onTablet {
+      padding: 0;
+    }
+  }
+
+  &__product-title {
+    margin: 0;
+    padding-top: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  &__product-price {
+    margin: 0;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+
+  &__button {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+}
