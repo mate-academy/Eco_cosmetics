@@ -1,0 +1,107 @@
+.about-the-creators {
+  &__box {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__left {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 342px;
+      height: 440px;
+    }
+    @include onDesktop {
+      width: 380px;
+      margin-left: 100px;
+    }
+  }
+
+  &__learn-more {
+    @include onDesktop {
+      margin-bottom: 15px;
+    }
+  }
+  &__right {
+    display: none;
+    @include onTablet {
+      display: flex;
+      background-image: url("../images/about-the-creators-tablet.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 342px;
+      height: 440px;
+    }
+    @include onDesktop {
+      background-image: url("../images/about-the-creators-desktop.png");
+      width: 580px;
+      height: 660px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text1,
+  &__text2 {
+    color: $main-color;
+    line-height: 1.5;
+    @include onTablet {
+      font-size: 16px;
+    }
+  }
+
+  &__text1 {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+  &__text2 {
+    margin-bottom: 30px;
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text3 {
+    display: none;
+    @include onDesktop {
+      display: block;
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+  }
+  &__btn {
+    text-decoration: none;
+  }
+
+  &__button {
+    @extend %btn;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}
