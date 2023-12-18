@@ -1,0 +1,57 @@
+.info {
+  grid-column: 1 / -1;
+
+  &__block {
+    grid-column: 1 / -1;
+    @include pageGrid;
+    text-align: center;
+    row-gap: 50px;
+
+    &--content {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+
+      @include onTablet {
+        display: flex;
+        flex-direction: column;
+        grid-column: span 2;
+        justify-content: space-between;
+      }
+
+      @include onDextop {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        grid-column: span 4;
+      }
+    }
+
+    &-icon {
+      object-fit: contain;
+      object-position: center;
+    }
+
+    &-title {
+      @extend %text-2;
+      margin: 0;
+      text-transform: uppercase;
+      color: #000;
+      width: 280px;
+
+      @include onTablet {
+        width: 218px;
+      }
+
+      @include onDextop {
+        display: flex;
+
+        justify-content: center;
+        width: 320px;
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+.nav {
+  grid-column: 1 /-1;
+
+  &__wrapper {
+    padding-top: 30px;
+
+    @include onDextop {
+      grid-column: 7/-1;
+      transform: translateY(45%);
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-style {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+
+      @include onTablet {
+        row-gap: 50px;
+      }
+
+      @include onDextop {
+        flex-direction: row;
+        align-items: center;
+        column-gap: 50px;
+      }
+    }
+  }
+
+  &__link {
+    color: $background-page;
+    text-decoration: none;
+    text-align: center;
+    text-transform: capitalize;
+
+    &-style {
+      display: flex;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #828282;
+      justify-content: center;
+      @include hover(color, $background-color);
+
+      @include onDextop {
+        position: relative;
+        border: none;
+        text-align: left;
+        color: $color-title;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 150%;
+
+        &::after {
+          content: "";
+          display: block;
+          border-bottom: 1px solid $color-title;
+          position: absolute;
+          border-radius: 1px;
+          bottom: 0;
+          width: 100%;
+          transform: scale(0);
+          transition: 0.3s;
+        }
+
+        &:hover::after {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

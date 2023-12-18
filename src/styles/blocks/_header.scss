@@ -1,0 +1,85 @@
+.header {
+  height: 100%;
+
+  @include onDextop {
+    height: 100%;
+  }
+
+  &__top {
+    align-items: center;
+  }
+
+  &__page {
+    @include pageGrid;
+    row-gap: 30px;
+
+    @include onTablet {
+      row-gap: 50px;
+    }
+
+    &-photo {
+      display: block;
+      grid-column: 1/-1;
+      padding: 0;
+      margin-inline: -20px;
+      background-image: url(../images/photo-mobile/header-photo-mobile.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      height: 50vh;
+
+      @include onTablet {
+        margin: 0;
+        background-image: url(../images/photo-tablet/header-photo-tablet.png);
+        height: 500px;
+      }
+
+      @include onDextop {
+        background-image: url(../images/photo-desktop/header-photo-desktop.png);
+        background-position: left;
+        width: 100%;
+        grid-column: 7/-1;
+        grid-row: span 3;
+      }
+    }
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    grid-column: 1/-1;
+    gap: 10px;
+
+    @include onTablet {
+      grid-row: 2;
+    }
+
+    @include onDextop {
+      grid-row: 1;
+      grid-column: 2 / 6;
+      text-align: left;
+      gap: 30px;
+    }
+
+    &-title {
+      margin: 0;
+    }
+
+    &-text {
+      margin: 0;
+      @extend %text-1;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    margin: 0 auto;
+
+    @include onDextop {
+      grid-column: 2 / 6;
+      margin: 0;
+    }
+  }
+}

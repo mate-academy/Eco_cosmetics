@@ -1,0 +1,94 @@
+.shop {
+  position: relative;
+  grid-column: 1 / -1;
+
+  &__block {
+    @include pageGrid;
+  }
+
+  &__wrapper {
+    grid-column: 1/-1;
+    @include pageGrid;
+  }
+
+  &__title {
+
+    @include onDextop {
+      grid-column: 2 / -1;
+    }
+
+    margin: 0;
+    grid-row: 1/ 2;
+    padding-bottom: 20px;
+
+    @include onDextop {
+      text-align: left;
+    }
+  }
+
+  &__nav {
+    grid-column: 1/-1;
+    @include pageGrid;
+
+    @include onDextop {
+      grid-column: 2/-1;
+      grid-row: 2;
+    }
+
+    &--list {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      list-style: none;
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+
+      @include onDextop {
+        grid-column: 1 / 5;
+      }
+
+      &-item {
+        text-transform: uppercase;
+        padding-bottom: 10px;
+      }
+
+      &-link {
+        position: relative;
+        text-decoration: none;
+        color: $color-decoration;
+        @include hover (color, $primary-color);
+
+        &-first {
+          color: $primary-color;
+          border-bottom: 2px solid $primary-color;
+          text-decoration: none;
+          border-radius: 1px;
+          padding-bottom: 8px;
+          width: 100%;
+        }
+
+        &::after {
+          content: "";
+          display: flex;
+          border-bottom: 2px solid $primary-color;
+          position: absolute;
+          border-radius: 1px;
+          bottom: -10px;
+          width: 100%;
+          transform: scale(0);
+          transition: 0.3s;
+        }
+
+        &:hover::after {
+          color: $primary-color;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.page {
+  min-width: 320px;
+  font-family: "Avenir", "Sharp Sans No2 Medium", sans-serif;
+  color: $primary-color;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    position: relative;
+    margin: 0;
+    background-color: $background-page;
+    overflow-x: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+  }
+}
