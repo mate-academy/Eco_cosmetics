@@ -1,0 +1,196 @@
+.shop {
+  @include pageGrid;
+
+  &__title {
+    margin: 0;
+    grid-column: 1 /-1;
+    color: #344f10;
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    @include onDesktop {
+      grid-column: 2 /-1;
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 /-1;
+    margin: 20px 0 27px;
+
+    @include onTablet {
+      margin: 10px 0 37px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 /-1;
+      margin: 30px 0 62px;
+    }
+  }
+
+  &__nav--link {
+    padding-bottom: 10px;
+    color: #828282;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition-duration: 0.3s;
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+    }
+
+    &:hover {
+      color: #333;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+      transition-duration: 0.3s;
+      border-bottom: 1px solid #333;
+    }
+  }
+
+  &__nav--link:not(:last-of-type) {
+    margin-right: 30px;
+
+    @include onTablet {
+      margin-right: 40px;
+    }
+
+    @include onDesktop {
+      margin-right: 46px;
+    }
+  }
+
+  &__products-1 {
+    position: relative;
+    margin-inline: -20px;
+    grid-column: 1 /-1;
+
+    @include onTablet {
+      margin: 0;
+      grid-column: 1 /4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 /7;
+      margin: 0 -50px 0 0;
+    }
+  }
+
+  &__product-title {
+    margin: 20px 0 0;
+    color: #333;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+
+  &__product-price {
+    margin: 10px 0 0;
+    color: #333;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin: 15px 0 0;
+    }
+  }
+
+  .title-1 {
+    padding-left: 20px;
+
+    @include onTablet {
+      padding: 0;
+    }
+  }
+
+  .price-1 {
+    padding-left: 20px;
+
+    @include onTablet {
+      padding: 0;
+    }
+  }
+
+  &__foto-bg-1 {
+    width: 100%;
+    cursor: pointer;
+
+    @include hover(transform,scale(1.05));
+  }
+
+  &__products-2 {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 /-1;
+    }
+
+    @include onDesktop {
+      grid-column: 8 /-1;
+      margin: 0 0 0 -50px;
+    }
+  }
+
+  &__foto-bg-2 {
+    width: 100%;
+    cursor: pointer;
+
+    @include hover(transform,scale(1.05));
+  }
+
+  &__button {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    grid-column: 1 /-1;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+}
+
+.side-mark--shop {
+  top: -145px;
+}
+
+.side-mark--shop::before {
+  left: -30px;
+}

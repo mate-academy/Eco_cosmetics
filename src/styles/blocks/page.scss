@@ -1,0 +1,71 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  line-height: 140%;
+  background: #e4dfd3;
+  margin: 0;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__menu:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__product-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__product-card:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.page:has(.page__menu:target) {
+  overflow: hidden;
+}
+
+.page:has(.page__product-card:target) {
+  overflow: hidden;
+}
+
+.buttons {
+  background-color: #333;
+  color: #f2f2f2;
+  width: 280px;
+  height: 60px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #e4dfd3;
+    color: #333;
+    transition: 0.3s;
+  }
+}

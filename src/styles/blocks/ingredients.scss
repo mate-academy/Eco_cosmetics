@@ -1,0 +1,80 @@
+.ingredients {
+  position: relative;
+  @include pageGrid;
+
+  &__image {
+    background-image: url(../images/bg-images/ingredients-sm.png);
+    background-repeat: no-repeat;
+    height: 400px;
+    grid-column: 1 /-1;
+    background-position: right;
+    margin-inline-end: -20px;
+
+    @include onTablet {
+      background-image: url(../images/bg-images/powder-md.png);
+      background-repeat: no-repeat;
+      grid-column: 2 /-1;
+      margin-inline-end: -27px;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/bg-images/powder-bg.png);
+      background-repeat: no-repeat;
+      margin: 0;
+    }
+  }
+
+  &__top {
+    position: relative;
+    grid-column: 1 /-1;
+
+    @include onTablet {
+      grid-column: 1 /4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 /6;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: #344f10;
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__lern-button {
+    position: relative;
+    grid-column: 1 /-1;
+    grid-row: 3;
+
+    @include onTablet {
+      grid-column: 1 /2;
+      margin-top: -70px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 /3;
+    }
+  }
+}
+
+.side-mark--ingredients {
+  top: 32px;
+}
+
+.side-mark--ingredients::before {
+  left: -52px;
+}

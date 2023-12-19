@@ -1,0 +1,172 @@
+.about {
+  @include pageGrid;
+
+  &__photos {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 /-1;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__photos--bg {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 7 /11;
+      grid-row: 1;
+      transition-duration: 0.3s;
+      cursor: pointer;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      transition-duration: 0.3s;
+    }
+  }
+
+  &__photos--sm {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 11 /-1;
+      grid-row: 1;
+      transition-duration: 0.3s;
+      cursor: pointer;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__photo-1 {
+    width: 100%;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__photo-2 {
+    width: 100%;
+  }
+
+  &__photo-sm {
+    padding-top: 105px;
+    width: 100%;
+  }
+
+  &__content {
+    position: relative;
+    grid-column: 1 /-1;
+
+    @include onTablet {
+      grid-column: 1 /4;
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 2 /6;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: #344f10;
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8;
+    }
+  }
+
+  &__text {
+    color: #333;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 10px 0 0;
+
+    @include onDesktop {
+      margin: 40px 0 0;
+    }
+  }
+}
+
+.text--2 {
+  display: none;
+  margin: 30px 0 0;
+
+  @include onDesktop {
+    display: block;
+  }
+}
+
+.learn {
+  margin-top: 20px;
+  padding: 10px 0;
+  color: #344f10;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  text-transform: uppercase;
+  border: none;
+  background: #e4dfd3;
+  cursor: pointer;
+  transition: 0.3s;
+
+  @include onDesktop {
+    margin-top: 30px;
+  }
+
+  &:hover {
+    border-bottom: 1px solid #344f10;
+    width: fit-content;
+    transition: 0.3s;
+  }
+}
+
+.side-mark {
+  position: absolute;
+  top: 82px;
+  left: -192px;
+  width: 192px;
+  transform: rotate(-90deg);
+  color: #344f1080;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.side-mark::before {
+  content: "";
+  position: absolute;
+  left: -100px;
+  top: 10px;
+  background: #344f1080;
+  height: 1px;
+  width: 100px;
+}
