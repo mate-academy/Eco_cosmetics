@@ -4,16 +4,53 @@
   width: 24px;
   background-size: cover;
 
+  @include onDesktop {
+    height: 50px;
+    width: 50px;
+  }
+
   &--menu {
     background-image: url(../images/menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &--logo {
-    background-image: url(../images/logo.svg);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+    &-image {
+      background-image: url(../images/logo.svg);
+    }
+
+    &-text {
+      display: none;
+      color: $c-green;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 130%; /* 18.2px */
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
   }
 
   &--shop {
     background-image: url(../images/shop.svg);
+
+    @include onDesktop {
+      height: 32px;
+      width: 32px;
+    }
   }
 
   &--close {

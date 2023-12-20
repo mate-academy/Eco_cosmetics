@@ -1,14 +1,82 @@
 .motivation {
 
-  color: $c-green;
+  position: relative;
+  padding-inline: 20px;
 
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 150%; /* 27px */
-  letter-spacing: 0.9px;
-  text-transform: uppercase;
+  @include onTablet {
+    padding-inline: 27px;
+  }
 
-  // &__text {
-  //   margin: 0;
-  // }
+  @include onDesktop {
+    padding-inline: 50px;
+    max-width: 1280px;
+    margin-inline: auto;
+  }
+
+  &__wrapper {
+    @include pageGrid;
+
+    @include onDesktop {
+      padding: 100px 0;
+    }
+  }
+
+  &__text {
+    color: $c-green;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%; /* 27px */
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      width: 280px;
+      grid-column: 3 / 5;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      text-align: left;
+      width: auto;
+      font-size: 24px;
+      letter-spacing: 1.2px;
+    }
+
+    &--desktop {
+      display: none;
+      @include commonText;
+
+      @include onDesktop {
+        display: block;
+        margin-top: 0;
+        grid-column: 2 / 6;
+      }
+    }
+  }
+
+  &__line {
+    display: none;
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: $c-green;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &--top {
+      top: 0;
+      left: 0;
+      width: 530px;
+    }
+
+    &--bottom {
+      bottom: 0;
+      right: 0;
+      width: 630px;
+    }
+  }
 }

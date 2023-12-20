@@ -1,10 +1,64 @@
 .contact {
-  &__text {
-    @include commonText;
+  &__wrapper {
+    @include pageGrid;
   }
 
-  &__button {
-    @include buttonStyle;
+  &__side-wrapper {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: span 1;
+      position: relative;
+    }
+  }
+
+  &__side {
+    display: none;
+
+    @include onDesktop {
+      bottom: 385px;
+
+      @include sideBlock;
+    }
+
+    @include onWideScreen {
+      bottom: 585px;
+    }
+
+    &-text {
+      @include sideText;
+      width: 35px;
+    }
+  }
+
+  &__part {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    &--first {
+      @include onDesktop {
+        grid-column: 2 / 6;
+      }
+    }
+
+    &--second {
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+
+  }
+
+  &__text {
+    @include commonText;
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
   }
 
   &__form {
@@ -12,6 +66,11 @@
     flex-direction: column;
     gap: 25px;
     margin-top: 30px;
+
+    @include onDesktop {
+      margin-top: 40px;
+      gap: 30px;
+    }
   }
 
   &__input {
@@ -29,5 +88,45 @@
     line-height: 150%;
     background: $c-main;
     color: $c-gray-3;
+
+    &:focus {
+      outline: none;
+      border-bottom-color: $c-gray-1;
+    }
+
+    &--textarea {
+      resize: none;
+      text-align: left;
+      padding-top: 20px;
+      height: 46px;
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: $c-gray-3;
+    -webkit-box-shadow: 0 0 0 1000px $c-main inset;
+  }
+
+  &__button {
+    @include buttonStyle;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+    }
   }
 }

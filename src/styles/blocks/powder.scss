@@ -1,10 +1,57 @@
 .powder {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      flex-direction: row;
+      position: relative;
+    }
+
+    @include onDesktop {
+      padding-inline: 50px;
+      max-width: 1280px;
+      margin-inline: auto;
+      @include pageGrid;
+    }
+  }
+
+  &__side-wrapper {
+    grid-column: span 1;
+    position: relative;
+  }
+
+  &__side {
+    display: none;
+
+    @include onDesktop {
+      bottom: 200px;
+      @include sideBlock;
+    }
+
+    &-text {
+      width: 80px;
+      @include sideText;
+    }
+  }
+
+  &__container {
+    @include onDesktop {
+      grid-column: 2 / 6;
+      padding: 0;
+    }
+  }
 
   &__composition {
     display: flex;
     margin-top: 20px;
     justify-content: flex-end;
     gap: 20px;
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      margin: 0;
+    }
   }
 
   &__ingridient {
@@ -12,17 +59,16 @@
     color: $c-gray-1;
     width: 98px;
     text-align: right;
-
     font-size: 16px;
     font-weight: 400;
     line-height: 150%; /* 24px */
   }
 
-  &__ingridient--49 {
+  &__ingridient--small {
     margin-top: 49px;
   }
 
-  &__ingridient--52 {
+  &__ingridient--medium {
     margin-top: 52px;
   }
 
@@ -32,19 +78,56 @@
     width: 182px;
     background-size: cover;
     background-image: url(../images/tooth-powder.svg);
+
+    @media (min-width: 720px) {
+      width: 398px;
+      background-image: url(../images/tooth-powder-tablet.svg);
+    }
+
+    @include onDesktop {
+      width: 480px;
+      background-image: url(../images/tooth-powder-desktop.svg);
+    }
   }
 
-  &__learn-more {
-    @include learnMore;
+  &__learn {
+    margin: 0 20px;
+
+    @include onTablet {
+      position: absolute;
+      bottom: 0;
+      left: 27px;
+    }
+
+    @include onDesktop {
+      left: 150px;
+      margin: 0;
+    }
+
+    &-more {
+      @include learnMore;
+    }
   }
 
   &__benefits {
     margin-top: 111px;
+
+    @include onTablet {
+      @include pageGrid;
+    }
   }
 
   &__benefit {
     &:not(:last-child) {
       margin-bottom: 50px;
+    }
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
     }
   }
 
@@ -54,22 +137,52 @@
     background-size: cover;
     text-align: center;
 
+    &-container {
+      @include onTablet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 84px;
+      }
+    }
+
     &--1 {
       background-image: url(../images/powder-icon1.svg);
       width: 62px;
       height: 60px;
+
+      @include onTablet {
+        background-image: url(../images/powder-icon1-tablet.svg);
+        width: 80px;
+        height: 60px;
+      }
     }
 
     &--2 {
       background-image: url(../images/powder-icon2.svg);
       width: 100px;
       height: 84px;
+
+      @include onTablet {
+        width: 80px;
+        height: 68px;
+      }
+
+      @include onDesktop {
+        width: 99px;
+        height: 84px;
+      }
     }
 
     &--3 {
       background-image: url(../images/powder-icon3.svg);
       width: 79px;
       height: 74px;
+
+      @include onTablet {
+        width: 80px;
+        height: 75px;
+      }
     }
 
     &-description {

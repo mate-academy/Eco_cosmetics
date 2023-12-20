@@ -1,0 +1,116 @@
+.product-card {
+
+  @include onTablet {
+    @include pageGrid;
+    margin-bottom: 72px;
+  }
+
+  &__info {
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      order: 2;
+      margin-top: 27px;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / 10;
+    }
+  }
+
+  &__name {
+    color: $c-gray-1;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%; /* 27px */
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__price {
+    margin-top: 10px;
+    color: $c-gray-1;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%; /* 27px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    transition: transform 0.3s;
+
+    @include onTablet {
+      margin-top: 25px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__image {
+    margin-top: 20px;
+    width: 100%;
+    background-size: cover;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      order: 1;
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / 10;
+    }
+  }
+
+  &__link {
+    @include buttonStyle;
+
+    @include onTablet {
+      grid-column: 3 / 5;
+      order: 3;
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__desc {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      order: 4;
+      gap: 25px;
+      margin-top: 60px;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / 10;
+    }
+  }
+
+  &__text {
+    @include commonText;
+    margin-top: 0;
+
+    &--green {
+      color: $c-green;
+    }
+  }
+}

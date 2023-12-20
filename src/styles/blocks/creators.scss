@@ -1,17 +1,104 @@
 .creators {
+
+  &__wrapper {
+    @include pageGrid;
+  }
+
+  &__side-wrapper {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: span 1;
+      position: relative;
+    }
+  }
+
+  &__side {
+    display: none;
+
+    @include onDesktop {
+      bottom: 420px;
+      @include sideBlock;
+    }
+
+    &-text {
+      width: 132px;
+      @include sideText;
+    }
+  }
+
+  &__part {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
   &__text {
     @include commonText;
 
+    @include onDesktop {
+      margin-top: 34px;
+    }
+
     &--second-par {
       margin-top: 20px;
+
+      @include onTablet {
+        margin-top: 15px;
+      }
+
+      @include onDesktop {
+        margin-top: 30px;
+      }
+    }
+
+    &--third-par {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-top: 30px;
+      }
     }
   }
 
   &__learn-more {
     @include learnMore;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
   }
 
   &__button {
     @include buttonStyle;
+
+    @include onTablet {
+      margin-top: 41px;
+    }
+  }
+
+  &__img {
+    display: none;
+    object-fit: cover;
+    width: 100%;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+      height: 440px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      height: 659px;
+    }
   }
 }

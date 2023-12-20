@@ -1,7 +1,6 @@
 .header {
 
   &__content {
-    // height: 100vh;
     display: flex;
     flex-direction: column;
 
@@ -10,11 +9,63 @@
     }
   }
 
+  &__second-part {
+    display: flex;
+    justify-content: space-between;
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      list-style: none;
+      display: block;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &-list {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 40px;
+    }
+
+    &-item {
+      display: block;
+      width: 100%;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $c-green;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%; /* 27px */
+      text-transform: capitalize;
+    }
+  }
+
   &__bottom {
     @include pageGrid;
 
+    @include onTablet {
+      padding: 0 27px;
+    }
+
     @include onDesktop {
-      margin-top: 92px;
+      margin-top: 41px;
+      padding: 0 50px;
+      max-width: 1280px;
+      margin-inline: auto;
+    }
+
+    @include onWideScreen {
+      margin-top: 30px;
     }
   }
 
@@ -24,38 +75,45 @@
     height: 267px;
     width: 100%;
 
+    grid-column: 1 / -1;
+
     @include onTablet {
       height: 500px;
+      background-image: url(../images/header-img-tablet.png);
     }
-
-    grid-column: 1 / -1;
 
     @include onDesktop {
       order: 2;
       grid-column: 7 / -1;
+      height: 451px;
+      background-image: url(../images/header-img-desktop.png);
     }
   }
 
   &__info {
     grid-column: 1 / -1;
-    margin-block: 25px 0;
-    padding-inline: 20px;
+    margin: 25px 0 0;
+    padding: 0 20px;
 
     @include onTablet {
       grid-column: 2 / 6;
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin: 50px 0 0;
+      padding: 0;
     }
 
     @include onDesktop {
       order: 1;
-      grid-column: 1 / 7;
+      grid-column: 2 / 7;
+      align-items: start;
+      margin: 0;
     }
   }
 
   &__title {
-    margin-block: 0;
+    margin: 0;
     text-align: center;
 
     font-size: 24px;
@@ -65,16 +123,26 @@
     @include onTablet {
       font-size: 36px;
       line-height: 150%; /* 54px */
-      text-transform: capitalize;
+      text-transform: none;
+    }
+
+    @include onDesktop {
+      text-align: start;
+      font-size: 60px;
+      line-height: 130%; /* 78px */
     }
   }
 
   &__text {
-    margin-block: 10px 0;
+    margin: 10px 0 0;
     font-size: 16px;
     text-align: center;
     font-weight: 400;
     line-height: 150%;
+
+    @include onDesktop {
+      margin: 30px 0 0;
+    }
   }
 
   &__button {

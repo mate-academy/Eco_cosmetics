@@ -1,8 +1,42 @@
 .shop {
+
+  @include onTablet {
+    margin-inline: 27px;
+  }
+
+  @include onDesktop {
+    padding-inline: 50px;
+    max-width: 1280px;
+    margin-inline: auto;
+    @include pageGrid;
+  }
+
+  &__side-wrapper {
+    @include onDesktop {
+      grid-column: span 1;
+      position: relative;
+    }
+  }
+
+  &__side {
+    display: none;
+
+    @include onDesktop {
+      bottom: -115px;
+      @include sideBlock;
+    }
+
+    &-text {
+      width: 35px;
+      @include sideText;
+    }
+  }
+
   &__nav {
     display: flex;
     justify-content: space-between;
     padding-inline: 20px;
+    margin-block: 20px 0;
     color: $c-gray-3;
 
     font-size: 14px;
@@ -11,24 +45,125 @@
     letter-spacing: 0.7px;
     text-transform: uppercase;
 
+    @include onTablet {
+      gap: 28px;
+      justify-content: start;
+      padding-inline: 0;
+      margin-top: 10px;
+    }
+
+    @include onDesktop {
+      gap: 51px;
+      margin-top: 30px;
+      grid-column: 2 / -1;
+      @include pageGrid;
+    }
+
     &-link {
       list-style-type: none;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        display: block;
+        background-color: $c-gray-1;
+        width: 100%;
+        height: 2px;
+
+        transition: transform 0.3s;
+        transform: scale(0);
+        transform-origin: center;
+      }
+
+      &:hover {
+        color: $c-gray-1;
+
+        &::after {
+          transform: scale(1);
+        }
+      }
     }
   }
 
   &__products {
+    @include pageGrid;
+
     margin-top: 27px;
+
+    @include onTablet {
+      margin-top: 37px;
+    }
+
+    @include onDesktop {
+      margin-top: 62px;
+      grid-column: 2 / -1;
+    }
   }
 
   &__product {
+
+    grid-column: span 3;
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+
+    &--ubtan {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
     &-image {
+      display: block;
+      height: 267px;
       width: 100%;
       background-size: cover;
+      transition: transform 0.3s;
+
+      @include onTablet {
+        height: 300px;
+      }
+
+      @include onDesktop {
+        height: 400px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &--oil {
+        background-image: url(../images/shop-oil-mobile.png);
+
+        @include onTablet {
+          background-image: url(../images/shop-oil-tablet.png);
+        }
+
+        @include onDesktop {
+          background-image: url(../images/shop-oil-desktop.png);
+        }
+      }
+
+      &--ubtan {
+        background-image: url(../images/shop-ubtan.png);
+
+        @include onDesktop {
+          background-image: url(../images/shop-ubtan-desktop.png);
+        }
+      }
     }
 
     &-info {
       margin-top: 20px;
-      padding-inline: 20px;
+      padding: 0 20px;
+
+      @include onTablet {
+        padding: 0;
+      }
     }
 
     &-name {
@@ -38,6 +173,11 @@
       line-height: 150%; /* 27px */
       letter-spacing: 0.9px;
       text-transform: uppercase;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     &-price {
@@ -48,14 +188,27 @@
       line-height: 150%; /* 27px */
       letter-spacing: 0.9px;
       text-transform: uppercase;
+      transition: transform 0.3s;
 
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
   &__button {
     padding-inline: 20px;
+
     &-link {
       @include buttonStyle;
+
+      @include onTablet {
+        margin-inline: auto;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 9;
     }
   }
 }

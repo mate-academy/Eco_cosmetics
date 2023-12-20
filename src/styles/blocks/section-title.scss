@@ -1,13 +1,26 @@
 .section-title {
   color: $c-green;
-
   font-size: 24px;
   font-weight: 600;
   line-height: 150%; /* 36px */
   letter-spacing: 1.2px;
   text-transform: uppercase;
 
+  @include onDesktop {
+    font-size: 36px;
+    line-height: 110%; /* 39.6px */
+    letter-spacing: 1.8px;
+  }
+
   &--shop {
     text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
   }
 }

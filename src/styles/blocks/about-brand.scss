@@ -1,9 +1,122 @@
 .about-brand {
+
+  &__wrapper {
+    @include pageGrid;
+
+  }
+
+  &__side-wrapper {
+    grid-column: span 1;
+    position: relative;
+  }
+
+  &__side {
+    display: none;
+
+    @include onDesktop {
+      bottom: 270px;
+      @include sideBlock;
+    }
+
+    @include onWideScreen {
+      bottom: 240px;
+    }
+
+    &-text {
+      width: 192px;
+      @include sideText;
+    }
+  }
+
+  &__article {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
   &__text {
     @include commonText;
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+
+    &--second {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-top: 30px;
+      }
+    }
   }
 
   &__learn-more {
     @include learnMore;
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__img {
+    display: none;
+    background-size: cover;
+    width: 100%;
+
+    @include onTablet {
+      display: block;
+      background-image: url(../images/about-brand.png);
+      height: 321px;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/about-brand-desktop-left.png);
+      height: 529px;
+    }
+
+    &-wrapper {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        align-items: end;
+      }
+
+      &--big {
+        display: none;
+
+        @include onTablet {
+          display: flex;
+          grid-column: 4 / -1;
+        }
+
+        @include onDesktop {
+          grid-column: 7 / 11;
+        }
+      }
+
+      &--small {
+        @include onDesktop {
+          grid-column: 11 / -1;
+        }
+      }
+    }
+
+    &--desktop {
+      @include onDesktop {
+        display: block;
+        background-size: cover;
+        width: 100%;
+        background-image: url(../images/about-brand-desktop-right.png);
+        height: 430px;
+      }
+    }
   }
 }
