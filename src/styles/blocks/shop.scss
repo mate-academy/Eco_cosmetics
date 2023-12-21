@@ -1,14 +1,16 @@
 .shop {
-
   @include onTablet {
-    margin-inline: 27px;
+    padding-inline: 27px;
   }
 
   @include onDesktop {
-    padding-inline: 50px;
-    max-width: 1280px;
-    margin-inline: auto;
-    @include pageGrid;
+    padding: 0;
+  }
+
+  &__wrapper {
+    @include onDesktop {
+      @include pageGrid;
+    }
   }
 
   &__side-wrapper {
@@ -54,10 +56,8 @@
     }
 
     @include onDesktop {
-      gap: 51px;
       margin-top: 30px;
-      grid-column: 2 / -1;
-      @include pageGrid;
+      grid-column: 2 / 6;
     }
 
     &-link {
@@ -85,16 +85,33 @@
           transform: scale(1);
         }
       }
+
+      &--first {
+        list-style-type: none;
+        position: relative;
+        color: $c-gray-1;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          display: block;
+          background-color: $c-gray-1;
+          width: 100%;
+          height: 2px;
+        }
+      }
     }
   }
 
   &__products {
-    @include pageGrid;
-
     margin-top: 27px;
 
     @include onTablet {
       margin-top: 37px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
 
     @include onDesktop {
@@ -105,10 +122,16 @@
 
   &__product {
 
-    grid-column: span 3;
+    @include onTablet {
+      width: 320px;
+    }
 
     @include onDesktop {
-      grid-column: span 6;
+      width: 400px;
+    }
+
+    @include onWideScreen {
+      width: 530px;
     }
 
     &--ubtan {
@@ -118,6 +141,7 @@
         display: block;
       }
     }
+
     &-image {
       display: block;
       height: 267px;
@@ -131,6 +155,10 @@
 
       @include onDesktop {
         height: 400px;
+      }
+
+      @include onWideScreen {
+        height: 500px;
       }
 
       &:hover {
