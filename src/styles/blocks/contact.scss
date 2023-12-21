@@ -1,0 +1,126 @@
+.contact {
+  &__content {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__left {
+    max-width: 342px;
+
+    @include onDesktop {
+      margin-left: 150px;
+    }
+  }
+
+  &__right {
+    display: none;
+    @include onTablet {
+      display: flex;
+      background-image: url("../images/contact/contact-img-tablet.png");
+      width: 342px;
+      min-height: 407px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @include onTablet {
+      background-image: url("../images/contact/contact-img-desktop.png");
+      width: 580px;
+      min-height: 540px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    line-height: 1.5;
+    color: $main-color;
+    margin-bottom: 30px;
+    @include onDesktop {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input {
+    display: flex;
+    width: 100%;
+    text-transform: capitalize;
+    background-color: $background-color;
+    color: $slider-color;
+    text-decoration: none;
+    border: none;
+    padding-bottom: 5px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    border-bottom: 1px solid $border-bottom-color;
+
+    &--name {
+      margin-bottom: 25px;
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--email {
+      margin-bottom: 25px;
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--phone {
+      margin-bottom: 45px;
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &--textarea {
+      height: 26px;
+      margin-bottom: 30px;
+      overflow: hidden;
+
+      @include onDesktop {
+        height: 40px;
+        margin-bottom: 50px;
+      }
+    }
+
+    &--textarea::placeholder {
+      font-family: Poppins, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.5;
+
+      @include onDesktop {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 500;
+      padding-bottom: 10px;
+    }
+  }
+  &__btn {
+    @extend %btn;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}
