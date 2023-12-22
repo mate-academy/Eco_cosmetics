@@ -1,0 +1,29 @@
+.menu {
+  @include paddinginline;
+  @include paddingblock;
+  overflow: auto;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  background: #333;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: transform 0.3s, opacity 0.3s;
+  transform: translateX(100%);
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  .icon-close {
+
+  }
+}
+
+
