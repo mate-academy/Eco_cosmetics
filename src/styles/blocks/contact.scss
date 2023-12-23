@@ -7,7 +7,9 @@
   }
 
   &__left {
-    max-width: 342px;
+    @include onTablet {
+      max-width: 342px;
+    }
 
     @include onDesktop {
       margin-left: 150px;
@@ -60,7 +62,7 @@
     text-decoration: none;
     border: none;
     padding-bottom: 5px;
-
+    outline: transparent;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.5;
@@ -88,10 +90,9 @@
     }
 
     &--textarea {
-      height: 26px;
+      min-height: 30px;
       margin-bottom: 30px;
-      overflow: hidden;
-
+      resize: none;
       @include onDesktop {
         height: 40px;
         margin-bottom: 50px;
