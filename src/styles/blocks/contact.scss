@@ -1,0 +1,111 @@
+.contact {
+  &__content {
+    @include grid;
+  }
+
+  &__text-wrapper {
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    @include onDesktop {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 30px;
+
+    @include onTablet {
+      font-size: 16px;
+      margin: 0 0 20px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__form-field {
+    width: 100%;
+    font-family: inherit;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    margin-bottom: 25px;
+    padding: 0 0 5px;
+    border-bottom: 1px solid #bdbdbd;
+    text-transform: capitalize;
+    color: #828282;
+
+    @include onTablet {
+      font-weight: 500;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      padding: 0 0 10px;
+      margin-bottom: 30px;
+    }
+
+    &--message {
+      resize: none;
+      padding-top: 20px;
+      margin-bottom: 30px;
+
+      height: 20px;// what another option?
+
+      @include onDesktop {
+        padding-top: 30px;
+        margin-bottom: 50px;
+        height: 27px;
+      }
+    }
+
+    &:focus {
+      border-bottom-color: $main-text-color;
+    }
+
+    &:valid {
+      color: $green-color;
+      border-bottom-color: $green-color;
+    }
+
+    &:not(:focus):not(:placeholder-shown):invalid {
+      color: #eb5757;
+      border-bottom-color: #eb5757;
+    }
+  }
+
+  &__photo-wrapper {
+    display: none;
+    position: relative;
+
+    @include onTablet {
+      display: block;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: -1 / -7;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

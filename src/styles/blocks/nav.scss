@@ -13,15 +13,28 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    row-gap: 30px;
 
     @include onTablet {
-      gap: 50px;
+      row-gap: 50px;
     }
 
     &--header {
       flex-direction: row;
-      gap: 40px;
+      column-gap: 40px;
+    }
+
+    &--footer {
+      row-gap: 10px;
+
+      @include onTablet {
+        row-gap: 15px;
+      }
+
+      @include onDesktop {
+        flex-direction: row;
+        column-gap: 40px;
+      }
     }
   }
 
@@ -37,18 +50,41 @@
     border-bottom: 1px solid #828282;
 
     @include onHover {
-      border-bottom: 3px dashed $main-bg-color;
+      border-bottom: 1px dashed rgb(151, 151, 117);
       color: rgb(151, 151, 117);
-      transform: translateY(20%);
     }
 
     &--header {
       color: $green-color;
       font-weight: 500;
-      line-height: 150%;
+      line-height: 1.5;
       text-transform: capitalize;
       border-bottom: transparent;
       padding: 0;
+    }
+
+    &--footer {
+      font-weight: 500;
+      line-height: 1.5;
+      text-transform: capitalize;
+      border-bottom: none;
+      padding: 0;
+      text-align: left;
+
+      @include onHover {
+        border-bottom: none;
+        color: $green-color;
+      }
+
+      @include onTablet {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+        font-weight: 500;
+      }
     }
   }
 }

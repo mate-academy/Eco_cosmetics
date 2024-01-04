@@ -5,6 +5,7 @@ const allContent = document.querySelectorAll('.shop__product-carts');
 
 tabs.forEach((tab, index) => {
   tab.addEventListener('click', () => {
+    // eslint-disable-next-line no-shadow
     tabs.forEach(tab => {
       tab.classList.remove('shop__tab--active');
     });
@@ -14,13 +15,5 @@ tabs.forEach((tab, index) => {
       content.classList.remove('shop__product-carts--active');
     });
     allContent[index].classList.add('shop__product-carts--active');
-  });
-});
-
-$(() => {
-  $('.slider').slick({
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 2
   });
 });

@@ -5,6 +5,14 @@
   color: $main-text-color;
   scroll-behavior: smooth;
 
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &:has(.page__prod-cart:target) {
+    overflow: hidden;
+  }
+
   &__body {
     min-width: 320px;
     margin: 0;
@@ -13,9 +21,25 @@
 
   &__menu {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
+    z-index: 1;
+
+    transition: all $effect-duration;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
+
+  &__prod-cart {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
 
     transition: all $effect-duration;
     opacity: 0;

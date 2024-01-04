@@ -1,0 +1,102 @@
+.tooth-powder {
+  overflow: hidden;
+
+  &__content {
+    @include grid;
+    position: relative;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    margin: 0 0 20px;
+
+    @include onTablet {
+      grid-column: 1/4;
+
+      grid-row: 1;// WHAT ANOTHER OPTION?
+
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 2/6;
+    }
+  }
+
+  &__jar {
+    grid-column: 1/-1;
+    display: flex;
+    column-gap: 10px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 4/-1;
+      margin-bottom: 0;
+      margin-left: -150px;
+      column-gap: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: -1/-8;
+      margin: 0;
+    }
+  }
+
+  &__ingredients {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__ingredient {
+    position: relative;
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    font-size: 16px;
+    text-wrap: nowrap;
+
+    &::after {
+      content: "";
+      width: 35px;
+      height: 1px;
+      background-color: $main-text-color;
+
+      @include onTablet {
+        width: 80px;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: $main-text-color;
+    }
+  }
+
+  &__link {
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 1/2;
+      grid-row: 1;
+      align-self: end;
+      // is it better option?
+      // position: absolute;
+      // bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 2/4;
+    }
+  }
+}
