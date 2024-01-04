@@ -1,0 +1,91 @@
+.ingredients {
+  &__wrapper {
+    overflow: hidden;
+    @include pageGrid;
+
+    @include onDesktop {
+      @include contentPaddingInline;
+    }
+  }
+
+  &__title {
+    grid-area: 1/1/span 1/-1;
+    margin-left: 20px;
+
+    @include onTablet {
+      grid-area: 1/1/auto/span 2;
+      margin-left: 27px;
+    }
+    @include onDesktop {
+      margin-left: 0;
+      grid-area: 1/2/span 1/span 4;
+    }
+  }
+
+  &__info {
+    padding-top: 20px;
+    grid-area: 2/1/span 1/-1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+
+    @include onTablet {
+      padding-top: 0;
+      grid-area: 1/3/auto/-1;
+    }
+    @include onDesktop {
+      grid-area: 1/5/span 1/-1;
+    }
+  }
+
+  &__info-list {
+    margin: 0;
+    padding: 14px 0 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+  }
+
+  &__info-item {
+    font-size: 16px;
+    align-self: end;
+    white-space: nowrap;
+  }
+
+  &__info-image {
+    display: block;
+    height: 397px;
+    width: 185px;
+    background-image: url(..//images/ingredients/ingredients-mobile.png);
+    background-repeat: no-repeat;
+    background-size: contain cover;
+
+    @include onTablet {
+      background-image: url(..//images/ingredients/ingredients.png);
+      width: 398px;
+      min-width: 300px;
+    }
+    @include onDesktop {
+      width: 480px;
+      min-width: 423px;
+    }
+  }
+
+  &__learn-more {
+    margin-top: auto;
+    margin-left: 27px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      padding-top: 0;
+      margin-left: 27px;
+      grid-area: 1/1/auto/span 2;
+    }
+    @include onDesktop {
+      margin-left: 0;
+      grid-area: 1/2/span 2/span 4;
+    }
+  }
+}

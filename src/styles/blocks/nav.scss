@@ -5,15 +5,65 @@
     gap: 30px;
     margin: 0;
     padding: 0;
+
+    &--footer {
+      flex-direction: column;
+      gap: 11px;
+
+      @include onTablet {
+        gap: 15px;
+      }
+
+      @include onDesktop {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
   }
 
   &__link {
+    position: relative;
     display: block;
-    font-family: Sharp, sans-serif;
-    font-weight: normal;
+    font-family: "Poppins", sans-serif;
     color: $accent-text-color;
     cursor: pointer;
     font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
     text-decoration: none;
+    @include hover(transform, scale(1.2));
+
+    &::before {
+      position: absolute;
+      bottom: -5px;
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: black;
+      transform: scale(0);
+      transform-origin: center;
+      transition: transform $effect-duration;
+    }
+
+    &:hover::before {
+      transform: scale(1);
+    }
+
+    &--footer {
+      @include hover(transform, none);
+      &:hover::before {
+        transform: scale(0);
+      }
+      color: #e4dfd3;
+
+      @include onTablet {
+        font-size: 14px;
+        font-weight: 400;
+      }
+      @include onDesktop {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
   }
 }

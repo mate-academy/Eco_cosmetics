@@ -1,15 +1,16 @@
 .shop {
-  // &__decor {
-  //   @include contentPaddingInline;
-  //   @include onDesktop {
-  //     @include pageGrid;
-  //   }
-  // }
-
-  &__title-wrapper {
-    @include contentPaddingInline;
+  &__content {
+    @include onTablet {
+      @include contentPaddingInline;
+    }
     @include onDesktop {
       @include pageGrid;
+    }
+  }
+
+  &__info {
+    @include onDesktop {
+      grid-column: 2/-1;
     }
   }
 
@@ -19,14 +20,20 @@
     @include onTablet {
       text-align: left;
     }
-
     @include onDesktop {
       grid-column: 2/-1;
     }
   }
 
   &__nav {
-    @include contentPaddingInline;
+    padding-inline: 27px;
+
+    @include onTablet {
+      padding: 0;
+    }
+    @include onDesktop {
+      grid-column: 2/-1;
+    }
   }
 
   &__nav-list {
@@ -41,40 +48,39 @@
       justify-content: left;
       gap: 34px;
     }
-
     @include onDesktop {
       padding-top: 30px;
-      @include pageGrid;
-    }
-  }
-
-  &__nav-item {
-    &--face {
-      grid-column: 2/ span 1;
-    }
-
-    &--body,
-    &--hair {
-      grid-column: span 1;
-    }
-
-    &--candels {
-      grid-column: span 2;
     }
   }
 
   &__nav-link {
-    font-family: Sharp, sans-serif;
-    font-weight: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
     color: #828282;
     cursor: pointer;
-    font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
 
     @include onDesktop {
       font-size: 18px;
-      font-weight: bold;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+    }
+
+    &::after {
+      position: absolute;
+      left: 0;
+      top: calc(100% + 10px);
+      content: "";
+      height: 2px;
+      width: 100%;
+      background-color: $main-text-color;
+      transform: scale(0);
+      transform-origin: left;
+      transition: all $effect-duration;
     }
 
     &:hover {
@@ -82,13 +88,7 @@
       position: relative;
 
       &::after {
-        position: absolute;
-        left: 0;
-        top: calc(100% + 10px);
-        content: "";
-        height: 2px;
-        width: 100%;
-        background-color: $main-text-color;
+        transform: scale(1);
       }
     }
   }
@@ -98,12 +98,10 @@
 
     @include onTablet {
       padding-top: 37px;
-      @include contentPaddingInline;
     }
-
     @include onDesktop {
-      padding-top: 62px;
-      @include pageGrid;
+      grid-column: 2/-1;
+      padding: 62px 0 0;
     }
   }
 
@@ -112,10 +110,8 @@
       display: flex;
       gap: 30px;
     }
-
     @include onDesktop {
       gap: 20px;
-      grid-column: 2/-1;
     }
   }
 
@@ -132,20 +128,27 @@
         display: block;
       }
     }
+  }
 
+  &__product-link {
+    display: block;
+
+    @include onTablet {
+      height: 300px;
+    }
+    @include onDesktop {
+      height: 400px;
+    }
   }
 
   &__product-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform $effect-duration;
 
-    @include onTablet {
-      max-height: 400px;
-    }
-
-    @include onDesktop {
-      max-height: 500px;
+    &:hover {
+      transform: scale(1.05);
     }
   }
 
@@ -154,6 +157,7 @@
     gap: 10px;
     flex-direction: column;
     @include contentPaddingInline;
+
     @include onTablet {
       padding: 0;
     }
@@ -163,20 +167,28 @@
     margin: 0;
     padding-top: 20px;
     font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    color: $main-text-color;
+    text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
   }
 
   &__product-price {
     margin: 0;
     font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.9px;
     text-transform: uppercase;
-    font-weight: normal;
   }
 
   &__button {
     padding-top: 30px;
     display: flex;
     justify-content: center;
+
+    @include onDesktop {
+      grid-column: 1/-1;
+    }
   }
 }
