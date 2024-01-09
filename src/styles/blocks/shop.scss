@@ -1,0 +1,128 @@
+.shop {
+  &__content {
+    @include gridContent;
+    row-gap: 20px;
+
+    @include onTablet {
+      row-gap: 50px;
+    }
+
+    @include onDesktop {
+      row-gap: 40px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      justify-self: start;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+
+    @include onDesktop {
+      justify-content: start;
+      column-gap: 20px;
+    }
+  }
+
+  &__nav-link {
+    color: $gray-3-color;
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    padding-block: 10px;
+    transition: all 0.3s;
+    width: fit-content;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      height: 1px;
+      width: 0;
+      background-color: $main-dark-color;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      color: $main-dark-color;
+      position: relative;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+    }
+  }
+
+  &__catalog {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+
+    @include gridContent;
+  }
+
+  &__card {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__card-image {
+    width: calc(100% + 40px);
+    align-self: center;
+
+    @include onTablet {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    // justify-self: stretch;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 3 / -3;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -5;
+    }
+  }
+
+}

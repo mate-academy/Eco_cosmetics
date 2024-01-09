@@ -1,0 +1,46 @@
+.page {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: $main-dark-color;
+  text-align: center;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    min-height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 100px;
+
+    @include onDesktop {
+      row-gap: 130px;
+    }
+  }
+
+  &__cart {
+    row-gap: 0;
+
+    & .header__content {
+      min-height: 0;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      transition: all 0.3s;
+      opacity: 1;
+      pointer-events: visible;
+    }
+  }
+}

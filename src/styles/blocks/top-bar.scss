@@ -1,0 +1,62 @@
+.top-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 24px);
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  @include onTablet {
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+
+  @include onDesktop {
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+
+  &__logo {
+    @include onDesktop {
+      justify-self: start;
+      grid-column: span 6;
+      order: -1;
+    }
+    picture {
+      display: flex;
+    }
+  }
+
+  &__nav {
+    display: none;
+    @include onDesktop {
+      display: block;
+      grid-column: span 5;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $gray-3-color;
+    }
+  }
+
+  &__shop {
+    justify-self: end;
+  }
+}

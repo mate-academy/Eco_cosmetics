@@ -1,0 +1,94 @@
+.header {
+  &__content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__icon--menu {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__bottom {
+    flex-grow: 1;
+
+    @include gridContent;
+    row-gap: 30px;
+    align-content: space-between;
+
+    @include onDesktop {
+      grid-auto-flow: column;
+    }
+  }
+
+  &__images {
+    width: calc(100% + 40px);
+    justify-self: center;
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    img {
+      @include onDesktop {
+        height: 100%;
+        object-fit: cover;
+      }
+
+    }
+    @include onDesktop {
+      grid-column: 7 / -1;
+      grid-row: span 2;
+    }
+  }
+
+  &__info {
+    grid-column: 1 /-1;
+
+    display: grid;
+    row-gap: 10px;
+
+    @include onTablet {
+      grid-column: 2 / -2;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 3 / -3;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 5;
+
+    }
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+
+    @include onDesktop {
+      font-size: 60px;
+    }
+  }
+
+  &__text {
+    line-height: 150%;
+  }
+}

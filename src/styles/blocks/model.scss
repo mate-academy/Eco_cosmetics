@@ -1,0 +1,71 @@
+.model {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 20px;
+  height: 395px;
+
+  &__block-names {
+    grid-column: span 5;
+    position: relative;
+
+    @include onDesktop {
+      grid-column: span 3;
+    }
+  }
+
+  &__name {
+    position: absolute;
+    right: 0;
+    width: max-content;
+
+    &--1 {
+      top: 36px;
+    }
+
+    &--2 {
+      top: 110px;
+    }
+
+    &--3 {
+      top: 185px;
+    }
+
+    &--4 {
+      top: 258px;
+    }
+
+    &--5 {
+      top: 330px;
+    }
+  }
+
+  &__image-block {
+    grid-column: span 7;
+    width: calc(100% + 20px);
+    overflow: hidden;
+
+    @include onTablet {
+      width: calc(100% + 197px);
+    }
+
+    @include onDesktop {
+      width: 100%;
+      grid-column: span 9;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+    object-position: -40px;
+
+    @include onTablet {
+      object-position: 0;
+    }
+
+    @include onDesktop {
+      object-fit: none;
+      object-position: right;
+    }
+  }
+}
