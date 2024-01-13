@@ -1,0 +1,254 @@
+.shop__products-2{
+  display: none;
+}
+
+.section__shop{
+  display: none;
+}
+
+.shop{
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  grid-template-rows: 6;
+}
+
+.shop__title{
+  grid-row: 1;
+  grid-column: 1 / 3;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 36px */
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.shop__nav{
+  margin-top: 20px;
+  grid-row: 2;
+  grid-column: 1 /3;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shop__nav--link{
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: #828282;
+  text-decoration: none;
+  display: block;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.shop__nav--link:hover{
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.9px;
+  transition-duration: 0.9s;
+  border-bottom: 1px solid #333;
+}
+
+.shop__products__wrapper{
+  margin-top: 27px;
+  grid-row: 3;
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.shop__products-1{
+   grid-column: 1 / 3;
+ }
+
+ .shop__foto-bg-1{
+   width: 100%;
+ }
+
+.shop__foto-bg-1:hover{
+   transform: scale(1.05);
+  transition-duration: 0.3s;
+ }
+
+.shop__product-title{
+   margin-top: 20px;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 150%; /* 27px */
+   letter-spacing: 0.9px;
+   text-transform: uppercase;
+   color: #333;
+ }
+
+ .shop__product-price{
+   margin-top: 10px;
+   font-size: 18px;
+   font-style: normal;
+   font-weight: 500;
+   line-height: 150%; /* 27px */
+   letter-spacing: 0.9px;
+   text-transform: uppercase;
+   color: #333;
+ }
+
+
+ .shop__button{
+   grid-row: 4;
+   margin-top: 30px;
+   grid-column: 1 / 3;
+   justify-content: center;
+   display: flex;
+
+ }
+
+ .shop__button__name{
+   font-size: 16px;
+   font-style: normal;
+   font-weight: 600;
+   line-height: 130%; /* 20.8px */
+   letter-spacing: 2.4px;
+   text-transform: uppercase;
+   color: #F2F2F2;
+   background-color: #333;
+   width: 100%;
+   height: 60px;
+
+ }
+
+@include desktop {
+
+  .shop{
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+.shop__title{
+  grid-column: 1 / 7;
+}
+
+.shop__nav{
+  grid-column: 1 / 7;
+  justify-self: start;
+  gap: 14px;
+}
+
+.shop__products__wrapper{
+  margin-top: 37px;
+  grid-column: 1 / -1;
+  column-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+}
+
+
+.shop__products-1{
+  grid-column: 1 / 4;
+}
+
+.shop__products-2{
+    display: block;
+    grid-column: 4 / 7;
+  }
+
+.shop__foto-bg-2{
+    width: 100%;
+  }
+
+  .shop__foto-bg-2:hover{
+    transform: scale(1.05);
+   transition-duration: 0.3s;
+  }
+
+
+.shop__product-price{
+   margin-top: 15px;
+ }
+
+ .shop__button{
+   grid-column: 1 / 7;
+   width: 280px;
+   justify-self: center;
+ }
+}
+
+@include main {
+
+
+
+.shop{
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 20px;
+}
+
+.shop__products__wrapper{
+  grid-column: 2 / -1;
+  margin-top: 62px;
+
+  display: flex;
+}
+
+.shop__products-1{
+   width: 50%;
+ }
+
+.shop__products-2{
+   width: 50%;
+  }
+
+ .shop__title{
+    grid-column: 2 / 4;
+    justify-self: start;
+  }
+
+.shop__nav{
+    grid-column: 2 / -1;
+  }
+
+.shop__button{
+    grid-column: 5 / 9;
+    justify-self: center;
+
+  }
+
+  .section__shop{
+    display: block;
+    grid-column: 1/2;
+    writing-mode: vertical-lr;
+    place-self: start start;
+    transform: rotate(-180deg);
+    color: rgba(52, 79, 16, 0.50);
+    text-align: center;
+
+    // /* Decorative - 14 Medium */
+    font-family: $mainfont;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    position: relative;
+    }
+
+    .section__shop::after{
+    content: " ";
+    position: absolute;
+    width: 1px;
+    height: 100px;
+    background-color: rgba(52, 79, 16, 0.50);
+    top: -109px;
+    left: 7px;
+     }
+
+
+
+}
