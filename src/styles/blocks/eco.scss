@@ -1,0 +1,72 @@
+.eco {
+  &__list {
+    @include pageGrid;
+    justify-content: end;
+    text-align: center;
+    align-items: center;
+    row-gap: 50px;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      column-gap: 20px;
+    }
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__img {
+    margin-bottom: 20px;
+
+    &--materials {
+      @include onTablet {
+        margin-bottom: 28px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 61px;
+      }
+    }
+
+    &--recycling {
+      @include onTablet {
+        margin-bottom: 23px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 37px;
+      }
+    }
+
+    &--leaves {
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+  }
+}

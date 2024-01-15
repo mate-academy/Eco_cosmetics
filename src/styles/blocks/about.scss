@@ -1,0 +1,94 @@
+.about {
+  &__content {
+    position: relative;
+    @include pageGrid;
+    column-gap: 30px;
+
+    @include onDesktop {
+      column-gap: 0;
+    }
+  }
+
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      row-gap: 40px;
+    }
+  }
+
+  &__subtitle {
+    top: 72px;
+  }
+
+  &__text {
+    @include onTablet {
+      font-size: 16px;
+      display: block;
+    }
+
+    &--desktop {
+      @include onMobile {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__images {
+    display: flex;
+    column-gap: 20px;
+    align-items: flex-end;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    &--middle {
+      @include onTablet {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--wide {
+      @include onDesktop {
+        display: block;
+        width: 380px;
+        height: 529px;
+      }
+    }
+
+    &--small {
+      @include onDesktop {
+        display: block;
+        width: 180px;
+        height: 430px;
+      }
+    }
+  }
+}
