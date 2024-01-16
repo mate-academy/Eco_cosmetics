@@ -1,0 +1,49 @@
+.container {
+  max-width: $pageMaxWidth + 2 * $pagePadding;
+  width: calc(100% - #{2 * $pagePadding});
+  margin: 0 auto;
+
+  &__link {
+    position: relative;
+    left: -83px;
+    bottom: -100px;
+    height: 18px;
+    color: rgba(52, 79, 16, 0.5);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transform: rotate(-90deg);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -60px;
+      top: -40px;
+      width: 1px;
+      height: 100px;
+      background: rgba(52, 79, 16, 0.5);
+      transform: rotate(-90deg);
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    @include desctop {
+      font-size: 36px;
+    }
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 130%;
+    }
+  }
+}

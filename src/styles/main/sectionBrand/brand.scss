@@ -1,0 +1,60 @@
+.brand {
+  @extend %sectionFlexContainer;
+  padding-top: 70px;
+
+  @include desctop {
+    justify-content: center;
+    padding-top: $sectionPaddingDesktop;
+  }
+
+  &__inner {
+    display: flex;
+    column-gap: 70px;
+
+    @include desctop {
+      flex-direction: column;
+    }
+  }
+
+  &__about {
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 22px;
+
+    @include mobile {
+      font-size: 18px;
+      line-height: 150%;
+    }
+  }
+
+  &__text {
+    @include desctop {
+      display: grid;
+      justify-items: center;
+      order: 2;
+      margin-top: 25px;
+      text-align: center;
+    }
+  }
+
+  &__image {
+    @include desctop {
+      display: flex;
+      flex: 0 0 100%;
+      justify-content: center;
+      order: 1;
+    }
+
+    @include mobile {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__image-product {
+    @include desctop {
+      max-width: 714px;
+      width: calc(100% + 40px);
+    }
+  }
+}

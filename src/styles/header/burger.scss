@@ -1,0 +1,94 @@
+.burger {
+  @include tabletMini {
+    display: flex;
+    order: 1;
+  }
+  &__toggler {
+    display: none;
+  }
+
+  &__label {
+    display: none;
+    width: max-content;
+    height: max-content;
+    cursor: pointer;
+
+    @for $i from 1 through 3 {
+      & :nth-child(#{$i}) {
+        height: 1px;
+        width: 20px;
+        margin-bottom: 5px;
+        background-color: $khakiColor;
+        transition: opacity 0.5s, transform 0.5s;
+      }
+    }
+
+    @include tabletMini {
+      display: flex;
+      position: relative;
+      z-index: 1;
+      flex-direction: column;
+    }
+  }
+
+  &__toggler:checked ~ &__label {
+    @for $i from 1 through 3 {
+      & :nth-child(#{$i}) {
+        background-color: $beigeGrayColor;
+      }
+    }
+  }
+
+  &__toggler:checked ~ &__label :nth-child(1) {
+    transform: rotate(-45deg) translateX(-4px);
+  }
+
+  &__toggler:checked ~ &__label :nth-child(2) {
+    transform: rotate(45deg) translateX(-5px);
+  }
+
+  &__toggler:checked ~ &__label :nth-child(3) {
+    opacity: 0;
+  }
+
+  @include tabletMini {
+    &__nav {
+      display: none;
+    }
+    .nav {
+      &__list {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+
+        color: $beigeGrayColor;
+        background-color: $darkColor;
+      }
+
+      &__link {
+        position: relative;
+        justify-content: center;
+        margin: 0 20px 50px;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          height: 1px;
+          width: 100%;
+          background-color: $beigeGrayColor;
+        }
+      }
+    }
+
+    &__toggler:checked ~ &__nav {
+      display: block;
+      animation: appear-h 0.5s linear;
+    }
+  }
+}
