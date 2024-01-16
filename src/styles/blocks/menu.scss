@@ -1,0 +1,54 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $black;
+  box-sizing: border-box;
+  padding: 25px 20px;
+  z-index: 2;
+  &__cross {
+    display: flex;
+    background-image: url(../images/cross.svg);
+    height: 15px;
+    width: 15px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 45px;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    width: 100%;
+    padding-bottom: 31px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__link {
+    box-sizing: border-box;
+    text-decoration: none;
+    @extend %h5;
+    color: $body-color;
+    line-height: 130%;
+    width: 100%;
+    text-align: center;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      margin-top: 10px;
+      background-color: $body-color;
+    }
+  }
+}

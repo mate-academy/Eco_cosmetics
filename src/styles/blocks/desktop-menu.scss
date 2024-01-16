@@ -1,0 +1,41 @@
+.desktop-menu {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+
+  @include onDesktop-1280 {
+    order: 2;
+  }
+
+  &__list {
+    display: none;
+    margin: 0;
+    padding: 0;
+
+    @include onDesktop-1280 {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      align-self: center;
+    }
+  }
+
+  &__item {
+    padding-right: 40px;
+    transition: 0.3s;
+
+    &:last-child {
+      padding: 0;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @extend %menu-text;
+    color: $darkgreen;
+  }
+}

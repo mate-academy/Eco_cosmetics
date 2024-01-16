@@ -1,0 +1,146 @@
+.contact-us {
+  padding: 0 20px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @include onTablet {
+    flex-direction: row;
+    padding: 0 27px 100px;
+  }
+
+  @include onDesktop-1280 {
+    padding: 0 50px 100px;
+  }
+
+  &__container {
+    @include onTablet {
+      width: 342px;
+    }
+
+    @include onDesktop-1280 {
+      width: 380px;
+      padding-left: 82px;
+    }
+  }
+
+  &__tittle {
+    @extend %h4;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $darkgreen;
+    padding-bottom: 10px;
+
+    @include onDesktop-1280 {
+      font-size: 36px;
+      line-height: 110%;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @extend %text2;
+    padding-bottom: 30px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+  }
+
+  &__field {
+    box-sizing: border-box;
+    margin: 0 0 25px;
+    width: 100%;
+    background-color: transparent;
+    @extend %text2;
+    color: #828282;
+    border: 0;
+    border-bottom: 1px solid #828282;
+    outline: none;
+
+    @include onDesktop-1280 {
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    &::placeholder {
+      @extend %text2;
+      color: #828282;
+
+      @include onDesktop-1280 {
+        font-weight: 500;
+        font-size: 18px;
+      }
+    }
+
+    &:focus {
+      border-color: $black;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:focus:valid {
+      border-color: $darkgreen;
+      color: $darkgreen;
+    }
+
+    &:focus:invalid {
+      border-color: red;
+      color: red;
+    }
+  }
+
+  &__message {
+    padding-top: 45px;
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 340px;
+      height: 415px;
+      padding-left: 30px;
+    }
+
+    @include onDesktop-1280 {
+      width: 580px;
+      height: 540px;
+      padding-left: 120px;
+    }
+  }
+
+  &__aside-text {
+    display: none;
+
+    @include onDesktop-1280 {
+      position: relative;
+      display: inline-block;
+      writing-mode: vertical-lr;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 130%;
+      text-align: end;
+      color: $lightgreen;
+      transform: rotate(-180deg);
+      margin: 0;
+      padding-right: 30px;
+
+      &::before {
+        position: absolute;
+        bottom: 45px;
+        left: 7px;
+        content: "";
+        display: block;
+        width: 1px;
+        height: 100px;
+        background-color: $lightgreen;
+      }
+    }
+  }
+}

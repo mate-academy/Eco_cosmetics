@@ -1,6 +1,56 @@
 @import "utils";
 @import "typography";
 
-body {
-  background: $c-gray;
+* {
+  scroll-behavior: smooth;
 }
+
+.page {
+  &__body {
+    background: $body-color;
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@import "./blocks/header.scss";
+@import "./blocks/desktop-menu.scss";
+
+@import "./blocks/menu.scss";
+
+@import "./blocks/intoduction.scss";
+@import "./blocks/button.scss";
+
+@import "./blocks/about.scss";
+
+@import "./blocks/shop.scss";
+
+@import "./blocks/about-creators.scss";
+
+@import "./blocks/tooth-powder.scss";
+
+@import "./blocks/contact-us.scss";
+
+@import "./blocks/footer.scss";

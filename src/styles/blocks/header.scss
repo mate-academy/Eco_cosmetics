@@ -1,0 +1,97 @@
+.header {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+
+  @include onTablet {
+    padding: 20px 30px;
+  }
+
+  @include onDesktop-1280 {
+    padding: 52px 55px;
+  }
+
+  @include onDesktop-1440 {
+    padding: 52px 134px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  &__menu-opener {
+    display: flex;
+    align-self: center;
+    width: 20px;
+    height: 13px;
+    background-image: url(../images/menu.svg);
+
+    @include onDesktop-1280 {
+      display: none;
+    }
+  }
+
+  &__bag-opener {
+    display: flex;
+    align-self: center;
+    width: 20px;
+    height: 24px;
+    background-image: url(../images/bag.svg);
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop-1280 {
+      width: 23px;
+      height: 28px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      order: 3;
+    }
+  }
+}
+
+.logo {
+  &__image {
+    display: flex;
+    align-self: center;
+    width: 24px;
+    height: 24px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop-1280 {
+      width: 50px;
+      height: 50px;
+      order: 1;
+      padding-right: 12px;
+    }
+  }
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+
+  &__text {
+    display: none;
+
+    @include onDesktop-1280 {
+      display: flex;
+      align-self: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 130%;
+      color: $darkgreen;
+    }
+  }
+}
