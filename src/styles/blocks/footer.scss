@@ -1,0 +1,126 @@
+.footer {
+  background-color: $l-green;
+  color: $white;
+
+  &__content {
+    padding: 30px 0;
+
+    @include desktop {
+      padding: 60px 0;
+    }
+  }
+
+  &__nav {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+    margin-bottom: 20px;
+    font-weight: 400;
+
+    @include tablet {
+      row-gap: 15px;
+    }
+
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    column-gap: 20px;
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      column-gap: 14px;
+      margin-bottom: 0;
+    }
+
+    &--mobile {
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include desktop {
+        display: flex;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include hover (transform, scale(1.2));
+
+    &--facebook {
+      background-image: url(../images/icons/facebook.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/instagram.svg);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+
+    @include desktop {
+      font-size: 16px;
+      row-gap: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+
+    @include desktop {
+      font-size: 16px;
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+    }
+  }
+
+  &__copyright-text {
+    display: inline;
+    font-size: 14px;
+
+    @include desktop {
+      font-size: 18px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include desktop {
+        display: inline;
+      }
+    }
+  }
+}

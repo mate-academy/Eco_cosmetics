@@ -1,0 +1,97 @@
+.about {
+  position: relative;
+  padding: 0 20px;
+  margin-bottom: 100px;
+  
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-right: 0;
+    margin-bottom: 133px;
+  }
+
+  @include desktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    @include tablet {
+      display: flex;
+      column-gap: 30px;
+      padding-right: 30px;
+    }
+
+    @include desktop {
+      justify-content: flex-end;
+      column-gap: 80px;
+      padding-right: 120px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include desktop {
+      margin-bottom: 34px;
+    }
+
+    @include design {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+    font-size: 14px;
+
+    @include desktop {
+      max-width: 380px;
+      font-size: 16px;
+    }
+
+    &--desktop {
+      display: none;
+      margin-bottom: 40px;
+
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__image-container {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      // grid-template-columns: 1fr 130px;
+      column-gap: 20px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-height: 318px;
+    // min-width: 370px;
+    max-width: 480px;
+    // background-image: url(../images/photos/candle.jpg);
+    object-position: center;
+    // background-repeat: no-repeat;
+    object-fit: cover;
+
+    @include desktop {
+      max-height: 530px;
+    }
+
+    &--second {
+      align-self: flex-end;
+      display: none;
+      height: 430px;
+      min-width: 130px;
+
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.if-you-choose {
+  position: relative;
+  margin-bottom: 100px;
+
+  @include tablet {
+    margin-bottom: 130px;
+  }
+
+  @include desktop {
+    margin-bottom: 200px;
+  }
+
+  &__dividing-line {
+    display: none;
+    height: 1px;
+    width: 42.3%;
+    background-color: rgba(52, 79, 16, 0.5);
+
+    @include desktop {
+      display: block;
+    }
+
+    &--bottom {
+      position: absolute;
+      right: 0;
+      width: 49.3%;
+    }
+  }
+
+  &__content {
+    @include desktop {
+      padding: 100px 0;
+    }
+  }
+
+  &__title {
+    margin: 0 auto;
+    max-width: 280px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $d-green;
+
+    @include desktop {
+      max-width: 380px;
+      font-size: 24px;
+    }
+  }
+
+  &__paragraph {
+    display: none;
+
+    @include desktop {
+      display: inline;
+    }
+  }
+}
