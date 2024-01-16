@@ -66,12 +66,24 @@
   border: none;
   background: #e4dfd3;
   cursor: pointer;
+  display: inline-block;
   transition: 0.3s;
+  position: relative;
 
-    &:hover {
-  border-bottom: 1px solid #344f10;
-  transition-duration: 0.9s;
+  &::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    top: 25px;
+    left: 0;
+    height: 2px;
+    background: #344F10;
+    transition: 300ms;
   }
+
+   &:hover::after {
+       width: 100%;
+   }
 }
 
 
