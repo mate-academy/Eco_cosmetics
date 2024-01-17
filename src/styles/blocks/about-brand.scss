@@ -1,0 +1,144 @@
+.about-brand {
+  &__content {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      &::before {
+        top: 180px;
+        content: 'witch of mountain winds';
+        position: absolute;
+        left: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 130%;
+        transform-origin: left;
+        transform: rotate(270deg);
+        color: $dark-green;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 220px;
+        left: 10px;
+        height: 20%;
+        width: 1px;
+        background-color: $dark-green;
+      }
+    }
+
+    &--left {
+      @include on-tablet {
+        grid-column: span 3;
+      }
+
+      @include on-desktop {
+        grid-column: 2/6;
+      }
+    }
+
+    &--right {
+      display: none;
+
+      @include on-tablet {
+        display: grid;
+        grid-column: span 3;
+      }
+
+      @include on-desktop {
+        display: grid;
+        grid-column: 7/13;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__text {
+    color: $gray-1;
+
+    @include basic-text-styles(14px, 400, 150%, normal);
+
+    @include on-tablet {
+      @include basic-text-styles(16px, 400, 150%, normal);
+    }
+
+    &--desktop {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        padding-top: 30px;
+      }
+    }
+  }
+
+  &__link {
+    height: 40px;
+
+    &--active {
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $dark-green;
+
+      @include basic-text-styles (14px, 500, 130%, normal);
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: $dark-green;
+        bottom: -8px;
+        display: block;
+        width: 100%;
+        height: 1px;
+
+        transition: transform 0.3s;
+        transform: scale(0);
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__photos {
+    &--big {
+      @include on-tablet {
+        max-height: 321px;
+      }
+
+      @include on-desktop {
+        grid-column: 7/11;
+        padding-right: 20px;
+        max-height: 529px;
+      }
+    }
+
+    &--small {
+      display: none;
+
+      @include on-desktop {
+        display: grid;
+        grid-column: 11/13;
+        max-height: 430px;
+        padding-top: 100px;
+      }
+    }
+
+    &--img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

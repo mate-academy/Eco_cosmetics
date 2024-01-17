@@ -1,0 +1,101 @@
+.contacts {
+  &__content {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      &::before {
+        top: 40px;
+        content: 'help';
+        position: absolute;
+        left: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 130%;
+        transform-origin: left;
+        transform: rotate(270deg);
+        color: $dark-green;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        height: 20%;
+        width: 1px;
+        background-color: $dark-green;
+      }
+    }
+
+    &--left {
+      @include on-tablet {
+        grid-column: span 3;
+      }
+
+      @include on-desktop {
+        grid-column: 2/6;
+      }
+    }
+
+    &--right {
+      @include on-tablet {
+        grid-column: span 3;
+      }
+
+      @include on-desktop {
+        grid-column: 7/13;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    box-sizing: border-box;
+
+    &--item {
+      border: none;
+      background-color: $yellowish ;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+
+    @include on-tablet {
+      margin: 0 auto;
+      width: 280px;
+    }
+
+    @include on-desktop {
+      margin: 0;
+      grid-column: 2/5;
+      margin-top: 20px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: left;
+    }
+
+    @include on-desktop {
+      max-height: 540px;
+    }
+  }
+}

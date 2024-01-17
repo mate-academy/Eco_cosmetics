@@ -1,69 +1,83 @@
 .header {
-  &__content {
-    @include page-grid;
+  overflow: hidden;
 
+  &__content {
     margin: 0;
 
+    @include on-desktop {
+      @include page-grid;
+    }
+
     &--photo {
-      grid-column: 1/-1;
+      display: block;
       object-fit: cover;
       width: 100%;
       height: 100%;
 
       @include on-desktop {
         grid-column: 7/13;
+
+        @include hover(transform, scale(1.05));
+      }
+
+      @include on-design {
+        grid-column: 7/13;
       }
     }
 
     &--text-data {
       text-align: center;
+      margin-bottom: 100px;
 
       @include on-desktop {
         text-align: left;
+        grid-row: 1;
 
         @include page-grid;
       }
     }
 
     &--title {
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 130%;
-      grid-column: 1/-1;
+      margin-top: 30px;
+
+      @include basic-text-styles(24px, 600, 130%, normal);
 
       @include on-tablet {
-        font-size: 36px;
-        line-height: 150%;
-
+        @include basic-text-styles(36px, 600, 150%, normal);
       }
 
       @include on-desktop {
         grid-column: 2/7;
-        margin: 0;
-        font-size: 60px;
-        line-height: 130%;
+
+        @include basic-text-styles(60px, 600, 130%, normal);
       }
     }
 
     &--description {
-      grid-column: 1/-1;
+      margin-top: 10px;
+      padding-bottom: 50px;
+
+      @include basic-text-styles(16px, 400, 150%, normal);
 
       @include on-desktop {
         grid-column: 2/5;
+        margin-top: 30px;
       }
     }
 
     &--button {
-      grid-column: 1/-1;
+      display: block;
+      width: 100%;
 
       @include on-tablet {
-        grid-column: 3/5;
+        margin: 0 auto;
+        width: 280px;
       }
 
       @include on-desktop {
+        width: 100%;
         grid-column: 2/5;
       }
     }
-
   }
 }

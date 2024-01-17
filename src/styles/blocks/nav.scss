@@ -6,8 +6,18 @@
   }
 
   &__link {
-    color: $additional-color-text;
-    font-size: 18px;
     text-decoration: none;
+    transition: all ease $effect-duration;
+
+    @include basic-text-styles(18px, 500, 150%, normal);
+
+    &:hover {
+      color: $gray-1;
+      cursor: pointer;
+    }
+  }
+
+  &__item {
+    @include hover(transform, scale(1.1));
   }
 }
