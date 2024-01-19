@@ -1,208 +1,104 @@
-@import "./utils/vars";
-@import "./utils/mixins";
-
-.favicon {
-  border-radius: 50%;
-}
-
 .header {
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 100px;
+  position: relative;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
 
   @include onDesktop {
-    padding-bottom: 200px;
-  }
+    margin-bottom: 0;
+    padding-bottom: 253px;
 
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    text-decoration: none;
-
-    @include onDesktop {
-      padding: 52px 0;
-    }
-
-    &-logo {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 12px;
-
-      &-img {
-        width: 24px;
-        height: 24px;
-
-        @include onDesktop {
-          width: 50px;
-          height: 50px;
-        }
-      }
-
-      &-text {
-        text-decoration: none;
-        color: $darkGreen;
-        font-size: 14px;
-        line-height: 130%;
-        letter-spacing: 0.7px;
-        text-transform: uppercase;
-        display: none;
-
-        @include onDesktop {
-          display: block;
-        }
-      }
-    }
-
-    &-menu-icon,
-    &-cart-icon {
-      width: 20px;
-      height: 24px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    &-menu-icon {
-      background-image: url("../images/Menu.svg");
-
-      @include onDesktop {
-        display: none;
-        width: 32px;
-        height: 32px;
-      }
-    }
-
-    &-cart-icon {
-      background-image: url("../images/shop.svg");
-
-      @include onDesktop {
-        width: 32px;
-        height: 32px;
-      }
-    }
-
-    &-menu {
-      list-style: none;
-      margin: 0;
-      padding: 0 0 0 15px;
-      display: none;
-      flex-direction: row;
-      gap: 40px;
-
-      @include onDesktop {
-        display: flex;
-      }
-
-      &-item {
-        height: 100%;
-      }
-
-      &-link {
-        text-decoration: none;
-        color: $darkGreen;
-        font-size: 18px;
-        line-height: 150%;
-        text-transform: capitalize;
-        padding-bottom: 10px;
-        border-bottom: 1px solid transparent;
-
-        &:hover {
-          border-bottom: 1px solid $darkGreen;
-        }
-      }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40vw;
+      border-bottom: 1px solid rgba(52, 79, 16, 0.5);
     }
   }
 
-  &__image {
-    display: block;
-    width: calc(100% + 40px);
-    min-height: 267px;
-    margin-left: -20px;
+  &__top-actions {
+    margin-bottom: 0;
 
-    @include onIpad {
-      width: 100%;
-      margin: 0;
-      min-height: 500px;
+    @include onTablet {
+      margin-bottom: 0;
     }
 
     @include onDesktop {
-      display: none;
-    }
-  }
-
-  &__title {
-    text-align: center;
-    padding-top: 25px;
-
-    @include onIpad {
-      padding-top: 50px;
-    }
-
-    @include onDesktop {
-      padding-top: 0;
-      text-align: left;
-      padding-left: 100px;
-    }
-  }
-
-  &__info {
-    font-size: 16px;
-    line-height: 150%;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 30px;
-
-    @include onIpad {
-      padding-bottom: 50px;
-    }
-
-    @include onDesktop {
-      padding-top: 15px;
-      text-align: left;
-      padding-left: 100px;
-    }
-  }
-
-  &__button {
-    display: flex;
-    justify-content: center;
-
-    @include onDesktop {
-      justify-content: start;
-      padding-left: 100px;
+      margin-bottom: 50px;
     }
   }
 
   &__content {
+    position: relative;
 
-    @include onDesktop {
-      display: flex;
-      flex-direction: row;
+    &-title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 130%;
+      text-align: center;
+      color: $blackTextColor;
 
-    }
+      margin-bottom: 10px;
 
-    &-right {
-      display: none;
+      @include onTablet {
+        font-size: 36px;
+        line-height: 150%;
+        text-align: center;
+        text-transform: capitalize;
+      }
 
       @include onDesktop {
-        display: block;
-        width: 50%;
-      }
-
-      &-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        font-size: 60px;
+        line-height: 130%;
+        text-align: left;
+        margin-bottom: 30px;
       }
     }
 
-    &-left {
+    &-subtitle {
+      display: block;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $blackTextColor;
+      text-align: center;
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        text-align: left;
+        margin-bottom: 50px;
+      }
+    }
+
+    &-button {
+      margin: 0 auto;
+
+      @include onDesktop {
+        margin: 0;
+      }
+    }
+
+    &-img {
+      display: block;
       width: 100%;
+      margin-bottom: 25px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
 
       @include onDesktop {
-        width: 50%;
+        position: absolute;
+        top: 0;
+      }
+
+      transition: all 0.3s;
+      &:hover {
+        scale: 105%;
       }
     }
   }
