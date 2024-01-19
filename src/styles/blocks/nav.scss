@@ -1,0 +1,82 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0 20px;
+
+  @include on-tablet {
+    padding: 23px 0 30px;
+  }
+
+  @include on-desktop {
+    padding: 40px 0 70px;
+  }
+
+  &__logo {
+    display: none;
+    transition: all 0.3s;
+
+
+    @include on-tablet {
+      @include hover(transform,scale(1.05));
+    }
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__link {
+    @include on-tablet {
+      transition: all 0.3s;
+
+      @include hover(transform,scale(1.05));
+    }
+  }
+
+  &__burger {
+    display: block;
+    height: 13px;
+    width: 20px;
+    background-image: url(../images/icons/menu.svg);
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: none;
+    gap: 40px;
+
+
+    @include on-desktop {
+      display: flex;
+    }
+  }
+
+  &__mini-logo {
+    display: block;
+    height: 24px;
+    width: 24px;
+    background-image: url(../images/icons/favicon.svg);
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__basket {
+    display: block;
+    height: 26px;
+    width: 23px;
+    background-image: url(../images/icons/basket.svg);
+
+    @include on-tablet {
+      transition: all 0.3s;
+
+      @include hover(transform,scale(1.05));
+
+    }
+  }
+}

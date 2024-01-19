@@ -1,0 +1,39 @@
+.benefits {
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    align-items: baseline;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: $colomn-gap;
+    }
+  }
+
+  &__item {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__info {
+    max-width: 220px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+
+    @include on-desktop {
+      min-width: 380px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 20px;
+    transition: all 0.3s;
+
+    @include on-tablet {
+      @include hover(transform,scale(1.05));
+
+    }
+  }
+}
