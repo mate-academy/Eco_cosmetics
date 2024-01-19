@@ -1,0 +1,66 @@
+.gift {
+  @include paddingInline;
+  @include pageGrid;
+  font-family: inherit;
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  @include onDesktop {
+    text-align: left;
+  }
+
+  &__part-one {
+    grid-column: 1 / -1;
+    font-weight: bolder;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: uppercase;
+    color: $d-green;
+    letter-spacing: 2.5px;
+    margin: 0;
+    justify-self: center;
+    width: 280px;
+
+    @include onDesktop {
+      grid-column: 6 / 11;
+    }
+  }
+
+  &__part-two {
+    display: none;
+    margin: 0;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / 6;
+
+      color: $d-gray;
+      font-size: 16px;
+      line-height: 24px;
+      direction: rtl;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding-block: 100px;
+  }
+
+  &__title {
+    text-align: left;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      padding-block: 33%;
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.menu {
+  box-sizing: border-box;
+  background-color: $d-gray;
+
+  grid-column: 1 / -1;
+  grid-row: 1 / 8;
+  place-self: stretch;
+  z-index: 1;
+  transition: all 0.3s;
+  transform: translateX(-110%);
+  pointer-events: none;
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+    overflow: scroll;
+  }
+
+  @include onDesktop {
+    opacity: 1;
+    grid-column: 7 / 10;
+    grid-row: 1;
+    background-color: transparent;
+    place-self: center;
+    transform: none;
+    transition: none;
+    pointer-events: fill;
+  }
+
+  &__icon {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  &__nav {
+    margin-top: 45px;
+
+    @include onTablet {
+      margin-top: 100px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+    padding-inline: 20px;
+
+    @include onDesktop {
+      flex-direction: row;
+      padding-inline: 0;
+    }
+  }
+
+  &__item {
+    font-family: inherit;
+    border-bottom: 1px solid $m-gray;
+    text-align: center;
+
+    @include onDesktop {
+      border-bottom: none;
+      font-size: 18px;
+      line-height: 27px;
+      padding-right: 40px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $l-gray-dark;
+    font-weight: bolder;
+
+    @include onDesktop {
+      color: $l-green;
+    }
+  }
+}

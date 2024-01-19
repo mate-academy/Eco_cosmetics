@@ -1,0 +1,59 @@
+.contacts {
+  @include pageGrid;
+  grid-column: 1 / -1;
+  @include paddingInline;
+
+  &__block {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__subtitle {
+    @include onDesktop {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding-bottom: 30px;
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: normal;
+    color: $d-gray;
+
+    @include onTablet {
+      padding-bottom: 20px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__photo {
+
+    @include onTablet {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      grid-column: 4 / 7;
+      background-image: url(../images/photo/contacts-desk.png);
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.brand {
+  @include pageGrid;
+  font-family: inherit;
+  grid-column: 1 / -1;
+  @include paddingInline;
+
+  &__block-text {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__learn-more {
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__photo {
+    background-repeat: no-repeat;
+  }
+
+  &__photo--big {
+    @include onTablet {
+      background-position: center;
+      background-size: cover;
+      grid-column: 4 / 7;
+      background-image: url(../images/photo/about-brand-big-tab.png);
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      background-size: cover;
+      background-image: url(../images/photo/about-brand-big.png);
+    }
+  }
+
+  &__photo--small {
+    @include onDesktop {
+      margin-top: 99px;
+      grid-column: 11 / 13;
+      background-size: cover;
+      background-image: url(../images/photo/about-brand-small.png);
+    }
+  }
+}

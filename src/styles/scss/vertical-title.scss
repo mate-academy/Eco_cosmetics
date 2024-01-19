@@ -1,0 +1,30 @@
+.vertical-title {
+  display: none;
+  
+  @include onDesktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    grid-column: 1 ;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(52, 79, 16, 0.5);
+    writing-mode: vertical-rl;
+    transform: rotate(0.5turn);
+    text-align: right;
+
+    &::before {
+      content: "";
+      position: relative;
+      top: -50px;
+      left: 40%;
+      display: block;
+      height: 1px;
+      min-width: 88px;
+      transform: rotate(0.25turn);
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+}

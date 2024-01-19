@@ -1,0 +1,30 @@
+.page {
+  font-family: Sharp_Sans_No2, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  margin: auto;
+  scroll-behavior: smooth;
+
+  &__body {
+    background: $l-gray-dark;
+    margin: auto;
+    min-width: 320px;
+    max-width: 1280px;
+  }
+
+  &:has(.header__menu:target) {
+    overflow: hidden;
+  }
+
+  &__child {
+    padding-top: 100px;
+
+    @include onTablet {
+      padding-top: 130px;
+    }
+
+    @include onDesktop {
+      padding-top: 200px;
+    }
+  }
+}

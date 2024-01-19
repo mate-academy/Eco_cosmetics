@@ -1,0 +1,138 @@
+.shop {
+  grid-column: 1 / -1;
+  @include pageGrid;
+  font-family: inherit;
+
+  @include onTablet {
+    @include paddingInline;
+  }
+
+  &__subtitle {
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    @include onTablet {
+      justify-items: start;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+    padding-inline: 20px;
+    justify-self: stretch;
+    padding-bottom: 15px;
+    text-align: justify;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      padding-inline: 0;
+      justify-self: start;
+      padding-bottom: 25px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__product {
+    @include pageGrid;
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    padding-inline: 20px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1.5;
+    justify-content: space-between;
+
+    @include onDesktop {
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+
+  &__item {
+    min-width: 55px;
+
+    @include onDesktop {
+      min-width: 80px;
+    }
+  }
+
+  &__link {
+    margin: 0;
+    display: inline-block;
+    text-decoration: none;
+    color: #828282;
+    padding-bottom: 10px;
+  }
+
+  &__item:not(:first-child) {
+    margin-left: 16px;
+
+    @include onTablet {
+      margin-left: 14px;
+    }
+
+    @include onDesktop {
+      margin-left: 20px;
+    }
+  }
+
+  &__link:hover {
+    color: $d-gray;
+  }
+
+  .is-active {
+    color: $d-gray;
+  }
+
+  &__link.is-active::after {
+    content: "";
+    position: relative;
+    display: block;
+    height: 2px;
+    border-radius: 8px;
+    background-color: $d-gray;
+    color: $d-gray;
+    bottom: -10px;
+  }
+}
