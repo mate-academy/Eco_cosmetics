@@ -1,0 +1,177 @@
+.header {
+  &__top {
+    padding-block: 15px 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @include on-tablet {
+      padding-block: 23px 30px;
+    }
+
+    @include on-desktop {
+      padding-block: 40px 81px;
+    }
+
+    @include on-wide-screen {
+      padding-bottom: 70px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    text-decoration: none;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &--slogan {
+      display: none;
+
+      @include on-desktop {
+        display: inline;
+        text-transform: uppercase;
+        line-height: 130%;
+        letter-spacing: 0.7px;
+        font-size: 14px;
+        color: $title-accent-color;
+        margin-block: auto;
+      }
+    }
+  }
+
+  &__link {
+    &--menu {
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    &--logo {
+      width: 24px;
+      height: 24px;
+
+      @include on-desktop {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    &--shop {
+      width: 20px;
+      height: 24px;
+      position: relative;
+
+      transition: all 0.3s;
+
+      &:hover {
+        filter: drop-shadow(1px 1px 2px rgba(12, 121, 122, 0.6));
+      }
+
+      @include on-tablet {
+        width: 24px;
+      }
+
+      @include on-desktop {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include on-desktop {
+      @include page-grid;
+
+      flex-direction: row;
+    }
+  }
+
+  &__banner {
+    display: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include on-tablet {
+      display: block;
+      background-image: url(../images/header/tablet_banner.png);
+      width: 100%;
+      height: 500px;
+    }
+
+    @include on-desktop {
+      background-image: url(../images/header/desktop_banner.png);
+      width: 100%;
+      height: 451px;
+      grid-column: 7 / -1;
+    }
+
+    &--mob {
+      position: absolute;
+      top: 59px;
+      background-image: url(../images/header/mobile_banner.png);
+      width: 100vw;
+      height: 267px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__text-content {
+    display: flex;
+    flex-direction: column;
+
+    &--deskt {
+      display: none;
+
+      @include on-desktop {
+        display: flex;
+        grid-column: 2 / 7;
+      }
+    }
+
+    &--tabl {
+      @include on-desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    margin-block: 292px 10px;
+    text-align: center;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      margin-block: 0 30px;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    text-align: center;
+
+    @include on-desktop {
+      text-align: left;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.btn {
+  box-sizing: border-box;
+  background-color: $btn-background;
+  border: 1px solid $btn-background;
+  display: block;
+  width: 100%;
+  line-height: 60px;
+  text-align: center;
+  margin-top: 30px;
+
+  color: $btn-text-color;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2.4px;
+
+  transition: all 0.3s;
+
+  &:hover {
+    box-sizing: border-box;
+    background-color: $btn-hover-color-bg;
+    color: $btn-background;
+  }
+
+  @include on-tablet {
+    width: 280px;
+    margin-inline: auto;
+    margin-top: 50px;
+  }
+
+  @include on-desktop {
+    margin-inline: 0;
+  }
+
+  &__underline {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $title-accent-color;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 86px;
+      height: 1px;
+      bottom: -10px;
+      background-color: $title-accent-color;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

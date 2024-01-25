@@ -1,0 +1,52 @@
+.contact {
+  position: relative;
+
+  &__side-title {
+    position: absolute;
+    top: 65px;
+  }
+
+  &__content {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__left {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__text {
+    margin-block: 10px 30px;
+
+    @include on-desktop {
+      margin-block: 30px 40px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      background-image: url(../images/contact/contact_tabl.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+
+      grid-column: 4 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+}

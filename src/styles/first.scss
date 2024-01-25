@@ -1,0 +1,68 @@
+.first {
+  position: relative;
+
+  &__content {
+    align-items: center;
+
+    @include on-desktop {
+      padding-block: 100px;
+    }
+
+    @include page-grid;
+  }
+
+  &__text {
+    display: none;
+
+    @include on-desktop {
+      display: inline;
+      grid-column: 2 / 6;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        background-color: rgba(52, 79, 16, 0.50);
+        width: calc($desktop-min-width / 2.4);
+        left: 0;
+        top: 0;
+
+        @include on-wide-screen {
+          width: calc($wide-screen-width / 2.5);
+        }
+      }
+    }
+  }
+
+  &__h5 {
+    grid-column: 1 / -1;
+    text-align: left;
+    color: $title-accent-color;
+
+    @include on-tablet {
+      grid-column: 2 / 6;
+      text-align: center;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      text-align: left;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        background-color: rgba(52, 79, 16, 0.50);
+        width: calc($desktop-min-width / 2.05);
+        right: 0;
+        bottom: 0;
+
+        @include on-wide-screen {
+          width: calc($wide-screen-width / 2);
+        }
+      }
+    }
+  }
+}
