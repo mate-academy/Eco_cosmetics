@@ -18,7 +18,7 @@ Implement landing page according to [Figma design](https://www.figma.com/file/Fz
 1. Implement footer.
 
 ## Fonts
-Use `Sharp Sans No2 Medium` and `Avenir`, which you can find in fonts directory.
+Use `Poppins` and `Avenir`, which you can find in fonts directory.
 
 
 ## Checklist for preparing a portfolio project for HR review
