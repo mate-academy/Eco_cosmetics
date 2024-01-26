@@ -1,0 +1,95 @@
+.powder {
+  &__main {
+    margin-bottom: 110px;
+
+    @include onTablet {
+      margin-bottom: 140px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 310px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 290px;
+    }
+  }
+
+  &__svg {
+    &--mobile {
+
+      margin: 0 -20px 30px 0;
+
+      @include onDesktop {
+        display: none;
+      }
+
+      &-svg {
+        width: 100%;
+        height: 395px;
+
+        &:hover {
+          transform: none;
+        }
+
+        @include onTablet {
+          position: absolute;
+          top: 0;
+          right: -110px;
+          transform: none;
+        }
+      }
+    }
+
+    &--desktop {
+      display: none;
+      position: absolute;
+      height: 395px;
+      top: 0;
+      left: 550px;
+      transform: none;
+
+      &:hover {
+        transform: none;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__advantage {
+    text-align: center;
+
+    &--svg {
+      height: 75px;
+      margin-bottom: 20px;
+
+      &-first {
+        padding-top: 15px;
+        height: 60px;
+      }
+    }
+
+    &--text {
+      margin-bottom: 50px;
+
+      &-last {
+        margin-bottom: 0;
+      }
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.header {
+  position: relative;
+
+  &__photo {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      padding: 0 27px 50px;
+      margin: 0;
+    }
+
+    @include on980 {
+      position: absolute;
+      width: 580px;
+      left: calc(50% + 10px);
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+
+    @include on980 {
+      margin-bottom: 30px;
+      text-align: left;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 30px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include on980 {
+      text-align: left;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0 20px;
+
+  @include onTablet {
+    padding: 23px 0 30px;
+  }
+
+  @include on980 {
+    padding: 40px 0 80px;
+  }
+
+  &__bigLogo,
+  &__list {
+    display: none;
+
+    @include on980 {
+      display: inline-block;
+    }
+  }
+
+  &__logo,
+  &__menu {
+    @include on980 {
+      display: none;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $green;
+  }
+}

@@ -1,0 +1,118 @@
+svg {
+  transition: transform $duration;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+img,
+a {
+  transition: transform $duration;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.page {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: $black;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background-color: $lightOlive;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    padding-bottom: 100px;
+
+    @include onTablet {
+      padding-bottom: 130px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 200px;
+    }
+
+    &--title {
+      font-size: 24px;
+      line-height: 150%;
+      color: $green;
+      margin-bottom: 10px;
+
+      @include onDesktop {
+        font-size: 36px;
+        line-height: 110%;
+        margin-bottom: 34px;
+      }
+    }
+
+    &--span {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(-90deg) translate(-50%, -100%);
+      line-height: 14px;
+
+      @include onDesktop {
+        display: flex;
+        align-items: center;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 130%;
+        color: rgba(52, 79, 16, 0.5);
+
+        &::before {
+          content: "";
+          display: inline-block;
+          margin-right: 10px;
+          height: 1px;
+          width: 100px;
+          background-color: rgba(52, 79, 16, 0.5);
+        }
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1180px;
+    overflow: hidden;
+
+    @include onTablet {
+      padding: 0 27px;
+    }
+
+    @include onDesktop {
+      padding: 0 50px;
+    }
+  }
+
+  &__more {
+    display: inline-block;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: $green;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $lightOlive;
+    transition: border-color $duration;
+
+    &:hover {
+      border-color: $green;
+    }
+  }
+}
