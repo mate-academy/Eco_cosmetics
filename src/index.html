@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="autocomplete" content="off">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -18,7 +19,11 @@
   <body class="body">
     <div class="body__container">
       <header class="header">
-        <a href="#menu" class="icon icon--menu"></a>
+        <a
+          href="#menu"
+          class="icon icon--menu"
+          id="openMenu"
+        ></a>
         <a href="#" class="icon icon--logo"></a>
         <div class="header__logo-container">
           <a href="#" class="header__link">
@@ -50,7 +55,11 @@
 
       <aside class="menu page__menu" id="menu">
         <div class="menu__container">
-          <a href="#" class="menu__close"></a>
+          <a
+            href="#"
+            class="menu__close"
+            id="closeMenu"
+          ></a>
           <div class="menu__content">
             <nav class="nav menu__nav">
               <ul class="nav__list">
@@ -68,49 +77,6 @@
           </div>
         </div>
       </aside>
-      <section class="popup page__popup" id="popup">
-        <header class="header">
-          <a href="#menu" class="icon icon--menu"></a>
-          <a href="#" class="icon icon--logo"></a>
-          <div class="header__logo-container">
-            <a href="#" class="header__link">
-              <img src="./images/icons/logo.svg" alt="medicine">
-            </a>
-            <a href="#" class="header__link">
-              <p class="header__logo-p">witch of mountain winds</p>
-            </a>
-          </div>
-          <div class="header__nav-container">
-            <a href="#shop" class="header__nav-link">shop</a>
-            <a href="#contact" class="header__nav-link">contact</a>
-            <a href="#about" class="header__nav-link">about</a>
-          </div>
-          <div class="header__cart-container">
-            <a href="#" class="icon icon--cart"></a>
-          </div>
-        </header>
-        <div class="popup__card-container">
-          <p class="popup__title-small">Hydroponic oil</p>
-          <p class="popup__price-small">160 UAH</p>
-          <div class="popup__image-container">
-            <div class="popup__image"></div>
-          </div>
-          <p class="popup__title">Almond Shampoo with Lavender Oil</p>
-          <p class="popup__price">70 UAH</p>
-          <p class="popup__weight">30 G</p>
-          <a href="#shop" class="popup__button-link">
-            <div class="popup__button">add to bag</div>
-          </a>
-          <p class="popup__description-one">
-            <span class="popup__span-one">Ingredients:</span> cocosulfate, aloe hydrolate, sweet almond oil, wheat proteins,
-            chamomile grass, lavender essential oil.
-          </p>
-          <p class="popup__description-two">
-            <span class="popup__span-two">Application:</span> foam the shampoo in your hands and apply foam on the
-            hair or draw a block over wet hair, foam, massage, rinse, apply balm or conditioner.
-          </p>
-        </div>
-      </section>
 
       <section class="care">
         <div class="care__left-line"></div>
@@ -187,7 +153,7 @@
               <p>160 UAH</p>
             </div>
           </div>
-          <a href="#popup" class="shop__button-link">
+          <a href="product.html" class="shop__button-link">
             <div class="shop__button">all products</div>
           </a>
         </div>
@@ -295,13 +261,19 @@
               We will help you choose a product that
               suits you and answer your other questions
             </p>
-            <form action="#" class="contact__form">
+            <form
+              action="#"
+              class="contact__form"
+              id="myForm"
+              autocomplete="off"
+            >
               <input
                 type="text"
                 class="contact__input"
                 placeholder="Your Name"
                 name="Name"
                 title="Please enter your name here"
+                autocomplete="off"
                 required
               >
               <input
@@ -310,6 +282,7 @@
                 placeholder="E - mail"
                 name="Email"
                 title="Please enter your email here"
+                autocomplete="off"
                 required
               >
               <input
@@ -318,6 +291,7 @@
                 placeholder="Phone Number"
                 name="Number"
                 title="Please enter your number here"
+                autocomplete="off"
                 required
               >
               <textarea
@@ -325,8 +299,10 @@
                 class="contact__area"
                 placeholder="Your message"
                 id="area"
-                cols="3"
                 rows="1"
+                cols="3"
+                maxlength="100"
+                required
               ></textarea>
               <button type="submit" class="contact__button">send a message</button>
             </form>
@@ -340,38 +316,95 @@
     <footer class="footer">
       <div class="footer__menu-container">
         <div class="footer__top-bar">
-          <p class="footer__top-p">shop</p>
-          <p class="footer__top-p">contact</p>
-          <p class="footer__top-p">about</p>
+          <a href="#shop" class="footer__link-top">
+            <p class="footer__top-p">shop</p>
+          </a>
+          <a href="#contact" class="footer__link-top">
+            <p class="footer__top-p">contact</p>
+          </a>
+          <a href="#about" class="footer__link-top">
+            <p class="footer__top-p">about</p>
+          </a>
           <div class="footer__icons-first">
-            <img
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              class="footer__link-top"
+            >
+              <img
               src="./images/icons/facebook.svg"
               alt="facebook"
               class="footer__icons-facebook"
+              >
+            </a>
+
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              class="footer__link-top"
             >
-            <img src="./images/icons/insta.svg" alt="instagram">
+              <img src="./images/icons/insta.svg" alt="instagram">
+            </a>
           </div>
         </div>
         <div class="footer__link-container footer__link-container-small">
           <p class="footer__link">Ukraine</p>
-          <p class="footer__link">support.mountain@gmail.com</p>
-          <p class="footer__link">+380934476839</p>
+          <a href="mailto:support.mountain@gmail.com" class="footer__link-top">
+            <p class="footer__link">support.mountain@gmail.com</p>
+          </a>
+          <a href="tel:+380934476839" class="footer__link-top">
+            <p class="footer__link">+380934476839</p>
+          </a>
           <p class="footer__link">Support is available Monday - Friday 9am-6pm</p>
           <div class="footer__icons-container">
-            <img src="./images/icons/facebook.svg" alt="facebook">
-            <img src="./images/icons/insta.svg" alt="instagram">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              class="footer__link-top"
+            >
+              <img src="./images/icons/facebook.svg" alt="facebook">
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              class="footer__link-top"
+            >
+              <img src="./images/icons/insta.svg" alt="instagram">
+            </a>
           </div>
         </div>
-        <p class="footer__bottom-p"><span class="footer__bottom-p-rights">Copyrights</span> &#169 2019 witch of the mountain winds</p>
+        <p class="footer__bottom-p">
+          <span class="footer__bottom-p-rights">
+            Copyrights
+          </span>
+          &#169 2019 witch of the mountain winds
+        </p>
       </div>
       <div class="footer__link-container">
         <p class="footer__link">Ukraine</p>
-        <p class="footer__link">support.mountain@gmail.com</p>
-        <p class="footer__link">+380934476839</p>
+        <a href="mailto:support.mountain@gmail.com" class="footer__link-top">
+          <p class="footer__link">support.mountain@gmail.com</p>
+        </a>
+        <a href="tel:+380934476839" class="footer__link-top">
+          <p class="footer__link">+380934476839</p>
+        </a>
         <p class="footer__link">Support is available Monday - Friday 9am-6pm</p>
         <div class="footer__icons-container">
-          <img src="./images/icons/facebook.svg" alt="facebook">
-          <img src="./images/icons/insta.svg" alt="instagram">
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            class="footer__link-top"
+          >
+            <img src="./images/icons/facebook.svg" alt="facebook">
+          </a>
+
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            class="footer__link-top"
+          >
+            <img src="./images/icons/insta.svg" alt="instagram">
+          </a>
         </div>
       </div>
     </footer>

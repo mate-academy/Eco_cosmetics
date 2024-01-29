@@ -3,6 +3,7 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overflow-y: auto;
 
   &__menu {
     position: fixed;
@@ -13,7 +14,7 @@
     transform: translateX(-100%);
     transition: all 0.3s;
     pointer-events: none;
-    overflow-y: hidden;
+    // overflow-y: auto;
     padding-bottom: 3rem;
 
     &:target {
@@ -22,39 +23,39 @@
       pointer-events: all;
       padding: 37px 27px;
       z-index: 999;
-      overflow-y: hidden;
+      // overflow-y: hidden;
     }
   }
 
-  &__popup {
-    position: absolute;
-    top: 1600px;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: all 0.3s;
-    pointer-events: none;
-    overflow-y: hidden;
-    padding-bottom: 3rem;
+  // &__popup {
+  //   position: absolute;
+  //   top: 1600px;
+  //   left: 0;
+  //   right: 0;
+  //   opacity: 0;
+  //   transform: translateX(-100%);
+  //   transition: all 0.3s;
+  //   pointer-events: none;
+  //   overflow-y: hidden;
+  //   padding-bottom: 3rem;
 
-    @include smallDevices {
-      top: 1250px;
-    }
+  //   @include smallDevices {
+  //     top: 1250px;
+  //   }
 
-    &:target {
-      opacity: 1;
-      transform: translateX(0);
-      pointer-events: all;
-      padding-inline: 27px;
-      z-index: 1000;
-      overflow-y: hidden;
-      height: 200vh;
+  //   &:target {
+  //     opacity: 1;
+  //     transform: translateX(0);
+  //     pointer-events: all;
+  //     padding-inline: 27px;
+  //     z-index: 1000;
+  //     // overflow-y: hidden;
+  //     height: 200vh;
 
-      @include smallDevices {
-        padding-inline: 20px;
-        height: 100vh;
-      }
-    }
-  }
+  //     @include smallDevices {
+  //       padding-inline: 20px;
+  //       height: 100vh;
+  //     }
+  //   }
+  // }
 }
