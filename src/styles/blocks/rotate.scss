@@ -1,0 +1,27 @@
+.rotate {
+  display: none;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+
+  color: $color-footer;
+  transform: rotate(-90deg);
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100px;
+    background-color: $color-footer;
+    top: 50%;
+    right: 50px;
+  }
+
+  @include on-desktop {
+    display: grid;
+    white-space: nowrap;
+    width: 1em;
+    grid-column: 1 / 2;
+  }
+}
+

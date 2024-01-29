@@ -1,0 +1,137 @@
+.about {
+  display: grid;
+
+  &__contant {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: $colomn-gap;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: $colomn-gap;
+    }
+
+  }
+  &__text {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+      margin: 0 0 34px;
+    }
+  }
+
+  &__first-p {
+    margin: 0 0 30px;
+
+    @include on-tablet {
+      display: grid;
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__second-p {
+    display: none;
+    margin: 0 0 40px;
+
+    @include on-desktop {
+      display: grid;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__learn-more {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid $color-text-accent;
+    transition: all 0.3s;
+
+    @include on-tablet {
+      &:hover {
+        color: $color-footer;
+        border-bottom: 1px solid $color-footer;
+      }
+    }
+  }
+
+  &__photo-container {
+    display: none;
+    position: relative;
+    margin-right: -25px;
+
+    @include on-tablet {
+      display: grid;
+      grid-column: 4 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 12;
+    }
+  }
+
+  &__photo {
+    @include on-tablet {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s;
+
+
+      @include hover(transform,scale(1.05));
+    }
+  }
+
+  &__photo-second {
+    display: none;
+
+    @include on-desktop {
+      position: absolute;
+      top: 20%;
+      right: -30%;
+      width: 20%;
+      height: 80%;
+      object-fit: cover;
+      object-position: 30%;
+      display: flex;
+      margin: 0 30px;
+      transition: transform 0.3s;
+
+      @include hover(transform,scale(1.05));
+
+    }
+  }
+}

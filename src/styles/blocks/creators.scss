@@ -1,0 +1,119 @@
+.creators {
+  &__contant {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: $colomn-gap;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: $colomn-gap;
+    }
+
+  }
+  &__text {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+      margin-bottom: 34px;
+    }
+  }
+
+  &__first-p,
+  &__second-p {
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      display: grid;
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      margin-bottom: 30px;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__learn-more {
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-bottom: 40px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 50px;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 14px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid $color-text-accent;
+    transition: all 0.3s;
+
+    @include on-tablet {
+      &:hover {
+        color: $color-footer;
+        border-bottom: 1px solid $color-footer;
+      }
+    }
+  }
+
+  &__photo-container {
+    display: none;
+    position: relative;
+
+    @include on-tablet {
+      display: grid;
+      grid-column: 4 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__photo {
+    @include on-tablet {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all 0.3s;
+
+      @include on-tablet {
+      @include hover(transform,scale(1.05));
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include on-tablet {
+      justify-content: start;
+    }
+  }
+}

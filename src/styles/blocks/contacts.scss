@@ -1,0 +1,98 @@
+.contacts {
+  &__content {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: $colomn-gap;
+
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: $colomn-gap;
+    }
+  }
+
+  &__info {
+    grid-column: 1 / 4;
+
+    @include on-desktop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    grid-column: 1 / 4;
+
+    @include on-desktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    grid-column: 1 / 4;
+  }
+
+  &__form {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    resize: none;
+
+    background-color: $color-background;
+    border: transparent;
+    border-bottom: 1px solid $color-grey;
+    line-height: 21px;
+    margin-bottom: 25px;
+    font-family: inherit;
+
+    &:focus,
+    &:active {
+      outline: none;
+      border-bottom: 1px solid $color-grey;
+    }
+
+    &--textarea {
+      margin: 45px 0 30px;
+
+      @include on-desktop {
+        margin: 50px 0;
+      }
+    }
+  }
+
+  &__img-container {
+    grid-column: 4 / 7;
+    position: relative;
+    margin-right: -25px;
+
+    @include on-desktop {
+      grid-column: 8 / 13;
+      margin-right: -50px;
+    }
+  }
+
+  &__img {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.3s;
+
+    @include on-tablet {
+      display: block;
+
+      @include hover(transform,scale(1.05));
+    }
+  }
+}

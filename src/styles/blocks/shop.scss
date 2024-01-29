@@ -1,0 +1,169 @@
+.shop {
+  &__content {
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: $colomn-gap;
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__pointer {
+    color: $color-text-accent;
+    text-decoration: none;
+
+    @include on-desktop {
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include on-desktop {
+      margin-bottom: 30px;
+      display: grid;
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    list-style: none;
+
+    @include on-desktop {
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__item {
+    margin: 0 0 25px;
+
+    @include on-tablet {
+      margin: 0 0 35px;
+    }
+
+    @include on-desktop {
+      margin: 0 0 60px;
+    }
+  }
+
+  &__link {
+    color: $color-grey;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $color-footer;
+      border-bottom: 2px solid $color-footer;
+    }
+
+    &--active {
+      color: $color-text;
+      border-bottom: 2px solid $color-text;
+    }
+  }
+
+  &__goods {
+    display: block;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: $colomn-gap;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: $colomn-gap;
+    }
+  }
+
+  &__goods-1 {
+    @include on-tablet {
+      margin: 0;
+      display: grid;
+      grid-column: 1 / 3;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__goods-2 {
+    display: none;
+
+    @include on-tablet {
+      display: grid;
+      grid-column: 3 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 12;
+    }
+  }
+
+
+  &__name {
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+
+    @include on-tablet {
+      margin-bottom: 15px;
+    }
+
+    @include on-tablet {
+
+      &:hover {
+        transform: scale(105%);
+        color: $color-footer;
+      }
+    }
+  }
+
+  &__price {
+    transition: all 0.3s;
+
+    @include on-tablet {
+      &:hover {
+        transform: scaleY(105%);
+        color: $color-footer;
+      }
+    }
+  }
+
+  &__photo {
+    object-fit: cover;
+    object-position: center;
+    height: 267px;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+
+    @include on-tablet {
+      height: 300px;
+
+      @include hover(transform,scale(1.05));
+
+    }
+
+    @include on-desktop {
+      height: 500px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include on-desktop {
+      margin-left: 80px;
+    }
+  }
+}
