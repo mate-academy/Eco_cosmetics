@@ -1,0 +1,225 @@
+.about {
+  width: 100%;
+  margin-bottom: 200px;
+
+  @include mediumDevices {
+    margin-bottom: 150px;
+  }
+
+  @include smallDevices {
+    margin-bottom: 100px;
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(80px, 1fr));
+
+    @include mediumDevices {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @include smallDevices {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+
+  &__p {
+    position: absolute;
+    top: 75px;
+    right: 30px;
+    place-items: start;
+    width: 200px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    color: rgba(52, 79, 16, 0.5);
+    display: inline;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    transform: rotate(-90deg);
+
+    &::before {
+      content: "";
+      width: 1px;
+      height: 100px;
+      background-color: rgba(52, 79, 16, 0.5);
+      position: absolute;
+      left: -31%;
+      bottom: -233%;
+      transform: rotate(-90deg);
+    }
+
+    @include mediumDevices {
+      display: none;
+    }
+
+    @include smallDevices {
+      display: none;
+    }
+  }
+
+  &__text-container {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include mediumDevices {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      gap: 10px;
+    }
+
+    @include smallDevices {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      gap: 10px;
+    }
+  }
+
+  &__title {
+    color: $logo-color;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+
+    @include mediumDevices {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 36px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    @include smallDevices {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 36px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__button {
+    position: relative;
+    width: 86px;
+    color: $logo-color;
+    background-color: $main-color;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    cursor: pointer;
+    transition: width 0.3s, color 0.3s;
+
+    @include mediumDevices {
+      margin-top: 20px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      background-color: #344f10;
+      bottom: -10px;
+      left: 0;
+
+      transition: width 0.3s ease;
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__images-container {
+    grid-column-start: 7;
+    grid-column-end: 13;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    @include hugeDevices {
+      grid-column-end: 13;
+    }
+
+    @include mediumDevices {
+      height: 321px;
+    }
+
+    @include smallDevices {
+      display: none;
+    }
+  }
+
+  &__img-one {
+    background-image: url(../images/photos/about1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+
+    @include mediumDevices {
+      background-image: url(../images/photos/about1m.jpg);
+      // max-height: 321px;
+      width: 341px;
+    }
+  }
+
+  &__img-two {
+    background-image: url(../images/photos/about2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 180px;
+    display: flex;
+    height: 430px;
+    align-self: flex-end;
+
+    @include mediumDevices {
+      display: none;
+    }
+  }
+
+  &__subtitle-one {
+    @include mediumDevices {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    @include smallDevices {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle-two {
+    @include mediumDevices {
+      display: none;
+    }
+
+    @include smallDevices {
+      display: none;
+    }
+  }
+}

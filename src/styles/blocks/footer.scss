@@ -1,0 +1,179 @@
+.footer {
+  height: 320px;
+  background: rgba(52, 79, 16, 0.5);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(80px, 1fr));
+  padding: 60px 130px;
+
+  @include mediumDevices {
+    height: 240px;
+    grid-template-columns: repeat(9, minmax(80px, 1fr));
+    padding: 27px;
+  }
+
+  @include smallDevices {
+    height: 468px;
+    grid-template-columns: repeat(3, minmax(80px, 1fr));
+    padding: 27px;
+  }
+
+  &__icons-first {
+    display: none;
+
+    @include mediumDevices {
+      display: block;
+    }
+
+    @include smallDevices {
+      display: block;
+    }
+  }
+
+  &__icons-facebook {
+    margin-right: 15px;
+  }
+
+  &__menu-container {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__top-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+    @include mediumDevices {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    @include smallDevices {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+  &__top-p {
+    color: #e4dfd3;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+    text-transform: capitalize;
+
+    @include mediumDevices {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+
+  &__bottom-p {
+    color: #e4dfd3;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 27px;
+    text-transform: capitalize;
+
+    @include mediumDevices {
+      text-transform: none;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    @include smallDevices {
+      margin: 0 auto;
+      width: 204px;
+      text-transform: none;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      text-align: center;
+    }
+  }
+
+  &__bottom-p-rights {
+    @include mediumDevices {
+      display: none;
+    }
+
+    @include smallDevices {
+      display: none;
+    }
+  }
+
+  &__link-container {
+    grid-column-start: 8;
+    grid-column-end: 13;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include mediumDevices {
+      grid-column-start: 6;
+      grid-column-end: 10;
+    }
+
+    @include smallDevices {
+      display: none;
+    }
+  }
+
+  &__link-container-small {
+    @include hugeDevices {
+      display: none;
+    }
+
+    @include bigDevices {
+      display: none;
+    }
+
+    @include mediumDevices {
+      display: none;
+    }
+
+    @include smallDevices {
+      gap: 10px;
+      display: flex;
+    }
+  }
+
+  &__link {
+    color: #e4dfd3;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include mediumDevices {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+
+  &__icons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    @include mediumDevices {
+      display: none;
+    }
+
+    @include smallDevices {
+      display: none;
+    }
+  }
+}

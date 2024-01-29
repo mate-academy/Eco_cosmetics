@@ -1,0 +1,112 @@
+.care {
+  margin-bottom: 200px;
+
+  @include mediumDevices {
+    margin-bottom: 130px;
+  }
+
+  @include smallDevices {
+    margin-bottom: 0;
+  }
+
+  &__left-line {
+    width: 50%;
+    margin-left: -130px;
+    height: 1px;
+    background: $logo-color;
+    margin-bottom: 100px;
+
+    @include mediumDevices {
+      display: none;
+    }
+
+    @include smallDevices {
+      display: none;
+    }
+  }
+
+  &__right-line {
+    float: right;
+    width: 59%;
+    margin-right: -130px;
+    height: 1px;
+    background: $logo-color;
+    margin-bottom: 200px;
+
+    @include mediumDevices {
+      display: none;
+    }
+
+    @include smallDevices {
+      display: none;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    @include mediumDevices {
+      // grid-template-columns: repeat(6, 1fr);
+      display: flex;
+      justify-content: center;
+    }
+
+    @include smallDevices {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__title-small {
+    grid-column-start: 2;
+    grid-column-end: 6;
+    color: #333;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include mediumDevices {
+      display: none;
+    }
+
+    @include smallDevices {
+      display: none;
+    }
+  }
+
+  &__title-big {
+    grid-column-start: 7;
+    grid-column-end: 11;
+    color: $logo-color;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+
+    @include mediumDevices {
+      display: inline-block;
+      width: 280px;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 27px;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @include smallDevices {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 27px;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+    }
+  }
+}

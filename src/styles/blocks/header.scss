@@ -1,0 +1,236 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include mediumDevices {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include smallDevices {
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+
+  &__logo-container {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    @include mediumDevices {
+      display: none;
+    }
+
+    @include smallDevices {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $logo-color;
+  }
+
+  &__menu {
+    display: none;
+
+    @include mediumDevices {
+      display: block;
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  &__logo-p {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+  }
+
+  &__nav-container {
+    grid-column-start: 7;
+    grid-column-end: 10;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+
+    @include mediumDevices {
+      display: none;
+    }
+
+    @include smallDevices {
+      display: none;
+    }
+  }
+
+  &__nav-link {
+    color: $logo-color;
+    text-decoration: none;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+  }
+
+  &__cart-container {
+    grid-column-start: 11;
+    grid-column-end: 13;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    @include smallDevices {
+      grid-column-start: 7;
+      grid-column-end: 5;
+    }
+  }
+
+  &__bottom-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    margin-bottom: 120px;
+
+    @include mediumDevices {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      margin-bottom: 130px;
+    }
+
+    @include smallDevices {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__title-container {
+    grid-column-start: 2;
+    grid-column-end: 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @include mediumDevices {
+      justify-content: center;
+      align-items: center;
+      order: 1;
+      margin-bottom: 10px;
+    }
+
+    @include smallDevices {
+      justify-content: center;
+      align-items: center;
+      order: 1;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title {
+    color: #333;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+
+    @include mediumDevices {
+      width: 466px;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      text-align: center;
+      text-transform: capitalize;
+    }
+
+    @include smallDevices {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 130%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__p {
+    color: #333;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include mediumDevices {
+      margin-bottom: 50px;
+    }
+
+    @include smallDevices {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__button {
+    color: white;
+    background-color: #333;
+    width: 280px;
+    height: 60px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: #e4dfde;
+      color: #333;
+      border: 1px solid #333;
+    }
+  }
+
+  &__img-container {
+    width: 100%;
+    height: 550px;
+    grid-column-start: 7;
+    grid-column-end: 13;
+
+    @include mediumDevices {
+      order: 0;
+      height: 500px;
+    }
+
+    @include smallDevices {
+      order: 0;
+      height: 267px;
+    }
+  }
+
+  &__image {
+    background-image: url(../images/photos/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+
+    @include mediumDevices {
+      background-image: url(../images/photos/main-m.jpg);
+    }
+
+    @include smallDevices {
+      background-image: url(../images/photos/main-m.jpg);
+      width: calc(100% + 40px);
+      margin-left: -20px;
+    }
+  }
+
+}
