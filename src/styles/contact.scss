@@ -1,0 +1,174 @@
+.contact-us__content{
+  margin-top: 100px;
+}
+
+.contact-us__image{
+  display: none;
+}
+
+.contact-side{
+  display: none;
+}
+
+input{
+  outline: none;
+}
+
+textarea{
+  outline: none;
+  resize: none
+}
+
+.contact-us__title{
+  font-size: 24px;
+  color: #344F10;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 36px */
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.contact-us__description{
+  margin-top: 10px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #333;
+}
+
+
+.form__fields{
+  display: grid;
+}
+
+.form__input{
+  background-color: #E4DFD3;
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+  padding-top: 25px;
+  padding-bottom: 5px;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  text-transform: capitalize;
+}
+
+.form__input--textarea{
+  padding-top: 45px;
+}
+
+.contact-us__button{
+  margin-top: 30px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 20.8px */
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: #F2F2F2;
+  background-color: #333;
+  width: 100%;
+  height: 60px;
+
+  &:hover{
+    background-color:#8C9772;
+    color: #333;
+   transition-duration: 0.9s;
+  }
+}
+
+@include desktop {
+  .contact-us__content__wrapper{
+    margin-top: 130px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 30px;
+  }
+
+  .contact-us__image{
+    display: block;
+    grid-column: 4 / 7;
+    background-image: url(../images/computerDesign/contactphoto.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .contact-us__content{
+    margin-top: 0;
+    grid-column: 1 / 4;
+  }
+
+  .contact-us__description{
+    font-size: 16px;
+  }
+
+  .contact-us__button{
+    max-width: 280px;
+  }
+}
+
+@include desktop {
+  .contact-us__content__wrapper{
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+  }
+
+  .contact-us__image{
+    display: block;
+    grid-column: 7 / 13;
+  }
+
+  .contact-us__content{
+    grid-column: 2 / 6;
+  }
+
+
+  .contact-us__title{
+    font-size: 36px;
+    line-height: 110%; /* 39.6px */
+    letter-spacing: 1.8px
+  }
+
+  .contact-us__description{
+    margin-top: 30px;
+    line-height: 150%;
+  }
+
+  .contact-us__button{
+    margin-top: 69px;
+  }
+
+  .contact-side{
+    display: block;
+    grid-column: 1/2;
+    writing-mode: vertical-lr;
+    place-self: start start;
+    transform: rotate(-180deg);
+    color: rgba(52, 79, 16, 0.50);
+    text-align: center;
+
+    // /* Decorative - 14 Medium */
+    font-family: $mainfont;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    position: relative;
+    }
+
+    .contact-side::after{
+    content: " ";
+    position: absolute;
+    width: 1px;
+    height: 100px;
+    background-color: rgba(52, 79, 16, 0.50);
+    top: -109px;
+    left: 7px;
+     }
+
+  }
