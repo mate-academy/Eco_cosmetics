@@ -1,0 +1,194 @@
+.cart {
+  &__content {
+    @include contentPaddingInline;
+    @include onDesktop {
+      @include pageGrid;
+    }
+
+    &--top {
+      @include onDesktop {
+        grid-column: 8 / 13;
+      }
+    }
+
+    &--bottom {
+      @include onDesktop {
+        grid-column: 1 / 7;
+        grid-row-start: 1;
+      }
+    }
+  }
+
+  &__title {
+    color: $dark-green-color;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    @include onTablet {
+      font-size: 22px;
+    }
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+
+  &__img {
+    height: 83px;
+    width: auto;
+  }
+
+  &__order--flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__product {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    &--title {
+      color: $main-black-color;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.9px;
+      text-transform: capitalize;
+      @include onDesktop {
+        font-size: 18px;
+      }
+    }
+
+    &--quantity {
+      font-size: 14px;
+    }
+  }
+
+  &__checkout--flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+
+  &--text {
+    font-weight: 600;
+    color: $dark-green-color;
+    @include onDesktop {
+      font-size: 20px;
+    }
+  }
+
+  &--price {
+    @include onDesktop {
+      font-size: 18px;
+    }
+  }
+
+  &__buttons {
+    padding: 20px;
+    border: 1px solid $border-grey-color;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__btn {
+    transition: all 0.3s ease;
+
+    &--paypal {
+      background-color: #ffc439;
+    }
+
+    &--form {
+      color: $light-grey-color;
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 130%;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      text-decoration: none;
+      @include onDesktop {
+        width: 50%;
+      }
+    }
+  }
+
+  &__payment {
+    margin-bottom: 30px;
+
+    &--title {
+      text-align: center;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+      @include onDesktop {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__contacts label {
+    @include onDesktop {
+      font-size: 20px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    color: $border-grey-color;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: capitalize;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $medium-grey-color;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    @include onTablet {
+      padding-bottom: 5px;
+    }
+    @include onDesktop {
+      margin-bottom: 31px;
+      padding-bottom: 10px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: $main-black-color;
+    }
+
+    &:nth-last-of-type(1) {
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: $border-grey-color;
+    }
+  }
+}
+
+.gpay-img {
+  height: 32px;
+}

@@ -1,0 +1,143 @@
+.footer {
+  background-color: $light-green-color;
+  padding-block-start: 30px;
+  padding-block-end: 40px;
+  color: $main-beige-color;
+  @include onDesktop {
+    padding-block: 60px;
+  }
+
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    &--top {
+      margin-bottom: 20px;
+      @include onDesktop {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+
+    &--bottom {
+      gap: 10px;
+      @include onDesktop {
+        gap: 20px;
+      }
+    }
+  }
+
+  &__link {
+    color: $main-beige-color;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    @include onTablet {
+      font-size: 14px;
+      font-weight: 400;
+    }
+    @include onDesktop {
+      font-size: 18px;
+    }
+
+    &:hover {
+      color: $dark-green-color;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    &--tablet {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+      @include onDesktop {
+        grid-row: 2 / 3;
+        grid-column: 8 / 13;
+        display: flex;
+        gap: 14px;
+      }
+    }
+  }
+
+  &__top {
+    margin-bottom: 40px;
+    @include onTablet {
+      grid-column: span 3;
+    }
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__bottom {
+    font-size: 14px;
+    line-height: 150%;
+    margin-bottom: 40px;
+    @include onTablet {
+      grid-column: span 3;
+    }
+    @include onDesktop {
+      grid-column: 8 / 13;
+      font-size: 16px;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $main-beige-color;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $dark-green-color;
+      }
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 130%;
+    width: 198px;
+    margin: 0 auto;
+    @include onTablet {
+      width: 100%;
+      text-align: left;
+      grid-row: 2 / 3;
+      grid-column: span 3;
+      font-weight: 400;
+    }
+    @include onDesktop {
+      grid-row: 2 / 3;
+      grid-column: span 6;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+    }
+
+    &--word {
+      display: none;
+      @include onDesktop {
+        display: initial;
+      }
+    }
+  }
+}

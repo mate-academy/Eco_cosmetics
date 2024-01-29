@@ -1,0 +1,72 @@
+.about-brand {
+  position: relative;
+  margin-bottom: 100px;
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__grid {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      grid-column: span 3;
+    }
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__img {
+    display: none;
+    @include onTablet {
+      display: block;
+      height: 321px;
+      width: 342px;
+      grid-column: span 3;
+      @include onDesktop {
+        height: 529px;
+        width: 380px;
+        grid-column: 7 / 11;
+      }
+    }
+
+    &--2 {
+      display: none;
+      @include onDesktop {
+        display: block;
+        grid-column: 11 / 13;
+        align-self: end;
+        justify-self: end;
+      }
+    }
+
+    &-container {
+      background-image: url("../images/products/candle.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: none;
+
+      @include onTablet {
+        grid-column: 4 / 7;
+        display: block;
+        width: 342px;
+        height: auto;
+      }
+      @include onDesktop {
+        grid-column: 7 / 11;
+      }
+    }
+  }
+
+  &__vertical-menu {
+    top: 280px;
+  }
+}

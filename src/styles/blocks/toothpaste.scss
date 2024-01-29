@@ -1,0 +1,210 @@
+.toothpaste {
+  padding-inline-start: 20px;
+  margin-bottom: 100px;
+  position: relative;
+  @include onTablet() {
+    padding-inline-start: 27px;
+    margin-bottom: 130px;
+  }
+  @include onDesktop() {
+    padding-inline: 50px;
+    margin-bottom: 200px;
+  }
+  @include onDesign() {
+    padding-inline: 130px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include onTablet {
+      justify-content: flex-end;
+      column-gap: 20px;
+    }
+    @include onDesktop {
+      grid-column: span 7;
+    }
+  }
+
+  &__flex {
+    &--top {
+      @include onDesktop {
+        display: flex;
+        justify-content: space-between;
+        grid-column: 2 / -1;
+        @include pageGrid;
+      }
+    }
+
+    &--bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      padding-inline-end: 20px;
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+      }
+      @include onDesktop {
+        justify-content: space-between;
+        padding-inline-end: 0;
+        gap: 20px;
+        @include pageGrid;
+      }
+    }
+  }
+
+  &__ingridients {
+    display: flex;
+    flex-direction: column;
+    place-items: end;
+    gap: 50px;
+  }
+
+  &__img {
+    &--mobile {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+      @include onTablet {
+        display: block;
+      }
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    margin-bottom: 100px;
+    border-bottom: 1px solid transparent;
+    @include onTablet {
+      margin-bottom: 121px;
+    }
+    @include onDesktop {
+      grid-column: 1 / 4;
+      padding-inline-start: 100px;
+    }
+  }
+
+  &__testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    @include onTablet {
+      flex: 1;
+      align-items: center;
+      grid-column: span 2;
+    }
+    @include onDesktop {
+      gap: 40px;
+      grid-column: span 4;
+    }
+
+    &-text {
+      color: $accent-black-color;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    &-img {
+      &--snail {
+        height: 59px;
+        width: 62px;
+        @include onTablet {
+          height: 60px;
+          width: 80px;
+        }
+      }
+
+      &--recyclable {
+        height: 84px;
+        width: 100px;
+        @include onTablet {
+          height: 67px;
+          width: 80px;
+        }
+        @include onDesktop {
+          height: 84px;
+          width: 99px;
+        }
+      }
+
+      &--leaves {
+        height: 73px;
+        width: 79px;
+        @include onTablet {
+          height: 74px;
+          width: 80px;
+        }
+        @include onDesktop {
+          height: 73px;
+          width: 79px;
+        }
+      }
+    }
+
+    &--snail {
+      @include onTablet {
+        gap: 28px;
+      }
+      @include onDesktop {
+        gap: 61px;
+        align-self: flex-start;
+      }
+    }
+
+    &--recyclable {
+      @include onTablet {
+        gap: 23.12px;
+      }
+      @include onDesktop {
+        gap: 38px;
+        align-self: flex-start;
+      }
+    }
+
+    &--leaves {
+      @include onTablet {
+        gap: 15px;
+        white-space: nowrap;
+        align-self: start;
+      }
+      @include onDesktop {
+        gap: 45px;
+      }
+    }
+  }
+
+  &__vertical-menu {
+    @include onDesktop {
+      left: 50px;
+      top: 180px;
+    }
+
+    @include onDesign {
+      left: 130px;
+      top: 180px;
+    }
+  }
+}
