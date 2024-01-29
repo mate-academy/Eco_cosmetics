@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  @include on-desktop {
+    gap: 30px;
+  }
+
+  &__input {
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid $form-elements-color;
+    box-sizing: border-box;
+    margin: 0;
+
+    font-family: Poppins, sans-serif;
+    text-transform: capitalize;
+    padding: 0 0 5px;
+    font-size: 14px;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $btn-background;
+    }
+
+    &--textarea {
+      resize: none;
+
+      &::placeholder {
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 0;
+    margin-top: 5px;
+    margin-left: 0;
+    cursor: pointer;
+
+    @include on-desktop {
+      margin-top: 20px;
+    }
+  }
+}

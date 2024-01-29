@@ -1,0 +1,92 @@
+.ingredients {
+  position: relative;
+
+  &__content {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__side-title {
+    position: absolute;
+    top: 65px;
+    margin-left: 50px;
+
+    @include on-desktop {
+      margin-left: 0;
+    }
+  }
+
+  &__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 447px;
+    z-index: 5;
+
+    @include on-tablet {
+      gap: 310px;
+      grid-column: 1 / 4;
+      padding-left: 21px;
+    }
+
+    @include on-desktop {
+      gap: 287px;
+      grid-column: 2 / 6;
+      padding-left: 0;
+    }
+  }
+
+  &__img {
+    background-image: url(../images/ingredients/ingredients_mob.svg);
+    background-repeat: no-repeat;
+    width: 182px;
+    height: 397px;
+
+    @include on-tablet {
+      background-image: url(../images/ingredients/ingredients_tabl.svg);
+      width: 398px;
+      height: 397px;
+    }
+
+    @include on-desktop {
+      background-image: url(../images/ingredients/ingredients_deskt.svg);
+      width: 480px;
+      height: 397px;
+    }
+  }
+
+  &__scheme {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: end;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    z-index: -1;
+
+    @include on-desktop {
+      right: 50px;
+      bottom: 0;
+    }
+
+    @include on-wide-screen {
+      right: 130px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 52px;
+    align-items: end;
+
+    @include on-tablet {
+      gap: 49px;
+    }
+  }
+}
