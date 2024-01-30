@@ -1,0 +1,45 @@
+.desktop-header {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+  }
+  &__content {
+    display: grid;
+    row-gap: 70px;
+    padding: 40px 0 0;
+  }
+  &__top {
+    @include pageGrid;
+  }
+  &__main {
+    @include pageGrid;
+  }
+  &__left-block {
+    grid-column: 2/7;
+    display: grid;
+    align-self: start;
+  }
+  &__product-image {
+    grid-column: 7/13;
+    max-height: 452px;
+    background-image: url("../images/hero-screen-desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    @include hover(transform, scale(0.9));
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+  }
+  &__sub-title {
+    margin: 0;
+    margin-bottom: 50px;
+  }
+  &__button {
+    margin: 0 auto;
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+}

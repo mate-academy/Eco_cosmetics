@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/Avenir/Avenir.ttc");
+}
+
+.page {
+  font-family: "Avenir", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  scroll-behavior: smooth;
+  color: $secondary-color;
+  &__body {
+    margin: 0;
+    background: $main-color;
+    min-width: 320px;
+  }
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translateX(-100%);
+    pointer-events: none;
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+      z-index: 100;
+    }
+  }
+}

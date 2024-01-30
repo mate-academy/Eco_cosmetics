@@ -1,0 +1,70 @@
+.about-brand {
+  position: relative;
+  &__content {
+    @include pageGrid;
+  }
+  &__text-block {
+    grid-column: span 2;
+    @include onTablet {
+      grid-column: 1/4;
+    }
+    @include onDesktop {
+      grid-column: 2/6;
+    }
+  }
+  &__picture-wrapper-1 {
+    align-self: self-start;
+    display: none;
+    @include onDesktop {
+      display: block;
+      align-self: self-end;
+      grid-column: 7/11;
+    }
+  }
+
+  &__picture-wrapper-2 {
+    align-self: self-end;
+    display: none;
+    @include onDesktop {
+      display: block;
+      grid-column: 11/13;
+    }
+  }
+  &__picture-wrapper-3 {
+    display: none;
+    @include onTablet {
+      display: block;
+      grid-column: 4/7;
+    }
+    @include onDesktop {
+      display: none;
+    }
+  }
+  &__picture {
+    @include hover(transform, scale(0.9));
+  }
+  &__picture--1 {
+    width: 100%;
+    object-fit: cover;
+    height: 529px;
+  }
+  &__picture--2 {
+    width: 100%;
+    object-fit: cover;
+    height: 430px;
+  }
+  &__picture--3 {
+    width: 100%;
+    object-fit: cover;
+    height: 321px;
+  }
+  &__side-bar--desktop {
+    display: none;
+    @include onDesktop {
+      @include verticalText;
+      &::after {
+        @include verticalLine;
+      }
+    }
+  }
+}

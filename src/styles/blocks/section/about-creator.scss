@@ -1,0 +1,55 @@
+.about-creator {
+  &__content {
+    @include pageGrid;
+  }
+  &__sidebar--desktop {
+    display: none;
+    @include onDesktop {
+      @include verticalText;
+      &::after {
+        @include verticalLine;
+      }
+    }
+  }
+  &__text-block {
+    grid-column: span 2;
+    @include onTablet {
+      grid-column: 1/4;
+    }
+    @include onDesktop {
+      grid-column: 2/6;
+    }
+  }
+  &__picture-block {
+    display: none;
+    @include onTablet {
+      display: block;
+      grid-column: 4/7;
+    }
+    @include onDesktop {
+      grid-column: 7/13;
+    }
+  }
+  &__picture {
+    width: 100%;
+    object-fit: cover;
+    max-height: 440px;
+    @include hover(transform, scale(0.9));
+    @include onDesktop {
+      max-height: 645px;
+    }
+  }
+  &__button {
+    grid-column: span 2;
+    margin: 30px auto 0;
+    @include onTablet {
+      grid-column: 1/4;
+      margin: 30px 0 0;
+      align-self: start;
+    }
+    @include onDesktop {
+      grid-column: 2/5;
+      margin: 40px 0 0;
+    }
+  }
+}

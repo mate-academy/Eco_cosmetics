@@ -1,0 +1,60 @@
+.benefits {
+  &__content {
+    @include pageGrid;
+    row-gap: 50px;
+
+  }
+  &__item {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: start;
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+  &__picture {
+    display: block;
+    
+    &--snail {
+      width: 62px;
+      height: 60px;
+      @include onTablet {
+        width: 80px;
+        height: 75px;
+      }
+    }
+    &--recycle {
+      width: 100px;
+      height: 84px;
+      @include onTablet {
+        width: 80px;
+        height: 75px;
+      }
+      @include onDesktop {
+        width: 100px;
+        height: 78px;
+      }
+    }
+    &--leaf {
+      width: 79px;
+      height: 74px;
+      @include onTablet {
+        width: 80px;
+        height: 75px;
+      }
+    }
+    @include hover(transform, rotate(360deg));
+  }
+  &__title {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

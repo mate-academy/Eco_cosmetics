@@ -1,0 +1,137 @@
+.shop {
+  &__content {
+    @include pageGrid;
+  }
+  &__sidebar--desktop {
+    display: none;
+    @include onDesktop {
+      @include verticalText;
+      &::after {
+        @include verticalLine;
+      }
+    }
+  }
+  &__section-title {
+    grid-column: span 2;
+    align-self: center;
+    @include onTablet {
+      align-self: start;
+    }
+    @include onDesktop {
+      margin-bottom: 30px;
+      grid-column: 2/4;
+    }
+  }
+  &__menu {
+    grid-column: span 2;
+    align-self: center;
+    margin-bottom: 15px;
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-bottom: 25px;
+      align-self: start;
+    }
+    @include onDesktop {
+      grid-column: 2/6;
+      margin-bottom: 50px;
+    }
+  }
+  &__products {
+    width: 100%;
+    grid-column: span 2;
+    @include onTablet {
+      grid-column: span 6;
+    }
+    @include onDesktop {
+      grid-column: 2/13;
+      margin-bottom: 40px;
+    }
+  }
+  &__products-wrapper {
+    @include pageGrid;
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  &__product {
+    grid-column: span 2;
+    @include onTablet {
+      grid-column: span 3;
+      align-self: start;
+      justify-self: center;
+    }
+    display: flex;
+    flex-direction: column;
+    
+    &--2 {
+      display: none;
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+  &__product-title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    color: $color-grey;
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+  }
+  &__product-price {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    color: $color-grey;
+  }
+  &__button {
+    grid-column: 1/-1;
+    margin: 0 auto;
+  }
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__cathegory {
+    width: 100%;
+  }
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-light-grey;
+    padding-bottom: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    @include onDesktop {
+      font-size: 18px;
+      line-height: 27px;
+      font-weight: 600;
+    }
+    transition: color 0.3s, border-bottom 0.3s;
+    &:hover {
+      color: $color-grey;
+      border-bottom: 2px solid $color-grey;
+    }
+  }
+}
+
+.product-picture {
+  margin-bottom: 20px;
+  width: 100%;
+  object-fit: cover;
+  @include hover(transform, scale(0.9));
+}
