@@ -1,3 +1,4 @@
+
 # Eco Cosmetics Landing Page
 
 This project is dedicated to showcasing natural cosmetics.
