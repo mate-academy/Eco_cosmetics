@@ -1,0 +1,43 @@
+iframe {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  min-width: $mobile-width;
+
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: $main-color;
+  background-color: $page-background-color;
+
+  &__menu {
+    position: fixed;
+    z-index: 2;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: all $transition-duration;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}
+
+.none {
+  display: none !important;
+}

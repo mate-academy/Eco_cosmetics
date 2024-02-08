@@ -1,0 +1,129 @@
+.header {
+  &__wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    @include on-desktop {
+      height: min-content;
+    }
+  }
+
+  &__top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include resizing-screen-property(padding-top, 15px, 23px, 40px);
+    @include resizing-screen-property(padding-bottom, 20px, 30px, 70px);
+
+    @include on-desktop {
+      @include page-grid;
+    }
+  }
+
+  &__logo {
+    grid-column: 1 / span 6;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__nav {
+    grid-column: 7 / span 5;
+  }
+
+  &__icon--shop {
+    grid-column-start: 12;
+    justify-self: end;
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-rows: 1fr auto;
+
+    @include on-desktop {
+      @include page-grid;
+    }
+  }
+
+  &__img {
+    @include resizing-screen-property(grid-column, '1 / -1', 'span 6', '7 / -1');
+
+    min-height: 200px;
+    margin-inline: -20px;
+
+    background-image: url('../images/img-mobile/img-mobile-jars.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    @include on-tablet {
+      margin-inline: 0;
+      background-image: url('../images/img-tablet/img-tablet-jars.png');
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      background-image: url('../images/img-desctop/img-desctop-jars.png');
+    }
+
+    @include hover(transform, scale(1.02));
+  }
+
+
+  &__content {
+    display: grid;
+
+    @include resizing-screen-property(margin-top, 25px, 50px, 0);
+    @include resizing-screen-property(grid-column, '1 / -1', '2 / 6', '2 / 7');
+
+    @include on-desktop {
+      order: -1;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    text-align: center;
+
+    font-weight: 600;
+    line-height: 130%;
+
+    @include resizing-screen-property(font-size, 24px, 36px, 60px);
+
+    @include on-tablet {
+      width: 466px;
+      margin: 0 auto 30px;
+      text-transform: capitalize;
+    }
+
+    @include on-desktop {
+      text-transform: none;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    justify-self: center;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      justify-self: start;
+    }
+  }
+
+  &__button {
+    justify-self: center;
+
+    @include on-desktop {
+      justify-self: start;
+      margin-bottom: 53px;
+    }
+  }
+}
+

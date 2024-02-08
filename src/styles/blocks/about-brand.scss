@@ -1,0 +1,100 @@
+.about-brand {
+  &__wrapper {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / 4;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $accent-color;
+
+    @include on-desktop {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+    font-size: 14px;
+    line-height: 150%;
+
+    @include on-tablet {
+      font-size: 16px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
+
+    & > p:last-child {
+      display: none;
+
+      @include on-desktop {
+        display: inline;
+      }
+    }
+  }
+
+
+  &__link {
+    margin-top: auto;
+
+    @include on-desktop {
+      margin-top: 0;
+    }
+  }
+
+  &__img-candel {
+    display: none;
+    margin: auto auto 0;
+    width: 100%;
+
+    @include on-tablet {
+      grid-column: 4 / 7;
+      display: block;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 11;
+    }
+
+    @include hover(transform, scale(1.02));
+  }
+
+  &__img-flowers {
+    display: none;
+
+    @include on-desktop {
+      grid-column: 11 / -1;
+      display: block;
+      margin-top: auto;
+    }
+
+    @include hover(transform, scale(1.02));
+  }
+}

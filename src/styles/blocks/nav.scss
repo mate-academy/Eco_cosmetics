@@ -1,0 +1,33 @@
+.nav {
+  display: none;
+
+  @include on-desktop {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    height: 100%;
+    transition: transform $transition-duration ease-in-out;
+
+    &:hover {
+      a {
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 500;
+    color: $accent-color;
+
+    @include underline(-5px, 2px, $accent-color);
+  }
+}

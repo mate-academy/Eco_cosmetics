@@ -1,6 +1,77 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transition-duration;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desctop-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+
+    column-gap: 20px;
+  }
+}
+
+@mixin resizing-screen-property($property, $def, $on-tablet, $on-desktop) {
+  #{$property}: #{$def};
+
+  @include on-tablet {
+    #{$property}: #{$on-tablet};
+  }
+
+  @include on-desktop {
+    #{$property}: #{$on-desktop};
+  }
+}
+
+@mixin underline($bottom, $height ,$color) {
+  position: relative;
+  display: inline;
+  width: max-content;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: $bottom;
+
+    width: 100%;
+    height: $height;
+
+    background-color: $color;
+
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform $transition-duration ease-in-out;
+  }
+
+  &:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
   }
 }
