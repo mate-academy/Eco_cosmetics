@@ -24,7 +24,7 @@ The project utilizes the following technologies:
 
 ## Preview
 
-You can preview the Eco Cosmetics Landing Page [Eco cosmetics Preview](https://oksanatytanych.github.io/eco_cosmetics/).
+You can preview the Eco Cosmetics Landing Page [Eco cosmetics Preview](https://oksanatytanych.github.io/Eco_cosmetics/).
 
 ## Design Mockup
 
