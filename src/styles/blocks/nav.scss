@@ -1,0 +1,103 @@
+.nav {
+  &--footer {
+    display: flex;
+    color: $main-text-color;
+    padding-bottom: 20px;
+    grid-column: span 2;
+    order: -2;
+  }
+
+  &--top-bar {
+    display: none;
+    
+    @include onDesktop {
+      display: flex;
+      grid-column: 7 / span 3;
+    }
+  }
+  
+  &__list {
+    &--menu {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      align-items: center;
+
+      margin-bottom: 0;
+      margin-top: 80px;
+    }
+
+    &--top-bar {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    &--footer {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+  
+      @include onTablet {
+        gap: 15px;
+      }
+
+      @include onDesktop {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+  }
+
+  &__item {
+    &--top-bar {
+      @include hover(transform, scale(1.2));
+    }
+    
+    &--menu {
+      &::after {
+        position: absolute;
+        content: "";
+        left: 20px;
+        right: 20px;
+        height: 1px;
+        background-color: $color-text-grey-3;
+
+        transition: background-color $transition-duration;
+      }
+
+      @include onDesktop {
+        &:hover::after {
+          background-color: $main-color-grey;
+        }
+      }
+    }
+  }
+
+  &__link {
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    border-bottom: 1px solid transparent;
+
+    &--top-bar {
+      color: $color-text-green;
+    }
+
+    &--menu {
+      display: block;
+      position: relative;
+      padding: 10px;
+    }
+
+    &--footer {
+      color: #e4dfd3;
+      font-size: 14px;
+
+      @include onDesktop {
+        @include hover(border-bottom, 1px solid $color-text-white);
+        font-size: 18px;
+      }
+    }
+  }
+}

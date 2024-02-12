@@ -1,0 +1,85 @@
+.header {
+  height: 100vh;
+
+  @include onDesktop {
+    height: 100%;
+  }
+
+  &--product-card {
+    height: 100%;
+  }
+
+  &__content {
+    grid-column: span 6;
+    @include onTablet {
+      @include pageGrid;
+      --columns: 6;
+    }
+
+    @include onDesktop {
+      --columns: 12;
+      grid-column: span 12;
+    }
+  }
+
+  &__bottom {
+    @include onTablet {
+      grid-column: span 6;
+      @include pageGrid;
+      --columns: 6;
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / span 6;
+      order: -1;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    text-align: center;
+
+    margin-bottom: 10px;
+    padding-inline: 20px;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+      padding-inline: 0;
+      grid-column: 2 / span 4;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      line-height: 130%;
+      margin-bottom: 30px;
+
+      grid-column: 2 / -1;
+      text-align: start;
+      text-transform: none;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 16px;
+    line-height: 150%;
+    
+    margin-bottom: 30px;
+    padding-inline: 20px;
+
+    @include onTablet {
+      font-size: 16px;
+      margin-bottom: 50px;
+      grid-column: span 6;
+      padding-inline: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+      text-align: start;
+    }
+  }
+}
