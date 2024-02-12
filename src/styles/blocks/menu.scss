@@ -1,0 +1,45 @@
+.menu {
+  height: 100vh;
+  background-color: $main-color;
+
+  overflow: auto;
+
+  &__top-bar {
+  position: sticky;
+  top: 0;
+
+  margin-bottom: 45px;
+  padding-top: 15px;
+
+  z-index: 1;
+
+    @include on-tablet {
+      margin-bottom: 100px;
+      padding-top: 28px;
+    }
+  }
+
+  &__list {
+    color: $page-background-color;
+  }
+
+  &__item {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $link-color;
+
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+
+    &:not(:first-child) {
+      @include resizing-screen-property(padding-top, 30px, 50px, 50px);
+    }
+
+    @include hover(color, $accent-color);
+    @include hover(border-bottom-color, $accent-color);
+  }
+
+  &__link {
+    color: inherit;
+  }
+}

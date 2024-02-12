@@ -1,0 +1,56 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+
+  height: 100%;
+
+  &__input {
+    position: relative;
+    padding-bottom: 10px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    background-color: $page-background-color;
+
+    border-bottom: 1px solid $form-border-color;
+    outline: none;
+
+    @include on-desktop {
+      font-size: 18px;
+    }
+
+    &--textarea {
+      resize: none;
+      margin-top: 15px;
+    }
+
+    &::placeholder {
+      color: $link-color;
+    }
+
+    &:focus {
+      border-bottom-color: $main-color;
+    }
+
+    &:valid {
+      color: $accent-color;
+      border-bottom-color: $accent-color;
+    }
+
+    &:not(:focus, :placeholder-shown):invalid {
+      color: #EB5757;
+      border-bottom-color: #EB5757;
+    }
+  }
+
+  &__button {
+    margin-top: 5px;
+  }
+}
+
+
+

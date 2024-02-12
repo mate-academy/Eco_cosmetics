@@ -1,0 +1,121 @@
+.footer {
+  @include resizing-screen-property(padding-top, 30px, 30px, 60px);
+  @include resizing-screen-property(padding-bottom, 40px, 30px,60px);
+
+  background-color: $footer-background-color;
+  color: $page-background-color;
+
+  &__wrapper {
+    @include page-grid;
+
+    grid-template-rows: repeat(4, min-content);
+  }
+
+  &__nav {
+    @include resizing-screen-property(grid-column, '1 / -1', '1 / 4', '1 / 6');
+
+    margin-bottom: 20px;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+
+    @include resizing-screen-property(gap, 11px, 15px, 40px);
+
+    @include on-desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__nav-link {
+    line-height: 150%;
+    text-transform: capitalize;
+    color: inherit;
+
+    @include resizing-screen-property(font-size, 18px, 14px, 18px);
+    @include resizing-screen-property(font-weight, 500, 400, 500);
+  }
+
+  &__social-medias {
+    @include resizing-screen-property(grid-column, '1 / -1', '1 / 4', '7 / -1');
+    @include resizing-screen-property(margin-bottom, 40px, 50px, 0);
+
+    display: flex;
+    gap: 14px;
+
+    @include on-tablet {
+      grid-row: 2;
+    }
+  }
+
+  &__social-media {
+    height: 20px;
+    width: 20px;
+
+    &--facebook {
+      background-image: url('../images/icons/facebook.svg');
+    }
+
+    &--instagram {
+      background-image: url('../images/icons/instagram.svg');
+    }
+
+    @include hover(transform, scale(1.2));
+  }
+
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    @include on-desktop {
+      gap: 20px;
+    }
+
+    @include resizing-screen-property(grid-column, '1 / -1', '4 / -1', '7 / -1');
+    @include resizing-screen-property(margin-bottom, 40px, 0, 30px);
+
+
+
+    &--text {
+      font-size: 14px;
+      line-height: 150%;
+      color: inherit;
+    }
+  }
+
+  &__copyright {
+    @include resizing-screen-property(grid-column, '1 / -1', '1 / -1', '1 / 6');
+
+    display: flex;
+    width: 198px;
+    margin: 0 auto;
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 130%;
+
+    @include on-tablet {
+      width: 100%;
+
+      text-align: left;
+      font-weight: 400;
+    }
+
+    & > p:first-child {
+      display: none;
+
+      @include on-desktop {
+        display: inline;
+      }
+    }
+  }
+}
+
+.footer__nav-link, a.footer__info--text {
+  @include underline(-5px, 1px, $page-background-color);
+}

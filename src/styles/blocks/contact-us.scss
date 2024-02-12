@@ -1,0 +1,59 @@
+.contact-us {
+  &__wrapper {
+      @include on-tablet {
+        @include page-grid;
+      }
+    }
+
+  &__content {
+    grid-column: 1 / 4;
+
+    display: flex;
+    flex-direction: column;
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $accent-color;
+
+    @include on-desktop {
+      margin-bottom: 30px;
+
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+
+  &__form {
+    @include resizing-screen-property(margin-top, 30px, 20px, 40px);
+  }
+
+  &__img {
+    display: none;
+    margin-inline: auto;
+    align-self: end;
+
+    @include on-tablet {
+      grid-column: 4 / 7;
+      display: block;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+
+    @include hover(transform, scale(1.02));
+  }
+}
+
+

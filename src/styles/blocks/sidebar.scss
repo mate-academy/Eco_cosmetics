@@ -1,0 +1,32 @@
+
+.sidebar {
+  display: none;
+
+  @include on-desktop {
+    display: block;
+  }
+
+  &__item {
+    position: relative;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+
+    color: $accent-color;
+    opacity: 0.5;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 100px;
+      margin-right: 8px;
+      margin-bottom: 10px;
+      vertical-align: middle;
+      background-color: $accent-color;
+    }
+  }
+}

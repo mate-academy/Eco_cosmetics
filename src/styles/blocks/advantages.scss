@@ -1,0 +1,35 @@
+.advantages {
+  &__wrapper {
+    display: grid;
+
+    @include resizing-screen-property(gap, 50px, 30px, 20px);
+
+    @include on-tablet {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.advantage {
+  flex-grow: 1;
+  text-align: center;
+
+  &__img-container {
+    @include on-tablet {
+      height: 88px;
+    }
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__title {
+    margin: 20px auto 0;
+    max-width: 351px;
+
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
