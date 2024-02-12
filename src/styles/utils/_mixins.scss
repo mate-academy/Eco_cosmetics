@@ -1,6 +1,101 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin ontablet {
+  @media (min-width: 768px) {
+    @content;
   }
+}
+
+@mixin ondesktop1280 {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin ondesktop1440 {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin button-link {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -10px;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform: scale(0);
+  transition: all 0.5s ease;
+}
+
+@mixin h1 {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 130%; /* 78px */
+}
+
+@mixin h2 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 110%; /* 39.6px */
+  letter-spacing: 1.8px;
+}
+
+@mixin h3 {
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 150%; /* 54px */
+  text-transform: capitalize;
+}
+
+@mixin h4 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 150%; /* 36px */
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: $color-second-text;
+}
+
+@mixin h5 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin text {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 130%; /* 20.8px */
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  color: $color-text-button;
+}
+
+@mixin text2 {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  color: $color-first-text;
+}
+
+@mixin decorative-text {
+  font-weight: 500;
+  line-height: 18px;
+  color: $color-second-text;
+}
+
+@mixin small-text {
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  line-height: 150%; /* 21px */
+}
+
+@mixin footer-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+  text-transform: capitalize;
 }
