@@ -1,0 +1,222 @@
+.main__contact {
+  @include page-grid;
+
+  &__side-info {
+    grid-column: 1 / span 1;
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+
+    &--text {
+      position: relative;
+      writing-mode: vertical-rl;
+      transform: rotate(-180deg);
+      font-weight: 500;
+      line-height: 18.2px;
+      color: $additional-text-color;
+      opacity: 0.5;
+      margin: 0;
+      justify-content: start;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        width: 100px;
+        height: 1px;
+        transform: rotate(90deg);
+        transform-origin: right;
+        background-color: $additional-text-color;
+      }
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / span 4
+    }
+
+    &--title {
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0.05em;
+      color: $additional-text-color;
+      text-transform: uppercase;
+      margin: 0;
+
+      @include on-desktop {
+        font-size: 36px;
+        line-height: 39.6px;
+      }
+    }
+
+    &--description {
+      font-weight: 400;
+      line-height: 24px;
+
+      margin-block: 10px 30px;
+
+      @include on-tablet {
+        margin-bottom: 20px;
+      }
+
+      @include on-desktop {
+        margin-block: 30px 40px;
+      }
+    }
+
+    &--form {
+      display: flex;
+      flex-direction: column;
+
+      gap: 25px;
+
+      @include on-desktop {
+        gap: 30px;
+      }
+
+      &--input {
+        padding: 0;
+        padding-bottom: 10px;
+        background-color: transparent;
+        border: 0;
+        border-bottom: 1px solid $auxiliary-text-color;
+        resize: none;
+        white-space: normal;
+        box-sizing: border-box;
+        height: 27px;
+
+        font-family: inherit;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: $auxiliary-text-color;
+
+        transition: all $effect-duration;
+
+        -webkit-box-shadow: 0 0 0 1000px $main-background-color inset !important;
+        box-shadow: 0 0 0 1000px $main-background-color inset !important;
+
+        @include on-tablet {
+          font-weight: 500;
+        }
+
+        @include on-desktop {
+          font-size: 18px;
+          line-height: 27px;
+          height: 38px;
+        }
+
+        &:focus {
+          outline: transparent;
+          border-bottom: 1px solid $main-text-color;
+        }
+
+        &:valid {
+          -webkit-text-fill-color: $color-success;
+
+          color: $color-success;
+          border-bottom: 1px solid $color-success;
+        }
+
+        &:not(:focus) {
+          &:not(:placeholder-shown):invalid {
+            -webkit-text-fill-color: $color-error;
+
+            color: $color-error;
+            border-bottom: 1px solid $color-error;
+          }
+        }
+
+        &--message {
+          margin-bottom: 20px 5px;
+
+          @include on-desktop {
+            margin-block: 30px 20px;
+          }
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+
+        &--phone {
+          &::-webkit-inner-spin-button {
+            display: none;
+          }
+        }
+      }
+
+      &--button {
+        display: block;
+        width: 280px;
+        height: 60px;
+        background-color: $main-text-color;
+        color: $buttontext-color;
+        text-align: center;
+        padding-block: 20px;
+        box-sizing: border-box;
+        cursor: pointer;
+        border: 1px solid $main-text-color;
+        transition: all $effect-duration;
+        text-decoration: none;
+        margin: 0 auto;
+
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20.8px;
+        letter-spacing: 0.15em;
+
+        &:hover {
+          background-color: $buttonhover-color;
+          color: $main-text-color;
+        }
+
+        @include on-tablet {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__image-info {
+    display: none;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+      display: block;
+      background-image: url('/src/images/tablet_size/main_media_tablet--contact.png');
+      height: 100%;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      background-image: url('/src/images/desktop_size/main_media_desktop--contact.png');
+    }
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: transform $effect-duration;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__wrapper {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+  }
+}

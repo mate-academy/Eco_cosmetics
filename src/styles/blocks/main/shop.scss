@@ -1,0 +1,270 @@
+.main__shop {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    @include on-desktop {
+      margin-left: 47px;
+    }
+  }
+
+  &__side-info {
+    display: none;
+
+    &--text {
+      position: relative;
+      writing-mode: vertical-rl;
+      transform: rotate(-180deg);
+      font-weight: 500;
+      line-height: 18.2px;
+      color: $additional-text-color;
+      opacity: 0.5;
+      margin: 0;
+      justify-content: start;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: 10px;
+        width: 100px;
+        height: 1px;
+        transform: rotate(90deg);
+        transform-origin: right;
+        background-color: $additional-text-color;
+      }
+    }
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &--title {
+    color: $additional-text-color;
+    display: flex;
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    line-height: 36px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      margin-left: 27px;
+      margin-bottom: 10px;
+    }
+
+    @include on-desktop {
+      font-size: 36px;
+      line-height: 39.6px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &--products {
+    width: 100%;
+
+    &--list {
+      list-style: none;
+      display: flex;
+      gap: 34px;
+      padding: 0;
+      margin: 0 auto;
+      justify-content: center;
+      margin-bottom: 27px;
+
+      @include on-tablet {
+        justify-content: start;
+        margin-left: 27px;
+        margin-bottom: 37px;
+      }
+
+      @include on-desktop {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 62px;
+        gap: 51px;
+      }
+    }
+
+    &--item {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18.2px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $auxiliary-text-color;
+      position: relative;
+      transition: color $effect-duration;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0%;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $main-text-color;
+
+        transition: transform $effect-duration;
+        transform: scale(0);
+        transform-origin: center;
+      }
+
+      &:hover {
+        color: $main-text-color;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+
+      &--active {
+        color: $main-text-color;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 0%;
+          display: block;
+          height: 1px;
+          width: 100%;
+          background-color: $main-text-color;
+          transform: scale(1);
+        }
+      }
+    }
+
+    &--cards {
+      display: flex;
+      flex-direction: row;
+      width: 320px !important;
+      margin: 0 auto;
+      height: 404px;
+
+      @include on-tablet {
+        @include page-grid;
+
+        margin-inline: 27px;
+        width: 714px !important;
+        height: 466px;
+      }
+
+      @include on-desktop {
+        height: 627px;
+      }
+    }
+
+    &--card {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      height: min-content;
+      grid-column: span 3;
+      grid-row: 1;
+
+      &--active {
+        display: block;
+        opacity: 1;
+        overflow: visible;
+        width: min-content;
+      }
+
+      &--image {
+        width: 320px;
+        display: block;
+        margin-bottom: 20px;
+        height: 267px;
+
+        transition: transform $effect-duration;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        @include on-tablet {
+          width: 342px;
+          height: 300px;
+        }
+
+        @include on-desktop {
+          width: 530px;
+          height: 500px;
+        }
+      }
+
+      &--description {
+        margin-left: 20px;
+
+        &--title {
+          font-size: 18px;
+          line-height: 27px;
+          letter-spacing: 0.05em;
+          text-decoration: none;
+          color: $main-text-color;
+          text-transform: uppercase;
+        }
+
+        &--price {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 27px;
+          letter-spacing: 0.05em;
+          margin-block: 10px 30px;
+
+          @include on-tablet {
+            margin-block: 15px 50px;
+          }
+
+          @include on-desktop {
+            margin-block: 13px 40px;
+          }
+        }
+      }
+    }
+  }
+
+  &--button {
+    display: block;
+    width: 280px;
+    height: 60px;
+    background-color: $main-text-color;
+    color: $buttontext-color;
+    letter-spacing: 0.15em;
+    line-height: 100%;
+    text-align: center;
+    padding-block: 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 1px solid $main-text-color;
+    transition: all $effect-duration;
+    text-decoration: none;
+    margin: 0 auto;
+
+    &:hover {
+      background-color: $buttonhover-color;
+      color: $main-text-color;
+    }
+
+    @include on-desktop {
+      margin-left: 0;
+    }
+
+    @include on-desktop {
+      margin-left: 35%;
+    }
+  }
+}
