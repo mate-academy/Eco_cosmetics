@@ -1,0 +1,139 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+
+  background-color: $footer-background;
+  color: $background-page;
+
+  @include on-tablet {
+    @include grid;
+  }
+
+  @include on-desktop {
+    @include grid;
+
+    padding-top: 60px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      gap: 11px;
+
+      @include on-desktop {
+        flex-direction: row;
+        gap: 40px;
+      }
+
+      &__item {
+        @include hover(scale, 1.1);
+
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: min-content;
+
+        &--link {
+          @include footer-link;
+
+          height: 100%;
+          display: flex;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: 8 / -1;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: row;
+
+      gap: 20px;
+
+      &__item {
+        @include hover(scale, 1.1);
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 8 / -1;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+
+      &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: max-content;
+
+        &-text {
+          @include footer-text;
+
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    align-self: center;
+
+    &__text {
+      @include footer-text;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      grid-row: 3;
+    }
+  }
+}

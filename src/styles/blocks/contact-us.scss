@@ -1,0 +1,114 @@
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  padding: 0 20px;
+
+  @include on-tablet {
+    padding: 0;
+
+    @include grid;
+  }
+
+  @include on-desktop {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 130px;
+
+    @include grid;
+  }
+
+  &__desktop-text {
+    display: none;
+    align-items: flex-end;
+    position: absolute;
+
+    @include on-desktop {
+      @include side-text;
+
+      display: flex;
+      position: absolute;
+      flex-direction: row;
+      align-self: flex-start;
+
+      text-orientation: mixed;
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+
+      grid-column: 1 / 2;
+    }
+
+    ::before {
+      top: -330%;
+    }
+  }
+
+  &__title {
+    @include h4;
+
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__article {
+    text-align: justify;
+
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__form {
+    @include on-tablet {
+      grid-column: 1 / 4;
+      grid-row: 3;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+
+    &__button {
+      @include on-tablet {
+        width: 280px;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      width: 100%;
+      background-image: url(../images/contact-us.png);
+      object-fit: cover;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: -20%;
+
+      grid-column: 4 / -1;
+      grid-row: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+}

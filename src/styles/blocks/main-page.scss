@@ -1,0 +1,129 @@
+.main {
+  display: flex;
+  flex-direction: column;
+
+
+  &__title {
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    @include on-tablet {
+      @include grid;
+
+      padding: 0;
+
+      grid-column: 3 / 5;
+    }
+
+    @include on-desktop {
+      @include grid;
+
+      height: 346px;
+
+      padding-left: 50px;
+      padding-right: 50px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 45%;
+        height: 1px;
+        background-color: $green-color;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        height: 1px;
+        background-color: $green-color;
+      }
+    }
+
+    &__article {
+      display: none;
+
+      @include text16;
+
+      @include on-desktop {
+        display: flex;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        text-align: justify;
+
+        grid-column: 2 / 6;
+      }
+    }
+
+    &__text {
+      @include h5;
+      
+      width: 100%;
+
+      @include on-tablet {
+        text-align: center;
+        grid-column: 2 / 6;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / 11;
+
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        text-align: left;
+      }
+    }
+
+    margin-bottom: 100px;
+
+    @include on-tablet {
+      margin-bottom: 130px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__about {
+    margin-bottom: 100px;
+
+    @include on-tablet {
+      margin-bottom: 130px;
+    }
+  }
+
+  &__shop {
+    margin-bottom: 100px;
+
+    @include on-tablet {
+      margin-bottom: 130px;
+    }
+  }
+
+  &__creators {
+    margin-bottom: 100px;
+  }
+
+  &__toothpowder {
+    margin-bottom: 100px;
+  }
+
+  &__advantages {
+    margin-bottom: 100px;
+  }
+
+  &__contact-us {
+    margin-bottom: 100px;
+  }
+}

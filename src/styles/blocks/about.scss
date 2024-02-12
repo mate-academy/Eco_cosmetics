@@ -1,0 +1,157 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  padding: 0 20px;
+
+
+  @include on-tablet {
+    padding: 0;
+
+    @include grid;
+  }
+
+  @include on-desktop {
+    @include grid;
+
+    align-items: flex-end;
+
+    height: 530px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    margin-bottom: 200px;
+  }
+
+  &__desktop-text {
+    display: none;
+    align-items: flex-end;
+    position: absolute;
+
+    @include on-desktop {
+      @include side-text;
+
+      display: flex;
+      position: absolute;
+      flex-direction: row;
+      align-self: flex-start;
+
+      text-orientation: mixed;
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+
+
+
+      grid-column: 1 / 2;
+    }
+  }
+
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+
+    &__heading {
+      @include h4;
+
+      margin-bottom: 10px;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+
+        margin-bottom: 40px;
+      }
+
+      @include on-desktop {
+        @include h2;
+      }
+    }
+
+    &__article {
+      display: flex;
+      flex-direction: column;
+
+      gap: 30px;
+
+      margin-bottom: 30px;
+
+      &-1 {
+        @include text16;
+
+        text-align: justify;
+      }
+
+      &-2 {
+        @include text16;
+
+        display: none;
+        text-align: justify;
+
+        @include on-desktop {
+          display: flex;
+        }
+      }
+    }
+
+    &__button {
+      position: relative;
+      margin-bottom: 0;
+
+      justify-content: left;
+      width: fit-content;
+
+      @include on-tablet {
+        grid-column: 1 / 3;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      background-image: url(../images/about-img.svg);
+      object-fit: cover;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      grid-column: 4 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 11;
+    }
+  }
+
+  &__img2 {
+    display: none;
+    width: 100%;
+    height: 80%;
+    background-image: url(../images/halfphoto-desktop.svg);
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include on-desktop {
+      display: flex;
+
+      grid-column: 11 / -1;
+    }
+  }
+}
