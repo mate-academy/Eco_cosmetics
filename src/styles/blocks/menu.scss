@@ -1,0 +1,66 @@
+.menu {
+  &__top {
+    padding-top: 15px;
+    @include onTablet {
+      padding-top: 23px;
+    }
+  }
+
+  &__close {
+    &__image {
+      width: 24px;
+      height: 24px;
+
+      @include hover(transform, scale(1.5));
+    }
+  }
+
+  &__nav {
+    padding-top: 30px;
+    @include onTablet {
+      padding-top: 100px;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      gap: 40px;
+      margin: 0;
+      padding: 0;
+
+      @include onTablet {
+        gap: 60px;
+      }
+    }
+
+    &__link {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: #e4dfd3;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+
+      &::after {
+        position: absolute;
+        bottom: -10px;
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: #828282;
+
+        transition: transform $effect-duration;
+        transform: scale(0);
+        transform-origin: center;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+}

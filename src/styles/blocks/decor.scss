@@ -1,0 +1,32 @@
+.decor {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    grid-column: span 1;
+  }
+
+  &__text {
+    position: relative;
+    display: inline;
+    margin: 0;
+    font-weight: 500;
+    line-height: 130%;
+
+    color: rgba(52, 79, 16, 0.5);
+    writing-mode: vertical-lr;
+    direction: rtl;
+    transform: rotate(-180deg);
+
+    &::after {
+      position: absolute;
+      top: -110px;
+      left: 50%;
+      transform: translate(-50%);
+      content: "";
+      height: 100px;
+      width: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+    }
+  }
+}

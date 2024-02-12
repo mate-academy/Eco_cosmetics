@@ -1,0 +1,55 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include hover(transform, scale(1.5));
+
+  &--menu {
+    background-image: url(../images/menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--logo {
+    position: relative;
+    background-image: url(../images/logo.png);
+
+    @include onDesktop {
+      grid-column: 1;
+
+      &::after {
+        content: "witch of mountain winds";
+        position: absolute;
+        display: block;
+        left: 36px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: max-content;
+        font-family: Sharp, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+        color: $accent-text-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &--basket {
+    display: block;
+    background-image: url(../images/basket.svg);
+
+    @include onDesktop {
+      justify-self: end;
+      grid-column: 12;
+    }
+  }
+}

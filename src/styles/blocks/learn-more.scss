@@ -1,0 +1,27 @@
+.learn-more {
+  &__link {
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: $accent-text-color;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::after {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      content: " ";
+      width: 100%;
+      height: 1px;
+      background-color: $accent-text-color;
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform $effect-duration;
+    }
+
+    &:hover::after {
+      transform: scaleY(1);
+    }
+  }
+}

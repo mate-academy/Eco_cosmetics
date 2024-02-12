@@ -1,0 +1,120 @@
+.footer {
+  background: rgba(52, 79, 16, 0.5);
+
+  &__wrapper {
+    padding-block: 30px;
+    @include contentPaddingInline;
+    @include pageGrid;
+
+    @include onDesktop {
+      padding-block: 60px;
+    }
+  }
+
+  &__navigation {
+    grid-area: 1/1/span 1/-1;
+
+    @include onTablet {
+      grid-area: 1/1/span 1/7;
+    }
+    @include onDesktop {
+      grid-area: 1/1/span 1/span 1;
+    }
+  }
+
+  &__copyright {
+    grid-area: 4/1/span 1/-1;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 40px;
+    width: 200px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 130%;
+    color: $footer-text-color;
+
+    @include onTablet {
+      grid-area: 3/1/span 1/4;
+      margin: 0;
+      padding-top: 50px;
+      width: auto;
+      font-weight: 400;
+      line-height: 150%;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-top: auto;
+      grid-area: 2/1/span 1/7;
+      padding-top: 0;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+    }
+  }
+
+  &__contacts {
+    grid-area: 3/1/span 1/-1;
+    padding-top: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    color: $footer-text-color;
+
+    @include onTablet {
+      padding-top: 0;
+      grid-area: 1/4/3/-1;
+    }
+
+    @include onDesktop {
+      grid-area: 1/7/auto/-1;
+      font-size: 16px;
+    }
+  }
+
+  &__contacts-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__contact {
+    font-size: 14px;
+    font-weight: 400;
+    color: $footer-text-color;
+    margin: 0;
+
+    &--link {
+      text-decoration: none;
+
+      @include hover(color, $accent-text-color);
+
+    }
+  }
+
+  &__social {
+    grid-area: 2/1/span 1/-1;
+    padding-top: 20px;
+    display: flex;
+    gap: 14px;
+
+    @include onTablet {
+      grid-area: 2/1/span 1/4;
+    }
+
+    @include onDesktop {
+      padding-top: 30px;
+      grid-area: 2/7/span 1/-1;
+    }
+
+    &--item {
+      width: 20px;
+      height: 20px;
+
+      @include hover(transform, scale(1.2));
+    }
+  }
+}

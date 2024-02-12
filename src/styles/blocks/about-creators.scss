@@ -1,0 +1,112 @@
+.about-creators {
+  &__content {
+    @include contentPaddingInline;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      grid-column: 1/4;
+    }
+    @include onDesktop {
+      grid-column: 2/6;
+    }
+  }
+
+  &__image {
+    background-image: url(..//images/about-creators.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include onTablet {
+      grid-column: 4/-1;
+    }
+    @include onDesktop {
+      grid-column: 7/-1;
+    }
+  }
+
+  &__text {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 15px;
+    }
+    @include onDesktop {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    &--3 {
+      display: none;
+
+      @include onDesktop {
+        display: inline;
+      }
+    }
+  }
+
+  &__learn-more {
+    padding-top: 30px;
+
+    @include onTablet {
+      padding-top: 20px;
+    }
+  }
+
+  &__button {
+    padding-top: 35px;
+
+    @include onTablet {
+      padding-top: 40px;
+    }
+    @include onDesktop {
+      padding-top: 50px;
+    }
+  }
+
+  &__link {
+    display: block;
+    box-sizing: border-box;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    padding: 19px 0 20px;
+    color: $botton-text-color;
+    background-color: $botton-color;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 130%;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    cursor: pointer;
+    transition: all $effect-duration;
+
+    @include onTablet {
+      max-width: 280px;
+    }
+
+    &:hover {
+      border: 1px solid $botton-color;
+      color: $botton-color;
+      background-color: $botton-hover-color;
+    }
+  }
+}

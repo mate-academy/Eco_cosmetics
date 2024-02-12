@@ -1,0 +1,195 @@
+.shop {
+  &__content {
+    @include onTablet {
+      @include contentPaddingInline;
+    }
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__info {
+    @include onDesktop {
+      grid-column: 2/-1;
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+    @include onDesktop {
+      grid-column: 2/-1;
+    }
+  }
+
+  &__nav {
+    padding-inline: 27px;
+
+    @include onTablet {
+      padding: 0;
+    }
+    @include onDesktop {
+      grid-column: 2/-1;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0 0;
+
+    @include onTablet {
+      padding-top: 10px;
+      justify-content: left;
+      gap: 34px;
+    }
+    @include onDesktop {
+      padding-top: 30px;
+    }
+  }
+
+  &__nav-link {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    color: #828282;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+    }
+
+    &::after {
+      position: absolute;
+      left: 0;
+      top: calc(100% + 10px);
+      content: "";
+      height: 2px;
+      width: 100%;
+      background-color: $main-text-color;
+      transform: scale(0);
+      transform-origin: left;
+      transition: all $effect-duration;
+    }
+
+    &:hover {
+      color: $main-text-color;
+      position: relative;
+
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__products {
+    padding-top: 27px;
+
+    @include onTablet {
+      padding-top: 37px;
+    }
+    @include onDesktop {
+      grid-column: 2/-1;
+      padding: 62px 0 0;
+    }
+  }
+
+  &__products-content {
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__product {
+    &--oil {
+      flex: 1;
+    }
+
+    &--ubtan {
+      flex: 1;
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__product-link {
+    display: block;
+
+    @include onTablet {
+      height: 300px;
+    }
+    @include onDesktop {
+      height: 400px;
+    }
+  }
+
+  &__product-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform $effect-duration;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__product-info {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    @include contentPaddingInline;
+
+    @include onTablet {
+      padding: 0;
+    }
+  }
+
+  &__product-title {
+    margin: 0;
+    padding-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+    color: $main-text-color;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__product-price {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    padding-inline: 20px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+
+    @include onDesktop {
+      grid-column: 1/-1;
+    }
+  }
+}

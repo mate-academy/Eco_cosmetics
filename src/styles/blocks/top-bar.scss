@@ -1,0 +1,27 @@
+.top-bar {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onTablet {
+    padding-top: 23px;
+    padding-bottom: 30px;
+  }
+
+  @include onDesktop {
+    @include pageGrid;
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+
+  &__navigation {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 7/ span 3;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.benefits {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    @include contentPaddingInline;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onDesktop {
+      gap: 36px;
+    }
+
+    &__image {
+      height: 76px;
+      width: 80px;
+      background-size: contain;
+      background-position: top;
+      background-repeat: no-repeat;
+
+      &--1 {
+        background-image: url(..//images/benefits/materials.png);
+      }
+
+      &--2 {
+        background-image: url(..//images/benefits/packaging.png);
+      }
+
+      &--3 {
+        background-image: url(..//images/benefits/ingredients-benefits.png);
+      }
+    }
+
+    &__title {
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &--1,
+    &--2,
+    &--3 {
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: span 2;
+      }
+      @include onDesktop {
+        grid-column: span 4;
+      }
+    }
+  }
+}

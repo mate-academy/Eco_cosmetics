@@ -1,0 +1,109 @@
+.header {
+  &__content {
+    @include onDesktop {
+      display: flex;
+      gap: 20px;
+      max-width: 1180px;
+      margin-inline: auto;
+      padding-inline: 50px;
+    }
+  }
+
+  &__image-wrapper {
+    height: 400px;
+    order: 2;
+
+    @include onTablet {
+      height: 500px;
+      padding-inline: 27px;
+    }
+    @include onDesktop {
+      height: 400px;
+      width: 580px;
+      padding-inline: 0;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    background-image: url(..//images/header_photo.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__info-wrapper {
+    order: 1;
+    padding-inline: 20px;
+    padding-top: 25px;
+
+    @include onTablet {
+      padding-inline: 27px;
+      padding-top: 50px;
+    }
+    @include onDesktop {
+      padding-inline: 0;
+      padding-top: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    @include onTablet {
+      gap: 30px;
+    }
+    @include onDesktop {
+      padding-left: 100px;
+      min-width: 430px;
+      max-width: 480px;
+    }
+  }
+
+  &__title {
+    max-width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 150%;
+    }
+    @include onDesktop {
+      text-align: left;
+      font-size: 60px;
+      line-height: 130%;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+
+    @include onDesktop {
+      text-align: left;
+    }
+  }
+
+  &__button {
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include onTablet {
+      padding-top: 50px;
+    }
+    @include onDesktop {
+      justify-content: left;
+      padding-left: 100px;
+    }
+  }
+}
