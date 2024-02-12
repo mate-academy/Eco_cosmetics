@@ -1,0 +1,186 @@
+.shop {
+  @include on-desktop {
+    padding-left: 100px;
+    position: relative;
+  }
+
+  &__title {
+    color: $green-c;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__slider {
+    transition: $transition-time;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__cards {
+    margin: 16px 0 30px;
+
+    @include on-tablet {
+      margin: 26px 0 50px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      transition: $transition-time;
+    }
+
+    @include on-desktop {
+      gap: 20px;
+      margin: 50px 0 40px;
+    }
+  }
+
+  &__radio {
+    display: none;
+    transform: scale(0);
+    transition: $transition-time;
+
+    @for $card-number from 1 through 4 {
+      &--#{$card-number}:checked~.shop__cards .shop__card--#{$card-number} {
+        display: block;
+
+        @include on-tablet {
+          transform: scale(105%);
+        }
+      }
+
+      @include on-tablet {
+        $next-card-number: $card-number + 1;
+
+        @if $next-card-number <= 4 {
+
+          &--#{$card-number}:checked~.shop__cards .shop__card--#{$next-card-number},
+          &--#{$next-card-number}:checked~.shop__cards .shop__card--#{$next-card-number} {
+            display: block;
+          }
+        }
+      }
+
+      &--#{$card-number}:checked+.shop__label--#{$card-number} {
+        color: $dark-grey-c;
+      }
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    color: $light-grey-c;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    align-items: center;
+    margin-right: 34px;
+    background-image: linear-gradient($dark-grey-c, $dark-grey-c);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 0 2px;
+    padding-bottom: 10px;
+    transition: $transition-time;
+
+    @include on-desktop {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 28px;
+      letter-spacing: 1px;
+    }
+
+    &:hover {
+      color: $dark-grey-c;
+      background-size: 100% 2px;
+    }
+  }
+
+  &__card {
+    display: none;
+
+    @include on-tablet {
+      cursor: pointer;
+      width: calc(50% - 20px);
+      flex-shrink: 0;
+      transition: $transition-time;
+      &:hover{
+        transform: scale(105%);
+      }
+    }
+
+  }
+
+  &__img {
+    width: calc(100% + 40px);
+    margin: 0 0 20px -20px;
+
+    @include on-tablet {
+      margin: 0;
+      min-width: 338px;
+      min-height: 300px;
+      max-width: 100%;
+    }
+
+    @include on-desktop {
+      height: 500px;
+    }
+  }
+
+  &__subtitle {
+    color: $dark-grey-c;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    color: $dark-grey-c;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    display: flex;
+    color: $white-c;
+    text-transform: uppercase;
+    background-color: $dark-grey-c;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $dark-grey-c;
+    transition: $transition-time;
+
+    &:hover {
+      background-color: transparent;
+      color: $dark-grey-c;
+    }
+
+    @include on-tablet {
+      width: 280px;
+    }
+  }
+}

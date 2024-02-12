@@ -1,0 +1,69 @@
+.add {
+  @include on-desktop {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    z-index: 0;
+  }
+
+  &__strip {
+    display: none;
+
+    @include on-desktop {
+      z-index: 2;
+      display: block;
+      margin-bottom: 100px;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: $green-c;
+      left: -58%;
+
+      &--bottom {
+        bottom: -100px;
+        left: 50%;
+      }
+    }
+  }
+
+  &__title {
+    color: $green-c;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      display: flex;
+      width: 280px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      padding-right: 200px;
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 1.2px;
+      text-align: left;
+      align-items: center;
+    }
+  }
+
+  &__description {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      width: 100%;
+      padding: 100px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+}

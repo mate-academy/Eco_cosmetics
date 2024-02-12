@@ -1,0 +1,185 @@
+.header {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+
+    @include on-tablet {
+      height: 78px;
+    }
+
+    @include on-desktop {
+      height: 100px;
+    }
+  }
+
+  &__logo {
+    @include on-desktop {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    &-img {
+      @include on-desktop {
+        width: 50px;
+      }
+    }
+
+    &-text {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        color: $green-c;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__menu {
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__icon {
+    transition: $transition-time;
+
+    &:hover {
+      transform: scale(120%);
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    color: $green-c;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    background-image: linear-gradient($green-c, $green-c);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 0 1px;
+    padding-bottom: 4px;
+    transition: $transition-time;
+
+    &:hover {
+      background-size: 100% 1px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include on-desktop {
+      margin-top: 70px;
+      flex-direction: row-reverse;
+      gap: 20px;
+      justify-content: space-between;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include on-desktop {
+      align-items: start;
+      margin-left: 100px;
+      width: 50%;
+    }
+  }
+
+  &__img {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-bottom: 26px;
+
+    @include on-tablet {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    @include on-desktop {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: $dark-grey-c;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      width: 466px;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 54px;
+      text-transform: capitalize;
+    }
+
+    @include on-desktop {
+      text-align: left;
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 78px;
+      text-transform: none;
+    }
+
+  }
+
+  &__description {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    display: flex;
+    background-color: $dark-grey-c;
+    height: 60px;
+    color: $white-c;
+    text-transform: uppercase;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid $dark-grey-c;
+    transition: $transition-time;
+
+    &:hover {
+      background-color: transparent;
+      color: $dark-grey-c;
+    }
+
+    @include on-tablet {
+      width: 280px;
+    }
+  }
+}

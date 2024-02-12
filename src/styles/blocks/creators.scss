@@ -1,0 +1,131 @@
+.creators {
+  @include on-tablet {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+  }
+
+  @include on-desktop {
+    position: relative;
+  }
+
+  &__text {
+    @include on-tablet {
+      width: 50%;
+    }
+
+    @include on-desktop {
+      padding: 0 100px;
+    }
+  }
+
+  &__title {
+    color: #344F10;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @include on-desktop {
+      margin-bottom: 34px;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 40px;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__description {
+    color: $dark-grey-c;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &--desk {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    color: $green-c;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    display: block;
+    position: relative;
+    max-width: max-content;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-bottom: 26px;
+
+    &::after {
+      display: block;
+      position: absolute;
+      bottom: -10px;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background: $green-c;
+      transition: $transition-time;
+      transform: scale(1);
+    }
+
+    &:hover::after {
+      transform: scale(0);
+    }
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    background-color: $dark-grey-c;
+    height: 60px;
+    color: $white-c;
+    text-transform: uppercase;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    border: 1px solid $dark-grey-c;
+    transition: $transition-time;
+
+    &:hover {
+      background-color: transparent;
+      color: $dark-grey-c;
+    }
+
+    @include on-tablet {
+      width: 280px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      transition: $transition-time;
+      &:hover{
+        transform: scale(105%);
+      }
+    }
+  }
+}

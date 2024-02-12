@@ -1,0 +1,153 @@
+.contacts {
+  @include on-tablet {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  @include on-desktop {
+    gap: 120px;
+    position: relative;
+  }
+
+  &__text {
+    width: 100%;
+
+    @include on-desktop {
+      padding-left: 100px;
+    }
+  }
+
+  &__title {
+    color: $green-c;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @include on-desktop {
+      font-size: 36px;
+      line-height: 40px;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__description {
+    color: $dark-grey-c;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    border-color: #BDBDBD;
+    border-width: 0 0 1px;
+    background-color: transparent;
+    color: $light-grey-c;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-transform: capitalize;
+    resize: none;
+    outline: none;
+
+    &--textarea {
+      padding-top: 20px;
+      font-family: Poppins, sans-serif;
+    }
+
+    &:focus {
+      border-color: $dark-grey-c;
+    }
+
+    &:valid {
+      color: $green-c;
+      border-color: $green-c;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      color: $red-c;
+      border-color: $red-c;
+    }
+
+    &:valid:-webkit-autofill {
+      background-color: inherit;
+      -webkit-text-fill-color: $green-c;
+      transition: background-color 5000s;
+    }
+
+    &:invalid:-webkit-autofill {
+      background-color: inherit;
+      -webkit-text-fill-color: $red-c;
+      transition: background-color 5000s;
+    }
+
+    @include on-desktop {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 28px;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    color: $white-c;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    background-color: $dark-grey-c;
+    height: 60px;
+    margin-top: 10px;
+    border: 1px solid $dark-grey-c;
+    transition: $transition-time;
+
+    &:hover {
+      background-color: transparent;
+      color: $dark-grey-c;
+    }
+
+    @include on-tablet {
+      width: 280px;
+    }
+  }
+
+  &__box {
+    width: 100%;
+  }
+
+  &__img {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: 100%;
+      transition: $transition-time;
+      &:hover{
+        transform: scale(105%);
+      }
+    }
+  }
+}
