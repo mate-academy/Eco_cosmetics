@@ -1,0 +1,69 @@
+.scroll-down {
+  margin-block: 100px;
+  
+  &__content {
+    text-align: center;
+
+
+    @include onDesktop {
+      text-align: left;
+      padding-block: 100px;
+
+      @include gridContent;
+      grid-auto-flow: column;
+    }
+  }
+
+  &__link-title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: $green-color;
+
+    @include onDesktop {
+      grid-column: 7/4 span;
+
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    display: none;
+    line-height: 150%;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2/4 span;
+    }
+  }
+
+  @include onDesktop {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      height: 1px;
+      width: calc(50% - 100px);
+      background-color: $green-color;
+      opacity: 0.5;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      content: "";
+      display: block;
+      height: 1px;
+      width: calc(50% - 10px);
+      background-color: $green-color;
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+.section {
+  &__content {
+    @include gridContent;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &:last-child &__content {
+    margin-bottom: 0;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+    display: grid;
+    row-gap: 30px;
+    align-content: start;
+    text-align: left;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 2/4 span;
+    }
+  }
+
+  &__block-text {
+    display: grid;
+    row-gap: 30px;
+  }
+
+  &__text {
+    &--visible {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__images {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+
+      @include gridContent;
+      align-items: end;
+    }
+  }
+}
