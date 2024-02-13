@@ -22,6 +22,8 @@
   }
 
   &__contain-img {
+    position: absolute;
+    right: 0;
     margin-top: 20px;
     float: right;
     margin-left: 20px;
@@ -35,14 +37,28 @@
     display: none;
 
     @include onTablet {
+      position: absolute;
+      right: 0;
       display: block;
       margin-top: 20px;
       float: right;
-      margin-left: 20px;
 
       @include onDesktop {
         display: none;
       }
+    }
+  }
+
+  &__contain-desk {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      right: 0;
+      display: block;
+      margin-top: 20px;
+      float: right;
+      margin-left: 20px;
     }
   }
 
@@ -51,6 +67,7 @@
     flex-direction: column;
     gap: 50px;
     margin-top: 78px;
+    margin-right: 200px;
     color: $main-text-color;
     text-align: right;
     font-family: Poppins, sans-serif;
@@ -59,6 +76,14 @@
     font-weight: 400;
     line-height: 150%;
     margin-bottom: 67px;
+
+    @include onTablet {
+      margin-right: 400px;
+    }
+
+    @include onDesktop {
+      margin-right: 450px;
+    }
   }
 
   &__learn {
@@ -114,17 +139,6 @@
       flex-direction: row;
       justify-content: space-around;
       align-items: first baseline;
-    }
-  }
-
-  &__contain-desk {
-    display: none;
-
-    @include onDesktop {
-      display: block;
-      margin-top: 20px;
-      float: right;
-      margin-left: 20px;
     }
   }
 
