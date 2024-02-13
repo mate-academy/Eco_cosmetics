@@ -1,0 +1,138 @@
+.container {
+  max-width: 1180px;
+  padding-inline: 20px;
+  position: relative;
+  overflow: visible;
+  margin: 0 auto;
+  @include pageGrid;
+
+  &--paddings--none {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  &__left-side {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      position: relative;
+      grid-column: 2 / span 4;
+    }
+
+    &--choose {
+      display: none;
+
+      @include onDesktop {
+        position: relative;
+        display: grid;
+        grid-column: 2 / span 4;
+        padding-block: 100px;
+
+        &::before {
+          position: absolute;
+          display: block;
+          content: "";
+          font-size: 20px;
+          width: 300%;
+          height: 1px;
+          background-color: $color-text-green;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+
+    &--contact-us {
+      @include onDesktop {
+        @include pageGrid;
+        --columns: 4;
+      }
+    }
+
+    &--footer {
+      display: grid;
+      order: -2;
+
+      @include onDesktop {
+        grid-column: 1 / span 7;
+      }
+    }
+  }
+
+  &__right-side {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      display: block;
+      grid-column: 7 / -1;
+    }
+
+    &--choose {
+      display: grid;
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: 2 / span 4;
+        padding-inline: 94px;
+      }
+      
+      @include onDesktop {
+        grid-column: 7 / span 4;
+        padding-block: 100px;
+        padding-inline: 0;
+
+        &::after {
+          position: absolute;
+          display: block;
+          content: "";
+          font-size: 20px;
+          width: 300%;
+          height: 1px;
+          background-color: $color-text-green;
+          bottom: 0;
+        }
+      }
+    }
+
+    &--about {
+      @include pageGrid;
+      --columns: 6;
+    }
+
+    &--footer {
+      display: grid;
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: 4 / span 3;
+        order: -1;
+      }
+
+      @include onDesktop {
+        grid-column: -6 / -1;
+      }
+    }
+  }
+
+  @include display(padding-inline, 27px, 50px, 130px);
+
+  @include onTablet {
+    @include pageGrid;
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+    column-gap: 20px;
+  }
+}

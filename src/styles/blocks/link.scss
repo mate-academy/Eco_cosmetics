@@ -1,0 +1,64 @@
+.link {
+  display: block;
+  width: fit-content;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  padding-bottom: 10px;
+  border-bottom: 1px solid transparent;
+
+  color: $color-text-green;
+
+  @include hover(border-color, $color-text-green);
+
+  &--location {
+
+    &--about {
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+    
+    &--creators {
+      margin-bottom: 25px;
+    }
+
+    &--description {
+      margin-bottom: 100px;
+      margin-left: 20px;
+
+      grid-column: span 2;
+
+      @include onTablet {
+        grid-column: 1 / span 2;
+        position: relative;
+        top: -30px;
+      }
+
+      @include onDesktop {
+        grid-column: 2 / -1;
+      }
+    }
+
+    &--product-card {
+      position: absolute;
+      right: $paddings-inline-mobile;
+      top: 2px;
+      font-size: 10px;
+      padding-bottom: 1px;
+
+      @include onTablet {
+        right: $paddings-inline-tablet;
+      }
+
+      @include onDesktop {
+        right: $paddings-inline-desktop;
+      }
+
+      @include onDesktopWide {
+        right: $paddings-inline-desktop-wide;
+      }
+    }
+  }
+}

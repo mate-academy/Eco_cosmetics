@@ -1,0 +1,31 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  z-index: 4;
+  background-color: $bg-color;
+
+  padding: 15px 20px;
+  margin-bottom: 5px;
+
+  @include onTablet {
+    margin-bottom: 7px;
+  }
+
+  @include onDesktop {
+    @include pageGrid;
+    --columns: 12;
+    margin-bottom: 41px;
+    align-items: center;
+  }
+
+  &:not(.top-bar--menu) {
+    position: sticky;
+  }
+
+  &--product-card {
+    padding-inline: 0;
+  }
+
+  @include display(padding, 23px 27px, 40px 50px, 40px 130px);
+}
