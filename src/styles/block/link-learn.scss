@@ -1,0 +1,54 @@
+.link-learn {
+  display: block;
+  width: max-content;
+
+  text-align: left;
+  text-transform: uppercase;
+
+  @include font-text-decorative(14px, $main-text-link-more-color);
+  @include hover-filterand-underscore;
+
+  padding-bottom: 11px;
+
+  &__creators {
+    margin-bottom: 25px;
+
+    @include on-table {
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__powder {
+
+    &--mobile {
+      margin-bottom: 100px;
+
+      @include on-table {
+        display: none;
+      }
+    }
+
+    &--table {
+      display: none;
+
+      @include on-table {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+
+      @include on-desktop {
+        padding-bottom: 13px;
+
+        &::after {
+          bottom: -13px;
+        }
+      }
+    }
+  }
+}

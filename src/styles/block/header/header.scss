@@ -1,0 +1,102 @@
+.header {
+  &__container-bottom {
+    @include page-grid;
+
+    @include on-table {
+      @include constent-padding-inline;
+    }
+
+    @include on-desktop {
+      padding-top: 40px;
+    }
+
+    @include on-desktop-max {
+      padding-top: 35px;
+    }
+  }
+
+  &__content-bottom {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 25px;
+
+    @include constent-padding-inline;
+    @include animation(left-to-right);
+
+    @include on-table {
+      grid-column: 2 / 6;
+
+      padding-inline: 0;
+      padding-top: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 7;
+      justify-items: start;
+
+      padding: 0;
+      padding-bottom: 53px;
+    }
+  }
+
+  &__link-img {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 7 / 13;
+      order: 1;
+    }
+  }
+
+  &__img {
+    @include animation(img);
+    @include img-size;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+    color: $main-text-page-color;
+
+    text-align: center;
+
+    @include on-table {
+      font-size: 36px;
+      line-height: 150%;
+
+      text-transform: capitalize;
+    }
+
+    @include on-desktop {
+      margin-bottom: 30px;
+
+      font-size: 60px;
+      line-height: 130%;
+
+      text-align: left;
+      text-transform: none;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    @include font-text-regular(16px, $main-text-page-color);
+
+    @include on-table {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      text-align: left;
+    }
+  }
+}

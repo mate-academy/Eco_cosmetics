@@ -1,0 +1,49 @@
+.top-bar {
+  padding-block: 15px 20px;
+  align-items: center;
+
+  @include page-grid;
+  @include constent-padding-inline;
+  @include animation(top-bar);
+
+  @include on-table {
+    padding-block: 23px 30px;
+  }
+
+  @include on-desktop {
+    padding-block: 40px;
+  }
+
+  @include on-desktop-max {
+    padding-block: 40px 35px;
+  }
+
+  &__nav {
+    display: none;
+
+    @include on-desktop {
+      grid-column: 7 / 10;
+      display: block;
+    }
+  }
+
+  &__picture {
+    display: flex;
+  }
+
+  &__logo-link {
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__logo {
+    height: 24px;
+
+    @include hover-zoom(transform, scale(1.2));
+
+    @include on-desktop {
+      height: 50px;
+    }
+  }
+}

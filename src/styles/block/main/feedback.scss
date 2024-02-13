@@ -1,0 +1,134 @@
+.feedback {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+
+  @include on-desktop {
+    row-gap: 30px;
+  }
+
+  &__label {
+    width: 100%;
+  }
+
+  &__category {
+    position: relative;
+    font-family: inherit;
+    display: block;
+
+    width: 100%;
+
+    padding-bottom: 5px;
+
+    background-color: $main-background-feedback-color;
+    border-bottom: 1px solid $main-border-feedback-color;
+
+    outline: none;
+
+    caret-color: $main-text-feedback-color;
+
+    @include font-text-regular(14px, $main-text-feedback-color);
+
+    transition: all $effect-duration ease-in;
+
+    @include on-table {
+      font-weight: 500;
+    }
+
+    @include on-desktop {
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+
+    &::placeholder {
+      color: $placeholder-text-feedback-color;
+      text-transform: capitalize;
+    }
+
+    &:valid {
+      color: $valid-text-feedback-color;
+    }
+
+    &:invalid {
+      color: $invalid-text-feedback-color;
+    }
+
+    &:hover {
+      border-color: $hover-border-feedback-color;
+    }
+
+    &:focus {
+      border-color: $focus-border-feedback-color;
+    }
+
+    &:-webkit-autofill {
+      transition: background-color 5000s ease-in-out 0s;
+
+      &:invalid {
+        -webkit-text-fill-color: $invalid-text-feedback-color;
+      }
+
+      &:valid {
+        -webkit-text-fill-color: $valid-text-feedback-color;
+      }
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-color: $invalid-border-feedback-color;
+    }
+
+    &:valid:not(:placeholder-shown) {
+      border-color: $valid-border-feedback-color;
+    }
+
+    &--textarea {
+      height: 47px;
+
+      margin-bottom: 5px;
+      padding-top: 17px;
+
+      resize: none;
+
+      @include on-desktop {
+        height: 68px;
+
+        margin-bottom: 20px;
+        padding-top: 28px;
+      }
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+  }
+
+  &__error {
+    display: none;
+
+    position: absolute;
+
+    margin-top: 3px;
+
+    text-align: left;
+    font-size: 10px;
+    color: $invalid-text-feedback-color;
+
+    @include on-table {
+      font-weight: 500;
+    }
+
+    @include on-desktop {
+      font-size: 12px;
+    }
+
+    &--textarea {
+      @include on-desktop {
+        margin-top: -15px;
+      }
+    }
+  }
+
+  &__category:invalid:not(:placeholder-shown) + &__error {
+    display: block;
+  }
+}

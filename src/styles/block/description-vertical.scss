@@ -1,0 +1,36 @@
+.description-vertical {
+  display: none;
+
+  @include on-desktop {
+    grid-column: span 1;
+    place-self: start;
+
+    position: relative;
+
+    display: block;
+
+    @include font-text-decorative(14px, $main-decorative-color);
+
+    text-align: center;
+    writing-mode: vertical-lr;
+
+    transform: rotate(-180deg);
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+
+      margin-bottom: 10px;
+
+      height: 100px;
+      width: 1px;
+      background-color: $main-decorative-color;
+    }
+  }
+
+  &__about {
+    padding-inline: 10px;
+  }
+}

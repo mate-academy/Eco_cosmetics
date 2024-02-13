@@ -1,0 +1,53 @@
+.icon {
+  display: block;
+
+  width: 20px;
+  height: 20px;
+
+  background-size: cover;
+
+  @include hover-zoom(transform, scale(1.2));
+
+  &--menu {
+    background-image: url(../images/icons/icon-burger-menu.svg);
+    height: 13px;
+
+    @include on-table {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--bag {
+    grid-column: -1;
+
+    background-image: url(../images/icons/icon-bag.svg);
+
+    height: 24px;
+
+    @include on-desktop {
+      grid-column: 12 / 13;
+      justify-self: end;
+
+      background-image: url(../images/icons/icon-bag-bg.svg);
+
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  &--close {
+    background-image: url(../images/icons/icon-close.svg);
+  }
+
+  &--facebook {
+    background-image: url(../images/icons/icon-facebook.svg);
+  }
+
+  &--instagram {
+    background-image: url(../images/icons/icon-instagram.svg);
+  }
+}

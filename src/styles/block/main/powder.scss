@@ -1,0 +1,276 @@
+.powder {
+  @include page-grid;
+  @include constent-padding-inline;
+
+  &__content {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+
+    @include on-table {
+      position: relative;
+      margin-bottom: 130px;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / -1;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__information {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+
+    @include on-table {
+      grid-column: 1 / 4;
+
+      position: absolute;
+      height: 100%;
+
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 1 /5;
+    }
+  }
+
+  &__title {
+    width: 100%;
+
+    text-align: left;
+
+    @include font-text-heading-regular-second-level;
+  }
+
+  &__jar-container {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: end;
+    gap: 11px;
+
+    margin-bottom: 30px;
+
+    @include on-table {
+      grid-column: 2 / -1;
+      gap: 19px;
+
+      padding-top: 10px;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / -1;
+      padding-top: 0;
+    }
+  }
+
+  &__names {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-block: 37px;
+
+    @include on-desktop {
+      padding-block: 35px 40px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__name {
+    width: 98px;
+
+    text-align: right;
+
+    @include font-text-regular(16px, $main-text-page-color);
+
+    @include on-table {
+      width: 97px;
+    }
+
+    @include on-desktop {
+      width: 180px;
+    }
+  }
+
+  &__line {
+    display: block;
+
+    position: relative;
+
+    margin-right: 5px;
+
+    background-color: $main-background-line-powder-color;
+    width: 32px;
+    height: 1px;
+
+    @include on-table {
+      width: 76px;
+    }
+
+    &::before {
+      position: absolute;
+
+      top: 50%;
+      left: 105%;
+
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+
+      background-color: inherit;
+
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__link-img {
+    display: block;
+
+    margin-right: -20px;
+
+    @include on-table {
+      margin-right: -27px;
+    }
+
+    @include on-desktop {
+      margin-right: 0;
+    }
+  }
+
+  &__img {
+    @include img-size;
+  }
+
+  &__icons-container {
+    grid-column: 1 / -1;
+    display: grid;
+    row-gap: 50px;
+
+    order: 5;
+
+    @include on-table {
+      grid-template-columns: subgrid;
+      row-gap: 0;
+    }
+  }
+
+  &__icon-wrapper {
+    display: grid;
+    justify-items: center;
+    row-gap: 20px;
+
+    @include on-table {
+      grid-template-rows: subgrid;
+      grid-row: 1 / 3;
+    }
+
+    @include on-desktop {
+      row-gap: 40px;
+    }
+
+    @include on-desktop-max {
+      row-gap: 35px;
+    }
+
+    &--top {
+      @include on-table {
+        grid-column: 1 / 3;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--center {
+      @include on-table {
+        grid-column: 3 / 5;
+      }
+
+      @include on-desktop {
+        grid-column: 5 / 9;
+      }
+
+    }
+
+    &--bottom {
+      @include on-table {
+        grid-column: 5 / 7;
+      }
+
+      @include on-desktop {
+        grid-column: 9 / -1;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+
+    background-image: cover;
+    background-size: cover;
+
+    transform: rotate(0deg) scale(1);
+    transition: transform 1s ease-in;
+
+    &:hover {
+      transform: rotate(360deg) scale(1.2);
+    }
+
+    &--bird {
+      background-image: url(../images/icons/powder/bird.svg);
+      width: 62px;
+      height: 60px;
+
+      @include on-table {
+        background-image: url(../images/icons/powder/bird-table.svg);
+        width: 80px;
+      }
+    }
+
+    &--recycling-symbol {
+      background-image: url(../images/icons/powder/recycling_symbol.svg);
+      width: 100px;
+      height: 84px;
+
+      @include on-table {
+        background-image: url(../images/icons/powder/recycling_symbol-table.svg);
+        width: 80px;
+        height: 68px;
+      }
+
+      @include on-desktop {
+        background-image: url(../images/icons/powder/recycling_symbol.svg);
+        width: 100px;
+        height: 85px;
+      }
+    }
+
+    &--leaves {
+      background-image: url(../images/icons/powder/leaves.svg);
+      width: 80px;
+      height: 75px;
+    }
+  }
+
+  &__description {
+    letter-spacing: 0.7px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    @include font-text-regular(14px, $black-text-page-color);
+
+    line-height: 130%;
+  }
+}

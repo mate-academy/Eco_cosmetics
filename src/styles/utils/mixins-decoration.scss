@@ -1,0 +1,111 @@
+@mixin hover-button-options(
+  $property-1,
+  $property-2,
+  $property-3,
+  $toValue-1,
+  $toValue-2,
+  $toValue-3) {
+  transition-duration: $effect-duration;
+  transition-timing-function: ease-in;
+  transition-property: #{$property-1}, #{$property-2}, #{$property-3};
+
+  &:hover {
+    #{$property-1}: #{$toValue-1};
+    #{$property-2}: #{$toValue-2};
+    #{$property-3}: #{$toValue-3};
+  }
+}
+
+@mixin hover-button {
+  @include hover-button-options (
+    background-color,
+    color,
+    border-color,
+    $hover-background-button-color,
+    $hover-text-button-color,
+    $hover-border-button-color);
+}
+
+@mixin decorative-line-scrolldown {
+    position: relative;
+
+    padding-block: 100px;
+
+    &::before {
+      content: "";
+      display: grid;
+
+      position: absolute;
+      width: 50vw;
+      height: 1px;
+
+      background-color: $main-decorative-color;
+    }
+}
+
+@mixin tabs($label-selector: $label-selector,
+  $content-selector: $content-selector) {
+  @for $i from 1 through 4 {
+    &:nth-of-type(#{$i}):checked {
+      #{$label-selector}:nth-child(#{$i}) {
+        @content;
+      }
+
+      #{$content-selector}:nth-child(#{$i}) {
+        display: block;
+      }
+    }
+  }
+}
+
+@mixin hover-filter {
+  &:hover {
+    filter: drop-shadow(5px 5px 30px rgb(18, 87, 5));
+  }
+}
+
+@mixin hover-zoom($property, $toValue) {
+  transition: #{$property} $effect-duration ease-in;
+
+  &:hover {
+    #{$property}: #{$toValue};
+  }
+}
+
+@mixin hover-filterand-underscore {
+  position: relative;
+
+  @include hover-filter;
+
+  &::after {
+    content: "";
+
+    position: relative;
+    bottom: -11px;
+
+    height: 1px;
+    width: 100%;
+
+    background-color: $secondary-text-page-color;;
+
+    transition: transform $effect-duration;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
+
+@mixin hover-text($color) {
+  transition: color $effect-duration ease-in;
+
+  &:hover {
+    color: $color;
+  }
+}
+
+@mixin animation($name) {
+  animation: #{$name} $effect-animation-duration ease-in $effect-animation-delay forwards;
+}
