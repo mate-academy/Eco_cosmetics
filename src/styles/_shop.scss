@@ -1,0 +1,199 @@
+.shop {
+  text-align: center;
+  margin-top: 100px;
+
+  @include onTablet {
+    text-align: left;
+    margin-top: 130px;
+
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    margin-top: 238px;
+  }
+
+  &__title {
+    color: $title-color;
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__title-n {
+    @include onTablet {
+      grid-column: 1/ 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__left-img {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__right-img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / 7;
+
+
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 34px;
+    justify-content: center;
+    margin-top: 20px;
+
+    @include onTablet {
+      justify-content: start;
+    }
+  }
+
+  &__nav-item {
+    color: $shop-form-col;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+
+    @include hover(transform, scale(1.2));
+
+
+    &:hover {
+      &::after {
+          content: "";
+          display: block;
+          border-bottom: 2px solid $main-text-color;
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+          width: 100%;
+      }
+
+      color: $main-text-color;
+    }
+  }
+
+  &__img {
+    margin-top: 27px;
+    width: 100%;
+    height: auto;
+    
+    @include hover(transform, scale(1.1));
+  }
+
+  &__name {
+    color: $main-text-color;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 20px;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.1));
+
+  }
+
+  &__price {
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 10px;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 30px;
+    background-color: $main-text-color;
+    color: $button-color;
+    height: 60px;
+    width: 280px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    grid-column: 3 / 5;
+    transition: all 0.3s;
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__button:hover {
+    background-color: $bg-color;
+    color: $main-text-color;
+    border: 1px solid $main-text-color;
+  }
+
+  &__left-side {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+      writing-mode: vertical-lr;
+      place-self: start start;
+    }
+  }
+
+  &__line {
+    width: 1px;
+    height: 100px;
+    background: rgba(52, 79, 16, 0.50);
+    margin-top: 10px;
+  }
+
+  &__left {
+    color: rgba(52, 79, 16, 0.50);
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    transform: rotate(-180deg);
+  }
+}
+

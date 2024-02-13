@@ -1,0 +1,87 @@
+.brand {
+  @include pageGrid;
+
+  grid-column: 1 / -1;
+
+  &__photo {
+    width: 100%;
+
+    @include onMobile {
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__wrapper {
+    @include onMobile {
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-row: 1;
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__title {
+    font-family: Poppins, sans-serif;
+    color: $main-text-color;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-top: 50px;
+      font-size: 36px;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      font-weight: 600;
+      line-height: 130%;
+    }
+  }
+
+  &__s-title {
+    color: $main-text-color;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%
+  }
+
+  &__shop-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 280px;
+    background-color: $main-text-color;
+    color: $button-color;
+    height: 60px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s;
+  }
+
+  &__shop-button:hover {
+    background-color: $bg-color;
+    color: $main-text-color;
+    border: 1px solid $main-text-color;
+  }
+}
