@@ -1,0 +1,180 @@
+.header {
+  &__top {
+    padding: 15px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include onTablet {
+      padding-block: 20px 30px;
+    }
+  }
+
+  &__container {
+    @include onTablet {
+      padding-inline: 27px;
+    }
+
+    @include onSmallDesktop {
+      padding-inline: 50px;
+    }
+
+    @include onMediumDesktop {
+      padding-inline: 130px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    &--link {
+      background-image: url(../images/icon/lgo-icon.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      height: 24px;
+      width: 24px;
+    }
+
+    &--tittle {
+      color: $main-iten-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      display: none;
+
+      @include onSmallDesktop {
+        display: contents;
+      }
+    }
+  }
+
+  &__menu {
+    background-image: url(../images/icon/icon-menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: 24px;
+    width: 24px;
+
+    @include onSmallDesktop {
+      display: none;
+    }
+  }
+
+  &__shop {
+    background-image: url(../images/icon/icon-shop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: 24px;
+    width: 24px;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+
+  &__content {
+    @include onSmallDesktop {
+      @include pageGrid;
+      padding-top: 50px;
+    }
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+
+    @include onSmallDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__bottom {
+    padding-top: 25px;
+
+    @include onTablet {
+      padding-top: 50px;
+    }
+
+    @include onSmallDesktop {
+      padding-top: 0;
+      grid-column: 2 / 7;
+      grid-row: 1;
+    }
+  }
+
+  &__tittle {
+    color: $main-text-color;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+    text-align: center;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+
+    @include onSmallDesktop {
+      font-size: 60px;
+      text-align: left;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__subtittle {
+    color: $main-text-color;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: center;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onSmallDesktop {
+      text-align: left;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__button {
+    display: flex;
+
+    &--link {
+      display: block;
+      color: $second-text-color;
+      background-color: $main-text-color;
+      text-decoration: none;
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 130%;
+      letter-spacing: 1.4px;
+      width: 280px;
+      text-align: center;
+      padding-block: 20px;
+      margin: 0 auto;
+      transition: 0.4s ease-in-out;
+      border: 1px solid transparent;
+
+      &:hover {
+        border: 1px solid $main-iten-color;
+        background-color: transparent;
+        color: $main-iten-color;
+      }
+
+      @include onSmallDesktop {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.gift {
+  &__line {
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+      height: 1px;
+      background-color: rgba(52, 79, 16, 0.5);
+      width: 530px;
+
+      @include onMediumDesktop {
+        width: 610px;
+      }
+
+      &--two {
+        width: 630px;
+        margin-left: auto;
+
+        @include onMediumDesktop {
+          width: 711px;
+        }
+      }
+    }
+  }
+
+  &__item {
+    @include onSmallDesktop {
+      @include pageGrid;
+      padding-block: 100px;
+    }
+
+  }
+
+  &__subtittle {
+    color: $main-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    width: 380px;
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__tittle {
+    color: $main-iten-color;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    width: 280px;
+    margin: 0 auto;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onSmallDesktop {
+      width: 380px;
+      font-size: 24px;
+      letter-spacing: 1.2px;
+      text-align: left;
+      grid-column: 8 / 12;
+    }
+  }
+
+}

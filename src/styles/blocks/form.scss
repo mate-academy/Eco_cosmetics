@@ -1,0 +1,89 @@
+.form {
+  &__label {
+    display: block;
+    padding-bottom: 25px;
+
+    @include onSmallDesktop {
+      padding-bottom: 30px;
+    }
+
+    &--three {
+      padding-bottom: 45px;
+
+      @include onSmallDesktop {
+        padding-bottom: 60px;
+      }
+    }
+
+    &--text {
+      padding-bottom: 30px;
+
+      @include onSmallDesktop {
+        padding-bottom: 50px;
+      }
+    }
+  }
+
+  &__input {
+    padding: 0;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $third-itrm-color;
+    width: 100%;
+    padding-bottom: 5px;
+
+    color: $main-text-color;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+
+    &:focus {
+      border-bottom: 1px solid $main-iten-color;
+    }
+
+    @include onSmallDesktop {
+      padding-bottom: 10px;
+    }
+
+    &--text {
+      resize: none;
+      padding-bottom: 0;
+    }
+
+    &::placeholder {
+      font-family: "Poppins", sans-serif;
+      color: $second-item-color;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%;
+      text-transform: capitalize;
+
+      @include onSmallDesktop {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+    &:-webkit-autofil {
+      background-color: transparent;
+      color: $main-iten-color;
+      border-bottom: 1px solid $main-iten-color;
+    }
+  }
+
+  &__btn {
+    @include button;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    transition: 0.4s ease-in-out;
+    border: 1px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid $main-iten-color;
+      background-color: transparent;
+      color: $main-iten-color;
+    }
+  }
+}

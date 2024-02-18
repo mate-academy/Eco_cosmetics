@@ -1,0 +1,42 @@
+.link {
+  padding-top: 45px;
+
+  @include onTablet {
+    padding-top: 100px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  &__links {
+    display: block;
+    text-decoration: none;
+    color: $main-bg-color;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 130%;
+    position: relative;
+
+    &:after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: $second-item-color;
+      position: absolute;
+      left: 0;
+      top: 30px;
+    }
+  }
+}
