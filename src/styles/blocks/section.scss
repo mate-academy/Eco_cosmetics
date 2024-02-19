@@ -1,0 +1,79 @@
+.section {
+  &-title {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $main-title-color;
+  }
+
+  &-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $header-text-color;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+  }
+
+  &-learn {
+    text-decoration: none;
+    color: $main-title-color;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+
+  &-button {
+    height: 60px;
+    background-color: $header-text-color;
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $header-button-text-color;
+    text-decoration: none;
+
+    transition: $duration;
+
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: $button-hover-color;
+      border: 1px solid $header-text-color;
+
+      color: $header-text-color;
+    }
+
+    @include onTablet {
+      width: 280px;
+    }
+  }
+
+  &-phrase {
+    @include onDesktop {
+      &:before {
+        content: "";
+        position: absolute;
+        width: 40vw;
+        height: 1px;
+
+        background-color: rgba(52, 79, 16, 0.5);
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 40vw;
+        height: 1px;
+
+        background-color: rgba(52, 79, 16, 0.5);
+        right: 0;
+      }
+    }
+  }
+}

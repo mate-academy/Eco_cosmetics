@@ -1,0 +1,287 @@
+.footer {
+  &__content {
+    @include pageGrid;
+    @include contentPaddingInline;
+
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  background-color: $footer-background-color;
+  color: $page-background-color;
+  font-size: 14px;
+  line-height: 150%;
+
+  &__nav {
+    grid-column: 1 / 1;
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+
+    &-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-top: 30px;
+
+      @include onTablet {
+        margin-top: 29px;
+      }
+
+      @include onDesktop {
+        flex-direction: row;
+        margin-top: 60px;
+        gap: 40px;
+      }
+    }
+
+    &-link {
+      color: $page-background-color;
+      text-decoration: none;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        margin-top: 5px;
+        width: 100%;
+        background-color: $page-background-color;
+
+        transition: transform $duration;
+
+        transform: scale(0);
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+
+      @include onDesktop {
+        color: $page-background-color;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__social {
+    grid-column: 1 / 1;
+
+    @include onTablet {
+      margin-top: -20px;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 12;
+      margin-top: 5px;
+    }
+  }
+
+  &__icon {
+    height: 20px;
+    width: 20px;
+
+    &-link {
+      margin-right: 20px;
+    }
+
+    &-facebook {
+      margin-top: 20px;
+
+      transition: transform $duration;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &-instagram {
+      transition: transform $duration;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__information {
+    grid-column: span 2;
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      grid-row: 1 / 2;
+
+      margin-top: 29px;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+      margin-top: 61px;
+    }
+
+    &-ukraine {
+      text-decoration: none;
+      color: $page-background-color;
+      font-size: 14px;
+      line-height: 150%;
+
+      position: relative;
+      margin-right: auto;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $page-background-color;
+
+        transition: transform $duration;
+
+        transform: scale(0);
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+
+      @include onDesktop {
+        font-size: 16px;
+      }
+    }
+
+    &-email {
+      margin-top: 10px;
+      margin-bottom: 0;
+
+      text-decoration: none;
+      color: $page-background-color;
+      font-size: 14px;
+      line-height: 150%;
+
+      position: relative;
+      margin-right: auto;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $page-background-color;
+
+        transition: transform $duration;
+
+        transform: scale(0);
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+
+      @include onDesktop {
+        font-size: 16px;
+      }
+    }
+
+    &-number {
+      margin-top: 10px;
+      margin-bottom: 0;
+
+      text-decoration: none;
+      color: $page-background-color;
+      font-size: 14px;
+      line-height: 150%;
+
+      position: relative;
+      margin-right: auto;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $page-background-color;
+
+        transition: transform $duration;
+
+        transform: scale(0);
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+
+      @include onDesktop {
+        font-size: 16px;
+      }
+    }
+
+    &-schedule {
+      margin-top: 10px;
+      margin-bottom: 0;
+
+      @include onDesktop {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__ownership {
+    grid-column: span 2;
+
+    text-align: center;
+    line-height: 130%;
+    font-weight: 600;
+    width: 198px;
+
+    margin: 40px auto;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin: 50px 0 30px;
+      text-align: left;
+      width: 100%;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      margin: -4px 0 62px -11px;
+
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    &-left {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        position: absolute;
+
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 150%;
+        text-transform: capitalize;
+
+        grid-column: 1 / 1;
+        margin: 231px 0 62px;
+      }
+    }
+  }
+}
