@@ -2,7 +2,7 @@
   background-color: $c-light-green;
 
   &__content {
-    @include pageGrid;
+    @include page-grid;
   }
 
   &__nav {
@@ -12,12 +12,12 @@
     gap: 11px;
     margin-bottom: 20px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 4;
       gap: 15px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 1 / 4;
       flex-direction: row;
       gap: 40px;
@@ -26,18 +26,21 @@
 
   &__link {
     color: $c-off-white;
-    @extend %text_menu;
+
+    @extend %text-menu;
+
     width: fit-content;
     position: relative;
+
     @include hover(color, $c-white);
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 14px;
       font-family: Poppins-Regular, serif;
       line-height: 150%;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       font-size: 18px;
       font-family: Poppins-Medium, serif;
       line-height: 150%;
@@ -55,7 +58,7 @@
       transition: width $effect-duration ease;
     }
 
-    &:hover:after {
+    &:hover::after {
       width: 100%;
     }
   }
@@ -66,12 +69,12 @@
     gap: 20px;
     margin-bottom: 40px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 4;
       margin-bottom: 50px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-area: 3 / 8 / 4 / 13;
       margin-bottom: 0;
     }
@@ -82,6 +85,7 @@
     height: 20px;
     background-position: center;
     background-size: contain;
+
     @include hover(transform, scale(1.2));
 
     &--fb {
@@ -100,11 +104,11 @@
     gap: 10px;
     margin-bottom: 40px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-area: 1 / 4 / 3 / 7;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-area: 1 / 8 / 3 / 13;
       margin-bottom: 30px;
       gap: 20px;
@@ -112,13 +116,15 @@
   }
 
   &__text {
-    @extend %text_small;
+    @extend %text-small;
+
     color: $c-off-white;
     width: fit-content;
     position: relative;
+
     @include hover(color, $c-white);
 
-    @include onDesktop {
+    @include on-desktop {
       font-size: 16px;
     }
 
@@ -134,7 +140,7 @@
       transition: width $effect-duration ease;
     }
 
-    &:hover:after {
+    &:hover::after {
       width: 100%;
     }
   }
@@ -149,7 +155,7 @@
     font-size: 14px;
     line-height: 130%;
 
-    @include onTablet {
+    @include on-tablet {
       font-family: Poppins-Regular, serif;
       line-height: 150%;
       text-align: left;
@@ -157,7 +163,7 @@
       width: fit-content;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-area: 3 / 1 / 4 / 6;
       text-transform: capitalize;
       font-size: 18px;
@@ -167,7 +173,7 @@
     &::before {
       display: none;
 
-      @include onDesktop {
+      @include on-desktop {
         display: inline-block;
         content: "Copyright";
       }

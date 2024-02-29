@@ -1,17 +1,18 @@
 .about-brand {
   grid-column: 1 / -1;
-  @include pageGrid;
+
+  @include page-grid;
 
   &__title {
     grid-column: 1 / -1;
     text-transform: uppercase;
     color: $c-green;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 4;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 2 / 6;
       margin-bottom: 40px;
       font-size: 36px;
@@ -21,17 +22,19 @@
 
   &__text {
     grid-column: 1 / -1;
-    @extend %text_small;
+
+    @extend %text-small;
+
     color: $c-black;
     margin-top: 10px;
     margin-bottom: 30px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 4;
       font-size: 16px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 2 / 6;
       margin-top: 0;
     }
@@ -39,7 +42,7 @@
     &--desktop {
       display: none;
 
-      @include onDesktop {
+      @include on-desktop {
         display: block;
         margin-bottom: 40px;
       }
@@ -49,17 +52,19 @@
   &__link {
     grid-column: 1 / -1;
     width: 86px;
-    @extend %text_decorative;
+
+    @extend %text-decorative;
+
     color: $c-green;
     position: relative;
     height: 18px;
     margin-bottom: 10px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 4;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 2 / 6;
     }
 
@@ -75,7 +80,7 @@
       transition: width 0.3s ease;
     }
 
-    &:hover:after {
+    &:hover::after {
       width: 100%;
     }
   }
@@ -83,7 +88,7 @@
   &__image {
     display: none;
 
-    @include onTablet {
+    @include on-tablet {
       display: block;
       grid-area: 1 / 4 / 4 / 7;
       height: 100%;
@@ -93,7 +98,7 @@
       background-size: cover;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-area: 1 / 7 / 5 / 11;
       height: 529px;
       background-image: url("../images/about_brand_desktop.png");
@@ -103,7 +108,7 @@
   &__image-little {
     display: none;
 
-    @include onDesktop {
+    @include on-desktop {
       display: block;
       grid-area: 2 / 11 / 5 / 13;
       background-image: url("../images/about_brand_desktop_2.png");

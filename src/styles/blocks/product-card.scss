@@ -1,30 +1,32 @@
 .product-card {
   grid-column: 1 / -1;
 
-  @include pageGrid;
+  @include page-grid;
 
   &__title {
     grid-column: 1 / -1;
     text-transform: uppercase;
     color: $c-black;
 
-    @include onTablet {
+    @include on-tablet {
       grid-area: 2 / 2 / 3 / 6;
       margin-top: 27px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 4 / 9;
     }
   }
 
   &__price {
     grid-column: 1 / -1;
-    @extend %text_2;
+
+    @extend %text-2;
+
     margin-top: 10px;
     color: $c-black;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 2 / 6;
       margin-top: 25px;
       font-size: 18px;
@@ -33,7 +35,7 @@
       line-height: 150%;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 4 / 9;
     }
   }
@@ -47,14 +49,14 @@
     height: 248px;
     margin-top: 20px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-area: 1 / 2 / 2 / 6;
       height: 440px;
       background-image: url("../images/product_card_tablet.png");
       margin-top: 0;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 4 / 9;
     }
   }
@@ -62,7 +64,7 @@
   &__mass {
     display: none;
 
-    @include onTablet {
+    @include on-tablet {
       display: block;
       grid-column: 2 / 6;
       font-size: 18px;
@@ -72,7 +74,7 @@
       margin-top: 10px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 4 / 9;
     }
   }
@@ -82,12 +84,12 @@
     margin: 30px auto;
     text-transform: uppercase;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 2 / 6;
       margin-bottom: 60px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 4 / 9;
     }
   }
@@ -95,15 +97,17 @@
   &__description {
     grid-column: 1 / -1;
     margin-top: 20px;
-    @extend %text_small;
+
+    @extend %text-small;
+
     color: $c-black;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 2 / 6;
       font-size: 16px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 4 / 9;
     }
   }

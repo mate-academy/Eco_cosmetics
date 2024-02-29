@@ -1,5 +1,5 @@
 .about-creators {
-  @include pageGrid;
+  @include page-grid;
 
   &__title {
     grid-column: 1 / -1;
@@ -7,11 +7,11 @@
     color: $c-green;
     margin-bottom: 10px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 4;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 2 / 6;
       font-size: 36px;
       line-height: 110%;
@@ -21,17 +21,19 @@
 
   &__text {
     grid-column: 1 / -1;
-    @extend %text_small;
+
+    @extend %text-small;
+
     margin-bottom: 20px;
     color: $c-black;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 4;
       margin-bottom: 15px;
       font-size: 16px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 2 / 6;
       margin-bottom: 30px;
     }
@@ -39,11 +41,11 @@
     &--second {
       margin-bottom: 30px;
 
-      @include onTablet {
+      @include on-tablet {
         margin-bottom: 20px;
       }
 
-      @include onDesktop {
+      @include on-desktop {
         margin-bottom: 30px;
       }
     }
@@ -51,7 +53,7 @@
     &--third {
       display: none;
 
-      @include onDesktop {
+      @include on-desktop {
         display: block;
         margin-bottom: 20px;
       }
@@ -62,17 +64,19 @@
     grid-column: 1 / -1;
     display: block;
     width: 86px;
-    @extend %text_decorative;
+
+    @extend %text-decorative;
+
     color: $c-green;
     position: relative;
     margin-bottom: 36px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 4;
       margin-bottom: 41px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 2 / 6;
     }
 
@@ -88,7 +92,7 @@
       transition: width 0.3s ease;
     }
 
-    &:hover:after {
+    &:hover::after {
       width: 100%;
     }
   }
@@ -98,13 +102,13 @@
     margin-left: auto;
     margin-right: auto;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 4;
       margin-left: 0;
       margin-right: 0;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 2 / 6;
     }
   }
@@ -112,7 +116,7 @@
   &__image {
     display: none;
 
-    @include onTablet {
+    @include on-tablet {
       display: block;
       background-image: url("../images/about_creators_tablet.png");
       grid-area: 1 / 4 / 6 / 7;
@@ -122,7 +126,7 @@
       background-size: cover;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-area: 1 / 7 / 7 / 13;
       background-image: url("../images/about_creators_desktop.png");
     }
