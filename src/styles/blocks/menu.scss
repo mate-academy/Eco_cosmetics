@@ -1,0 +1,48 @@
+.menu {
+  background-color: $c-black;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__close {
+    grid-column: 1 / -1;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-image: url("../images/icons/close.svg");
+    margin-bottom: 45px;
+
+    @include hover(transform, scale(1.2));
+
+    @include on-tablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include on-tablet {
+      gap: 50px;
+    }
+  }
+
+  &__link {
+    @extend %h5;
+
+    line-height: 130%;
+    color: $c-off-white;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $c-gray;
+
+    @include hover(color, $c-white)
+  }
+}

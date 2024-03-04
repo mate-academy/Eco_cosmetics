@@ -1,0 +1,59 @@
+.advantages {
+  gap: 50px;
+
+  @include page-grid;
+
+  &__item {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      grid-column: span 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+      gap: 35px;
+    }
+  }
+
+  &__photo {
+    margin-right: auto;
+    margin-left: auto;
+
+    &--first {
+      width: 62px;
+      height: 60px;
+    }
+
+    &--second {
+      width: 100px;
+      height: 84px;
+
+      @include on-tablet {
+        width: 80px;
+        height: 68px;
+      }
+
+      @include on-desktop {
+        width: 100px;
+        height: 84px;
+      }
+    }
+
+    &--third {
+      width: 79px;
+      height: 74px;
+    }
+  }
+
+  &__description {
+    @extend %text-2;
+
+    color: $c-black;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

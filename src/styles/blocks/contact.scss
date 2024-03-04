@@ -1,0 +1,157 @@
+.contact {
+  @include page-grid;
+
+  &__title {
+    grid-column: 1 / -1;
+    color: $c-green;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+      font-size: 36px;
+      line-height: 110%;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+
+    @extend %text-small;
+
+    color: $c-black;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      font-size: 16px;
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    background-color: inherit;
+    outline: none;
+
+    @extend %text-small;
+
+    padding-bottom: 5px;
+    border-bottom: 1px solid $c-gray;
+    color: $c-black;
+    margin-bottom: 25px;
+
+    @include on-tablet {
+      font-family: Poppins-Medium, serif;
+    }
+
+    @include on-desktop {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    &--tel {
+      margin-bottom: 45px;
+
+      @include on-desktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &--message {
+      margin-bottom: 30px;
+      resize: none;
+      height: 27px;
+      overflow: hidden;
+
+      @include on-desktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &::placeholder {
+      color: $c-dark-gray;
+    }
+
+    &:focus {
+      border-color: $c-black;
+
+      &:valid {
+        border-color: $c-green;
+        color: $c-green;
+
+        &::placeholder {
+          color: $c-green;
+        }
+      }
+
+      &:invalid {
+        border-color: red;
+        color: red;
+
+        &::placeholder {
+          color: red;
+        }
+      }
+    }
+  }
+
+  &__button {
+    text-transform: uppercase;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include on-tablet {
+      grid-area: 1 / 4 / 4 / 7;
+      display: block;
+      height: auto;
+      background-image: url("../images/bird_tablet.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @include on-desktop {
+      grid-area: 1 / 7 / 5 / 13;
+      display: block;
+      height: auto;
+      background-image: url("../images/bird_desktop.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}

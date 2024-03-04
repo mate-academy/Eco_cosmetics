@@ -1,0 +1,152 @@
+.header {
+  overflow: hidden;
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+    background-image: url("../images/bottles_mobile.png");
+    width: calc(100% + $inline-padding-mobile);
+    height: 267px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: -20px;
+
+    @include on-tablet {
+      width: 100%;
+      margin-left: 0;
+      height: 500px;
+      background-image: url("../images/bottles_tablet.png");
+    }
+
+    @include on-desktop {
+      grid-area: 2 / 7 / 5 / 13;
+      height: 450px;
+      background-image: url("../images/bottles_desktop.png");
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-top: 25px;
+    text-align: center;
+    color: $c-black;
+
+    @include on-tablet {
+      width: 466px;
+      margin-top: 50px;
+      font-size: 36px;
+      text-transform: capitalize;
+      letter-spacing: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 7;
+      font-size: 60px;
+      margin: 0;
+      line-height: 130%;
+      text-transform: none;
+      text-align: left;
+    }
+  }
+
+  &__text {
+    @extend %text;
+
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    text-align: center;
+    color: $c-black;
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+      margin-top: 30px;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    grid-column: 1 / -1;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+      margin-left: 0;
+    }
+  }
+
+  &__subtitle {
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+    margin-top: 100px;
+    color: $c-green;
+    width: 280px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+
+    @include on-tablet {
+      margin-top: 130px;
+      text-align: center;
+    }
+
+    @include on-desktop {
+      margin-top: 306px;
+      grid-column: 7 / 11;
+      text-align: left;
+      margin-inline: 0;
+      margin-bottom: 131px;
+    }
+
+    &::after {
+      content: "";
+      display: none;
+      position: absolute;
+      bottom: -131px;
+      left: 0;
+      height: 1px;
+      width: 711px;
+      background-color: $c-green;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__description {
+    display: none;
+    color: $c-black;
+    position: relative;
+
+    @extend %text;
+
+    @include on-desktop {
+      display: block;
+      grid-area: 5 / 2 / 6 / 6;
+      margin-top: 301px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -100px;
+      right: 0;
+      height: 1px;
+      width: 610px;
+      background-color: $c-green;
+    }
+  }
+}

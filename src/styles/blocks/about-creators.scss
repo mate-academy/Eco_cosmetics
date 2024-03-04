@@ -1,0 +1,134 @@
+.about-creators {
+  @include page-grid;
+
+  &__title {
+    grid-column: 1 / -1;
+    text-transform: uppercase;
+    color: $c-green;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+      font-size: 36px;
+      line-height: 110%;
+      margin-bottom: 34px;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+
+    @extend %text-small;
+
+    margin-bottom: 20px;
+    color: $c-black;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+      margin-bottom: 30px;
+    }
+
+    &--second {
+      margin-bottom: 30px;
+
+      @include on-tablet {
+        margin-bottom: 20px;
+      }
+
+      @include on-desktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--third {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__link {
+    grid-column: 1 / -1;
+    display: block;
+    width: 86px;
+
+    @extend %text-decorative;
+
+    color: $c-green;
+    position: relative;
+    margin-bottom: 36px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-bottom: 41px;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -10px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $c-green;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      background-image: url("../images/about_creators_tablet.png");
+      grid-area: 1 / 4 / 6 / 7;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    @include on-desktop {
+      grid-area: 1 / 7 / 7 / 13;
+      background-image: url("../images/about_creators_desktop.png");
+    }
+  }
+}

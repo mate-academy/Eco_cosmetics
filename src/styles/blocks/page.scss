@@ -1,0 +1,76 @@
+.page {
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    background-color: $c-off-white;
+  }
+
+  &__header {
+    padding-top: 15px;
+
+    @include on-tablet {
+      padding-top: 23px;
+    }
+
+    @include on-desktop {
+      padding-top: 40px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all $effect-duration;
+    transform: translateX(-100%);
+    padding-top: 20px;
+
+    @include on-tablet {
+      padding-top: 28px;
+    }
+
+    &:target {
+      opacity: 1;
+      left: 0;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__main {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @include on-tablet {
+      padding-top: 130px;
+      padding-bottom: 130px;
+    }
+
+    @include on-desktop {
+      padding-top: 200px;
+    }
+  }
+
+  &__footer {
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      padding-bottom: 30px;
+    }
+
+    @include on-desktop {
+      padding-top: 60px;
+      padding-bottom: 62px;
+    }
+  }
+}

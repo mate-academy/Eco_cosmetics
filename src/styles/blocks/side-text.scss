@@ -1,0 +1,32 @@
+.side-text {
+  display: none;
+
+  @extend %text-decorative;
+
+  color: $c-light-green;
+  position: relative;
+
+  @include on-desktop {
+    display: block;
+    grid-area: 1 / 1 / 5 / 2;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin-right: auto;
+    margin-bottom: auto;
+  }
+
+  &::after {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      position: absolute;
+      content: "";
+      height: 100px;
+      width: 1px;
+      background-color: $c-light-green;
+      left: 9px;
+      top: -110px;
+    }
+  }
+}
