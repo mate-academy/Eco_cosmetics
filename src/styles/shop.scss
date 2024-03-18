@@ -1,0 +1,196 @@
+.shop {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__wrapper {
+    @include pageGrid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    text-align: center;
+    @include mainTitle;
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+      text-align: left;
+    }
+  }
+
+  &__tabs {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 34px;
+    margin: 20px 0 27px;
+
+    @include onTablet {
+      grid-column: 1 /  4;
+      gap: 14px;
+      margin: 10px 0 37px;
+      justify-content: start;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 5;
+      margin: 30px 0 62px;
+    }
+  }
+
+  &__tab {
+    position: relative;
+    font-weight: 400;
+    letter-spacing: 0.7px;
+    color: $c-light-grey2;
+    background-color: inherit;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0;
+
+    @include onDesktop {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      letter-spacing: 0.9px;
+    }
+
+    &-active {
+      color: $c-dark-grey;
+      border-color: $c-dark-grey;
+    }
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: $c-green;
+
+      transition: transform $effectDuration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after, &-active::after {
+      transform: scale(1);
+    }
+
+    &:hover {
+      color: $c-dark-grey;
+      border-color: $c-dark-grey;
+    }
+  }
+
+
+  &__product__cart {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+      margin: 0 -50px 0 0;
+    }
+
+    &-2 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: 4 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 8 / -1;
+        margin: 0 0 0 -50px;
+      }
+    }
+
+  &__bg {
+    display: flex;
+    margin: 0 -20px;
+    height: 267px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include hover(transform, scale(0.93));
+
+    &-oil {
+      background-image: url(../images/bg/shop-bg.png);
+    }
+
+    &-ubtan {
+      background-image: url(../images/bg/shop-bg-2.png);
+    }
+
+    @include onTablet {
+      margin: 0;
+      height: 300px;
+      @include hover(transform, scale(1.2));
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+  }
+
+  &__content {
+    text-transform: uppercase;
+    color: $c-dark-grey;
+
+    &-text {
+      margin: 20px 0 10px;
+      @extend %h5;
+
+      @include onTablet {
+        margin: 20px 0 15px;
+      }
+
+      @include onDesktop {
+        margin: 20px 0 13px;
+      }
+    }
+
+    &-price {
+      margin: 0 0 30px;
+      @extend %text3;
+
+      @include onTablet {
+        margin: 0 0 50px;
+      }
+
+      @include onDesktop {
+        margin: 0 0 40px;
+      }
+    }
+  }
+}
+
+  &__button {
+    @include pageButton;
+    grid-column: 1 / -1;
+    margin: 0 auto;
+
+    @include onTablet {
+      grid-column: 3 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 9;
+    }
+  }
+}

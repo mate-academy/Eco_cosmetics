@@ -1,0 +1,51 @@
+.menu {
+  background-color: $c-dark-grey;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+
+  &__header {
+    padding-top: 20px;
+  }
+
+  &__icon {
+    display: block;
+    background-image: url(../images/icons/close.svg);
+    width: 15px;
+    height: 15px;
+  }
+
+  &__nav {
+    margin-top: 60px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding-bottom: 40px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    color: $c-biege;
+    width: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 100%;
+      bottom: -10px;
+      @extend %menu-nav;
+      background-color: $c-biege;
+    }
+  }
+}

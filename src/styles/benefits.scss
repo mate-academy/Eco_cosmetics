@@ -1,0 +1,88 @@
+.benefits {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__wrapper {
+    @include pageGrid;
+    row-gap: 50px;
+  }
+}
+
+.benefit {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @include onDesktop {
+    grid-column: span 4;
+  }
+
+  &__icon {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include hover(transform, scale(1.2));
+
+    @include onTablet {
+      height: 75px;
+    }
+
+    @include onDesktop {
+      height: 84px;
+    }
+
+    &-bird {
+      background-image: url(../images/bird-mb.png);
+      width: 62px;
+      height: 60px;
+
+      @include onTablet {
+      width: 80px;
+      height: 60px;
+      }
+    }
+
+    &-recycle {
+      background-image: url(../images/recycle-mb.png);
+      width: 100px;
+      height: 84px;
+
+      @include onTablet {
+        width: 80px;
+        height: 68px;
+      }
+    }
+
+    &-leaves {
+      background-image: url(../images/leaves-mb.png);
+      width: 79px;
+      height: 74px;
+
+      @include onTablet {
+        width: 80px;
+        height: 75px;
+      }
+    }
+  }
+
+  &__text {
+    margin: 20px 0 0 0;
+    @extend %text2;
+    text-transform: uppercase;
+    color: $c-black;
+    text-align: center;
+
+    @include onDesktop {
+      margin: 40px 0 0 0;
+    }
+  }
+}

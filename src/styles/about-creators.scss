@@ -1,0 +1,109 @@
+.about-creators {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__wrapper {
+    @include pageGrid;
+  }
+
+  &__title {
+    grid-column: span 2;
+    @include mainTitle;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 5;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    @extend %small-text;
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &:first-child {
+      margin: 10px 0 20px;
+
+      @include onTablet {
+        margin: 10px 0 15px;
+      }
+
+      @include onDesktop {
+        margin: 34px 0 30px;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:nth-child(3) {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__link {
+    @include learnMore;
+  }
+
+  &__button {
+    @include pageButton;
+    margin: 0 auto;
+    margin-top: 25px;
+
+    @include onTablet {
+      margin: 30px 0 0;
+    }
+
+    @include onDesktop {
+      margin: 40px 0 0;
+    }
+  }
+
+  &__photo {
+    background-image: url(../images/about-creators-photo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+      @include onTablet {
+        grid-column: -4 / -1;
+        grid-row: 1;
+        width: 342px;
+        height: 440px;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+        width: 580px;
+        height: 659px;
+      }
+  }
+}

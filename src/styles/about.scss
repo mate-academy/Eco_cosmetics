@@ -1,0 +1,103 @@
+.about {
+  &__wrapper {
+    @include pageGrid;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / -4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / span 4;
+    }
+  }
+
+  &__aside-text {
+    @include aside-text;
+  }
+
+  &__title {
+    @include mainTitle;
+
+    @include onDesktop {
+      padding: 0 0 40px;
+    }
+  }
+
+  &__text {
+    margin: 10px 0 30px;
+    @extend %small-text;
+    color: $c-dark-grey;
+
+    &-hidden {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    @include onTablet {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0;
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__link {
+    @include learnMore;
+  }
+
+  &__photo {
+    @include onTablet {
+      grid-column: -4 / -1;
+      background-image: url(../images/choose-photo.png);
+      height: 321px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      @include hover(transform, scale(1.2));
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      background-image: url(../images/choose-photo-dt.png);
+      height: 529px;
+    }
+
+    &-small {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        align-self: end;
+        grid-column: span 2;
+        height: 430px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-image: url(../images/choose-photo-dt-small.png);
+        @include hover(transform, scale(1.2));
+      }
+    }
+  }
+
+}

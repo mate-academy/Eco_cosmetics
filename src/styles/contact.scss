@@ -1,0 +1,155 @@
+.contacts {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__wrapper {
+    @include pageGrid;
+  }
+
+  &__title {
+    grid-column: span 2;
+    @include mainTitle;
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__help {
+    margin: 10px 0 30px;
+    grid-column: span 2;
+    @extend %small-text;
+    color: $c-dark-grey;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      margin: 30px 0 40px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+
+    &--input,
+    &--textarea {
+      padding: 0;
+      padding-bottom: 5px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      background-color: $c-biege;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $c-grey-m;
+      margin-top: 25px;
+
+      &:first-child {
+        margin-top: 30px;
+
+        @include onTablet {
+          margin: 0;
+        }
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+        line-height: 27px;
+        padding-bottom: 10px;
+        margin-top: 30px;
+      }
+
+      &:focus {
+        border-bottom-color: $c-dark-grey;
+      }
+
+      &:valid {
+        color: $c-green;
+        border-bottom-color: $c-green;
+      }
+
+      &:not(:focus, :placeholder-shown):invalid {
+        color: #EB5757;
+        border-bottom-color: #EB5757;
+      }
+
+    &--textarea {
+      height: 21px;
+      padding-bottom: 5px;
+      resize: none;
+      margin-top: 45px;
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        height: 27px;
+        padding-bottom: 10px;
+        margin-top: 60px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+    &--button {
+      outline: none;
+      border: none;
+      @include pageButton;
+      margin: 0 auto;
+
+      @include onTablet {
+        margin: 0;
+      }
+    }
+  }
+
+  &__photo {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include onTablet {
+      grid-column: -4 / -1;
+      grid-row: 1 / 4;
+      background-image: url(../images/contacts-photo.png);
+      width: 342px;
+      height: 407px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      width: 580px;
+      height: 539px;
+    }
+  }
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: $c-biege;
+  color: $c-green;
+  border-bottom-color: $c-green;
+}
+}
+

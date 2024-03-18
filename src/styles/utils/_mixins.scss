@@ -1,6 +1,240 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktopBig {
+  @media (min-width: $desktop-big-min-width) {
+    @content;
+  }
+}
+
+@mixin constentPaddingInline () {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop {
+    padding-inline: 50px;
+  }
+
+  @include onDesktopBig {
+    padding-inline: 130px;
+    margin-inline: auto;
+    max-width: 1440px;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effectDuration;
+
+  &:hover {
+    z-index: 1;
+    #{$property}: $toValue;
+  }
+}
+
+@mixin focus($property, $toValue) {
+  transition: #{$property} $effectDuration;
+
+  &:focus {
+    z-index: 1;
+    #{$property}: $toValue;
+  }
+}
+
+@mixin hoverFocus {
+  @include hover(background-color, $main-hover-button-color);
+  @include focus(background-color, $main-focus-button-color);
+}
+
+@mixin pageButton {
+  // margin: 0 auto;
+  display: flex;
+  width: 280px;
+  text-align: center;
+  justify-content: center;
+  background-color: $c-dark-grey;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 20.8px;
+  cursor: pointer;
+  transition: all $effectDuration;
+
+  &--link {
+    display: block;
+    padding: 19px 0 20px;
+    color: $c-light-grey;
+    letter-spacing: 2.4px;
+    text-decoration: none;
+
+    &:hover {
+      color: $c-dark-grey;
+    }
+  }
+
+  &:hover {
+    background-color: $c-biege;
+    outline: 1px solid $c-dark-grey;
+  }
+}
+
+@mixin wrapperGrid {
+  --colums: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--colums), 1fr);
+
+  @include onTablet {
+    --colums: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --colums: 12;
+    column-gap: 20px;
+    max-width: 1440px;
+  }
+}
+
+@mixin pageGrid {
+  --colums: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--colums), 1fr);
+  // row-gap: 100px;
+
+  @include onTablet {
+    --colums: 6;
+    column-gap: 30px;
+    // row-gap: 130px;
+  }
+
+  @include onDesktop {
+    --colums: 12;
+    column-gap: 20px;
+    // row-gap: 200px;
+    max-width: 1440px;
+  }
+}
+
+@mixin mainTitle {
+    @extend %h4;
+    text-transform: uppercase;
+    color: $c-green;
+
+    @include onDesktop {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+    }
+}
+
+@mixin mainTitleDesktop {
+  @extend %h2;
+  text-transform: uppercase;
+  color: $c-green;
+}
+
+@mixin learnMore {
+  display: block;
+  width: max-content;
+  padding-bottom: 10px;
+  @extend %decorative-text;
+  text-decoration: none;
+  color: $c-green;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $c-green;
+    transition: width $effectDuration ease;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+
+@mixin aside-text {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    gap: 10px;
+    margin: 0;
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: $c-green;
+    opacity: 0.5;
+    transform-origin: top right;
+    transform: translateX(-100%) rotate(-90deg);
+
+    &::before {
+      content: "";
+      width: 100px;
+      height: 1px;
+      background: $c-green;
+    }
+  }
+}
+
+.nav {
+  &__link {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  font-size: 22px;
+  letter-spacing: 2px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+
+    transition: transform $effectDuration;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+ }
+}
+
+
+@keyframes changeColor {
+  0% {
+    color: $c-dark-grey;
+  }
+  100% {
+    color: $c-biege;
+}
 }

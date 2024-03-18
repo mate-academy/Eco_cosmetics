@@ -1,0 +1,124 @@
+.header {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+
+  &__top {
+    margin: 15px 0 20px;
+
+    @include onTablet {
+    margin: 23px 0 30px;
+    }
+
+    &-org {
+      @include onDesktop {
+        @include pageGrid;
+        margin: 40px 0 81px;
+      }
+    }
+
+    &__logo {
+      display: flex;
+      height: 24px;
+      width: 24px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+
+      @include hover(transform, scale(1.2));
+
+      &-menu {
+        background-image: url(../images/icons/menu.png);
+
+        &-org {
+          @include onDesktop {
+            display: none;
+          }
+        }
+      }
+
+      &-logo {
+        position: relative;
+        grid-row: 1;
+        grid-column: 1 / 5;
+        background-image: url(../images/icons/logo.png);
+
+        &-org {
+          @include onDesktop {
+            height: 50px;
+            width: 50px;
+          }
+        }
+      }
+
+      &-text {
+        margin: 0;
+        display: none;
+        text-transform: uppercase;
+        @extend %text2;
+        color: $c-green;
+
+        @include onDesktop {
+          margin-left: 60px;
+          grid-row: 1;
+          grid-column: 1 / 5;
+          display: block;
+        }
+      }
+
+      &-shop {
+        background-image: url(../images/icons/shop.png);
+
+        &-org {
+          @include onDesktop {
+            grid-column: 12;
+            justify-self: end;
+            background-image: url(../images/icons/shop-dt.png);
+            height: 32px;
+            width: 32px;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__bottom {
+    grid-column: 1 / -1;
+    margin: 0 -20px;
+    padding: 0;
+    height: 267px;
+    margin-bottom: 30px;
+
+
+    background-image: url(../images/bg/header-bg-2x.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include hover(transform, scale(0.93));
+
+    @include onTablet {
+      grid-column: span 6;
+      margin: 0;
+      height: 500px;
+      margin-bottom: 50px;
+      @include hover(transform, scale(1.2));
+
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      height: 451px;
+      margin-bottom: 0;
+    }
+  }
+}

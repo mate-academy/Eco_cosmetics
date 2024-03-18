@@ -1,0 +1,114 @@
+.ayuverdic-tooth {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+ &__wrapper {
+  @include pageGrid;
+ }
+
+  &__title {
+    grid-column: 1 / -1;
+    @include mainTitle;
+
+    @include onTablet {
+      grid-row: 1;
+      grid-column: 1 / 4;
+      margin-left: -5px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__powder {
+    grid-column: span 1;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      width: 97px;
+      grid-row: 1;
+      grid-column: 3;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 7;
+    }
+
+    &__photo {
+      grid-column: 2;
+      margin: 21px -20px 0 0;
+      width: 182px;
+      height: 397px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(../images/jar-mb.png);
+
+
+      @include onTablet {
+        grid-row: 1;
+        grid-column: 4 / -1;
+        width: 398px;
+        margin: 14px -27px 0 0;
+        background-image: url(../images/jar-tb.png);
+      }
+
+      @include onDesktop {
+        grid-column: 8 / -1;
+        width: 480px;
+        margin: 0;
+        background-image: url(../images/jar-dt.png);
+      }
+    }
+
+    &__list {
+      list-style-type: none;
+      text-align: right;
+      margin: 0;
+      padding: 0;
+
+      & li:first-child {
+        margin-top: 58px;
+
+        @include onTablet {
+          margin-top: 52px;
+        }
+
+        @include onDesktop {
+          margin-top: 35px;
+        }
+      }
+
+        & li:nth-child(2),
+        & li:nth-child(4) {
+          margin-top: 52px;
+        }
+
+        & li:nth-child(3),
+        & li:nth-child(5) {
+          margin-top: 49px;
+        }
+    }
+ }
+ &__link {
+   @include learnMore;
+   margin-top: 30px;
+
+  @include onTablet {
+   margin-top: -30px;
+  }
+
+  @include onDesktop {
+    grid-column: 2;
+  }
+  }
+}
+
