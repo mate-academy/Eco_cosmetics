@@ -1,0 +1,181 @@
+.shop {
+  margin-bottom: 100px;
+
+  &__content {
+    @include onDekstop {
+      @include pageGrid;
+      position: relative;
+    }
+  }
+
+  &__mini-title {
+    display: none;
+
+    @include onDekstop {
+      display: block;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: $light-green;
+      position: absolute;
+      left: -17%;
+      top: 50%;
+    }
+  }
+
+  &__wrapper {
+    @include onDekstop {
+      grid-column: 2 / 13
+    }
+  }
+
+  &__cards {
+    overflow: hidden;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+
+  &__photo {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 268px;
+    margin-bottom: 20px;
+    animation: photoSize 1s;
+
+    @include scalePhoto(0.9);
+
+    &--oil {
+      background-image: url(../images/shop-foto.svg);
+    }
+
+    &--ubtah {
+      background-image: url(../images/third_block-image2.svg);
+    }
+
+    &--avocado {
+      background-image: url(../images/shop_image_6.jpeg);
+    }
+
+    &--green {
+      background-image: url(../images/shop_image_5.jpeg);
+    }
+
+    &--lemon {
+      background-image: url(../images/shop_image_1.jpeg);
+    }
+
+    &--stone {
+      background-image: url(../images/shop_image_2.jpeg);
+    }
+
+    &--candle-first {
+      background-image: url(../images/shop_image_8.jpeg);
+    }
+
+    &--candle-second {
+      background-image: url(../images/shop_image_9.jpeg);
+    }
+
+    @include onTablet {
+      height: 300px;
+    }
+
+    @include onDekstop {
+      height: 500px;
+    }
+  }
+
+  &__card {
+    width: 100%;
+
+    &:nth-of-type(2) {
+      display: none;
+
+      @include onTablet {
+      display: block;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0;
+
+    @include onTablet {
+      gap: 34px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__item {
+    position: relative;
+    list-style: none;
+    color: $dark-grey;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 27px;
+  }
+
+  &__item--active {
+    color: $main-black;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -10px;
+      height: 2px;
+      width: 100%;
+      background-color: $main-black;
+
+      transition: transform 0.3s;
+      transform: scale(1);
+      transform-origin: left;
+    }
+  }
+
+  &__description {
+    color: $main-black;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  &__paragraph {
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    font-weight: 500;
+  }
+}
+
+.hidden {
+  display: none;
+}

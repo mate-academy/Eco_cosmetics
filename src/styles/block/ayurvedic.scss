@@ -1,0 +1,232 @@
+.ayurvedic {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDekstop {
+    padding-inline: 50px;
+  }
+
+  @include onDekstopXL {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 130px;
+    margin-bottom: 200px
+  }
+
+  &__wrappers {
+    @include onDekstop {
+      @include pageGrid;
+      position: relative;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      position: relative;
+      margin-bottom: 130px;
+    }
+
+    @include onDekstop {
+      grid-column: 2 / 13;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__title {
+    padding-inline: 20px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      position: absolute;
+      margin: 0;
+      padding-left: 27px;
+      width: 342px;
+    }
+
+    @include onDekstop {
+      padding-left: 0;
+      width: 380px;
+    }
+  }
+
+  &__link {
+    @include onTablet {
+      position: absolute;
+      padding-left: 27px;
+      top: 91%;
+    }
+
+    @include onDekstop {
+      top: 85%;
+      padding-left: 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    list-style: none;
+    padding: 37px 0 40px 20px;
+
+    @include onDekstop {
+      gap: 40px;
+      padding-top: 57px;
+    }
+  }
+
+  &__item {
+    text-align: end;
+    font-weight: 400;
+    line-height: 150%;
+    color: $main-black;
+  }
+
+  &__bottle {
+    background-image: url(../images/bottle-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+
+    width: 182px;
+    height: 400px;
+
+    @include onTablet {
+      background-image: url(../images/bottle-tablet.svg);
+      width: 398px;
+      height: 400px;
+    }
+
+    @include onDekstop {
+      background-image: url(../images/big-bottle.svg);
+    }
+  }
+
+  &__benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__benefit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDekstop {
+      grid-column: span 4;
+    }
+  }
+
+  &__icon-bird {
+    background-image: url(../images/dead-bird.svg);
+    width: 64px;
+    height: 64px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onTablet {
+      width: 82px;
+      height: 68px;
+      background-image: url(../images/snail-tablet.svg);
+    }
+
+    &:hover {
+      animation: goWalk 3s ease-in-out infinite;
+    }
+  }
+
+  &__icon-recycled {
+    background-image: url(../images/danger-mob.svg);
+    width: 100px;
+    height: 82px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform .7s ease-in-out;
+
+    @include onTablet {
+      width: 80px;
+      height: 68px;
+    }
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+
+  }
+
+  &__icon-leaves {
+    background-image: url(../images/leaves-mob.svg);
+    width: 80px;
+    height: 74px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onTablet {
+      height: 68px;
+      // background-image: url(../images/liaveas.tablet.svg);
+    }
+
+    &:hover {
+      animation: wiggle 2s linear infinite;
+    }
+  }
+
+  &__description {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    &--padding {
+      @include onTablet {
+        padding: 0 0 17px;
+      }
+    }
+  }
+
+  &__mini-title {
+    display: none;
+
+    @include onDekstop {
+      display: block;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: $light-green;
+      position: absolute;
+      left: -30%;
+      top: 40%;
+    }
+  }
+}

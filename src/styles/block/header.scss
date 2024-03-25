@@ -1,0 +1,153 @@
+.header {
+  &__content {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDekstop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include onDekstop {
+      @include pageGrid;
+      padding-inline: 50px;
+    }
+
+    @include onDekstopXL {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: 130px;
+    }
+  }
+
+  &__photos {
+    @include onTablet {
+      padding-inline: 27px;
+    }
+
+    @include onDekstop {
+      grid-column: 7 / 13;
+      padding-inline: 0;
+    }
+  }
+
+  &__photo {
+    background-image: url(../images/main-image.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 268px;
+    width: 100%;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      height: 500px;
+      margin-bottom: 50px;
+      @include scalePhoto(1.05);
+    }
+
+    @include onDekstop {
+      // height: 450px;
+      height: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__bottom {
+    @include onDekstop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__title {
+    color: $main-black;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin: auto;
+      width: 466px;
+      font-size: 36px;
+      line-height: 150%;
+      text-transform: capitalize;
+    }
+
+    @include onDekstop {
+      margin: 0;
+      width: 100%;
+      font-size: 60px;
+      line-height: 130%;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDekstop {
+      text-align: left;
+    }
+  }
+
+  &__button {
+    // @include paddingInline;
+    padding-inline: 20px;
+
+    @include onTablet {
+      padding-inline: 0;
+    }
+
+    @include onDekstop {
+      margin: auto;
+      padding-inline: 0;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDekstop {
+      display: block;
+    }
+  }
+
+  &__logo-description {
+    text-decoration: none;
+
+    &::after {
+      content: "witch of mountain winds";
+      display: block;
+      width: max-content;
+      position: relative;
+      transform: translate(24%, -50%);
+      top: 50%;
+      padding-left: 12px;
+
+      color: $dark-green;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+  }
+}

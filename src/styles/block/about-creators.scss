@@ -1,0 +1,103 @@
+.about-creators {
+  margin-bottom: 100px;
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-height: 440px;
+    margin-bottom: 30px;
+  }
+
+  &__paragraph {
+    &--hidden {
+      display: none;
+
+      @include onDekstop {
+        display: contents;
+      }
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDekstop {
+      position: relative;
+    }
+  }
+
+  &__top {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDekstop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / 7;
+    }
+
+    @include onDekstop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__photo {
+    background-image: url(../images/bird__photo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    @include scalePhoto(1.1);
+  }
+
+  &__button {
+    @include onTablet {
+      @include pageGrid;
+      place-items: right;
+    }
+  }
+
+  &__link-btn {
+    @include onTablet {
+      width: 280px;
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__mini-title {
+    display: none;
+
+    @include onDekstop {
+      display: block;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: $light-green;
+      position: absolute;
+      left: -40%;
+      top: 40%;
+    }
+  }
+
+}

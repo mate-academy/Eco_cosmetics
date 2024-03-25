@@ -1,0 +1,73 @@
+.main {
+  &__vertical-lines {
+    @include onDekstop {
+      position: relative;
+    }
+
+  }
+
+  &__wrapper {
+    @include onDekstop {
+      @include pageGrid;
+      margin-bottom: 200px;
+      padding: 100px 0;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    color: $dark-green;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      width: 280px;
+      margin: auto;
+      margin-bottom: 130px;
+    }
+
+    @include onDekstop {
+      letter-spacing: 1.2px;
+      font-size: 24px;
+      width: 380px;
+      margin: 0;
+      padding: 5px 0;
+      grid-column: 7 / 11;
+    }
+  }
+
+  &__paragraph {
+    display: none;
+
+    @include onDekstop {
+      display: inline-block;
+      grid-column: 2 / 6;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: #344f10;
+      position: absolute;
+      width: 50%;
+      bottom: 0;
+      right: 0;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      margin-bottom: 15px;
+      height: 1px;
+      background-color: #344f10;
+      position: absolute;
+      width: 44%;
+      top: 0;
+      left: 0;
+    }
+  }
+}

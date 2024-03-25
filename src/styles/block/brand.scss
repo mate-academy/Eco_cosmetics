@@ -1,0 +1,111 @@
+.brand {
+  margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDekstop {
+      position: relative;
+    }
+  }
+
+  &__top {
+    grid-column: 1 / 4;
+
+    @include onDekstop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__bottom {
+    display: none;
+    height: 100%;
+
+    @include onTablet {
+      display: contents;
+    }
+
+    @include onDekstop {
+      position: relative;
+    }
+  }
+
+  &__photo-main {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/vosk.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include scalePhoto(0.9);
+
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onDekstop {
+      background-image: url(../images/moonlight-desktop.svg);
+      grid-column: 7 / 11;
+    }
+  }
+
+  &__photo-second {
+    display: none;
+    height: 430px;
+    width: 100%;
+    background-image: url(../images/moonlight-mini-desrtop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include scalePhoto(0.9);
+
+    position: absolute;
+    bottom: 0;
+
+    @include onDekstop {
+      display: block;
+      grid-column: 11 / 13;
+    }
+  }
+
+  &__mini-title {
+    display: none;
+
+    @include onDekstop {
+      display: block;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 1px;
+      background-color: $light-green;
+      position: absolute;
+      left: -55%;
+      top: 50%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+
+    &--hidden {
+      display: none;
+
+      @include onDekstop {
+        display: block;
+      }
+    }
+  }
+}

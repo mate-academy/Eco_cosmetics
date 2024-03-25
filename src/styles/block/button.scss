@@ -1,0 +1,58 @@
+.button {
+  @include onTablet {
+    @include pageGrid;
+    place-items: center;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-block: 20px;
+    width: 100%;
+
+    background-color: $main-black;
+    color: $light-grey;
+    border: 1px solid $main-black;
+
+    text-align: center;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.5s;
+
+    &:hover {
+      @include hover(box-shadow, 1px 4px 16px 0 rgba(51, 51, 51, 0.7));
+      @include hover(background-color, $main-color);
+      animation: jumps 1s infinite;
+      color: $main-black;
+      border-radius: 15px;
+    }
+
+    @include onTablet {
+      width: 280px;
+      grid-column: 2 / 6;
+    }
+
+    @include onDekstop {
+      grid-column: 1 / 1;
+    }
+
+    &--creators {
+      @include onTablet {
+        width: 280px;
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--contacts {
+      @include onTablet {
+        width: 280px;
+        grid-column: 1 / 4;
+      }
+    }
+  }
+}

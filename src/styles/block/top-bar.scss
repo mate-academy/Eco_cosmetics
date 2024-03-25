@@ -1,0 +1,41 @@
+.top-bar {
+  @include onDekstop {
+    margin-bottom: 82px;
+  }
+
+  &__icons {
+    padding: 15px 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    animation: fade-in-from-top 0.6s;
+
+    @include onDekstop {
+      @include pageGrid;
+      padding: 40px 0 0;
+    }
+  }
+
+  &__left {
+    @include onDekstop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__center {
+    @include onDekstop {
+      grid-column: 7 / 10;
+    }
+  }
+
+  &__right {
+    @include onDekstop {
+      grid-column: 12 / 13;
+
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
