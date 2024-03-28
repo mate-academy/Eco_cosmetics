@@ -1,0 +1,207 @@
+.header {
+  margin-bottom: 100px;
+
+  @include on-tablet {
+    margin-bottom: 130px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 200px;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 20px 0;
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+
+    transition: 0.4s ease;
+
+    &:hover {
+      transform: scale(120%);
+    }
+  }
+
+
+.menu {
+  @include on-desktop {
+    display: none;
+  }
+}
+
+.logo {
+  display: flex;
+  width: fit-content;
+  gap: 12px;
+  text-decoration: none;
+
+  .logo-size {
+    @include on-desktop {
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  &-text {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      color: $text-color-main;
+      font-size: 14px;
+      line-height: 340%;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+  }
+}
+
+  &__hide {
+    display: none;
+    opacity: 0;
+
+    &-link {
+      text-decoration: none;
+      color: $text-color-main;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+
+      transition: 0.4s ease;
+
+      &:hover {
+        color: rgba(51, 51, 51, 0.62);
+        transform: scale(110%);
+      }
+    }
+
+    @include on-desktop {
+      display: flex;
+      opacity: 1;
+      gap: 40px;
+    }
+  }
+}
+
+.header-content {
+  @include page-grid;
+}
+
+.bg {
+  width: 100%;
+  grid-row: 1;
+
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: span 6;
+  }
+
+  @include on-desktop {
+    grid-column: 7 / -1;
+    padding-inline: 0;
+  }
+
+  @include on-desktop-big {
+    grid-column: 7 / -1;
+  }
+}
+
+.header-bottom {
+  margin: 25px 0 0;
+
+  @include page-grid;
+
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: 2 / -2;
+  }
+
+  @include on-desktop {
+    grid-column: 2 / 6;
+    padding-inline: 0;
+  }
+
+  &__title {
+    text-align: center;
+    color: $text-color-second;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 130%;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      font-size: 36px;
+      line-height: 150%;
+      grid-column: 1 / -1;
+    }
+
+    @include on-desktop {
+      text-align: left;
+      font-size: 60px;
+      line-height: 130%;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__subtitle {
+    color: $text-color-second;
+    text-align: center;
+    font-size: 16px;
+    line-height: 150%;
+    margin: 10px 0 30px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+    }
+
+    @include on-desktop {
+      text-align: left;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__button {
+    height: 60px;
+    background-color: $text-color-second;
+    border: none;
+
+    color:#F2F2F2;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+
+    transition: 0.4s ease;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 9;
+    }
+
+    &:hover {
+      color: $text-color-second;
+      background-color: #E4DFD3;
+      border: 1px solid $text-color-second;
+      transform: scale(110%);
+    }
+  }
+}
+

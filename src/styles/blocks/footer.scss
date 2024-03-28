@@ -1,0 +1,166 @@
+.footer {
+  background-color: $footer-backround;
+
+  &__place {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: $c-gray;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+  }
+
+  &__content {
+    @include on-tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include on-desktop {
+      padding-bottom: 62px;
+    }
+  }
+
+  &__nav {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    @include on-desktop {
+      padding-top: 60px;
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    @include on-tablet {
+      gap: 15px;
+    }
+
+    &-items {
+      color: $c-gray;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      text-align: left;
+
+      transition: 0.4s linear;
+
+      &:hover {
+        color: #e4dfd38a;
+      }
+
+      @include on-tablet {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21px;
+      }
+
+      @include on-desktop {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+      }
+    }
+
+    &-icons {
+      display: flex;
+      gap: 20px;
+
+      &:hover {
+        transform: scale(120%);
+      }
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    &-icon {
+      text-decoration: none;
+    }
+
+    &-copy {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+
+    color: $c-gray;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: left;
+
+    @include on-desktop {
+      margin-top: 61px;
+      gap: 19px;
+
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &-link {
+      color: $c-gray;
+      text-decoration: none;
+    }
+
+    &-icons {
+      display: flex;
+      gap: 14px;
+    }
+  }
+
+  &__copy {
+    padding: 40px 0;
+
+    color: $c-gray;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.2px;
+    text-align: center;
+
+    @include on-tablet {
+      padding: 50px 0 30px;
+
+      font-weight: 400;
+      line-height: 21px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__hover {
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(120%);
+    }
+  }
+
+  .telephone:hover {
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      color: rgba(0, 0, 255, 0.78);
+    }
+  }
+}
+
+
