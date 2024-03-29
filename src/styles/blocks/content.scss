@@ -640,6 +640,22 @@
     }
   }
 
+  .button-link {
+    @include page-grid;
+
+    text-decoration: none;
+
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop{
+      grid-column: 1 / 10;
+    }
+  }
+
   &__button {
     grid-column: span 2;
 
@@ -863,6 +879,14 @@
    gap: 20px;
   }
 
+  &__image {
+    transition: 0.4s ease-in;
+
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+
   &__text {
     font-size: 14px;
     line-height: 18.2px;
@@ -981,12 +1005,12 @@
       border-bottom: 1px solid black;
     }
 
-    &:invalid {
+    &:focus:invalid {
       color: $error;
       border-bottom: 1px solid $error;
     }
 
-    &:valid {
+    &:focus:valid {
       color: $text-color-main;
       border-bottom: 1px solid $text-color-main;
     }
