@@ -36,7 +36,15 @@
 // Description start
 
 .description {
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+
+  @include on-tablet {
+    margin-bottom: 130px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 200px;
+  }
 
   @include page-grid;
 
@@ -1074,8 +1082,6 @@
 
     transition: 0.4s ease;
 
-    grid-column: span 2;
-
     &:hover {
       color: $text-color-second;
       background-color: $c-gray;
@@ -1084,12 +1090,10 @@
     }
 
     @include on-tablet {
-      grid-column: 1 / 6;
+      width: 280px;
     }
 
     @include on-desktop {
-      grid-column: 1 / 8;
-
       margin-top: 50px;
     }
   }
