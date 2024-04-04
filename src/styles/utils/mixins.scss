@@ -5,72 +5,72 @@
   }
 }
 
-@mixin onMobile {
+@mixin on-mobile {
   @media (max-width: $mobile-max-width) {
     @content;
   }
 }
 
-@mixin onTablet {
+@mixin on-tablet {
   @media (min-width: $tablet-min-width) {
     @content;
   }
 }
 
-@mixin onDesktop {
+@mixin on-desktop {
   @media (min-width: $desktop-min-width) {
     @content;
   }
 }
 
-@mixin onBigDesktop {
+@mixin on-big-desktop {
   @media (min-width: $big-desktop-min-width) {
     @content;
   }
 }
 
-@mixin contentPaddingInline {
-  @include onTablet {
+@mixin content-padding-inline {
+  @include on-tablet {
     padding-inline: 27px;
   }
 
-  @include onDesktop {
+  @include on-desktop {
     padding-inline: 50px;
   }
 
-  @include onBigDesktop {
+  @include on-big-desktop {
     padding-inline: 130px;
   }
 }
 
 
-@mixin pageGrid {
+@mixin page-grid {
   --column: 2;
 
   display: grid;
   column-gap: 20px;
   grid-template-columns: repeat(var(--column), 1fr);
 
-  @include onTablet {
+  @include on-tablet {
     --column: 6;
 
     column-gap: 30px;
   }
 
-  @include onDesktop {
+  @include on-desktop {
     --column: 12;
 
     column-gap: 20px;
   }
 
-  @include onBigDesktop {
+  @include on-big-desktop {
     --column: 12;
 
     column-gap: 20px;
   }
 }
 
-@mixin learnMore {
+@mixin learn-more {
   position: relative;
   display: block;
   width: 86px;
