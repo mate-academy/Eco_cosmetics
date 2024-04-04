@@ -1,0 +1,97 @@
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: $mobile-max-width) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin onBigDesktop {
+  @media (min-width: $big-desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline {
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop {
+    padding-inline: 50px;
+  }
+
+  @include onBigDesktop {
+    padding-inline: 130px;
+  }
+}
+
+
+@mixin pageGrid {
+  --column: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--column), 1fr);
+
+  @include onTablet {
+    --column: 6;
+
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --column: 12;
+
+    column-gap: 20px;
+  }
+
+  @include onBigDesktop {
+    --column: 12;
+
+    column-gap: 20px;
+  }
+}
+
+@mixin learnMore {
+  position: relative;
+  display: block;
+  width: 86px;
+  color: $text-green;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%; /* 18.2px */
+
+  &::after {
+    transform: scale(0);
+    transition: transform 0.3s;
+    position: absolute;
+    bottom: -10px;
+    display: block;
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: $text-green;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}

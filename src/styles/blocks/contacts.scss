@@ -1,0 +1,55 @@
+.contacts {
+  @include pageGrid;
+
+  @include onMobile {
+    padding-inline: 20px;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+
+    @include onBigDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__form {
+    margin-top: 40px;
+  }
+
+  &__image {
+    display: none;
+    cursor: pointer;
+    order: 0;
+    flex: 1 1 auto;
+    background-image: url(../images/contacts-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include hover(transform, scale(1.1));
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      background-image: url(../images/contacts-image-3x.png);
+    }
+
+    @include onBigDesktop {
+      grid-column: 7 / -1;
+      background-image: url(../images/contacts-image-3x.png);
+    }
+  }
+}

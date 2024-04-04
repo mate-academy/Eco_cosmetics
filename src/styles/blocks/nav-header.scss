@@ -1,0 +1,33 @@
+.nav-header {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+    gap: 40px;
+    order: 2;
+  }
+
+  &__link {
+    position: relative;
+    color: $text-green;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+
+    &::after {
+      transform: scale(0);
+      transition: transform 0.3s;
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: $text-green;
+    }
+  
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

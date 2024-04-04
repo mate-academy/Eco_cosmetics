@@ -1,0 +1,141 @@
+.about-creators {
+  position: relative;
+
+  @include pageGrid;
+
+  @include onMobile {
+    padding-inline: 20px;
+  }
+
+  &__side-content {
+    position: absolute;
+    top: 260px;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    position: relative;
+
+    @include onTablet{
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+
+    }
+
+    @include onBigDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+
+    @include onBigDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+
+    @include onTablet {
+      row-gap: 20px;
+
+    }
+
+    @include onDesktop {
+      row-gap: 20px;
+    }
+
+    @include onDesktop {
+      row-gap: 20px;
+    }
+  }
+
+  &__added-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @include onTablet {
+      row-gap: 15px;
+    }
+
+    @include onDesktop {
+      row-gap: 30px;
+    }
+
+    @include onBigDesktop {
+      row-gap: 30px;
+    }
+  }
+
+  &__added-text {
+    position: absolute;
+
+    height: 0;
+    overflow: hidden;
+
+    &--active {
+      position: static;
+      height: auto;
+    } 
+  }
+
+  &__learn-more {
+    @include learnMore;
+  }
+
+  &__button {
+    margin-top: 36px;
+    margin-inline: auto;
+
+    @include onTablet {
+      margin-left: 0;
+      margin-top: 41px;
+    }
+
+    @include onDesktop {
+      margin-top: 51px;
+    }
+
+    @include onBigDesktop {
+      margin-top: 51px;
+    }
+  }
+
+  &__image {
+    cursor: pointer;
+    display: none;
+    background-image: url(../images/about-creators.png);
+    background-size: cover;
+    background-position: center;
+
+    @include hover(transform, scale(1.1));
+
+    @include onTablet{
+      display: block;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      max-height: 645px;
+
+    }
+
+    @include onBigDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+}

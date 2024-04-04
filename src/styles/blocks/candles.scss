@@ -1,0 +1,99 @@
+.candles {
+  position: relative;
+
+  @include onDesktop {
+    margin-top: 50px;
+
+    @include pageGrid;
+  }
+
+  @include onBigDesktop {
+    margin-top: 50px;
+
+    @include pageGrid;
+  }
+
+  &__image {
+    cursor: pointer;
+    padding-bottom: 83%;
+    background-image: url(../images/candles-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include hover(transform, scale(1.03));
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      order: 2;
+    }
+
+    @include onBigDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__content {
+    @include onDesktop {
+      grid-column: 2 / 7;
+    }
+
+    @include onBigDesktop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__title {
+    margin-inline: auto;
+    color: $text-base;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%; /* 36px */
+    letter-spacing: 1.2px;
+    text-align: center;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      text-transform: capitalize;
+    }
+
+    @include onDesktop {
+      font-size: 60px;
+      text-align: left;
+      margin-bottom: 30px;
+      text-transform: none;
+    }
+
+    @include onBigDesktop {
+      font-size: 60px;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__sales {
+    text-align: center;
+    color:  $text-base;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    margin-bottom: 50px;
+
+    @include onDesktop {
+      text-align: left;
+    }
+
+    @include onBigDesktop {
+      text-align: left;
+    }
+
+  }
+
+  &__button {
+    margin-inline: auto;
+
+    @include onDesktop {
+      margin-inline: 0;
+    }
+  }
+}

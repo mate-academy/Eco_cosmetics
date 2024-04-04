@@ -1,0 +1,37 @@
+.nav-shop {
+  display: flex;
+  justify-content: space-between;
+
+  &__link {
+    position: relative;
+    display: block;
+    color: #828282;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 18.2px */
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $text-base;
+      font-weight: 600;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: $text-base;
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.nav-footer {
+  &__links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 11px;
+
+    @include onDesktop {
+      flex-direction: row;
+      column-gap: 40px;
+    }
+
+    @include onBigDesktop {
+      flex-direction: row;
+      column-gap: 40px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: #e4dfd3;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+    text-transform: capitalize;
+
+    &::after {
+      transform: scale(0);
+      transition: transform 0.3s;
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: #e4dfd3;
+    }
+  
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

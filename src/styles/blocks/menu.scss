@@ -1,0 +1,46 @@
+.menu {
+  height: 100vh;
+  background: $text-base;
+  z-index: 1;
+
+  @include contentPaddingInline;
+
+  @include onMobile {
+    padding-inline: 20px;
+  }
+
+  &__icon-close {
+    display: block;
+    color: #e4dfd3;
+    height: 15px;
+    width: 15px;
+    background-image: url(../images/icons/icon-close-2x.png);
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px
+  }
+
+  &__item {
+    display: block;
+    color: #e4dfd3;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 130%; /* 23.4px */
+
+    &::after {
+      display: block;
+      margin-top: 10px;
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: #828282;
+    }
+  }
+}

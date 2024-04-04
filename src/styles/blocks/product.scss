@@ -1,0 +1,68 @@
+.product {
+
+  &--hydrophilic-oil {
+    flex: 1 1 100%;
+  }
+  &--ubtan {
+    display: none;
+    flex: 1 1 100%;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+
+    @include onBigDesktop {
+      display: block;
+    }
+  }
+
+  &__image {
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 83%;
+    margin-bottom: 20px;
+
+    @include hover(transform, scale(1.05));
+    
+    &--hydrophilic-oil {
+      background-image: url(../images/hydrophilic-oil.png);
+    }
+
+    &--ubtan {
+      background-image: url(../images/ubtan.png);
+    }
+  }
+
+  &__name {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%; /* 27px */
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @include onMobile {
+      padding-inline: 20px;
+    }
+  }
+
+  &__price {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%; /* 27px */
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    @include onMobile {
+      padding-inline: 20px;
+    }
+  }
+}
+

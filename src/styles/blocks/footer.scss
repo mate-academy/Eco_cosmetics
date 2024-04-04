@@ -1,0 +1,186 @@
+.footer {
+  background-color: #8c9772;
+  color: #e4dfd3;
+  line-height: 150%; /* 21px */
+  padding-block: 30px;
+
+  @include onDesktop {
+    padding-block: 60px;
+  }
+
+  @include onBigDesktop {
+    padding-block: 60px;
+  }
+
+  &__content {
+    @include pageGrid
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+
+    @include onBigDesktop{
+      grid-column: 1 / 7;
+
+    }
+  }
+
+  &__icons {
+    margin-top: 20px;
+    display: flex;
+    column-gap: 20px;
+    grid-column: 1 / -1;
+
+    @include onMobile {
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      order: 1;
+      margin-top: 7px;
+
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+      order: 2;
+      grid-column: 7 / -1;
+    }
+
+    @include onBigDesktop{
+      margin-top: 30px;
+      order: 2;
+      grid-column: 7 / -1;
+
+    }
+  }
+
+  &__icon {
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-position: center;
+    background-size: cover;
+
+    @include hover(transform, scale(1.2));
+
+    &--fb {
+      background-image: url(../images/icons/fb-2x.png);
+    }
+
+    &--insta {
+      background-image: url(../images/icons/insta-2x.png);
+    }
+  }
+
+  &__contacts {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+
+    @include onBigDesktop{
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__contact {
+    color: #e4dfd3;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+  }
+
+  &__foot-content {
+    margin-top: 40px;
+    grid-column: 1 / -1;
+    order: 1;
+    display: flex;
+    column-gap: 3px;
+
+    @include onMobile {
+      margin-inline: auto;
+    }
+
+    @include onTablet {
+      margin-top: 50px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+      grid-column: 1 / 7;
+    }
+
+    @include onBigDesktop {
+      margin-top: 30px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__foot-copy {
+    display: flex;
+  }
+
+  &__foot-copyright {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__foot-icon {
+    margin-top: 3px;
+    height: 17px;
+    width: 17px;
+    background-image: url(../images/icons/icon-c-2x.png);
+    background-size: cover;
+    background-position: center 100%;
+    }
+
+  &__foot-text {
+    @include onMobile {
+      max-width: 184px;
+      text-align: center;
+    }
+    
+    @include onTablet {
+      font-weight: 400;
+    }
+
+    @include onDesktop {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    @include onBigDesktop {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+}
+
+.footer .container {
+  @include onMobile {
+    padding-inline: 20px;
+  }
+}
+

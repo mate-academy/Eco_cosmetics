@@ -1,0 +1,109 @@
+.about-brand {
+  position: relative;
+
+  @include onMobile {
+    padding-inline: 20px;
+  }
+
+  @include pageGrid;
+
+  &__side-content {
+    margin-top: 303px;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    color: $text-base;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+
+  }
+
+  &__added-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+
+  &__added-text {
+    position: absolute;
+
+    height: 0;
+    overflow: hidden;
+
+    &--active {
+      position: static;
+      height: auto;
+    } 
+  }
+
+  &__learn-more {
+    @include learnMore;
+  }
+
+  &__image {
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+      padding-bottom: 94%;
+      background-image: url(../images/about-brand.png);
+      background-size: cover;
+      background-position: center;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      padding-bottom: 140%;
+      background-image: url(../images/about-brand-desktop-1.png);
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
+  &__image-small {
+    cursor: pointer;
+
+    @include onDesktop {
+      display: block;
+      grid-column: span 2;
+      height: 81%;
+      background-image: url(../images/about-brand-desktop-2.png);
+      background-size: cover;
+      background-position: center;
+      transform: translateY(23.33%);
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

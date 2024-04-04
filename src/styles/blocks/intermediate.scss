@@ -1,0 +1,48 @@
+.intermediate {
+  @include pageGrid;
+
+  @include onMobile {
+    padding-inline: 20px;
+  }
+
+  @include onTablet {
+    text-align: center;
+  }
+
+  &__biologists {
+    display: none;
+    color: $text-base;
+    font-size: 16px;
+    font-weight: 400;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 2 / 6;
+    }
+
+    @include onBigDesktop {
+      display: block;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__if-choose {
+    grid-column: 1 / -1;
+    max-width: 280px;
+    color: $text-green;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%; /* 27px */
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-inline: auto;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 11;
+      text-align: left;
+    }
+  }
+}
