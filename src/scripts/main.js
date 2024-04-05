@@ -2,11 +2,33 @@
 
 const items = document.querySelectorAll('.shop__item');
 const shopCard = document.querySelectorAll('.shop__cards');
+const allInput = document.querySelectorAll('.contacts__field', '.form-field');
 const form = document.getElementById('form');
-const btnForm = document.querySelector('.button__link--contacts');
 
-btnForm.addEventListener('click', () => {
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  allInput.forEach(input => {
+    input.style.borderColor = '#bdbdbd';
+  });
+
   form.reset();
+
+  return false;
+});
+
+const checkValidForm = (event) => {
+  const target = event.target.value;
+
+  if (target.length === 0) {
+    event.target.style.borderColor = '#eb5757';
+  } else {
+    event.target.style.borderColor = '#344f10';
+  }
+};
+
+allInput.forEach(input => {
+  input.addEventListener('change', checkValidForm);
 });
 
 items.forEach((item, index) => {
