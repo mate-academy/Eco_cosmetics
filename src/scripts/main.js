@@ -23,3 +23,13 @@ const learnMore3 = addedContent3.querySelector('.tooth-powder__learnMore');
 learnMore3.addEventListener('click', () => {
   addedText3.classList.toggle('tooth-powder__added-text--active');
 });
+
+const phoneInput = document.getElementById('phone-input');
+
+phoneInput.addEventListener('focus', function() {
+  phoneInput.placeholder = 'Please use format: xxx-xxx-xxxx';
+});
+
+phoneInput.addEventListener('blur', function() {
+  phoneInput.placeholder = 'Phone Number';
+});
