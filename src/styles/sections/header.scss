@@ -1,0 +1,62 @@
+.header {
+  padding: 15px 0;
+  background: $light-bg;
+
+  @include on-mobile-small {
+    padding: 20px 0;
+  }
+
+  @include on-tablet {
+    padding: 40px 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: max-content;
+    height: 100%;
+
+    @include on-mobile {
+      display: flex;
+      align-items: center;
+      column-gap: 12px;
+    }
+
+    img {
+      height: 24px;
+      width: 24px;
+
+      @include on-mobile {
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    span {
+      display: none;
+
+      @include on-mobile {
+        display: block;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__shop {
+    background: url(../images/icons/shop.svg) center/cover no-repeat;
+    height: 24px;
+    width: 24px;
+    align-self: center;
+
+    @include on-mobile {
+      height: 32px;
+      width: 32px;
+    }
+  }
+}

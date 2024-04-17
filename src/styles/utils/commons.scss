@@ -1,0 +1,182 @@
+[class*='__container'] {
+  max-width: $max-width-container;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include on-mobile-small {
+    padding: 0 27px;
+  }
+}
+
+.input {
+  outline: none;
+  width: 100%;
+  border-bottom: 1px solid $border;
+  color: $secondary-color;
+  font-weight: 500;
+  background-color: transparent;
+  transition:
+    color $duration,
+    border-bottom $duration;
+  text-transform: capitalize;
+
+  font-size: 14px;
+  line-height: 21px;
+  padding: 5px 0;
+
+  @include on-tablet {
+    font-size: 18px;
+    line-height: 27px;
+    padding: 10px 0;
+  }
+
+  &::placeholder {
+    color: #828282;
+  }
+
+  &:focus {
+    border-bottom: 1px solid $secondary-color;
+  }
+
+  &:valid {
+    color: $main-color;
+  }
+
+  &:invalid {
+    color: $error;
+  }
+}
+
+.button {
+  display: block;
+  padding: 19px 20px 20px;
+  color: $light;
+  font-weight: 600;
+  line-height: 21px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid transparent;
+  background-color: $secondary-color;
+  height: 60px;
+  max-width: 280px;
+
+  @media (any-hover: hover) {
+    cursor: pointer;
+    transition:
+      border $duration,
+      background-color $duration,
+      color $duration;
+
+    &:hover {
+      border: 1px solid $secondary-color;
+      background-color: $light-bg;
+      color: $secondary-color;
+    }
+  }
+}
+
+.link-hover {
+  position: relative;
+  width: max-content;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: -10px;
+    left: 0;
+    height: 1px;
+    background-color: $main-color;
+  }
+
+  @media (any-hover: hover) {
+    &::after {
+      content: '';
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform $duration;
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.icon {
+  display: block;
+  height: 24px;
+  width: 24px;
+
+  @media (any-hover: hover) {
+    transform: scale(1);
+    transition: transform $duration;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &--open {
+    background: url(../images/icons/menu.svg);
+  }
+
+  &--close {
+    background: url(../images/icons/close.svg);
+  }
+}
+
+.text {
+  color: $secondary-color;
+  font-size: 14px;
+  line-height: 150%;
+
+  @include on-mobile-small {
+    font-size: 16px;
+  }
+}
+
+.title {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $main-color;
+
+  font-size: 24px;
+  line-height: 150%;
+
+  @include on-mobile {
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 2px;
+  }
+}
+
+.decore {
+  display: none;
+
+  @include on-tablet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: right;
+    transform: translate(-87%, 0) rotate(-90deg);
+    color: $green-bg;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &::before {
+      content: '';
+      background-color: $green-bg;
+      height: 1px;
+      width: 100px;
+    }
+  }
+}
