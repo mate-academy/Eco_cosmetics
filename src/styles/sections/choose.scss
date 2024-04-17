@@ -1,0 +1,68 @@
+.choose {
+  position: relative;
+
+  @include on-tablet {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      max-width: 41.41%;
+      background: rgba(52, 79, 16, 0.5);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 1px;
+      width: 49.22%;
+      background: rgba(52, 79, 16, 0.5);
+    }
+  }
+
+  &__container {
+    @include page-grid;
+  }
+
+  &__text {
+    display: none;
+
+    @include on-mobile {
+      grid-column: 1 / 4;
+      display: block;
+    }
+
+    @include on-tablet {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    line-height: 150%;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-align: left;
+    grid-column: span 2;
+
+    @include on-mobile-small {
+      grid-column: 3 / -3;
+      margin: 0 -30px;
+      text-align: center;
+    }
+
+    @include on-mobile {
+      grid-column: 4 / -1;
+      margin: 0;
+      font-size: 24px;
+      text-align: left;
+    }
+
+    @include on-tablet {
+      grid-column: 7 / 11;
+    }
+  }
+}
