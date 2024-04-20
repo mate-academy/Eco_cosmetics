@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+
+}
+
+.page {
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+
+  background-color: $page-main-color;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    transition: all 0.5s;
+    transform: translateY(-100%);
+    pointer-events: 0;
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+
+  scroll-behavior: smooth;
+
+  h1 {
+    text-align: center;
+    line-height: 130%;
+    font-size: 24px;
+
+    color: $additional-color;
+  }
+}
