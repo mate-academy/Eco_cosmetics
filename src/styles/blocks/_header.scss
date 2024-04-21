@@ -1,0 +1,98 @@
+.header {
+  &__inner {
+    @include page-grid;
+
+    align-items: center;
+    padding-top: 40px;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding-top: 20px;
+    }
+
+    @include mobile {
+      padding-top: 15px;
+    }
+  }
+
+  &__logo {
+    grid-column: span 4;
+  }
+
+  &__icon {
+    line-height: 0;
+
+    &--menu-open {
+      order: -1;
+    }
+
+    &--cart {
+      justify-self: end;
+      grid-column: -2;
+    }
+
+    &--menu-close {
+      @include tablet {
+        display: block;
+        padding-top: 20px;
+      }
+    }
+  }
+
+  &__menu {
+    grid-column: 7 / 10;
+
+    @include tablet {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+
+      background-color: $color-dark;
+      visibility: hidden;
+
+      transform: translateX(-100%);
+      transition: all 0.3s;
+
+      &:target {
+        z-index: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+
+      @include tablet {
+        flex-direction: column;
+        row-gap: 50px;
+        padding-top: 100px;
+      }
+    }
+
+    &-link {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+      text-transform: capitalize;
+      color: $color-accent;
+
+      &:hover {
+        color: $color-accent-alt;
+      }
+
+      @include tablet {
+        color: $color-light;
+
+        &:hover {
+          color: $color-gray;
+        }
+      }
+    }
+  }
+}

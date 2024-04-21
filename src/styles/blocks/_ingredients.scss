@@ -1,0 +1,98 @@
+.ingredients {
+  --colomns: 11;
+
+  display: grid;
+  grid-template-columns: repeat(var(--colomns), 1fr);
+  grid-template-rows: repeat(3, auto);
+  column-gap: 20px;
+
+  @include mobile {
+    --colomns: 6;
+
+    column-gap: 30px;
+  }
+
+  &__title {
+    grid-column: 1 / 5;
+
+    @include mobile {
+      grid-column: 1 / -1;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__illustration {
+    grid-column: 5 / -1;
+    grid-row: 1 / -1;
+    justify-self: end;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    @include mobile {
+      grid-row: 2 / 3;
+      margin-bottom: 30px;
+    }
+
+    @include mobile-mini {
+      gap: 10px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  &__item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+
+    white-space: nowrap;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 1px;
+      background-color: $color-dark;
+
+      @include mobile {
+        width: 36px;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: $color-dark;
+      border-radius: 100%;
+    }
+
+  }
+
+  &__image {
+    max-width: 382px;
+
+    @include tablet {
+      margin-right: -20px;
+      max-width: 300px;
+    }
+  }
+
+  &__more-btn {
+    grid-column: 1 / 5;
+    grid-row: 3 / -1;
+    align-self: end;
+    width: max-content;
+  }
+}

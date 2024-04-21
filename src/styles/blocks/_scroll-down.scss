@@ -1,0 +1,57 @@
+.scroll-down {
+  box-sizing: content-box;
+
+  min-height: 344px;
+
+  @include tablet {
+    min-height: 210px;
+  }
+
+  @include tablet {
+    min-height: 180px;
+  }
+
+  &__text {
+    position: relative;
+    grid-column: 2 / 6;
+    height: 100%;
+
+    @include flex-center;
+  }
+
+  &__accent-text {
+    position: relative;
+    grid-column: 7 / 11;
+    height: 100%;
+
+    @include flex-center;
+    @include fluid-text(24, 18);
+
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-accent;
+
+    @include tablet {
+      grid-column: 1 / -1;
+      max-width: 280px;
+      justify-self: center;
+      text-align: center;
+    }
+  }
+
+  &__line {
+    height: 1px;
+    background-color: $color-accent-alt;
+
+    &--left {
+      grid-column: 1 / 6;
+    }
+
+    &--right {
+      grid-column: 7 / -1;
+      align-self: end;
+    }
+  }
+}
