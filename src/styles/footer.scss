@@ -1,0 +1,134 @@
+.footer {
+  @include paddinginline;
+
+  margin-top: 100px;
+  background-color:#8C9772;
+
+  @include ontablet {
+    margin-top: 130px;
+  }
+
+  &__wrapper {
+    display: grid;
+
+    grid-template-areas:
+     "links links"
+     "img img"
+     "about-us about-us"
+     "copy copy";
+
+    @include ontablet {
+      grid-template-areas:
+      "links about-us"
+      "img about-us"
+      "copy copy";
+      column-gap: 300px;
+    }
+
+    @include onmain {
+      grid-template-areas:
+      "links about-us"
+      "copy img";
+      column-gap: 300px;
+    }
+  }
+
+  &__copy {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+    grid-area: copy;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18.2px;
+    color: #E4DFD3;
+
+    @include ontablet {
+      justify-content: left;
+      margin: 0 0 30px;
+      align-items: center;
+    }
+
+    @include onmain {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      margin: 15px 0 30px;
+      align-items: center;
+    }
+  }
+
+  &__links {
+    text-align: left;
+    grid-area: links;
+  }
+
+  &__contact-link {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    color: #E4DFD3;
+    text-decoration: none;
+  }
+
+  &__links--wrapper {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    padding: 30px 0 20px;
+
+    @include ontablet {
+      margin: 0;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    @include onmain {
+      flex-direction: row;
+      margin: 0;
+      gap: 40px;
+    }
+  }
+
+  &__about-us {
+    display: flex;
+    flex-direction: column;
+    grid-area: about-us;
+    gap: 10px;
+    margin-top: 30px;
+
+    &-link {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      color: #E4DFD3;
+      text-decoration: none;
+    }
+
+    @include onmain {
+      gap: 20px;
+    }
+  }
+
+  &__img {
+    display: flex;
+    grid-area: img;
+    padding-bottom: 40px;
+    gap: 20px;
+
+    @include onmain {
+      margin: 30px 66px 0 0;
+      gap: 14px;
+    }
+  }
+
+  &__icon-size {
+    width: 20px;
+    height: 20px;
+  }
+}

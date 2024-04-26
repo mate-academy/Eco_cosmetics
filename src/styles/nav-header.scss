@@ -1,0 +1,135 @@
+.nav__phone {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-items {
+    text-decoration: none;
+  }
+
+  &-links {
+    &-group4 {
+      width: 20px;
+      height: 14px;
+    }
+
+    &-group8 {
+      width: 24px;
+      height: 24px;
+    }
+
+    &-shopping-bag {
+      width: 20px;
+      height: 24px;
+    }
+  }
+}
+
+.nav__phone li {
+  list-style: none;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav__desktop {
+  display: none;
+
+  @include onmain {
+    & {
+      @include pagegrid;
+    }
+  }
+
+  &-top {
+    grid-column: 1 / 4;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  &-title {
+    margin: 0;
+    padding: 0;
+    color: $main-accent;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  &-item {
+    list-style: none;
+  }
+
+  &-link{
+    position: relative;
+    color: $main-accent;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-decoration: none;
+
+    &::before {
+      content: "";
+      width: 100%;
+      background: $main-accent;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      transform: scale(0);
+      opacity: 0;
+      transform-origin: left;
+    }
+
+    &:hover::before {
+      opacity: 1;
+      transform: scale(1);
+      transition: transform 0.75s;
+    }
+
+  }
+
+  &-container {
+    display: flex;
+    gap: 40px;
+    grid-column: 7 / 10;
+  }
+
+  &-shop {
+    grid-column: 13;
+
+    &-image {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.nav {
+  @include paddingblock;
+  @include paddinginline;
+
+  align-items: center;
+
+
+
+  @include onmain {
+    &__phone {
+      display: none;
+    }
+  }
+}

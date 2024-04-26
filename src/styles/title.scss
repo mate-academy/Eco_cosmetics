@@ -1,0 +1,87 @@
+.title {
+  @include paddinginline;
+
+  box-sizing: border-box;
+  position: relative;
+  padding-block: 100px;
+
+  &__wrapper {
+    @include pagegrid;
+    
+    @include onmain {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 42vw;
+        border: 1px solid $background-line;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 49vw;
+        border: 1px solid $background-line;
+      }
+    }
+  }
+
+  @include onmain {
+    margin-top:250px;
+    margin-bottom: 250px;
+  }
+
+  &__choice {
+    display: none;
+    align-items: center;
+
+    @include onmain {
+      display: block;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__slogan {
+    align-items: center;
+    grid-column: 1 / -1;
+
+    @include ontablet {
+      grid-column: 3 / 5;
+    }
+
+    @include onmain {
+      grid-column: 7 / 12;
+    }
+  }
+
+  &__text-choice {
+    text-align: left;
+    color: $title-color;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__text-slogan {
+    color: $main-accent;
+    color: #344F10;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+
+    @include onmain {
+      letter-spacing: 1.2px;
+      text-align: left;
+      font-size: 24px;
+    }
+  }
+}

@@ -1,0 +1,272 @@
+.shop {
+  @include ontablet {
+    @include paddinginline;
+  }
+
+  margin-bottom: 100px;
+
+  margin-top: 100px;
+
+  @include ontablet {
+    margin-bottom: 130px;
+    margin-top: 130px;
+  }
+
+  @include onmain {
+    margin-bottom: 200px;
+    margin-top: 200px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__side-wrapper {
+    display: none;
+    
+    @include onmain {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 0 82px 0 0;
+
+      &-text {
+        color:$background-line;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        writing-mode: vertical-lr;
+        rotate: 180deg;
+        margin: 0;
+      }
+
+      &-line {
+        display: block;
+        width: 1px;
+        height: 100px;
+        background-color: $background-line;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    color: $main-accent;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    @include ontablet {
+      text-align: left;
+    }
+
+    @include onmain {
+      color: $main-accent;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+
+  &__side {
+    position: relative;
+    transform: rotate(-90deg);
+    color: $background-line;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      transform: rotate(-90deg);
+      right: 0;
+      height: 100px;
+      width: 1px;
+      background-color: $background-line;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 0;
+    gap: 34px;
+
+    @include ontablet {
+      justify-content: left;
+      gap: 51px;
+    }
+
+  }
+
+  &__nav-item {
+    position: relative;
+    list-style: none;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $link-color;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      top: calc(100% + 10px);
+      left: 0;
+      background: $title-color;
+      transform: scale(0);
+      transform-origin: left;
+      transition: all .5s;
+    }
+
+    &:hover {
+      color: $title-color;
+      position: relative;
+
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__ubitan-img {
+    display: none;
+
+    @include ontablet {
+      display: block;
+    }
+  }
+
+  &__img-size {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    padding-inline: 0;
+
+    @include ontablet {
+      width: 342px;
+      height: 300px;
+    }
+
+    @include onmain {
+      width: 530px;
+      height: 500px;
+    }
+  }
+
+  &__photos {
+    @include ontablet {
+      margin-top: 37px;
+      display: flex;
+      gap: 30px;
+    }
+
+    @include onmain {
+      margin-top: 50px;
+      gap: 20px;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-title {
+      margin: 20px 0 10px;
+      color: $title-color;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+
+      @include onmain {
+        margin: 20px 0 13px;
+      }
+    }
+
+    &-title-ubtan {
+      display: none;
+
+      @include ontablet {
+        display: block;
+      }
+    }
+
+    &-price-ubtan {
+      display: none;
+
+      @include ontablet {
+        display: block;
+      }
+    }
+
+    &-price {
+      margin: 0;
+      color: $title-color;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+
+    @include onmain {
+      margin-top: 40px;
+    }
+  }
+
+  &__button {
+    color: $button-text-color;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 280px;
+    height: 60px;
+    border: none;
+    flex-shrink: 0;
+    cursor: pointer;
+    background: $title-color;
+
+    &:hover {
+      background: $background-color;
+      color: $title-color;
+      border: 1px solid $title-color;
+    }
+  }
+}

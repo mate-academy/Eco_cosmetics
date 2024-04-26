@@ -1,0 +1,227 @@
+.creators {
+  @include paddinginline;
+
+  display: flex;
+  justify-content: center;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__title-wrap {
+    @include ontablet {
+      margin-right: 30px;
+    }
+
+    @include onmain {
+      margin-right: 120px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin: 0 0 10px;
+    color: $main-accent;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+
+    @include ontablet {
+      text-align: start;
+    }
+  }
+
+  &__text1 {
+    margin: 0 0 20px;
+
+    @include ontablet {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+
+      max-width: 342px;
+      max-height: 96px;
+
+      margin: 0 0 15px;
+    }
+
+    @include onmain {
+      margin: 0 0 30px;
+      max-width: 380px;
+      max-height: 96px;
+    }
+  }
+
+  &__text2 {
+    margin: 0 0 30px;
+
+    @include ontablet {
+      margin: 0 0 20px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      max-height: 144px;
+      max-width: 342px;
+    }
+
+    @include onmain {
+      margin: 0 0 30px;
+      max-width: 380px;
+      max-height: 120px;
+    }
+  }
+
+  &__text3 {
+    display: none;
+    margin-bottom: 20px;
+
+    @include ontablet {
+      max-width: 342px;
+      max-height: 96px;
+    }
+
+    @include onmain {
+      display: block;
+      max-width: 380px;
+      max-height: 120px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    color: $title-color;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include ontablet {
+      text-align: left;
+    }
+  }
+
+  &__more-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+
+    @include ontablet {
+      margin-bottom: 30px;
+      justify-content: start;
+    }
+  }
+
+  &__more {
+    display: inline;
+    position: relative;
+    color: $main-accent;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $main-accent;
+      transform: scale(0);
+      transform-origin: left;
+      transition: all .5s;
+    }
+
+    &:hover {
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__button-wrap {
+    display: flex;
+    justify-content: center;
+
+    @include ontablet {
+      justify-content: start;
+    }
+  }
+
+  &__button {
+    color: $button-text-color;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: 280px;
+    height: 60px;
+    border: none;
+    flex-shrink: 0;
+    cursor: pointer;
+    background: $title-color;
+
+    &:hover {
+      background: $background-color;
+      color: $title-color;
+      border: 1px solid $title-color;
+    }
+  }
+
+  &__photo {
+   display: none;
+
+    @include ontablet {
+      display: block;
+
+      max-width: 342px;
+      max-height: 440px;
+    }
+
+    @include onmain {
+      max-width: 580px;
+      max-height: 649px;
+    }
+  }
+
+  &__side-wrapper {
+    display: none;
+
+    @include onmain {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 0 82px 0 0;
+
+      &-text {
+        color:$background-line;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+        writing-mode: vertical-lr;
+        rotate: 180deg;
+        margin: 0;
+      }
+
+      &-line {
+        display: block;
+        width: 1px;
+        height: 100px;
+        background-color: $background-line;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.menu {
+  @include paddinginline;
+  @include paddingblock;
+
+  overflow: auto;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  background: $title-color;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  transition: transform 0.3s, opacity 0.3s;
+  transform: translateX(100%);
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+    align-items: center;
+    gap: 30px;
+
+    @include ontablet {
+      gap: 50px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: $button-text-hover;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+
+    &::after {
+      content: "";
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      background-color: $link-color;
+    }
+  }
+}
+
+
