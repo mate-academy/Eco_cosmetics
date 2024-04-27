@@ -1,17 +1,52 @@
 @mixin menuInlinePadding {
   padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop {
+    padding-inline: 50px;
+  }
+}
+
+@mixin onTablet {
+  @media(min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media(min-width: $desktop-min-width) {
+    @content;
+  }
 }
 
 @mixin pageGrid {
-  --column: 1;
+  --column: 2;
   display: grid;
   column-gap: 20px;
   grid-template-columns: repeat(var(--column), 1fr);
 
+  @include onTablet {
+    --columns: 6;
+    column-gap: 30px;
 
+  }
+
+  @include onDesktop {
+    --columns: 12;
+
+  }
 }
 
-.container {
-  @include menuInlinePadding;
+@mixin hiddenImg {
+  @media (max-width: 768px) {
+      display: none;
+  }
 
+  @include onTablet {
+    display: initial;
+  }
 }
+
