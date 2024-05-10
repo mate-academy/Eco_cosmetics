@@ -1,4 +1,26 @@
 .header {
+  &__wrap {
+    @include onDesktop {
+      @include pageGrid;
+      margin-top: 70px;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__grid {
+    @include onDesktop {
+      grid-column: 2/7;
+      grid-row-start: 1;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    @include onDesktop {
+      justify-content: left;
+    }
+  }
 
   &__img {
     &--logo {
@@ -12,10 +34,16 @@
     }
   }
 
-  &__main-text {
+  &__main--text {
     margin: 0;
     margin-top: 25px;
     padding: 0;
+
+    @include onDesktop {
+      grid-column: 1/7;
+      margin-top: 0;
+      font-size: 60px;
+    }
   }
 
   &__text {
@@ -28,6 +56,15 @@
     line-height: 24px;
     font-weight: 400;
     font-size: 16px;
+
+    &--grid {
+      @include onDesktop {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: left;
+      }
+
+    }
   }
 
   &__quote {
@@ -40,6 +77,35 @@
     text-transform: uppercase;
     line-height: 27px;
     font-size: 18px;
+
+    @include onDesktop {
+      grid-column: 7/13;
+      justify-content: left;
+
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 0;
+      padding-top: 100px;
+      padding-bottom: 131px;
+
+      border-bottom: 1px solid $dark-green-color;
+
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  &__desktopText {
+    display: none !important;
+    @include onDesktop {
+      display: initial !important;
+      grid-column: 1/6;
+      padding-left: 100px;
+      padding-top: 100px;
+
+
+      border-top: 1px solid $dark-green-color;
+    }
   }
 
 

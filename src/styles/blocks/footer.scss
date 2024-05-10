@@ -1,13 +1,63 @@
 .footer {
   margin-inline: -20px;
+  @include menuInlinePadding;
+
+  margin-top: 100px;
   overflow: hidden;
   background-color: $footer-bg-color;
 
+  @include onTablet {
+    margin-inline: -27px;
+    margin-top: 0;
+  }
+
+  @include onDesktop {
+    margin-inline: -50px;
+
+    @media (min-width: 1440px) {
+      margin-inline: -130px;
+    }
+  }
+
+  &__wrap {
+    padding-top: 30px;
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      padding-top: 60px;
+    }
+  }
+
+  &__grid {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__grid2 {
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 7/12;
+    }
+  }
+
+
+
 
   &__list {
-    padding-top: 19px;
-    margin-inline: -20px;
+    padding: 0;
+    margin: 0;
     margin-bottom: 20px;
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+    }
 
   }
 
@@ -28,30 +78,55 @@
     font-size: 18px;
     line-height: 27px;
 
+    &--text {
+      margin-top: 0;
+      text-align: left;
+    }
+
   }
 
   &__img {
     height: 20px;
     width: 20px;
-
-    margin-left: 20px;
-    margin-bottom: 30px;
+    margin-right: 20px;
 
     color: $icon-color;
+
+
 
   }
 
   &__icons {
-    display: flex;
+    margin-bottom: 40px;
+
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      padding-top: 174px;
+      padding-left: 681px;
+      margin-bottom: 0;
+
+      @media (min-width: 1440px) {
+        padding-left: 601px;
+      }
+    }
   }
 
   &__text {
-    @include menuInlinePadding;
-    margin-top: 10px;
-    margin-bottom: 10px;
     color: $page-main-color;
 
     text-decoration: none;
+
+    @include onDesktop {
+      font-size: 16px;
+      line-height: 27px;
+    }
+
+
 
   }
 
@@ -64,9 +139,29 @@
 
     color: $page-main-color;
 
-    font-weight: 600;
+    font-weight: 500;
     line-height: 18.2px;
 
+    @include onTablet {
+      justify-content: left;
+    }
 
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__visible {
+    @include hiddenImg;
+    @include onDesktop {
+      display: initial;
+      text-align: left;
+      grid-column: 1/7;
+      margin-top: 0;
+      padding-bottom: 62px;
+
+      font-size: 18px;
+      line-height: 27px;
+    }
   }
 }
