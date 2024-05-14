@@ -1,0 +1,72 @@
+.losung {
+  text-transform: uppercase;
+  color: $green-text-color;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 5%;
+  display: flex;
+  justify-content: center;
+  grid-column: 7 / -4;
+
+  @include on-desktop {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  &__hidden {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__nhidden {
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__text {
+    display: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+
+    @include on-desktop {
+      display: grid;
+      grid-column: 2 / 6;
+    }
+  }
+}
+
+.lure {
+  position: relative;
+  margin-top: 100px;
+
+  @include on-tablet {
+    margin-top: 130px;
+  }
+
+  @include on-desktop {
+    margin-top: 200px;
+    margin-bottom: 200px;
+
+    @include page-grid;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -100px;
+      background-color: #344f1080;
+      height: 1px;
+      width: 50%;
+      border-radius: 8px;
+      right: 0;
+    }
+  }
+
+}
