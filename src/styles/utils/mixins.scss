@@ -1,0 +1,55 @@
+@mixin on-mobile-small {
+  @media  (min-width: $mobile-small) {
+    @content;
+  }
+}
+
+@mixin on-mobile {
+  @media (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 20px;
+
+  @include on-mobile-small {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-tablet {
+    --columns: 12;
+
+    column-gap: 20px;
+  }
+}
+
+@mixin section-padding {
+  padding-top: 100px;
+
+  @include on-mobile-small {
+    padding-top: 130px;
+  }
+
+  @include on-tablet {
+    padding-top: 200px;
+  }
+}
