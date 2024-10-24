@@ -1,0 +1,127 @@
+.about {
+  @include content-padding-inline;
+
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  @include page-grid;
+
+  @include on-tablet {
+    margin-bottom: 130px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 200px;
+  }
+
+  &--left {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+      margin-left: 50px;
+    }
+  }
+
+  &__photo--big {
+    width: 342px;
+    height: 100%;
+    display: none;
+
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    @include on-tablet {
+      display: grid;
+      width: 380px;
+      height: auto;
+      grid-column: 5 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -3;
+      height: 100%;
+    }
+  }
+
+  &__photo--small {
+    display: none;
+
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-column: 11 / -1;
+      align-self: self-end;
+      margin-top: 40px;
+
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $green-text-color;
+    text-align: left;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 5%;
+    margin-bottom: 10px;
+
+    @include on-desktop {
+      font-size: 36px;
+      line-height: 40px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__description--hidden {
+    display: none;
+
+    @include on-desktop {
+      color: #333;
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__learn-more {
+    text-decoration: none;
+    color: $green-text-color;
+    font-weight: 500;
+    font-size: 14px;
+
+    line-height: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $green-text-color;
+
+    @include hover (color, #795c34);
+  }
+}

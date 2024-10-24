@@ -1,0 +1,222 @@
+.ayurvedic {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+
+  @include on-tablet {
+    margin-bottom: 130px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 200px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: $green-text-color;
+
+    @include content-padding-inline;
+
+    margin-bottom: 20px;
+
+    @include on-desktop {
+      font-size: 36px;
+      line-height: 110%;
+      letter-spacing: 1.8px;
+      margin-left: 50px;
+    }
+  }
+
+  &__firstblock {
+    display: flex;
+  }
+
+  &__firstblock-content {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      flex-direction: row;
+    }
+
+    @include on-desktop {
+      justify-content: right;
+      flex-direction: column;
+    }
+  }
+
+  &__ingridients {
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+    justify-content: right;
+
+    @include on-tablet {
+      justify-content: right;
+    }
+
+    @include on-desktop {
+      justify-content: right;
+    }
+  }
+
+  &__image--mobile {
+    height: 382px;
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__image--tablet {
+    display: none;
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__image--desktop {
+    display: none;
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    @include on-desktop {
+      display: flex;
+      justify-content: right;
+      margin-right: 100px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+  }
+
+  &__list-item {
+    color: #333;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 25px;
+    margin-bottom: 50px;
+    min-width: max-content;
+  }
+
+  &__list-item1 {
+    margin-top: 30px;
+  }
+
+  &__info {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 30px;
+      margin-top: 130px;
+    }
+
+    @include on-desktop {
+      margin-top: 200px;
+      margin-left: 50px;
+    }
+  }
+
+  &__info--img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  &__info-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    @include on-tablet {
+      width: 33%;
+      justify-content: flex-start;
+    }
+  }
+
+  &__info--title {
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  &__learn-more {
+    text-decoration: none;
+    color: $green-text-color;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $green-text-color;
+    margin-left: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+
+
+    @include hover (color, #795c34);
+
+    @include on-tablet {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: 20px;
+      display: block;
+    }
+
+    @include on-desktop {
+      margin-left: 50px;
+    }
+  }
+
+  &__margin {
+    margin-top: 50px;
+
+    @include on-desktop {
+      margin-left: 50px;
+    }
+  }
+}
