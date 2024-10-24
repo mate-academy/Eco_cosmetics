@@ -1,0 +1,36 @@
+%learn-more {
+  position: relative;
+  display: inline-block;
+  width: content;
+
+  color: #344F10;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%;
+  cursor: pointer;
+  margin: 0;
+
+  &:hover {
+    color: #263a0c;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    display: block;
+    left: 0;
+    background-color: #344F10;
+    height: 1px;
+    width: 100%;
+    transition: transform $transform-duration;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+    transform: scale(0);
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
