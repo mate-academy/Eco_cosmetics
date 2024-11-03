@@ -1,0 +1,68 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25.5px;
+
+  &__label {
+    &:not(:focus),
+    &:not(:active) {
+      @include visually-hidden;
+    }
+  }
+
+  &__input {
+    box-sizing: border-box;
+
+    width: 100%;
+    padding: 0;
+    padding-bottom: 5px;
+    border: 0;
+    border-bottom: 1px solid $color3;
+
+    font-family: $font-family;
+    font-weight: $small-text-weight;
+    font-size: $small-text-size;
+    line-height: $small-text-line-height;
+    letter-spacing: $small-text-letter-spacing;
+    color: $color1;
+
+    background-color: $bg-color;
+    transition: $page-transition;
+
+    &::placeholder {
+      font-family: $font-family;
+      font-weight: $small-text-weight;
+      font-size: $small-text-size;
+      line-height: $small-text-line-height;
+      letter-spacing: $small-text-letter-spacing;
+      text-align: left;
+      color: #828282;
+    }
+
+    &:hover {
+      border-color: $color1;
+      transition: $page-transition;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color1;
+      transition: $page-transition;
+    }
+  }
+
+  &__textarea {
+    display: block;
+
+    margin-top: 20px;
+    height: 27px;
+    resize: none;
+  }
+
+  &__button {
+    margin: 5px 0 50px;
+  }
+}
