@@ -19,15 +19,55 @@
     letter-spacing: $menu-text-letter-spacing;
     color: $bg-color;
     text-decoration: none;
+    transition: $page-transition;
+
+    &:hover {
+      transition: $page-transition;
+      font-size: 20px;
+    }
   }
 
   &__media {
     display: flex;
     flex-direction: row;
     gap: 20px;
-
-    height: 20px;
-    vertical-align: bottom;
     margin-bottom: 40px;
+  }
+
+  &__icon {
+    width: 20px;
+    vertical-align: bottom;
+    transition: $page-transition;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: $page-transition;
+    }
+  }
+
+  &__license {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    position: relative;
+
+    font-family: $font-family;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: center;
+    color: $bg-color;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 4.5px;
+      top: 3px;
+      width: 10.5px;
+      height: 10.5px;
+
+      background-image: url(../images/icons/Group.svg);
+      background-repeat: no-repeat;
+    }
   }
 }
