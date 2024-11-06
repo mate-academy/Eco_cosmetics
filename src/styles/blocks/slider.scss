@@ -1,0 +1,48 @@
+.slider {
+  box-sizing: border-box;
+  position: absolute;
+  height: 506px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  &__label {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: bold;
+    text-align: center;
+    background: purple;
+    color: #aaa;
+    width: max-content;
+    height: 65px;
+    padding: 20px 0 27px;
+  }
+
+  &__label:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  & [type='radio'] {
+    display: none;
+  }
+
+  &__shop-card {
+    box-sizing: border-box;
+    position: absolute;
+    inset: 65px 0 0;
+    display: none;
+  }
+
+  [type='radio']:checked + &__label {
+    color: white;
+  }
+
+  [type='radio']:checked + &__label + &__shop-card {
+    display: inline-block;
+  }
+}
