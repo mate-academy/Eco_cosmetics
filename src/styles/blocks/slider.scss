@@ -1,29 +1,37 @@
+@use '../utils/vars';
+
 .slider {
   box-sizing: border-box;
   position: absolute;
-  height: 506px;
+  height: 416px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 0 20px;
 
   &__label {
     box-sizing: border-box;
     display: inline-block;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: bold;
-    text-align: center;
-    background: purple;
-    color: #aaa;
-    width: max-content;
+
     height: 65px;
     padding: 20px 0 27px;
+
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: $text2-letter-spacing;
+    text-transform: uppercase;
+    text-align: center;
+    color: #aaa;
+
+    & p {
+      display: inline-block;
+      padding-bottom: 10px;
+    }
   }
 
   &__label:hover {
-    color: white;
+    color: $color1;
     cursor: pointer;
   }
 
@@ -39,7 +47,13 @@
   }
 
   [type='radio']:checked + &__label {
-    color: white;
+    transition: $page-transition;
+    color: $color1;
+  }
+
+  [type='radio']:checked + &__label p {
+    transition: $page-transition;
+    border-bottom: 2px solid $color1;
   }
 
   [type='radio']:checked + &__label + &__shop-card {
