@@ -1,7 +1,12 @@
 @use '../utils/vars';
+@use '../utils/mixins' as *;
 
 .main {
   padding-top: 50px;
+
+  @include for-tablet {
+    padding-top: 80px;
+  }
 
   &__text {
     padding: 0 20px;
@@ -14,5 +19,9 @@
     letter-spacing: $h5-letter-spacing;
     color: $color6;
     text-transform: uppercase;
+
+    @include for-tablet {
+      padding: 0 244px;
+    }
   }
 }

@@ -1,7 +1,18 @@
 @use '../utils/vars';
+@use '../utils/mixins' as *;
 
 .header {
   text-align: center;
+
+  @include page-grid;
+
+  &__navigation {
+    grid-column: span 2;
+
+    @include for-tablet {
+      grid-column: span 6;
+    }
+  }
 
   &__picture {
     margin-bottom: 25px;
@@ -9,6 +20,15 @@
     height: 267px;
     object-fit: cover;
     vertical-align: bottom;
+
+    grid-column: span 2;
+
+    @include for-tablet {
+      margin-bottom: 50px;
+      height: 500px;
+
+      grid-column: span 6;
+    }
   }
 
   &__title {
@@ -20,6 +40,17 @@
     font-size: $h4-size;
     line-height: 31px;
     color: $color1;
+
+    grid-column: span 2;
+
+    @include for-tablet {
+      margin: 0 -30px 10px;
+      font-size: $h3-size;
+      line-height: $h3-line-height;
+      text-transform: capitalize;
+
+      grid-column: 2 / 6;
+    }
   }
 
   &__text {
@@ -31,9 +62,22 @@
     line-height: $text1-line-height;
     letter-spacing: $text1-letter-spacing;
     color: $color1;
+
+    grid-column: span 2;
+
+    @include for-tablet {
+      margin-bottom: 50px;
+      grid-column: span 6;
+    }
   }
 
   &__button {
     margin: 0 20px 50px;
+    grid-column: span 2;
+
+    @include for-tablet {
+      margin: 0 -30px 50px;
+      grid-column: 3 / 5;
+    }
   }
 }
