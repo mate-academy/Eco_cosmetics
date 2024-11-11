@@ -1,0 +1,136 @@
+@import "../utils";
+
+.creators {
+  margin-bottom: $halfOfMobGap;
+
+  @include onTablet {
+    margin-bottom: $section-gap-tab;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include onDesktop {
+    margin-bottom: $section-gap-big;
+
+    display: flex;
+    justify-content: space-between;
+
+    &::before {
+      content: "about the creators";
+      @include side-text;
+      left: 50px;
+
+      transform: rotate(180deg);
+    }
+
+    &::after {
+      @include side-line;
+      left: calc(#{$margin-big} + 10px);
+      transform: translateY(150px);
+    }
+  }
+
+  @include onLarge {
+    &::before {
+      left: $margin-large;
+    }
+    &::after {
+      left: 140px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include title;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $green;
+
+    @include onDesktop {
+      margin-bottom: 34px;
+      max-width: 300px;
+
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__paragraph {
+    @include text;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    &--1 {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 15px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--2 {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--3 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+
+      display: block;
+      width: max-content;
+    }
+
+    @include onDesktop {
+      width: max-content;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__bigButton {
+    margin-top: 35px;
+    height: $button-height;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+    }
+  }
+
+  &__img {
+    width: 342px;
+    height: 440px;
+
+    @include onDesktop {
+      width: 580px;
+      height: 660px;
+    }
+  }
+}

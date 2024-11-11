@@ -1,0 +1,187 @@
+@import "../utils";
+
+.tooth-powder {
+  margin-bottom: $section-gap-mob;
+  overflow-y: hidden;
+
+  @include onTablet {
+    height: 421px;
+    margin-bottom: 121px;
+  }
+
+  @include onDesktop {
+    margin-left: $side-margin-big--section;
+    margin-bottom: $margin-big;
+    max-height: max-content;
+
+    &::before {
+      content: "Ingredients";
+      @include side-text;
+      transform: rotate(180deg);
+
+      left: $margin-big;
+    }
+
+    &::after {
+      @include side-line;
+      left: calc(#{$margin-big} + 10px);
+      transform: translateY(-390px);
+    }
+  }
+
+  @include onLarge {
+    margin-left: $side-margin-large--shop;
+
+    &::before {
+      left: $margin-large;
+    }
+
+    &::after {
+      left: calc(#{$margin-large} + 10px);
+    }
+  }
+
+  &__title {
+    margin: 0 $margin-mob $margin-mob;
+
+    @include title;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $green;
+
+    @include onTablet {
+      margin-left: 21px;
+
+      width: 342px;
+      height: 72px;
+    }
+
+    @include onDesktop {
+      max-width: 380px;
+      margin: 0;
+
+      line-height: 110%;
+      overflow-y: hidden;
+    }
+  }
+
+  &__container {
+    overflow-y: hidden;
+
+    display: flex;
+    flex-direction: row-reverse;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-right: 6px;
+
+      position: relative;
+      bottom: 92px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      bottom: $tooth-powder-title-height-big;
+      margin-bottom: 0;
+    }
+  }
+
+  &__svg {
+    @include onDesktop {
+      margin-right: $margin-big;
+    }
+
+    @include onLarge {
+      margin-right: $margin-large;
+    }
+  }
+
+  &__svg > img {
+    position: relative;
+    left: 70px;
+
+    height: 395px;
+    width: 380px;
+
+    @include onDesktop {
+      width: 580px;
+    }
+  }
+
+  &__list {
+    position: relative;
+    top: 36px;
+    margin-right: 10px;
+
+    max-width: max-content;
+    padding-left: $margin-mob;
+    text-align: end;
+
+    @include onTablet {
+      margin-right: 20px;
+    }
+
+    &--line {
+      display: inline-block;
+      margin-left: 20px;
+      margin-bottom: 5px;
+      width: 32px;
+      height: 1px;
+      background-color: $dark-gray;
+
+      &:first-of-type {
+        height: 0.5px;
+      }
+    }
+
+    &--dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+
+      position: relative;
+      left: -5px;
+      margin-bottom: 3px;
+
+      background-color: $dark-gray;
+    }
+  }
+
+  &__item {
+    white-space: nowrap;
+
+    &:nth-of-type(odd) {
+      margin-bottom: 52px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &:nth-last-of-type(even) {
+      margin-bottom: 49px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    margin-left: $margin-mob;
+
+    @include onTablet {
+      margin-left: $margin-tab;
+      bottom: 150px;
+    }
+
+    @include onDesktop {
+      margin-left: 0;
+      top: -110px;
+
+      // &:hover {
+      //   transform: translateX(10px) translateY(-10px);
+      // }
+    }
+  }
+}

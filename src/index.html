@@ -1,19 +1,535 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-cosmetics</title>
     <link
-      rel="stylesheet"
-      href="./styles/main.scss"
-    />
+      rel="icon"
+      href="./images/favicon.ico"
+      type="img/x-icon">
+    <link rel="stylesheet" href="./styles/main.scss">
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
-    <script src="scripts/main.js"></script>
+    <header class="header">
+      <nav class="menu">
+        <a href="#" class="menu__closer">
+          <img
+            src="./images/icons/close.svg"
+            alt="close menu"
+            class="menu__closer-img">
+        </a>
+
+        <div class="container__menu menu__container">
+          <ul>
+            <li class="menu__list-item">
+              <a href="#shop">Shop</a>
+            </li>
+            <li class="menu__list-item">
+              <a href="#contact-us">Contact</a>
+            </li>
+            <li class="menu__list-item">
+              <a href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="header__container container__header">
+        <a href="#" class="menu__opener">
+          <img src="./images/icons/menu.svg" alt="menu">
+        </a>
+        <a href="#" class="header__logo">
+          <img src="./images/icons/logo.svg" alt="logo">
+          <span class="header__slogan">
+            witch of mountain winds
+          </span>
+        </a>
+
+        <div class="header__menu-container">
+          <ul class="header__menu-list">
+            <li class="header__list-item">
+              <a href="#shop">Shop</a>
+            </li>
+            <li class="header__list-item">
+              <a href="#contact-us">Contact</a>
+            </li>
+            <li class="header__list-item">
+              <a href="#about">About</a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="./product_card.html" class="header__shop-list">
+          <img src="./images/icons/shop.svg" alt="shop bag">
+        </a>
+
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main__image">
+        <picture>
+          <source media="(min-width: 768px) and (max-width: 1279px)" srcset="./images/main-tab.jpg">
+          <source media="(min-width: 1280px)" srcset="./images/main-big.jpg">
+          <img
+            src="./images/main-mob.jpg"
+            alt="main image"
+            class="main__img">
+        </picture>
+      </div>
+      <div class="main__container container__main">
+        <div class="main__title">
+          Brand of eco-cosmetics and magic candles
+        </div>
+        <p class="main__subtitle">
+          20% of sales at a wild bird shelter
+        </p>
+
+        <a class="main__button button" href="#shop">
+          <div class="button__text">SHOP</div>
+        </a>
+      </div>
+    </main>
+
+    <section class="scroll-down">
+      <div class="scroll-down__container scroll-down__container--1">
+        <p class="scroll-down__description">
+          Biologists say that birds are indicators of the environmental situation, and over the past half century, the
+          population of seabirds has declined by 70%. Birds die due to environmental problems and human intervention in
+          the natural environment.
+        </p>
+      </div>
+
+      <div class="scroll-down__container scroll-down__container--2">
+        <a href="#contact-us">
+          <h5 class="scroll-down__text">if you choose the gifts of nature and care about it’s - scroll down</h5>
+        </a>
+      </div>
+    </section>
+
+    <section class="about-brand" id="about">
+      <div class="container__about-brand">
+        <h4 class="about-brand__title">
+          about our brand
+        </h4>
+
+        <p class="about-brand__paragraph">
+          Our brand cosmetics are made from natural ingredients and we are promoting them to the masses. Shampoo, hair
+          conditioner, soap - in recycled paper. Creams, oils, washing products in glass containers with recycled paper
+          labels. No synthetics and microplastics in cosmetics. And the packaging from it can be returned for recycling
+          or reused.
+        </p>
+
+        <p class="about-brand__additional-text">
+          We are all neighbors of one big House. And we must protect what we have. Destroying everything around for the
+          sake of consumerism and imaginary convenience, we destroy what does not belong to us. Be aware of your choice!
+        </p>
+
+        <a href="#" class="about-brand__button button__learnMore">
+          LEARN MORE
+        </a>
+      </div>
+
+      <div class="container__about-brand-images">
+        <div class="about-brand__image">
+          <picture>
+            <source media="(min-width: 1280px)" srcset="./images/about-big-1.jpg">
+            <img
+              class="about-brand__image--tab"
+              src="./images/about-tab.jpg"
+              alt="candle">
+          </picture>
+        </div>
+
+        <div class="about-brand__image--small">
+          <img src="./images/about-big-2.jpg" alt="small candle">
+        </div>
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <h4 class="shop__title">shop</h4>
+
+      <div class="shop__menu container__shop">
+        <ul class="shop__menu-list">
+          <li class="shop__menu-item active" data-category="face">
+            <a class="shop__menu-link" href="#">Face</a>
+          </li>
+          <li class="shop__menu-item" data-category="body">
+            <a class="shop__menu-link" href="#">Body</a>
+          </li>
+          <li class="shop__menu-item" data-category="hair">
+            <a class="shop__menu-link" href="#">Hair</a>
+          </li>
+          <li class="shop__menu-item" data-category="candles">
+            <a class="shop__menu-link" href="#">Candles</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="shop__carousel carousel">
+        <div class="shop__item shop__item--face" data-id="1">
+          <div class="shop__item-image">
+            <picture>
+              <source media="(min-width: 768px) and (max-width: 1279px)" srcset="./images/shop-tab-1.jpg">
+              <source media="(min-width: 1280px)" srcset="./images/shop-big-1.jpg">
+              <img
+                class="shop__item-img"
+                src="./images/product-mob.jpg"
+                alt="Hydrophilic oil">
+            </picture>
+          </div>
+          <h3 class="shop__item-title container__shop">Hydrophilic oil</h3>
+          <p class="shop__item-price container__shop">160 UAH</p>
+        </div>
+
+        <div class="shop__item shop__item--face" data-id="2">
+          <div class="shop__item-image">
+            <picture>
+              <source media="(min-width: 1280px)" srcset="./images/shop-big-2.jpg">
+              <img
+                class="shop__item-img"
+                src="./images/shop-tab-2.jpg"
+                alt="ubtan">
+            </picture>
+          </div>
+          <h3 class="shop__item-title container__shop">ubtan</h3>
+          <p class="shop__item-price container__shop">160 UAH</p>
+        </div>
+
+        <div class="shop__item shop__item--body" data-id="3">
+          <div class="shop__item-image">
+            <picture>
+              <img
+                class="shop__item-img"
+                src="./images/body-cream.png"
+                alt="Body">
+            </picture>
+          </div>
+          <h3 class="shop__item-title container__shop">Cream</h3>
+          <p class="shop__item-price container__shop">200UAH</p>
+        </div>
+
+        <div class="shop__item shop__item--body" data-id="4">
+          <div class="shop__item-image">
+            <picture>
+              <img
+                class="shop__item-img"
+                src="./images/body-soap.jpeg"
+                alt="Body">
+            </picture>
+          </div>
+          <h3 class="shop__item-title container__shop">Soap</h3>
+          <p class="shop__item-price container__shop">200UAH</p>
+        </div>
+
+        <div class="shop__item shop__item--hair" data-id="5">
+          <div class="shop__item-image">
+            <picture>
+              <img
+                class="shop__item-img"
+                src="./images/hair-shampoo.jpg"
+                alt="Hair">
+            </picture>
+          </div>
+          <h3 class="shop__item-title container__shop">Shampoo</h3>
+          <p class="shop__item-price container__shop">300UAH</p>
+        </div>
+
+        <div class="shop__item shop__item--hair" data-id="6">
+          <div class="shop__item-image">
+            <picture>
+              <img
+                class="shop__item-img"
+                src="./images/hair-conditioner.jpg"
+                alt="Hair">
+            </picture>
+          </div>
+          <h3 class="shop__item-title container__shop">Conditioner</h3>
+          <p class="shop__item-price container__shop">300UAH</p>
+        </div>
+
+        <div class="shop__item shop__item--candles" data-id="7">
+          <div class="shop__item-image">
+            <picture>
+              <img
+                class="shop__item-img"
+                src="./images/candle.jpg"
+                alt="Candles">
+            </picture>
+          </div>
+          <h3 class="shop__item-title container__shop">Candle aroma</h3>
+          <p class="shop__item-price container__shop">230UAH</p>
+        </div>
+
+        <div class="shop__item shop__item--candles" data-id="8">
+          <div class="shop__item-image">
+            <picture>
+              <img
+                class="shop__item-img"
+                src="./images/candle-2.jpg"
+                alt="Candles">
+            </picture>
+          </div>
+          <h3 class="shop__item-title container__shop">Eco candle</h3>
+          <p class="shop__item-price container__shop">240UAH</p>
+        </div>
+      </div>
+
+      <a class="shop__button button container__shop" href="#">
+        <div class="button__text">
+          all products
+        </div>
+      </a>
+    </section>
+
+    <section class="creators">
+      <div class="container__creators">
+        <h4 class="creators__title">
+          about the creators
+        </h4>
+        <p class="creators__paragraph creators__paragraph--1">
+          My name is Victoria, I’m a master at candle making and natural cosmetics. In the past, a cynologist, was
+          engaged in herbs, made layouts on the Tarot.
+        </p>
+        <p class="creators__paragraph creators__paragraph--2">
+          I am also a volunteer to save wild birds in distress, a consultant to the Phoenix Wildlife Rehabilitation
+          Center, a member of the Society for the Conservation of Birds of Ukraine with the support of Birdlife
+          International.
+        </p>
+        <p class="creators__paragraph creators__paragraph--3">
+          My husband and I live in the Carpathian region in the city of Chernivtsi. I dream of my center for the
+          rehabilitation of wild birds, as it is very difficult to rescue birds in a rented communal apartment.
+        </p>
+        <a href="#" class="creators__button button__learnMore">
+          Learn more
+        </a>
+        <a href="#" class="creators__bigButton button">
+          <div class="creators__bigButton--text button__text">
+            to contact us
+          </div>
+        </a>
+      </div>
+
+      <div class="container__creators-img">
+        <picture>
+          <source media="(min-width: 768px)" srcset="./images/creators-tab.jpg">
+          <source media="(min-width: 1280px)" srcset="./images/creators-big.jpg">
+          <img
+            src="./images/creators-tab.jpg"
+            alt="creators care image"
+            class="creators__img">
+        </picture>
+      </div>
+    </section>
+
+    <section class="tooth-powder">
+      <h4 class="tooth-powder__title">
+        Ayurvedic Tooth Powder
+      </h4>
+      <div class="tooth-powder__container">
+        <div class="tooth-powder__svg">
+          <picture>
+            <source media="(min-width: 1280px)" srcset="./images/powder-big.svg">
+            <source media="(min-width: 768px) and (max-width: 1279px)" srcset="./images/powder-tab.svg">
+            <img src="images/tooth-powder.svg" alt="powder">
+          </picture>
+        </div>
+
+        <ul class="tooth-powder__list">
+          <li class="tooth-powder__item">Kaolin
+            <div class="tooth-powder__list--line"></div>
+            <div class="tooth-powder__list--dot"></div>
+          </li>
+          <li class="tooth-powder__item">Sivak
+            <div class="tooth-powder__list--line"></div>
+            <div class="tooth-powder__list--dot"></div>
+          </li>
+          <li class="tooth-powder__item">Calcium
+            <div class="tooth-powder__list--line"></div>
+            <div class="tooth-powder__list--dot"></div>
+          </li>
+          <li class="tooth-powder__item">Licorice root
+            <div class="tooth-powder__list--line"></div>
+            <div class="tooth-powder__list--dot"></div>
+          </li>
+          <li class="tooth-powder__item">Turmeric
+            <div class="tooth-powder__list--line"></div>
+            <div class="tooth-powder__list--dot"></div>
+          </li>
+        </ul>
+      </div>
+      <a href="#" class="tooth-powder__button button__learnMore">
+        Learn more
+      </a>
+    </section>
+
+    <section class="pros container__pros">
+      <div class="pros__item pros__snail">
+        <div class="pros__img-container">
+          <img
+            class="pros__img--snail pros__img"
+            src="./images/snail.svg"
+            alt="snail">
+        </div>
+        <div class="pros__text--snail pros__text">
+          No synthetics and microplastics
+        </div>
+      </div>
+
+      <div class="pros__item">
+        <div class="pros__img-container">
+          <img
+            class="pros__img"
+            src="./images/recycling.svg"
+            alt="recycling">
+        </div>
+        <div class="pros__text">
+          product packaging can be recycled or reused
+        </div>
+      </div>
+
+      <div class="pros__item">
+        <div class="pros__img-container">
+          <img
+            class="pros__img"
+            src="./images/leaf.svg"
+            alt="leaf">
+        </div>
+
+        <div class="pros__text">
+          only natural ingredients
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-us" id="contact-us">
+      <div class="container__contact-us">
+        <h4 class="contact-us__title">
+          contact us
+        </h4>
+
+        <p class="contact-us__text">
+          We will help you choose a product that suits you and answer your other questions
+        </p>
+
+        <form
+          class="contact-us__form"
+          id="form"
+          onsubmit="handleFormSubmit(event)">
+          <input
+            class="contact-us__input"
+            id="name"
+            type="text"
+            placeholder="Your Name"
+            required
+         >
+          <input
+            class="contact-us__input"
+            id="email"
+            type="email"
+            placeholder="E-Mail"
+            required
+         >
+          <input
+            class="contact-us__input"
+            id="number"
+            type="number"
+            placeholder="Phone Number"
+            maxlength="11"
+            required
+         >
+          <textarea
+            class="contact-us__input"
+            type="text"
+            id="textarea"
+            min-rows="1"
+            max-rows="3"
+            placeholder="Your Message"
+            required
+         ></textarea>
+          <button type="submit" class="contact-us__button button">
+            <div class="button__text">
+              send a message
+            </div>
+          </button>
+        </form>
+      </div>
+
+      <div class="container__contact-us-img">
+        <picture>
+          <source media="(min-width: 1280px)" srcset="./images/contact-big.jpg">
+          <img
+            src="./images/contact-tab.jpg"
+            alt="bird"
+            class="contact-us__img">
+        </picture>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="container__footer footer__container">
+        <div class="footer__container--links">
+          <ul class="footer__menu-list">
+            <li>
+              <a class="footer__menu-link" href="#shop">Shop</a>
+            </li>
+            <li>
+              <a class="footer__menu-link" href="#contact-us">Contact</a>
+            </li>
+            <li>
+              <a class="footer__menu-link" href="#about">About</a>
+            </li>
+          </ul>
+
+          <div class="footer__social">
+            <a href="https://www.facebook.com" target="_blank">
+              <img src="./images/icons/facebook.svg" alt="facebook">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <img src="./images/icons/Instagram.svg" alt="Instagram">
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__container--info">
+          <p class="footer__text">Ukraine</p>
+
+          <a href="mailto:support.mountain@gmail.com">
+            <p class="footer__text">
+              support.mountain@gmail.com
+            </p>
+          </a>
+
+          <a href="tel:+380934476839">
+            <p class="footer__text">
+              +380934476839
+            </p>
+          </a>
+
+          <p class="footer__text footer__text--last">
+            Support is available Monday - Friday 9am-6pm
+          </p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__text footer__text--rights">
+        @ 2019 witch of mountain winds
+        </p>
+
+        <div class="footer__social--desktop">
+          <a href="https://www.facebook.com" target="_blank">
+            <img src="./images/icons/facebook.svg" alt="facebook">
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <img src="./images/icons/Instagram.svg" alt="Instagram">
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>

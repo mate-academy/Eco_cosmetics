@@ -1,0 +1,166 @@
+@import "../utils";
+
+.contact-us {
+  margin-bottom: $section-gap-mob;
+
+  @include onTablet {
+    margin-bottom: $section-gap-tab;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include onDesktop {
+    margin-bottom: $section-gap-tab;
+
+    display: flex;
+    justify-content: space-between;
+
+    &::before {
+      content: "help";
+      @include side-text;
+      transform: rotate(180deg);
+
+      margin-left: $margin-big;
+    }
+
+    &::after {
+      @include side-line;
+      left: calc(#{$margin-big} + 10px);
+      transform: translateY(50px);
+    }
+  }
+
+  @include onLarge {
+    &::before {
+      margin-left: $margin-large;
+    }
+
+    &::after {
+      left: calc(#{$margin-large} + 10px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include title;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: $green;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include text;
+
+    @include onTablet {
+      font-size: 16px;
+
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > textarea {
+      resize: vertical;
+      height: 40px;
+      // margin-bottom: 30px;
+      padding-top: 10px;
+      // padding-bottom: 5px;
+
+      &::placeholder {
+        // padding-top: 20px;
+        // padding-bottom: 5px;
+      }
+
+      @include onTablet {
+        // margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        overflow: hidden;
+        // padding-top: 0;
+        // margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__input {
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    width: 100%;
+
+    @include text;
+    font-weight: 500;
+
+    @include onDesktop {
+      margin-bottom: 45px;
+      font-size: 18px;
+    }
+
+    border: none;
+    border-bottom: 1px solid $light-gray;
+    background-color: transparent;
+
+    &:valid {
+      color: $green;
+      border-bottom: 1px solid $green;
+    }
+
+    &:focus {
+      color: black;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;
+    }
+
+    &:nth-of-type(3n) { // phone number
+      margin-bottom: 45px;
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &:invalid:focus {
+      color: $red;
+      border-bottom: 1px solid $red;
+    }
+
+    &::placeholder {
+      @include text;
+      font-weight: 500;
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+
+      color: $bottom-border;
+    }
+  }
+
+  &__button {
+    height: $button-height;
+  }
+
+  &__img {
+    height: 100%;
+  }
+}

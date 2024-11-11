@@ -1,0 +1,111 @@
+@import "../utils";
+
+.header {
+  &__menu {
+    position: relative;
+    left: 0;
+  }
+
+  &__container {
+    padding-top: 15px;
+    padding-bottom: $margin-mob;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet {
+      padding-top: 23px;
+      padding-bottom: $margin-tab;
+    }
+
+    @include onDesktop {
+      padding: 40px $margin-big 80px;
+    }
+
+    @include onLarge {
+      padding: 40px $margin-large 70px;
+    }
+  }
+
+  &__shop-list {
+    display: inline-block;
+
+    @include hover;
+
+    @include onDesktop {
+      & img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  &__logo {
+    @include hover;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__logo > img {
+    @include onDesktop {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  &__slogan {
+    display: none;
+
+    @include text;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    color: $green;
+
+    @include onDesktop {
+      display: inline-block;
+      padding-left: 12px;
+    }
+  }
+
+  &__menu-container {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: relative;
+    }
+  }
+
+  &__menu-list {
+    padding-inline-start: 0;
+    transition: all 0.3s ease-in;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &:hover {
+      padding: 10px;
+    }
+  }
+
+  &__list-item {
+    margin-right: 40px;
+
+    @include hover;
+
+    & > a {
+      @include footer-menu-link;
+      text-transform: capitalize;
+
+      color: $green;
+    }
+  }
+}

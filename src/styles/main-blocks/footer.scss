@@ -1,0 +1,202 @@
+@import "../utils";
+
+.footer {
+  background-color: $light-green;
+
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    display: block;
+
+    min-width: 320px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+
+      &--links {
+        margin-top: 30px;
+      }
+
+      &--info {
+        margin-top: 30px;
+      }
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+
+      &--links {
+        margin-top: 60px;
+      }
+
+      &--info {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  &__social {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    & > a {
+      margin-right: 20px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        position: relative;
+        right: 450px;
+
+        & > a {
+          margin-right: 14px;
+        }
+      }
+
+      @include onLarge {
+        right: 530px;
+      }
+    }
+  }
+
+  &__menu-list {
+    padding-left: 0;
+    margin-bottom: 20px;
+
+    &:first-child {
+      margin-top: 30px;
+
+      @include onTablet {
+        margin-top: 0;
+      }
+
+      @include onDesktop {
+        margin-top: 0;
+
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    & > li {
+      margin-bottom: 12px;
+
+      @include onTablet {
+        margin-bottom: 16px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+        margin-right: 40px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      &:hover > a {
+        color: $dark-white;
+      }
+    }
+  }
+
+  &__menu-link {
+    @include footer-menu-link;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+    @include text;
+    align-self: center;
+
+    color: $body;
+
+    &:hover {
+      color: $dark-white;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+      width: 480px;
+
+      font-size: 16px;
+    }
+
+    &--last {
+      margin-bottom: 40px;
+
+      @include onMobile {
+        max-width: 280px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--rights {
+      overflow-y: hidden;
+      text-align: center;
+      padding-bottom: 40px;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin: 0;
+      width: 198px;
+
+      font-weight: 600;
+      line-height: 130%;
+
+      @include onTablet {
+        margin-left: $margin-tab;
+        align-self: flex-start;
+        width: auto;
+      }
+
+      @include onDesktop {
+        width: max-content;
+        align-self: flex-start;
+        margin-left: $margin-big;
+
+        font-size: 18px;
+        font-weight: 500;
+        font-style: normal;
+        line-height: 150%;
+
+        &::before {
+          content: "Copyright";
+        }
+      }
+
+      @include onLarge {
+        margin-left: $margin-large;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+
+    @include onMobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

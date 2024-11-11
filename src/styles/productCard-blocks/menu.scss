@@ -1,0 +1,76 @@
+@import "../utils";
+
+.menu {
+  display: none;
+  height: 100vh;
+  width: 100%;
+
+  background-color: $dark-gray;
+
+  &--open {
+    display: block;
+  }
+
+  &-open {
+    overflow: hidden;
+  }
+
+  &__opener {
+    display: block;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__container {
+    display: flex;
+
+    & ul {
+      width: 100%;
+
+      margin: 80px $margin-mob 0;
+      padding: 0;
+      list-style-type: none;
+      text-align: center;
+
+      @include onTablet {
+        margin: 144px $margin-tab 0;
+      }
+    }
+  }
+
+  &__closer {
+    position: absolute;
+    margin: $margin-mob 0 0 $margin-mob;
+
+    @include hover;
+
+    @include onTablet {
+      margin: $margin-tab 0 0 $margin-tab;
+    }
+  }
+
+  &__closer-img {
+    color: $body;
+  }
+
+  &__list-item {
+    position: relative;
+
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $bottom-border;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    & > a {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 130%;
+      color: $body;
+    }
+  }
+}
