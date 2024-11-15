@@ -4,6 +4,8 @@
 .main {
   padding-top: 50px;
 
+  @include page-grid;
+
   @include for-tablet {
     padding-top: 80px;
   }
@@ -17,11 +19,24 @@
     font-size: $h5-size;
     line-height: $h5-line-height;
     letter-spacing: $h5-letter-spacing;
-    color: $color6;
     text-transform: uppercase;
+    color: $color6;
+
+    grid-column: span 2;
 
     @include for-tablet {
-      padding: 0 244px;
+      margin: 0 -31px 50px;
+      padding: 0;
+      text-align: center;
+      grid-column: 3 / 5;
+    }
+  }
+
+  &__section {
+    grid-column: span 2;
+
+    @include for-tablet {
+      grid-column: span 6;
     }
   }
 }

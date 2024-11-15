@@ -1,4 +1,5 @@
 @use '../utils/vars';
+@use '../utils/mixins' as *;
 
 .shop-card {
   &__img-container {
@@ -9,6 +10,10 @@
 
     &:hover img {
       transform: scale(1.2);
+    }
+
+    @include for-tablet {
+      height: 300px;
     }
   }
 
@@ -26,11 +31,16 @@
     font-size: 30px;
     font-weight: bold;
     color: $bg-color;
+
     background-color: $color6;
     transition: $page-transition;
 
     &:hover {
       font-size: 36px;
+    }
+
+    @include for-tablet {
+      height: 300px;
     }
   }
 
@@ -45,6 +55,11 @@
     letter-spacing: $h5-letter-spacing;
     text-transform: uppercase;
     color: $color1;
+
+    @include for-tablet {
+      padding: 0;
+      margin-bottom: 15px;
+    }
   }
 
   &__price {
@@ -58,5 +73,9 @@
     letter-spacing: $text3-letter-spacing;
     text-transform: uppercase;
     color: $color1;
+
+    @include for-tablet {
+      padding: 0;
+    }
   }
 }

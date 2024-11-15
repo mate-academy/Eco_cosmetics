@@ -1,7 +1,14 @@
 @use '../utils/vars';
+@use '../utils/mixins' as *;
 
 .shop {
   padding: 50px 0;
+
+  @include page-grid;
+
+  @include for-tablet {
+    padding: 80px 0 50px;
+  }
 
   &__title {
     padding: 0 20px;
@@ -11,8 +18,25 @@
     font-size: $h4-size;
     line-height: $h4-line-height;
     letter-spacing: $h4-letter-spacing;
-    color: $color6;
     text-transform: uppercase;
     text-align: center;
+    color: $color6;
+
+    grid-column: span 2;
+
+    @include for-tablet {
+      padding: 0;
+      text-align: left;
+      grid-column: span 6;
+    }
+  }
+
+  &__button {
+    grid-column: span 2;
+
+    @include for-tablet {
+      grid-column: 3 / 5;
+      margin: 10px -30px 0;
+    }
   }
 }

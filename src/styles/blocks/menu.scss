@@ -1,20 +1,30 @@
 @use '../utils/vars';
+@use '../utils/mixins' as *;
 
 .menu {
-  position: fixed;
   box-sizing: border-box;
+  position: fixed;
   inset: 0;
-  transform: translateX(-100%);
+  z-index: 2;
 
   min-height: 100dvh;
   padding: 20px 20px 50px;
+  overflow-y: auto;
+  transform: translateX(-100%);
 
   background-color: $color1;
   transition: $page-transition;
-  overflow-y: auto;
 
   &:target {
     transform: translate(0);
+  }
+
+  @include page-grid;
+
+  grid-template-rows: max-content;
+
+  @include for-tablet {
+    padding: 28px 0 50px;
   }
 
   &__close-button {
@@ -27,12 +37,26 @@
     background-image: url(../images/icons/close-icon.svg);
     background-position: center;
     background-repeat: no-repeat;
+
+    grid-column: span 2;
+
+    @include for-tablet {
+      margin-bottom: 100px;
+      grid-column: span 6;
+    }
   }
 
   &__nav {
     display: flex;
     flex-direction: column;
     gap: 30px;
+
+    grid-column: span 2;
+
+    @include for-tablet {
+      gap: 50px;
+      grid-column: span 6;
+    }
   }
 
   &__link {

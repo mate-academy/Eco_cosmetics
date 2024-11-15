@@ -1,15 +1,29 @@
 @use '../utils/vars';
 
 .slider {
-  position: absolute;
   box-sizing: border-box;
+  position: relative;
 
   display: flex;
   justify-content: space-between;
 
-  height: 416px;
+  height: 436px;
   width: 100%;
   padding: 0 10px;
+
+  grid-column: span 2;
+
+  @include for-tablet {
+    position: relative;
+    justify-content: start;
+    gap: 32.5px;
+
+    height: 494px;
+    padding: 0;
+    overflow: hidden;
+
+    grid-column: span 6;
+  }
 
   &__label {
     box-sizing: border-box;
@@ -20,7 +34,7 @@
 
     font-family: $font-family;
     font-weight: $text2-weight;
-    font-size: $text1-size;
+    font-size: $text2-size;
     line-height: 18px;
     letter-spacing: $text2-letter-spacing;
     text-transform: uppercase;
@@ -33,6 +47,12 @@
       border-bottom: 2px solid $bg-color;
       transition: $page-transition;
     }
+
+    @include for-tablet {
+      gap: 30px;
+      padding: 10px 0 27px;
+      font-size: 14px;
+    }
   }
 
   &__label:hover {
@@ -41,14 +61,34 @@
     transition: $page-transition;
   }
 
-  & [type='radio'] {
-    display: none;
-  }
-
   &__shop-card {
     box-sizing: border-box;
     position: absolute;
+    display: none;
     inset: 65px 0 0;
+    background-color: $bg-color;
+
+    @include for-tablet {
+      display: inline-block;
+      width: 342px;
+
+      @for $i from 1 to 3 {
+        &:nth-of-type(#{$i}) {
+          inset: 65px (($i - 1) * (30px + 342px)) 0;
+        }
+      }
+
+      &:nth-of-type(2) {
+        z-index: 1;
+      }
+
+      &:nth-of-type(3) {
+        inset: 65px (30px + 342px) 0;
+      }
+    }
+  }
+
+  & [type='radio'] {
     display: none;
   }
 
@@ -64,5 +104,10 @@
 
   [type='radio']:checked + &__label + &__shop-card {
     display: inline-block;
+
+    @include for-tablet {
+      inset: 65px 0 0;
+      z-index: 1;
+    }
   }
 }
