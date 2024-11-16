@@ -1,15 +1,23 @@
 @use '../utils/vars';
+@use '../utils/mixins' as *;
 
 .tooth-power {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1.5fr;
   gap: 20px;
+
+  grid-column: span 2;
+
+  @include for-tablet {
+    position: absolute;
+    grid-column: span 6;
+  }
 
   &__list {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 100%;
     padding: 38px 0 37px;
 
     font-family: $font-family;
@@ -23,9 +31,9 @@
   }
 
   &__picture {
-    object-fit: contain;
-    object-position: left;
-    height: 397px;
+    object-fit: cover;
     width: 100%;
+    object-position: 18%;
+    height: 397px;
   }
 }
