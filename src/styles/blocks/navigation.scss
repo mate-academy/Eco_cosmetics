@@ -12,11 +12,51 @@
     padding: 23px 0 30px;
   }
 
+  @include for-desktop {
+    padding: 40px 0 81px;
+    align-items: center;
+  }
+
+  &__item {
+    &--menu {
+      @include for-desktop {
+        display: none;
+      }
+    }
+  }
+
   &__icon {
     vertical-align: bottom;
 
     &--menu {
       margin-top: 5px;
+    }
+
+    &--main {
+      position: relative;
+
+      @include for-desktop {
+        height: 50px;
+      }
+
+      &::after {
+        @include for-desktop {
+          content: 'witch of mountain winds';
+          position: absolute;
+          display: block;
+          height: 100%;
+          width: 100%;
+          font-size: 30px;
+          inset: 0;
+        }
+      }
+    }
+
+    &--shop {
+      @include for-desktop {
+        height: 26px;
+        width: 32px;
+      }
     }
   }
 }
