@@ -5,7 +5,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
-
   padding: 15px 20px 20px;
 
   @include for-tablet {
@@ -13,6 +12,10 @@
   }
 
   @include for-desktop {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto 1fr 1fr auto;
+
     padding: 40px 0 81px;
     align-items: center;
   }
@@ -38,18 +41,6 @@
       @include for-desktop {
         height: 50px;
       }
-
-      &::after {
-        @include for-desktop {
-          content: 'witch of mountain winds';
-          position: absolute;
-          display: block;
-          height: 100%;
-          width: 100%;
-          font-size: 30px;
-          inset: 0;
-        }
-      }
     }
 
     &--shop {
@@ -58,5 +49,45 @@
         width: 32px;
       }
     }
+  }
+
+  &__page-name {
+    display: none;
+    justify-self: flex-start;
+    padding: 15px 12px;
+
+    font-family: $font-family;
+    font-weight: $text2-weight;
+    font-size: $text2-size;
+    line-height: $text2-line-height;
+    letter-spacing: $text2-letter-spacing;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color6;
+
+    @include for-desktop {
+      display: inline;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include for-desktop {
+      display: flex;
+      flex-direction: row;
+      gap: 41px;
+    }
+  }
+
+  &__list-item a {
+    font-family: $font-family;
+    font-weight: $menu-text-weight;
+    font-size: $menu-text-size;
+    line-height: $menu-text-line-height;
+    letter-spacing: $menu-text-letter-spacing;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $color6;
   }
 }

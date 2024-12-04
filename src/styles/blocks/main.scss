@@ -2,12 +2,17 @@
 @use '../utils/mixins' as *;
 
 .main {
+  position: relative;
   padding-top: 50px;
 
   @include page-grid;
 
   @include for-tablet {
     padding-top: 80px;
+  }
+
+  @include for-desktop {
+    padding-top: 100px;
   }
 
   &__text {
@@ -29,6 +34,56 @@
       padding: 0;
       text-align: center;
       grid-column: 3 / 5;
+    }
+
+    @include for-desktop {
+      margin: 6px -40px 0 0;
+      font-size: $h5-size * 1.5;
+      line-height: $h5-size * 2;
+      letter-spacing: -0.5;
+      text-align: left;
+      grid-column: 7 / 11;
+    }
+
+    &::after {
+      @include for-desktop {
+        content: ' ';
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 344px;
+        height: 1px;
+        width: 49%;
+        background-color: grey;
+      }
+    }
+  }
+
+  &__desktop-text {
+    display: none;
+    font-family: $font-family;
+    font-weight: $text1-weight;
+    font-size: $text1-size;
+    line-height: $text1-line-height;
+    letter-spacing: $text1-letter-spacing;
+
+    @include for-desktop {
+      display: inline;
+      margin-bottom: 100px;
+      grid-column: 2 / 6;
+    }
+
+    &::before {
+      @include for-desktop {
+        content: ' ';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1px;
+        width: 41.5%;
+        background-color: grey;
+      }
     }
   }
 
