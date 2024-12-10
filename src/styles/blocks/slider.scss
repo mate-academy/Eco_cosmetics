@@ -25,11 +25,16 @@
     grid-column: span 6;
   }
 
+  @include for-desktop {
+    gap: 50px;
+    height: 676px;
+    grid-column: 2 / 13;
+  }
+
   &__label {
     box-sizing: border-box;
     display: inline-block;
 
-    height: 65px;
     padding: 20px 10px 27px;
 
     font-family: $font-family;
@@ -52,6 +57,13 @@
       gap: 30px;
       padding: 10px 0 27px;
       font-size: 14px;
+    }
+
+    @include for-desktop {
+      padding: 0 0 50px;
+      font-size: $h5-size;
+      font-weight: $h5-weight;
+      line-height: $h5-line-height;
     }
   }
 
@@ -84,6 +96,24 @@
 
       &:nth-of-type(3) {
         inset: 65px (30px + 342px) 0;
+      }
+    }
+
+    @include for-desktop {
+      width: 530px;
+
+      @for $i from 1 to 3 {
+        &:nth-of-type(#{$i}) {
+          inset: 120px (($i - 1) * (20px + 530px)) 0;
+        }
+      }
+
+      &:nth-of-type(2) {
+        z-index: 1;
+      }
+
+      &:nth-of-type(3) {
+        inset: 120px (20px + 530px) 0;
       }
     }
   }
