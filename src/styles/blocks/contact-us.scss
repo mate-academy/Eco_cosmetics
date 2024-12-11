@@ -2,12 +2,56 @@
 @use '../utils/mixins' as *;
 
 .contact-us {
-  padding: 10px 20px 0;
-  grid-column: span 2;
+  padding: 50px 0;
 
   @include for-tablet {
-    padding: 0;
-    grid-column: 1 / 4;
+    padding: 80px 0 50px;
+  }
+
+  @include for-desktop {
+    padding: 100px 0;
+  }
+
+  @include page-grid;
+
+  &__title {
+    padding: 0 20px;
+    margin-bottom: 10px;
+    grid-column: span 2;
+
+    @include for-tablet {
+      padding: 0;
+      grid-column: 1 / 4;
+    }
+
+    @include for-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__text {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    grid-column: span 2;
+
+    @include for-tablet {
+      padding: 0;
+      grid-column: 1 / 4;
+    }
+
+    @include for-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__article {
+    padding: 10px 20px 0;
+    grid-column: span 2;
+
+    @include for-tablet {
+      padding: 0;
+      grid-column: 1 / 4;
+    }
   }
 
   &__picture {

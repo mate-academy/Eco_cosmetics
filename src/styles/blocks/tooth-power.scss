@@ -2,19 +2,49 @@
 @use '../utils/mixins' as *;
 
 .tooth-power {
-  position: relative;
-  display: grid;
-  justify-content: center;
-  padding: 10px 0 20px;
-
-  grid-template-columns: 1fr 1.5fr;
-  gap: 20px;
-
-  grid-column: span 2;
+  padding: 50px 0;
 
   @include for-tablet {
-    position: absolute;
-    grid-column: span 6;
+    padding: 89px 0 50px;
+  }
+
+  @include for-desktop {
+    padding: 100px 0;
+  }
+
+  @include page-grid;
+
+  &__title {
+    padding: 0 20px;
+    margin-bottom: 10px;
+    grid-column: span 2;
+
+    @include for-tablet {
+      padding: 0;
+      grid-column: 1 / 4;
+    }
+
+    @include for-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__article {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    padding: 10px 0 20px;
+
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
+
+    grid-column: span 2;
+
+    @include for-tablet {
+      position: absolute;
+      padding: 0;
+      grid-column: span 6;
+    }
   }
 
   &__list {
@@ -36,8 +66,12 @@
   &__picture {
     object-fit: cover;
     width: 100%;
-    object-position: 18%;
     height: 397px;
+    object-position: 18%;
+
+    @include for-tablet {
+      height: 411px;
+    }
   }
 
   &__underlined-button {
