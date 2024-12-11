@@ -1,0 +1,67 @@
+.top-bar {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+
+  @media (min-width: 1280px) {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  &__icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @media (min-width: 768px) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @media (min-width: 1280px) {
+      display: block;
+
+      &_list {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+
+        &_link {
+          &-item {
+            cursor: pointer;
+            text-decoration: none;
+            color: $color-dark-green;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 27px;
+
+            &::after {
+              content: '';
+              display: block;
+              width: 100%;
+              bottom: -8px;
+              height: 1px;
+              background-color: $color-dark;
+
+              transition: transform 0.3s;
+              transform: scale(0);
+            }
+
+            &:hover::after {
+              transform: scale(1);
+            }
+
+            &:hover {
+              color: $color-light-green;
+            }
+          }
+        }
+      }
+    }
+  }
+}

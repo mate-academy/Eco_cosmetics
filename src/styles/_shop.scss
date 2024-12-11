@@ -1,0 +1,133 @@
+.shop {
+  padding-top: 80px;
+
+  @media (min-width: 1280px) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1180px;
+    margin: auto;
+  }
+
+  &--title {
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    @media (min-width: 1280px) {
+      padding-left: 60px;
+    }
+  }
+
+  &__tab {
+    &--bigger-screen {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    &_list {
+      padding: 20px 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        width: 300px;
+      }
+
+      @media (min-width: 1280px) {
+        width: 400px;
+        padding-left: 60px;
+      }
+
+      &_link {
+        list-style: none;
+
+        &-item {
+          color: $color-medium-gray;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 400;
+          cursor: pointer;
+
+          &:hover {
+            border-bottom: 2px solid black;
+          }
+        }
+      }
+    }
+
+    &_picture {
+      @media (min-width: 768px) {
+        display: flex;
+        padding-inline: 20px;
+        justify-content: space-between;
+      }
+
+      @media (min-width: 1280px) {
+        align-items: flex-start;
+        gap: 30px;
+      }
+
+      &-photo {
+        width: 100%;
+
+        @media (min-width: 1280px) {
+          width: auto;
+          margin-left: 40px;
+        }
+
+        &--tablet {
+          @media (min-width: 1280px) {
+            display: none;
+          }
+        }
+
+        &--desktop {
+          @media (min-width: 768px) {
+            display: none;
+          }
+
+          @media (min-width: 1280px) {
+            display: block;
+            margin-right: 50px;
+          }
+        }
+      }
+
+      &-description {
+        padding: 10px 20px;
+
+        @media (min-width: 768px) {
+          text-align: left;
+          padding: 10px 0;
+        }
+
+        @media (min-width: 1280px) {
+          margin-left: 40px;
+        }
+
+        &--title {
+          color: $color-dark;
+          text-transform: uppercase;
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+
+        &--price {
+          color: $color-dark;
+          text-transform: uppercase;
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

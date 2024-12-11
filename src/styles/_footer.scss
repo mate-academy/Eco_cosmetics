@@ -1,0 +1,148 @@
+.footer {
+  background-color: $color-light-green;
+  color: $color-cream;
+  padding: 20px 20px 40px;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    box-sizing: border-box;
+    margin: auto;
+  }
+
+  &__nav {
+    @media (min-width: 768px) {
+      grid-column: 1;
+    }
+
+    &_list {
+      @media (min-width: 1280px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+      }
+
+      &_link {
+        margin-bottom: 15px;
+
+        &-item {
+          cursor: pointer;
+          text-decoration: none;
+          color: $color-cream;
+          font-weight: 500;
+          font-size: 18px;
+
+          &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            bottom: -8px;
+            height: 1px;
+            background-color: $color-dark;
+
+            transition: transform 0.3s;
+            transform: scale(0);
+          }
+
+          &:hover::after {
+            transform: scale(1);
+          }
+
+          &:hover {
+            color: $color-dark-green;
+          }
+        }
+      }
+    }
+  }
+
+  &__social {
+    padding-top: 30px;
+    margin-right: 20px;
+
+    @media (min-width: 768px) {
+      grid-column: 1;
+    }
+
+    @media (min-width: 1280px) {
+      width: 200px;
+      grid-column: 3;
+      display: flex;
+      box-sizing: border-box;
+    }
+  }
+
+  &__suport {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+
+    @media (min-width: 768px) {
+      grid-column: 2;
+      grid-row: 1 / 3;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 16px;
+      line-height: 24px;
+      grid-column: 3;
+      grid-row: 1/ 3;
+      padding: 20px;
+    }
+
+    &-title {
+      margin-bottom: 10px;
+    }
+
+    &-email {
+      color: $color-cream;
+      display: block;
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+
+    &-phone {
+      color: $color-cream;
+      text-decoration: none;
+    }
+
+    &-text {
+      margin: 15px 0;
+    }
+  }
+}
+
+.copyrights {
+  width: 200px;
+  margin: 0 auto;
+  padding: 30px 0;
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
+
+  &_text {
+    text-align: center;
+    color: $color-cream;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+
+    @media (min-width: 768px) {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+}

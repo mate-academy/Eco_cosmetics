@@ -1,6 +1,128 @@
 @import 'utils';
 @import 'typography';
+@import 'header';
+@import 'top-bar';
+@import 'menu';
+@import 'icon';
+@import 'choose';
+@import 'about-brand';
+@import 'about-creator';
+@import 'powder';
+@import 'sustainability';
+@import 'shop';
+@import 'card';
+@import 'contact';
+@import 'button';
+@import 'footer';
+@import 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap';
+
+html {
+  font-family: Poppins, sans-serif;
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  background-color: $color-cream;
+}
+
+header {
+  @media (min-width: 768px) {
+    padding: 10px 40px;
+  }
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer {
+  width: 100%;
+  margin-top: 80px;
+  background-color: $color-light-green;
+}
+
+.photo_hover {
+  &:hover {
+    box-shadow: 1px 4px 16px $color-light-green;
+  }
+}
+
+.container {
+  @media (min-width: 768px) {
+    padding: 10px 40px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1180px;
+    margin: auto;
+  }
+}
+
+.title {
+  color: $color-dark-green;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+  margin-bottom: 10px;
+}
+
+.about-link {
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  color: $color-dark-green;
+  font-size: 14px;
+  font-weight: 500;
+
+  &:hover {
+    color: $color-light-green;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 86px;
+    height: 1px;
+    background-color: $color-dark-green;
+    margin-top: 8px;
+  }
+}
+
+.about-link--bigger-screen {
+  margin-left: 40px;
+}
+
+.about-link--bigger-screen::after {
+  content: '';
+  display: block;
+  width: 86px;
+  height: 1px;
+  background-color: $color-dark-green;
+  margin-top: 8px;
+  margin-left: 40px;
+}
+
+.active {
+  color: $color-dark;
+  border-bottom: 2px solid black;
+
+  &:active {
+    color: $color-dark;
+    border-bottom: 2px solid black;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
