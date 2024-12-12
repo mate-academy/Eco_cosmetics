@@ -30,4 +30,33 @@
       line-height: 24px;
     }
   }
+
+  &__tag {
+    display: none;
+    position: absolute;
+    width: max-content;
+    height: max-content;
+
+    font-family: $font-family;
+    font-weight: $decorative-text-weight;
+    font-size: $decorative-text-size;
+    line-height: $decorative-text-line-height;
+    letter-spacing: $decoratice-text-letter-spacing;
+    color: $color6;
+    opacity: 0.5;
+
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+
+    @include for-desktop {
+      display: inline;
+    }
+
+    &::before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      background-color: grey;
+    }
+  }
 }

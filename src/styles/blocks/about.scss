@@ -14,6 +14,8 @@
 
   @include page-grid;
 
+  grid-template-rows: auto auto auto 1fr;
+
   &__title {
     padding: 0 20px;
     margin-bottom: 10px;
@@ -25,6 +27,7 @@
     }
 
     @include for-desktop {
+      margin-bottom: 40px;
       grid-column: 2 / 6;
     }
   }
@@ -40,11 +43,23 @@
     }
 
     @include for-desktop {
+      margin-bottom: 30px;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__desktop-text {
+    display: none;
+
+    @include for-desktop {
+      display: inline;
+      margin-bottom: 40px;
       grid-column: 2 / 6;
     }
   }
 
   &__underlined-button {
+    height: max-content;
     margin: 10px 20px 0;
     grid-column: span 2;
 
@@ -54,6 +69,7 @@
     }
 
     @include for-desktop {
+      margin: 0;
       grid-column: 2/ 3;
     }
   }
@@ -67,7 +83,7 @@
       height: 321px;
       overflow: hidden;
       grid-column: 4 / 7;
-      grid-row: 1 / 4;
+      grid-row: 1 / 5;
 
       &:hover img {
         transform: scale(1.2);
@@ -90,6 +106,17 @@
 
     @include for-desktop {
       height: 529px;
+    }
+  }
+
+  &__tag {
+    padding: 10px 0;
+
+    &::before {
+      width: 1px;
+      height: 100px;
+      top: -110px;
+      left: 9px;
     }
   }
 }
