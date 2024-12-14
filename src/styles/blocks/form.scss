@@ -6,6 +6,10 @@
   flex-direction: column;
   gap: 25.5px;
 
+  @include for-desktop {
+    gap: 30px;
+  }
+
   &__label {
     &:not(:focus),
     &:not(:active) {
@@ -38,6 +42,11 @@
       margin-top: 20px;
       height: 27px;
       resize: none;
+
+      @include for-desktop {
+        margin: 30px 0 20px;
+        height: 38px;
+      }
     }
 
     &::placeholder {
@@ -48,6 +57,10 @@
       letter-spacing: $small-text-letter-spacing;
       text-align: left;
       color: #828282;
+
+      @include for-desktop {
+        font-size: $menu-text-size;
+      }
     }
 
     &:hover {
@@ -60,6 +73,11 @@
       border-color: $color1;
       transition: $page-transition;
     }
+
+    @include for-desktop {
+      padding-bottom: 10px;
+      font-size: $menu-text-size;
+    }
   }
 
   &__button {
@@ -68,6 +86,10 @@
     @include for-tablet {
       width: 280px;
       margin-bottom: 80px;
+    }
+
+    @include for-desktop {
+      margin: 0;
     }
   }
 }

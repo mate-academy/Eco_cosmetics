@@ -3,38 +3,32 @@
 .slider {
   box-sizing: border-box;
   position: relative;
-
   display: flex;
   justify-content: space-between;
-
   height: 446px;
   width: 100%;
   padding: 0 10px;
-
   grid-column: span 2;
 
   @include for-tablet {
     position: relative;
     justify-content: start;
     gap: 32.5px;
-
     height: 494px;
     padding: 0;
     overflow: hidden;
-
     grid-column: span 6;
   }
 
   @include for-desktop {
     gap: 50px;
-    height: 676px;
+    height: 716px;
     grid-column: 2 / 13;
   }
 
   &__label {
     box-sizing: border-box;
     display: inline-block;
-
     padding: 20px 10px 27px;
 
     font-family: $font-family;
@@ -101,10 +95,11 @@
 
     @include for-desktop {
       width: 530px;
+      inset: 90px 0 0;
 
       @for $i from 1 to 3 {
         &:nth-of-type(#{$i}) {
-          inset: 120px (($i - 1) * (20px + 530px)) 0;
+          inset: 90px (($i - 1) * (20px + 530px)) 0;
         }
       }
 
@@ -113,7 +108,7 @@
       }
 
       &:nth-of-type(3) {
-        inset: 120px (20px + 530px) 0;
+        inset: 90px (20px + 530px) 0;
       }
     }
   }
@@ -138,6 +133,10 @@
     @include for-tablet {
       inset: 65px 0 0;
       z-index: 1;
+    }
+
+    @include for-desktop {
+      inset: 90px 0 0;
     }
   }
 }

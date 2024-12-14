@@ -25,6 +25,7 @@
     }
 
     @include for-desktop {
+      margin-bottom: 287px;
       grid-column: 2 / 6;
     }
   }
@@ -34,16 +35,19 @@
     display: grid;
     justify-content: center;
     padding: 10px 0 20px;
-
     grid-template-columns: 1fr 1.5fr;
     gap: 20px;
-
     grid-column: span 2;
 
     @include for-tablet {
       position: absolute;
       padding: 0;
       grid-column: span 6;
+    }
+
+    @include for-desktop {
+      grid-template-columns: 1fr auto;
+      width: 1180px;
     }
   }
 
@@ -59,7 +63,6 @@
     line-height: $text1-line-height;
     letter-spacing: $text1-letter-spacing;
     color: $color1;
-
     text-align: right;
   }
 
@@ -71,6 +74,10 @@
 
     @include for-tablet {
       height: 411px;
+    }
+
+    @include for-desktop {
+      height: 397px;
     }
   }
 
@@ -85,7 +92,15 @@
     }
 
     @include for-desktop {
+      margin: 0;
       grid-column: 2/ 3;
     }
+  }
+
+  &__tag::before {
+    width: 1px;
+    height: 88px;
+    top: -98px;
+    left: 9px;
   }
 }

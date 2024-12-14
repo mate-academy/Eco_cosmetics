@@ -9,10 +9,12 @@
   }
 
   @include for-desktop {
-    padding: 100px 0;
+    padding: 100px 0 130px;
   }
 
   @include page-grid;
+
+  grid-template-rows: auto auto 1fr;
 
   &__title {
     padding: 0 20px;
@@ -25,6 +27,7 @@
     }
 
     @include for-desktop {
+      margin-bottom: 30px;
       grid-column: 2 / 6;
     }
   }
@@ -40,6 +43,7 @@
     }
 
     @include for-desktop {
+      margin-bottom: 40px;
       grid-column: 2 / 6;
     }
   }
@@ -51,6 +55,10 @@
     @include for-tablet {
       padding: 0;
       grid-column: 1 / 4;
+    }
+
+    @include for-desktop {
+      grid-column: 2 / 6;
     }
   }
 
@@ -70,6 +78,11 @@
         transition: $page-transition;
       }
     }
+
+    @include for-desktop {
+      height: 539px;
+      grid-column: 7 / 13;
+    }
   }
 
   &__picture img {
@@ -78,5 +91,21 @@
     object-fit: cover;
     object-position: 63%;
     transition: $page-transition;
+
+    @include for-desktop {
+      height: 539px;
+      object-position: 80%;
+    }
+  }
+
+  &__tag {
+    padding-bottom: 4px;
+
+    &::before {
+      width: 1px;
+      height: 88px;
+      top: -97px;
+      left: 9px;
+    }
   }
 }
