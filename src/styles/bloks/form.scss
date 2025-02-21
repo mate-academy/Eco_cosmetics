@@ -1,0 +1,48 @@
+@mixin visually-hidden() {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.form{
+  &__input{
+    background-color: #E4DFD3;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #828282;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #828282;
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  &__text{
+    font-family: Poppins, sans-serif;
+    background-color: #E4DFD3;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #828282;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: #828282;
+    width: 100%;
+    margin-top: 45px;
+    height: 21px;
+  }
+
+  &__label{
+    &:not(:focus)
+    :not(:active){
+      @include visually-hidden;
+    }
+  }
+}
