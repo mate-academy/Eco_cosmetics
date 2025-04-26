@@ -1,0 +1,145 @@
+.promo {
+
+  &__decorative {
+    display: none;
+
+    @include onDesktop {
+    display: flex;
+
+
+    &-text {
+      display: block;
+      width: 18px;
+      height: 80px;
+    }
+
+    &-line {
+      display: block;
+      width: 1px;
+      height: 100px;
+    }
+
+    &-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+  }
+
+
+  }
+
+  &__title-container {
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 380px;
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+    }
+
+    &-title {
+      display: flex;
+      @extend %poppins-600;
+
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $colorGreen;
+      font-size: 24px;
+      line-height: 150%;
+      margin-bottom: 447px;
+
+      @include onTablet {
+        margin-bottom: 310px;
+        max-width: 300px;
+      }
+
+
+      @include onDesktop {
+        font-size: 36px;
+        line-height: 110%;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__info-contatiner {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 70px;
+    left: calc((100vw - 320px) / 2);
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      top: 13px;
+      left: calc(220px + ((100vw - 768px) / 2));
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: flex-end;
+      position: initial;
+
+    }
+  }
+
+  &__info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 40px;
+    gap: 55px;
+    margin-right: 20px;
+    width: max-content;
+  }
+
+
+  &__info--item {
+    @extend %poppins-400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: right;
+    color: $colorBlack;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__info-link {
+    @extend %poppins-500;
+      color: $colorGreen;
+      font-size: 14px;
+      line-height: 130%;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $colorGreen;
+      display: flex;
+      width: fit-content;
+
+      &:hover {
+        color: #8C9772;
+        border-bottom: 1px solid $colorLightGreen;
+      }
+  }
+
+
+
+}
+
+
