@@ -11,20 +11,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com"
     crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
       rel="stylesheet"
       href="./styles/main.scss"
     />
   </head>
   <body>
-    <header class="header">
+    <header class="header" id="home">
+
+      <nav class="nav nav--distance">
+
+        <a href="#menu" class="nav__link">
+          <img src="./images/Menu.svg" alt="1"
+          class="nav__icon">
+        </a>
+
+        <a href="#" class="nav__link">
+          <img src="./images/logo.svg" alt="1"
+          class="nav__icon">
+        </a>
+
+        <a href="#" class="nav__link">
+          <img src="./images/shop.svg" alt="1"
+          class="nav__icon">
+        </a>
+      </nav>
+
       <img src="./images/2.jpg" alt="1"
       class="header__image">
       <h1 class="title title--primary">Brand of eco-cosmetics and magic candles</h1>
       <p class="header__paragraph">20% of sales at a wild bird shelter</p>
       <a href="#" class="button button--primary">shop</a>
     </header>
+
+    <nav class="menu" id="menu">
+      <a href="#home" class="menu__close"><img src="./images/close.svg" alt="ex"></a>
+      <a href="#shop" class="menu__link menu__link--primary">Shop</a>
+      <a href="#contact" class="menu__link">Contact</a>
+      <a href="#about" class="menu__link">About</a>
+    </nav>
 
     <main class="main">
 
@@ -41,18 +66,48 @@
       <section class="shop" id="shop">
         <h2 class="title title--shop">shop</h2>
         <nav class="shop-navigation">
-          <a href="#shop" class="shop-navigation__link shop-navigation--active">face</a>
-          <a href="#shop" class="shop-navigation__link">body</a>
-          <a href="#shop" class="shop-navigation__link">hair</a>
-          <a href="#shop" class="shop-navigation__link">candles</a>
+          <button class="shop-navigation__link" onclick="openShop(category, 'face')">face</button>
+          <button class="shop-navigation__link" onclick="openShop(category, 'body')">body</button>
+          <button class="shop-navigation__link" onclick="openShop(category, 'hair')">hair</button>
+          <button class="shop-navigation__link" onclick="openShop(category, 'candles')">candles</button>
         </nav>
 
-        <img src="./images/5.jpg" alt="5"
-        class="shop__image">
+        <div id="face" class="shop-navigation__content">
+          <img src="./images/5.jpg" alt="5"
+          class="shop__image">
 
-        <p class="shop__product-name">hydrophilic oil</p>
-        <p class="shop__product-value">160 UAH</p>
-        <a href="#" class="button button--primary">all products</a>
+          <p class="shop__product-name">hydrophilic oil</p>
+          <p class="shop__product-value">160 UAH</p>
+          <a href="#" class="button button--primary">all products</a>
+        </div>
+
+        <div id="body" class="shop-navigation__content">
+          <img src="./images/5.jpg" alt="5"
+          class="shop__image">
+
+          <p class="shop__product-name">hydrophilic oil</p>
+          <p class="shop__product-value">160 UAH</p>
+          <a href="#" class="button button--primary">all products</a>
+        </div>
+
+        <div id="hair" class="shop-navigation__content">
+          <img src="./images/5.jpg" alt="5"
+          class="shop__image">
+
+          <p class="shop__product-name">hydrophilic oil</p>
+          <p class="shop__product-value">160 UAH</p>
+          <a href="#" class="button button--primary">all products</a>
+        </div>
+
+        <div id="candles" class="shop-navigation__content">
+          <img src="./images/5.jpg" alt="5"
+          class="shop__image">
+
+          <p class="shop__product-name">hydrophilic oil</p>
+          <p class="shop__product-value">160 UAH</p>
+          <a href="#" class="button button--primary">all products</a>
+        </div>
+
       </section>
 
       <section class="aboutOurCreators">
@@ -93,7 +148,7 @@
         <p class="signs__paragraph">No synthetics and microplastics</p>
       </section>
 
-      <section class="contact-us">
+      <section class="contact-us" id="contact">
         <h2 class="title title--secondary">Contact us</h2>
         <p class="contact-us__paragraph">
           We will help you choose a product that suits you and answer your other questions
@@ -138,12 +193,12 @@
         </form>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="about">
       <section class="section__footer">
         <ul class="list-sec">
           <li class="list-sec__list"><a href="#shop" class="list-sec__link">shop</a></li>
-          <li class="list-sec__list"></li><a href="#contact-us"class="list-sec__link">contact</a></li>
-          <li class="list-sec__list"></li><a href="#about"class="list-sec__link">About</a></li>
+          <li class="list-sec__list"><a href="#contact-us"class="list-sec__link">contact</a></li>
+          <li class="list-sec__list"><a href="#about"class="list-sec__link">About</a></li>
         </ul>
         <div class="footer__container">
           <a href="#" class="footer__icon"><img src="./images/facebook (1).svg" alt="fb"></a>
