@@ -1,19 +1,24 @@
-@mixin hover-effect($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+// Alterar para padrão kebab-case
+@mixin hover-effect($property, $to-value) {
+  transition: #{$property} 0.3s;
 
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $to-value;
   }
 }
 
 @mixin on-tablet {
   @media (min-width: 768px) {
-    @content;
+    & {
+      @content;
+    }
   }
 }
 
 @mixin on-desktop {
   @media (min-width: 1280px) {
-    @content;
+    & {
+      @content;
+    }
   }
 }

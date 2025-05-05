@@ -10,9 +10,10 @@
     "format": "prettier --ignore-path .prettierignore --write './src/**/*.{html,css,scss}'",
     "lint": "npm run style-format && npm run format && mate-scripts lint",
     "test:only": "mate-scripts test",
-    "build": "mate-scripts build",
+    "build": "parcel build src/index.html --dist-dir build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "deploy:force": "gh-pages -d public",
     "update": "mate-scripts update",
     "postinstall": "npm run update",
     "test": "npm run lint && npm run test:only"
@@ -26,13 +27,16 @@
     "@mate-academy/linthtml-config": "latest",
     "@mate-academy/scripts": "^2.1.1",
     "@mate-academy/stylelint-config": "latest",
-    "@parcel/transformer-sass": "^2.12.0",
+    "@parcel/transformer-sass": "^2.14.4",
     "gh-pages": "^6.3.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "parcel": "^2.14.4",
     "prettier": "^3.3.2",
+    "sass": "^1.70.0",
     "stylelint": "^16.7.0",
-    "stylelint-scss": "^6.4.1"
+    "stylelint-scss": "^6.4.1",
+    "svgo": "^3.3.2"
   },
   "mateAcademy": {
     "projectType": "layout",
