@@ -1,38 +1,33 @@
 .contact {
-
   @include onTablet {
     padding-bottom: 132px;
   }
-
 
   &__decorative {
     display: none;
 
     @include onDesktop {
-    display: flex;
-
-
-    &-text {
-      display: block;
-      width: 18px;
-      height: 35px;
-    }
-
-    &-line {
-      display: block;
-      width: 1px;
-      height: 88px;
-    }
-
-    &-container {
       display: flex;
-      align-items: center;
-      flex-direction: column;
-      gap: 10px;
+
+      &-text {
+        display: block;
+        width: 18px;
+        height: 35px;
+      }
+
+      &-line {
+        display: block;
+        width: 1px;
+        height: 88px;
+      }
+
+      &-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+      }
     }
-
-  }
-
   }
 
   &__content {
@@ -40,7 +35,7 @@
     flex-direction: column;
 
     &-label {
-      border-bottom: 1px solid  #BDBDBD;
+      border-bottom: 1px solid #bdbdbd;
       padding-bottom: 5px;
 
       @include onDesktop {
@@ -50,6 +45,7 @@
 
     &-title {
       @extend %poppins-600;
+
       font-size: 24px;
       line-height: 150%;
       letter-spacing: 0.05em;
@@ -66,6 +62,7 @@
 
     &-text {
       @extend %poppins-400;
+
       font-size: 14px;
       line-height: 150%;
       color: $colorBlack;
@@ -83,7 +80,6 @@
   }
 
   &__content-form {
-
     padding-bottom: 100px;
 
     @include onTablet {
@@ -92,6 +88,7 @@
 
     &--field {
       @extend %poppins-400;
+
       background-color: transparent;
       font-style: normal;
       font-size: 14px;
@@ -128,26 +125,23 @@
         background-color: transparent;
         text-align: bottom;
         height: 55px;
-        border-bottom: 1px solid #BDBDBD;
+        border-bottom: 1px solid #bdbdbd;
         overflow-y: hidden;
 
         &::placeholder {
           position: absolute;
-          bottom: 0px;
+          bottom: 0;
         }
       }
     }
 
-
     &--button {
-
       border: none;
 
       @include onTablet {
         max-width: 280px;
       }
     }
-
   }
 
   &__image {
@@ -155,20 +149,19 @@
 
     @include onTablet {
       display: block;
-      content: "";
+      content: '';
       width: 100%;
       height: 100%;
       background-image: url(../images/contact.png);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      
+
       &:hover {
         border-radius: 10px;
       }
     }
   }
-
 }
 
 input:-webkit-autofill,
@@ -183,7 +176,6 @@ select:-webkit-autofill:focus {
   border: 1px solid transparent;
   -webkit-text-fill-color: $colorGreen;
   box-shadow: none;
-  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
 }
-
