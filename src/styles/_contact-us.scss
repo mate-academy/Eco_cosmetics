@@ -1,0 +1,157 @@
+.contacts {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  &__title {
+    color: $title-color;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+
+  &__help{
+    color: $main-text-color;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  &__input {
+    background: none;
+    border: none;
+    font-family: Poppins, sans-serif;
+    resize: none;
+    box-sizing: border-box;
+    color: $shop-form-col;
+    outline: none;
+    align-items: center;
+    width: 100%;
+    display: inline-flex;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: capitalize;
+    border-bottom: 1px solid #bdbdbd;
+  }
+
+  &__button-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 30px;
+    background-color: $main-text-color;
+    color: $button-color;
+    height: 60px;
+    width: 280px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  &__button-link:hover {
+    background-color: $bg-color;
+    color: $main-text-color;
+    border: 1px solid $main-text-color;
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__container {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      margin-top: 220px;
+    }
+  }
+
+  &__photo-desk {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 100%;
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__left-side {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      display: flex;
+      flex-direction: row-reverse;
+      writing-mode: vertical-lr;
+      place-self: start start;
+      align-items: first baseline;
+    }
+  }
+
+  &__line {
+    width: 1px;
+    height: 100px;
+    background: rgba(52, 79, 16, 0.50);
+    margin-top: 10px;
+  }
+
+  &__left {
+    color: rgba(52, 79, 16, 0.50);
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    transform: rotate(-180deg);
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: $shop-form-col;
+  -webkit-box-shadow: 0 0 0px 1000px $bg-color inset;
+}
+

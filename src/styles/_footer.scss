@@ -1,0 +1,151 @@
+.footer {
+  background-color: $footer-bg;
+  padding-top: 30px;
+
+  &__wrapper {
+    @include contentPaddingInline;
+
+    @include onTablet {
+      @include pageGrid;
+
+      align-items: baseline;
+    }
+  }
+
+  &__nav {
+    grid-column:  span 3;
+  }
+
+  &__nav-list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: start;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__nav-item {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $bg-color;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-shadow: none;
+    transition:  box-shadow 0.3s ease;
+
+    @include onTablet {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    @include onDesktop {
+    font-size: 18px;
+    font-weight: 500;
+    }
+  }
+
+  &__nav-link:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    @include onTablet {
+      align-self: last baseline;
+      grid-column: 1 / 3;
+      grid-row: 2;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 9;
+      margin-bottom: 66px;
+      margin-top: 30px;
+    }
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: $bg-color;
+    font-family: Poppins,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-top: 40px;
+  }
+
+  &__bottom {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+      justify-content: start;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__name {
+    color: $bg-color;
+    font-family: Poppins,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    margin-left: 5px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__email {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__tel {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__add-wrapper {
+    grid-column: 4 / 7;
+
+    @include onTablet {
+      align-items: first baseline;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+    }
+  }
+}
