@@ -1,10 +1,10 @@
 .shop {
-  text-align: center;
   margin-top: 100px;
+  text-align: center;
 
   @include onTablet {
-    text-align: left;
     margin-top: 130px;
+    text-align: left;
 
     @include pageGrid;
   }
@@ -14,14 +14,14 @@
   }
 
   &__title {
-    color: $title-color;
     font-family: Poppins, sans-serif;
     font-size: 24px;
-    font-style: normal;
     font-weight: 600;
+    font-style: normal;
     line-height: 150%;
-    letter-spacing: 1.2px;
+    color: $title-color;
     text-transform: uppercase;
+    letter-spacing: 1.2px;
 
     @include hover(transform, scale(1.1));
   }
@@ -52,8 +52,6 @@
     @include onTablet {
       display: block;
       grid-column: 4 / 7;
-
-
     }
 
     @include onDesktop {
@@ -73,88 +71,99 @@
   }
 
   &__nav-item {
-    color: $shop-form-col;
+    position: relative;
+
     font-family: Poppins, sans-serif;
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
     line-height: 130%;
-    letter-spacing: 0.7px;
-    text-transform: uppercase;
+    color: $shop-form-col;
     text-decoration: none;
-    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
 
     @include hover(transform, scale(1.2));
 
-
     &:hover {
-      &::after {
-          content: "";
-          display: block;
-          border-bottom: 2px solid $main-text-color;
-          position: absolute;
-          left: 0;
-          bottom: -10px;
-          width: 100%;
-      }
-
       color: $main-text-color;
+      &::after {
+        content: '';
+
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+
+        display: block;
+
+        width: 100%;
+        border-bottom: 2px solid $main-text-color;
+      }
     }
   }
 
   &__img {
-    margin-top: 27px;
     width: 100%;
     height: auto;
-    
+    margin-top: 27px;
+
     @include hover(transform, scale(1.1));
   }
 
   &__name {
-    color: $main-text-color;
-    font-family: Poppins, sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 150%;
-    letter-spacing: 0.9px;
-    text-transform: uppercase;
-    display: block;
-    margin-top: 20px;
     cursor: pointer;
 
-    @include hover(transform, scale(1.1));
+    display: block;
 
+    margin-top: 20px;
+
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 150%;
+    color: $main-text-color;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+
+    @include hover(transform, scale(1.1));
   }
 
   &__price {
-    font-weight: 500;
-    font-size: 16px;
-    text-transform: uppercase;
     display: block;
+
     margin-top: 10px;
+
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
   }
 
   &__button {
+    cursor: pointer;
+
     display: flex;
+    grid-column: 3 / 5;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    width: 280px;
+    height: 60px;
     margin: auto;
     margin-top: 30px;
-    background-color: $main-text-color;
-    color: $button-color;
-    height: 60px;
-    width: 280px;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 130%;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
     border: none;
-    cursor: pointer;
-    grid-column: 3 / 5;
+
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 130%;
+    color: $button-color;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+
+    background-color: $main-text-color;
+
     transition: all 0.3s;
 
     @include onDesktop {
@@ -163,9 +172,9 @@
   }
 
   &__button:hover {
-    background-color: $bg-color;
-    color: $main-text-color;
     border: 1px solid $main-text-color;
+    color: $main-text-color;
+    background-color: $bg-color;
   }
 
   &__left-side {
@@ -174,26 +183,26 @@
     @include onDesktop {
       display: flex;
       flex-direction: row-reverse;
-      writing-mode: vertical-lr;
       place-self: start start;
+      writing-mode: vertical-lr;
     }
   }
 
   &__line {
     width: 1px;
     height: 100px;
-    background: rgba(52, 79, 16, 0.50);
     margin-top: 10px;
+    background: rgba(52, 79, 16, 0.5);
   }
 
   &__left {
-    color: rgba(52, 79, 16, 0.50);
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 130%;
     transform: rotate(-180deg);
+
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.5);
+    text-align: center;
   }
 }
-

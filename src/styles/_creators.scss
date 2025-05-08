@@ -1,10 +1,12 @@
 .creators {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+
   margin-top: 100px;
+
+  text-align: center;
 
   @include onTablet {
     @include pageGrid;
@@ -14,8 +16,8 @@
     grid-column: 1 / 3;
 
     @include onTablet {
-      font-size: 16px;
       grid-column: 1 / 3;
+      font-size: 16px;
     }
 
     @include onDesktop {
@@ -25,23 +27,24 @@
 
   &__title {
     display: block;
-    color: $title-color;
+
     font-family: Poppins, sans-serif;
     font-size: 24px;
-    font-style: normal;
     font-weight: 600;
+    font-style: normal;
     line-height: 150%;
-    letter-spacing: 1.2px;
+    color: $title-color;
     text-transform: uppercase;
+    letter-spacing: 1.2px;
   }
 
   &__text {
-    color: $main-text-color;
     font-family: Poppins, sans-serif;
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
     line-height: 150%;
+    color: $main-text-color;
   }
 
   &__par3 {
@@ -54,29 +57,35 @@
   }
 
   &__learn {
-    color: $title-color;
+    position: relative;
+
+    margin-top: 30px;
+
     font-family: Poppins, sans-serif;
     font-size: 14px;
-    font-style: normal;
     font-weight: 500;
+    font-style: normal;
     line-height: 130%;
-    margin-top: 30px;
+    color: $title-color;
     text-decoration: none;
-    position: relative;
     text-shadow: none;
-    transition:  box-shadow 0.3s ease;
+
+    transition: box-shadow 0.3s ease;
 
     &:hover {
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
       &::after {
-          content: "";
-          display: block;
-          border-bottom: 1px solid $title-color;
-          position: absolute;
-          left: 0;
-          bottom: -10px;
-          width: 100%;
+        content: '';
+
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+
+        display: block;
+
+        width: 100%;
+        border-bottom: 1px solid $title-color;
       }
     }
   }
@@ -85,9 +94,9 @@
     display: none;
 
     @include onTablet {
-      width: 100%;
       display: block;
       grid-column: 4 / 7;
+      width: 100%;
     }
 
     @include onDesktop {
@@ -96,24 +105,29 @@
   }
 
   &__button {
+    cursor: pointer;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    width: 280px;
+    height: 60px;
     margin: auto;
     margin-top: 25px;
-    width: 280px;
-    background-color: $main-text-color;
-    color: $button-color;
-    height: 60px;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 130%;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
     border: none;
-    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 130%;
+    color: $button-color;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+
+    background-color: $main-text-color;
+
     transition: all 0.3s;
 
     @include onTablet {
@@ -126,9 +140,9 @@
   }
 
   &__button:hover {
-    background-color: $bg-color;
-    color: $main-text-color;
     border: 1px solid $main-text-color;
+    color: $main-text-color;
+    background-color: $bg-color;
   }
 
   &__left-side {
@@ -136,29 +150,31 @@
 
     @include onDesktop {
       position: absolute;
+
       display: flex;
       flex-direction: row-reverse;
-      writing-mode: vertical-lr;
       place-self: start start;
-      white-space: nowrap;
 
+      writing-mode: vertical-lr;
+      white-space: nowrap;
     }
   }
 
   &__line {
     width: 1px;
     height: 100px;
-    background: rgba(52, 79, 16, 0.50);
     margin-top: 10px;
+    background: rgba(52, 79, 16, 0.5);
   }
 
   &__left {
-    color: rgba(52, 79, 16, 0.50);
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 130%;
     transform: rotate(-180deg);
+
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.5);
+    text-align: center;
   }
 }

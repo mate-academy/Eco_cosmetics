@@ -1,9 +1,11 @@
 .contacts {
   position: relative;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   margin-top: 100px;
   margin-bottom: 100px;
 
@@ -12,76 +14,86 @@
   }
 
   &__title {
-    color: $title-color;
     font-size: 24px;
-    font-style: normal;
     font-weight: 600;
+    font-style: normal;
     line-height: 150%;
-    letter-spacing: 1.2px;
+    color: $title-color;
     text-transform: uppercase;
+    letter-spacing: 1.2px;
   }
 
-  &__help{
-    color: $main-text-color;
+  &__help {
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
     line-height: 150%;
+    color: $main-text-color;
   }
 
   &__form {
     display: flex;
     flex-direction: column;
     gap: 25px;
+
     margin-top: 30px;
     margin-bottom: 50px;
   }
 
   &__input {
-    background: none;
-    border: none;
-    font-family: Poppins, sans-serif;
     resize: none;
-    box-sizing: border-box;
-    color: $shop-form-col;
-    outline: none;
-    align-items: center;
-    width: 100%;
+
     display: inline-flex;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    text-transform: capitalize;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
     border-bottom: 1px solid #bdbdbd;
+
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%;
+    color: $shop-form-col;
+    text-transform: capitalize;
+
+    background: none;
+    outline: none;
   }
 
   &__button-link {
+    cursor: pointer;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    width: 280px;
+    height: 60px;
     margin: auto;
     margin-top: 30px;
-    background-color: $main-text-color;
-    color: $button-color;
-    height: 60px;
-    width: 280px;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 130%;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
     border: none;
-    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 130%;
+    color: $button-color;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+
+    background-color: $main-text-color;
+
     transition: all 0.3s;
   }
 
   &__button-link:hover {
-    background-color: $bg-color;
-    color: $main-text-color;
     border: 1px solid $main-text-color;
+    color: $main-text-color;
+    background-color: $bg-color;
   }
 
   &__photo {
@@ -89,8 +101,8 @@
 
     @include onTablet {
       display: block;
-      width: 100%;
       grid-column: 4 / 7;
+      width: 100%;
     }
 
     @include onDesktop {
@@ -114,8 +126,8 @@
 
     @include onDesktop {
       display: block;
-      width: 100%;
       grid-column: 7 / 13;
+      width: 100%;
     }
   }
 
@@ -124,34 +136,37 @@
 
     @include onDesktop {
       position: absolute;
+
       display: flex;
       flex-direction: row-reverse;
-      writing-mode: vertical-lr;
       place-self: start start;
       align-items: first baseline;
+
+      writing-mode: vertical-lr;
     }
   }
 
   &__line {
     width: 1px;
     height: 100px;
-    background: rgba(52, 79, 16, 0.50);
     margin-top: 10px;
+    background: rgba(52, 79, 16, 0.5);
   }
 
   &__left {
-    color: rgba(52, 79, 16, 0.50);
-    text-align: center;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 130%;
     transform: rotate(-180deg);
+
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.5);
+    text-align: center;
   }
 }
 
 input:-webkit-autofill {
-  -webkit-text-fill-color: $shop-form-col;
-  -webkit-box-shadow: 0 0 0px 1000px $bg-color inset;
-}
+  -webkit-box-shadow: 0 0 0 1000px $bg-color inset;
 
+  -webkit-text-fill-color: $shop-form-col;
+}

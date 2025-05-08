@@ -1,18 +1,19 @@
-
 .page {
-  font-family: Poppins, sans-serif;
-  background: $bg-color;
+  scroll-behavior: smooth;
+
   margin: 0;
+
+  font-family: Poppins, sans-serif;
   font-size: 16px;
   line-height: 140%;
   color: $main-text-color;
 
-  scroll-behavior: smooth;
+  background: $bg-color;
 
   &__body {
     overflow-x: hidden;
-    margin: 0;
     min-width: 320px;
+    margin: 0;
 
     &--with-menu {
       overflow: hidden;
@@ -20,20 +21,22 @@
   }
 
   &__menu {
+    pointer-events: none;
+
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-
-    transition:  all 0.3s ease;
-    opacity: 0;
     transform: translateX(-100%);
-    pointer-events: none;
+
+    opacity: 0;
+
+    transition: all 0.3s ease;
 
     &:target {
-      opacity: 1;
-      transform: translateX(0);
       pointer-events: all;
+      transform: translateX(0);
+      opacity: 1;
     }
   }
 }
