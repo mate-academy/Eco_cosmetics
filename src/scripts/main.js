@@ -48,3 +48,18 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#product') {
+    document.body.classList.add('page__body--with-product');
+  } else {
+    document.body.classList.remove('page__body--with-product');
+  }
+});
+
+const send = document.querySelector("#a-button");
+
+send.addEventListener("click", sendClick, false);
+
+function sendClick(event) {
+  event.preventDefault();
+}
