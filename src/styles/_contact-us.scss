@@ -1,43 +1,76 @@
+// src/styles/_contacts.scss
+@use 'utils/mixins' as m;
+@use 'utils/vars' as v;
+
 .contacts {
   position: relative;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin: 100px 0;
+  padding: 0 20px;
 
-  @include onTablet {
-    @include pageGrid;
+  @include m.on-tablet {
+    @include m.page-grid;
+
+    padding: 0;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 400px;
+
+    @include m.on-tablet {
+      grid-column: 1 / 4;
+      max-width: none;
+    }
+
+    @include m.on-desktop {
+      grid-column: 2 / 6;
+      margin-top: 220px;
+    }
   }
 
   &__title {
+    margin-bottom: 15px;
+
+    font-family: Poppins, sans-serif;
     font-size: 24px;
     font-weight: 600;
-    font-style: normal;
     line-height: 150%;
-    color: $title-color;
+    color: v.$title-color;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 1.2px;
+
+    @include m.on-desktop {
+      font-size: 28px;
+      text-align: left;
+    }
   }
 
   &__help {
+    margin-bottom: 30px;
+
+    font-family: Poppins, sans-serif;
     font-size: 14px;
     font-weight: 400;
-    font-style: normal;
     line-height: 150%;
-    color: $main-text-color;
+    color: v.$main-text-color;
+    text-align: center;
+
+    @include m.on-desktop {
+      text-align: left;
+    }
   }
 
   &__form {
     display: flex;
     flex-direction: column;
     gap: 25px;
-
-    margin-top: 30px;
-    margin-bottom: 50px;
+    margin: 30px 0 50px;
   }
 
   &__input {
@@ -48,99 +81,109 @@
 
     box-sizing: border-box;
     width: 100%;
+    padding: 10px 0;
     border: none;
     border-bottom: 1px solid #bdbdbd;
 
     font-family: Poppins, sans-serif;
     font-size: 14px;
     font-weight: 400;
-    font-style: normal;
     line-height: 150%;
-    color: $shop-form-col;
-    text-transform: capitalize;
+    color: v.$shop-form-col;
 
     background: none;
     outline: none;
+
+    &::placeholder {
+      color: rgba(v.$shop-form-col, 0.5);
+      text-transform: capitalize;
+    }
+
+    &:focus {
+      border-bottom-color: v.$title-color;
+    }
+
+    @include m.smooth-transition(border-color);
   }
 
-  &__button-link {
+  &__button {
     cursor: pointer;
 
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    width: 280px;
+    width: 100%;
+    max-width: 280px;
     height: 60px;
-    margin: auto;
-    margin-top: 30px;
+    margin: 30px auto 0;
     border: none;
 
+    font-family: Poppins, sans-serif;
     font-size: 16px;
     font-weight: 600;
-    font-style: normal;
     line-height: 130%;
-    color: $button-color;
+    color: v.$button-color;
     text-transform: uppercase;
     letter-spacing: 2.4px;
 
-    background-color: $main-text-color;
+    background-color: v.$main-text-color;
 
-    transition: all 0.3s;
-  }
+    @include m.smooth-transition(all);
 
-  &__button-link:hover {
-    border: 1px solid $main-text-color;
-    color: $main-text-color;
-    background-color: $bg-color;
+    &:hover {
+      border: 1px solid v.$main-text-color;
+      color: v.$main-text-color;
+      background-color: v.$bg-color;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
   }
 
   &__photo {
     display: none;
 
-    @include onTablet {
+    @include m.on-tablet {
       display: block;
       grid-column: 4 / 7;
+
       width: 100%;
+      height: auto;
+
+      object-fit: cover;
     }
 
-    @include onDesktop {
+    @include m.on-desktop {
       display: none;
-    }
-  }
-
-  &__container {
-    @include onTablet {
-      grid-column: 1 / 4;
-    }
-
-    @include onDesktop {
-      grid-column: 2 / 6;
-      margin-top: 220px;
     }
   }
 
   &__photo-desk {
     display: none;
 
-    @include onDesktop {
+    @include m.on-desktop {
       display: block;
       grid-column: 7 / 13;
+
       width: 100%;
+      height: 100%;
+
+      object-fit: cover;
     }
   }
 
   &__left-side {
     display: none;
 
-    @include onDesktop {
+    @include m.on-desktop {
       position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(180deg);
 
       display: flex;
       flex-direction: row-reverse;
-      place-self: start start;
-      align-items: first baseline;
+      gap: 20px;
+      align-items: center;
 
       writing-mode: vertical-lr;
     }
@@ -149,24 +192,24 @@
   &__line {
     width: 1px;
     height: 100px;
-    margin-top: 10px;
-    background: rgba(52, 79, 16, 0.5);
+    background: rgba(v.$title-color, 0.5);
   }
 
-  &__left {
-    transform: rotate(-180deg);
-
+  &__left-text {
+    font-family: Poppins, sans-serif;
     font-size: 14px;
     font-weight: 500;
-    font-style: normal;
     line-height: 130%;
-    color: rgba(52, 79, 16, 0.5);
-    text-align: center;
+    color: rgba(v.$title-color, 0.5);
   }
 }
 
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px $bg-color inset;
+// Autofill styles
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px v.$bg-color inset;
+  caret-color: v.$shop-form-col;
 
-  -webkit-text-fill-color: $shop-form-col;
+  -webkit-text-fill-color: v.$shop-form-col;
 }
