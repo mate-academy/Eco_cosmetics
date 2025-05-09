@@ -1,12 +1,12 @@
 .footer {
-  background-color: $footer-bg;
   padding-top: 30px;
+  background-color: $footer-bg;
 
   &__wrapper {
-    @include contentPaddingInline;
+    @include content-padding-inline;
 
-    @include onTablet {
-      @include pageGrid;
+    @include on-tablet {
+      @include page-grid;
 
       align-items: baseline;
     }
@@ -17,18 +17,20 @@
   }
 
   &__nav-list {
-    padding: 0;
-    list-style: none;
     display: flex;
     flex-direction: column;
     gap: 11px;
     align-items: start;
 
-    @include onTablet {
+    padding: 0;
+
+    list-style: none;
+
+    @include on-tablet {
       margin-bottom: 20px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       flex-direction: row;
       gap: 40px;
     }
@@ -39,23 +41,24 @@
   }
 
   &__nav-link {
-    text-decoration: none;
-    color: $bg-color;
     font-family: Poppins, sans-serif;
     font-size: 18px;
-    font-style: normal;
     font-weight: 500;
+    font-style: normal;
     line-height: 150%;
-    text-transform: capitalize;
+    color: $bg-color;
+    text-decoration: none;
     text-shadow: none;
+    text-transform: capitalize;
+
     transition:  box-shadow 0.3s ease;
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 16px;
       font-weight: 400;
     }
 
-    @include onDesktop {
+    @include on-desktop {
     font-size: 18px;
     font-weight: 500;
     }
@@ -70,16 +73,16 @@
     flex-direction: row;
     gap: 20px;
 
-    @include onTablet {
-      align-self: last baseline;
+    @include on-tablet {
       grid-column: 1 / 3;
       grid-row: 2;
+      align-self: last baseline;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 8 / 9;
-      margin-bottom: 66px;
       margin-top: 30px;
+      margin-bottom: 66px;
     }
   }
 
@@ -87,42 +90,45 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    color: $bg-color;
+
+    margin-top: 40px;
+
     font-family: Poppins,sans-serif;
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
     line-height: 150%;
-    margin-top: 40px;
+    color: $bg-color;
   }
 
   &__bottom {
-    margin-top: 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 40px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 3;
       justify-content: start;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 1 / 3;
     }
   }
 
   &__name {
-    color: $bg-color;
+    margin-bottom: 40px;
+    margin-left: 5px;
+
     font-family: Poppins,sans-serif;
     font-size: 14px;
-    font-style: normal;
     font-weight: 600;
+    font-style: normal;
     line-height: 130%;
-    margin-left: 5px;
-    margin-bottom: 40px;
+    color: $bg-color;
 
-    @include onTablet {
+    @include on-tablet {
       margin-bottom: 30px;
     }
   }
@@ -140,11 +146,11 @@
   &__add-wrapper {
     grid-column: 4 / 7;
 
-    @include onTablet {
+    @include on-tablet {
       align-items: first baseline;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 8 / 13;
     }
   }
