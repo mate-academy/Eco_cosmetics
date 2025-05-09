@@ -1,42 +1,31 @@
-// src/styles/_about.scss
-@use 'utils/mixins' as m;
-@use 'utils/vars' as v;
-
 .about {
   display: flex;
+
   margin-top: 100px;
 
-  @include m.on-tablet {
+
+  @include onTablet {
     margin-top: 130px;
 
-    @include m.page-grid;
+    @include pageGrid;
   }
 
-  @include m.on-desktop {
+  @include onDesktop {
     margin-top: 200px;
 
-    @include m.page-grid;
-  }
-
-  &__photo-container {
-    display: flex;
-    gap: 20px;
+    @include pageGrid;
   }
 
   &__photo1 {
     display: none;
 
-    @include m.on-tablet {
+    @include onTablet {
       display: block;
-      grid-column: 4 / 7;
-
       width: 100%;
-      height: auto;
-
-      object-fit: cover;
+      grid-column: 4 / 7;
     }
 
-    @include m.on-desktop {
+    @include onDesktop {
       display: none;
     }
   }
@@ -44,72 +33,58 @@
   &__photo1-desk {
     display: none;
 
-    @include m.on-desktop {
+    @include onDesktop {
       display: block;
-      grid-column: 7 / 11;
-
       width: 100%;
-      height: auto;
-
-      object-fit: cover;
+      grid-column: 7 / 11;
     }
   }
 
   &__photo2 {
     display: none;
 
-    @include m.on-desktop {
+    @include onDesktop {
       display: block;
-      grid-column: 11 / 13;
-
       width: 100%;
-      height: auto;
-
-      object-fit: cover;
+      grid-column: 11 /13;
     }
   }
 
   &__title {
-    margin-bottom: 20px;
-
+    color: $title-color;
     font-family: Poppins, sans-serif;
     font-size: 24px;
+    font-style: normal;
     font-weight: 600;
     line-height: 150%;
-    color: v.$title-color;
-    text-transform: uppercase;
     letter-spacing: 1.2px;
+    text-transform: uppercase;
   }
 
   &__wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+      color: $main-text-color;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-    padding: 0 20px;
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
 
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 150%;
-    color: v.$main-text-color;
-
-    @include m.on-tablet {
-      grid-column: 1 / 4;
-      align-items: flex-start;
-      padding: 0;
-    }
-
-    @include m.on-desktop {
-      grid-column: 2 / 6;
-    }
+      @include onDesktop {
+        grid-column: 2 / 6;
+      }
   }
 
   &__text {
-    margin-bottom: 20px;
-
     font-family: Poppins, sans-serif;
     font-size: 14px;
+    font-style: normal;
     font-weight: 400;
     line-height: 150%;
   }
@@ -117,43 +92,36 @@
   &__text-desk {
     display: none;
 
-    @include m.on-desktop {
-      display: block;
-      margin-top: 20px;
+    @include onDesktop {
+      display: grid;
     }
   }
 
   &__learn {
-    position: relative;
-
-    margin-top: 30px;
-
+    color: $title-color;
     font-family: Poppins, sans-serif;
     font-size: 14px;
+    font-style: normal;
     font-weight: 500;
     line-height: 130%;
-    color: v.$title-color;
+    margin-top: 30px;
     text-decoration: none;
-    text-transform: uppercase;
-
-    @include m.smooth-transition(text-shadow);
+    position: relative;
+    text-shadow: none;
+    transition:  box-shadow 0.3s ease;
 
     &:hover {
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
       &::after {
-        content: '';
-
+        content: "";
+        display: block;
+        border-bottom: 1px solid $title-color;
         position: absolute;
-        bottom: -8px;
         left: 0;
-
+        bottom: -10px;
         width: 100%;
-        height: 1px;
 
-        background-color: v.$title-color;
-
-        @include m.smooth-transition(all);
       }
     }
   }
@@ -161,30 +129,28 @@
   &__left-side {
     display: none;
 
-    @include m.on-desktop {
-      transform: rotate(180deg);
-
+    @include onDesktop {
       display: flex;
-      grid-column: 1;
       flex-direction: row-reverse;
-      gap: 20px;
-      align-items: center;
-
       writing-mode: vertical-lr;
+      place-self: start start;
     }
   }
 
   &__line {
     width: 1px;
     height: 100px;
-    background: rgba(v.$title-color, 0.5);
+    background: rgba(52, 79, 16, 0.50);
+    margin-top: 10px;
   }
 
-  &__left-text {
-    font-family: Poppins, sans-serif;
+  &__left {
+    color: rgba(52, 79, 16, 0.50);
+    text-align: center;
     font-size: 14px;
+    font-style: normal;
     font-weight: 500;
     line-height: 130%;
-    color: rgba(v.$title-color, 0.5);
+    transform: rotate(-180deg);
   }
 }
