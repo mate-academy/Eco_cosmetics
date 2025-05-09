@@ -1,156 +1,87 @@
-// src/styles/_brand.scss
-@use 'utils/mixins' as m;
-@use 'utils/vars' as v;
-
 .brand {
+  @include pageGrid;
+
   grid-column: 1 / -1;
-  padding: 20px 0;
-  color: v.$main-text-color;
-
-  @include m.page-grid;
-
-  @include m.on-tablet {
-    padding: 40px;
-  }
-
-  @include m.on-desktop {
-    align-items: center;
-    padding: 60px 0;
-  }
-
-  &__photo-container {
-    grid-column: 1 / -1;
-    width: 100%;
-
-    @include m.on-desktop {
-      grid-column: 7 / -1;
-      grid-row: 1;
-    }
-  }
 
   &__photo {
-    display: block;
     width: 100%;
-    height: auto;
-    object-fit: cover;
 
-    @include m.on-tablet {
-      max-height: 500px;
+    @include onMobile {
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
     }
   }
 
   &__wrapper {
-    grid-column: 1 / -1;
-    padding: 20px;
-
-    @include m.on-tablet {
-      padding: 40px;
+    @include onMobile {
+      grid-column: 1 / -1;
     }
 
-    @include m.on-desktop {
-      display: flex;
-      grid-column: 2 / 7;
+    @include onDesktop {
+      display: grid;
       grid-row: 1;
-      flex-direction: column;
-      justify-content: center;
-
-      height: 100%;
-      padding: 0;
+      grid-column: 2 / 7;
     }
   }
 
   &__title {
-    margin: 25px 0 10px;
-
     font-family: Poppins, sans-serif;
+    color: $main-text-color;
+    text-align: center;
     font-size: 24px;
     font-weight: 600;
-    line-height: 130%;
-    color: v.$main-text-color;
-    text-align: center;
-    text-transform: uppercase;
+    margin-top: 25px;
+    margin-bottom: 10px;
 
-    @include m.on-tablet {
+    @include onTablet {
       margin-top: 50px;
       font-size: 36px;
+      line-height: 150%;
     }
 
-    @include m.on-desktop {
-      margin-top: 0;
-      font-size: 48px;
-      text-align: left;
-    }
-
-    @include m.on-large {
+    @include onDesktop {
       font-size: 60px;
+      font-weight: 600;
+      line-height: 130%;
     }
   }
 
-  &__subtitle {
-    margin-bottom: 20px;
-
-    font-family: Poppins, sans-serif;
+  &__s-title {
+    color: $main-text-color;
+    text-align: center;
     font-size: 16px;
     font-weight: 400;
-    line-height: 150%;
-    color: v.$main-text-color;
-    text-align: center;
-
-    @include m.on-desktop {
-      margin-bottom: 40px;
-      font-size: 18px;
-      text-align: left;
-    }
+    line-height: 150%
   }
 
   &__shop-button {
-    @include m.center-content;
-
-    cursor: pointer;
-
-    width: 100%;
-    max-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 280px;
+    background-color: $main-text-color;
+    color: $button-color;
     height: 60px;
-    margin: 30px auto 0;
-    border: none;
-    border-radius: 4px;
-
-    font-family: Poppins, sans-serif;
     font-size: 16px;
+    font-style: normal;
     font-weight: 600;
-    color: v.$button-color;
-    text-transform: uppercase;
+    line-height: 130%;
     letter-spacing: 2.4px;
-
-    background-color: v.$main-text-color;
-
-    @include m.smooth-transition(all, 0.3s);
-
-    &:hover {
-      border: 1px solid v.$main-text-color;
-      color: v.$main-text-color;
-      background-color: transparent;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    @include m.on-desktop {
-      margin: 30px 0 0;
-    }
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: all 0.3s;
   }
 
-  &__decoration {
-    display: none;
-
-    @include m.on-desktop {
-      transform: rotate(180deg);
-
-      display: block;
-      grid-column: 1;
-
-      writing-mode: vertical-lr;
-      font-size: 14px;
-      color: rgba(v.$main-text-color, 0.5);
-      letter-spacing: 1.4px;
-    }
+  &__shop-button:hover {
+    background-color: $bg-color;
+    color: $main-text-color;
+    border: 1px solid $main-text-color;
   }
 }
