@@ -1,0 +1,177 @@
+.header {
+  @include grid-layout;
+  @include padding-layout;
+  @extend %keyframes;
+
+  padding-top: 15px;
+  margin-bottom: 20px;
+
+  &__nav {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu-toggle {
+    width: 24px;
+    height: 24px;
+    z-index: 3;
+
+    display: block;
+    mask-size: contain;
+    mask-position: center;
+    mask-image: url('../images/icons/menu.png');
+    background-color: $color-primary;
+
+    &--active {
+      mask-image: url('../images/icons/close.png');
+      background-color: $color-text-light;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    @include reset-links;
+
+    display: flex;
+    align-items: center;
+
+    &-smallsize {
+      width: 24px;
+      height: 24px;
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    &-bigsize {
+      width: 50px;
+      height: 50px;
+      display: none;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+
+    &-text {
+      @extend %text-2;
+
+      margin-inline: 12px 30px;
+      color: $color-primary;
+      text-transform: uppercase;
+      display: none;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__menu {
+    @extend %menu-text;
+
+    display: none;
+    font-weight: 600;
+
+    &--is-active {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 80px;
+      overflow: hidden;
+      overscroll-behavior: none;
+
+      background-color: $color-secondary;
+      color: $color-text-light;
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100dvw;
+      height: 100dvh;
+      z-index: 2;
+
+      animation: slide-in 0.5s forwards;
+    }
+
+    &--closing {
+      animation: slide-out 0.5s forwards;
+    }
+
+    &-link {
+      @include reset-links;
+
+      margin-bottom: 40px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $color-primary;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 1px;
+        width: calc(100% - 40px);
+        margin-top: 10px;
+        left: 20px;
+        background-color: $color-text-light;
+
+        @include on-desktop {
+          display: none;
+        }
+      }
+
+      @include on-desktop {
+        margin: 0;
+
+        &:nth-of-type(2) {
+          margin-inline: 40px;
+        }
+      }
+    }
+
+    @include on-desktop {
+      display: flex;
+      font-weight: 500;
+      line-height: 150%;
+      color: $color-primary;
+
+      &-link:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+
+  &__btn-shop {
+    width: 24px;
+    height: 24px;
+
+    display: block;
+    mask-size: contain;
+    mask-position: center;
+    mask-image: url('../images/icons/shop.png');
+    background-color: $color-primary;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+
+  @include on-tablet {
+    padding-top: 23px;
+  }
+
+  @include on-desktop {
+    padding-top: 40px;
+    margin-bottom: 80px;
+  }
+}

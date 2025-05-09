@@ -1,4 +1,204 @@
 %h1 {
-  font-family: Roboto, sans-serif;
+  font-family: $font-primary;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 130%;
+  letter-spacing: 0%;
+}
+
+%h2 {
+  font-family: $font-primary;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 110%;
+  letter-spacing: 5%;
+}
+
+%h3 {
+  font-family: $font-primary;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+%h4 {
+  font-family: $font-primary;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 5%;
+}
+
+%h5 {
+  font-family: $font-primary;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 5%;
+}
+
+%text {
+  font-family: $font-primary;
   font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 5%;
+}
+
+%text-2 {
+  font-family: $font-primary;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 5%;
+}
+
+%text-3 {
+  font-family: $font-primary;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 5%;
+}
+
+%small-text {
+  font-family: $font-primary;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+%menu-text {
+  font-family: $font-primary;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0%;
+}
+
+%decorative-text {
+  font-family: $font-primary;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 130%;
+  letter-spacing: 0%;
+}
+
+%button {
+  @include reset-links;
+
+  font-family: $font-primary;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  letter-spacing: 15%;
+
+  @extend %button-style;
+}
+
+%button-style {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 280px;
+  height: 60px;
+  background-color: $color-secondary;
+  color: $color-text-light;
+
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid $color-secondary;
+
+  &:hover {
+    color: $color-secondary;
+  }
+
+  &::after {
+    content: '';
+    background-color: $color-text-light;
+    position: absolute;
+    z-index: -1;
+    inset: 0 -20%;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+  }
+
+  &:hover::after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+}
+
+%btn-learn-more {
+  border: 1px solid $color-primary;
+  position: relative;
+  transition: 0.3s ease-out;
+  padding-block: 10px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% - -2px);
+    background-color: $color-background;
+    transition: 0.3s ease-out;
+    transform: scaleY(1);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 100%;
+    height: 100%;
+    background-color: $color-background;
+    transition: 0.3s ease-out;
+    transform: scaleX(1);
+  }
+
+  &:hover::before {
+    transform: translateY(-25px);
+    height: 0;
+  }
+
+  &:hover::after {
+    transform: scaleX(0);
+    transition-delay: 0.15s;
+  }
+
+  &:hover {
+    padding-inline: 10px;
+    border: 1px solid $color-primary;
+    transform: translateX(-10px);
+    transition: transform 0s;
+  }
+}
+
+%keyframes {
+  @keyframes slide-in {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-out {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
 }

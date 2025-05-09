@@ -1,0 +1,153 @@
+.products {
+  @include padding-layout;
+
+  display: none;
+
+  &--active {
+    display: grid;
+  }
+
+  .card {
+    @include grid-layout;
+
+    @include on-desktop {
+      margin-bottom: 100px;
+    }
+
+    &__title {
+      grid-column: 1 / -1;
+      text-transform: uppercase;
+      color: $color-secondary;
+      margin: 0 0 10px;
+
+      @include on-tablet {
+        grid-column: 2 / -1;
+        margin: 0 0 25px;
+      }
+
+      @include on-desktop {
+        grid-column: 8 / -1;
+        grid-row: 1;
+      }
+    }
+
+    &__description {
+      @extend %text-2;
+
+      grid-column: 1 / -1;
+      text-transform: uppercase;
+      color: $color-secondary;
+      margin: 0 0 20px;
+
+      &-g {
+        display: none;
+
+        @include on-tablet {
+          display: block;
+          color: $color-secondary;
+          margin: 0 0 30px;
+        }
+      }
+
+      @include on-tablet {
+        grid-column: 2 / -1;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 150%;
+        color: $color-primary;
+        margin: 0 0 10px;
+      }
+
+      @include on-desktop {
+        grid-column: 8 / -1;
+        grid-row: 2;
+      }
+    }
+
+    &__image {
+      /* grid-column: 1 / -1; */
+      width: 280px;
+      height: 248px;
+      margin: 0 0 30px;
+
+      @include on-tablet {
+        grid-row: 1;
+        grid-column: 2 / -1;
+        width: 466px;
+        height: 440px;
+      }
+
+      @include on-desktop {
+        grid-row: 1 / 7;
+        grid-column: 2 / -1;
+        width: 486px;
+        height: 460px;
+        margin: 0;
+      }
+    }
+
+    &__btn {
+      @extend %button;
+
+      grid-column: 1 / -1;
+      margin: 0 0 50px;
+
+      @include on-tablet {
+        justify-self: center;
+        margin: 0 0 60px;
+      }
+
+      @include on-desktop {
+        grid-column: 6 / -1;
+        grid-row: 6;
+        margin: 0;
+      }
+    }
+
+    &__paragraph {
+      @extend %small-text;
+
+      grid-column: 1 / -1;
+      margin: 0 0 20px;
+
+      &-label {
+        color: $color-primary;
+      }
+
+      @include on-tablet {
+        grid-column: 2 / 6;
+      }
+
+      @include on-desktop {
+        grid-column: 8 / -1;
+
+        &--1 {
+          grid-row: 3;
+        }
+
+        &--2 {
+          grid-row: 4;
+        }
+      }
+    }
+  }
+
+  position: relative;
+  &__close-btn {
+    @extend %button;
+
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: $color-secondary;
+    border-radius: 50%;
+    z-index: 3;
+
+    @include on-desktop {
+      bottom: 110px;
+      right: 80px;
+    }
+  }
+}
