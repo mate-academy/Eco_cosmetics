@@ -1,12 +1,20 @@
+// src/styles/_header.scss
+@use 'utils/mixins' as m;
+@use 'utils/vars' as v;
+
 .header {
+  position: relative;
   box-sizing: border-box;
+  width: 100%;
   padding: 20px;
 
   &__mobile {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
-    @media screen and (min-width: 1280px) {
+    @include m.on-desktop {
+      // Fixed: kebab-case
       display: none;
     }
   }
@@ -14,54 +22,74 @@
   &__desktop {
     display: none;
 
-    @media screen and (min-width: 1280px) {
+    @include m.on-desktop {
+      // Fixed: kebab-case
       display: flex;
-      flex-direction: row;
       align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
 
-      &-text {
-        margin-left: 12px;
+    &-text {
+      margin-left: 12px;
 
-        font-size: 14px;
-        font-weight: 400;
-        font-style: normal;
-        line-height: 130%;
-        color: $title-color;
-        text-transform: uppercase;
-        letter-spacing: 0.7px;
-      }
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 130%;
+      color: v.$title-color;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
     }
   }
 
-  &__nav-list {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    align-items: center;
+  &__nav {
+    &-list {
+      display: flex;
+      gap: 40px;
+      align-items: center;
 
-    margin-left: 330px;
+      margin: 0;
+      padding: 0;
 
-    list-style: none;
+      list-style: none;
+
+      @include m.on-desktop {
+        // Fixed: kebab-case
+        margin-left: auto;
+      }
+    }
+
+    &-link {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 150%;
+      color: v.$title-color;
+      text-decoration: none;
+      text-transform: capitalize;
+
+      @include m.smooth-transition(text-shadow); // Fixed: kebab-case
+
+      &:hover {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &-item {
+      @include m.hover-effect(transform, scale(1.2));
+    }
   }
 
-  &__nav-link {
-    font-size: 18px;
-    font-weight: 500;
-    font-style: normal;
-    line-height: 150%;
-    color: $title-color;
-    text-decoration: none;
-    text-shadow: none;
-    text-transform: capitalize;
+  &__menu-button {
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    background: none;
 
-    transition: box-shadow 0.3s ease;
-  }
+    @include m.hover-effect(opacity, 0.8);
 
-  &__nav-link:hover {
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  }
-
-  &__nav-item {
-    @include hover(transform, scale(1.2));
+    @include m.on-desktop {
+      // Fixed: kebab-case
+      display: none;
+    }
   }
 }
