@@ -1,39 +1,35 @@
-// _gifts.scss
-@use 'utils/mixins' as m;
-@use 'utils/vars' as v;
-
 .gifts {
   display: flex;
-  align-items: center;
+  color: $title-color;
   justify-content: center;
-  color: v.$title-color; // Variável corrigida com namespace
+  align-items: center;
 
-  @include m.on-desktop {
-    @include m.page-grid;
+  @include onDesktop {
+    @include pageGrid;
   }
 
   &__title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 100px;
-
     font-family: Poppins, sans-serif;
     font-size: 18px;
+    font-style: normal;
     font-weight: 600;
     line-height: 150%;
-    text-transform: uppercase;
     letter-spacing: 0.9px;
+    text-transform: uppercase;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
 
-    @include m.on-tablet {
+    @include onTablet {
       margin-top: 130px;
     }
 
-    @include m.on-desktop {
-      grid-column: 7 / 12;
+
+    @include onDesktop {
       font-size: 24px;
+      font-weight: 600;
       letter-spacing: 1.2px;
+      grid-column: 7 / 12;
     }
   }
 
@@ -41,7 +37,7 @@
     display: none;
     margin-top: 100px;
 
-    @include m.on-desktop {
+    @include onDesktop {
       display: block;
       grid-column: 2 / 6;
     }
@@ -50,17 +46,15 @@
   &__line-up {
     display: none;
 
-    @include m.on-desktop {
+    @include onDesktop {
       display: flex;
+      margin-top: 200px;
+      height: 1px;
+      width: 530px;
+      color: rgba(52, 79, 16, 0.50);
       grid-column: 1 / 6;
 
-      width: 530px;
-      height: 1px;
-      margin-top: 200px;
-
-      background-color: rgba(52, 79, 16, 0.5);
-
-      @include m.on-screen {
+      @include onScreen {
         width: 610px;
       }
     }
@@ -69,17 +63,15 @@
   &__line-down {
     display: none;
 
-    @include m.on-desktop {
+    @include onDesktop {
       display: flex;
+      margin-top: 100px;
+      height: 1px;
+      width: 530px;
+      color: rgba(52, 79, 16, 0.50);
       grid-column: 7 / 13;
 
-      width: 530px;
-      height: 1px;
-      margin-top: 100px;
-
-      background-color: rgba(52, 79, 16, 0.5);
-
-      @include m.on-screen {
+      @include onScreen {
         width: 610px;
       }
     }
