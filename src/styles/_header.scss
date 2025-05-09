@@ -1,95 +1,63 @@
-// src/styles/_header.scss
-@use 'utils/mixins' as m;
-@use 'utils/vars' as v;
-
 .header {
-  position: relative;
   box-sizing: border-box;
-  width: 100%;
   padding: 20px;
 
   &__mobile {
     display: flex;
-    align-items: center;
     justify-content: space-between;
 
-    @include m.on-desktop {
-      // Fixed: kebab-case
+    @media screen and (min-width: 1280px) {
       display: none;
     }
   }
 
   &__desktop {
-    display: none;
+     display: none;
 
-    @include m.on-desktop {
-      // Fixed: kebab-case
+     @media screen and (min-width: 1280px) {
       display: flex;
+      flex-direction: row;
       align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
 
-    &-text {
-      margin-left: 12px;
-
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 130%;
-      color: v.$title-color;
-      text-transform: uppercase;
-      letter-spacing: 0.7px;
+      &-text {
+        color: $title-color;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+        margin-left: 12px;
+      }
     }
   }
 
-  &__nav {
-    &-list {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-
-      margin: 0;
-      padding: 0;
-
-      list-style: none;
-
-      @include m.on-desktop {
-        // Fixed: kebab-case
-        margin-left: auto;
-      }
-    }
-
-    &-link {
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 150%;
-      color: v.$title-color;
-      text-decoration: none;
-      text-transform: capitalize;
-
-      @include m.smooth-transition(text-shadow); // Fixed: kebab-case
-
-      &:hover {
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      }
-    }
-
-    &-item {
-      @include m.hover-effect(transform, scale(1.2));
-    }
+  &__nav-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    gap: 40px;
+    margin-left: 330px;
   }
 
-  &__menu-button {
-    cursor: pointer;
-    padding: 8px;
-    border: none;
-    background: none;
+  &__nav-link {
+    text-decoration: none;
+    color: $title-color;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-shadow: none;
+    transition:  box-shadow 0.3s ease;
+  }
 
-    @include m.hover-effect(opacity, 0.8);
+  &__nav-link:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
 
-    @include m.on-desktop {
-      // Fixed: kebab-case
-      display: none;
-    }
+  &__nav-item {
+    @include hover(transform, scale(1.2));
   }
 }
