@@ -1,8 +1,8 @@
-// src/styles/_contacts.scss
+// src/styles/_creators.scss
 @use 'utils/mixins' as m;
 @use 'utils/vars' as v;
 
-.contacts {
+.creators {
   position: relative;
 
   display: flex;
@@ -12,15 +12,18 @@
   margin: 100px 0;
   padding: 0 20px;
 
+  text-align: center;
+
   @include m.on-tablet {
     @include m.page-grid;
 
     padding: 0;
+    text-align: left;
   }
 
-  &__container {
+  &__wrapper {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 
     @include m.on-tablet {
       grid-column: 1 / 4;
@@ -28,88 +31,114 @@
     }
 
     @include m.on-desktop {
-      grid-column: 2 / 6;
-      margin-top: 220px;
+      grid-column: 2 / 7;
     }
   }
 
   &__title {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
     font-family: Poppins, sans-serif;
     font-size: 24px;
     font-weight: 600;
     line-height: 150%;
     color: v.$title-color;
-    text-align: center;
     text-transform: uppercase;
     letter-spacing: 1.2px;
 
-    @include m.on-desktop {
+    @include m.on-tablet {
       font-size: 28px;
-      text-align: left;
+    }
+
+    @include m.on-desktop {
+      font-size: 32px;
     }
   }
 
-  &__help {
-    margin-bottom: 30px;
+  &__text {
+    margin-bottom: 15px;
 
     font-family: Poppins, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 150%;
     color: v.$main-text-color;
-    text-align: center;
 
-    @include m.on-desktop {
-      text-align: left;
+    @include m.onTablet {
+      font-size: 16px;
     }
   }
 
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin: 30px 0 50px;
+  &__paragraph {
+    &--desktop-only {
+      display: none;
+
+      @include m.on-desktop {
+        display: block;
+        margin-top: 20px;
+      }
+    }
   }
 
-  &__input {
-    resize: none;
+  &__learn-more {
+    position: relative;
 
-    display: inline-flex;
-    align-items: center;
+    display: inline-block;
 
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px 0;
-    border: none;
-    border-bottom: 1px solid #bdbdbd;
+    margin-top: 30px;
 
     font-family: Poppins, sans-serif;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 150%;
-    color: v.$shop-form-col;
+    font-weight: 500;
+    line-height: 130%;
+    color: v.$title-color;
+    text-decoration: none;
+    text-transform: uppercase;
 
-    background: none;
-    outline: none;
+    @include m.smooth-transition(all);
 
-    &::placeholder {
-      color: rgba(v.$shop-form-col, 0.5);
-      text-transform: capitalize;
+    &:hover {
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+
+        width: 100%;
+        height: 1px;
+
+        background-color: v.$title-color;
+
+        @include m.smooth-transition(all);
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    @include m.on-tablet {
+      display: block;
+      grid-column: 4 / 7;
+      margin-top: 30px;
     }
 
-    &:focus {
-      border-bottom-color: v.$title-color;
+    @include m.on-desktop {
+      grid-column: 8 / 13;
+      margin-top: 0;
     }
-
-    @include m.smooth-transition(border-color);
   }
 
   &__button {
     cursor: pointer;
 
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
@@ -118,6 +147,7 @@
     height: 60px;
     margin: 30px auto 0;
     border: none;
+    border-radius: 4px;
 
     font-family: Poppins, sans-serif;
     font-size: 16px;
@@ -134,44 +164,16 @@
     &:hover {
       border: 1px solid v.$main-text-color;
       color: v.$main-text-color;
-      background-color: v.$bg-color;
+      background-color: transparent;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-  }
-
-  &__photo {
-    display: none;
-
-    @include m.on-tablet {
-      display: block;
-      grid-column: 4 / 7;
-
-      width: 100%;
-      height: auto;
-
-      object-fit: cover;
-    }
 
     @include m.on-desktop {
-      display: none;
+      margin-left: 0;
     }
   }
 
-  &__photo-desk {
-    display: none;
-
-    @include m.on-desktop {
-      display: block;
-      grid-column: 7 / 13;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-    }
-  }
-
-  &__left-side {
+  &__side-decoration {
     display: none;
 
     @include m.on-desktop {
@@ -187,29 +189,19 @@
 
       writing-mode: vertical-lr;
     }
+
+    &-text {
+      font-family: Poppins, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 130%;
+      color: rgba(v.$title-color, 0.5);
+    }
+
+    &-line {
+      width: 1px;
+      height: 100px;
+      background: rgba(v.$title-color, 0.5);
+    }
   }
-
-  &__line {
-    width: 1px;
-    height: 100px;
-    background: rgba(v.$title-color, 0.5);
-  }
-
-  &__left-text {
-    font-family: Poppins, sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 130%;
-    color: rgba(v.$title-color, 0.5);
-  }
-}
-
-// Autofill styles
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 1000px v.$bg-color inset;
-  caret-color: v.$shop-form-col;
-
-  -webkit-text-fill-color: v.$shop-form-col;
 }
