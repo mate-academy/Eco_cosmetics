@@ -1,96 +1,70 @@
-@use 'vars' as v;
-
-@mixin on-mobile {
-  @media (min-width: v.$mobile-min-width) {
+@mixin onMobile {
+  @media (min-width: $mobile-min-width) {
     @content;
   }
 }
 
-@mixin on-tablet {
-  @media (min-width: v.$tablet-min-width) {
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
     @content;
   }
 }
 
-@mixin on-desktop {
-  @media (min-width: v.$desktop-min-width) {
+@mixin onDesktop {
+  @media (min-width: $desktop-min-with) {
     @content;
   }
 }
 
-@mixin on-screen {
-  @media (min-width: v.$screen-min-width) {
+@mixin onScreen {
+  @media (min-width: $screen-min-with) {
     @content;
   }
 }
 
-@mixin content-padding-inline() {
+@mixin contentPaddingInline() {
   margin: 0 20px;
 
-  @include on-tablet {
+  @include onTablet {
     margin: 0 27px;
   }
 
-  @include on-desktop {
+  @include onDesktop {
     margin: 0 50px;
   }
 
-  @include on-screen {
+  @include onScreen {
     margin: 0 130px;
   }
 }
 
-.main {
-  @include content-padding-inline;
+.main{
+  @include contentPaddingInline;
 }
 
-@mixin hover-effect($property, $toValue, $important: false) {
-  @include smooth-transition($property);
-
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
   &:hover {
-    #{$property}: $toValue #{if($important, '!important', '')};
+    #{$_property}: $_toValue;
   }
 }
 
-@mixin page-grid {
-  --columns: 2; // Fixed spelling from "colomns" to "columns"
+@mixin pageGrid {
+  --colomns: 2;
 
   display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
   column-gap: 20px;
+  grid-template-columns: repeat(var(--colomns), 1fr);
 
-  @include on-tablet {
-    --columns: 6; // Fixed spelling
+  @include onTablet {
+    --colomns: 6;
 
     column-gap: 30px;
   }
 
-  @include on-desktop {
-    --columns: 12; // Fixed spelling
+  @include onDesktop {
+    --colomns: 12;
 
     column-gap: 20px;
   }
-}
-
-@mixin smooth-transition(
-  // Changed to kebab-case
-  $property: all,
-  $duration: v.$effectDuration,
-  $timing: ease-in-out
-) {
-  transition: $property $duration $timing;
-}
-
-@mixin on-large {
-  // ✅ Correct definition
-  @media (min-width: 1024px) {
-    @content;
-  }
-}
-
-@mixin center-content {
-  // ✅ Correct definition
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
