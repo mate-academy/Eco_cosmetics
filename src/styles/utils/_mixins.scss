@@ -1,23 +1,25 @@
+@use 'vars' as v;
+
 @mixin on-mobile {
-  @media (min-width: $mobile-min-width) {
+  @media (min-width: v.$mobile-min-width) {
     @content;
   }
 }
 
 @mixin on-tablet {
-  @media (min-width: $tablet-min-width) {
+  @media (min-width: v.$tablet-min-width) {
     @content;
   }
 }
 
 @mixin on-desktop {
-  @media (min-width: $desktop-min-with) {
+  @media (min-width: v.$desktop-min-width) {
     @content;
   }
 }
 
 @mixin on-screen {
-  @media (min-width: $screen-min-with) {
+  @media (min-width: v.$screen-min-width) {
     @content;
   }
 }
@@ -42,29 +44,53 @@
   @include content-padding-inline;
 }
 
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover-effect($property, $toValue, $important: false) {
+  @include smooth-transition($property);
+
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $toValue #{if($important, '!important', '')};
   }
 }
 
 @mixin page-grid {
-  --colomns: 2;
+  --columns: 2; // Fixed spelling from "colomns" to "columns"
 
   display: grid;
-  grid-template-columns: repeat(var(--colomns), 1fr);
+  grid-template-columns: repeat(var(--columns), 1fr);
   column-gap: 20px;
 
   @include on-tablet {
-    --colomns: 6;
+    --columns: 6; // Fixed spelling
 
     column-gap: 30px;
   }
 
   @include on-desktop {
-    --colomns: 12;
+    --columns: 12; // Fixed spelling
 
     column-gap: 20px;
   }
+}
+
+@mixin smooth-transition(
+  // Changed to kebab-case
+  $property: all,
+  $duration: v.$effectDuration,
+  $timing: ease-in-out
+) {
+  transition: $property $duration $timing;
+}
+
+@mixin on-large {
+  // ✅ Correct definition
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin center-content {
+  // ✅ Correct definition
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
