@@ -1,15 +1,43 @@
-@import 'utils';
-@import 'typography';
-@import 'header';
-@import 'page';
-@import 'brand';
-@import 'icon';
-@import 'menu';
-@import 'nav';
-@import 'gifts';
-@import 'about';
-@import 'shop';
-@import 'creators';
-@import 'powder';
-@import 'contact-us';
-@import 'footer';
+// src/styles/main.scss
+@use './utils/mixins' as m;
+@use './utils/vars' as v;
+@use './utils/extends';
+
+// Importação de componentes
+@use 'header';
+
+@use 'brand';
+@use 'gifts';
+@use 'about';
+@use 'typography';
+
+@use 'page';
+@use 'icon';
+@use 'menu';
+@use 'nav';
+@use 'shop';
+@use 'creators';
+@use 'powder';
+@use 'contact-us';
+@use 'footer';
+
+// Estilos Globais
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  color: v.$main-text-color;
+  background-color: v.$bg-color;
+}
+
+// Layout Geral
+.container {
+  @include m.content-padding-inline;
+}
