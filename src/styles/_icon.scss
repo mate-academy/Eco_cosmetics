@@ -1,10 +1,16 @@
+@use 'utils/mixins' as m;
+@use 'utils/vars' as v;
+
 .icon {
   position: relative;
+
   display: block;
+
+  background-color: v.$main-text-color;
   background-position: center;
   background-size: cover;
 
-  @include hover(transform, scale(1.2));
+  @include m.hover-effect(transform, scale(1.2));
 
   &--menu {
     width: 20px;
@@ -38,7 +44,7 @@
 
     background-image: url(/images/icons/dead-bird.png);
 
-    @include onTablet {
+    @include m.on-tablet {
       width: 80px;
       height: 60px;
     }
@@ -52,7 +58,7 @@
 
     background-image: url(/images/icons/icon-res.png);
 
-    @include onTablet {
+    @include m.on-tablet {
       width: 80px;
       height: 67px;
     }
