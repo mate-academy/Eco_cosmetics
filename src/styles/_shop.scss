@@ -1,0 +1,213 @@
+.shop {
+  margin-top: 100px;
+  text-align: center;
+
+  @include on-tablet {
+    margin-top: 130px;
+    text-align: left;
+
+    @include page-grid;
+  }
+
+  @include on-desktop {
+    margin-top: 238px;
+  }
+
+  &__title {
+    font-family: Poppins, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 150%;
+    color: $title-color;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+
+    @include hover-effect(transform, scale(1.1));
+  }
+
+  &__title-n {
+    @include on-tablet {
+      grid-column: 1/ 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 4;
+    }
+  }
+
+  &__left-img {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__right-img {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      grid-column: 4 / 7;
+
+
+    }
+
+    @include on-desktop {
+      grid-column: 8 / 13;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 34px;
+    justify-content: center;
+    margin-top: 20px;
+
+    @include on-tablet {
+      justify-content: start;
+    }
+  }
+
+  &__nav-item {
+    position: relative;
+
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 130%;
+    color: $shop-form-col;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+
+    @include hover-effect(transform, scale(1.2));
+
+
+    &:hover {
+      color: $main-text-color;
+      &::after {
+          content: "";
+
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+
+          display: block;
+
+          width: 100%;
+          border-bottom: 2px solid $main-text-color;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    margin-top: 27px;
+
+    @include hover-effect(transform, scale(1.1));
+  }
+
+  &__name {
+    cursor: pointer;
+
+    display: block;
+
+    margin-top: 20px;
+
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 150%;
+    color: $main-text-color;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+
+    @include hover-effect(transform, scale(1.1));
+
+  }
+
+  &__price {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    cursor: pointer;
+
+    display: flex;
+    grid-column: 3 / 5;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 280px;
+    height: 60px;
+    margin: auto;
+    margin-top: 30px;
+    border: none;
+
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 130%;
+    color: $button-color;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+
+    background-color: $main-text-color;
+
+    transition: all 0.3s;
+
+    @include on-desktop {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__button:hover {
+    border: 1px solid $main-text-color;
+    color: $main-text-color;
+    background-color: $bg-color;
+  }
+
+  &__left-side {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row-reverse;
+      place-self: start start;
+      writing-mode: vertical-lr;
+    }
+  }
+
+  &__line {
+    width: 1px;
+    height: 100px;
+    margin-top: 10px;
+    background: rgba(52, 79, 16, 0.50);
+  }
+
+  &__left {
+    transform: rotate(-180deg);
+
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.50);
+    text-align: center;
+  }
+}
+

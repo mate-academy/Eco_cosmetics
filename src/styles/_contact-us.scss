@@ -1,0 +1,173 @@
+.contacts {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  @include on-tablet {
+    @include page-grid;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 150%;
+    color: $title-color;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+
+  &__help{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%;
+    color: $main-text-color;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  &__input {
+    resize: none;
+
+    display: inline-flex;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%;
+    color: $shop-form-col;
+    text-transform: capitalize;
+
+    background: none;
+    outline: none;
+  }
+
+  &__button-link {
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 280px;
+    height: 60px;
+    margin: auto;
+    margin-top: 30px;
+    border: none;
+
+    font-size: 16px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 130%;
+    color: $button-color;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+
+    background-color: $main-text-color;
+
+    transition: all 0.3s;
+  }
+
+  &__button-link:hover {
+    border: 1px solid $main-text-color;
+    color: $main-text-color;
+    background-color: $bg-color;
+  }
+
+  &__photo {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      grid-column: 4 / 7;
+      width: 100%;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__container {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+      margin-top: 220px;
+    }
+  }
+
+  &__photo-desk {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      grid-column: 7 / 13;
+      width: 100%;
+    }
+  }
+
+  &__left-side {
+    display: none;
+
+    @include on-desktop {
+      position: absolute;
+
+      display: flex;
+      flex-direction: row-reverse;
+      place-self: start start;
+      align-items: first baseline;
+
+      writing-mode: vertical-lr;
+    }
+  }
+
+  &__line {
+    width: 1px;
+    height: 100px;
+    margin-top: 10px;
+    background: rgba(52, 79, 16, 0.50);
+  }
+
+  &__left {
+    transform: rotate(-180deg);
+
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 130%;
+    color: rgba(52, 79, 16, 0.50);
+    text-align: center;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px $bg-color inset;
+
+  -webkit-text-fill-color: $shop-form-col;
+}
+
