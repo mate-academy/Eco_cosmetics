@@ -1,0 +1,84 @@
+.gifts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $title-color;
+
+  @include on-desktop {
+    @include page-grid;
+  }
+
+  &__title {
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 100px;
+
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 150%;
+    text-transform: uppercase;
+    letter-spacing: 0.9px;
+
+    @include on-tablet {
+      margin-top: 130px;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 12;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__desktop {
+    display: none;
+    margin-top: 100px;
+
+    @include on-desktop {
+      display: block;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__line-up {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      grid-column: 1 / 6;
+
+      width: 530px;
+      height: 1px;
+      margin-top: 200px;
+
+      color: rgba(52, 79, 16, 0.5);
+
+      @include on-screen {
+        width: 610px;
+      }
+    }
+  }
+
+  &__line-down {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      grid-column: 7 / 13;
+
+      width: 530px;
+      height: 1px;
+      margin-top: 100px;
+
+      color: rgba(52, 79, 16, 0.5);
+
+      @include on-screen {
+        width: 610px;
+      }
+    }
+  }
+}

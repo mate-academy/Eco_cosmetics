@@ -1,0 +1,157 @@
+.footer {
+  padding-top: 30px;
+  background-color: $footer-bg;
+
+  &__wrapper {
+    @include content-padding-inline;
+
+    @include on-tablet {
+      @include page-grid;
+
+      align-items: baseline;
+    }
+  }
+
+  &__nav {
+    grid-column: span 3;
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: start;
+
+    padding: 0;
+
+    list-style: none;
+
+    @include on-tablet {
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__nav-item {
+    @include hover-effect(transform, scale(1.2));
+  }
+
+  &__nav-link {
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 150%;
+    color: $bg-color;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: capitalize;
+
+    transition: box-shadow 0.3s ease;
+
+    @include on-tablet {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    @include on-desktop {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  &__nav-link:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+      grid-row: 2;
+      align-self: last baseline;
+    }
+
+    @include on-desktop {
+      grid-column: 8 / 9;
+      margin-top: 30px;
+      margin-bottom: 66px;
+    }
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-top: 40px;
+
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%;
+    color: $bg-color;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+      justify-content: start;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__name {
+    margin-bottom: 40px;
+    margin-left: 5px;
+
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 130%;
+    color: $bg-color;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__email {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__tel {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__add-wrapper {
+    grid-column: 4 / 7;
+
+    @include on-tablet {
+      align-items: first baseline;
+    }
+
+    @include on-desktop {
+      grid-column: 8 / 13;
+    }
+  }
+}
