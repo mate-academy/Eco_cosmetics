@@ -25,33 +25,45 @@
 
 @mixin grid-layout {
   display: grid;
-  grid-template-columns: repeat(2, 130px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 20px;
+  max-width: 100%;
+  width: 100%;
 
   @include on-tablet {
-    grid-template-columns: repeat(6, 94px);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     column-gap: 30px;
   }
 
   @include on-desktop {
-    grid-template-columns: repeat(12, 80px);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: 20px;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }
 
 @mixin padding-layout {
-  padding-inline: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
 
   @include on-tablet {
-    padding-inline: 27px;
+    padding-left: 27px;
+    padding-right: 27px;
   }
 
   @include on-desktop {
-    padding-inline: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
   @include on-desktop-xl {
-    padding-inline: 130px;
+    padding-left: 130px;
+    padding-right: 130px;
   }
 }
 
@@ -61,5 +73,16 @@
 
   &:focus {
     outline: none;
+  }
+}
+
+@mixin full-width-mobile {
+  // For images that need to ignore side paddings on mobile
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+
+  @include on-tablet {
+    width: 100%;
+    margin-left: 0;
   }
 }

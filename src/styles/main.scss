@@ -5,10 +5,82 @@
 html {
   scroll-behavior: smooth;
   scrollbar-width: none;
+  box-sizing: border-box;
 }
 
 body {
   background: $color-background;
   color: $color-secondary;
   margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+// Correções gerais de responsividade
+* {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Correção para elementos que podem causar overflow
+section {
+  overflow-x: hidden;
+}
+
+// Correções específicas para elementos problemáticos
+.home__image--mobile,
+.shop__image,
+.about__image,
+.contact-us__image,
+.about-creators__image,
+.products .card__image {
+  object-fit: cover;
+  object-position: center;
+}
+
+// Ensure full-width images don't cause overflow
+.home__image--mobile,
+.shop__image,
+.products .card__image {
+  @media (max-width: 639px) {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+}
+
+// Ensure no element exceeds viewport width
+.header,
+.home,
+.about,
+.shop,
+.products,
+.about-creators,
+.others,
+.others-part-2,
+.contact-us,
+.footer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// Fix for very large screens
+@media (min-width: 1440px) {
+  .header,
+  .home,
+  .about,
+  .shop,
+  .products,
+  .about-creators,
+  .others,
+  .others-part-2,
+  .contact-us,
+  .footer {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 }
