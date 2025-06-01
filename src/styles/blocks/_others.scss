@@ -37,7 +37,10 @@
     @include full-width-mobile;
 
     @include on-tablet {
-      display: none;
+      // display: none;
+      width: 55%;
+      background-image: url('../images/tablet/img-bg.png');
+      transform: translateY(-60px);
     }
   }
 
@@ -76,6 +79,8 @@
     @include on-tablet {
       grid-column: 2 / 4;
       grid-row: 2;
+
+      transform: translateY(-60px);
     }
 
     @include on-desktop {
@@ -85,10 +90,16 @@
   }
 
   &__item {
-    margin: 0 30px 52px 0;
+    margin: 0 30px 50px 0;
 
     &:nth-of-type(even) {
-      margin-bottom: 49px;
+      margin-bottom: 50px;
+    }
+
+    @include on-tablet {
+      &:last-child {
+        margin: 0 30px;
+      }
     }
   }
 
