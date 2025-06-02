@@ -1,9 +1,8 @@
 .home {
+  /* display: none !important; */
   @include grid-layout;
   @include padding-layout;
 
-  width: 100%;
-  box-sizing: border-box;
   padding-bottom: 100px;
 
   &__image {
@@ -18,11 +17,10 @@
     }
 
     &--mobile {
-      @include full-width-mobile;
-
       grid-column: 1 / -1;
+      transform: translateX(-20px);
+      width: 320px;
       height: 267px;
-      margin-bottom: 20px;
 
       @include on-tablet {
         display: none;
@@ -31,10 +29,9 @@
 
     &--tablet {
       display: none;
+      grid-column: 1 / -1;
       width: 100%;
       max-width: 714px;
-      height: 500px;
-      grid-column: 1 / -1;
 
       @include on-tablet {
         display: block;
@@ -48,8 +45,7 @@
     &--desktop {
       display: none;
       grid-column: 7 / -1;
-      width: 100%;
-      max-width: 580px;
+      width: 580px;
       height: 451px;
 
       @include on-desktop {
@@ -79,17 +75,16 @@
 
     @include on-tablet {
       font-size: 36px;
-      margin: 0 auto 10px;
-      max-width: calc(100% - 130px);
+      margin: 0 120px 10px;
       line-height: 150%;
       text-transform: capitalize;
+      width: 90%;
     }
 
     @include on-desktop {
       font-size: 60px;
       line-height: 130%;
       margin: 0;
-      max-width: 100%;
     }
   }
 

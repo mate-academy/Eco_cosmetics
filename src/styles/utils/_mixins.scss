@@ -25,45 +25,39 @@
 
 @mixin grid-layout {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(20px, 130px));
+
+  // grid-template-columns: repeat(2, 130px);
   column-gap: 20px;
-  max-width: 100%;
-  width: 100%;
 
   @include on-tablet {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(27px, 94px));
+
+    // grid-template-columns: repeat(6, 94px);
     column-gap: 30px;
   }
 
   @include on-desktop {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    // grid-template-columns: repeat(12, minmax(auto, 80px));
+
+    grid-template-columns: repeat(12, 80px);
     column-gap: 20px;
-    max-width: 1440px;
-    margin: 0 auto;
   }
 }
 
 @mixin padding-layout {
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 100%;
-  box-sizing: border-box;
+  padding-inline: 20px;
 
   @include on-tablet {
-    padding-left: 27px;
-    padding-right: 27px;
+    padding-inline: 27px;
   }
 
   @include on-desktop {
-    padding-left: 50px;
-    padding-right: 50px;
-    max-width: 1440px;
-    margin: 0 auto;
+    padding-inline: 50px;
   }
 
   @include on-desktop-xl {
-    padding-left: 130px;
-    padding-right: 130px;
+    padding-inline: 130px;
   }
 }
 
@@ -73,16 +67,5 @@
 
   &:focus {
     outline: none;
-  }
-}
-
-@mixin full-width-mobile {
-  // For images that need to ignore side paddings on mobile
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-
-  @include on-tablet {
-    width: 100%;
-    margin-left: 0;
   }
 }

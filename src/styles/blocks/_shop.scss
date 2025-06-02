@@ -80,26 +80,28 @@
 
       @include on-desktop {
         grid-column: 8 / -1;
-        position: relative;
-        left: -50px;
+        transform: translateX(-50px);
       }
     }
   }
 
   &__image {
-    @include full-width-mobile;
-    
-    grid-column: 1 / -1;
+    width: 320px;
     height: 267px;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
+    transform: translateX(-20px);
 
     @include on-tablet {
+      width: 100%;
       max-width: 342px;
-      height: 300px;
+      
+      // height: 300px;
+      transform: translateX(0);
     }
 
     @include on-desktop {
-      max-width: 530px;
+      // width: 100%;
+      min-width: 530px;
       height: 500px;
     }
   }
