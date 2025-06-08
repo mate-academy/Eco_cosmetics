@@ -1,0 +1,163 @@
+.about-creators {
+  @include grid-layout;
+  @include padding-layout;
+
+  padding-bottom: 100px;
+
+  &__container {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__image {
+    display: none;
+    width: 100%;
+    max-width: 342px;
+    height: 440px;
+
+    @include on-tablet {
+      display: block;
+      grid-column: 4 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      max-width: 580px;
+      height: 659px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    text-transform: uppercase;
+    color: $color-primary;
+    margin: 0 0 10px;
+
+    @include on-desktop {
+      font-size: 36px;
+      line-height: 110%;
+      margin: 0 0 8px;
+    }
+  }
+
+  &__paragraph {
+    @extend %small-text;
+
+    margin: 0;
+    grid-column: 1 / -1;
+
+    &--1 {
+      margin: 0 0 20px;
+
+      @include on-tablet {
+        margin: 0 0 15px;
+      }
+
+      @include on-desktop {
+        margin: 0 0 30px;
+      }
+    }
+
+    &--2 {
+      margin: 0 0 30px;
+
+      @include on-tablet {
+        margin: 0 0 20px;
+      }
+
+      @include on-desktop {
+        margin: 0 0 30px;
+      }
+    }
+
+    &--3 {
+      display: none;
+      margin: 0 0 20px;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+
+    @include on-tablet {
+      font-size: 16px;
+    }
+  }
+
+  &__learn-more {
+    @include reset-links;
+    @extend %decorative-text;
+    @extend %btn-learn-more;
+
+    grid-column: 1 / -1;
+    color: $color-primary;
+    text-transform: uppercase;
+    width: fit-content;
+    display: block;
+    margin: 0 0 25px;
+
+    &-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    @include on-tablet {
+      margin: 0 0 18px;
+    }
+
+    @include on-desktop {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__btn {
+    @extend %button;
+
+    grid-column: 1 / -1;
+  }
+
+  @include on-tablet {
+    padding-bottom: 140px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 200px;
+  }
+
+  &__text {
+    &--ghost {
+      display: none;
+
+      @include on-desktop {
+        display: flex;
+        align-items: center;
+        color: rgba(52, 79, 16, 0.5);
+        grid-column: 1 / 1;
+        grid-row: 2;
+        width: 350px;
+        transform: translate(-260px, 25px) rotate(270deg);
+
+        &::before {
+          content: '';
+          display: block;
+          opacity: 0.5;
+          width: 30%;
+          margin-right: 30px;
+          height: 1px;
+          background-color: rgba(52, 79, 16, 0.5);
+        }
+      }
+    }
+
+    &--ghost-text {
+      white-space: nowrap;
+    }
+  }
+}

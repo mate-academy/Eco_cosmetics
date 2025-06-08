@@ -1,0 +1,227 @@
+.about {
+  /* display: none !important; */
+  @include grid-layout;
+  @include padding-layout;
+
+  padding-bottom: 100px;
+
+  &__title {
+    color: $color-primary;
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+    margin: 0;
+
+    &--secondary {
+      text-align: center;
+
+      @include on-tablet {
+        width: 280px;
+      }
+
+      @include on-desktop {
+        width: 380px;
+        grid-column: 7 / -1;
+        text-align: start;
+        font-size: 24px;
+        margin-top: 100px;
+
+        &::after {
+          content: '';
+          display: block;
+          margin-top: 100px;
+          width: 200%;
+          height: 1px;
+          background-color: rgba(52, 79, 16, 0.5);
+        }
+      }
+    }
+
+    &--primary {
+      margin-bottom: 10px;
+
+      @include on-desktop {
+        grid-column: 2 / 6;
+        font-size: 36px;
+        line-height: 110%;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__container {
+    @include grid-layout;
+
+    grid-column: 1 / -1;
+
+    &--secondary {
+      grid-column: 1 / -1;
+      justify-items: center;
+      margin-bottom: 100px;
+
+      @include on-tablet {
+        margin-bottom: 130px;
+      }
+
+      @include on-desktop {
+        margin-bottom: 200px;
+      }
+    }
+
+    &--primary {
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+    }
+  }
+
+  &__text {
+    @extend %small-text;
+
+    grid-column: 1 / -1;
+    margin: 0 0 30px;
+
+    @include on-tablet {
+      font-size: 16px;
+    }
+
+    &--primary {
+      @include on-tablet {
+        // grid-column: 1 / 4;
+      }
+
+      @include on-desktop {
+        grid-column: 2 / 6;
+      }
+    }
+
+    &--primary-2 {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        grid-column: 2 / 6;
+        margin: 0 0 40px;
+      }
+    }
+
+    &--secondary {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+        grid-column: 2 / 6;
+        grid-row: 1;
+
+        &::before {
+          content: '';
+          display: block;
+          transform: translateX(-50%);
+          margin-bottom: 100px;
+          width: 200%;
+          height: 1px;
+          background-color: rgba(52, 79, 16, 0.5);
+        }
+      }
+    }
+
+    &--ghost {
+      display: none;
+
+      @include on-desktop {
+        display: flex;
+        align-items: center;
+        color: rgba(52, 79, 16, 0.5);
+        grid-column: 1 / 1;
+        grid-row: 2;
+        width: 350px;
+        transform: translate(-160px, -25px) rotate(270deg);
+
+        &::before {
+          content: '';
+          display: block;
+          opacity: 0.5;
+          width: 100%;
+          margin-right: 10px;
+          height: 1px;
+          background-color: rgba(52, 79, 16, 0.5);
+        }
+      }
+    }
+
+    &--ghost-text {
+      white-space: nowrap;
+    }
+  }
+
+  &__learn-more {
+    @include reset-links;
+    @extend %decorative-text;
+    @extend %btn-learn-more;
+
+    grid-column: 1 / -1;
+    color: $color-primary;
+    text-transform: uppercase;
+    width: fit-content;
+    display: block;
+
+    &-text {
+      position: relative;
+      z-index: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 6;
+      padding-bottom: 1;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    &--tablet {
+      grid-column: 4 / -1;
+      width: 100%;
+      max-width: 342px;
+      
+      // height: 321px;
+
+      @include on-tablet {
+        display: grid;
+      }
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      width: 380px;
+      height: 529px;
+
+      @include on-desktop {
+        display: block;
+
+        grid-column: 7 / 11;
+      }
+    }
+
+    &--desktop-2 {
+      width: 180px;
+      height: 430px;
+
+      @include on-desktop {
+        display: block;
+        padding-top: 99px;
+        grid-column: 11 / -1;
+      }
+    }
+  }
+
+  @include on-tablet {
+    padding-bottom: 130px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 200px;
+  }
+}

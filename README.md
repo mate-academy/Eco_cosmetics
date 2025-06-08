@@ -1,5 +1,7 @@
 # Eco cosmetics landing page
+
 Implement landing page according to [Figma design](https://www.figma.com/file/Fz588JKGuPS2Bk21De4KE5/Brand-of-eco-cosmetics-_FE-students?node-id=21779%3A631&t=Gtk1Kj4TKq6BJit2-1) - Use BEM and SCSS
+
 - The design 1440px
 - Desktop 1280px
 - Tablet 640px
@@ -10,16 +12,18 @@ Implement landing page according to [Figma design](https://www.figma.com/file/Fz
 1. Implement `If you choose the gifts of nature and care about it’s - scroll down` block.
 1. Implement `About our brand` block.
 1. Implement `Shop` block:
-  - implement tabs
-  - implement slider
+
+- implement tabs
+- implement slider
+
 1. Implement `About the creators` block.
 1. Implement `Ayurvedic Tooth Powder` block.
 1. Implement `Contact us` block.
 1. Implement footer.
 
 ## Fonts
-Use `Poppins` and `Avenir`, which you can find in fonts directory.
 
+Use `Poppins` and `Avenir`, which you can find in fonts directory.
 
 ## Checklist for preparing a portfolio project for HR review
 
@@ -42,8 +46,8 @@ Use `Poppins` and `Avenir`, which you can find in fonts directory.
 21. The form shouldn’t submit empty
 22. The "contact us" form should be automatically reset after submit and don’t show 404/405 errors after sending
 
-
 ## Github flow
+
 1. **Fork** the repo.
 2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
 3. Run `npm install` (or just `npm i`).
@@ -57,7 +61,7 @@ Use `Poppins` and `Avenir`, which you can find in fonts directory.
 11. `git push origin develop` - to send you code for PR.
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/Eco_cosmetics/).
+  [DEMO LINK](https://alexandre-a11.github.io/Eco_cosmetics/).
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.
