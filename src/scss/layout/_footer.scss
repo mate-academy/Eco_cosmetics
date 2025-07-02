@@ -32,20 +32,18 @@
       'bloco4';
 
     @include respond-to(tablet) {
-      grid-template-columns: 270px 370px;
-      grid-template-rows: 122px 40px 101px;
-      grid-template-areas:
-        'bloco1 bloco3'
-        'bloco2 .'
-        'bloco4 .';
+      grid-template:
+        'bloco1 bloco3' 122px
+        'bloco2 .' 40px
+        'bloco4 .' 101px
+        / 270px 370px;
     }
 
     @include respond-to(desktop) {
-      grid-template-columns: auto auto;
-      grid-template-rows: auto auto;
-      grid-template-areas:
+      grid-template:
         'bloco1 bloco3'
-        'bloco4 bloco2';
+        'bloco4 bloco2'
+        / auto auto;
     }
   }
 

@@ -1,14 +1,15 @@
 @use './variables' as *;
+@use 'sass:map';
 
 @mixin container-size($size) {
-  min-width: map-get($container-widths, $size);
+  min-width: map.get($container-widths, $size);
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 }
 
 @mixin respond-to($device) {
-  $breakpoint: map-get($breakpoints, $device);
+  $breakpoint: map.get($breakpoints, $device);
 
   @if $breakpoint {
     @media (min-width: $breakpoint) {
