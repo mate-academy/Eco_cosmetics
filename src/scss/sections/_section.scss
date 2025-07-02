@@ -1,0 +1,35 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.section {
+  position: relative;
+  margin-block: 100px;
+
+  @include respond-to(tablet) {
+    margin-block: 130px;
+  }
+
+  @include respond-to(desktop) {
+    margin-block: 100px;
+
+    &__line {
+      position: absolute;
+      width: 100vw;
+      height: 1px;
+      background-color: #344f1080;
+      opacity: 0.5;
+
+      &--top {
+        width: clamp(530px, calc(530px + 0.5 * ((100vw - 1280px))), 100vw);
+        top: 0;
+        left: -20px;
+      }
+
+      &--bottom {
+        width: clamp(630px, calc(630px + 0.5 * ((100vw - 1280px))), 100vw);
+        bottom: 0;
+        right: -20px;
+      }
+    }
+  }
+}

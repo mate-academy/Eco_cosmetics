@@ -1,0 +1,43 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.section__cta {
+  font-size: $font-size-xsmall;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-xsmall;
+  text-transform: uppercase;
+  width: 86px;
+  height: 18px;
+  margin-bottom: 25px;
+  transition: transform 0.3s ease;
+
+  @include hover-zoom;
+
+  @include respond-to(tablet) {
+    margin-bottom: 40px;
+  }
+
+  &-link {
+    position: relative;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-tertiary-text;
+    }
+
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        background-color: $color-tertiary-text;
+        width: 86px;
+        height: 1px;
+        bottom: -10px;
+      }
+    }
+  }
+}

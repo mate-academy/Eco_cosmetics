@@ -1,0 +1,50 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.section__contact--form-input,
+.section__contact--form-textarea {
+  font-size: $font-size-xsmall;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-medium;
+  background-color: $color-page-bg;
+  border: 1px solid transparent;
+  border-bottom-color: $color-input-border;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+  margin-bottom: 30px;
+
+  &::placeholder {
+    color: $color-input;
+    padding-top: 35px;
+  }
+
+  &:focus {
+    border-bottom-color: $color-input-selected;
+  }
+
+  &:valid {
+    border-bottom-color: $color-input-success;
+    color: $color-input-success;
+  }
+
+  /* &:invalid:not(:focus, :placeholder-shown) {
+    border-bottom-color: $color-input-error;
+    color: $color-input-error;
+  } */
+
+  @include respond-to(tablet) {
+    font-weight: $font-weight-medium;
+    margin-bottom: 5px;
+  }
+
+  @include respond-to(desktop) {
+    font-size: $font-size-medium-2;
+    margin-bottom: 30px;
+
+    &::placeholder {
+      padding-top: 50px;
+    }
+  }
+}

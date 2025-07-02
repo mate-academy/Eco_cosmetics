@@ -1,0 +1,68 @@
+@use './variables' as *;
+
+@mixin container-size($size) {
+  min-width: map-get($container-widths, $size);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@mixin respond-to($device) {
+  $breakpoint: map-get($breakpoints, $device);
+
+  @if $breakpoint {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @warn "Dispositivo '#{$device}' não encontrado no mapa de breakpoints.";
+  }
+}
+
+// Mixin para grid de página com parâmetros personalizáveis
+// Permite definir o número de colunas, espaçamento e margens para diferentes dispositivos
+// Exemplo de uso: @include page-grid(2, 20px, 20px, 6, 30px, 27px, 12, 20px, 50px, 130px);
+// Exemplo de uso: .page { @include page-grid(2, 20px, 20px, 6, 30px, 27px, 12, 20px, 50px, 130px); }
+@mixin page-grid(
+  $columns-mobile: 2,
+  $gap-mobile: 20px,
+  $margin-mobile: 20px,
+  $columns-tablet: 6,
+  $gap-tablet: 30px,
+  $margin-tablet: 27px,
+  $columns-desktop: 12,
+  $gap-desktop: 20px,
+  $margin-desktop: 50px,
+  $margin-desktop-design: 130px
+) {
+  display: grid;
+  grid-template-columns: repeat($columns-mobile, 1fr);
+  column-gap: $gap-mobile;
+  margin: 0 $margin-mobile;
+
+  @include respond-to(tablet) {
+    grid-template-columns: repeat($columns-tablet, 1fr);
+    column-gap: $gap-tablet;
+    margin: 0 $margin-tablet;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: repeat($columns-desktop, 1fr);
+    column-gap: $gap-desktop;
+    margin: 0 $margin-desktop;
+  }
+
+  @include respond-to(desktop-design) {
+    margin: 0 $margin-desktop-design;
+  }
+}
+
+@mixin hover-zoom($scale: 1.05, $duration: 0.3s, $timing: ease) {
+  transition:
+    transform #{$duration} #{$timing},
+    box-shadow #{$duration} #{$timing};
+
+  &:hover {
+    transform: scale(#{$scale});
+  }
+}
