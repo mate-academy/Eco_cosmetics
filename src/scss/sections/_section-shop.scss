@@ -1,0 +1,254 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.section__shop {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  scroll-margin-top: 50px; // Ajuste conforme a altura do seu header
+
+  &--img {
+    display: none;
+
+    @include respond-to(desktop) {
+      display: flex;
+      justify-content: start;
+      width: 18px;
+      height: 145px;
+    }
+  }
+
+  &--container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    height: 542px;
+
+    @include respond-to(tablet) {
+      width: 588px;
+      height: 504px;
+    }
+
+    @include respond-to(desktop) {
+      width: 1180px;
+      height: 846px;
+      padding-left: 82px;
+    }
+
+    &-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include respond-to(tablet) {
+        width: 588px;
+        height: 504px;
+        align-items: start;
+      }
+
+      @include respond-to(desktop) {
+        width: 1080px;
+        height: 846px;
+        align-items: start;
+      }
+    }
+  }
+
+  &--title {
+    font-size: $font-size-xlarge;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-medium;
+    color: $color-title;
+    text-transform: uppercase;
+
+    @include respond-to(tablet) {
+      align-items: start;
+    }
+
+    @include respond-to(desktop) {
+      font-size: $font-size-xxlarge;
+      line-height: 1.1;
+    }
+  }
+
+  &--items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 34px;
+    font-size: $font-size-xsmall;
+    line-height: $line-height-xsmall;
+    font-weight: $font-weight-regular;
+    letter-spacing: 5%;
+    text-transform: uppercase;
+    list-style: none;
+    margin-block: 20px 27px;
+
+    @include respond-to(tablet) {
+      margin-block: 10px 37px;
+    }
+
+    @include respond-to(desktop) {
+      font-size: $font-size-xsmall;
+      font-weight: $font-weight-semibold;
+      line-height: $line-height-xsmall;
+      margin-block: 30px 62px;
+    }
+  }
+
+  &--item {
+    position: relative;
+    text-decoration: none;
+    color: $color-secondary-text;
+    display: inline-block; // importante para o transform funcionar bem em links
+    transition: transform 0.3s ease;
+
+    @include hover-zoom(1.1);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-primary-text;
+    }
+
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        background-color: $color-primary-text;
+        width: 100%;
+        height: 1px;
+        bottom: -10px;
+      }
+    }
+  }
+
+  &--botton {
+    &-cards {
+      display: flex;
+      flex-direction: row;
+
+      @include respond-to(tablet) {
+        gap: 30px;
+      }
+
+      @include respond-to(desktop) {
+        gap: 20px;
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      &-img-1 {
+        width: 320px;
+        height: 267px;
+        background-image: url(../assets/images/mobile/img_mobile-2.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @include respond-to(tablet) {
+          width: 279px;
+          height: 246px;
+          background-image: url(../assets/images/tablet/img_tablet-3.png);
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        @include respond-to(desktop) {
+          width: 530px;
+          height: 500px;
+          background-image: url(../assets/images/desktop/img_desktop-4.png);
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+
+      &-img-2 {
+        display: none;
+
+        @include respond-to(tablet) {
+          display: flex;
+          width: 279px;
+          height: 246px;
+          background-image: url(../assets/images/tablet/img_tablet-4.png);
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        @include respond-to(desktop) {
+          width: 530px;
+          height: 500px;
+          background-image: url(../assets/images/desktop/img_desktop-5.png);
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
+    }
+
+    &-title,
+    &-price {
+      font-size: $font-size-medium-2;
+      line-height: $line-height-medium;
+      letter-spacing: 5%;
+      text-transform: uppercase;
+      color: $color-primary-text;
+      margin-left: 27px;
+    }
+
+    &-title {
+      font-weight: $font-weight-semibold;
+      margin-block: 20px 10px;
+
+      @include respond-to(tablet) {
+        margin-block: 20px 15px;
+      }
+
+      @include respond-to(desktop) {
+        margin-block: 20px 13px;
+      }
+    }
+
+    &-price {
+      font-weight: $font-weight-medium;
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+      margin-block: 30px 50px;
+
+      @include respond-to(tablet) {
+        margin-block: 50px 65px;
+      }
+
+      @include respond-to(desktop) {
+        margin-block: 40px 100px;
+      }
+    }
+  }
+}
+
+.title-2,
+.price-2 {
+  display: none;
+
+  @include respond-to(tablet) {
+    display: flex;
+    flex-direction: column;
+  }
+}

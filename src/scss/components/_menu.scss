@@ -1,0 +1,56 @@
+@use '../utils/variables' as v;
+
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: v.$color-menu-bg;
+
+  &__nav {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 41px;
+    }
+
+    &--itens {
+      position: relative;
+
+      a {
+        color: v.$color-menu-text;
+        font-weight: v.$font-weight-semibold;
+        font-size: v.$font-size-medium-2;
+        line-height: v.$line-height-xsmall;
+        letter-spacing: 0%;
+
+        &:link,
+        &:visited,
+        &:hover,
+        &:focus,
+        &:active {
+          color: v.$color-menu-text;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        background-color: v.$color-menu-text-after;
+        width: 280px;
+        height: 1px;
+        bottom: -10px;
+
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
