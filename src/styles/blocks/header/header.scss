@@ -1,0 +1,96 @@
+@use '../../utils/media';
+@use '../../utils/poppins';
+@use '../../utils/button';
+
+.header {
+  @include media.grid-320;
+
+  grid-template-rows: 59px auto auto;
+
+  &__container {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-logo {
+      order: 1;
+    }
+
+    &-nav {
+      order: 0;
+    }
+
+    &-cart {
+      order: 3;
+    }
+  }
+
+  &__menu {
+    display: none;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    grid-row: 2 / 4;
+
+    display: grid;
+    grid-template-columns: inherit;
+    grid-template-rows: 1fr;
+
+    margin: 0;
+    padding: 0;
+    height: auto;
+
+    &-title {
+      @include poppins.h4;
+
+      text-align: center;
+
+      margin: 25px 0 10px;
+    }
+
+    &-subtitle {
+      @include poppins.text;
+
+      margin-bottom: 30px;
+
+      text-align: center;
+    }
+
+    &-one {
+      grid-column: 1 / -1;
+      grid-row: 3 / 4;
+    }
+
+    &-two {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+
+      .header__image {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  &__button {
+    @include button.button;
+  }
+
+  @include media.grid-768 {
+    grid-template-rows: 70px auto auto;
+  }
+}
