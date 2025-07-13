@@ -1,0 +1,90 @@
+@use '../../utils/media';
+@use '../../utils/poppins';
+@use '../../utils/button';
+@use '../../utils/vars';
+
+.about {
+  @include media.grid-320;
+
+  grid-column: 1 / -1;
+
+  background-color: vars.$white-200;
+
+  &-sub {
+    grid-column: 1 / -1;
+
+    padding: 100px 0;
+
+    @include poppins.h5;
+
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &-description {
+    @include poppins.text;
+
+    display: none;
+  }
+
+  @include media.grid-768 {
+    &-sub {
+      grid-column: 3 / span 2;
+
+      width: calc(100% + 60px);
+      transform: translateX(-30px);
+    }
+  }
+
+  @include media.grid-1280 {
+    &-sub {
+      grid-column: 7 / span 4;
+
+      width: 100%;
+      transform: translateX(0);
+
+      display: flex;
+
+      text-align: left;
+
+      @include poppins.h4;
+
+      padding-bottom: 100px;
+
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        background: rgba(52, 79, 16, 0.5);
+
+        right: calc(-50vw + 50%);
+        width: calc(50vw - 50% + 100%);
+      }
+    }
+
+    &-description {
+      grid-column: 2 / span 4;
+
+      display: flex;
+      text-align: left;
+
+      padding-top: 100px;
+
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 1px;
+        background: rgba(52, 79, 16, 0.5);
+
+        left: calc(-50vw + 50%);
+        width: calc(50vw - 50% + 100%);
+      }
+    }
+  }
+}
