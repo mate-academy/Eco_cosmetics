@@ -1,0 +1,157 @@
+@use '../../utils/media';
+@use '../../utils/poppins';
+@use '../../utils/button';
+@use '../../utils/vars';
+
+.ourbrand {
+  @include media.grid-320;
+
+  grid-column: 1 / -1;
+
+  margin-bottom: 100px;
+
+  &__content {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include poppins.h4;
+
+    color: vars.$green-800;
+
+    text-transform: uppercase;
+
+    &--vertical {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include poppins.text-small;
+
+    margin-top: 10px;
+
+    &--more {
+      @include poppins.text-decorative;
+
+      color: vars.$green-800;
+
+      text-transform: uppercase;
+
+      display: inline-block;
+      border-bottom: 1px solid vars.$green-800;
+      padding-bottom: 10px;
+
+      margin-top: 30px;
+    }
+
+    &--2 {
+      display: none;
+    }
+  }
+
+  @include media.grid-768 {
+    margin-bottom: 130px;
+
+    &__content {
+      grid-column: 1 / span 3;
+    }
+
+    &__title {
+      @include poppins.h3;
+    }
+
+    &__text {
+      @include poppins.text;
+
+      margin-top: 40px;
+
+      &--2 {
+        display: block;
+
+        &:last-child {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    &__images {
+      &--1 {
+        grid-column: 4 / span 3;
+
+        background-image: url('/src/images/img/tablet/img-2.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  @include media.grid-1280 {
+    margin-bottom: 200px;
+
+    &__content {
+      grid-column: 2 / span 4;
+    }
+
+    &__title {
+      position: absolute;
+
+      &--vertical {
+        display: block;
+
+        grid-column: 1 / span 1;
+
+        @include poppins.text-small;
+
+        color: vars.$green-800;
+
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+
+        justify-self: start;
+        align-self: flex-start;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 100px;
+          background-color: vars.$green-800;
+          left: 10px;
+          top: -110px;
+        }
+      }
+    }
+
+    &__text {
+      &--more {
+        margin-bottom: 36px;
+        margin-top: 49px;
+      }
+    }
+
+    &__images {
+      &--1 {
+        grid-column: 7 / span 4;
+        background-image: url('/src/images/img/desktop/img-2-0.png');
+      }
+
+      &--2 {
+        grid-column: 11 / span 2;
+
+        background-image: url('/src/images/img/desktop/img-2-1.png');
+        background-size: cover;
+        background-position: center bottom;
+        align-self: end;
+        height: 80%;
+      }
+    }
+  }
+
+  @include media.grid-1440 {
+  }
+}
