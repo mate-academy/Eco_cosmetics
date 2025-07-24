@@ -1,0 +1,37 @@
+.nav-footer {
+  margin-bottom: 20px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 11px;
+
+    @include on-mobile-small {
+      row-gap: 15px;
+    }
+
+    @include on-mobile {
+      column-gap: 40px;
+      flex-direction: row;
+    }
+  }
+
+  &__link {
+    color: $light-bg;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+
+    @media (any-hover: hover) {
+      &::after {
+        background-color: $light-bg;
+      }
+    }
+
+    @media (any-hover: none) {
+      &::after {
+        background-color: transparent;
+      }
+    }
+  }
+}
