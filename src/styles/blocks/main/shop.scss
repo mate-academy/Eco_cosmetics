@@ -15,6 +15,10 @@
     grid-column: 1 / -1;
 
     text-align: center;
+
+    &--vertical {
+      display: none;
+    }
   }
 
   &__header {
@@ -75,9 +79,6 @@
 
   @include media.grid-768 {
     &__header {
-      margin: 10px 0 37px;
-      padding: 14px;
-
       justify-content: left;
     }
 
@@ -103,20 +104,55 @@
 
   @include media.grid-1280 {
     &__title {
+      grid-column: 2 / span 11;
+
       @include poppins.h2;
+
+      text-align: left;
+
+      &--vertical {
+        grid-column: 1 / span 1;
+
+        display: block;
+        position: relative;
+
+        grid-column: 1 / span 1;
+
+        @include poppins.text-small;
+
+        color: vars.$green-800;
+
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+
+        place-self: start;
+        margin-bottom: 0;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 100px;
+          background-color: vars.$green-800;
+          left: 50%;
+          top: -110px;
+          transform: translateX(-50%);
+        }
+      }
     }
 
     &__header {
+      grid-column: 2 / span 11;
       .shop__tab {
         @include poppins.h5;
       }
     }
 
     &__content {
-      grid-column: 1 / -1;
+      grid-column: 2 / span 11;
 
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr)); // dwa bloki po 6 kolumn
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       column-gap: 30px;
     }
 
