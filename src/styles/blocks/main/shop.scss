@@ -1,0 +1,132 @@
+@use '../../utils/media';
+@use '../../utils/poppins';
+@use '../../utils/button';
+@use '../../utils/vars';
+
+.shop {
+  @include media.grid-320;
+
+  &__title {
+    @include poppins.h4;
+
+    text-transform: uppercase;
+    color: vars.$green-800;
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+  }
+
+  &__header {
+    grid-column: 1 / -1;
+
+    margin: 20px 0 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .shop__tab {
+      border: none;
+      background: transparent;
+
+      @include poppins.text-2;
+
+      text-transform: uppercase;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    .shop__product {
+      img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+
+        margin-bottom: 10px;
+      }
+
+      &--2 {
+        display: none;
+      }
+
+      &-name,
+      &-price {
+        @include poppins.h5;
+
+        margin: 10px;
+
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    background: none;
+
+    @include button.button;
+
+    margin: 30px 0 100px;
+  }
+
+  @include media.grid-768 {
+    &__header {
+      margin: 10px 0 37px;
+      padding: 14px;
+
+      justify-content: left;
+    }
+
+    &__content {
+      display: flex;
+      gap: 30px;
+
+      .shop__product {
+        &--2 {
+          display: block;
+        }
+      }
+    }
+
+    &__button {
+      grid-column: 3 / span 2;
+      margin: 50px 0 130px;
+
+      width: calc(100% + 60px);
+      transform: translateX(-30px);
+    }
+  }
+
+  @include media.grid-1280 {
+    &__title {
+      @include poppins.h2;
+    }
+
+    &__header {
+      .shop__tab {
+        @include poppins.h5;
+      }
+    }
+
+    &__content {
+      grid-column: 1 / -1;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr)); // dwa bloki po 6 kolumn
+      column-gap: 30px;
+    }
+
+    &__button {
+      grid-column: 6 / span 2;
+
+      width: calc(100% + 100px);
+      transform: translateX(-50px);
+
+      margin: 23px 0 200px;
+    }
+  }
+}
