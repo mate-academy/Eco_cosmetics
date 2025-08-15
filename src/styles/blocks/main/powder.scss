@@ -1,0 +1,172 @@
+@use '../../utils/media';
+@use '../../utils/poppins';
+@use '../../utils/button';
+@use '../../utils/vars';
+
+.powder {
+  @include media.grid-320;
+
+  grid-column: 1 / -1;
+
+  margin: 100px 0;
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include poppins.h4;
+
+    text-transform: uppercase;
+    color: vars.$green-800;
+
+    text-align: left;
+
+    margin-bottom: 20px;
+
+    &--vertical {
+      display: none;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+
+    &--more {
+      grid-column: 1 / span 1;
+
+      @include poppins.text-button;
+
+      color: vars.$green-800;
+
+      text-transform: uppercase;
+
+      display: inline-block;
+      border-bottom: 1px solid vars.$green-800;
+
+      margin-top: 25px;
+    }
+  }
+
+  &__item {
+    grid-column: 1 / span 2;
+
+    overflow: hidden;
+
+    width: calc(100% + 20px);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &-list {
+      li {
+        @include poppins.text;
+
+        margin-top: 50px;
+
+        white-space: nowrap;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    img {
+      transform: translateX(3%);
+
+      display: block;
+      object-fit: contain;
+    }
+  }
+
+  @include media.grid-768 {
+    margin: 150px 0 120px;
+
+    &__title {
+      grid-column: 1 / -1;
+
+      @include poppins.h4;
+    }
+
+    &__text {
+      &--more {
+        grid-column: 1 / span 1;
+
+        width: calc(100% + 20px);
+
+        @include poppins.text-decorative;
+      }
+    }
+
+    &__item {
+      grid-column: 3 / span 4;
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
+  }
+
+  @include media.grid-1280 {
+    margin: 200px 0;
+
+    &__title {
+      grid-column: 2 / -1;
+
+      @include poppins.h3;
+
+      &--vertical {
+        grid-column: 1 / span 1;
+
+        display: block;
+        position: relative;
+
+        @include poppins.text-small;
+
+        color: vars.$green-800;
+
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+
+        place-self: start;
+        margin-bottom: 0;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 100px;
+          background-color: vars.$green-800;
+          left: 50%;
+          top: -110px;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    &__text {
+      &--more {
+        grid-column: 2 / span 1;
+
+        width: calc(100% + 30px);
+
+        @include poppins.text-decorative;
+      }
+    }
+
+    &__item {
+      grid-column: 7 / span 6;
+
+      width: 100%;
+
+      &-list {
+        li {
+          transform: translateX(-10px);
+        }
+      }
+    }
+  }
+}
