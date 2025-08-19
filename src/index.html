@@ -26,16 +26,23 @@
   </head>
   <body>
     <header class="header">
-      <!-- <picture class="header__picture">
-        <source srcset="./images/main/main-img.png" media="(min-width: 1440px)">
-        <source srcset="./images/main/main-img.png" media="(min-width: 1280px) and (max-width: 1439px)">
-        <source srcset="./images/main/tablet-main-img.png" media="(min-width: 640px) and (max-width: 1279px)">
-        <img
-          src="./images/main/mobile-main-img.png"
-          alt="Eco cosmetics main image"
-          class="header__image"
-        >
-      </picture> -->
+      <img
+        src="./images/main/mobile-main-img.png"
+        srcset="
+          ./images/main/mobile-main-img.png 640w,
+          ./images/main/tablet-main-img.png 1280w,
+          ./images/main/main-img.png 1440w,
+          ./images/main/main-img.png 1920w
+        "
+        sizes="
+          (max-width: 639px) 100vw,
+          (max-width: 1279px) 100vw,
+          (max-width: 1439px) 100vw,
+          100vw
+        "
+        alt="Eco cosmetics main image"
+        class="header__image"
+      />
       <h1 class="header__title">Brand of eco-cosmetics and magic candles</h1>
       <p class="header__paragraph">20% of sales at a wild bird shelter</p>
       <a href="#" class="button header__button">Shop</a>
