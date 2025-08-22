@@ -1,6 +1,6 @@
 .navigation {
-  padding-top: 15px;
   width: 100%;
+  padding-top: 15px;
 
   @include for-design {
     @include grid;
@@ -148,6 +148,9 @@
   }
 
   &__link {
+    position: relative;
+    padding-bottom: 12px;
+    color: $forest;
     font-family: Poppins, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -155,8 +158,26 @@
     line-height: 150%;
     text-transform: capitalize;
     text-decoration: none;
-    color: $forest;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $forest;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
   }
+
 
   &__shop {
     width: 32px;
