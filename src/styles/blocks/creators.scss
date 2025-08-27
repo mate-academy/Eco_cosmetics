@@ -1,16 +1,14 @@
-.about {
+.creators {
   @include grid;
 
-  @include for-design {
-    grid-template-rows: auto auto auto auto;
-  }
-
-  @include for-desktop {
-    grid-template-rows: auto auto auto auto;
-  }
+  grid-template-rows: repeat(6, auto);
 
   @include for-tablet {
-    grid-template-rows: auto auto auto;
+    grid-template-rows: repeat(5, auto);
+  }
+
+  @include for-mobile {
+    grid-template-rows: repeat(5, auto);
   }
 
   &__vertical {
@@ -20,7 +18,7 @@
   }
 
   &__title {
-    margin-bottom: 40px;
+    margin-bottom: 34px;
     color: $forest;
     font-family: Poppins, sans-serif;
     font-style: normal;
@@ -30,7 +28,8 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
 
-    grid-column:  2 / 6;
+    grid-column: 2 / 6;
+    grid-row: 1 / 2;
 
     @include for-tablet {
       margin-bottom: 10px;
@@ -47,7 +46,7 @@
     }
   }
 
-  &__paragraph {
+  &__text {
     margin-bottom: 30px;
     color: $dark-grey;
     font-family: Poppins, sans-serif;
@@ -55,21 +54,41 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-
-    grid-column:  2 / 6;
+    grid-column: 2 / 6;
+    grid-row: 2 / 3;
 
     @include for-tablet {
-      grid-column: 1 / 4;
+      margin-bottom: 15px;
+      font-size: 16px;
+
+      grid-column: span 3;
+      grid-row: 2 / 3;
     }
 
     @include for-mobile {
+      margin-bottom: 20px;
       font-size: 14px;
 
       grid-column: span 2;
+      grid-row: 2 / 3;
     }
 
     &--second {
-      margin-bottom: 40px;
+      grid-row: 3 / 4;
+
+      @include for-tablet {
+        margin-bottom: 20px;
+        grid-row: 3 / 4;
+      }
+
+      @include for-mobile {
+        margin-bottom: 30px;
+        grid-row: 3 / 4;
+      }
+    }
+
+    &--third {
+      grid-row: 4 / 5;
 
       @include for-tablet {
         display: none;
@@ -86,6 +105,7 @@
     display: inline-block;
     width: max-content;
     padding-bottom: 10px;
+    margin-bottom: 41px;
     color: $forest;
     font-family: Poppins, sans-serif;
     font-style: normal;
@@ -96,13 +116,18 @@
     text-decoration: none;
 
     grid-column:  2 / 6;
+    grid-row: 5 / 6;
 
     @include for-tablet {
+      margin-bottom: 31px;
       grid-column: 1 / 4;
+      grid-row: 4 / 5;
     }
 
     @include for-mobile {
+      margin-bottom: 26px;
       grid-column: span 2;
+      grid-row: 4 / 5;
     }
 
     &::after {
@@ -124,37 +149,40 @@
     }
   }
 
-  &__wrapper {
-    display: block;
-    height: 100%;
-    grid-column: 7 / 11;
-    grid-row: 1 / -1;
-    place-self: stretch;
+  &__button {
+    place-self: start center;
+    grid-column: 2 / 5;
+    grid-row: 6 / 7;
 
     @include for-tablet {
-      grid-column: 4 / -1;
+      place-self: start;
+      grid-column: 1 / 4;
+      grid-row: 5 / 6;
     }
 
     @include for-mobile {
-      display: none;
+      grid-column: 1 / -1;
+      grid-row: 5 / 6;
     }
   }
 
   &__image {
     display: block;
-    width: 100%;
     height: 100%;
-    object-fit: cover;
-  }
-
-  &__addition {
-    width: 100%;
-    grid-column: 11 / -1;
+    grid-column: 7 / -1;
     grid-row: 1 / -1;
-    align-self: end;
+    place-self: stretch;
+
+    img {
+      grid-column: 7 / -1;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
 
     @include for-tablet {
-      display: none;
+      grid-column: 4 / -1;
+      grid-row: 1 / -1;
     }
 
     @include for-mobile {
