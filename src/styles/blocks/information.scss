@@ -1,0 +1,47 @@
+.information {
+  @include grid;
+
+  &__image {
+    object-fit: contain;
+    place-self: center;
+    margin-bottom: 40px;
+
+    grid-column: span 4;
+
+    @include for-tablet {
+      margin-bottom: 20px;
+      grid-column: span 2;
+    }
+
+    @include for-mobile {
+      margin-bottom: 20px;
+      grid-column: span 2;
+      grid-row: auto;
+    }
+  }
+
+  &__text {
+    color: $black;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    grid-column: span 4;
+    grid-row: 2 / 3;
+
+    @include for-tablet {
+      grid-column: span 2;
+    }
+
+    @include for-mobile {
+      grid-column: span 2;
+      grid-row: auto;
+      margin-bottom: 50px;
+    }
+  }
+}
