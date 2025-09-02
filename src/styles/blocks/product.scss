@@ -1,0 +1,201 @@
+.page__body--with-product {
+  overflow: hidden;
+}
+
+.product {
+  position: fixed;
+  box-sizing: border-box;
+  inset: 0;
+  overflow: hidden auto;
+  align-content: start;
+  padding-top: 5px;
+  background: $sand;
+
+  transform: translateX(-100%);
+  transition: transform 1s ease-in-out;
+
+  &:target {
+    position: fixed;
+    transform: translateX(0);
+  }
+
+  @include for-design {
+    display: none;
+  }
+
+  @include for-desktop {
+    display: none;
+  }
+
+  @include grid;
+
+  grid-template-rows: repeat(8, auto);
+
+  @include for-mobile {
+    padding-top: 0;
+    grid-template-rows: repeat(7, auto);
+  }
+
+  &__navigation {
+    margin-bottom: 30px;
+    grid-column: 1 / -1;
+
+    @include for-mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    color: $dark-grey;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    grid-column: 2 / 6;
+
+    @include for-mobile {
+      grid-column: 1 / -1;
+    }
+
+    &--tablet {
+      @include for-tablet {
+        margin-bottom: 25px;
+        grid-row: 3 / 4;
+      }
+
+      @include for-mobile {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      @include for-tablet {
+        display: none;
+      }
+
+      @include for-mobile {
+        margin-bottom: 10px;
+        grid-row: 2 / 3;
+      }
+    }
+  }
+
+  &__price {
+    color: $forest;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    grid-column: 2 / 6;
+
+    @include for-mobile {
+      font-size: 14px;
+      grid-column: 1 / -1;
+    }
+
+    &--tablet {
+      @include for-tablet {
+        margin-bottom: 10px;
+        grid-row: 4 / 5;
+      }
+
+      @include for-mobile {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      @include for-tablet {
+        display: none;
+      }
+
+      @include for-mobile {
+        margin-bottom: 20px;
+        grid-row: 3 / 4;
+      }
+    }
+  }
+
+  &__weight {
+    margin-bottom: 30px;
+    color: $dark-grey;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    grid-column: 2 / 6;
+    grid-row: 5 / 6;
+
+    @include for-mobile {
+      display: none;
+    }
+  }
+
+  &__picture {
+    margin-bottom: 27px;
+    grid-column: 2 / 6;
+    grid-row: 2 / 3;
+
+    @include for-mobile {
+      margin-bottom: 30px;
+      grid-column: 1 / -1;
+      grid-row: 4 / 5;
+    }
+  }
+
+  &__button {
+    margin-bottom: 60px;
+    place-self: start center;
+
+    grid-column: 1 / -1;
+    grid-row: 6 / 7;
+
+    @include for-mobile {
+      margin-bottom: 50px;
+      grid-column: 1 / -1;
+      grid-row: 5 / 6;
+    }
+  }
+
+  &__info {
+    margin-bottom: 25px;
+    color: $forest;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    grid-column: 2 / 6;
+    grid-row: 7 / 8;
+
+    @include for-mobile {
+      margin-bottom: 20px;
+      font-size: 14px;
+      grid-column: 1 / -1;
+      grid-row: 6 / 7;
+    }
+
+    &--continue {
+      margin-bottom: 72px;
+      grid-row: 8 / 9;
+
+      @include for-mobile {
+        margin-bottom: 20px;
+        grid-row: 7 / 8;
+      }
+    }
+  }
+}
