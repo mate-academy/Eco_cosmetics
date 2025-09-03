@@ -2,11 +2,11 @@
   @include grid;
 
   &__image {
-    object-fit: contain;
-    place-self: center;
     margin-bottom: 40px;
+    object-fit: contain;
 
     grid-column: span 4;
+    place-self: center;
 
     @include for-tablet {
       margin-bottom: 20px;
@@ -15,12 +15,16 @@
 
     @include for-mobile {
       margin-bottom: 20px;
+
       grid-column: span 2;
       grid-row: auto;
     }
   }
 
   &__text {
+    grid-column: span 4;
+    grid-row: 2 / 3;
+
     color: $black;
     font-family: Poppins, sans-serif;
     font-style: normal;
@@ -31,17 +35,15 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
 
-    grid-column: span 4;
-    grid-row: 2 / 3;
-
     @include for-tablet {
       grid-column: span 2;
     }
 
     @include for-mobile {
+      margin-bottom: 50px;
+
       grid-column: span 2;
       grid-row: auto;
-      margin-bottom: 50px;
     }
   }
 }

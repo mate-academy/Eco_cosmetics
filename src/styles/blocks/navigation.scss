@@ -41,14 +41,6 @@
         width: 20px;
         height: 13px;
       }
-
-      @include for-design {
-        grid-column: 1 / 2;
-      }
-
-      @include for-desktop {
-        grid-column: 1 / 2;
-      }
     }
 
     &--full-logo {
@@ -56,20 +48,14 @@
       width: 270px;
       height: 50px;
 
+      grid-column: 1 / 3;
+
       @include for-tablet {
         display: none;
       }
 
       @include for-mobile {
         display: none;
-      }
-
-      @include for-design {
-        grid-column: 1 / 3;
-      }
-
-      @include for-desktop {
-        grid-column: 1 / 3;
       }
     }
 
@@ -87,40 +73,25 @@
         width: 24px;
         height: 24px;
       }
-
-      @include for-design {
-        grid-column: 2 / 3;
-      }
-
-      @include for-desktop {
-        grid-column: 2 / 3;
-      }
     }
 
     &--shop {
-      width: 32px;
-      height: 32px;
+      display: inline-block;
+      width: 24px;
+      height: 24px;
 
       @include for-design {
         grid-column: -1 / -2;
         justify-self: end;
+        width: 32px;
+        height: 32px;
       }
 
       @include for-desktop {
         grid-column: -1 / -2;
         justify-self: end;
-      }
-
-      @include for-tablet {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-      }
-
-      @include for-mobile {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
+        width: 32px;
+        height: 32px;
       }
     }
   }
@@ -128,15 +99,10 @@
   &__list {
     display: flex;
     gap: 40px;
+
+    grid-column: 7 / 12;
+
     list-style: none;
-
-    @include for-design {
-      grid-column: 7 / 12;
-    }
-
-    @include for-desktop {
-      grid-column: 7 / 12;
-    }
 
     @include for-tablet {
       display: none;
@@ -149,7 +115,9 @@
 
   &__link {
     position: relative;
+
     padding-bottom: 12px;
+
     color: $forest;
     font-family: Poppins, sans-serif;
     font-style: normal;
@@ -164,9 +132,12 @@
       position: absolute;
       left: 0;
       bottom: 0;
+
       width: 100%;
       height: 1px;
+
       background-color: $forest;
+
       transform: scaleX(0);
       transform-origin: right;
       transition: transform 0.3s ease;
@@ -179,20 +150,11 @@
     }
   }
 
-
   &__shop {
     width: 32px;
     height: 32px;
-
-    @include for-design {
-      grid-column: -1 / -2;
-      justify-self: end;
-    }
-
-    @include for-desktop {
-      grid-column: -1 / -2;
-      justify-self: end;
-    }
+    grid-column: -1 / -2;
+    justify-self: end;
 
     @include for-tablet {
       display: inline-block;

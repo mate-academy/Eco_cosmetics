@@ -4,18 +4,20 @@
 
 .menu {
   position: fixed;
-  box-sizing: border-box;
   top: 0;
   left: 0;
   right: 0;
+  box-sizing: border-box;
+
   min-height: 100vh;
-  align-content: start;
   padding-top: 28px;
-  background: $dark-grey;
 
   @include grid;
 
   grid-template-rows: auto auto;
+  align-content: start;
+
+  background: $dark-grey;
 
   transform: translateX(-100%);
   transition: transform 1s ease-in-out;
@@ -35,10 +37,12 @@
   }
 
   &__home {
-    text-decoration: none;
+    margin-bottom: 100px;
+
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    margin-bottom: 100px;
+
+    text-decoration: none;
 
     @include for-mobile {
       margin-bottom: 45px;
@@ -66,6 +70,7 @@
 
   &__item {
     position: relative;
+
     padding-bottom: 10px;
 
     &::after {
@@ -73,8 +78,10 @@
       position: absolute;
       bottom: 0;
       left: 0;
+
       width: 100%;
       height: 1px;
+
       background: $simple-grey;
     }
   }

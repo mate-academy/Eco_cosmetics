@@ -1,8 +1,11 @@
 .footer {
   padding-top: 60px;
-  background-color: $sage;
+
+  @include grid;
 
   grid-template-rows: repeat(2, auto);
+
+  background-color: $sage;
 
   @include for-tablet {
     padding-top: 30px;
@@ -16,33 +19,37 @@
     grid-template-rows: repeat(4, auto);
   }
 
-  @include grid;
-
   &__list {
     display: flex;
     gap: 40px;
-    list-style: none;
 
     grid-column: 1 / 4;
     grid-row: 1 / 2;
 
+    list-style: none;
+
     @include for-tablet {
       margin-bottom: 20px;
-      gap: 15px;
+
       flex-direction: column;
+      gap: 15px;
+
       grid-column: 1 / 2;
     }
 
     @include for-mobile {
       margin-bottom: 20px;
-      gap: 10px;
+
       flex-direction: column;
+      gap: 10px;
+
       grid-column: 1 / -1;
     }
   }
 
   &__link {
     position: relative;
+
     color: $sand;
     font-family: Poppins, sans-serif;
     font-style: normal;
@@ -63,12 +70,14 @@
 
     @include for-tablet {
       margin-bottom: 50px;
+
       grid-column: 1 / 2;
       grid-row: 2 / 3;
     }
 
     @include for-mobile {
       margin-bottom: 40px;
+
       grid-column: 1 / -1;
       grid-row: 2 / 3;
     }
@@ -76,24 +85,29 @@
 
   &__address {
     margin-bottom: 30px;
+
     grid-column: 8 / -1;
     grid-row: 1 / 2;
 
     @include for-tablet {
       margin-bottom: 0;
+
       grid-column: 4 / -1;
       grid-row: 1 / 2;
     }
 
     @include for-mobile {
       margin-bottom: 40px;
+
       grid-column: 1 / -1;
       grid-row: 3 / 4;
     }
   }
 
   &__copyright {
-    margin-bottom: 60px;
+    grid-column: 1 / 8;
+    grid-row: 2 / 3;
+
     color: $sand;
     font-family: Poppins, sans-serif;
     font-style: normal;
@@ -102,8 +116,6 @@
     line-height: 150%;
     text-transform: capitalize;
     text-decoration: none;
-    grid-column: 1 / 8;
-    grid-row: 2 / 3;
 
     &::before {
       content: "";
@@ -111,7 +123,7 @@
       @include for-desktop {
         content: "Copyright";
       }
-
+      
       @include for-design {
         content: "Copyright";
       }
@@ -119,20 +131,24 @@
 
     @include for-tablet {
       margin-bottom: 30px;
-      font-size: 14px;
-      text-transform: none;
+
       grid-column: 1 / 4;
       grid-row: 3 / 4;
+
+      font-size: 14px;
+      text-transform: none;
     }
 
     @include for-mobile {
       padding: 0 50px;
       margin-bottom: 40px;
+
+      grid-column: 1 / -1;
+      grid-row: 4 / 5;
+
       font-size: 14px;
       text-align: center;
       text-transform: none;
-      grid-column: 1 / -1;
-      grid-row: 4 / 5;
     }
   }
 }
