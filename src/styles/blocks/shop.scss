@@ -1,4 +1,6 @@
 .shop {
+  position: relative;
+
   @include grid;
 
   grid-template-rows: repeat(6, auto);
@@ -32,11 +34,12 @@
     }
 
     @include for-mobile {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
 
       grid-column: span 2;
 
       font-size: 24px;
+      text-align: center;
     }
   }
 
@@ -116,6 +119,21 @@
     }
   }
 
+  &__category {
+    display: contents;
+
+    & > * {
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    &.active > * {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
   &__image-first {
     display: block;
     height: 100%;
@@ -128,10 +146,12 @@
     @include for-tablet {
       grid-column: 1 / 4;
       grid-row: 3 / 4;
+      cursor: pointer;
     }
 
     @include for-mobile {
       grid-column: 1 / -1;
+      cursor: pointer;
 
       img {
         height: auto;
@@ -157,6 +177,8 @@
 
       grid-column: 4 / -1;
       grid-row: 3 / 4;
+
+      cursor: pointer;
     }
 
     @include for-mobile {
