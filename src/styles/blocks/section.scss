@@ -1,0 +1,101 @@
+.section {
+  position: relative;
+
+  padding: 100px 0;
+
+  @include for-tablet {
+    padding: 0;
+  }
+
+  @include for-mobile {
+    padding: 0;
+  }
+
+  @include grid;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+
+    height: 1px;
+
+    background-color: $forest;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+
+    width: calc((100% / 12) * 5 + 20px);
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+
+    width: calc((100% / 12) * 6);
+  }
+
+  &__paragraph {
+    grid-column: 2 / 6;
+
+    color: $dark-grey;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include for-tablet {
+      display: none;
+    }
+
+    @include for-mobile {
+      display: none;
+    }
+  }
+
+  &__title {
+    grid-column: 7 / 11;
+
+    color: $forest;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include for-tablet {
+      width: 280px;
+
+      grid-column: 1 / -1;
+      justify-self: center;
+
+      font-size: 18px;
+      text-align: center;
+    }
+
+    @include for-mobile {
+      grid-column: 1 / -1;
+
+      font-size: 18px;
+    }
+  }
+
+  @include for-tablet {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  @include for-mobile {
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+.navigation {
+  width: 100%;
+  padding-top: 15px;
+
+  @include for-design {
+    @include grid;
+
+    align-items: center;
+  }
+
+  @include for-desktop {
+    @include grid;
+
+    align-items: center;
+  }
+
+  @include for-tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include for-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item {
+    &--burger {
+      display: none;
+
+      @include for-tablet {
+        display: inline-block;
+      }
+
+      @include for-mobile {
+        display: inline-block;
+      }
+    }
+
+    &--full-logo {
+      display: inline-block;
+      width: 270px;
+      height: 50px;
+
+      grid-column: 1 / 3;
+
+      @include for-tablet {
+        display: none;
+      }
+
+      @include for-mobile {
+        display: none;
+      }
+    }
+
+    &--logo {
+      display: none;
+
+      @include for-tablet {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+      }
+
+      @include for-mobile {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &--shop {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+
+      @include for-design {
+        grid-column: -1 / -2;
+        justify-self: end;
+        width: 32px;
+        height: 32px;
+      }
+
+      @include for-desktop {
+        grid-column: -1 / -2;
+        justify-self: end;
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 40px;
+
+    grid-column: 7 / 12;
+
+    list-style: none;
+
+    @include for-tablet {
+      display: none;
+    }
+
+    @include for-mobile {
+      display: none;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    padding-bottom: 12px;
+
+    color: $forest;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    text-transform: capitalize;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $forest;
+
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+      cursor: pointer;
+    }
+  }
+
+  &__shop {
+    width: 32px;
+    height: 32px;
+    grid-column: -1 / -2;
+    justify-self: end;
+
+    @include for-tablet {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+    }
+
+    @include for-mobile {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

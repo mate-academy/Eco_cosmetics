@@ -1,0 +1,167 @@
+.about {
+  @include grid;
+
+  @include for-design {
+    grid-template-rows: auto auto auto auto;
+  }
+
+  @include for-desktop {
+    grid-template-rows: auto auto auto auto;
+  }
+
+  @include for-tablet {
+    grid-template-rows: auto auto auto;
+  }
+
+  &__vertical {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    place-self: start;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    grid-column: 2 / 6;
+
+    color: $forest;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    @include for-tablet {
+      margin-bottom: 10px;
+      font-size: 24px;
+      grid-column: span 3;
+    }
+
+    @include for-mobile {
+      margin-bottom: 10px;
+      font-size: 24px;
+      grid-column: span 2;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+
+    grid-column: 2 / 6;
+
+    color: $dark-grey;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include for-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include for-mobile {
+      font-size: 14px;
+      grid-column: span 2;
+    }
+
+    &--second {
+      margin-bottom: 40px;
+
+      @include for-tablet {
+        display: none;
+      }
+
+      @include for-mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__learn {
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    padding-bottom: 10px;
+
+    grid-column: 2 / 6;
+
+    color: $forest;
+    font-family: Poppins, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @include for-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include for-mobile {
+      grid-column: span 2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $forest;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+      cursor: pointer;
+    }
+  }
+
+  &__wrapper {
+    display: block;
+    height: 100%;
+
+    grid-column: 7 / 11;
+    grid-row: 1 / -1;
+    place-self: stretch;
+
+    @include for-tablet {
+      grid-column: 4 / -1;
+    }
+
+    @include for-mobile {
+      display: none;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__addition {
+    width: 100%;
+
+    grid-column: 11 / -1;
+    grid-row: 1 / -1;
+    align-self: end;
+
+    @include for-tablet {
+      display: none;
+    }
+
+    @include for-mobile {
+      display: none;
+    }
+  }
+}
