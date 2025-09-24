@@ -2,6 +2,7 @@
 @use '../../utils/poppins';
 @use '../../utils/button';
 @use '../../utils/vars';
+@use '../../utils/mixins';
 
 .powder {
   @include media.grid-320;
@@ -75,6 +76,10 @@
     grid-column: 1;
     grid-row: 3;
 
+    display: inline-block;
+    width: auto;
+    justify-self: start;
+
     margin: 20px 0 50px;
 
     @include poppins.text-button;
@@ -83,11 +88,7 @@
 
     text-transform: uppercase;
 
-    display: inline;
-
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    text-decoration-thickness: 1px;
+    @include mixins.hover-underline;
   }
 
   @include media.grid-768 {
@@ -125,7 +126,7 @@
       margin-bottom: 5px;
 
       &--more {
-        width: calc(100% + 20px);
+        // width: calc(100% + 20px);
 
         @include poppins.text-decorative;
       }
@@ -178,10 +179,6 @@
 
       &-list {
         align-self: right;
-
-        li {
-          // transform: translateX(30px);
-        }
       }
     }
     &__image {
@@ -196,7 +193,7 @@
       grid-column: 2 / span 2;
 
       &--more {
-        width: calc(100% + 30px);
+        // width: calc(100% + 30px);
 
         @include poppins.text-decorative;
       }
