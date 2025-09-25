@@ -52,7 +52,21 @@
 
       border: none;
       outline: none;
-      border-bottom: 1px solid #bdbdbd;
+      border-bottom: 1px solid vars.$gray-300;
+
+      &:focus {
+        border-bottom: 1px solid vars.$gray-900;
+      }
+
+      &:not(:placeholder-shown):valid {
+        border-bottom: 1px solid vars.$valid;
+        color: vars.$valid;
+      }
+
+      &:not(:placeholder-shown):invalid {
+        border-bottom: 1px solid vars.$invalid;
+        color: vars.$invalid;
+      }
 
       &--message {
         display: block;
