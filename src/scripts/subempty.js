@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('message__form');
+  const form = document.getElementById('message-form');
 
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const name = form.querySelector('input[name="name"]').value.trim();
     const email = form.querySelector('input[name="email"]').value.trim();
-    message = form.querySelector('number[name="phone"]').value.trim();
+    const phone = form.querySelector('input[name="phone"]').value.trim();
     const message = form.querySelector('textarea[name="message"]').value.trim();
 
     if (!name || !email || !phone || !message) {
@@ -15,6 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     form.reset();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
