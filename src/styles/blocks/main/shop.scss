@@ -40,6 +40,16 @@
       text-transform: uppercase;
 
       color: vars.$gray-600;
+
+      a {
+        text-decoration: none;
+
+        @include mixins.hover-underline;
+
+        &:visited {
+          color: vars.$gray-600;
+        }
+      }
     }
   }
 
@@ -47,13 +57,17 @@
     grid-column: 1 / -1;
 
     .shop__product {
+      cursor: pointer;
+      transition:
+        box-shadow 0.3s,
+        transform 0.3s;
       img {
         width: 100%;
         height: auto;
         max-width: 100%;
         object-fit: contain;
-
         margin-bottom: 10px;
+        transition: transform 0.3s;
       }
 
       &--2 {
@@ -65,8 +79,16 @@
         @include poppins.h5;
 
         margin: 10px;
-
         text-transform: uppercase;
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        transform: translateY(-4px) scale(1.01);
+
+        img {
+          transform: scale(1.01);
+        }
       }
     }
   }
@@ -99,9 +121,6 @@
     &__button {
       grid-column: 3 / span 2;
       margin: 50px 0 130px;
-
-      // width: calc(100% + 60px);
-      // transform: translateX(-30px);
     }
   }
 
@@ -161,9 +180,6 @@
 
     &__button {
       grid-column: 6 / span 2;
-
-      // width: calc(100% + 100px);
-      // transform: translateX(-50px);
 
       margin: 23px 0 200px;
     }
