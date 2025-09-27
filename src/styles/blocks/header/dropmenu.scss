@@ -1,0 +1,89 @@
+@use '../../utils/media';
+@use '../../utils/poppins';
+@use '../../utils/button';
+@use '../../utils/vars';
+@use '../../utils/mixins';
+
+.dropmenu {
+  @include media.grid-320;
+
+  grid-column: 1 / -1;
+
+  z-index: 1000;
+
+  display: inline-block;
+  box-sizing: border-box;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+
+  transform: translateX(-100%);
+  transition: transform 0.33s ease-in-out;
+
+  order: 1;
+
+  background-color: vars.$gray-900;
+
+  overflow: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  &__close {
+    width: 20px;
+    height: 20px;
+
+    margin-top: 20px;
+
+    display: inline-block;
+
+    background: transparent;
+    border: none;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    background-color: vars.$gray-900;
+  }
+
+  &__menu {
+    grid-column: 1 / -1;
+
+    margin-top: 50px;
+
+    &-item {
+      margin-top: 30px;
+      border-bottom: 1px solid vars.$white-200;
+      width: 100%;
+
+      box-sizing: border-box;
+      padding: 10px 0;
+
+      &:first-of-type {
+        margin-top: 45px;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+
+        @include poppins.h5;
+
+        text-decoration: none;
+
+        color: vars.$white-200;
+
+        margin-top: 30px;
+
+        &:hover {
+          transform: translateY(-4px) scale(1.01);
+        }
+      }
+    }
+  }
+}

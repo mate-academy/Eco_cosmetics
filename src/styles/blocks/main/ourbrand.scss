@@ -1,0 +1,161 @@
+@use '../../utils/media';
+@use '../../utils/poppins';
+@use '../../utils/button';
+@use '../../utils/vars';
+@use '../../utils/mixins';
+
+.ourbrand {
+  @include media.grid-320;
+
+  grid-column: 1 / -1;
+
+  margin-bottom: 100px;
+
+  &__content {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include poppins.h4;
+
+    color: vars.$green-800;
+
+    text-transform: uppercase;
+
+    &--vertical {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include poppins.text-small;
+
+    margin-top: 10px;
+
+    &--more {
+      @include poppins.text-decorative;
+
+      color: vars.$green-800;
+
+      text-transform: uppercase;
+
+      margin-top: 30px;
+
+      display: inline-block;
+
+      @include mixins.hover-underline;
+      @include mixins.underline;
+
+      &:hover {
+        transform: translateY(-4px) scale(1.01);
+      }
+    }
+
+    &--2 {
+      display: none;
+    }
+  }
+
+  @include media.grid-768 {
+    margin-bottom: 130px;
+
+    &__content {
+      grid-column: 1 / span 3;
+    }
+
+    &__text {
+      @include poppins.text;
+
+      color: vars.$green-800;
+
+      margin-top: 40px;
+    }
+
+    &__images {
+      &--1 {
+        grid-column: 4 / span 3;
+
+        background-image: url('/src/images/img/brand/brand-01.png');
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  @include media.grid-1280 {
+    margin-bottom: 200px;
+
+    &__content {
+      grid-column: 2 / span 4;
+    }
+
+    &__title {
+      position: relative;
+
+      @include poppins.h3;
+
+      color: vars.$green-800;
+
+      &--vertical {
+        display: block;
+
+        grid-column: 1 / span 1;
+
+        @include poppins.text-small;
+
+        color: vars.$green-800;
+
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+
+        place-self: flex-start auto;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 100px;
+          background-color: vars.$green-800;
+          left: 10px;
+          top: -110px;
+        }
+      }
+    }
+
+    &__text {
+      &--more {
+        margin-bottom: 36px;
+        margin-top: 49px;
+      }
+
+      &--2 {
+        display: block;
+
+        &:last-child {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    &__images {
+      &--1 {
+        grid-column: 7 / span 4;
+        background-image: url('/src/images/img/brand/brand-01.png');
+      }
+
+      &--2 {
+        grid-column: 11 / span 2;
+
+        background-image: url('/src/images/img/brand/brand-02.png');
+        background-size: cover;
+        background-position: center bottom;
+        align-self: end;
+        height: 80%;
+      }
+    }
+  }
+}

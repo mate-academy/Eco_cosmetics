@@ -1,0 +1,42 @@
+@use '../utils/vars';
+@use '../utils/poppins';
+
+@mixin button-hover() {
+  background-color: vars.$white-200;
+  border: 1px solid vars.$gray-900;
+  color: vars.$gray-900;
+
+  transition:
+    background-color 300ms,
+    transform 300ms ease-in-out;
+  transform: translateY(-4px) scale(1.01);
+}
+
+@mixin button-passed() {
+  border: 1px solid vars.$gray-600;
+}
+
+@mixin button() {
+  display: block;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  width: 100%;
+  height: 60px;
+
+  line-height: 130%;
+
+  @include poppins.text-button;
+
+  background-color: vars.$gray-900;
+
+  &:hover {
+    @include button-hover;
+  }
+
+  &:focus {
+    @include button-passed;
+  }
+}

@@ -1,0 +1,231 @@
+@use '../../utils/media';
+@use '../../utils/poppins';
+@use '../../utils/button';
+@use '../../utils/vars';
+@use '../../utils/mixins';
+
+.shop {
+  @include media.grid-320;
+
+  &__title {
+    @include poppins.h4;
+
+    text-transform: uppercase;
+    color: vars.$green-800;
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    &--vertical {
+      display: none;
+    }
+  }
+
+  &__header {
+    grid-column: 1 / -1;
+
+    margin: 20px 0 30px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .shop__tab {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+
+      @include poppins.text-2;
+
+      text-transform: uppercase;
+
+      color: vars.$gray-600;
+
+      a {
+        text-decoration: none;
+
+        @include mixins.hover-underline;
+
+        /* Let the button handle clicks to avoid default anchor navigation interfering */
+        pointer-events: none;
+
+        &:visited,
+        &:link {
+          color: vars.$gray-600;
+        }
+
+        &.active {
+          text-decoration: underline;
+          text-underline-offset: 14px;
+          text-decoration-thickness: 2px;
+          color: vars.$gray-900;
+        }
+      }
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    .shop__product {
+      cursor: pointer;
+      transition:
+        box-shadow 0.3s,
+        transform 0.3s;
+
+      img {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        display: block;
+        max-width: none;
+        margin-bottom: 10px;
+        transition: transform 0.3s;
+      }
+
+      &--2 {
+        display: none;
+      }
+
+      &-name,
+      &-price {
+        @include poppins.h5;
+
+        margin: 10px;
+        text-transform: uppercase;
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        transform: translateY(-4px) scale(1.01);
+
+        img {
+          transform: scale(1.01);
+        }
+      }
+    }
+
+    // Ensure hidden attribute actually hides content (author CSS may override UA styles)
+    &[hidden] {
+      display: none !important;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    background: none;
+
+    @include button.button;
+
+    margin: 30px 0 100px;
+  }
+
+  @include media.grid-768 {
+    &__title {
+      text-align: left;
+    }
+
+    &__header {
+      justify-content: left;
+    }
+
+    &__content {
+      display: flex;
+      gap: 30px;
+
+      .shop__product {
+        &--2 {
+          display: block;
+        }
+
+        img {
+          width: 50vw;
+          position: static;
+          left: auto;
+          right: auto;
+          margin-left: 0;
+          margin-right: 0;
+          max-width: 100%;
+          display: block;
+        }
+      }
+    }
+
+    &__button {
+      grid-column: 3 / span 2;
+
+      margin: 50px 0 130px;
+
+      width: calc(100% + 60px);
+      margin-left: -30px;
+    }
+  }
+
+  @include media.grid-1280 {
+    &__title {
+      grid-column: 2 / span 11;
+
+      @include poppins.h2;
+
+      color: vars.$green-800;
+
+      text-align: left;
+
+      &--vertical {
+        grid-column: 1 / span 1;
+
+        display: block;
+        position: relative;
+
+        @include poppins.text-small;
+
+        color: vars.$green-800;
+
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+
+        place-self: start;
+        margin-bottom: 0;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 100px;
+          background-color: vars.$green-800;
+          left: 50%;
+          top: -110px;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    &__header {
+      grid-column: 2 / span 11;
+      .shop__tab {
+        @include poppins.h5;
+      }
+    }
+
+    &__content {
+      grid-column: 2 / span 11;
+
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 30px;
+    }
+
+    &__button {
+      grid-column: 6 / span 3;
+
+      margin: 23px 0 200px;
+
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}

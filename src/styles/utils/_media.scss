@@ -1,0 +1,50 @@
+$grid-tablet-side-gap: 50px;
+$grid-desktop-side-gap-1024: 50px;
+
+@mixin grid-768() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin grid-1280() {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin grid-1440() {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin grid-320() {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+
+  padding: 0 20px;
+
+  @include grid-768 {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+
+    padding: 0 27px;
+  }
+
+  @include grid-1280 {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+
+    padding: 0 50px;
+  }
+
+  @include grid-1440 {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+
+    padding: 0 130px;
+  }
+}

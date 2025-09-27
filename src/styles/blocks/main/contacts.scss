@@ -1,0 +1,205 @@
+@use '../../utils/media';
+@use '../../utils/poppins';
+@use '../../utils/button';
+@use '../../utils/vars';
+@use '../../utils/mixins';
+
+.contacts {
+  @include media.grid-320;
+
+  grid-column: 1 / -1;
+
+  &__content {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include poppins.h4;
+
+    text-transform: uppercase;
+    color: vars.$green-800;
+
+    text-align: left;
+
+    margin-bottom: 20px;
+
+    &--vertical {
+      display: none;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+
+    @include poppins.text-small;
+  }
+
+  .message {
+    grid-column: 1 / -1;
+  }
+
+  .form {
+    &__input {
+      background-color: vars.$white-200;
+
+      @include poppins.text-small;
+
+      width: 100%;
+      height: 31px;
+      margin-bottom: 20px;
+
+      border: none;
+      outline: none;
+      border-bottom: 1px solid vars.$gray-300;
+
+      &:focus {
+        border-bottom: 1px solid vars.$gray-900;
+      }
+
+      &:not(:placeholder-shown):valid {
+        border-bottom: 1px solid vars.$valid;
+        color: vars.$valid;
+      }
+
+      &:not(:placeholder-shown):invalid {
+        border-bottom: 1px solid vars.$invalid;
+        color: vars.$invalid;
+      }
+
+      &--message {
+        display: block;
+
+        margin-top: 40px;
+      }
+
+      &--name {
+        margin-top: 30px;
+      }
+    }
+
+    &__label {
+      @include poppins.text-small;
+
+      &:not(:focus, :active) {
+        @include mixins.visually-hidden;
+      }
+    }
+
+    &__button {
+      grid-column: 1 / -1;
+      background: none;
+
+      @include button.button;
+
+      margin-top: 30px;
+    }
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    display: none;
+  }
+
+  @include media.grid-768 {
+    &__content {
+      grid-column: 1 / span 3;
+    }
+
+    &__text {
+      margin-bottom: 30px;
+    }
+
+    .form {
+      &__button {
+        margin-top: 35px;
+        width: 80%;
+      }
+    }
+
+    &__item {
+      grid-column: 4 / span 3;
+
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      background-image: url('/src/images/img/contact/contact-tab-01.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include media.grid-1280 {
+    &__content {
+      grid-column: 2 / span 4;
+    }
+
+    &__title {
+      grid-column: 1 / span 2;
+      text-align: left;
+
+      margin-bottom: 30px;
+
+      @include poppins.h3;
+
+      color: vars.$green-800;
+
+      &--vertical {
+        grid-column: 1 / span 1;
+
+        display: block;
+        position: relative;
+
+        @include poppins.text-small;
+
+        color: vars.$green-800;
+
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+
+        place-self: start;
+        margin-bottom: 0;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 100px;
+          background-color: vars.$green-800;
+          left: 50%;
+          top: -110px;
+          transform: translateX(-50%);
+        }
+      }
+    }
+    &__text {
+      @include poppins.text;
+
+      margin-bottom: 20px;
+    }
+
+    .form {
+      &__input {
+        @include poppins.h5;
+
+        margin-bottom: 30px;
+
+        &--message {
+          margin-top: 60px;
+        }
+      }
+
+      &__button {
+        margin-top: 50px;
+      }
+    }
+
+    &__item {
+      grid-column: 7 / -1;
+    }
+  }
+}

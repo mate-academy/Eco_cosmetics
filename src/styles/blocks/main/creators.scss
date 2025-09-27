@@ -1,0 +1,147 @@
+@use '../../utils/media';
+@use '../../utils/poppins';
+@use '../../utils/button';
+@use '../../utils/vars';
+@use '../../utils/mixins';
+
+.creators {
+  @include media.grid-320;
+  &__content {
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+
+    @include poppins.h4;
+
+    text-transform: uppercase;
+    color: vars.$green-800;
+
+    text-align: left;
+
+    &--vertical {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include poppins.text;
+
+    &--unvisible {
+      display: none;
+    }
+
+    &--more {
+      @include poppins.text-button;
+
+      display: inline-block;
+      box-sizing: content-box;
+
+      color: vars.$green-800;
+
+      margin: 30px 0 41px;
+
+      @include mixins.underline;
+      @include mixins.hover-underline;
+
+      text-transform: uppercase;
+    }
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    display: none;
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    background: none;
+
+    @include button.button;
+  }
+
+  @include media.grid-768 {
+    &__content {
+      grid-column: 1 / span 3;
+    }
+
+    &__item {
+      grid-column: 4 / span 3;
+      display: block;
+
+      img {
+        width: auto;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__button {
+      width: 80%;
+    }
+  }
+
+  @include media.grid-1280 {
+    &__content {
+      grid-column: 2 / span 4;
+    }
+
+    &__title {
+      grid-column: 2 / span 2;
+      text-align: left;
+
+      margin-bottom: 34px;
+
+      @include poppins.h3;
+
+      color: vars.$green-800;
+
+      &--vertical {
+        grid-column: 1 / span 1;
+
+        display: block;
+        position: relative;
+
+        @include poppins.text-small;
+
+        color: vars.$green-800;
+
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+
+        place-self: start;
+        margin-bottom: 0;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 100px;
+          background-color: vars.$green-800;
+          left: 50%;
+          top: -110px;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    &__text {
+      &--unvisible {
+        display: block;
+      }
+    }
+
+    &__item {
+      grid-column: 7 / span 6;
+      display: block;
+    }
+
+    &__button {
+      width: 75%;
+    }
+  }
+}
