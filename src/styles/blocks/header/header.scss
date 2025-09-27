@@ -7,6 +7,12 @@
 .header {
   @include media.grid-320;
 
+  /* Ensure any header child with [hidden] stays hidden across breakpoints */
+  &[hidden],
+  & > *[hidden] {
+    display: none !important;
+  }
+
   grid-template-rows: 59px auto auto;
 
   &__container {
@@ -155,6 +161,9 @@
 
       &-button {
         grid-column: 3 / span 2;
+
+        width: calc(100% + 60px);
+        margin-left: -30px;
       }
     }
 
@@ -276,8 +285,8 @@
 
         margin-bottom: 53px;
 
-        transform: translateX(0);
         width: 100%;
+        margin-left: 0;
       }
     }
 
