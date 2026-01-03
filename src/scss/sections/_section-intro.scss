@@ -1,0 +1,56 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.section__intro {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 120px;
+
+  @include respond-to(desktop) {
+    height: 346px;
+  }
+
+  &--title {
+    font-family: $font-primary;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-medium-2;
+    line-height: $line-height-medium;
+    letter-spacing: 0.05em;
+    color: $color-title;
+    text-transform: uppercase;
+    width: 280px;
+    padding-block: 50px;
+
+    @include respond-to(tablet) {
+      text-align: center;
+    }
+
+    @include respond-to(desktop) {
+      min-width: 380px;
+      width: 380px;
+      height: 108px;
+      font-size: $font-size-xlarge;
+      margin: 105px 250px 0 0;
+      text-align: start;
+      padding-block: 0;
+    }
+  }
+
+  &--text {
+    display: none;
+
+    @include respond-to(desktop) {
+      display: flex;
+      min-width: 380px;
+      width: 380px;
+      height: 144px;
+      font-size: $font-size-medium;
+      font-weight: $font-weight-regular;
+      line-height: $line-height-medium;
+      color: $color-primary-text;
+      margin: 100px 0 0 150px;
+      text-align: start;
+    }
+  }
+}
