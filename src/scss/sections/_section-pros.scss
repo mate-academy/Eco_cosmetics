@@ -1,0 +1,78 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.section__pros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  color: $color-tertiary-text;
+  font-size: $font-size-xsmall;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-xsmall;
+  letter-spacing: 5%;
+  text-transform: uppercase;
+
+  @include respond-to(tablet) {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  @include respond-to(desktop) {
+    height: 160px;
+    gap: 20px;
+  }
+
+  &--item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 218px;
+    height: 141px;
+    gap: 20px;
+
+    @include respond-to(desktop) {
+      width: 380px;
+      height: 160px;
+    }
+  }
+
+  .img-1 {
+    @include respond-to(tablet) {
+      width: 80px;
+      height: 60px;
+      margin-bottom: 30px;
+
+      @include hover-zoom(1.1);
+    }
+  }
+
+  .img-2 {
+    @include respond-to(tablet) {
+      width: 80px;
+      height: 67px;
+      margin-bottom: 23px;
+
+      @include hover-zoom(1.1);
+    }
+  }
+
+  .img-3 {
+    @include respond-to(tablet) {
+      width: 80px;
+      height: 75px;
+      margin-bottom: 15px;
+
+      @include hover-zoom(1.1);
+    }
+  }
+
+  p {
+    text-align: center;
+
+    @include respond-to(desktop) {
+      width: 300px;
+    }
+  }
+}

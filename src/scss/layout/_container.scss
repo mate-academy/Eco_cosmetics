@@ -1,0 +1,23 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+
+  @include container-size(small); // mobile base
+
+  padding-inline: 20px;
+
+  @include respond-to(tablet) {
+    @include container-size(medium);
+  }
+
+  @include respond-to(desktop) {
+    @include container-size(large);
+  }
+
+  @include respond-to(desktop-design) {
+    @include container-size(xlarge);
+  }
+}
