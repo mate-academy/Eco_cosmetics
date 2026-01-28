@@ -1,0 +1,189 @@
+.header {
+  @include page-grid;
+
+  &__menu {
+    grid-column: 1/-1;
+    padding-block: 20px;
+
+    @include on-desktop {
+      padding-bottom: 80px;
+    }
+
+    &__top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &-menu {
+        background-image: url(../images/icons/icon-burger.png);
+      }
+
+      &-logo {
+        background-image: url(../images/icons/icon-logo.png);
+      }
+
+      &-shop {
+        background-image: url(../images/icons/icon-shop.png);
+      }
+    }
+  }
+
+  &__background {
+    grid-column: 1/-1;
+
+
+
+    @include negative-margin;
+
+    @include on-tabblet {
+      margin: 0;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+
+    &-img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    grid-column: 1/-1;
+    color: $dark-3;
+    text-align: center;
+
+    @include on-desktop {
+      grid-column: 2/span 5;
+      grid-row: 2;
+      padding-bottom: 200px;
+    }
+
+    &-title {
+      @include poppin-600;
+      @include font-header-title;
+
+      @include on-desktop {
+        padding-top: 0;
+      }
+    }
+
+    &-desc {
+      @include poppin-400;
+
+      padding-bottom: 30px;
+      font-size: 16px;
+
+      @include on-tabblet {
+        padding-bottom: 50px;
+      }
+    }
+
+    &-link {
+      &-button {
+        @include button-green;
+
+        width: 100%;
+
+        @include on-tabblet {
+          width: 30%;
+        }
+
+        @include on-desktop {
+          width: 50%;
+        }
+
+      }
+    }
+
+    &-if {
+      position: relative;
+      grid-column: 1/-1;
+      padding-block: 100px;
+      text-align: center;
+
+
+
+      @include poppin-600;
+
+      @include on-desktop {
+        grid-column: 7/span 4;
+        order: 2;
+        padding-block: 100px;
+        font-size: 24px;
+
+        &::before {
+          content: "";
+
+          position: absolute;
+          right: -270px;
+          bottom: 0;
+
+          width: 109vh; // Ocupa a largura total do container
+          height: 1px; // Espessura da borda
+
+          opacity: 0.5;
+          background-color: #344F1080; // Cor da linha (ajuste conforme o Figma)
+        }
+      }
+
+      &-title {
+        grid-column: 1/-1;
+        font-size: 18px;
+        color: $green-34;
+
+        @include spacing-upper;
+
+        @include on-tabblet {
+          padding-block: 130px;
+        }
+
+        @include on-desktop {
+          padding-block: 0;
+        }
+      }
+
+
+
+
+
+
+
+
+    }
+
+    &-left {
+      position: relative;
+
+      @include on-desktop {
+        &::before {
+          content: "";
+
+          position: absolute;
+          top: 0;
+          left: -50px;
+
+          width: 90vh; // Ocupa a largura total do container
+          height: 1px; // Espessura da borda
+
+          opacity: 0.5;
+          background-color: #344F1080; // Cor da linha (ajuste conforme o Figma)
+        }
+      }
+
+
+      &-desc {
+        grid-column: 6/-1;
+        padding-top: 100px;
+
+        @include on-desktop {
+          grid-column: 2/span 4;
+          order: 1;
+          text-align: center;
+
+        }
+      }
+    }
+
+  }
+}

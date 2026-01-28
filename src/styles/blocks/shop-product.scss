@@ -1,0 +1,100 @@
+.shop__product {
+  @include page-grid;
+
+  pointer-events: none;
+
+  position: fixed;
+  z-index: 22;
+  inset: 0;
+  transform: translate(100%);
+
+  overflow-y: auto;
+
+  // configurações para o menu por cima da pagina
+  grid-column: 1/-1;
+  gap: 20px;
+
+  height: 100vh;
+
+  opacity: 0;
+  background-color: $green-back;
+
+  transition: all 0.3s;
+
+  &:target {
+    pointer-events: all;
+    transform: translate(0);
+    opacity: 1;
+
+  }
+
+  // fim da configuracao do menu
+
+  &-desc {
+    display: grid;
+    grid-column: span 2;
+    gap: 15px;
+    color:$dark-3;
+
+    @include on-tabblet {
+      grid-column: 2/span 4;
+    }
+
+    @include poppin-600;
+
+  }
+
+  &-img {
+    display: block;
+        grid-column: span 2;
+
+    height: 100vw;
+
+    background-image: url(../images/background/prod-background-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include on-tabblet {
+      grid-column: 2/span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2/-2;
+
+    }
+  }
+
+  &-l {
+        grid-column: span 2;
+
+    @include on-tabblet {
+      grid-column: 2/span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2/-2;
+
+    }
+
+    &-button {
+      width: 100%;
+
+      @include button-green;
+    }
+  }
+
+  &-info {
+    @include poppin-500;
+
+    grid-column: span 2;
+
+    @include on-tabblet {
+      grid-column: 2/span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 2/-2;
+
+    }
+  }
+}

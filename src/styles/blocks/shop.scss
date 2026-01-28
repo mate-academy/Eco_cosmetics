@@ -1,0 +1,108 @@
+.shop {
+  @include page-grid;
+
+  text-align: center;
+
+  &__menu {
+    @include column-span236;
+
+    grid-column: 1/-1;
+    grid-row: 1;
+
+    &-title {
+      @include poppin-600;
+
+      padding-bottom: 20px;
+      font-size: 24px;
+      color: $green-34;
+
+      @include spacing-upper;
+    }
+
+    &-nav {
+      &-ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style: none;
+      }
+
+      &-link {
+        @include poppin-400;
+
+        font-size: 14px;
+        line-height: 130%;
+
+        @include spacing-upper;
+
+        color: $link-w;
+
+        @include underline-border;
+      }
+    }
+  }
+
+  &__content {
+    @include column-span236;
+
+    grid-row: 2;
+
+    &-background {
+      @include negative-margin;
+
+      position: relative;
+
+      @include on-tabblet {
+        margin: 0;
+      }
+
+      padding-top: 20px;
+
+      &-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease;
+      }
+
+      &:hover .shop__content-background-img {
+        transform: scale(1.05);
+      }
+    }
+
+    &-prod {
+      &-desc {
+        @include poppin-600;
+        @include spacing-upper;
+
+        padding-block: 20px 10px;
+        font-size: 18px;
+        color: $dark-3;
+      }
+
+      &-qt {
+        @include poppin-500;
+        @include spacing-upper;
+
+        padding-bottom: 30px;
+        font-size: 18px;
+        color: $dark-3;
+      }
+    }
+
+
+  }
+
+  &-l {
+    display: inline;
+    grid-column: 1/-1;
+    justify-content: center;
+
+    &-button {
+      @include button-green;
+
+      width: 36%;
+    }
+  }
+
+}

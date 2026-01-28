@@ -1,0 +1,97 @@
+.contact {
+  @include page-grid;
+  @include page-padding-block;
+
+  &_content {
+    @include column-span234;
+  }
+
+  &__info {
+    gap: 10px;
+    padding-bottom: 25px;
+
+    &-title {
+      @include title24-green;
+    }
+
+    &-desc {
+      @include poppin-400;
+
+      color: $dark-3;
+    }
+  }
+
+  &__form {
+    display: grid;
+    gap: 20px;
+
+    @include on-desktop {
+      gap: 30px;
+      padding-top: 15px;
+    }
+
+
+
+    &-input {
+      width: 100%;
+      padding-block: 5px;
+      border: none;
+      border-bottom: 1px solid #bdbdbd;
+
+      color: $input-color;
+
+      background-color: inherit;
+
+      &-textarea {
+        border: none;
+        border-bottom: 1px solid #bdbdbd;
+        background-color: inherit;
+
+      }
+
+      @include on-desktop {
+        &:nth-child(4) {
+          padding-top: 30px;
+        }
+      }
+
+    }
+
+    &-input:valid {
+      border-bottom: 1px solid green;
+    }
+
+    &-input:focus:invalid {
+      border-bottom: 1px solid red;
+      outline: none;
+    }
+
+    &-link {
+      padding-top: 30px;
+
+      &-button {
+        width: 100%;
+
+        @include button-green;
+      }
+    }
+  }
+
+  &-img {
+    @include column-span236;
+
+    position: relative;
+
+    @include on-desktop {
+      grid-column: 7/span 6;
+    }
+
+    &-imagem {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+    }
+  }
+}

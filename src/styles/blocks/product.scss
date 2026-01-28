@@ -1,0 +1,96 @@
+.prod {
+  @include page-grid;
+  @include page-padding-block;
+
+  &-title {
+    grid-column: span 2;
+
+    @include title24-green;
+
+    @include on-desktop {
+      grid-column: 2/span 4;
+    }
+  }
+
+  &-schem {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    align-items: stretch;
+
+    padding-block: 30px 20px;
+
+    @include on-desktop {
+      grid-column: 6/-1;
+      padding-block: 0;
+    }
+
+    font-size: 16px;
+
+    @include poppin-400;
+    @include negative-margin-right;
+
+
+    &-ul {
+      @include column-span13;
+
+
+
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      padding-top: 30px;
+
+      text-align: right;
+      list-style: none;
+
+      @include on-desktop {
+        grid-column: 1/span 2;
+      }
+
+      :nth-child(n + 2) {
+        margin-top: 6px;
+      }
+    }
+
+    &-img {
+      min-height: 320px;
+
+      background-image: url('../images/background/background-schem.png');
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-size: contain;
+
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      @include column-span13;
+
+      @include on-tabblet {
+        background-image: url('../images/background/background-schem-02.png');
+      }
+
+      @include on-desktop {
+        grid-column: span 4;
+        background-image: url('../images/background/background-schem-desktop.png');
+      }
+    }
+  }
+
+  &-learn {
+    grid-column: span 2;
+
+    @include on-desktop {
+      grid-column: 2/span 2;
+    }
+
+    &-link {
+      @include underline-border;
+      @include link14-green;
+    }
+  }
+}

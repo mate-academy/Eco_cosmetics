@@ -1,0 +1,104 @@
+.footer {
+  @include page-grid;
+
+  color: $footer-color;
+  background-color: $background-footer;
+
+  &-nav {
+    grid-column: span 2;
+    padding-block: 30px 20px;
+
+    @include on-desktop {
+      grid-column: span 3;
+    }
+
+    &-ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      list-style: none;
+
+      @include on-desktop {
+        flex-direction: row;
+      }
+
+      &-li {
+        @include poppin-500;
+
+        font-size: 18px;
+        line-height: 150%;
+
+        &-link {
+          color: $footer-color;
+        }
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    grid-column: span 2;
+    gap: 20px;
+
+    @include on-tabblet {
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: 8/-1;
+      padding-top: 30px;
+    }
+
+    &-i {
+      background-image: url(../images/icons/instagram-icon.png);
+    }
+
+    &-f {
+      background-image: url(../images/icons/facebook-icon.png);
+    }
+  }
+
+  &-reserved {
+    grid-column: span 2;
+    order: 5;
+    padding-block: 40px;
+    text-align: center;
+
+    @include on-tabblet {
+      grid-row: 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+      grid-row: 2;
+      text-align: left;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    grid-column: span 2;
+    flex-direction: column;
+    gap: 10px;
+
+    padding-top: 40px;
+
+    @include poppin-400;
+
+    &-info {
+      @include poppin-400;
+
+        color: $footer-color;
+
+    }
+
+    @include on-tabblet {
+      grid-column: 4/span 3;
+      padding-top: 30px;
+    }
+
+    @include on-desktop {
+      grid-column: 8/-1;
+    }
+  }
+}

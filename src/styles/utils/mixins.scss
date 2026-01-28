@@ -1,0 +1,290 @@
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+// padrao de letras
+@mixin poppin-400 {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+}
+
+@mixin poppin-500 {
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+}
+
+@mixin poppin-600 {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+}
+
+// screen
+@mixin on-tabblet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $small-desktop-width) {
+    @content;
+  }
+}
+
+@mixin on-mobile {
+  @media(max-width:$mobile-width) {
+    @content;
+  }
+}
+
+@mixin on-tabblet-hide {
+  @media (max-width:1279px) {
+    @content;
+  }
+}
+
+// grid-configs
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  padding-inline: 20px;
+
+  @include on-tabblet {
+    --columns: 6;
+
+    column-gap: 24px;
+    padding-inline: 27px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+
+    padding-inline: 50px;
+  }
+}
+
+@mixin page-grid-nopadd {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+
+  @include on-tabblet {
+    --columns: 6;
+
+    column-gap: 24px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+
+  }
+}
+
+// padrao da img
+@mixin negative-margin {
+  margin-inline: -20px;
+
+  @include on-tabblet {
+    margin-inline: -27px;
+  }
+
+  @include on-desktop {
+    margin-inline: -50px;
+  }
+}
+
+// imagem negativa a direita
+@mixin negative-margin-right {
+  margin-right: -20px;
+
+  @include on-tabblet {
+    margin-right: -27px;
+  }
+
+  @include on-desktop {
+    margin-right: -50px;
+  }
+}
+
+
+
+// font header
+@mixin font-header-title {
+  padding-block: 25px 10px;
+  font-size: 24px;
+  line-height: 130%;
+
+  @include on-tabblet {
+    padding-block: 50px 10px;
+    font-size: 36px;
+    line-height: 150%;
+  }
+
+  @include on-desktop {
+    font-size: 60px;
+    line-height: 130%;
+  }
+}
+
+// letter spacing
+@mixin spacing-upper {
+  text-transform: uppercase;
+  letter-spacing: 5%;
+}
+
+// Font style 24px green titles
+@mixin title24-green {
+  @include poppin-600;
+  @include spacing-upper;
+
+  font-size: 24px;
+  color: $green-34;
+
+  @include on-desktop {
+    font-size: 36px;
+  }
+}
+
+// Fonte para o link verde com borda embaixo
+
+@mixin link14-green {
+  @include poppin-500;
+
+  font-size: 14px;
+  line-height: 130%;
+  color: $green-34;
+  text-transform: uppercase;
+}
+
+// Padrao botao green
+@mixin button-green {
+  @include poppin-600;
+
+  height: 60px;
+
+  font-size: 16px;
+  line-height: 130%;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 15%;
+
+  background-color: $dark-3;
+
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $footer-color;
+  }
+}
+
+// borda inferior para links
+
+@mixin underline-border {
+  position: relative; 
+  
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: -10px; 
+    left: 0;
+
+    width: 100%;
+    height: 2px; // Espessura da linha
+
+    opacity: 0; // Começa invisível
+    background-color: #344f10;
+
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    color: #344f10;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+// paddings
+
+@mixin page-padding-bottom {
+  padding-bottom: 100px;
+
+  @include on-tabblet {
+    padding-bottom: 130px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 200px;
+  }
+}
+
+@mixin page-padding-top {
+  padding-top: 100px;
+
+  @include on-tabblet {
+    padding-top: 130px;
+  }
+
+  @include on-desktop {
+    padding-top: 200px;
+  }
+}
+
+@mixin page-padding-block {
+  padding-block: 100px;
+
+  @include on-tabblet {
+    padding-block: 130px;
+  }
+
+  @include on-desktop {
+    padding-block: 200px;
+  }
+}
+
+// column span
+@mixin column-span236 {
+  grid-column: span 2;
+
+  @include on-tabblet {
+    grid-column: span 3;
+  }
+
+  @include on-desktop {
+    grid-column: span 6;
+  }
+}
+
+@mixin column-span234 {
+  grid-column: span 2;
+
+  @include on-tabblet {
+    grid-column: span 3;
+  }
+
+  @include on-desktop {
+    grid-column: 2/span 4;
+  }
+}
+
+
+
+@mixin column-span13 {
+  grid-column: span 1;
+
+  @include on-tabblet {
+    grid-column: span 3;
+  }
+
+
+}
