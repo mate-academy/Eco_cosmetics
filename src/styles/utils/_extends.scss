@@ -1,4 +1,88 @@
-%h1 {
-  font-family: Roboto, sans-serif;
-  font-weight: 400;
+%deco-wrapper {
+  position: relative;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  padding: 0 $paddingDesktop;
+}
+
+%deco-text {
+  position: absolute;
+  left: 70px;
+  transform-origin: left;
+  transform: rotate(270deg);
+
+  font-size: 14px;
+  color: rgba(52, 79, 16, 0.5);
+  text-transform: uppercase;
+
+  transition: 5s;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 5px;
+    left: -110px;
+
+    display: block;
+
+    width: 100px;
+    height: 1px;
+
+    background-color: rgba(52, 79, 16, 0.5);
+  }
+
+  @media (max-width: $tabletWidth) {
+    display: none;
+  }
+}
+
+%link {
+  display: inline-block;
+
+  padding-top: 10px;
+  border-bottom: 1px solid transparent;
+
+  font-size: 14px;
+  line-height: 130%;
+  color: $witchGreen;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  transition: 0.5s;
+
+  &:hover {
+    padding-top: 0;
+    padding-bottom: 10px;
+    border-color: $witchGreen;
+  }
+}
+
+%button {
+  cursor: pointer;
+
+  display: block;
+
+  box-sizing: border-box;
+  width: $buttonWidth;
+  height: $buttonHeight;
+  margin-top: 20px;
+  border: 1px solid $witchGray;
+
+  font-size: 16px;
+  font-weight: bold;
+  line-height: $buttonHeight;
+  color: #f2f2f2;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  background-color: $witchGray;
+
+  transition: 0.5s;
+
+  &:hover {
+    color: $witchGray;
+    background-color: transparent;
+  }
 }

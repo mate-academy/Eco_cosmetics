@@ -1,0 +1,138 @@
+.toggler {
+  position: absolute;
+  z-index: 2;
+  visibility: hidden;
+}
+
+.button {
+  cursor: pointer;
+
+  position: absolute;
+  z-index: 2;
+  top: 0;
+
+  display: block;
+
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+
+  visibility: hidden;
+
+  @media (max-width: $tabletWidth) {
+    visibility: visible;
+  }
+}
+
+.bar {
+  content: '';
+
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  transform-origin: left;
+
+  display: block;
+
+  width: 20px;
+  height: 1px;
+
+  background-color: $witchGreen;
+
+  transition: 0.5s;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    transform-origin: left;
+
+    display: block;
+
+    width: 20px;
+    height: 1px;
+
+    background-color: $witchGreen;
+
+    transition: 0.5s;
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    z-index: 2;
+    bottom: 7px;
+    transform-origin: left;
+
+    display: block;
+
+    width: 20px;
+    height: 1px;
+
+    background-color: $witchGreen;
+
+    transition: 0.5s;
+  }
+
+  @media (max-width: 1000px) {
+    visibility: visible;
+  }
+}
+
+.toggler:checked ~ .header__wrapper .button .bar {
+  background-color: transparent;
+
+  &::before {
+    transform: rotate(-45deg);
+    background-color: #e4dfd3;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+    background-color: #e4dfd3;
+  }
+}
+
+.menu {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+
+  visibility: hidden;
+  opacity: 0;
+  background-color: #333;
+
+  transition: 0.5s;
+
+  &__wrapper {
+    padding: 20px;
+  }
+
+  &__nav {
+    padding-top: 50px;
+  }
+
+  &__item {
+    margin-top: 50px;
+    padding: 15px;
+    border-bottom: 1px solid #828282;
+    text-align: center;
+  }
+
+  &__link {
+    padding: 15px 50px;
+    font-size: 18px;
+    line-height: 23px;
+    color: #e4dfd3;
+  }
+}
+
+.toggler:checked + .menu {
+  @media (max-width: 1000px) {
+    visibility: visible;
+    opacity: 1;
+  }
+}
