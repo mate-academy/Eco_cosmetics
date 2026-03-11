@@ -1,0 +1,68 @@
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin on-tablets {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-large-desktop {
+  @media (min-width: $on-large-desktop) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline {
+  padding-inline: 20px;
+
+  // include signigfica que quero usar um mixin dentro de outro mixin, então chamo on-tablet e passo o content
+  // estou dizendo: se a tela for do tamanho de on-tablet aplique esse paddin-inline
+  @include on-tablets {
+    padding-inline: 27px;
+  }
+
+  @include on-desktop {
+    padding-inline: 50px;
+  }
+
+  @include on-large-desktop {
+    padding-inline: 130px;
+  }
+}
+
+@mixin page-grid {
+  --colums: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--colums), 1fr);
+  column-gap: 20px;
+
+  @include on-tablets {
+    --colums: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --colums: 12;
+
+    column-gap: 20px;
+  }
+
+  @include on-large-desktop {
+    --colums: 12;
+
+    column-gap: 20px;
+  }
+}

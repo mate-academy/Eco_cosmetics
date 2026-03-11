@@ -1,0 +1,235 @@
+.card {
+  z-index: 1;
+
+  overflow: auto;
+
+  box-sizing: border-box;
+  width: auto;
+  height: 100vh;
+
+  background-color: $primary-color;
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &__content {
+    @include on-tablets {
+      display: none;
+    }
+  }
+
+  &__top {
+    position: sticky;
+
+    @include content-padding-inline;
+  }
+
+  &__product {
+    &-container {
+      @include content-padding-inline;
+
+      @include on-tablets {
+        @include page-grid;
+
+        margin-bottom: 30px;
+      }
+    }
+
+    &-name {
+      margin: 20px 0 10px;
+
+      font-family: Poppins, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      font-style: SemiBold;
+      line-height: 150%;
+      text-transform: uppercase;
+      letter-spacing: 5%;
+    }
+
+    &-information {
+      margin: 0 0 20px;
+
+      font-family: Poppins, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: Regular;
+      line-height: 130%;
+      text-transform: uppercase;
+      letter-spacing: 5%;
+    }
+
+    &-title {
+      display: none;
+
+      @include on-tablets {
+        display: block;
+        grid-column: 2 / 6;
+
+        margin: 0 0 25px;
+
+        font-family: Poppins, sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 150%;
+        text-transform: uppercase;
+        letter-spacing: 5%;
+      }
+    }
+
+    &-price {
+      display: none;
+
+      @include on-tablets {
+        display: block;
+        grid-column: 2 / 4;
+
+        margin: 0 0 10px;
+
+        font-family: Poppins, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        font-style: Medium;
+        line-height: 150%;
+        color: rgba(52, 79, 16, 1);
+        text-transform: uppercase;
+        letter-spacing: 5%;
+      }
+    }
+
+    &-size {
+      display: none;
+
+      @include on-tablets {
+        display: block;
+        grid-column: 2 / 4;
+
+        margin: 0;
+
+        font-family: Poppins, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 150%;
+        text-transform: uppercase;
+        letter-spacing: 5%;
+      }
+    }
+
+    &-button-container {
+      @include content-padding-inline;
+
+      margin-bottom: 50px;
+
+      @include on-tablets {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 50px;
+      }
+    }
+
+    &-button {
+      cursor: pointer;
+
+      width: 280px;
+      height: 60px;
+      border: none;
+
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 130%;
+      color: rgba(242, 242, 242, 1);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 15%;
+
+      opacity: 1;
+      background-color: $button-color;
+
+      &:hover {
+        border: 1px solid rgba(51, 51, 51, 1);
+        color: rgba(51, 51, 51, 1);
+        background-color: rgba(228, 223, 211, 1);
+      }
+    }
+
+    &-content {
+      @include content-padding-inline;
+
+      @include on-tablets {
+        @include page-grid;
+
+        margin-bottom: 72px;
+      }
+    }
+
+    &-image {
+      display: block;
+
+      width: 280px;
+      height: 248px;
+      margin-bottom: 30px;
+
+      background-image: url(../images/hydrophilic-oil.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include on-tablets {
+        grid-column: 2 / 6;
+
+        width: 466px;
+        height: 440px;
+        margin: 0 0 27px;
+
+        background-image: url(../images/shampoo.svg);
+      }
+    }
+
+    &-paragraph {
+      font-family: Poppins, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: Regular;
+      line-height: 150%;
+      color: Gray 1;
+      letter-spacing: 0%;
+
+      @include on-tablets {
+        grid-column: 2 / 6;
+      }
+
+      &--margin {
+        margin: 0 0 20px;
+
+        @include on-tablets {
+          margin: 0 0 25px;
+        }
+      }
+
+      &--before-ingredients::before {
+        content: 'Ingredients: ';
+
+        font-family: Poppins, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 150%;
+        color: rgba(52, 79, 16, 1);
+        letter-spacing: 0%;
+      }
+
+      &--before-application::before {
+        content: 'Application: ';
+
+        font-family: Poppins, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 150%;
+        color: rgba(52, 79, 16, 1);
+        letter-spacing: 0%;
+      }
+    }
+  }
+}
