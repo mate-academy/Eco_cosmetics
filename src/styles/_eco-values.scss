@@ -1,0 +1,49 @@
+.eco-values {
+  padding: 20px 0 80px;
+
+  @include respond-to(desktop) {
+    padding-bottom: 110px;
+  }
+}
+
+.eco-values__container {
+  @include container;
+}
+
+.eco-values__grid {
+  display: grid;
+  gap: 32px;
+
+  @include respond-to(tablet-large) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+// Each eco-value card — centered icon + centered title
+.eco-value {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  text-align: center;
+}
+
+.eco-value__icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.eco-value__title {
+  margin: 0;
+
+  font-family: $font-heading;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  color: $color-green;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

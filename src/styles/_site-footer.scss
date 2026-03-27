@@ -1,0 +1,164 @@
+.site-footer {
+  padding: 48px 0 32px;
+  color: $color-cream;
+  background-color: #8c9772;
+}
+
+// CSS Grid: left col (nav + copyright) | right col (info spanning full height)
+.site-footer__container {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: flex-start;
+
+  text-align: left;
+
+  @include respond-to(tablet-large) {
+    display: grid;
+    grid-template-areas:
+      'nav     info'
+      'socials info'
+      'copy    info';
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    row-gap: 32px;
+    align-items: start;
+
+    text-align: left;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-areas:
+      'nav  info'
+      'copy info';
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    row-gap: 40px;
+  }
+}
+
+// Nav links vertical at tablet, horizontal at desktop
+.site-footer__nav {
+  display: flex;
+  grid-area: nav;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start; // Left on mobile
+
+  @include respond-to(tablet-large) {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  @include respond-to(desktop) {
+    flex-direction: row;
+    gap: 32px;
+  }
+}
+
+.site-footer__nav-link {
+  font-family: $font-heading;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  color: $color-cream;
+  text-transform: capitalize;
+
+  @include hover-supported {
+    opacity: 0.75;
+  }
+}
+
+// RIGHT — info
+.site-footer__info {
+  display: flex;
+  grid-area: info;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start; // Left on mobile
+
+  @include respond-to(tablet-large) {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  @include respond-to(desktop) {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  @include respond-to(wide) {
+    gap: 0;
+    justify-content: space-between;
+  }
+}
+
+.site-footer__info-item {
+  font-family: $font-heading;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: $color-cream;
+}
+
+// Social icons
+.site-footer__socials {
+  display: flex;
+  grid-area: socials;
+  gap: 12px;
+  justify-content: flex-start; // Left on mobile
+
+  margin-top: 0;
+
+  @include respond-to(tablet-large) {
+    justify-content: flex-start;
+  }
+
+  @include respond-to(desktop) {
+    // Manually place below info or keep separate in grid?
+    // At desktop, we can put it back into the info flow or keep it as its own area.
+    // Let's use grid-area socials also for desktop if we want it after nav.
+  }
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(228, 223, 211, 0.6);
+
+  color: $color-cream;
+
+  &--round {
+    border-radius: 6px;
+  }
+
+  @include hover-supported {
+    background-color: rgba(228, 223, 211, 0.15);
+  }
+}
+
+.site-footer__social-icon {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+}
+
+// BOTTOM LEFT — copyright
+.site-footer__copyright {
+  grid-area: copy;
+
+  font-family: $font-heading;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%;
+  color: $color-cream;
+
+  @include respond-to(tablet-large) {
+    align-self: end;
+  }
+}

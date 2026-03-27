@@ -1,0 +1,240 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+
+  min-width: 320px;
+  margin: 0;
+
+  font-family: $font-body;
+  color: $color-text;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(232, 220, 207, 0.8),
+      transparent 30%
+    ),
+    linear-gradient(180deg, #fbf7f0 0%, $color-cream 38%, #f5efe5 100%);
+}
+
+body.body--menu-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+}
+
+input,
+textarea {
+  min-width: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+section[id] {
+  scroll-margin-top: calc(#{$header-height-mobile} + 24px);
+
+  @include respond-to(desktop) {
+    scroll-margin-top: calc(#{$header-height-desktop} + 32px);
+  }
+}
+
+::selection {
+  background: rgba(52, 79, 16, 0.18);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px $color-surface inset;
+  transition: background-color 9999s ease-in-out 0s;
+
+  -webkit-text-fill-color: $color-text;
+}
+
+.section-sidebar {
+  @include section-sidebar;
+}
+
+.page__main {
+  display: block;
+}
+
+.section-label {
+  @extend %text2;
+
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+
+  margin: 0 0 16px;
+
+  color: $color-green;
+
+  &::before {
+    content: '';
+    width: 36px;
+    height: 1px;
+    background-color: currentColor;
+  }
+}
+
+%text-link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding-bottom: 2px;
+
+  font-family: $font-heading;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: $color-green;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  transition: color $transition-duration $transition-easing;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: $color-green;
+
+    transition: opacity $transition-duration $transition-easing;
+  }
+
+  @include hover-supported {
+    transform: none;
+    color: $color-green;
+
+    &::after {
+      opacity: 0.6;
+    }
+  }
+
+  @include focus-ring;
+}
+
+.text-link {
+  @extend %text-link;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  background-color: transparent;
+
+  transition: transform $transition-duration $transition-easing;
+
+  @include hover-supported {
+    transform: translateY(-5px);
+  }
+}
+
+.product-card__media {
+  overflow: hidden;
+  width: 100%;
+  height: 440px;
+  margin-bottom: 20px;
+
+  @include respond-to(desktop) {
+    height: 500px;
+  }
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-card__category {
+  display: none; // Hidden in latest mockup cards
+}
+
+.product-card__title {
+  margin: 0;
+
+  font-family: $font-heading; // Poppins
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 150%;
+  color: $color-black;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.product-card__description {
+  display: none; // Hidden in latest mockup cards
+}
+
+.product-card__footer {
+  margin-top: 0;
+}
+
+.product-card__price {
+  margin: 0;
+
+  font-family: $font-heading;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+  color: $color-black;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.product-card__button {
+  display: none; // Buying happens elsewhere or on the detail page
+}

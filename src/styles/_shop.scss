@@ -1,0 +1,144 @@
+.shop {
+  padding: 20px 0 80px;
+
+  @include respond-to(desktop) {
+    padding-bottom: 110px;
+  }
+}
+
+.shop__container {
+  @include container;
+
+  position: relative;
+}
+
+.shop__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start; // Left on mobile
+
+  margin-bottom: 32px;
+
+  text-align: left;
+
+  @include respond-to(tablet-large) {
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+.shop__title {
+  @extend %section-title;
+
+  width: 100%;
+  text-align: center;
+
+  @include respond-to(tablet-large) {
+    width: auto;
+    text-align: left;
+  }
+}
+
+.shop__tabs {
+  display: flex;
+  flex-flow: row nowrap; // Always side-by-side
+  gap: 16px; // Smaller gap for mobile
+  justify-content: flex-start; // Left on mobile
+
+  @include respond-to(tablet-large) {
+    gap: 24px;
+    justify-content: flex-start;
+  }
+}
+
+.shop__tab {
+  position: relative;
+
+  padding: 0 0 6px;
+  border: none;
+  border-radius: 0;
+
+  font-family: $font-heading;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: $color-gray-dark;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  background: none;
+
+  transition: color $transition-duration $transition-easing;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: transparent;
+
+    transition: background $transition-duration $transition-easing;
+  }
+
+  @include focus-ring;
+
+  @include hover-supported {
+    transform: none;
+    color: $color-black;
+    &::after {
+      background: $color-black;
+    }
+  }
+}
+
+.shop__tab--active {
+  color: $color-black;
+  &::after {
+    background: $color-black;
+  }
+}
+
+.shop__viewport {
+  min-width: 0;
+}
+
+.shop__products {
+  display: grid;
+  gap: 24px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  @include respond-to(tablet-large) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+// Navigation arrows – hidden per design
+.shop__navigation {
+  display: none;
+}
+
+.shop__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.shop__button {
+  @extend %button-base;
+
+  margin: 0 auto; // Center on mobile
+
+  @include respond-to(tablet-large) {
+    margin: 0;
+  }
+}

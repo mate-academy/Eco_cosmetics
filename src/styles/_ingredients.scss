@@ -1,0 +1,204 @@
+.ingredients {
+  padding: 60px 0 80px;
+
+  @include respond-to(desktop) {
+    padding: 80px 0 100px;
+  }
+}
+
+.ingredients__container {
+  @include container;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+
+  text-align: left;
+
+  @include respond-to(tablet-large) {
+    display: grid;
+    grid-template-areas:
+      'content media'
+      'learn   media';
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  @include respond-to(desktop) {
+    grid-template-columns: minmax(0, 700fr) minmax(0, 480fr);
+    gap: 0;
+  }
+}
+
+// LEFT column — title
+.ingredients__content {
+  display: flex;
+  grid-area: content;
+  flex-direction: column;
+  align-items: flex-start; // Left on mobile
+
+  @include respond-to(tablet-large) {
+    // nothing special needed
+  }
+}
+
+.ingredients__title {
+  @extend %section-title;
+
+  width: 100%;
+  color: $color-green;
+  text-align: left;
+
+  @include respond-to(tablet-large) {
+    width: auto;
+  }
+}
+
+.ingredients__learn-more {
+  @extend %text-link;
+
+  display: table;
+  grid-area: learn;
+
+  margin: 32px 0 0; // Left-aligned on mobile per user request
+
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-green;
+
+  @include respond-to(tablet-large) {
+    margin: auto 0 0;
+    padding-top: 0;
+  }
+}
+
+// RIGHT column
+.ingredients__media {
+  position: relative;
+  transform-origin: right top;
+
+  // Mobile scaling (320px)
+  transform: scale(0.5);
+
+  overflow: visible;
+  display: block; // Always visible now
+  grid-area: media;
+
+  width: 100%;
+  height: 200px;
+
+  @include respond-to(tablet-large) {
+    transform-origin: right top;
+    transform: scale(1);
+    height: 397px;
+  }
+}
+
+.ingredients__illustration {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// Annotation lines container
+.ingredients__annotations {
+  position: absolute;
+  top: 0;
+  right: 360px; // Anchor to the left side of the 360px jar
+
+  width: 50px;
+  height: 100%;
+
+  @include respond-to(tablet-large) {
+    right: calc(360px - 27px);
+  }
+
+  @include respond-to(desktop) {
+    right: auto;
+    left: 0;
+    width: 76px;
+  }
+}
+
+// ... Each annotation line ...
+.ingredients__annotation {
+  position: absolute;
+  top: var(--top);
+  right: 0;
+
+  width: 50px;
+  height: 1px;
+
+  background-color: $color-black;
+
+  @include respond-to(desktop) {
+    width: 76px;
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: -2.5px;
+    right: -2.5px;
+
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+
+    background-color: $color-black;
+  }
+}
+
+// ... Labels ...
+.ingredients__label {
+  position: absolute;
+  top: -10px;
+  right: calc(100% + 12px);
+
+  width: 100px;
+
+  font-family: $font-body;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: $color-black;
+  text-align: right;
+  white-space: nowrap;
+
+  @include respond-to(desktop) {
+    top: -12px;
+    right: calc(100% + 20px);
+    width: 180px;
+    font-size: 16px;
+  }
+}
+
+// Jar SVG
+.ingredients__jar {
+  position: absolute;
+  top: 0;
+  left: 50%; // Center on mobile via transform or adjustment
+  transform: translateX(-50%);
+
+  width: 360px;
+  height: auto;
+
+  object-fit: contain;
+
+  @include respond-to(tablet-large) {
+    right: -27px;
+    left: auto;
+    transform: none;
+  }
+
+  @include respond-to(desktop) {
+    right: 0;
+    width: 362px;
+    height: 377px;
+  }
+}

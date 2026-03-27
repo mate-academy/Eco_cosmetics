@@ -1,0 +1,37 @@
+.story-intro {
+  padding: 24px 0 72px;
+
+  @include respond-to(desktop) {
+    padding-bottom: 96px;
+  }
+}
+
+.story-intro__container {
+  @include container;
+
+  display: grid;
+  gap: 24px;
+
+  padding: 28px;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+
+  @include respond-to(desktop) {
+    grid-template-columns: minmax(0, 0.75fr) minmax(0, 1fr);
+    gap: 32px;
+    align-items: center;
+  }
+}
+
+.story-intro__note {
+  @extend %body-text;
+}
+
+.story-intro__message {
+  margin: 0;
+
+  font-family: $font-heading;
+  font-size: clamp(1.5rem, 4vw, 2.8rem);
+  line-height: 1.15;
+  color: $color-green;
+}

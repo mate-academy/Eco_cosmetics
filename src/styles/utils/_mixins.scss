@@ -1,6 +1,150 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@use 'sass:map';
+
+$breakpoints: (
+  tablet: $bp-tablet,
+  tablet-large: $bp-tablet-large,
+  desktop: $bp-desktop,
+  wide: $bp-wide,
+);
+
+@mixin respond-to($breakpoint) {
+  @media (min-width: map.get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin container {
+  position: relative;
+  width: min(calc(100% - 40px), 1180px);
+  max-width: 280px; // Limit all elements to 280px on mobile
+  margin-inline: auto;
+
+  @include respond-to(tablet-large) {
+    width: min(calc(100% - 54px), 1180px);
+    max-width: none;
+  }
+
+  @include respond-to(wide) {
+    width: 1180px;
+  }
+}
+
+@mixin section-sidebar {
+  @include respond-to(desktop) {
+    position: absolute;
+    top: 0;
+    left: -40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 40px;
+    height: 100%;
+
+    // Vertical line - Figma: width:1, height:100, angle:0deg
+    &::after {
+      content: '';
+
+      display: block;
+
+      width: 1px;
+      height: 100px;
+      margin-top: 10px;
+
+      background-color: rgba($color-black, 0.25);
+    }
+
+    &__label {
+      transform: rotate(180deg);
+
+      writing-mode: vertical-rl;
+      font-size: 14px;
+      line-height: 150%;
+      color: $color-black;
+      text-transform: capitalize;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+  }
+
+  // At 1280px+: use same wider layout as 1440px
+  // Container at 1280px has ~50px margin each side, sidebar sits within it
+  @media (min-width: 1280px) {
+    left: -50px;
+    width: 50px;
+
+    &__label {
+      font-size: 16px; // Match 1440px font size
+    }
+  }
+
+  @include respond-to(wide) {
+    left: -130px;
+    width: 130px;
+  }
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+@mixin button-primary {
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 280px;
+  height: 60px;
+  border: none;
+
+  font-family: $font-heading;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 130%;
+  color: $color-white;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+
+  background-color: $color-black;
+
+  transition: all $transition-duration $transition-easing;
+
+  @include hover-supported {
+    color: $color-black;
+    background-color: $color-cream;
+    box-shadow: inset 0 0 0 1px $color-black;
+  }
+}
+
+@mixin hover-supported {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid $color-green;
+    outline-offset: 4px;
+  }
+}
+
+@mixin interactive-lift($distance: -6px) {
+  transition:
+    transform $transition-duration $transition-easing,
+    box-shadow $transition-duration $transition-easing,
+    background-color $transition-duration $transition-easing,
+    color $transition-duration $transition-easing,
+    border-color $transition-duration $transition-easing,
+    opacity $transition-duration $transition-easing;
+
+  @include hover-supported {
+    transform: translateY($distance);
   }
 }
