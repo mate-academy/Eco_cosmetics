@@ -1,0 +1,87 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    @include desktop {
+      gap: 30px;
+    }
+  }
+
+  &__label {
+    &:not(:focus, :active) {
+      @include visually-hidden;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    overflow-y: auto;
+    height: calc(1.5em + 5px);
+    padding-top: 0;
+
+    @include desktop {
+      height: calc(1.5em + 10px);
+    }
+  }
+
+  &__input,
+  &__textarea {
+    display: block;
+
+    width: 100%;
+    padding-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid $c-gray;
+
+    font: inherit;
+    font-size: 14px;
+    font-weight: $fw-medium;
+    line-height: 1.5;
+    color: $c-green;
+    letter-spacing: 0;
+
+    background: transparent;
+    outline: none;
+
+    transition: border-bottom-color 0.3s ease;
+
+    @include desktop {
+      padding-bottom: 10px;
+      font-size: 18px;
+    }
+
+    &::placeholder {
+      font: inherit;
+      font-size: 14px;
+      font-weight: $fw-medium;
+      line-height: 1.5;
+      color: $c-gray-deep;
+      letter-spacing: 0;
+
+      opacity: 1;
+    }
+
+    &:hover {
+      border-bottom-color: $c-dark;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $c-gray-deep;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-bottom-color: $c-red;
+      color: $c-red;
+
+      &::placeholder {
+        color: rgba($c-red, 0.6);
+      }
+    }
+  }
+}
