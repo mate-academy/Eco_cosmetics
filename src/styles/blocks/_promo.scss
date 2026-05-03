@@ -1,0 +1,101 @@
+.promo {
+  background-color: $c-bg;
+
+  @include desktop {
+    position: relative;
+    margin-top: 200px;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 45%;
+      height: 45%;
+      border-top: 1px solid #344f1080;
+      border-left: 1px solid #344f1080;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 45%;
+      height: 45%;
+      border-right: 1px solid #344f1080;
+      border-bottom: 1px solid #344f1080;
+    }
+  }
+
+  &__container {
+    @extend %container;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    @include tablet {
+      padding-top: 48px;
+      padding-bottom: 48px;
+      text-align: center;
+    }
+
+    @include desktop {
+      display: flex;
+      gap: 100px;
+      align-items: center;
+      justify-content: center;
+
+      height: 380px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+
+      text-align: left;
+    }
+  }
+
+  &__description {
+    display: none;
+
+    @include desktop {
+      display: block;
+
+      max-width: 380px;
+
+      font-family: $font-poppins;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: $c-dark;
+    }
+  }
+
+  &__text {
+    font-family: $font-poppins;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: $c-green;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+    @include tablet {
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    @include desktop {
+      max-width: 380px;
+      margin: 0;
+
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+    }
+  }
+}

@@ -1,6 +1,55 @@
-@import 'utils';
+@import 'utils/vars';
+@import 'utils/mixins';
+@import 'utils/extends';
 @import 'typography';
 
-body {
-  background: $c-gray;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+
+  font-family: $font-poppins;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $c-dark;
+
+  background-color: $c-bg;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+@import 'blocks/mobile-menu';
+@import 'blocks/button';
+@import 'blocks/header';
+@import 'blocks/hero';
+@import 'blocks/promo';
+@import 'blocks/about';
+@import 'blocks/shop';
+@import 'blocks/creators';
+@import 'blocks/powder';
+@import 'blocks/features';
+@import 'blocks/contact';
+@import 'blocks/footer';

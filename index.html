@@ -2,18 +2,386 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco cosmetics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com"
+    crossorigin="true" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
-      href="src/styles/main.scss"
     />
+    <link rel="icon" type="image/svg+xml" href="src/images/favicon.svg" />
+    <link rel="stylesheet" href="src/styles/main.scss" />
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="mobile-menu__close" type="button" id="menuCloseBtn" aria-label="Close menu">&#x2715;</button>
+      <nav class="mobile-menu__nav">
+        <ul class="mobile-menu__list">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#shop">Shop</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#contact">Contact</a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="#about">About</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <header class="header">
+      <div class="header__container">
+        <button class="header__burger" type="button" id="burgerBtn"
+        aria-label="Open menu">
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+        </button>
+        <a class="header__logo" href="#">
+          <img
+            class="header__logo-img header__logo-img--mobile"
+            src="src/images/logo-mobile.svg"
+            alt="Witch of Mountain Winds"
+          />
+          <img
+            class="header__logo-img header__logo-img--desktop"
+            src="src/images/logo-desktop.svg"
+            alt="Witch of Mountain Winds"
+          />
+        </a>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#shop">Shop</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="#about">About</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="header__cart" type="button"
+        aria-label="Shopping cart">
+          <img
+            class="header__cart-icon"
+            src="src/images/cart.svg"
+            alt="Cart"
+          />
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero__image-wrap">
+          <img
+            class="hero__image"
+            src="src/images/hero-bg.png"
+            alt="Eco cosmetics products"
+          />
+        </div>
+        <div class="hero__container">
+          <h1 class="hero__title">
+            Brand of eco-cosmetics and magic candles
+          </h1>
+          <p class="hero__subtitle">20% of sales at a wild bird shelter</p>
+          <a class="hero__button button" href="#shop">SHOP</a>
+        </div>
+      </section>
+
+      <section class="promo">
+        <div class="promo__container">
+          <p class="promo__description">
+            Biologists say that birds are indicators of the environmental
+            situation, and over the past half century, the population of
+            seabirds has declined by 70%. Birds die due to environmental
+            problems and human intervention in the natural environment.
+          </p>
+          <p class="promo__text">
+            IF YOU CHOOSE THE GIFTS OF NATURE AND CARE ABOUT IT'S –
+            SCROLL DOWN
+          </p>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <p class="about__side-label">witch of mountain winds</p>
+        <div class="about__container">
+          <div class="about__content">
+            <h2 class="about__title">ABOUT OUR BRAND</h2>
+            <p class="about__text">
+              Our brand cosmetics are made from natural ingredients and we are
+              promoting them to the masses. Shampoo, hair conditioner, soap – in
+              recycled paper. Creams, oils, washing products in glass containers
+              with recycled paper labels. No synthetics and microplastics in
+              cosmetics. And the packaging from it can be returned for recycling
+              or reused.
+            </p>
+            <p class="about__text about__text--extra">
+              We are all neighbors of one big House. And we must protect what we have. Destroying everything around for the sake of consumerism and imaginary convenience, we destroy what does not belong to us. Be aware of your choice!
+            </p>
+            <a class="about__link" href="#">LEARN MORE</a>
+          </div>
+          <div class="about__images">
+            <img
+              class="about__image"
+              src="src/images/about-image.png"
+              alt="About our brand"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="shop" id="shop">
+        <p class="shop__side-label">shop</p>
+        <div class="shop__container">
+          <h2 class="shop__title">SHOP</h2>
+          <div class="shop__tabs tabs">
+            <button
+              class="tabs__btn tabs__btn--active"
+              type="button"
+              data-tab="face"
+            >FACE</button>
+            <button class="tabs__btn" type="button"
+            data-tab="body">BODY</button>
+            <button class="tabs__btn" type="button"
+            data-tab="hair">HAIR</button>
+            <button
+              class="tabs__btn"
+              type="button"
+              data-tab="candles"
+            >CANDLES</button>
+          </div>
+          <div class="shop__slider">
+            <div class="product" data-category="face">
+              <img
+                class="product__image"
+                src="src/images/product-face.png"
+                alt="Hydrophilic Oil"
+              />
+              <h3 class="product__name">HYDROPHILIC OIL</h3>
+              <p class="product__price">160 UAH</p>
+            </div>
+            <div class="product product--tablet-only" data-category="face">
+              <img
+                class="product__image"
+                src="src/images/shop-image.png"
+                alt="Ubtan"
+              />
+              <h3 class="product__name">UBTAN</h3>
+              <p class="product__price">160 UAH</p>
+            </div>
+          </div>
+          <a class="shop__button button" href="#">ALL PRODUCTS</a>
+        </div>
+      </section>
+
+      <section class="creators" id="creators">
+        <p class="creators__side-label">about the creators</p>
+        <div class="creators__container">
+          <div class="creators__content">
+            <h2 class="creators__title">ABOUT THE CREATORS</h2>
+            <p class="creators__text">
+              My name is Victoria, I'm a master at candle making and natural cosmetics. In the past, a cynologist, was engaged in herbs, made layouts on the Tarot.
+            </p>
+            <p class="creators__text">
+              I am also a volunteer to save wild birds in distress, a consultant to the Phoenix Wildlife Rehabilitation Center, a member of the Society for the Conservation of Birds of Ukraine with the support of Birdlife International.
+            </p>
+            <p class="creators__text creators__text--extra">
+              My husband and I live in the Carpathian region in the city of Chernivtsi. I dream of my center for the rehabilitation of wild birds, as it is very difficult to rescue birds in a rented communal apartment.
+            </p>
+            <a class="creators__link" href="#">LEARN MORE</a>
+            <a class="creators__button button" href="#contact">TO CONTACT US</a>
+          </div>
+          <div class="creators__image-wrap">
+            <img
+              class="creators__image"
+              src="src/images/creators.png"
+              alt="About the creators"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="powder">
+        <p class="powder__side-label">Ingredients</p>
+        <div class="powder__container">
+          <h2 class="powder__title">AYURVEDIC TOOTH POWDER</h2>
+          <div class="powder__body">
+            <ul class="powder__list">
+              <li class="powder__item">
+                <span class="powder__ingredient">Kaolin</span>
+              </li>
+              <li class="powder__item">
+                <span class="powder__ingredient">Sivak</span>
+              </li>
+              <li class="powder__item">
+                <span class="powder__ingredient">Calcium</span>
+              </li>
+              <li class="powder__item">
+                <span class="powder__ingredient">Licorice root</span>
+              </li>
+              <li class="powder__item">
+                <span class="powder__ingredient">Turmeric</span>
+              </li>
+            </ul>
+            <img
+              class="powder__jar"
+              src="src/images/jar.png"
+              alt="Ayurvedic tooth powder jar"
+            />
+          </div>
+          <a class="powder__link" href="#">LEARN MORE</a>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="features__container">
+          <div class="feature">
+            <img
+              class="feature__icon"
+              src="src/images/icon-no-synthetics.png"
+              alt="hi"
+            />
+            <p class="feature__text">NO SYNTHETICS AND MICROPLASTICS</p>
+          </div>
+          <div class="feature">
+            <img
+              class="feature__icon"
+              src="src/images/icon-recycled.png"
+              alt="hi"
+            />
+            <p class="feature__text">
+              PRODUCT PACKAGING CAN BE RECYCLED OR REUSED
+            </p>
+          </div>
+          <div class="feature">
+            <img
+              class="feature__icon"
+              src="src/images/icon-natural.png"
+              alt="hi"
+            />
+            <p class="feature__text">ONLY NATURAL INGREDIENTS</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <p class="contact__side-label">help</p>
+        <div class="contact__container">
+          <div class="contact__content">
+            <h2 class="contact__title">CONTACT US</h2>
+            <p class="contact__text">
+              We will help you choose a product that suits you and answer your
+              other questions.
+            </p>
+            <form
+              class="contact__form form"
+              action="#"
+              onsubmit="handleSubmit(event)"
+            >
+              <input
+                class="form__input"
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                class="form__input"
+                type="email"
+                name="email"
+                placeholder="E-Mail"
+                required
+              />
+              <input
+                class="form__input"
+                type="tel"
+                name="phone"
+                placeholder="Phone Number (+48 000 000 000)"
+                pattern="[\+]?[0-9\s\-\(\)]{7,20}"
+                required
+              />
+              <textarea
+                class="form__textarea"
+                name="message"
+                placeholder="Your Message"
+                rows="4"
+              ></textarea>
+              <button class="form__button button" type="submit">
+                SEND A MESSAGE
+              </button>
+            </form>
+          </div>
+          <div class="contact__image-wrap">
+            <img
+              class="contact__image"
+              src="src/images/contact-image.png"
+              alt="Contact us"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__body">
+          <div class="footer__left">
+            <div class="footer__left-top">
+              <nav class="footer__nav">
+                <ul class="footer__nav-list">
+                  <li class="footer__nav-item">
+                    <a class="footer__nav-link" href="#shop">Shop</a>
+                  </li>
+                  <li class="footer__nav-item">
+                    <a class="footer__nav-link" href="#contact">Contact</a>
+                  </li>
+                  <li class="footer__nav-item">
+                    <a class="footer__nav-link" href="#about">About</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="footer__socials footer__socials--tablet">
+                <a class="footer__social-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <img class="footer__social-icon" src="src/images/facebook.png" alt="Facebook" />
+                </a>
+                <a class="footer__social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <img class="footer__social-icon" src="src/images/instagram.png" alt="Instagram" />
+                </a>
+              </div>
+            </div>
+            <p class="footer__copyright footer__copyright--tablet-up">Copyright© 2019 Witch Of Mountain Winds</p>
+          </div>
+          <div class="footer__right">
+            <a
+              class="footer__contact-link"
+              href="https://maps.google.com/?q=Ukraine"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Ukraine</a>
+            <a class="footer__contact-link" href="mailto:support.mountain@gmail.com">support.mountain@gmail.com</a>
+            <a class="footer__contact-link" href="tel:+380934476839">+380934476839</a>
+            <p class="footer__contact-item">Support is available Monday - Friday 9am-6pm</p>
+            <div class="footer__socials footer__socials--desktop">
+              <a class="footer__social-link" href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <img class="footer__social-icon" src="src/images/facebook.png" alt="Facebook" />
+              </a>
+              <a class="footer__social-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <img class="footer__social-icon" src="src/images/instagram.png" alt="Instagram" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="footer__copyright footer__copyright--mobile">Copyright© 2019 Witch Of Mountain Winds</p>
+      </div>
+    </footer>
+
     <script src="src/scripts/main.js"></script>
   </body>
 </html>

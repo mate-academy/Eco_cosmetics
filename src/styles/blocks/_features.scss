@@ -1,0 +1,57 @@
+.features {
+  background-color: $c-bg;
+
+  @include desktop {
+    position: relative;
+    margin-top: 200px;
+  }
+
+  &__side-label {
+    @include side-label;
+  }
+
+  &__container {
+    @extend %container;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 24px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+
+  @include tablet {
+    flex: 1;
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  &__text {
+    font-family: $font-poppins;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    text-align: center;
+    letter-spacing: 0;
+  }
+}
