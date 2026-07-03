@@ -1,0 +1,60 @@
+.header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  padding-top: 40px;
+  background-color: rgba($color-bg, 0.96);
+
+  @include on-tablet {
+    padding-top: 28px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+  }
+
+  &__menu-button {
+    display: grid;
+    gap: 6px;
+    width: 36px;
+    height: 36px;
+    padding: 10px 7px;
+    border: 0;
+    background-color: transparent;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__menu-line {
+    height: 2px;
+    background-color: $color-green;
+  }
+
+  &__nav {
+    position: fixed;
+    inset: 0;
+    display: none;
+
+    &--open {
+      display: flex;
+    }
+
+    @include on-tablet {
+      position: static;
+      display: flex;
+    }
+  }
+
+  &__cart {
+    display: none;
+
+    @include on-tablet {
+      display: grid;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.about-brand {
+  &__content {
+    display: grid;
+    gap: 28px;
+
+    @include on-tablet {
+      grid-template-columns: 160px 1fr 1.1fr;
+      align-items: start;
+    }
+  }
+
+  &__label {
+    @include on-tablet {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__text {
+    display: grid;
+    gap: 18px;
+  }
+
+  &__paragraph {
+    margin: 0;
+    color: $color-muted;
+    line-height: 1.6;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: 1fr 0.48fr;
+    gap: 18px;
+    min-height: 320px;
+  }
+
+  &__image {
+    background-position: center;
+    background-size: cover;
+
+    &--wide {
+      background-image: url('../images/Снимок экрана 2019-09-07 в 20.08.png');
+    }
+
+    &--narrow {
+      align-self: end;
+      height: 72%;
+      background-image: url('../images/Снимок экрана 2019-09-04 в 19.24.png');
+    }
+  }
+}

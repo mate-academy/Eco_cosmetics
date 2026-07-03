@@ -1,19 +1,548 @@
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="page"
+>
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Title</title>
+    <meta
+      name="description"
+      content="Eco cosmetics and magic candles made with natural ingredients."
+    />
+    <title>Eco Cosmetics</title>
+    <link
+      rel="icon"
+      href="/src/images/favicon.svg"
+      type="image/svg+xml"
+    />
     <link
       rel="stylesheet"
       href="src/styles/main.scss"
     />
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
-    <script src="src/scripts/main.js"></script>
+  <body class="page__body">
+    <!-- Header and navigation -->
+    <header
+      class="header"
+      id="home"
+    >
+      <div class="container header__content">
+        <a
+          class="logo"
+          href="#home"
+          aria-label="Eco cosmetics home"
+        >
+          <span class="logo__mark"></span>
+          <span class="logo__text">Witch of mountain winds</span>
+        </a>
+
+        <button
+          class="header__menu-button"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          data-menu-button
+        >
+          <span class="header__menu-line"></span>
+          <span class="header__menu-line"></span>
+        </button>
+
+        <nav
+          class="nav header__nav"
+          data-menu
+        >
+          <a
+            class="nav__link"
+            href="#shop"
+          >
+            Shop
+          </a>
+          <a
+            class="nav__link"
+            href="#contact"
+          >
+            Contact
+          </a>
+          <a
+            class="nav__link"
+            href="#about"
+          >
+            About
+          </a>
+        </nav>
+
+        <button
+          class="cart header__cart"
+          type="button"
+          aria-label="Open cart"
+        >
+          <span class="cart__icon"></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero: brand headline and main CTA -->
+      <section class="hero section">
+        <div class="container hero__content">
+          <div class="hero__copy">
+            <h1 class="hero__title">
+              Brand of eco-cosmetics and magic candles
+            </h1>
+            <p class="hero__note">20% of sales at a wild bird shelter</p>
+            <a
+              class="button hero__button"
+              href="#shop"
+            >
+              Shop
+            </a>
+          </div>
+
+          <img
+            class="hero__image"
+            src="/src/images/Снимок экрана 2019-09-04 в 18.07.png"
+            alt="Natural cosmetic cream jars"
+          />
+        </div>
+      </section>
+
+      <!-- Nature statement -->
+      <section class="intro section">
+        <div class="container intro__content">
+          <p class="intro__paragraph">
+            Biologists say that birds are indicators of the environmental
+            situation, and over the past half century, the population of
+            seabirds has declined by 70%. Birds die due to environmental
+            problems and human intervention in the natural environment.
+          </p>
+
+          <p class="intro__callout">
+            <span class="intro__callout-line">If you choose the gifts of</span>
+            <span class="intro__callout-line">nature and care about</span>
+            <span class="intro__callout-line">it’s - scroll down</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- About our brand -->
+      <section
+        class="about section section--with-label"
+        id="about"
+      >
+        <div class="container about__content">
+          <p class="side-label about__side-label">Witch of mountain winds</p>
+
+          <div class="about__copy">
+            <h2 class="section-title">About our brand</h2>
+            <p class="about__paragraph">
+              Our brand cosmetics are made from natural ingredients and we are
+              promoting them to the masses. Shampoo, hair conditioner, soap - in
+              recycled paper. Creams, oils, washing products in glass containers
+              with recycled paper labels. No synthetics and microplastics in
+              cosmetics. And the packaging from it can be returned for
+              <span class="about__last-word">recycling or reused.</span>
+            </p>
+            <p class="about__paragraph">
+              We are all neighbors of one big House. And we must protect what we
+              have. Destroying everything around for the sake of consumerism and
+              imaginary convenience is not a healthy choice!
+            </p>
+            <a
+              class="text-link"
+              href="#creators"
+            >
+              Learn more
+            </a>
+          </div>
+
+          <div class="about__images">
+            <img
+              class="about__image about__image--main"
+              src="/src/images/Снимок экрана 2019-09-04 в 19.23.png"
+              alt="Moonlight natural candle"
+            />
+            <img
+              class="about__image about__image--side"
+              src="/src/images/Снимок экрана 2019-09-04 в 19.24.png"
+              alt="Purple flower detail near candle"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Shop: category tabs and product slider -->
+      <section
+        class="shop section section--with-label"
+        id="shop"
+      >
+        <div class="container shop__content">
+          <p class="side-label shop__side-label">Shop</p>
+
+          <div class="shop__head">
+            <h2 class="section-title">Shop</h2>
+            <div
+              class="tabs"
+              role="tablist"
+              aria-label="Product categories"
+            >
+              <button
+                class="tabs__button tabs__button--active"
+                type="button"
+                data-tab="face"
+              >
+                Face
+              </button>
+              <button
+                class="tabs__button"
+                type="button"
+                data-tab="body"
+              >
+                Body
+              </button>
+              <button
+                class="tabs__button"
+                type="button"
+                data-tab="hair"
+              >
+                Hair
+              </button>
+              <button
+                class="tabs__button"
+                type="button"
+                data-tab="candles"
+              >
+                Candles
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="shop__list"
+            data-shop-list
+          >
+            <article
+              class="product-card"
+              data-category="face"
+            >
+              <img
+                class="product-card__image"
+                src="/src/images/Group 43.png"
+                alt="Hydrophilic oil bottles"
+              />
+              <h3 class="product-card__title">Hydrophilic oil</h3>
+              <p class="product-card__price">160 UAH</p>
+            </article>
+
+            <article
+              class="product-card"
+              data-category="face"
+            >
+              <img
+                class="product-card__image"
+                src="/src/images/farinha.png"
+                alt="Ubtan powder jar"
+              />
+              <h3 class="product-card__title">Ubtan</h3>
+              <p class="product-card__price">160 UAH</p>
+            </article>
+
+            <article
+              class="product-card"
+              data-category="body"
+            >
+              <img
+                class="product-card__image"
+                src="/src/images/Снимок экрана 2019-09-04 в 18.07.png"
+                alt="Natural body cream jars"
+              />
+              <h3 class="product-card__title">Body cream</h3>
+              <p class="product-card__price">180 UAH</p>
+            </article>
+
+            <article
+              class="product-card"
+              data-category="candles"
+            >
+              <img
+                class="product-card__image"
+                src="/src/images/Снимок экрана 2019-09-04 в 19.23.png"
+                alt="Magic candle"
+              />
+              <h3 class="product-card__title">Magic candle</h3>
+              <p class="product-card__price">120 UAH</p>
+            </article>
+          </div>
+
+          <a
+            class="button shop__button"
+            href="#shop"
+          >
+            All products
+          </a>
+        </div>
+      </section>
+
+      <!-- About the creators -->
+      <section
+        class="creators section section--with-label"
+        id="creators"
+      >
+        <div class="container creators__content">
+          <p class="side-label creators__side-label">About the creators</p>
+
+          <div class="creators__copy">
+            <h2 class="section-title">About the creators</h2>
+            <p class="creators__paragraph">
+              My name is Victoria, I’m a master at candle making and natural
+              cosmetics. In the past, a cynologist, was engaged in herbs, made
+              layouts on the Tarot.
+            </p>
+            <p class="creators__paragraph">
+              I am also a volunteer to save wild birds in distress, a consultant
+              to the Phoenix Wildlife Rehabilitation Center, a member of the
+              Society for the Conservation of Birds.
+            </p>
+            <p class="creators__paragraph">
+              My husband and I live in the Carpathian region in the city of
+              Chernivtsi. I dream of my center for the rehabilitation of wild
+              birds, as it is very difficult to rescue birds in a rented
+              communal apartment.
+            </p>
+            <a
+              class="text-link"
+              href="#contact"
+            >
+              Learn more
+            </a>
+            <a
+              class="button creators__button"
+              href="#contact"
+            >
+              To contact us
+            </a>
+          </div>
+
+          <img
+            class="creators__image"
+            src="/src/images/Снимок экрана 2019-09-07 в 20.08.png"
+            alt="Small rescued bird in hands"
+          />
+        </div>
+      </section>
+
+      <!-- Ayurvedic tooth powder ingredients -->
+      <section class="powder section section--with-label">
+        <div class="container powder__content">
+          <p class="side-label powder__side-label">Ingredients</p>
+
+          <div class="powder__copy">
+            <h2 class="section-title">Ayurvedic tooth powder</h2>
+            <a
+              class="text-link powder__link"
+              href="#shop"
+            >
+              Learn more
+            </a>
+          </div>
+
+          <div
+            class="powder__scheme"
+            aria-label="Tooth powder ingredients"
+          >
+            <ul class="powder__list">
+              <li class="powder__item">Kaolin</li>
+              <li class="powder__item">Sivak</li>
+              <li class="powder__item">Calcium</li>
+              <li class="powder__item">Licorice root</li>
+              <li class="powder__item">Turmeric</li>
+            </ul>
+
+            <div class="powder__jar"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product benefits -->
+      <section class="benefits section">
+        <div class="container benefits__list">
+          <article class="benefits__item">
+            <span class="benefits__icon benefits__icon--lab"></span>
+            <h3 class="benefits__title">No synthetics and microplastics</h3>
+          </article>
+
+          <article class="benefits__item">
+            <span class="benefits__icon benefits__icon--recycle"></span>
+            <h3 class="benefits__title">
+              Product packaging can be recycled or reused
+            </h3>
+          </article>
+
+          <article class="benefits__item">
+            <span class="benefits__icon benefits__icon--leaf"></span>
+            <h3 class="benefits__title">Only natural ingredients</h3>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact form -->
+      <section
+        class="contact section section--with-label"
+        id="contact"
+      >
+        <div class="container contact__content">
+          <p class="side-label contact__side-label">Help</p>
+
+          <div class="contact__form-wrap">
+            <h2 class="section-title">Contact us</h2>
+            <p class="contact__text">
+              We will help you choose a product that suits you and answer your
+              other questions.
+            </p>
+
+            <form
+              class="form contact__form"
+              data-contact-form
+            >
+              <input
+                class="form__input"
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                class="form__input"
+                type="email"
+                name="email"
+                placeholder="E-Mail"
+                required
+              />
+              <input
+                class="form__input"
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                pattern="^\+?[0-9\s()-]{7,20}$"
+                required
+              />
+              <textarea
+                class="form__textarea"
+                name="message"
+                placeholder="Your Message"
+                rows="3"
+                required
+              ></textarea>
+              <button
+                class="button form__button"
+                type="submit"
+              >
+                Send a message
+              </button>
+            </form>
+          </div>
+
+          <img
+            class="contact__image"
+            src="/src/images/Снимок экрана 2019-09-06 в 18.48.png"
+            alt="Wild bird near green pot"
+          />
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer contacts and social links -->
+    <footer class="footer">
+      <div class="container footer__content">
+        <div class="footer__left">
+          <nav
+            class="footer__nav"
+            aria-label="Footer navigation"
+          >
+            <a
+              class="footer__link"
+              href="#shop"
+            >
+              Shop
+            </a>
+            <a
+              class="footer__link"
+              href="#contact"
+            >
+              Contact
+            </a>
+            <a
+              class="footer__link"
+              href="#about"
+            >
+              About
+            </a>
+          </nav>
+
+          <p class="footer__copyright">
+            Copyright 2019 Witch Of Mountain Winds
+          </p>
+        </div>
+
+        <address class="footer__contacts">
+          <p class="footer__country">Ukraine</p>
+          <a
+            class="footer__link"
+            href="mailto:support.mountain@gmail.com"
+          >
+            support.mountain@gmail.com
+          </a>
+          <a
+            class="footer__link"
+            href="tel:+380934476839"
+          >
+            +380934476839
+          </a>
+          <p class="footer__schedule">
+            Support is available Monday - Friday 9am-6pm
+          </p>
+
+          <div
+            class="footer__socials"
+            aria-label="Social networks"
+          >
+            <a
+              class="footer__social"
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+            >
+              <img
+                class="footer__social-icon"
+                src="/src/images/iconface.png"
+                alt=""
+              />
+            </a>
+            <a
+              class="footer__social"
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
+              <img
+                class="footer__social-icon"
+                src="/src/images/iconinsta.png"
+                alt=""
+              />
+            </a>
+          </div>
+        </address>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="src/scripts/main.js"
+    ></script>
   </body>
 </html>

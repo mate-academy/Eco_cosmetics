@@ -1,6 +1,35 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover-lift {
+  transition:
+    transform $duration,
+    opacity $duration,
+    color $duration,
+    background-color $duration,
+    border-color $duration;
+
   &:hover {
-    #{$_property}: $_toValue;
+    transform: translateY(-3px);
   }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin product-texture($base, $accent) {
+  background:
+    radial-gradient(
+      circle at 28% 24%,
+      rgba($color-white, 0.76),
+      transparent 0 18%
+    ),
+    radial-gradient(circle at 72% 70%, rgba($accent, 0.42), transparent 0 24%),
+    linear-gradient(135deg, $base, color.adjust($base, $lightness: 9%));
 }

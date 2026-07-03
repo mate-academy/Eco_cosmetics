@@ -1,0 +1,34 @@
+.form {
+  display: grid;
+  gap: 18px;
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 14px 0;
+    border: 0;
+    border-bottom: 1px solid $color-line;
+    outline: 0;
+    background-color: transparent;
+    color: $color-text;
+    resize: vertical;
+
+    &::placeholder {
+      color: $color-muted;
+    }
+
+    &:focus {
+      border-color: $color-green;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-color: #b54838;
+    }
+  }
+
+  &__button {
+    width: $button-width;
+    min-height: $button-height;
+    margin-top: 14px;
+  }
+}

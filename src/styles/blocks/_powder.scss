@@ -1,0 +1,57 @@
+.powder {
+  &__content {
+    display: grid;
+    gap: 36px;
+
+    @include on-tablet {
+      grid-template-columns: 50px 0.7fr 1.3fr;
+      align-items: start;
+      gap: 46px;
+    }
+  }
+
+  &__copy {
+    display: grid;
+    gap: 120px;
+  }
+
+  &__scheme {
+    display: grid;
+    grid-template-columns: minmax(110px, 0.7fr) minmax(180px, 1fr);
+    align-items: start;
+    gap: 16px;
+  }
+
+  &__list {
+    display: grid;
+    gap: 28px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    padding-right: 52px;
+    font-size: 12px;
+    text-align: right;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 40px;
+      height: 1px;
+      background-color: $color-green;
+    }
+  }
+
+  &__jar {
+    height: 260px;
+    background-image: url('/src/images/Frame 19.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

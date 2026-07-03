@@ -1,0 +1,57 @@
+.intro {
+  padding-block: 0;
+
+  &__content {
+    display: grid;
+    gap: 44px;
+    padding-block: 48px;
+    border-top: 1px solid $color-line;
+    border-bottom: 1px solid $color-line;
+
+    @include on-tablet {
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      padding-block: 74px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: 300px 380px;
+      justify-content: center;
+      gap: 120px;
+      padding-block: 74px;
+    }
+  }
+
+  &__paragraph {
+    max-width: 340px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  &__callout {
+    display: grid;
+    gap: 8px;
+    width: min(100%, 380px);
+    min-height: 108px;
+    margin: 0;
+    color: $color-green;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      font-size: 18px;
+    }
+
+    @include on-desktop {
+      align-content: start;
+      font-size: 24px;
+    }
+  }
+
+  &__callout-line {
+    display: block;
+  }
+}

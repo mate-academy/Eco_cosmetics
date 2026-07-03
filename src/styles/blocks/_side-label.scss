@@ -1,0 +1,25 @@
+.side-label {
+  display: none;
+
+  @include on-tablet {
+    position: relative;
+    display: block;
+    align-self: start;
+    min-height: 160px;
+    color: rgba($color-green, 0.5);
+    font-size: 12px;
+    text-transform: lowercase;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: calc(100% + 12px);
+      left: 50%;
+      width: 1px;
+      height: 80px;
+      background-color: rgba($color-green, 0.25);
+    }
+  }
+}

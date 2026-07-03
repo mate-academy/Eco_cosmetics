@@ -1,0 +1,99 @@
+.about {
+  &__content {
+    display: grid;
+    gap: 32px;
+
+    @include on-tablet {
+      grid-template-columns: 50px minmax(260px, 1fr) minmax(380px, 580px);
+      align-items: start;
+      gap: 46px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: 50px 474px 580px;
+      gap: 38px;
+    }
+  }
+
+  &__copy {
+    display: grid;
+    align-content: start;
+    gap: 28px;
+
+    @include on-desktop {
+      width: 380px;
+      padding-top: 8px;
+    }
+  }
+
+  &__paragraph {
+    max-width: 380px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+
+    @include on-tablet {
+      font-size: 14px;
+    }
+
+    @include on-desktop {
+      font-size: 16px;
+    }
+
+    &:first-of-type {
+      @include on-desktop {
+        min-height: 192px;
+      }
+    }
+
+    &:last-of-type {
+      @include on-desktop {
+        min-height: 120px;
+      }
+    }
+  }
+
+  &__last-word {
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__images {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    align-items: end;
+
+    @include on-tablet {
+      grid-template-columns: minmax(260px, 380px) minmax(120px, 180px);
+    }
+
+    @include on-desktop {
+      grid-template-columns: 380px 180px;
+      width: 580px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+
+    &--main {
+      height: 420px;
+
+      @include on-tablet {
+        height: 529px;
+      }
+    }
+
+    &--side {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+        height: 430px;
+      }
+    }
+  }
+}
