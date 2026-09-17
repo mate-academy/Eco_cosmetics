@@ -1,0 +1,165 @@
+.about {
+  grid-column: 1/-1;
+  margin: 0 $mobile-margin 80px;
+
+  &__title {
+    grid-column: 1/-1;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  &__description-1 {
+    grid-column: 1/-1;
+    grid-row: 2;
+    margin-bottom: 10px;
+    color: $primairly-font-color;
+  }
+
+  &__description-2 {
+    display: none;
+  }
+
+  &__image {
+    display: none;
+  }
+
+  &__button {
+    grid-column: 1/-1;
+    grid-row: 3;
+    text-decoration: none;
+  }
+
+  @include tablet {
+    margin-right: $tablet-margin;
+    margin-bottom: 117px;
+    margin-left: $tablet-margin;
+
+    &__title {
+      grid-column: 1/-1;
+      grid-row: 1;
+    }
+
+    &__description-1 {
+      grid-column: 1/5;
+      grid-row: 2;
+
+      margin-bottom: 0;
+
+      font-size: 16px;
+      color: $primairly-font-color;
+    }
+
+    &__image-1 {
+      grid-column: 5/7;
+      grid-row: 1/4;
+      align-self: self-start;
+
+      width: 342px;
+      height: 321px;
+
+      background-image: url('../images/about_tablet.jpg');
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: auto;
+    }
+
+    &__button {
+      grid-column: 1/4;
+      grid-row: 3;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+  }
+
+  @include desktop-regular {
+    margin-right: $regular-margin;
+    margin-bottom: 200px;
+    margin-left: $regular-margin;
+
+    &__title {
+      grid-column: 2/8;
+      grid-row: 1;
+      font-size: 36px;
+    }
+
+    &__description-1 {
+      grid-column: 2/6;
+      grid-row: 2;
+      font-size: 16px;
+      color: $primairly-font-color;
+    }
+
+    &__description-2 {
+      display: grid;
+      grid-column: 2/6;
+      grid-row: 3;
+
+      margin-bottom: 0;
+
+      font-size: 16px;
+      color: $primairly-font-color;
+    }
+
+    &__verticallogo {
+      grid-column: 1;
+      grid-row: span 3;
+
+      width: 18px;
+      height: 145px;
+
+      background-image: url('../images/vertical_about.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &__image-1 {
+      grid-column: 7;
+      grid-row: 1/5;
+      align-self: self-end;
+
+      width: 380px;
+      height: 529px;
+
+      background-image: url('../images/about_desktop_1.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto;
+    }
+
+    &__image-2 {
+      grid-column: 11;
+      grid-row: 1/5;
+      align-self: self-end;
+
+      width: 180px;
+      height: 430px;
+
+      background-image: url('../images/about_desktop_2.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &__button {
+      grid-column: 2/6;
+      grid-row: 4;
+      align-self: end;
+
+      width: fit-content;
+      padding-bottom: 10px;
+      border-bottom: 1px solid transparent;
+
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 1px solid $secondary-color;
+      }
+    }
+  }
+
+  @include desktop-large {
+    margin-right: $large-margin;
+    margin-bottom: 200px;
+    margin-left: $large-margin;
+  }
+}

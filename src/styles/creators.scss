@@ -1,0 +1,158 @@
+.creators {
+  display: grid;
+  grid-column: 1/-1;
+  margin: 0 $mobile-margin 80px;
+
+  &__leftcontent {
+    display: flex;
+    grid-column: 1/-1;
+    grid-row: 1;
+    flex-direction: column;
+    align-items: space-evenly;
+  }
+
+  &__image {
+    display: none;
+  }
+
+  &__description-text {
+    text-align: left;
+  }
+
+  &__description-third {
+    display: none;
+  }
+
+  &__button {
+    margin-top: 20px;
+    margin-bottom: 36px;
+    text-decoration: none;
+  }
+
+  @include tablet {
+    margin-right: $tablet-margin;
+    margin-bottom: 150px;
+    margin-left: $tablet-margin;
+
+    &__leftcontent {
+      display: flex;
+      grid-column: 1/4;
+      grid-row: 1;
+      flex-direction: column;
+      align-items: space-evenly;
+    }
+
+    &__description-text {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    &__verticallogo {
+      display: none;
+    }
+
+    &__description-third {
+      display: none;
+    }
+
+    &__image {
+      display: grid;
+      grid-column: 4/8;
+      grid-row: 1;
+
+      width: 342px;
+      height: 440px;
+
+      background-image: url('../images/creators__tablet.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &__button {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+    &__contact {
+      width: 280px;
+      margin-top: 20px;
+    }
+  }
+
+  @include desktop-regular {
+    margin-right: $regular-margin;
+    margin-bottom: 200px;
+    margin-left: $regular-margin;
+
+    &__leftcontent {
+      display: flex;
+      grid-column: 2/6;
+      grid-row: 1;
+      flex-direction: column;
+      align-items: space-evenly;
+
+      height: 659px;
+    }
+
+    &__title {
+      margin-bottom: 34px;
+      font-size: 36px;
+    }
+
+    &__verticallogo {
+      display: grid;
+      grid-column: 1;
+      grid-row: 1;
+
+      width: 18px;
+      height: 145px;
+
+      background-image: url('../images/vertical_shop.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &__description-text {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: $primairly-font-color;
+    }
+
+    &__description-third {
+      display: grid;
+    }
+
+    &__image {
+      grid-column: 7/13;
+
+      width: 100%;
+      height: 659px;
+
+      background-image: url('../images/creators_desktop.jpg');
+      background-repeat: no-repeat;
+      background-position: center right;
+    }
+
+    &__button {
+      width: fit-content;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid transparent;
+
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 1px solid $secondary-color;
+      }
+    }
+
+    &__contact {
+      margin-top: 10px;
+    }
+  }
+
+  @include desktop-large {
+    margin-right: $large-margin;
+    margin-left: $large-margin;
+  }
+}

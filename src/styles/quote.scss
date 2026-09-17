@@ -1,0 +1,86 @@
+.quote {
+  margin: 0 $mobile-margin 80px;
+
+  &__description {
+    display: none;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    color: $secondary-color;
+    text-align: center;
+  }
+
+  @include tablet {
+    margin-right: $tablet-margin;
+    margin-bottom: 130px;
+    margin-left: $tablet-margin;
+
+    &__title {
+      grid-column: span 4;
+      text-align: center;
+    }
+  }
+
+  @include desktop-regular {
+    margin-right: $regular-margin;
+    margin-bottom: 200px;
+    margin-left: $regular-margin;
+
+    &__description {
+      display: grid;
+      grid-column: 2/6;
+      grid-row: 2;
+      text-align: left;
+    }
+
+    &__line-top {
+      content: '';
+
+      grid-column: 1/5;
+      grid-row: 1;
+
+      width: 550px;
+      height: 1px;
+      margin-bottom: 80px;
+      margin-left: -($regular-margin);
+
+      background-color: #344f1080;
+    }
+
+    &__title {
+      grid-column: 7/11;
+      grid-row: 2;
+      font-size: 24px;
+      text-align: left;
+    }
+
+    &__line-bottom {
+      content: '';
+
+      grid-column: 7/13;
+      grid-row: 3;
+
+      width: calc(630px + $regular-margin);
+      height: 1px;
+      margin-top: 80px;
+      margin-left: 0;
+
+      background-color: #344f1080;
+    }
+  }
+
+  @include desktop-large {
+    margin: 0 $large-margin 100px;
+
+    &__line-top {
+      width: 610px;
+      margin-left: -$large-margin;
+    }
+
+    &__line-bottom {
+      width: 711px;
+      margin-left: 0;
+    }
+  }
+}

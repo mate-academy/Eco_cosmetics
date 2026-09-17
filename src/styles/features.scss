@@ -1,0 +1,200 @@
+@use '../styles/utils/mixins';
+
+.features {
+  margin-bottom: 60px;
+
+  &__title {
+    width: 250px;
+    margin-left: $mobile-margin;
+  }
+
+  &__labels {
+    display: none;
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+
+    width: 300px;
+    height: 397px;
+    margin-bottom: 30px;
+
+    background-image: url('../images/features_mobile.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+  }
+
+  &__item {
+    grid-column: span 2;
+    align-self: baseline;
+  }
+
+  &__icons {
+    grid-column: 1/-1;
+    margin-top: 100px;
+  }
+
+  &__icon {
+    display: flex;
+    grid-column: 1/-1;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    display: block;
+    margin-top: calc(397px + 20px);
+    margin-left: $mobile-margin;
+    text-decoration: none;
+  }
+
+  &__icontitle {
+    grid-column: 1/-1;
+    justify-self: center;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  @include tablet {
+    @include grid;
+
+    margin-bottom: 130px;
+
+    &__verticallogo {
+      display: none;
+    }
+
+    &__title {
+      grid-column: 1/4;
+      margin-left: $tablet-margin;
+    }
+
+    &__image {
+      width: 515px;
+      margin-top: 20px;
+      background-image: url('../images/features_tablet.svg');
+    }
+
+    &__icons {
+      grid-column: 1/-1;
+      margin-right: $tablet-margin;
+      margin-left: $tablet-margin;
+    }
+
+    &__icontitle {
+      grid-column: span 2;
+      margin-bottom: 0;
+    }
+
+    &__button {
+      grid-column: 1/-1;
+      margin-top: 295px;
+    }
+  }
+
+  @include desktop-regular {
+    @include grid;
+
+    margin-right: $regular-margin;
+    margin-left: $regular-margin;
+
+    &__title {
+      grid-column: 2/6;
+      grid-row: 1;
+
+      width: auto;
+      margin: 0;
+
+      font-size: 36px;
+    }
+
+    &__verticallogo {
+      display: grid;
+      grid-column: 1;
+      grid-row: 1/2;
+      align-self: start;
+
+      width: 18px;
+      height: 145px;
+
+      background-image: url('../images/vertical_features.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &__image {
+      position: static;
+
+      display: grid;
+      grid-column: 8/1;
+      grid-row: 1/3;
+
+      width: 1180px;
+      margin-top: 10px;
+      margin-right: $regular-margin;
+
+      background-image: url('../images/features_desktop.svg');
+    }
+
+    &__labels {
+      display: flex;
+      grid-column: 6/8;
+      grid-row: 1;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    &__label {
+      display: flex;
+      flex-direction: column;
+      margin-top: 45px;
+      text-align: right;
+    }
+
+    //  &__button {
+    //  margin-top: auto;
+    // }
+
+    &__button {
+      grid-column: 2/4;
+      grid-row: 2;
+
+      width: fit-content;
+      margin: 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid $secondary-color;
+      }
+    }
+
+    &__icons {
+      grid-column: 1/-1;
+      margin-top: 180px;
+      margin-bottom: 80px;
+    }
+
+    &__item {
+      grid-column: span 4;
+    }
+
+    &__icontitle {
+      grid-column: span 2;
+    }
+  }
+
+  @include desktop-large {
+    margin-right: $large-margin;
+    margin-left: $large-margin;
+
+    &__image {
+      margin-right: $large-margin;
+    }
+  }
+}
