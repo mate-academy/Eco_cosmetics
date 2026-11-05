@@ -16,6 +16,16 @@
 
   background-color: #344f1080;
 
+  @include for-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    box-sizing: border-box;
+    height: auto;
+    padding: 30px 20px;
+  }
+
   @include for-tablet {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -35,6 +45,12 @@
 
     margin-top: 60px;
 
+    @include for-mobile {
+      grid-column: 1 / -1;
+      gap: 20px;
+      margin-top: 0;
+    }
+
     @include for-tablet {
       grid-column: 1 / 2;
       gap: 0;
@@ -49,6 +65,12 @@
     display: flex;
     gap: 45px;
     margin-bottom: 80px;
+
+    @include for-mobile {
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 0;
+    }
 
     @include for-tablet {
       flex-direction: column;
@@ -69,6 +91,11 @@
     line-height: 150%;
     color: #e4dfd3;
     letter-spacing: 0%;
+
+    @include for-mobile {
+      grid-column: 1 / -1;
+      margin-top: 0;
+    }
 
     @include for-tablet {
       grid-column: 2 / 3;
@@ -92,7 +119,7 @@
   }
 
   &__copyright {
-    grid-column: 3/8;
+    grid-column: 3 / 8;
 
     margin-top: 70px;
 
@@ -104,30 +131,71 @@
     text-transform: capitalize;
     letter-spacing: 0%;
 
+    @include for-mobile {
+      display: none;
+    }
+
     @include for-tablet {
       display: none;
       margin-top: 0;
-      font-size: 18px;
-      color: #e4dfd3;
     }
+
     &--tablet {
       display: none;
 
-      @include for-tablet {
+      @include for-mobile {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
         display: block;
+
+        width: 90%;
+        margin: 0;
+
+        font-size: 14px;
+        line-height: 150%;
+        color: #e4dfd3;
+        text-align: center;
+      }
+
+      @include for-tablet {
+        position: static;
+        transform: none;
+
+        display: block;
+
+        width: auto;
 
         font-size: 14px;
         font-weight: 400;
-        font-style: Regular;
         line-height: 150%;
         color: #e4dfd3;
-        letter-spacing: 0%;
+        text-align: left;
       }
+    }
+  }
+
+  .mobile-break {
+    display: none;
+
+    @include for-mobile {
+      display: block;
+    }
+
+    @include for-tablet {
+      display: none;
     }
   }
   &__country {
     margin-top: 61px;
     margin-bottom: 20px;
+
+    @include for-mobile {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
 
     @include for-tablet {
       margin-top: 0;
@@ -139,6 +207,12 @@
     margin: 0;
     margin-bottom: 20px;
 
+    @include for-mobile {
+      grid-column: 1;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
     @include for-tablet {
       margin-bottom: 0;
       white-space: nowrap;
@@ -148,6 +222,11 @@
   &__socials {
     display: flex;
     gap: 20px;
+
+    @include for-mobile {
+      position: absolute;
+      top: 150px;
+    }
 
     @include for-tablet {
       position: absolute;
