@@ -14,7 +14,9 @@
     box-sizing: border-box;
   }
 
-  &__title {
+  &__title-desktop {
+    display: inline;
+
     margin-top: 0;
     margin-bottom: 30px;
 
@@ -24,7 +26,36 @@
     line-height: 130%;
     color: #333;
   }
+  &__title-tablet {
+    display: none;
 
+  }
+
+  @include for-tablet {
+  @media (max-width: 1279px) {
+    &__title-desktop {
+      display: none;
+  
+
+    }
+
+    &__title-tablet {
+      display: inline;
+
+      font-size: 36px;
+      font-weight: 600;
+      font-style: SemiBold;
+      line-height: 150%;
+      text-align: center;
+      text-transform: capitalize;
+      letter-spacing: 0%;
+    }
+
+    &__title {
+      font-size: 36px;
+    }
+  }
+}
   &__title-break {
     display: inline;
   }
