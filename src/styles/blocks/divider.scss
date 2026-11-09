@@ -1,3 +1,5 @@
+@use '../utils/mixins' as *;
+
 .dividers {
   display: grid;
   grid-template-columns: repeat(12, 80px);
@@ -14,11 +16,23 @@
   &--first {
     grid-column: 1 / 8;
     margin-top: 100px;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: none;
+      }
+    }
   }
   &--second {
     grid-column: 9/ 14;
     margin-top: 131px;
     margin-bottom: 200px;
     padding-left: 50px;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: none;
+      }
+    }
   }
 }

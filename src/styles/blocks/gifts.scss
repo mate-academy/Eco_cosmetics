@@ -1,3 +1,5 @@
+@use '../utils/mixins' as *;
+
 .gifts {
   display: grid;
   grid-column: 2 / 7;
@@ -17,6 +19,12 @@
       line-height: 150%;
       color: #333;
       letter-spacing: 0%;
+
+      @include for-tablet {
+        @media (max-width: 1279px) {
+          display: none;
+        }
+      }
     }
 
     &--right {
@@ -30,6 +38,12 @@
       color: #344f10;
       text-transform: uppercase;
       letter-spacing: 5%;
+
+      @include for-tablet {
+        @media (max-width: 1279px) {
+          margin-bottom: 130px;
+        }
+      }
     }
   }
 }
