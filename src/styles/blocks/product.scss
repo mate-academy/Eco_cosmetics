@@ -1,14 +1,23 @@
+
 @use '../utils/mixins' as *;
 
 .product__card {
   display: none;
+}
 
-  @include for-tablet {
-    @media (max-width: 1279px) {
-      &:target {
-        display: block;
-       
-      }
+@include for-tablet {
+  @media (max-width: 1279px) {
+    .product__card:target {
+      display: block;
+    }
+
+    main:has(.product__card:target) > *:not(.product__card) {
+      display: none;
+    }
+
+    body:has(.product__card:target) .footer {
+      display: none;
     }
   }
 }
+
