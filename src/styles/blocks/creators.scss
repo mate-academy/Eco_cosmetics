@@ -96,19 +96,65 @@
     color: #344f10;
     text-transform: uppercase;
     letter-spacing: 5%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
+    }
   }
 
   &__description {
     margin-bottom: 30px;
     line-height: 150%;
 
-    &--second {
+    &--second-desktop {
       margin-bottom: 30px;
     }
-    &--paragraph {
+
+    &--paragraph-desktop {
       margin-bottom: 20px;
     }
+
+    &--desktop {
+      display: block;
+
+      @include for-tablet {
+        @media (max-width: 1279px) {
+          display: none;
+        }
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include for-tablet {
+        @media (max-width: 1279px) {
+          display: block;
+          width: 100%;
+          max-width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    &--second-tablet {
+      display: none;
+
+      @include for-tablet {
+        @media (max-width: 1279px) {
+          display: block;
+          width: 100%;
+          max-width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
+
   &__link {
     display: inline-block;
     grid-column: 2/ 6;
@@ -126,6 +172,14 @@
       text-decoration: underline;
       text-underline-offset: 13px;
     }
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        align-self: flex-start;
+        margin-top: 0;
+        margin-bottom: 30px;
+      }
+    }
   }
   &__images {
     grid-column: 8/12;
@@ -133,8 +187,24 @@
 
     @include for-tablet {
       @media (max-width: 1279px) {
-        grid-column: 4/6;
+        grid-column: 4/7;
+        grid-row: 1;
+        min-width: 0;
         margin-bottom: 0;
+      }
+    }
+  }
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
       }
     }
   }
@@ -170,6 +240,13 @@
       border: 1px solid #333;
       color: #333;
       background-color: #e4dfd3;
+    }
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        grid-column: 1 / 4;
+        place-self: end stretch;
+      }
     }
   }
 }
