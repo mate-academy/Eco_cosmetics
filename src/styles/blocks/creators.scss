@@ -4,7 +4,7 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: repeat(12, 80px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: 20px;
   align-items: start;
 
@@ -15,15 +15,18 @@
   @include for-tablet {
     @media (max-width: 1279px) {
       grid-template-columns: repeat(6, minmax(0, 1fr));
-      column-gap: 30px;
       align-items: stretch;
       padding-inline: 27px;
     }
   }
 
   &__content {
-    grid-column: 3 / 7;
+    grid-column: 3 /7;
     grid-row: 1;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
 
     @include for-tablet {
       @media (max-width: 1279px) {
@@ -182,30 +185,50 @@
     }
   }
   &__images {
-    grid-column: 8/12;
+    grid-column: 7/ 12;
+    grid-row: 1;
+  }
+
+  &__images--desktop {
+    display: block;
+    grid-column: 7/ 12;
     grid-row: 1;
 
     @include for-tablet {
       @media (max-width: 1279px) {
-        grid-column: 4/7;
+        display: none;
+      }
+    }
+  }
+
+  &__images--tablet {
+    display: none;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: block;
+        grid-column: 4 / 7;
         grid-row: 1;
         min-width: 0;
-        margin-bottom: 0;
       }
     }
   }
   &__image {
     display: block;
+
     width: 100%;
+    max-width: 100%;
     height: auto;
 
-    @include for-tablet {
-      @media (max-width: 1279px) {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
+    object-fit: cover;
+  }
+
+  @include for-tablet {
+    @media (max-width: 1279px) {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
     }
   }
 
