@@ -34,11 +34,12 @@
       @media (max-width: 1279px) {
         grid-column: 1 / 4;
         grid-row: 1;
+      
 
         width: 100%;
         max-width: auto;
-
-        text-align: justify;
+        max-height: 100%;
+ 
       }
     }
   }
@@ -138,10 +139,12 @@
 
       @include for-tablet {
         @media (max-width: 1279px) {
-          display: flex;
-          width: 100%;
-          max-width: 100%;
-          margin-bottom: 15px;
+        display: block;
+      width: 100%;
+      max-width: none;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+      text-align: left;
         }
       }
     }
@@ -152,8 +155,7 @@
       @include for-tablet {
         @media (max-width: 1279px) {
           display: block;
-          width: 100%;
-          max-width: 100%;
+         
           margin-bottom: 20px;
         }
       }
@@ -208,35 +210,35 @@
 
     @include for-tablet {
       @media (max-width: 1279px) {
-        display: block;
-        grid-column: 4 / 7;
-        grid-row: 1;
-        align-self: start;
-
-        width: 100%;
-        min-width: 0;
-        max-width: 100%;
+       display: block;
+      grid-column: 4 / 7;
+      grid-row: 1;
+      width: 100%;
+      min-width: 0;
+      height: 100%;
+      overflow: hidden;
+      padding: 0;
+      background-color: antiquewhite;
+       
       }
     }
   }
-  &__image {
-    display: flex;
-    grid-column: 7 / 13;
-    flex-flow: row nowrap;
-    gap: 20px;
-    align-items: flex-start;
+ &__image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
 
-    padding-inline: 50px;
-
-    @include for-tablet {
-      @media (max-width: 1279px) {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
+  @include for-tablet {
+    @media (max-width: 1279px) {
+      width: 100%;
+      max-width: none;
+      height: 100%;
     }
   }
+}
   &__button {
     position: relative;
     transform: translateY(-66px);
