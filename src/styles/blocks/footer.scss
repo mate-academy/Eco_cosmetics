@@ -1,10 +1,10 @@
 @use '../utils/mixins' as *;
 
 .footer {
-  position: relative;
+    position: relative;
 
   display: grid;
-  grid-column: 1 / 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: 20px;
   align-items: start;
 
@@ -13,7 +13,6 @@
   height: 320px;
 
   font-family: Poppins, sans-serif;
-
   background-color: #344f1080;
 
   @include for-mobile {
@@ -23,7 +22,7 @@
 
     box-sizing: border-box;
     height: auto;
-    padding: 30px 20px;
+  
   }
 
   @include for-tablet {
@@ -31,10 +30,10 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
     align-items: start;
-
+position: relative;
     box-sizing: border-box;
-    height: 360px;
-    padding: 60px 9% 70px;
+    height: 263px;
+      padding-inline:30px 27px;
   }
 
   &__left {
@@ -75,6 +74,7 @@
     @include for-tablet {
       flex-direction: column;
       gap: 15px;
+      margin-top: 29px;
     }
   }
 
@@ -99,8 +99,8 @@
 
     @include for-tablet {
       grid-column: 2 / 3;
-      gap: 16px;
-      margin-top: 0;
+      gap: 10px;
+      margin-top: 29px;
     }
   }
   &__link {
@@ -113,69 +113,68 @@
     color: #e4dfd3;
     text-decoration: none;
     letter-spacing: 0%;
+
+    
   }
   &__contact {
     justify-self: start;
   }
 
-  &__copyright {
-    grid-column: 3 / 8;
+ &__copyright {
+  grid-column: 3 / 8;
+  margin-top: 70px;
 
-    margin-top: 70px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 150%;
+  color: #e4dfd3;
+  text-transform: capitalize;
 
-    font-size: 18px;
-    font-weight: 500;
-    font-style: Medium;
-    line-height: 150%;
-    color: #e4dfd3;
-    text-transform: capitalize;
-    letter-spacing: 0%;
+  @include for-mobile {
+    display: none;
+  }
+
+  @include for-tablet {
+    display: none;
+  }
+
+  &--tablet {
+    display: none;
 
     @include for-mobile {
-      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      display: block;
+      width: 90%;
+      margin: 0;
+
+      font-size: 14px;
+      line-height: 150%;
+      color: #e4dfd3;
+      text-align: center;
     }
 
     @include for-tablet {
-      display: none;
-      margin-top: 0;
-    }
+      position: absolute;
+      bottom: 30px;
+      left: 27px;
+      transform: none;
 
-    &--tablet {
-      display: none;
+      display: block;
+      width: auto;
+      margin: 0;
 
-      @include for-mobile {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-
-        display: block;
-
-        width: 90%;
-        margin: 0;
-
-        font-size: 14px;
-        line-height: 150%;
-        color: #e4dfd3;
-        text-align: center;
-      }
-
-      @include for-tablet {
-        position: static;
-        transform: none;
-
-        display: block;
-
-        width: auto;
-
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 150%;
-        color: #e4dfd3;
-        text-align: left;
-      }
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%;
+      color: #e4dfd3;
+      text-align: left;
     }
   }
+}
 
   .mobile-break {
     display: none;
@@ -199,7 +198,8 @@
 
     @include for-tablet {
       margin-top: 0;
-      margin-bottom: 7px;
+      margin-bottom: -3px;
+      font-size: 14px;
     }
   }
 
@@ -229,13 +229,13 @@
     }
 
     @include for-tablet {
-      position: absolute;
-      top: 55%;
-      left: 9%;
+        position: absolute;
+  top: 55%;
+  left: 27px;
 
-      width: 20px;
-      height: 20px;
-      margin-bottom: 50px;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 0;
     }
 
     @include for-desktop {
