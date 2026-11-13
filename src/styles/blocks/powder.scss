@@ -1,0 +1,286 @@
+@use '../utils/mixins' as *;
+
+.powder {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 20px;
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1280px;
+
+  font-family: Poppins, sans-serif;
+
+  @include for-tablet {
+    @media (max-width: 1279px) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      column-gap: 20px;
+      align-items: start;
+      padding-inline: 27px;
+      margin-bottom: 121px;
+     
+    }
+  }
+
+  &__text {
+    position: absolute;
+    left: 70px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    width: 80px;
+    height: 18px;
+
+    writing-mode: sideways-lr;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+    color: #344f1080;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: none;
+      }
+    }
+  }
+
+  &__line {
+    position: absolute;
+    left: 80px;
+
+    grid-row: 1;
+
+    width: 1px;
+    height: 88px;
+    margin-top: 100px;
+
+    background-color: #344f10;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    grid-column: 3 / 8;
+    grid-row: 1;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        grid-column: 1 / 7;
+        grid-row: 1;
+
+        width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 7;
+    align-self: start;
+
+    margin-bottom: 287px;
+
+    font-size: 36px;
+    font-weight: 600;
+    color: #344f10;
+    text-transform: uppercase;
+    letter-spacing: 5%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        align-self: start;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    grid-column: 1 / 6;
+
+    margin-bottom: 200px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 130%;
+    color: #344f10;
+    text-decoration: none;
+    letter-spacing: 0%;
+
+    &:hover {
+      color: #333;
+      text-decoration: underline;
+      text-underline-offset: 12px;
+    }
+  }
+
+  &__product {
+    position: relative;
+
+    grid-column: 9 / 13;
+    grid-row: 1;
+
+    width: 100%;
+    min-width: 0;
+  }
+
+  &__image {
+    display: block;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &__image--desktop {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: none;
+      }
+    }
+  }
+
+  &__image--tablet {
+    display: none;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: block;
+        width: 100%;
+        max-width: none;
+        height: auto;
+      }
+    }
+  }
+
+  &__labels {
+    position: absolute;
+    inset: 0;
+  }
+
+  &__label {
+    position: absolute;
+    right: 110%;
+    left: auto;
+
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+  }
+
+  &__name {
+    margin-right: 8px;
+    font-size: 16px;
+    color: #333;
+    white-space: nowrap;
+  }
+
+  &__label:nth-child(1) {
+    top: 6%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        top: 10%;
+      }
+    }
+  }
+
+  &__label:nth-child(2) {
+    top: 17%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        top: 28%;
+      }
+    }
+  }
+
+  &__label:nth-child(3) {
+    top: 28%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        top: 48%;
+      }
+    }
+  }
+
+  &__label:nth-child(4) {
+    top: 39%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        top: 66%;
+      }
+    }
+  }
+
+  &__label:nth-child(5) {
+    top: 50%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        top: 85%;
+        
+      }
+    }
+  }
+
+  
+
+  @media (min-width: 640px) and (max-width: 767px) {
+    overflow: hidden;
+
+    &__content {
+      grid-column: 1 / 4;
+      grid-row: 1;
+
+      min-width: 0;
+      width: 100%;
+      max-height: none;
+    }
+
+    &__title {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0;
+    }
+
+    &__link {
+      position: absolute;
+      bottom: 30px;
+      left: 27px;
+      
+      margin: 0;
+    }
+
+    &__product {
+      grid-column: 4 / 7;
+      grid-row: 1;
+
+      min-width: 0;
+      width: 100%;
+    }
+
+    &__image--tablet {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

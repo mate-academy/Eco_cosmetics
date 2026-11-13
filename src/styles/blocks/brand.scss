@@ -1,0 +1,132 @@
+@use '../utils/mixins' as *;
+
+.brand {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 20px;
+
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1280px;
+
+  &__content {
+    grid-column: 3 / 8;
+    box-sizing: border-box;
+  }
+
+  &__title-desktop {
+    display: inline;
+
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    font-family: Poppins, sans-serif;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 130%;
+    color: #333;
+  }
+  &__title-tablet {
+    display: none;
+  }
+
+  @include for-tablet {
+    @media (max-width: 1279px) {
+      &__title-desktop {
+        display: none;
+      }
+
+      &__title-tablet {
+        display: inline;
+
+        font-size: 36px;
+        font-weight: 600;
+        font-style: SemiBold;
+        line-height: 150%;
+        text-align: center;
+        text-transform: capitalize;
+        letter-spacing: 0%;
+      }
+
+      &__title {
+        font-size: 36px;
+      }
+    }
+  }
+  &__title-break {
+    display: inline;
+  }
+
+  &__text {
+    margin-bottom: 50px;
+
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: #333;
+  }
+
+  &__image {
+    grid-column: 8 / 13;
+    box-sizing: border-box;
+    min-width: 0;
+
+    picture {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__image-img {
+    display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 714px;
+    max-height: 451px;
+  }
+
+  @media (max-width: 1279px) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: 20px;
+    margin-top: 0;
+    padding: 0 27px;
+
+    &__content {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      text-align: center;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+      font-size: 36px;
+    }
+
+    &__title-break {
+      display: none;
+    }
+
+    &__text {
+      margin-bottom: 50px;
+      font-size: 16px;
+    }
+
+    &__image {
+      grid-column: 1 / -1;
+      grid-row: 1;
+
+      width: 100%;
+      min-width: 0;
+      margin-bottom: 50px;
+    }
+
+    &__image-img {
+      width: 100%;
+      max-width: none;
+      height: auto;
+      max-height: none;
+    }
+  }
+}

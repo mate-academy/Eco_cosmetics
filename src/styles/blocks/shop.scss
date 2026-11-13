@@ -1,0 +1,248 @@
+@use '../utils/mixins' as *;
+
+.shop {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 80px);
+  column-gap: 20px;
+
+  @include for-tablet {
+    @media (max-width: 1279px) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      column-gap: 20px;
+
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1280px;
+      margin-inline: auto;
+      padding-inline: 27px;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    transform: rotate(0deg);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    width: 18px;
+    height: 302px;
+
+    writing-mode: sideways-lr;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: Medium;
+    line-height: 130%;
+    color: #344f10;
+    letter-spacing: 0%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: none;
+      }
+    }
+  }
+
+  &__line {
+    position: absolute;
+    top: 49px;
+    left: 70px;
+
+    width: 1px;
+    height: 100px;
+
+    background-color: #344f10;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    grid-column: 3/12;
+    grid-row: 1;
+
+    margin: 0;
+    margin-bottom: 30px;
+
+    font-family: Poppins, sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    font-style: SemiBold;
+    color: #344f10;
+    text-transform: uppercase;
+    letter-spacing: 5%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        grid-column: 1 / -1;
+        margin-left: 0;
+        font-size: 24px;
+      
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    grid-column: 2/ 12;
+    grid-row: 2;
+    gap: 40px;
+    justify-content: flex-start;
+
+    padding-left: 100px;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        grid-column: 1 / -1;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding-left: 0;
+        
+      }
+    }
+  }
+  &__link {
+    margin-bottom: 86px;
+
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: SemiBold;
+    line-height: 150%;
+    color: #828282;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 5%;
+    &:hover {
+      color: #333;
+      text-decoration: underline;
+      text-underline-offset: 10px;
+    }
+    @include for-tablet {
+      @media (max-width: 1279px) {
+       margin-bottom: 30px;
+        
+      }
+    }
+  }
+
+  &__products {
+    display: grid;
+    grid-column: 3 / 12;
+    grid-row: 3;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 30px;
+
+        width: 100%;
+        min-width: 0;
+      }
+    }
+  }
+
+  &__product {
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    font-style: SemiBold;
+    line-height: 150%;
+    color: #333;
+    text-align: start;
+    text-transform: uppercase;
+    letter-spacing: 5%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        min-width: 0;
+      }
+    }
+  }
+
+  &__image {
+    margin-bottom: 20px;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: block;
+
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__name {
+    margin-bottom: 13px;
+  }
+
+  &__price {
+    margin-bottom: 40px;
+
+    font-size: 18px;
+    font-weight: 500;
+    font-style: Medium;
+    line-height: 150%;
+    text-transform: uppercase;
+    letter-spacing: 5%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+     margin-bottom: 50px;
+        
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    grid-column: 3 / 13;
+    grid-row: 4;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+
+    width: 280px;
+    height: 60px;
+   
+    margin-bottom: 200px;
+
+    font-size: 16px;
+    font-weight: 600;
+    font-style: SemiBold;
+    line-height: 130%;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 15%;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        margin-inline: auto;
+      }
+    }
+
+    background-color: #333;
+    &:hover {
+      border: 1px solid #333;
+      color: #333;
+      background-color: #e4dfd3;
+    }
+  }
+}
