@@ -2,11 +2,11 @@
 
 .dividers {
   display: grid;
-  grid-template-columns: repeat(12, 80px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 20px;
 
   box-sizing: border-box;
   width: 100%;
-  max-width: 1280px;
 }
 
 .divider {
@@ -14,20 +14,20 @@
   background-color: #344f1080;
 
   &--first {
-    grid-column: 1 / 8;
+    grid-column: 1 / 6;
     margin-bottom: 100px;
-    
+
     @include for-tablet {
       @media (max-width: 1279px) {
         display: none;
       }
     }
   }
+
   &--second {
-    grid-column: 9/ 14;
+    grid-column: 7/ -1;
     margin-top: 131px;
     margin-bottom: 200px;
-    padding-left: 50px;
 
     @include for-tablet {
       @media (max-width: 1279px) {
