@@ -1,23 +1,29 @@
 @use '../utils/mixins' as *;
 
 .brand {
+  position: relative;
+
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: 20px;
+  align-items: start;
 
   box-sizing: border-box;
   width: 100%;
-  max-width: 1280px;
+  padding-inline: 150px 50px;
 
   &__content {
-    grid-column: 3 / 8;
+    grid-column: 1 / 7;
+    grid-row: 1;
+    justify-self: stretch;
+
     box-sizing: border-box;
+    width: 100%;
   }
 
   &__title-desktop {
-    display: inline;
+    display: block;
 
-    margin-top: 0;
     margin-bottom: 30px;
 
     font-family: Poppins, sans-serif;
@@ -68,7 +74,7 @@
   }
 
   &__image {
-    grid-column: 8 / 13;
+    grid-column: 7 / 13;
     box-sizing: border-box;
     min-width: 0;
 
