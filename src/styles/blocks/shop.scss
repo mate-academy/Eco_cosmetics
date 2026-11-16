@@ -3,9 +3,13 @@
 .shop {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(12, 80px);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: 20px;
+  box-sizing: border-box;
+    width: 100%;
+    padding-inline: 150px 50px;
 
+    
   @include for-tablet {
     @media (max-width: 1279px) {
       grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -22,7 +26,7 @@
   &__text {
     position: absolute;
     top: 0;
-    left: 60px;
+    left: 70px;
     transform: rotate(0deg);
 
     display: flex;
@@ -50,7 +54,7 @@
   &__line {
     position: absolute;
     top: 49px;
-    left: 70px;
+    left: 80px;
 
     width: 1px;
     height: 100px;
@@ -65,7 +69,7 @@
   }
 
   &__title {
-    grid-column: 3/12;
+    grid-column: 1/12;
     grid-row: 1;
 
     margin: 0;
@@ -89,12 +93,12 @@
   }
   &__nav {
     display: flex;
-    grid-column: 2/ 12;
+    grid-column: 1/ 12;
     grid-row: 2;
     gap: 40px;
     justify-content: flex-start;
 
-    padding-left: 100px;
+   
 
     @include for-tablet {
       @media (max-width: 1279px) {
@@ -133,10 +137,16 @@
 
   &__products {
     display: grid;
-    grid-column: 3 / 12;
+    grid-column: 1 / 12;
     grid-row: 3;
     grid-template-columns: 1fr 1fr;
+ 
+      @media (min-width: 1280px) {
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
+  }
+
 
     @include for-tablet {
       @media (max-width: 1279px) {
@@ -170,6 +180,11 @@
 
   &__image {
     margin-bottom: 20px;
+    @media (min-width: 1280px) {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
     @include for-tablet {
       @media (max-width: 1279px) {
@@ -207,7 +222,7 @@
 
   &__button {
     display: flex;
-    grid-column: 3 / 13;
+    grid-column:1 / 13;
     grid-row: 4;
     align-items: center;
     justify-content: center;
