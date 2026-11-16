@@ -1,11 +1,13 @@
 @use '../utils/mixins' as *;
 
 .about {
+  position: relative;
+
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: 20px;
-  position: relative;
-  padding-inline:150px 50px;
+
+  padding-inline: 150px 50px;
 
   @include for-tablet {
     @media (max-width: 1279px) {
@@ -17,9 +19,11 @@
 
   &__content {
     position: relative;
+
     grid-column: 1 / 6;
     grid-row: 1;
     justify-self: start;
+
     box-sizing: border-box;
     width: 100%;
 
@@ -30,6 +34,7 @@
         grid-row: 1;
         flex-direction: column;
         justify-content: flex-start;
+
         min-width: 0;
         margin-bottom: 130px;
       }
@@ -183,13 +188,12 @@
   &__images {
     display: grid;
     grid-column: 7 / 13;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-      width: 100%;
-  min-width: 0;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     gap: 20px;
     align-items: end;
 
-    
+    width: 100%;
+    min-width: 0;
 
     @include for-tablet {
       @media (max-width: 1279px) {
@@ -214,7 +218,7 @@
       @media (max-width: 1279px) {
         position: absolute;
         inset: 0;
-      
+
         overflow: hidden;
         display: block;
 
@@ -225,7 +229,7 @@
 
     &--big {
       grid-column: 1;
-        width: 100%;
+      width: 100%;
       height: 529px;
 
       @include for-tablet {
@@ -236,12 +240,12 @@
     }
 
     &--small {
-  grid-column: 2;
-  align-self: end;
+      grid-column: 2;
+      align-self: end;
 
-  width: 100%;
-  max-width: none;
-  height: 429px;
+      width: 100%;
+      max-width: none;
+      height: 429px;
 
       @include for-tablet {
         @media (max-width: 1279px) {
