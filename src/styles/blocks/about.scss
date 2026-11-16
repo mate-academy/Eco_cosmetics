@@ -4,11 +4,8 @@
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: 20px;
-
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1280px;
-  padding-inline: 90px;
+  position: relative;
+  padding-inline:150px 50px;
 
   @include for-tablet {
     @media (max-width: 1279px) {
@@ -20,7 +17,11 @@
 
   &__content {
     position: relative;
-    grid-column: 2 / 7;
+    grid-column: 1 / 6;
+    grid-row: 1;
+    justify-self: start;
+    box-sizing: border-box;
+    width: 100%;
 
     @include for-tablet {
       @media (max-width: 1279px) {
@@ -29,7 +30,6 @@
         grid-row: 1;
         flex-direction: column;
         justify-content: flex-start;
-
         min-width: 0;
         margin-bottom: 130px;
       }
@@ -39,10 +39,10 @@
   &__line {
     position: absolute;
     top: 165px;
-    left: -110px;
+    left: -70px;
 
     width: 1px;
-    height: 30%;
+    height: 100px;
 
     background-color: #344f10;
 
@@ -56,7 +56,7 @@
   &__text {
     position: absolute;
     top: 0;
-    left: -120px;
+    left: -80px;
     transform: rotate(0deg);
 
     display: flex;
@@ -82,7 +82,7 @@
 
   &__description {
     display: grid;
-    grid-column: 1 / 7;
+    grid-column: 1 / 6;
 
     margin-bottom: 30px;
 
@@ -130,7 +130,7 @@
 
   &__title {
     display: grid;
-    grid-column: 1 / 7;
+    grid-column: 1 / 6;
 
     margin-top: 0;
     margin-bottom: 40px;
@@ -181,13 +181,15 @@
   }
 
   &__images {
-    display: flex;
+    display: grid;
     grid-column: 7 / 13;
-    flex-flow: row nowrap;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+      width: 100%;
+  min-width: 0;
     gap: 20px;
-    align-items: flex-start;
+    align-items: end;
 
-    padding-inline: 50px;
+    
 
     @include for-tablet {
       @media (max-width: 1279px) {
@@ -205,14 +207,14 @@
   }
 
   &__image {
-    flex: 0 0 auto;
+    min-width: 0;
     margin-bottom: 200px;
 
     @include for-tablet {
       @media (max-width: 1279px) {
         position: absolute;
         inset: 0;
-
+      
         overflow: hidden;
         display: block;
 
@@ -222,7 +224,8 @@
     }
 
     &--big {
-      width: 380px;
+      grid-column: 1;
+        width: 100%;
       height: 529px;
 
       @include for-tablet {
@@ -233,14 +236,12 @@
     }
 
     &--small {
-      display: block;
-      align-self: flex-end;
+  grid-column: 2;
+  align-self: end;
 
-      width: 100%;
-      max-width: 180px;
-      height: auto;
-
-      object-fit: cover;
+  width: 100%;
+  max-width: none;
+  height: 429px;
 
       @include for-tablet {
         @media (max-width: 1279px) {
@@ -266,6 +267,8 @@
   &__image-img {
     display: block;
     width: 100%;
+    height: 100%;
+    object-fit: contain;
 
     @include for-tablet {
       @media (max-width: 1279px) {
