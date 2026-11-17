@@ -23,7 +23,7 @@
       }
     }
     @include for-large-desktop {
-  padding-left: 130px;
+  padding-inline: 130px;
  
 }
   }
@@ -106,11 +106,20 @@
     margin-top: 52px;
     margin-bottom: 92px;
 
+
     @include for-tablet {
       @media (max-width: 1279px) {
         display: none;
       }
     }
+    @include for-large-desktop {
+  grid-column: 7 / 11;
+  justify-self: start;
+  transform: translateX(40px);
+
+
+ 
+}
   }
 
   &__link {
@@ -147,7 +156,14 @@
   .button--cart {
     grid-column: 13;
     grid-row: 1;
-    justify-self: center;
+    justify-self:start;
+
+
+@include for-large-desktop {
+grid-column: 12;
+grid-row: 1;
+justify-self:center;
+}
 
     @include for-tablet {
       @media (max-width: 1279px) {
@@ -160,5 +176,6 @@
         background: transparent;
       }
     }
+
   }
 }

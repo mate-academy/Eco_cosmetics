@@ -12,6 +12,11 @@
   width: 100%;
   padding-inline: 150px 50px;
 
+  @include for-large-desktop {
+  padding-left: 230px;
+  padding-right: 150px;
+}
+
   &__content {
     grid-column: 1 / 7;
     grid-row: 1;
@@ -31,10 +36,13 @@
     font-weight: 600;
     line-height: 130%;
     color: #333;
+
+  
   }
   &__title-tablet {
     display: none;
   }
+
 
   @include for-tablet {
     @media (max-width: 1279px) {
@@ -53,20 +61,7 @@
         text-transform: capitalize;
         letter-spacing: 0%;
       }
-      &__title-mobile {
-        display: none;
-      }
-
-      @include for-mobile {
-        @media (min-width: 320px) {
-          font-size: 24px;
-          font-weight: 600;
-          line-height: 130%;
-          text-align: center;
-          letter-spacing: 0%;
-        }
-      }
-
+  
       &__title {
         font-size: 36px;
       }
@@ -147,5 +142,11 @@
       height: auto;
       max-height: none;
     }
+    @include for-large-desktop {
+  width: 100%;
+  max-width: 580px;
+  height: 451px;
+  object-fit: cover;
+}
   }
 }
