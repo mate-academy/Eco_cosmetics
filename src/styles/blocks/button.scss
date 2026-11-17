@@ -1,0 +1,81 @@
+@use '../utils/mixins' as *;
+
+.button {
+  cursor: pointer;
+  border: none;
+
+  &__icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &--cart {
+    display: flex;
+    grid-column: 12/ 13;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    background: transparent;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: flex;
+        grid-column: 3;
+        place-self: center end;
+
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+
+        background: transparent;
+      }
+    }
+  }
+
+  &--primary {
+    display: flex;
+    grid-column: 3;
+    align-items: center;
+    justify-content: center;
+    justify-self: end;
+
+    width: 280px;
+    height: 60px;
+    margin-bottom: 222px;
+    padding: 0;
+
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 130%;
+    color: #f2f2f2;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 15%;
+
+    background-color: #333;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        margin-bottom: 130px;
+        margin-inline: auto;
+      }
+    }
+  }
+
+  &:hover {
+    border: 1px solid #333;
+    color: #333;
+    background-color: #e4dfd3;
+  }
+}

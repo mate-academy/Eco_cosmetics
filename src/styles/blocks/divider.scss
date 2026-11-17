@@ -1,0 +1,38 @@
+@use '../utils/mixins' as *;
+
+.dividers {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 20px;
+
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.divider {
+  height: 1px;
+  background-color: #344f1080;
+
+  &--first {
+    grid-column: 1 / 6;
+    margin-bottom: 100px;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: none;
+      }
+    }
+  }
+
+  &--second {
+    grid-column: 7/ -1;
+    margin-top: 131px;
+    margin-bottom: 200px;
+
+    @include for-tablet {
+      @media (max-width: 1279px) {
+        display: none;
+      }
+    }
+  }
+}

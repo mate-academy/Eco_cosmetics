@@ -1,0 +1,76 @@
+@use '../utils/mixins' as *;
+
+.gifts {
+  position: relative;
+
+  display: grid;
+  grid-column: 1 / 7;
+  column-gap: 20px;
+  align-items: start;
+
+  box-sizing: border-box;
+  width: 100%;
+  padding-inline: 150px 50px;
+
+  @include for-tablet {
+    @media (max-width: 1279px) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      padding-inline: 27px;
+    }
+    @include for-large-desktop {
+  padding-inline: 230px 130px;
+ 
+}
+
+  }
+
+  &__text {
+    &--left {
+      grid-column: 1/ 6;
+
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      font-style: Regular;
+      line-height: 150%;
+      color: #333;
+      letter-spacing: 0%;
+
+      @include for-tablet {
+        @media (max-width: 1279px) {
+          display: none;
+        }
+      }
+    }
+
+    &--right {
+      grid-column: 7 / 13;
+
+      font-family: Poppins, sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      font-style: SemiBold;
+      line-height: 150%;
+      color: #344f10;
+      text-transform: uppercase;
+      letter-spacing: 5%;
+
+      @include for-tablet {
+        @media (max-width: 1279px) {
+          grid-column: 1 / -1;
+          justify-self: center;
+
+          width: 100%;
+          margin-bottom: 130px;
+
+          text-align: center;
+
+          span:nth-of-type(2),
+          span:nth-of-type(3) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
