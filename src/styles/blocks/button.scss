@@ -13,32 +13,43 @@
 
   &--cart {
     display: flex;
-    grid-column: 12/ 13;
+    grid-column: 13;
+    grid-row: 1;
     align-items: center;
     justify-content: center;
-    justify-self: end;
+    justify-self: start;
 
     width: 32px;
     height: 32px;
+    margin: 0;
     padding: 0;
+    border: none;
 
     background: transparent;
 
+    &:hover {
+      border: none;
+      background: transparent;
+    }
+
     @include for-tablet {
       @media (max-width: 1279px) {
-        display: flex;
+        transform: none;
+
         grid-column: 3;
-        place-self: center end;
+        grid-row: 1;
+        justify-self: end;
 
         width: 24px;
         min-width: 24px;
         height: 24px;
-        margin: 0;
-        padding: 0;
-        border: 0;
-
-        background: transparent;
       }
+    }
+
+    @include for-large-desktop {
+      grid-column: 12;
+      grid-row: 1;
+      justify-self: center;
     }
   }
 
@@ -73,7 +84,7 @@
     }
   }
 
-  &:hover {
+  &--primary:hover {
     border: 1px solid #333;
     color: #333;
     background-color: #e4dfd3;
