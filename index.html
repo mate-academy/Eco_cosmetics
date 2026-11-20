@@ -565,10 +565,19 @@ I am also a volunteer to save wild birds in
         you and answer your other questions
       </p>
 
-      <form class="contact__form">
+      <form class="contact__form"
+        onsubmit="event.preventDefault(); this.reset();"
+        >
         <div class="contact__item">
           <label for="name" class="contact__label">Your Name</label>
-          <input type="text" id="name" name="name" class="contact__input"/>
+          <input 
+          type="text" 
+          id="name" 
+          name="name" 
+          class="contact__input"
+          autocomplete="name"
+          required
+          />
         </div>
         <div class="contact__item">
           <label for="email" class="contact__label">E-Mail</label>
@@ -577,6 +586,8 @@ I am also a volunteer to save wild birds in
             id="email"
             name="email"
             class="contact__input"
+            autocomplete="email"
+            required
           />
         </div>
         <div class="contact__item">
@@ -586,6 +597,10 @@ I am also a volunteer to save wild birds in
             id="phone"
             name="phone"
             class="contact__input"
+  autocomplete="tel"
+  pattern="[+]?[0-9 ]{9,15}"
+  title="Enter 9 to 15 digits. You can use spaces and a + at the beginning."
+  required
           />
         </div>
         <div class="contact__item">
@@ -594,6 +609,9 @@ I am also a volunteer to save wild birds in
             id="message"
             name="message"
             class="contact__input"
+          
+            minlength="10"
+            required
           ></textarea>
         </div>
 
