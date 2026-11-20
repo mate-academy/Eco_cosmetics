@@ -1,3 +1,4 @@
+
 @use '../utils/mixins' as *;
 
 .brand {
@@ -28,7 +29,6 @@
 
   &__title-desktop {
     display: block;
-
     margin-bottom: 30px;
 
     font-family: Poppins, sans-serif;
@@ -37,6 +37,7 @@
     line-height: 130%;
     color: #333;
   }
+
   &__title-tablet {
     display: none;
   }
@@ -64,6 +65,7 @@
       }
     }
   }
+
   &__title-break {
     display: inline;
   }
@@ -139,12 +141,41 @@
       height: auto;
       max-height: none;
     }
+  }
 
-    @include for-large-desktop {
-      width: 100%;
-      max-width: 580px;
-      height: 451px;
-      object-fit: cover;
+  @include for-mobile {
+    @media (max-width: 639px) {
+      padding-inline: 0;
+
+      &__content {
+        padding-inline: 20px;
+        text-align: center;
+      }
+
+      &__title {
+        margin-bottom: 15px;
+        font-size: 24px;
+        line-height: 150%;
+      }
+
+      &__title-desktop {
+        display: none;
+      }
+
+      &__title-tablet {
+        display: block;
+
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 150%;
+        text-align: center;
+      }
+
+      &__text {
+        margin-bottom: 30px;
+        font-size: 14px;
+        line-height: 150%;
+      }
     }
   }
 }
