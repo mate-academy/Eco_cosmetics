@@ -15,6 +15,13 @@
     width: 100%;
     padding-inline: 50px;
 
+    @include for-mobile {
+     @media (max-width: 639px) {
+    grid-template-columns: 1fr auto 1fr;
+    padding: 23px 27px;
+  }
+}
+
     @include for-tablet {
       @media (max-width: 1279px) {
         grid-template-columns: 1fr auto 1fr;
@@ -31,6 +38,22 @@
   &__menu {
     display: none;
 
+    @include for-mobile {
+  @media (max-width: 639px) {
+    cursor: pointer;
+
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+    align-items: center;
+    justify-content: center;
+    justify-self: start;
+
+    width: 24px;
+    height: 24px;
+  }
+}
+
     @include for-tablet {
       @media (max-width: 1279px) {
         cursor: pointer;
@@ -45,6 +68,8 @@
         height: 24px;
       }
     }
+
+    
   }
   &__menu-icon {
     display: block;
@@ -57,6 +82,13 @@
     display: block;
     width: 50px;
     height: 50px;
+
+    @include for-mobile {
+  @media (max-width: 639px) {
+    width: 24px;
+    height: 24px;
+  }
+}
 
     @include for-tablet {
       @media (max-width: 1279px) {
@@ -87,6 +119,12 @@
     letter-spacing: 5%;
     white-space: nowrap;
 
+    @include for-mobile {
+  @media (max-width: 639px) {
+    display: none;
+  }
+}
+
     @include for-tablet {
       @media (max-width: 1279px) {
         display: none;
@@ -105,6 +143,12 @@
 
     margin-top: 52px;
     margin-bottom: 92px;
+
+    @include for-mobile {
+  @media (max-width: 639px) {
+    display: none;
+  }
+}
 
     @include for-tablet {
       @media (max-width: 1279px) {
@@ -139,6 +183,24 @@
     column-gap: 12px;
     align-items: center;
     justify-self: start;
+
+
+@include for-mobile {
+  @media (max-width: 639px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(400%, -80%);
+
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+  
+  }
+}
+
 
     @include for-tablet {
       @media (max-width: 1279px) {
